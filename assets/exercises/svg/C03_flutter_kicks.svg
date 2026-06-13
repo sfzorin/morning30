@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-labelledby="c03t c03d">
+  <title id="c03t">Flutter kicks</title>
+  <desc id="c03d">Схема упражнения: человек лежит на спине, ноги приподняты и попеременно двигаются вверх-вниз короткой амплитудой, поясница прижата к коврику.</desc>
+  <defs>
+    <marker id="ah" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" refX="16" refY="12" orient="auto-start-reverse">
+      <path d="M5,3 L19,12 L5,21" fill="none" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <path id="trunk" d="M 0,-10 C 20,-10 25,2 25,38 C 25,72 17,86 17,108 C 17,138 23,150 23,168 C 23,182 12,186 0,186 C -12,186 -23,182 -23,168 C -23,150 -17,138 -17,108 C -17,86 -25,72 -25,38 C -25,2 -20,-10 0,-10 Z"/>
+    <g id="c03-limbs" fill="none">
+      <line x1="270" y1="500" x2="244" y2="499"/>
+      <polyline points="270,500 382,514 470,520"/>
+      <polyline points="445,506 548,395 632,268 668,252"/>
+      <polyline points="445,506 565,415 690,330 726,316"/>
+    </g>
+    <g id="c03-glimbs" fill="none">
+      <polyline points="445,506 575,420 700,345 735,330"/>
+      <polyline points="445,506 545,400 628,272 664,256"/>
+    </g>
+  </defs>
+
+  <g id="mat">
+    <rect x="120" y="520" width="780" height="120" rx="32" fill="#D1FAE5" stroke="#1F2937" stroke-width="3" opacity="0.7"/>
+  </g>
+
+  <g id="body-end" opacity="0.4" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#c03-glimbs" stroke="#9CA3AF" stroke-width="28"/>
+  </g>
+
+  <g id="body-start" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#trunk" transform="translate(270 500) rotate(-88)" fill="#E5E7EB" stroke="#1F2937" stroke-width="6"/>
+    <use href="#c03-limbs" stroke="#1F2937" stroke-width="40"/>
+    <use href="#c03-limbs" stroke="#E5E7EB" stroke-width="28"/>
+    <ellipse cx="206" cy="498" rx="29" ry="41" fill="#E5E7EB" stroke="#1F2937" stroke-width="6" transform="rotate(-88 206 498)"/>
+  </g>
+
+  <g id="movement-arrows" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 590 230 L 590 306" marker-start="url(#ah)" marker-end="url(#ah)"/>
+    <path d="M 748 300 L 748 376" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  </g>
+
+  <g id="safety-cues" fill="none" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14">
+    <line x1="360" y1="520" x2="445" y2="522"/>
+  </g>
+</svg>

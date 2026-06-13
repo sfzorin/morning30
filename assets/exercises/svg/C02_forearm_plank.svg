@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-labelledby="c02t c02d">
+  <title id="c02t">Планка на локтях</title>
+  <desc id="c02d">Схема упражнения: удержание планки на предплечьях, предплечья направлены вперёд, тело одной прямой линией от плеч до пяток.</desc>
+  <defs>
+    <path id="trunk" d="M 0,-10 C 20,-10 25,2 25,38 C 25,72 17,86 17,108 C 17,138 23,150 23,168 C 23,182 12,186 0,186 C -12,186 -23,182 -23,168 C -23,150 -17,138 -17,108 C -17,86 -25,72 -25,38 C -25,2 -20,-10 0,-10 Z"/>
+    <g id="c02-limbs" fill="none">
+      <line x1="424" y1="440" x2="398" y2="436"/>
+      <polyline points="424,440 420,556 330,556"/>
+      <polyline points="597,466 746,489 895,512 926,556"/>
+    </g>
+  </defs>
+
+  <g id="mat">
+    <rect x="120" y="560" width="780" height="90" rx="32" fill="#D1FAE5" stroke="#1F2937" stroke-width="3" opacity="0.7"/>
+  </g>
+
+  <g id="body-end"></g>
+
+  <g id="body-start" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#trunk" transform="translate(424 440) rotate(-81.4)" fill="#E5E7EB" stroke="#1F2937" stroke-width="6"/>
+    <use href="#c02-limbs" stroke="#1F2937" stroke-width="40"/>
+    <use href="#c02-limbs" stroke="#E5E7EB" stroke-width="28"/>
+    <ellipse cx="361" cy="430" rx="29" ry="41" fill="#E5E7EB" stroke="#1F2937" stroke-width="6" transform="rotate(-81.4 361 430)"/>
+  </g>
+
+  <g id="movement-arrows"></g>
+
+  <g id="safety-cues" fill="none" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14">
+    <line x1="360" y1="434" x2="915" y2="524"/>
+  </g>
+</svg>

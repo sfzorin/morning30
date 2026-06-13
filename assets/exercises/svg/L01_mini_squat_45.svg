@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-labelledby="l01t l01d">
+  <title id="l01t">Мини-присед до 45°</title>
+  <desc id="l01d">Схема упражнения: неглубокий присед из положения стоя, таз уходит назад-вниз, спина прямая, колени по линии носков.</desc>
+  <defs>
+    <marker id="ah" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" refX="18" refY="13" orient="auto-start-reverse">
+      <path d="M5,3 L21,13 L5,23" fill="none" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <path id="trunk" d="M 0,-10 C 20,-10 25,2 25,38 C 25,72 17,86 17,108 C 17,138 23,150 23,168 C 23,182 12,186 0,186 C -12,186 -23,182 -23,168 C -23,150 -17,138 -17,108 C -17,86 -25,72 -25,38 C -25,2 -20,-10 0,-10 Z"/>
+    <g id="l01-limbs" fill="none">
+      <line x1="470" y1="255" x2="478" y2="230"/>
+      <polyline points="470,255 503,365 592,356"/>
+      <polyline points="415,420 502,545 468,692 450,716 522,716"/>
+    </g>
+    <g id="l01-glimbs" fill="none">
+      <line x1="470" y1="215" x2="470" y2="189"/>
+      <polyline points="470,215 478,329 486,417"/>
+      <polyline points="470,390 470,541 468,692"/>
+    </g>
+  </defs>
+
+  <g id="mat">
+    <line x1="180" y1="716" x2="820" y2="716" stroke="#1F2937" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  </g>
+
+  <g id="body-end" opacity="0.4" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#trunk" transform="translate(470 215) rotate(0)" fill="#9CA3AF"/>
+    <use href="#l01-glimbs" stroke="#9CA3AF" stroke-width="28"/>
+    <ellipse cx="470" cy="151" rx="29" ry="41" fill="#9CA3AF"/>
+  </g>
+
+  <g id="body-start" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#trunk" transform="translate(470 255) rotate(18.4)" fill="#E5E7EB" stroke="#1F2937" stroke-width="6"/>
+    <use href="#l01-limbs" stroke="#1F2937" stroke-width="40"/>
+    <use href="#l01-limbs" stroke="#E5E7EB" stroke-width="28"/>
+    <ellipse cx="490" cy="194" rx="29" ry="41" fill="#E5E7EB" stroke="#1F2937" stroke-width="6" transform="rotate(18.4 490 194)"/>
+  </g>
+
+  <g id="movement-arrows" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 405 418 C 360 438, 345 470, 342 505" marker-end="url(#ah)"/>
+  </g>
+
+  <g id="safety-cues" fill="none" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14">
+    <line x1="350" y1="425" x2="515" y2="425"/>
+    <line x1="522" y1="716" x2="522" y2="520"/>
+  </g>
+</svg>

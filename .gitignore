@@ -1,0 +1,23 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# Runtime data (SQLite database + WAL)
+*.db
+*.db-shm
+*.db-wal
+
+# Local toolchain (downloaded gox binary, ~14 MB, platform-specific)
+.tooling/
+
+# macOS
+.DS_Store
+
+# Node (if using Tailwind via npm)
+node_modules/
