@@ -28,11 +28,11 @@ func TestUserAndSettings(t *testing.T) {
 	if _, err := d.CreateUser("a@b.com", "h2", "en", "Test"); err != ErrEmailTaken {
 		t.Errorf("expected ErrEmailTaken, got %v", err)
 	}
-	if err := d.UpdateSettings(u.ID, "Sergey", "de", 35, false); err != nil {
+	if err := d.UpdateSettings(u.ID, "Sergey", "de", 35, "min"); err != nil {
 		t.Fatal(err)
 	}
 	u2, _ := d.UserByID(u.ID)
-	if u2.Lang != "de" || u2.Rest != 35 || u2.Voice || u2.Name != "Sergey" {
+	if u2.Lang != "de" || u2.Rest != 35 || u2.VoiceMode != "min" || !u2.Voice || u2.Name != "Sergey" {
 		t.Errorf("settings not saved: %+v", u2)
 	}
 }

@@ -20,10 +20,11 @@ type User struct {
 	Email   string
 	Name    string
 	Lang    string
-	Rest    int  // rest seconds between exercises (10..40)
-	Voice   bool // voice cues enabled
-	IsGuest bool // anonymous cookie-only account
-	Created string
+	Rest      int    // rest seconds between exercises (10..40)
+	Voice     bool   // voice cues enabled (derived: VoiceMode != "off")
+	VoiceMode string // off | min | normal | detailed
+	IsGuest   bool   // anonymous cookie-only account
+	Created   string
 }
 
 // Open opens (creating if needed) the SQLite database at path and migrates it.
@@ -56,6 +57,7 @@ CREATE TABLE IF NOT EXISTS users (
     lang         TEXT NOT NULL DEFAULT 'en',
     rest_seconds INTEGER NOT NULL DEFAULT 20,
     voice        INTEGER NOT NULL DEFAULT 1,
+    voice_mode   TEXT NOT NULL DEFAULT 'normal', -- off | min | normal | detailed
     is_guest     INTEGER NOT NULL DEFAULT 0,    -- anonymous cookie-only account
     position     INTEGER NOT NULL DEFAULT 0,   -- completed sessions in the looping 30-day cycle
     adapt_level    INTEGER NOT NULL DEFAULT 0,  -- variant delta for the next workout
@@ -65,6 +67,8 @@ CREATE TABLE IF NOT EXISTS users (
     back_block     INTEGER NOT NULL DEFAULT 0,  -- sessions left swapping scissors/flutter
     low_energy     INTEGER NOT NULL DEFAULT 0,  -- consecutive "worse" energy reports
     safety_ack     INTEGER NOT NULL DEFAULT 0,  -- safety disclaimer acknowledged
+    program_json   TEXT NOT NULL DEFAULT '',     -- custom program (Resolved JSON); empty = none
+    active_program TEXT NOT NULL DEFAULT 'builtin', -- builtin | custom
     created_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -112,6 +116,9 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN back_block INTEGER NOT NULL DEFAULT 0`,
 		`ALTER TABLE users ADD COLUMN low_energy INTEGER NOT NULL DEFAULT 0`,
 		`ALTER TABLE users ADD COLUMN safety_ack INTEGER NOT NULL DEFAULT 0`,
+		`ALTER TABLE users ADD COLUMN voice_mode TEXT NOT NULL DEFAULT 'normal'`,
+		`ALTER TABLE users ADD COLUMN program_json TEXT NOT NULL DEFAULT ''`,
+		`ALTER TABLE users ADD COLUMN active_program TEXT NOT NULL DEFAULT 'builtin'`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

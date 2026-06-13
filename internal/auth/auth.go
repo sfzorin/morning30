@@ -25,6 +25,7 @@ type Session struct {
 	Lang       string
 	Rest       int
 	Voice      bool
+	VoiceMode  string
 	IsGuest    bool
 }
 

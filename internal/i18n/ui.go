@@ -3,7 +3,7 @@ package i18n
 // ui maps a string key to translations in Order = [ru, en, tr, de, es, fr, it].
 var ui = map[string][7]string{
 	// App / brand
-	"app.name":    {"Dani", "Dani", "Dani", "Dani", "Dani", "Dani", "Dani"},
+	"app.name":    {"dani.cc", "dani.cc", "dani.cc", "dani.cc", "dani.cc", "dani.cc", "dani.cc"},
 	"app.tagline": {"Утренняя зарядка за 30 дней", "30-day morning workout", "30 günlük sabah egzersizi", "30-Tage-Morgenworkout", "Rutina matutina de 30 días", "Routine matinale de 30 jours", "Allenamento mattutino di 30 giorni"},
 
 	// Guest mode
@@ -69,9 +69,13 @@ var ui = map[string][7]string{
 	"workout.side":      {"сторона", "side", "taraf", "Seite", "lado", "côté", "lato"},
 
 	// Exercise info card
-	"info.technique": {"Техника", "Technique", "Teknik", "Technik", "Técnica", "Technique", "Tecnica"},
-	"info.mistake":   {"Частая ошибка", "Common mistake", "Sık hata", "Häufiger Fehler", "Error común", "Erreur fréquente", "Errore comune"},
+	"info.technique": {"Как правильно", "How to do it", "Nasıl yapılır", "Ausführung", "Cómo hacerlo", "Comment faire", "Come si fa"},
+	"info.how":       {"Как делать", "How to", "Nasıl", "So geht's", "Cómo", "Comment", "Come"},
+	"info.correct":   {"Правильно", "Correct", "Doğru", "Richtig", "Correcto", "Correct", "Corretto"},
+	"info.wrong":     {"Ошибки", "Mistakes", "Hatalar", "Fehler", "Errores", "Erreurs", "Errori"},
+	"info.breathing": {"Дыхание", "Breathing", "Nefes", "Atmung", "Respiración", "Respiration", "Respirazione"},
 	"info.warning":   {"Внимание", "Caution", "Dikkat", "Achtung", "Atención", "Attention", "Attenzione"},
+	"info.replace":   {"Заменить упражнение", "Replace exercise", "Egzersizi değiştir", "Übung ersetzen", "Reemplazar ejercicio", "Remplacer l'exercice", "Sostituisci esercizio"},
 	"info.close":     {"Закрыть", "Close", "Kapat", "Schließen", "Cerrar", "Fermer", "Chiudi"},
 
 	// Safety disclaimer (spec §20)
@@ -107,12 +111,23 @@ var ui = map[string][7]string{
 	"settings.rest":      {"Пауза между упражнениями", "Rest between exercises", "Egzersizler arası dinlenme", "Pause zwischen Übungen", "Descanso entre ejercicios", "Repos entre exercices", "Riposo tra esercizi"},
 	"settings.language":  {"Язык", "Language", "Dil", "Sprache", "Idioma", "Langue", "Lingua"},
 	"settings.voice":     {"Голосовые подсказки", "Voice cues", "Sesli komutlar", "Sprachansagen", "Indicaciones de voz", "Indications vocales", "Indicazioni vocali"},
+	"voice.off":          {"Выкл", "Off", "Kapalı", "Aus", "No", "Non", "No"},
+	"voice.min":          {"Минимум", "Minimal", "Az", "Minimal", "Mínimo", "Minimal", "Minimo"},
+	"voice.normal":       {"Нормально", "Normal", "Normal", "Normal", "Normal", "Normal", "Normale"},
+	"voice.detailed":     {"Подробно", "Detailed", "Ayrıntılı", "Ausführlich", "Detallado", "Détaillé", "Dettagliato"},
 	"settings.on":        {"Вкл", "On", "Açık", "An", "Sí", "Oui", "Sì"},
 	"settings.off":       {"Выкл", "Off", "Kapalı", "Aus", "No", "Non", "No"},
 	"settings.save":      {"Сохранить", "Save", "Kaydet", "Speichern", "Guardar", "Enregistrer", "Salva"},
 	"settings.saved":     {"Сохранено", "Saved", "Kaydedildi", "Gespeichert", "Guardado", "Enregistré", "Salvato"},
 	"settings.account":   {"Аккаунт", "Account", "Hesap", "Konto", "Cuenta", "Compte", "Account"},
 	"settings.reset":     {"Сбросить прогресс", "Reset progress", "İlerlemeyi sıfırla", "Fortschritt zurücksetzen", "Reiniciar progreso", "Réinitialiser", "Azzera progressi"},
+	"settings.program":   {"Программа", "Program", "Program", "Programm", "Programa", "Programme", "Programma"},
+	"settings.cycle":     {"Цикл упражнений", "Exercise cycle", "Egzersiz döngüsü", "Übungszyklus", "Ciclo de ejercicios", "Cycle d'exercices", "Ciclo di esercizi"},
+	"settings.save_version": {"Сохранить мою версию", "Save my version", "Sürümümü kaydet", "Meine Version speichern", "Guardar mi versión", "Enregistrer ma version", "Salva la mia versione"},
+	"settings.version_name": {"Название версии", "Version name", "Sürüm adı", "Versionsname", "Nombre de versión", "Nom de version", "Nome versione"},
+	"settings.my_version":   {"Моя версия", "My version", "Sürümüm", "Meine Version", "Mi versión", "Ma version", "La mia versione"},
+	"settings.delete_version": {"Удалить мою версию", "Delete my version", "Sürümümü sil", "Meine Version löschen", "Eliminar mi versión", "Supprimer ma version", "Elimina la mia versione"},
+	"settings.download":  {"Скачать (JSON)", "Download (JSON)", "İndir (JSON)", "Herunterladen (JSON)", "Descargar (JSON)", "Télécharger (JSON)", "Scarica (JSON)"},
 
 	// Voice cues (spoken)
 	"cue.ready":       {"Приготовься", "Get ready", "Hazır ol", "Mach dich bereit", "Prepárate", "Préparez-vous", "Preparati"},
@@ -122,6 +137,7 @@ var ui = map[string][7]string{
 	"cue.halfway":     {"Половина пройдена", "Halfway there", "Yarısı bitti", "Halbzeit", "A mitad", "À mi-chemin", "A metà"},
 	"cue.last":        {"Последнее упражнение", "Last exercise", "Son egzersiz", "Letzte Übung", "Último ejercicio", "Dernier exercice", "Ultimo esercizio"},
 	"cue.well_done":   {"Молодец", "Well done", "Aferin", "Gut gemacht", "Bien hecho", "Bien joué", "Bravo"},
+	"cue.five":        {"Осталось пять", "Five seconds", "Beş saniye", "Noch fünf", "Cinco segundos", "Cinq secondes", "Cinque secondi"},
 	"cue.switch_side": {"Другая сторона", "Other side", "Diğer taraf", "Andere Seite", "Otro lado", "Autre côté", "Altro lato"},
 	"cue.workout_end": {"Тренировка завершена", "Workout complete", "Antrenman bitti", "Workout fertig", "Entrenamiento completado", "Séance terminée", "Allenamento finito"},
 

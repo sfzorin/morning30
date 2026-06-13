@@ -1,6 +1,6 @@
 {
-  "name": "Dani — 30-day workout",
-  "short_name": "Dani",
+  "name": "dani.cc — 30-day workout",
+  "short_name": "dani.cc",
   "description": "Daily morning exercise: a 30-day cycle, streaks, voice cues.",
   "start_url": "/",
   "scope": "/",

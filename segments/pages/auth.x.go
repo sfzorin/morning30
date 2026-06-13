@@ -330,6 +330,7 @@ func (a authPage) submit(msg doors.Source[string]) func(context.Context, doors.R
 			Lang:       u.Lang,
 			Rest:       u.Rest,
 			Voice:      u.Voice,
+			VoiceMode:  u.VoiceMode,
 		})
 		a.path.Update(ctx, path.Path{Page: path.Home})
 		return false

@@ -126,6 +126,31 @@ func NextAdapt(prev AdaptState, fb Feedback) AdaptState {
 	return next
 }
 
+// ConvertValue adapts a magnitude when swapping between units (used by manual
+// replacement so e.g. 20 s does not become "20 reps"). ~2 s per rep.
+func ConvertValue(from, to Unit, value int) int {
+	if from == to {
+		return value
+	}
+	switch {
+	case from == Seconds && to == Reps:
+		v := value / 2
+		if v < 6 {
+			v = 6
+		}
+		return v
+	case from == Reps && to == Seconds:
+		v := value * 2
+		if v < 15 {
+			v = 15
+		}
+		return v
+	case to == Breaths:
+		return 5
+	}
+	return value
+}
+
 // substitute applies the spec's replacement table for active pain blocks.
 func substitute(id string, val int, a Adapt) (string, int) {
 	switch {
@@ -319,6 +344,35 @@ func restAfter(e Exercise, lightRest int) int {
 
 const restBetweenRounds = 75
 
+// assignRestsAndEst fills each item's Rest (per the spec rules; longer between
+// main rounds) and returns a rough total-duration estimate in seconds.
+func assignRestsAndEst(items []Item, lightRest int) int {
+	est := 0
+	for i := range items {
+		it := items[i]
+		e := Pool[it.ExerciseID]
+		if i < len(items)-1 {
+			next := items[i+1]
+			if it.Slot == Main && next.Slot == Main && next.Round != it.Round {
+				items[i].Rest = restBetweenRounds
+			} else {
+				items[i].Rest = restAfter(e, lightRest)
+			}
+		}
+		work := it.Value
+		if it.Unit == Reps {
+			work *= 3
+		} else if it.Unit == Breaths {
+			work *= 4
+		}
+		if it.PerSide {
+			work *= 2
+		}
+		est += work + items[i].Rest
+	}
+	return est
+}
+
 // Build assembles the workout for a day (1..30) with no adaptation.
 func Build(day, lightRest int) Workout {
 	return BuildAdapted(day, lightRest, Adapt{})
@@ -392,32 +446,7 @@ func BuildAdapted(day, lightRest int, a Adapt) Workout {
 		add(s.ID, Cooldown, s.Val, 1)
 	}
 
-	// Rest + duration estimate.
-	est := 0
-	for i := range items {
-		it := items[i]
-		e := Pool[it.ExerciseID]
-		// rest after this item
-		if i < len(items)-1 {
-			next := items[i+1]
-			if it.Slot == Main && next.Slot == Main && next.Round != it.Round {
-				items[i].Rest = restBetweenRounds // between main rounds
-			} else {
-				items[i].Rest = restAfter(e, lightRest)
-			}
-		}
-		// duration: per-side work counts double
-		work := it.Value
-		if it.Unit == Reps {
-			work *= 3 // ~3s per rep
-		} else if it.Unit == Breaths {
-			work *= 4 // ~4s per breath
-		}
-		if it.PerSide {
-			work *= 2
-		}
-		est += work + items[i].Rest
-	}
+	est := assignRestsAndEst(items, lightRest)
 
 	// Label reflects the actually-built plan (forced recovery / shifted variant).
 	label := BlockLabel(day)

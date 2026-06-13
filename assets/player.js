@@ -10,7 +10,8 @@
   var labels = payload.labels || {};
   var cues = payload.cues || {};
   var enc = payload.enc || [];
-  var voiceOn = !!payload.voice;
+  var voiceMode = payload.voiceMode || "normal";   // off | min | normal | detailed
+  var voiceOn = voiceMode !== "off";
   var voiceLang = payload.bcp47 || "en-US";        // e.g. "tr-TR"
   var voicePrefix = (payload.lang || "en").toLowerCase(); // e.g. "tr"
 
@@ -55,12 +56,18 @@
     infoOverlay: $(".info-overlay"),
     infoMedia: $(".info-media"),
     infoName: $(".info-name"),
-    infoTech: $(".info-tech"),
-    infoTechSec: $(".info-tech-sec"),
-    infoMistake: $(".info-mistake"),
-    infoMistakeSec: $(".info-mistake-sec"),
+    infoDesc: $(".info-desc"),
+    infoHow: $(".info-how"),
+    infoHowSec: $(".info-how-sec"),
+    infoCorrect: $(".info-correct"),
+    infoCorrectSec: $(".info-correct-sec"),
+    infoWrong: $(".info-wrong"),
+    infoWrongSec: $(".info-wrong-sec"),
+    infoBreathing: $(".info-breathing"),
+    infoBreathingSec: $(".info-breathing-sec"),
     infoWarn: $(".info-warn"),
     infoWarnSec: $(".info-warn-sec"),
+    infoReplace: $(".info-replace"),
     infoClose: $(".info-close"),
     controls: $(".controls"),
     prev: $(".ctl-prev"),
@@ -123,6 +130,22 @@
     if (ticker) { clearInterval(ticker); ticker = null; }
   }
 
+  // ---- non-blocking voice cues ----
+  var lastCueTs = 0;
+  var repCueTimer = null;
+  function clearRepCue() { if (repCueTimer) { clearTimeout(repCueTimer); repCueTimer = null; } }
+  // cue speaks a short line without ever delaying the timer. "mid" cues are
+  // gated by mode (normal/detailed only) and a minimum gap; start/last/finish
+  // always play (when voice is on).
+  function cue(text, kind) {
+    if (!voiceOn || !text) return;
+    if (kind === "mid" && voiceMode !== "normal" && voiceMode !== "detailed") return;
+    var now = Date.now();
+    if (kind === "mid" && now - lastCueTs < 8000) return;
+    lastCueTs = now;
+    speak(text);
+  }
+
   // Run a 1-second countdown; onTick(remaining) each second, onDone() at 0.
   // Respects the paused flag.
   function countdown(seconds, onTick, onDone) {
@@ -180,54 +203,74 @@
     runSide(it, 1);
   }
 
-  // runSide runs one side of an exercise (sides==1 for non-per-side).
+  // runSide runs one side of an exercise (sides==1 for non-per-side) with
+  // non-blocking voice cues scheduled by duration.
   function runSide(it, side) {
     curSide = side;
+    clearRepCue();
     el.side.textContent = it.perSide ? t("side") + " " + side + "/" + sides(it) : "";
+    if (side === 1) cue(it.vStart, "start");
+
     if (it.unit === "seconds") {
       el.done.classList.add("hidden");
       el.value.classList.add("timer");
-      countdown(it.value, function (r) {
+      var D = it.value;
+      var mid1At = Math.round(D * 0.65); // 35% elapsed
+      var mid2At = Math.round(D * 0.35); // 65% elapsed
+      var halfAt = Math.round(D * 0.5);
+      var m = it.vMid || [];
+      countdown(D, function (r) {
         el.value.textContent = r + "″";
-        if (r <= 3 && r >= 1) speak(String(r)); // spoken 3-2-1 before the end
+        if (D >= 30) {
+          if (r === mid1At && m[0]) cue(m[0], "mid");
+          if (r === mid2At && m[1]) cue(m[1], "mid");
+        } else if (D >= 16) {
+          if (r === halfAt && m[0]) cue(m[0], "mid");
+        }
+        if (r === 5 && D > 7) cue(it.vLast, "last");
       }, function () { nextSide(it, side); });
     } else {
-      // reps / breaths: wait for the user to tap Done
+      // reps / breaths: wait for the user to tap Done.
       clearTicker();
       el.value.classList.remove("timer");
       el.value.textContent = it.unit === "breaths"
         ? it.value + " " + t("breaths")
         : "× " + it.value;
       el.done.classList.remove("hidden");
+      // One mid cue a few seconds in (reps are user-paced).
+      if (it.vMid && it.vMid[0]) {
+        repCueTimer = setTimeout(function () { cue(it.vMid[0], "mid"); }, 5000);
+      }
     }
   }
 
   function nextSide(it, side) {
+    clearRepCue();
     if (side < sides(it)) {
-      speak(cues.switch_side);
+      cue(cues.switch_side, "start");
       runSide(it, side + 1); // straight into the other side, no rest
     } else {
+      cue(it.vFinish, "finish");
       endItem();
     }
   }
 
   // doRest shows the rest/get-ready overlay and counts down. The final 3 seconds
-  // are spoken (3-2-1) with "go" at zero — the countdown is part of the pause,
-  // not an extra delay. `onDone` runs at zero (and is what Skip jumps to).
+  // are spoken (3-2-1); the exercise's own start cue plays when it begins. The
+  // countdown is part of the pause, not an extra delay.
   function doRest(seconds, upcomingName, isReady, onDone) {
+    clearRepCue();
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
     el.rest.classList.remove("hidden");
     el.restTitle.textContent = isReady ? t("ready") : t("rest");
     el.restNext.textContent = upcomingName ? t("next") + ": " + upcomingName : "";
     pendingStart = onDone;
-    speak(isReady ? cues.ready : cues.rest);
     if (upcomingName) speak(upcomingName);
     countdown(seconds, function (r) {
       el.restCount.textContent = r;
       if (r <= 3 && r >= 1) speak(String(r));
     }, function () {
-      speak(cues.go);
       var f = pendingStart; pendingStart = null;
       if (f) f();
     });
@@ -246,6 +289,7 @@
 
   function endItem() {
     clearTicker();
+    clearRepCue();
     if (i >= items.length - 1) { finish(); return; }
     var nextName = items[i + 1].name;
     var rest = items[i].rest || 0;
@@ -393,31 +437,70 @@
   if (el.fbSave) el.fbSave.addEventListener("click", function () { submitWorkout(collectFeedback()); });
   if (el.fbSkip) el.fbSkip.addEventListener("click", function () { submitWorkout(null); });
 
-  // Exercise detail card (full technique / mistake / safety warning).
+  // Exercise detail card: description, how-to, correct, mistakes, breathing,
+  // warning, and a manual replace button. Opening it pauses the timer (reading
+  // is a pull action, not part of the workout flow).
   var infoWasPaused = false;
   function setSec(sec, p, text) {
     if (!sec) return;
     if (text) { p.textContent = text; sec.classList.remove("hidden"); }
     else { sec.classList.add("hidden"); }
   }
+  function fillList(list, arr) {
+    if (!list) return;
+    var sec = list.parentElement;
+    list.innerHTML = "";
+    if (!arr || !arr.length) { sec.classList.add("hidden"); return; }
+    sec.classList.remove("hidden");
+    for (var k = 0; k < arr.length; k++) {
+      var li = document.createElement("li");
+      li.textContent = arr[k];
+      list.appendChild(li);
+    }
+  }
   function openInfo() {
     var it = items[i];
     if (!it) return;
     infoWasPaused = paused;
-    paused = true; // freeze the timer while reading
+    paused = true;
     el.infoMedia.src = it.video || it.svg;
     el.infoName.textContent = it.name;
-    setSec(el.infoTechSec, el.infoTech, it.technique);
-    setSec(el.infoMistakeSec, el.infoMistake, it.mistake);
-    setSec(el.infoWarnSec, el.infoWarn, it.warning);
+    el.infoDesc.textContent = it.desc || "";
+    fillList(el.infoHow, it.howTo);
+    fillList(el.infoCorrect, it.correct);
+    fillList(el.infoWrong, it.wrong);
+    setSec(el.infoBreathingSec, el.infoBreathing, it.breathing);
+    setSec(el.infoWarnSec, el.infoWarn, it.warning || it.safety);
+    if (el.infoReplace) {
+      if (it.repl) el.infoReplace.classList.remove("hidden");
+      else el.infoReplace.classList.add("hidden");
+    }
     el.infoOverlay.classList.remove("hidden");
   }
   function closeInfo() {
     el.infoOverlay.classList.add("hidden");
     paused = infoWasPaused;
   }
+  // doReplace swaps the current exercise for its replacement and restarts it.
+  function doReplace() {
+    var it = items[i];
+    if (!it || !it.repl) return;
+    var r = it.repl;
+    items[i] = {
+      id: r.id, unit: r.unit, value: r.value, slot: it.slot, perSide: r.perSide,
+      round: it.round, rest: it.rest, name: r.name, hint: r.hint, warning: r.warning,
+      svg: r.svg, video: "", desc: "", howTo: [], correct: [], wrong: [],
+      breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
+      vFinish: cues.well_done, repl: null
+    };
+    el.infoOverlay.classList.add("hidden");
+    paused = false;
+    shutUp();
+    startItem(i);
+  }
   if (el.infoBtn) el.infoBtn.addEventListener("click", openInfo);
   if (el.infoClose) el.infoClose.addEventListener("click", closeInfo);
+  if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
 
   // Static control labels
   el.pause.textContent = t("pause");

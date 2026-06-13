@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-labelledby="arft">
+  <title id="arft">armsout — front</title>
+  <defs><path id="TK" d="M 0,-10 C 20,-10 25,2 25,38 C 25,72 17,86 17,108 C 17,138 23,150 23,168 C 23,182 12,186 0,186 C -12,186 -23,182 -23,168 C -23,150 -17,138 -17,108 C -17,86 -25,72 -25,38 C -25,2 -20,-10 0,-10 Z"/><path id="TKF" d="M 0,-14 C 38,-14 54,-4 54,16 C 54,58 32,86 30,116 C 30,148 42,162 42,176 C 42,190 -42,190 -42,176 C -42,162 -30,148 -30,116 C -30,86 -54,58 -54,16 C -54,-4 -38,-14 0,-14 Z"/><path id="FT" d="M 8,-6 C 34,-6 50,0 57,9 C 63,13 61,21 51,21 L -8,21 C -18,21 -18,-3 -9,-5 Z"/></defs>
+  <g id="floor"><line x1="200.9" y1="702.0" x2="823.1" y2="702.0" stroke="#1F2937" stroke-width="4" stroke-linecap="round" opacity="0.45"/></g>
+  <g transform="translate(512.0 702.1) scale(1.066)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 0.0,-501.0 L 0.0,-527.0" fill="none" stroke="#1F2937" stroke-width="40"/><path d="M 0.0,-501.0 L 0.0,-527.0" fill="none" stroke="#E5E7EB" stroke-width="28"/>
+      <path d="M 26,-326 L 26.0,-175.0 L 26.0,-24.0" fill="none" stroke="#1F2937" stroke-width="40"/><path d="M 26,-326 L 26.0,-175.0 L 26.0,-24.0" fill="none" stroke="#E5E7EB" stroke-width="28"/>
+      <path d="M -26,-326 L -26.0,-175.0 L -26.0,-24.0" fill="none" stroke="#1F2937" stroke-width="40"/><path d="M -26,-326 L -26.0,-175.0 L -26.0,-24.0" fill="none" stroke="#E5E7EB" stroke-width="28"/>
+      <path d="M 58.0,-501.0 L 173.9,-506.8 L 263.7,-511.3" fill="none" stroke="#1F2937" stroke-width="40"/><path d="M 58.0,-501.0 L 173.9,-506.8 L 263.7,-511.3" fill="none" stroke="#E5E7EB" stroke-width="28"/>
+      <path d="M -58.0,-501.0 L -173.9,-506.8 L -263.7,-511.3" fill="none" stroke="#1F2937" stroke-width="40"/><path d="M -58.0,-501.0 L -173.9,-506.8 L -263.7,-511.3" fill="none" stroke="#E5E7EB" stroke-width="28"/>
+      <use href="#TKF" transform="translate(0.0 -501.0) rotate(-0.0)" fill="#E5E7EB" stroke="#1F2937" stroke-width="6"/>
+      <ellipse cx="26.0" cy="-14.0" rx="17" ry="12" fill="#E5E7EB" stroke="#1F2937" stroke-width="6"/>
+      <ellipse cx="-26.0" cy="-14.0" rx="17" ry="12" fill="#E5E7EB" stroke="#1F2937" stroke-width="6"/>
+      <ellipse cx="0.0" cy="-565.0" rx="29" ry="41" fill="#E5E7EB" stroke="#1F2937" stroke-width="6" transform="rotate(-0.0 0.0 -565.0)"/>
+  </g>
+</svg>

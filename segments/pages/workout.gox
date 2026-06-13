@@ -24,6 +24,18 @@ type completeReq struct {
 	Feedback    content.Feedback `json:"feedback"`
 }
 
+// playerRepl is the minimal data for a manual exercise replacement.
+type playerRepl struct {
+	ID      string `json:"id"`
+	Name    string `json:"name"`
+	Unit    string `json:"unit"`
+	Value   int    `json:"value"`
+	PerSide bool   `json:"perSide"`
+	SVG     string `json:"svg"`
+	Hint    string `json:"hint"`
+	Warning string `json:"warning"`
+}
+
 type playerItem struct {
 	ID      string `json:"id"`
 	Unit    string `json:"unit"`
@@ -32,25 +44,38 @@ type playerItem struct {
 	PerSide bool   `json:"perSide"`
 	Round   int    `json:"round"`
 	Rest    int    `json:"rest"`
-	Name      string `json:"name"`
-	Hint      string `json:"hint"`
-	Warning   string `json:"warning"`
-	Technique string `json:"technique"`
-	Mistake   string `json:"mistake"`
-	SVG       string `json:"svg"`
-	Video     string `json:"video"`
+	Name    string `json:"name"`
+	Hint    string `json:"hint"`    // short on-screen cue (localized)
+	Warning string `json:"warning"` // inline safety warning (localized)
+	SVG     string `json:"svg"`
+	Video   string `json:"video"`
+	// Detail card (Russian canonical content).
+	Desc      string   `json:"desc"`
+	HowTo     []string `json:"howTo"`
+	Correct   []string `json:"correct"`
+	Wrong     []string `json:"wrong"`
+	Breathing string   `json:"breathing"`
+	Safety    string   `json:"safety"`
+	// Non-blocking voice cues.
+	VStart  string   `json:"vStart"`
+	VMid    []string `json:"vMid"`
+	VLast   string   `json:"vLast"`
+	VFinish string   `json:"vFinish"`
+	// Manual replacement (nil if none).
+	Repl *playerRepl `json:"repl,omitempty"`
 }
 
 type playerPayload struct {
-	Day    int               `json:"day"`
-	Lang   string            `json:"lang"`
-	BCP47  string            `json:"bcp47"`
-	Voice  bool              `json:"voice"`
-	Name   string            `json:"name"`
-	Items  []playerItem      `json:"items"`
-	Labels map[string]string `json:"labels"`
-	Cues   map[string]string `json:"cues"`
-	Enc    []string          `json:"enc"`
+	Day       int               `json:"day"`
+	Lang      string            `json:"lang"`
+	BCP47     string            `json:"bcp47"`
+	Voice     bool              `json:"voice"`
+	VoiceMode string            `json:"voiceMode"`
+	Name      string            `json:"name"`
+	Items     []playerItem      `json:"items"`
+	Labels    map[string]string `json:"labels"`
+	Cues      map[string]string `json:"cues"`
+	Enc       []string          `json:"enc"`
 }
 
 // workoutPage renders the client-driven player for one day.
@@ -71,31 +96,81 @@ func (w workoutPage) clampDay() int {
 	return d
 }
 
+// voiceFor returns the cues for an exercise. Languages with per-exercise content
+// use those phrases; others fall back to the generic localized cues.
+func (w workoutPage) voiceFor(l i18n.Lang, id string, d content.Detail) (start string, mid []string, last, finish string) {
+	if content.HasDetailLang(string(l)) {
+		start, mid, last, finish = d.Voice.Start, d.Voice.Mid, d.Voice.Last, d.Voice.Finish
+	}
+	if start == "" {
+		start = i18n.Cue(l, "go")
+	}
+	if finish == "" {
+		finish = i18n.Cue(l, "well_done")
+	}
+	if last == "" {
+		last = i18n.Cue(l, "five")
+	}
+	return
+}
+
+// replFor returns the manual-replacement item for an exercise (nil if none).
+func (w workoutPage) replFor(l i18n.Lang, id string, value int) *playerRepl {
+	ex, ok := content.Get(id)
+	if !ok || ex.Replacement == "" {
+		return nil
+	}
+	rid := ex.Replacement
+	r := content.Pool[rid]
+	return &playerRepl{
+		ID:      rid,
+		Name:    i18n.Exercise(l, rid),
+		Unit:    string(r.Unit),
+		Value:   content.ConvertValue(ex.Unit, r.Unit, value),
+		PerSide: r.PerSide,
+		SVG:     "/static/ex/" + rid + ".svg",
+		Hint:    i18n.Hint(l, rid),
+		Warning: i18n.Warning(l, rid),
+	}
+}
+
 // payloadJSON serializes everything the client player needs.
 func (w workoutPage) payloadJSON() string {
 	l := i18n.Lang(w.sess.Lang)
 	day := w.clampDay()
 	adapt, _ := app.DB.GetAdaptState(w.sess.UserID)
 	streak, _ := app.DB.Streak(w.sess.UserID, app.Today())
-	wk := content.BuildAdapted(day, w.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
+	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
 
 	items := make([]playerItem, 0, len(wk.Items))
 	for _, it := range wk.Items {
+		id := it.ExerciseID
+		d, _ := content.GetDetailL(string(l), id)
+		vs, vm, vl, vf := w.voiceFor(l, id, d)
 		items = append(items, playerItem{
-			ID:      it.ExerciseID,
-			Unit:    string(it.Unit),
-			Value:   it.Value,
-			Slot:    string(it.Slot),
-			PerSide: it.PerSide,
-			Round:   it.Round,
-			Rest:    it.Rest,
-			Name:      i18n.Exercise(l, it.ExerciseID),
-			Hint:      i18n.Hint(l, it.ExerciseID),
-			Warning:   i18n.Warning(l, it.ExerciseID),
-			Technique: i18n.Technique(l, it.ExerciseID),
-			Mistake:   i18n.Mistake(l, it.ExerciseID),
-			SVG:       "/static/ex/" + it.ExerciseID + ".svg",
-			Video:     content.Pool[it.ExerciseID].Video,
+			ID:        id,
+			Unit:      string(it.Unit),
+			Value:     it.Value,
+			Slot:      string(it.Slot),
+			PerSide:   it.PerSide,
+			Round:     it.Round,
+			Rest:      it.Rest,
+			Name:      i18n.Exercise(l, id),
+			Hint:      i18n.Hint(l, id),
+			Warning:   i18n.Warning(l, id),
+			SVG:       "/static/ex/" + id + ".svg",
+			Video:     content.Pool[id].Video,
+			Desc:      d.Desc,
+			HowTo:     d.HowTo,
+			Correct:   d.Correct,
+			Wrong:     d.Wrong,
+			Breathing: d.Breathing,
+			Safety:    d.Safety,
+			VStart:    vs,
+			VMid:      vm,
+			VLast:     vl,
+			VFinish:   vf,
+			Repl:      w.replFor(l, id, it.Value),
 		})
 	}
 
@@ -138,13 +213,18 @@ func (w workoutPage) payloadJSON() string {
 		enc = append(enc, i18n.T(l, "enc."+strconv.Itoa(n)))
 	}
 
+	mode := w.sess.VoiceMode
+	if mode == "" {
+		mode = "normal"
+	}
 	p := playerPayload{
-		Day:    day,
-		Lang:   w.sess.Lang,
-		BCP47:  i18n.BCP47(l),
-		Voice:  w.sess.Voice,
-		Name:   w.sess.Name,
-		Items:  items,
+		Day:       day,
+		Lang:      w.sess.Lang,
+		BCP47:     i18n.BCP47(l),
+		Voice:     w.sess.Voice,
+		VoiceMode: mode,
+		Name:      w.sess.Name,
+		Items:     items,
 		Labels: labels,
 		Cues:   cues,
 		Enc:    enc,
@@ -244,18 +324,28 @@ elem (w workoutPage) Main() {
 			<div class="info-card">
 				<img class="info-media" alt="">
 				<h2 class="info-name"></h2>
-				<div class="info-sec info-tech-sec">
-					<h3>~(i18n.T(l, "info.technique"))</h3>
-					<p class="info-tech"></p>
+				<p class="info-desc"></p>
+				<div class="info-sec info-how-sec">
+					<h3>~(i18n.T(l, "info.how"))</h3>
+					<ol class="info-how"></ol>
 				</div>
-				<div class="info-sec info-mistake-sec">
-					<h3>~(i18n.T(l, "info.mistake"))</h3>
-					<p class="info-mistake"></p>
+				<div class="info-sec info-correct-sec">
+					<h3>~(i18n.T(l, "info.correct"))</h3>
+					<ul class="info-correct"></ul>
+				</div>
+				<div class="info-sec info-wrong-sec">
+					<h3>~(i18n.T(l, "info.wrong"))</h3>
+					<ul class="info-wrong"></ul>
+				</div>
+				<div class="info-sec info-breathing-sec">
+					<h3>~(i18n.T(l, "info.breathing"))</h3>
+					<p class="info-breathing"></p>
 				</div>
 				<div class="info-sec info-warn-sec">
 					<h3>⚠️ ~(i18n.T(l, "info.warning"))</h3>
 					<p class="info-warn"></p>
 				</div>
+				<button class="info-replace btn" type="button">~(i18n.T(l, "info.replace"))</button>
 				<button class="info-close btn primary" type="button">~(i18n.T(l, "info.close"))</button>
 			</div>
 		</div>

@@ -40,7 +40,7 @@ func (h homePage) Main() gox.Elem {
 		cycle := pos/content.TotalDays + 1
 		curDay := pos%content.TotalDays + 1
 		adapt, _ := app.DB.GetAdaptState(h.sess.UserID)
-		w := content.BuildAdapted(curDay, h.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
+		w := app.UserWorkout(h.sess.UserID, curDay, h.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
 		acked, _ := app.DB.SafetyAck(h.sess.UserID)
 		safety := doors.NewSource(acked)
 

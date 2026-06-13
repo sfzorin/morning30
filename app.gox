@@ -29,12 +29,12 @@ elem (a App) Main() {
 			<meta name="mobile-web-app-capable" content="yes">
 			<meta name="apple-mobile-web-app-capable" content="yes">
 			<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-			<meta name="apple-mobile-web-app-title" content="Dani">
+			<meta name="apple-mobile-web-app-title" content="dani.cc">
 			<link rel="manifest" href="/static/manifest.webmanifest">
 			<link rel="icon" type="image/svg+xml" href="/static/icon.svg">
 			<link rel="apple-touch-icon" href="/static/icon-180.png">
 			<link rel="stylesheet" href=(assets.Style) name="main.css">
-			<title>Dani</title>
+			<title>dani.cc</title>
 		</head>
 		<body>
 			~(doors.Route(
