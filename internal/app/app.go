@@ -4,6 +4,7 @@ package app
 import (
 	"time"
 
+	"danicc/internal/catalog"
 	"danicc/internal/content"
 	"danicc/internal/db"
 )
@@ -27,6 +28,32 @@ func ProgramByKey(userID int64, key string) content.Resolved {
 		}
 	}
 	return content.ResolveBuiltin()
+}
+
+// SeedBuiltins writes the built-in exercise library into the DB (idempotent) so
+// the global `exercises` table is the canonical base every user reads from.
+func SeedBuiltins() {
+	for _, ex := range content.Library() {
+		if d, ok := catalog.Builtin(ex.ID); ok {
+			_ = DB.SeedExercise(ex.ID, d.Compact())
+		}
+	}
+}
+
+// UserCatalog returns the user's exercise catalog: the global DB library overlaid
+// with their custom exercises. Pages use it to resolve names/content/voice so
+// custom exercises are selectable, shown and spoken.
+func UserCatalog(userID int64) catalog.Catalog {
+	base, _ := DB.AllExercises()
+	j, _ := DB.GetCustomExercises(userID)
+	return catalog.NewLayered(base, j)
+}
+
+// SaveCustomExercise adds or overrides a custom exercise in the user's library.
+func SaveCustomExercise(userID int64, d catalog.Doc) error {
+	c := UserCatalog(userID)
+	c.Put(d)
+	return DB.SetCustomExercises(userID, c.Marshal())
 }
 
 // HasCustomProgram reports whether the user saved a custom program.

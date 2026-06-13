@@ -61,6 +61,13 @@ func Get(id string) (Exercise, bool) {
 	return e, ok
 }
 
+// Library returns the built-in exercises in canonical (display) order.
+func Library() []Exercise {
+	out := make([]Exercise, len(library))
+	copy(out, library)
+	return out
+}
+
 var library = []Exercise{
 	// ---- Warm-up (fixed, 2 rounds) ----
 	{ID: "W01", Slot: Warmup, Unit: Breaths, Difficulty: 1, KneeLoad: KneeNone},

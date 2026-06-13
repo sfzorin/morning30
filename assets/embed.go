@@ -18,6 +18,12 @@ var Style []byte
 //go:embed player.js
 var Player []byte
 
+// ExUpload wires the exercise-JSON file picker to its textarea (read via
+// FileReader so the server only ever receives text). Served as an inline script.
+//
+//go:embed exupload.js
+var ExUpload []byte
+
 // static holds the static/ directory tree (icons, manifest, sw, exercise SVGs),
 // embedded recursively and exposed via Static() for the UseFS middleware.
 //

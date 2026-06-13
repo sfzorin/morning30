@@ -69,6 +69,7 @@ CREATE TABLE IF NOT EXISTS users (
     safety_ack     INTEGER NOT NULL DEFAULT 0,  -- safety disclaimer acknowledged
     program_json   TEXT NOT NULL DEFAULT '',     -- custom program (Resolved JSON); empty = none
     active_program TEXT NOT NULL DEFAULT 'builtin', -- builtin | custom
+    custom_exercises TEXT NOT NULL DEFAULT '',   -- per-user custom exercise library (map id -> Doc JSON)
     created_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -83,6 +84,14 @@ CREATE TABLE IF NOT EXISTS feedback (
     shoulder   INTEGER NOT NULL DEFAULT 0,
     energy     TEXT NOT NULL DEFAULT '',
     created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- Global exercise library: one self-contained Doc (JSON) per exercise. Seeded
+-- from the built-in catalog at startup; the canonical base every user reads.
+CREATE TABLE IF NOT EXISTS exercises (
+    id         TEXT PRIMARY KEY,
+    doc        TEXT NOT NULL,                  -- catalog.Doc as JSON
+    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
 -- One row per calendar day the user worked out (drives streaks + date calendar).
@@ -119,6 +128,7 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN voice_mode TEXT NOT NULL DEFAULT 'normal'`,
 		`ALTER TABLE users ADD COLUMN program_json TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN active_program TEXT NOT NULL DEFAULT 'builtin'`,
+		`ALTER TABLE users ADD COLUMN custom_exercises TEXT NOT NULL DEFAULT ''`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

@@ -2,14 +2,16 @@ package pages
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 	"strings"
 
+	"danicc/assets"
 	"danicc/internal/app"
 	"danicc/internal/auth"
+	"danicc/internal/catalog"
 	"danicc/internal/content"
 	"danicc/internal/i18n"
-	"danicc/internal/program"
 	"danicc/path"
 
 	"github.com/doors-dev/doors"
@@ -21,6 +23,14 @@ type settingsForm struct {
 	Name      string `form:"name"`
 	Rest      int    `form:"rest"`
 	VoiceMode string `form:"voice_mode"`
+}
+
+// editState is the editor's working copy: the selected day plus the program as
+// JSON. It is a single comparable value so one Source/Bind drives the whole
+// editor (day switch + every edit) — nested Binds don't patch reliably.
+type editState struct {
+	Day  int
+	JSON string
 }
 
 // settingsPage lets the user change rest time, language, voice and reset progress.
@@ -45,8 +55,16 @@ elem (s settingsPage) Main() {
 		streak, _ := app.DB.Streak(s.sess.UserID, app.Today())
 		active, _ := app.DB.ActiveProgram(s.sess.UserID)
 		hasCustom := app.HasCustomProgram(s.sess.UserID)
+		cat := app.UserCatalog(s.sess.UserID)
+		entries := cat.List(l)
 		prog := app.UserProgram(s.sess.UserID) // the active program (built-in or custom)
-		daySource := doors.NewSource(1)
+		editSrc := doors.NewSource(editState{Day: 1, JSON: prog.Marshal()})
+		nameSrc := doors.NewSource(prog.Name)
+		firstID := "W01"
+		if len(entries) > 0 {
+			firstID = entries[0].ID
+		}
+		selSrc := doors.NewSource(firstID)
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
@@ -113,7 +131,7 @@ elem (s settingsPage) Main() {
 					</div>
 				</form>
 
-				~// Collapsible cycle viewer/editor: choose program, browse days, edit values, save your version.
+				~// Collapsible cycle viewer/editor: choose program, browse days, full CRUD, save your version.
 				<details class="cycle-details">
 					<summary>~(i18n.T(l, "settings.cycle"))</summary>
 
@@ -130,58 +148,94 @@ elem (s settingsPage) Main() {
 
 					<div class="srow">
 						<span>~(i18n.T(l, "home.day"))</span>
-						<select class="lang-select compact" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-							if n := r.Event().Number; n != nil {
-								daySource.Update(ctx, int(*n))
-							}
-							return false
-						}})>
+						<select class="lang-select compact" (doors.AChange{On: s.setDay(editSrc)})>
 							~(for d := 1; d <= len(prog.Days); d++ {
 								<option value=(d) selected=func { return d == 1 }>~(d)</option>
 							})
 						</select>
 					</div>
 
-					~>doors.ARawSubmit{On: s.saveProgram(daySource)} <form class="cycle-form">
-						~(daySource.Bind(elem(d int) {
-							~{
-								idx := d - 1
-								if idx < 0 {
-									idx = 0
-								}
-								if idx >= len(prog.Days) {
-									idx = len(prog.Days) - 1
-								}
-								rd := prog.Days[idx]
+					~// Reactive editor for the selected day: replace / reorder / delete / add / value.
+					~(editSrc.Bind(elem(st editState) {
+						~{
+							p, _ := content.ParseResolved(st.JSON)
+							idx := clampDay(st.Day, len(p.Days)) - 1
+							if idx < 0 {
+								idx = 0
 							}
-							<div class="cyc-head">~(rd.Label, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
-							<ol class="cyc-list">
-								~(for ii, it := range rd.Items {
-									<li>
-										<span class="cyc-name">~(i18n.Exercise(l, it.ID))</span>
-										<span class="cyc-edit">
-											<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" name=("v" + strconv.Itoa(ii)) value=(it.Value)>
-											<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
-										</span>
-									</li>
-								})
-							</ol>
-						}))
-						<div class="srow cyc-save">
-							<input class="text-input compact" name="pname" type="text" maxlength="40" value=(prog.Name) placeholder=(i18n.T(l, "settings.version_name"))>
-							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.save_version"))</button>
-						</div>
-					</form>
+						}
+						~(if len(p.Days) == 0 {
+						} else {
+						~{ rd := p.Days[idx] }
+						<div class="cyc-head">~(rd.Label, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
+						<ol class="cyc-list edit">
+							~(for ii := range rd.Items {
+								~{ it := rd.Items[ii] }
+								<li class="cyc-row">
+									<select class="cyc-select" (doors.AChange{On: s.editReplace(editSrc, cat, ii)})>
+										~(s.exOptions(entries, l, it.ID))
+									</select>
+									<span class="cyc-edit">
+										<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, ii)})>
+										<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
+									</span>
+									<span class="cyc-ops">
+										~>doors.AClick{On: s.editMove(editSrc, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
+										~>doors.AClick{On: s.editMove(editSrc, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
+										~>doors.AClick{On: s.editDelete(editSrc, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
+									</span>
+								</li>
+							})
+						</ol>
+						~>doors.AClick{On: s.editAdd(editSrc, cat)} <button class="btn small cyc-add" type="button">＋ ~(i18n.T(l, "settings.add_exercise"))</button>
+						})
+					}))
+
+					<div class="srow cyc-save">
+						<input class="text-input compact" type="text" maxlength="40" value=(prog.Name) placeholder=(i18n.T(l, "settings.version_name"))
+							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+								nameSrc.Update(ctx, r.Event().Value)
+								return false
+							}})>
+						~>doors.AClick{On: s.saveEditor(editSrc, nameSrc)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.save_version"))</button>
+					</div>
 
 					~(if hasCustom {
 						~>doors.AClick{On: s.deleteProgram} <button class="btn danger small" type="button">~(i18n.T(l, "settings.delete_version"))</button>
 					})
 				</details>
 
-				<div class="srow">
-					<span>~(i18n.T(l, "settings.program"))</span>
-					<a class="btn small" (doors.ResourceBytes(program.ExportJSON())) name="dani-program.json">~(i18n.T(l, "settings.download"))</a>
-				</div>
+				~// Per-exercise JSON: download any exercise, or import one (paste / file).
+				<details class="cycle-details">
+					<summary>~(i18n.T(l, "settings.exercise_json"))</summary>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.exercise"))</span>
+						<select class="lang-select compact" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+							selSrc.Update(ctx, r.Event().Value)
+							return false
+						}})>
+							~(s.exOptions(entries, l, firstID))
+						</select>
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.download"))</span>
+						~(selSrc.Bind(elem(id string) {
+							~{
+								doc, _ := cat.Doc(id)
+								b := doc.Marshal()
+							}
+							<a class="btn small" (doors.ResourceBytes(b)) name=(id + ".json")>~(id, ".json")</a>
+						}))
+					</div>
+					~>doors.ARawSubmit{On: s.importExercise} <form class="ex-import-form">
+						<textarea class="ex-import" name="exjson" rows="3" placeholder=(i18n.T(l, "settings.paste_json"))></textarea>
+						<div class="srow ex-import-row">
+							<input class="ex-file" type="file" accept=".json,application/json">
+							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
+						</div>
+					</form>
+					<script src=(assets.ExUpload) inline></script>
+				</details>
 
 				<div class="srow">
 					<span>~(i18n.T(l, "settings.account"))</span>
@@ -198,6 +252,23 @@ elem (s settingsPage) Main() {
 			</div>
 		</section>
 	</main>
+}
+
+// exOptions renders the exercise dropdown options grouped by slot.
+elem (s settingsPage) exOptions(entries []catalog.Entry, l i18n.Lang, cur string) {
+	~(s.exGroup(entries, l, cur, "warmup", "workout.warmup"))
+	~(s.exGroup(entries, l, cur, "main", "workout.main"))
+	~(s.exGroup(entries, l, cur, "cooldown", "workout.cooldown"))
+}
+
+elem (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, labelKey string) {
+	<optgroup label=(i18n.T(l, labelKey))>
+		~(for _, e := range entries {
+			~(if e.Slot == slot {
+				<option value=(e.ID) selected=func { return e.ID == cur }>~(e.Name)</option>
+			})
+		})
+	</optgroup>
 }
 
 // save persists rest + voice and updates the reactive session.
@@ -251,46 +322,216 @@ func unitWord(l i18n.Lang, u content.Unit, perSide bool) string {
 	return w
 }
 
-// saveProgram stores the edited day into the user's custom program (built from
-// the currently-active program), makes it active, and reloads.
-func (s settingsPage) saveProgram(day doors.Source[int]) func(context.Context, doors.RequestRawForm) bool {
-	return func(ctx context.Context, r doors.RequestRawForm) bool {
-		pf, err := r.ParseForm(1 << 20)
+// clampDay clamps a day number to [1, n] (0 when n == 0).
+func clampDay(d, n int) int {
+	if n == 0 {
+		return 0
+	}
+	if d < 1 {
+		d = 1
+	}
+	if d > n {
+		d = n
+	}
+	return d
+}
+
+// setDay switches the edited day, keeping the working JSON.
+func (s settingsPage) setDay(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		d, err := strconv.Atoi(r.Event().Value)
 		if err != nil {
 			return false
 		}
-		prog := app.UserProgram(s.sess.UserID)
-		if len(prog.Days) == 0 {
+		st := editSrc.Get()
+		st.Day = d
+		editSrc.Update(ctx, st)
+		return false
+	}
+}
+
+// mutateProg parses the working-copy JSON, applies fn to the selected day's
+// item list, and stores it back (triggering a re-render).
+func mutateProg(ctx context.Context, editSrc doors.Source[editState], fn func(items []content.RItem) []content.RItem) {
+	st := editSrc.Get()
+	p, err := content.ParseResolved(st.JSON)
+	if err != nil {
+		return
+	}
+	d := clampDay(st.Day, len(p.Days))
+	if d < 1 {
+		return
+	}
+	p.Days[d-1].Items = fn(p.Days[d-1].Items)
+	st.JSON = p.Marshal()
+	editSrc.Update(ctx, st)
+}
+
+// editReplace swaps the exercise at index ii for the one picked in the dropdown,
+// resetting unit/side/slot from the chosen exercise and converting the value.
+func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.Catalog, ii int) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		newID := r.Event().Value
+		def, ok := cat.Def(newID)
+		if !ok {
 			return false
 		}
-		d := day.Get()
-		if d < 1 {
-			d = 1
-		}
-		if d > len(prog.Days) {
-			d = len(prog.Days)
-		}
-		items := prog.Days[d-1].Items
-		for i := range items {
-			if v := pf.FormValue("v" + strconv.Itoa(i)); v != "" {
-				if n, e := strconv.Atoi(v); e == nil && n >= 1 && n <= 600 {
-					items[i].Value = n
-				}
+		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+			if ii < 0 || ii >= len(its) {
+				return its
 			}
+			old := its[ii]
+			its[ii] = content.RItem{
+				ID: newID, Unit: def.Unit, PerSide: def.PerSide, Slot: def.Slot,
+				Value: content.ConvertValue(old.Unit, def.Unit, old.Value), Round: old.Round,
+			}
+			return its
+		})
+		return false
+	}
+}
+
+// editSetValue updates the value (reps/seconds) at index ii.
+func (s settingsPage) editSetValue(editSrc doors.Source[editState], ii int) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		n := r.Event().Number
+		if n == nil {
+			return false
 		}
-		name := strings.TrimSpace(pf.FormValue("pname"))
+		v := int(*n)
+		if v < 1 {
+			v = 1
+		}
+		if v > 600 {
+			v = 600
+		}
+		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+			if ii >= 0 && ii < len(its) {
+				its[ii].Value = v
+			}
+			return its
+		})
+		return false
+	}
+}
+
+// editMove shifts the item at index ii by delta (-1 up / +1 down).
+func (s settingsPage) editMove(editSrc doors.Source[editState], ii, delta int) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+			j := ii + delta
+			if ii < 0 || ii >= len(its) || j < 0 || j >= len(its) {
+				return its
+			}
+			its[ii], its[j] = its[j], its[ii]
+			return its
+		})
+		return false
+	}
+}
+
+// editDelete removes the item at index ii.
+func (s settingsPage) editDelete(editSrc doors.Source[editState], ii int) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+			if ii < 0 || ii >= len(its) {
+				return its
+			}
+			nw := make([]content.RItem, 0, len(its)-1)
+			nw = append(nw, its[:ii]...)
+			nw = append(nw, its[ii+1:]...)
+			return nw
+		})
+		return false
+	}
+}
+
+// editAdd appends a default exercise (push-ups) to the selected day.
+func (s settingsPage) editAdd(editSrc doors.Source[editState], cat catalog.Catalog) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		it := defaultItem(cat)
+		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+			return append(append([]content.RItem{}, its...), it)
+		})
+		return false
+	}
+}
+
+// defaultItem is the exercise added by the "add" button.
+func defaultItem(cat catalog.Catalog) content.RItem {
+	id := "M01"
+	unit, perSide, slot := content.Reps, false, content.Main
+	if def, ok := cat.Def(id); ok {
+		unit, perSide, slot = def.Unit, def.PerSide, def.Slot
+	}
+	val := 10
+	if unit == content.Seconds {
+		val = 30
+	}
+	return content.RItem{ID: id, Unit: unit, Value: val, PerSide: perSide, Slot: slot, Round: 1}
+}
+
+// saveEditor stores the edited program as the user's custom version and reloads.
+func (s settingsPage) saveEditor(editSrc doors.Source[editState], nameSrc doors.Source[string]) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		p, err := content.ParseResolved(editSrc.Get().JSON)
+		if err != nil {
+			return false
+		}
+		name := strings.TrimSpace(nameSrc.Get())
 		if name == "" {
 			name = "my dani.cc"
 		}
 		if len(name) > 40 {
 			name = name[:40]
 		}
-		prog.Name = name
-		_ = app.DB.SetProgramJSON(s.sess.UserID, prog.Marshal())
+		p.Name = name
+		_ = app.DB.SetProgramJSON(s.sess.UserID, p.Marshal())
 		_ = app.DB.SetActiveProgram(s.sess.UserID, "custom")
 		_ = r.After(doors.ActionLocationReload{})
 		return false
 	}
+}
+
+// importExercise stores an uploaded/pasted per-exercise JSON into the user's
+// custom library (it then appears in the dropdowns and is shown/spoken), reloads.
+func (s settingsPage) importExercise(ctx context.Context, r doors.RequestRawForm) bool {
+	pf, err := r.ParseForm(1 << 20)
+	if err != nil {
+		return false
+	}
+	raw := strings.TrimSpace(pf.FormValue("exjson"))
+	if raw == "" {
+		return false
+	}
+	var d catalog.Doc
+	if json.Unmarshal([]byte(raw), &d) != nil {
+		return false
+	}
+	if !validDoc(d) {
+		return false
+	}
+	_ = app.SaveCustomExercise(s.sess.UserID, d)
+	_ = r.After(doors.ActionLocationReload{})
+	return false
+}
+
+// validDoc sanity-checks an imported exercise document.
+func validDoc(d catalog.Doc) bool {
+	if strings.TrimSpace(d.ID) == "" {
+		return false
+	}
+	switch content.Slot(d.Slot) {
+	case content.Warmup, content.Main, content.Cooldown:
+	default:
+		return false
+	}
+	switch content.Unit(d.Unit) {
+	case content.Reps, content.Seconds, content.Breaths:
+	default:
+		return false
+	}
+	return true
 }
 
 // selectProgram switches the active program (builtin | custom) and reloads.

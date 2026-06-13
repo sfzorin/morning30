@@ -11,6 +11,7 @@ import (
 	"danicc/assets"
 	"danicc/internal/app"
 	"danicc/internal/auth"
+	"danicc/internal/catalog"
 	"danicc/internal/content"
 	"danicc/internal/i18n"
 	"danicc/path"
@@ -99,10 +100,10 @@ func (w workoutPage) clampDay() int {
 	return d
 }
 
-// voiceFor returns the cues for an exercise. Languages with per-exercise content
-// use those phrases; others fall back to the generic localized cues.
-func (w workoutPage) voiceFor(l i18n.Lang, id string, d content.Detail) (start string, mid []string, last, finish string) {
-	if content.HasDetailLang(string(l)) {
+// voiceFor returns the cues for an exercise. Exercises/languages with per-exercise
+// content use those phrases; others fall back to the generic localized cues.
+func (w workoutPage) voiceFor(l i18n.Lang, hasVoice bool, d content.Detail) (start string, mid []string, last, finish string) {
+	if hasVoice {
 		start, mid, last, finish = d.Voice.Start, d.Voice.Mid, d.Voice.Last, d.Voice.Finish
 	}
 	if start == "" {
@@ -118,22 +119,25 @@ func (w workoutPage) voiceFor(l i18n.Lang, id string, d content.Detail) (start s
 }
 
 // replFor returns the manual-replacement item for an exercise (nil if none).
-func (w workoutPage) replFor(l i18n.Lang, id string, value int) *playerRepl {
-	ex, ok := content.Get(id)
+func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, id string, value int) *playerRepl {
+	ex, ok := cat.Def(id)
 	if !ok || ex.Replacement == "" {
 		return nil
 	}
 	rid := ex.Replacement
-	r := content.Pool[rid]
+	r, ok := cat.Def(rid)
+	if !ok {
+		return nil
+	}
 	return &playerRepl{
 		ID:      rid,
-		Name:    i18n.Exercise(l, rid),
+		Name:    cat.Name(l, rid),
 		Unit:    string(r.Unit),
 		Value:   content.ConvertValue(ex.Unit, r.Unit, value),
 		PerSide: r.PerSide,
-		SVG:     "/static/ex/" + rid + ".svg",
-		Hint:    i18n.Hint(l, rid),
-		Warning: i18n.Warning(l, rid),
+		SVG:     cat.SVG(rid),
+		Hint:    cat.Hint(l, rid),
+		Warning: cat.Warning(l, rid),
 	}
 }
 
@@ -144,12 +148,13 @@ func (w workoutPage) payloadJSON() string {
 	adapt, _ := app.DB.GetAdaptState(w.sess.UserID)
 	streak, _ := app.DB.Streak(w.sess.UserID, app.Today())
 	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
+	cat := app.UserCatalog(w.sess.UserID)
 
 	items := make([]playerItem, 0, len(wk.Items))
 	for _, it := range wk.Items {
 		id := it.ExerciseID
-		d, _ := content.GetDetailL(string(l), id)
-		vs, vm, vl, vf := w.voiceFor(l, id, d)
+		d, _ := cat.Detail(l, id)
+		vs, vm, vl, vf := w.voiceFor(l, cat.HasVoiceLang(l, id), d)
 		items = append(items, playerItem{
 			ID:        id,
 			Unit:      string(it.Unit),
@@ -158,10 +163,10 @@ func (w workoutPage) payloadJSON() string {
 			PerSide:   it.PerSide,
 			Round:     it.Round,
 			Rest:      it.Rest,
-			Name:      i18n.Exercise(l, id),
-			Hint:      i18n.Hint(l, id),
-			Warning:   i18n.Warning(l, id),
-			SVG:       "/static/ex/" + id + ".svg",
+			Name:      cat.Name(l, id),
+			Hint:      cat.Hint(l, id),
+			Warning:   cat.Warning(l, id),
+			SVG:       cat.SVG(id),
 			Video:     content.Pool[id].Video,
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
@@ -173,7 +178,7 @@ func (w workoutPage) payloadJSON() string {
 			VMid:      vm,
 			VLast:     vl,
 			VFinish:   vf,
-			Repl:      w.replFor(l, id, it.Value),
+			Repl:      w.replFor(l, cat, id, it.Value),
 		})
 	}
 
@@ -270,67 +275,67 @@ func (w workoutPage) complete(ctx context.Context, r doors.RequestHook[completeR
 }
 
 // painGroup renders a 3-chip pain question (None / A bit / Pain → 0 / 3 / 6).
-//line workout.gox:270
+//line workout.gox:275
 func (w workoutPage) painGroup(l i18n.Lang, key, labelKey string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line workout.gox:271
+//line workout.gox:276
 			__e = __c.Set("class", "fb-q fb-group"); if __e != nil { return }
-//line workout.gox:271
+//line workout.gox:276
 			__e = __c.Set("data-key", key); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("label"); if __e != nil { return }
 			{
-//line workout.gox:272
+//line workout.gox:277
 				__e = __c.Set("class", "fb-label"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:272
+//line workout.gox:277
 				__e = __c.Any(i18n.T(l, labelKey)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:273
+//line workout.gox:278
 				__e = __c.Set("class", "fb-chips"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:274
+//line workout.gox:279
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:274
+//line workout.gox:279
 					__e = __c.Set("class", "fb-chip active"); if __e != nil { return }
-//line workout.gox:274
+//line workout.gox:279
 					__e = __c.Set("data-val", "0"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:274
+//line workout.gox:279
 					__e = __c.Any(i18n.T(l, "fb.none")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:275
+//line workout.gox:280
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:275
+//line workout.gox:280
 					__e = __c.Set("class", "fb-chip"); if __e != nil { return }
-//line workout.gox:275
+//line workout.gox:280
 					__e = __c.Set("data-val", "3"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:275
+//line workout.gox:280
 					__e = __c.Any(i18n.T(l, "fb.some")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:276
+//line workout.gox:281
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:276
+//line workout.gox:281
 					__e = __c.Set("class", "fb-chip"); if __e != nil { return }
-//line workout.gox:276
+//line workout.gox:281
 					__e = __c.Set("data-val", "6"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:276
+//line workout.gox:281
 					__e = __c.Any(i18n.T(l, "fb.pain")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -339,42 +344,42 @@ func (w workoutPage) painGroup(l i18n.Lang, key, labelKey string) gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line workout.gox:279
+//line workout.gox:284
 }
 
-//line workout.gox:281
+//line workout.gox:286
 func (w workoutPage) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line workout.gox:283
+//line workout.gox:288
 		l := i18n.Lang(w.sess.Lang)
 		payloadStr := w.payloadJSON()
 
 		__e = __c.Init("title"); if __e != nil { return }
 		{
 			__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:286
+//line workout.gox:291
 			__e = __c.Any(i18n.T(l, "app.name")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line workout.gox:287
+//line workout.gox:292
 			__e = __c.Set("class", "player"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:288
+//line workout.gox:293
 				__e = __c.Set("class", "player-top"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:289
+//line workout.gox:294
 				__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line workout.gox:289
+//line workout.gox:294
 						__e = __c.Set("class", "quit"); if __e != nil { return }
-//line workout.gox:289
+//line workout.gox:294
 						__e = __c.Set("aria-label", i18n.T(l, "workout.quit")); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Text("✕"); if __e != nil { return }
@@ -383,12 +388,12 @@ func (w workoutPage) Main() gox.Elem {
 				return })); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:290
+//line workout.gox:295
 					__e = __c.Set("class", "pbar"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:290
+//line workout.gox:295
 						__e = __c.Set("class", "pbar-fill"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
@@ -397,18 +402,18 @@ func (w workoutPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:291
+//line workout.gox:296
 					__e = __c.Set("class", "phase"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:292
+//line workout.gox:297
 					__e = __c.Set("class", "info-btn"); if __e != nil { return }
-//line workout.gox:292
+//line workout.gox:297
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:292
+//line workout.gox:297
 					__e = __c.Set("aria-label", i18n.T(l, "info.technique")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Text("ⓘ"); if __e != nil { return }
@@ -418,55 +423,55 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:295
+//line workout.gox:300
 				__e = __c.Set("class", "stage"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:296
+//line workout.gox:301
 					__e = __c.Set("class", "ex-index"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.InitVoid("img"); if __e != nil { return }
 				{
-//line workout.gox:297
+//line workout.gox:302
 					__e = __c.Set("class", "ex-svg"); if __e != nil { return }
-//line workout.gox:297
+//line workout.gox:302
 					__e = __c.Set("alt", ""); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:298
+//line workout.gox:303
 					__e = __c.Set("class", "ex-name"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:299
+//line workout.gox:304
 					__e = __c.Set("class", "ex-side"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:300
+//line workout.gox:305
 					__e = __c.Set("class", "ex-value"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:301
+//line workout.gox:306
 					__e = __c.Set("class", "ex-hint"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:302
+//line workout.gox:307
 					__e = __c.Set("class", "ex-warn"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
@@ -475,16 +480,16 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:305
+//line workout.gox:310
 				__e = __c.Set("class", "controls"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:306
+//line workout.gox:311
 					__e = __c.Set("class", "ctl-prev btn"); if __e != nil { return }
-//line workout.gox:306
+//line workout.gox:311
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:306
+//line workout.gox:311
 					__e = __c.Set("aria-label", i18n.T(l, "workout.prev")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Text("◀"); if __e != nil { return }
@@ -492,27 +497,27 @@ func (w workoutPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:307
+//line workout.gox:312
 					__e = __c.Set("class", "ctl-pause btn"); if __e != nil { return }
-//line workout.gox:307
+//line workout.gox:312
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:308
+//line workout.gox:313
 					__e = __c.Set("class", "ctl-skip btn"); if __e != nil { return }
-//line workout.gox:308
+//line workout.gox:313
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line workout.gox:309
+//line workout.gox:314
 					__e = __c.Set("class", "ctl-done btn primary"); if __e != nil { return }
-//line workout.gox:309
+//line workout.gox:314
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
@@ -521,49 +526,49 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:312
+//line workout.gox:317
 				__e = __c.Set("class", "rest-overlay hidden"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:313
+//line workout.gox:318
 					__e = __c.Set("class", "rest-title"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:314
+//line workout.gox:319
 					__e = __c.Set("class", "rest-count"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:315
+//line workout.gox:320
 					__e = __c.Set("class", "rest-next"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:316
+//line workout.gox:321
 					__e = __c.Set("class", "rest-actions"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line workout.gox:317
+//line workout.gox:322
 						__e = __c.Set("class", "rest-back"); if __e != nil { return }
-//line workout.gox:317
+//line workout.gox:322
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line workout.gox:318
+//line workout.gox:323
 						__e = __c.Set("class", "rest-skip"); if __e != nil { return }
-//line workout.gox:318
+//line workout.gox:323
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
@@ -574,51 +579,51 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:323
+//line workout.gox:328
 				__e = __c.Set("class", "info-overlay hidden"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:324
+//line workout.gox:329
 					__e = __c.Set("class", "info-card"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.InitVoid("img"); if __e != nil { return }
 					{
-//line workout.gox:325
+//line workout.gox:330
 						__e = __c.Set("class", "info-media"); if __e != nil { return }
-//line workout.gox:325
+//line workout.gox:330
 						__e = __c.Set("alt", ""); if __e != nil { return }
 					}
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h2"); if __e != nil { return }
 					{
-//line workout.gox:326
+//line workout.gox:331
 						__e = __c.Set("class", "info-name"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
-//line workout.gox:327
+//line workout.gox:332
 						__e = __c.Set("class", "info-desc"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:328
+//line workout.gox:333
 						__e = __c.Set("class", "info-sec info-how-sec"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("h3"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:329
+//line workout.gox:334
 							__e = __c.Any(i18n.T(l, "info.how")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("ol"); if __e != nil { return }
 						{
-//line workout.gox:330
+//line workout.gox:335
 							__e = __c.Set("class", "info-how"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 						}
@@ -627,19 +632,19 @@ func (w workoutPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:332
+//line workout.gox:337
 						__e = __c.Set("class", "info-sec info-correct-sec"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("h3"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:333
+//line workout.gox:338
 							__e = __c.Any(i18n.T(l, "info.correct")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("ul"); if __e != nil { return }
 						{
-//line workout.gox:334
+//line workout.gox:339
 							__e = __c.Set("class", "info-correct"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 						}
@@ -648,19 +653,19 @@ func (w workoutPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:336
+//line workout.gox:341
 						__e = __c.Set("class", "info-sec info-wrong-sec"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("h3"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:337
+//line workout.gox:342
 							__e = __c.Any(i18n.T(l, "info.wrong")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("ul"); if __e != nil { return }
 						{
-//line workout.gox:338
+//line workout.gox:343
 							__e = __c.Set("class", "info-wrong"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 						}
@@ -669,19 +674,19 @@ func (w workoutPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:340
+//line workout.gox:345
 						__e = __c.Set("class", "info-sec info-breathing-sec"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("h3"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:341
+//line workout.gox:346
 							__e = __c.Any(i18n.T(l, "info.breathing")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("p"); if __e != nil { return }
 						{
-//line workout.gox:342
+//line workout.gox:347
 							__e = __c.Set("class", "info-breathing"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 						}
@@ -690,20 +695,20 @@ func (w workoutPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:344
+//line workout.gox:349
 						__e = __c.Set("class", "info-sec info-warn-sec"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("h3"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("⚠️ "); if __e != nil { return }
-//line workout.gox:345
+//line workout.gox:350
 							__e = __c.Any(i18n.T(l, "info.warning")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("p"); if __e != nil { return }
 						{
-//line workout.gox:346
+//line workout.gox:351
 							__e = __c.Set("class", "info-warn"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 						}
@@ -712,23 +717,23 @@ func (w workoutPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line workout.gox:348
+//line workout.gox:353
 						__e = __c.Set("class", "info-replace btn"); if __e != nil { return }
-//line workout.gox:348
+//line workout.gox:353
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:348
+//line workout.gox:353
 						__e = __c.Any(i18n.T(l, "info.replace")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line workout.gox:349
+//line workout.gox:354
 						__e = __c.Set("class", "info-close btn primary"); if __e != nil { return }
-//line workout.gox:349
+//line workout.gox:354
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:349
+//line workout.gox:354
 						__e = __c.Any(i18n.T(l, "info.close")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -738,36 +743,36 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:354
+//line workout.gox:359
 				__e = __c.Set("class", "feedback-overlay hidden"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("h2"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:355
+//line workout.gox:360
 					__e = __c.Any(i18n.T(l, "fb.title")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:356
+//line workout.gox:361
 					__e = __c.Set("class", "fb-q"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("label"); if __e != nil { return }
 					{
-//line workout.gox:357
+//line workout.gox:362
 						__e = __c.Set("class", "row-between"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("span"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:358
+//line workout.gox:363
 							__e = __c.Any(i18n.T(l, "fb.difficulty")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("output"); if __e != nil { return }
 						{
-//line workout.gox:359
+//line workout.gox:364
 							__e = __c.Set("class", "fb-diff-out"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("6"); if __e != nil { return }
@@ -777,83 +782,83 @@ func (w workoutPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.InitVoid("input"); if __e != nil { return }
 					{
-//line workout.gox:361
+//line workout.gox:366
 						__e = __c.Set("class", "fb-diff"); if __e != nil { return }
-//line workout.gox:361
+//line workout.gox:366
 						__e = __c.Set("type", "range"); if __e != nil { return }
-//line workout.gox:361
+//line workout.gox:366
 						__e = __c.Set("min", "1"); if __e != nil { return }
-//line workout.gox:361
+//line workout.gox:366
 						__e = __c.Set("max", "10"); if __e != nil { return }
-//line workout.gox:361
+//line workout.gox:366
 						__e = __c.Set("value", "6"); if __e != nil { return }
 					}
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line workout.gox:363
+//line workout.gox:368
 				__e = __c.Any(w.painGroup(l, "knee", "fb.knee")); if __e != nil { return }
-//line workout.gox:364
+//line workout.gox:369
 				__e = __c.Any(w.painGroup(l, "back", "fb.back")); if __e != nil { return }
-//line workout.gox:365
+//line workout.gox:370
 				__e = __c.Any(w.painGroup(l, "shoulder", "fb.shoulder")); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:366
+//line workout.gox:371
 					__e = __c.Set("class", "fb-q fb-group"); if __e != nil { return }
-//line workout.gox:366
+//line workout.gox:371
 					__e = __c.Set("data-key", "energy"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("label"); if __e != nil { return }
 					{
-//line workout.gox:367
+//line workout.gox:372
 						__e = __c.Set("class", "fb-label"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:367
+//line workout.gox:372
 						__e = __c.Any(i18n.T(l, "fb.energy")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line workout.gox:368
+//line workout.gox:373
 						__e = __c.Set("class", "fb-chips"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line workout.gox:369
+//line workout.gox:374
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:369
+//line workout.gox:374
 							__e = __c.Set("class", "fb-chip"); if __e != nil { return }
-//line workout.gox:369
+//line workout.gox:374
 							__e = __c.Set("data-val", "worse"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:369
+//line workout.gox:374
 							__e = __c.Any(i18n.T(l, "fb.worse")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line workout.gox:370
+//line workout.gox:375
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:370
+//line workout.gox:375
 							__e = __c.Set("class", "fb-chip active"); if __e != nil { return }
-//line workout.gox:370
+//line workout.gox:375
 							__e = __c.Set("data-val", "normal"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:370
+//line workout.gox:375
 							__e = __c.Any(i18n.T(l, "fb.normal")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line workout.gox:371
+//line workout.gox:376
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:371
+//line workout.gox:376
 							__e = __c.Set("class", "fb-chip"); if __e != nil { return }
-//line workout.gox:371
+//line workout.gox:376
 							__e = __c.Set("data-val", "better"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:371
+//line workout.gox:376
 							__e = __c.Any(i18n.T(l, "fb.better")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -863,28 +868,28 @@ func (w workoutPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:374
+//line workout.gox:379
 					__e = __c.Set("class", "fb-actions"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line workout.gox:375
+//line workout.gox:380
 						__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:375
+//line workout.gox:380
 						__e = __c.Set("class", "fb-save btn primary"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:375
+//line workout.gox:380
 						__e = __c.Any(i18n.T(l, "fb.save")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line workout.gox:376
+//line workout.gox:381
 						__e = __c.Set("type", "button"); if __e != nil { return }
-//line workout.gox:376
+//line workout.gox:381
 						__e = __c.Set("class", "fb-skip"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:376
+//line workout.gox:381
 						__e = __c.Any(i18n.T(l, "fb.skip")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -894,12 +899,12 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line workout.gox:380
+//line workout.gox:385
 				__e = __c.Set("class", "done-overlay hidden"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:381
+//line workout.gox:386
 					__e = __c.Set("class", "applause"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Text("👏"); if __e != nil { return }
@@ -907,34 +912,34 @@ func (w workoutPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:382
+//line workout.gox:387
 					__e = __c.Set("class", "done-title"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:383
+//line workout.gox:388
 					__e = __c.Set("class", "done-enc"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line workout.gox:384
+//line workout.gox:389
 					__e = __c.Set("class", "done-streak"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line workout.gox:385
+//line workout.gox:390
 				__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line workout.gox:385
+//line workout.gox:390
 						__e = __c.Set("class", "btn primary back-home"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line workout.gox:385
+//line workout.gox:390
 						__e = __c.Any(i18n.T(l, "done.back_home")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -943,12 +948,12 @@ func (w workoutPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("script"); if __e != nil { return }
 			{
-//line workout.gox:389
+//line workout.gox:394
 				__e = __c.Set("src", assets.Player); if __e != nil { return }
 				__e = __c.Set("inline", true); if __e != nil { return }
-//line workout.gox:391
+//line workout.gox:396
 				__e = __c.Set("data:payload", payloadStr); if __e != nil { return }
-//line workout.gox:392
+//line workout.gox:397
 				__e = __c.Modify(doors.AHook[completeReq]{Name: "complete", On: w.complete}); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Raw(""); if __e != nil { return }
@@ -957,5 +962,5 @@ func (w workoutPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line workout.gox:395
+//line workout.gox:400
 }

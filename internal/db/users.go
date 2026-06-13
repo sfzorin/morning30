@@ -148,6 +148,19 @@ func (d *DB) SetActiveProgram(userID int64, which string) error {
 	return err
 }
 
+// GetCustomExercises returns the user's custom exercise library JSON ("" = none).
+func (d *DB) GetCustomExercises(userID int64) (string, error) {
+	var s string
+	err := d.sql.QueryRow(`SELECT custom_exercises FROM users WHERE id = ?`, userID).Scan(&s)
+	return s, err
+}
+
+// SetCustomExercises stores (or clears, with "") the user's custom exercise library.
+func (d *DB) SetCustomExercises(userID int64, j string) error {
+	_, err := d.sql.Exec(`UPDATE users SET custom_exercises = ? WHERE id = ?`, j, userID)
+	return err
+}
+
 // SetLang updates only the language (used by the quick switcher).
 func (d *DB) SetLang(userID int64, lang string) error {
 	_, err := d.sql.Exec(`UPDATE users SET lang = ? WHERE id = ?`, lang, userID)

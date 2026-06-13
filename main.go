@@ -29,6 +29,7 @@ func main() {
 	}
 	defer database.Close()
 	app.DB = database
+	app.SeedBuiltins() // populate the global exercise library (idempotent)
 
 	a := doors.NewApp(func(ctx context.Context, r doors.Request) gox.Comp {
 		// Bootstrap the shared reactive session once per browser session.

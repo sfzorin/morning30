@@ -128,6 +128,14 @@ var ui = map[string][7]string{
 	"settings.my_version":   {"Моя версия", "My version", "Sürümüm", "Meine Version", "Mi versión", "Ma version", "La mia versione"},
 	"settings.delete_version": {"Удалить мою версию", "Delete my version", "Sürümümü sil", "Meine Version löschen", "Eliminar mi versión", "Supprimer ma version", "Elimina la mia versione"},
 	"settings.download":  {"Скачать (JSON)", "Download (JSON)", "İndir (JSON)", "Herunterladen (JSON)", "Descargar (JSON)", "Télécharger (JSON)", "Scarica (JSON)"},
+	"settings.exercise":     {"Упражнение", "Exercise", "Egzersiz", "Übung", "Ejercicio", "Exercice", "Esercizio"},
+	"settings.add_exercise": {"Добавить упражнение", "Add exercise", "Egzersiz ekle", "Übung hinzufügen", "Añadir ejercicio", "Ajouter un exercice", "Aggiungi esercizio"},
+	"settings.move_up":      {"Вверх", "Move up", "Yukarı taşı", "Nach oben", "Subir", "Monter", "Sposta su"},
+	"settings.move_down":    {"Вниз", "Move down", "Aşağı taşı", "Nach unten", "Bajar", "Descendre", "Sposta giù"},
+	"settings.remove":       {"Удалить", "Remove", "Kaldır", "Entfernen", "Quitar", "Retirer", "Rimuovi"},
+	"settings.exercise_json": {"Упражнение как JSON", "Exercise as JSON", "JSON olarak egzersiz", "Übung als JSON", "Ejercicio como JSON", "Exercice en JSON", "Esercizio come JSON"},
+	"settings.import":       {"Импортировать", "Import", "İçe aktar", "Importieren", "Importar", "Importer", "Importa"},
+	"settings.paste_json":   {"Вставьте JSON упражнения", "Paste exercise JSON", "Egzersiz JSON'unu yapıştırın", "Übungs-JSON einfügen", "Pega el JSON del ejercicio", "Collez le JSON de l'exercice", "Incolla il JSON dell'esercizio"},
 
 	// Voice cues (spoken)
 	"cue.ready":       {"Приготовься", "Get ready", "Hazır ol", "Mach dich bereit", "Prepárate", "Préparez-vous", "Preparati"},

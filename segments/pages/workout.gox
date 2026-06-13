@@ -8,6 +8,7 @@ import (
 	"danicc/assets"
 	"danicc/internal/app"
 	"danicc/internal/auth"
+	"danicc/internal/catalog"
 	"danicc/internal/content"
 	"danicc/internal/i18n"
 	"danicc/path"
@@ -96,10 +97,10 @@ func (w workoutPage) clampDay() int {
 	return d
 }
 
-// voiceFor returns the cues for an exercise. Languages with per-exercise content
-// use those phrases; others fall back to the generic localized cues.
-func (w workoutPage) voiceFor(l i18n.Lang, id string, d content.Detail) (start string, mid []string, last, finish string) {
-	if content.HasDetailLang(string(l)) {
+// voiceFor returns the cues for an exercise. Exercises/languages with per-exercise
+// content use those phrases; others fall back to the generic localized cues.
+func (w workoutPage) voiceFor(l i18n.Lang, hasVoice bool, d content.Detail) (start string, mid []string, last, finish string) {
+	if hasVoice {
 		start, mid, last, finish = d.Voice.Start, d.Voice.Mid, d.Voice.Last, d.Voice.Finish
 	}
 	if start == "" {
@@ -115,22 +116,25 @@ func (w workoutPage) voiceFor(l i18n.Lang, id string, d content.Detail) (start s
 }
 
 // replFor returns the manual-replacement item for an exercise (nil if none).
-func (w workoutPage) replFor(l i18n.Lang, id string, value int) *playerRepl {
-	ex, ok := content.Get(id)
+func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, id string, value int) *playerRepl {
+	ex, ok := cat.Def(id)
 	if !ok || ex.Replacement == "" {
 		return nil
 	}
 	rid := ex.Replacement
-	r := content.Pool[rid]
+	r, ok := cat.Def(rid)
+	if !ok {
+		return nil
+	}
 	return &playerRepl{
 		ID:      rid,
-		Name:    i18n.Exercise(l, rid),
+		Name:    cat.Name(l, rid),
 		Unit:    string(r.Unit),
 		Value:   content.ConvertValue(ex.Unit, r.Unit, value),
 		PerSide: r.PerSide,
-		SVG:     "/static/ex/" + rid + ".svg",
-		Hint:    i18n.Hint(l, rid),
-		Warning: i18n.Warning(l, rid),
+		SVG:     cat.SVG(rid),
+		Hint:    cat.Hint(l, rid),
+		Warning: cat.Warning(l, rid),
 	}
 }
 
@@ -141,12 +145,13 @@ func (w workoutPage) payloadJSON() string {
 	adapt, _ := app.DB.GetAdaptState(w.sess.UserID)
 	streak, _ := app.DB.Streak(w.sess.UserID, app.Today())
 	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
+	cat := app.UserCatalog(w.sess.UserID)
 
 	items := make([]playerItem, 0, len(wk.Items))
 	for _, it := range wk.Items {
 		id := it.ExerciseID
-		d, _ := content.GetDetailL(string(l), id)
-		vs, vm, vl, vf := w.voiceFor(l, id, d)
+		d, _ := cat.Detail(l, id)
+		vs, vm, vl, vf := w.voiceFor(l, cat.HasVoiceLang(l, id), d)
 		items = append(items, playerItem{
 			ID:        id,
 			Unit:      string(it.Unit),
@@ -155,10 +160,10 @@ func (w workoutPage) payloadJSON() string {
 			PerSide:   it.PerSide,
 			Round:     it.Round,
 			Rest:      it.Rest,
-			Name:      i18n.Exercise(l, id),
-			Hint:      i18n.Hint(l, id),
-			Warning:   i18n.Warning(l, id),
-			SVG:       "/static/ex/" + id + ".svg",
+			Name:      cat.Name(l, id),
+			Hint:      cat.Hint(l, id),
+			Warning:   cat.Warning(l, id),
+			SVG:       cat.SVG(id),
 			Video:     content.Pool[id].Video,
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
@@ -170,7 +175,7 @@ func (w workoutPage) payloadJSON() string {
 			VMid:      vm,
 			VLast:     vl,
 			VFinish:   vf,
-			Repl:      w.replFor(l, id, it.Value),
+			Repl:      w.replFor(l, cat, id, it.Value),
 		})
 	}
 
