@@ -18,26 +18,35 @@ func mainOf(w Workout) []Item {
 	return out
 }
 
-func isPlank(id string) bool { return id == "C02" || id == "C05" || id == "C08" }
+// wantMainCount is the per-day main-exercise count (per round), from the spec.
+var wantMainCount = map[int]int{
+	1: 5, 2: 6, 3: 7, 4: 5, 5: 7, 6: 8, 7: 5, 8: 7, 9: 8, 10: 7,
+	11: 5, 12: 9, 13: 8, 14: 5, 15: 8, 16: 9, 17: 7, 18: 5, 19: 9, 20: 10,
+	21: 5, 22: 9, 23: 7, 24: 10, 25: 5, 26: 10, 27: 8, 28: 5, 29: 10, 30: 10,
+}
 
-func TestStructureWarmupCooldown(t *testing.T) {
+// Every day: 6 warm-up + (block × 2 rounds) main + 4 cool-down; screen totals
+// follow the 20–30 progression.
+func TestDayStructureAndCounts(t *testing.T) {
 	for day := 1; day <= TotalDays; day++ {
 		w := base(day)
-		// Warm-up: 10 exercises × 2 rounds = first 20 items, all W*.
-		if len(w.Items) < 26 {
-			t.Fatalf("day %d: too few items (%d)", day, len(w.Items))
+		count := wantMainCount[day]
+		wantTotal := 6 + count*2 + 4
+		if len(w.Items) != wantTotal {
+			t.Fatalf("day %d: %d items, want %d", day, len(w.Items), wantTotal)
 		}
-		for i := 0; i < 20; i++ {
+		for i := 0; i < 6; i++ {
 			if w.Items[i].Slot != Warmup || !strings.HasPrefix(w.Items[i].ExerciseID, "W") {
-				t.Fatalf("day %d: item %d is not a warm-up (%s)", day, i, w.Items[i].ExerciseID)
+				t.Fatalf("day %d: item %d not warm-up (%s)", day, i, w.Items[i].ExerciseID)
 			}
 		}
-		// Cool-down: last 6 items, all CD*, 1 round.
-		cd := w.Items[len(w.Items)-6:]
-		for _, it := range cd {
+		for _, it := range w.Items[len(w.Items)-4:] {
 			if it.Slot != Cooldown || !strings.HasPrefix(it.ExerciseID, "CD") {
-				t.Fatalf("day %d: expected cool-down at the end, got %s", day, it.ExerciseID)
+				t.Fatalf("day %d: tail not cool-down (%s)", day, it.ExerciseID)
 			}
+		}
+		if got := len(mainOf(w)); got != count*2 {
+			t.Errorf("day %d: %d main items, want %d", day, got, count*2)
 		}
 		if w.Items[len(w.Items)-1].Rest != 0 {
 			t.Errorf("day %d: last item has rest", day)
@@ -50,67 +59,29 @@ func TestStructureWarmupCooldown(t *testing.T) {
 	}
 }
 
-// Warm-up and cool-down are stored once and identical for every day.
+// Warm-up (6, one round) and cool-down (4) are shared and identical every day.
 func TestSharedWarmupCooldown(t *testing.T) {
 	r := ResolveBuiltin()
-	if len(r.Warmup) != 10 || r.WarmupRounds != 2 || len(r.Cooldown) != 6 {
-		t.Fatalf("shared series: warmup=%d rounds=%d cooldown=%d", len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
+	if len(r.Warmup) != 6 || r.WarmupRounds != 1 || len(r.Cooldown) != 4 {
+		t.Fatalf("warmup=%d rounds=%d cooldown=%d", len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
 	}
 	for _, d := range r.Days {
 		for _, it := range d.Items {
 			if it.Slot != Main {
-				t.Fatalf("day %d main list has a non-main item %s (%s)", d.Day, it.ID, it.Slot)
+				t.Fatalf("day %d main has a non-main item %s", d.Day, it.ID)
 			}
 		}
 	}
 }
 
-func TestPlankChallengeAndProgression(t *testing.T) {
-	for day := 1; day <= TotalDays; day++ {
-		p := calendar[day]
-		if p.Recovery {
-			continue
-		}
-		m := mainOf(base(day))
-		last := m[len(m)-1]
-		if !isPlank(last.ExerciseID) {
-			t.Errorf("day %d: main does not end with a plank (got %s)", day, last.ExerciseID)
-		}
-		if last.ExerciseID == "C02" && last.Value < 45 {
-			t.Errorf("day %d: plank %ds < 45s", day, last.Value)
-		}
-		if p.Control && last.Value != 90 {
-			t.Errorf("day 30 control plank = %ds, want 90", last.Value)
-		}
-	}
-}
-
-func TestRecoveryDays(t *testing.T) {
-	allowed := map[string]bool{"C04": true, "G01": true, "B01": true, "S01": true, "C05": true}
-	rCount := 0
-	for day := 1; day <= TotalDays; day++ {
-		if !calendar[day].Recovery {
-			continue
-		}
-		rCount++
-		for _, it := range mainOf(base(day)) {
-			if it.Round != 1 {
-				t.Errorf("R day %d: main round %d, want single round", day, it.Round)
-			}
-			if !allowed[it.ExerciseID] {
-				t.Errorf("R day %d: forbidden recovery exercise %s", day, it.ExerciseID)
-			}
-		}
-	}
-	if rCount < 7 {
-		t.Errorf("only %d recovery days, expected several", rCount)
-	}
-}
-
+// Recovery days are lighter (5 exercises) and spaced (≤4 working days in a row).
 func TestRecoveryCadence(t *testing.T) {
 	run := 0
 	for day := 1; day <= TotalDays; day++ {
-		if calendar[day].Recovery {
+		if isRecoveryDay(day) {
+			if wantMainCount[day] != 5 {
+				t.Errorf("recovery day %d has %d exercises, want 5", day, wantMainCount[day])
+			}
 			run = 0
 			continue
 		}
@@ -136,13 +107,12 @@ func TestForbiddenExercisesAbsent(t *testing.T) {
 // ScaleValue: linear ±10% per step on reps/seconds; breaths fixed; min clamps.
 func TestScaleValue(t *testing.T) {
 	cases := []struct {
-		u             Unit
+		u              Unit
 		val, lvl, want int
 	}{
-		{Reps, 11, 0, 11}, {Reps, 11, 3, 14}, {Reps, 11, -3, 8},
-		{Seconds, 50, 2, 60}, {Seconds, 50, -3, 35},
-		{Breaths, 5, 3, 5}, {Breaths, 5, -3, 5},
-		{Reps, 1, -3, 1}, {Seconds, 5, -3, 5}, // clamps
+		{Reps, 12, 0, 12}, {Reps, 12, 1, 13}, {Reps, 12, 3, 16}, {Reps, 12, -3, 8},
+		{Seconds, 60, 2, 72}, {Seconds, 60, -3, 42},
+		{Breaths, 5, 3, 5}, {Reps, 1, -3, 1}, {Seconds, 5, -3, 5},
 	}
 	for _, c := range cases {
 		if got := ScaleValue(c.u, c.val, c.lvl); got != c.want {
@@ -154,32 +124,17 @@ func TestScaleValue(t *testing.T) {
 // The level scales the main block but not warm-up/cool-down.
 func TestLevelScalingInWorkout(t *testing.T) {
 	r := ResolveBuiltin()
-	wuVal := r.Workout(1, 18, 0).Items[0].Value
+	wu := r.Workout(1, 18, 0).Items[0].Value
 	for _, lvl := range []int{-3, 0, 3} {
-		if v := r.Workout(1, 18, lvl).Items[0].Value; v != wuVal {
-			t.Errorf("level %d changed warm-up value (%d != %d)", lvl, v, wuVal)
+		if v := r.Workout(1, 18, lvl).Items[0].Value; v != wu {
+			t.Errorf("level %d changed the warm-up value", lvl)
 		}
 	}
-	// Day 1 first push-up base = 10 reps → +1 = 11, +3 = 13, −3 = 7.
-	if got := mainOf(r.Workout(1, 18, 1))[0].Value; got != 11 {
-		t.Errorf("level +1 push-ups = %d, want 11", got)
+	// Day 1 first main = push-ups = 12 → +1 = 13, +3 = 16.
+	if got := mainOf(r.Workout(1, 18, 1))[0].Value; got != 13 {
+		t.Errorf("level +1 push-ups = %d, want 13", got)
 	}
-	if got := mainOf(r.Workout(1, 18, 3))[0].Value; got != 13 {
-		t.Errorf("level +3 push-ups = %d, want 13", got)
-	}
-}
-
-func TestRestRules(t *testing.T) {
-	w := base(1) // block A
-	for i, it := range w.Items {
-		if i == len(w.Items)-1 {
-			continue
-		}
-		switch {
-		case it.ExerciseID == "M01" || it.ExerciseID == "M02" || it.ExerciseID == "M03":
-			if it.Rest != 35 {
-				t.Errorf("after push-ups rest = %d, want 35", it.Rest)
-			}
-		}
+	if got := mainOf(r.Workout(1, 18, 3))[0].Value; got != 16 {
+		t.Errorf("level +3 push-ups = %d, want 16", got)
 	}
 }

@@ -449,6 +449,7 @@
     startItem(i);
   }
   if (el.infoBtn) el.infoBtn.addEventListener("click", openInfo);
+  if (el.svg) el.svg.addEventListener("click", openInfo); // tap the figure → pause + show details
   if (el.infoClose) el.infoClose.addEventListener("click", closeInfo);
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
 

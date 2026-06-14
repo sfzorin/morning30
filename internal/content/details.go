@@ -26,11 +26,11 @@ func GetDetail(id string) (Detail, bool) {
 	return d, ok
 }
 
-// detailsByLang holds the rich content per language. Add a map as each language
-// is translated; missing languages fall back to English, then Russian.
+// detailsByLang holds the rich content per language. Currently only English is
+// authored for the new exercise set; every other language falls back to English.
 var detailsByLang = map[string]map[string]Detail{
-	"ru": Details,
 	"en": detailsEN,
+	"ru": detailsRU,
 	"tr": detailsTR,
 	"de": detailsDE,
 	"es": detailsES,

@@ -31,6 +31,7 @@ type settingsForm struct {
 type editState struct {
 	Day  int
 	JSON string
+	Open string // which row's content preview is expanded ("target:index"), "" = none
 }
 
 // settingsPage lets the user change rest time, language, voice and reset progress.
@@ -180,16 +181,16 @@ elem (s settingsPage) Main() {
 							}
 						}
 						<div class="cyc-head">~(i18n.T(l, "settings.warmup_series"), " · ", p.WarmupRounds, "×")</div>
-						~(s.editList(editSrc, cat, entries, l, p.Warmup, "warmup"))
+						~(s.editList(editSrc, cat, entries, l, p.Warmup, "warmup", st.Open))
 
 						~(if len(p.Days) > 0 {
 							~{ rd := p.Days[idx] }
 							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
-							~(s.editList(editSrc, cat, entries, l, rd.Items, "day"))
+							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
 						})
 
 						<div class="cyc-head">~(i18n.T(l, "settings.cooldown_series"))</div>
-						~(s.editList(editSrc, cat, entries, l, p.Cooldown, "cooldown"))
+						~(s.editList(editSrc, cat, entries, l, p.Cooldown, "cooldown", st.Open))
 					}))
 
 					<div class="srow cyc-save">
@@ -206,9 +207,10 @@ elem (s settingsPage) Main() {
 					})
 				</details>
 
-				~// Per-exercise JSON: download any exercise, or import one (paste / file).
+				~// Browse exercise content (description + all tips), download any
+				~// exercise as JSON, or import one (paste / file).
 				<details class="cycle-details">
-					<summary>~(i18n.T(l, "settings.exercise_json"))</summary>
+					<summary>~(i18n.T(l, "settings.exercise_content"))</summary>
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.exercise"))</span>
 						<select class="lang-select compact" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
@@ -218,6 +220,10 @@ elem (s settingsPage) Main() {
 							~(s.exOptions(entries, l, firstID))
 						</select>
 					</div>
+					~// Read-only content of the selected exercise.
+					~(selSrc.Bind(elem(id string) {
+						~(s.exDetail(l, cat, id))
+					}))
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.download"))</span>
 						~(selSrc.Bind(elem(id string) {
@@ -253,6 +259,48 @@ elem (s settingsPage) Main() {
 			</div>
 		</section>
 	</main>
+}
+
+// exDetail renders the read-only content card for an exercise: description,
+// how-to, correct, mistakes, breathing and safety, localized.
+elem (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) {
+	~{ d, _ := cat.Detail(l, id) }
+	<div class="ex-detail">
+		<div class="ex-detail-name">~(cat.Name(l, id))</div>
+		~(if d.Desc != "" {
+			<p class="ex-detail-desc">~(d.Desc)</p>
+		})
+		~(if len(d.HowTo) > 0 {
+			<div class="ex-detail-sec">
+				<h4>~(i18n.T(l, "info.how"))</h4>
+				<ol>~(for _, x := range d.HowTo { <li>~(x)</li> })</ol>
+			</div>
+		})
+		~(if len(d.Correct) > 0 {
+			<div class="ex-detail-sec">
+				<h4>~(i18n.T(l, "info.correct"))</h4>
+				<ul>~(for _, x := range d.Correct { <li>~(x)</li> })</ul>
+			</div>
+		})
+		~(if len(d.Wrong) > 0 {
+			<div class="ex-detail-sec">
+				<h4>~(i18n.T(l, "info.wrong"))</h4>
+				<ul>~(for _, x := range d.Wrong { <li>~(x)</li> })</ul>
+			</div>
+		})
+		~(if d.Breathing != "" {
+			<div class="ex-detail-sec">
+				<h4>~(i18n.T(l, "info.breathing"))</h4>
+				<p>~(d.Breathing)</p>
+			</div>
+		})
+		~(if d.Safety != "" {
+			<div class="ex-detail-sec">
+				<h4>⚠️ ~(i18n.T(l, "info.warning"))</h4>
+				<p>~(d.Safety)</p>
+			</div>
+		})
+	</div>
 }
 
 // exOptions renders the exercise dropdown options grouped by slot.
@@ -389,24 +437,28 @@ func mutateList(ctx context.Context, editSrc doors.Source[editState], target str
 }
 
 // editList renders one CRUD section (warm-up / day main / cool-down).
-elem (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Catalog, entries []catalog.Entry, l i18n.Lang, items []content.RItem, target string) {
+elem (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Catalog, entries []catalog.Entry, l i18n.Lang, items []content.RItem, target, open string) {
 	<ol class="cyc-list edit">
 		~(for ii := range items {
-			~{ it := items[ii] }
+			~{
+				it := items[ii]
+				key := target + ":" + strconv.Itoa(ii)
+			}
 			<li class="cyc-row">
+				<span class="cyc-num"></span>
 				<select class="cyc-select" (doors.AChange{On: s.editReplace(editSrc, cat, target, ii)})>
 					~(s.exOptions(entries, l, it.ID))
 				</select>
-				<span class="cyc-edit">
-					<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, target, ii)})>
-					<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
-				</span>
-				<span class="cyc-ops">
-					~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
-					~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
-					~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
-				</span>
+				<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, target, ii)})>
+				<span class="cyc-unit">~(unitWord(l, it.Unit, false))</span>
+				~>doors.AClick{On: s.editPeek(editSrc, target, ii)} <button class="cyc-op cyc-info" type="button" aria-label=(i18n.T(l, "settings.view"))>ⓘ</button>
+				~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
+				~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
+				~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
 			</li>
+			~(if open == key {
+				<li class="cyc-peek">~(s.exDetail(l, cat, it.ID))</li>
+			})
 		})
 	</ol>
 	~>doors.AClick{On: s.editAdd(editSrc, cat, target)} <button class="btn small cyc-add" type="button">＋ ~(i18n.T(l, "settings.add_exercise"))</button>
@@ -519,6 +571,21 @@ func (s settingsPage) editDelete(editSrc doors.Source[editState], target string,
 			nw = append(nw, its[ii+1:]...)
 			return nw
 		})
+		return false
+	}
+}
+
+// editPeek toggles the inline content preview for a row.
+func (s settingsPage) editPeek(editSrc doors.Source[editState], target string, ii int) func(context.Context, doors.RequestPointer) bool {
+	key := target + ":" + strconv.Itoa(ii)
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		st := editSrc.Get()
+		if st.Open == key {
+			st.Open = ""
+		} else {
+			st.Open = key
+		}
+		editSrc.Update(ctx, st)
 		return false
 	}
 }

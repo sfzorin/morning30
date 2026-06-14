@@ -69,53 +69,69 @@ func Library() []Exercise {
 }
 
 var library = []Exercise{
-	// ---- Warm-up (fixed, 2 rounds) ----
-	{ID: "W01", Slot: Warmup, Unit: Breaths, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W02", Slot: Warmup, Unit: Reps, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W03", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W04", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W05", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W06", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W07", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W08", Slot: Warmup, Unit: Reps, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W09", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "W10", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeLow},
+	// ---- Warm-up (fixed, 6 exercises, 1 round) ----
+	{ID: "W01", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // shoulder circles
+	{ID: "W02", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // small arm circles
+	{ID: "W03", Slot: Warmup, Unit: Reps, PerSide: true, Difficulty: 1, KneeLoad: KneeNone}, // standing twists
+	{ID: "W04", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},             // hip hinge no weight
+	{ID: "W05", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeLow},              // slow shallow squat
+	{ID: "W06", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // high plank weight shift
 
-	// ---- Main library ----
-	{ID: "M01", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},
-	{ID: "M02", Slot: Main, Unit: Reps, Difficulty: 4, KneeLoad: KneeNone, Replacement: "M01"},
-	{ID: "M03", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone, Replacement: "M01"},
+	// ---- Abs / core ----
+	{ID: "C01", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone},                      // forearm plank
+	{ID: "C02", Slot: Main, Unit: Seconds, Difficulty: 4, KneeLoad: KneeNone, Replacement: "C01"},  // RKC plank
+	{ID: "C03", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone, Replacement: "C12"},  // scissors
+	{ID: "C04", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone, Replacement: "C12"},  // flutter kicks
+	{ID: "C05", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},                         // reverse crunch
+	{ID: "C06", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone, Replacement: "C12"},  // hollow hold (easy)
+	{ID: "C07", Slot: Main, Unit: Seconds, PerSide: true, Difficulty: 3, KneeLoad: KneeNone},       // side plank
+	{ID: "C08", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 3, KneeLoad: KneeNone},          // side plank hip lift
+	{ID: "C09", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},                         // plank shoulder taps
+	{ID: "C10", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},                         // up-down plank
+	{ID: "C11", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},          // heel taps (per side)
+	{ID: "C12", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},          // dead bug advanced
 
-	{ID: "C01", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone, Replacement: "C06"},
-	{ID: "C02", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone},
-	{ID: "C03", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone, Replacement: "C04"},
-	{ID: "C04", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "C05", Slot: Main, Unit: Seconds, PerSide: true, Difficulty: 3, KneeLoad: KneeNone},
-	{ID: "C06", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "C07", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone, Replacement: "C04"},
-	{ID: "C08", Slot: Main, Unit: Seconds, Difficulty: 4, KneeLoad: KneeNone, Replacement: "C02"},
+	// ---- Push-ups / triceps / shoulders ----
+	{ID: "P01", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},                         // classic push-up
+	{ID: "P02", Slot: Main, Unit: Reps, Difficulty: 4, KneeLoad: KneeNone, Replacement: "P01"},     // narrow push-up
+	{ID: "P03", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone, Replacement: "P01"},     // paused push-up
+	{ID: "P04", Slot: Main, Unit: Reps, Difficulty: 4, KneeLoad: KneeNone, Replacement: "P03"},     // slow 3-1-3 push-up
+	{ID: "P05", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 4, KneeLoad: KneeNone, Replacement: "P01"}, // staggered push-up (per side)
+	{ID: "P06", Slot: Main, Unit: Reps, Difficulty: 4, KneeLoad: KneeNone, Replacement: "P03"},     // pike push-up
+	{ID: "P08", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},                         // sphinx push-up
 
-	{ID: "B01", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "B02", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "B03", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "B04", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "B05", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},
+	// ---- Back / scapula ----
+	{ID: "B01", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeNone}, // prone cobra hold
+	{ID: "B02", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // reverse snow angels
+	{ID: "B03", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // prone W-raise
+	{ID: "B04", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // prone Y-raise
+	{ID: "B05", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // prone T-raise
+	{ID: "B06", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // superman pull-down
+	{ID: "B07", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeNone}, // swimmers
+	{ID: "B08", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone}, // reverse plank
+	{ID: "B09", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // back extension pulses
+	{ID: "B10", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // cobra to W-pull
 
-	{ID: "G01", Slot: Main, Unit: Reps, Difficulty: 1, KneeLoad: KneeLow},
-	{ID: "G02", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeLow},
+	// ---- Arms / biceps (self-resistance, no equipment) ----
+	{ID: "A01", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},    // self-resist curl
+	{ID: "A02", Slot: Main, Unit: Seconds, PerSide: true, Difficulty: 2, KneeLoad: KneeNone}, // biceps isometric 90°
+	{ID: "A03", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeNone},                // hand-hook pull
+	{ID: "A04", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},    // slow negative curl
 
-	{ID: "L01", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeMedium, Replacement: "G01"},
+	// ---- Legs / glutes ----
+	{ID: "L01", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeMedium, Replacement: "L03"}, // slow shallow squat
+	{ID: "L02", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeMedium, Replacement: "L03"}, // paused squat
+	{ID: "L03", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeLow},                        // hip hinge
+	{ID: "L04", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeLow},         // single-leg glute bridge
+	{ID: "L05", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeLow},         // glute bridge march
+	{ID: "L06", Slot: Main, Unit: Reps, Difficulty: 1, KneeLoad: KneeLow},                        // glute bridge hold
+	{ID: "L07", Slot: Main, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},                       // calf raises
+	{ID: "L09", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 3, KneeLoad: KneeNone},        // side plank leg lift
 
-	{ID: "A01", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},
-	{ID: "A02", Slot: Main, Unit: Seconds, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},
-
-	{ID: "S01", Slot: Main, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},
-
-	// ---- Cool-down (fixed, 1 round) ----
-	{ID: "CD01", Slot: Cooldown, Unit: Breaths, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "CD02", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "CD03", Slot: Cooldown, Unit: Seconds, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "CD04", Slot: Cooldown, Unit: Seconds, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},
-	{ID: "CD05", Slot: Cooldown, Unit: Seconds, PerSide: true, Difficulty: 1, KneeLoad: KneeLow},
-	{ID: "CD06", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},
+	// ---- Cool-down (fixed, 4 exercises, 1 round) ----
+	{ID: "CD01", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},                      // chest stretch
+	{ID: "CD02", Slot: Cooldown, Unit: Seconds, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},       // hamstring stretch
+	{ID: "CD03", Slot: Cooldown, Unit: Seconds, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},       // supine twist
+	{ID: "CD04", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone, Replacement: "CD05"}, // sphinx pose
+	{ID: "CD05", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},                      // lying breathing (sphinx replacement)
 }

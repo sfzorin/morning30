@@ -138,7 +138,9 @@ var ui = map[string][7]string{
 	"settings.move_up":      {"Вверх", "Move up", "Yukarı taşı", "Nach oben", "Subir", "Monter", "Sposta su"},
 	"settings.move_down":    {"Вниз", "Move down", "Aşağı taşı", "Nach unten", "Bajar", "Descendre", "Sposta giù"},
 	"settings.remove":       {"Удалить", "Remove", "Kaldır", "Entfernen", "Quitar", "Retirer", "Rimuovi"},
+	"settings.view":         {"Описание", "View", "Görüntüle", "Ansehen", "Ver", "Voir", "Vedi"},
 	"settings.exercise_json": {"Упражнение как JSON", "Exercise as JSON", "JSON olarak egzersiz", "Übung als JSON", "Ejercicio como JSON", "Exercice en JSON", "Esercizio come JSON"},
+	"settings.exercise_content": {"Упражнения: содержание и JSON", "Exercises: content & JSON", "Egzersizler: içerik ve JSON", "Übungen: Inhalt & JSON", "Ejercicios: contenido y JSON", "Exercices : contenu et JSON", "Esercizi: contenuto e JSON"},
 	"settings.import":       {"Импортировать", "Import", "İçe aktar", "Importieren", "Importar", "Importer", "Importa"},
 	"settings.paste_json":   {"Вставьте JSON упражнения", "Paste exercise JSON", "Egzersiz JSON'unu yapıştırın", "Übungs-JSON einfügen", "Pega el JSON del ejercicio", "Collez le JSON de l'exercice", "Incolla il JSON dell'esercizio"},
 

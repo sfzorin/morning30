@@ -287,45 +287,70 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .cyc-unit { color: var(--muted); font-size: 13px; min-width: 56px; }
 .srow.cyc-save { border-bottom: none; gap: 10px; }
 
-/* Full-CRUD day editor */
-.cyc-list.edit { counter-reset: none; }
+/* Full-CRUD day editor — compact single-line rows, numbered per section */
+.cyc-list.edit { counter-reset: cycn; }
 .cyc-list.edit .cyc-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  counter-increment: none;
+  gap: 5px;
+  flex-wrap: nowrap;
+  counter-increment: cycn;
+  padding: 5px 0;
 }
+.cyc-num { flex: 0 0 auto; min-width: 15px; text-align: right; color: var(--muted); font-size: 12px; }
+.cyc-num::before { content: counter(cycn) "."; }
 .cyc-list.edit .cyc-row .cyc-select {
-  flex: 1 1 130px;
+  flex: 1 1 0;
   min-width: 0;
-  padding: 8px 30px 8px 10px;
-  border-radius: 10px;
+  padding: 7px 26px 7px 9px;
+  border-radius: 9px;
   border: 1px solid var(--line);
   background-color: var(--bg);
   color: var(--fg);
-  font-size: 14px;
+  font-size: 13px;
   appearance: none;
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%2394a3b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M1 1.5 6 6.5 11 1.5'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 11px center;
+  background-position: right 9px center;
 }
-.cyc-list.edit .cyc-edit { flex: 0 0 auto; }
-.cyc-ops { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }
+.cyc-list.edit .cyc-val {
+  flex: 0 0 42px; width: 42px; padding: 7px 2px; font-size: 14px;
+  border-radius: 9px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); text-align: center;
+}
+.cyc-unit {
+  flex: 0 0 auto; max-width: 38px; min-width: 0; color: var(--muted); font-size: 11px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .cyc-op {
-  width: 32px; height: 32px;
+  width: 28px; height: 28px; flex: 0 0 auto;
   padding: 0;
   display: flex; align-items: center; justify-content: center;
   border-radius: 8px;
   border: 1px solid var(--line);
   background: var(--bg);
   color: var(--fg);
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
 }
+.cyc-op.cyc-info { color: var(--accent); }
 .cyc-op.danger { color: var(--danger, #e5484d); }
+.cyc-peek {
+  padding: 8px 10px; margin: 2px 0 6px; border: 1px solid var(--line);
+  border-radius: 10px; background: var(--bg);
+}
+.cyc-peek .ex-detail { padding: 0; }
 .cyc-add { margin: 10px 0 4px; }
+
+/* Read-only exercise content preview in settings */
+.ex-detail { padding: 6px 0 12px; }
+.ex-detail-name { font-size: 16px; font-weight: 700; color: var(--fg); margin-bottom: 4px; }
+.ex-detail-desc { margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.ex-detail-sec { margin-top: 8px; }
+.ex-detail-sec h4 { margin: 0 0 4px; font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: .4px; }
+.ex-detail-sec p { margin: 0; color: var(--fg); font-size: 14px; line-height: 1.4; }
+.ex-detail-sec ul, .ex-detail-sec ol { margin: 2px 0 0; padding-left: 18px; color: var(--fg); }
+.ex-detail-sec li { margin: 2px 0; font-size: 14px; line-height: 1.35; }
 
 /* Per-exercise JSON import */
 .ex-import-form { padding: 8px 0 4px; }
@@ -418,7 +443,8 @@ h1, h2, h3 { margin: 0 0 .4em; }
 
 .stage { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
 .ex-index { color: var(--muted); font-size: 15px; font-weight: 600; }
-.ex-svg { width: min(70vw, 260px); height: min(70vw, 260px); border-radius: 24px; background: #fff; }
+.ex-svg { width: min(70vw, 260px); height: min(70vw, 260px); border-radius: 24px; background: #fff; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ex-svg:active { transform: scale(.98); }
 .ex-name { font-size: 26px; font-weight: 800; padding: 0 10px; }
 .ex-value { font-size: 44px; font-weight: 800; color: var(--accent); }
 .ex-value.timer { font-variant-numeric: tabular-nums; }

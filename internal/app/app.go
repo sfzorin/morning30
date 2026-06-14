@@ -30,14 +30,17 @@ func ProgramByKey(userID int64, key string) content.Resolved {
 	return content.ResolveBuiltin()
 }
 
-// SeedBuiltins writes the built-in exercise library into the DB (idempotent) so
-// the global `exercises` table is the canonical base every user reads from.
+// SeedBuiltins makes the global `exercises` table match the built-in library
+// (authoritative upsert + prune), so it is the canonical base every user reads.
 func SeedBuiltins() {
+	ids := make([]string, 0, len(content.Library()))
 	for _, ex := range content.Library() {
 		if d, ok := catalog.Builtin(ex.ID); ok {
-			_ = DB.SeedExercise(ex.ID, d.Compact())
+			_ = DB.SetExercise(ex.ID, d.Compact()) // upsert (code is canonical)
+			ids = append(ids, ex.ID)
 		}
 	}
+	_ = DB.PruneExercises(ids) // drop exercises removed from the library
 }
 
 // UserCatalog returns the user's exercise catalog: the global DB library overlaid

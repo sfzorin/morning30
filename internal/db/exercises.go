@@ -1,9 +1,26 @@
 package db
 
+import "strings"
+
 // SeedExercise inserts a built-in exercise Doc if it's not already present
-// (idempotent — existing rows, including later global edits, are preserved).
+// (idempotent — existing rows are preserved).
 func (d *DB) SeedExercise(id, doc string) error {
 	_, err := d.sql.Exec(`INSERT OR IGNORE INTO exercises(id, doc) VALUES(?, ?)`, id, doc)
+	return err
+}
+
+// PruneExercises deletes global exercises whose ID is not in keep (removes
+// exercises dropped from the built-in library).
+func (d *DB) PruneExercises(keep []string) error {
+	if len(keep) == 0 {
+		return nil
+	}
+	ph := strings.TrimSuffix(strings.Repeat("?,", len(keep)), ",")
+	args := make([]any, len(keep))
+	for i, k := range keep {
+		args[i] = k
+	}
+	_, err := d.sql.Exec(`DELETE FROM exercises WHERE id NOT IN (`+ph+`)`, args...)
 	return err
 }
 
