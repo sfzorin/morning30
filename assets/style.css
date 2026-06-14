@@ -231,6 +231,8 @@ h1, h2, h3 { margin: 0 0 .4em; }
 
 /* ---- Settings ---- */
 .settings { display: flex; flex-direction: column; gap: 8px; }
+.settings-head { display: flex; align-items: center; justify-content: space-between; }
+.settings-head .quit { margin-bottom: 8px; }
 .settings h1 { font-size: 22px; margin-bottom: 8px; }
 
 /* Compact single-card settings (fits one screen) */

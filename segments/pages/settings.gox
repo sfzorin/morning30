@@ -74,7 +74,10 @@ elem (s settingsPage) Main() {
 	<main class="screen">
 		~(header{sess: s.sess, auth: s.auth, path: s.path, streak: streak})
 		<section class="settings">
-			<h1>~(i18n.T(l, "settings.title"))</h1>
+			<div class="settings-head">
+				<h1>~(i18n.T(l, "settings.title"))</h1>
+				~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "nav.close"))>✕</a>
+			</div>
 			~{
 				vm := s.sess.VoiceMode
 				if vm == "" {

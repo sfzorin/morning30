@@ -13,6 +13,7 @@ var ui = map[string][7]string{
 	"nav.home":     {"Главная", "Home", "Ana sayfa", "Start", "Inicio", "Accueil", "Home"},
 	"nav.settings": {"Настройки", "Settings", "Ayarlar", "Einstellungen", "Ajustes", "Réglages", "Impostazioni"},
 	"nav.logout":   {"Выйти", "Log out", "Çıkış", "Abmelden", "Salir", "Déconnexion", "Esci"},
+	"nav.close":    {"Закрыть", "Close", "Kapat", "Schließen", "Cerrar", "Fermer", "Chiudi"},
 
 	// Auth
 	"auth.login":          {"Вход", "Log in", "Giriş", "Anmelden", "Iniciar sesión", "Connexion", "Accedi"},
