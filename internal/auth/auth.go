@@ -27,6 +27,7 @@ type Session struct {
 	Voice      bool
 	VoiceMode  string
 	IsGuest    bool
+	Level      int // universal difficulty level (−3..+3)
 }
 
 // StoreKey keys the Source[Session] in the doors SessionStore.

@@ -13,13 +13,13 @@ func scanUser(row interface {
 }) (User, error) {
 	var u User
 	var voice, guest int
-	err := row.Scan(&u.ID, &u.Email, &u.Name, &u.Lang, &u.Rest, &voice, &guest, &u.VoiceMode, &u.Created)
+	err := row.Scan(&u.ID, &u.Email, &u.Name, &u.Lang, &u.Rest, &voice, &guest, &u.VoiceMode, &u.Level, &u.Created)
 	u.Voice = voice != 0
 	u.IsGuest = guest != 0
 	return u, err
 }
 
-const userCols = `id, email, name, lang, rest_seconds, voice, is_guest, voice_mode, created_at`
+const userCols = `id, email, name, lang, rest_seconds, voice, is_guest, voice_mode, level, created_at`
 
 // CreateUser inserts a new account. Returns ErrEmailTaken on duplicate email.
 func (d *DB) CreateUser(email, passHash, lang, name string) (User, error) {
@@ -146,6 +146,29 @@ func (d *DB) SetActiveProgram(userID int64, which string) error {
 	}
 	_, err := d.sql.Exec(`UPDATE users SET active_program = ? WHERE id = ?`, which, userID)
 	return err
+}
+
+// GetLevel returns the user's universal difficulty level (clamped −3..+3).
+func (d *DB) GetLevel(userID int64) int {
+	var lvl int
+	_ = d.sql.QueryRow(`SELECT level FROM users WHERE id = ?`, userID).Scan(&lvl)
+	return clampLevel(lvl)
+}
+
+// SetLevel stores the user's universal difficulty level (clamped −3..+3).
+func (d *DB) SetLevel(userID int64, level int) error {
+	_, err := d.sql.Exec(`UPDATE users SET level = ? WHERE id = ?`, clampLevel(level), userID)
+	return err
+}
+
+func clampLevel(l int) int {
+	if l < -3 {
+		return -3
+	}
+	if l > 3 {
+		return 3
+	}
+	return l
 }
 
 // GetCustomExercises returns the user's custom exercise library JSON ("" = none).

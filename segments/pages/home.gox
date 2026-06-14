@@ -33,8 +33,7 @@ elem (h homePage) Main() {
 
 		cycle := pos/content.TotalDays + 1
 		curDay := pos%content.TotalDays + 1
-		adapt, _ := app.DB.GetAdaptState(h.sess.UserID)
-		w := app.UserWorkout(h.sess.UserID, curDay, h.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
+		w := app.UserWorkout(h.sess.UserID, curDay, h.sess.Rest)
 		acked, _ := app.DB.SafetyAck(h.sess.UserID)
 		safety := doors.NewSource(acked)
 
@@ -83,7 +82,7 @@ elem (h homePage) Main() {
 			~(if doneToday {
 				<p class="done-banner">~(i18n.T(l, "home.done_today"))</p>
 			})
-			<div class="hero-cycle">~(i18n.T(l, "home.cycle"), " ", cycle, "  ·  ", w.BlockCode)</div>
+			<div class="hero-cycle">~(i18n.T(l, "home.cycle"), " ", cycle, "  ·  ", levelLabel(l, h.sess.Level))</div>
 			<div class="day-num">~(i18n.T(l, "home.day"), " ", curDay)</div>
 			<div class="day-meta">
 				<span>~(len(w.Items), " ", i18n.T(l, "home.exercises"))</span>

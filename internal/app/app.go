@@ -72,15 +72,8 @@ func UserProgram(userID int64) content.Resolved {
 	return ProgramByKey(userID, activeKey(userID))
 }
 
-// UserWorkout builds a day's workout from the active program. The built-in path
-// keeps full block-variant adaptation; a custom program applies substitutions only.
-func UserWorkout(userID int64, day, rest int, a content.Adapt) content.Workout {
-	if activeKey(userID) == "custom" {
-		if j, err := DB.GetProgramJSON(userID); err == nil && j != "" {
-			if r, err := content.ParseResolved(j); err == nil && len(r.Days) > 0 {
-				return r.Workout(day, rest, a)
-			}
-		}
-	}
-	return content.BuildAdapted(day, rest, a)
+// UserWorkout builds a day's workout from the active program (built-in or custom),
+// scaled by the user's universal difficulty level.
+func UserWorkout(userID int64, day, rest int) content.Workout {
+	return UserProgram(userID).Workout(day, rest, DB.GetLevel(userID))
 }

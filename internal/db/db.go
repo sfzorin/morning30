@@ -24,6 +24,7 @@ type User struct {
 	Voice     bool   // voice cues enabled (derived: VoiceMode != "off")
 	VoiceMode string // off | min | normal | detailed
 	IsGuest   bool   // anonymous cookie-only account
+	Level     int    // universal difficulty level (−3..+3); ±10% per step
 	Created   string
 }
 
@@ -70,6 +71,7 @@ CREATE TABLE IF NOT EXISTS users (
     program_json   TEXT NOT NULL DEFAULT '',     -- custom program (Resolved JSON); empty = none
     active_program TEXT NOT NULL DEFAULT 'builtin', -- builtin | custom
     custom_exercises TEXT NOT NULL DEFAULT '',   -- per-user custom exercise library (map id -> Doc JSON)
+    level          INTEGER NOT NULL DEFAULT 0,   -- universal difficulty level (−3..+3)
     created_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -129,6 +131,7 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN program_json TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN active_program TEXT NOT NULL DEFAULT 'builtin'`,
 		`ALTER TABLE users ADD COLUMN custom_exercises TEXT NOT NULL DEFAULT ''`,
+		`ALTER TABLE users ADD COLUMN level INTEGER NOT NULL DEFAULT 0`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

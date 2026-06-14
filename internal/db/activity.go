@@ -98,18 +98,11 @@ func (d *DB) AdvancePosition(userID int64) error {
 	return err
 }
 
-// ResetProgress clears activity, feedback, cycle position and adaptation state.
+// ResetProgress clears activity and the cycle position.
 func (d *DB) ResetProgress(userID int64) error {
 	if _, err := d.sql.Exec(`DELETE FROM activity WHERE user_id = ?`, userID); err != nil {
 		return err
 	}
-	if _, err := d.sql.Exec(`DELETE FROM feedback WHERE user_id = ?`, userID); err != nil {
-		return err
-	}
-	_, err := d.sql.Exec(
-		`UPDATE users SET position = 0, adapt_level = 0, adapt_force_r = 0,
-		        knee_block = 0, shoulder_block = 0, back_block = 0, low_energy = 0
-		 WHERE id = ?`, userID,
-	)
+	_, err := d.sql.Exec(`UPDATE users SET position = 0 WHERE id = ?`, userID)
 	return err
 }

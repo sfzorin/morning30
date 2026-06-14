@@ -16,114 +16,25 @@ type Item struct {
 
 // Workout is a full session for one day.
 type Workout struct {
-	Day       int    `json:"day"`
-	BlockCode string `json:"block"`  // display label, e.g. "A+", "R", "Control"
-	Items     []Item `json:"items"`
-	EstSec    int    `json:"estSec"`
+	Day    int    `json:"day"`
+	Items  []Item `json:"items"`
+	EstSec int    `json:"estSec"`
 }
 
-// Feedback is the post-workout questionnaire (spec §14). Pain values are 0–10;
-// Energy is "worse" | "normal" | "better".
-type Feedback struct {
-	Difficulty int    `json:"difficulty"` // 1–10
-	Knee       int    `json:"knee"`
-	Back       int    `json:"back"`
-	Shoulder   int    `json:"shoulder"`
-	Energy     string `json:"energy"`
-}
-
-// AdaptState is the persisted adaptation state that shapes the NEXT workout.
-type AdaptState struct {
-	Level     int  // variant delta for the next workout (−1/0/+1)
-	ForceR    bool // make the next workout a recovery day
-	Knee      int  // sessions remaining without the mini-squat
-	Shoulder  int  // sessions remaining without narrow push-ups
-	Back      int  // sessions remaining swapping scissors/flutter
-	LowEnergy int  // consecutive "worse" energy reports
-}
-
-// Adapt is the per-build view derived from AdaptState.
-type Adapt struct {
-	LevelDelta    int
-	ForceR        bool
-	KneeBlock     bool // replace L01 (mini-squat) -> G01 (glute bridge)
-	ShoulderBlock bool // replace M02 (narrow push-ups) -> M01 −30%
-	BackBlock     bool // replace C01 -> C06, C03 -> C04
-}
-
-// SuppressIncreaseOnGap drops a pending level "+" when the streak is broken
-// (the user skipped): repeat the day without increasing the load (spec §14).
-func (a Adapt) SuppressIncreaseOnGap(streakAlive bool) Adapt {
-	if !streakAlive && a.LevelDelta > 0 {
-		a.LevelDelta = 0
+// ScaleValue applies the universal difficulty level to a value: ±10% per step
+// (linear), level in [−3, +3]. Only reps/seconds scale; breaths stay fixed.
+func ScaleValue(u Unit, value, level int) int {
+	if level == 0 || u == Breaths {
+		return value
 	}
-	return a
-}
-
-// ToAdapt projects the persisted state onto a single build.
-func (s AdaptState) ToAdapt() Adapt {
-	return Adapt{
-		LevelDelta:    s.Level,
-		ForceR:        s.ForceR,
-		KneeBlock:     s.Knee > 0,
-		ShoulderBlock: s.Shoulder > 0,
-		BackBlock:     s.Back > 0,
+	out := (value*(10+level) + 5) / 10 // round half up (10+level is 7..13)
+	if u == Reps && out < 1 {
+		out = 1
 	}
-}
-
-func max0(n int) int {
-	if n < 0 {
-		return 0
+	if u == Seconds && out < 5 {
+		out = 5
 	}
-	return n
-}
-
-// Decay advances the state by one completed session: block counters tick down
-// and the one-shot level/force-R (already applied to that session) reset.
-func (s AdaptState) Decay() AdaptState {
-	s.Knee = max0(s.Knee - 1)
-	s.Shoulder = max0(s.Shoulder - 1)
-	s.Back = max0(s.Back - 1)
-	s.Level = 0
-	s.ForceR = false
-	return s
-}
-
-// NextAdapt applies the spec §14 rules from the latest feedback to produce the
-// state for the next workout. Call after Decay().
-func NextAdapt(prev AdaptState, fb Feedback) AdaptState {
-	next := prev
-	noPain := fb.Knee < 3 && fb.Back < 3 && fb.Shoulder < 3
-	switch {
-	case fb.Difficulty >= 10:
-		next.ForceR = true
-		next.Level = 0
-	case fb.Difficulty >= 8:
-		next.Level = -1
-	case fb.Difficulty >= 1 && fb.Difficulty <= 5 && noPain:
-		next.Level = 1
-	default: // 6–7, or easy but with pain → hold
-		next.Level = 0
-	}
-	if fb.Knee >= 3 {
-		next.Knee = 3
-	}
-	if fb.Shoulder >= 3 {
-		next.Shoulder = 3
-	}
-	if fb.Back >= 3 {
-		next.Back = 3
-	}
-	if fb.Energy == "worse" {
-		next.LowEnergy = prev.LowEnergy + 1
-		if next.LowEnergy >= 2 {
-			next.ForceR = true
-			next.LowEnergy = 0
-		}
-	} else {
-		next.LowEnergy = 0
-	}
-	return next
+	return out
 }
 
 // ConvertValue adapts a magnitude when swapping between units (used by manual
@@ -149,21 +60,6 @@ func ConvertValue(from, to Unit, value int) int {
 		return 5
 	}
 	return value
-}
-
-// substitute applies the spec's replacement table for active pain blocks.
-func substitute(id string, val int, a Adapt) (string, int) {
-	switch {
-	case a.KneeBlock && id == "L01":
-		return "G01", val // mini-squat → glute bridge
-	case a.ShoulderBlock && id == "M02":
-		return "M01", int(float64(val)*0.7 + 0.5) // narrow → classic −30%
-	case a.BackBlock && id == "C01":
-		return "C06", 10 // scissors → toe taps (reps/side)
-	case a.BackBlock && id == "C03":
-		return "C04", 8 // flutter → dead bug (reps/side)
-	}
-	return id, val
 }
 
 // setDef is a fixed-value entry (warm-up, cool-down, recovery, control).
@@ -270,9 +166,9 @@ type dayPlan struct {
 	Control  bool
 }
 
-var variantSuffix = [3]string{"−", "", "+"}
-
-// calendar[day] (1-indexed) maps each day to its block/variant per spec §8.
+// calendar[day] (1-indexed) maps each day to its block/variant. The variant per
+// day still bakes the natural day-to-day progression into the base program; the
+// runtime no longer shifts it (difficulty is the universal level instead).
 var calendar = map[int]dayPlan{
 	1: {Code: "A", Variant: 0}, 2: {Code: "A", Variant: 1}, 3: {Code: "A", Variant: 2},
 	4: {Recovery: true},
@@ -294,19 +190,6 @@ var calendar = map[int]dayPlan{
 	28: {Recovery: true},
 	29: {Code: "E", Variant: 2},
 	30: {Control: true},
-}
-
-// BlockLabel returns a short human label for the day's block (e.g. "A+", "R").
-func BlockLabel(day int) string {
-	p := calendar[clampDay(day)]
-	switch {
-	case p.Control:
-		return "Control"
-	case p.Recovery:
-		return "R"
-	default:
-		return p.Code + variantSuffix[p.Variant]
-	}
 }
 
 func clampDay(day int) int {
@@ -373,91 +256,47 @@ func assignRestsAndEst(items []Item, lightRest int) int {
 	return est
 }
 
-// Build assembles the workout for a day (1..30) with no adaptation.
-func Build(day, lightRest int) Workout {
-	return BuildAdapted(day, lightRest, Adapt{})
+// warmupRounds is how many times the shared warm-up series runs each session.
+const warmupRounds = 2
+
+// seqItems converts a fixed sequence (warm-up / cool-down) to base RItems.
+func seqItems(seq []setDef, slot Slot) []RItem {
+	out := make([]RItem, 0, len(seq))
+	for _, s := range seq {
+		e := Pool[s.ID]
+		out = append(out, RItem{ID: s.ID, Unit: e.Unit, Value: s.Val, PerSide: e.PerSide, Slot: slot, Round: 1})
+	}
+	return out
 }
 
-// BuildAdapted assembles the workout for a day applying the adaptation state
-// (variant level shift, forced recovery, pain substitutions). lightRest tunes
-// the rest after light exercises (10..40 s); push-up/plank/between-round rests
-// follow the spec.
-func BuildAdapted(day, lightRest int, a Adapt) Workout {
-	day = clampDay(day)
-	plan := calendar[day]
-	if a.ForceR && !plan.Control {
-		plan = dayPlan{Recovery: true} // deload: next session becomes recovery
-	}
-	// Variant shifted by the adaptation level, clamped to [0,2].
-	variant := plan.Variant + a.LevelDelta
-	if variant < 0 {
-		variant = 0
-	}
-	if variant > 2 {
-		variant = 2
-	}
-
-	var items []Item
-	add := func(id string, slot Slot, val, round int) {
-		if slot == Main {
-			id, val = substitute(id, val, a)
-		}
+// mainItems builds the base MAIN items for a day from the calendar. The fixed
+// per-day variant bakes the natural day-to-day progression into the base values;
+// the runtime applies the universal level on top.
+func mainItems(day int) []RItem {
+	plan := calendar[clampDay(day)]
+	var out []RItem
+	add := func(id string, val, round int) {
 		e := Pool[id]
-		items = append(items, Item{
-			ExerciseID: id,
-			Unit:       e.Unit,
-			Value:      val,
-			Slot:       slot,
-			PerSide:    e.PerSide,
-			Round:      round,
-		})
+		out = append(out, RItem{ID: id, Unit: e.Unit, Value: val, PerSide: e.PerSide, Slot: Main, Round: round})
 	}
-
-	// Warm-up: 2 rounds.
-	for r := 1; r <= 2; r++ {
-		for _, s := range warmupSeq {
-			add(s.ID, Warmup, s.Val, r)
-		}
-	}
-
-	// Main block.
 	switch {
 	case plan.Control:
 		for r := 1; r <= 2; r++ {
 			for _, s := range controlSeq {
-				add(s.ID, Main, s.Val, r)
+				add(s.ID, s.Val, r)
 			}
 		}
-		add("C02", Main, controlPlankSec, 3) // plank challenge
+		add("C02", controlPlankSec, 3) // plank challenge
 	case plan.Recovery:
 		for _, s := range recoverySeq {
-			add(s.ID, Main, s.Val, 1)
+			add(s.ID, s.Val, 1)
 		}
 	default:
 		for r := 1; r <= 2; r++ {
 			for _, bs := range blocks[plan.Code] {
-				add(bs.ID, Main, bs.Vals[variant], r)
+				add(bs.ID, bs.Vals[plan.Variant], r)
 			}
 		}
 	}
-
-	// Cool-down: 1 round.
-	for _, s := range cooldownSeq {
-		add(s.ID, Cooldown, s.Val, 1)
-	}
-
-	est := assignRestsAndEst(items, lightRest)
-
-	// Label reflects the actually-built plan (forced recovery / shifted variant).
-	label := BlockLabel(day)
-	switch {
-	case plan.Control:
-		label = "Control"
-	case plan.Recovery:
-		label = "R"
-	default:
-		label = plan.Code + variantSuffix[variant]
-	}
-
-	return Workout{Day: day, BlockCode: label, Items: items, EstSec: est}
+	return out
 }

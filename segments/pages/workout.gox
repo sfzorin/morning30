@@ -17,12 +17,9 @@ import (
 	"github.com/doors-dev/gox"
 )
 
-// completeReq is the body sent by the client when a day is finished, optionally
-// carrying the post-workout feedback.
+// completeReq is the body sent by the client when a day is finished.
 type completeReq struct {
-	Day         int              `json:"day"`
-	HasFeedback bool             `json:"hasFeedback"`
-	Feedback    content.Feedback `json:"feedback"`
+	Day int `json:"day"`
 }
 
 // playerRepl is the minimal data for a manual exercise replacement.
@@ -142,9 +139,7 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, id string, value 
 func (w workoutPage) payloadJSON() string {
 	l := i18n.Lang(w.sess.Lang)
 	day := w.clampDay()
-	adapt, _ := app.DB.GetAdaptState(w.sess.UserID)
-	streak, _ := app.DB.Streak(w.sess.UserID, app.Today())
-	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest, adapt.ToAdapt().SuppressIncreaseOnGap(streak > 0))
+	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest)
 	cat := app.UserCatalog(w.sess.UserID)
 
 	items := make([]playerItem, 0, len(wk.Items))
@@ -238,22 +233,15 @@ func (w workoutPage) payloadJSON() string {
 	return string(b)
 }
 
-// complete is the JS hook fired when a day finishes. It records today's
-// activity (streak/calendar), advances the looping 30-day cycle when the
-// finished day is the current one, and folds the optional post-workout feedback
-// into the adaptation state that shapes the next workout. Returns the streak.
+// complete is the JS hook fired when a day finishes. It records today's activity
+// (streak/calendar) and advances the looping 30-day cycle when the finished day
+// is the current one. Returns the streak.
 func (w workoutPage) complete(ctx context.Context, r doors.RequestHook[completeReq]) (any, bool) {
 	uid := w.sess.UserID
 	day := w.clampDay()
 	today := app.Today()
-	data := r.Data()
 
 	_ = app.DB.RecordActivity(uid, today)
-
-	// One session passed: decay block counters and clear the one-shot
-	// level/force-R that applied to this workout.
-	st, _ := app.DB.GetAdaptState(uid)
-	st = st.Decay()
 
 	if pos, err := app.DB.Position(uid); err == nil {
 		if day == pos%content.TotalDays+1 {
@@ -261,26 +249,8 @@ func (w workoutPage) complete(ctx context.Context, r doors.RequestHook[completeR
 		}
 	}
 
-	if data.HasFeedback {
-		st = content.NextAdapt(st, data.Feedback)
-		_ = app.DB.AddFeedback(uid, today, day, data.Feedback)
-	}
-	_ = app.DB.SetAdaptState(uid, st)
-
 	streak, _ := app.DB.Streak(uid, today)
 	return streak, false
-}
-
-// painGroup renders a 3-chip pain question (None / A bit / Pain → 0 / 3 / 6).
-elem (w workoutPage) painGroup(l i18n.Lang, key, labelKey string) {
-	<div class="fb-q fb-group" data-key=(key)>
-		<label class="fb-label">~(i18n.T(l, labelKey))</label>
-		<div class="fb-chips">
-			<button type="button" class="fb-chip active" data-val="0">~(i18n.T(l, "fb.none"))</button>
-			<button type="button" class="fb-chip" data-val="3">~(i18n.T(l, "fb.some"))</button>
-			<button type="button" class="fb-chip" data-val="6">~(i18n.T(l, "fb.pain"))</button>
-		</div>
-	</div>
 }
 
 elem (w workoutPage) Main() {
@@ -352,33 +322,6 @@ elem (w workoutPage) Main() {
 				</div>
 				<button class="info-replace btn" type="button">~(i18n.T(l, "info.replace"))</button>
 				<button class="info-close btn primary" type="button">~(i18n.T(l, "info.close"))</button>
-			</div>
-		</div>
-
-		~// Post-workout feedback (spec §14). Server-rendered labels; JS collects values.
-		<div class="feedback-overlay hidden">
-			<h2>~(i18n.T(l, "fb.title"))</h2>
-			<div class="fb-q">
-				<label class="row-between">
-					<span>~(i18n.T(l, "fb.difficulty"))</span>
-					<output class="fb-diff-out">6</output>
-				</label>
-				<input class="fb-diff" type="range" min="1" max="10" value="6">
-			</div>
-			~(w.painGroup(l, "knee", "fb.knee"))
-			~(w.painGroup(l, "back", "fb.back"))
-			~(w.painGroup(l, "shoulder", "fb.shoulder"))
-			<div class="fb-q fb-group" data-key="energy">
-				<label class="fb-label">~(i18n.T(l, "fb.energy"))</label>
-				<div class="fb-chips">
-					<button type="button" class="fb-chip" data-val="worse">~(i18n.T(l, "fb.worse"))</button>
-					<button type="button" class="fb-chip active" data-val="normal">~(i18n.T(l, "fb.normal"))</button>
-					<button type="button" class="fb-chip" data-val="better">~(i18n.T(l, "fb.better"))</button>
-				</div>
-			</div>
-			<div class="fb-actions">
-				<button type="button" class="fb-save btn primary">~(i18n.T(l, "fb.save"))</button>
-				<button type="button" class="fb-skip">~(i18n.T(l, "fb.skip"))</button>
 			</div>
 		</div>
 

@@ -80,11 +80,6 @@
     restSkip: $(".rest-skip"),
     restBack: $(".rest-back"),
     restTitle: $(".rest-title"),
-    feedback: $(".feedback-overlay"),
-    fbDiff: $(".fb-diff"),
-    fbDiffOut: $(".fb-diff-out"),
-    fbSave: $(".fb-save"),
-    fbSkip: $(".fb-skip"),
     doneOverlay: $(".done-overlay"),
     doneTitle: $(".done-title"),
     doneEnc: $(".done-enc"),
@@ -298,9 +293,8 @@
     doRest(rest, nextName, false, function () { startItem(next); });
   }
 
-  // finish ends the workout and shows the feedback questionnaire first; the
-  // celebration + server save happen on Save/Skip (submitWorkout).
-  function finish() {
+  // finish ends the workout: celebrate and report completion to the server.
+  async function finish() {
     if (finished) return;
     finished = true;
     clearTicker();
@@ -309,32 +303,6 @@
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
     el.rest.classList.add("hidden");
-    if (el.feedback) {
-      el.feedback.classList.remove("hidden");
-    } else {
-      submitWorkout(null);
-    }
-  }
-
-  function fbVal(key) {
-    var a = el.feedback.querySelector('.fb-group[data-key="' + key + '"] .fb-chip.active');
-    if (a) return a.getAttribute("data-val");
-    return key === "energy" ? "normal" : "0";
-  }
-  function collectFeedback() {
-    return {
-      difficulty: parseInt(el.fbDiff.value, 10) || 6,
-      knee: parseInt(fbVal("knee"), 10) || 0,
-      back: parseInt(fbVal("back"), 10) || 0,
-      shoulder: parseInt(fbVal("shoulder"), 10) || 0,
-      energy: fbVal("energy")
-    };
-  }
-
-  // submitWorkout shows the celebration and reports completion (+ optional
-  // feedback) to the server.
-  async function submitWorkout(fb) {
-    if (el.feedback) el.feedback.classList.add("hidden");
     el.doneOverlay.classList.remove("hidden");
 
     var name = (payload.name || "").trim();
@@ -346,10 +314,8 @@
     speak(name ? name + ", " + cues.well_done : cues.workout_end);
     if (message) setTimeout(function () { speak(message); }, 1100);
 
-    var body = { day: payload.day };
-    if (fb) { body.hasFeedback = true; body.feedback = fb; }
     try {
-      var streak = await $hook("complete", body);
+      var streak = await $hook("complete", { day: payload.day });
       if (typeof streak === "number") {
         el.doneStreak.textContent = "🔥 " + streak + " · " + t("streak");
       }
@@ -420,22 +386,6 @@
     el.pause.textContent = paused ? t("resume") : t("pause");
     if (paused) shutUp();
   });
-
-  // Feedback questionnaire wiring.
-  if (el.fbDiff) {
-    el.fbDiff.addEventListener("input", function () { el.fbDiffOut.textContent = el.fbDiff.value; });
-  }
-  if (el.feedback) {
-    el.feedback.addEventListener("click", function (e) {
-      var chip = e.target && e.target.closest ? e.target.closest(".fb-chip") : null;
-      if (!chip) return;
-      var chips = chip.parentElement.querySelectorAll(".fb-chip");
-      for (var k = 0; k < chips.length; k++) chips[k].classList.remove("active");
-      chip.classList.add("active");
-    });
-  }
-  if (el.fbSave) el.fbSave.addEventListener("click", function () { submitWorkout(collectFeedback()); });
-  if (el.fbSkip) el.fbSkip.addEventListener("click", function () { submitWorkout(null); });
 
   // Exercise detail card: description, how-to, correct, mistakes, breathing,
   // warning, and a manual replace button. Opening it pauses the timer (reading

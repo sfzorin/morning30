@@ -65,6 +65,7 @@ elem (s settingsPage) Main() {
 			firstID = entries[0].ID
 		}
 		selSrc := doors.NewSource(firstID)
+		levelSrc := doors.NewSource(s.sess.Level)
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
@@ -131,6 +132,19 @@ elem (s settingsPage) Main() {
 					</div>
 				</form>
 
+				~// Universal difficulty level — applies to any program, ±10% per step.
+				<div class="srow col">
+					<div class="row-between">
+						<span>~(i18n.T(l, "settings.difficulty"))</span>
+						<output class="rest-out">
+							~(levelSrc.Bind(elem(v int) {
+								~(levelLabel(l, v))
+							}))
+						</output>
+					</div>
+					<input type="range" min="-3" max="3" step="1" value=(s.sess.Level) (doors.AChange{On: s.setLevel(levelSrc)})>
+				</div>
+
 				~// Collapsible cycle viewer/editor: choose program, browse days, full CRUD, save your version.
 				<details class="cycle-details">
 					<summary>~(i18n.T(l, "settings.cycle"))</summary>
@@ -155,7 +169,8 @@ elem (s settingsPage) Main() {
 						</select>
 					</div>
 
-					~// Reactive editor for the selected day: replace / reorder / delete / add / value.
+					~// Reactive editor: shared warm-up + cool-down (whole series) and the
+					~// selected day's main block. Editing warm-up/cool-down affects all days.
 					~(editSrc.Bind(elem(st editState) {
 						~{
 							p, _ := content.ParseResolved(st.JSON)
@@ -164,31 +179,17 @@ elem (s settingsPage) Main() {
 								idx = 0
 							}
 						}
-						~(if len(p.Days) == 0 {
-						} else {
-						~{ rd := p.Days[idx] }
-						<div class="cyc-head">~(rd.Label, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
-						<ol class="cyc-list edit">
-							~(for ii := range rd.Items {
-								~{ it := rd.Items[ii] }
-								<li class="cyc-row">
-									<select class="cyc-select" (doors.AChange{On: s.editReplace(editSrc, cat, ii)})>
-										~(s.exOptions(entries, l, it.ID))
-									</select>
-									<span class="cyc-edit">
-										<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, ii)})>
-										<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
-									</span>
-									<span class="cyc-ops">
-										~>doors.AClick{On: s.editMove(editSrc, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
-										~>doors.AClick{On: s.editMove(editSrc, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
-										~>doors.AClick{On: s.editDelete(editSrc, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
-									</span>
-								</li>
-							})
-						</ol>
-						~>doors.AClick{On: s.editAdd(editSrc, cat)} <button class="btn small cyc-add" type="button">＋ ~(i18n.T(l, "settings.add_exercise"))</button>
+						<div class="cyc-head">~(i18n.T(l, "settings.warmup_series"), " · ", p.WarmupRounds, "×")</div>
+						~(s.editList(editSrc, cat, entries, l, p.Warmup, "warmup"))
+
+						~(if len(p.Days) > 0 {
+							~{ rd := p.Days[idx] }
+							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
+							~(s.editList(editSrc, cat, entries, l, rd.Items, "day"))
 						})
+
+						<div class="cyc-head">~(i18n.T(l, "settings.cooldown_series"))</div>
+						~(s.editList(editSrc, cat, entries, l, p.Cooldown, "cooldown"))
 					}))
 
 					<div class="srow cyc-save">
@@ -350,39 +351,115 @@ func (s settingsPage) setDay(editSrc doors.Source[editState]) func(context.Conte
 	}
 }
 
-// mutateProg parses the working-copy JSON, applies fn to the selected day's
-// item list, and stores it back (triggering a re-render).
-func mutateProg(ctx context.Context, editSrc doors.Source[editState], fn func(items []content.RItem) []content.RItem) {
+// slotForTarget maps an editor section to the slot its items belong to.
+func slotForTarget(target string) content.Slot {
+	switch target {
+	case "warmup":
+		return content.Warmup
+	case "cooldown":
+		return content.Cooldown
+	default:
+		return content.Main
+	}
+}
+
+// mutateList parses the working-copy JSON, applies fn to the target list — the
+// shared warm-up / cool-down (whole series) or the selected day's main block —
+// and stores it back (triggering a re-render).
+func mutateList(ctx context.Context, editSrc doors.Source[editState], target string, fn func(items []content.RItem) []content.RItem) {
 	st := editSrc.Get()
 	p, err := content.ParseResolved(st.JSON)
 	if err != nil {
 		return
 	}
-	d := clampDay(st.Day, len(p.Days))
-	if d < 1 {
-		return
+	switch target {
+	case "warmup":
+		p.Warmup = fn(p.Warmup)
+	case "cooldown":
+		p.Cooldown = fn(p.Cooldown)
+	default:
+		d := clampDay(st.Day, len(p.Days))
+		if d < 1 {
+			return
+		}
+		p.Days[d-1].Items = fn(p.Days[d-1].Items)
 	}
-	p.Days[d-1].Items = fn(p.Days[d-1].Items)
 	st.JSON = p.Marshal()
 	editSrc.Update(ctx, st)
 }
 
+// editList renders one CRUD section (warm-up / day main / cool-down).
+elem (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Catalog, entries []catalog.Entry, l i18n.Lang, items []content.RItem, target string) {
+	<ol class="cyc-list edit">
+		~(for ii := range items {
+			~{ it := items[ii] }
+			<li class="cyc-row">
+				<select class="cyc-select" (doors.AChange{On: s.editReplace(editSrc, cat, target, ii)})>
+					~(s.exOptions(entries, l, it.ID))
+				</select>
+				<span class="cyc-edit">
+					<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, target, ii)})>
+					<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
+				</span>
+				<span class="cyc-ops">
+					~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
+					~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
+					~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
+				</span>
+			</li>
+		})
+	</ol>
+	~>doors.AClick{On: s.editAdd(editSrc, cat, target)} <button class="btn small cyc-add" type="button">＋ ~(i18n.T(l, "settings.add_exercise"))</button>
+}
+
+// levelLabel formats the difficulty level as a percent (or the "base" word).
+func levelLabel(l i18n.Lang, level int) string {
+	if level == 0 {
+		return i18n.T(l, "settings.level_base")
+	}
+	if level > 0 {
+		return "+" + strconv.Itoa(level*10) + "%"
+	}
+	return strconv.Itoa(level*10) + "%"
+}
+
+// setLevel persists the universal difficulty level immediately and updates the session.
+func (s settingsPage) setLevel(levelSrc doors.Source[int]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		n := r.Event().Number
+		if n == nil {
+			return false
+		}
+		lv := int(*n)
+		if lv < -3 {
+			lv = -3
+		}
+		if lv > 3 {
+			lv = 3
+		}
+		_ = app.DB.SetLevel(s.sess.UserID, lv)
+		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session { cur.Level = lv; return cur })
+		levelSrc.Update(ctx, lv)
+		return false
+	}
+}
+
 // editReplace swaps the exercise at index ii for the one picked in the dropdown,
 // resetting unit/side/slot from the chosen exercise and converting the value.
-func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.Catalog, ii int) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.Catalog, target string, ii int) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
 	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 		newID := r.Event().Value
 		def, ok := cat.Def(newID)
 		if !ok {
 			return false
 		}
-		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+		mutateList(ctx, editSrc, target, func(its []content.RItem) []content.RItem {
 			if ii < 0 || ii >= len(its) {
 				return its
 			}
 			old := its[ii]
 			its[ii] = content.RItem{
-				ID: newID, Unit: def.Unit, PerSide: def.PerSide, Slot: def.Slot,
+				ID: newID, Unit: def.Unit, PerSide: def.PerSide, Slot: slotForTarget(target),
 				Value: content.ConvertValue(old.Unit, def.Unit, old.Value), Round: old.Round,
 			}
 			return its
@@ -392,7 +469,7 @@ func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.C
 }
 
 // editSetValue updates the value (reps/seconds) at index ii.
-func (s settingsPage) editSetValue(editSrc doors.Source[editState], ii int) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+func (s settingsPage) editSetValue(editSrc doors.Source[editState], target string, ii int) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
 	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 		n := r.Event().Number
 		if n == nil {
@@ -405,7 +482,7 @@ func (s settingsPage) editSetValue(editSrc doors.Source[editState], ii int) func
 		if v > 600 {
 			v = 600
 		}
-		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+		mutateList(ctx, editSrc, target, func(its []content.RItem) []content.RItem {
 			if ii >= 0 && ii < len(its) {
 				its[ii].Value = v
 			}
@@ -416,9 +493,9 @@ func (s settingsPage) editSetValue(editSrc doors.Source[editState], ii int) func
 }
 
 // editMove shifts the item at index ii by delta (-1 up / +1 down).
-func (s settingsPage) editMove(editSrc doors.Source[editState], ii, delta int) func(context.Context, doors.RequestPointer) bool {
+func (s settingsPage) editMove(editSrc doors.Source[editState], target string, ii, delta int) func(context.Context, doors.RequestPointer) bool {
 	return func(ctx context.Context, r doors.RequestPointer) bool {
-		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+		mutateList(ctx, editSrc, target, func(its []content.RItem) []content.RItem {
 			j := ii + delta
 			if ii < 0 || ii >= len(its) || j < 0 || j >= len(its) {
 				return its
@@ -431,9 +508,9 @@ func (s settingsPage) editMove(editSrc doors.Source[editState], ii, delta int) f
 }
 
 // editDelete removes the item at index ii.
-func (s settingsPage) editDelete(editSrc doors.Source[editState], ii int) func(context.Context, doors.RequestPointer) bool {
+func (s settingsPage) editDelete(editSrc doors.Source[editState], target string, ii int) func(context.Context, doors.RequestPointer) bool {
 	return func(ctx context.Context, r doors.RequestPointer) bool {
-		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+		mutateList(ctx, editSrc, target, func(its []content.RItem) []content.RItem {
 			if ii < 0 || ii >= len(its) {
 				return its
 			}
@@ -446,29 +523,37 @@ func (s settingsPage) editDelete(editSrc doors.Source[editState], ii int) func(c
 	}
 }
 
-// editAdd appends a default exercise (push-ups) to the selected day.
-func (s settingsPage) editAdd(editSrc doors.Source[editState], cat catalog.Catalog) func(context.Context, doors.RequestPointer) bool {
+// editAdd appends a default exercise (by section) to the target list.
+func (s settingsPage) editAdd(editSrc doors.Source[editState], cat catalog.Catalog, target string) func(context.Context, doors.RequestPointer) bool {
 	return func(ctx context.Context, r doors.RequestPointer) bool {
-		it := defaultItem(cat)
-		mutateProg(ctx, editSrc, func(its []content.RItem) []content.RItem {
+		it := defaultItem(cat, target)
+		mutateList(ctx, editSrc, target, func(its []content.RItem) []content.RItem {
 			return append(append([]content.RItem{}, its...), it)
 		})
 		return false
 	}
 }
 
-// defaultItem is the exercise added by the "add" button.
-func defaultItem(cat catalog.Catalog) content.RItem {
+// defaultItem is the exercise added by a section's "add" button.
+func defaultItem(cat catalog.Catalog, target string) content.RItem {
 	id := "M01"
-	unit, perSide, slot := content.Reps, false, content.Main
+	switch target {
+	case "warmup":
+		id = "W03"
+	case "cooldown":
+		id = "CD02"
+	}
+	unit, perSide := content.Reps, false
 	if def, ok := cat.Def(id); ok {
-		unit, perSide, slot = def.Unit, def.PerSide, def.Slot
+		unit, perSide = def.Unit, def.PerSide
 	}
 	val := 10
 	if unit == content.Seconds {
 		val = 30
+	} else if unit == content.Breaths {
+		val = 5
 	}
-	return content.RItem{ID: id, Unit: unit, Value: val, PerSide: perSide, Slot: slot, Round: 1}
+	return content.RItem{ID: id, Unit: unit, Value: val, PerSide: perSide, Slot: slotForTarget(target), Round: 1}
 }
 
 // saveEditor stores the edited program as the user's custom version and reloads.

@@ -5,7 +5,10 @@ import (
 	"testing"
 )
 
-func mainItems(w Workout) []Item {
+// base builds a day's workout from the built-in program at level 0.
+func base(day int) Workout { return ResolveBuiltin().Workout(day, 18, 0) }
+
+func mainOf(w Workout) []Item {
 	var out []Item
 	for _, it := range w.Items {
 		if it.Slot == Main {
@@ -19,7 +22,7 @@ func isPlank(id string) bool { return id == "C02" || id == "C05" || id == "C08" 
 
 func TestStructureWarmupCooldown(t *testing.T) {
 	for day := 1; day <= TotalDays; day++ {
-		w := Build(day, 18)
+		w := base(day)
 		// Warm-up: 10 exercises × 2 rounds = first 20 items, all W*.
 		if len(w.Items) < 26 {
 			t.Fatalf("day %d: too few items (%d)", day, len(w.Items))
@@ -36,14 +39,27 @@ func TestStructureWarmupCooldown(t *testing.T) {
 				t.Fatalf("day %d: expected cool-down at the end, got %s", day, it.ExerciseID)
 			}
 		}
-		// Last item has no trailing rest.
 		if w.Items[len(w.Items)-1].Rest != 0 {
 			t.Errorf("day %d: last item has rest", day)
 		}
-		// All items are known exercises.
 		for _, it := range w.Items {
 			if _, ok := Get(it.ExerciseID); !ok {
 				t.Errorf("day %d: unknown exercise %s", day, it.ExerciseID)
+			}
+		}
+	}
+}
+
+// Warm-up and cool-down are stored once and identical for every day.
+func TestSharedWarmupCooldown(t *testing.T) {
+	r := ResolveBuiltin()
+	if len(r.Warmup) != 10 || r.WarmupRounds != 2 || len(r.Cooldown) != 6 {
+		t.Fatalf("shared series: warmup=%d rounds=%d cooldown=%d", len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
+	}
+	for _, d := range r.Days {
+		for _, it := range d.Items {
+			if it.Slot != Main {
+				t.Fatalf("day %d main list has a non-main item %s (%s)", d.Day, it.ID, it.Slot)
 			}
 		}
 	}
@@ -55,14 +71,11 @@ func TestPlankChallengeAndProgression(t *testing.T) {
 		if p.Recovery {
 			continue
 		}
-		w := Build(day, 18)
-		m := mainItems(w)
+		m := mainOf(base(day))
 		last := m[len(m)-1]
 		if !isPlank(last.ExerciseID) {
 			t.Errorf("day %d: main does not end with a plank (got %s)", day, last.ExerciseID)
 		}
-		// Working-day plank is never below 45 s (spec). RKC (C08) is the
-		// intentional short exception (25–30 s).
 		if last.ExerciseID == "C02" && last.Value < 45 {
 			t.Errorf("day %d: plank %ds < 45s", day, last.Value)
 		}
@@ -80,9 +93,7 @@ func TestRecoveryDays(t *testing.T) {
 			continue
 		}
 		rCount++
-		w := Build(day, 18)
-		// Recovery main = exactly 1 round.
-		for _, it := range mainItems(w) {
+		for _, it := range mainOf(base(day)) {
 			if it.Round != 1 {
 				t.Errorf("R day %d: main round %d, want single round", day, it.Round)
 			}
@@ -97,7 +108,6 @@ func TestRecoveryDays(t *testing.T) {
 }
 
 func TestRecoveryCadence(t *testing.T) {
-	// No more than 4 consecutive working days without a recovery day.
 	run := 0
 	for day := 1; day <= TotalDays; day++ {
 		if calendar[day].Recovery {
@@ -112,7 +122,6 @@ func TestRecoveryCadence(t *testing.T) {
 }
 
 func TestForbiddenExercisesAbsent(t *testing.T) {
-	// The library itself must contain none of the forbidden movements.
 	forbidden := []string{"jump", "burpee", "jack", "mountain", "lunge", "highknee", "stepup"}
 	for id := range Pool {
 		low := strings.ToLower(id)
@@ -124,95 +133,44 @@ func TestForbiddenExercisesAbsent(t *testing.T) {
 	}
 }
 
-func hasID(w Workout, id string) bool {
-	for _, it := range w.Items {
-		if it.ExerciseID == id {
-			return true
+// ScaleValue: linear ±10% per step on reps/seconds; breaths fixed; min clamps.
+func TestScaleValue(t *testing.T) {
+	cases := []struct {
+		u             Unit
+		val, lvl, want int
+	}{
+		{Reps, 11, 0, 11}, {Reps, 11, 3, 14}, {Reps, 11, -3, 8},
+		{Seconds, 50, 2, 60}, {Seconds, 50, -3, 35},
+		{Breaths, 5, 3, 5}, {Breaths, 5, -3, 5},
+		{Reps, 1, -3, 1}, {Seconds, 5, -3, 5}, // clamps
+	}
+	for _, c := range cases {
+		if got := ScaleValue(c.u, c.val, c.lvl); got != c.want {
+			t.Errorf("ScaleValue(%s,%d,%d) = %d, want %d", c.u, c.val, c.lvl, got, c.want)
 		}
 	}
-	return false
 }
 
-func TestNextAdaptRules(t *testing.T) {
-	base := AdaptState{}
-	// Easy + no pain → level up.
-	if NextAdapt(base, Feedback{Difficulty: 5, Energy: "normal"}).Level != 1 {
-		t.Errorf("easy no-pain should bump level +1")
+// The level scales the main block but not warm-up/cool-down.
+func TestLevelScalingInWorkout(t *testing.T) {
+	r := ResolveBuiltin()
+	wuVal := r.Workout(1, 18, 0).Items[0].Value
+	for _, lvl := range []int{-3, 0, 3} {
+		if v := r.Workout(1, 18, lvl).Items[0].Value; v != wuVal {
+			t.Errorf("level %d changed warm-up value (%d != %d)", lvl, v, wuVal)
+		}
 	}
-	// Easy but with knee pain → hold, and block the mini-squat.
-	s := NextAdapt(base, Feedback{Difficulty: 4, Knee: 5, Energy: "normal"})
-	if s.Level != 0 || s.Knee != 3 {
-		t.Errorf("knee pain: level %d knee %d, want 0 and 3", s.Level, s.Knee)
+	// Day 1 first push-up base = 10 reps → +1 = 11, +3 = 13, −3 = 7.
+	if got := mainOf(r.Workout(1, 18, 1))[0].Value; got != 11 {
+		t.Errorf("level +1 push-ups = %d, want 11", got)
 	}
-	// Hard → level down; very hard → force R.
-	if NextAdapt(base, Feedback{Difficulty: 8, Energy: "normal"}).Level != -1 {
-		t.Errorf("difficulty 8 should drop a level")
-	}
-	if !NextAdapt(base, Feedback{Difficulty: 10, Energy: "normal"}).ForceR {
-		t.Errorf("difficulty 10 should force recovery")
-	}
-	// Back / shoulder pain set their blocks.
-	if NextAdapt(base, Feedback{Difficulty: 6, Back: 4, Energy: "normal"}).Back != 3 {
-		t.Errorf("back pain should block 3 sessions")
-	}
-	if NextAdapt(base, Feedback{Difficulty: 6, Shoulder: 3, Energy: "normal"}).Shoulder != 3 {
-		t.Errorf("shoulder pain should block 3 sessions")
-	}
-	// Two "worse" energy reports in a row → force R.
-	s1 := NextAdapt(base, Feedback{Difficulty: 6, Energy: "worse"})
-	if s1.ForceR {
-		t.Errorf("single worse-energy should not force R")
-	}
-	s2 := NextAdapt(s1, Feedback{Difficulty: 6, Energy: "worse"})
-	if !s2.ForceR {
-		t.Errorf("two worse-energy in a row should force R")
-	}
-}
-
-func TestSuppressIncreaseOnGap(t *testing.T) {
-	up := Adapt{LevelDelta: 1}
-	if up.SuppressIncreaseOnGap(true).LevelDelta != 1 {
-		t.Errorf("alive streak should keep the +")
-	}
-	if up.SuppressIncreaseOnGap(false).LevelDelta != 0 {
-		t.Errorf("broken streak should drop the + (don't increase after a skip)")
-	}
-	down := Adapt{LevelDelta: -1}
-	if down.SuppressIncreaseOnGap(false).LevelDelta != -1 {
-		t.Errorf("a deload should survive a gap")
-	}
-}
-
-func TestBuildAdapted(t *testing.T) {
-	// Force recovery turns a working day into R.
-	w := BuildAdapted(1, 18, Adapt{ForceR: true})
-	if w.BlockCode != "R" {
-		t.Errorf("forced recovery block = %s, want R", w.BlockCode)
-	}
-	// Level +1 on day 1 (A−) raises the first push-up set 10 → 11.
-	w = BuildAdapted(1, 18, Adapt{LevelDelta: 1})
-	if mainItems(w)[0].Value != 11 {
-		t.Errorf("level +1 push-ups = %d, want 11", mainItems(w)[0].Value)
-	}
-	// Knee block removes the mini-squat (day 9 = C−, has L01).
-	w = BuildAdapted(9, 18, Adapt{KneeBlock: true})
-	if hasID(w, "L01") {
-		t.Errorf("knee block should remove L01")
-	}
-	// Back block swaps scissors C01 → toe taps C06 (day 1 has C01).
-	w = BuildAdapted(1, 18, Adapt{BackBlock: true})
-	if hasID(w, "C01") || !hasID(w, "C06") {
-		t.Errorf("back block should swap C01 → C06")
-	}
-	// Shoulder block swaps narrow push-ups M02 → M01 (day 5 = B has M02).
-	w = BuildAdapted(5, 18, Adapt{ShoulderBlock: true})
-	if hasID(w, "M02") {
-		t.Errorf("shoulder block should remove M02")
+	if got := mainOf(r.Workout(1, 18, 3))[0].Value; got != 13 {
+		t.Errorf("level +3 push-ups = %d, want 13", got)
 	}
 }
 
 func TestRestRules(t *testing.T) {
-	w := Build(1, 18) // block A
+	w := base(1) // block A
 	for i, it := range w.Items {
 		if i == len(w.Items)-1 {
 			continue
@@ -222,8 +180,6 @@ func TestRestRules(t *testing.T) {
 			if it.Rest != 35 {
 				t.Errorf("after push-ups rest = %d, want 35", it.Rest)
 			}
-		case isPlank(it.ExerciseID) && w.Items[i+1].Slot == Main:
-			// plank rest only checked when not the last main item
 		}
 	}
 }
