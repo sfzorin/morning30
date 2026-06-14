@@ -92,7 +92,7 @@ func Builtin(id string) (Doc, bool) {
 	d := Doc{
 		ID: id, Slot: string(ex.Slot), Unit: string(ex.Unit), PerSide: ex.PerSide,
 		KneeLoad: string(ex.KneeLoad), Difficulty: ex.Difficulty, Replacement: ex.Replacement,
-		SVG:     "/static/ex/" + id + ".svg",
+		SVG:     "/static/ex/" + id + ".png",
 		Content: map[string]Loc{},
 	}
 	for _, m := range i18n.Languages {
@@ -266,12 +266,12 @@ func (c Catalog) Warning(l i18n.Lang, id string) string {
 	return ""
 }
 
-// SVG returns the figure URL for an exercise.
+// SVG returns the figure URL for an exercise (a static PNG under /static/ex).
 func (c Catalog) SVG(id string) string {
 	if d, ok := c.resolve(id); ok && d.SVG != "" {
 		return d.SVG
 	}
-	return "/static/ex/" + id + ".svg"
+	return "/static/ex/" + id + ".png"
 }
 
 // Doc returns the self-contained doc for an exercise (custom -> base -> built-in).
