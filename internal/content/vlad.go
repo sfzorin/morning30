@@ -10,7 +10,7 @@ package content
 // Low pogo jumps (J01) carry a lighter substitute (J02, marching high knees)
 // for recovery days.
 var vladWarmupSeq = []setDef{
-	{"W07", 20}, {"W01", 30}, {"W08", 30}, {"W04", 10}, {"L10", 10}, {"J01", 20},
+	{"W07", 20}, {"W09", 30}, {"W08", 30}, {"W04", 10}, {"L10", 10}, {"J01", 20},
 }
 
 // vladCooldownSeq is Vlad's 4-exercise cool-down (one round), the same every day.

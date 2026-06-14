@@ -79,6 +79,7 @@ var library = []Exercise{
 	{ID: "W06", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // high plank weight shift
 	{ID: "W07", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // standing breathing + reach (Vlad)
 	{ID: "W08", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // standing torso rotations (Vlad)
+	{ID: "W09", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // arm swings (Vlad)
 
 	// ---- Abs / core ----
 	{ID: "C01", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone},                      // forearm plank

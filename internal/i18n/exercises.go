@@ -11,6 +11,7 @@ var exerciseNames = map[string][7]string{
 	"W06": {"Высокая планка с переносом веса", "High plank weight shift", "Yüksek plankta ağırlık aktarma", "Hoher Stütz mit Gewichtsverlagerung", "Plancha alta con cambio de peso", "Planche haute, transfert de poids", "Plank alto con spostamento del peso"},
 	"W07": {"Дыхание с вытяжением", "Standing breathing + reach", "Ayakta nefes + uzanma", "Atmen mit Strecken", "Respiración con estiramiento", "Respiration avec étirement", "Respirazione con allungamento"},
 	"W08": {"Вращения корпуса стоя", "Standing torso rotations", "Ayakta gövde rotasyonu", "Rumpfrotationen im Stehen", "Rotaciones de torso de pie", "Rotations du torse debout", "Rotazioni del busto in piedi"},
+	"W09": {"Махи руками", "Arm swings", "Kol savurma", "Armschwünge", "Balanceo de brazos", "Balancements des bras", "Slanci delle braccia"},
 
 	// ---- Abs / core ----
 	"C01": {"Планка на локтях", "Forearm plank", "Dirsek plank", "Unterarmstütz", "Plancha de antebrazos", "Planche sur les avant-bras", "Plank sugli avambracci"},
