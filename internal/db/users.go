@@ -169,6 +169,25 @@ func clampLevel(l int) int {
 	return l
 }
 
+// GetSex returns the user's figure preference ("m" or "f"; defaults to "m").
+func (d *DB) GetSex(userID int64) string {
+	var s string
+	_ = d.sql.QueryRow(`SELECT sex FROM users WHERE id = ?`, userID).Scan(&s)
+	if s != "f" {
+		return "m"
+	}
+	return "f"
+}
+
+// SetSex stores the user's figure preference (anything but "f" is stored as "m").
+func (d *DB) SetSex(userID int64, sex string) error {
+	if sex != "f" {
+		sex = "m"
+	}
+	_, err := d.sql.Exec(`UPDATE users SET sex = ? WHERE id = ?`, sex, userID)
+	return err
+}
+
 // GetCustomExercises returns the user's custom exercise library JSON ("" = none).
 func (d *DB) GetCustomExercises(userID int64) (string, error) {
 	var s string

@@ -274,6 +274,21 @@ func (c Catalog) SVG(id string) string {
 	return "/static/ex/" + id + ".png"
 }
 
+// Figure returns the figure URL for an exercise, choosing the male/female
+// variant by sex ("m"/"f"). A custom (per-user) exercise keeps its own SVG; the
+// built-in figures live under /static/ex/<sex>/<id>.png.
+func (c Catalog) Figure(id, sex string) string {
+	if c.IsCustom(id) {
+		if d, ok := c.resolve(id); ok && d.SVG != "" {
+			return d.SVG
+		}
+	}
+	if sex != "f" {
+		sex = "m"
+	}
+	return "/static/ex/" + sex + "/" + id + ".png"
+}
+
 // Doc returns the self-contained doc for an exercise (custom -> base -> built-in).
 func (c Catalog) Doc(id string) (Doc, bool) {
 	return c.resolve(id)

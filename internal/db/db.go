@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS users (
     rest_seconds INTEGER NOT NULL DEFAULT 20,
     voice        INTEGER NOT NULL DEFAULT 1,
     voice_mode   TEXT NOT NULL DEFAULT 'normal', -- off | min | normal | detailed
+    sex          TEXT NOT NULL DEFAULT 'm',     -- m | f; picks the figure variant
     is_guest     INTEGER NOT NULL DEFAULT 0,    -- anonymous cookie-only account
     position     INTEGER NOT NULL DEFAULT 0,   -- completed sessions in the looping 30-day cycle
     adapt_level    INTEGER NOT NULL DEFAULT 0,  -- variant delta for the next workout
@@ -132,6 +133,7 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN active_program TEXT NOT NULL DEFAULT 'builtin'`,
 		`ALTER TABLE users ADD COLUMN custom_exercises TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN level INTEGER NOT NULL DEFAULT 0`,
+		`ALTER TABLE users ADD COLUMN sex TEXT NOT NULL DEFAULT 'm'`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

@@ -23,6 +23,7 @@ type settingsForm struct {
 	Name      string `form:"name"`
 	Rest      int    `form:"rest"`
 	VoiceMode string `form:"voice_mode"`
+	Sex       string `form:"sex"`
 }
 
 // editState is the editor's working copy: the selected day plus the program as
@@ -67,6 +68,7 @@ elem (s settingsPage) Main() {
 		}
 		selSrc := doors.NewSource(firstID)
 		levelSrc := doors.NewSource(s.sess.Level)
+		curSex := app.DB.GetSex(s.sess.UserID)
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
@@ -121,6 +123,13 @@ elem (s settingsPage) Main() {
 							<option value="min" selected=func { return vm == "min" }>~(i18n.T(l, "voice.min"))</option>
 							<option value="normal" selected=func { return vm == "normal" }>~(i18n.T(l, "voice.normal"))</option>
 							<option value="detailed" selected=func { return vm == "detailed" }>~(i18n.T(l, "voice.detailed"))</option>
+						</select>
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.sex"))</span>
+						<select class="lang-select compact" name="sex">
+							<option value="m" selected=func { return curSex != "f" }>~(i18n.T(l, "sex.male"))</option>
+							<option value="f" selected=func { return curSex == "f" }>~(i18n.T(l, "sex.female"))</option>
 						</select>
 					</div>
 					<div class="srow save-row">
@@ -344,6 +353,7 @@ func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors
 			mode = "normal"
 		}
 		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, rest, mode)
+		_ = app.DB.SetSex(s.sess.UserID, f.Sex)
 		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
 			cur.Name = name
 			cur.Rest = rest

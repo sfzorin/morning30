@@ -113,7 +113,7 @@ func (w workoutPage) voiceFor(l i18n.Lang, hasVoice bool, d content.Detail) (sta
 }
 
 // replFor returns the manual-replacement item for an exercise (nil if none).
-func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, id string, value int) *playerRepl {
+func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, value int) *playerRepl {
 	ex, ok := cat.Def(id)
 	if !ok || ex.Replacement == "" {
 		return nil
@@ -129,7 +129,7 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, id string, value 
 		Unit:    string(r.Unit),
 		Value:   content.ConvertValue(ex.Unit, r.Unit, value),
 		PerSide: r.PerSide,
-		SVG:     cat.SVG(rid),
+		SVG:     cat.Figure(rid, sex),
 		Hint:    cat.Hint(l, rid),
 		Warning: cat.Warning(l, rid),
 	}
@@ -141,6 +141,7 @@ func (w workoutPage) payloadJSON() string {
 	day := w.clampDay()
 	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest)
 	cat := app.UserCatalog(w.sess.UserID)
+	sex := app.DB.GetSex(w.sess.UserID)
 
 	items := make([]playerItem, 0, len(wk.Items))
 	for _, it := range wk.Items {
@@ -158,7 +159,7 @@ func (w workoutPage) payloadJSON() string {
 			Name:      cat.Name(l, id),
 			Hint:      cat.Hint(l, id),
 			Warning:   cat.Warning(l, id),
-			SVG:       cat.SVG(id),
+			SVG:       cat.Figure(id, sex),
 			Video:     content.Pool[id].Video,
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
@@ -170,7 +171,7 @@ func (w workoutPage) payloadJSON() string {
 			VMid:      vm,
 			VLast:     vl,
 			VFinish:   vf,
-			Repl:      w.replFor(l, cat, id, it.Value),
+			Repl:      w.replFor(l, cat, sex, id, it.Value),
 		})
 	}
 
