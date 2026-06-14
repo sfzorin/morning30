@@ -1,7 +1,8 @@
-// Package content defines the exercise library and the 30-day program,
-// implemented to the product spec: warm-up (W) -> main blocks (A–E / R /
-// control) with a plank challenge -> cool-down (CD). Floor/mat only; no jumps,
-// no equipment, no lunges/deep-squats/mountain-climbers (see forbidden list).
+// Package content defines the exercise library and the 30-day programs. The
+// library is shared by every standard set; each set (Sergey, Vlad, …) selects
+// from it per day. Floor/mat only, no equipment. The Sergey set is jump-free;
+// the Vlad set adds plyometric/cardio movements (the J* group: jumps, burpees,
+// mountain climbers) and lunges for a fitter profile.
 package content
 
 // Unit is how an exercise is measured.
@@ -76,6 +77,8 @@ var library = []Exercise{
 	{ID: "W04", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},             // hip hinge no weight
 	{ID: "W05", Slot: Warmup, Unit: Reps, Difficulty: 1, KneeLoad: KneeLow},              // slow shallow squat
 	{ID: "W06", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // high plank weight shift
+	{ID: "W07", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // standing breathing + reach (Vlad)
+	{ID: "W08", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},          // standing torso rotations (Vlad)
 
 	// ---- Abs / core ----
 	{ID: "C01", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone},                      // forearm plank
@@ -90,6 +93,7 @@ var library = []Exercise{
 	{ID: "C10", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},                         // up-down plank
 	{ID: "C11", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},          // heel taps (per side)
 	{ID: "C12", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},          // dead bug advanced
+	{ID: "C13", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone},                      // bicycle crunches (Vlad)
 
 	// ---- Push-ups / triceps / shoulders ----
 	{ID: "P01", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeNone},                         // classic push-up
@@ -111,6 +115,7 @@ var library = []Exercise{
 	{ID: "B08", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeNone}, // reverse plank
 	{ID: "B09", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // back extension pulses
 	{ID: "B10", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone},    // cobra to W-pull
+	{ID: "B11", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone}, // swimmers, counted per side (Vlad)
 
 	// ---- Arms / biceps (self-resistance, no equipment) ----
 	{ID: "A01", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone},    // self-resist curl
@@ -127,6 +132,20 @@ var library = []Exercise{
 	{ID: "L06", Slot: Main, Unit: Reps, Difficulty: 1, KneeLoad: KneeLow},                        // glute bridge hold
 	{ID: "L07", Slot: Main, Unit: Reps, Difficulty: 1, KneeLoad: KneeNone},                       // calf raises
 	{ID: "L09", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 3, KneeLoad: KneeNone},        // side plank leg lift
+	{ID: "L10", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeMedium, Replacement: "L01"},                // air squat (Vlad)
+	{ID: "L11", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeMedium, Replacement: "L03"}, // reverse lunge (Vlad)
+	{ID: "L12", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeMedium, Replacement: "L01"},                // slow air squat (Vlad)
+
+	// ---- Cardio / plyometrics (Vlad set) ----
+	{ID: "J01", Slot: Warmup, Unit: Seconds, Difficulty: 2, KneeLoad: KneeLow, Replacement: "J02"},              // low pogo jumps
+	{ID: "J02", Slot: Warmup, Unit: Seconds, Difficulty: 1, KneeLoad: KneeLow},                                  // marching high knees (pogo substitute)
+	{ID: "J03", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeLow},                                    // jumping jacks
+	{ID: "J04", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeLow},                                    // mountain climbers
+	{ID: "J05", Slot: Main, Unit: Reps, Difficulty: 3, KneeLoad: KneeMedium, Replacement: "L10"},                // squat jumps
+	{ID: "J06", Slot: Main, Unit: Seconds, Difficulty: 3, KneeLoad: KneeMedium, Replacement: "J03"},             // skater hops
+	{ID: "J07", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeLow, Replacement: "J02"},                // high knees
+	{ID: "J08", Slot: Main, Unit: Reps, Difficulty: 4, KneeLoad: KneeMedium, Replacement: "J03"},                // burpees
+	{ID: "J09", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 4, KneeLoad: KneeMedium, Replacement: "L11"}, // jump lunges (per side)
 
 	// ---- Cool-down (fixed, 4 exercises, 1 round) ----
 	{ID: "CD01", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},                      // chest stretch
@@ -134,4 +153,5 @@ var library = []Exercise{
 	{ID: "CD03", Slot: Cooldown, Unit: Seconds, PerSide: true, Difficulty: 1, KneeLoad: KneeNone},       // supine twist
 	{ID: "CD04", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone, Replacement: "CD05"}, // sphinx pose
 	{ID: "CD05", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},                      // lying breathing (sphinx replacement)
+	{ID: "CD07", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},                      // child's pose (Vlad)
 }

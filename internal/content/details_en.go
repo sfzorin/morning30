@@ -329,4 +329,108 @@ var detailsEN = map[string]Detail{
 		Correct: []string{"Breathing is calm.", "Shoulders stay relaxed.", "Face stays soft.", "Body settles down."},
 		Wrong:   []string{"Breathing too forcefully.", "Holding the breath.", "Tensing the neck.", "Arching the lower back."},
 	},
+
+	// ---- Vlad set additions (warm-up / cardio / plyometrics / lunges) ----
+	"W07": {
+		Desc:    "A calm opening drill: deep breathing with a gentle full-body reach to lengthen the spine.",
+		HowTo:   []string{"Stand tall with feet hip-width apart.", "Inhale and reach both arms overhead.", "Lengthen gently through the spine.", "Exhale and lower the arms, dropping the shoulders."},
+		Correct: []string{"Breathing is slow and full.", "Shoulders relax on the exhale.", "Ribs stay down, no over-arching.", "Movement is unhurried."},
+		Wrong:   []string{"Holding the breath.", "Arching the lower back hard.", "Shrugging the shoulders to the ears.", "Rushing the reach."},
+	},
+	"W08": {
+		Desc:    "A gentle rotation drill to warm up the spine and trunk.",
+		HowTo:   []string{"Stand with feet hip-width apart.", "Let the arms swing loosely.", "Rotate the upper body to one side.", "Flow smoothly to the other side."},
+		Correct: []string{"Movement comes from the trunk.", "Hips stay mostly forward.", "Feet stay planted.", "Pace is smooth and even."},
+		Wrong:   []string{"Twisting hard through the knees.", "Yanking the arms.", "Rotating too fast.", "Holding the breath."},
+	},
+	"C13": {
+		Desc:    "A dynamic core exercise for the abs and obliques.",
+		HowTo:   []string{"Lie on the back with hands lightly behind the head.", "Lift the shoulders and bring the knees up.", "Bring one elbow toward the opposite knee.", "Switch sides in a steady pedaling motion."},
+		Correct: []string{"Lower back stays down.", "Movement is controlled, not yanked.", "Elbows stay wide.", "Breathing stays steady."},
+		Wrong:   []string{"Pulling on the neck.", "Lifting the lower back off the floor.", "Rushing the rhythm.", "Holding the breath."},
+	},
+	"B11": {
+		Desc:    "A back exercise lifting opposite arm and leg in an alternating, swimming-like motion.",
+		HowTo:   []string{"Lie face down, arms reaching overhead.", "Lift the chest and legs slightly.", "Raise one arm and the opposite leg.", "Lower and switch sides, alternating smoothly."},
+		Correct: []string{"Lift stays small.", "Neck follows the spine.", "Glutes stay engaged.", "Movement is steady."},
+		Wrong:   []string{"Cranking the lower back.", "Lifting the head.", "Moving in jerks.", "Holding the breath."},
+	},
+	"L10": {
+		Desc:    "A foundational leg exercise for the quads, glutes and hips.",
+		HowTo:   []string{"Stand with feet shoulder-width apart.", "Push the hips back and bend the knees.", "Lower until the thighs are near parallel.", "Drive through the heels to stand."},
+		Correct: []string{"Knees track over the toes.", "Heels stay on the floor.", "Chest stays up.", "Back stays neutral."},
+		Wrong:   []string{"Letting the knees cave inward.", "Lifting the heels.", "Rounding the back.", "Dropping down without control."},
+	},
+	"L11": {
+		Desc:    "A single-leg exercise for the legs and glutes that is gentle on the knees.",
+		HowTo:   []string{"Stand tall with feet hip-width apart.", "Step one foot back.", "Lower until both knees are near 90 degrees.", "Push through the front heel to return."},
+		Correct: []string{"Front knee stays over the heel.", "Torso stays tall.", "Step is controlled.", "Back knee lowers softly."},
+		Wrong:   []string{"Letting the front knee collapse inward.", "Leaning the torso far forward.", "Slamming the back knee down.", "Rushing the steps."},
+	},
+	"L12": {
+		Desc:    "An air squat done slowly to build control and leg strength.",
+		HowTo:   []string{"Stand with feet shoulder-width apart.", "Lower over about three seconds.", "Pause briefly at the bottom.", "Stand up with control."},
+		Correct: []string{"Tempo stays slow.", "Knees track the toes.", "Heels stay grounded.", "Back stays neutral."},
+		Wrong:   []string{"Dropping down fast.", "Bouncing out of the bottom.", "Letting the knees cave in.", "Holding the breath."},
+	},
+	"J01": {
+		Desc:    "Small, springy jumps off the balls of the feet to prime the calves and ankles.",
+		HowTo:   []string{"Stand tall with feet together.", "Bounce lightly off the balls of the feet.", "Keep the knees slightly soft.", "Land softly and quietly."},
+		Correct: []string{"Jumps stay low.", "Landings are quiet.", "Knees stay soft.", "Body stays upright."},
+		Wrong:   []string{"Landing hard and loud.", "Locking the knees.", "Jumping too high.", "Collapsing the ankles inward."},
+	},
+	"J02": {
+		Desc:    "A low-impact march lifting the knees, a gentle cardio warm-up.",
+		HowTo:   []string{"Stand tall.", "March in place lifting one knee toward hip height.", "Swing the opposite arm naturally.", "Keep a steady, comfortable pace."},
+		Correct: []string{"Torso stays tall.", "Knees lift to a comfortable height.", "Steps stay light.", "Breathing stays easy."},
+		Wrong:   []string{"Leaning back.", "Stomping the feet.", "Holding the breath.", "Rushing past control."},
+	},
+	"J03": {
+		Desc:    "A classic full-body cardio move warming the whole body.",
+		HowTo:   []string{"Stand with feet together, arms at the sides.", "Jump the feet wide as the arms rise overhead.", "Jump back to the start.", "Keep a steady rhythm."},
+		Correct: []string{"Landings stay soft.", "Knees track the toes.", "Movement is rhythmic.", "Breathing stays steady."},
+		Wrong:   []string{"Landing hard.", "Letting the knees cave in.", "Hunching the shoulders.", "Holding the breath."},
+	},
+	"J04": {
+		Desc:    "A dynamic core and cardio move driving the knees toward the chest from a plank.",
+		HowTo:   []string{"Start in a high plank, hands under the shoulders.", "Drive one knee toward the chest.", "Switch legs quickly.", "Keep the hips low and steady."},
+		Correct: []string{"Hips stay level.", "Shoulders stay over the hands.", "Core stays tight.", "Pace stays controlled."},
+		Wrong:   []string{"Letting the hips bounce up.", "Sagging the lower back.", "Shifting the shoulders far forward.", "Holding the breath."},
+	},
+	"J05": {
+		Desc:    "An explosive lower-body move: squat down, then jump up powerfully.",
+		HowTo:   []string{"Stand with feet shoulder-width apart.", "Lower into a squat.", "Jump up explosively.", "Land softly and absorb into the next squat."},
+		Correct: []string{"Landings are soft and quiet.", "Knees track the toes.", "Chest stays up.", "Hips absorb the landing."},
+		Wrong:   []string{"Landing stiff and loud.", "Letting the knees cave inward.", "Rounding the back.", "Landing on straight legs."},
+	},
+	"J06": {
+		Desc:    "A lateral hop from side to side for power, balance and coordination.",
+		HowTo:   []string{"Stand on one leg.", "Hop sideways onto the other leg.", "Let the trailing leg swing behind.", "Land softly and reverse."},
+		Correct: []string{"Landings stay soft.", "Knee tracks over the foot.", "Hips stay balanced.", "Movement stays smooth."},
+		Wrong:   []string{"Caving the knee inward.", "Landing hard.", "Losing balance.", "Rushing without control."},
+	},
+	"J07": {
+		Desc:    "A running-in-place cardio move driving the knees up high.",
+		HowTo:   []string{"Stand tall.", "Run in place lifting the knees toward hip height.", "Stay on the balls of the feet.", "Pump the arms in rhythm."},
+		Correct: []string{"Torso stays tall.", "Knees lift high.", "Landings stay light.", "Pace stays steady."},
+		Wrong:   []string{"Leaning back.", "Stomping the feet.", "Slouching.", "Holding the breath."},
+	},
+	"J08": {
+		Desc:    "A full-body conditioning move combining a squat, plank and jump.",
+		HowTo:   []string{"From standing, squat and place the hands down.", "Jump or step the feet back to a plank.", "Return the feet under the hips.", "Stand and jump with a reach."},
+		Correct: []string{"Spine stays neutral in the plank.", "Landings stay soft.", "Pace stays steady.", "Core stays engaged."},
+		Wrong:   []string{"Sagging the hips in the plank.", "Landing hard.", "Rushing past form.", "Holding the breath."},
+	},
+	"J09": {
+		Desc:    "An explosive lunge that switches legs in the air for power and coordination.",
+		HowTo:   []string{"Start in a lunge position.", "Jump up and switch legs in the air.", "Land softly in a lunge on the other side.", "Continue alternating."},
+		Correct: []string{"Landings stay soft.", "Front knee tracks over the foot.", "Torso stays tall.", "Hips absorb each landing."},
+		Wrong:   []string{"Landing hard.", "Caving the front knee inward.", "Leaning far forward.", "Losing control of the switch."},
+	},
+	"CD07": {
+		Desc:    "A restful stretch for the back, hips and shoulders to wind down.",
+		HowTo:   []string{"Kneel and sit the hips back toward the heels.", "Reach the arms forward on the floor.", "Let the forehead rest down.", "Breathe slowly and relax."},
+		Correct: []string{"Hips settle toward the heels.", "Back lengthens gently.", "Shoulders relax.", "Breathing stays slow."},
+		Wrong:   []string{"Forcing the hips down.", "Tensing the shoulders.", "Holding the breath.", "Straining the knees."},
+	},
 }

@@ -321,4 +321,108 @@ var detailsFR = map[string]Detail{
 		Correct: []string{"Respiration calme.", "Épaules détendues.", "Visage détendu.", "Le corps s'apaise."},
 		Wrong:   []string{"Respirer trop fort.", "Retenir sa respiration.", "Tendre le cou.", "Cambrer le bas du dos."},
 	},
+
+	// ---- Ajouts du set Vlad (échauffement / cardio / pliométrie / fentes) ----
+	"W07": {
+		Desc:    "Un exercice d'ouverture calme : respiration profonde avec un grand étirement de tout le corps pour allonger la colonne.",
+		HowTo:   []string{"Tiens-toi droit, pieds écartés de la largeur des hanches.", "Inspire et lève les deux bras au-dessus de la tête.", "Allonge doucement la colonne.", "Expire et redescends les bras en relâchant les épaules."},
+		Correct: []string{"La respiration est lente et ample.", "Les épaules se relâchent à l'expiration.", "Les côtes restent basses, sans cambrer.", "Le mouvement est sans hâte."},
+		Wrong:   []string{"Retenir sa respiration.", "Cambrer fortement le bas du dos.", "Hausser les épaules vers les oreilles.", "Précipiter l'étirement."},
+	},
+	"W08": {
+		Desc:    "Un exercice de rotation doux pour échauffer la colonne et le tronc.",
+		HowTo:   []string{"Pieds écartés de la largeur des hanches.", "Laisse les bras se balancer librement.", "Tourne le haut du corps d'un côté.", "Passe en douceur de l'autre côté."},
+		Correct: []string{"Le mouvement vient du tronc.", "Les hanches restent surtout face à l'avant.", "Les pieds restent stables.", "Le rythme est souple et régulier."},
+		Wrong:   []string{"Tourner fortement avec les genoux.", "Donner des à-coups avec les bras.", "Tourner trop vite.", "Retenir sa respiration."},
+	},
+	"C13": {
+		Desc:    "Un exercice de tronc dynamique pour les abdos et les obliques.",
+		HowTo:   []string{"Allonge-toi sur le dos, mains légèrement derrière la tête.", "Lève les épaules et ramène les genoux.", "Amène un coude vers le genou opposé.", "Change de côté dans un mouvement de pédalage régulier."},
+		Correct: []string{"Bas du dos au sol.", "Mouvement contrôlé, sans à-coups.", "Les coudes restent écartés.", "Respiration régulière."},
+		Wrong:   []string{"Tirer sur le cou.", "Décoller le bas du dos du sol.", "Précipiter le rythme.", "Retenir sa respiration."},
+	},
+	"B11": {
+		Desc:    "Un exercice de dos qui lève le bras et la jambe opposés en alternance, comme une nage.",
+		HowTo:   []string{"Allonge-toi sur le ventre, bras tendus au-dessus de la tête.", "Soulève un peu la poitrine et les jambes.", "Lève un bras et la jambe opposée.", "Redescends et change de côté en alternant en douceur."},
+		Correct: []string{"L'élévation reste petite.", "Le cou suit la ligne de la colonne.", "Fessiers actifs.", "Mouvement régulier."},
+		Wrong:   []string{"Forcer le bas du dos.", "Lever la tête.", "Bouger par à-coups.", "Retenir sa respiration."},
+	},
+	"L10": {
+		Desc:    "Un exercice de jambes fondamental pour les quadriceps, les fessiers et les hanches.",
+		HowTo:   []string{"Pieds écartés de la largeur des épaules.", "Pousse les hanches vers l'arrière et fléchis les genoux.", "Descends jusqu'à ce que les cuisses soient presque parallèles au sol.", "Pousse dans les talons pour te redresser."},
+		Correct: []string{"Genoux dans l'axe des orteils.", "Talons au sol.", "Poitrine ouverte.", "Dos neutre."},
+		Wrong:   []string{"Laisser les genoux rentrer.", "Lever les talons.", "Arrondir le dos.", "Descendre sans contrôle."},
+	},
+	"L11": {
+		Desc:    "Un exercice unilatéral pour les jambes et les fessiers, doux pour les genoux.",
+		HowTo:   []string{"Tiens-toi droit, pieds écartés de la largeur des hanches.", "Recule un pied.", "Descends jusqu'à ce que les deux genoux soient proches de 90 degrés.", "Pousse dans le talon avant pour revenir."},
+		Correct: []string{"Le genou avant reste au-dessus du talon.", "Le buste reste droit.", "Le pas est contrôlé.", "Le genou arrière descend en douceur."},
+		Wrong:   []string{"Laisser le genou avant rentrer.", "Pencher le buste trop en avant.", "Claquer le genou arrière au sol.", "Précipiter les pas."},
+	},
+	"L12": {
+		Desc:    "Un squat sans charge fait lentement pour développer le contrôle et la force des jambes.",
+		HowTo:   []string{"Pieds écartés de la largeur des épaules.", "Descends sur environ trois secondes.", "Marque une brève pause en bas.", "Redresse-toi avec contrôle."},
+		Correct: []string{"Le tempo reste lent.", "Genoux dans l'axe des orteils.", "Talons au sol.", "Dos neutre."},
+		Wrong:   []string{"Descendre vite.", "Rebondir depuis le bas.", "Laisser les genoux rentrer.", "Retenir sa respiration."},
+	},
+	"J01": {
+		Desc:    "De petits sauts élastiques sur la pointe des pieds pour préparer les mollets et les chevilles.",
+		HowTo:   []string{"Tiens-toi droit, pieds joints.", "Rebondis légèrement sur la pointe des pieds.", "Garde les genoux légèrement souples.", "Atterris en douceur et sans bruit."},
+		Correct: []string{"Les sauts restent bas.", "Les atterrissages sont silencieux.", "Les genoux restent souples.", "Le corps reste droit."},
+		Wrong:   []string{"Atterrir lourdement et bruyamment.", "Verrouiller les genoux.", "Sauter trop haut.", "Faire basculer les chevilles vers l'intérieur."},
+	},
+	"J02": {
+		Desc:    "Une marche à faible impact en levant les genoux, un échauffement cardio doux.",
+		HowTo:   []string{"Tiens-toi droit.", "Marche sur place en levant un genou à hauteur de hanche.", "Balance le bras opposé naturellement.", "Garde un rythme régulier et confortable."},
+		Correct: []string{"Le buste reste droit.", "Les genoux montent à une hauteur confortable.", "Les pas restent légers.", "La respiration reste facile."},
+		Wrong:   []string{"Se pencher en arrière.", "Taper des pieds.", "Retenir sa respiration.", "Aller trop vite au détriment du contrôle."},
+	},
+	"J03": {
+		Desc:    "Un mouvement cardio classique pour tout le corps qui échauffe l'ensemble du corps.",
+		HowTo:   []string{"Pieds joints, bras le long du corps.", "Saute en écartant les pieds tout en levant les bras au-dessus de la tête.", "Reviens en sautant à la position de départ.", "Garde un rythme régulier."},
+		Correct: []string{"Les atterrissages restent doux.", "Genoux dans l'axe des orteils.", "Le mouvement est rythmé.", "Respiration régulière."},
+		Wrong:   []string{"Atterrir lourdement.", "Laisser les genoux rentrer.", "Voûter les épaules.", "Retenir sa respiration."},
+	},
+	"J04": {
+		Desc:    "Un mouvement de tronc et de cardio dynamique qui ramène les genoux vers la poitrine depuis la planche.",
+		HowTo:   []string{"Commence en planche haute, mains sous les épaules.", "Ramène un genou vers la poitrine.", "Change de jambe rapidement.", "Garde les hanches basses et stables."},
+		Correct: []string{"Les hanches restent de niveau.", "Les épaules restent au-dessus des mains.", "Tronc gainé.", "Le rythme reste contrôlé."},
+		Wrong:   []string{"Laisser les hanches rebondir vers le haut.", "Laisser tomber le bas du dos.", "Décaler les épaules trop en avant.", "Retenir sa respiration."},
+	},
+	"J05": {
+		Desc:    "Un mouvement explosif du bas du corps : descendre en squat, puis sauter puissamment.",
+		HowTo:   []string{"Pieds écartés de la largeur des épaules.", "Descends en squat.", "Saute vers le haut de façon explosive.", "Atterris en douceur et enchaîne sur le squat suivant."},
+		Correct: []string{"Les atterrissages sont doux et silencieux.", "Genoux dans l'axe des orteils.", "Poitrine ouverte.", "Les hanches absorbent l'atterrissage."},
+		Wrong:   []string{"Atterrir raide et bruyamment.", "Laisser les genoux rentrer.", "Arrondir le dos.", "Atterrir jambes tendues."},
+	},
+	"J06": {
+		Desc:    "Un saut latéral d'un côté à l'autre pour la puissance, l'équilibre et la coordination.",
+		HowTo:   []string{"Tiens-toi sur une jambe.", "Saute latéralement sur l'autre jambe.", "Laisse la jambe arrière se balancer derrière.", "Atterris en douceur et inverse."},
+		Correct: []string{"Les atterrissages restent doux.", "Le genou reste dans l'axe du pied.", "Les hanches restent équilibrées.", "Le mouvement reste fluide."},
+		Wrong:   []string{"Laisser le genou rentrer.", "Atterrir lourdement.", "Perdre l'équilibre.", "Se précipiter sans contrôle."},
+	},
+	"J07": {
+		Desc:    "Un mouvement cardio de course sur place en montant les genoux haut.",
+		HowTo:   []string{"Tiens-toi droit.", "Cours sur place en levant les genoux à hauteur de hanche.", "Reste sur la pointe des pieds.", "Pompe les bras en rythme."},
+		Correct: []string{"Le buste reste droit.", "Les genoux montent haut.", "Les atterrissages restent légers.", "Le rythme reste régulier."},
+		Wrong:   []string{"Se pencher en arrière.", "Taper des pieds.", "Se voûter.", "Retenir sa respiration."},
+	},
+	"J08": {
+		Desc:    "Un mouvement de conditionnement pour tout le corps combinant un squat, une planche et un saut.",
+		HowTo:   []string{"Depuis debout, descends en squat et pose les mains au sol.", "Saute ou recule les pieds en planche.", "Ramène les pieds sous les hanches.", "Redresse-toi et saute avec un grand étirement des bras."},
+		Correct: []string{"La colonne reste neutre en planche.", "Les atterrissages restent doux.", "Le rythme reste régulier.", "Tronc gainé."},
+		Wrong:   []string{"Laisser tomber les hanches en planche.", "Atterrir lourdement.", "Se précipiter au détriment de la forme.", "Retenir sa respiration."},
+	},
+	"J09": {
+		Desc:    "Une fente explosive qui change de jambe en l'air pour la puissance et la coordination.",
+		HowTo:   []string{"Commence en position de fente.", "Saute vers le haut et change de jambe en l'air.", "Atterris en douceur en fente de l'autre côté.", "Continue en alternant."},
+		Correct: []string{"Les atterrissages restent doux.", "Le genou avant reste dans l'axe du pied.", "Le buste reste droit.", "Les hanches absorbent chaque atterrissage."},
+		Wrong:   []string{"Atterrir lourdement.", "Laisser le genou avant rentrer.", "Pencher trop en avant.", "Perdre le contrôle du changement."},
+	},
+	"CD07": {
+		Desc:    "Un étirement reposant pour le dos, les hanches et les épaules pour décompresser.",
+		HowTo:   []string{"Mets-toi à genoux et assieds les hanches vers les talons.", "Étends les bras vers l'avant sur le sol.", "Laisse le front se poser au sol.", "Respire lentement et détends-toi."},
+		Correct: []string{"Les hanches descendent vers les talons.", "Le dos s'allonge en douceur.", "Les épaules se relâchent.", "La respiration reste lente."},
+		Wrong:   []string{"Forcer les hanches vers le bas.", "Tendre les épaules.", "Retenir sa respiration.", "Forcer les genoux."},
+	},
 }

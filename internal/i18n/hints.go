@@ -24,6 +24,15 @@ var hints = map[string][2]string{
 	"A02": {"Держи угол 90°, не задерживай дыхание.", "Hold 90°, keep breathing."},
 	"S01": {"Плечи вниз, круги маленькие.", "Shoulders down, small circles."},
 	"W09": {"Спина прямая, наклон от таза.", "Straight back, hinge from the hips."},
+	"J01": {"Приземляйся мягко и тихо.", "Land soft and quiet."},
+	"J03": {"Колени по линии носков.", "Knees track the toes."},
+	"J04": {"Поясница не проваливается.", "Don't let the hips sag."},
+	"J05": {"Мягкое тихое приземление.", "Soft, quiet landing."},
+	"J06": {"Колено не заваливается внутрь.", "Don't cave the knee inward."},
+	"J07": {"Корпус прямой, дыши ровно.", "Stay tall, keep breathing."},
+	"J08": {"Темп ровный, спина нейтральна.", "Steady pace, neutral spine."},
+	"J09": {"Колено над стопой, мягко вниз.", "Knee over foot, land soft."},
+	"L11": {"Колено над пяткой, корпус прямой.", "Knee over heel, torso tall."},
 }
 
 // Hint returns the short technique cue for an exercise (empty if none).

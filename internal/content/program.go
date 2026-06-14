@@ -132,10 +132,13 @@ func clampDay(day int) int {
 // isRecoveryDay reports whether the given day is a lighter recovery day.
 func isRecoveryDay(day int) bool { return recoveryDays[clampDay(day)] }
 
-// restAfter is the rest after a main exercise (the user's 10..40 s setting; the
-// spec suggests 10–20). Warm-up/cool-down items have a short/zero rest.
-func restAfter(e Exercise, lightRest int) int {
-	switch e.Slot {
+// restAfter is the rest after an item, keyed by its occurrence slot (not the
+// library slot): a main item gets the user's 10..40 s setting (spec suggests
+// 10–20); warm-up/cool-down get a short/zero rest. Keying off the occurrence
+// slot lets a main-slot exercise (e.g. an air squat) be reused in the warm-up
+// and still rest like a warm-up item.
+func restAfter(slot Slot, lightRest int) int {
+	switch slot {
 	case Warmup:
 		return 5
 	case Cooldown:
@@ -158,13 +161,12 @@ func assignRestsAndEst(items []Item, lightRest int) int {
 	est := 0
 	for i := range items {
 		it := items[i]
-		e := Pool[it.ExerciseID]
 		if i < len(items)-1 {
 			next := items[i+1]
 			if it.Slot == Main && next.Slot == Main && next.Round != it.Round {
 				items[i].Rest = restBetweenRounds
 			} else {
-				items[i].Rest = restAfter(e, lightRest)
+				items[i].Rest = restAfter(it.Slot, lightRest)
 			}
 		}
 		work := it.Value
@@ -194,10 +196,9 @@ func seqItems(seq []setDef, slot Slot) []RItem {
 	return out
 }
 
-// mainItems builds the base MAIN items for a day: the day's explicit block run
-// for 2 rounds. The universal difficulty level scales these at runtime.
-func mainItems(day int) []RItem {
-	defs := dayBlocks[clampDay(day)]
+// mainItemsFrom builds base MAIN items from a day's block: the block run for 2
+// rounds. The universal difficulty level scales these at runtime.
+func mainItemsFrom(defs []setDef) []RItem {
 	out := make([]RItem, 0, len(defs)*2)
 	for r := 1; r <= 2; r++ {
 		for _, s := range defs {
@@ -207,3 +208,26 @@ func mainItems(day int) []RItem {
 	}
 	return out
 }
+
+// programSpec is the compact definition of a standard set: a shared warm-up and
+// cool-down series plus a per-day MAIN block. resolve() flattens it into the
+// editable Resolved program (the same shape the editor and Workout consume).
+type programSpec struct {
+	name     string
+	warmup   []setDef
+	cooldown []setDef
+	days     map[int][]setDef
+}
+
+func (s programSpec) resolve() Resolved {
+	r := Resolved{Version: 1, Name: s.name, TotalDays: TotalDays, WarmupRounds: warmupRounds}
+	r.Warmup = seqItems(s.warmup, Warmup)
+	r.Cooldown = seqItems(s.cooldown, Cooldown)
+	for day := 1; day <= TotalDays; day++ {
+		r.Days = append(r.Days, RDay{Day: day, Items: mainItemsFrom(s.days[clampDay(day)])})
+	}
+	return r
+}
+
+// sergeySpec is the original built-in set (floor/mat only, no jumps).
+var sergeySpec = programSpec{name: "Sergey", warmup: warmupSeq, cooldown: cooldownSeq, days: dayBlocks}

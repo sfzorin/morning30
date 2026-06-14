@@ -321,4 +321,108 @@ var detailsTR = map[string]Detail{
 		Correct: []string{"Nefes sakin.", "Omuzlar gevşek.", "Yüz yumuşak.", "Vücut sakinleşir."},
 		Wrong:   []string{"Çok güçlü nefes almak.", "Nefesi tutmak.", "Boynu kasmak.", "Beli çukurlaştırmak."},
 	},
+
+	// ---- Vlad seti eklemeleri (ısınma / kardiyo / pliometri / hamleler) ----
+	"W07": {
+		Desc:    "Omurgayı uzatmak için nazik bir tam vücut uzanmasıyla derin nefes alan sakin bir açılış çalışması.",
+		HowTo:   []string{"Dik durun, ayaklar kalça genişliğinde.", "Nefes alın ve iki kolu başın üstüne uzatın.", "Omurga boyunca nazikçe uzanın.", "Nefes verin ve kolları indirip omuzları bırakın."},
+		Correct: []string{"Nefes yavaş ve dolu.", "Nefes verirken omuzlar gevşer.", "Kaburgalar aşağıda, aşırı çukurlaşma yok.", "Hareket acelesiz."},
+		Wrong:   []string{"Nefesi tutmak.", "Beli sertçe çukurlaştırmak.", "Omuzları kulaklara kaldırmak.", "Uzanmayı acele etmek."},
+	},
+	"W08": {
+		Desc:    "Omurgayı ve gövdeyi ısıtan nazik bir rotasyon çalışması.",
+		HowTo:   []string{"Ayaklar kalça genişliğinde durun.", "Kolların serbestçe sallanmasına izin verin.", "Üst gövdeyi bir yana çevirin.", "Akıcı şekilde diğer yana geçin."},
+		Correct: []string{"Hareket gövdeden gelir.", "Kalça çoğunlukla öne bakar.", "Ayaklar sabit.", "Tempo akıcı ve düzenli."},
+		Wrong:   []string{"Dizleri sertçe burmak.", "Kolları savurmak.", "Çok hızlı dönmek.", "Nefesi tutmak."},
+	},
+	"C13": {
+		Desc:    "Karın ve yan karın için dinamik bir kor egzersizi.",
+		HowTo:   []string{"Sırtüstü yatın, eller hafifçe başın arkasında.", "Omuzları kaldırın ve dizleri yukarı getirin.", "Bir dirseği karşı dize doğru götürün.", "Düzenli bir pedal çevirme hareketiyle taraf değiştirin."},
+		Correct: []string{"Bel yerde kalır.", "Hareket kontrollü, savrulmaz.", "Dirsekler geniş.", "Nefes düzenli."},
+		Wrong:   []string{"Boyundan çekmek.", "Beli yerden kaldırmak.", "Ritmi acele etmek.", "Nefesi tutmak."},
+	},
+	"B11": {
+		Desc:    "Karşı kol ve bacağı almaşık, yüzme benzeri bir hareketle kaldıran sırt egzersizi.",
+		HowTo:   []string{"Yüzüstü yatın, kollar başın üstünde uzanmış.", "Göğsü ve bacakları hafifçe kaldırın.", "Bir kolu ve karşı bacağı kaldırın.", "İndirip taraf değiştirin, akıcı şekilde almaşık yapın."},
+		Correct: []string{"Kalkış küçük kalır.", "Boyun omurga çizgisini izler.", "Kalça kasları aktif.", "Hareket düzenli."},
+		Wrong:   []string{"Beli zorlamak.", "Başı kaldırmak.", "Sarsıntılı hareket etmek.", "Nefesi tutmak."},
+	},
+	"L10": {
+		Desc:    "Uyluk önü, kalça kasları ve kalça için temel bir bacak egzersizi.",
+		HowTo:   []string{"Ayaklar omuz genişliğinde durun.", "Kalçayı geriye itin ve dizleri bükün.", "Uyluklar paralele yakın olana dek inin.", "Topuklardan iterek doğrulun."},
+		Correct: []string{"Dizler parmak yönünde.", "Topuklar yerde.", "Göğüs açık.", "Sırt nötr."},
+		Wrong:   []string{"Dizleri içe düşürmek.", "Topukları kaldırmak.", "Sırtı yuvarlamak.", "Kontrolsüz çökmek."},
+	},
+	"L11": {
+		Desc:    "Bacaklar ve kalça için dize nazik, tek bacaklı bir egzersiz.",
+		HowTo:   []string{"Dik durun, ayaklar kalça genişliğinde.", "Bir ayağı geriye adımlayın.", "İki diz de 90 dereceye yakın olana dek inin.", "Ön topuktan iterek dönün."},
+		Correct: []string{"Ön diz topuğun üstünde kalır.", "Gövde dik.", "Adım kontrollü.", "Arka diz yumuşakça iner."},
+		Wrong:   []string{"Ön dizi içe düşürmek.", "Gövdeyi çok öne eğmek.", "Arka dizi yere çarpmak.", "Adımları acele etmek."},
+	},
+	"L12": {
+		Desc:    "Kontrol ve bacak gücü geliştirmek için yavaş yapılan bir çömelme.",
+		HowTo:   []string{"Ayaklar omuz genişliğinde durun.", "Yaklaşık üç saniyede inin.", "Altta kısa süre durun.", "Kontrolle doğrulun."},
+		Correct: []string{"Tempo yavaş kalır.", "Dizler parmak yönünde.", "Topuklar yerde.", "Sırt nötr."},
+		Wrong:   []string{"Hızla çökmek.", "Alt noktadan sıçramak.", "Dizleri içe düşürmek.", "Nefesi tutmak."},
+	},
+	"J01": {
+		Desc:    "Baldırları ve ayak bileklerini hazırlamak için ayak uçlarından küçük, yaylı sıçramalar.",
+		HowTo:   []string{"Dik durun, ayaklar bitişik.", "Ayak uçlarından hafifçe zıplayın.", "Dizleri hafif yumuşak tutun.", "Yumuşak ve sessizce inin."},
+		Correct: []string{"Sıçramalar alçak kalır.", "İnişler sessiz.", "Dizler yumuşak.", "Vücut dik."},
+		Wrong:   []string{"Sert ve gürültülü inmek.", "Dizleri kilitlemek.", "Çok yükseğe zıplamak.", "Ayak bileklerini içe çökertmek."},
+	},
+	"J02": {
+		Desc:    "Dizleri kaldıran düşük etkili bir yürüyüş, nazik bir kardiyo ısınması.",
+		HowTo:   []string{"Dik durun.", "Yerinde yürüyün, bir dizi kalça hizasına kaldırın.", "Karşı kolu doğal şekilde sallayın.", "Düzenli, rahat bir tempo tutun."},
+		Correct: []string{"Gövde dik.", "Dizler rahat bir yüksekliğe kalkar.", "Adımlar hafif.", "Nefes rahat."},
+		Wrong:   []string{"Geriye yaslanmak.", "Ayakları yere vurmak.", "Nefesi tutmak.", "Kontrolü kaybedecek kadar acele etmek."},
+	},
+	"J03": {
+		Desc:    "Tüm vücudu ısıtan klasik bir tam vücut kardiyo hareketi.",
+		HowTo:   []string{"Ayaklar bitişik, kollar yanlarda durun.", "Kollar başın üstüne kalkarken ayakları yana açın.", "Başlangıca geri zıplayın.", "Düzenli bir ritim tutun."},
+		Correct: []string{"İnişler yumuşak kalır.", "Dizler parmak yönünde.", "Hareket ritmik.", "Nefes düzenli."},
+		Wrong:   []string{"Sert inmek.", "Dizleri içe düşürmek.", "Omuzları kamburlaştırmak.", "Nefesi tutmak."},
+	},
+	"J04": {
+		Desc:    "Plank pozisyonundan dizleri göğse doğru süren dinamik bir kor ve kardiyo hareketi.",
+		HowTo:   []string{"Yüksek plankta başlayın, eller omuzların altında.", "Bir dizi göğse doğru sürün.", "Bacakları hızlıca değiştirin.", "Kalçayı alçak ve sabit tutun."},
+		Correct: []string{"Kalça hizada kalır.", "Omuzlar ellerin üstünde.", "Kor sıkı.", "Tempo kontrollü."},
+		Wrong:   []string{"Kalçayı yukarı zıplatmak.", "Beli çökertmek.", "Omuzları çok öne kaydırmak.", "Nefesi tutmak."},
+	},
+	"J05": {
+		Desc:    "Patlayıcı bir alt vücut hareketi: çömelip sonra güçlüce yukarı zıplamak.",
+		HowTo:   []string{"Ayaklar omuz genişliğinde durun.", "Bir çömelmeye inin.", "Patlayıcı şekilde yukarı zıplayın.", "Yumuşak inip bir sonraki çömelmeye geçin."},
+		Correct: []string{"İnişler yumuşak ve sessiz.", "Dizler parmak yönünde.", "Göğüs açık.", "Kalça inişi emer."},
+		Wrong:   []string{"Sert ve gürültülü inmek.", "Dizleri içe düşürmek.", "Sırtı yuvarlamak.", "Düz bacaklarla inmek."},
+	},
+	"J06": {
+		Desc:    "Güç, denge ve koordinasyon için yandan yana yanal bir sıçrama.",
+		HowTo:   []string{"Tek bacak üzerinde durun.", "Yana doğru diğer bacağa zıplayın.", "Arka bacağın arkadan sallanmasına izin verin.", "Yumuşak inip ters yöne yapın."},
+		Correct: []string{"İnişler yumuşak kalır.", "Diz ayağın üstünde kalır.", "Kalça dengeli.", "Hareket akıcı."},
+		Wrong:   []string{"Dizi içe düşürmek.", "Sert inmek.", "Dengeyi kaybetmek.", "Kontrolsüz acele etmek."},
+	},
+	"J07": {
+		Desc:    "Dizleri yükseğe süren, yerinde koşma kardiyo hareketi.",
+		HowTo:   []string{"Dik durun.", "Yerinde koşun, dizleri kalça hizasına kaldırın.", "Ayak uçlarında kalın.", "Kolları ritimle çalıştırın."},
+		Correct: []string{"Gövde dik.", "Dizler yükseğe kalkar.", "İnişler hafif.", "Tempo düzenli."},
+		Wrong:   []string{"Geriye yaslanmak.", "Ayakları yere vurmak.", "Kamburlaşmak.", "Nefesi tutmak."},
+	},
+	"J08": {
+		Desc:    "Çömelme, plank ve sıçramayı birleştiren tam vücut kondisyon hareketi.",
+		HowTo:   []string{"Ayaktayken çömelip elleri yere koyun.", "Ayakları zıplayarak ya da adımlayarak planka atın.", "Ayakları kalçanın altına geri getirin.", "Doğrulup uzanarak zıplayın."},
+		Correct: []string{"Plankta omurga nötr.", "İnişler yumuşak kalır.", "Tempo düzenli.", "Kor aktif."},
+		Wrong:   []string{"Plankta kalçayı çökertmek.", "Sert inmek.", "Formu bozacak kadar acele etmek.", "Nefesi tutmak."},
+	},
+	"J09": {
+		Desc:    "Güç ve koordinasyon için havada bacak değiştiren patlayıcı bir hamle.",
+		HowTo:   []string{"Hamle pozisyonunda başlayın.", "Yukarı zıplayıp havada bacak değiştirin.", "Diğer tarafta yumuşak bir hamleye inin.", "Almaşık şekilde sürdürün."},
+		Correct: []string{"İnişler yumuşak kalır.", "Ön diz ayağın üstünde kalır.", "Gövde dik.", "Kalça her inişi emer."},
+		Wrong:   []string{"Sert inmek.", "Ön dizi içe düşürmek.", "Çok öne eğilmek.", "Değişimin kontrolünü kaybetmek."},
+	},
+	"CD07": {
+		Desc:    "Sakinleşmek için sırt, kalça ve omuzlara dinlendirici bir esneme.",
+		HowTo:   []string{"Diz çöküp kalçayı topuklara doğru geri oturtun.", "Kolları yerde öne uzatın.", "Alnın yere dayanmasına izin verin.", "Yavaşça nefes alıp gevşeyin."},
+		Correct: []string{"Kalça topuklara doğru yerleşir.", "Sırt nazikçe uzar.", "Omuzlar gevşer.", "Nefes yavaş kalır."},
+		Wrong:   []string{"Kalçayı zorla aşağı bastırmak.", "Omuzları kasmak.", "Nefesi tutmak.", "Dizleri zorlamak."},
+	},
 }

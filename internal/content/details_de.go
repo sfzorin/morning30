@@ -321,4 +321,108 @@ var detailsDE = map[string]Detail{
 		Correct: []string{"Atmung ruhig.", "Schultern entspannt.", "Gesicht weich.", "Der Körper kommt zur Ruhe."},
 		Wrong:   []string{"Zu kräftig atmen.", "Die Luft anhalten.", "Den Nacken anspannen.", "Den unteren Rücken überstrecken."},
 	},
+
+	// ---- Vlad-Set Ergänzungen (Aufwärmen / Cardio / Plyometrie / Ausfallschritte) ----
+	"W07": {
+		Desc:    "Eine ruhige Eröffnungsübung: tiefe Atmung mit einem sanften Ganzkörper-Strecken, das die Wirbelsäule länger macht.",
+		HowTo:   []string{"Aufrecht stehen, Füße hüftbreit.", "Einatmen und beide Arme über den Kopf strecken.", "Die Wirbelsäule sanft in die Länge ziehen.", "Ausatmen und die Arme senken, die Schultern fallen lassen."},
+		Correct: []string{"Atmung langsam und voll.", "Schultern entspannen beim Ausatmen.", "Rippen bleiben unten, kein Überstrecken.", "Bewegung ohne Hast."},
+		Wrong:   []string{"Die Luft anhalten.", "Den unteren Rücken stark überstrecken.", "Die Schultern zu den Ohren ziehen.", "Das Strecken hetzen."},
+	},
+	"W08": {
+		Desc:    "Eine sanfte Rotationsübung, um Wirbelsäule und Rumpf aufzuwärmen.",
+		HowTo:   []string{"Füße hüftbreit.", "Die Arme locker schwingen lassen.", "Den Oberkörper zu einer Seite drehen.", "Weich zur anderen Seite fließen."},
+		Correct: []string{"Bewegung kommt aus dem Rumpf.", "Becken zeigt überwiegend nach vorn.", "Füße bleiben stabil.", "Tempo weich und gleichmäßig."},
+		Wrong:   []string{"Stark in den Knien drehen.", "Mit den Armen reißen.", "Zu schnell drehen.", "Die Luft anhalten."},
+	},
+	"C13": {
+		Desc:    "Eine dynamische Rumpfübung für Bauch und schräge Bauchmuskeln.",
+		HowTo:   []string{"Auf den Rücken legen, Hände locker hinter dem Kopf.", "Die Schultern heben und die Knie anziehen.", "Einen Ellbogen Richtung gegenüberliegendes Knie führen.", "In einer gleichmäßigen Trittbewegung die Seiten wechseln."},
+		Correct: []string{"Unterer Rücken bleibt am Boden.", "Bewegung kontrolliert, nicht gerissen.", "Ellbogen bleiben weit.", "Atmung gleichmäßig."},
+		Wrong:   []string{"Am Nacken ziehen.", "Den unteren Rücken vom Boden heben.", "Den Rhythmus hetzen.", "Die Luft anhalten."},
+	},
+	"B11": {
+		Desc:    "Eine Rückenübung, die gegenüberliegenden Arm und Bein in einer wechselnden, schwimmähnlichen Bewegung hebt.",
+		HowTo:   []string{"Auf den Bauch legen, Arme über Kopf.", "Brust und Beine leicht heben.", "Einen Arm und das gegenüberliegende Bein anheben.", "Absenken und Seite wechseln, weich abwechselnd."},
+		Correct: []string{"Heben bleibt klein.", "Nacken folgt der Wirbelsäule.", "Gesäß bleibt aktiv.", "Bewegung gleichmäßig."},
+		Wrong:   []string{"Den unteren Rücken überlasten.", "Den Kopf heben.", "In Rucken bewegen.", "Die Luft anhalten."},
+	},
+	"L10": {
+		Desc:    "Eine grundlegende Beinübung für Oberschenkel, Gesäß und Hüften.",
+		HowTo:   []string{"Füße schulterbreit.", "Das Becken nach hinten schieben und die Knie beugen.", "Senken, bis die Oberschenkel fast parallel sind.", "Über die Fersen nach oben drücken."},
+		Correct: []string{"Knie in Richtung der Zehen.", "Fersen bleiben am Boden.", "Brust bleibt offen.", "Rücken bleibt neutral."},
+		Wrong:   []string{"Die Knie nach innen fallen lassen.", "Die Fersen heben.", "Den Rücken runden.", "Ohne Kontrolle nach unten fallen."},
+	},
+	"L11": {
+		Desc:    "Eine einbeinige Übung für Beine und Gesäß, die schonend für die Knie ist.",
+		HowTo:   []string{"Aufrecht stehen, Füße hüftbreit.", "Mit einem Fuß einen Schritt zurück machen.", "Senken, bis beide Knie fast 90 Grad erreichen.", "Über die vordere Ferse zurückdrücken."},
+		Correct: []string{"Vorderes Knie bleibt über der Ferse.", "Oberkörper bleibt aufrecht.", "Schritt kontrolliert.", "Hinteres Knie senkt sich sanft."},
+		Wrong:   []string{"Das vordere Knie nach innen fallen lassen.", "Den Oberkörper weit nach vorn lehnen.", "Das hintere Knie auf den Boden schlagen.", "Die Schritte hetzen."},
+	},
+	"L12": {
+		Desc:    "Eine langsam ausgeführte Kniebeuge ohne Gewicht, um Kontrolle und Beinkraft aufzubauen.",
+		HowTo:   []string{"Füße schulterbreit.", "Über etwa drei Sekunden senken.", "Unten kurz pausieren.", "Mit Kontrolle aufrichten."},
+		Correct: []string{"Tempo bleibt langsam.", "Knie in Richtung der Zehen.", "Fersen bleiben am Boden.", "Rücken bleibt neutral."},
+		Wrong:   []string{"Schnell nach unten fallen.", "Aus der unteren Position federn.", "Die Knie nach innen fallen lassen.", "Die Luft anhalten."},
+	},
+	"J01": {
+		Desc:    "Kleine, federnde Sprünge von den Fußballen, um Waden und Sprunggelenke vorzubereiten.",
+		HowTo:   []string{"Aufrecht stehen, Füße zusammen.", "Leicht von den Fußballen abfedern.", "Die Knie leicht weich halten.", "Weich und leise landen."},
+		Correct: []string{"Sprünge bleiben niedrig.", "Landungen sind leise.", "Knie bleiben weich.", "Körper bleibt aufrecht."},
+		Wrong:   []string{"Hart und laut landen.", "Die Knie durchstrecken.", "Zu hoch springen.", "Die Sprunggelenke nach innen kippen."},
+	},
+	"J02": {
+		Desc:    "Ein gelenkschonender Marsch mit Kniehub, ein sanftes Cardio-Aufwärmen.",
+		HowTo:   []string{"Aufrecht stehen.", "Auf der Stelle marschieren und ein Knie bis auf Hüfthöhe heben.", "Den gegenüberliegenden Arm natürlich mitschwingen.", "Ein gleichmäßiges, angenehmes Tempo halten."},
+		Correct: []string{"Oberkörper bleibt aufrecht.", "Knie heben bis auf angenehme Höhe.", "Schritte bleiben leicht.", "Atmung bleibt locker."},
+		Wrong:   []string{"Nach hinten lehnen.", "Mit den Füßen stampfen.", "Die Luft anhalten.", "Die Kontrolle hetzen."},
+	},
+	"J03": {
+		Desc:    "Eine klassische Ganzkörper-Cardio-Bewegung, die den ganzen Körper aufwärmt.",
+		HowTo:   []string{"Füße zusammen, Arme an den Seiten.", "Die Füße weit springen, während die Arme über den Kopf gehen.", "Zurück in die Ausgangsposition springen.", "Einen gleichmäßigen Rhythmus halten."},
+		Correct: []string{"Landungen bleiben weich.", "Knie in Richtung der Zehen.", "Bewegung rhythmisch.", "Atmung gleichmäßig."},
+		Wrong:   []string{"Hart landen.", "Die Knie nach innen fallen lassen.", "Die Schultern hochziehen.", "Die Luft anhalten."},
+	},
+	"J04": {
+		Desc:    "Eine dynamische Rumpf- und Cardio-Bewegung, die aus der Plank die Knie zur Brust treibt.",
+		HowTo:   []string{"In einer hohen Plank beginnen, Hände unter den Schultern.", "Ein Knie Richtung Brust treiben.", "Schnell die Beine wechseln.", "Das Becken tief und stabil halten."},
+		Correct: []string{"Becken bleibt gerade.", "Schultern bleiben über den Händen.", "Rumpf bleibt fest.", "Tempo bleibt kontrolliert."},
+		Wrong:   []string{"Das Becken nach oben springen lassen.", "Den unteren Rücken durchhängen lassen.", "Die Schultern zu weit nach vorn schieben.", "Die Luft anhalten."},
+	},
+	"J05": {
+		Desc:    "Eine explosive Unterkörper-Bewegung: in die Kniebeuge gehen, dann kraftvoll nach oben springen.",
+		HowTo:   []string{"Füße schulterbreit.", "In eine Kniebeuge senken.", "Explosiv nach oben springen.", "Weich landen und in die nächste Kniebeuge abfedern."},
+		Correct: []string{"Landungen weich und leise.", "Knie in Richtung der Zehen.", "Brust bleibt offen.", "Hüften federn die Landung ab."},
+		Wrong:   []string{"Steif und laut landen.", "Die Knie nach innen fallen lassen.", "Den Rücken runden.", "Auf gestreckten Beinen landen."},
+	},
+	"J06": {
+		Desc:    "Ein seitlicher Hüpfer von Seite zu Seite für Kraft, Gleichgewicht und Koordination.",
+		HowTo:   []string{"Auf einem Bein stehen.", "Seitlich auf das andere Bein hüpfen.", "Das nachziehende Bein hinten ausschwingen lassen.", "Weich landen und umkehren."},
+		Correct: []string{"Landungen bleiben weich.", "Knie in Richtung des Fußes.", "Hüften bleiben im Gleichgewicht.", "Bewegung bleibt weich."},
+		Wrong:   []string{"Das Knie nach innen fallen lassen.", "Hart landen.", "Das Gleichgewicht verlieren.", "Ohne Kontrolle hetzen."},
+	},
+	"J07": {
+		Desc:    "Eine Cardio-Bewegung mit Laufen auf der Stelle und hohem Kniehub.",
+		HowTo:   []string{"Aufrecht stehen.", "Auf der Stelle laufen und die Knie bis auf Hüfthöhe heben.", "Auf den Fußballen bleiben.", "Die Arme im Rhythmus mitpumpen."},
+		Correct: []string{"Oberkörper bleibt aufrecht.", "Knie heben hoch.", "Landungen bleiben leicht.", "Tempo bleibt gleichmäßig."},
+		Wrong:   []string{"Nach hinten lehnen.", "Mit den Füßen stampfen.", "Zusammensacken.", "Die Luft anhalten."},
+	},
+	"J08": {
+		Desc:    "Eine Ganzkörper-Konditionsübung, die Kniebeuge, Plank und Sprung verbindet.",
+		HowTo:   []string{"Aus dem Stand in die Hocke gehen und die Hände aufsetzen.", "Die Füße in die Plank springen oder zurücksetzen.", "Die Füße wieder unter die Hüften bringen.", "Aufstehen und mit einem Strecken nach oben springen."},
+		Correct: []string{"Wirbelsäule bleibt neutral in der Plank.", "Landungen bleiben weich.", "Tempo bleibt gleichmäßig.", "Rumpf bleibt aktiv."},
+		Wrong:   []string{"Das Becken in der Plank durchhängen lassen.", "Hart landen.", "Die Form hetzen.", "Die Luft anhalten."},
+	},
+	"J09": {
+		Desc:    "Ein explosiver Ausfallschritt, der die Beine in der Luft wechselt, für Kraft und Koordination.",
+		HowTo:   []string{"In einer Ausfallschritt-Position beginnen.", "Nach oben springen und die Beine in der Luft wechseln.", "Weich in einem Ausfallschritt auf der anderen Seite landen.", "Im Wechsel weitermachen."},
+		Correct: []string{"Landungen bleiben weich.", "Vorderes Knie in Richtung des Fußes.", "Oberkörper bleibt aufrecht.", "Hüften federn jede Landung ab."},
+		Wrong:   []string{"Hart landen.", "Das vordere Knie nach innen fallen lassen.", "Weit nach vorn lehnen.", "Die Kontrolle beim Wechsel verlieren."},
+	},
+	"CD07": {
+		Desc:    "Eine ruhige Dehnung für Rücken, Hüften und Schultern zum Herunterkommen.",
+		HowTo:   []string{"Knien und das Becken Richtung Fersen sinken lassen.", "Die Arme nach vorn auf den Boden strecken.", "Die Stirn ablegen.", "Langsam atmen und entspannen."},
+		Correct: []string{"Becken sinkt Richtung Fersen.", "Rücken wird sanft länger.", "Schultern entspannen.", "Atmung bleibt langsam."},
+		Wrong:   []string{"Das Becken nach unten zwingen.", "Die Schultern anspannen.", "Die Luft anhalten.", "Die Knie überlasten."},
+	},
 }

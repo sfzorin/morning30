@@ -12,6 +12,7 @@ type StandardProgram struct {
 // the default (used when nothing else is selected).
 var StandardPrograms = []StandardProgram{
 	{Key: "sergey", Name: "Sergey", Build: ResolveBuiltin},
+	{Key: "vlad", Name: "Vlad", Build: resolveVlad},
 	// Add more standard sets here, e.g.:
 	// {Key: "mobility", Name: "Mobility", Build: resolveMobility},
 }

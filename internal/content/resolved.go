@@ -32,17 +32,9 @@ type RItem struct {
 	Round   int    `json:"round"`
 }
 
-// ResolveBuiltin flattens the built-in program: shared warm-up/cool-down series
-// plus each day's main block (with its baked-in day-to-day progression).
-func ResolveBuiltin() Resolved {
-	r := Resolved{Version: 1, Name: "Sergey", TotalDays: TotalDays, WarmupRounds: warmupRounds}
-	r.Warmup = seqItems(warmupSeq, Warmup)
-	r.Cooldown = seqItems(cooldownSeq, Cooldown)
-	for day := 1; day <= TotalDays; day++ {
-		r.Days = append(r.Days, RDay{Day: day, Items: mainItems(day)})
-	}
-	return r
-}
+// ResolveBuiltin flattens the default built-in program (Sergey): shared warm-up/
+// cool-down series plus each day's main block (with its baked-in progression).
+func ResolveBuiltin() Resolved { return sergeySpec.resolve() }
 
 // ParseResolved parses a stored custom program JSON and normalizes it (defaults +
 // migration of legacy full-day programs into shared warm-up/cool-down).

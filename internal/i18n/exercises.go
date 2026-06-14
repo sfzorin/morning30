@@ -9,6 +9,8 @@ var exerciseNames = map[string][7]string{
 	"W04": {"Наклон с прямой спиной", "Hip hinge", "Kalça menteşesi", "Hüftbeuge", "Bisagra de cadera", "Charnière de hanche", "Hip hinge"},
 	"W05": {"Неглубокий присед", "Shallow squat", "Sığ çömelme", "Flache Kniebeuge", "Sentadilla poco profunda", "Squat peu profond", "Squat poco profondo"},
 	"W06": {"Высокая планка с переносом веса", "High plank weight shift", "Yüksek plankta ağırlık aktarma", "Hoher Stütz mit Gewichtsverlagerung", "Plancha alta con cambio de peso", "Planche haute, transfert de poids", "Plank alto con spostamento del peso"},
+	"W07": {"Дыхание с вытяжением", "Standing breathing + reach", "Ayakta nefes + uzanma", "Atmen mit Strecken", "Respiración con estiramiento", "Respiration avec étirement", "Respirazione con allungamento"},
+	"W08": {"Вращения корпуса стоя", "Standing torso rotations", "Ayakta gövde rotasyonu", "Rumpfrotationen im Stehen", "Rotaciones de torso de pie", "Rotations du torse debout", "Rotazioni del busto in piedi"},
 
 	// ---- Abs / core ----
 	"C01": {"Планка на локтях", "Forearm plank", "Dirsek plank", "Unterarmstütz", "Plancha de antebrazos", "Planche sur les avant-bras", "Plank sugli avambracci"},
@@ -23,6 +25,7 @@ var exerciseNames = map[string][7]string{
 	"C10": {"Планка вверх-вниз", "Up-down plank", "Aşağı-yukarı plank", "Hoch-tief-Plank", "Plancha arriba-abajo", "Planche haute-basse", "Plank su e giù"},
 	"C11": {"Касания пяток лёжа", "Heel taps", "Topuk dokunuşu", "Fersen-Tippen", "Toques de talón", "Touches de talon", "Tocchi del tallone"},
 	"C12": {"Дэд-баг (усложнённый)", "Dead bug (advanced)", "Ölü böcek (ileri)", "Dead Bug (fortgeschritten)", "Bicho muerto (avanzado)", "Dead bug (avancé)", "Dead bug (avanzato)"},
+	"C13": {"Велосипед", "Bicycle crunches", "Bisiklet mekiği", "Fahrrad-Crunches", "Abdominales bicicleta", "Crunch bicyclette", "Crunch a bicicletta"},
 
 	// ---- Push-ups / triceps / shoulders ----
 	"P01": {"Отжимания", "Push-ups", "Şınav", "Liegestütze", "Flexiones", "Pompes", "Piegamenti"},
@@ -44,6 +47,7 @@ var exerciseNames = map[string][7]string{
 	"B08": {"Обратная планка", "Reverse plank", "Ters plank", "Umgekehrter Stütz", "Plancha inversa", "Planche inversée", "Plank inverso"},
 	"B09": {"Разгибания спины (пульс)", "Back extension pulses", "Sırt esnetme (pulse)", "Rückenstrecker-Pulse", "Extensiones de espalda (pulsos)", "Extensions du dos (pulsations)", "Estensioni schiena (pulse)"},
 	"B10": {"Кобра с W-тягой", "Cobra to W-pull", "Kobra + W çekiş", "Kobra mit W-Zug", "Cobra con tirón en W", "Cobra avec tirage en W", "Cobra con tirata a W"},
+	"B11": {"Пловец (по сторонам)", "Swimmers", "Yüzücü", "Schwimmer", "Nadador", "Nageur", "Nuotatore"},
 
 	// ---- Arms / biceps ----
 	"A01": {"Бицепс с самосопротивлением", "Self-resist curl", "Pazı (kendine direnç)", "Bizeps mit Eigenwiderstand", "Curl con autorresistencia", "Curl en auto-résistance", "Curl con autoresistenza"},
@@ -60,6 +64,20 @@ var exerciseNames = map[string][7]string{
 	"L06": {"Ягодичный мост с паузой", "Glute bridge hold", "Duraklamalı köprü", "Glute Bridge mit Pause", "Puente con pausa", "Pont fessier avec pause", "Ponte glutei con pausa"},
 	"L07": {"Подъём на носки", "Calf raises", "Topuk kaldırma", "Wadenheben", "Elevación de pantorrillas", "Mollets debout", "Sollevamento polpacci"},
 	"L09": {"Боковая планка с подъёмом ноги", "Side plank leg lift", "Yan plankta bacak kaldırma", "Seitstütz mit Beinheben", "Plancha lateral con elevación de pierna", "Planche latérale, élévation de jambe", "Plank laterale con sollevamento gamba"},
+	"L10": {"Приседания", "Air squats", "Çömelme", "Kniebeugen", "Sentadillas", "Squats", "Squat"},
+	"L11": {"Обратные выпады", "Reverse lunges", "Geri hamle", "Ausfallschritt rückwärts", "Zancadas hacia atrás", "Fentes arrière", "Affondi indietro"},
+	"L12": {"Медленные приседания", "Slow air squats", "Yavaş çömelme", "Langsame Kniebeugen", "Sentadillas lentas", "Squats lents", "Squat lenti"},
+
+	// ---- Cardio / plyometrics ----
+	"J01": {"Низкие пого-прыжки", "Low pogo jumps", "Alçak pogo zıplama", "Niedrige Pogo-Sprünge", "Saltos pogo bajos", "Petits sauts pogo", "Saltelli pogo bassi"},
+	"J02": {"Высокие колени на месте", "Marching high knees", "Yerinde yüksek diz", "Hohes Kniemarschieren", "Rodillas altas marchando", "Montées de genoux sur place", "Ginocchia alte sul posto"},
+	"J03": {"Джампинг-джеки", "Jumping jacks", "Jumping jack", "Hampelmann", "Saltos de tijera", "Jumping jacks", "Jumping jack"},
+	"J04": {"Скалолаз", "Mountain climbers", "Dağcı", "Bergsteiger", "Escaladores", "Grimpeur", "Mountain climber"},
+	"J05": {"Выпрыгивания из приседа", "Squat jumps", "Çömelme sıçraması", "Squat-Sprünge", "Saltos de sentadilla", "Squats sautés", "Squat jump"},
+	"J06": {"Конькобежец", "Skater hops", "Patenci sıçraması", "Skater-Sprünge", "Saltos de patinador", "Sauts du patineur", "Salti del pattinatore"},
+	"J07": {"Высокий бег на месте", "High knees", "Yüksek diz koşusu", "Hohe Knie", "Rodillas altas", "Montées de genoux", "Ginocchia alte"},
+	"J08": {"Бёрпи", "Burpees", "Burpee", "Burpees", "Burpees", "Burpees", "Burpee"},
+	"J09": {"Прыжковые выпады", "Jump lunges", "Sıçramalı hamle", "Sprung-Ausfallschritte", "Zancadas con salto", "Fentes sautées", "Affondi con salto"},
 
 	// ---- Cool-down ----
 	"CD01": {"Растяжка груди", "Chest stretch", "Göğüs esnetme", "Brustdehnung", "Estiramiento de pecho", "Étirement pectoral", "Allungamento pettorali"},
@@ -67,4 +85,5 @@ var exerciseNames = map[string][7]string{
 	"CD03": {"Скручивание лёжа", "Supine twist", "Sırtüstü dönüş", "Liegende Drehung", "Torsión tumbado", "Torsion allongée", "Torsione sdraiato"},
 	"CD04": {"Поза сфинкса", "Sphinx pose", "Sfenks pozu", "Sphinx-Haltung", "Postura de esfinge", "Posture du sphinx", "Posizione della sfinge"},
 	"CD05": {"Спокойное дыхание лёжа", "Lying breathing", "Sırtüstü sakin nefes", "Ruhige Atmung im Liegen", "Respiración tumbada", "Respiration allongée", "Respirazione sdraiato"},
+	"CD07": {"Поза ребёнка", "Child's pose", "Çocuk pozu", "Kindhaltung", "Postura del niño", "Posture de l'enfant", "Posizione del bambino"},
 }

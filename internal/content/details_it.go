@@ -321,4 +321,108 @@ var detailsIT = map[string]Detail{
 		Correct: []string{"Respiro calmo.", "Spalle rilassate.", "Viso disteso.", "Il corpo si calma."},
 		Wrong:   []string{"Respirare troppo forte.", "Trattenere il respiro.", "Tendere il collo.", "Inarcare la zona lombare."},
 	},
+
+	// ---- Aggiunte del set Vlad (riscaldamento / cardio / pliometria / affondi) ----
+	"W07": {
+		Desc:    "Un esercizio di apertura calmo: respirazione profonda con un dolce allungamento di tutto il corpo per allungare la colonna.",
+		HowTo:   []string{"Stai dritto, piedi alla larghezza dei fianchi.", "Inspira e porta entrambe le braccia sopra la testa.", "Allungati dolcemente lungo la colonna.", "Espira e abbassa le braccia lasciando cadere le spalle."},
+		Correct: []string{"Il respiro è lento e pieno.", "Le spalle si rilassano sull'espirazione.", "Le costole restano basse, senza iperestendere.", "Il movimento è senza fretta."},
+		Wrong:   []string{"Trattenere il respiro.", "Inarcare con forza la zona lombare.", "Alzare le spalle alle orecchie.", "Affrettare l'allungamento."},
+	},
+	"W08": {
+		Desc:    "Un esercizio di rotazione dolce per riscaldare la colonna e il tronco.",
+		HowTo:   []string{"Piedi alla larghezza dei fianchi.", "Lascia oscillare le braccia in modo sciolto.", "Ruota la parte alta del corpo da un lato.", "Passa in modo fluido all'altro lato."},
+		Correct: []string{"Il movimento viene dal tronco.", "I fianchi restano soprattutto rivolti in avanti.", "I piedi restano stabili.", "Il ritmo è fluido e uniforme."},
+		Wrong:   []string{"Torcere con forza le ginocchia.", "Dare strattoni con le braccia.", "Ruotare troppo veloce.", "Trattenere il respiro."},
+	},
+	"C13": {
+		Desc:    "Un esercizio dinamico per il core, per l'addome e gli obliqui.",
+		HowTo:   []string{"Sdraiati sulla schiena con le mani leggere dietro la testa.", "Solleva le spalle e porta le ginocchia in alto.", "Avvicina un gomito al ginocchio opposto.", "Cambia lato in un movimento di pedalata costante."},
+		Correct: []string{"La zona lombare resta a terra.", "Il movimento è controllato, senza strattoni.", "I gomiti restano larghi.", "Il respiro resta regolare."},
+		Wrong:   []string{"Tirare il collo.", "Sollevare la zona lombare dal pavimento.", "Affrettare il ritmo.", "Trattenere il respiro."},
+	},
+	"B11": {
+		Desc:    "Un esercizio per la schiena che solleva braccio e gamba opposti in un movimento alternato simile al nuoto.",
+		HowTo:   []string{"Sdraiati a pancia in giù con le braccia sopra la testa.", "Solleva un po' il petto e le gambe.", "Alza un braccio e la gamba opposta.", "Riabbassa e cambia lato, alternando in modo fluido."},
+		Correct: []string{"Il sollevamento resta piccolo.", "Il collo segue la linea della colonna.", "I glutei restano attivi.", "Il movimento è costante."},
+		Wrong:   []string{"Forzare la zona lombare.", "Sollevare la testa.", "Muoversi a scatti.", "Trattenere il respiro."},
+	},
+	"L10": {
+		Desc:    "Un esercizio base per le gambe, per quadricipiti, glutei e fianchi.",
+		HowTo:   []string{"Piedi alla larghezza delle spalle.", "Spingi i fianchi all'indietro e piega le ginocchia.", "Scendi finché le cosce sono quasi parallele al pavimento.", "Spingi con i talloni per rialzarti."},
+		Correct: []string{"Ginocchia in direzione delle dita.", "Talloni a terra.", "Petto aperto.", "Schiena neutra."},
+		Wrong:   []string{"Lasciare cedere le ginocchia verso l'interno.", "Alzare i talloni.", "Incurvare la schiena.", "Scendere senza controllo."},
+	},
+	"L11": {
+		Desc:    "Un esercizio su una gamba sola per gambe e glutei, delicato sulle ginocchia.",
+		HowTo:   []string{"Stai dritto, piedi alla larghezza dei fianchi.", "Porta un piede indietro.", "Scendi finché entrambe le ginocchia sono vicine a 90 gradi.", "Spingi con il tallone anteriore per tornare su."},
+		Correct: []string{"Il ginocchio anteriore resta sopra il tallone.", "Il busto resta eretto.", "Il passo è controllato.", "Il ginocchio posteriore scende dolcemente."},
+		Wrong:   []string{"Lasciar cedere il ginocchio anteriore verso l'interno.", "Inclinare troppo il busto in avanti.", "Sbattere il ginocchio posteriore a terra.", "Affrettare i passi."},
+	},
+	"L12": {
+		Desc:    "Uno squat a corpo libero eseguito lentamente per costruire controllo e forza nelle gambe.",
+		HowTo:   []string{"Piedi alla larghezza delle spalle.", "Scendi in circa tre secondi.", "Pausa breve nella posizione bassa.", "Rialzati con controllo."},
+		Correct: []string{"Il ritmo resta lento.", "Ginocchia in direzione delle dita.", "Talloni a terra.", "Schiena neutra."},
+		Wrong:   []string{"Scendere veloce.", "Rimbalzare dalla posizione bassa.", "Lasciare cedere le ginocchia verso l'interno.", "Trattenere il respiro."},
+	},
+	"J01": {
+		Desc:    "Piccoli salti elastici sugli avampiedi per attivare polpacci e caviglie.",
+		HowTo:   []string{"Stai dritto, piedi uniti.", "Rimbalza leggermente sugli avampiedi.", "Tieni le ginocchia leggermente morbide.", "Atterra in modo morbido e silenzioso."},
+		Correct: []string{"I salti restano bassi.", "Gli atterraggi sono silenziosi.", "Le ginocchia restano morbide.", "Il corpo resta eretto."},
+		Wrong:   []string{"Atterrare in modo duro e rumoroso.", "Bloccare le ginocchia.", "Saltare troppo in alto.", "Far cedere le caviglie verso l'interno."},
+	},
+	"J02": {
+		Desc:    "Una marcia a basso impatto sollevando le ginocchia, un dolce riscaldamento cardio.",
+		HowTo:   []string{"Stai dritto.", "Marcia sul posto sollevando un ginocchio verso l'altezza dell'anca.", "Oscilla il braccio opposto in modo naturale.", "Mantieni un ritmo costante e comodo."},
+		Correct: []string{"Il busto resta eretto.", "Le ginocchia salgono a un'altezza comoda.", "I passi restano leggeri.", "Il respiro resta tranquillo."},
+		Wrong:   []string{"Inclinarsi all'indietro.", "Battere i piedi a terra.", "Trattenere il respiro.", "Affrettarsi perdendo il controllo."},
+	},
+	"J03": {
+		Desc:    "Un classico esercizio cardio per tutto il corpo che riscalda l'intero corpo.",
+		HowTo:   []string{"Piedi uniti, braccia lungo i fianchi.", "Salta allargando i piedi mentre le braccia salgono sopra la testa.", "Torna saltando alla posizione iniziale.", "Mantieni un ritmo costante."},
+		Correct: []string{"Gli atterraggi restano morbidi.", "Ginocchia in direzione delle dita.", "Il movimento è ritmico.", "Il respiro resta regolare."},
+		Wrong:   []string{"Atterrare in modo duro.", "Lasciare cedere le ginocchia verso l'interno.", "Incurvare le spalle.", "Trattenere il respiro."},
+	},
+	"J04": {
+		Desc:    "Un esercizio dinamico di core e cardio che porta le ginocchia verso il petto partendo dal plank.",
+		HowTo:   []string{"Inizia in plank alto, mani sotto le spalle.", "Porta un ginocchio verso il petto.", "Cambia gamba rapidamente.", "Tieni i fianchi bassi e stabili."},
+		Correct: []string{"I fianchi restano a livello.", "Le spalle restano sopra le mani.", "Il core resta saldo.", "Il ritmo resta controllato."},
+		Wrong:   []string{"Lasciar rimbalzare i fianchi verso l'alto.", "Lasciar cedere la zona lombare.", "Spostare troppo le spalle in avanti.", "Trattenere il respiro."},
+	},
+	"J05": {
+		Desc:    "Un esercizio esplosivo per la parte bassa del corpo: scendi in squat, poi salta su con potenza.",
+		HowTo:   []string{"Piedi alla larghezza delle spalle.", "Scendi in uno squat.", "Salta su in modo esplosivo.", "Atterra morbido e assorbi nello squat successivo."},
+		Correct: []string{"Gli atterraggi sono morbidi e silenziosi.", "Ginocchia in direzione delle dita.", "Petto aperto.", "I fianchi assorbono l'atterraggio."},
+		Wrong:   []string{"Atterrare rigido e rumoroso.", "Lasciare cedere le ginocchia verso l'interno.", "Incurvare la schiena.", "Atterrare a gambe dritte."},
+	},
+	"J06": {
+		Desc:    "Un salto laterale da un lato all'altro per potenza, equilibrio e coordinazione.",
+		HowTo:   []string{"Stai su una gamba sola.", "Salta di lato sull'altra gamba.", "Lascia oscillare la gamba di slancio dietro.", "Atterra morbido e inverti."},
+		Correct: []string{"Gli atterraggi restano morbidi.", "Il ginocchio resta sopra il piede.", "I fianchi restano in equilibrio.", "Il movimento resta fluido."},
+		Wrong:   []string{"Far cedere il ginocchio verso l'interno.", "Atterrare in modo duro.", "Perdere l'equilibrio.", "Affrettarsi senza controllo."},
+	},
+	"J07": {
+		Desc:    "Un esercizio cardio di corsa sul posto sollevando le ginocchia in alto.",
+		HowTo:   []string{"Stai dritto.", "Corri sul posto sollevando le ginocchia verso l'altezza dell'anca.", "Resta sugli avampiedi.", "Muovi le braccia a ritmo."},
+		Correct: []string{"Il busto resta eretto.", "Le ginocchia salgono alte.", "Gli atterraggi restano leggeri.", "Il ritmo resta costante."},
+		Wrong:   []string{"Inclinarsi all'indietro.", "Battere i piedi a terra.", "Incurvare la schiena.", "Trattenere il respiro."},
+	},
+	"J08": {
+		Desc:    "Un esercizio di condizionamento per tutto il corpo che unisce squat, plank e salto.",
+		HowTo:   []string{"Dalla posizione eretta, scendi in squat e appoggia le mani a terra.", "Salta o porta i piedi indietro in plank.", "Riporta i piedi sotto i fianchi.", "Rialzati e salta con un allungo verso l'alto."},
+		Correct: []string{"La colonna resta neutra nel plank.", "Gli atterraggi restano morbidi.", "Il ritmo resta costante.", "Il core resta attivo."},
+		Wrong:   []string{"Lasciar cedere i fianchi nel plank.", "Atterrare in modo duro.", "Affrettarsi trascurando la forma.", "Trattenere il respiro."},
+	},
+	"J09": {
+		Desc:    "Un affondo esplosivo che cambia gamba in aria per potenza e coordinazione.",
+		HowTo:   []string{"Inizia in posizione di affondo.", "Salta su e cambia gamba in aria.", "Atterra morbido in affondo dall'altro lato.", "Continua alternando."},
+		Correct: []string{"Gli atterraggi restano morbidi.", "Il ginocchio anteriore resta sopra il piede.", "Il busto resta eretto.", "I fianchi assorbono ogni atterraggio."},
+		Wrong:   []string{"Atterrare in modo duro.", "Far cedere il ginocchio anteriore verso l'interno.", "Inclinarsi troppo in avanti.", "Perdere il controllo del cambio."},
+	},
+	"CD07": {
+		Desc:    "Un allungamento riposante per schiena, fianchi e spalle per defaticarsi.",
+		HowTo:   []string{"Inginocchiati e porta i fianchi indietro verso i talloni.", "Allunga le braccia in avanti sul pavimento.", "Lascia riposare la fronte a terra.", "Respira lentamente e rilassati."},
+		Correct: []string{"I fianchi si abbassano verso i talloni.", "La schiena si allunga dolcemente.", "Le spalle si rilassano.", "Il respiro resta lento."},
+		Wrong:   []string{"Forzare i fianchi verso il basso.", "Tendere le spalle.", "Trattenere il respiro.", "Sforzare le ginocchia."},
+	},
 }

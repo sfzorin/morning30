@@ -92,6 +92,47 @@ func TestRecoveryCadence(t *testing.T) {
 	}
 }
 
+// wantVladMainCount is Vlad's per-day main-exercise count (per round).
+var wantVladMainCount = map[int]int{
+	1: 5, 2: 6, 3: 7, 4: 5, 5: 7, 6: 8, 7: 5, 8: 7, 9: 8, 10: 8,
+	11: 5, 12: 9, 13: 8, 14: 5, 15: 9, 16: 8, 17: 9, 18: 5, 19: 10, 20: 9,
+	21: 5, 22: 10, 23: 7, 24: 10, 25: 5, 26: 10, 27: 9, 28: 5, 29: 10, 30: 10,
+}
+
+// The Vlad set: 6 warm-up + (block × 2 rounds) + 4 cool-down, 20→30 screens,
+// every referenced exercise present in the library.
+func TestVladStructureAndCounts(t *testing.T) {
+	r := resolveVlad()
+	if r.Name != "Vlad" || len(r.Warmup) != 6 || r.WarmupRounds != 1 || len(r.Cooldown) != 4 {
+		t.Fatalf("vlad: name=%q warmup=%d rounds=%d cooldown=%d", r.Name, len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
+	}
+	for day := 1; day <= TotalDays; day++ {
+		w := r.Workout(day, 18, 0)
+		count := wantVladMainCount[day]
+		if got := len(w.Items); got != 6+count*2+4 {
+			t.Fatalf("vlad day %d: %d items, want %d", day, got, 6+count*2+4)
+		}
+		for i := 0; i < 6; i++ {
+			if w.Items[i].Slot != Warmup {
+				t.Fatalf("vlad day %d: item %d not warm-up", day, i)
+			}
+		}
+		for _, it := range w.Items[len(w.Items)-4:] {
+			if it.Slot != Cooldown {
+				t.Fatalf("vlad day %d: tail not cool-down (%s)", day, it.ExerciseID)
+			}
+		}
+		if got := len(mainOf(w)); got != count*2 {
+			t.Errorf("vlad day %d: %d main items, want %d", day, got, count*2)
+		}
+		for _, it := range w.Items {
+			if _, ok := Get(it.ExerciseID); !ok {
+				t.Errorf("vlad day %d: unknown exercise %s", day, it.ExerciseID)
+			}
+		}
+	}
+}
+
 func TestForbiddenExercisesAbsent(t *testing.T) {
 	forbidden := []string{"jump", "burpee", "jack", "mountain", "lunge", "highknee", "stepup"}
 	for id := range Pool {

@@ -321,4 +321,108 @@ var detailsES = map[string]Detail{
 		Correct: []string{"Respiración tranquila.", "Hombros relajados.", "Cara relajada.", "El cuerpo se calma."},
 		Wrong:   []string{"Respirar con demasiada fuerza.", "Aguantar la respiración.", "Tensar el cuello.", "Arquear la zona lumbar."},
 	},
+
+	// ---- Añadidos del set Vlad (calentamiento / cardio / pliometría / zancadas) ----
+	"W07": {
+		Desc:    "Un ejercicio de apertura tranquilo: respiración profunda con una extensión suave de todo el cuerpo para alargar la columna.",
+		HowTo:   []string{"Ponte de pie y erguido, pies al ancho de caderas.", "Inhala y lleva ambos brazos por encima de la cabeza.", "Alarga la columna con suavidad.", "Exhala y baja los brazos, dejando caer los hombros."},
+		Correct: []string{"La respiración es lenta y completa.", "Los hombros se relajan al exhalar.", "Las costillas abajo, sin arquear de más.", "El movimiento es sin prisa."},
+		Wrong:   []string{"Aguantar la respiración.", "Arquear con fuerza la zona lumbar.", "Subir los hombros a las orejas.", "Apresurar la extensión."},
+	},
+	"W08": {
+		Desc:    "Un ejercicio suave de rotación para calentar la columna y el tronco.",
+		HowTo:   []string{"Ponte de pie, pies al ancho de caderas.", "Deja que los brazos se balanceen sueltos.", "Gira la parte superior del cuerpo a un lado.", "Fluye con suavidad hacia el otro lado."},
+		Correct: []string{"El movimiento sale del tronco.", "Las caderas miran sobre todo al frente.", "Los pies estables.", "El ritmo suave y uniforme."},
+		Wrong:   []string{"Torcer con fuerza las rodillas.", "Dar tirones con los brazos.", "Girar demasiado rápido.", "Aguantar la respiración."},
+	},
+	"C13": {
+		Desc:    "Un ejercicio dinámico de core para el abdomen y los oblicuos.",
+		HowTo:   []string{"Túmbate boca arriba con las manos suaves detrás de la cabeza.", "Eleva los hombros y sube las rodillas.", "Lleva un codo hacia la rodilla contraria.", "Cambia de lado en un pedaleo constante."},
+		Correct: []string{"La zona lumbar cerca del suelo.", "El movimiento es controlado, sin tirones.", "Los codos abiertos.", "Respiración constante."},
+		Wrong:   []string{"Tirar del cuello.", "Despegar la zona lumbar del suelo.", "Apresurar el ritmo.", "Aguantar la respiración."},
+	},
+	"B11": {
+		Desc:    "Un ejercicio de espalda que eleva el brazo y la pierna contrarios en un patrón de nado alterno.",
+		HowTo:   []string{"Túmbate boca abajo con los brazos por encima de la cabeza.", "Eleva un poco el pecho y las piernas.", "Sube un brazo y la pierna contraria.", "Baja y cambia de lado, alternando con suavidad."},
+		Correct: []string{"La elevación es pequeña.", "El cuello sigue la línea de la columna.", "Glúteos activos.", "Movimiento constante."},
+		Wrong:   []string{"Forzar la zona lumbar.", "Levantar la cabeza.", "Moverse a tirones.", "Aguantar la respiración."},
+	},
+	"L10": {
+		Desc:    "Un ejercicio básico de piernas para los cuádriceps, los glúteos y las caderas.",
+		HowTo:   []string{"Pies al ancho de los hombros.", "Lleva las caderas hacia atrás y flexiona las rodillas.", "Baja hasta que los muslos queden casi paralelos al suelo.", "Empuja con los talones para ponerte de pie."},
+		Correct: []string{"Rodillas en dirección a los dedos.", "Talones en el suelo.", "Pecho abierto.", "Espalda neutra."},
+		Wrong:   []string{"Dejar caer las rodillas hacia dentro.", "Levantar los talones.", "Redondear la espalda.", "Bajar sin control."},
+	},
+	"L11": {
+		Desc:    "Un ejercicio a una pierna para las piernas y los glúteos, suave para las rodillas.",
+		HowTo:   []string{"Ponte de pie y erguido, pies al ancho de caderas.", "Da un paso atrás con un pie.", "Baja hasta que ambas rodillas queden cerca de 90 grados.", "Empuja con el talón delantero para volver."},
+		Correct: []string{"La rodilla delantera sobre el talón.", "El torso erguido.", "El paso controlado.", "La rodilla trasera baja con suavidad."},
+		Wrong:   []string{"Dejar caer la rodilla delantera hacia dentro.", "Inclinar mucho el torso hacia delante.", "Golpear el suelo con la rodilla trasera.", "Apresurar los pasos."},
+	},
+	"L12": {
+		Desc:    "Una sentadilla sin peso hecha despacio para ganar control y fuerza de piernas.",
+		HowTo:   []string{"Pies al ancho de los hombros.", "Baja durante unos tres segundos.", "Pausa breve en la posición baja.", "Ponte de pie con control."},
+		Correct: []string{"El ritmo se mantiene lento.", "Rodillas en dirección a los dedos.", "Talones en el suelo.", "Espalda neutra."},
+		Wrong:   []string{"Bajar rápido.", "Rebotar desde el fondo.", "Dejar caer las rodillas hacia dentro.", "Aguantar la respiración."},
+	},
+	"J01": {
+		Desc:    "Saltitos cortos y elásticos sobre las puntas de los pies para activar las pantorrillas y los tobillos.",
+		HowTo:   []string{"Ponte de pie y erguido, pies juntos.", "Rebota ligeramente sobre las puntas de los pies.", "Mantén las rodillas algo suaves.", "Aterriza con suavidad y en silencio."},
+		Correct: []string{"Los saltos se mantienen bajos.", "Los aterrizajes silenciosos.", "Las rodillas suaves.", "El cuerpo erguido."},
+		Wrong:   []string{"Aterrizar fuerte y con ruido.", "Bloquear las rodillas.", "Saltar demasiado alto.", "Volcar los tobillos hacia dentro."},
+	},
+	"J02": {
+		Desc:    "Una marcha de bajo impacto elevando las rodillas, un calentamiento cardiovascular suave.",
+		HowTo:   []string{"Ponte de pie y erguido.", "Marcha en el sitio elevando una rodilla hacia la altura de la cadera.", "Balancea el brazo contrario con naturalidad.", "Mantén un ritmo constante y cómodo."},
+		Correct: []string{"El torso erguido.", "Las rodillas suben a una altura cómoda.", "Los pasos ligeros.", "La respiración tranquila."},
+		Wrong:   []string{"Inclinarse hacia atrás.", "Pisar con fuerza.", "Aguantar la respiración.", "Apresurarse y perder el control."},
+	},
+	"J03": {
+		Desc:    "Un clásico movimiento cardiovascular de todo el cuerpo que calienta el cuerpo entero.",
+		HowTo:   []string{"Pies juntos, brazos a los lados.", "Salta abriendo los pies mientras los brazos suben por encima de la cabeza.", "Salta de nuevo a la posición inicial.", "Mantén un ritmo constante."},
+		Correct: []string{"Los aterrizajes suaves.", "Rodillas en dirección a los dedos.", "El movimiento rítmico.", "Respiración constante."},
+		Wrong:   []string{"Aterrizar fuerte.", "Dejar caer las rodillas hacia dentro.", "Encorvar los hombros.", "Aguantar la respiración."},
+	},
+	"J04": {
+		Desc:    "Un movimiento dinámico de core y cardio que lleva las rodillas hacia el pecho desde la plancha.",
+		HowTo:   []string{"Empieza en plancha alta, las manos bajo los hombros.", "Lleva una rodilla hacia el pecho.", "Cambia de pierna rápidamente.", "Mantén la cadera baja y estable."},
+		Correct: []string{"La cadera nivelada.", "Los hombros sobre las manos.", "Core firme.", "El ritmo controlado."},
+		Wrong:   []string{"Dejar que la cadera rebote hacia arriba.", "Hundir la zona lumbar.", "Desplazar los hombros muy hacia delante.", "Aguantar la respiración."},
+	},
+	"J05": {
+		Desc:    "Un movimiento explosivo del tren inferior: baja a sentadilla y luego salta con potencia.",
+		HowTo:   []string{"Pies al ancho de los hombros.", "Baja a una sentadilla.", "Salta hacia arriba de forma explosiva.", "Aterriza con suavidad y absorbe entrando en la siguiente sentadilla."},
+		Correct: []string{"Los aterrizajes suaves y silenciosos.", "Rodillas en dirección a los dedos.", "Pecho abierto.", "Las caderas absorben el aterrizaje."},
+		Wrong:   []string{"Aterrizar rígido y con ruido.", "Dejar caer las rodillas hacia dentro.", "Redondear la espalda.", "Aterrizar con las piernas rectas."},
+	},
+	"J06": {
+		Desc:    "Un salto lateral de un lado a otro para potencia, equilibrio y coordinación.",
+		HowTo:   []string{"Apóyate sobre una pierna.", "Salta de lado hacia la otra pierna.", "Deja que la pierna de atrás se balancee detrás.", "Aterriza con suavidad e invierte."},
+		Correct: []string{"Los aterrizajes suaves.", "La rodilla sobre el pie.", "Las caderas equilibradas.", "El movimiento suave."},
+		Wrong:   []string{"Dejar caer la rodilla hacia dentro.", "Aterrizar fuerte.", "Perder el equilibrio.", "Apresurarse sin control."},
+	},
+	"J07": {
+		Desc:    "Un movimiento cardiovascular corriendo en el sitio elevando bien las rodillas.",
+		HowTo:   []string{"Ponte de pie y erguido.", "Corre en el sitio elevando las rodillas hacia la altura de la cadera.", "Mantente sobre las puntas de los pies.", "Bombea los brazos al ritmo."},
+		Correct: []string{"El torso erguido.", "Las rodillas suben alto.", "Los aterrizajes ligeros.", "El ritmo constante."},
+		Wrong:   []string{"Inclinarse hacia atrás.", "Pisar con fuerza.", "Encorvarse.", "Aguantar la respiración."},
+	},
+	"J08": {
+		Desc:    "Un movimiento de acondicionamiento de todo el cuerpo que combina sentadilla, plancha y salto.",
+		HowTo:   []string{"De pie, baja a sentadilla y apoya las manos en el suelo.", "Salta o lleva los pies atrás a una plancha.", "Vuelve a llevar los pies bajo las caderas.", "Ponte de pie y salta con una extensión de brazos."},
+		Correct: []string{"La columna neutra en la plancha.", "Los aterrizajes suaves.", "El ritmo constante.", "Core activo."},
+		Wrong:   []string{"Hundir la cadera en la plancha.", "Aterrizar fuerte.", "Apresurarse y perder la técnica.", "Aguantar la respiración."},
+	},
+	"J09": {
+		Desc:    "Una zancada explosiva que cambia de pierna en el aire para potencia y coordinación.",
+		HowTo:   []string{"Empieza en posición de zancada.", "Salta hacia arriba y cambia de pierna en el aire.", "Aterriza con suavidad en una zancada del otro lado.", "Continúa alternando."},
+		Correct: []string{"Los aterrizajes suaves.", "La rodilla delantera sobre el pie.", "El torso erguido.", "Las caderas absorben cada aterrizaje."},
+		Wrong:   []string{"Aterrizar fuerte.", "Dejar caer la rodilla delantera hacia dentro.", "Inclinarse mucho hacia delante.", "Perder el control del cambio."},
+	},
+	"CD07": {
+		Desc:    "Un estiramiento de descanso para la espalda, las caderas y los hombros para relajarse.",
+		HowTo:   []string{"Arrodíllate y lleva las caderas hacia atrás, hacia los talones.", "Extiende los brazos hacia delante en el suelo.", "Deja que la frente descanse en el suelo.", "Respira despacio y relájate."},
+		Correct: []string{"Las caderas se acomodan hacia los talones.", "La espalda se alarga con suavidad.", "Los hombros relajados.", "La respiración lenta."},
+		Wrong:   []string{"Forzar las caderas hacia abajo.", "Tensar los hombros.", "Aguantar la respiración.", "Forzar las rodillas."},
+	},
 }
