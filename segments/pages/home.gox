@@ -58,7 +58,7 @@ elem (h homePage) Main() {
 		~(header{sess: h.sess, auth: h.auth, path: h.path, streak: streak, title: greeting})
 
 		~(safety.Bind(elem(ok bool) {
-			~(if !ok {
+			~(if !ok && h.sess.IsGuest {
 				<div class="safety-card">
 					<h3>⚠️ ~(i18n.T(l, "safety.title"))</h3>
 					<p>~(i18n.T(l, "safety.text"))</p>

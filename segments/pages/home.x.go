@@ -78,7 +78,7 @@ func (h homePage) Main() gox.Elem {
 			return gox.Elem(func(__c gox.Cursor) (__e error) {
 				ctx := __c.Context(); _ = ctx
 //line home.gox:61
-				if !ok {
+				if !ok && h.sess.IsGuest {
 					__e = __c.Init("div"); if __e != nil { return }
 					{
 //line home.gox:62

@@ -127,8 +127,6 @@
 
   // ---- non-blocking voice cues ----
   var lastCueTs = 0;
-  var repCueTimer = null;
-  function clearRepCue() { if (repCueTimer) { clearTimeout(repCueTimer); repCueTimer = null; } }
   // cue speaks a short line without ever delaying the timer. "mid" cues are
   // gated by mode (normal/detailed only) and a minimum gap; start/last/finish
   // always play (when voice is on).
@@ -139,6 +137,43 @@
     if (kind === "mid" && now - lastCueTs < 8000) return;
     lastCueTs = now;
     speak(text);
+  }
+  // talkative covers the two spoken levels: "detailed" (chatty) and "normal".
+  function talkative() { return voiceMode === "normal" || voiceMode === "detailed"; }
+
+  // ---- technique narration during the exercise ("how to" + "how not to") ----
+  // The narrator speaks the exercise's correct cues, then its mistakes, one line
+  // at a time on a self-rescheduling timer that pauses with the workout and never
+  // blocks the countdown. detailed = all cues; normal = a couple.
+  var narrTimer = null, narrQ = [], narrI = 0;
+  function clearNarr() { if (narrTimer) { clearTimeout(narrTimer); narrTimer = null; } narrQ = []; narrI = 0; }
+  function startNarr(it) {
+    clearNarr();
+    if (!voiceOn || !talkative()) return;
+    var c = it.correct || [], w = it.wrong || [], k;
+    var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
+    var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
+    for (k = 0; k < nc; k++) narrQ.push(c[k]);
+    for (k = 0; k < nw; k++) narrQ.push((cues.avoid ? cues.avoid + ": " : "") + w[k]);
+    if (!narrQ.length) return;
+    var gap = voiceMode === "detailed" ? 6000 : 10000;
+    function step() {
+      if (paused) { narrTimer = setTimeout(step, 1000); return; }
+      if (narrI >= narrQ.length) { narrTimer = null; return; }
+      speak(narrQ[narrI]); narrI++;
+      narrTimer = setTimeout(step, gap);
+    }
+    narrTimer = setTimeout(step, voiceMode === "detailed" ? 2500 : 4500);
+  }
+
+  // flashHalf marks the midpoint of a timed exercise: shows and (when talkative)
+  // speaks "half the time".
+  var halfTimer = null;
+  function flashHalf() {
+    el.side.textContent = cues.halfway || "";
+    if (halfTimer) clearTimeout(halfTimer);
+    halfTimer = setTimeout(function () { el.side.textContent = ""; }, 4000);
+    if (talkative()) speak(cues.halfway);
   }
 
   // Run a 1-second countdown; onTick(remaining) each second, onDone() at 0.
@@ -176,9 +211,7 @@
   }
 
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
-  var curSide = 1;         // which side of a per-side exercise is running
-
-  function sides(it) { return it.perSide ? 2 : 1; }
+  var curSide = 1;         // retained so the rep "Done" handler can call nextSide
 
   function startItem(idx) {
     i = idx;
@@ -198,30 +231,25 @@
     runSide(it, 1);
   }
 
-  // runSide runs one side of an exercise (sides==1 for non-per-side) with
-  // non-blocking voice cues scheduled by duration.
+  // runSide runs the exercise. Per-side splitting was removed — every exercise is
+  // a single set in seconds or reps; the user does both sides themselves. Voice:
+  // a start cue, technique narration, "half the time" at the midpoint of a timed
+  // exercise, and a 5-second warning.
   function runSide(it, side) {
     curSide = side;
-    clearRepCue();
-    el.side.textContent = it.perSide ? t("side") + " " + side + "/" + sides(it) : "";
-    if (side === 1) cue(it.vStart, "start");
+    clearNarr();
+    el.side.textContent = "";
+    cue(it.vStart, "start");
+    startNarr(it);
 
     if (it.unit === "seconds") {
       el.done.classList.add("hidden");
       el.value.classList.add("timer");
       var D = it.value;
-      var mid1At = Math.round(D * 0.65); // 35% elapsed
-      var mid2At = Math.round(D * 0.35); // 65% elapsed
       var halfAt = Math.round(D * 0.5);
-      var m = it.vMid || [];
       countdown(D, function (r) {
         el.value.textContent = r + "″";
-        if (D >= 30) {
-          if (r === mid1At && m[0]) cue(m[0], "mid");
-          if (r === mid2At && m[1]) cue(m[1], "mid");
-        } else if (D >= 16) {
-          if (r === halfAt && m[0]) cue(m[0], "mid");
-        }
+        if (r === halfAt && D >= 10) flashHalf();
         if (r === 5 && D > 7) cue(it.vLast, "last");
       }, function () { nextSide(it, side); });
     } else {
@@ -232,36 +260,45 @@
         ? it.value + " " + t("breaths")
         : "× " + it.value;
       el.done.classList.remove("hidden");
-      // One mid cue a few seconds in (reps are user-paced).
-      if (it.vMid && it.vMid[0]) {
-        repCueTimer = setTimeout(function () { cue(it.vMid[0], "mid"); }, 5000);
-      }
     }
   }
 
   function nextSide(it, side) {
-    clearRepCue();
-    if (side < sides(it)) {
-      cue(cues.switch_side, "start");
-      runSide(it, side + 1); // straight into the other side, no rest
-    } else {
-      cue(it.vFinish, "finish");
-      endItem();
-    }
+    clearNarr();
+    cue(it.vFinish, "finish");
+    endItem();
   }
 
-  // doRest shows the rest/get-ready overlay and counts down. The final 3 seconds
-  // are spoken (3-2-1); the exercise's own start cue plays when it begins. The
-  // countdown is part of the pause, not an extra delay.
-  function doRest(seconds, upcomingName, isReady, onDone) {
-    clearRepCue();
+  // unitFor returns the spoken / written unit word for an item.
+  function unitWord(it) {
+    if (it.unit === "seconds") return cues.seconds || t("sec");
+    if (it.unit === "breaths") return t("breaths");
+    return cues.reps || t("reps");
+  }
+  function nextDisplay(it) { // on-screen "Name · ×12" / "Name · 30″"
+    var v = it.unit === "seconds" ? it.value + "″"
+      : it.unit === "breaths" ? it.value + " " + t("breaths")
+      : "× " + it.value;
+    return it.name + " · " + v;
+  }
+
+  // doRest shows the rest/get-ready overlay and counts down. It writes and speaks
+  // the next exercise with its count ("Next exercise: Push-ups, 14 reps"), then
+  // the final 3 seconds are spoken (3-2-1). The countdown is part of the pause,
+  // not an extra delay.
+  function doRest(seconds, upItem, isReady, onDone) {
+    clearNarr();
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
     el.rest.classList.remove("hidden");
     el.restTitle.textContent = isReady ? t("ready") : t("rest");
-    el.restNext.textContent = upcomingName ? t("next") + ": " + upcomingName : "";
+    el.restNext.textContent = upItem ? t("next") + ": " + nextDisplay(upItem) : "";
     pendingStart = onDone;
-    if (upcomingName) speak(upcomingName);
+    if (upItem) {
+      if (!isReady && cues.rest) speak(cues.rest); // "Rest"
+      var lead = cues.next_ex || t("next");
+      speak(lead + ": " + upItem.name + ", " + upItem.value + " " + unitWord(upItem));
+    }
     countdown(seconds, function (r) {
       el.restCount.textContent = r;
       if (r <= 3 && r >= 1) speak(String(r));
@@ -279,18 +316,17 @@
     paused = false;
     el.pause.textContent = t("pause");
     var target = vis(el.rest) ? i : Math.max(0, i - 1);
-    doRest(3, items[target].name, true, function () { startItem(target); });
+    doRest(3, items[target], true, function () { startItem(target); });
   }
 
   function endItem() {
     clearTicker();
-    clearRepCue();
+    clearNarr();
     if (i >= items.length - 1) { finish(); return; }
-    var nextName = items[i + 1].name;
     var rest = items[i].rest || 0;
     var next = i + 1;
     if (rest <= 0) { startItem(next); return; }
-    doRest(rest, nextName, false, function () { startItem(next); });
+    doRest(rest, items[next], false, function () { startItem(next); });
   }
 
   // finish ends the workout: celebrate and report completion to the server.
@@ -298,6 +334,7 @@
     if (finished) return;
     finished = true;
     clearTicker();
+    clearNarr();
     shutUp();
     releaseWake();
     el.stage.classList.add("hidden");
@@ -461,13 +498,13 @@
   if (el.restBack) el.restBack.textContent = t("prev");
 
   // ---- go ---------------------------------------------------------------
-  $sys.clean(function () { clearTicker(); shutUp(); releaseWake(); });
+  $sys.clean(function () { clearTicker(); clearNarr(); shutUp(); releaseWake(); });
 
   requestWake();
   if (items.length === 0) {
     finish();
   } else {
     // A short "get ready" 3-2-1 leads into the first exercise.
-    doRest(3, items[0].name, true, function () { startItem(0); });
+    doRest(3, items[0], true, function () { startItem(0); });
   }
 })();

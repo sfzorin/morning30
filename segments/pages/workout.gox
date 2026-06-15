@@ -208,6 +208,10 @@ func (w workoutPage) payloadJSON() string {
 		"well_done":   i18n.Cue(l, "well_done"),
 		"workout_end": i18n.Cue(l, "workout_end"),
 		"switch_side": i18n.Cue(l, "switch_side"),
+		"next_ex":     i18n.Cue(l, "next_ex"),
+		"reps":        i18n.Cue(l, "reps"),
+		"seconds":     i18n.Cue(l, "seconds"),
+		"avoid":       i18n.Cue(l, "avoid"),
 	}
 	enc := make([]string, 0, 6)
 	for n := 0; n < 6; n++ {
@@ -265,7 +269,6 @@ elem (w workoutPage) Main() {
 			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "workout.quit"))>✕</a>
 			<div class="pbar"><div class="pbar-fill"></div></div>
 			<div class="phase"></div>
-			<button class="info-btn" type="button" aria-label=(i18n.T(l, "info.technique"))>ⓘ</button>
 		</div>
 
 		<div class="stage">
