@@ -150,7 +150,7 @@ var ui = map[string][7]string{
 
 	// Voice cues (spoken)
 	"cue.ready":       {"Приготовься", "Get ready", "Hazır ol", "Mach dich bereit", "Prepárate", "Préparez-vous", "Preparati"},
-	"cue.go":          {"Начали", "Go", "Başla", "Los", "Vamos", "C'est parti", "Via"},
+	"cue.go":          {"Старт", "Go", "Başla", "Los", "Vamos", "C'est parti", "Via"},
 	"cue.rest":        {"Отдых", "Rest", "Dinlen", "Pause", "Descanso", "Repos", "Riposo"},
 	"cue.next":        {"Дальше", "Next up", "Sıradaki", "Als Nächstes", "A continuación", "Ensuite", "Prossimo"},
 	"cue.halfway":     {"Половина времени", "Half the time", "Sürenin yarısı", "Halbe Zeit", "Mitad del tiempo", "Mi-temps", "Metà del tempo"},

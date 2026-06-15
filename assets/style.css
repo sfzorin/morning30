@@ -499,7 +499,9 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .safety-card h3 { margin: 0 0 8px; font-size: 16px; }
 .safety-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 
-.controls { display: flex; gap: 10px; padding: 16px 0 8px; }
+.done-row { display: flex; }
+.done-row .ctl-done { width: 100%; padding: 16px 12px; }
+.controls { display: flex; gap: 10px; padding: 12px 0 8px; }
 .controls .btn { flex: 1; padding: 14px 12px; }
 .ctl-prev { flex: 0 0 52px !important; background: var(--card2); font-size: 18px; }
 .ctl-pause { background: var(--card2); }

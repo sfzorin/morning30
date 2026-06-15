@@ -250,7 +250,8 @@
       countdown(D, function (r) {
         el.value.textContent = r + "″";
         if (r === halfAt && D >= 10) flashHalf();
-        if (r === 5 && D > 7) cue(it.vLast, "last");
+        if (r === 4) clearNarr();               // stop chatter before the count
+        if (r <= 3 && r >= 1) speak(String(r)); // 3-2-1 matches the seconds
       }, function () { nextSide(it, side); });
     } else {
       // reps / breaths: wait for the user to tap Done.
@@ -290,6 +291,7 @@
     clearNarr();
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
+    el.done.classList.add("hidden"); // Done lives on its own row, outside .controls
     el.rest.classList.remove("hidden");
     el.restTitle.textContent = isReady ? t("ready") : t("rest");
     el.restNext.textContent = upItem ? t("next") + ": " + nextDisplay(upItem) : "";
@@ -339,6 +341,7 @@
     releaseWake();
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
+    el.done.classList.add("hidden");
     el.rest.classList.add("hidden");
     el.doneOverlay.classList.remove("hidden");
 

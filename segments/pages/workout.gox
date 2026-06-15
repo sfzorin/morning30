@@ -281,11 +281,13 @@ elem (w workoutPage) Main() {
 			<div class="ex-warn"></div>
 		</div>
 
+		<div class="done-row">
+			<button class="ctl-done btn primary" type="button"></button>
+		</div>
 		<div class="controls">
 			<button class="ctl-prev btn" type="button" aria-label=(i18n.T(l, "workout.prev"))>◀</button>
 			<button class="ctl-pause btn" type="button"></button>
 			<button class="ctl-skip btn" type="button"></button>
-			<button class="ctl-done btn primary" type="button"></button>
 		</div>
 
 		<div class="rest-overlay hidden">

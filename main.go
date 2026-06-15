@@ -70,25 +70,9 @@ func main() {
 				}
 			}
 
-			// No valid session → create an anonymous guest, identified by a
-			// cookie, so progress is saved without registration.
-			if tok, err := auth.NewToken(); err == nil {
-				if emailTok, err := auth.NewToken(); err == nil {
-					if gu, err := database.CreateGuest("guest:"+emailTok, lang); err == nil {
-						if err := database.CreateSession(tok, gu.ID, auth.SessionTTL); err == nil {
-							r.SetCookie(&http.Cookie{
-								Name: "session", Value: tok, Path: "/",
-								HttpOnly: true, SameSite: http.SameSiteLaxMode,
-								MaxAge: int(auth.SessionTTL.Seconds()),
-							})
-							doors.SessionExpire(ctx, auth.SessionTTL)
-							return doors.NewSource(sessionFromUser(gu))
-						}
-					}
-				}
-			}
-
-			// Fallback (DB error): unauthenticated shell.
+			// No valid session → land on the sign-in screen (unauthenticated).
+			// A guest session is created on demand only when the visitor picks
+			// "continue as guest" on the auth page.
 			return doors.NewSource(auth.Session{Lang: lang, Rest: 20})
 		}).(doors.Source[auth.Session])
 		return App{auth: src}

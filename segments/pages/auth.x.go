@@ -227,12 +227,14 @@ func (a authPage) Main() gox.Elem {
 				}
 				__e = __c.Close(); if __e != nil { return }
 //line auth.gox:84
-				__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+				__e = (doors.AClick{On: a.guest}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
 //line auth.gox:84
 						__e = __c.Set("class", "guest-link"); if __e != nil { return }
+//line auth.gox:84
+						__e = __c.Set("role", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 //line auth.gox:84
 						__e = __c.Any(i18n.T(l, "auth.continue_guest")); if __e != nil { return }
@@ -247,6 +249,39 @@ func (a authPage) Main() gox.Elem {
 		__e = __c.Close(); if __e != nil { return }
 	return })
 //line auth.gox:88
+}
+
+// guest creates an anonymous guest session on demand ("continue as guest") and
+// enters the app, so progress is saved without registration.
+func (a authPage) guest(ctx context.Context, r doors.RequestPointer) bool {
+	tok, err := auth.NewToken()
+	if err != nil {
+		return false
+	}
+	emailTok, err := auth.NewToken()
+	if err != nil {
+		return false
+	}
+	gu, err := app.DB.CreateGuest("guest:"+emailTok, a.sess.Lang)
+	if err != nil {
+		return false
+	}
+	_ = app.DB.CreateSession(tok, gu.ID, auth.SessionTTL)
+	r.SetCookie(&http.Cookie{
+		Name:     "session",
+		Value:    tok,
+		Path:     "/",
+		HttpOnly: true,
+		SameSite: http.SameSiteLaxMode,
+		MaxAge:   int(auth.SessionTTL.Seconds()),
+	})
+	doors.SessionExpire(ctx, auth.SessionTTL)
+	a.auth.Update(ctx, auth.Session{
+		Authorized: true, UserID: gu.ID, Email: gu.Email, Name: gu.Name,
+		Lang: gu.Lang, Rest: gu.Rest, Voice: gu.Voice, VoiceMode: gu.VoiceMode, IsGuest: true,
+	})
+	a.path.Update(ctx, path.Path{Page: path.Home})
+	return false
 }
 
 // submit returns the form handler bound to the given error-message source.
