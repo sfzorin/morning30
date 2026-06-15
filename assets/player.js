@@ -160,8 +160,8 @@
     var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
     var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
     narrQ = []; narrI = 0;
-    for (k = 0; k < nc; k++) narrQ.push(c[k]);
-    for (k = 0; k < nw; k++) narrQ.push((cues.avoid ? cues.avoid + ": " : "") + w[k]);
+    for (k = 0; k < nc; k++) narrQ.push((cues.tipdo ? cues.tipdo + ": " : "") + c[k]); // how to do it
+    for (k = 0; k < nw; k++) narrQ.push((cues.avoid ? cues.avoid + ": " : "") + w[k]); // what to avoid
     if (!narrQ.length) return;
     var gap = voiceMode === "detailed" ? 6500 : 11000;
     function step() {
@@ -234,6 +234,12 @@
     el.warn.textContent = it.warning ? "⚠️ " + it.warning : "";
     el.index.textContent = (i + 1) + " / " + items.length;
     el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round;
+    // Slot-coloured counter so you can see at a glance whether you're in the
+    // warm-up, main set, or cool-down.
+    el.value.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
+    el.value.classList.add("slot-" + it.slot);
+    el.phase.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
+    el.phase.classList.add("slot-" + it.slot);
     setProgress();
     runSide(it, 1);
   }

@@ -450,6 +450,11 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .ex-name { font-size: 26px; font-weight: 800; padding: 0 10px; }
 .ex-value { font-size: 44px; font-weight: 800; color: var(--accent); }
 .ex-value.timer { font-variant-numeric: tabular-nums; }
+/* Slot-coloured counter + phase: warm-up = amber, main = accent, cool-down = mint. */
+.ex-value.slot-warmup { color: #fb923c; }
+.ex-value.slot-cooldown { color: #34d399; }
+.phase.slot-warmup { color: #fb923c; }
+.phase.slot-cooldown { color: #34d399; }
 .ex-side { color: var(--accent); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
 .ex-hint { color: var(--muted); font-size: 14px; max-width: 24em; line-height: 1.35; }
 .ex-warn { color: #fbbf24; font-size: 13px; max-width: 24em; line-height: 1.3; }
