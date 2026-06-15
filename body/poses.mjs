@@ -9,11 +9,11 @@ const DN=[0,-1,0];
 // ---------- reusable archetypes ----------
 // straight body tilted ~22° (shoulders high on vertical arms, feet low), belly down (back up),
 // palms flat forward on the floor, toes down — hands and toes both reach the ground.
-const PUSHUP_TOP = {spine:[-0.93,0.37,0],front:[-0.37,-0.93,0],head:[-0.88,0.3,0],
+const PUSHUP_TOP = {spine:[-0.978,0.21,0],front:[-0.21,-0.978,0],head:[-0.94,0.18,0],
   Luarm:[-0.05,-1,0],Lfarm:[-0.05,-1,0],Lhand:[-1,0,0],
   Ruarm:[-0.05,-1,0],Rfarm:[-0.05,-1,0],Rhand:[-1,0,0],
-  Lthigh:[0.93,-0.37,0],Lshin:[0.93,-0.37,0],Lfoot:[0.4,-0.85,0],
-  Rthigh:[0.93,-0.37,0],Rshin:[0.93,-0.37,0],Rfoot:[0.4,-0.85,0]};
+  Lthigh:[0.978,-0.21,0],Lshin:[0.978,-0.21,0],Lfoot:[0.4,-0.85,0],
+  Rthigh:[0.978,-0.21,0],Rshin:[0.978,-0.21,0],Rfoot:[0.4,-0.85,0]};
 const FOREARM_PLANK = {...PUSHUP_TOP, Lfarm:[-0.85,-0.5,0], Rfarm:[-0.85,-0.5,0]};
 const SQUAT = {spine:[0.42,0.91,0],front:[1,0,0],
   Luarm:[0.6,0,0],Lfarm:[0.92,0,0],Ruarm:[0.6,0,0],Rfarm:[0.92,0,0],
