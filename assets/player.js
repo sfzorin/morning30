@@ -102,7 +102,14 @@
     return t("main");
   }
 
-  function speak(text) {
+  // ---- speech coordinator ----------------------------------------------
+  // Two priorities, so the spoken countdown always lands on its second and
+  // never queues behind technique narration:
+  //   sayNow(text) — time-critical (countdown digits, Go, Rest, next-exercise,
+  //                  half-time): cancels whatever is speaking, then speaks.
+  //   utter(text)  — plain queued speech (narration, the rest announcement,
+  //                  finish messages); any sayNow cuts the current line off.
+  function utter(text) {
     if (!voiceOn || !text || !("speechSynthesis" in window)) return;
     try {
       if (!voices.length || !chosenVoice) loadVoices();
@@ -117,6 +124,12 @@
       window.speechSynthesis.speak(u);
     } catch (e) {}
   }
+  var speak = utter; // queued (finish / celebration messages)
+  function sayNow(text) {
+    if (!voiceOn || !text) return;
+    shutUp();      // drop any in-progress narration so the cue is on time
+    utter(text);
+  }
   function shutUp() {
     if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
   }
@@ -125,55 +138,49 @@
     if (ticker) { clearInterval(ticker); ticker = null; }
   }
 
-  // ---- non-blocking voice cues ----
-  var lastCueTs = 0;
-  // cue speaks a short line without ever delaying the timer. "mid" cues are
-  // gated by mode (normal/detailed only) and a minimum gap; start/last/finish
-  // always play (when voice is on).
-  function cue(text, kind) {
-    if (!voiceOn || !text) return;
-    if (kind === "mid" && voiceMode !== "normal" && voiceMode !== "detailed") return;
-    var now = Date.now();
-    if (kind === "mid" && now - lastCueTs < 8000) return;
-    lastCueTs = now;
-    speak(text);
-  }
   // talkative covers the two spoken levels: "detailed" (chatty) and "normal".
   function talkative() { return voiceMode === "normal" || voiceMode === "detailed"; }
 
-  // ---- technique narration during the exercise ("how to" + "how not to") ----
-  // The narrator speaks the exercise's correct cues, then its mistakes, one line
-  // at a time on a self-rescheduling timer that pauses with the workout and never
-  // blocks the countdown. detailed = all cues; normal = a couple.
-  var narrTimer = null, narrQ = [], narrI = 0;
-  function clearNarr() { if (narrTimer) { clearTimeout(narrTimer); narrTimer = null; } narrQ = []; narrI = 0; }
+  // ---- scheduled speech: technique narration + the rest announcement -------
+  // narrTimer drives the "how to / how not to" lines; announceTimer holds the
+  // delayed "Rest / next exercise" line. clearNarr cancels both — they are the
+  // only pre-scheduled speech, and both must die on every transition.
+  var narrTimer = null, narrQ = [], narrI = 0, announceTimer = null;
+  function clearNarr() {
+    if (narrTimer) { clearTimeout(narrTimer); narrTimer = null; }
+    if (announceTimer) { clearTimeout(announceTimer); announceTimer = null; }
+    narrQ = []; narrI = 0;
+  }
+  // startNarr begins the narration a few seconds into the exercise (after the Go
+  // cue), spaced out and low priority. runSide stops it before the closing
+  // countdown; any sayNow cue cuts the current line off. detailed = all cues.
   function startNarr(it) {
-    clearNarr();
     if (!voiceOn || !talkative()) return;
     var c = it.correct || [], w = it.wrong || [], k;
     var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
     var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
+    narrQ = []; narrI = 0;
     for (k = 0; k < nc; k++) narrQ.push(c[k]);
     for (k = 0; k < nw; k++) narrQ.push((cues.avoid ? cues.avoid + ": " : "") + w[k]);
     if (!narrQ.length) return;
-    var gap = voiceMode === "detailed" ? 6000 : 10000;
+    var gap = voiceMode === "detailed" ? 6500 : 11000;
     function step() {
       if (paused) { narrTimer = setTimeout(step, 1000); return; }
       if (narrI >= narrQ.length) { narrTimer = null; return; }
-      speak(narrQ[narrI]); narrI++;
+      utter(narrQ[narrI]); narrI++;
       narrTimer = setTimeout(step, gap);
     }
-    narrTimer = setTimeout(step, voiceMode === "detailed" ? 2500 : 4500);
+    narrTimer = setTimeout(step, 3000); // small pause after "Go" before instructions
   }
 
-  // flashHalf marks the midpoint of a timed exercise: shows and (when talkative)
-  // speaks "half the time".
+  // flashHalf marks the midpoint of a timed set: shows and (when talkative)
+  // speaks "half the time", clear of both the start and the closing count.
   var halfTimer = null;
   function flashHalf() {
     el.side.textContent = cues.halfway || "";
     if (halfTimer) clearTimeout(halfTimer);
-    halfTimer = setTimeout(function () { el.side.textContent = ""; }, 4000);
-    if (talkative()) speak(cues.halfway);
+    halfTimer = setTimeout(function () { el.side.textContent = ""; }, 3500);
+    if (talkative()) sayNow(cues.halfway);
   }
 
   // Run a 1-second countdown; onTick(remaining) each second, onDone() at 0.
@@ -239,8 +246,8 @@
     curSide = side;
     clearNarr();
     el.side.textContent = "";
-    cue(it.vStart, "start");
-    startNarr(it);
+    sayNow(it.vStart);   // "Go" / "Старт"
+    startNarr(it);       // first instruction ~3 s later
 
     if (it.unit === "seconds") {
       el.done.classList.add("hidden");
@@ -249,9 +256,9 @@
       var halfAt = Math.round(D * 0.5);
       countdown(D, function (r) {
         el.value.textContent = r + "″";
-        if (r === halfAt && D >= 10) flashHalf();
-        if (r === 4) clearNarr();               // stop chatter before the count
-        if (r <= 3 && r >= 1) speak(String(r)); // 3-2-1 matches the seconds
+        if (D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
+        if (r === 4) clearNarr();                // silence narration before the count
+        if (r <= 3 && r >= 1) sayNow(String(r)); // digits land exactly on the second
       }, function () { nextSide(it, side); });
     } else {
       // reps / breaths: wait for the user to tap Done.
@@ -266,7 +273,6 @@
 
   function nextSide(it, side) {
     clearNarr();
-    cue(it.vFinish, "finish");
     endItem();
   }
 
@@ -283,10 +289,11 @@
     return it.name + " · " + v;
   }
 
-  // doRest shows the rest/get-ready overlay and counts down. It writes and speaks
-  // the next exercise with its count ("Next exercise: Push-ups, 14 reps"), then
-  // the final 3 seconds are spoken (3-2-1). The countdown is part of the pause,
-  // not an extra delay.
+  // doRest shows the rest/get-ready overlay and counts down. The big number
+  // counts the seconds and the final 3 are spoken (3-2-1, exactly on the tick).
+  // For a real rest it then speaks "Rest" + the next exercise with its count —
+  // after a short beat so it never lands on top of the previous set's "one".
+  // The get-ready before an exercise is just the spoken 3-2-1, leading into "Go".
   function doRest(seconds, upItem, isReady, onDone) {
     clearNarr();
     el.stage.classList.add("hidden");
@@ -296,14 +303,18 @@
     el.restTitle.textContent = isReady ? t("ready") : t("rest");
     el.restNext.textContent = upItem ? t("next") + ": " + nextDisplay(upItem) : "";
     pendingStart = onDone;
-    if (upItem) {
-      if (!isReady && cues.rest) speak(cues.rest); // "Rest"
-      var lead = cues.next_ex || t("next");
-      speak(lead + ": " + upItem.name + ", " + upItem.value + " " + unitWord(upItem));
+    if (upItem && !isReady && seconds >= 6) {
+      announceTimer = setTimeout(function () {
+        announceTimer = null;
+        if (paused || el.rest.classList.contains("hidden")) return;
+        shutUp();
+        if (cues.rest) utter(cues.rest); // "Rest" (queued)
+        utter((cues.next_ex || t("next")) + ": " + upItem.name + ", " + upItem.value + " " + unitWord(upItem));
+      }, 700);
     }
     countdown(seconds, function (r) {
       el.restCount.textContent = r;
-      if (r <= 3 && r >= 1) speak(String(r));
+      if (r <= 3 && r >= 1) sayNow(String(r)); // digits land exactly on the second
     }, function () {
       var f = pendingStart; pendingStart = null;
       if (f) f();
@@ -412,12 +423,14 @@
     var it = items[i];
     if (it && it.unit !== "seconds") { nextSide(it, curSide); }
   });
-  el.skip.addEventListener("click", function () { shutUp(); endItem(); });
+  el.skip.addEventListener("click", function () { shutUp(); clearNarr(); endItem(); });
   el.prev.addEventListener("click", prev);
   if (el.restBack) el.restBack.addEventListener("click", prev);
   // Skip jumps straight to whatever the rest/ready countdown was about to start.
   el.restSkip.addEventListener("click", function () {
     clearTicker();
+    clearNarr();
+    shutUp();
     var f = pendingStart; pendingStart = null;
     if (f) f();
   });
@@ -453,6 +466,7 @@
     if (!it) return;
     infoWasPaused = paused;
     paused = true;
+    shutUp();
     el.infoMedia.src = it.video || it.svg;
     el.infoName.textContent = it.name;
     el.infoDesc.textContent = it.desc || "";
