@@ -160,8 +160,8 @@
     var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
     var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
     narrQ = []; narrI = 0;
-    for (k = 0; k < nc; k++) narrQ.push((cues.tipdo ? cues.tipdo + ": " : "") + c[k]); // how to do it
-    for (k = 0; k < nw; k++) narrQ.push((cues.avoid ? cues.avoid + ": " : "") + w[k]); // what to avoid
+    for (k = 0; k < nc; k++) narrQ.push(c[k]); // how to do it (phrased as a do)
+    for (k = 0; k < nw; k++) narrQ.push(w[k]); // common mistake (phrased as a don't)
     if (!narrQ.length) return;
     var gap = voiceMode === "detailed" ? 6500 : 11000;
     function step() {

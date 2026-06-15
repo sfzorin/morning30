@@ -212,7 +212,6 @@ func (w workoutPage) payloadJSON() string {
 		"reps":        i18n.Cue(l, "reps"),
 		"seconds":     i18n.Cue(l, "seconds"),
 		"avoid":       i18n.Cue(l, "avoid"),
-		"tipdo":       i18n.Cue(l, "tip_do"),
 	}
 	enc := make([]string, 0, 6)
 	for n := 0; n < 6; n++ {
