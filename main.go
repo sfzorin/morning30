@@ -119,6 +119,20 @@ func main() {
 	// served from disk so swapping a model needs no rebuild. The 3D editor loads these
 	// first and falls back to CDN stand-ins if absent.
 	mux.Handle("/body/models/", http.StripPrefix("/body/models/", http.FileServer(http.Dir("body/web/models"))))
+
+	// SEO: robots + sitemap (the only crawlable URL is the landing page).
+	mux.HandleFunc("/robots.txt", func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+		w.Write([]byte("User-agent: *\nAllow: /\nSitemap: https://morning30.com/sitemap.xml\n"))
+	})
+	mux.HandleFunc("/sitemap.xml", func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Set("Content-Type", "application/xml; charset=utf-8")
+		w.Write([]byte(`<?xml version="1.0" encoding="UTF-8"?>` +
+			`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` +
+			`<url><loc>https://morning30.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>` +
+			`</urlset>`))
+	})
+
 	mux.Handle("/", a)
 
 	addr := ":8080"

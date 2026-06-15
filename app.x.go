@@ -87,46 +87,182 @@ func (a App) Main() gox.Elem {
 					__e = __c.Set("content", "morning30.com"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:35
+					__e = __c.Set("name", "description"); if __e != nil { return }
+//line app.gox:35
+					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat. Daily progression, streaks, male/female figures, and 7 languages. Open-source PWA."); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:36
+					__e = __c.Set("name", "application-name"); if __e != nil { return }
+//line app.gox:36
+					__e = __c.Set("content", "morning30.com"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:37
+					__e = __c.Set("name", "robots"); if __e != nil { return }
+//line app.gox:37
+					__e = __c.Set("content", "index, follow"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("link"); if __e != nil { return }
 				{
-//line app.gox:33
+//line app.gox:38
+					__e = __c.Set("rel", "canonical"); if __e != nil { return }
+//line app.gox:38
+					__e = __c.Set("href", "https://morning30.com/"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:39
+					__e = __c.Set("property", "og:type"); if __e != nil { return }
+//line app.gox:39
+					__e = __c.Set("content", "website"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:40
+					__e = __c.Set("property", "og:site_name"); if __e != nil { return }
+//line app.gox:40
+					__e = __c.Set("content", "morning30.com"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:41
+					__e = __c.Set("property", "og:title"); if __e != nil { return }
+//line app.gox:41
+					__e = __c.Set("content", "morning30.com — 30-day morning workout"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:42
+					__e = __c.Set("property", "og:description"); if __e != nil { return }
+//line app.gox:42
+					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat. Daily progression, streaks, and 7 languages."); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:43
+					__e = __c.Set("property", "og:url"); if __e != nil { return }
+//line app.gox:43
+					__e = __c.Set("content", "https://morning30.com/"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:44
+					__e = __c.Set("property", "og:image"); if __e != nil { return }
+//line app.gox:44
+					__e = __c.Set("content", "https://morning30.com/static/icon-512.png"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:45
+					__e = __c.Set("property", "og:image:width"); if __e != nil { return }
+//line app.gox:45
+					__e = __c.Set("content", "512"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:46
+					__e = __c.Set("property", "og:image:height"); if __e != nil { return }
+//line app.gox:46
+					__e = __c.Set("content", "512"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:47
+					__e = __c.Set("name", "twitter:card"); if __e != nil { return }
+//line app.gox:47
+					__e = __c.Set("content", "summary"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:48
+					__e = __c.Set("name", "twitter:title"); if __e != nil { return }
+//line app.gox:48
+					__e = __c.Set("content", "morning30.com — 30-day morning workout"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:49
+					__e = __c.Set("name", "twitter:description"); if __e != nil { return }
+//line app.gox:49
+					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat."); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("meta"); if __e != nil { return }
+				{
+//line app.gox:50
+					__e = __c.Set("name", "twitter:image"); if __e != nil { return }
+//line app.gox:50
+					__e = __c.Set("content", "https://morning30.com/static/icon-512.png"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("link"); if __e != nil { return }
+				{
+//line app.gox:52
 					__e = __c.Set("rel", "manifest"); if __e != nil { return }
-//line app.gox:33
+//line app.gox:52
 					__e = __c.Set("href", "/static/manifest.webmanifest"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("link"); if __e != nil { return }
 				{
-//line app.gox:34
+//line app.gox:53
 					__e = __c.Set("rel", "icon"); if __e != nil { return }
-//line app.gox:34
+//line app.gox:53
 					__e = __c.Set("type", "image/svg+xml"); if __e != nil { return }
-//line app.gox:34
+//line app.gox:53
 					__e = __c.Set("href", "/static/icon.svg"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("link"); if __e != nil { return }
 				{
-//line app.gox:35
+//line app.gox:54
 					__e = __c.Set("rel", "apple-touch-icon"); if __e != nil { return }
-//line app.gox:35
+//line app.gox:54
 					__e = __c.Set("href", "/static/icon-180.png"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("link"); if __e != nil { return }
 				{
-//line app.gox:36
+//line app.gox:55
 					__e = __c.Set("rel", "stylesheet"); if __e != nil { return }
-//line app.gox:36
+//line app.gox:55
 					__e = __c.Set("href", assets.Style); if __e != nil { return }
-//line app.gox:36
+//line app.gox:55
 					__e = __c.Set("name", "main.css"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("title"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("morning30.com"); if __e != nil { return }
+					__e = __c.Text("morning30.com — 30-day morning workout"); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
+				__e = __c.Init("script"); if __e != nil { return }
+				{
+//line app.gox:57
+					__e = __c.Set("type", "application/ld+json"); if __e != nil { return }
+					__e = __c.Submit(); if __e != nil { return }
+					__e = __c.Raw("{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"morning30.com\",\"url\":\"https://morning30.com/\",\"applicationCategory\":\"HealthApplication\",\"operatingSystem\":\"Web\",\"browserRequirements\":\"Requires JavaScript\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"A free, voice-guided 30-day morning workout you can do anywhere with just a mat.\",\"inLanguage\":[\"en\",\"ru\",\"tr\",\"de\",\"es\",\"fr\",\"it\"]}"); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
@@ -134,7 +270,7 @@ func (a App) Main() gox.Elem {
 			__e = __c.Init("body"); if __e != nil { return }
 			{
 				__e = __c.Submit(); if __e != nil { return }
-//line app.gox:40
+//line app.gox:62
 				__e = __c.Any(doors.Route(
 				doors.RouteModel(func(p doors.Source[path.Path]) gox.Comp {
 					return pages.Root{Path: p, Auth: a.auth}
@@ -152,5 +288,5 @@ func (a App) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line app.gox:54
+//line app.gox:76
 }
