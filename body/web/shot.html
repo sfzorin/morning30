@@ -139,13 +139,20 @@ function ingest(root){
 // by the picture, not by bones (bones ignore the flesh, so the figure looked like it floated).
 const out=document.createElement('canvas'); out.width=SIZE; out.height=SIZE;
 document.body.appendChild(out); const octx=out.getContext('2d',{willReadFrequently:true});
+const MEASURE=new URLSearchParams(location.search).has('measure');
 function composite(){
   octx.clearRect(0,0,SIZE,SIZE); octx.drawImage(renderer.domElement,0,0,SIZE,SIZE);
-  const d=octx.getImageData(0,0,SIZE,SIZE).data; let bottom=-1,left=SIZE,right=0;
-  for(let y=SIZE-1;y>=0;y--){let hit=false;for(let x=0;x<SIZE;x++){if(d[(y*SIZE+x)*4+3]>24){hit=true;if(x<left)left=x;if(x>right)right=x;}}if(hit){if(bottom<0)bottom=y;}}
+  const d=octx.getImageData(0,0,SIZE,SIZE).data; let bottom=-1,left=SIZE,right=0,footB=-1,handB=-1;
+  for(let y=SIZE-1;y>=0;y--){let hit=false;for(let x=0;x<SIZE;x++){ if(d[(y*SIZE+x)*4+3]>24){hit=true;
+    if(x<left)left=x; if(x>right)right=x;
+    if(x<SIZE*0.45 && footB<0) footB=y; if(x>SIZE*0.55 && handB<0) handB=y; }}
+    if(hit && bottom<0) bottom=y; }
   if(bottom>=0 && spec.floor!==false){const fy=Math.min(SIZE-3,bottom+1);
     octx.strokeStyle='#475569';octx.lineWidth=4;octx.lineCap='round';
     octx.beginPath();octx.moveTo(Math.max(6,left-24),fy);octx.lineTo(Math.min(SIZE-6,right+24),fy);octx.stroke();}
+  if(MEASURE){ octx.fillStyle='#dc2626'; if(footB>=0)octx.fillRect(SIZE*0.22-9,footB-1,18,3);
+    octx.fillStyle='#2563eb'; if(handB>=0)octx.fillRect(SIZE*0.78-9,handB-1,18,3);
+    octx.fillStyle='#111'; octx.font='15px monospace'; octx.fillText(`foot ${footB}  hand ${handB}  d ${handB-footB}`,8,18); }
 }
 function chain(list){
   if(!list.length){ document.title='ERROR'; window.__shotErr=true; return; }

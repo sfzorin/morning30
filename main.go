@@ -19,18 +19,13 @@ import (
 	"github.com/doors-dev/gox"
 )
 
-// bodyHTML is the standalone interactive mannequin editor served at /body.
-//
-//go:embed body/web/body.html
-var bodyHTML []byte
-
-// bodyCore is the shared figure-math ES module imported by the editor (and reused
-// by the Node SVG generator at body/gen.mjs). Served at /body/core.mjs.
+// bodyCore is the shared figure-math ES module: joints()/constraints (used by the 3D
+// editor's mini-projections) + the legacy SVG figure. Served at /body/core.mjs.
 //
 //go:embed body/core.mjs
 var bodyCore []byte
 
-// bodyR3D is the Three.js + Mixamo-rig prototype editor (real 3D), served at /body3d.
+// bodyR3D is the Three.js + Mixamo-rig 3D mannequin editor, served at /body (and /body3d).
 //
 //go:embed body/web/r3d.html
 var bodyR3D []byte
@@ -109,7 +104,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/body", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		w.Write(bodyHTML)
+		w.Write(bodyR3D)
 	})
 	mux.HandleFunc("/body/core.mjs", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "text/javascript; charset=utf-8")
