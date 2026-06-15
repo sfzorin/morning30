@@ -6,6 +6,24 @@
 
 const DN=[0,-1,0];
 
+// ======================= discrete pose vocabulary =======================
+// RULES (snap to these, no arbitrary angles):
+//  - limb directions come from DIR only (cardinals + 45° diagonals), body frame x=front,y=up,z=left.
+//  - foot: POINTED (in line with shin) or FLEXED (~90° to shin). nothing in between.
+//  - head: pitch in line with torso (never cranes); yaw ∈ {0,+70,-70} via spec.headYaw.
+//  - hand: support = flat on floor (horizontal); free = continues the forearm (omit it).
+//  - elbow/knee: straight (~0°) or bent (~90°), not a little.
+//  - default L/R mirrored; asymmetry only on purpose (perSide / steps / swings).
+const DIR = {
+  down:[0,-1,0], up:[0,1,0], fwd:[1,0,0], back:[-1,0,0], left:[0,0,1], right:[0,0,-1],
+  fwdDown:[0.71,-0.71,0], fwdUp:[0.71,0.71,0], backDown:[-0.71,-0.71,0], backUp:[-0.71,0.71,0],
+  downLeft:[0,-0.71,0.71], downRight:[0,-0.71,-0.71], upLeft:[0,0.71,0.71], upRight:[0,0.71,-0.71],
+};
+// foot relative to a given shin direction sh: pointed = along shin; flexed = 90° toward the sole.
+const norm=v=>{const m=Math.hypot(v[0],v[1],v[2])||1;return[v[0]/m,v[1]/m,v[2]/m];};
+const footPointed = sh => norm(sh);                   // toe continues the shin (e.g. tiptoe, lying point)
+const footFlexed  = sh => norm([-sh[1], sh[0], 0]);   // 90° to shin toward the toes-forward side (sole flat); standing shin[0,-1,0]→[1,0,0]
+
 // ---------- reusable archetypes ----------
 // straight body tilted ~22° (shoulders high on vertical arms, feet low), belly down (back up),
 // palms flat forward on the floor, toes down — hands and toes both reach the ground.
@@ -14,7 +32,19 @@ const PUSHUP_TOP = {spine:[-0.978,0.21,0],front:[-0.21,-0.978,0],head:[-0.94,0.1
   Ruarm:[-0.05,-1,0],Rfarm:[-0.05,-1,0],Rhand:[-1,0,0],
   Lthigh:[0.978,-0.21,0],Lshin:[0.978,-0.21,0],Lfoot:[0.4,-0.85,0],
   Rthigh:[0.978,-0.21,0],Rshin:[0.978,-0.21,0],Rfoot:[0.4,-0.85,0]};
-const FOREARM_PLANK = {...PUSHUP_TOP, Lfarm:[-0.85,-0.5,0], Rfarm:[-0.85,-0.5,0]};
+// forearm plank: upper arm straight DOWN to the elbow, forearm flat FORWARD along the floor,
+// body a straight line, toes down. Forearms + toes are the two floor contacts.
+const FOREARM_PLANK = {spine:[-0.9995,0.03,0],front:[-0.03,-0.9995,0],head:[-0.999,0.03,0],
+  Luarm:[0,-1,0],Lfarm:[-1,0,0],Lhand:[-1,0,0],
+  Ruarm:[0,-1,0],Rfarm:[-1,0,0],Rhand:[-1,0,0],
+  Lthigh:[0.9995,-0.03,0],Lshin:[0.9995,-0.03,0],Lfoot:[0.4,-0.85,0],
+  Rthigh:[0.9995,-0.03,0],Rshin:[0.9995,-0.03,0],Rfoot:[0.4,-0.85,0]};
+// side plank (front view): diagonal body on its side; RIGHT arm down = support (hand on
+// floor), LEFT arm up; legs stacked sloping to the feet on the floor. Contacts: hand + feet.
+const SIDEPLANK = {spine:[0,0.36,0.933],front:[1,0,0],head:[0,0.63,0.78],
+  Ruarm:[0,-1,0],Rfarm:[0,-1,0],Rhand:[1,0,0], Luarm:[0,1,0],Lfarm:[0,1,0],Lhand:[0,1,0],   // Rhand flat on floor (full palm)
+  Rthigh:[0,-0.36,-0.933],Rshin:[0,-0.36,-0.933],Rfoot:[0,-0.5,-0.87],
+  Lthigh:[0,-0.36,-0.933],Lshin:[0,-0.36,-0.933],Lfoot:[0,-0.5,-0.87]};
 const SQUAT = {spine:[0.42,0.91,0],front:[1,0,0],
   Luarm:[0.6,0,0],Lfarm:[0.92,0,0],Ruarm:[0.6,0,0],Rfarm:[0.92,0,0],
   Lthigh:[0.95,-0.12,0],Lshin:[-0.6,-0.8,0],Rthigh:[0.95,-0.12,0],Rshin:[-0.6,-0.8,0]};
@@ -41,7 +71,7 @@ export const POSES = {
   W02: {view:'front', pose:{Luarm:[0,0.1,1],Lfarm:[0,0.1,1],Ruarm:[0,0.1,-1],Rfarm:[0,0.1,-1]}},                 // arm circles (arms out)
   W03: {view:'front', pose:{front:[0.7,0,0.7],Luarm:[0.3,0,0.6],Lfarm:[0.6,0,0.4],Ruarm:[0.3,0,-0.6],Rfarm:[0.6,0,-0.4]}}, // standing twist
   W04: {view:'side', pose:HINGE},                                                                                  // hip hinge
-  W05: {view:'side', pose:{...SQUAT, Lthigh:[0.4,-0.9,0],Rthigh:[0.4,-0.9,0],Lshin:[-0.02,-1,0],Rshin:[-0.02,-1,0]}}, // shallow squat
+  W05: {view:'side', pose:SQUAT}, // shallow squat (use the verified squat)
   W06: {view:'side', pose:PUSHUP_TOP},                                                                            // high plank
   W07: {view:'front', pose:{Luarm:[0,1,0.1],Lfarm:[0,1,0.1],Ruarm:[0,1,-0.1],Rfarm:[0,1,-0.1]}},                 // breathing + reach (overhead)
   W08: {view:'front', pose:{front:[0.7,0,0.7],Luarm:[0.2,0,0.7],Lfarm:[0.5,0,0.5],Ruarm:[0.2,0,-0.7],Rfarm:[0.5,0,-0.5]}}, // torso rotations
@@ -54,8 +84,8 @@ export const POSES = {
   C04: {view:'side', pose:{...SUPINE, Lthigh:[0.35,0.93,0],Lshin:[0.35,0.93,0],Rthigh:[0.7,0.7,0],Rshin:[0.7,0.7,0]}}, // flutter kicks
   C05: {view:'side', pose:{...SUPINE, Lthigh:[0.2,0.6,0],Lshin:[-0.7,0.4,0],Rthigh:[0.2,0.6,0],Rshin:[-0.7,0.4,0]}}, // reverse crunch (knees to chest)
   C06: {view:'side', pose:{...SUPINE, Luarm:[-1,0.1,0],Lfarm:[-1,0.1,0],Ruarm:[-1,0.1,0],Rfarm:[-1,0.1,0], Lthigh:[0.5,0.5,0],Lshin:[0.5,0.5,0],Rthigh:[0.5,0.5,0],Rshin:[0.5,0.5,0]}}, // hollow hold
-  C07: {view:'iso', pose:{spine:[-0.95,0.3,0],front:[-0.2,0,-0.98], Ruarm:[0,-1,0],Rfarm:[0,-1,0], Luarm:[0,1,0],Lfarm:[0,1,0], Lthigh:[0.95,-0.05,0],Lshin:[0.95,-0.05,0],Lfoot:[0.6,-0.7,0],Rthigh:[0.95,-0.05,0],Rshin:[0.95,-0.05,0],Rfoot:[0.6,-0.7,0]}}, // side plank (on side, bottom arm support, top arm up)
-  C08: {view:'iso', pose:{spine:[-0.95,0.3,0],front:[-0.2,0,-0.98], Ruarm:[0,-1,0],Rfarm:[0,-1,0], Luarm:[0,1,0],Lfarm:[0,1,0], Lthigh:[0.95,-0.05,0],Lshin:[0.95,-0.05,0],Lfoot:[0.6,-0.7,0],Rthigh:[0.95,-0.05,0],Rshin:[0.95,-0.05,0],Rfoot:[0.6,-0.7,0]}}, // side plank hip lift
+  C07: {view:'front', pose:SIDEPLANK}, // side plank
+  C08: {view:'front', pose:SIDEPLANK}, // side plank hip lift (same hold)
   C09: {view:'side', pose:{...PUSHUP_TOP, Ruarm:[0.3,-0.5,0],Rfarm:[1,0.1,0]}},                                  // plank shoulder taps (one hand up)
   C10: {view:'side', pose:PUSHUP_TOP},                                                                            // up-down plank
   C11: {view:'side', pose:{...SUPINE, Lthigh:[0.3,0.5,0],Lshin:[-0.5,0.3,0],Rthigh:[0.3,0.5,0],Rshin:[-0.5,0.3,0], Luarm:[-0.4,-0.5,0],Lfarm:[0.3,-0.7,0],Ruarm:[-0.4,-0.5,0],Rfarm:[0.3,-0.7,0]}}, // heel taps
@@ -76,7 +106,12 @@ export const POSES = {
   B05: {view:'iso', pose:{...PRONE, Luarm:[0.1,0.2,1],Lfarm:[0.1,0.2,1],Ruarm:[0.1,0.2,-1],Rfarm:[0.1,0.2,-1]}}, // T-raise
   B06: {view:'iso', pose:{...PRONE, Luarm:[0.3,0.7,0.5],Lfarm:[0.2,0.4,0.7],Ruarm:[0.3,0.7,-0.5],Rfarm:[0.2,0.4,-0.7]}}, // superman pull-down
   B07: {view:'iso', pose:{...PRONE, Luarm:[0.6,0.5,0.25],Lfarm:[0.5,0.7,0.2],Ruarm:[0.85,-0.2,-0.3],Rfarm:[0.95,-0.1,-0.2], Lthigh:[-0.92,0.32,0],Lshin:[-0.94,0.3,0], Rthigh:[-0.97,-0.18,0],Rshin:[-0.98,-0.12,0]}}, // swimmers (opp arm+leg up)
-  B08: {view:'side', pose:{spine:[0.55,0.83,0],front:[-0.5,0.86,0], Luarm:[-0.55,-0.83,0],Lfarm:[-0.5,-0.86,0],Ruarm:[-0.55,-0.83,0],Rfarm:[-0.5,-0.86,0], Lthigh:[0.93,-0.36,0],Lshin:[0.96,-0.28,0],Lfoot:[0.6,-0.8,0],Rthigh:[0.93,-0.36,0],Rshin:[0.96,-0.28,0],Rfoot:[0.6,-0.8,0]}}, // reverse plank: straight body line, hands behind, hips lifted
+  // reverse plank: face UP, straight body; arms down to flat hands behind (support), legs
+  // extended fwd-down to heels (feet flexed). contacts: hands + heels.
+  B08: {view:'side', pose:{spine:[-0.94,0.34,0],front:[0.34,0.94,0],head:[-0.9,0.35,0],
+    Luarm:[-0.2,-0.98,0],Lfarm:[-0.2,-0.98,0],Lhand:[1,0,0], Ruarm:[-0.2,-0.98,0],Rfarm:[-0.2,-0.98,0],Rhand:[1,0,0],
+    Lthigh:[0.94,-0.34,0],Lshin:[0.94,-0.34,0],Lfoot:[0.34,0.94,0],
+    Rthigh:[0.94,-0.34,0],Rshin:[0.94,-0.34,0],Rfoot:[0.34,0.94,0]}}, // reverse plank
   B09: {view:'side', pose:{...PRONE, spine:[0.85,0.5,0],front:[0.3,-0.95,0], Luarm:[0.3,0.1,0.5],Lfarm:[0.5,0.1,0.4],Ruarm:[0.3,0.1,-0.5],Rfarm:[0.5,0.1,-0.4]}}, // back extension pulses
   B10: {view:'iso', pose:{...PRONE, Luarm:[0.3,0.5,0.6],Lfarm:[0.1,0.85,0.4],Ruarm:[0.3,0.5,-0.6],Rfarm:[0.1,0.85,-0.4]}}, // cobra to W
   B11: {view:'iso', pose:{...PRONE, Luarm:[0.6,0.5,0.25],Lfarm:[0.5,0.7,0.2],Ruarm:[0.85,-0.2,-0.3],Rfarm:[0.95,-0.1,-0.2], Lthigh:[-0.92,0.32,0],Lshin:[-0.94,0.3,0], Rthigh:[-0.97,-0.18,0],Rshin:[-0.98,-0.12,0]}}, // swimmers per side
@@ -93,7 +128,8 @@ export const POSES = {
   L05: {view:'side', pose:{...SUPINE, spine:[-0.8,0.6,0], Lthigh:[0.6,0.5,0],Lshin:[-0.4,-0.85,0], Rthigh:[0.85,0.45,0],Rshin:[0.85,0.45,0], Luarm:[-0.8,-0.5,0],Lfarm:[-0.8,-0.5,0],Ruarm:[-0.8,-0.5,0],Rfarm:[-0.8,-0.5,0]}}, // bridge march
   L06: {view:'side', pose:{...SUPINE, spine:[-0.8,0.6,0], Lthigh:[0.75,0.45,0],Lshin:[-0.35,-0.9,0],Lfoot:[0.8,-0.5,0], Rthigh:[0.75,0.45,0],Rshin:[-0.35,-0.9,0],Rfoot:[0.8,-0.5,0], Luarm:[-0.8,-0.5,0],Lfarm:[-0.8,-0.5,0],Ruarm:[-0.8,-0.5,0],Rfarm:[-0.8,-0.5,0]}}, // bridge hold
   L07: {view:'side', pose:{Lfoot:[0.85,-0.5,0],Rfoot:[0.85,-0.5,0], spine:[0,1,0]}},   // calf raises (on toes)
-  L09: {view:'iso', pose:{spine:[-0.95,0.3,0],front:[-0.2,0,-0.98], Ruarm:[0,-1,0],Rfarm:[0,-1,0], Luarm:[0,1,0],Lfarm:[0,1,0], Rthigh:[0.95,-0.05,0],Rshin:[0.95,-0.05,0],Rfoot:[0.6,-0.7,0], Lthigh:[0.9,0.35,0],Lshin:[0.9,0.35,0],Lfoot:[0.7,-0.3,0]}}, // side plank + top leg lift
+  // side plank + top (left) leg lifted up off the bottom leg
+  L09: {view:'front', pose:{...SIDEPLANK, Lthigh:[0,0.25,-0.97],Lshin:[0,0.25,-0.97],Lfoot:[0,-0.2,-0.98]}}, // side plank leg lift
   L10: {view:'side', pose:SQUAT}, L12: {view:'side', pose:SQUAT},
   L11: {view:'side', pose:{spine:[0.05,1,0],front:[1,0,0], Luarm:[0.3,-0.9,0],Lfarm:[0.3,-0.9,0],Ruarm:[0.3,-0.9,0],Rfarm:[0.3,-0.9,0], Lthigh:[0.5,-0.86,0],Lshin:[0.4,-0.9,0],Rthigh:[-0.6,-0.8,0],Rshin:[0.2,-0.98,0],Rfoot:[0.6,-0.8,0]}}, // reverse lunge
 
