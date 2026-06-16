@@ -263,47 +263,40 @@ func (h homePage) Main() gox.Elem {
 //line home.gox:101
 				__e = __c.Set("class", "calendar"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-				__e = __c.Init("h3"); if __e != nil { return }
-				{
-					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:102
-					__e = __c.Any(i18n.T(l, "home.calendar")); if __e != nil { return }
-				}
-				__e = __c.Close(); if __e != nil { return }
-//line home.gox:103
 				__e = __c.Any(h.month(monthOffset)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("section"); if __e != nil { return }
 			{
-//line home.gox:107
+//line home.gox:106
 				__e = __c.Set("class", "cycle"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("h3"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line home.gox:108
+//line home.gox:107
 					__e = __c.Many(i18n.T(l, "home.cycle"), " ", cycle); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line home.gox:109
+//line home.gox:108
 					__e = __c.Set("class", "diff"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line home.gox:110
+//line home.gox:109
 						__e = __c.Set("class", "diff-bar"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("span"); if __e != nil { return }
 					{
-//line home.gox:111
+//line home.gox:110
 						__e = __c.Set("class", "diff-label"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line home.gox:111
+//line home.gox:110
 						__e = __c.Any(i18n.T(l, "home.diff")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -311,12 +304,12 @@ func (h homePage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line home.gox:113
+//line home.gox:112
 					__e = __c.Set("class", "cyc-grid"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line home.gox:114
+//line home.gox:113
 					for d := 1; d <= content.TotalDays; d++ {
-//line home.gox:115
+//line home.gox:114
 						__e = __c.Any(h.cycleCell(d, curDay)); if __e != nil { return }
 					}
 				}
@@ -326,19 +319,19 @@ func (h homePage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line home.gox:120
+//line home.gox:119
 }
 
 // month renders the date calendar for the current month ± offset, reactively.
-//line home.gox:123
+//line home.gox:122
 func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line home.gox:124
+//line home.gox:123
 		__e = __c.Any(monthOffset.Bind(func(off int) gox.Elem {
 		return gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
-//line home.gox:126
+//line home.gox:125
 			now := time.Now()
 			base := time.Date(now.Year(), now.Month(), 1, 0, 0, 0, 0, time.Local)
 			disp := base.AddDate(0, off, 0)
@@ -354,10 +347,10 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line home.gox:139
+//line home.gox:138
 				__e = __c.Set("class", "cal-head"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line home.gox:140
+//line home.gox:139
 				__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				monthOffset.Mutate(ctx, func(o int) int { return o - 1 })
 				return false
@@ -365,9 +358,9 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line home.gox:143
+//line home.gox:142
 						__e = __c.Set("class", "cal-nav"); if __e != nil { return }
-//line home.gox:143
+//line home.gox:142
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Text("‹"); if __e != nil { return }
@@ -376,14 +369,14 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 				return })); if __e != nil { return }
 				__e = __c.Init("span"); if __e != nil { return }
 				{
-//line home.gox:144
+//line home.gox:143
 					__e = __c.Set("class", "cal-title"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line home.gox:144
+//line home.gox:143
 					__e = __c.Many(i18n.Month(l, month), " ", year); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line home.gox:145
+//line home.gox:144
 				__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				monthOffset.Mutate(ctx, func(o int) int { return o + 1 })
 				return false
@@ -391,9 +384,9 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line home.gox:148
+//line home.gox:147
 						__e = __c.Set("class", "cal-nav"); if __e != nil { return }
-//line home.gox:148
+//line home.gox:147
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Text("›"); if __e != nil { return }
@@ -404,15 +397,15 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line home.gox:150
+//line home.gox:149
 				__e = __c.Set("class", "cal-week"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line home.gox:151
+//line home.gox:150
 				for wd := 0; wd < 7; wd++ {
 					__e = __c.Init("span"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line home.gox:152
+//line home.gox:151
 						__e = __c.Any(i18n.Weekday(l, wd)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -421,39 +414,39 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line home.gox:155
+//line home.gox:154
 				__e = __c.Set("class", "cal-grid month"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line home.gox:156
+//line home.gox:155
 				for b := 0; b < lead; b++ {
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line home.gox:157
+//line home.gox:156
 						__e = __c.Set("class", "cal-blank"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				}
-//line home.gox:159
+//line home.gox:158
 				for dd := 1; dd <= daysIn; dd++ {
-//line home.gox:160
+//line home.gox:159
 					__e = __c.Any(h.dayCell(year, month, dd, acts, todayStr)); if __e != nil { return }
 				}
 			}
 			__e = __c.Close(); if __e != nil { return }
 		return })
-//line home.gox:163
+//line home.gox:162
 	})); if __e != nil { return }
 	return })
-//line home.gox:164
+//line home.gox:163
 }
 
 // dayCell renders one date cell, marked when the user worked out that day.
-//line home.gox:167
+//line home.gox:166
 func (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line home.gox:169
+//line home.gox:168
 		ds := fmt.Sprintf("%04d-%02d-%02d", year, month, dd)
 		cls := "cal-day"
 		if acts[ds] {
@@ -465,28 +458,28 @@ func (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr st
 
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line home.gox:178
+//line home.gox:177
 			__e = __c.Set("class", cls); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line home.gox:179
+//line home.gox:178
 			if acts[ds] {
 				__e = __c.Text("🔥"); if __e != nil { return }
 			} else  {
-//line home.gox:182
+//line home.gox:181
 				__e = __c.Any(dd); if __e != nil { return }
 			}
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line home.gox:185
+//line home.gox:184
 }
 
 // cycleCell renders one of the 30 program days; sequential, looping each cycle.
-//line home.gox:188
+//line home.gox:187
 func (h homePage) cycleCell(d, current int) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line home.gox:190
+//line home.gox:189
 		done := d < current
 		isCurrent := d == current
 		locked := d > current
@@ -502,36 +495,23 @@ func (h homePage) cycleCell(d, current int) gox.Elem {
 		}
 
 //line home.gox:204
-		if locked {
-			__e = __c.Init("div"); if __e != nil { return }
+		__e = (doors.ALink{Model: path.Path{Page: path.Day, Day: d}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+			ctx := __c.Context(); _ = ctx
+			__e = __c.Init("a"); if __e != nil { return }
 			{
-//line home.gox:205
+//line home.gox:204
 				__e = __c.Set("class", cls); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 //line home.gox:205
-				__e = __c.Any(d); if __e != nil { return }
+				if done {
+					__e = __c.Text("✓"); if __e != nil { return }
+				} else  {
+//line home.gox:208
+					__e = __c.Any(d); if __e != nil { return }
+				}
 			}
 			__e = __c.Close(); if __e != nil { return }
-		} else  {
-//line home.gox:207
-			__e = (doors.ALink{Model: path.Path{Page: path.Day, Day: d}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
-				ctx := __c.Context(); _ = ctx
-				__e = __c.Init("a"); if __e != nil { return }
-				{
-//line home.gox:207
-					__e = __c.Set("class", cls); if __e != nil { return }
-					__e = __c.Submit(); if __e != nil { return }
-//line home.gox:208
-					if done {
-						__e = __c.Text("✓"); if __e != nil { return }
-					} else  {
-//line home.gox:211
-						__e = __c.Any(d); if __e != nil { return }
-					}
-				}
-				__e = __c.Close(); if __e != nil { return }
-			return })); if __e != nil { return }
-		}
+		return })); if __e != nil { return }
 	return })
-//line home.gox:215
+//line home.gox:211
 }

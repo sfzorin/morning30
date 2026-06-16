@@ -52,7 +52,6 @@ elem (s settingsPage) Main() {
 		restWVal := doors.NewSource(restW)
 		restMVal := doors.NewSource(restM)
 		restCVal := doors.NewSource(restC)
-		streak, _ := app.DB.Streak(s.sess.UserID, app.Today())
 		active := app.ActiveProgramKey(s.sess.UserID)
 		hasCustom := app.HasCustomProgram(s.sess.UserID)
 		cat := app.UserCatalog(s.sess.UserID)
@@ -70,7 +69,6 @@ elem (s settingsPage) Main() {
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
-		~(header{sess: s.sess, auth: s.auth, path: s.path, streak: streak})
 		<section class="settings">
 			<div class="settings-head">
 				<h1>~(i18n.T(l, "settings.title"))</h1>

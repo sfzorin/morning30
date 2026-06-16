@@ -99,7 +99,6 @@ elem (h homePage) Main() {
 
 		~// Date-based habit calendar (drives the streak).
 		<section class="calendar">
-			<h3>~(i18n.T(l, "home.calendar"))</h3>
 			~(h.month(monthOffset))
 		</section>
 
@@ -201,15 +200,12 @@ elem (h homePage) cycleCell(d, current int) {
 			cls += " locked"
 		}
 	}
-	~(if locked {
-		<div class=(cls)>~(d)</div>
-	} else {
-		~>doors.ALink{Model: path.Path{Page: path.Day, Day: d}} <a class=(cls)>
-			~(if done {
-				✓
-			} else {
-				~(d)
-			})
-		</a>
-	})
+	~// Every day is tappable — jump straight into that day's program.
+	~>doors.ALink{Model: path.Path{Page: path.Day, Day: d}} <a class=(cls)>
+		~(if done {
+			✓
+		} else {
+			~(d)
+		})
+	</a>
 }
