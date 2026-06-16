@@ -57,10 +57,12 @@ const SUPINE = {spine:[-1,0.05,0],front:[0,1,0],
   Lthigh:[-1,0,0],Lshin:[-1,0,0],Lfoot:[-0.7,-0.7,0],Rthigh:[-1,0,0],Rshin:[-1,0,0],Rfoot:[-0.7,-0.7,0]};
 // prone = lying face DOWN along the body axis; head toward +x, belly down (-y), legs extend
 // the OPPOSITE way (toward -x) so the body is a flat line, not folded into a crouch.
-const PRONE = {spine:[0.96,0.28,0],front:[0.27,-0.96,0],
-  Luarm:[0.7,-0.6,0.3],Lfarm:[0.9,0,0.2],Ruarm:[0.7,-0.6,-0.3],Rfarm:[0.9,0,-0.2],
-  Lthigh:[-0.96,-0.26,0],Lshin:[-0.98,-0.12,0],Lfoot:[-0.7,-0.6,0],
-  Rthigh:[-0.96,-0.26,0],Rshin:[-0.98,-0.12,0],Rfoot:[-0.7,-0.6,0]};
+// PRONE: body lies FLAT face-down (chest+belly+thighs+feet on floor); head +x; legs straight
+// back along the floor; feet pointed (tops down, toes back — NOT toes-up). Raises lift arms only.
+const PRONE = {spine:[1,0.03,0],front:[0.03,-1,0],head:[0.94,0.08,0],
+  Luarm:[0.7,-0.3,0.2],Lfarm:[0.9,-0.1,0.1],Ruarm:[0.7,-0.3,-0.2],Rfarm:[0.9,-0.1,-0.1],
+  Lthigh:[-0.99,-0.12,0],Lshin:[-0.99,-0.12,0],Lfoot:[-0.8,-0.55,0],
+  Rthigh:[-0.99,-0.12,0],Rshin:[-0.99,-0.12,0],Rfoot:[-0.8,-0.55,0]};
 const STAND = {view:'front'};   // plain neutral
 
 export const POSES = {
@@ -88,7 +90,8 @@ export const POSES = {
   C08: {view:'front', pose:SIDEPLANK}, // side plank hip lift (same hold)
   C09: {view:'side', pose:{...PUSHUP_TOP, Ruarm:[0.3,-0.5,0],Rfarm:[1,0.1,0]}},                                  // plank shoulder taps (one hand up)
   C10: {view:'side', pose:PUSHUP_TOP},                                                                            // up-down plank
-  C11: {view:'side', pose:{...SUPINE, Lthigh:[0.3,0.5,0],Lshin:[-0.5,0.3,0],Rthigh:[0.3,0.5,0],Rshin:[-0.5,0.3,0], Luarm:[-0.4,-0.5,0],Lfarm:[0.3,-0.7,0],Ruarm:[-0.4,-0.5,0],Rfarm:[0.3,-0.7,0]}}, // heel taps
+  // heel taps: on back (back on floor), knees bent up, hands reach up toward the knees
+  C11: {view:'side', pose:{...SUPINE, Lthigh:[0.35,0.6,0],Lshin:[-0.45,0.5,0],Rthigh:[0.35,0.6,0],Rshin:[-0.45,0.5,0], Luarm:[0.3,0.4,0],Lfarm:[0.55,0.55,0],Ruarm:[0.3,0.4,0],Rfarm:[0.55,0.55,0]}}, // heel taps
   C12: {view:'side', pose:{...SUPINE, Luarm:[0,0.9,0],Lfarm:[0,0.9,0], Ruarm:[0,0.9,0],Rfarm:[0,0.9,0], Lthigh:[0.3,0.6,0],Lshin:[-0.6,0.4,0], Rthigh:[0.3,0.6,0],Rshin:[-0.6,0.4,0]}}, // dead bug
   C13: {view:'side', pose:{...SUPINE, Luarm:[-0.3,0.6,0],Lfarm:[0.4,0.5,0], Ruarm:[-0.3,0.6,0],Rfarm:[0.4,0.5,0], Lthigh:[0.3,0.55,0],Lshin:[-0.6,0.3,0], Rthigh:[0.7,0.4,0],Rshin:[0.85,0.2,0]}}, // bicycle crunch
 
@@ -100,12 +103,16 @@ export const POSES = {
 
   // ---- Back / scapula (prone) ----
   B01: {view:'side', pose:{...PRONE, spine:[0.8,0.55,0],front:[0.4,-0.9,0], Luarm:[0.6,-0.4,0.4],Lfarm:[0.8,-0.2,0.3],Ruarm:[0.6,-0.4,-0.4],Rfarm:[0.8,-0.2,-0.3]}}, // cobra hold
-  B02: {view:'iso', pose:{...PRONE, Luarm:[0.2,0.1,0.95],Lfarm:[0.2,0.1,0.95],Ruarm:[0.2,0.1,-0.95],Rfarm:[0.2,0.1,-0.95]}}, // reverse snow angels
-  B03: {view:'iso', pose:{...PRONE, Luarm:[0.3,0.5,0.6],Lfarm:[0.1,0.9,0.3],Ruarm:[0.3,0.5,-0.6],Rfarm:[0.1,0.9,-0.3]}}, // W-raise
-  B04: {view:'iso', pose:{...PRONE, Luarm:[0.3,0.8,0.4],Lfarm:[0.3,0.9,0.3],Ruarm:[0.3,0.8,-0.4],Rfarm:[0.3,0.9,-0.3]}}, // Y-raise
-  B05: {view:'iso', pose:{...PRONE, Luarm:[0.1,0.2,1],Lfarm:[0.1,0.2,1],Ruarm:[0.1,0.2,-1],Rfarm:[0.1,0.2,-1]}}, // T-raise
-  B06: {view:'iso', pose:{...PRONE, Luarm:[0.3,0.7,0.5],Lfarm:[0.2,0.4,0.7],Ruarm:[0.3,0.7,-0.5],Rfarm:[0.2,0.4,-0.7]}}, // superman pull-down
-  B07: {view:'iso', pose:{...PRONE, Luarm:[0.6,0.5,0.25],Lfarm:[0.5,0.7,0.2],Ruarm:[0.85,-0.2,-0.3],Rfarm:[0.95,-0.1,-0.2], Lthigh:[-0.92,0.32,0],Lshin:[-0.94,0.3,0], Rthigh:[-0.97,-0.18,0],Rshin:[-0.98,-0.12,0]}}, // swimmers (opp arm+leg up)
+  B02: {view:'side', pose:{...PRONE, Luarm:[0.2,0.1,0.95],Lfarm:[0.2,0.1,0.95],Ruarm:[0.2,0.1,-0.95],Rfarm:[0.2,0.1,-0.95]}}, // reverse snow angels
+  B03: {view:'side', pose:{...PRONE, Luarm:[0.3,0.5,0.6],Lfarm:[0.1,0.9,0.3],Ruarm:[0.3,0.5,-0.6],Rfarm:[0.1,0.9,-0.3]}}, // W-raise
+  B04: {view:'side', pose:{...PRONE, Luarm:[0.3,0.8,0.4],Lfarm:[0.3,0.9,0.3],Ruarm:[0.3,0.8,-0.4],Rfarm:[0.3,0.9,-0.3]}}, // Y-raise
+  B05: {view:'side', pose:{...PRONE, Luarm:[0.1,0.2,1],Lfarm:[0.1,0.2,1],Ruarm:[0.1,0.2,-1],Rfarm:[0.1,0.2,-1]}}, // T-raise
+  // superman: the one prone move that lifts arms AND legs off the floor
+  B06: {view:'side', pose:{...PRONE, spine:[0.97,0.22,0],front:[0.22,-0.97,0],
+    Luarm:[0.9,0.35,0.1],Lfarm:[0.95,0.25,0.05],Ruarm:[0.9,0.35,-0.1],Rfarm:[0.95,0.25,-0.05],
+    Lthigh:[-0.9,0.35,0],Lshin:[-0.92,0.3,0],Lfoot:[-0.95,0.15,0],
+    Rthigh:[-0.9,0.35,0],Rshin:[-0.92,0.3,0],Rfoot:[-0.95,0.15,0]}}, // superman (arms + legs lifted)
+  B07: {view:'side', pose:{...PRONE, Luarm:[0.6,0.5,0.25],Lfarm:[0.5,0.7,0.2],Ruarm:[0.85,-0.2,-0.3],Rfarm:[0.95,-0.1,-0.2], Lthigh:[-0.92,0.32,0],Lshin:[-0.94,0.3,0], Rthigh:[-0.97,-0.18,0],Rshin:[-0.98,-0.12,0]}}, // swimmers (opp arm+leg up)
   // reverse plank: face UP, straight body; arms down to flat hands behind (support), legs
   // extended fwd-down to heels (feet flexed). contacts: hands + heels.
   B08: {view:'side', pose:{spine:[-0.94,0.34,0],front:[0.34,0.94,0],head:[-0.9,0.35,0],
@@ -113,8 +120,8 @@ export const POSES = {
     Lthigh:[0.94,-0.34,0],Lshin:[0.94,-0.34,0],Lfoot:[0.34,0.94,0],
     Rthigh:[0.94,-0.34,0],Rshin:[0.94,-0.34,0],Rfoot:[0.34,0.94,0]}}, // reverse plank
   B09: {view:'side', pose:{...PRONE, spine:[0.85,0.5,0],front:[0.3,-0.95,0], Luarm:[0.3,0.1,0.5],Lfarm:[0.5,0.1,0.4],Ruarm:[0.3,0.1,-0.5],Rfarm:[0.5,0.1,-0.4]}}, // back extension pulses
-  B10: {view:'iso', pose:{...PRONE, Luarm:[0.3,0.5,0.6],Lfarm:[0.1,0.85,0.4],Ruarm:[0.3,0.5,-0.6],Rfarm:[0.1,0.85,-0.4]}}, // cobra to W
-  B11: {view:'iso', pose:{...PRONE, Luarm:[0.6,0.5,0.25],Lfarm:[0.5,0.7,0.2],Ruarm:[0.85,-0.2,-0.3],Rfarm:[0.95,-0.1,-0.2], Lthigh:[-0.92,0.32,0],Lshin:[-0.94,0.3,0], Rthigh:[-0.97,-0.18,0],Rshin:[-0.98,-0.12,0]}}, // swimmers per side
+  B10: {view:'side', pose:{...PRONE, Luarm:[0.3,0.5,0.6],Lfarm:[0.1,0.85,0.4],Ruarm:[0.3,0.5,-0.6],Rfarm:[0.1,0.85,-0.4]}}, // cobra to W
+  B11: {view:'side', pose:{...PRONE, Luarm:[0.6,0.5,0.25],Lfarm:[0.5,0.7,0.2],Ruarm:[0.85,-0.2,-0.3],Rfarm:[0.95,-0.1,-0.2], Lthigh:[-0.92,0.32,0],Lshin:[-0.94,0.3,0], Rthigh:[-0.97,-0.18,0],Rshin:[-0.98,-0.12,0]}}, // swimmers per side
 
   // ---- Arms ----
   A01: {view:'front', pose:{Luarm:[0.25,-0.9,0],Lfarm:[0.5,0.75,0], Ruarm:DN,Rfarm:DN}}, // self-resist curl (one arm curled up)
