@@ -83,7 +83,7 @@ export const project=(p,cam)=>[dot(p,cam.right), -dot(p,cam.up), dot(p,cam.fwd)]
 // ---- skeleton ----
 export function joints(pose,sex='M'){
  const p=k=>P(sex,k);
- const pel=pose.pelvis, spine=cone([0,1,0],nz(pose.spine),90), front=nz(pose.front), lat=nz(cross(spine,front));   // 90°: allow a fully flat (horizontal) plank/lying body
+ const pel=pose.pelvis, spine=cone([0,1,0],nz(pose.spine),135), front=nz(pose.front), lat=nz(cross(spine,front));   // 135°: flat planks/lying AND chest-below-pelvis (glute bridge)
  const sh_y=.04*H+p('shin')+p('thigh')+p('trunk');
  const neck_len=(H-p('head'))-sh_y, head_off=(H-p('head')/2)-sh_y;
  const chest=add(pel,spine,p('trunk'));

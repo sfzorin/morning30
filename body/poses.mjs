@@ -63,6 +63,12 @@ const PRONE = {spine:[1,0.03,0],front:[0.03,-1,0],head:[0.94,0.08,0],
   Luarm:[0.7,-0.3,0.2],Lfarm:[0.9,-0.1,0.1],Ruarm:[0.7,-0.3,-0.2],Rfarm:[0.9,-0.1,-0.1],
   Lthigh:[-0.99,-0.12,0],Lshin:[-0.99,-0.12,0],Lfoot:[-0.8,-0.55,0],
   Rthigh:[-0.99,-0.12,0],Rshin:[-0.99,-0.12,0],Rfoot:[-0.8,-0.55,0]};
+// glute bridge: shoulders/head on the floor, pelvis LIFTED (chest below pelvis), knees bent
+// with feet flat on the floor. spine points down-toward-head. contacts: shoulders + feet.
+const BRIDGE = {spine:[-0.72,-0.69,0],front:[-0.69,0.72,0],head:[-0.92,-0.28,0],
+  Luarm:[0.6,-0.35,0.12],Lfarm:[0.8,-0.25,0.08],Ruarm:[0.6,-0.35,-0.12],Rfarm:[0.8,-0.25,-0.08],
+  Lthigh:[0.45,-0.89,0],Lshin:[0.1,-0.99,0],Lfoot:[1,-0.05,0],
+  Rthigh:[0.45,-0.89,0],Rshin:[0.1,-0.99,0],Rfoot:[1,-0.05,0]};
 const STAND = {view:'front'};   // plain neutral
 
 export const POSES = {
@@ -133,7 +139,7 @@ export const POSES = {
   L01: {view:'side', pose:SQUAT}, L02: {view:'side', pose:SQUAT}, L03: {view:'side', pose:HINGE},
   L04: {view:'side', pose:{...SUPINE, spine:[-0.8,0.6,0], Lthigh:[0.7,0.4,0],Lshin:[-0.3,-0.9,0],Lfoot:[0.7,-0.6,0], Rthigh:[0.85,0.4,0],Rshin:[0.85,0.4,0], Luarm:[-0.8,-0.5,0],Lfarm:[-0.8,-0.5,0],Ruarm:[-0.8,-0.5,0],Rfarm:[-0.8,-0.5,0]}}, // single-leg glute bridge
   L05: {view:'side', pose:{...SUPINE, spine:[-0.8,0.6,0], Lthigh:[0.6,0.5,0],Lshin:[-0.4,-0.85,0], Rthigh:[0.85,0.45,0],Rshin:[0.85,0.45,0], Luarm:[-0.8,-0.5,0],Lfarm:[-0.8,-0.5,0],Ruarm:[-0.8,-0.5,0],Rfarm:[-0.8,-0.5,0]}}, // bridge march
-  L06: {view:'side', pose:{...SUPINE, spine:[-0.8,0.6,0], Lthigh:[0.75,0.45,0],Lshin:[-0.35,-0.9,0],Lfoot:[0.8,-0.5,0], Rthigh:[0.75,0.45,0],Rshin:[-0.35,-0.9,0],Rfoot:[0.8,-0.5,0], Luarm:[-0.8,-0.5,0],Lfarm:[-0.8,-0.5,0],Ruarm:[-0.8,-0.5,0],Rfarm:[-0.8,-0.5,0]}}, // bridge hold
+  L06: {view:'side', pose:BRIDGE}, // glute bridge hold
   L07: {view:'side', pose:{Lfoot:[0.85,-0.5,0],Rfoot:[0.85,-0.5,0], spine:[0,1,0]}},   // calf raises (on toes)
   // side plank + top (left) leg lifted up off the bottom leg
   L09: {view:'front', pose:{...SIDEPLANK, Lthigh:[0,0.25,-0.97],Lshin:[0,0.25,-0.97],Lfoot:[0,-0.2,-0.98]}}, // side plank leg lift
