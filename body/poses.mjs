@@ -65,8 +65,8 @@ const PRONE = {spine:[1,0.03,0],front:[0.03,-1,0],head:[0.94,0.08,0],
   Rthigh:[-0.99,-0.12,0],Rshin:[-0.99,-0.12,0],Rfoot:[-0.8,-0.55,0]};
 // glute bridge: shoulders/head on the floor, pelvis LIFTED (chest below pelvis), knees bent
 // with feet flat on the floor. spine points down-toward-head. contacts: shoulders + feet.
-const BRIDGE = {spine:[-0.72,-0.69,0],front:[-0.69,0.72,0],head:[-0.99,-0.04,0],
-  Luarm:[0.6,-0.35,0.12],Lfarm:[0.8,-0.25,0.08],Ruarm:[0.6,-0.35,-0.12],Rfarm:[0.8,-0.25,-0.08],
+const BRIDGE = {spine:[-0.82,-0.57,0],front:[-0.57,0.82,0],head:[-0.5,0.62,0],   // shoulders on floor, pelvis peak (small arch); head tucked forward, resting on shoulders/neck
+  Luarm:[0.9,-0.18,0.13],Lfarm:[1,-0.06,0.06],Lhand:[1,0,0],Ruarm:[0.9,-0.18,-0.13],Rfarm:[1,-0.06,-0.06],Rhand:[1,0,0],   // arms along the body, palms flat on the floor
   Lthigh:[0.35,-0.94,0],Lshin:[0.18,-0.98,0],Lfoot:[0.55,-0.65,0],
   Rthigh:[0.35,-0.94,0],Rshin:[0.18,-0.98,0],Rfoot:[0.55,-0.65,0]};
 const STAND = {view:'front'};   // plain neutral

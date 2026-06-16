@@ -88,7 +88,7 @@ export function joints(pose,sex='M'){
  const neck_len=(H-p('head'))-sh_y, head_off=(H-p('head')/2)-sh_y;
  const chest=add(pel,spine,p('trunk'));
  const neck=add(chest,spine,neck_len);
- const headDir=cone(spine,nz(pose.head||spine),45);
+ const headDir=cone(spine,nz(pose.head||spine),70);   // allow a forward chin-tuck (e.g. glute bridge: head rests on shoulders/neck)
  const J={pel,chest,neck,head:add(neck,headDir,head_off-neck_len),spine,front,lat,hrx:p('head')*.34,hry:p('head')/2};
  for(const[s,sg] of [['L',1],['R',-1]]){
   J['hip'+s]=addv(pel,lat,sg*p('hpw')/2); J['sh'+s]=addv(chest,lat,sg*p('shw')/2);
