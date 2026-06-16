@@ -66,6 +66,7 @@ elem (s settingsPage) Main() {
 		selSrc := doors.NewSource(firstID)
 		levelSrc := doors.NewSource(s.sess.Level)
 		curSex := app.DB.GetSex(s.sess.UserID)
+		confirmReset := doors.NewSource(false)
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
@@ -275,7 +276,25 @@ elem (s settingsPage) Main() {
 				</div>
 
 				<div class="srow save-row">
-					~>doors.AClick{On: s.reset} <button class="btn danger small" type="button">~(i18n.T(l, "settings.reset"))</button>
+					~(confirmReset.Bind(elem(c bool) {
+						~(if !c {
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								confirmReset.Update(ctx, true)
+								return false
+							}} <button class="btn danger small" type="button">~(i18n.T(l, "settings.reset"))</button>
+						} else {
+							<div class="confirm-reset">
+								<span class="confirm-q">~(i18n.T(l, "settings.reset_confirm"))</span>
+								<div class="confirm-actions">
+									~>doors.AClick{On: s.reset} <button class="btn danger small" type="button">~(i18n.T(l, "settings.reset_yes"))</button>
+									~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+										confirmReset.Update(ctx, false)
+										return false
+									}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
+								</div>
+							</div>
+						})
+					}))
 				</div>
 			</div>
 		</section>

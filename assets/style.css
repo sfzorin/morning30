@@ -256,6 +256,9 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .srow input[type=range] { width: 100%; accent-color: var(--accent); }
 .srow .email { color: var(--fg); font-size: 15px; text-align: right; word-break: break-all; }
 .srow.save-row { justify-content: flex-start; gap: 14px; }
+.confirm-reset { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.confirm-q { color: var(--danger); font-size: 14px; }
+.confirm-actions { display: flex; gap: 10px; }
 
 /* Collapsible cycle viewer/editor */
 .cycle-details { border-bottom: 1px solid var(--line); }
