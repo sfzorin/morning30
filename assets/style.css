@@ -447,6 +447,13 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .pbar-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .4s ease; }
 .phase { color: var(--muted); font-size: 13px; min-width: 0; }
 
+/* In-workout difficulty nudge */
+.lvl-row { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 4px 0 2px; }
+.lvl-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--card2); color: var(--fg); font-size: 22px; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.lvl-btn:active { transform: scale(.94); }
+.lvl-btn:disabled { opacity: .3; }
+.lvl-label { color: var(--muted); font-size: 13px; font-weight: 600; min-width: 9em; text-align: center; }
+
 .stage { flex: 1; min-height: 0; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
 
 /* Paused: "freeze" everything but the bottom controls. */

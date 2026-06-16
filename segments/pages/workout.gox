@@ -28,6 +28,7 @@ type playerRepl struct {
 	Name    string `json:"name"`
 	Unit    string `json:"unit"`
 	Value   int    `json:"value"`
+	Scale   bool   `json:"scale"`
 	PerSide bool   `json:"perSide"`
 	SVG     string `json:"svg"`
 	Hint    string `json:"hint"`
@@ -37,7 +38,8 @@ type playerRepl struct {
 type playerItem struct {
 	ID      string `json:"id"`
 	Unit    string `json:"unit"`
-	Value   int    `json:"value"`
+	Value   int    `json:"value"` // base (level-0) value; the client scales when Scale is true
+	Scale   bool   `json:"scale"` // main exercises scale with the difficulty level
 	Slot    string `json:"slot"`
 	PerSide bool   `json:"perSide"`
 	Round   int    `json:"round"`
@@ -70,6 +72,7 @@ type playerPayload struct {
 	Voice     bool              `json:"voice"`
 	VoiceMode string            `json:"voiceMode"`
 	Name      string            `json:"name"`
+	Level     int               `json:"level"` // current difficulty level (−3..+3); the client scales main exercises
 	Items     []playerItem      `json:"items"`
 	Labels    map[string]string `json:"labels"`
 	Cues      map[string]string `json:"cues"`
@@ -139,19 +142,25 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, v
 func (w workoutPage) payloadJSON() string {
 	l := i18n.Lang(w.sess.Lang)
 	day := w.clampDay()
-	wk := app.UserWorkout(w.sess.UserID, day)
+	wk, level := app.UserWorkoutBase(w.sess.UserID, day) // base values; client scales by level
 	cat := app.UserCatalog(w.sess.UserID)
 	sex := app.DB.GetSex(w.sess.UserID)
 
 	items := make([]playerItem, 0, len(wk.Items))
 	for _, it := range wk.Items {
 		id := it.ExerciseID
+		scale := it.Slot == content.Main
 		d, _ := cat.Detail(l, id)
 		vs, vm, vl, vf := w.voiceFor(l, cat.HasVoiceLang(l, id), d)
+		repl := w.replFor(l, cat, sex, id, it.Value)
+		if repl != nil {
+			repl.Scale = scale
+		}
 		items = append(items, playerItem{
 			ID:        id,
 			Unit:      string(it.Unit),
 			Value:     it.Value,
+			Scale:     scale,
 			Slot:      string(it.Slot),
 			PerSide:   it.PerSide,
 			Round:     it.Round,
@@ -171,7 +180,7 @@ func (w workoutPage) payloadJSON() string {
 			VMid:      vm,
 			VLast:     vl,
 			VFinish:   vf,
-			Repl:      w.replFor(l, cat, sex, id, it.Value),
+			Repl:      repl,
 		})
 	}
 
@@ -197,6 +206,9 @@ func (w workoutPage) payloadJSON() string {
 		"day_done":   i18n.T(l, "done.day_done"),
 		"streak":     i18n.T(l, "done.streak"),
 		"back_home":  i18n.T(l, "done.back_home"),
+		"difficulty": i18n.T(l, "settings.difficulty"),
+		"harder":     i18n.T(l, "workout.harder"),
+		"easier":     i18n.T(l, "workout.easier"),
 	}
 	cues := map[string]string{
 		"ready":       i18n.Cue(l, "ready"),
@@ -229,6 +241,7 @@ func (w workoutPage) payloadJSON() string {
 		Voice:     w.sess.Voice,
 		VoiceMode: mode,
 		Name:      w.sess.Name,
+		Level:     level,
 		Items:     items,
 		Labels: labels,
 		Cues:   cues,
@@ -269,6 +282,13 @@ elem (w workoutPage) Main() {
 			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "workout.quit"))>✕</a>
 			<div class="pbar"><div class="pbar-fill"></div></div>
 			<div class="phase"></div>
+		</div>
+
+		~// In-workout difficulty nudge (applies to all remaining sets this session).
+		<div class="lvl-row">
+			<button class="lvl-btn lvl-down" type="button" aria-label=(i18n.T(l, "workout.easier"))>−</button>
+			<span class="lvl-label"></span>
+			<button class="lvl-btn lvl-up" type="button" aria-label=(i18n.T(l, "workout.harder"))>+</button>
 		</div>
 
 		<div class="stage">

@@ -95,3 +95,12 @@ func UserWorkout(userID int64, day int) content.Workout {
 	rests := content.Rests{Warmup: w, Main: m, Cooldown: c}
 	return UserProgram(userID).Workout(day, DB.GetLevel(userID), rests)
 }
+
+// UserWorkoutBase builds the day's workout at level 0 (base, unscaled values) and
+// returns the user's difficulty level separately, so the client can scale main
+// exercises on the fly (the in-workout difficulty nudge).
+func UserWorkoutBase(userID int64, day int) (content.Workout, int) {
+	w, m, c := DB.Rests(userID)
+	rests := content.Rests{Warmup: w, Main: m, Cooldown: c}
+	return UserProgram(userID).Workout(day, 0, rests), DB.GetLevel(userID)
+}

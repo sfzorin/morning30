@@ -14,6 +14,18 @@
   var voiceOn = voiceMode !== "off";
   var voiceLang = payload.bcp47 || "en-US";        // e.g. "tr-TR"
   var voicePrefix = (payload.lang || "en").toLowerCase(); // e.g. "tr"
+  var level = payload.level || 0;                  // difficulty −3..+3, nudged in-workout
+
+  // jsScale mirrors the server's ScaleValue: ±10% per level on reps/seconds,
+  // breaths fixed, with min clamps. Lets us re-scale main sets on the fly.
+  function jsScale(base, unit, lvl) {
+    if (lvl === 0 || unit === "breaths") return base;
+    var out = Math.floor((base * (10 + lvl) + 5) / 10);
+    if (unit === "reps" && out < 1) out = 1;
+    if (unit === "seconds" && out < 5) out = 5;
+    return out;
+  }
+  function val(it) { return it && it.scale ? jsScale(it.value, it.unit, level) : (it ? it.value : 0); }
 
   // Voice selection. Browsers otherwise default to an English voice even when
   // utterance.lang is "tr-TR", so we explicitly pick a voice whose lang matches
@@ -83,7 +95,10 @@
     doneOverlay: $(".done-overlay"),
     doneTitle: $(".done-title"),
     doneEnc: $(".done-enc"),
-    doneStreak: $(".done-streak")
+    doneStreak: $(".done-streak"),
+    diffUp: $(".lvl-up"),
+    diffDown: $(".lvl-down"),
+    diffLabel: $(".lvl-label")
   };
   var vis = function (e) { return e && !e.classList.contains("hidden"); };
 
@@ -268,7 +283,7 @@
     if (it.unit === "seconds") {
       el.done.classList.add("hidden");
       el.value.classList.add("timer");
-      var D = it.value;
+      var D = val(it);
       var halfAt = Math.round(D * 0.5);
       countdown(D, function (r) {
         el.value.textContent = r + "″";
@@ -281,8 +296,8 @@
       clearTicker();
       el.value.classList.remove("timer");
       el.value.textContent = it.unit === "breaths"
-        ? it.value + " " + t("breaths")
-        : "× " + it.value;
+        ? val(it) + " " + t("breaths")
+        : "× " + val(it);
       el.done.classList.remove("hidden");
     }
   }
@@ -299,9 +314,9 @@
     return cues.reps || t("reps");
   }
   function nextDisplay(it) { // on-screen "Name · ×12" / "Name · 30″"
-    var v = it.unit === "seconds" ? it.value + "″"
-      : it.unit === "breaths" ? it.value + " " + t("breaths")
-      : "× " + it.value;
+    var v = it.unit === "seconds" ? val(it) + "″"
+      : it.unit === "breaths" ? val(it) + " " + t("breaths")
+      : "× " + val(it);
     return it.name + " · " + v;
   }
 
@@ -325,7 +340,7 @@
         if (paused || el.rest.classList.contains("hidden")) return;
         shutUp();
         if (cues.rest) utter(cues.rest); // "Rest" (queued)
-        utter((cues.next_ex || t("next")) + ": " + upItem.name + ", " + upItem.value + " " + unitWord(upItem));
+        utter((cues.next_ex || t("next")) + ": " + upItem.name + ", " + val(upItem) + " " + unitWord(upItem));
       }, 700);
     }
     countdown(seconds, function (r) {
@@ -457,6 +472,31 @@
     if (paused) shutUp();
   });
 
+  // ---- in-workout difficulty nudge (this session only) ----
+  function clampLevel(n) { return n < -3 ? -3 : (n > 3 ? 3 : n); }
+  function updateDiff() {
+    if (!el.diffLabel) return;
+    var s = level > 0 ? "+" + level : (level < 0 ? "−" + (-level) : "0");
+    el.diffLabel.textContent = (labels.difficulty || "") + " " + s;
+    if (el.diffDown) el.diffDown.disabled = level <= -3;
+    if (el.diffUp) el.diffUp.disabled = level >= 3;
+  }
+  function changeLevel(delta) {
+    var nl = clampLevel(level + delta);
+    if (nl === level) return;
+    level = nl;
+    updateDiff();
+    // Refresh the current rep target live; a running timer keeps its duration and
+    // the new level applies from the next set on.
+    var it = items[i];
+    if (it && vis(el.stage) && it.unit !== "seconds") {
+      el.value.textContent = it.unit === "breaths" ? val(it) + " " + t("breaths") : "× " + val(it);
+    }
+  }
+  if (el.diffUp) el.diffUp.addEventListener("click", function () { changeLevel(1); });
+  if (el.diffDown) el.diffDown.addEventListener("click", function () { changeLevel(-1); });
+  updateDiff();
+
   // Exercise detail card: description, how-to, correct, mistakes, breathing,
   // warning, and a manual replace button. Opening it pauses the timer (reading
   // is a pull action, not part of the workout flow).
@@ -509,7 +549,7 @@
     if (!it || !it.repl) return;
     var r = it.repl;
     items[i] = {
-      id: r.id, unit: r.unit, value: r.value, slot: it.slot, perSide: r.perSide,
+      id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
       round: it.round, rest: it.rest, name: r.name, hint: r.hint, warning: r.warning,
       svg: r.svg, video: "", desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
