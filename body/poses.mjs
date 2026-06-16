@@ -162,8 +162,12 @@ export const POSES = {
   // ---- Cool-down ----
   CD01: {view:'iso', pose:{Luarm:[-0.55,-0.2,0.45],Lfarm:[-0.7,-0.1,0.35],Ruarm:[-0.55,-0.2,-0.45],Rfarm:[-0.7,-0.1,-0.35]}}, // chest stretch (arms back, hands clasped behind)
   CD02: {view:'side', pose:{...SUPINE, Lthigh:[0.2,0.95,0],Lshin:[0.2,0.95,0],Lfoot:[0.2,0.95,0], Rthigh:[1,-0.05,0],Rshin:[1,-0.05,0],Rfoot:[0.7,-0.6,0], Luarm:[0.2,0.9,0],Lfarm:[0.3,0.85,0],Ruarm:[0.2,0.9,0],Rfarm:[0.3,0.85,0]}}, // hamstring stretch (one leg up, other extended)
-  CD03: {view:'iso', pose:{...SUPINE, front:[0.4,0.55,0.7], Lthigh:[0.3,0,0.92],Lshin:[0.7,-0.2,0.65], Rthigh:[1,-0.05,0],Rshin:[1,-0.05,0], Luarm:[0,0.1,1],Lfarm:[0,0.1,1],Ruarm:[0,0.1,-1],Rfarm:[0,0.1,-1]}}, // supine twist (one knee across)
+  // supine twist: on back (shoulders flat, face up), both knees bent and dropped to one side,
+  // arms out in a T on the floor. contacts: back/shoulders + the side of the legs.
+  CD03: {view:'iso', pose:{...SUPINE, front:[0,1,0], Lthigh:[0.2,0.3,0.83],Lshin:[-0.3,0.1,0.85], Rthigh:[0.2,0.3,0.83],Rshin:[-0.3,0.1,0.85], Luarm:[-0.15,0,0.97],Lfarm:[-0.15,0,0.97],Ruarm:[-0.15,0,-0.97],Rfarm:[-0.15,0,-0.97]}}, // supine twist
   CD04: {view:'side', pose:{...PRONE, spine:[0.75,0.66,0],front:[0.2,-0.97,0], Luarm:[0.3,-0.9,0],Lfarm:[0.6,-0.2,0],Ruarm:[0.3,-0.9,0],Rfarm:[0.6,-0.2,0]}}, // sphinx pose
   CD05: {view:'side', pose:PRONE},  // lying breathing (prone relaxed)
-  CD07: {view:'side', pose:{spine:[0.93,0.33,0],front:[0.28,-0.96,0], Luarm:[0.8,-0.25,0],Lfarm:[0.96,-0.12,0],Ruarm:[0.8,-0.25,0],Rfarm:[0.96,-0.12,0], Lthigh:[0.18,-0.98,0],Lshin:[-0.92,-0.32,0],Lfoot:[-0.85,-0.2,0], Rthigh:[0.18,-0.98,0],Rshin:[-0.92,-0.32,0],Rfoot:[-0.85,-0.2,0]}}, // child's pose: kneel, fold torso forward-down, arms reach forward
+  // child's pose: kneel (knees/shins on floor, sit toward heels), torso folded forward-DOWN
+  // over the thighs, arms reach forward flat on the floor. contacts: shins + hands.
+  CD07: {view:'side', pose:{spine:[0.93,-0.18,0],front:[-0.18,-0.98,0],head:[0.92,-0.3,0], Luarm:[0.72,-0.55,0.1],Lfarm:[0.93,-0.25,0.05],Lhand:[1,0,0],Ruarm:[0.72,-0.55,-0.1],Rfarm:[0.93,-0.25,-0.05],Rhand:[1,0,0], Lthigh:[0.18,-0.98,0],Lshin:[-0.92,-0.3,0],Lfoot:[-0.85,-0.2,0], Rthigh:[0.18,-0.98,0],Rshin:[-0.92,-0.3,0],Rfoot:[-0.85,-0.2,0]}}, // child's pose (kneel, torso fwd, arms flat on floor)
 };
