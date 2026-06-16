@@ -439,25 +439,30 @@
       bed.connect(bp); bp.connect(bedG); bedG.connect(master);
       bed.start(t0);
 
-      // Cheers / whoops: rising voices with vibrato, staggered like a crowd.
-      for (i = 0; i < 6; i++) {
-        var s = t0 + Math.random() * 1.4;
-        var o = ac.createOscillator(); o.type = "sawtooth";
-        var base = 220 + Math.random() * 260;
-        o.frequency.setValueAtTime(base, s);
-        o.frequency.exponentialRampToValueAtTime(base * (1.4 + Math.random() * 0.6), s + 0.25);
-        o.frequency.exponentialRampToValueAtTime(base * 0.9, s + 0.8);
-        var lp = ac.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1200;
-        var vib = ac.createOscillator(); vib.frequency.value = 5 + Math.random() * 3;
-        var vibG = ac.createGain(); vibG.gain.value = 12;
-        vib.connect(vibG); vibG.connect(o.frequency);
-        var g = ac.createGain();
-        g.gain.setValueAtTime(0.0001, s);
-        g.gain.exponentialRampToValueAtTime(0.10, s + 0.12);
-        g.gain.exponentialRampToValueAtTime(0.0001, s + 0.9);
-        o.connect(lp); lp.connect(g); g.connect(master);
-        o.start(s); vib.start(s); o.stop(s + 0.95); vib.stop(s + 0.95);
+      // Crowd roar: a throaty "ahhh" — brown-ish noise shaped by two vowel
+      // formants, with a big swell and a slow undulation, like an approving
+      // crowd. (Pitched oscillators sound fake; a real roar is filtered noise.)
+      var roarBuf = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
+      var rd = roarBuf.getChannelData(0), lastp = 0;
+      for (k = 0; k < rd.length; k++) {
+        var wn = Math.random() * 2 - 1;
+        lastp = (lastp + 0.02 * wn) / 1.02; // leaky integrator → brown-ish noise
+        rd[k] = lastp * 3.0 + wn * 0.3;
       }
+      var roar = ac.createBufferSource(); roar.buffer = roarBuf;
+      var f1 = ac.createBiquadFilter(); f1.type = "bandpass"; f1.frequency.value = 620; f1.Q.value = 2.2;
+      var f2 = ac.createBiquadFilter(); f2.type = "bandpass"; f2.frequency.value = 1300; f2.Q.value = 2.2;
+      var roarG = ac.createGain();
+      roarG.gain.setValueAtTime(0.0001, t0);
+      roarG.gain.exponentialRampToValueAtTime(0.55, t0 + 0.4); // crowd swells up
+      roarG.gain.setValueAtTime(0.55, t0 + 1.9);
+      roarG.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      var trem = ac.createOscillator(); trem.type = "sine"; trem.frequency.value = 4;
+      var tremG = ac.createGain(); tremG.gain.value = 0.16; // undulation
+      trem.connect(tremG); tremG.connect(roarG.gain);
+      roar.connect(f1); roar.connect(f2);
+      f1.connect(roarG); f2.connect(roarG); roarG.connect(master);
+      roar.start(t0); roar.stop(t0 + dur); trem.start(t0); trem.stop(t0 + dur);
 
       // A couple of celebratory whistles.
       for (i = 0; i < 2; i++) {
