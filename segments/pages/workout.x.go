@@ -142,7 +142,7 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, v
 func (w workoutPage) payloadJSON() string {
 	l := i18n.Lang(w.sess.Lang)
 	day := w.clampDay()
-	wk := app.UserWorkout(w.sess.UserID, day, w.sess.Rest)
+	wk := app.UserWorkout(w.sess.UserID, day)
 	cat := app.UserCatalog(w.sess.UserID)
 	sex := app.DB.GetSex(w.sess.UserID)
 

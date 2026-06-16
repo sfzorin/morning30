@@ -28,7 +28,7 @@ func TestUserAndSettings(t *testing.T) {
 	if _, err := d.CreateUser("a@b.com", "h2", "en", "Test"); err != ErrEmailTaken {
 		t.Errorf("expected ErrEmailTaken, got %v", err)
 	}
-	if err := d.UpdateSettings(u.ID, "Sergey", "de", 35, "min"); err != nil {
+	if err := d.UpdateSettings(u.ID, "Sergey", "de", 5, 35, 0, "min"); err != nil {
 		t.Fatal(err)
 	}
 	u2, _ := d.UserByID(u.ID)

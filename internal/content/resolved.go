@@ -87,9 +87,9 @@ func (r Resolved) Marshal() string {
 // Workout builds a session for a day: the shared warm-up (× WarmupRounds), the
 // day's main block scaled by the difficulty level, then the shared cool-down.
 // Warm-up/cool-down and breaths are never scaled.
-func (r Resolved) Workout(day, lightRest, level int) Workout {
+func (r Resolved) Workout(day, level int, rests Rests) Workout {
 	if len(r.Days) == 0 {
-		return ResolveBuiltin().Workout(day, lightRest, level)
+		return ResolveBuiltin().Workout(day, level, rests)
 	}
 	if day < 1 {
 		day = 1
@@ -130,6 +130,6 @@ func (r Resolved) Workout(day, lightRest, level int) Workout {
 		emit(ri, 1, false)
 	}
 
-	est := assignRestsAndEst(items, lightRest)
+	est := assignRestsAndEst(items, rests)
 	return Workout{Day: day, Items: items, EstSec: est}
 }

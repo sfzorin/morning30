@@ -93,17 +93,28 @@ func (d *DB) PassHash(email string) (hash string, ok bool, err error) {
 	return hash, true, nil
 }
 
-// UpdateSettings updates per-user preferences. voiceMode is off|min|normal|detailed.
-func (d *DB) UpdateSettings(userID int64, name, lang string, rest int, voiceMode string) error {
+// UpdateSettings updates per-user preferences, including the three per-phase
+// rest durations. voiceMode is off|min|normal|detailed.
+func (d *DB) UpdateSettings(userID int64, name, lang string, restWarmup, restMain, restCooldown int, voiceMode string) error {
 	v := 1
 	if voiceMode == "off" {
 		v = 0
 	}
 	_, err := d.sql.Exec(
-		`UPDATE users SET name = ?, lang = ?, rest_seconds = ?, voice = ?, voice_mode = ? WHERE id = ?`,
-		name, lang, rest, v, voiceMode, userID,
+		`UPDATE users SET name = ?, lang = ?, rest_seconds = ?, rest_warmup = ?, rest_cooldown = ?, voice = ?, voice_mode = ? WHERE id = ?`,
+		name, lang, restMain, restWarmup, restCooldown, v, voiceMode, userID,
 	)
 	return err
+}
+
+// Rests returns the user's per-phase rest seconds (warm-up, main, cool-down),
+// falling back to the defaults if the row is missing.
+func (d *DB) Rests(userID int64) (warmup, main, cooldown int) {
+	warmup, main, cooldown = 5, 20, 0
+	_ = d.sql.QueryRow(
+		`SELECT rest_warmup, rest_seconds, rest_cooldown FROM users WHERE id = ?`, userID,
+	).Scan(&warmup, &main, &cooldown)
+	return
 }
 
 // SafetyAck reports whether the user acknowledged the safety disclaimer.

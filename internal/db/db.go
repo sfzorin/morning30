@@ -56,7 +56,9 @@ CREATE TABLE IF NOT EXISTS users (
     pass_hash    TEXT NOT NULL,
     name         TEXT NOT NULL DEFAULT '',
     lang         TEXT NOT NULL DEFAULT 'en',
-    rest_seconds INTEGER NOT NULL DEFAULT 20,
+    rest_seconds INTEGER NOT NULL DEFAULT 20,    -- rest in the main set (10..40)
+    rest_warmup   INTEGER NOT NULL DEFAULT 5,     -- rest in the warm-up
+    rest_cooldown INTEGER NOT NULL DEFAULT 0,     -- rest in the cool-down
     voice        INTEGER NOT NULL DEFAULT 1,
     voice_mode   TEXT NOT NULL DEFAULT 'normal', -- off | min | normal | detailed
     sex          TEXT NOT NULL DEFAULT 'm',     -- m | f; picks the figure variant
@@ -134,6 +136,8 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN custom_exercises TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN level INTEGER NOT NULL DEFAULT 0`,
 		`ALTER TABLE users ADD COLUMN sex TEXT NOT NULL DEFAULT 'm'`,
+		`ALTER TABLE users ADD COLUMN rest_warmup INTEGER NOT NULL DEFAULT 5`,
+		`ALTER TABLE users ADD COLUMN rest_cooldown INTEGER NOT NULL DEFAULT 0`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

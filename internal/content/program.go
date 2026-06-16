@@ -132,32 +132,43 @@ func clampDay(day int) int {
 // isRecoveryDay reports whether the given day is a lighter recovery day.
 func isRecoveryDay(day int) bool { return recoveryDays[clampDay(day)] }
 
+// Rests holds the user's rest (seconds) for each phase. Warm-up and cool-down
+// may be 0 (flow straight through); main is clamped to a sensible minimum.
+type Rests struct {
+	Warmup   int
+	Main     int
+	Cooldown int
+}
+
+func clampRest(v, lo, hi int) int {
+	if v < lo {
+		return lo
+	}
+	if v > hi {
+		return hi
+	}
+	return v
+}
+
 // restAfter is the rest after an item, keyed by its occurrence slot (not the
-// library slot): a main item gets the user's 10..40 s setting (spec suggests
-// 10–20); warm-up/cool-down get a short/zero rest. Keying off the occurrence
-// slot lets a main-slot exercise (e.g. an air squat) be reused in the warm-up
-// and still rest like a warm-up item.
-func restAfter(slot Slot, lightRest int) int {
+// library slot), using the user's per-phase setting. Keying off the occurrence
+// slot lets a main-slot exercise (e.g. an air squat) reused in the warm-up rest
+// like a warm-up item.
+func restAfter(slot Slot, r Rests) int {
 	switch slot {
 	case Warmup:
-		return 5
+		return clampRest(r.Warmup, 0, 90)
 	case Cooldown:
-		return 0
+		return clampRest(r.Cooldown, 0, 90)
 	}
-	if lightRest < 10 {
-		lightRest = 10
-	}
-	if lightRest > 40 {
-		lightRest = 40
-	}
-	return lightRest
+	return clampRest(r.Main, 5, 90)
 }
 
 const restBetweenRounds = 60
 
-// assignRestsAndEst fills each item's Rest (per the spec rules; longer between
-// main rounds) and returns a rough total-duration estimate in seconds.
-func assignRestsAndEst(items []Item, lightRest int) int {
+// assignRestsAndEst fills each item's Rest (per-phase user setting; longer
+// between main rounds) and returns a rough total-duration estimate in seconds.
+func assignRestsAndEst(items []Item, r Rests) int {
 	est := 0
 	for i := range items {
 		it := items[i]
@@ -166,7 +177,7 @@ func assignRestsAndEst(items []Item, lightRest int) int {
 			if it.Slot == Main && next.Slot == Main && next.Round != it.Round {
 				items[i].Rest = restBetweenRounds
 			} else {
-				items[i].Rest = restAfter(it.Slot, lightRest)
+				items[i].Rest = restAfter(it.Slot, r)
 			}
 		}
 		work := it.Value

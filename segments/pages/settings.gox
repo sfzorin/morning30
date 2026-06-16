@@ -20,10 +20,12 @@ import (
 
 // settingsForm is the decoded settings submission.
 type settingsForm struct {
-	Name      string `form:"name"`
-	Rest      int    `form:"rest"`
-	VoiceMode string `form:"voice_mode"`
-	Sex       string `form:"sex"`
+	Name         string `form:"name"`
+	Rest         int    `form:"rest"`          // main set
+	RestWarmup   int    `form:"rest_warmup"`
+	RestCooldown int    `form:"rest_cooldown"`
+	VoiceMode    string `form:"voice_mode"`
+	Sex          string `form:"sex"`
 }
 
 // editState is the editor's working copy: the selected day plus the program as
@@ -46,14 +48,10 @@ elem (s settingsPage) Main() {
 	~{
 		l := i18n.Lang(s.sess.Lang)
 		saved := doors.NewSource(false)
-		rest := s.sess.Rest
-		if rest < 10 {
-			rest = 10
-		}
-		if rest > 40 {
-			rest = 40
-		}
-		restVal := doors.NewSource(rest)
+		restW, restM, restC := app.DB.Rests(s.sess.UserID)
+		restWVal := doors.NewSource(restW)
+		restMVal := doors.NewSource(restM)
+		restCVal := doors.NewSource(restC)
 		streak, _ := app.DB.Streak(s.sess.UserID, app.Today())
 		active := app.ActiveProgramKey(s.sess.UserID)
 		hasCustom := app.HasCustomProgram(s.sess.UserID)
@@ -96,26 +94,37 @@ elem (s settingsPage) Main() {
 						<span>~(i18n.T(l, "auth.name"))</span>
 						<input class="text-input compact" name="name" type="text" maxlength="40" value=(s.sess.Name)>
 					</div>
+					~// Three rest durations: warm-up, main set, cool-down.
 					<div class="srow col">
 						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest"))</span>
-							<output class="rest-out">
-								~(restVal.Bind(elem(v int) {
-									~(v, " ", i18n.T(l, "workout.sec"))
-								}))
-							</output>
+							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
+							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
 						</div>
-						<input
-							type="range"
-							name="rest"
-							min="10"
-							max="40"
-							step="5"
-							value=(rest)
+						<input type="range" name="rest_warmup" min="0" max="40" step="5" value=(restW)
 							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-								if n := r.Event().Number; n != nil {
-									restVal.Update(ctx, int(*n))
-								}
+								if n := r.Event().Number; n != nil { restWVal.Update(ctx, int(*n)) }
+								return false
+							}})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_main"))</span>
+							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" name="rest" min="5" max="40" step="5" value=(restM)
+							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+								if n := r.Event().Number; n != nil { restMVal.Update(ctx, int(*n)) }
+								return false
+							}})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
+							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" name="rest_cooldown" min="0" max="40" step="5" value=(restC)
+							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+								if n := r.Event().Number; n != nil { restCVal.Update(ctx, int(*n)) }
 								return false
 							}})>
 					</div>
@@ -338,13 +347,9 @@ elem (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, l
 func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors.RequestForm[settingsForm]) bool {
 	return func(ctx context.Context, r doors.RequestForm[settingsForm]) bool {
 		f := r.Data()
-		rest := f.Rest
-		if rest < 10 {
-			rest = 10
-		}
-		if rest > 40 {
-			rest = 40
-		}
+		restMain := clampRange(f.Rest, 5, 40)
+		restWarm := clampRange(f.RestWarmup, 0, 40)
+		restCool := clampRange(f.RestCooldown, 0, 40)
 		name := strings.TrimSpace(f.Name)
 		if len(name) > 40 {
 			name = name[:40]
@@ -355,11 +360,11 @@ func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors
 		default:
 			mode = "normal"
 		}
-		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, rest, mode)
+		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode)
 		_ = app.DB.SetSex(s.sess.UserID, f.Sex)
 		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
 			cur.Name = name
-			cur.Rest = rest
+			cur.Rest = restMain
 			cur.VoiceMode = mode
 			cur.Voice = mode != "off"
 			return cur
@@ -398,6 +403,17 @@ func clampDay(d, n int) int {
 		d = n
 	}
 	return d
+}
+
+// clampRange clamps v to [lo, hi].
+func clampRange(v, lo, hi int) int {
+	if v < lo {
+		return lo
+	}
+	if v > hi {
+		return hi
+	}
+	return v
 }
 
 // setDay switches the edited day, keeping the working JSON.

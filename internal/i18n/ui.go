@@ -110,6 +110,9 @@ var ui = map[string][7]string{
 	// Settings
 	"settings.title":     {"Настройки", "Settings", "Ayarlar", "Einstellungen", "Ajustes", "Réglages", "Impostazioni"},
 	"settings.rest":      {"Пауза между упражнениями", "Rest between exercises", "Egzersizler arası dinlenme", "Pause zwischen Übungen", "Descanso entre ejercicios", "Repos entre exercices", "Riposo tra esercizi"},
+	"settings.rest_warmup":   {"Пауза в разминке", "Rest in warm-up", "Isınmada dinlenme", "Pause beim Aufwärmen", "Descanso en el calentamiento", "Repos à l'échauffement", "Riposo nel riscaldamento"},
+	"settings.rest_main":     {"Пауза в основной части", "Rest in the main set", "Ana bölümde dinlenme", "Pause im Hauptteil", "Descanso en la parte principal", "Repos dans la partie principale", "Riposo nella parte principale"},
+	"settings.rest_cooldown": {"Пауза в заминке", "Rest in cool-down", "Soğumada dinlenme", "Pause beim Abwärmen", "Descanso en el enfriamiento", "Repos au retour au calme", "Riposo nel defaticamento"},
 	"settings.language":  {"Язык", "Language", "Dil", "Sprache", "Idioma", "Langue", "Lingua"},
 	"settings.voice":     {"Голосовые подсказки", "Voice cues", "Sesli komutlar", "Sprachansagen", "Indicaciones de voz", "Indications vocales", "Indicazioni vocali"},
 	"settings.sex":       {"Фигура", "Figure", "Figür", "Figur", "Figura", "Silhouette", "Figura"},

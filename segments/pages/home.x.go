@@ -39,7 +39,7 @@ func (h homePage) Main() gox.Elem {
 
 		cycle := pos/content.TotalDays + 1
 		curDay := pos%content.TotalDays + 1
-		w := app.UserWorkout(h.sess.UserID, curDay, h.sess.Rest)
+		w := app.UserWorkout(h.sess.UserID, curDay)
 		acked, _ := app.DB.SafetyAck(h.sess.UserID)
 		safety := doors.NewSource(acked)
 

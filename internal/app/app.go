@@ -89,7 +89,9 @@ func UserProgram(userID int64) content.Resolved {
 }
 
 // UserWorkout builds a day's workout from the active program (built-in or custom),
-// scaled by the user's universal difficulty level.
-func UserWorkout(userID int64, day, rest int) content.Workout {
-	return UserProgram(userID).Workout(day, rest, DB.GetLevel(userID))
+// scaled by the user's universal difficulty level, with the user's per-phase rests.
+func UserWorkout(userID int64, day int) content.Workout {
+	w, m, c := DB.Rests(userID)
+	rests := content.Rests{Warmup: w, Main: m, Cooldown: c}
+	return UserProgram(userID).Workout(day, DB.GetLevel(userID), rests)
 }

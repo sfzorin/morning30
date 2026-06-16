@@ -6,7 +6,7 @@ import (
 )
 
 // base builds a day's workout from the built-in program at level 0.
-func base(day int) Workout { return ResolveBuiltin().Workout(day, 18, 0) }
+func base(day int) Workout { return ResolveBuiltin().Workout(day, 0, Rests{Warmup: 5, Main: 18}) }
 
 func mainOf(w Workout) []Item {
 	var out []Item
@@ -107,7 +107,7 @@ func TestVladStructureAndCounts(t *testing.T) {
 		t.Fatalf("vlad: name=%q warmup=%d rounds=%d cooldown=%d", r.Name, len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
 	}
 	for day := 1; day <= TotalDays; day++ {
-		w := r.Workout(day, 18, 0)
+		w := r.Workout(day, 0, Rests{Warmup: 5, Main: 18})
 		count := wantVladMainCount[day]
 		if got := len(w.Items); got != 6+count*2+4 {
 			t.Fatalf("vlad day %d: %d items, want %d", day, got, 6+count*2+4)
@@ -165,17 +165,17 @@ func TestScaleValue(t *testing.T) {
 // The level scales the main block but not warm-up/cool-down.
 func TestLevelScalingInWorkout(t *testing.T) {
 	r := ResolveBuiltin()
-	wu := r.Workout(1, 18, 0).Items[0].Value
+	wu := r.Workout(1, 0, Rests{Warmup: 5, Main: 18}).Items[0].Value
 	for _, lvl := range []int{-3, 0, 3} {
-		if v := r.Workout(1, 18, lvl).Items[0].Value; v != wu {
+		if v := r.Workout(1, lvl, Rests{Warmup: 5, Main: 18}).Items[0].Value; v != wu {
 			t.Errorf("level %d changed the warm-up value", lvl)
 		}
 	}
 	// Day 1 first main = push-ups = 12 → +1 = 13, +3 = 16.
-	if got := mainOf(r.Workout(1, 18, 1))[0].Value; got != 13 {
+	if got := mainOf(r.Workout(1, 1, Rests{Warmup: 5, Main: 18}))[0].Value; got != 13 {
 		t.Errorf("level +1 push-ups = %d, want 13", got)
 	}
-	if got := mainOf(r.Workout(1, 18, 3))[0].Value; got != 16 {
+	if got := mainOf(r.Workout(1, 3, Rests{Warmup: 5, Main: 18}))[0].Value; got != 16 {
 		t.Errorf("level +3 push-ups = %d, want 16", got)
 	}
 }

@@ -204,12 +204,21 @@
 
   async function requestWake() {
     try {
-      if ("wakeLock" in navigator) wakeLock = await navigator.wakeLock.request("screen");
-    } catch (e) {}
+      if ("wakeLock" in navigator && document.visibilityState === "visible" && !wakeLock) {
+        wakeLock = await navigator.wakeLock.request("screen");
+        wakeLock.addEventListener("release", function () { wakeLock = null; });
+      }
+    } catch (e) { wakeLock = null; }
   }
   function releaseWake() {
     try { if (wakeLock) { wakeLock.release(); wakeLock = null; } } catch (e) {}
   }
+  // The OS auto-releases the wake lock whenever the page is hidden (screen off,
+  // tab switch). Re-acquire it on return so the screen stays on mid-workout.
+  function onVisible() {
+    if (document.visibilityState === "visible" && !finished) requestWake();
+  }
+  document.addEventListener("visibilitychange", onVisible);
 
   // ---- rendering --------------------------------------------------------
   function setProgress() {
@@ -524,7 +533,7 @@
   if (el.restBack) el.restBack.textContent = t("prev");
 
   // ---- go ---------------------------------------------------------------
-  $sys.clean(function () { clearTicker(); clearNarr(); shutUp(); releaseWake(); });
+  $sys.clean(function () { clearTicker(); clearNarr(); shutUp(); releaseWake(); document.removeEventListener("visibilitychange", onVisible); });
 
   requestWake();
   if (items.length === 0) {
