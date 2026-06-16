@@ -24,7 +24,9 @@ const userCols = `id, email, name, lang, rest_seconds, voice, is_guest, voice_mo
 // CreateUser inserts a new account. Returns ErrEmailTaken on duplicate email.
 func (d *DB) CreateUser(email, passHash, lang, name string) (User, error) {
 	res, err := d.sql.Exec(
-		`INSERT INTO users (email, pass_hash, lang, name) VALUES (?, ?, ?, ?)`,
+		// rest_warmup/rest_cooldown set explicitly so new users get the current
+		// defaults even on a DB whose column default predates them.
+		`INSERT INTO users (email, pass_hash, lang, name, rest_warmup, rest_cooldown) VALUES (?, ?, ?, ?, 10, 10)`,
 		email, passHash, lang, name,
 	)
 	if err != nil {
@@ -39,7 +41,7 @@ func (d *DB) CreateUser(email, passHash, lang, name string) (User, error) {
 // email must be a unique placeholder (e.g. "guest:<token>").
 func (d *DB) CreateGuest(email, lang string) (User, error) {
 	res, err := d.sql.Exec(
-		`INSERT INTO users (email, pass_hash, lang, is_guest) VALUES (?, '', ?, 1)`,
+		`INSERT INTO users (email, pass_hash, lang, is_guest, rest_warmup, rest_cooldown) VALUES (?, '', ?, 1, 10, 10)`,
 		email, lang,
 	)
 	if err != nil {
@@ -110,7 +112,7 @@ func (d *DB) UpdateSettings(userID int64, name, lang string, restWarmup, restMai
 // Rests returns the user's per-phase rest seconds (warm-up, main, cool-down),
 // falling back to the defaults if the row is missing.
 func (d *DB) Rests(userID int64) (warmup, main, cooldown int) {
-	warmup, main, cooldown = 5, 20, 0
+	warmup, main, cooldown = 10, 20, 10
 	_ = d.sql.QueryRow(
 		`SELECT rest_warmup, rest_seconds, rest_cooldown FROM users WHERE id = ?`, userID,
 	).Scan(&warmup, &main, &cooldown)
