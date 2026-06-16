@@ -225,8 +225,8 @@ func (w workoutPage) payloadJSON() string {
 		"seconds":     i18n.Cue(l, "seconds"),
 		"avoid":       i18n.Cue(l, "avoid"),
 	}
-	enc := make([]string, 0, 6)
-	for n := 0; n < 6; n++ {
+	enc := make([]string, 0, 20)
+	for n := 0; n < 20; n++ {
 		enc = append(enc, i18n.T(l, "enc."+strconv.Itoa(n)))
 	}
 

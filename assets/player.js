@@ -404,35 +404,87 @@
     } catch (e) {}
   }
 
-  // ---- celebration (applause + confetti) --------------------------------
+  // ---- celebration: confetti + a roaring crowd (applause, cheers, whistles) ----
   function celebrate() {
     confetti();
     try {
       var Ctx = window.AudioContext || window.webkitAudioContext;
       if (!Ctx) return;
       var ac = new Ctx();
-      // Short bright chime arpeggio.
+      var t0 = ac.currentTime;
+      var master = ac.createGain();
+      master.gain.value = 0.9;
+      master.connect(ac.destination);
+
+      // Applause bed: a crowd of ~900 random claps over ~3 s, with a swell.
+      var dur = 3.0;
+      var buffer = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
+      var d = buffer.getChannelData(0), i, k;
+      for (i = 0; i < 900; i++) {
+        var at = Math.floor(Math.random() * d.length);
+        var len = 40 + Math.floor(Math.random() * 80);
+        var amp = 0.5 + Math.random() * 0.5;
+        for (k = 0; k < len && at + k < d.length; k++) {
+          var e = 1 - k / len;
+          d[at + k] += (Math.random() * 2 - 1) * e * e * amp;
+        }
+      }
+      var bed = ac.createBufferSource(); bed.buffer = buffer;
+      var bp = ac.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 1900; bp.Q.value = 0.7;
+      var bedG = ac.createGain();
+      bedG.gain.setValueAtTime(0.0001, t0);
+      bedG.gain.exponentialRampToValueAtTime(0.6, t0 + 0.25);
+      bedG.gain.setValueAtTime(0.6, t0 + 1.7);
+      bedG.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      bed.connect(bp); bp.connect(bedG); bedG.connect(master);
+      bed.start(t0);
+
+      // Cheers / whoops: rising voices with vibrato, staggered like a crowd.
+      for (i = 0; i < 6; i++) {
+        var s = t0 + Math.random() * 1.4;
+        var o = ac.createOscillator(); o.type = "sawtooth";
+        var base = 220 + Math.random() * 260;
+        o.frequency.setValueAtTime(base, s);
+        o.frequency.exponentialRampToValueAtTime(base * (1.4 + Math.random() * 0.6), s + 0.25);
+        o.frequency.exponentialRampToValueAtTime(base * 0.9, s + 0.8);
+        var lp = ac.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1200;
+        var vib = ac.createOscillator(); vib.frequency.value = 5 + Math.random() * 3;
+        var vibG = ac.createGain(); vibG.gain.value = 12;
+        vib.connect(vibG); vibG.connect(o.frequency);
+        var g = ac.createGain();
+        g.gain.setValueAtTime(0.0001, s);
+        g.gain.exponentialRampToValueAtTime(0.10, s + 0.12);
+        g.gain.exponentialRampToValueAtTime(0.0001, s + 0.9);
+        o.connect(lp); lp.connect(g); g.connect(master);
+        o.start(s); vib.start(s); o.stop(s + 0.95); vib.stop(s + 0.95);
+      }
+
+      // A couple of celebratory whistles.
+      for (i = 0; i < 2; i++) {
+        var ws = t0 + 0.3 + Math.random() * 1.2;
+        var wo = ac.createOscillator(); wo.type = "sine";
+        var wf = 2200 + Math.random() * 600;
+        wo.frequency.setValueAtTime(wf, ws);
+        wo.frequency.linearRampToValueAtTime(wf + 300, ws + 0.3);
+        var wg = ac.createGain();
+        wg.gain.setValueAtTime(0.0001, ws);
+        wg.gain.exponentialRampToValueAtTime(0.06, ws + 0.05);
+        wg.gain.exponentialRampToValueAtTime(0.0001, ws + 0.5);
+        wo.connect(wg); wg.connect(master);
+        wo.start(ws); wo.stop(ws + 0.55);
+      }
+
+      // Bright chime arpeggio (the firework "salute").
       [523, 659, 784, 1046].forEach(function (f, n) {
         var o = ac.createOscillator(), g = ac.createGain();
         o.type = "triangle"; o.frequency.value = f;
-        o.connect(g); g.connect(ac.destination);
-        var s = ac.currentTime + n * 0.12;
+        o.connect(g); g.connect(master);
+        var s = t0 + n * 0.12;
         g.gain.setValueAtTime(0.0001, s);
-        g.gain.exponentialRampToValueAtTime(0.25, s + 0.03);
-        g.gain.exponentialRampToValueAtTime(0.0001, s + 0.4);
-        o.start(s); o.stop(s + 0.42);
+        g.gain.exponentialRampToValueAtTime(0.22, s + 0.03);
+        g.gain.exponentialRampToValueAtTime(0.0001, s + 0.5);
+        o.start(s); o.stop(s + 0.52);
       });
-      // Applause-ish noise burst.
-      var buffer = ac.createBuffer(1, ac.sampleRate * 1.2, ac.sampleRate);
-      var d = buffer.getChannelData(0);
-      for (var k = 0; k < d.length; k++) {
-        var env = 1 - k / d.length;
-        d[k] = (Math.random() * 2 - 1) * env * env * 0.5;
-      }
-      var src = ac.createBufferSource(); src.buffer = buffer;
-      var bp = ac.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 1800;
-      src.connect(bp); bp.connect(ac.destination);
-      src.start(ac.currentTime + 0.1);
     } catch (e) {}
   }
 
