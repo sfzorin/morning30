@@ -150,10 +150,8 @@ func clampRest(v, lo, hi int) int {
 	return v
 }
 
-// restAfter is the rest after an item, keyed by its occurrence slot (not the
-// library slot), using the user's per-phase setting. Keying off the occurrence
-// slot lets a main-slot exercise (e.g. an air squat) reused in the warm-up rest
-// like a warm-up item.
+// restAfter maps a phase (slot) to its rest seconds. The rest before an exercise
+// belongs to that exercise's phase, so callers pass the UPCOMING item's slot.
 func restAfter(slot Slot, r Rests) int {
 	switch slot {
 	case Warmup:
@@ -164,21 +162,17 @@ func restAfter(slot Slot, r Rests) int {
 	return clampRest(r.Main, 5, 90)
 }
 
-const restBetweenRounds = 60
-
-// assignRestsAndEst fills each item's Rest (per-phase user setting; longer
-// between main rounds) and returns a rough total-duration estimate in seconds.
+// assignRestsAndEst sets each item's rest and returns a rough duration estimate.
+// The rest after an item is the NEXT item's phase rest — i.e. the pause belongs
+// to the exercise it leads into (warm-up / main / cool-down) and always honours
+// the user's per-phase setting (including between the two main rounds; there is
+// no special longer between-rounds pause).
 func assignRestsAndEst(items []Item, r Rests) int {
 	est := 0
 	for i := range items {
 		it := items[i]
 		if i < len(items)-1 {
-			next := items[i+1]
-			if it.Slot == Main && next.Slot == Main && next.Round != it.Round {
-				items[i].Rest = restBetweenRounds
-			} else {
-				items[i].Rest = restAfter(it.Slot, r)
-			}
+			items[i].Rest = restAfter(items[i+1].Slot, r) // rest belongs to the next exercise
 		}
 		work := it.Value
 		if it.Unit == Reps {
