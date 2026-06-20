@@ -443,8 +443,14 @@ h1, h2, h3 { margin: 0 0 .4em; }
 }
 .player-top { display: flex; align-items: center; gap: 12px; position: relative; z-index: 10; }
 .quit { font-size: 20px; color: var(--muted); width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; }
-.pbar { flex: 1; height: 8px; background: var(--card2); border-radius: 999px; overflow: hidden; }
-.pbar-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .4s ease; }
+/* Three-colour progress bar: one segment per phase (warm-up / main / cool-down). */
+.pbar { flex: 1; height: 8px; display: flex; gap: 3px; }
+.pbar-seg { position: relative; height: 100%; border-radius: 999px; overflow: hidden; background: var(--seg-dim); transition: background .3s ease, box-shadow .3s ease; }
+.pbar-seg-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--seg-bright); border-radius: 999px; transition: width .4s ease; }
+.pbar-seg.active { background: var(--seg-mid); box-shadow: 0 0 5px -1px var(--seg-bright); }
+.pbar-seg.slot-warmup   { --seg-dim: rgba(56,189,248,.16); --seg-mid: rgba(56,189,248,.42); --seg-bright: #38bdf8; }
+.pbar-seg.slot-main     { --seg-dim: rgba(251,146,60,.16); --seg-mid: rgba(251,146,60,.42); --seg-bright: var(--accent); }
+.pbar-seg.slot-cooldown { --seg-dim: rgba(52,211,153,.16); --seg-mid: rgba(52,211,153,.42); --seg-bright: #34d399; }
 .phase { color: var(--muted); font-size: 13px; min-width: 0; }
 
 /* In-workout difficulty nudge */
@@ -558,6 +564,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
   text-align: center;
   padding: 24px;
 }
+.rest-index { color: var(--muted); font-size: 14px; font-weight: 600; }
 .rest-title { font-size: 20px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 .rest-count { font-size: 88px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .rest-next { font-size: 18px; color: var(--fg); }

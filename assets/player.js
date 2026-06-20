@@ -54,7 +54,7 @@
   var $ = function (sel) { return root.querySelector(sel); };
 
   var el = {
-    pbar: $(".pbar-fill"),
+    pbar: $(".pbar"),
     phase: $(".phase"),
     index: $(".ex-index"),
     svg: $(".ex-svg"),
@@ -92,6 +92,7 @@
     restSkip: $(".rest-skip"),
     restBack: $(".rest-back"),
     restTitle: $(".rest-title"),
+    restIndex: $(".rest-index"),
     doneOverlay: $(".done-overlay"),
     doneTitle: $(".done-title"),
     doneEnc: $(".done-enc"),
@@ -236,9 +237,50 @@
   document.addEventListener("visibilitychange", onVisible);
 
   // ---- rendering --------------------------------------------------------
-  function setProgress() {
-    var pct = Math.round(((i) / items.length) * 100);
-    el.pbar.style.width = pct + "%";
+  // The top bar is split into one segment per phase (warm-up / main / cool-down),
+  // each sized to its share of the exercises and tinted its phase colour. A
+  // segment starts greyish-dim, brightens while it's the active phase, and fills
+  // left→right as its exercises complete. barSegs is built once from the items.
+  var barSegs = [];
+  function buildBar() {
+    barSegs = [];
+    el.pbar.textContent = "";
+    var start = 0;
+    for (var k = 1; k <= items.length; k++) {
+      if (k === items.length || items[k].slot !== items[start].slot) {
+        var slot = items[start].slot;
+        var seg = document.createElement("div");
+        seg.className = "pbar-seg slot-" + slot;
+        seg.style.flexGrow = (k - start);          // width ∝ exercises in the phase
+        var fill = document.createElement("div");
+        fill.className = "pbar-seg-fill";
+        seg.appendChild(fill);
+        el.pbar.appendChild(seg);
+        barSegs.push({ slot: slot, start: start, end: k, seg: seg, fill: fill });
+        start = k;
+      }
+    }
+  }
+
+  // renderProgress fills each phase segment by how many of its exercises are done
+  // and marks activeSlot's segment active. During a rest, donePos/activeSlot point
+  // at the UPCOMING exercise, so the next phase lights up the moment its rest
+  // begins (e.g. the main set "starts" during the pause that leads into it).
+  function renderProgress(donePos, activeSlot) {
+    for (var k = 0; k < barSegs.length; k++) {
+      var s = barSegs[k];
+      var n = s.end - s.start;
+      var f = Math.max(0, Math.min(n, donePos - s.start));
+      s.fill.style.width = (f / n * 100) + "%";
+      s.seg.classList.toggle("active", s.slot === activeSlot);
+    }
+  }
+
+  // setPhaseLabel writes the phase + round into the top label, slot-coloured.
+  function setPhaseLabel(it) {
+    el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round;
+    el.phase.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
+    el.phase.classList.add("slot-" + it.slot);
   }
 
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
@@ -258,14 +300,12 @@
     el.hint.textContent = it.hint || "";
     el.warn.textContent = it.warning ? "⚠️ " + it.warning : "";
     el.index.textContent = (i + 1) + " / " + items.length;
-    el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round;
+    setPhaseLabel(it);
     // Slot-coloured counter so you can see at a glance whether you're in the
     // warm-up, main set, or cool-down.
     el.value.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
     el.value.classList.add("slot-" + it.slot);
-    el.phase.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
-    el.phase.classList.add("slot-" + it.slot);
-    setProgress();
+    renderProgress(i, it.slot);
     runSide(it, 1);
   }
 
@@ -333,6 +373,14 @@
     el.rest.classList.remove("hidden");
     el.restTitle.textContent = isReady ? t("ready") : t("rest");
     el.restNext.textContent = upItem ? t("next") + ": " + nextDisplay(upItem) : "";
+    // Keep the counter, phase label and bar aligned with the exercise the rest
+    // leads into — the upcoming phase lights up during its lead-in pause.
+    if (upItem) {
+      var upIdx = items.indexOf(upItem);
+      el.restIndex.textContent = (upIdx + 1) + " / " + items.length;
+      setPhaseLabel(upItem);
+      renderProgress(upIdx, upItem.slot);
+    }
     pendingStart = onDone;
     if (upItem && !isReady && seconds >= 6) {
       announceTimer = setTimeout(function () {
@@ -377,6 +425,7 @@
   async function finish() {
     if (finished) return;
     finished = true;
+    renderProgress(items.length, null); // every phase fully filled
     clearTicker();
     clearNarr();
     shutUp();
@@ -633,6 +682,7 @@
   $sys.clean(function () { clearTicker(); clearNarr(); shutUp(); releaseWake(); document.removeEventListener("visibilitychange", onVisible); });
 
   requestWake();
+  buildBar();
   if (items.length === 0) {
     finish();
   } else {
