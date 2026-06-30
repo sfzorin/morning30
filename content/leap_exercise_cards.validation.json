@@ -1,0 +1,2222 @@
+{
+  "total": 443,
+  "ok": 443,
+  "with_issues": 0,
+  "results": [
+    {
+      "exercise_id": "leap_wall_sumo_squats_and_calf_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_standing_thoracic_left",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_reverse_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_revolved_side_angle",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cow_face",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_forward_bend_with_shoulder_opener",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_moon_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_warrior_iii",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reverse_warrior",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_warrior_ii",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_humble_warrior",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_revolved_triangle_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_extended_side_angle",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_happy_baby_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crescent_low_lunge_with_cactus_arms",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_revolved_crescent_low_lunge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crescent_low_lunge_with_arm_extended_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crescent_low_lunge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_walk_the_dog",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_down_dog_with_knee_drives",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_down_dog_with_bent_knee",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_eagle_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_garland_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_revolved_chair_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_goddess_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_upward_facing_dog",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_palm_tree_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bridge_one_leg_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_forward_bend",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_circle_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_cat_cow",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_plough_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_thunderbolt_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_locust_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_locust_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_tiger_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_low_boat_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_boat_pose_with_alternating_legs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_boat_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_thread_the_needle",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_gate_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_spinal_rolling",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_prone_scorpion_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lumbar_cat_cow",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_thoracic_spine_cat_cow",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wide_leg_hamstring_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_forward_spine_stretch_pulse",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_easy_butterfly_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_butterfly_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_easy_kneeling_hamstring_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_kneeling_hamstring_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_runner_s_lunge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_tree_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_corpse_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bow_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_push_up_hold",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_kneel_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lizard_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sage_marichi_s_pose_iii",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_boat_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_straight_arm_knee_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_pigeon_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_spine_lumbar_twist_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_chair",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_fish_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_warrior_i",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_camel",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_shoulder_shrugs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_star_jumps",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_pendulum_swings",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_windshield_wipers",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leg_spreads",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_back_bow_pulls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_body_saw",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_prone_flutter_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sitting_hamstring_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_butterfly_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_pullover_on_floor",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_squat_jacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crossbody_mountain_climber",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plank_hip_dips",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_close_grip_floor_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_straight_arm_plank_to_pike",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_downward_facing_dog",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_oblique_crunch_reach",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_floor_fly_to_close_grip_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_twisting_piston",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_mouth_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cheek_firmer",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_floor_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bent_over_row",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_havyk_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_knee_to_chest",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_knee_circle",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wrists_ankles_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_double_knees_to_chest",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_pistol_box_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_straight_leg_bounds",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_x_burpees",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_dumbbell_chest_fly",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_triangle_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_bulgarian_split_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_curtsy_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_shoulder_stretch_with_chair",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_hip_hinge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_levator_scapulae_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_open_chain_knee_extension",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cross_leg_side_bend",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_fire_hydrant",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_close_grip_bench_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_side_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_neck_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_supine_hamstring_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_quarter_wall_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_single_leg_drops",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_step_up_onto_chair",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_mountain_climber_squat_thrust",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_starfish_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crab_kick_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_the_roll",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_jumping_lunge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_chest_fly",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_split_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bent_knee_side_hip_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_slow_mountain_climber",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_chair_bicycle_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_double_leg_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_eyes_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_run_on_the_wall",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_push_up_row",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_butt_bridge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lying_knee_hug",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_butterfly_bridge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_hip_bridge_leg_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_marchin_hip_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_single_arm_fly",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_toe_tap",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lips_down_pull",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_single_leg_hip_thrust",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_valley_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_half_bending_pushing_forward",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_upright_row",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bent_over_dumbbell_rows",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_kickbacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_donkey_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_backward_lunge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_single_leg_deadlift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_hip_thrust",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_spiderman_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_pullover",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_swing",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_tricep_dumbbell_flick_back",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_knee_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_overhead_tricep_extension",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_jaw_line",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_arm_triceps_kickback",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_underchin_duck",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_eye_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_marilyn",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_straight_leg_fire_hydrant",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_clasp_hands_behind_back",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_nose_touching",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_hamstring_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_smiling_fish_face",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_side_bend",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_single_leg_deadlift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_lying_triceps_extension",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_neck_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_puffy_cheeks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_cuban_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cross_body_hammer_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_single_arm_otis_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_wide_bicep_curls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_triceps_extension",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lion",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_punch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_smile",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_drawn_cheeks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_floor_slides",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_spinal_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_boat_hold",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_drag_curls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_rear_delt_row",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_squat_clean_and_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_single_arm_renegade_row",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_fly_to_close_grip_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_elbow_plank_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_seated_in_outs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_side_boat_hold",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_bicep_curl_to_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_hip_circle",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_overhead_arm_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_aeiou",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alternating_renegade_row",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_v_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_offset_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_shrug",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_standing_hip_abduction",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_in_outs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_fire_hydrant_pulse",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_downward_facing_dog_on_the_wall",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_walking_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_plank_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_donkey_kicks_pulse",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_oblique_crossover_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_pilates_leg_pulls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_bent_leg_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_bench_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_plank_knee_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_dumbbell_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_arm_swings_with_lateral_steps",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_lying_forward_leg_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leg_lateral_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_chair_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_zottman_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_concentration_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_kneeling_side_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_air_cycling",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alternate_hammer_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_decline_floor_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_crossover_toe_touches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wood_chops",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_tiger_bend_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_glute_kickback_pulse",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_oblique_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_glute_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_plank_front_kick",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_standing_glute_kickbacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_step_jacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_glute_kickback_hold",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_glute_kickback_crossover_with_leg",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_lying_kickback",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_fast_spider_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_flutter_kick_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plank_taps",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_dumbbell_calf_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sumo_squat_leg_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_one_leg_bridge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_trunk_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_one_leg_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_tip_toe_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_squat_thrust_with_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lunge_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_skater_jump",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_kneeling_lunge_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leaning_dumbbell_one_leg_calf_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bridge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_to_side_turns",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plank_and_reach",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bench_glute_kick_back",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_squat_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_single_leg_hip_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cross_touch_and_reach",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_pilates_clamshell",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_quick_feet",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_quad_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crab_walk",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_plie_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_star_crawl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_forward_bend",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_torso_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_to_side_tilts",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_elbows_back",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_jumping_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_modified_burpees",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_legs_up_the_wall",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dynamic_chest",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_ski_squat_leg_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_push_up_with_toe_tap",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_jumping_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_side_bend",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_hops_on_the_spot",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_up_down_nods",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crab_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_claps_over_head",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lunge_knee_hops",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_butt_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bird_dog",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_side_lateral_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_military_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_diagonal_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_chest_press_pulse",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_diamond_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_shoulder_outward_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_triceps_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_anterior_shoulder_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_punches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_biceps_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lying_dumbbell_lateral_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_shoulder_rolls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_arm_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_front_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_doorway_curls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leg_barbell_curl",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_modified_push_up_low_hold",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_one_arm_dumbbell_lateral_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_military_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reverse_flys",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alternating_hooks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_arm_curls_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_arnold_dumbbell_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_shoulder_gators",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alternating_dumbbell_shoulder_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_glute_kickbacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sumo_squat_calf_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_glute_kick_back",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_toy_soldiers",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_roundhouse_squat_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_skipping_without_rope",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_frog_press",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plank_jacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_step_up_onto_chair",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wide_arm_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_in_outs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_knee_to_chest_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_straight_arm_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_knee_to_elbow_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_calf_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lateral_plank_walk",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leaning_stretcher_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_inchworms",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_quad_stretch_with_wall",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sumo_squat_calf_raises_with_wall",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_calf_raise_with_splayed_foot",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_single_leg_calf_hop",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_calf_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_straight_leg_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lying_butterfly_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sumo_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_calf_raise_with_pigeon_toed",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_squat_pulses",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_resisting_single_leg_calf_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_squat_reach_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_adductor_stretch_in_standing",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crossover_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plie_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bottom_leg_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_lying_floor_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_arm_scissors",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_hop",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_floor_y_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_lying_leg_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reverse_flutter_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_prone_triceps_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_hover_push_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_leg_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reclined_rhomboid_squeezes",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_triceps_kickbacks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_hip_bridge_leg_lift",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_backward_lunge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_arm_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_supine_push_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_hyperextension",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plank_leg_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_rhomboid_pulls",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_shoulder_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_donkey_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bulgarian_split_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_fire_hydrant",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_froggy_glute_lifts",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_floor_tricep_dips",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_wall_sit",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_spiderman_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_push_up_rotation",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_incline_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_curtsy_lunges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_single_leg_calf_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_jumping_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_knee_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_box_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reverse_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_split_squat",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_decline_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_triceps_dips",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_hindu_push_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_arm_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_squats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cat_cow_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lying_swing_legs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crunch_kicks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cobra_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_heels_to_the_heavens",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alt_v_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leg_raises",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_leg_in_outs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reverse_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cross_knee_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_torture_tucks",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_abs_circles",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_butt_bridge",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_side_bend",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_crunches_with_legs_raised",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_t_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cobras",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_toe_touch_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_up_n_overs",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_oblique_v_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_x_man_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_one_down_two_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reverse_crunches_with_leg_raised",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sit_up_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_lying_twist_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_bicycle_passes",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_v_hold",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_paddle_boats",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_90_90_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_superman",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_abdominal_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_clapping_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_child_pose",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_sit_ups",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_leg_raise",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_swimmer_and_superman",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_cross_arm_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_long_arm_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_plank",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_russian_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_high_stepping",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_v_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_heel_touch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_standing_bicycle_crunches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_bent_leg_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dead_bug",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_russian_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_reclined_oblique_twist",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_dumbbell_crunch_and_punches",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_side_bridges",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_v_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alternating_knee_to_chest_stretch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_open_chain_knee_extension_left",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_oblique_v_up",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_clockwise_arm_swings",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_backward_lunge_with_front",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_seated_in_and_out",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_abdominal_crunch",
+      "status": "ok",
+      "issues": []
+    },
+    {
+      "exercise_id": "leap_alternating_bird_dog",
+      "status": "ok",
+      "issues": []
+    }
+  ]
+}

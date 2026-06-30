@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_wall_calf_raises",
+    "exercise_name": "Wall Calf Raises",
+    "group_label": "Wall",
+    "video_title": "How to Do：WALL CALF RAISES"
+  },
+  {
+    "exercise_id": "leap_lateral_plank_walk",
+    "exercise_name": "Lateral Plank Walk",
+    "group_label": "Planks",
+    "video_title": "How to Do：LATERAL PLANK WALK"
+  },
+  {
+    "exercise_id": "leap_leaning_stretcher_raises",
+    "exercise_name": "Leaning Stretcher Raises",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：LEANING STRETCHER RAISES"
+  },
+  {
+    "exercise_id": "leap_inchworms",
+    "exercise_name": "Inchworms",
+    "group_label": "Other",
+    "video_title": "How to Do：INCHWORMS"
+  },
+  {
+    "exercise_id": "leap_quad_stretch_with_wall",
+    "exercise_name": "Quad Stretch with Wall",
+    "group_label": "Wall",
+    "video_title": "How to Do：QUAD STRETCH WITH WALL"
+  },
+  {
+    "exercise_id": "leap_sumo_squat_calf_raises_with_wall",
+    "exercise_name": "Sumo Squat Calf Raises with Wall",
+    "group_label": "Wall",
+    "video_title": "How to Do：SUMO SQUAT CALF RAISES WITH WALL"
+  },
+  {
+    "exercise_id": "leap_calf_raise_with_splayed_foot",
+    "exercise_name": "Calf Raise with Splayed Foot",
+    "group_label": "Legs & Calves",
+    "video_title": "How to Do：CALF RAISE WITH SPLAYED FOOT"
+  },
+  {
+    "exercise_id": "leap_single_leg_calf_hop",
+    "exercise_name": "Single Leg Calf Hop",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：SINGLE LEG CALF HOP"
+  },
+  {
+    "exercise_id": "leap_calf_stretch",
+    "exercise_name": "Calf Stretch",
+    "group_label": "Legs & Calves",
+    "video_title": "How to Do：CALF STRETCH"
+  },
+  {
+    "exercise_id": "leap_straight_leg_raise",
+    "exercise_name": "Straight Leg Raise",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：STRAIGHT LEG RAISE"
+  },
+  {
+    "exercise_id": "leap_lying_butterfly_stretch",
+    "exercise_name": "Lying Butterfly Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：LYING BUTTERFLY STRETCH"
+  },
+  {
+    "exercise_id": "leap_sumo_squat",
+    "exercise_name": "Sumo Squat",
+    "group_label": "Squats",
+    "video_title": "How to Do：SUMO SQUAT"
+  },
+  {
+    "exercise_id": "leap_calf_raise_with_pigeon_toed",
+    "exercise_name": "Calf Raise with Pigeon-Toed",
+    "group_label": "Legs & Calves",
+    "video_title": "How to Do：CALF RAISE WITH PIGEON-TOED"
+  },
+  {
+    "exercise_id": "leap_squat_pulses",
+    "exercise_name": "Squat Pulses",
+    "group_label": "Squats",
+    "video_title": "How to Do：SQUAT PULSES"
+  },
+  {
+    "exercise_id": "leap_wall_resisting_single_leg_calf_raise",
+    "exercise_name": "Wall Resisting Single Leg Calf Raise",
+    "group_label": "Wall",
+    "video_title": "How to Do：WALL RESISTING SINGLE LEG CALF RAISE"
+  },
+  {
+    "exercise_id": "leap_squat_reach_ups",
+    "exercise_name": "Squat Reach Ups",
+    "group_label": "Squats",
+    "video_title": "How to Do：SQUAT REACH UPS"
+  },
+  {
+    "exercise_id": "leap_adductor_stretch_in_standing",
+    "exercise_name": "Adductor Stretch in Standing",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：ADDUCTOR STRETCH IN STANDING"
+  },
+  {
+    "exercise_id": "leap_crossover_crunch",
+    "exercise_name": "Crossover Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：CROSSOVER CRUNCH"
+  },
+  {
+    "exercise_id": "leap_plie_squats",
+    "exercise_name": "Plie Squats",
+    "group_label": "Squats",
+    "video_title": "How to Do：PLIE SQUATS"
+  },
+  {
+    "exercise_id": "leap_bottom_leg_lift",
+    "exercise_name": "Bottom Leg Lift",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：BOTTOM LEG LIFT"
+  }
+]

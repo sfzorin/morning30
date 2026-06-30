@@ -1,0 +1,1412 @@
+[
+  {
+    "exercise_id": "leap_curtsy_lunges",
+    "ru": {
+      "name": "Выпады «реверанс»",
+      "short_description": "Выпад с перекрёстным шагом назад, который акцентированно нагружает ягодицы, внешние бёдра и квадрицепсы с элементом ротации.",
+      "how_to": [
+        "Встань прямо, ноги на ширине бёдер.",
+        "Шагни одной ногой назад и скрести её за опорной, опускаясь в выпад.",
+        "Держи колено передней ноги над носком.",
+        "Оттолкнись пяткой передней ноги и вернись в исходное положение.",
+        "Чередуй стороны с каждым повтором."
+      ],
+      "correct": [
+        "Держи колени над носками.",
+        "Держи пятку рабочей ноги на полу.",
+        "Держи корпус вертикально.",
+        "Опускайся с контролем каждый раз."
+      ],
+      "mistakes": [
+        "Не своди колени внутрь.",
+        "Не опускайся слишком быстро.",
+        "Не разворачивай бёдра чрезмерно.",
+        "Не отрывай пятку передней ноги от пола."
+      ]
+    },
+    "tr": {
+      "name": "Reverans Lunges",
+      "short_description": "Kalçaları, dış uyluğu ve quadları rotasyonel bir vurguyla hedefleyen çapraz arkaya adım lunges.",
+      "how_to": [
+        "Ayakların kalça genişliğinde açık, dik dur.",
+        "Bir ayağını diğerinin arkasına ve çaprazına adımla, lunge'a in.",
+        "Ön dizinin ayak parmaklarının üzerinde kalmasını sağla.",
+        "Ön topuğundan güç kullanarak başlangıç pozisyonuna dön.",
+        "Her tekrarda yanları değiştir."
+      ],
+      "correct": [
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Çalışan ayağının topuğunu yerde tut.",
+        "Gövdeni dik tut.",
+        "Her seferinde kontrollü şekilde in."
+      ],
+      "mistakes": [
+        "Dizlerini içe bükme.",
+        "Çok hızlı inme.",
+        "Kalçaları aşırı döndürme.",
+        "Ön ayağının topuğunu yerden kaldırma."
+      ]
+    },
+    "de": {
+      "name": "Curtsy Lunges",
+      "short_description": "Ein Ausfallschritt mit hinterkreuztem Bein, der Gesäß, äußere Hüfte und Quadrizeps mit rotatorischem Schwerpunkt trainiert.",
+      "how_to": [
+        "Steh aufrecht mit hüftbreitem Stand.",
+        "Tritt mit einem Fuß schräg hinter den anderen und senke dich in einen Ausfallschritt.",
+        "Halte das vordere Knie über den Zehen.",
+        "Drücke dich durch die Ferse des Vorderfußes zurück in den Stand.",
+        "Wechsle mit jeder Wiederholung die Seiten."
+      ],
+      "correct": [
+        "Halte die Knie über den Zehen.",
+        "Halte die Ferse des arbeitenden Fußes am Boden.",
+        "Halte den Oberkörper aufrecht.",
+        "Senke dich jedes Mal kontrolliert ab."
+      ],
+      "mistakes": [
+        "Lass die Knie nicht nach innen kippen.",
+        "Geh nicht zu schnell nach unten.",
+        "Rotiere die Hüfte nicht übermäßig.",
+        "Hebe die Ferse des vorderen Fußes nicht an."
+      ]
+    },
+    "es": {
+      "name": "Zancadas en reverencia",
+      "short_description": "Una zancada cruzada hacia atrás que trabaja los glúteos, la cadera externa y los cuádriceps con énfasis rotacional.",
+      "how_to": [
+        "Ponte de pie con los pies al ancho de las caderas.",
+        "Lleva un pie detrás y crúzalo por detrás del otro mientras bajas a una zancada.",
+        "Mantén la rodilla delantera alineada sobre el pie.",
+        "Empuja con el talón del pie delantero para volver a la posición inicial.",
+        "Alterna lados con cada repetición."
+      ],
+      "correct": [
+        "Mantén las rodillas sobre los dedos del pie.",
+        "Mantén el talón del pie activo en el suelo.",
+        "Mantén el torso erguido.",
+        "Baja con control en cada repetición."
+      ],
+      "mistakes": [
+        "No dejes que las rodillas se hundan hacia dentro.",
+        "No bajes demasiado rápido.",
+        "No rotes las caderas en exceso.",
+        "No levantes el talón del pie delantero."
+      ]
+    },
+    "fr": {
+      "name": "Fentes en révérence",
+      "short_description": "Une fente croisée vers l'arrière qui cible les fessiers, la hanche externe et les quadriceps avec un accent rotatoire.",
+      "how_to": [
+        "Tiens-toi droit, pieds écartés à la largeur des hanches.",
+        "Passe un pied derrière et en croix de l'autre, en descendant en fente.",
+        "Garde le genou avant au-dessus des orteils.",
+        "Pousse sur le talon avant pour revenir en position debout.",
+        "Alterne les côtés à chaque répétition."
+      ],
+      "correct": [
+        "Garde les genoux au-dessus des orteils.",
+        "Garde le talon du pied actif au sol.",
+        "Garde le buste droit.",
+        "Descends avec contrôle à chaque fois."
+      ],
+      "mistakes": [
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne descends pas trop vite.",
+        "Ne pivote pas excessivement les hanches.",
+        "Ne soulève pas le talon du pied avant."
+      ]
+    },
+    "it": {
+      "name": "Affondi a riverenza",
+      "short_description": "Un affondo incrociato verso l'indietro che lavora i glutei, i fianchi esterni e i quadricipiti con un'enfasi rotatoria.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza dei fianchi.",
+        "Porta un piede dietro e incrocialo dietro l'altro, abbassandoti in un affondo.",
+        "Tieni il ginocchio anteriore sopra le punte dei piedi.",
+        "Spingi attraverso il tallone anteriore per tornare in posizione eretta.",
+        "Alterna i lati a ogni ripetizione."
+      ],
+      "correct": [
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Tieni il tallone del piede attivo a terra.",
+        "Tieni il busto eretto.",
+        "Scendi con controllo ogni volta."
+      ],
+      "mistakes": [
+        "Non far cedere le ginocchia verso l'interno.",
+        "Non scendere troppo velocemente.",
+        "Non ruotare eccessivamente i fianchi.",
+        "Non sollevare il tallone del piede anteriore."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_single_leg_calf_raises",
+    "ru": {
+      "name": "Подъём на носок на одной ноге",
+      "short_description": "Подъём пятки на одной ноге, который изолирует мышцы голени и улучшает стабильность голеностопа.",
+      "how_to": [
+        "Встань рядом со стеной для баланса, слегка касаясь её одной рукой.",
+        "Подними одну ногу от пола.",
+        "Оттолкнись подушечкой опорной стопы и поднимись на носок как можно выше.",
+        "Опустись обратно с контролем.",
+        "Выполни все повторы на одной стороне, затем смени."
+      ],
+      "correct": [
+        "Держи опорную ногу прямой, но не заблокированной.",
+        "Поднимайся как можно выше в каждом повторе.",
+        "Опускайся медленно и с контролем.",
+        "Держи корпус стабильным для баланса."
+      ],
+      "mistakes": [
+        "Не торопи движение.",
+        "Не опирайся сильно на стену.",
+        "Не давай голеностопу заваливаться наружу.",
+        "Не сокращай амплитуду движения."
+      ]
+    },
+    "tr": {
+      "name": "Tek Bacak Baldır Yükseltme",
+      "short_description": "Baldır kaslarını izole eden ve ayak bileği stabilitesini geliştiren tek bacaklı topuk kaldırma hareketi.",
+      "how_to": [
+        "Denge için bir elinle hafifçe duvara değerek yanında dur.",
+        "Bir ayağını yerden kaldır.",
+        "Duran ayağının topuğunu mümkün olduğunca yukarı kaldırmak için ayak tabanından güç uygula.",
+        "Kontrollü şekilde aşağı in.",
+        "Bir tarafta tüm tekrarları tamamla, ardından değiştir."
+      ],
+      "correct": [
+        "Duran bacağını düz tut ama kilitleme.",
+        "Her tekrarda mümkün olduğunca yüksel.",
+        "Yavaş ve kontrollü şekilde in.",
+        "Denge için core'unu aktif tut."
+      ],
+      "mistakes": [
+        "Hareketi aceleye getirme.",
+        "Duvara fazla yaslanma.",
+        "Ayak bileğinin dışa dönmesine izin verme.",
+        "Hareket açıklığını kısaltma."
+      ]
+    },
+    "de": {
+      "name": "Einbeinige Wadenheben",
+      "short_description": "Eine einbeinige Fersenhebeübung, die die Wadenmuskulatur isoliert und die Sprunggelenkstabilität verbessert.",
+      "how_to": [
+        "Stell dich nah an eine Wand und stütze dich leicht mit einer Hand ab.",
+        "Hebe einen Fuß vom Boden.",
+        "Drücke dich über den Fußballen des Standbeins hoch und hebe die Ferse so weit wie möglich.",
+        "Senke dich kontrolliert ab.",
+        "Absolviere alle Wiederholungen auf einer Seite, dann wechsle."
+      ],
+      "correct": [
+        "Halte das Standbein gestreckt, aber nicht durchgedrückt.",
+        "Steige bei jeder Wiederholung so hoch wie möglich.",
+        "Senke dich langsam und kontrolliert ab.",
+        "Halte die Körpermitte angespannt für Balance."
+      ],
+      "mistakes": [
+        "Überstürze die Bewegung nicht.",
+        "Stütz dich nicht zu stark an der Wand ab.",
+        "Lass das Sprunggelenk nicht nach außen kippen.",
+        "Verringere die Bewegungsreichweite nicht."
+      ]
+    },
+    "es": {
+      "name": "Elevaciones de talón a una pierna",
+      "short_description": "Una elevación de talón unilateral que aísla los músculos de la pantorrilla y mejora la estabilidad del tobillo.",
+      "how_to": [
+        "Colócate cerca de una pared para equilibrarte, apoyando ligeramente una mano en ella.",
+        "Levanta un pie del suelo.",
+        "Empuja con la parte delantera del pie de apoyo para elevar el talón lo más alto posible.",
+        "Baja de vuelta con control.",
+        "Completa todas las repeticiones en un lado, luego cambia."
+      ],
+      "correct": [
+        "Mantén la pierna de apoyo recta pero sin bloquear la rodilla.",
+        "Sube lo más alto posible en cada repetición.",
+        "Baja lento y con control.",
+        "Activa el core para mantener el equilibrio."
+      ],
+      "mistakes": [
+        "No apresures el movimiento.",
+        "No te apoyes con fuerza en la pared.",
+        "No dejes que el tobillo gire hacia afuera.",
+        "No acortes el rango de movimiento."
+      ]
+    },
+    "fr": {
+      "name": "Élévations du talon sur une jambe",
+      "short_description": "Une élévation du talon sur une jambe qui isole les mollets et améliore la stabilité de la cheville.",
+      "how_to": [
+        "Tiens-toi près d'un mur pour l'équilibre, en posant légèrement une main dessus.",
+        "Soulève un pied du sol.",
+        "Pousse sur l'avant-pied de la jambe d'appui pour monter le talon le plus haut possible.",
+        "Redescends avec contrôle.",
+        "Effectue toutes les répétitions d'un côté, puis change."
+      ],
+      "correct": [
+        "Garde la jambe d'appui droite sans la verrouiller.",
+        "Monte le plus haut possible à chaque répétition.",
+        "Redescends lentement et avec contrôle.",
+        "Garde les abdominaux engagés pour l'équilibre."
+      ],
+      "mistakes": [
+        "Ne précipite pas le mouvement.",
+        "Ne t'appuie pas trop lourdement sur le mur.",
+        "Ne laisse pas la cheville pivoter vers l'extérieur.",
+        "Ne réduis pas l'amplitude du mouvement."
+      ]
+    },
+    "it": {
+      "name": "Alzate su un piede solo",
+      "short_description": "Un'elevazione del tallone su una gamba che isola i muscoli del polpaccio e migliora la stabilità della caviglia.",
+      "how_to": [
+        "Mettiti vicino a una parete per l'equilibrio, appoggiando leggermente una mano.",
+        "Solleva un piede da terra.",
+        "Spingi attraverso la punta del piede di appoggio per alzare il tallone il più in alto possibile.",
+        "Abbassati di nuovo con controllo.",
+        "Completa tutte le ripetizioni su un lato, poi cambia."
+      ],
+      "correct": [
+        "Tieni la gamba d'appoggio dritta ma non bloccata.",
+        "Sali il più in alto possibile a ogni ripetizione.",
+        "Scendi lentamente e con controllo.",
+        "Tieni il core attivo per l'equilibrio."
+      ],
+      "mistakes": [
+        "Non affrettare il movimento.",
+        "Non appoggiarti con forza alla parete.",
+        "Non lasciare che la caviglia ruoti verso l'esterno.",
+        "Non accorciare il range di movimento."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_jumping_squats",
+    "ru": {
+      "name": "Прыжковые приседания",
+      "short_description": "Взрывное приседание с прыжком, развивающее силу ног — квадрицепсов, ягодиц и икр — с повышением пульса.",
+      "how_to": [
+        "Встань, ноги на ширине плеч.",
+        "Опустись в присед, бёдра примерно параллельно полу.",
+        "Взрывно оттолкнись вверх и прыгни.",
+        "Приземлись с мягкими коленями и сразу переходи в следующий присед.",
+        "Поддерживай ровный ритм на протяжении всего упражнения."
+      ],
+      "correct": [
+        "Приземляйся мягко.",
+        "Держи колени над носками.",
+        "Держи пятки на полу в приседе.",
+        "Держи грудь раскрытой на протяжении всего упражнения."
+      ],
+      "mistakes": [
+        "Не приземляйся жёстко.",
+        "Не своди колени внутрь.",
+        "Не опускайся слишком быстро в присед.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Zıplama Squatları",
+      "short_description": "Quadları, kalçaları ve baldırları geliştiren ve kalp atışını artıran patlayıcı squat atlayışı.",
+      "how_to": [
+        "Ayakların omuz genişliğinde açık dur.",
+        "Uyluklarınız yere yaklaşık paralel olacak şekilde squat'a in.",
+        "Patlayıcı biçimde yukarı it ve yerden zıpla.",
+        "Yumuşak dizlerle in ve hemen bir sonraki squat'a geç.",
+        "Boyunca sabit bir ritim koru."
+      ],
+      "correct": [
+        "Yumuşak in.",
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Squat'ta topuklarını yerde tut.",
+        "Göğsünü boyunca dik tut."
+      ],
+      "mistakes": [
+        "Sert inme.",
+        "Dizlerini içe bükme.",
+        "Squat'ta çok hızlı inme.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Sprungkniebeugen",
+      "short_description": "Eine explosive Kniebeuge mit Sprung, die Quadrizeps, Gesäß und Waden kräftigt und die Herzfrequenz erhöht.",
+      "how_to": [
+        "Stell dich schulterbreit hin.",
+        "Geh in die Kniebeuge, bis die Oberschenkel ungefähr parallel zum Boden sind.",
+        "Springe kraftvoll nach oben und verlasse den Boden.",
+        "Lande mit weichen Knien und geh direkt in die nächste Kniebeuge.",
+        "Halte durchgehend einen gleichmäßigen Rhythmus."
+      ],
+      "correct": [
+        "Lande weich.",
+        "Halte die Knie über den Zehen.",
+        "Halte die Fersen in der Hocke am Boden.",
+        "Halte die Brust durchgehend aufrecht."
+      ],
+      "mistakes": [
+        "Lande nicht hart.",
+        "Lass die Knie nicht nach innen kippen.",
+        "Geh in der Kniebeuge nicht zu schnell nach unten.",
+        "Halte nicht die Luft an."
+      ]
+    },
+    "es": {
+      "name": "Sentadillas con salto",
+      "short_description": "Una sentadilla explosiva con salto que potencia piernas — cuádriceps, glúteos y gemelos — mientras eleva la frecuencia cardíaca.",
+      "how_to": [
+        "Ponte de pie con los pies al ancho de los hombros.",
+        "Baja a una sentadilla con los muslos aproximadamente paralelos al suelo.",
+        "Empuja hacia arriba con fuerza y salta.",
+        "Aterriza con las rodillas flexionadas y pasa directamente a la siguiente sentadilla.",
+        "Mantén un ritmo constante durante todo el ejercicio."
+      ],
+      "correct": [
+        "Cae suave.",
+        "Mantén las rodillas sobre los dedos del pie.",
+        "Mantén los talones en el suelo en la sentadilla.",
+        "Mantén el pecho arriba durante todo el ejercicio."
+      ],
+      "mistakes": [
+        "No caigas con fuerza.",
+        "No dejes que las rodillas se hundan hacia dentro.",
+        "No bajes demasiado rápido en la sentadilla.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Squats sautés",
+      "short_description": "Un squat explosif avec saut qui développe la puissance des jambes — quadriceps, fessiers et mollets — tout en élevant le rythme cardiaque.",
+      "how_to": [
+        "Tiens-toi debout, pieds à la largeur des épaules.",
+        "Descends en squat, cuisses à peu près parallèles au sol.",
+        "Propulse-toi vers le haut de façon explosive et saute.",
+        "Atterris avec les genoux souples et enchaîne directement le squat suivant.",
+        "Maintiens un rythme régulier du début à la fin."
+      ],
+      "correct": [
+        "Atterris en douceur.",
+        "Garde les genoux au-dessus des orteils.",
+        "Garde les talons au sol dans le squat.",
+        "Garde la poitrine haute tout au long du mouvement."
+      ],
+      "mistakes": [
+        "N'atterris pas brutalement.",
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne descends pas trop vite dans le squat.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Squat con salto",
+      "short_description": "Uno squat esplosivo con salto che sviluppa la potenza delle gambe — quadricipiti, glutei e polpacci — alzando la frequenza cardiaca.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle spalle.",
+        "Scendi in uno squat con le cosce circa parallele al pavimento.",
+        "Spingi verso l'alto in modo esplosivo e salta.",
+        "Atterra con le ginocchia morbide e passa direttamente allo squat successivo.",
+        "Mantieni un ritmo costante per tutta la durata."
+      ],
+      "correct": [
+        "Atterra in modo morbido.",
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Tieni i talloni a terra nello squat.",
+        "Tieni il petto alto per tutta la durata."
+      ],
+      "mistakes": [
+        "Non atterrare con forza.",
+        "Non far cedere le ginocchia verso l'interno.",
+        "Non scendere troppo velocemente nello squat.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_knee_push_ups",
+    "ru": {
+      "name": "Отжимания с колен",
+      "short_description": "Модифицированные отжимания с колен, которые укрепляют грудь, плечи и трицепсы при сниженной нагрузке.",
+      "how_to": [
+        "Встань на четвереньки, руки под плечами.",
+        "Немного пройди руками вперёд, чтобы тело образовало прямую линию от головы до колен.",
+        "Опусти грудь к полу.",
+        "Выжми себя обратно в исходное положение.",
+        "Держи корпус в напряжении на протяжении всего упражнения."
+      ],
+      "correct": [
+        "Держи тело прямым от головы до колен.",
+        "Контролируй положение локтей при опускании.",
+        "Держи корпус напряжённым.",
+        "Опускайся до тех пор, пока грудь почти не коснётся пола."
+      ],
+      "mistakes": [
+        "Не позволяй бёдрам провисать.",
+        "Не разводи локти широко в стороны.",
+        "Не прогибай поясницу.",
+        "Не торопи движение."
+      ]
+    },
+    "tr": {
+      "name": "Diz Üstü Şınav",
+      "short_description": "Göğüs, omuz ve triseps gücünü daha az yükle geliştiren, dizlerden yapılan modifiye şınav.",
+      "how_to": [
+        "Ellerini omuzların altında, el ve dizlerin üzerinde başla.",
+        "Ellerini hafifçe öne yürüt, böylece vücudun başından dizlerine düz bir çizgi oluştursun.",
+        "Göğsünü yere doğru indir.",
+        "Başlangıç pozisyonuna geri it.",
+        "Boyunca core'unu aktif tut."
+      ],
+      "correct": [
+        "Vücudunu başından dizlerine kadar düz tut.",
+        "Aşağı inerken dirseklerini kontrollü tut.",
+        "Core'unu aktif tut.",
+        "Göğsün neredeyse yere değene kadar in."
+      ],
+      "mistakes": [
+        "Kalçaların düşmesine izin verme.",
+        "Dirseklerini yana açma.",
+        "Bel bölgeni çökmesine izin verme.",
+        "Hareketi aceleye getirme."
+      ]
+    },
+    "de": {
+      "name": "Kniende Liegestütze",
+      "short_description": "Ein modifizierter Liegestütz von den Knien, der Brust, Schultern und Trizeps bei reduzierter Belastung kräftigt.",
+      "how_to": [
+        "Starte auf Händen und Knien, Hände unter den Schultern.",
+        "Geh mit den Händen leicht vor, bis der Körper eine gerade Linie von Kopf bis Knie bildet.",
+        "Senke deine Brust Richtung Boden.",
+        "Drücke dich zurück in die Ausgangsposition.",
+        "Halte die Körpermitte durchgehend angespannt."
+      ],
+      "correct": [
+        "Halte den Körper gerade von Kopf bis Knie.",
+        "Halte die Ellbogen beim Absenken unter Kontrolle.",
+        "Halte die Körpermitte angespannt.",
+        "Senke dich, bis die Brust den Boden fast berührt."
+      ],
+      "mistakes": [
+        "Lass die Hüfte nicht nach unten sinken.",
+        "Spreize die Ellbogen nicht weit nach außen.",
+        "Lass den unteren Rücken nicht durchhängen.",
+        "Überstürze die Bewegung nicht."
+      ]
+    },
+    "es": {
+      "name": "Flexiones de rodillas",
+      "short_description": "Una flexión modificada desde las rodillas que fortalece el pecho, los hombros y el tríceps con menor carga.",
+      "how_to": [
+        "Comienza en cuatro apoyos con las manos bajo los hombros.",
+        "Avanza ligeramente las manos para que el cuerpo forme una línea recta de cabeza a rodillas.",
+        "Baja el pecho hacia el suelo.",
+        "Empuja de vuelta a la posición inicial.",
+        "Mantén el core activo durante todo el ejercicio."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto de cabeza a rodillas.",
+        "Controla los codos al bajar.",
+        "Mantén el core activo.",
+        "Baja hasta que el pecho casi toque el suelo."
+      ],
+      "mistakes": [
+        "No dejes que las caderas caigan.",
+        "No abras los codos hacia los lados.",
+        "No dejes que la zona lumbar se hunda.",
+        "No apresures el movimiento."
+      ]
+    },
+    "fr": {
+      "name": "Pompes sur les genoux",
+      "short_description": "Une pompe modifiée depuis les genoux qui renforce la poitrine, les épaules et les triceps avec une charge réduite.",
+      "how_to": [
+        "Mets-toi à quatre pattes, mains sous les épaules.",
+        "Avance légèrement les mains pour que le corps forme une ligne droite de la tête aux genoux.",
+        "Descends la poitrine vers le sol.",
+        "Repousse jusqu'à la position de départ.",
+        "Garde les abdominaux engagés tout au long du mouvement."
+      ],
+      "correct": [
+        "Garde le corps droit de la tête aux genoux.",
+        "Contrôle les coudes lors de la descente.",
+        "Garde les abdominaux engagés.",
+        "Descends jusqu'à ce que la poitrine frôle le sol."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches s'affaisser.",
+        "N'écarte pas les coudes sur les côtés.",
+        "Ne laisse pas le bas du dos se creuser.",
+        "Ne précipite pas le mouvement."
+      ]
+    },
+    "it": {
+      "name": "Flessioni sulle ginocchia",
+      "short_description": "Una flessione modificata dalle ginocchia che rafforza petto, spalle e tricipiti con un carico ridotto.",
+      "how_to": [
+        "Inizia a quattro appoggi con le mani sotto le spalle.",
+        "Avanza leggermente le mani finché il corpo forma una linea retta dalla testa alle ginocchia.",
+        "Abbassa il petto verso il pavimento.",
+        "Spingi di nuovo alla posizione di partenza.",
+        "Tieni il core attivo per tutta la durata."
+      ],
+      "correct": [
+        "Tieni il corpo dritto dalla testa alle ginocchia.",
+        "Controlla i gomiti durante la discesa.",
+        "Tieni il core attivo.",
+        "Scendi finché il petto sfiora quasi il pavimento."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi si abbassino.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non lasciare che la zona lombare si incurvi.",
+        "Non affrettare il movimento."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_box_push_ups",
+    "ru": {
+      "name": "Отжимания на четвереньках",
+      "short_description": "Вариант отжиманий на четвереньках, который знакомит новичков с жимовым движением.",
+      "how_to": [
+        "Встань на четвереньки, руки на ширине плеч.",
+        "Держи спину ровной, бёдра над коленями.",
+        "Согни локти и опусти грудь к полу.",
+        "Выжми себя обратно в исходное положение.",
+        "Поддерживай контролируемый темп на протяжении всего упражнения."
+      ],
+      "correct": [
+        "Держи тело прямым.",
+        "Держи локти под контролем, направляя их назад.",
+        "Держи спину ровной на протяжении всего упражнения.",
+        "Опускайся с контролем в каждом повторе."
+      ],
+      "mistakes": [
+        "Не позволяй бёдрам провисать.",
+        "Не разводи локти широко в стороны.",
+        "Не опускай голову к полу.",
+        "Не прогибай поясницу."
+      ]
+    },
+    "tr": {
+      "name": "Kutu Şınavı",
+      "short_description": "Yeni başlayanları itme hareketine alıştıran, dört ayak pozisyonundan yapılan squat şınavı varyasyonu.",
+      "how_to": [
+        "Ellerini omuz genişliğinde açarak el ve dizlerin üzerinde başla.",
+        "Sırtını düz tut ve kalçaların dizlerin üzerinde olsun.",
+        "Dirseklerini bükerek göğsünü yere doğru indir.",
+        "Başlangıç pozisyonuna geri it.",
+        "Boyunca kontrollü bir tempo koru."
+      ],
+      "correct": [
+        "Vücudunu düz tut.",
+        "Dirseklerini kontrollü ve geriye dönük tut.",
+        "Boyunca sırtını düz tut.",
+        "Her tekrarda kontrollü şekilde in."
+      ],
+      "mistakes": [
+        "Kalçaların düşmesine izin verme.",
+        "Dirseklerini yana açma.",
+        "Başının yere düşmesine izin verme.",
+        "Bel bölgeni çökertme."
+      ]
+    },
+    "de": {
+      "name": "Box-Liegestütze",
+      "short_description": "Eine Liegestützvariante auf allen Vieren, die Anfänger an die Druckbewegung heranführt.",
+      "how_to": [
+        "Starte auf Händen und Knien, Hände schulterbreit.",
+        "Halte den Rücken flach und die Hüfte über den Knien.",
+        "Beuge die Ellbogen und senke die Brust Richtung Boden.",
+        "Drücke dich zurück in die Ausgangsposition.",
+        "Halte durchgehend ein kontrolliertes Tempo."
+      ],
+      "correct": [
+        "Halte den Körper gerade.",
+        "Halte die Ellbogen unter Kontrolle und nach hinten zeigend.",
+        "Halte den Rücken durchgehend flach.",
+        "Senke dich bei jeder Wiederholung kontrolliert."
+      ],
+      "mistakes": [
+        "Lass die Hüfte nicht nach unten sinken.",
+        "Spreize die Ellbogen nicht weit nach außen.",
+        "Lass den Kopf nicht Richtung Boden fallen.",
+        "Mach keinen Hohlkreuz."
+      ]
+    },
+    "es": {
+      "name": "Flexiones en caja",
+      "short_description": "Una variación de flexión en cuadrupedia que introduce a los principiantes al movimiento de empuje.",
+      "how_to": [
+        "Comienza en cuatro apoyos con las manos al ancho de los hombros.",
+        "Mantén la espalda plana y las caderas sobre las rodillas.",
+        "Flexiona los codos y baja el pecho hacia el suelo.",
+        "Empuja de vuelta a la posición inicial.",
+        "Mantén un ritmo controlado durante todo el ejercicio."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto.",
+        "Controla los codos y mantenlos apuntando hacia atrás.",
+        "Mantén la espalda plana durante todo el ejercicio.",
+        "Baja con control en cada repetición."
+      ],
+      "mistakes": [
+        "No dejes que las caderas caigan.",
+        "No abras los codos hacia los lados.",
+        "No dejes que la cabeza caiga hacia el suelo.",
+        "No arquees la zona lumbar."
+      ]
+    },
+    "fr": {
+      "name": "Pompes en position boîte",
+      "short_description": "Une variante de pompe à quatre pattes qui initie les débutants au mouvement de poussée.",
+      "how_to": [
+        "Mets-toi à quatre pattes, mains à la largeur des épaules.",
+        "Garde le dos plat et les hanches au-dessus des genoux.",
+        "Plie les coudes et descends la poitrine vers le sol.",
+        "Repousse jusqu'à la position de départ.",
+        "Maintiens un rythme contrôlé tout au long du mouvement."
+      ],
+      "correct": [
+        "Garde le corps droit.",
+        "Garde les coudes contrôlés et orientés vers l'arrière.",
+        "Garde le dos plat tout au long du mouvement.",
+        "Descends avec contrôle à chaque répétition."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches s'affaisser.",
+        "N'écarte pas les coudes sur les côtés.",
+        "Ne laisse pas la tête tomber vers le sol.",
+        "Ne cambre pas le bas du dos."
+      ]
+    },
+    "it": {
+      "name": "Flessioni a quattro zampe",
+      "short_description": "Una variazione di flessione in posizione quadrupede che introduce i principianti al movimento di spinta.",
+      "how_to": [
+        "Inizia a quattro appoggi con le mani alla larghezza delle spalle.",
+        "Tieni la schiena piatta e i fianchi sopra le ginocchia.",
+        "Piega i gomiti e abbassa il petto verso il pavimento.",
+        "Spingi di nuovo alla posizione di partenza.",
+        "Mantieni un ritmo controllato per tutta la durata."
+      ],
+      "correct": [
+        "Tieni il corpo dritto.",
+        "Tieni i gomiti sotto controllo e puntati all'indietro.",
+        "Tieni la schiena piatta per tutta la durata.",
+        "Scendi con controllo a ogni ripetizione."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi si abbassino.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non lasciare che la testa cada verso il pavimento.",
+        "Non inarcare la zona lombare."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_reverse_push_ups",
+    "ru": {
+      "name": "Обратные отжимания",
+      "short_description": "Вариант отжиманий лицом вверх в позиции «стол», нагружающий трицепсы, задние дельты и ягодицы.",
+      "how_to": [
+        "Сядь на пол, руки позади себя, колени согнуты.",
+        "Упрись руками и ногами, поднимая бёдра в позицию «стол».",
+        "Согни локти, опуская бёдра к полу.",
+        "Выжмись обратно, пока руки не выпрямятся.",
+        "Держи бёдра поднятыми на протяжении всего подхода."
+      ],
+      "correct": [
+        "Держи тело прямым.",
+        "Контролируй положение локтей при опускании.",
+        "Держи бёдра поднятыми на протяжении всего упражнения.",
+        "Держи корпус напряжённым."
+      ],
+      "mistakes": [
+        "Не опускай бёдра на пол между повторами.",
+        "Не разводи локти широко в стороны.",
+        "Не поднимай плечи к ушам.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Ters Şınav",
+      "short_description": "Trisepsi, arka omuzları ve kalçaları hedefleyen, yukarı bakarak masa üstü pozisyonunda yapılan şınav varyasyonu.",
+      "how_to": [
+        "Ellerini arkanıza, dizlerinizi bükülü olacak şekilde yere otur.",
+        "Kalçalarını masa üstü pozisyonuna kaldırmak için ellerine ve ayaklarına bas.",
+        "Kalçaları yere doğru indirmek için dirseklerini büküyoruz.",
+        "Kolların uzanana kadar geri it.",
+        "Set boyunca kalçaları kaldırılmış tut."
+      ],
+      "correct": [
+        "Vücudunu düz tut.",
+        "Aşağı inerken dirseklerini kontrollü tut.",
+        "Boyunca kalçaları kaldırılmış tut.",
+        "Core'unu aktif tut."
+      ],
+      "mistakes": [
+        "Tekrarlar arasında kalçaların yere düşmesine izin verme.",
+        "Dirseklerini yana açma.",
+        "Omuzlarının yukarı kalkmasına izin verme.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Umgekehrte Liegestütze",
+      "short_description": "Eine Liegestützvariante nach oben schauend in der Tischposition, die Trizeps, hintere Schultern und Gesäß trainiert.",
+      "how_to": [
+        "Setz dich auf den Boden, Hände hinter dir, Knie angewinkelt.",
+        "Drücke dich mit Händen und Füßen ab und hebe die Hüfte in eine Tischposition.",
+        "Beuge die Ellbogen, um die Hüfte Richtung Boden zu senken.",
+        "Drücke dich zurück, bis die Arme gestreckt sind.",
+        "Halte die Hüfte während des gesamten Satzes oben."
+      ],
+      "correct": [
+        "Halte den Körper gerade.",
+        "Halte die Ellbogen beim Absenken unter Kontrolle.",
+        "Halte die Hüfte durchgehend oben.",
+        "Halte die Körpermitte angespannt."
+      ],
+      "mistakes": [
+        "Lass die Hüfte zwischen den Wiederholungen nicht auf den Boden sinken.",
+        "Spreize die Ellbogen nicht weit nach außen.",
+        "Lass die Schultern nicht hochziehen.",
+        "Halte nicht die Luft an."
+      ]
+    },
+    "es": {
+      "name": "Flexiones inversas",
+      "short_description": "Una variación de flexión mirando hacia arriba en posición de mesa que trabaja tríceps, hombros posteriores y glúteos.",
+      "how_to": [
+        "Siéntate en el suelo con las manos detrás y las rodillas flexionadas.",
+        "Empuja con las manos y los pies para elevar las caderas a una posición de mesa.",
+        "Flexiona los codos para bajar las caderas hacia el suelo.",
+        "Empuja de vuelta hasta que los brazos estén extendidos.",
+        "Mantén las caderas elevadas durante toda la serie."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto.",
+        "Controla los codos al bajar.",
+        "Mantén las caderas elevadas durante todo el ejercicio.",
+        "Mantén el core activo."
+      ],
+      "mistakes": [
+        "No dejes que las caderas toquen el suelo entre repeticiones.",
+        "No abras los codos hacia los lados.",
+        "No encojas los hombros hacia arriba.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Pompes inversées",
+      "short_description": "Une variante de pompe face vers le haut en position de table qui cible les triceps, les épaules arrière et les fessiers.",
+      "how_to": [
+        "Assieds-toi sur le sol, mains derrière toi et genoux fléchis.",
+        "Appuie sur les mains et les pieds pour soulever les hanches en position de table.",
+        "Fléchis les coudes pour descendre les hanches vers le sol.",
+        "Repousse jusqu'à ce que les bras soient tendus.",
+        "Garde les hanches levées pendant toute la série."
+      ],
+      "correct": [
+        "Garde le corps droit.",
+        "Contrôle les coudes lors de la descente.",
+        "Garde les hanches levées tout au long du mouvement.",
+        "Garde les abdominaux engagés."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches toucher le sol entre les répétitions.",
+        "N'écarte pas les coudes sur les côtés.",
+        "Ne laisse pas les épaules remonter vers les oreilles.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Flessioni inverse",
+      "short_description": "Una variazione di flessione a faccia in su in posizione da tavolo che lavora tricipiti, spalle posteriori e glutei.",
+      "how_to": [
+        "Siediti sul pavimento con le mani dietro di te e le ginocchia piegate.",
+        "Spingi sulle mani e sui piedi per sollevare i fianchi in una posizione da tavolo.",
+        "Piega i gomiti per abbassare i fianchi verso il pavimento.",
+        "Spingi di nuovo finché le braccia sono estese.",
+        "Tieni i fianchi alzati per tutta la serie."
+      ],
+      "correct": [
+        "Tieni il corpo dritto.",
+        "Controlla i gomiti durante la discesa.",
+        "Tieni i fianchi sollevati per tutta la durata.",
+        "Tieni il core attivo."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi tocchino il pavimento tra le ripetizioni.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non sollevare le spalle verso le orecchie.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_split_squat",
+    "ru": {
+      "name": "Сплит-присед",
+      "short_description": "Присед в стойке выпада, который прорабатывает квадрицепсы, ягодицы и сгибатели бедра по одной ноге за раз.",
+      "how_to": [
+        "Шагни одной ногой вперёд, другой назад, принимая стойку выпада.",
+        "Держи обе стопы плотно на полу.",
+        "С контролем опусти заднее колено к полу.",
+        "Оттолкнись пяткой передней ноги и вернись в исходное положение.",
+        "Выполни все повторы, затем смени сторону."
+      ],
+      "correct": [
+        "Держи колени над носками.",
+        "Держи пятки на полу на протяжении всего упражнения.",
+        "Держи корпус вертикально.",
+        "Опускайся и поднимайся в ровном темпе."
+      ],
+      "mistakes": [
+        "Не своди колени внутрь.",
+        "Не опускайся слишком быстро.",
+        "Не наклоняйся сильно вперёд.",
+        "Не отрывай пятку передней ноги от пола."
+      ]
+    },
+    "tr": {
+      "name": "Split Squat",
+      "short_description": "Quadları, kalçaları ve kalça fleksörlerini tek tek çalıştıran, sabit lunge duruşunda yapılan squat.",
+      "how_to": [
+        "Bir ayağı öne, diğerini arkaya adımlayarak split duruşuna gir.",
+        "Her iki ayağını da yerde düz tut.",
+        "Arka dizini kontrollü şekilde yere doğru indir.",
+        "Başlangıç pozisyonuna dönmek için ön topuğundan güç uygula.",
+        "Tüm tekrarları tamamla, ardından tarafları değiştir."
+      ],
+      "correct": [
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Boyunca topuklarını yerde tut.",
+        "Gövdeni dik tut.",
+        "Sabit bir tempoda in ve çık."
+      ],
+      "mistakes": [
+        "Dizlerini içe bükme.",
+        "Çok hızlı inme.",
+        "Fazla öne eğilme.",
+        "Ön ayağının topuğunu yerden kaldırma."
+      ]
+    },
+    "de": {
+      "name": "Split Squat",
+      "short_description": "Eine Kniebeuge im Ausfallschrittstand, die Quadrizeps, Gesäß und Hüftbeuger je einem Bein einzeln trainiert.",
+      "how_to": [
+        "Tritt einen Fuß vor und einen zurück in eine Ausfallschrittposition.",
+        "Halte beide Füße flach auf dem Boden.",
+        "Senke das hintere Knie kontrolliert Richtung Boden.",
+        "Drücke durch die Ferse des Vorderfußes zurück in die Ausgangsposition.",
+        "Absolviere alle Wiederholungen, dann wechsle die Seite."
+      ],
+      "correct": [
+        "Halte die Knie über den Zehen.",
+        "Halte die Fersen durchgehend am Boden.",
+        "Halte den Oberkörper aufrecht.",
+        "Senke und hebe in gleichmäßigem Tempo."
+      ],
+      "mistakes": [
+        "Lass die Knie nicht nach innen kippen.",
+        "Geh nicht zu schnell nach unten.",
+        "Lehne dich nicht stark nach vorn.",
+        "Hebe die Ferse des vorderen Fußes nicht an."
+      ]
+    },
+    "es": {
+      "name": "Split squat",
+      "short_description": "Una sentadilla en posición de zancada estática que trabaja los cuádriceps, los glúteos y los flexores de cadera de una pierna a la vez.",
+      "how_to": [
+        "Da un paso adelante con un pie y otro atrás en posición de zancada.",
+        "Mantén ambos pies planos en el suelo.",
+        "Baja la rodilla trasera hacia el suelo con control.",
+        "Empuja con el talón del pie delantero para volver a la posición inicial.",
+        "Completa todas las repeticiones, luego cambia de lado."
+      ],
+      "correct": [
+        "Mantén las rodillas sobre los dedos del pie.",
+        "Mantén los talones en el suelo durante todo el ejercicio.",
+        "Mantén el torso erguido.",
+        "Baja y sube a un ritmo constante."
+      ],
+      "mistakes": [
+        "No dejes que las rodillas se hundan hacia dentro.",
+        "No bajes demasiado rápido.",
+        "No te inclines demasiado hacia adelante.",
+        "No levantes el talón del pie delantero."
+      ]
+    },
+    "fr": {
+      "name": "Split squat",
+      "short_description": "Un squat en fente stationnaire qui entraîne les quadriceps, les fessiers et les fléchisseurs de hanche une jambe à la fois.",
+      "how_to": [
+        "Avance un pied et recule l'autre en position de fente.",
+        "Garde les deux pieds à plat sur le sol.",
+        "Descends le genou arrière vers le sol avec contrôle.",
+        "Pousse sur le talon avant pour revenir en position initiale.",
+        "Effectue toutes les répétitions, puis change de côté."
+      ],
+      "correct": [
+        "Garde les genoux au-dessus des orteils.",
+        "Garde les talons au sol tout au long du mouvement.",
+        "Garde le buste droit.",
+        "Descends et remonte à un rythme régulier."
+      ],
+      "mistakes": [
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne descends pas trop vite.",
+        "Ne te penche pas trop en avant.",
+        "Ne soulève pas le talon du pied avant."
+      ]
+    },
+    "it": {
+      "name": "Split squat",
+      "short_description": "Uno squat in posizione di affondo stazionario che allena quadricipiti, glutei e flessori dell'anca una gamba alla volta.",
+      "how_to": [
+        "Porta un piede avanti e uno indietro in posizione di affondo.",
+        "Tieni entrambi i piedi piatti sul pavimento.",
+        "Abbassa il ginocchio posteriore verso il pavimento con controllo.",
+        "Spingi attraverso il tallone anteriore per tornare alla posizione iniziale.",
+        "Completa tutte le ripetizioni, poi cambia lato."
+      ],
+      "correct": [
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Tieni i talloni a terra per tutta la durata.",
+        "Tieni il busto eretto.",
+        "Scendi e sali a un ritmo costante."
+      ],
+      "mistakes": [
+        "Non far cedere le ginocchia verso l'interno.",
+        "Non scendere troppo velocemente.",
+        "Non inclinarti eccessivamente in avanti.",
+        "Non sollevare il tallone del piede anteriore."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_decline_push_ups",
+    "ru": {
+      "name": "Отжимания с возвышением ног",
+      "short_description": "Отжимания с ногами на возвышении, смещающие акцент на верхнюю часть груди и передние дельты.",
+      "how_to": [
+        "Поставь ноги на возвышенность — скамью или ступеньку.",
+        "Пройди руками вперёд, чтобы тело вытянулось в прямую линию.",
+        "Опусти грудь к полу с контролем.",
+        "Выжмись обратно в исходное положение.",
+        "Держи тело прямым на протяжении всего упражнения."
+      ],
+      "correct": [
+        "Держи тело прямым от головы до пяток.",
+        "Контролируй положение локтей при опускании.",
+        "Держи корпус напряжённым.",
+        "Опускайся до конца, пока грудь почти не коснётся пола."
+      ],
+      "mistakes": [
+        "Не позволяй бёдрам провисать.",
+        "Не разводи локти широко в стороны.",
+        "Не прогибай поясницу.",
+        "Не поднимай плечи в верхней точке."
+      ]
+    },
+    "tr": {
+      "name": "Eğimli Şınav",
+      "short_description": "Üst göğsü ve ön omuzları çalıştırmak için vurguyu değiştiren, ayakları yükseltilmiş yüzey üzerinde yapılan şınav.",
+      "how_to": [
+        "Ayaklarını bir bank veya basamak gibi yükseltilmiş bir yüzeye koy.",
+        "Vücudun düz bir pozisyon oluşturacak şekilde ellerini ileriye yürüt.",
+        "Göğsünü kontrollü şekilde yere doğru indir.",
+        "Başlangıç pozisyonuna geri it.",
+        "Boyunca vücudunu düz tut."
+      ],
+      "correct": [
+        "Vücudunu başından topuklarına kadar düz tut.",
+        "Aşağı inerken dirseklerini kontrollü tut.",
+        "Core'unu aktif tut.",
+        "Göğsün neredeyse yere değene kadar tamamen in."
+      ],
+      "mistakes": [
+        "Kalçaların düşmesine izin verme.",
+        "Dirseklerini yana açma.",
+        "Bel bölgeni çökmesine izin verme.",
+        "Üstte omuzlarını silkme."
+      ]
+    },
+    "de": {
+      "name": "Liegestütze mit erhöhten Füßen",
+      "short_description": "Ein Liegestütz mit erhöhten Füßen, der den Schwerpunkt auf obere Brust und vordere Schultern verlagert.",
+      "how_to": [
+        "Stelle die Füße auf eine erhöhte Fläche wie eine Bank oder Stufe.",
+        "Geh mit den Händen vor, bis der Körper eine gerade Linie bildet.",
+        "Senke die Brust kontrolliert Richtung Boden.",
+        "Drücke dich zurück in die Ausgangsposition.",
+        "Halte den Körper durchgehend gerade."
+      ],
+      "correct": [
+        "Halte den Körper gerade von Kopf bis Ferse.",
+        "Halte die Ellbogen beim Absenken unter Kontrolle.",
+        "Halte die Körpermitte angespannt.",
+        "Senke dich vollständig, bis die Brust den Boden fast berührt."
+      ],
+      "mistakes": [
+        "Lass die Hüfte nicht nach unten sinken.",
+        "Spreize die Ellbogen nicht weit nach außen.",
+        "Lass den unteren Rücken nicht durchhängen.",
+        "Zieh die Schultern oben nicht hoch."
+      ]
+    },
+    "es": {
+      "name": "Flexiones con pies elevados",
+      "short_description": "Una flexión con los pies sobre una superficie elevada que desplaza el énfasis hacia la parte superior del pecho y los hombros frontales.",
+      "how_to": [
+        "Coloca los pies en una superficie elevada como un banco o escalón.",
+        "Avanza las manos hasta que el cuerpo forme una línea recta.",
+        "Baja el pecho hacia el suelo con control.",
+        "Empuja de vuelta a la posición inicial.",
+        "Mantén el cuerpo recto durante todo el ejercicio."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto de cabeza a talones.",
+        "Controla los codos al bajar.",
+        "Mantén el core activo.",
+        "Baja completamente hasta que el pecho casi toque el suelo."
+      ],
+      "mistakes": [
+        "No dejes que las caderas caigan.",
+        "No abras los codos hacia los lados.",
+        "No dejes que la zona lumbar se hunda.",
+        "No encojas los hombros en la parte superior."
+      ]
+    },
+    "fr": {
+      "name": "Pompes déclinées",
+      "short_description": "Une pompe avec les pieds surélevés qui déplace l'accent sur le haut de la poitrine et les épaules avant.",
+      "how_to": [
+        "Pose les pieds sur une surface surélevée, comme un banc ou une marche.",
+        "Avance les mains pour aligner le corps en ligne droite.",
+        "Descends la poitrine vers le sol avec contrôle.",
+        "Repousse jusqu'à la position de départ.",
+        "Garde le corps droit tout au long du mouvement."
+      ],
+      "correct": [
+        "Garde le corps droit de la tête aux talons.",
+        "Contrôle les coudes lors de la descente.",
+        "Garde les abdominaux engagés.",
+        "Descends complètement jusqu'à ce que la poitrine frôle le sol."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches s'affaisser.",
+        "N'écarte pas les coudes sur les côtés.",
+        "Ne laisse pas le bas du dos se creuser.",
+        "Ne hausse pas les épaules en haut du mouvement."
+      ]
+    },
+    "it": {
+      "name": "Flessioni declinate",
+      "short_description": "Una flessione con i piedi su una superficie rialzata che sposta l'enfasi sulla parte superiore del petto e le spalle anteriori.",
+      "how_to": [
+        "Appoggia i piedi su una superficie rialzata come una panca o uno scalino.",
+        "Avanza le mani finché il corpo forma una linea retta.",
+        "Abbassa il petto verso il pavimento con controllo.",
+        "Spingi di nuovo alla posizione di partenza.",
+        "Tieni il corpo dritto per tutta la durata."
+      ],
+      "correct": [
+        "Tieni il corpo dritto dalla testa ai talloni.",
+        "Controlla i gomiti durante la discesa.",
+        "Tieni il core attivo.",
+        "Scendi completamente finché il petto sfiora il pavimento."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi si abbassino.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non lasciare che la zona lombare si incurvi.",
+        "Non sollevare le spalle in cima al movimento."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_triceps_dips",
+    "ru": {
+      "name": "Отжимания на трицепс",
+      "short_description": "Отжимания с весом тела от скамьи или стула, нацеленные на трицепсы и передние дельты.",
+      "how_to": [
+        "Сядь на край скамьи, обхватив её руками по бокам от бёдер.",
+        "Сдвинь бёдра вперёд со скамьи.",
+        "Согни локти, опускаясь к полу.",
+        "Выжмись обратно, пока руки не выпрямятся.",
+        "Держи спину близко к скамье на протяжении всего упражнения."
+      ],
+      "correct": [
+        "Держи тело прямым.",
+        "Держи локти под контролем, направляя их назад.",
+        "Держи спину близко к скамье.",
+        "Опускайся до тех пор, пока верхние руки не станут примерно параллельны полу."
+      ],
+      "mistakes": [
+        "Не опускай бёдра слишком низко ниже скамьи.",
+        "Не разводи локти широко в стороны.",
+        "Не поднимай плечи при опускании.",
+        "Не блокируй локти в верхней точке."
+      ]
+    },
+    "tr": {
+      "name": "Triseps Dips",
+      "short_description": "Trisepsleri ve ön omuzları hedefleyen, bank veya sandalye kullanılarak yapılan vücut ağırlıklı dips hareketi.",
+      "how_to": [
+        "Bankın kenarına otur, ellerini kalçalarının yanına bankın kenarına yerleştir.",
+        "Kalçalarını banktan öne kaydır.",
+        "Dirseklerini bükerek kendini yere doğru indir.",
+        "Kolların uzanana kadar geri it.",
+        "Boyunca sırtını banka yakın tut."
+      ],
+      "correct": [
+        "Vücudunu düz tut.",
+        "Dirseklerini kontrollü ve geriye dönük tut.",
+        "Sırtını banka yakın tut.",
+        "Üst kolların yere yaklaşık paralel olana kadar in."
+      ],
+      "mistakes": [
+        "Kalçalarının bankın çok altına düşmesine izin verme.",
+        "Dirseklerini yana açma.",
+        "İnerken omuzlarının yukarı kalkmasına izin verme.",
+        "Üstte dirseklerini kilitleme."
+      ]
+    },
+    "de": {
+      "name": "Trizepsdips",
+      "short_description": "Ein Körpergewichts-Dip an Bank oder Stuhl, der Trizeps und vordere Schultern trainiert.",
+      "how_to": [
+        "Setz dich auf die Bankkante und greife mit den Händen neben deinen Hüften an die Kante.",
+        "Schiebe die Hüfte vor der Bank nach vorne.",
+        "Beuge die Ellbogen und lass dich Richtung Boden sinken.",
+        "Drücke dich zurück, bis die Arme gestreckt sind.",
+        "Halte den Rücken während des gesamten Satzes nah an der Bank."
+      ],
+      "correct": [
+        "Halte den Körper gerade.",
+        "Halte die Ellbogen unter Kontrolle und nach hinten zeigend.",
+        "Halte den Rücken nah an der Bank.",
+        "Senke dich, bis die Oberarme ungefähr parallel zum Boden sind."
+      ],
+      "mistakes": [
+        "Lass die Hüfte nicht zu weit unter die Bank sinken.",
+        "Spreize die Ellbogen nicht weit nach außen.",
+        "Zieh die Schultern beim Absenken nicht hoch.",
+        "Drücke die Ellbogen oben nicht durch."
+      ]
+    },
+    "es": {
+      "name": "Fondos de tríceps",
+      "short_description": "Un fondeo con peso corporal usando un banco o silla que trabaja los tríceps y los hombros anteriores.",
+      "how_to": [
+        "Siéntate en el borde de un banco con las manos agarrando el borde junto a las caderas.",
+        "Desliza las caderas hacia adelante fuera del banco.",
+        "Flexiona los codos para bajar hacia el suelo.",
+        "Empuja de vuelta hasta que los brazos estén extendidos.",
+        "Mantén la espalda cerca del banco durante todo el ejercicio."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto.",
+        "Controla los codos y mantenlos apuntando hacia atrás.",
+        "Mantén la espalda cerca del banco.",
+        "Baja hasta que la parte superior de los brazos quede aproximadamente paralela al suelo."
+      ],
+      "mistakes": [
+        "No dejes que las caderas bajen demasiado por debajo del banco.",
+        "No abras los codos hacia los lados.",
+        "No encojas los hombros al bajar.",
+        "No bloquees los codos en la parte superior."
+      ]
+    },
+    "fr": {
+      "name": "Dips aux triceps",
+      "short_description": "Un dip au poids du corps sur un banc ou une chaise qui cible les triceps et les épaules avant.",
+      "how_to": [
+        "Assieds-toi au bord d'un banc, mains posées sur le bord à côté des hanches.",
+        "Fais glisser les hanches en avant du banc.",
+        "Fléchis les coudes pour descendre vers le sol.",
+        "Repousse jusqu'à ce que les bras soient tendus.",
+        "Garde le dos proche du banc tout au long du mouvement."
+      ],
+      "correct": [
+        "Garde le corps droit.",
+        "Garde les coudes contrôlés et orientés vers l'arrière.",
+        "Garde le dos proche du banc.",
+        "Descends jusqu'à ce que les bras soient à peu près parallèles au sol."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches descendre trop bas sous le banc.",
+        "N'écarte pas les coudes sur les côtés.",
+        "Ne hausse pas les épaules en descendant.",
+        "Ne verrouille pas les coudes en haut du mouvement."
+      ]
+    },
+    "it": {
+      "name": "Dip ai tricipiti",
+      "short_description": "Un dip a corpo libero su una panca o sedia che lavora i tricipiti e le spalle anteriori.",
+      "how_to": [
+        "Siediti sul bordo di una panca con le mani che afferrano il bordo accanto ai fianchi.",
+        "Fai scivolare i fianchi in avanti fuori dalla panca.",
+        "Piega i gomiti per abbassarti verso il pavimento.",
+        "Spingi di nuovo finché le braccia sono estese.",
+        "Tieni la schiena vicina alla panca per tutta la durata."
+      ],
+      "correct": [
+        "Tieni il corpo dritto.",
+        "Tieni i gomiti sotto controllo e puntati all'indietro.",
+        "Tieni la schiena vicina alla panca.",
+        "Scendi finché le braccia superiori sono circa parallele al pavimento."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi scendano troppo sotto la panca.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non sollevare le spalle durante la discesa.",
+        "Non bloccare i gomiti in cima al movimento."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_hindu_push_ups",
+    "ru": {
+      "name": "Индийские отжимания",
+      "short_description": "Плавные отжимания с переходом из позы собаки мордой вниз в позу собаки мордой вверх — укрепляют плечи и грудь, вытягивая позвоночник.",
+      "how_to": [
+        "Встань в позу собаки мордой вниз, бёдра подняты высоко.",
+        "Опусти голову к полу по дуге.",
+        "Проведи грудь сквозь и выжмись в позу собаки мордой вверх.",
+        "Верни бёдра вверх в позу собаки мордой вниз — это один повтор.",
+        "Двигайся плавно по дуге каждый раз."
+      ],
+      "correct": [
+        "Держи тело прямым в фазе жима.",
+        "Контролируй положение локтей при опускании.",
+        "Двигайся плавно и непрерывно.",
+        "Держи корпус напряжённым на протяжении всего упражнения."
+      ],
+      "mistakes": [
+        "Не позволяй бёдрам провисать в фазе подъёма.",
+        "Не разводи локти широко в стороны.",
+        "Не торопись при прохождении дуги.",
+        "Не проваливайся в поясницу в верхней точке дуги."
+      ]
+    },
+    "tr": {
+      "name": "Hindu Şınavı",
+      "short_description": "Aşağı bakan köpekten yukarı bakan köpeğe geçen, omuz ve göğüs gücünü sırt esnekliğiyle birleştiren akıcı şınav.",
+      "how_to": [
+        "Kalçaların yüksekte olacak şekilde aşağı bakan köpek pozisyonunda başla.",
+        "Başını yay çizerek yere doğru indir.",
+        "Göğsünü aradan geçirerek yukarı bakan köpek pozisyonuna it.",
+        "Bir tekrarı tamamlamak için kalçaları aşağı bakan köpeğe geri it.",
+        "Her seferinde yay üzerinde pürüzsüzce hareket et."
+      ],
+      "correct": [
+        "İtme aşamasında vücudunu düz tut.",
+        "Aşağı inerken dirseklerini kontrollü tut.",
+        "Hareketlerini akıcı ve kesintisiz tut.",
+        "Boyunca core'unu aktif tut."
+      ],
+      "mistakes": [
+        "Yukarı aşamasında kalçaların düşmesine izin verme.",
+        "Dirseklerini yana açma.",
+        "Yay üzerinde acele etme.",
+        "Yayın tepesinde bel bölgesine çökme."
+      ]
+    },
+    "de": {
+      "name": "Hindu-Liegestütze",
+      "short_description": "Ein fließender Liegestütz, der vom Downward Dog in den Upward Dog wechselt und Schultern sowie Brust kräftigt, während die Wirbelsäule gestreckt wird.",
+      "how_to": [
+        "Beginne im Downward Dog mit hoch gehobener Hüfte.",
+        "Senke den Kopf im Bogen Richtung Boden.",
+        "Führe die Brust durch und drücke dich in den Upward Dog.",
+        "Schiebe die Hüfte wieder zurück in den Downward Dog für eine Wiederholung.",
+        "Bewege dich bei jeder Wiederholung fließend durch den Bogen."
+      ],
+      "correct": [
+        "Halte den Körper während der Druckphase gerade.",
+        "Halte die Ellbogen beim Absenken unter Kontrolle.",
+        "Bewege dich fließend und gleichmäßig.",
+        "Halte die Körpermitte durchgehend angespannt."
+      ],
+      "mistakes": [
+        "Lass die Hüfte in der Aufwärtsphase nicht fallen.",
+        "Spreize die Ellbogen nicht weit nach außen.",
+        "Überstürze den Bogen nicht.",
+        "Drücke den unteren Rücken oben im Bogen nicht durch."
+      ]
+    },
+    "es": {
+      "name": "Flexiones hindúes",
+      "short_description": "Una flexión fluida que va del perro boca abajo al perro boca arriba, fortaleciendo hombros y pecho mientras estira la columna.",
+      "how_to": [
+        "Comienza en posición de perro boca abajo con las caderas altas.",
+        "Baja la cabeza hacia el suelo en arco.",
+        "Desliza el pecho hacia adelante y empuja hasta la posición de perro boca arriba.",
+        "Lleva las caderas de vuelta al perro boca abajo para completar una repetición.",
+        "Muévete con fluidez a través del arco en cada repetición."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto durante la fase de empuje.",
+        "Controla los codos al bajar.",
+        "Mantén los movimientos fluidos y continuos.",
+        "Mantén el core activo durante todo el ejercicio."
+      ],
+      "mistakes": [
+        "No dejes que las caderas caigan en la fase ascendente.",
+        "No abras los codos hacia los lados.",
+        "No apresures el arco.",
+        "No hundas la zona lumbar en la parte superior del arco."
+      ]
+    },
+    "fr": {
+      "name": "Pompes hindoues",
+      "short_description": "Une pompe fluide qui passe du chien tête en bas au chien tête en haut, renforçant épaules et poitrine tout en étirant la colonne vertébrale.",
+      "how_to": [
+        "Commence en chien tête en bas, hanches hautes.",
+        "Descends la tête vers le sol en arc de cercle.",
+        "Glisse la poitrine vers l'avant et pousse en chien tête en haut.",
+        "Ramène les hanches en chien tête en bas pour compléter une répétition.",
+        "Enchaîne fluidement l'arc à chaque répétition."
+      ],
+      "correct": [
+        "Garde le corps droit pendant la phase de poussée.",
+        "Contrôle les coudes lors de la descente.",
+        "Garde les mouvements fluides et continus.",
+        "Garde les abdominaux engagés tout au long du mouvement."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches s'affaisser dans la phase montante.",
+        "N'écarte pas les coudes sur les côtés.",
+        "Ne précipite pas l'arc.",
+        "Ne t'effondre pas dans le bas du dos au sommet de l'arc."
+      ]
+    },
+    "it": {
+      "name": "Flessioni induiste",
+      "short_description": "Una flessione fluida che passa dal cane a testa in giù al cane a testa in su, rafforzando spalle e petto con uno stretching della colonna vertebrale.",
+      "how_to": [
+        "Inizia in posizione di cane a testa in giù con i fianchi alti.",
+        "Abbassa la testa verso il pavimento ad arco.",
+        "Spingi il petto in avanti e premi fino al cane a testa in su.",
+        "Riporta i fianchi al cane a testa in giù per completare una ripetizione.",
+        "Muoviti con fluidità lungo l'arco ogni volta."
+      ],
+      "correct": [
+        "Tieni il corpo dritto durante la fase di spinta.",
+        "Controlla i gomiti durante la discesa.",
+        "Mantieni movimenti fluidi e continui.",
+        "Tieni il core attivo per tutta la durata."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi cadano nella fase ascendente.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non affrettare l'arco.",
+        "Non cedere nella zona lombare in cima all'arco."
+      ]
+    }
+  }
+]

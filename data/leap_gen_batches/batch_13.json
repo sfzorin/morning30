@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_one_leg_push_ups",
+    "exercise_name": "One Leg Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：ONE LEG PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_tip_toe_squats",
+    "exercise_name": "Tip Toe Squats",
+    "group_label": "Squats",
+    "video_title": "How to Do：TIP TOE SQUATS"
+  },
+  {
+    "exercise_id": "leap_squat_thrust_with_twist",
+    "exercise_name": "Squat Thrust with Twist",
+    "group_label": "Squats",
+    "video_title": "How to Do：SQUAT THRUST WITH TWIST"
+  },
+  {
+    "exercise_id": "leap_lunge_twist",
+    "exercise_name": "Lunge Twist",
+    "group_label": "Lunges",
+    "video_title": "How to Do：LUNGE TWIST"
+  },
+  {
+    "exercise_id": "leap_skater_jump",
+    "exercise_name": "Skater Jump",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：SKATER JUMP"
+  },
+  {
+    "exercise_id": "leap_kneeling_lunge_stretch",
+    "exercise_name": "Kneeling Lunge Stretch",
+    "group_label": "Lunges",
+    "video_title": "How to Do：KNEELING LUNGE STRETCH"
+  },
+  {
+    "exercise_id": "leap_leaning_dumbbell_one_leg_calf_raise",
+    "exercise_name": "Leaning Dumbbell One Leg Calf Raise",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：LEANING DUMBBELL ONE LEG CALF RAISE"
+  },
+  {
+    "exercise_id": "leap_bridge",
+    "exercise_name": "Bridge",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：BRIDGE"
+  },
+  {
+    "exercise_id": "leap_side_to_side_turns",
+    "exercise_name": "Side-To-Side Turns",
+    "group_label": "Other",
+    "video_title": "How to Do：SIDE-TO-SIDE TURNS"
+  },
+  {
+    "exercise_id": "leap_plank_and_reach",
+    "exercise_name": "Plank and Reach",
+    "group_label": "Planks",
+    "video_title": "How to Do：PLANK AND REACH"
+  },
+  {
+    "exercise_id": "leap_bench_glute_kick_back",
+    "exercise_name": "Bench Glute Kick Back",
+    "group_label": "Equipment",
+    "video_title": "How to Do：BENCH GLUTE KICK BACK"
+  },
+  {
+    "exercise_id": "leap_squat_kicks",
+    "exercise_name": "Squat Kicks",
+    "group_label": "Squats",
+    "video_title": "How to Do：SQUAT KICKS"
+  },
+  {
+    "exercise_id": "leap_single_leg_hip_rotation",
+    "exercise_name": "Single Leg Hip Rotation",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SINGLE LEG HIP ROTATION"
+  },
+  {
+    "exercise_id": "leap_cross_touch_and_reach",
+    "exercise_name": "Cross Touch and Reach",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：CROSS TOUCH AND REACH"
+  },
+  {
+    "exercise_id": "leap_pilates_clamshell",
+    "exercise_name": "Pilates Clamshell",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：PILATES CLAMSHELL"
+  },
+  {
+    "exercise_id": "leap_quick_feet",
+    "exercise_name": "Quick Feet",
+    "group_label": "Other",
+    "video_title": "How to Do：QUICK FEET"
+  },
+  {
+    "exercise_id": "leap_quad_stretch",
+    "exercise_name": "Quad Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：QUAD STRETCH"
+  },
+  {
+    "exercise_id": "leap_crab_walk",
+    "exercise_name": "Crab Walk",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：CRAB WALK"
+  },
+  {
+    "exercise_id": "leap_dumbbell_plie_squats",
+    "exercise_name": "Dumbbell Plie Squats",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL PLIE SQUATS"
+  },
+  {
+    "exercise_id": "leap_star_crawl",
+    "exercise_name": "Star Crawl",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：STAR CRAWL"
+  }
+]

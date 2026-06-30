@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_bulgarian_split_squat",
+    "short_description": "A single-leg squat with your rear foot elevated that targets the quads, glutes and hip flexors.",
+    "how_to": ["Stand about two feet in front of a bench or step.", "Place your rear foot on the bench behind you.", "Lower your hips until your front thigh is roughly parallel to the floor.", "Drive through your front heel to stand back up.", "Complete all reps on one side, then switch legs."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down on your working foot.", "Keep your torso upright throughout.", "Control the descent steadily."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't lean too far forward.", "Don't let your front heel lift."]
+  },
+  {
+    "exercise_id": "leap_fire_hydrant",
+    "short_description": "A quadruped hip abduction that strengthens the glutes and outer hips.",
+    "how_to": ["Start on all fours with your hands under your shoulders and knees under your hips.", "Keep your knee bent and lift one leg out to the side.", "Raise until your thigh is parallel to the floor.", "Lower back down with control.", "Repeat on the same side, then switch."],
+    "correct": ["Keep your hips level throughout.", "Keep your core engaged.", "Move only at the hip joint.", "Breathe steadily."],
+    "mistakes": ["Don't rotate your hips to lift higher.", "Don't rush the movement.", "Don't let your supporting arm buckle.", "Don't raise your leg above hip height."]
+  },
+  {
+    "exercise_id": "leap_froggy_glute_lifts",
+    "short_description": "A prone glute exercise with the feet turned out that isolates the glutes through a short range of motion.",
+    "how_to": ["Lie face down and bend your knees, pressing the soles of your feet together.", "Rest your forehead on your hands.", "Squeeze your glutes and lift both knees slightly off the floor.", "Hold briefly at the top, then lower with control.", "Repeat for the desired reps."],
+    "correct": ["Keep your glutes squeezed at the top.", "Keep your lower back relaxed.", "Move with control on both the lift and the lower.", "Breathe steadily."],
+    "mistakes": ["Don't lift too high and strain your back.", "Don't hold your breath.", "Don't rush the repetitions.", "Don't use momentum instead of muscle."]
+  },
+  {
+    "exercise_id": "leap_side_lunges",
+    "short_description": "A lateral lunge that works the inner thighs, quads and glutes through a side-to-side movement.",
+    "how_to": ["Stand tall with your feet together.", "Step wide to one side and bend that knee, pushing your hips back.", "Keep your other leg straight.", "Push off to return to the start.", "Alternate sides with each rep."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down throughout.", "Keep your chest up as you lower.", "Land with control each time."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't round your lower back.", "Don't let your heel lift off the floor."]
+  },
+  {
+    "exercise_id": "leap_floor_tricep_dips",
+    "short_description": "A floor-based pushing exercise that targets the triceps using your bodyweight.",
+    "how_to": ["Sit on the floor with your knees bent and hands behind you, fingers pointing forward.", "Lift your hips off the floor.", "Bend your elbows to lower your hips toward the floor.", "Press back up to the start position.", "Keep your hips off the floor throughout the set."],
+    "correct": ["Keep your body straight.", "Keep your elbows controlled and pointing back.", "Keep your core engaged.", "Move at a steady pace."],
+    "mistakes": ["Don't let your hips drop to the floor between reps.", "Don't flare your elbows out wide.", "Don't hunch your shoulders.", "Don't lock your elbows at the top."]
+  },
+  {
+    "exercise_id": "leap_wall_sit",
+    "short_description": "An isometric hold against a wall that builds endurance in the quads and glutes.",
+    "how_to": ["Stand with your back flat against a wall.", "Walk your feet forward and slide down until your thighs are parallel to the floor.", "Keep your knees directly above your ankles.", "Hold the position and breathe steadily.", "Push into the wall with your back throughout the hold."],
+    "correct": ["Keep your back flat on the wall.", "Keep your knees over your ankles.", "Keep your thighs parallel to the floor.", "Breathe steadily throughout."],
+    "mistakes": ["Don't let your knees drift past your toes.", "Don't slide too low and strain your knees.", "Don't push off your thighs with your hands.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_spiderman_push_ups",
+    "short_description": "A push-up variation that combines chest and tricep work with a hip flexor stretch by bringing the knee to the elbow.",
+    "how_to": ["Start in a high push-up position.", "As you lower your chest toward the floor, bring one knee toward your elbow on the same side.", "Press back up and return the foot to the start.", "Alternate sides with each rep.", "Move the knee and the push-up at the same time."],
+    "correct": ["Keep your body straight between reps.", "Keep your elbows controlled on the way down.", "Keep your core engaged throughout.", "Move the knee fully to the elbow each rep."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't rush and lose form.", "Don't let your lower back sag mid-rep."]
+  },
+  {
+    "exercise_id": "leap_push_up_rotation",
+    "short_description": "A push-up followed by a thoracic rotation that builds chest and shoulder strength while opening the upper back.",
+    "how_to": ["Start in a high push-up position.", "Lower your chest to the floor with control.", "Press back up, then rotate to one side, extending that arm toward the ceiling.", "Return to the centre and repeat, rotating to the other side next time.", "Keep your hips level during the rotation."],
+    "correct": ["Keep your body straight during the push-up phase.", "Keep your elbows controlled on the way down.", "Rotate from your upper back, not your hips.", "Keep your core engaged throughout."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't swing your arm to rotate.", "Don't rush between the push-up and the twist."]
+  },
+  {
+    "exercise_id": "leap_incline_push_ups",
+    "short_description": "A push-up with hands elevated on a surface that reduces load and emphasises the lower chest.",
+    "how_to": ["Place your hands on an elevated surface such as a bench or step, shoulder-width apart.", "Walk your feet back into a straight-body position.", "Lower your chest toward the surface.", "Press back up to the start.", "Keep your body in a straight line throughout."],
+    "correct": ["Keep your body straight from head to heels.", "Keep your elbows controlled on the way down.", "Keep your core engaged.", "Lower all the way until your chest nearly touches."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't rush the descent.", "Don't let your head jut forward."]
+  },
+  {
+    "exercise_id": "leap_lunges",
+    "short_description": "A classic stepping exercise that targets the quads, glutes and hamstrings through a forward stride.",
+    "how_to": ["Stand tall with your feet together.", "Step one foot forward and lower your back knee toward the floor.", "Stop before the back knee touches down.", "Push off the front foot to return to the start.", "Alternate legs with each rep."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down on your front foot.", "Keep your torso upright.", "Step forward with control."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't let your front knee shoot past your toes.", "Don't lean heavily forward."]
+  },
+  {
+    "exercise_id": "leap_curtsy_lunges",
+    "short_description": "A cross-behind lunge that targets the glutes, outer hips and quads with a rotational emphasis.",
+    "how_to": ["Stand tall with your feet hip-width apart.", "Step one foot behind and across the other, lowering into a lunge.", "Keep your front knee tracking over your toes.", "Push through your front heel to return to standing.", "Alternate sides with each rep."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down on the working foot.", "Keep your torso upright.", "Lower with control each time."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't rotate your hips excessively.", "Don't let your front heel lift."]
+  },
+  {
+    "exercise_id": "leap_single_leg_calf_raises",
+    "short_description": "A single-leg heel raise that isolates the calf muscles and improves ankle stability.",
+    "how_to": ["Stand near a wall for balance, resting one hand lightly on it.", "Lift one foot off the floor.", "Press through the ball of your standing foot to raise your heel as high as you can.", "Lower back down with control.", "Complete all reps on one side, then switch."],
+    "correct": ["Keep your standing leg straight but not locked.", "Rise as high as possible each rep.", "Lower slowly and with control.", "Keep your core engaged for balance."],
+    "mistakes": ["Don't rush the movement.", "Don't lean heavily on the wall.", "Don't let your ankle roll outward.", "Don't shorten the range of motion."]
+  },
+  {
+    "exercise_id": "leap_jumping_squats",
+    "short_description": "An explosive squat jump that builds leg power in the quads, glutes and calves while raising the heart rate.",
+    "how_to": ["Stand with your feet shoulder-width apart.", "Lower into a squat with your thighs roughly parallel to the floor.", "Drive upward explosively and jump off the floor.", "Land with soft knees and go straight into the next squat.", "Maintain a steady rhythm throughout."],
+    "correct": ["Land softly.", "Keep your knees over your toes.", "Keep your heels down in the squat.", "Keep your chest up throughout."],
+    "mistakes": ["Don't land hard.", "Don't let your knees cave inward.", "Don't drop too fast on the squat.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_knee_push_ups",
+    "short_description": "A modified push-up from the knees that builds chest, shoulder and tricep strength at a reduced load.",
+    "how_to": ["Start on your hands and knees with your hands under your shoulders.", "Walk your hands forward slightly so your body forms a straight line from head to knees.", "Lower your chest toward the floor.", "Press back up to the start.", "Keep your core engaged throughout."],
+    "correct": ["Keep your body straight from head to knees.", "Keep your elbows controlled on the way down.", "Keep your core engaged.", "Lower until your chest nearly touches the floor."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't let your lower back sag.", "Don't rush the movement."]
+  },
+  {
+    "exercise_id": "leap_box_push_ups",
+    "short_description": "A quadruped push-up variation from an all-fours position that introduces beginners to pressing movement.",
+    "how_to": ["Start on hands and knees with your hands shoulder-width apart.", "Keep your back flat and your hips above your knees.", "Bend your elbows to lower your chest toward the floor.", "Press back up to the start.", "Maintain a controlled pace throughout."],
+    "correct": ["Keep your body straight.", "Keep your elbows controlled and pointing back.", "Keep your back flat throughout.", "Lower with control each rep."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't let your head drop toward the floor.", "Don't arch your lower back."]
+  },
+  {
+    "exercise_id": "leap_reverse_push_ups",
+    "short_description": "A table-top push-up variation facing upward that targets the triceps, posterior shoulders and glutes.",
+    "how_to": ["Sit on the floor with your hands behind you and your knees bent.", "Press into your hands and feet to lift your hips into a table-top position.", "Bend your elbows to lower your hips toward the floor.", "Press back up until your arms are extended.", "Keep your hips lifted throughout the set."],
+    "correct": ["Keep your body straight.", "Keep your elbows controlled on the way down.", "Keep your hips raised throughout.", "Keep your core engaged."],
+    "mistakes": ["Don't let your hips drop to the floor between reps.", "Don't flare your elbows out wide.", "Don't let your shoulders shrug up.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_split_squat",
+    "short_description": "A stationary lunge-stance squat that trains the quads, glutes and hip flexors one leg at a time.",
+    "how_to": ["Step one foot forward and one foot back into a split stance.", "Keep both feet flat on the floor.", "Lower your back knee toward the floor with control.", "Drive through your front heel to return to the start.", "Complete all reps, then switch sides."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down throughout.", "Keep your torso upright.", "Lower and raise at a steady pace."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't lean heavily forward.", "Don't let your front heel lift."]
+  },
+  {
+    "exercise_id": "leap_decline_push_ups",
+    "short_description": "A push-up with feet elevated on a surface that shifts emphasis to the upper chest and front shoulders.",
+    "how_to": ["Place your feet on an elevated surface such as a bench or step.", "Walk your hands out into a straight-body position.", "Lower your chest toward the floor with control.", "Press back up to the start.", "Keep your body straight throughout."],
+    "correct": ["Keep your body straight from head to heels.", "Keep your elbows controlled on the way down.", "Keep your core engaged.", "Lower all the way until your chest nearly touches."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't let your lower back sag.", "Don't shrug your shoulders at the top."]
+  },
+  {
+    "exercise_id": "leap_triceps_dips",
+    "short_description": "A bodyweight dip using a bench or chair that targets the triceps and anterior shoulders.",
+    "how_to": ["Sit on the edge of a bench with your hands gripping the edge beside your hips.", "Slide your hips forward off the bench.", "Bend your elbows to lower yourself toward the floor.", "Press back up until your arms are extended.", "Keep your back close to the bench throughout."],
+    "correct": ["Keep your body straight.", "Keep your elbows controlled and pointing back.", "Keep your back close to the bench.", "Lower until your upper arms are roughly parallel to the floor."],
+    "mistakes": ["Don't let your hips drop too far below the bench.", "Don't flare your elbows out wide.", "Don't shrug your shoulders as you lower.", "Don't lock your elbows at the top."]
+  },
+  {
+    "exercise_id": "leap_hindu_push_ups",
+    "short_description": "A flowing push-up that moves through a downward dog to an upward dog, building shoulder and chest strength with a spine stretch.",
+    "how_to": ["Start in a downward dog position with your hips high.", "Lower your head toward the floor in an arc.", "Sweep your chest through and press up into an upward dog.", "Push your hips back up to downward dog to complete one rep.", "Move smoothly through the arc each time."],
+    "correct": ["Keep your body straight during the pressing phase.", "Keep your elbows controlled on the way down.", "Keep your movements smooth and flowing.", "Keep your core engaged throughout."],
+    "mistakes": ["Don't let your hips drop in the upward phase.", "Don't flare your elbows out wide.", "Don't rush the arc.", "Don't collapse into the lower back at the top of the sweep."]
+  }
+]

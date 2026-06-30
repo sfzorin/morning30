@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_the_roll",
+    "exercise_name": "The Roll",
+    "group_label": "Other",
+    "video_title": "How to Do：THE ROLL"
+  },
+  {
+    "exercise_id": "leap_dumbbell_jumping_lunge",
+    "exercise_name": "Dumbbell Jumping Lunge",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL JUMPING LUNGE"
+  },
+  {
+    "exercise_id": "leap_dumbbell_chest_fly",
+    "exercise_name": "Dumbbell Chest Fly",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CHEST FLY"
+  },
+  {
+    "exercise_id": "leap_dumbbell_split_squat",
+    "exercise_name": "Dumbbell Split Squat",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SPLIT SQUAT"
+  },
+  {
+    "exercise_id": "leap_bent_knee_side_hip_raises",
+    "exercise_name": "Bent Knee Side Hip Raises",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：BENT KNEE SIDE HIP RAISES"
+  },
+  {
+    "exercise_id": "leap_slow_mountain_climber",
+    "exercise_name": "Slow Mountain Climber",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：SLOW MOUNTAIN CLIMBER"
+  },
+  {
+    "exercise_id": "leap_chair_bicycle_crunch",
+    "exercise_name": "Chair Bicycle Crunch",
+    "group_label": "Equipment",
+    "video_title": "How to Do：CHAIR BICYCLE CRUNCH"
+  },
+  {
+    "exercise_id": "leap_double_leg_circles",
+    "exercise_name": "Double Leg Circles",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：DOUBLE LEG CIRCLES"
+  },
+  {
+    "exercise_id": "leap_eyes_circles",
+    "exercise_name": "Eyes Circles",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：EYES CIRCLES"
+  },
+  {
+    "exercise_id": "leap_run_on_the_wall",
+    "exercise_name": "Run on the Wall",
+    "group_label": "Wall",
+    "video_title": "How to Do：RUN ON THE WALL"
+  },
+  {
+    "exercise_id": "leap_push_up_row",
+    "exercise_name": "Push-Up Row",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：PUSH-UP ROW"
+  },
+  {
+    "exercise_id": "leap_dumbbell_butt_bridge",
+    "exercise_name": "Dumbbell Butt Bridge",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BUTT BRIDGE"
+  },
+  {
+    "exercise_id": "leap_lying_knee_hug",
+    "exercise_name": "Lying Knee Hug",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：LYING KNEE HUG"
+  },
+  {
+    "exercise_id": "leap_butterfly_bridge",
+    "exercise_name": "Butterfly Bridge",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：BUTTERFLY BRIDGE"
+  },
+  {
+    "exercise_id": "leap_dumbbell_hip_bridge_leg_lift",
+    "exercise_name": "Dumbbell Hip Bridge & Leg Lift",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL HIP BRIDGE & LEG LIFT"
+  },
+  {
+    "exercise_id": "leap_marchin_hip_raises",
+    "exercise_name": "Marchin Hip Raises",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：MARCHIN HIP RAISES"
+  },
+  {
+    "exercise_id": "leap_dumbbell_single_arm_fly",
+    "exercise_name": "Dumbbell Single Arm Fly",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SINGLE ARM FLY"
+  },
+  {
+    "exercise_id": "leap_toe_tap",
+    "exercise_name": "Toe Tap",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：TOE TAP"
+  },
+  {
+    "exercise_id": "leap_lips_down_pull",
+    "exercise_name": "Lips Down Pull",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do：LIPS DOWN PULL"
+  },
+  {
+    "exercise_id": "leap_dumbbell_single_leg_hip_thrust",
+    "exercise_name": "Dumbbell Single Leg Hip Thrust",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SINGLE LEG HIP THRUST"
+  }
+]

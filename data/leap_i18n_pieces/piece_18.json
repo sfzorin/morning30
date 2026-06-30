@@ -1,0 +1,232 @@
+[
+  {
+    "exercise_id": "leap_dumbbell_russian_twist",
+    "exercise_name": "Dumbbell Russian Twist",
+    "short_description": "A weighted seated rotation that adds resistance to the oblique twist for greater core strength.",
+    "how_to": [
+      "Sit with your knees bent and heels slightly raised, holding a dumbbell in both hands.",
+      "Lean back slightly until your core is engaged.",
+      "Rotate the dumbbell to one side, tapping it near the floor.",
+      "Rotate to the other side in a controlled motion."
+    ],
+    "correct": [
+      "Keep your chest tall throughout.",
+      "Keep the dumbbell close to your body.",
+      "Move from your torso, not your arms.",
+      "Keep a firm grip on the dumbbell."
+    ],
+    "mistakes": [
+      "Don't round your back.",
+      "Don't use momentum to swing the weight.",
+      "Don't hold your breath.",
+      "Don't choose a weight that forces you to lose control."
+    ]
+  },
+  {
+    "exercise_id": "leap_reclined_oblique_twist",
+    "exercise_name": "Reclined Oblique Twist",
+    "short_description": "A gentle supine twist that stretches the obliques and mobilizes the thoracic spine.",
+    "how_to": [
+      "Lie on your back and draw one knee toward your chest.",
+      "Guide that knee across your body with the opposite hand.",
+      "Extend your other arm out to the side for stability.",
+      "Hold the position and breathe steadily, then switch sides."
+    ],
+    "correct": [
+      "Keep your shoulders flat on the floor.",
+      "Breathe slowly and steadily.",
+      "Relax into the twist gradually.",
+      "Keep your neck long and relaxed."
+    ],
+    "mistakes": [
+      "Don't force the knee down to the floor.",
+      "Don't hold your breath.",
+      "Don't let your opposite shoulder lift up.",
+      "Don't twist quickly — ease into it."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_crunch_and_punches",
+    "exercise_name": "Dumbbell Crunch and Punches",
+    "short_description": "A weighted crunch followed by punching movements that works the abs and arms together.",
+    "how_to": [
+      "Lie on your back holding a light dumbbell in each hand.",
+      "Crunch your upper back off the floor and hold the position.",
+      "From there, punch one arm forward, then the other.",
+      "Lower back down with control and repeat."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your core tight during the punches.",
+      "Keep your movements deliberate.",
+      "Keep your chin off your chest."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't swing the dumbbells — punch with control.",
+      "Don't choose weights that force your form to break down."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_bridges",
+    "exercise_name": "Side Bridges",
+    "short_description": "A lateral isometric hold that strengthens the obliques, glutes and hip abductors.",
+    "how_to": [
+      "Lie on your side with your forearm on the floor and elbow under your shoulder.",
+      "Stack your feet or stagger them for balance.",
+      "Lift your hips off the floor until your body is straight.",
+      "Hold the position, then switch sides."
+    ],
+    "correct": [
+      "Keep your hips lifted and level.",
+      "Keep your body in a straight line from head to feet.",
+      "Keep your core engaged throughout.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your hips sag toward the floor.",
+      "Don't rotate your torso forward or backward.",
+      "Don't hold your breath.",
+      "Don't prop your head — keep your neck in line."
+    ]
+  },
+  {
+    "exercise_id": "leap_v_up",
+    "exercise_name": "V-Up",
+    "short_description": "A full-body crunch that lifts both legs and the upper body simultaneously to work the entire core.",
+    "how_to": [
+      "Lie flat on your back with your arms extended overhead.",
+      "Keeping your arms and legs straight, lift them both off the floor at once.",
+      "Reach your hands toward your feet at the top.",
+      "Lower slowly and with control to the starting position."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your legs straight as they rise.",
+      "Move with smooth control, not momentum.",
+      "Breathe out at the top of the movement."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't drop your limbs back down — lower them.",
+      "Don't bend your knees to compensate."
+    ]
+  },
+  {
+    "exercise_id": "leap_alternating_knee_to_chest_stretch",
+    "exercise_name": "Alternating Knee to Chest Stretch",
+    "short_description": "A supine stretch that alternately draws each knee to the chest to release the lower back and hips.",
+    "how_to": [
+      "Lie on your back with your legs extended.",
+      "Draw one knee toward your chest and hold it with both hands.",
+      "Hold gently for a breath, then lower and switch sides.",
+      "Alternate at a slow, steady pace."
+    ],
+    "correct": [
+      "Keep your opposite leg relaxed on the floor.",
+      "Keep your neck and shoulders relaxed.",
+      "Breathe steadily throughout.",
+      "Hold each side for a full breath before switching."
+    ],
+    "mistakes": [
+      "Don't force the knee into your chest.",
+      "Don't hold your breath.",
+      "Don't lift your head and strain your neck.",
+      "Don't rush between sides."
+    ]
+  },
+  {
+    "exercise_id": "leap_open_chain_knee_extension_left",
+    "exercise_name": "Open Chain Knee Extension Left",
+    "short_description": "A seated or supine knee extension on the left leg that strengthens the quadriceps through a controlled range.",
+    "how_to": [
+      "Sit upright on a firm surface with your left knee bent.",
+      "Slowly straighten your left leg until it is fully extended.",
+      "Hold briefly at the top with your quad engaged.",
+      "Lower your foot slowly back to the start."
+    ],
+    "correct": [
+      "Keep your thigh still — only your lower leg moves.",
+      "Keep the movement slow in both directions.",
+      "Keep your back upright and supported.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't swing the leg up with momentum.",
+      "Don't lock the knee aggressively at the top.",
+      "Don't hold your breath.",
+      "Don't let the foot drop on the way down."
+    ]
+  },
+  {
+    "exercise_id": "leap_oblique_v_up",
+    "exercise_name": "Oblique V-Up",
+    "short_description": "A side-lying V-up variation that isolates the obliques by folding the body laterally.",
+    "how_to": [
+      "Lie on your side with your body in a straight line.",
+      "Place your bottom hand behind your head or on the floor for support.",
+      "Lift your legs and upper body toward each other simultaneously.",
+      "Lower with control and complete your reps, then switch sides."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep the fold lateral — don't rotate forward.",
+      "Control the lowering phase.",
+      "Breathe out as you lift."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let momentum do the work.",
+      "Don't rotate your torso toward the ceiling."
+    ]
+  },
+  {
+    "exercise_id": "leap_clockwise_arm_swings",
+    "exercise_name": "Clockwise Arm Swings",
+    "short_description": "A shoulder mobility warm-up that circles both arms clockwise to loosen the shoulder joints.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Extend both arms out to your sides.",
+      "Swing both arms in large clockwise circles.",
+      "Complete your reps, then reverse direction if desired."
+    ],
+    "correct": [
+      "Keep your chest open and your posture tall.",
+      "Keep the circles large and full-range.",
+      "Relax your shoulders as you swing.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't tense your shoulders up toward your ears.",
+      "Don't make the circles too small.",
+      "Don't hold your breath.",
+      "Don't rush — let each circle be deliberate."
+    ]
+  },
+  {
+    "exercise_id": "leap_backward_lunge_with_front",
+    "exercise_name": "Backward Lunge with Front",
+    "short_description": "A reverse lunge that adds a front knee lift at the top to challenge the quads, glutes and balance.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Step one foot back and lower into a lunge.",
+      "Push through your front heel to stand and drive the rear knee up in front.",
+      "Lower the foot back to start and repeat, then switch sides."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down in the lunge.",
+      "Keep your chest tall throughout.",
+      "Control the knee drive — don't flick."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't lean forward as you lunge.",
+      "Don't rush the knee drive at the top."
+    ]
+  }
+]

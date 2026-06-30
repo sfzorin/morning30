@@ -1,0 +1,20 @@
+[
+  {
+    "exercise_id": "leap_seated_in_and_out",
+    "exercise_name": "Seated in and Out",
+    "group_label": "Other",
+    "video_title": "How to Do: SEATED IN AND OUT"
+  },
+  {
+    "exercise_id": "leap_abdominal_crunch",
+    "exercise_name": "Abdominal Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: ABDOMINAL CRUNCH"
+  },
+  {
+    "exercise_id": "leap_alternating_bird_dog",
+    "exercise_name": "Alternating Bird Dog",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do: ALTERNATING BIRD DOG"
+  }
+]

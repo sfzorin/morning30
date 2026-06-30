@@ -1,0 +1,232 @@
+[
+  {
+    "exercise_id": "leap_cross_arm_crunches",
+    "exercise_name": "Cross Arm Crunches",
+    "short_description": "A crunch variation with arms crossed over the chest that targets the rectus abdominis.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat.",
+      "Cross your arms over your chest.",
+      "Exhale and curl your upper back off the floor.",
+      "Hold briefly at the top, then lower with control."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chin lifted off your chest.",
+      "Move slowly and with control.",
+      "Keep your feet flat on the floor."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't jerk up with momentum.",
+      "Don't let your feet lift off the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_long_arm_crunches",
+    "exercise_name": "Long Arm Crunches",
+    "short_description": "A crunch with arms extended overhead that increases the lever length and challenges the abs more deeply.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat.",
+      "Extend your arms straight overhead close to your ears.",
+      "Exhale and curl your shoulders off the floor.",
+      "Hold briefly at the top, then lower slowly."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your arms in line with your ears.",
+      "Move at a steady, controlled pace.",
+      "Keep your core tight throughout."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your arms drift out to the sides.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_plank",
+    "exercise_name": "Plank",
+    "short_description": "A foundational isometric hold that builds core, shoulder and back stability.",
+    "how_to": [
+      "Place your forearms on the floor with elbows under your shoulders.",
+      "Extend your legs back and rest on your toes.",
+      "Brace your core and align your body in a straight line.",
+      "Hold the position and breathe steadily."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips level.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't hold your breath.",
+      "Don't let your head drop."
+    ]
+  },
+  {
+    "exercise_id": "leap_russian_twist",
+    "exercise_name": "Russian Twist",
+    "short_description": "A seated rotation exercise that works the obliques and deep core muscles.",
+    "how_to": [
+      "Sit on the floor with your knees bent and heels slightly raised.",
+      "Lean back slightly to engage your core.",
+      "Clasp your hands together in front of you.",
+      "Rotate your torso to one side, then the other, in a controlled rhythm."
+    ],
+    "correct": [
+      "Keep your chest tall throughout.",
+      "Keep your core braced as you rotate.",
+      "Move from your torso, not just your arms.",
+      "Keep your heels low if needed for balance."
+    ],
+    "mistakes": [
+      "Don't round your back.",
+      "Don't twist with just your arms.",
+      "Don't hold your breath.",
+      "Don't let your hips shift with each rotation."
+    ]
+  },
+  {
+    "exercise_id": "leap_high_stepping",
+    "exercise_name": "High Stepping",
+    "short_description": "A marching drill that raises the knees high to warm up the hips and elevate the heart rate.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Drive one knee up toward your chest.",
+      "Lower it and immediately drive the other knee up.",
+      "Pump your arms in opposition to your legs."
+    ],
+    "correct": [
+      "Keep your chest tall and upright.",
+      "Drive your knees up deliberately.",
+      "Keep a steady rhythm.",
+      "Land softly on the balls of your feet."
+    ],
+    "mistakes": [
+      "Don't lean back as your knees come up.",
+      "Don't let your arms hang limp.",
+      "Don't shuffle your feet — lift them clearly.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_v_crunch",
+    "exercise_name": "V Crunch",
+    "short_description": "A crunch variation where the body folds into a V shape to engage the full abdominal wall.",
+    "how_to": [
+      "Lie flat on your back with your arms extended overhead.",
+      "In one motion, lift your legs and upper back off the floor.",
+      "Reach your hands toward your feet at the top.",
+      "Lower slowly and return to the starting position."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep the movement smooth and controlled.",
+      "Keep your legs straight as they rise.",
+      "Breathe out as you fold up."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't slam your back down on the way back.",
+      "Don't bend your knees to make it easier than intended."
+    ]
+  },
+  {
+    "exercise_id": "leap_heel_touch",
+    "exercise_name": "Heel Touch",
+    "short_description": "A side-to-side crunch variation that targets the obliques by reaching toward each heel.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat.",
+      "Lift your head and shoulders slightly off the floor.",
+      "Reach your right hand to your right heel by side-bending right.",
+      "Return to center and repeat on the left side."
+    ],
+    "correct": [
+      "Keep your lower back pressed gently into the floor.",
+      "Keep your neck relaxed, not strained.",
+      "Control the side bend — don't flop.",
+      "Keep your feet flat throughout."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't rush through the reps.",
+      "Don't lift your hips to reach farther."
+    ]
+  },
+  {
+    "exercise_id": "leap_standing_bicycle_crunches",
+    "exercise_name": "Standing Bicycle Crunches",
+    "short_description": "A standing variation of the bicycle crunch that works the obliques and challenges balance.",
+    "how_to": [
+      "Stand tall with your hands lightly behind your head.",
+      "Drive your right knee up while twisting your left elbow toward it.",
+      "Lower and switch, bringing your left knee up to your right elbow.",
+      "Alternate sides in a steady rhythm."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest open — don't collapse forward.",
+      "Rotate from your torso, not just your arms.",
+      "Keep a soft bend in your standing knee."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't just tap the elbow to the knee — rotate fully.",
+      "Don't lean forward from the hips."
+    ]
+  },
+  {
+    "exercise_id": "leap_bent_leg_twist",
+    "exercise_name": "Bent Leg Twist",
+    "short_description": "A supine spinal rotation stretch that releases tension in the lower back and hips.",
+    "how_to": [
+      "Lie on your back with your arms out to your sides.",
+      "Bend one knee and bring it across your body toward the floor.",
+      "Keep your shoulder blades flat on the floor.",
+      "Hold the twist and breathe, then switch sides."
+    ],
+    "correct": [
+      "Keep your shoulders grounded throughout.",
+      "Breathe steadily into the stretch.",
+      "Keep the movement gentle and unhurried.",
+      "Relax your neck and jaw."
+    ],
+    "mistakes": [
+      "Don't force the knee to the floor.",
+      "Don't hold your breath.",
+      "Don't lift your opposite shoulder off the floor.",
+      "Don't rush between sides."
+    ]
+  },
+  {
+    "exercise_id": "leap_dead_bug",
+    "exercise_name": "Dead Bug",
+    "short_description": "A supine core stability exercise that trains the abs to resist extension as opposite limbs move.",
+    "how_to": [
+      "Lie on your back with your arms pointing up and your knees bent at ninety degrees.",
+      "Press your lower back gently into the floor.",
+      "Lower your right arm overhead and your left leg toward the floor simultaneously.",
+      "Return to the start and repeat on the opposite side."
+    ],
+    "correct": [
+      "Keep your lower back pressed into the floor throughout.",
+      "Keep your core braced as the limbs move.",
+      "Move slowly and with full control.",
+      "Breathe out as you extend."
+    ],
+    "mistakes": [
+      "Don't let your lower back arch away from the floor.",
+      "Don't hold your breath.",
+      "Don't rush — slow movement is the point.",
+      "Don't let your limbs drop instead of lowering with control."
+    ]
+  }
+]

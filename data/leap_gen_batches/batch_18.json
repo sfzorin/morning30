@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_side_lying_floor_stretch",
+    "exercise_name": "Side-Lying Floor Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SIDE-LYING FLOOR STRETCH"
+  },
+  {
+    "exercise_id": "leap_arm_scissors",
+    "exercise_name": "Arm Scissors",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：ARM SCISSORS"
+  },
+  {
+    "exercise_id": "leap_side_hop",
+    "exercise_name": "Side Hop",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：SIDE HOP"
+  },
+  {
+    "exercise_id": "leap_floor_y_raises",
+    "exercise_name": "Floor Y Raises",
+    "group_label": "Other",
+    "video_title": "How to Do：FLOOR Y RAISES"
+  },
+  {
+    "exercise_id": "leap_side_lying_leg_lift",
+    "exercise_name": "Side-Lying Leg Lift",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：SIDE-LYING LEG LIFT"
+  },
+  {
+    "exercise_id": "leap_reverse_flutter_kicks",
+    "exercise_name": "Reverse Flutter Kicks",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：REVERSE FLUTTER KICKS"
+  },
+  {
+    "exercise_id": "leap_prone_triceps_push_ups",
+    "exercise_name": "Prone Triceps Push Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：PRONE TRICEPS PUSH UPS"
+  },
+  {
+    "exercise_id": "leap_hover_push_up",
+    "exercise_name": "Hover Push Up",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：HOVER PUSH UP"
+  },
+  {
+    "exercise_id": "leap_side_leg_circles",
+    "exercise_name": "Side Leg Circles",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SIDE LEG CIRCLES"
+  },
+  {
+    "exercise_id": "leap_reclined_rhomboid_squeezes",
+    "exercise_name": "Reclined Rhomboid Squeezes",
+    "group_label": "Other",
+    "video_title": "How to Do：RECLINED RHOMBOID SQUEEZES"
+  },
+  {
+    "exercise_id": "leap_triceps_kickbacks",
+    "exercise_name": "Triceps Kickbacks",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：TRICEPS KICKBACKS"
+  },
+  {
+    "exercise_id": "leap_hip_bridge_leg_lift",
+    "exercise_name": "Hip Bridge & Leg Lift",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：HIP BRIDGE & LEG LIFT"
+  },
+  {
+    "exercise_id": "leap_backward_lunge",
+    "exercise_name": "Backward Lunge",
+    "group_label": "Lunges",
+    "video_title": "How to Do：BACKWARD LUNGE"
+  },
+  {
+    "exercise_id": "leap_side_arm_raise",
+    "exercise_name": "Side Arm Raise",
+    "group_label": "Other",
+    "video_title": "How to Do：SIDE ARM RAISE"
+  },
+  {
+    "exercise_id": "leap_supine_push_up",
+    "exercise_name": "Supine Push Up",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：SUPINE PUSH UP"
+  },
+  {
+    "exercise_id": "leap_hyperextension",
+    "exercise_name": "Hyperextension",
+    "group_label": "Other",
+    "video_title": "How to Do：HYPEREXTENSION"
+  },
+  {
+    "exercise_id": "leap_plank_leg_up",
+    "exercise_name": "Plank Leg Up",
+    "group_label": "Planks",
+    "video_title": "How to Do：PLANK LEG UP"
+  },
+  {
+    "exercise_id": "leap_rhomboid_pulls",
+    "exercise_name": "Rhomboid Pulls",
+    "group_label": "Other",
+    "video_title": "How to Do：RHOMBOID PULLS"
+  },
+  {
+    "exercise_id": "leap_shoulder_stretch",
+    "exercise_name": "Shoulder Stretch",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：SHOULDER STRETCH"
+  },
+  {
+    "exercise_id": "leap_donkey_kicks",
+    "exercise_name": "Donkey Kicks",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：DONKEY KICKS"
+  }
+]

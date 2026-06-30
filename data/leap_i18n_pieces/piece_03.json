@@ -1,0 +1,236 @@
+[
+  {
+    "exercise_id": "leap_dumbbell_side_lateral_raise",
+    "exercise_name": "Dumbbell Side Lateral Raise",
+    "short_description": "A dumbbell shoulder exercise that lifts the arms out to the sides to target the lateral deltoids.",
+    "how_to": [
+      "Stand tall with a dumbbell in each hand at your sides.",
+      "Keep a slight bend in your elbows.",
+      "Raise both arms out to shoulder height.",
+      "Pause briefly at the top.",
+      "Lower the weights slowly back down."
+    ],
+    "correct": [
+      "Keep your core engaged.",
+      "Keep a slight bend in your elbows throughout.",
+      "Keep your wrists in line with your forearms.",
+      "Move at a controlled pace."
+    ],
+    "mistakes": [
+      "Don't shrug your shoulders as you lift.",
+      "Don't swing your torso for momentum.",
+      "Don't raise your arms above shoulder height.",
+      "Don't let the weights drop fast."
+    ]
+  },
+  {
+    "exercise_id": "leap_military_press",
+    "exercise_name": "Military Press",
+    "short_description": "An overhead pressing movement that builds shoulder and triceps strength.",
+    "how_to": [
+      "Stand with feet shoulder-width apart and hold weights at shoulder height.",
+      "Keep your core tight and your back straight.",
+      "Press the weights directly overhead until your arms are fully extended.",
+      "Lower the weights back to shoulder height with control."
+    ],
+    "correct": [
+      "Keep your body straight.",
+      "Keep your elbows controlled.",
+      "Keep your core braced throughout.",
+      "Move at a steady pace."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't arch your lower back under load.",
+      "Don't rush the descent."
+    ]
+  },
+  {
+    "exercise_id": "leap_diagonal_plank",
+    "exercise_name": "Diagonal Plank",
+    "short_description": "A rotational plank variation that challenges core stability and oblique strength.",
+    "how_to": [
+      "Start in a forearm plank with your body in a straight line.",
+      "Rotate your hips to one side, lowering them toward the floor.",
+      "Return to the centre position.",
+      "Rotate to the other side.",
+      "Continue alternating at a controlled pace."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips low throughout.",
+      "Move slowly and deliberately."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't twist so far that you lose control.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_chest_press_pulse",
+    "exercise_name": "Chest Press Pulse",
+    "short_description": "A short-range chest pressing movement that keeps the muscles under constant tension.",
+    "how_to": [
+      "Lie on your back with weights held above your chest.",
+      "Lower the weights to just above your chest.",
+      "Press up a few centimetres, then lower again in small pulses.",
+      "Keep the range of motion tight and controlled throughout."
+    ],
+    "correct": [
+      "Keep your body straight.",
+      "Keep your elbows controlled.",
+      "Keep your lower back pressed gently into the surface.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't bounce the weights off your chest.",
+      "Don't hold your breath during the pulses."
+    ]
+  },
+  {
+    "exercise_id": "leap_diamond_push_ups",
+    "exercise_name": "Diamond Push-Ups",
+    "short_description": "A close-grip push-up variation that places extra emphasis on the triceps and inner chest.",
+    "how_to": [
+      "Place your hands close together beneath your chest, forming a diamond shape.",
+      "Extend your legs behind you in a push-up position.",
+      "Lower your chest toward your hands while keeping your elbows close.",
+      "Press back up until your arms are straight."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled close to your sides.",
+      "Keep your core tight throughout.",
+      "Keep your neck neutral."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't let your lower back arch.",
+      "Don't rush through the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_shoulder_outward_rotation",
+    "exercise_name": "Shoulder Outward Rotation",
+    "short_description": "A rotator-cuff exercise that strengthens the small muscles that stabilise the shoulder joint.",
+    "how_to": [
+      "Stand or sit with your upper arm tucked against your side.",
+      "Bend your elbow to ninety degrees.",
+      "Rotate your forearm outward away from your body.",
+      "Return slowly to the starting position.",
+      "Repeat on each side."
+    ],
+    "correct": [
+      "Keep your upper arm against your side.",
+      "Move with control through the full range.",
+      "Keep your wrist straight.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your elbow drift away from your side.",
+      "Don't rush the rotation.",
+      "Don't use your whole torso to swing the arm.",
+      "Don't force the range further than comfortable."
+    ]
+  },
+  {
+    "exercise_id": "leap_triceps_stretch",
+    "exercise_name": "Triceps Stretch",
+    "short_description": "An overhead triceps stretch that loosens the back of the upper arm and shoulder.",
+    "how_to": [
+      "Raise one arm overhead and bend the elbow so your hand drops behind your head.",
+      "Use the opposite hand to gently press the elbow further back.",
+      "Hold where you feel a gentle stretch.",
+      "Release and switch arms."
+    ],
+    "correct": [
+      "Keep your head upright.",
+      "Keep your core lightly engaged.",
+      "Breathe steadily throughout the hold.",
+      "Stay relaxed in your shoulder."
+    ],
+    "mistakes": [
+      "Don't force the stretch by pulling hard.",
+      "Don't hold your breath.",
+      "Don't let your lower back arch as you reach up.",
+      "Don't rush through the hold."
+    ]
+  },
+  {
+    "exercise_id": "leap_anterior_shoulder_stretch",
+    "exercise_name": "Anterior Shoulder Stretch",
+    "short_description": "A chest-opening stretch that targets the front of the shoulder and the pectoral muscles.",
+    "how_to": [
+      "Clasp your hands behind your back.",
+      "Straighten your arms and gently draw your shoulder blades together.",
+      "Lift your clasped hands slightly if comfortable.",
+      "Hold where you feel a stretch across your chest and shoulders."
+    ],
+    "correct": [
+      "Keep your chest open and tall.",
+      "Keep a neutral spine throughout.",
+      "Breathe slowly and steadily.",
+      "Relax your neck and jaw."
+    ],
+    "mistakes": [
+      "Don't force the stretch.",
+      "Don't hold your breath.",
+      "Don't round your upper back forward.",
+      "Don't jerk your arms to increase the stretch."
+    ]
+  },
+  {
+    "exercise_id": "leap_punches",
+    "exercise_name": "Punches",
+    "short_description": "A cardio drill that throws alternating punches to elevate the heart rate and work the shoulders.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and hands raised to guard position.",
+      "Extend one arm forward in a controlled punch.",
+      "Retract it and extend the opposite arm.",
+      "Continue alternating arms at a steady rhythm.",
+      "Keep your core engaged throughout."
+    ],
+    "correct": [
+      "Keep your core tight on each punch.",
+      "Keep your shoulders relaxed.",
+      "Keep your feet grounded.",
+      "Move at a pace you can control."
+    ],
+    "mistakes": [
+      "Don't lock out your elbow on each punch.",
+      "Don't hunch your shoulders up to your ears.",
+      "Don't hold your breath.",
+      "Don't swing wildly and lose your balance."
+    ]
+  },
+  {
+    "exercise_id": "leap_standing_biceps_stretch",
+    "exercise_name": "Standing Biceps Stretch",
+    "short_description": "A standing stretch that lengthens the biceps and the front of the forearm.",
+    "how_to": [
+      "Extend one arm straight out to your side with your palm facing up.",
+      "Gently press your fingers back with your opposite hand.",
+      "Hold where you feel a stretch along the front of your arm.",
+      "Switch to the other arm."
+    ],
+    "correct": [
+      "Keep your arm fully extended.",
+      "Keep your shoulder relaxed and down.",
+      "Breathe steadily throughout the hold.",
+      "Keep your posture tall."
+    ],
+    "mistakes": [
+      "Don't force the stretch.",
+      "Don't hold your breath.",
+      "Don't shrug your shoulder during the hold.",
+      "Don't rush through the stretch."
+    ]
+  }
+]

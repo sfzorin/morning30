@@ -1,0 +1,2834 @@
+[
+  {
+    "exercise_id": "leap_forward_bend",
+    "ru": {
+      "name": "Наклон вперёд",
+      "short_description": "Наклон стоя, который растягивает подколенные сухожилия и поясницу.",
+      "how_to": [
+        "Встань, поставив ноги на ширину бёдер.",
+        "Наклонись вперёд от бёдер, опуская корпус к полу.",
+        "Позволь рукам свободно свисать вниз или положи их на голени.",
+        "Зафиксируй положение там, где чувствуешь лёгкое растяжение в задней поверхности ног.",
+        "Медленно поднимись, подключив мышцы кора."
+      ],
+      "correct": [
+        "Держи спину длинной во время наклона.",
+        "Сгибайся в тазобедренных суставах, а не в пояснице.",
+        "Держи колени слегка согнутыми.",
+        "Дыши равномерно на протяжении всего упражнения."
+      ],
+      "mistakes": [
+        "Не округляй сильно верхнюю часть спины.",
+        "Не выпрямляй колени до упора.",
+        "Не пружинь, чтобы наклониться глубже.",
+        "Не форсируй растяжку сверх комфортного предела.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Öne Eğilme",
+      "short_description": "Arka bacak kaslarını ve bel bölgesini esnetmek için ayakta yapılan öne eğilme hareketi.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde açarak dik dur.",
+        "Kalçalarından öne eğilerek gövdeni yere doğru indir.",
+        "Ellerini yere sarkıt ya da baldırlarına daya.",
+        "Bacaklarının arkasında hafif bir gerilme hissettiğin yerde tut.",
+        "Koru devreye alarak yavaşça doğrul."
+      ],
+      "correct": [
+        "Eğilirken sırtını uzun tut.",
+        "Belden değil, kalçadan eğil.",
+        "Dizlerinde hafif bir bükülme bırak.",
+        "Boyunca düzenli nefes al."
+      ],
+      "mistakes": [
+        "Üst sırtını fazla yuvarlama.",
+        "Dizlerini tamamen kilitleme.",
+        "Daha derin eğilmek için zıplama.",
+        "Gerilmeyi rahatsızlık sınırının ötesine zorlamа.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Vorwärtsbeuge",
+      "short_description": "Eine Vorwärtsbeuge im Stehen, die die Oberschenkelrückseite und den unteren Rücken dehnt.",
+      "how_to": [
+        "Stell dich mit hüftbreitem Stand hin.",
+        "Beuge dich aus den Hüften heraus vor und senke den Oberkörper Richtung Boden.",
+        "Lass die Hände Richtung Boden hängen oder leg sie auf die Schienbeine.",
+        "Halte die Position dort, wo du eine sanfte Dehnung in der Rückseite der Beine spürst.",
+        "Richte dich langsam wieder auf, indem du die Körpermitte anspannst."
+      ],
+      "correct": [
+        "Halte deinen Rücken lang, während du dich beugst.",
+        "Beuge aus den Hüften, nicht aus der Taille.",
+        "Lass die Knie leicht gebeugt.",
+        "Atme gleichmäßig während der gesamten Übung."
+      ],
+      "mistakes": [
+        "Runde deinen oberen Rücken nicht stark.",
+        "Strecke deine Knie nicht vollständig durch.",
+        "Federe nicht, um tiefer zu kommen.",
+        "Zwinge die Dehnung nicht über deinen Komfortbereich hinaus.",
+        "Halte den Atem nicht an."
+      ]
+    },
+    "es": {
+      "name": "Flexión hacia adelante",
+      "short_description": "Una flexión de pie que estira los isquiotibiales y la zona lumbar.",
+      "how_to": [
+        "Párate con los pies a la anchura de las caderas.",
+        "Inclínate desde las caderas y baja el torso hacia el suelo.",
+        "Deja que las manos cuelguen hacia el suelo o apóyalas en las espinillas.",
+        "Mantén la posición donde sientas un estiramiento suave en la parte posterior de las piernas.",
+        "Sube lentamente activando el core."
+      ],
+      "correct": [
+        "Mantén la espalda larga al doblarte.",
+        "Bisagra desde las caderas, no desde la cintura.",
+        "Mantén una ligera flexión en las rodillas.",
+        "Respira de forma constante durante todo el ejercicio."
+      ],
+      "mistakes": [
+        "No redondees agresivamente la parte superior de la espalda.",
+        "No bloquees las rodillas en extensión.",
+        "No hagas rebotes para bajar más.",
+        "No fuerces el estiramiento más allá de tu comodidad.",
+        "No retengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Flexion avant",
+      "short_description": "Une flexion avant debout qui étire les ischio-jambiers et le bas du dos.",
+      "how_to": [
+        "Tiens-toi debout, les pieds écartés à la largeur des hanches.",
+        "Incline-toi vers l'avant depuis les hanches et descends le buste vers le sol.",
+        "Laisse tes mains pendre vers le bas ou pose-les sur tes tibias.",
+        "Maintiens la position là où tu ressens un étirement doux à l'arrière des jambes.",
+        "Remonte lentement en engageant ta sangle abdominale."
+      ],
+      "correct": [
+        "Garde le dos allongé pendant la flexion.",
+        "Plie depuis les hanches, pas depuis la taille.",
+        "Garde les genoux légèrement fléchis.",
+        "Respire régulièrement tout au long de l'exercice."
+      ],
+      "mistakes": [
+        "Ne ronds pas excessivement le haut du dos.",
+        "Ne verrouille pas les genoux en extension.",
+        "Ne rebondis pas pour aller plus bas.",
+        "Ne force pas l'étirement au-delà de ton confort.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Flessione in avanti",
+      "short_description": "Una flessione in piedi che allunga i muscoli posteriori della coscia e la zona lombare.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle anche.",
+        "Piegati in avanti dalle anche abbassando il busto verso il pavimento.",
+        "Lascia che le mani pendano verso il basso o appoggiale agli stinchi.",
+        "Mantieni la posizione dove senti un allungamento leggero nella parte posteriore delle gambe.",
+        "Rialzati lentamente attivando il core."
+      ],
+      "correct": [
+        "Tieni la schiena lunga mentre ti pieghi.",
+        "Piega dalle anche, non dalla vita.",
+        "Mantieni un leggero piegamento delle ginocchia.",
+        "Respira in modo regolare per tutta la durata."
+      ],
+      "mistakes": [
+        "Non arrotondare aggressivamente la parte alta della schiena.",
+        "Non bloccare le ginocchia in estensione.",
+        "Non rimbalzare per scendere di più.",
+        "Non forzare lo stretching oltre il livello di comfort.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_torso_twist",
+    "ru": {
+      "name": "Скручивание корпуса",
+      "short_description": "Ротационная растяжка стоя, которая расслабляет позвоночник и косые мышцы живота.",
+      "how_to": [
+        "Встань, поставив ноги на ширину плеч, слегка согни колени.",
+        "Подними руки на высоту плеч, локти согнуты.",
+        "Поверни корпус вправо, затем вернись в центр.",
+        "Поверни влево, удерживая таз прямо.",
+        "Чередуй стороны в ровном, контролируемом ритме."
+      ],
+      "correct": [
+        "Держи таз повёрнутым вперёд.",
+        "Держи грудь высоко при каждом повороте.",
+        "Проходи через полный диапазон движения позвоночника.",
+        "Дыши равномерно."
+      ],
+      "mistakes": [
+        "Не размахивай руками, чтобы усилить поворот.",
+        "Не позволяй тазу вращаться вместе с корпусом.",
+        "Не сутулься.",
+        "Не спеши."
+      ]
+    },
+    "tr": {
+      "name": "Gövde Rotasyonu",
+      "short_description": "Omurgayı ve yan karın kaslarını gevşeten ayakta rotasyon germe hareketi.",
+      "how_to": [
+        "Ayaklarını omuz genişliğinde açarak, dizlerini hafifçe bükerek dur.",
+        "Kollarını omuz hizasına kaldır, dirseklerin bükülü olsun.",
+        "Gövdeni sağa döndür, sonra merkeze geri dön.",
+        "Kalçalarını sabit tutarak sola dön.",
+        "Düzenli ve kontrollü bir ritimle tarafları değiştir."
+      ],
+      "correct": [
+        "Kalçalarını öne dönük tut.",
+        "Her rotasyonda göğsünü dik tut.",
+        "Omurganın tam hareket aralığını kullan.",
+        "Düzenli nefes al."
+      ],
+      "mistakes": [
+        "Rotasyonu zorlamak için kollarını sallama.",
+        "Kalçalarının gövdeyle dönmesine izin verme.",
+        "Omuzlarını öne düşürme.",
+        "Hareketi aceleye getirme."
+      ]
+    },
+    "de": {
+      "name": "Rumpfrotation",
+      "short_description": "Eine stehende Rotationsdehnung, die die Wirbelsäule und die schrägen Bauchmuskeln lockert.",
+      "how_to": [
+        "Stell dich schulterbreit hin, die Knie leicht gebeugt.",
+        "Hebe die Arme auf Schulterhöhe, Ellbogen gebeugt.",
+        "Drehe den Oberkörper nach rechts, dann zurück zur Mitte.",
+        "Drehe nach links und halte dabei die Hüften gerade.",
+        "Wechsle die Seiten in einem gleichmäßigen, kontrollierten Rhythmus."
+      ],
+      "correct": [
+        "Halte deine Hüften nach vorne gerichtet.",
+        "Halte die Brust bei jeder Rotation aufgerichtet.",
+        "Beweg dich durch den vollen Bewegungsbereich der Wirbelsäule.",
+        "Atme gleichmäßig."
+      ],
+      "mistakes": [
+        "Schwinge die Arme nicht, um die Rotation zu erzwingen.",
+        "Lass die Hüften nicht mit dem Oberkörper mitdrehen.",
+        "Zieh die Schultern nicht hoch.",
+        "Mach die Bewegung nicht zu schnell."
+      ]
+    },
+    "es": {
+      "name": "Rotación de torso",
+      "short_description": "Un estiramiento rotacional de pie que afloja la columna y los oblicuos.",
+      "how_to": [
+        "Párate con los pies a la anchura de los hombros y las rodillas ligeramente flexionadas.",
+        "Eleva los brazos a la altura de los hombros con los codos flexionados.",
+        "Gira el torso hacia la derecha y vuelve al centro.",
+        "Gira hacia la izquierda manteniendo las caderas en su sitio.",
+        "Alterna los lados con un ritmo constante y controlado."
+      ],
+      "correct": [
+        "Mantén las caderas mirando al frente.",
+        "Mantén el pecho erguido en cada rotación.",
+        "Recorre el rango completo de movimiento de tu columna.",
+        "Respira de forma constante."
+      ],
+      "mistakes": [
+        "No balancees los brazos para forzar la rotación.",
+        "No dejes que las caderas giren con el torso.",
+        "No encojas los hombros.",
+        "No hagas el movimiento con prisa."
+      ]
+    },
+    "fr": {
+      "name": "Rotation du buste",
+      "short_description": "Un étirement rotatif debout qui assouplit la colonne vertébrale et les obliques.",
+      "how_to": [
+        "Tiens-toi debout, les pieds écartés à la largeur des épaules, les genoux légèrement fléchis.",
+        "Lève les bras à la hauteur des épaules, coudes fléchis.",
+        "Tourne le buste vers la droite, puis reviens au centre.",
+        "Tourne vers la gauche en gardant les hanches fixes.",
+        "Alterne les côtés avec un rythme régulier et contrôlé."
+      ],
+      "correct": [
+        "Garde les hanches face à l'avant.",
+        "Garde la poitrine haute à chaque rotation.",
+        "Parcours l'amplitude complète de ta colonne.",
+        "Respire régulièrement."
+      ],
+      "mistakes": [
+        "Ne balance pas les bras pour forcer la rotation.",
+        "Ne laisse pas les hanches suivre le buste.",
+        "Ne voûte pas les épaules.",
+        "Ne précipite pas le mouvement."
+      ]
+    },
+    "it": {
+      "name": "Rotazione del busto",
+      "short_description": "Uno stretching rotazionale in piedi che scioglie la colonna vertebrale e i muscoli obliqui.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle spalle e le ginocchia leggermente flesse.",
+        "Alza le braccia all'altezza delle spalle con i gomiti piegati.",
+        "Ruota il busto verso destra, poi torna al centro.",
+        "Ruota verso sinistra mantenendo le anche ferme.",
+        "Alterna i lati con un ritmo regolare e controllato."
+      ],
+      "correct": [
+        "Tieni le anche rivolte in avanti.",
+        "Tieni il petto alto durante ogni rotazione.",
+        "Percorri tutta l'ampiezza di movimento della colonna.",
+        "Respira in modo regolare."
+      ],
+      "mistakes": [
+        "Non dondolare le braccia per forzare la rotazione.",
+        "Non lasciare che le anche ruotino con il busto.",
+        "Non inarcare le spalle in avanti.",
+        "Non affrettare il movimento."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_side_to_side_tilts",
+    "ru": {
+      "name": "Боковые наклоны",
+      "short_description": "Боковые наклоны стоя, растягивающие боковую поверхность тела и косые мышцы живота.",
+      "how_to": [
+        "Встань прямо, поставив ноги на ширину бёдер.",
+        "Положи одну руку на бедро или опусти её вдоль тела.",
+        "Вытяни противоположную руку над головой и наклонись в сторону.",
+        "Задержись на секунду, затем вернись в центр.",
+        "Повтори на другую сторону."
+      ],
+      "correct": [
+        "Держи тело в одной плоской плоскости.",
+        "Удерживай таз ровным и неподвижным.",
+        "Тянись как можно дальше кончиками пальцев.",
+        "Дыши равномерно."
+      ],
+      "mistakes": [
+        "Не наклоняйся вперёд или назад во время наклона.",
+        "Не сдвигай таз в сторону.",
+        "Не проваливайся в пояснице.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Yana Eğilmeler",
+      "short_description": "Vücudun yan tarafını ve oblik kasları esnetmek için yapılan ayakta yana eğilme hareketi.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde açarak dik dur.",
+        "Bir elini kalçana koy ya da vücudun yanında serbest bırak.",
+        "Diğer kolunu başının üzerinde uzatarak yana eğil.",
+        "Kısaca tut, sonra merkeze geri dön.",
+        "Diğer tarafa tekrarla."
+      ],
+      "correct": [
+        "Vücudunu tek düz bir düzlemde tut.",
+        "Kalçalarını düz ve sabit tut.",
+        "Parmaklarının ucundan uzun uzat.",
+        "Düzenli nefes al."
+      ],
+      "mistakes": [
+        "Eğilirken öne ya da arkaya yaslanma.",
+        "Kalçalarını yana kaydırma.",
+        "Belden çökmе.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Seitliche Neigungen",
+      "short_description": "Eine seitliche Standneigung, die die seitlichen Körpermuskeln und die schrägen Bauchmuskeln dehnt.",
+      "how_to": [
+        "Steh aufrecht mit hüftbreitem Stand.",
+        "Leg eine Hand auf die Hüfte oder lass sie seitlich hängen.",
+        "Strecke den gegenüberliegenden Arm über den Kopf und neige dich seitlich.",
+        "Halte kurz an, dann komm zurück in die Mitte.",
+        "Wiederhole auf der anderen Seite."
+      ],
+      "correct": [
+        "Halte deinen Körper in einer flachen Ebene.",
+        "Halte deine Hüften auf gleichem Niveau und ruhig.",
+        "Strecke dich weit durch die Fingerspitzen.",
+        "Atme gleichmäßig."
+      ],
+      "mistakes": [
+        "Lehne dich beim Neigen nicht vor oder zurück.",
+        "Schiebe die Hüften nicht zur Seite.",
+        "Knicke nicht in der Taille ein.",
+        "Halte den Atem nicht an."
+      ]
+    },
+    "es": {
+      "name": "Inclinaciones laterales",
+      "short_description": "Una inclinación lateral de pie que estira los costados del cuerpo y los oblicuos.",
+      "how_to": [
+        "Párate erguido con los pies a la anchura de las caderas.",
+        "Coloca una mano en la cadera o déjala colgar al lado.",
+        "Extiende el brazo contrario sobre la cabeza e inclínate hacia un lado.",
+        "Mantén un momento, luego vuelve al centro.",
+        "Repite en el otro lado."
+      ],
+      "correct": [
+        "Mantén el cuerpo en un plano plano.",
+        "Mantén las caderas niveladas e inmóviles.",
+        "Estírate bien con las puntas de los dedos.",
+        "Respira de forma constante."
+      ],
+      "mistakes": [
+        "No te inclines hacia adelante o hacia atrás al doblarte.",
+        "No desplaces las caderas hacia el lado.",
+        "No te hundas en la cintura.",
+        "No retengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Inclinaisons latérales",
+      "short_description": "Une inclinaison latérale debout qui étire les flancs et les obliques.",
+      "how_to": [
+        "Tiens-toi droit, les pieds écartés à la largeur des hanches.",
+        "Pose une main sur la hanche ou laisse-la reposer le long du corps.",
+        "Étends le bras opposé au-dessus de la tête et incline-toi sur le côté.",
+        "Tiens brièvement, puis reviens au centre.",
+        "Répète de l'autre côté."
+      ],
+      "correct": [
+        "Garde le corps dans un plan plat.",
+        "Garde les hanches de niveau et immobiles.",
+        "Étire-toi loin à travers le bout des doigts.",
+        "Respire régulièrement."
+      ],
+      "mistakes": [
+        "Ne te penche pas en avant ou en arrière lors de l'inclinaison.",
+        "Ne déplace pas les hanches sur le côté.",
+        "Ne t'affaisse pas dans la taille.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Inclinazioni laterali",
+      "short_description": "Un'inclinazione laterale in piedi che allunga i fianchi e i muscoli obliqui.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle anche.",
+        "Metti una mano sul fianco o lasciala pendere sul lato.",
+        "Allunga il braccio opposto sopra la testa e inclinati di lato.",
+        "Tieni brevemente, poi torna al centro.",
+        "Ripeti sull'altro lato."
+      ],
+      "correct": [
+        "Tieni il corpo su un piano piatto.",
+        "Tieni le anche livellate e ferme.",
+        "Allungati bene attraverso le punte delle dita.",
+        "Respira in modo regolare."
+      ],
+      "mistakes": [
+        "Non inclinarti in avanti o indietro mentre ti pieghi.",
+        "Non spostare le anche di lato.",
+        "Non cedere nella vita.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_elbows_back",
+    "ru": {
+      "name": "Локти назад",
+      "short_description": "Упражнение для осанки: локти отводятся назад, чтобы раскрыть грудь и укрепить верхнюю часть спины.",
+      "how_to": [
+        "Встань или сядь прямо, поставив ступни на пол.",
+        "Подними руки до уровня груди, локти разведи в стороны.",
+        "Сведи лопатки вместе и отведи локти прямо назад.",
+        "Задержись ненадолго, затем вернись в исходное положение.",
+        "Повтори нужное количество раз."
+      ],
+      "correct": [
+        "Держи грудь открытой и приподнятой.",
+        "Опускай плечи вниз, подальше от ушей.",
+        "Своди лопатки в конце каждого повторения.",
+        "Удерживай кор в лёгком напряжении."
+      ],
+      "mistakes": [
+        "Не пожимай плечами при отведении назад.",
+        "Не прогибай поясницу, чтобы увеличить амплитуду.",
+        "Не торопись при сведении лопаток.",
+        "Не выдвигай подбородок вперёд."
+      ]
+    },
+    "tr": {
+      "name": "Dirsekleri Geri Çekme",
+      "short_description": "Göğsü açmak ve üst sırtı güçlendirmek için dirseklerin vücudun arkasına çekildiği duruş egzersizi.",
+      "how_to": [
+        "Ayakların yere düz basacak şekilde dik dur veya otur.",
+        "Ellerini göğüs hizasına kaldır, dirseklerin yanlara açık olsun.",
+        "Kürek kemiklerini birbirine yaklaştır ve dirseklerini düz bir şekilde geri çek.",
+        "Kısaca tut, sonra başlangıç pozisyonuna dön.",
+        "Hedeflenen tekrar sayısını tamamla."
+      ],
+      "correct": [
+        "Göğsünü açık ve yukarıda tut.",
+        "Omuzlarını kulak hizasından uzakta aşağıda tut.",
+        "Her tekrarda kürek kemiklerini sona doğru sıkıştır.",
+        "Koru hafifçe devrede tut."
+      ],
+      "mistakes": [
+        "Geri çekerken omuzlarını kaldırma.",
+        "Daha fazla hareket alanı için bel bölgesini öne itme.",
+        "Sıkıştırmayı aceleye getirme.",
+        "Çeneni öne uzatma."
+      ]
+    },
+    "de": {
+      "name": "Ellbogen zurück",
+      "short_description": "Eine Haltungsübung, bei der die Ellbogen nach hinten gezogen werden, um die Brust zu öffnen und den oberen Rücken zu kräftigen.",
+      "how_to": [
+        "Steh oder sitz aufrecht mit flach auf dem Boden stehenden Füßen.",
+        "Hebe die Hände auf Brusthöhe, Ellbogen seitlich ausgestreckt.",
+        "Ziehe die Schulterblätter zusammen und ziehe die Ellbogen gerade nach hinten.",
+        "Halte kurz an, dann zurück zur Ausgangsposition.",
+        "Wiederhole für die gewünschte Wiederholungszahl."
+      ],
+      "correct": [
+        "Halte die Brust offen und gehoben.",
+        "Halte die Schultern unten, weg von den Ohren.",
+        "Drücke die Schulterblätter am Ende jeder Wiederholung zusammen.",
+        "Halte die Körpermitte leicht angespannt."
+      ],
+      "mistakes": [
+        "Zieh die Schultern beim Zurückziehen nicht hoch.",
+        "Wölbe den unteren Rücken nicht, um mehr Bewegungsraum zu erzwingen.",
+        "Übereil das Zusammendrücken nicht.",
+        "Lass das Kinn nicht nach vorne schieben."
+      ]
+    },
+    "es": {
+      "name": "Codos atrás",
+      "short_description": "Un ejercicio de postura que lleva los codos detrás del cuerpo para abrir el pecho y fortalecer la parte alta de la espalda.",
+      "how_to": [
+        "Párate o siéntate erguido con los pies planos en el suelo.",
+        "Sube las manos a la altura del pecho con los codos abiertos hacia los lados.",
+        "Junta los omóplatos y lleva los codos directamente hacia atrás.",
+        "Mantén un momento, luego vuelve a la posición inicial.",
+        "Repite el número de veces indicado."
+      ],
+      "correct": [
+        "Mantén el pecho abierto y elevado.",
+        "Mantén los hombros bajos, lejos de las orejas.",
+        "Aprieta los omóplatos al final de cada repetición.",
+        "Mantén el core ligeramente activo."
+      ],
+      "mistakes": [
+        "No encojas los hombros al tirar hacia atrás.",
+        "No arquees la zona lumbar para ganar más rango.",
+        "No te apresures al apretar.",
+        "No dejes que la barbilla se proyecte hacia adelante."
+      ]
+    },
+    "fr": {
+      "name": "Coudes en arrière",
+      "short_description": "Un exercice de posture qui ramène les coudes vers l'arrière pour ouvrir la poitrine et renforcer le haut du dos.",
+      "how_to": [
+        "Tiens-toi debout ou assis bien droit, les pieds à plat sur le sol.",
+        "Monte les mains à la hauteur de la poitrine, coudes écartés sur les côtés.",
+        "Rapproche les omoplates et tire les coudes directement en arrière.",
+        "Maintiens brièvement, puis reviens à la position de départ.",
+        "Répète pour le nombre de répétitions voulu."
+      ],
+      "correct": [
+        "Garde la poitrine ouverte et haute.",
+        "Garde les épaules basses, éloignées des oreilles.",
+        "Serre les omoplates en fin de chaque répétition.",
+        "Garde la sangle abdominale légèrement engagée."
+      ],
+      "mistakes": [
+        "Ne hausse pas les épaules en tirant en arrière.",
+        "Ne cambre pas le bas du dos pour forcer l'amplitude.",
+        "Ne presse pas trop vite le serrage.",
+        "Ne laisse pas le menton partir en avant."
+      ]
+    },
+    "it": {
+      "name": "Gomiti indietro",
+      "short_description": "Un esercizio di postura che porta i gomiti dietro al corpo per aprire il petto e rafforzare la parte alta della schiena.",
+      "how_to": [
+        "Mettiti in piedi o siediti in modo eretto con i piedi piatti sul pavimento.",
+        "Alza le mani all'altezza del petto con i gomiti aperti di lato.",
+        "Unisci le scapole e tira i gomiti direttamente indietro.",
+        "Tieni brevemente, poi torna alla posizione iniziale.",
+        "Ripeti per il numero di ripetizioni previsto."
+      ],
+      "correct": [
+        "Tieni il petto aperto e sollevato.",
+        "Tieni le spalle abbassate, lontane dalle orecchie.",
+        "Stringi le scapole alla fine di ogni ripetizione.",
+        "Mantieni il core leggermente attivato."
+      ],
+      "mistakes": [
+        "Non alzare le spalle mentre tiri indietro.",
+        "Non inarcare la zona lombare per guadagnare ampiezza.",
+        "Non affrettare la stretta.",
+        "Non spingere il mento in avanti."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_jumping_push_ups",
+    "ru": {
+      "name": "Взрывные отжимания",
+      "short_description": "Взрывной вариант отжиманий: толчок руками от пола для развития силы груди, плеч и взрывной мощи.",
+      "how_to": [
+        "Прими упор лёжа: руки под плечами.",
+        "Опусти грудь к полу в контролируемом отжимании.",
+        "Оттолкнись резко, чтобы руки оторвались от пола.",
+        "Приземлись мягко, чуть согнув локти.",
+        "Сразу переходи к следующему повторению."
+      ],
+      "correct": [
+        "Держи тело прямым от головы до пяток.",
+        "Контролируй локти на пути вниз.",
+        "Приземляйся мягко.",
+        "Удерживай колени над носками.",
+        "Держи кор в напряжении на протяжении всего упражнения."
+      ],
+      "mistakes": [
+        "Не позволяй тазу проваливаться вниз.",
+        "Не расставляй локти широко в стороны.",
+        "Не приземляйся жёстко.",
+        "Не своди колени внутрь.",
+        "Не задерживай дыхание во время толчка."
+      ]
+    },
+    "tr": {
+      "name": "Patlayıcı Şınav",
+      "short_description": "Eller yerden kalkacak şekilde yapılan patlayıcı şınav: göğüs, omuz ve güç gelişimi için.",
+      "how_to": [
+        "Ellerini omuz hizasına koyarak şınav pozisyonuna geç.",
+        "Göğsünü kontrollü bir şınav hareketiyle yere doğru indir.",
+        "Ellerinin yerden kalkacağı şekilde patlayıcı biçimde it.",
+        "Dirseklerinde hafif bir bükülmeyle yavaşça in.",
+        "Hemen bir sonraki tekrara geç."
+      ],
+      "correct": [
+        "Vücudunu baştan topuğa düz tut.",
+        "Dirseklerini aşağı inerken kontrollü tut.",
+        "Yavaşça in.",
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Boyunca koru sıkı tut."
+      ],
+      "mistakes": [
+        "Kalçanın düşmesine izin verme.",
+        "Dirseklerini geniş açma.",
+        "Sert inme.",
+        "Dizlerinin içe dönmesine izin verme.",
+        "İterken nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Explosive Liegestütze",
+      "short_description": "Eine explosive Liegestütz-Variante, bei der die Hände vom Boden abheben, um Brust, Schultern und Explosivkraft zu trainieren.",
+      "how_to": [
+        "Nimm die Liegestütz-Position ein, Hände unter den Schultern.",
+        "Senke die Brust kontrolliert Richtung Boden.",
+        "Drücke dich explosiv ab, sodass die Hände den Boden verlassen.",
+        "Lande weich mit leicht gebeugten Ellbogen.",
+        "Gehe sofort in die nächste Wiederholung über."
+      ],
+      "correct": [
+        "Halte deinen Körper gerade von Kopf bis Ferse.",
+        "Kontrolliere die Ellbogen auf dem Weg nach unten.",
+        "Lande weich.",
+        "Halte die Knie über den Zehen.",
+        "Halte die Körpermitte während der gesamten Übung angespannt."
+      ],
+      "mistakes": [
+        "Lass die Hüften nicht absacken.",
+        "Flare die Ellbogen nicht weit nach außen.",
+        "Lande nicht hart.",
+        "Lass die Knie nicht nach innen fallen.",
+        "Halte beim Drücken den Atem nicht an."
+      ]
+    },
+    "es": {
+      "name": "Flexiones explosivas",
+      "short_description": "Una variante explosiva de la flexión en la que las manos se despegan del suelo para desarrollar pecho, hombros y potencia.",
+      "how_to": [
+        "Colócate en posición de flexión con las manos bajo los hombros.",
+        "Baja el pecho hacia el suelo en una flexión controlada.",
+        "Empuja de forma explosiva para que las manos se despeguen del suelo.",
+        "Aterriza con suavidad con un ligero doblez en los codos.",
+        "Entra directamente en la siguiente repetición."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto de cabeza a talones.",
+        "Controla los codos en la bajada.",
+        "Aterriza con suavidad.",
+        "Mantén las rodillas sobre los dedos de los pies.",
+        "Mantén el core tenso durante todo el ejercicio."
+      ],
+      "mistakes": [
+        "No dejes caer las caderas.",
+        "No abras los codos hacia los lados.",
+        "No aterrices con fuerza.",
+        "No dejes que las rodillas se hundan hacia adentro.",
+        "No retengas la respiración en el empuje."
+      ]
+    },
+    "fr": {
+      "name": "Pompes explosives",
+      "short_description": "Une variante explosive de la pompe où les mains quittent le sol pour développer la poitrine, les épaules et la puissance.",
+      "how_to": [
+        "Place-toi en position de pompe, mains sous les épaules.",
+        "Descends la poitrine vers le sol de façon contrôlée.",
+        "Pousse de manière explosive pour que tes mains décollent du sol.",
+        "Atterris doucement avec une légère flexion des coudes.",
+        "Passe immédiatement à la répétition suivante."
+      ],
+      "correct": [
+        "Garde le corps droit de la tête aux talons.",
+        "Contrôle les coudes lors de la descente.",
+        "Atterris doucement.",
+        "Garde les genoux au-dessus des orteils.",
+        "Garde la sangle abdominale gainée tout au long de l'exercice."
+      ],
+      "mistakes": [
+        "Ne laisse pas les hanches s'affaisser.",
+        "N'écarte pas les coudes vers l'extérieur.",
+        "N'atterris pas violemment.",
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne retiens pas ta respiration lors de la poussée."
+      ]
+    },
+    "it": {
+      "name": "Piegamenti esplosivi",
+      "short_description": "Una variante esplosiva del piegamento in cui le mani si staccano dal suolo per sviluppare petto, spalle e potenza.",
+      "how_to": [
+        "Posizionati in posizione di piegamento con le mani sotto le spalle.",
+        "Abbassa il petto verso il pavimento in un piegamento controllato.",
+        "Spingi in modo esplosivo così che le mani si stacchino dal suolo.",
+        "Atterra morbidamente con una leggera flessione dei gomiti.",
+        "Passa immediatamente alla ripetizione successiva."
+      ],
+      "correct": [
+        "Tieni il corpo dritto dalla testa ai talloni.",
+        "Controlla i gomiti nella discesa.",
+        "Atterra morbidamente.",
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Mantieni il core in tensione per tutta la durata."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi cedano verso il basso.",
+        "Non allargare i gomiti di lato.",
+        "Non atterrare con forza.",
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non trattenere il respiro durante la spinta."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_modified_burpees",
+    "ru": {
+      "name": "Модифицированные бёрпи",
+      "short_description": "Облегчённый вариант бёрпи: шаги вместо прыжков для развития общей выносливости с меньшей нагрузкой на суставы.",
+      "how_to": [
+        "Встань, поставив ноги на ширину плеч.",
+        "Наклонись вниз и поставь руки на пол.",
+        "Сделай шаг назад одной ногой, затем другой, приняв положение планки.",
+        "Шагни ногами обратно к рукам.",
+        "Встань и подними руки над головой — одно повторение выполнено."
+      ],
+      "correct": [
+        "Приземляйся мягко при подъёме в стойку.",
+        "Держи колени над носками.",
+        "Удерживай кор в напряжении в положении планки.",
+        "Выполняй упражнение в ровном, контролируемом темпе."
+      ],
+      "mistakes": [
+        "Не приземляйся жёстко.",
+        "Не своди колени внутрь.",
+        "Не проваливай поясницу в планке.",
+        "Не спеши и не теряй устойчивости."
+      ]
+    },
+    "tr": {
+      "name": "Modifiye Burpee",
+      "short_description": "Zıplamak yerine adım atarak yapılan, eklemlere daha az yük bindiren tam vücut dayanıklılık egzersizi.",
+      "how_to": [
+        "Ayaklarını omuz genişliğinde açarak dur.",
+        "Öne eğil ve ellerini yere koy.",
+        "Önce bir ayağını, sonra diğerini geri çekerek plank pozisyonuna geç.",
+        "Ayaklarını tekrar ellerinin yanına adımla.",
+        "Ayağa kalk ve kollarını başının üzerinde kaldır — bir tekrar tamamlandı."
+      ],
+      "correct": [
+        "Ayağa kalkarken yavaşça in.",
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Plank pozisyonunda koru devrede tut.",
+        "Düzenli ve kontrollü bir tempo koru."
+      ],
+      "mistakes": [
+        "Sert inme.",
+        "Dizlerinin içe dönmesine izin verme.",
+        "Plankta bel bölgesini çöktürme.",
+        "Acele edip dengeyi kaybetme."
+      ]
+    },
+    "de": {
+      "name": "Modifizierte Burpees",
+      "short_description": "Eine gelenkschonende Burpee-Variante, bei der Schritte statt Sprünge für Ganzkörper-Ausdauer sorgen.",
+      "how_to": [
+        "Stell dich schulterbreit hin.",
+        "Beuge dich nach unten und platziere die Hände auf dem Boden.",
+        "Tritt ein Bein nach hinten, dann das andere, in die Plankenposition.",
+        "Tritt die Füße zurück zu den Händen.",
+        "Steh auf und hebe die Arme über den Kopf, um eine Wiederholung abzuschließen."
+      ],
+      "correct": [
+        "Lande weich, wenn du wieder aufstehst.",
+        "Halte die Knie über den Zehen.",
+        "Halte die Körpermitte in der Plankenposition angespannt.",
+        "Halte ein gleichmäßiges, kontrolliertes Tempo."
+      ],
+      "mistakes": [
+        "Lande nicht hart.",
+        "Lass die Knie nicht nach innen fallen.",
+        "Lass den unteren Rücken in der Planke nicht durchhängen.",
+        "Haste nicht und verliere nicht den Halt."
+      ]
+    },
+    "es": {
+      "name": "Burpees modificados",
+      "short_description": "Una variante de burpee de bajo impacto que desarrolla la resistencia de todo el cuerpo usando pasos en lugar de saltos.",
+      "how_to": [
+        "Párate con los pies a la anchura de los hombros.",
+        "Inclínate hacia abajo y coloca las manos en el suelo.",
+        "Lleva un pie hacia atrás, luego el otro, a posición de plancha.",
+        "Vuelve a llevar los pies hacia las manos con pasos.",
+        "Levántate y sube los brazos por encima de la cabeza para completar una repetición."
+      ],
+      "correct": [
+        "Aterriza con suavidad al volver a ponerte de pie.",
+        "Mantén las rodillas sobre los dedos de los pies.",
+        "Mantén el core activo en la posición de plancha.",
+        "Mantén un ritmo constante y controlado."
+      ],
+      "mistakes": [
+        "No aterrices con fuerza.",
+        "No dejes que las rodillas se hundan hacia adentro.",
+        "No dejes que la zona lumbar se hunda en la plancha.",
+        "No te apresures y pierdas el equilibrio."
+      ]
+    },
+    "fr": {
+      "name": "Burpees modifiés",
+      "short_description": "Une variante de burpee à faible impact qui développe l'endurance du corps entier en marchant plutôt qu'en sautant.",
+      "how_to": [
+        "Tiens-toi debout, les pieds écartés à la largeur des épaules.",
+        "Penche-toi en avant et pose les mains sur le sol.",
+        "Recule un pied, puis l'autre, en position de gainage.",
+        "Ramène les pieds vers les mains par des pas.",
+        "Lève-toi et élève les bras au-dessus de la tête pour terminer une répétition."
+      ],
+      "correct": [
+        "Atterris doucement quand tu te relèves.",
+        "Garde les genoux au-dessus des orteils.",
+        "Garde la sangle abdominale engagée en position de planche.",
+        "Maintiens un rythme régulier et contrôlé."
+      ],
+      "mistakes": [
+        "N'atterris pas violemment.",
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne laisse pas le bas du dos s'affaisser en planche.",
+        "Ne te précipite pas au risque de perdre l'équilibre."
+      ]
+    },
+    "it": {
+      "name": "Burpees modificati",
+      "short_description": "Una variante del burpee a basso impatto che sviluppa la resistenza di tutto il corpo usando passi invece di salti.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle spalle.",
+        "Piegati in avanti e appoggia le mani sul pavimento.",
+        "Porta un piede indietro, poi l'altro, in posizione di plank.",
+        "Riporta i piedi verso le mani con passi.",
+        "Alzati e solleva le braccia sopra la testa per completare una ripetizione."
+      ],
+      "correct": [
+        "Atterra morbidamente quando torni in piedi.",
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Mantieni il core attivo nella posizione di plank.",
+        "Mantieni un ritmo costante e controllato."
+      ],
+      "mistakes": [
+        "Non atterrare con forza.",
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non lasciare che la zona lombare ceda nel plank.",
+        "Non affrettarti perdendo l'equilibrio."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_legs_up_the_wall",
+    "ru": {
+      "name": "Ноги на стену",
+      "short_description": "Восстановительная поза: ноги подняты на стену для снятия напряжения в пояснице и подколенных сухожилиях.",
+      "how_to": [
+        "Сядь боком у стены, прижав бедро к ней.",
+        "Перекинь ноги на стену и лягь на спину.",
+        "Вытяни руки в стороны ладонями вверх.",
+        "Удерживай позу и дыши медленно.",
+        "Чтобы выйти, согни колени и перекатись на бок."
+      ],
+      "correct": [
+        "Держи ноги расслабленными на стене.",
+        "Удерживай поясницу прижатой к полу.",
+        "Дыши медленно и глубоко.",
+        "Расслабь плечи, опуская их от ушей."
+      ],
+      "mistakes": [
+        "Не выпрямляй ноги насильно, если это перегружает подколенные сухожилия.",
+        "Не напрягай шею и плечи.",
+        "Не задерживай дыхание.",
+        "Не выходи из позы слишком быстро."
+      ]
+    },
+    "tr": {
+      "name": "Bacakları Duvara Ver",
+      "short_description": "Bacakların duvara yaslandırıldığı, bel ve arka bacak kaslarındaki gerilimi gideren restoratif bir poz.",
+      "how_to": [
+        "Duvara yan otur, kalçanı duvara yaklaştır.",
+        "Bacaklarını duvara kaldır ve sırt üstü uzan.",
+        "Kollarını yanlara, avuç içleri yukarı bakacak şekilde uzat.",
+        "Pozu koru ve yavaşça nefes al.",
+        "Çıkmak için dizlerini bük ve yana dönerek yuvarlan."
+      ],
+      "correct": [
+        "Bacaklarını duvarda gevşek tut.",
+        "Bel bölgesini yere düz bas.",
+        "Yavaş ve derin nefes al.",
+        "Omuzlarını kulak hizasından uzaklaştırarak gevşet."
+      ],
+      "mistakes": [
+        "İsquiotibiallarini zorluyorsa bacaklarını düzeltmeye zorlamа.",
+        "Boyun ve omuzlarını germe.",
+        "Nefesini tutma.",
+        "Pozdan çok hızlı çıkma."
+      ]
+    },
+    "de": {
+      "name": "Beine an die Wand",
+      "short_description": "Eine regenerative Pose, bei der die Beine an eine Wand gelehnt werden, um Spannung im unteren Rücken und in den Oberschenkelrückseiten zu lösen.",
+      "how_to": [
+        "Setz dich seitlich neben eine Wand, die Hüfte nah an der Wand.",
+        "Schwinge die Beine an die Wand und leg dich auf den Rücken.",
+        "Lass die Arme seitlich ausgestreckt mit den Handflächen nach oben ruhen.",
+        "Halte die Position und atme langsam.",
+        "Um rauszukommen, beuge die Knie und rolle dich auf die Seite."
+      ],
+      "correct": [
+        "Halte deine Beine entspannt an der Wand.",
+        "Halte den unteren Rücken flach auf dem Boden.",
+        "Atme langsam und tief.",
+        "Entspanne die Schultern weg von den Ohren."
+      ],
+      "mistakes": [
+        "Zwinge deine Beine nicht in die Streckung, wenn es die Oberschenkelrückseiten belastet.",
+        "Verspanne Nacken und Schultern nicht.",
+        "Halte den Atem nicht an.",
+        "Komm nicht zu schnell aus der Pose heraus."
+      ]
+    },
+    "es": {
+      "name": "Piernas en la pared",
+      "short_description": "Una postura restaurativa que eleva las piernas contra una pared para aliviar la tensión en la zona lumbar e isquiotibiales.",
+      "how_to": [
+        "Siéntate de lado junto a una pared con la cadera cerca de ella.",
+        "Sube las piernas a la pared y túmbate de espaldas.",
+        "Deja los brazos extendidos a los lados con las palmas hacia arriba.",
+        "Mantén la postura y respira despacio.",
+        "Para salir, dobla las rodillas y rueda sobre un lado."
+      ],
+      "correct": [
+        "Mantén las piernas relajadas contra la pared.",
+        "Mantén la zona lumbar plana en el suelo.",
+        "Respira despacio y profundo.",
+        "Relaja los hombros alejándolos de las orejas."
+      ],
+      "mistakes": [
+        "No fuerces las piernas en extensión si eso tensiona tus isquiotibiales.",
+        "No tenses el cuello ni los hombros.",
+        "No retengas la respiración.",
+        "No salgas de la postura demasiado rápido."
+      ]
+    },
+    "fr": {
+      "name": "Jambes au mur",
+      "short_description": "Une posture restauratrice où les jambes reposent contre un mur pour soulager la tension dans le bas du dos et les ischio-jambiers.",
+      "how_to": [
+        "Assieds-toi de côté contre un mur, la hanche près de la paroi.",
+        "Balance les jambes contre le mur et allonge-toi sur le dos.",
+        "Laisse les bras reposer sur les côtés, paumes vers le haut.",
+        "Maintiens la position et respire lentement.",
+        "Pour sortir, plie les genoux et roule sur le côté."
+      ],
+      "correct": [
+        "Garde les jambes détendues contre le mur.",
+        "Garde le bas du dos à plat sur le sol.",
+        "Respire lentement et profondément.",
+        "Détends les épaules en les éloignant des oreilles."
+      ],
+      "mistakes": [
+        "Ne force pas tes jambes en extension si cela tire sur tes ischio-jambiers.",
+        "Ne crispе pas le cou ni les épaules.",
+        "Ne retiens pas ta respiration.",
+        "Ne sors pas de la posture trop vite."
+      ]
+    },
+    "it": {
+      "name": "Gambe al muro",
+      "short_description": "Una postura rigenerativa con le gambe appoggiate a un muro per allentare la tensione nella zona lombare e nei tendini del ginocchio.",
+      "how_to": [
+        "Siediti di fianco a un muro con l'anca vicina alla parete.",
+        "Porta le gambe su contro il muro e sdraiati sulla schiena.",
+        "Lascia le braccia distese di lato con i palmi rivolti verso l'alto.",
+        "Mantieni la posizione e respira lentamente.",
+        "Per uscire, piega le ginocchia e rotola su un fianco."
+      ],
+      "correct": [
+        "Tieni le gambe rilassate contro il muro.",
+        "Mantieni la zona lombare piatta sul pavimento.",
+        "Respira lentamente e in profondità.",
+        "Rilassa le spalle allontanandole dalle orecchie."
+      ],
+      "mistakes": [
+        "Non forzare le gambe in estensione se mette sotto sforzo i tendini del ginocchio.",
+        "Non irrigidire il collo e le spalle.",
+        "Non trattenere il respiro.",
+        "Non uscire dalla postura troppo in fretta."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_dumbbell_lunges",
+    "ru": {
+      "name": "Выпады с гантелями",
+      "short_description": "Выпады с отягощением для укрепления квадрицепсов, ягодичных мышц и подколенных сухожилий.",
+      "how_to": [
+        "Возьми по гантели в каждую руку и опусти руки вдоль тела.",
+        "Встань прямо, поставив ноги на ширину бёдер.",
+        "Шагни одной ногой вперёд и опусти заднее колено к полу.",
+        "Оттолкнись через пятку передней ноги, возвращаясь в стойку.",
+        "Чередуй ноги нужное количество раз."
+      ],
+      "correct": [
+        "Держи колени над носками.",
+        "Держи пятку передней ноги на полу.",
+        "Держи корпус вертикальным.",
+        "Удерживай кор в лёгком напряжении."
+      ],
+      "mistakes": [
+        "Не позволяй коленям заваливаться внутрь.",
+        "Не опускайся в выпад слишком быстро.",
+        "Не наклоняй корпус вперёд.",
+        "Не давай переднему колену выходить за носок."
+      ]
+    },
+    "tr": {
+      "name": "Dumbbell ile Akciğer",
+      "short_description": "Quadriceps, glutes ve arka bacak kaslarını güçlendirmek için yapılan ağırlıklı hamle.",
+      "how_to": [
+        "Her eline bir dumbbell al ve yanlarında tut.",
+        "Ayaklarını kalça genişliğinde açarak dik dur.",
+        "Bir ayağını öne adımla ve arka dizini yere doğru indir.",
+        "Ön topuğun üzerinden iterek ayağa kalk.",
+        "Hedeflenen tekrar sayısı için bacakları değiştir."
+      ],
+      "correct": [
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Ön ayağının topuğunu yerde tut.",
+        "Gövdeni boyunca dik tut.",
+        "Koru hafifçe devrede tut."
+      ],
+      "mistakes": [
+        "Dizlerinin içe dönmesine izin verme.",
+        "Hamlеye çok hızlı inme.",
+        "Gövdeni öne yaslanma.",
+        "Ön dizinin ayak parmaklarının ötesine geçmesine izin verme."
+      ]
+    },
+    "de": {
+      "name": "Ausfallschritte mit Kurzhanteln",
+      "short_description": "Gewichtete Ausfallschritte zur Kräftigung der Oberschenkelvorderseite, des Gesäßes und der Oberschenkelrückseite.",
+      "how_to": [
+        "Halte eine Kurzhantel in jeder Hand seitlich am Körper.",
+        "Steh aufrecht mit hüftbreitem Stand.",
+        "Tritt mit einem Fuß nach vorne und senke das hintere Knie Richtung Boden.",
+        "Drücke durch die Ferse des vorderen Fußes, um wieder aufzustehen.",
+        "Wechsle die Beine für die gewünschte Wiederholungszahl."
+      ],
+      "correct": [
+        "Halte die Knie über den Zehen.",
+        "Halte die Ferse des vorderen Fußes auf dem Boden.",
+        "Halte den Oberkörper während der gesamten Übung aufrecht.",
+        "Halte die Körpermitte leicht angespannt."
+      ],
+      "mistakes": [
+        "Lass die Knie nicht nach innen fallen.",
+        "Senke dich nicht zu schnell in den Ausfallschritt.",
+        "Lehne den Oberkörper nicht nach vorne.",
+        "Lass das vordere Knie nicht über die Zehen hinausgehen."
+      ]
+    },
+    "es": {
+      "name": "Zancadas con mancuernas",
+      "short_description": "Una zancada con peso que fortalece los cuádriceps, glúteos e isquiotibiales.",
+      "how_to": [
+        "Sujeta una mancuerna en cada mano a los lados del cuerpo.",
+        "Párate erguido con los pies a la anchura de las caderas.",
+        "Da un paso adelante con un pie y baja la rodilla trasera hacia el suelo.",
+        "Empuja a través del talón del pie delantero para volver a la posición de pie.",
+        "Alterna las piernas el número de repeticiones indicado."
+      ],
+      "correct": [
+        "Mantén las rodillas sobre los dedos de los pies.",
+        "Mantén el talón del pie delantero en el suelo.",
+        "Mantén el torso erguido durante todo el ejercicio.",
+        "Mantén el core ligeramente activo."
+      ],
+      "mistakes": [
+        "No dejes que las rodillas se hundan hacia adentro.",
+        "No bajes demasiado rápido a la zancada.",
+        "No inclines el torso hacia adelante.",
+        "No dejes que la rodilla delantera sobrepase los dedos del pie."
+      ]
+    },
+    "fr": {
+      "name": "Fentes avec haltères",
+      "short_description": "Des fentes avec charge pour renforcer les quadriceps, les fessiers et les ischio-jambiers.",
+      "how_to": [
+        "Tiens un haltère dans chaque main le long du corps.",
+        "Tiens-toi droit, les pieds écartés à la largeur des hanches.",
+        "Avance un pied et descends le genou arrière vers le sol.",
+        "Pousse sur le talon du pied avant pour te redresser.",
+        "Alterne les jambes pour le nombre de répétitions voulu."
+      ],
+      "correct": [
+        "Garde les genoux au-dessus des orteils.",
+        "Garde le talon du pied avant au sol.",
+        "Garde le buste droit tout au long de l'exercice.",
+        "Garde la sangle abdominale légèrement engagée."
+      ],
+      "mistakes": [
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne descends pas trop vite dans la fente.",
+        "Ne penche pas le buste en avant.",
+        "Ne laisse pas le genou avant dépasser les orteils."
+      ]
+    },
+    "it": {
+      "name": "Affondi con manubri",
+      "short_description": "Un affondo con pesi per rafforzare quadricipiti, glutei e muscoli posteriori della coscia.",
+      "how_to": [
+        "Tieni un manubrio per mano lungo i fianchi.",
+        "Mettiti in piedi con i piedi alla larghezza delle anche.",
+        "Fai un passo in avanti con un piede e abbassa il ginocchio posteriore verso il pavimento.",
+        "Spingi attraverso il tallone del piede anteriore per tornare in piedi.",
+        "Alterna le gambe per il numero di ripetizioni previsto."
+      ],
+      "correct": [
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Mantieni il tallone del piede anteriore a terra.",
+        "Tieni il busto eretto per tutta la durata.",
+        "Mantieni il core leggermente attivato."
+      ],
+      "mistakes": [
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non scendere nell'affondo troppo velocemente.",
+        "Non inclinare il busto in avanti.",
+        "Non lasciare che il ginocchio anteriore superi le punte dei piedi."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_dynamic_chest",
+    "ru": {
+      "name": "Динамическое раскрытие груди",
+      "short_description": "Динамическое упражнение для раскрытия грудной клетки, мобилизующее плечи и растягивающее грудные мышцы.",
+      "how_to": [
+        "Встань, поставив ноги на ширину плеч.",
+        "Вытяни обе руки перед собой на высоте груди.",
+        "Широко разведи руки назад, сводя лопатки вместе.",
+        "Вернись в исходное положение по плавной дуге.",
+        "Повторяй в плавном ритмичном темпе."
+      ],
+      "correct": [
+        "Держи грудь открытой при разведении рук.",
+        "Опускай плечи вниз, подальше от ушей.",
+        "Удерживай кор стабильным и корпус вертикальным.",
+        "Двигайся с контролем, не используя инерцию."
+      ],
+      "mistakes": [
+        "Не сутуль плечи вперёд.",
+        "Не маши руками слишком быстро — ты не почувствуешь растяжку.",
+        "Не прогибай поясницу при раскрытии.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Dinamik Göğüs Açılımı",
+      "short_description": "Omuzları mobilize eden ve göğüs kaslarını esnetmek için yapılan dinamik göğüs açılım hareketi.",
+      "how_to": [
+        "Ayaklarını omuz genişliğinde açarak dur.",
+        "Her iki kolunu göğüs hizasında önüne uzat.",
+        "Kollarını geniş bir şekilde geri süpür ve kürek kemiklerini birbirine yaklaştır.",
+        "Kontrollü bir yay çizerek başlangıç pozisyonuna dön.",
+        "Yumuşak ve ritmik bir hareketle tekrarla."
+      ],
+      "correct": [
+        "Geri sallarken göğsünü açık tut.",
+        "Omuzlarını kulak hizasından uzakta aşağıda tut.",
+        "Koru sabit ve gövdeni dik tut.",
+        "Momentum değil, kontrol ile hareket et."
+      ],
+      "mistakes": [
+        "Omuzlarını öne düşürme.",
+        "Gerilimi hissetmek için kollarını çok hızlı sallama.",
+        "Açılırken bel bölgesini öne itme.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Dynamische Brustöffnung",
+      "short_description": "Eine dynamische Brustöffnungsbewegung, die die Schultern mobilisiert und die Brustmuskeln dehnt.",
+      "how_to": [
+        "Stell dich schulterbreit hin.",
+        "Strecke beide Arme auf Brusthöhe vor dir aus.",
+        "Schwinge die Arme weit nach hinten und drücke die Schulterblätter zusammen.",
+        "Kehre in einer kontrollierten Kreisbewegung zur Ausgangsposition zurück.",
+        "Wiederhole mit einer fließenden, rhythmischen Bewegung."
+      ],
+      "correct": [
+        "Halte die Brust offen, wenn du zurückschwingst.",
+        "Halte die Schultern unten, weg von den Ohren.",
+        "Halte die Körpermitte stabil und den Oberkörper aufrecht.",
+        "Bewege dich mit Kontrolle, nicht mit Schwung."
+      ],
+      "mistakes": [
+        "Runde die Schultern nicht nach vorne.",
+        "Schwinge die Arme nicht zu schnell, um die Dehnung zu spüren.",
+        "Wölbe den unteren Rücken nicht beim Öffnen.",
+        "Halte den Atem nicht an."
+      ]
+    },
+    "es": {
+      "name": "Apertura dinámica de pecho",
+      "short_description": "Un movimiento dinámico de apertura de pecho que moviliza los hombros y estira los músculos pectorales.",
+      "how_to": [
+        "Párate con los pies a la anchura de los hombros.",
+        "Extiende ambos brazos frente a ti a la altura del pecho.",
+        "Abre los brazos ampliamente hacia atrás juntando los omóplatos.",
+        "Vuelve a la posición inicial en un arco controlado.",
+        "Repite con un movimiento suave y rítmico."
+      ],
+      "correct": [
+        "Mantén el pecho abierto al abrir los brazos hacia atrás.",
+        "Mantén los hombros bajos y alejados de las orejas.",
+        "Mantén el core estable y el torso erguido.",
+        "Muévete con control, no con impulso."
+      ],
+      "mistakes": [
+        "No encojas los hombros hacia adelante.",
+        "No balancees los brazos demasiado rápido para sentir el estiramiento.",
+        "No arquees la zona lumbar al abrirte.",
+        "No retengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Ouverture de poitrine dynamique",
+      "short_description": "Un mouvement dynamique d'ouverture de la poitrine qui mobilise les épaules et étire les pectoraux.",
+      "how_to": [
+        "Tiens-toi debout, les pieds écartés à la largeur des épaules.",
+        "Étends les deux bras devant toi à la hauteur de la poitrine.",
+        "Ouvre les bras largement en arrière en rapprochant les omoplates.",
+        "Reviens à la position de départ en suivant un arc contrôlé.",
+        "Répète avec un mouvement fluide et rythmique."
+      ],
+      "correct": [
+        "Garde la poitrine ouverte lorsque tu balances en arrière.",
+        "Garde les épaules basses, éloignées des oreilles.",
+        "Garde la sangle abdominale stable et le buste droit.",
+        "Bouge avec contrôle, pas avec de l'élan."
+      ],
+      "mistakes": [
+        "Ne laisse pas les épaules se voûter vers l'avant.",
+        "Ne balance pas les bras trop vite pour ressentir l'étirement.",
+        "Ne cambre pas le bas du dos en t'ouvrant.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Apertura dinamica del petto",
+      "short_description": "Un movimento dinamico di apertura del petto che mobilizza le spalle e allunga i muscoli pettorali.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle spalle.",
+        "Estendi entrambe le braccia davanti a te all'altezza del petto.",
+        "Apri le braccia ampiamente verso dietro avvicinando le scapole.",
+        "Torna alla posizione iniziale con un arco controllato.",
+        "Ripeti con un movimento fluido e ritmico."
+      ],
+      "correct": [
+        "Tieni il petto aperto quando apri le braccia indietro.",
+        "Tieni le spalle abbassate, lontane dalle orecchie.",
+        "Mantieni il core stabile e il busto eretto.",
+        "Muoviti con controllo, non con slancio."
+      ],
+      "mistakes": [
+        "Non curvare le spalle in avanti.",
+        "Non oscillare le braccia troppo velocemente per sentire lo stretching.",
+        "Non inarcare la zona lombare nell'apertura.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_ski_squat_leg_lift",
+    "ru": {
+      "name": "Лыжный присед с подъёмом ноги",
+      "short_description": "Комбинация приседания и подъёма ноги в сторону для проработки ягодичных мышц, квадрицепсов и отводящих мышц бедра.",
+      "how_to": [
+        "Встань, поставив ноги на ширину бёдер.",
+        "Сядь назад в присед, держа грудь высоко.",
+        "Оттолкнись через пятки, выпрямляясь, и подними одну ногу в сторону.",
+        "Опусти ногу и сядь в следующий присед.",
+        "Чередуй подъём ноги при каждом повторении."
+      ],
+      "correct": [
+        "Держи колени над носками в приседе.",
+        "Держи пятки на полу при опускании.",
+        "Держи корпус вертикальным на протяжении всего упражнения.",
+        "Удерживай кор в напряжении во время подъёма ноги."
+      ],
+      "mistakes": [
+        "Не позволяй коленям заваливаться внутрь.",
+        "Не опускайся в присед слишком быстро.",
+        "Не отклоняйся в сторону при подъёме ноги.",
+        "Не округляй поясницу."
+      ]
+    },
+    "tr": {
+      "name": "Kayakçı Squat ve Bacak Kaldırma",
+      "short_description": "Gluteus, quadriceps ve kalça abduktörlerini hedef alan squat ve yana bacak kaldırma kombinasyonu.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde açarak dur.",
+        "Göğsünü yukarıda tutarak geri squat yap.",
+        "Topuklarından iterek kalk, sonra bir bacağını yana kaldır.",
+        "Bacağını indir ve bir sonraki squata otur.",
+        "Her tekrarda bacak kaldırmayı değiştir."
+      ],
+      "correct": [
+        "Squatta dizlerini ayak parmaklarının üzerinde tut.",
+        "İnerken topuklarını yerde tut.",
+        "Her tekrarda gövdeni dik tut.",
+        "Bacak kaldırma sırasında koru sıkı tut."
+      ],
+      "mistakes": [
+        "Dizlerinin içe dönmesine izin verme.",
+        "Squata çok hızlı inme.",
+        "Bacak kaldırırken yana yaslanma.",
+        "Bel bölgesini yuvarlama."
+      ]
+    },
+    "de": {
+      "name": "Ski-Squat mit Beinabduktion",
+      "short_description": "Eine Kombination aus Kniebeuge und seitlichem Beinheben, die Gesäß, Oberschenkelvorderseite und Hüftabduktoren trainiert.",
+      "how_to": [
+        "Stell dich mit hüftbreitem Stand hin.",
+        "Geh in eine Kniebeuge zurück und halte die Brust aufgerichtet.",
+        "Drücke durch die Fersen, um aufzustehen, und hebe dabei ein Bein zur Seite.",
+        "Senke das Bein ab und geh in die nächste Kniebeuge.",
+        "Wechsle das Beinheben bei jeder Wiederholung."
+      ],
+      "correct": [
+        "Halte die Knie in der Kniebeuge über den Zehen.",
+        "Halte die Fersen beim Senken auf dem Boden.",
+        "Halte den Oberkörper während jeder Wiederholung aufrecht.",
+        "Halte die Körpermitte beim Beinheben angespannt."
+      ],
+      "mistakes": [
+        "Lass die Knie nicht nach innen fallen.",
+        "Senke dich nicht zu schnell in die Kniebeuge.",
+        "Lehne dich beim Beinheben nicht zur Seite.",
+        "Runde den unteren Rücken nicht."
+      ]
+    },
+    "es": {
+      "name": "Sentadilla de esquí con elevación de pierna",
+      "short_description": "Una combinación de sentadilla y elevación lateral de pierna que trabaja glúteos, cuádriceps y abductores de cadera.",
+      "how_to": [
+        "Párate con los pies a la anchura de las caderas.",
+        "Siéntate hacia atrás en una sentadilla manteniendo el pecho arriba.",
+        "Empuja a través de los talones para ponerte de pie y levanta una pierna hacia el lado.",
+        "Baja la pierna y vuelve a la sentadilla siguiente.",
+        "Alterna la elevación de pierna en cada repetición."
+      ],
+      "correct": [
+        "Mantén las rodillas sobre los dedos de los pies en la sentadilla.",
+        "Mantén los talones en el suelo al bajar.",
+        "Mantén el torso erguido durante cada repetición.",
+        "Mantén el core tenso durante la elevación de pierna."
+      ],
+      "mistakes": [
+        "No dejes que las rodillas se hundan hacia adentro.",
+        "No bajes demasiado rápido a la sentadilla.",
+        "No te inclines hacia el lado en la elevación de pierna.",
+        "No redondees la zona lumbar."
+      ]
+    },
+    "fr": {
+      "name": "Squat de ski et élévation de jambe",
+      "short_description": "Une combinaison de squat et d'élévation latérale de jambe qui cible les fessiers, les quadriceps et les abducteurs de hanche.",
+      "how_to": [
+        "Tiens-toi debout, les pieds écartés à la largeur des hanches.",
+        "Descends en squat en gardant la poitrine haute.",
+        "Pousse sur les talons pour te redresser, puis lève une jambe sur le côté.",
+        "Baisse la jambe et redescends en squat.",
+        "Alterne la jambe levée à chaque répétition."
+      ],
+      "correct": [
+        "Garde les genoux au-dessus des orteils dans le squat.",
+        "Garde les talons au sol en descendant.",
+        "Garde le buste droit à chaque répétition.",
+        "Garde la sangle abdominale gainée pendant l'élévation de jambe."
+      ],
+      "mistakes": [
+        "Ne laisse pas les genoux rentrer vers l'intérieur.",
+        "Ne descends pas trop vite dans le squat.",
+        "Ne te penche pas sur le côté lors de l'élévation de jambe.",
+        "Ne ronds pas le bas du dos."
+      ]
+    },
+    "it": {
+      "name": "Squat da sci con sollevamento della gamba",
+      "short_description": "Una combinazione di squat e sollevamento laterale della gamba che lavora su glutei, quadricipiti e abduttori dell'anca.",
+      "how_to": [
+        "Mettiti in piedi con i piedi alla larghezza delle anche.",
+        "Siediti indietro in uno squat tenendo il petto alto.",
+        "Spingi attraverso i talloni per alzarti, poi solleva una gamba di lato.",
+        "Abbassa la gamba e torna al prossimo squat.",
+        "Alterna il sollevamento della gamba a ogni ripetizione."
+      ],
+      "correct": [
+        "Tieni le ginocchia sopra le punte dei piedi nello squat.",
+        "Mantieni i talloni a terra nella discesa.",
+        "Tieni il busto eretto durante ogni ripetizione.",
+        "Mantieni il core in tensione durante il sollevamento della gamba."
+      ],
+      "mistakes": [
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non scendere nello squat troppo velocemente.",
+        "Non inclinarti di lato nel sollevamento della gamba.",
+        "Non arrotondare la zona lombare."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_push_up_with_toe_tap",
+    "ru": {
+      "name": "Отжимание с касанием носка",
+      "short_description": "Вариант отжимания с касанием носка в верхней точке для развития стабильности корпуса и плеч.",
+      "how_to": [
+        "Прими упор лёжа, руки под плечами.",
+        "Опусти грудь к полу.",
+        "Вытолкни себя в верхнее положение.",
+        "Перенеси вес на одну руку и коснись свободной рукой противоположной ноги.",
+        "Вернись в центр и повтори, чередуя касание с каждым повтором."
+      ],
+      "correct": [
+        "Держи тело прямым от головы до пяток.",
+        "Контролируй локти на опускании.",
+        "Держи бёдра ровно во время касания.",
+        "Выдыхай при отжимании вверх."
+      ],
+      "mistakes": [
+        "Не опускай бёдра вниз.",
+        "Не разводи локти широко в стороны.",
+        "Не разворачивай бёдра при касании.",
+        "Не торопись и не теряй выравнивание тела."
+      ]
+    },
+    "tr": {
+      "name": "Parmak Ucu Dokunuşlu Şınav",
+      "short_description": "Üst noktada parmak ucu dokunuşu ekleyerek gövde ve omuz stabilitesini zorlayan şınav varyasyonu.",
+      "how_to": [
+        "Ellerini omuzlarının altına koyarak şınav pozisyonuna geç.",
+        "Göğsünü yere doğru indir.",
+        "Kendini tekrar üst pozisyona it.",
+        "Ağırlığını bir eline ver ve serbest elinle karşı ayağına dokun.",
+        "Merkeze dön ve her tekrarda dokunuşu değiştirerek devam et."
+      ],
+      "correct": [
+        "Başından topuklarına kadar vücudunu düz tut.",
+        "İnerken dirseklerini kontrollü tut.",
+        "Parmak dokunuşu sırasında kalçalarını sabit tut.",
+        "Yukarı iterken nefes ver."
+      ],
+      "mistakes": [
+        "Kalçalarının düşmesine izin verme.",
+        "Dirseklerini geniş açma.",
+        "Dokunurken kalçalarını döndürme.",
+        "Acele edip vücut hizanı bozma."
+      ]
+    },
+    "de": {
+      "name": "Liegestütz mit Zehentipp",
+      "short_description": "Eine Liegestütz-Variante mit Zehentipp oben, die Rumpf und Schultern zusätzlich fordert.",
+      "how_to": [
+        "Nimm die Liegestütz-Position ein, Hände unter den Schultern.",
+        "Senke deine Brust zur Bodenfläche ab.",
+        "Drück dich zurück in die obere Position.",
+        "Verlagere dein Gewicht auf eine Hand und berühre mit der freien Hand den gegenüberliegenden Fuß.",
+        "Kehre in die Mitte zurück und wechsle den Tipp jede Wiederholung ab."
+      ],
+      "correct": [
+        "Halte deinen Körper gerade von Kopf bis Ferse.",
+        "Führe deine Ellbogen beim Absenken kontrolliert.",
+        "Halte deine Hüfte während des Zehenipps gerade.",
+        "Atme beim Hochdrücken aus."
+      ],
+      "mistakes": [
+        "Lass deine Hüfte nicht absinken.",
+        "Spreize deine Ellbogen nicht weit nach außen.",
+        "Dreh deine Hüfte beim Tippen nicht.",
+        "Mach nicht zu schnell und verliere die Körperhaltung."
+      ]
+    },
+    "es": {
+      "name": "Flexión con toque de punta",
+      "short_description": "Variación de flexión que añade un toque de punta en la parte superior para trabajar la estabilidad del core y los hombros.",
+      "how_to": [
+        "Colócate en posición de flexión con las manos bajo los hombros.",
+        "Baja el pecho hacia el suelo.",
+        "Empuja de vuelta a la posición superior.",
+        "Desplaza el peso a una mano y toca el pie contrario con la mano libre.",
+        "Regresa al centro y alterna el toque en cada repetición."
+      ],
+      "correct": [
+        "Mantén el cuerpo recto de cabeza a talones.",
+        "Controla los codos al bajar.",
+        "Mantén las caderas alineadas durante el toque.",
+        "Exhala al empujar hacia arriba."
+      ],
+      "mistakes": [
+        "No dejes que las caderas caigan.",
+        "No abras los codos hacia los lados.",
+        "No gires las caderas al tocar.",
+        "No te apresures y pierdas la alineación corporal."
+      ]
+    },
+    "fr": {
+      "name": "Pompe avec toucher du pied",
+      "short_description": "Variante de pompe avec un toucher du pied en haut du mouvement pour solliciter la stabilité du gainage et des épaules.",
+      "how_to": [
+        "Prends la position de pompe, mains sous les épaules.",
+        "Descends ta poitrine vers le sol.",
+        "Repousse le sol pour revenir en haut.",
+        "Déplace ton poids sur une main et touche le pied opposé avec la main libre.",
+        "Reviens au centre et alterne le toucher à chaque répétition."
+      ],
+      "correct": [
+        "Garde le corps droit de la tête aux talons.",
+        "Contrôle tes coudes lors de la descente.",
+        "Garde les hanches alignées pendant le toucher.",
+        "Expire en poussant vers le haut."
+      ],
+      "mistakes": [
+        "Ne laisse pas tes hanches s'affaisser.",
+        "N'écarte pas les coudes vers l'extérieur.",
+        "Ne fais pas pivoter tes hanches lors du toucher.",
+        "Ne te précipite pas au point de perdre l'alignement."
+      ]
+    },
+    "it": {
+      "name": "Piegamento con tocco del piede",
+      "short_description": "Variante del piegamento che aggiunge un tocco del piede in alto per sfidare la stabilità del core e delle spalle.",
+      "how_to": [
+        "Parti in posizione di piegamento con le mani sotto le spalle.",
+        "Abbassa il petto verso il pavimento.",
+        "Spingi verso l'alto fino alla posizione di partenza.",
+        "Sposta il peso su una mano e tocca il piede opposto con la mano libera.",
+        "Torna al centro e alterna il tocco a ogni ripetizione."
+      ],
+      "correct": [
+        "Tieni il corpo diritto dalla testa ai talloni.",
+        "Controlla i gomiti durante la discesa.",
+        "Tieni i fianchi allineati durante il tocco.",
+        "Espira mentre spingi verso l'alto."
+      ],
+      "mistakes": [
+        "Non lasciare che i fianchi cedano verso il basso.",
+        "Non aprire i gomiti verso l'esterno.",
+        "Non ruotare i fianchi durante il tocco.",
+        "Non affrettarti perdendo l'allineamento del corpo."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_dumbbell_jumping_squat",
+    "ru": {
+      "name": "Прыжковый присед с гантелями",
+      "short_description": "Взрывной присед с весом для развития силы ног и повышения частоты сердечных сокращений.",
+      "how_to": [
+        "Возьми гантели в каждую руку и держи их вдоль бёдер.",
+        "Встань, ноги на ширине плеч.",
+        "Опустись в присед, держа грудь прямо.",
+        "Оттолкнись ногами и прыгни вверх.",
+        "Приземлись мягко, согни колени, чтобы смягчить удар, и сразу переходи в следующий присед."
+      ],
+      "correct": [
+        "Приземляйся мягко.",
+        "Держи колени над носками.",
+        "Держи пятки на полу при опускании в присед.",
+        "Держи грудь прямо на протяжении всего упражнения."
+      ],
+      "mistakes": [
+        "Не приземляйся жёстко.",
+        "Не позволяй коленям заваливаться внутрь.",
+        "Не опускайся слишком быстро и бесконтрольно.",
+        "Не округляй спину при опускании."
+      ]
+    },
+    "tr": {
+      "name": "Dambıllı Zıplama Squat",
+      "short_description": "Bacak gücünü artıran ve kalp atış hızını yükselten patlayıcı ağırlıklı squat.",
+      "how_to": [
+        "Her iki elinde bir dambıl tutarak yanlarında bırak.",
+        "Ayaklarını omuz genişliğinde aç.",
+        "Göğsünü dik tutarak squat pozisyonuna in.",
+        "Ayaklarını yere basarak havaya zıpla.",
+        "Yumuşak iniş yap, darbeyi emmek için dizlerini bük ve bir sonraki squata geç."
+      ],
+      "correct": [
+        "Yumuşak in.",
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Squat yaparken topuklarını yerde tut.",
+        "Göğsünü dik tut."
+      ],
+      "mistakes": [
+        "Sert inme.",
+        "Dizlerinin içe çökmesine izin verme.",
+        "Kontrolsüz çok hızlı inme.",
+        "İnerken sırtını yuvarlama."
+      ]
+    },
+    "de": {
+      "name": "Kniebeuge mit Sprung und Hantel",
+      "short_description": "Eine explosive, gewichtete Kniebeuge, die Beinkraft aufbaut und die Herzfrequenz erhöht.",
+      "how_to": [
+        "Halte eine Hantel in jeder Hand seitlich am Körper.",
+        "Stell dich schulterbreit hin.",
+        "Geh in die Kniebeuge, Brust aufrecht.",
+        "Drück dich kraftvoll ab und spring hoch.",
+        "Lande weich, beuge die Knie zum Abfedern und geh direkt in die nächste Kniebeuge."
+      ],
+      "correct": [
+        "Lande weich.",
+        "Halte deine Knie über den Zehen.",
+        "Halte deine Fersen beim Absenken auf dem Boden.",
+        "Halte deine Brust während der ganzen Übung aufrecht."
+      ],
+      "mistakes": [
+        "Lande nicht hart.",
+        "Lass deine Knie nicht nach innen einknicken.",
+        "Senk dich nicht unkontrolliert zu schnell ab.",
+        "Runde deinen Rücken beim Absenken nicht."
+      ]
+    },
+    "es": {
+      "name": "Sentadilla con salto y mancuernas",
+      "short_description": "Sentadilla explosiva con peso que desarrolla la potencia de las piernas y eleva la frecuencia cardíaca.",
+      "how_to": [
+        "Sujeta una mancuerna en cada mano a los lados del cuerpo.",
+        "Colócate con los pies a la anchura de los hombros.",
+        "Baja a la sentadilla manteniendo el pecho erguido.",
+        "Empuja con fuerza los pies y salta.",
+        "Aterriza suavemente, dobla las rodillas para amortiguar el impacto y pasa a la siguiente sentadilla."
+      ],
+      "correct": [
+        "Aterriza suavemente.",
+        "Mantén las rodillas sobre los pies.",
+        "Mantén los talones en el suelo al bajar.",
+        "Mantén el pecho erguido en todo momento."
+      ],
+      "mistakes": [
+        "No aterrices con fuerza.",
+        "No dejes que las rodillas se hundan hacia dentro.",
+        "No bajes demasiado rápido sin control.",
+        "No redondees la espalda al bajar."
+      ]
+    },
+    "fr": {
+      "name": "Squat sauté avec haltères",
+      "short_description": "Squat explosif avec charges qui développe la puissance des jambes et élève la fréquence cardiaque.",
+      "how_to": [
+        "Tiens un haltère dans chaque main le long du corps.",
+        "Tiens-toi debout, pieds à la largeur des épaules.",
+        "Descends en squat en gardant la poitrine haute.",
+        "Pousse sur tes pieds pour sauter.",
+        "Atterris doucement, fléchis les genoux pour amortir et enchaîne sur le squat suivant."
+      ],
+      "correct": [
+        "Atterris doucement.",
+        "Garde tes genoux dans l'axe des orteils.",
+        "Garde tes talons au sol en descendant.",
+        "Garde la poitrine haute tout au long du mouvement."
+      ],
+      "mistakes": [
+        "N'atterris pas brutalement.",
+        "Ne laisse pas tes genoux s'affaisser vers l'intérieur.",
+        "Ne descends pas trop vite de façon incontrôlée.",
+        "Ne arrondis pas le dos en descendant."
+      ]
+    },
+    "it": {
+      "name": "Squat con salto e manubri",
+      "short_description": "Squat esplosivo con pesi per sviluppare la potenza delle gambe e aumentare la frequenza cardiaca.",
+      "how_to": [
+        "Tieni un manubrio in ciascuna mano lungo i fianchi.",
+        "Posizionati con i piedi alla larghezza delle spalle.",
+        "Scendi nello squat mantenendo il petto alto.",
+        "Spingi con i piedi e salta.",
+        "Atterra morbidamente, piega le ginocchia per assorbire l'impatto e passa al prossimo squat."
+      ],
+      "correct": [
+        "Atterra in modo morbido.",
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Mantieni i talloni a terra durante la discesa.",
+        "Mantieni il petto eretto per tutta la durata."
+      ],
+      "mistakes": [
+        "Non atterrare di peso.",
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non scendere troppo velocemente senza controllo.",
+        "Non arrotondare la schiena durante la discesa."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_standing_side_bend",
+    "ru": {
+      "name": "Наклон в сторону стоя",
+      "short_description": "Боковой наклон стоя для растяжки косых мышц живота и боковой поверхности туловища.",
+      "how_to": [
+        "Встань ровно, ноги на ширине бёдер.",
+        "Подними одну руку вверх, другую положи на бедро.",
+        "Медленно наклонись в сторону, противоположную поднятой руке.",
+        "Задержись в нижней точке на один вдох-выдох, затем вернись в центр.",
+        "Повтори на другую сторону."
+      ],
+      "correct": [
+        "Держи тело в одной плоскости при наклоне.",
+        "Держи бёдра ровно и неподвижно.",
+        "Тянись кончиками пальцев как можно дальше.",
+        "Дыши равномерно."
+      ],
+      "mistakes": [
+        "Не скручивай туловище при наклоне.",
+        "Не позволяй бёдрам смещаться в сторону.",
+        "Не проваливайся в талии.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Ayakta Yana Eğilme",
+      "short_description": "Yan karın kaslarını ve gövdenin yan tarafını esnetmek için yapılan ayakta yana eğilme hareketi.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde açarak dik dur.",
+        "Bir kolunu yukarı kaldır, diğer elini kalçana koy.",
+        "Kaldırılmış kolunun ters tarafına doğru yavaşça eğil.",
+        "Alt noktada bir nefes bekle, sonra merkeze dön.",
+        "Diğer tarafa tekrarla."
+      ],
+      "correct": [
+        "Eğilirken vücudunu tek düz bir düzlemde tut.",
+        "Kalçalarını sabit ve düz tut.",
+        "Parmak uçlarından uzağa uzanmaya çalış.",
+        "Düzenli nefes al."
+      ],
+      "mistakes": [
+        "Eğilirken gövdeni döndürme.",
+        "Kalçalarının yana kaymasına izin verme.",
+        "Belden çökme.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Seitbeuge im Stand",
+      "short_description": "Eine stehende Seitbeuge, die die schräge Bauchmuskulatur und die Seite des Rumpfes dehnt.",
+      "how_to": [
+        "Steh aufrecht, Füße hüftbreit.",
+        "Hebe einen Arm über den Kopf und lege die andere Hand an die Hüfte.",
+        "Beuge dich langsam zur Seite, die dem erhobenen Arm gegenüberliegt.",
+        "Halte unten für einen Atemzug, dann komm zurück in die Mitte.",
+        "Wiederhole auf der anderen Seite."
+      ],
+      "correct": [
+        "Halte deinen Körper beim Beugen in einer Ebene.",
+        "Halte deine Hüfte gerade und ruhig.",
+        "Strecke dich weit durch deine Fingerspitzen.",
+        "Atme gleichmäßig."
+      ],
+      "mistakes": [
+        "Dreh deinen Rumpf beim Beugen nicht.",
+        "Lass deine Hüfte nicht zur Seite ausweichen.",
+        "Brich nicht in der Taille ein.",
+        "Halte nicht den Atem an."
+      ]
+    },
+    "es": {
+      "name": "Flexión lateral de pie",
+      "short_description": "Inclinación lateral en posición de pie para estirar los oblicuos y el costado del torso.",
+      "how_to": [
+        "Ponte de pie con los pies a la anchura de las caderas.",
+        "Levanta un brazo por encima de la cabeza y coloca la otra mano en la cadera.",
+        "Inclínate despacio hacia el lado contrario al brazo levantado.",
+        "Mantén la posición abajo un respiro y vuelve al centro.",
+        "Repite en el otro lado."
+      ],
+      "correct": [
+        "Mantén el cuerpo en un plano plano al inclinarte.",
+        "Mantén las caderas alineadas y quietas.",
+        "Estírate lejos con las yemas de los dedos.",
+        "Respira de forma constante."
+      ],
+      "mistakes": [
+        "No gires el torso al inclinarte.",
+        "No dejes que las caderas se desplacen hacia un lado.",
+        "No te hundas por la cintura.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Flexion latérale debout",
+      "short_description": "Flexion latérale en position debout pour étirer les obliques et le côté du tronc.",
+      "how_to": [
+        "Tiens-toi droit, pieds à la largeur des hanches.",
+        "Lève un bras au-dessus de la tête et pose l'autre main sur la hanche.",
+        "Penche-toi lentement du côté opposé au bras levé.",
+        "Maintiens la position basse le temps d'une respiration, puis reviens au centre.",
+        "Répète de l'autre côté."
+      ],
+      "correct": [
+        "Garde le corps dans un plan plat lors de la flexion.",
+        "Garde les hanches stables et immobiles.",
+        "Allonge-toi loin à travers tes doigts.",
+        "Respire régulièrement."
+      ],
+      "mistakes": [
+        "Ne fais pas pivoter ton tronc en te penchant.",
+        "Ne laisse pas tes hanches dériver sur le côté.",
+        "Ne t'affaisse pas au niveau de la taille.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Flessione laterale in piedi",
+      "short_description": "Flessione laterale in posizione eretta per allungare gli obliqui e il fianco del busto.",
+      "how_to": [
+        "Stai in piedi con i piedi alla larghezza dei fianchi.",
+        "Alza un braccio sopra la testa e poggia l'altra mano sul fianco.",
+        "Piegati lentamente verso il lato opposto al braccio alzato.",
+        "Tieni la posizione in basso per un respiro, poi torna al centro.",
+        "Ripeti dall'altro lato."
+      ],
+      "correct": [
+        "Tieni il corpo in un unico piano durante la flessione.",
+        "Tieni i fianchi allineati e fermi.",
+        "Stenditi lontano con le punte delle dita.",
+        "Respira in modo costante."
+      ],
+      "mistakes": [
+        "Non ruotare il busto mentre ti pieghi.",
+        "Non lasciare che i fianchi si spostino di lato.",
+        "Non cedere in vita.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_hops_on_the_spot",
+    "ru": {
+      "name": "Прыжки на месте",
+      "short_description": "Лёгкие прыжки на месте для разминки икр, лодыжек и сердечно-сосудистой системы.",
+      "how_to": [
+        "Встань, ноги на ширине бёдер, колени слегка согнуты.",
+        "Оттолкнись носками и легко подпрыгни на месте.",
+        "Держи прыжки небольшими и контролируемыми.",
+        "Поддерживай быстрый, ровный ритм на протяжении всего подхода."
+      ],
+      "correct": [
+        "Приземляйся мягко.",
+        "Держи колени над носками.",
+        "Слегка напрягай мышцы корпуса.",
+        "Оставайся на носках."
+      ],
+      "mistakes": [
+        "Не приземляйся жёстко на пятки.",
+        "Не позволяй коленям заваливаться внутрь.",
+        "Не напрягай плечи.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Yerinde Zıplama",
+      "short_description": "Baldırları, bilekleri ve kardiyovasküler sistemi ısıtan yerinde hafif zıplama egzersizi.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde aç, dizlerini hafifçe bük.",
+        "Ayak tabanlarının ön kısmına basarak hafifçe yerinde zıpla.",
+        "Zıplamaları küçük ve kontrollü tut.",
+        "Belirlenen süre boyunca hızlı ve düzenli ritim koru."
+      ],
+      "correct": [
+        "Yumuşak in.",
+        "Dizlerini ayak parmaklarının üzerinde tut.",
+        "Gövdeni hafifçe sıkıştırılmış tut.",
+        "Ayak tabanlarının ön kısmında kal."
+      ],
+      "mistakes": [
+        "Topuklarına sert basma.",
+        "Dizlerinin içe çökmesine izin verme.",
+        "Omuzlarını germe.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Hüpfen auf der Stelle",
+      "short_description": "Ein schnelles Hüpfprogramm auf der Stelle, das Waden, Knöchel und das Herz-Kreislauf-System aufwärmt.",
+      "how_to": [
+        "Steh mit hüftbreitem Stand und leicht gebeugten Knien.",
+        "Drück dich vom Fußballen ab und hüpfe leicht auf der Stelle.",
+        "Halte die Hüpfer klein und kontrolliert.",
+        "Halte für die vorgegebene Zeit einen schnellen, gleichmäßigen Rhythmus."
+      ],
+      "correct": [
+        "Lande weich.",
+        "Halte deine Knie über den Zehen.",
+        "Spann deinen Rumpf leicht an.",
+        "Bleib auf den Fußballen."
+      ],
+      "mistakes": [
+        "Lande nicht hart auf den Fersen.",
+        "Lass deine Knie nicht nach innen einknicken.",
+        "Verspanne deine Schultern nicht.",
+        "Halte nicht den Atem an."
+      ]
+    },
+    "es": {
+      "name": "Saltos en el sitio",
+      "short_description": "Ejercicio de saltos ligeros en el lugar para calentar los gemelos, tobillos y el sistema cardiovascular.",
+      "how_to": [
+        "Colócate con los pies a la anchura de las caderas y las rodillas ligeramente flexionadas.",
+        "Impúlsate desde las puntas de los pies y salta suavemente en el sitio.",
+        "Mantén los saltos pequeños y controlados.",
+        "Mantén un ritmo rápido y constante durante el tiempo establecido."
+      ],
+      "correct": [
+        "Aterriza suavemente.",
+        "Mantén las rodillas sobre los pies.",
+        "Mantén el core levemente activado.",
+        "Permanece en las puntas de los pies."
+      ],
+      "mistakes": [
+        "No aterrices con fuerza sobre los talones.",
+        "No dejes que las rodillas se hundan hacia dentro.",
+        "No tenses los hombros.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Sauts sur place",
+      "short_description": "Exercice de petits sauts sur place pour échauffer les mollets, les chevilles et le système cardiovasculaire.",
+      "how_to": [
+        "Tiens-toi debout, pieds à la largeur des hanches, genoux légèrement fléchis.",
+        "Pousse sur les avant-pieds et sautille légèrement sur place.",
+        "Garde les sauts petits et contrôlés.",
+        "Maintiens un rythme rapide et régulier pendant la durée prévue."
+      ],
+      "correct": [
+        "Atterris doucement.",
+        "Garde tes genoux dans l'axe des orteils.",
+        "Contracte légèrement tes abdominaux.",
+        "Reste sur les avant-pieds."
+      ],
+      "mistakes": [
+        "N'atterris pas durement sur les talons.",
+        "Ne laisse pas tes genoux s'affaisser vers l'intérieur.",
+        "Ne crispe pas les épaules.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Saltelli sul posto",
+      "short_description": "Esercizio di saltelli rapidi sul posto per riscaldare polpacci, caviglie e sistema cardiovascolare.",
+      "how_to": [
+        "Stai in piedi con i piedi alla larghezza dei fianchi e le ginocchia leggermente piegate.",
+        "Spingi dalla punta dei piedi e salta leggermente sul posto.",
+        "Mantieni i saltelli piccoli e controllati.",
+        "Mantieni un ritmo veloce e costante per tutta la durata."
+      ],
+      "correct": [
+        "Atterra in modo morbido.",
+        "Tieni le ginocchia sopra le punte dei piedi.",
+        "Mantieni il core leggermente attivato.",
+        "Rimani sulle punte dei piedi."
+      ],
+      "mistakes": [
+        "Non atterrare di peso sui talloni.",
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non irrigidire le spalle.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_up_down_nods",
+    "ru": {
+      "name": "Кивки вверх-вниз",
+      "short_description": "Мягкие кивки головой для снятия напряжения в шейном отделе позвоночника.",
+      "how_to": [
+        "Сядь или встань прямо, плечи расслаблены.",
+        "Медленно опусти подбородок к груди.",
+        "Плавно подними подбородок в нейтральное положение, затем слегка наклони его вверх.",
+        "Вернись в нейтральное положение и повтори.",
+        "Выполняй движение медленно и осознанно."
+      ],
+      "correct": [
+        "Держи плечи опущенными и расслабленными.",
+        "Двигайся медленно при каждом кивке.",
+        "Двигайся в комфортном для шеи диапазоне.",
+        "Дыши равномерно."
+      ],
+      "mistakes": [
+        "Не дёргай головой резко.",
+        "Не опускай подбородок ниже, чем комфортно.",
+        "Не напрягай плечи.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Yukarı-Aşağı Baş Sallama",
+      "short_description": "Servikal omurgadaki gerilimi azaltmak için başı yukarı ve aşağı hareket ettiren nazik boyun egzersizi.",
+      "how_to": [
+        "Omuzlarını rahatlatarak dik otur veya ayakta dur.",
+        "Çeneni yavaşça göğsüne doğru indir.",
+        "Çeneni nötr konuma doğru hafifçe kaldır, sonra biraz yukarı eğ.",
+        "Nötr konuma dön ve tekrarla.",
+        "Hareketi yavaş ve bilinçli yap."
+      ],
+      "correct": [
+        "Omuzlarını aşağıda ve rahat tut.",
+        "Her sallayışta yavaş hareket et.",
+        "Boyunun rahat hissettiği aralıkta kal.",
+        "Düzenli nefes al."
+      ],
+      "mistakes": [
+        "Başını hızlıca sarsma.",
+        "Çeneni rahatsız hissettiren kadar zorlamа.",
+        "Omuzlarını germe.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Auf-und-ab-Nicken",
+      "short_description": "Sanfte Kopfnicken nach oben und unten, um Verspannungen in der Halswirbelsäule zu lösen.",
+      "how_to": [
+        "Sitz oder steh aufrecht mit entspannten Schultern.",
+        "Senke das Kinn langsam zur Brust.",
+        "Hebe das Kinn sanft zurück in die Neutralstellung und neige es leicht nach oben.",
+        "Kehre in die Neutralstellung zurück und wiederhole.",
+        "Halte die Bewegung langsam und bewusst."
+      ],
+      "correct": [
+        "Halte deine Schultern unten und entspannt.",
+        "Bewege dich bei jedem Nicken langsam.",
+        "Bleib in einem für deinen Nacken angenehmen Bewegungsbereich.",
+        "Atme gleichmäßig."
+      ],
+      "mistakes": [
+        "Reiß deinen Kopf nicht schnell hin und her.",
+        "Drück dein Kinn nicht weiter als es sich angenehm anfühlt.",
+        "Verspanne deine Schultern nicht.",
+        "Halte nicht den Atem an."
+      ]
+    },
+    "es": {
+      "name": "Asentimientos arriba y abajo",
+      "short_description": "Asentimiento suave de cabeza hacia arriba y hacia abajo para liberar la tensión en la columna cervical.",
+      "how_to": [
+        "Siéntate o ponte de pie erguido con los hombros relajados.",
+        "Baja el mentón lentamente hacia el pecho.",
+        "Sube el mentón suavemente a la posición neutra y luego inclínalo ligeramente hacia arriba.",
+        "Vuelve a la posición neutra y repite.",
+        "Mantén el movimiento lento y deliberado."
+      ],
+      "correct": [
+        "Mantén los hombros bajos y relajados.",
+        "Muévete despacio en cada asentimiento.",
+        "Mantén un rango de movimiento cómodo para tu cuello.",
+        "Respira de forma constante."
+      ],
+      "mistakes": [
+        "No muevas la cabeza bruscamente.",
+        "No fuerces el mentón más allá de lo que resulte cómodo.",
+        "No tenses los hombros.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Hochements de tête haut-bas",
+      "short_description": "Hochements de tête doux vers le haut et le bas pour relâcher les tensions dans la colonne cervicale.",
+      "how_to": [
+        "Assieds-toi ou tiens-toi droit avec les épaules relâchées.",
+        "Abaisse lentement ton menton vers ta poitrine.",
+        "Remonte doucement le menton en position neutre, puis incline-le légèrement vers le haut.",
+        "Reviens en position neutre et recommence.",
+        "Garde le mouvement lent et délibéré."
+      ],
+      "correct": [
+        "Garde les épaules basses et relâchées.",
+        "Bouge lentement à chaque hochement.",
+        "Reste dans une amplitude confortable pour ton cou.",
+        "Respire régulièrement."
+      ],
+      "mistakes": [
+        "Ne secoue pas la tête brusquement.",
+        "Ne force pas le menton plus loin que ce qui est confortable.",
+        "Ne crispe pas les épaules.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Cenni su e giù",
+      "short_description": "Cenni del capo verso l'alto e il basso per sciogliere la tensione nella colonna cervicale.",
+      "how_to": [
+        "Siediti o stai in piedi con le spalle rilassate.",
+        "Abbassa lentamente il mento verso il petto.",
+        "Alza dolcemente il mento in posizione neutra, poi inclinalo leggermente verso l'alto.",
+        "Torna in posizione neutra e ripeti.",
+        "Mantieni il movimento lento e deliberato."
+      ],
+      "correct": [
+        "Tieni le spalle abbassate e rilassate.",
+        "Muoviti lentamente a ogni cenno.",
+        "Rimani in un'ampiezza di movimento comoda per il collo.",
+        "Respira in modo costante."
+      ],
+      "mistakes": [
+        "Non scuotere la testa bruscamente.",
+        "Non spingere il mento oltre il punto di comfort.",
+        "Non irrigidire le spalle.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_crab_kicks",
+    "ru": {
+      "name": "Удары ногами из позиции «краб»",
+      "short_description": "Удары ногами из обратного упора для проработки корпуса, трицепсов и сгибателей бедра.",
+      "how_to": [
+        "Сядь на пол, руки позади, ноги согнуты, стопы на полу.",
+        "Упрись руками и ногами, подними бёдра в позицию «краб».",
+        "Подними одну ногу вверх, удерживая бёдра поднятыми.",
+        "Опусти ногу и подними другую.",
+        "Чередуй удары на заданное количество повторений."
+      ],
+      "correct": [
+        "Контролируй поясницу.",
+        "Держи бёдра поднятыми на протяжении всего упражнения.",
+        "Держи опорные запястья под плечами.",
+        "Двигайся в ровном, контролируемом ритме."
+      ],
+      "mistakes": [
+        "Не прогибай поясницу.",
+        "Не тяни шею.",
+        "Не позволяй бёдрам провисать между ударами.",
+        "Не торопись и не теряй равновесие."
+      ]
+    },
+    "tr": {
+      "name": "Yengeç Pozisyonunda Tekme",
+      "short_description": "Ters masa pozisyonundan gövde, triseps ve kalça fleksörlerini çalıştıran yengeç pozisyonu tekme hareketi.",
+      "how_to": [
+        "Ellerini arkanı koyarak yere otur, ayaklarını düz bas.",
+        "El ve ayaklarına basarak kalçalarını yengeç pozisyonuna kaldır.",
+        "Kalçalarını kaldırılmış tutarak bir bacağını tavana doğru tekle.",
+        "O ayağı indir ve diğer bacağı tekle.",
+        "Hedef tekrar sayısına ulaşana kadar tekmeleri değiştir."
+      ],
+      "correct": [
+        "Bel bölgesini kontrollü tut.",
+        "Kalçalarını sürekli kaldırılmış tut.",
+        "Destek bileklerini omuzların altında tut.",
+        "Düzenli ve kontrollü ritimde hareket et."
+      ],
+      "mistakes": [
+        "Bel bölgesini keme.",
+        "Boynunu zorlamа.",
+        "Tekmeler arasında kalçalarının sarkmаsına izin verme.",
+        "Acele edip dengeyi kaybetme."
+      ]
+    },
+    "de": {
+      "name": "Krabben-Kicks",
+      "short_description": "Ein Kick aus der umgekehrten Tischposition, der Rumpf, Trizeps und Hüftbeuger anspricht.",
+      "how_to": [
+        "Setz dich mit den Händen hinter dir und flachen Füßen auf den Boden.",
+        "Drück durch Hände und Füße, um die Hüften in die Krabbenposition zu heben.",
+        "Kicke ein Bein nach oben zur Decke, Hüften oben behalten.",
+        "Senke den Fuß und kicke das andere Bein hoch.",
+        "Wechsle die Kicks für die Zieltechnik ab."
+      ],
+      "correct": [
+        "Halte deinen unteren Rücken kontrolliert.",
+        "Halte deine Hüften die ganze Zeit angehoben.",
+        "Halte deine Handgelenke unter den Schultern.",
+        "Bewege dich in einem gleichmäßigen, kontrollierten Rhythmus."
+      ],
+      "mistakes": [
+        "Hohlkreuz nicht machen.",
+        "Zieh nicht am Nacken.",
+        "Lass deine Hüften zwischen den Kicks nicht durchhängen.",
+        "Mach nicht zu schnell und verliere das Gleichgewicht."
+      ]
+    },
+    "es": {
+      "name": "Patadas en posición cangrejo",
+      "short_description": "Patada desde la posición de cangrejo invertida para trabajar el core, los tríceps y los flexores de cadera.",
+      "how_to": [
+        "Siéntate en el suelo con las manos detrás y los pies planos.",
+        "Empuja con manos y pies para levantar las caderas a la posición de cangrejo.",
+        "Patea una pierna hacia el techo manteniendo las caderas elevadas.",
+        "Baja ese pie y patea la otra pierna.",
+        "Alterna las patadas durante las repeticiones objetivo."
+      ],
+      "correct": [
+        "Controla la zona lumbar.",
+        "Mantén las caderas elevadas en todo momento.",
+        "Mantén las muñecas de apoyo bajo los hombros.",
+        "Muévete con un ritmo constante y controlado."
+      ],
+      "mistakes": [
+        "No arquees la zona lumbar.",
+        "No tenses el cuello.",
+        "No dejes que las caderas caigan entre patadas.",
+        "No te apresures y pierdas el equilibrio."
+      ]
+    },
+    "fr": {
+      "name": "Coups de pied en position crabe",
+      "short_description": "Un coup de pied depuis la position de table inversée ciblant la sangle abdominale, les triceps et les fléchisseurs de hanche.",
+      "how_to": [
+        "Assieds-toi au sol avec les mains derrière toi et les pieds à plat.",
+        "Pousse sur les mains et les pieds pour lever les hanches en position crabe.",
+        "Lance une jambe vers le plafond en gardant les hanches levées.",
+        "Pose ce pied et lance l'autre jambe.",
+        "Alterne les coups de pied pour le nombre de répétitions cible."
+      ],
+      "correct": [
+        "Maintiens le contrôle de ton bas du dos.",
+        "Garde les hanches soulevées tout au long du mouvement.",
+        "Garde les poignets d'appui sous les épaules.",
+        "Bouge avec un rythme régulier et contrôlé."
+      ],
+      "mistakes": [
+        "Ne creuse pas le bas du dos.",
+        "Ne tire pas sur la nuque.",
+        "Ne laisse pas tes hanches s'affaisser entre les coups.",
+        "Ne te précipite pas et ne perds pas l'équilibre."
+      ]
+    },
+    "it": {
+      "name": "Calci in posizione granchio",
+      "short_description": "Calcio dalla posizione di tavolo inverso per lavorare su core, tricipiti e flessori dell'anca.",
+      "how_to": [
+        "Siediti a terra con le mani dietro di te e i piedi piatti.",
+        "Spingi su mani e piedi per sollevare i fianchi in posizione granchio.",
+        "Calcia una gamba verso il soffitto tenendo i fianchi sollevati.",
+        "Abbassa quel piede e calcia l'altra gamba.",
+        "Alterna i calci per le ripetizioni previste."
+      ],
+      "correct": [
+        "Mantieni il controllo della zona lombare.",
+        "Tieni i fianchi sollevati per tutta la durata.",
+        "Tieni i polsi di supporto sotto le spalle.",
+        "Muoviti con un ritmo costante e controllato."
+      ],
+      "mistakes": [
+        "Non inarcare la zona lombare.",
+        "Non tirare il collo.",
+        "Non lasciare che i fianchi cedano tra un calcio e l'altro.",
+        "Non affrettarti perdendo l'equilibrio."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_claps_over_head",
+    "ru": {
+      "name": "Хлопки над головой",
+      "short_description": "Ритмичные хлопки над головой для разминки плеч и повышения частоты сердечных сокращений.",
+      "how_to": [
+        "Встань, ноги на ширине плеч.",
+        "Подними обе руки в стороны и вверх, пока ладони не встретятся над головой.",
+        "Хлопни в верхней точке, затем опусти руки к бокам.",
+        "Повторяй в быстром, ровном ритме.",
+        "Держи корпус слегка напряжённым на протяжении всего упражнения."
+      ],
+      "correct": [
+        "Держи грудь высоко, плечи отведи назад.",
+        "Крепко стой на ногах.",
+        "Двигай руками плавно, без рывков.",
+        "Дыши равномерно."
+      ],
+      "mistakes": [
+        "Не поднимай плечи при каждом повторении.",
+        "Не прогибай поясницу, поднимая руки над головой.",
+        "Не задерживай дыхание.",
+        "Не блокируй колени."
+      ]
+    },
+    "tr": {
+      "name": "Baş Üstünde Alkış",
+      "short_description": "Kalp atış hızını artıran ve omuzları ısıtan ritmik baş üstü alkış hareketi.",
+      "how_to": [
+        "Ayaklarını omuz genişliğinde aç.",
+        "İki kolunu da yana ve yukarı kaldırarak ellerin başının üstünde buluşana kadar devam et.",
+        "Üstte el çırp, sonra kollarını yanlarına indir.",
+        "Hızlı ve düzenli ritimle tekrarla.",
+        "Boyunca gövdeni hafifçe sıkıştırılmış tut."
+      ],
+      "correct": [
+        "Göğsünü dik tut, omuzlarını geri çek.",
+        "Ayaklarını yere sağlam bas.",
+        "Kollarını sarsıntısız, akıcı hareket ettir.",
+        "Düzenli nefes al."
+      ],
+      "mistakes": [
+        "Her tekrarda omuzlarını kaldırma.",
+        "Kollarını başın üstüne uzatırken beli keme.",
+        "Nefesini tutma.",
+        "Dizlerini kilitleme."
+      ]
+    },
+    "de": {
+      "name": "Klatschen über dem Kopf",
+      "short_description": "Eine rhythmische Überkopf-Klatschbewegung, die die Herzfrequenz anhebt und die Schultern aufwärmt.",
+      "how_to": [
+        "Stell dich schulterbreit hin.",
+        "Hebe beide Arme seitlich und nach oben, bis deine Hände über dem Kopf zusammenkommen.",
+        "Klatsch oben, dann senke die Arme wieder an die Seiten.",
+        "Wiederhole im flotten, gleichmäßigen Rhythmus.",
+        "Halte deinen Rumpf während der ganzen Übung leicht angespannt."
+      ],
+      "correct": [
+        "Halte die Brust hoch und die Schultern zurück.",
+        "Halte deine Füße fest auf dem Boden.",
+        "Bewege die Arme fließend, nicht ruckartig.",
+        "Atme gleichmäßig."
+      ],
+      "mistakes": [
+        "Zieh die Schultern bei jeder Wiederholung nicht hoch.",
+        "Mach kein Hohlkreuz, wenn du die Arme hebt.",
+        "Halte nicht den Atem an.",
+        "Streck die Knie nicht durch."
+      ]
+    },
+    "es": {
+      "name": "Palmadas sobre la cabeza",
+      "short_description": "Movimiento rítmico de palmadas sobre la cabeza para elevar la frecuencia cardíaca y calentar los hombros.",
+      "how_to": [
+        "Colócate con los pies a la anchura de los hombros.",
+        "Sube ambos brazos hacia los lados y arriba hasta que las manos se junten sobre la cabeza.",
+        "Da una palmada arriba y baja los brazos a los lados.",
+        "Repite con un ritmo vivo y constante.",
+        "Mantén el core ligeramente activo durante todo el ejercicio."
+      ],
+      "correct": [
+        "Mantén el pecho alto y los hombros hacia atrás.",
+        "Planta los pies con firmeza.",
+        "Mueve los brazos de forma fluida, sin sacudidas.",
+        "Respira de forma constante."
+      ],
+      "mistakes": [
+        "No encojas los hombros en cada repetición.",
+        "No arquees la zona lumbar al levantar los brazos.",
+        "No contengas la respiración.",
+        "No bloquees las rodillas."
+      ]
+    },
+    "fr": {
+      "name": "Applaudissements au-dessus de la tête",
+      "short_description": "Mouvement rythmique d'applaudissements au-dessus de la tête pour élever la fréquence cardiaque et échauffer les épaules.",
+      "how_to": [
+        "Tiens-toi debout, pieds à la largeur des épaules.",
+        "Lève les deux bras sur les côtés et vers le haut jusqu'à ce que les mains se rejoignent au-dessus de la tête.",
+        "Claque des mains en haut, puis ramène les bras le long du corps.",
+        "Répète à un rythme vif et régulier.",
+        "Garde le gainage légèrement actif tout au long."
+      ],
+      "correct": [
+        "Garde la poitrine haute et les épaules en arrière.",
+        "Plante bien les pieds au sol.",
+        "Bouge les bras de façon fluide, sans à-coups.",
+        "Respire régulièrement."
+      ],
+      "mistakes": [
+        "Ne hausse pas les épaules à chaque répétition.",
+        "Ne creuse pas le bas du dos en levant les bras.",
+        "Ne retiens pas ta respiration.",
+        "Ne verrouille pas les genoux."
+      ]
+    },
+    "it": {
+      "name": "Applausi sopra la testa",
+      "short_description": "Movimento ritmico di applausi sopra la testa per aumentare la frequenza cardiaca e riscaldare le spalle.",
+      "how_to": [
+        "Stai in piedi con i piedi alla larghezza delle spalle.",
+        "Alza entrambe le braccia di lato e verso l'alto finché le mani si incontrano sopra la testa.",
+        "Applaudi in alto, poi abbassa le braccia lungo i fianchi.",
+        "Ripeti con un ritmo vivace e costante.",
+        "Mantieni il core leggermente attivato per tutta la durata."
+      ],
+      "correct": [
+        "Tieni il petto alto e le spalle indietro.",
+        "Tieni i piedi ben piantati a terra.",
+        "Muovi le braccia in modo fluido, senza strappi.",
+        "Respira in modo costante."
+      ],
+      "mistakes": [
+        "Non alzare le spalle a ogni ripetizione.",
+        "Non inarcare la zona lombare mentre sollevi le braccia.",
+        "Non trattenere il respiro.",
+        "Non bloccare le ginocchia."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_lunge_knee_hops",
+    "ru": {
+      "name": "Выпад с прыжком на колено",
+      "short_description": "Динамический выпад с прыжком для развития силы ног, равновесия и выносливости сердечно-сосудистой системы.",
+      "how_to": [
+        "Встань, ноги на ширине бёдер.",
+        "Шагни одной ногой вперёд и опустись в выпад.",
+        "Оттолкнись передней ногой и встань, подняв заднее колено к груди.",
+        "Подпрыгни с опорной ноги в верхней точке.",
+        "Приземлись мягко и сразу переходи в следующий выпад."
+      ],
+      "correct": [
+        "Приземляйся мягко после каждого прыжка.",
+        "Держи колени над носками в выпаде.",
+        "Держи туловище прямо на протяжении всего упражнения.",
+        "Напрягай корпус для удержания равновесия."
+      ],
+      "mistakes": [
+        "Не приземляйся жёстко.",
+        "Не позволяй коленям заваливаться внутрь.",
+        "Не опускайся в выпад слишком быстро.",
+        "Не наклоняй туловище вперёд."
+      ]
+    },
+    "tr": {
+      "name": "Öne Adım Zıplama Hareketi",
+      "short_description": "Bacak gücü, denge ve kardiyovasküler kondisyon geliştiren dinamik öne adım-zıplama hareketi.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde aç.",
+        "Bir ayağını öne adımla ve öne adım pozisyonuna in.",
+        "Ön ayağına basarak kalk ve arka dizini göğsüne doğru kaldır.",
+        "Üst noktada destek ayağından zıpla.",
+        "Yumuşak in ve bir sonraki öne adım pozisyonuna geç."
+      ],
+      "correct": [
+        "Her zıplamanın ardından yumuşak in.",
+        "Öne adımda dizlerini ayak parmaklarının üzerinde tut.",
+        "Gövdeni dik tut.",
+        "Denge için gövdeni sıkıştırılmış tut."
+      ],
+      "mistakes": [
+        "Sert inme.",
+        "Dizlerinin içe çökmesine izin verme.",
+        "Öne adım pozisyonuna çok hızlı inme.",
+        "Gövdeni öne eğme."
+      ]
+    },
+    "de": {
+      "name": "Ausfallschritt mit Kniehüpfer",
+      "short_description": "Eine dynamische Ausfallschritt-zu-Hüpf-Bewegung, die Beinkraft, Balance und Ausdauer fördert.",
+      "how_to": [
+        "Stell dich hüftbreit hin.",
+        "Tritt mit einem Fuß nach vorne und geh in den Ausfallschritt.",
+        "Drück dich vom vorderen Fuß ab, steh auf und bring das hintere Knie Richtung Brust.",
+        "Hüpf vom Standbein oben ab.",
+        "Lande weich und geh direkt in den nächsten Ausfallschritt."
+      ],
+      "correct": [
+        "Lande nach jedem Hüpfer weich.",
+        "Halte deine Knie im Ausfallschritt über den Zehen.",
+        "Halte deinen Oberkörper die ganze Zeit aufrecht.",
+        "Spann deinen Rumpf für die Balance an."
+      ],
+      "mistakes": [
+        "Lande nicht hart.",
+        "Lass deine Knie nicht nach innen einknicken.",
+        "Senk dich nicht zu schnell in den Ausfallschritt.",
+        "Lehn deinen Oberkörper nicht nach vorne."
+      ]
+    },
+    "es": {
+      "name": "Zancada con salto de rodilla",
+      "short_description": "Movimiento dinámico de zancada con salto para desarrollar fuerza de piernas, equilibrio y condición cardiovascular.",
+      "how_to": [
+        "Colócate con los pies a la anchura de las caderas.",
+        "Da un paso adelante con un pie y baja a la zancada.",
+        "Empuja con el pie delantero para ponerte de pie y sube la rodilla trasera hacia el pecho.",
+        "Salta desde el pie de apoyo en la parte superior.",
+        "Aterriza suavemente y pasa a la siguiente zancada."
+      ],
+      "correct": [
+        "Aterriza suavemente tras cada salto.",
+        "Mantén las rodillas sobre los pies en la zancada.",
+        "Mantén el torso erguido durante todo el movimiento.",
+        "Activa el core para mantener el equilibrio."
+      ],
+      "mistakes": [
+        "No aterrices con fuerza.",
+        "No dejes que las rodillas se hundan hacia dentro.",
+        "No bajes demasiado rápido a la zancada.",
+        "No inclines el torso hacia delante."
+      ]
+    },
+    "fr": {
+      "name": "Fente avec saut genou levé",
+      "short_description": "Mouvement dynamique de fente vers un saut pour développer la force des jambes, l'équilibre et la condition cardiovasculaire.",
+      "how_to": [
+        "Tiens-toi debout, pieds à la largeur des hanches.",
+        "Avance un pied et descends en fente.",
+        "Pousse sur ton pied avant pour te lever en ramenant le genou arrière vers la poitrine.",
+        "Saute depuis ta jambe d'appui en haut du mouvement.",
+        "Atterris doucement et enchaîne sur la fente suivante."
+      ],
+      "correct": [
+        "Atterris doucement après chaque saut.",
+        "Garde tes genoux dans l'axe des orteils en fente.",
+        "Garde le buste droit tout au long du mouvement.",
+        "Contracte les abdominaux pour l'équilibre."
+      ],
+      "mistakes": [
+        "N'atterris pas brutalement.",
+        "Ne laisse pas tes genoux s'affaisser vers l'intérieur.",
+        "Ne descends pas trop vite en fente.",
+        "Ne penche pas le buste en avant."
+      ]
+    },
+    "it": {
+      "name": "Affondo con salto al ginocchio",
+      "short_description": "Movimento dinamico di affondo con salto per sviluppare forza delle gambe, equilibrio e resistenza cardiovascolare.",
+      "how_to": [
+        "Stai in piedi con i piedi alla larghezza dei fianchi.",
+        "Fai un passo avanti con un piede e scendi in affondo.",
+        "Spingi con il piede anteriore per alzarti portando il ginocchio posteriore verso il petto.",
+        "Salta dalla gamba di appoggio in cima al movimento.",
+        "Atterra morbidamente e vai al prossimo affondo."
+      ],
+      "correct": [
+        "Atterra in modo morbido dopo ogni salto.",
+        "Tieni le ginocchia sopra le punte dei piedi nell'affondo.",
+        "Mantieni il busto eretto per tutta la durata.",
+        "Attiva il core per mantenere l'equilibrio."
+      ],
+      "mistakes": [
+        "Non atterrare di peso.",
+        "Non lasciare che le ginocchia collassino verso l'interno.",
+        "Non scendere troppo velocemente nell'affondo.",
+        "Non inclinare il busto in avanti."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_butt_kicks",
+    "ru": {
+      "name": "Захлёсты пяток",
+      "short_description": "Бег на месте с забрасыванием пяток к ягодицам для разминки подколенных сухожилий и повышения частоты сердечных сокращений.",
+      "how_to": [
+        "Встань, ноги на ширине бёдер.",
+        "Начни лёгкий бег на месте.",
+        "С каждым шагом подтягивай пятку к ягодицам.",
+        "Естественно работай руками для сохранения равновесия.",
+        "Поддерживай быстрый, ровный темп на протяжении всего подхода."
+      ],
+      "correct": [
+        "Держи колени направленными вниз к полу.",
+        "Держи туловище прямо, не наклоняйся вперёд.",
+        "Приземляйся мягко на носки.",
+        "Слегка напрягай мышцы корпуса."
+      ],
+      "mistakes": [
+        "Не наклоняй грудь сильно вперёд.",
+        "Не разводи колени в стороны.",
+        "Не топочи ногами.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Topuk Vurma",
+      "short_description": "Arka bacak kaslarını ısıtmak ve kalp atış hızını artırmak için topukları kalçalara doğru atan yerinde koşu.",
+      "how_to": [
+        "Ayaklarını kalça genişliğinde aç.",
+        "Yerinde hafifçe koşmaya başla.",
+        "Her adımda topuğunu kalçanı doğru fırlat.",
+        "Dengeyi korumak için kollarını doğal şekilde salla.",
+        "Belirlenen süre boyunca hızlı ve düzenli tempo koru."
+      ],
+      "correct": [
+        "Dizlerini yere doğru tut.",
+        "Gövdeni dik tut, öne eğilme.",
+        "Ayak tabanlarının ön kısmına yumuşak in.",
+        "Gövdeni hafifçe sıkıştırılmış tut."
+      ],
+      "mistakes": [
+        "Göğsünü çok öne eğme.",
+        "Dizlerini dışa açma.",
+        "Ayaklarını yere vurarak basma.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Fersenläufe",
+      "short_description": "Laufen auf der Stelle mit Fersenanzug zur Erwärmung der Oberschenkelrückseite und Erhöhung der Herzfrequenz.",
+      "how_to": [
+        "Stell dich hüftbreit hin.",
+        "Beginne leicht auf der Stelle zu laufen.",
+        "Ziehe bei jedem Schritt die Ferse zur Gesäßmuskulatur.",
+        "Schwinge deine Arme natürlich, um die Balance zu halten.",
+        "Halte für die vorgegebene Zeit ein schnelles, gleichmäßiges Tempo."
+      ],
+      "correct": [
+        "Halte die Knie nach unten Richtung Boden gerichtet.",
+        "Halte den Oberkörper aufrecht, nicht nach vorne gelehnt.",
+        "Lande weich auf den Fußballen.",
+        "Halte deinen Rumpf leicht angespannt."
+      ],
+      "mistakes": [
+        "Lehn die Brust nicht zu weit nach vorne.",
+        "Lass die Knie nicht nach außen ausweichen.",
+        "Stampf nicht mit den Füßen auf.",
+        "Halte nicht den Atem an."
+      ]
+    },
+    "es": {
+      "name": "Talones a glúteos",
+      "short_description": "Carrera en el sitio llevando los talones hacia los glúteos para calentar los isquiotibiales y elevar la frecuencia cardíaca.",
+      "how_to": [
+        "Colócate con los pies a la anchura de las caderas.",
+        "Comienza a trotar suavemente en el sitio.",
+        "Con cada paso, lleva el talón hacia los glúteos.",
+        "Mueve los brazos de forma natural para mantener el equilibrio.",
+        "Mantén un ritmo rápido y constante durante el tiempo establecido."
+      ],
+      "correct": [
+        "Mantén las rodillas apuntando hacia el suelo.",
+        "Mantén el torso erguido, sin inclinarte hacia delante.",
+        "Aterriza suavemente en las puntas de los pies.",
+        "Mantén el core ligeramente activo."
+      ],
+      "mistakes": [
+        "No inclines el pecho demasiado hacia delante.",
+        "No dejes que las rodillas se abran hacia los lados.",
+        "No golpees el suelo con los pies.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Talons-fesses",
+      "short_description": "Course sur place avec les talons qui remontent vers les fessiers pour échauffer les ischio-jambiers et élever la fréquence cardiaque.",
+      "how_to": [
+        "Tiens-toi debout, pieds à la largeur des hanches.",
+        "Commence à trottiner légèrement sur place.",
+        "À chaque pas, ramène le talon vers les fessiers.",
+        "Pompe les bras naturellement pour garder l'équilibre.",
+        "Maintiens un rythme rapide et régulier pendant la durée prévue."
+      ],
+      "correct": [
+        "Garde les genoux pointés vers le bas.",
+        "Garde le buste droit, sans te pencher en avant.",
+        "Atterris doucement sur les avant-pieds.",
+        "Contracte légèrement les abdominaux."
+      ],
+      "mistakes": [
+        "Ne penche pas trop la poitrine en avant.",
+        "Ne laisse pas les genoux partir vers l'extérieur.",
+        "Ne frappe pas le sol avec les pieds.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Calci ai glutei",
+      "short_description": "Corsa sul posto portando i talloni verso i glutei per riscaldare i bicipiti femorali e aumentare la frequenza cardiaca.",
+      "how_to": [
+        "Stai in piedi con i piedi alla larghezza dei fianchi.",
+        "Inizia a trotterellare leggermente sul posto.",
+        "A ogni passo, porta il tallone verso i glutei.",
+        "Muovi le braccia in modo naturale per mantenere l'equilibrio.",
+        "Mantieni un ritmo veloce e costante per tutta la durata."
+      ],
+      "correct": [
+        "Tieni le ginocchia puntate verso il basso.",
+        "Mantieni il busto eretto, senza inclinarti in avanti.",
+        "Atterra morbidamente sulle punte dei piedi.",
+        "Mantieni il core leggermente attivato."
+      ],
+      "mistakes": [
+        "Non inclinare il petto troppo in avanti.",
+        "Non lasciare che le ginocchia si aprano verso l'esterno.",
+        "Non battere i piedi a terra.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_bird_dog",
+    "ru": {
+      "name": "Птица-собака",
+      "short_description": "Упражнение на стабилизацию с вытягиванием разноимённых руки и ноги для укрепления корпуса и поясницы.",
+      "how_to": [
+        "Встань на четвереньки: руки под плечами, колени под бёдрами.",
+        "Напряги корпус, удерживая нейтральное положение позвоночника.",
+        "Одновременно вытяни правую руку вперёд и левую ногу назад.",
+        "Задержись на один вдох-выдох, затем вернись в исходное положение.",
+        "Чередуй стороны на заданное количество повторений."
+      ],
+      "correct": [
+        "Держи бёдра горизонтально на протяжении всего движения.",
+        "Держи поясницу ровной, не прогибай её.",
+        "Держи шею на одной линии с позвоночником.",
+        "Двигайся медленно и контролируемо."
+      ],
+      "mistakes": [
+        "Не разворачивай бёдра при вытягивании.",
+        "Не прогибай поясницу.",
+        "Не торопись с повторениями.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Kuş-Köpek",
+      "short_description": "Gövde ve bel kaslarını güçlendirmek için karşı kol ve bacağı uzatan zemin denge egzersizi.",
+      "how_to": [
+        "Ellerin omuzlarının, dizlerin kalçalarının altında olacak şekilde dört ayak pozisyonuna geç.",
+        "Omurgayı nötr tutmak için gövdeni sıkıştır.",
+        "Sağ kolunu öne, sol bacağını aynı anda geri uzat.",
+        "Bir nefes bekle, sonra başlangıç pozisyonuna dön.",
+        "Hedef tekrar sayısına ulaşana kadar tarafları değiştir."
+      ],
+      "correct": [
+        "Hareket boyunca kalçalarını düz tut.",
+        "Bel bölgesini düz tut, keme.",
+        "Boynunu omurgayla aynı hizada tut.",
+        "Yavaş ve kontrollü hareket et."
+      ],
+      "mistakes": [
+        "Uzatırken kalçalarını döndürme.",
+        "Bel bölgesini keme.",
+        "Tekrarlarda acele etme.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Bird Dog",
+      "short_description": "Eine Stabilitätsübung am Boden, bei der gegenüberliegende Arm und Bein gestreckt werden, um Rumpf und unteren Rücken zu kräftigen.",
+      "how_to": [
+        "Geh in den Vierfüßlerstand, Hände unter den Schultern, Knie unter den Hüften.",
+        "Spann den Rumpf an, um die Wirbelsäule neutral zu halten.",
+        "Strecke gleichzeitig den rechten Arm nach vorne und das linke Bein nach hinten.",
+        "Halte einen Atemzug lang, dann zurück in die Ausgangsposition.",
+        "Wechsle die Seiten für die Zieltechnik ab."
+      ],
+      "correct": [
+        "Halte deine Hüften während der ganzen Bewegung waagerecht.",
+        "Halte deinen unteren Rücken flach, nicht durchgebogen.",
+        "Halte deinen Nacken in einer Linie mit der Wirbelsäule.",
+        "Bewege dich langsam und kontrolliert."
+      ],
+      "mistakes": [
+        "Dreh deine Hüfte beim Strecken nicht.",
+        "Mach kein Hohlkreuz.",
+        "Mach nicht zu schnell durch die Wiederholungen.",
+        "Halte nicht den Atem an."
+      ]
+    },
+    "es": {
+      "name": "Perro pájaro",
+      "short_description": "Ejercicio de estabilidad en el suelo que extiende el brazo y la pierna contrarios para fortalecer el core y la zona lumbar.",
+      "how_to": [
+        "Colócate a cuatro patas con las manos bajo los hombros y las rodillas bajo las caderas.",
+        "Activa el core para mantener la columna en posición neutra.",
+        "Extiende el brazo derecho hacia delante y la pierna izquierda hacia atrás al mismo tiempo.",
+        "Mantén la posición un respiro y vuelve al inicio.",
+        "Alterna los lados durante las repeticiones objetivo."
+      ],
+      "correct": [
+        "Mantén las caderas niveladas durante todo el movimiento.",
+        "Mantén la zona lumbar plana, sin arquearla.",
+        "Mantén el cuello alineado con la columna.",
+        "Muévete lento y con control."
+      ],
+      "mistakes": [
+        "No gires las caderas al extender.",
+        "No arquees la zona lumbar.",
+        "No te apresures en las repeticiones.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Oiseau-chien",
+      "short_description": "Exercice de stabilité au sol qui étend le bras et la jambe opposés pour renforcer la sangle abdominale et le bas du dos.",
+      "how_to": [
+        "Mets-toi à quatre pattes, mains sous les épaules, genoux sous les hanches.",
+        "Contracte le gainage pour maintenir la colonne neutre.",
+        "Étends le bras droit vers l'avant et la jambe gauche vers l'arrière en même temps.",
+        "Maintiens le temps d'une respiration, puis reviens au départ.",
+        "Alterne les côtés pour le nombre de répétitions cible."
+      ],
+      "correct": [
+        "Garde les hanches de niveau tout au long du mouvement.",
+        "Garde le bas du dos plat, sans creuser.",
+        "Garde la nuque dans l'axe de la colonne.",
+        "Bouge lentement et avec contrôle."
+      ],
+      "mistakes": [
+        "Ne fais pas pivoter les hanches en t'étirant.",
+        "Ne creuse pas le bas du dos.",
+        "Ne te précipite pas dans les répétitions.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Bird Dog",
+      "short_description": "Esercizio di stabilità a terra che estende il braccio e la gamba opposti per rafforzare il core e la zona lombare.",
+      "how_to": [
+        "Parti a quattro zampe con le mani sotto le spalle e le ginocchia sotto i fianchi.",
+        "Attiva il core per mantenere la colonna in posizione neutra.",
+        "Estendi il braccio destro in avanti e la gamba sinistra indietro allo stesso tempo.",
+        "Tieni la posizione per un respiro, poi torna alla partenza.",
+        "Alterna i lati per le ripetizioni previste."
+      ],
+      "correct": [
+        "Mantieni i fianchi in piano per tutta la durata del movimento.",
+        "Tieni la zona lombare piatta, senza inarcarla.",
+        "Tieni il collo allineato con la colonna vertebrale.",
+        "Muoviti lentamente e con controllo."
+      ],
+      "mistakes": [
+        "Non ruotare i fianchi durante l'estensione.",
+        "Non inarcare la zona lombare.",
+        "Non affrettarti nelle ripetizioni.",
+        "Non trattenere il respiro."
+      ]
+    }
+  }
+]

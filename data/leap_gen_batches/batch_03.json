@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_gate_pose",
+    "exercise_name": "Gate Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: GATE POSE"
+  },
+  {
+    "exercise_id": "leap_spinal_rolling",
+    "exercise_name": "Spinal Rolling",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: SPINAL ROLLING"
+  },
+  {
+    "exercise_id": "leap_prone_scorpion_kicks",
+    "exercise_name": "Prone Scorpion Kicks",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do: PRONE SCORPION KICKS"
+  },
+  {
+    "exercise_id": "leap_lumbar_cat_cow",
+    "exercise_name": "Lumbar Cat Cow",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: LUMBAR CAT COW"
+  },
+  {
+    "exercise_id": "leap_thoracic_spine_cat_cow",
+    "exercise_name": "Thoracic Spine Cat Cow",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: THORACIC SPINE CAT COW"
+  },
+  {
+    "exercise_id": "leap_wide_leg_hamstring_stretch",
+    "exercise_name": "Wide Leg Hamstring Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: WIDE LEG HAMSTRING STRETCH"
+  },
+  {
+    "exercise_id": "leap_forward_spine_stretch_pulse",
+    "exercise_name": "Forward Spine Stretch Pulse",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: FORWARD SPINE STRETCH PULSE"
+  },
+  {
+    "exercise_id": "leap_easy_butterfly_pose",
+    "exercise_name": "Easy Butterfly Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: EASY BUTTERFLY POSE"
+  },
+  {
+    "exercise_id": "leap_butterfly_pose",
+    "exercise_name": "Butterfly Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: BUTTERFLY POSE"
+  },
+  {
+    "exercise_id": "leap_easy_kneeling_hamstring_stretch",
+    "exercise_name": "Easy Kneeling Hamstring Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: EASY KNEELING HAMSTRING STRETCH"
+  },
+  {
+    "exercise_id": "leap_kneeling_hamstring_stretch",
+    "exercise_name": "Kneeling Hamstring Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: KNEELING HAMSTRING STRETCH"
+  },
+  {
+    "exercise_id": "leap_runner_s_lunge",
+    "exercise_name": "Runner's Lunge",
+    "group_label": "Lunges",
+    "video_title": "How to Do: RUNNER'S LUNGE"
+  },
+  {
+    "exercise_id": "leap_tree_pose",
+    "exercise_name": "Tree Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: TREE POSE"
+  },
+  {
+    "exercise_id": "leap_corpse_pose",
+    "exercise_name": "Corpse Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: CORPSE POSE"
+  },
+  {
+    "exercise_id": "leap_bow_pose",
+    "exercise_name": "Bow Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: BOW POSE"
+  },
+  {
+    "exercise_id": "leap_push_up_hold",
+    "exercise_name": "Push Up Hold",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do: PUSH UP HOLD"
+  },
+  {
+    "exercise_id": "leap_kneel_plank",
+    "exercise_name": "Kneel Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do: KNEEL PLANK"
+  },
+  {
+    "exercise_id": "leap_lizard_pose",
+    "exercise_name": "Lizard Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: LIZARD POSE"
+  },
+  {
+    "exercise_id": "leap_sage_marichi_s_pose_iii",
+    "exercise_name": "Sage Marichi's Pose Iii",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: SAGE MARICHI'S POSE III"
+  },
+  {
+    "exercise_id": "leap_boat_pose",
+    "exercise_name": "Boat Pose",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: BOAT POSE"
+  }
+]

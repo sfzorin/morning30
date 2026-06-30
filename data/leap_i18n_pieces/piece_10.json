@@ -1,0 +1,232 @@
+[
+  {
+    "exercise_id": "leap_triceps_kickbacks",
+    "exercise_name": "Triceps Kickbacks",
+    "short_description": "A hinging triceps extension that isolates the back of the upper arm.",
+    "how_to": [
+      "Hinge forward at the hips with a flat back and a slight bend in your knees.",
+      "Tuck your upper arms close to your sides with your elbows bent.",
+      "Straighten your arms behind you until they are fully extended.",
+      "Bend your elbows to return and repeat."
+    ],
+    "correct": [
+      "Keep your upper arms still throughout the movement.",
+      "Keep your back flat and your core engaged.",
+      "Keep your elbows close to your sides.",
+      "Move in a slow, controlled arc."
+    ],
+    "mistakes": [
+      "Don't swing your arms to generate momentum.",
+      "Don't round your back.",
+      "Don't let your upper arms drop during the extension.",
+      "Don't rush the return phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_hip_bridge_leg_lift",
+    "exercise_name": "Hip Bridge & Leg Lift",
+    "short_description": "A glute bridge variation that adds a leg lift to challenge the glutes and core.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat on the floor.",
+      "Press through your heels and lift your hips into a bridge.",
+      "Extend one leg straight out at knee height.",
+      "Lower the leg, then lower your hips and repeat on each side."
+    ],
+    "correct": [
+      "Keep your hips level when you lift your leg.",
+      "Keep your supporting foot flat on the floor.",
+      "Keep your core braced throughout.",
+      "Squeeze your glutes at the top of the bridge."
+    ],
+    "mistakes": [
+      "Don't let your hips sag when you extend the leg.",
+      "Don't rush through the movement.",
+      "Don't let your lower back arch excessively.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_backward_lunge",
+    "exercise_name": "Backward Lunge",
+    "short_description": "A reverse lunge that strengthens the quads, glutes and hamstrings.",
+    "how_to": [
+      "Stand tall with your feet together.",
+      "Step one foot back and lower your back knee toward the floor.",
+      "Stop when your front thigh is parallel to the floor.",
+      "Push through your front heel to stand back up and repeat on the other side."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down on your front foot.",
+      "Keep your torso upright throughout.",
+      "Keep your core engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't lean your torso forward.",
+      "Don't let your front heel lift off the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_arm_raise",
+    "exercise_name": "Side Arm Raise",
+    "short_description": "A lateral raise that targets the medial deltoids and builds shoulder width.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart and your arms at your sides.",
+      "Keep a soft bend in your elbows.",
+      "Raise both arms out to the sides until they reach shoulder height.",
+      "Lower them slowly back down and repeat."
+    ],
+    "correct": [
+      "Keep your arms at or just below shoulder height at the top.",
+      "Keep a slight bend in your elbows throughout.",
+      "Keep your shoulders relaxed, not shrugged.",
+      "Control the lowering phase."
+    ],
+    "mistakes": [
+      "Don't swing your arms up with momentum.",
+      "Don't shrug your shoulders at the top.",
+      "Don't raise your arms above shoulder height.",
+      "Don't let your torso lean side to side."
+    ]
+  },
+  {
+    "exercise_id": "leap_supine_push_up",
+    "exercise_name": "Supine Push Up",
+    "short_description": "An inverted push-up performed lying on your back that works the chest and triceps.",
+    "how_to": [
+      "Lie on your back and place your hands on the floor beside your chest, fingers pointing toward your shoulders.",
+      "Press your palms into the floor and lift your torso off the ground.",
+      "Straighten your arms as fully as comfortable.",
+      "Lower back down with control and repeat."
+    ],
+    "correct": [
+      "Keep your body straight.",
+      "Keep your elbows controlled as you press.",
+      "Keep your core engaged throughout.",
+      "Move at a steady, deliberate pace."
+    ],
+    "mistakes": [
+      "Don't let your hips drop toward the floor.",
+      "Don't flare your elbows out wide.",
+      "Don't rush the lowering phase.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_hyperextension",
+    "exercise_name": "Hyperextension",
+    "short_description": "A prone back extension that strengthens the erector spinae and glutes.",
+    "how_to": [
+      "Lie face down with your arms extended in front or crossed behind your head.",
+      "Engage your glutes and core.",
+      "Lift your chest and legs off the floor simultaneously.",
+      "Hold briefly at the top, then lower with control."
+    ],
+    "correct": [
+      "Keep your neck neutral.",
+      "Move with control.",
+      "Keep your glutes and core engaged throughout.",
+      "Keep the lift moderate rather than extreme."
+    ],
+    "mistakes": [
+      "Don't throw your head back.",
+      "Don't over-arch your lower back.",
+      "Don't hold your breath at the top.",
+      "Don't jerk your body up with momentum."
+    ]
+  },
+  {
+    "exercise_id": "leap_plank_leg_up",
+    "exercise_name": "Plank Leg Up",
+    "short_description": "A plank variation with an alternating leg raise that challenges the core and glutes.",
+    "how_to": [
+      "Start in a forearm plank with your elbows under your shoulders.",
+      "Keep your body in a straight line from head to heels.",
+      "Lift one leg toward the ceiling, keeping it straight.",
+      "Lower it and repeat on the other side."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged throughout.",
+      "Keep your hips level when you raise each leg.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't rotate your hips when you raise your leg.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_rhomboid_pulls",
+    "exercise_name": "Rhomboid Pulls",
+    "short_description": "A bodyweight pull that activates the rhomboids and middle trapezius to improve posture.",
+    "how_to": [
+      "Stand or sit tall with your arms extended forward at shoulder height.",
+      "Pull your elbows back and squeeze your shoulder blades together.",
+      "Hold the squeeze for a moment.",
+      "Return your arms forward with control and repeat."
+    ],
+    "correct": [
+      "Keep your shoulders down, away from your ears.",
+      "Focus the effort between your shoulder blades.",
+      "Keep your chest open at the end of each pull.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't shrug your shoulders up as you pull.",
+      "Don't use momentum to swing your arms back.",
+      "Don't round your upper back on the return.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_shoulder_stretch",
+    "exercise_name": "Shoulder Stretch",
+    "short_description": "A cross-body stretch that releases tension in the rear deltoid and upper back.",
+    "how_to": [
+      "Stand or sit tall.",
+      "Bring one arm straight across your chest.",
+      "Use your opposite hand to gently press the arm closer to your chest.",
+      "Hold the stretch, then repeat on the other side."
+    ],
+    "correct": [
+      "Keep your shoulder down, not hunched.",
+      "Keep your spine upright throughout.",
+      "Breathe steadily into the stretch.",
+      "Hold for several slow breaths."
+    ],
+    "mistakes": [
+      "Don't rotate your torso to reach further.",
+      "Don't force the stretch.",
+      "Don't hold your breath.",
+      "Don't hunch your upper back."
+    ]
+  },
+  {
+    "exercise_id": "leap_donkey_kicks",
+    "exercise_name": "Donkey Kicks",
+    "short_description": "An all-fours glute kick that isolates and strengthens the glutes.",
+    "how_to": [
+      "Start on all fours with your hands under your shoulders and your knees under your hips.",
+      "Keep your core engaged and your back flat.",
+      "Drive one heel toward the ceiling, keeping your knee bent at 90 degrees.",
+      "Lower it with control and repeat, then switch sides."
+    ],
+    "correct": [
+      "Keep your hips square to the floor.",
+      "Keep your core engaged to stabilise your lower back.",
+      "Keep your knee bent throughout the movement.",
+      "Move with control rather than swinging your leg."
+    ],
+    "mistakes": [
+      "Don't rotate your hips when you kick up.",
+      "Don't let your lower back arch excessively.",
+      "Don't kick so high that you lose control.",
+      "Don't rush through the reps."
+    ]
+  }
+]

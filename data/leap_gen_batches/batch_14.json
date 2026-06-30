@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_forward_bend",
+    "exercise_name": "Forward Bend",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do：FORWARD BEND"
+  },
+  {
+    "exercise_id": "leap_torso_twist",
+    "exercise_name": "Torso Twist",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：TORSO TWIST"
+  },
+  {
+    "exercise_id": "leap_side_to_side_tilts",
+    "exercise_name": "Side-To-Side Tilts",
+    "group_label": "Other",
+    "video_title": "How to Do：SIDE-TO-SIDE TILTS"
+  },
+  {
+    "exercise_id": "leap_elbows_back",
+    "exercise_name": "Elbows Back",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do：ELBOWS BACK"
+  },
+  {
+    "exercise_id": "leap_jumping_push_ups",
+    "exercise_name": "Jumping Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：JUMPING PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_modified_burpees",
+    "exercise_name": "Modified Burpees",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：MODIFIED BURPEES"
+  },
+  {
+    "exercise_id": "leap_legs_up_the_wall",
+    "exercise_name": "Legs Up the Wall",
+    "group_label": "Wall",
+    "video_title": "How to Do：LEGS UP THE WALL"
+  },
+  {
+    "exercise_id": "leap_dumbbell_lunges",
+    "exercise_name": "Dumbbell Lunges",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL LUNGES"
+  },
+  {
+    "exercise_id": "leap_dynamic_chest",
+    "exercise_name": "Dynamic Chest",
+    "group_label": "Other",
+    "video_title": "How to Do：DYNAMIC CHEST"
+  },
+  {
+    "exercise_id": "leap_ski_squat_leg_lift",
+    "exercise_name": "Ski Squat & Leg Lift",
+    "group_label": "Squats",
+    "video_title": "How to Do：SKI SQUAT & LEG LIFT"
+  },
+  {
+    "exercise_id": "leap_push_up_with_toe_tap",
+    "exercise_name": "Push-Up with Toe Tap",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：PUSH-UP WITH TOE TAP"
+  },
+  {
+    "exercise_id": "leap_dumbbell_jumping_squat",
+    "exercise_name": "Dumbbell Jumping Squat",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL JUMPING SQUAT"
+  },
+  {
+    "exercise_id": "leap_standing_side_bend",
+    "exercise_name": "Standing Side Bend",
+    "group_label": "Other",
+    "video_title": "How to Do：STANDING SIDE BEND"
+  },
+  {
+    "exercise_id": "leap_hops_on_the_spot",
+    "exercise_name": "Hops on the Spot",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：HOPS ON THE SPOT"
+  },
+  {
+    "exercise_id": "leap_up_down_nods",
+    "exercise_name": "Up & Down Nods",
+    "group_label": "Other",
+    "video_title": "How to Do：UP & DOWN NODS"
+  },
+  {
+    "exercise_id": "leap_crab_kicks",
+    "exercise_name": "Crab Kicks",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：CRAB KICKS"
+  },
+  {
+    "exercise_id": "leap_claps_over_head",
+    "exercise_name": "Claps Over Head",
+    "group_label": "Other",
+    "video_title": "How to Do：CLAPS OVER HEAD"
+  },
+  {
+    "exercise_id": "leap_lunge_knee_hops",
+    "exercise_name": "Lunge Knee Hops",
+    "group_label": "Lunges",
+    "video_title": "How to Do：LUNGE KNEE HOPS"
+  },
+  {
+    "exercise_id": "leap_butt_kicks",
+    "exercise_name": "Butt Kicks",
+    "group_label": "Other",
+    "video_title": "How to Do：BUTT KICKS"
+  },
+  {
+    "exercise_id": "leap_bird_dog",
+    "exercise_name": "Bird Dog",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do：BIRD DOG"
+  }
+]

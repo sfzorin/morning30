@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_dumbbell_decline_floor_press",
+    "short_description": "A floor press with a decline angle that targets the lower chest and triceps using dumbbells.",
+    "how_to": ["Lie on your back with your feet flat and knees bent.", "Hold a dumbbell in each hand at chest level, elbows bent.", "Press both dumbbells straight up until your arms are fully extended.", "Lower them slowly back to chest level and repeat."],
+    "correct": ["Keep your feet flat on the floor.", "Keep your wrists straight throughout.", "Lower the dumbbells with control.", "Keep your shoulder blades pressed into the floor."],
+    "mistakes": ["Don't let your wrists bend back under load.", "Don't drop the dumbbells fast.", "Don't let your elbows flare out wide.", "Don't hold your breath on the press."]
+  },
+  {
+    "exercise_id": "leap_standing_crossover_toe_touches",
+    "short_description": "A standing cross-body reach that stretches the hamstrings and works the obliques.",
+    "how_to": ["Stand tall with your feet hip-width apart and arms out to the sides.", "Hinge forward and reach your right hand toward your left foot.", "Return upright and then reach your left hand toward your right foot.", "Alternate sides in a steady rhythm."],
+    "correct": ["Keep your lower back controlled.", "Keep your legs as straight as comfortable.", "Move through the full range slowly.", "Keep your core braced throughout."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't rush and lose balance.", "Don't round your upper back excessively."]
+  },
+  {
+    "exercise_id": "leap_wood_chops",
+    "short_description": "A rotational chopping movement that trains the obliques, core, and hip flexors.",
+    "how_to": ["Stand with your feet shoulder-width apart.", "Clasp your hands together and raise them to one side above your shoulder.", "Rotate and sweep your hands diagonally down toward the opposite knee.", "Return to the start and repeat for reps, then switch sides."],
+    "correct": ["Keep your core braced throughout.", "Rotate from your torso, not just your arms.", "Keep your feet planted firmly.", "Move with control on both the chop and the return."],
+    "mistakes": ["Don't use only your arms to swing.", "Don't let your lower back twist excessively.", "Don't rush through the movement.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_tiger_bend_push_ups",
+    "short_description": "An advanced push-up variation that lowers to forearms then presses back up, building triceps, shoulders, and core.",
+    "how_to": ["Start in a high push-up position with your hands under your shoulders.", "Lower your forearms to the floor one arm at a time.", "Pause briefly on your forearms with your body flat.", "Press back up to the starting position one arm at a time."],
+    "correct": ["Keep your body straight from head to heels.", "Keep your elbows controlled as you lower and press.", "Keep your core engaged throughout.", "Move slowly and deliberately."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't rock your hips side to side.", "Don't collapse to the floor under load."]
+  },
+  {
+    "exercise_id": "leap_glute_kickback_pulse",
+    "short_description": "A small pulsing kick that isolates the glutes through a short range of motion.",
+    "how_to": ["Start on all fours with your hands under your shoulders and knees under your hips.", "Lift one leg back and up with your knee bent at ninety degrees.", "Pulse the foot toward the ceiling in small controlled movements.", "Complete all reps on one side before switching."],
+    "correct": ["Keep your hips level throughout.", "Keep your core engaged.", "Keep your back flat and neutral.", "Control each small pulse, don't swing."],
+    "mistakes": ["Don't rotate your hips to lift higher.", "Don't arch your lower back.", "Don't swing your leg for momentum.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_standing_oblique_crunches",
+    "short_description": "A standing side crunch that works the obliques and lateral core without lying down.",
+    "how_to": ["Stand tall with your feet hip-width apart and hands behind your head.", "Lift your right knee toward your right elbow as you side-bend right.", "Lower back to the start and repeat on the same side, then switch.", "Keep the movement controlled and deliberate."],
+    "correct": ["Keep your lower back controlled.", "Keep your elbows wide throughout.", "Side-bend directly, don't twist forward.", "Keep a slight bend in your standing knee."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't twist instead of crunching to the side.", "Don't use momentum to swing the knee up."]
+  },
+  {
+    "exercise_id": "leap_glute_stretch",
+    "short_description": "A seated or lying cross-legged stretch that releases tension in the glutes and piriformis.",
+    "how_to": ["Lie on your back with both knees bent and feet flat.", "Cross your right ankle over your left thigh just above the knee.", "Reach through and pull your left thigh gently toward your chest.", "Hold the stretch and breathe steadily, then switch sides."],
+    "correct": ["Keep your lower back flat on the floor.", "Breathe slowly and steadily.", "Hold at a comfortable level of tension.", "Keep your head and shoulders relaxed on the floor."],
+    "mistakes": ["Don't force the stretch beyond comfort.", "Don't hold your breath.", "Don't let your lower back arch off the floor.", "Don't jerk or bounce the leg."]
+  },
+  {
+    "exercise_id": "leap_side_plank_front_kick",
+    "short_description": "A side plank with a front kick that challenges lateral core stability and hip flexor strength.",
+    "how_to": ["Start in a side plank on your forearm with your feet stacked.", "Keep your body in one line from head to feet.", "Lift your top leg and kick it forward in a controlled arc.", "Bring it back, hold the plank, and repeat for reps before switching sides."],
+    "correct": ["Keep your body in one line.", "Keep your core engaged.", "Keep your hips lifted throughout.", "Control the kick, don't swing."],
+    "mistakes": ["Don't let your lower back sag.", "Don't lift your hips too high.", "Don't rush the kick and lose stability.", "Don't let your supporting hip drop."]
+  },
+  {
+    "exercise_id": "leap_wall_standing_glute_kickbacks",
+    "short_description": "A wall-supported standing kickback that isolates the glutes through a full range of motion.",
+    "how_to": ["Face a wall and place both hands on it at shoulder height.", "Stand with your feet hip-width apart and a slight bend in your standing knee.", "Squeeze your glute and kick one leg straight back and up.", "Lower with control and repeat for reps, then switch legs."],
+    "correct": ["Keep your hips level and square to the wall.", "Keep your core engaged.", "Kick back from the glute, not the lower back.", "Keep your foot flexed on the working leg."],
+    "mistakes": ["Don't arch your lower back to lift higher.", "Don't rotate your hips open.", "Don't swing the leg for momentum.", "Don't lean into the wall with your bodyweight."]
+  },
+  {
+    "exercise_id": "leap_side_step_jacks",
+    "short_description": "A low-impact lateral stepping exercise that raises the heart rate and works the inner and outer thighs.",
+    "how_to": ["Stand tall with your feet together.", "Step one foot out to the side while raising both arms overhead.", "Step your feet back together and lower your arms.", "Continue alternating sides at a steady pace."],
+    "correct": ["Keep your chest up throughout.", "Keep your core braced.", "Step wide enough to feel your inner thigh engage.", "Keep a slight bend in your knees."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't lean forward and drop your chest.", "Don't stomp down on each step.", "Don't rush and lose your balance."]
+  },
+  {
+    "exercise_id": "leap_wall_glute_kickback_hold",
+    "short_description": "An isometric wall-supported kickback hold that builds glute strength and hip stability.",
+    "how_to": ["Face a wall and rest both hands on it at shoulder height.", "Keep a soft bend in your standing knee and brace your core.", "Kick one leg back and up until you feel your glute contract.", "Hold the position for the required time, then switch sides."],
+    "correct": ["Keep your hips level and square to the wall.", "Keep your core engaged.", "Hold the contraction steady, don't sway.", "Breathe steadily throughout the hold."],
+    "mistakes": ["Don't arch your lower back to raise the leg higher.", "Don't rotate your hips open.", "Don't hold your breath.", "Don't lean your weight into the wall."]
+  },
+  {
+    "exercise_id": "leap_glute_kickback_crossover_with_leg",
+    "short_description": "A kickback with a crossover sweep that targets the glutes and outer hips through a wider arc.",
+    "how_to": ["Start on all fours with your hands under your shoulders and knees under your hips.", "Lift one leg back to a parallel kickback position.", "Sweep that leg out and across behind the opposite leg.", "Return to the kickback position and repeat, then switch sides."],
+    "correct": ["Keep your hips square throughout.", "Keep your back flat and neutral.", "Control the crossover arc, don't swing.", "Keep your core engaged."],
+    "mistakes": ["Don't rotate your hips to swing the leg.", "Don't arch your lower back.", "Don't rush the sweep for momentum.", "Don't let your supporting knee slide."]
+  },
+  {
+    "exercise_id": "leap_side_lying_kickback",
+    "short_description": "A side-lying hip extension that isolates the glutes and outer hip in a supported position.",
+    "how_to": ["Lie on your side with your body in a straight line and your head resting on your bottom arm.", "Stack your hips and feet directly on top of each other.", "Keeping your top leg straight, kick it back behind your body.", "Return it to the start and repeat for reps, then switch sides."],
+    "correct": ["Keep your hips stacked throughout.", "Keep your core engaged.", "Extend the leg from the glute, not the lower back.", "Keep the movement slow and controlled."],
+    "mistakes": ["Don't roll your hips back to reach further.", "Don't arch your lower back.", "Don't swing the leg for momentum.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_fast_spider_lunges",
+    "short_description": "A dynamic plank-based lunge that builds hip mobility, core stability, and cardiovascular endurance.",
+    "how_to": ["Start in a high push-up position with your core braced.", "Drive your right foot forward to land beside your right hand.", "Quickly switch legs, driving the left foot forward.", "Continue alternating at a fast pace."],
+    "correct": ["Keep your knees over your toes.", "Keep your hips low and level.", "Keep your core tight throughout.", "Keep your heels down on the planted foot."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast and lose control.", "Don't let your hips rise above shoulder height.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_flutter_kick_squats",
+    "short_description": "A squat paired with flutter kicks at the top that works the legs, glutes, and hip flexors.",
+    "how_to": ["Stand with your feet shoulder-width apart.", "Lower into a squat, keeping your chest up.", "Stand up and perform two quick alternating flutter kicks.", "Return immediately to the squat and repeat."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down in the squat.", "Keep your core braced during the kicks.", "Keep your chest up throughout."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast into the squat.", "Don't swing your arms for momentum.", "Don't lean back during the flutter kicks."]
+  },
+  {
+    "exercise_id": "leap_plank_taps",
+    "short_description": "A plank variation where you tap alternate shoulders to challenge core stability and balance.",
+    "how_to": ["Start in a high plank with your hands under your shoulders and feet hip-width apart.", "Keep your hips steady and lift your right hand to tap your left shoulder.", "Place it back down and tap your right shoulder with your left hand.", "Alternate sides in a slow, controlled rhythm."],
+    "correct": ["Keep your body in one line.", "Keep your core engaged.", "Keep your hips as still as possible.", "Keep your feet hip-width apart for a stable base."],
+    "mistakes": ["Don't let your lower back sag.", "Don't lift your hips too high.", "Don't rock your hips side to side on each tap.", "Don't rush and lose your balance."]
+  },
+  {
+    "exercise_id": "leap_standing_dumbbell_calf_raise",
+    "short_description": "A standing dumbbell calf raise that strengthens the gastrocnemius and soleus while adding load.",
+    "how_to": ["Stand tall with a dumbbell in each hand and your feet hip-width apart.", "Press through the balls of your feet and rise up onto your toes.", "Hold briefly at the top with your calves fully contracted.", "Lower your heels slowly back to the floor and repeat."],
+    "correct": ["Keep your ankles straight, don't roll outward.", "Rise as high as possible on each rep.", "Lower with control, don't drop.", "Keep your core braced and stand tall."],
+    "mistakes": ["Don't rush through the lowering phase.", "Don't let your ankles roll inward or outward.", "Don't use your knees to help bounce up.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_sumo_squat_leg_raises",
+    "short_description": "A sumo squat combined with a side leg raise at the top to target the glutes, inner thighs, and outer hips.",
+    "how_to": ["Stand with your feet wide and your toes turned out.", "Lower into a sumo squat, keeping your chest up.", "Rise up and at the top shift your weight to one leg and lift the other leg out to the side.", "Lower the raised leg, squat again, and alternate the side raise each rep."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down throughout the squat.", "Keep your core braced on the leg raise.", "Keep your chest up and back straight."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast into the squat.", "Don't lean to the side excessively on the leg raise.", "Don't round your lower back at the bottom."]
+  },
+  {
+    "exercise_id": "leap_one_leg_bridge",
+    "short_description": "A single-leg glute bridge that builds unilateral glute and hamstring strength while challenging pelvic stability.",
+    "how_to": ["Lie on your back with both knees bent and feet flat on the floor.", "Extend one leg straight out at the same height as the bent knee.", "Press through the heel of the grounded foot and drive your hips up.", "Lower with control and repeat for reps, then switch legs."],
+    "correct": ["Keep your hips level at the top.", "Squeeze your glute fully at the top of each rep.", "Keep your core engaged.", "Keep the extended leg in line with your body."],
+    "mistakes": ["Don't let your hips drop to one side.", "Don't arch your lower back at the top.", "Don't let your knee of the bent leg cave inward.", "Don't rush the lowering phase."]
+  },
+  {
+    "exercise_id": "leap_trunk_rotation",
+    "short_description": "A seated or standing spinal rotation that improves thoracic mobility and loosens the obliques.",
+    "how_to": ["Sit tall on the floor with your legs crossed, or stand with feet hip-width apart.", "Place your hands on your shoulders or cross your arms over your chest.", "Rotate your upper body smoothly to the right as far as comfortable.", "Return to center and rotate to the left, alternating sides slowly."],
+    "correct": ["Keep your back tall throughout.", "Rotate from your mid-back, not just your neck.", "Keep your hips facing forward.", "Breathe steadily as you rotate."],
+    "mistakes": ["Don't force the rotation beyond comfortable range.", "Don't hold your breath.", "Don't let your hips twist with the movement.", "Don't jerk or bounce at the end range."]
+  }
+]

@@ -1,0 +1,239 @@
+[
+  {
+    "exercise_id": "leap_lying_dumbbell_lateral_raise",
+    "exercise_name": "Lying Dumbbell Lateral Raise",
+    "short_description": "A lying version of the lateral raise that isolates the lateral deltoid while eliminating momentum.",
+    "how_to": [
+      "Lie on your side with one dumbbell in the top hand.",
+      "Keep your body in a straight line.",
+      "Raise the top arm directly upward until it is vertical.",
+      "Lower it slowly back down.",
+      "Complete all reps then switch sides."
+    ],
+    "correct": [
+      "Keep your body still and stable.",
+      "Keep a slight bend in your elbow.",
+      "Move at a controlled pace.",
+      "Keep your neck neutral."
+    ],
+    "mistakes": [
+      "Don't swing the weight up with momentum.",
+      "Don't roll your torso back to assist the lift.",
+      "Don't raise beyond the vertical.",
+      "Don't let the weight drop fast."
+    ]
+  },
+  {
+    "exercise_id": "leap_shoulder_rolls",
+    "exercise_name": "Shoulder Rolls",
+    "short_description": "A gentle mobility drill that loosens the shoulders and upper trapezius.",
+    "how_to": [
+      "Stand or sit tall with your arms at your sides.",
+      "Lift both shoulders toward your ears.",
+      "Roll them backward and then downward in a smooth circle.",
+      "Complete several rotations, then reverse direction."
+    ],
+    "correct": [
+      "Keep your neck relaxed.",
+      "Move through the full circle slowly.",
+      "Keep your arms hanging loose.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't rush the movement.",
+      "Don't tense your neck as you roll.",
+      "Don't jut your head forward.",
+      "Don't cut the circle short."
+    ]
+  },
+  {
+    "exercise_id": "leap_arm_circles",
+    "exercise_name": "Arm Circles",
+    "short_description": "A shoulder warm-up drill that uses circular arm movements to improve joint mobility.",
+    "how_to": [
+      "Stand tall with your feet shoulder-width apart.",
+      "Extend both arms straight out to your sides.",
+      "Begin making small circles forward.",
+      "Gradually widen the circles.",
+      "Reverse direction for the same number of rotations."
+    ],
+    "correct": [
+      "Keep your core lightly engaged.",
+      "Keep your arms at shoulder height throughout.",
+      "Keep your movements smooth and controlled.",
+      "Relax your neck."
+    ],
+    "mistakes": [
+      "Don't let your arms drop below shoulder height.",
+      "Don't tense your shoulders up by your ears.",
+      "Don't rush the circles.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_wall_push_ups",
+    "exercise_name": "Wall Push-Ups",
+    "short_description": "A beginner pressing exercise that builds chest and shoulder strength using the wall for support.",
+    "how_to": [
+      "Stand facing a wall and place your hands on it at shoulder height and width.",
+      "Step back so your arms are extended.",
+      "Bend your elbows and lower your chest toward the wall.",
+      "Push back to the start until your arms are straight."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled on the way in.",
+      "Keep your core engaged throughout.",
+      "Keep your feet flat on the floor."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't let your head push forward on the way in.",
+      "Don't stand too close to reduce the challenge."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_front_raise",
+    "exercise_name": "Dumbbell Front Raise",
+    "short_description": "A dumbbell exercise that lifts the arms forward to strengthen the front deltoids.",
+    "how_to": [
+      "Stand tall with a dumbbell in each hand in front of your thighs.",
+      "Keep a slight bend in your elbows.",
+      "Raise both arms forward to shoulder height.",
+      "Pause at the top.",
+      "Lower the weights slowly back down."
+    ],
+    "correct": [
+      "Keep your core engaged throughout.",
+      "Keep a slight bend in your elbows.",
+      "Keep your torso upright.",
+      "Move at a controlled pace."
+    ],
+    "mistakes": [
+      "Don't swing your torso back to lift.",
+      "Don't raise the weights above shoulder height.",
+      "Don't let the weights drop fast.",
+      "Don't shrug your shoulders during the raise."
+    ]
+  },
+  {
+    "exercise_id": "leap_doorway_curls",
+    "exercise_name": "Doorway Curls",
+    "short_description": "A bodyweight biceps exercise that uses a doorframe for resistance.",
+    "how_to": [
+      "Stand in a doorway and grip both sides of the frame at about hip height.",
+      "Lean your body weight back slightly.",
+      "Curl your body upward by pulling through your biceps.",
+      "Lower yourself back to the start with control.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your elbows close to your sides.",
+      "Keep your body in a straight line.",
+      "Move at a controlled pace.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't swing your hips to assist the curl.",
+      "Don't let your elbows flare out.",
+      "Don't drop back fast on the way down.",
+      "Don't grip the frame so hard your forearms dominate the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_leg_barbell_curl",
+    "exercise_name": "Leg Barbell Curl",
+    "short_description": "A machine or barbell hamstring curl that isolates the back of the thighs.",
+    "how_to": [
+      "Lie face down with the barbell pad against the back of your ankles.",
+      "Keep your hips pressed down into the bench.",
+      "Curl your heels toward your glutes.",
+      "Pause at the top.",
+      "Lower the weight slowly back down."
+    ],
+    "correct": [
+      "Keep your hips pressed down throughout.",
+      "Move at a controlled pace.",
+      "Keep your core lightly engaged.",
+      "Keep your feet flexed."
+    ],
+    "mistakes": [
+      "Don't let your hips rise off the bench.",
+      "Don't swing the weight up with momentum.",
+      "Don't drop the weight fast on the way down.",
+      "Don't lock your knees hard at the bottom."
+    ]
+  },
+  {
+    "exercise_id": "leap_modified_push_up_low_hold",
+    "exercise_name": "Modified Push-Up Low Hold",
+    "short_description": "A modified push-up isometric hold from the knees that builds chest and triceps endurance.",
+    "how_to": [
+      "Start in a modified push-up position on your knees with hands under your shoulders.",
+      "Lower yourself halfway until your elbows are bent.",
+      "Hold there with your body in a straight line from knees to head.",
+      "Breathe steadily and maintain the position for the target time."
+    ],
+    "correct": [
+      "Keep your body straight from knees to head.",
+      "Keep your elbows controlled.",
+      "Keep your core engaged.",
+      "Breathe steadily throughout the hold."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't raise your hips above the line of your body.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_one_arm_dumbbell_lateral_raise",
+    "exercise_name": "One Arm Dumbbell Lateral Raise",
+    "short_description": "A single-arm lateral raise that targets the lateral deltoid while allowing focused control on each side.",
+    "how_to": [
+      "Stand tall with a dumbbell in one hand at your side.",
+      "Keep a slight bend in your elbow.",
+      "Raise the arm out to shoulder height.",
+      "Pause briefly at the top.",
+      "Lower the weight slowly and repeat before switching sides."
+    ],
+    "correct": [
+      "Keep your torso upright throughout.",
+      "Keep a slight bend in your elbow.",
+      "Keep your core engaged.",
+      "Move at a controlled pace."
+    ],
+    "mistakes": [
+      "Don't tilt your torso to the opposite side.",
+      "Don't shrug your shoulder as you raise.",
+      "Don't swing the weight up with momentum.",
+      "Don't let the weight drop fast."
+    ]
+  },
+  {
+    "exercise_id": "leap_military_push_ups",
+    "exercise_name": "Military Push Ups",
+    "short_description": "A strict push-up variation with elbows close to the body that targets the triceps and chest.",
+    "how_to": [
+      "Start in a push-up position with your hands directly under your shoulders.",
+      "Keep your elbows tucked close to your sides.",
+      "Lower your chest to the floor in a straight line.",
+      "Push back up to the start position.",
+      "Repeat with a steady rhythm."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled close to your body.",
+      "Keep your core tight throughout.",
+      "Keep your neck neutral."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't let your lower back arch.",
+      "Don't rush and shorten the range of motion."
+    ]
+  }
+]

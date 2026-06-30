@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_reverse_flys",
+    "exercise_name": "Reverse Flys",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do：REVERSE FLYS"
+  },
+  {
+    "exercise_id": "leap_alternating_hooks",
+    "exercise_name": "Alternating Hooks",
+    "group_label": "Other",
+    "video_title": "How to Do：ALTERNATING HOOKS"
+  },
+  {
+    "exercise_id": "leap_arm_curls_crunch",
+    "exercise_name": "Arm Curls Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：ARM CURLS CRUNCH"
+  },
+  {
+    "exercise_id": "leap_arnold_dumbbell_press",
+    "exercise_name": "Arnold Dumbbell Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：ARNOLD DUMBBELL PRESS"
+  },
+  {
+    "exercise_id": "leap_shoulder_gators",
+    "exercise_name": "Shoulder Gators",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：SHOULDER GATORS"
+  },
+  {
+    "exercise_id": "leap_alternating_dumbbell_shoulder_press",
+    "exercise_name": "Alternating Dumbbell Shoulder Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：ALTERNATING DUMBBELL SHOULDER PRESS"
+  },
+  {
+    "exercise_id": "leap_standing_glute_kickbacks",
+    "exercise_name": "Standing Glute Kickbacks",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：STANDING GLUTE KICKBACKS"
+  },
+  {
+    "exercise_id": "leap_sumo_squat_calf_raises",
+    "exercise_name": "Sumo Squat Calf Raises",
+    "group_label": "Squats",
+    "video_title": "How to Do：SUMO SQUAT CALF RAISES"
+  },
+  {
+    "exercise_id": "leap_glute_kick_back",
+    "exercise_name": "Glute Kick Back",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：GLUTE KICK BACK"
+  },
+  {
+    "exercise_id": "leap_toy_soldiers",
+    "exercise_name": "Toy Soldiers",
+    "group_label": "Other",
+    "video_title": "How to Do：TOY SOLDIERS"
+  },
+  {
+    "exercise_id": "leap_roundhouse_squat_kicks",
+    "exercise_name": "Roundhouse Squat Kicks",
+    "group_label": "Squats",
+    "video_title": "How to Do：ROUNDHOUSE SQUAT KICKS"
+  },
+  {
+    "exercise_id": "leap_skipping_without_rope",
+    "exercise_name": "Skipping Without Rope",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：SKIPPING WITHOUT ROPE"
+  },
+  {
+    "exercise_id": "leap_frog_press",
+    "exercise_name": "Frog Press",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：FROG PRESS"
+  },
+  {
+    "exercise_id": "leap_plank_jacks",
+    "exercise_name": "Plank Jacks",
+    "group_label": "Planks",
+    "video_title": "How to Do：PLANK JACKS"
+  },
+  {
+    "exercise_id": "leap_step_up_onto_chair",
+    "exercise_name": "Step-Up Onto Chair",
+    "group_label": "Equipment",
+    "video_title": "How to Do：STEP-UP ONTO CHAIR"
+  },
+  {
+    "exercise_id": "leap_wide_arm_push_ups",
+    "exercise_name": "Wide Arm Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：WIDE ARM PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_in_outs",
+    "exercise_name": "In & Outs",
+    "group_label": "Other",
+    "video_title": "How to Do：IN & OUTS"
+  },
+  {
+    "exercise_id": "leap_knee_to_chest_stretch",
+    "exercise_name": "Knee to Chest Stretch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：KNEE TO CHEST STRETCH"
+  },
+  {
+    "exercise_id": "leap_straight_arm_plank",
+    "exercise_name": "Straight-Arm Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do：STRAIGHT-ARM PLANK"
+  },
+  {
+    "exercise_id": "leap_knee_to_elbow_crunches",
+    "exercise_name": "Knee to Elbow Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：KNEE TO ELBOW CRUNCHES"
+  }
+]

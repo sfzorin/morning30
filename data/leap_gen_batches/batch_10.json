@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_seated_spinal_twist",
+    "exercise_name": "Seated Spinal Twist",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SEATED SPINAL TWIST"
+  },
+  {
+    "exercise_id": "leap_dumbbell_boat_hold",
+    "exercise_name": "Dumbbell Boat Hold",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BOAT HOLD"
+  },
+  {
+    "exercise_id": "leap_dumbbell_drag_curls",
+    "exercise_name": "Dumbbell Drag Curls",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL DRAG CURLS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_rear_delt_row",
+    "exercise_name": "Dumbbell Rear Delt Row",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL REAR DELT ROW"
+  },
+  {
+    "exercise_id": "leap_dumbbell_squat_clean_and_press",
+    "exercise_name": "Dumbbell Squat Clean and Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SQUAT CLEAN AND PRESS"
+  },
+  {
+    "exercise_id": "leap_single_arm_renegade_row",
+    "exercise_name": "Single Arm Renegade Row",
+    "group_label": "Other",
+    "video_title": "How to Do：SINGLE ARM RENEGADE ROW"
+  },
+  {
+    "exercise_id": "leap_dumbbell_fly_to_close_grip_press",
+    "exercise_name": "Dumbbell Fly to Close Grip Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL FLY TO CLOSE GRIP PRESS"
+  },
+  {
+    "exercise_id": "leap_elbow_plank_rotation",
+    "exercise_name": "Elbow Plank Rotation",
+    "group_label": "Planks",
+    "video_title": "How to Do：ELBOW PLANK ROTATION"
+  },
+  {
+    "exercise_id": "leap_dumbbell_seated_in_outs",
+    "exercise_name": "Dumbbell Seated in & Outs",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SEATED IN & OUTS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_side_boat_hold",
+    "exercise_name": "Dumbbell Side Boat Hold",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SIDE BOAT HOLD"
+  },
+  {
+    "exercise_id": "leap_dumbbell_bicep_curl_to_press",
+    "exercise_name": "Dumbbell Bicep Curl to Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BICEP CURL TO PRESS"
+  },
+  {
+    "exercise_id": "leap_standing_hip_circle",
+    "exercise_name": "Standing Hip Circle",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：STANDING HIP CIRCLE"
+  },
+  {
+    "exercise_id": "leap_overhead_arm_circles",
+    "exercise_name": "Overhead Arm Circles",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：OVERHEAD ARM CIRCLES"
+  },
+  {
+    "exercise_id": "leap_aeiou",
+    "exercise_name": "\"aeiou\"",
+    "group_label": "Other",
+    "video_title": "How to Do：\"AEIOU\""
+  },
+  {
+    "exercise_id": "leap_alternating_renegade_row",
+    "exercise_name": "Alternating Renegade Row",
+    "group_label": "Other",
+    "video_title": "How to Do：ALTERNATING RENEGADE ROW"
+  },
+  {
+    "exercise_id": "leap_dumbbell_v_up",
+    "exercise_name": "Dumbbell V-Up",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL V-UP"
+  },
+  {
+    "exercise_id": "leap_offset_push_ups",
+    "exercise_name": "Offset Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：OFFSET PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_shrug",
+    "exercise_name": "Dumbbell Shrug",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SHRUG"
+  },
+  {
+    "exercise_id": "leap_dumbbell_standing_hip_abduction",
+    "exercise_name": "Dumbbell Standing Hip Abduction",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL STANDING HIP ABDUCTION"
+  },
+  {
+    "exercise_id": "leap_seated_in_outs",
+    "exercise_name": "Seated in & Outs",
+    "group_label": "Other",
+    "video_title": "How to Do：SEATED IN & OUTS"
+  }
+]

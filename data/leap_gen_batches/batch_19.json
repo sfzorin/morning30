@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_bulgarian_split_squat",
+    "exercise_name": "Bulgarian Split Squat",
+    "group_label": "Squats",
+    "video_title": "How to Do：BULGARIAN SPLIT SQUAT"
+  },
+  {
+    "exercise_id": "leap_fire_hydrant",
+    "exercise_name": "Fire Hydrant",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：FIRE HYDRANT"
+  },
+  {
+    "exercise_id": "leap_froggy_glute_lifts",
+    "exercise_name": "Froggy Glute Lifts",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：FROGGY GLUTE LIFTS"
+  },
+  {
+    "exercise_id": "leap_side_lunges",
+    "exercise_name": "Side Lunges",
+    "group_label": "Lunges",
+    "video_title": "How to Do：SIDE LUNGES"
+  },
+  {
+    "exercise_id": "leap_floor_tricep_dips",
+    "exercise_name": "Floor Tricep Dips",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：FLOOR TRICEP DIPS"
+  },
+  {
+    "exercise_id": "leap_wall_sit",
+    "exercise_name": "Wall Sit",
+    "group_label": "Wall",
+    "video_title": "How to Do：WALL SIT"
+  },
+  {
+    "exercise_id": "leap_spiderman_push_ups",
+    "exercise_name": "Spiderman Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：SPIDERMAN PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_push_up_rotation",
+    "exercise_name": "Push-Up & Rotation",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：PUSH-UP & ROTATION"
+  },
+  {
+    "exercise_id": "leap_incline_push_ups",
+    "exercise_name": "Incline Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：INCLINE PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_lunges",
+    "exercise_name": "Lunges",
+    "group_label": "Lunges",
+    "video_title": "How to Do：LUNGES"
+  },
+  {
+    "exercise_id": "leap_curtsy_lunges",
+    "exercise_name": "Curtsy Lunges",
+    "group_label": "Lunges",
+    "video_title": "How to Do：CURTSY LUNGES"
+  },
+  {
+    "exercise_id": "leap_single_leg_calf_raises",
+    "exercise_name": "Single Leg Calf Raises",
+    "group_label": "Legs & Calves",
+    "video_title": "How to Do：SINGLE LEG CALF RAISES"
+  },
+  {
+    "exercise_id": "leap_jumping_squats",
+    "exercise_name": "Jumping Squats",
+    "group_label": "Squats",
+    "video_title": "How to Do：JUMPING SQUATS"
+  },
+  {
+    "exercise_id": "leap_knee_push_ups",
+    "exercise_name": "Knee Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：KNEE PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_box_push_ups",
+    "exercise_name": "Box Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：BOX PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_reverse_push_ups",
+    "exercise_name": "Reverse Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：REVERSE PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_split_squat",
+    "exercise_name": "Split Squat",
+    "group_label": "Squats",
+    "video_title": "How to Do：SPLIT SQUAT"
+  },
+  {
+    "exercise_id": "leap_decline_push_ups",
+    "exercise_name": "Decline Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：DECLINE PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_triceps_dips",
+    "exercise_name": "Triceps Dips",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：TRICEPS DIPS"
+  },
+  {
+    "exercise_id": "leap_hindu_push_ups",
+    "exercise_name": "Hindu Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：HINDU PUSH-UPS"
+  }
+]

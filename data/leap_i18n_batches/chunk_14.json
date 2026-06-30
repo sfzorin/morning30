@@ -1,0 +1,484 @@
+[
+  {
+    "exercise_id": "leap_forward_bend",
+    "exercise_name": "Forward Bend",
+    "short_description": "A standing forward fold that stretches the hamstrings and lower back.",
+    "how_to": [
+      "Stand with your feet hip-width apart.",
+      "Hinge from your hips and lower your torso toward the floor.",
+      "Let your hands hang toward the ground or rest on your shins.",
+      "Hold where you feel a gentle stretch in the back of your legs.",
+      "Rise back up slowly by engaging your core."
+    ],
+    "correct": [
+      "Keep your back long as you fold.",
+      "Hinge from your hips, not your waist.",
+      "Keep a soft bend in your knees.",
+      "Breathe steadily throughout the hold."
+    ],
+    "mistakes": [
+      "Don't round your upper back aggressively.",
+      "Don't lock your knees straight.",
+      "Don't bounce to reach deeper.",
+      "Don't force the stretch beyond comfort.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_torso_twist",
+    "exercise_name": "Torso Twist",
+    "short_description": "A standing rotational stretch that loosens the spine and obliques.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and knees soft.",
+      "Raise your arms to shoulder height with elbows bent.",
+      "Rotate your torso to the right, then back to centre.",
+      "Rotate to the left, keeping your hips square.",
+      "Alternate sides with a steady, controlled rhythm."
+    ],
+    "correct": [
+      "Keep your hips facing forward.",
+      "Keep your chest tall through each rotation.",
+      "Move through the full range of your spine.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't swing your arms to force the rotation.",
+      "Don't let your hips rotate with your torso.",
+      "Don't hunch your shoulders.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_to_side_tilts",
+    "exercise_name": "Side-To-Side Tilts",
+    "short_description": "A standing lateral tilt that stretches the side body and obliques.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Place one hand on your hip or let it rest at your side.",
+      "Reach the opposite arm overhead and tilt sideways.",
+      "Hold briefly, then return to centre.",
+      "Repeat on the other side."
+    ],
+    "correct": [
+      "Keep your body in one flat plane.",
+      "Keep your hips level and still.",
+      "Reach long through your fingertips.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't lean forward or backward as you tilt.",
+      "Don't shift your hips to the side.",
+      "Don't collapse through your waist.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_elbows_back",
+    "exercise_name": "Elbows Back",
+    "short_description": "A posture drill that draws the elbows behind the body to open the chest and strengthen the upper back.",
+    "how_to": [
+      "Stand or sit tall with your feet flat on the floor.",
+      "Raise your hands to chest height with elbows out to the sides.",
+      "Squeeze your shoulder blades together and pull your elbows straight back.",
+      "Hold briefly, then return to the start.",
+      "Repeat for the target reps."
+    ],
+    "correct": [
+      "Keep your chest open and lifted.",
+      "Keep your shoulders down, away from your ears.",
+      "Squeeze your shoulder blades at the end of each rep.",
+      "Keep your core lightly engaged."
+    ],
+    "mistakes": [
+      "Don't shrug your shoulders as you pull back.",
+      "Don't arch your lower back to force more range.",
+      "Don't rush through the squeeze.",
+      "Don't let your chin jut forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_jumping_push_ups",
+    "exercise_name": "Jumping Push-Ups",
+    "short_description": "An explosive push-up variation that combines a push-up with a hand jump to build chest, shoulder and power.",
+    "how_to": [
+      "Start in a push-up position with your hands under your shoulders.",
+      "Lower your chest toward the floor in a controlled push-up.",
+      "Press up explosively so your hands leave the ground.",
+      "Land softly with a slight bend in your elbows.",
+      "Immediately lower into the next rep."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled on the way down.",
+      "Land softly.",
+      "Keep your knees over your toes.",
+      "Keep your core tight throughout."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't hold your breath on the push."
+    ]
+  },
+  {
+    "exercise_id": "leap_modified_burpees",
+    "exercise_name": "Modified Burpees",
+    "short_description": "A lower-impact burpee that builds full-body endurance by stepping instead of jumping.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart.",
+      "Hinge down and place your hands on the floor.",
+      "Step one foot back, then the other, into a plank position.",
+      "Step your feet back in toward your hands.",
+      "Stand up and raise your arms overhead to complete one rep."
+    ],
+    "correct": [
+      "Land softly when you return to standing.",
+      "Keep your knees over your toes.",
+      "Keep your core engaged in the plank position.",
+      "Keep a steady, controlled pace."
+    ],
+    "mistakes": [
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't let your lower back sag in the plank.",
+      "Don't rush and lose your footing."
+    ]
+  },
+  {
+    "exercise_id": "leap_legs_up_the_wall",
+    "exercise_name": "Legs Up the Wall",
+    "short_description": "A restorative pose that elevates the legs against a wall to ease tension in the lower back and hamstrings.",
+    "how_to": [
+      "Sit sideways next to a wall with your hip close to it.",
+      "Swing your legs up and lie back so your legs rest against the wall.",
+      "Let your arms rest out to the sides, palms up.",
+      "Hold the position and breathe slowly.",
+      "To come out, bend your knees and roll onto your side."
+    ],
+    "correct": [
+      "Keep your legs relaxed against the wall.",
+      "Keep your lower back flat on the floor.",
+      "Breathe slowly and deeply.",
+      "Relax your shoulders away from your ears."
+    ],
+    "mistakes": [
+      "Don't force your legs straight if it strains your hamstrings.",
+      "Don't tense your neck or shoulders.",
+      "Don't hold your breath.",
+      "Don't come out of the pose too quickly."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_lunges",
+    "exercise_name": "Dumbbell Lunges",
+    "short_description": "A weighted lunge that strengthens the quads, glutes and hamstrings.",
+    "how_to": [
+      "Hold a dumbbell in each hand at your sides.",
+      "Stand tall with your feet hip-width apart.",
+      "Step one foot forward and lower your back knee toward the floor.",
+      "Push through your front heel to return to standing.",
+      "Alternate legs for the target reps."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down on your front foot.",
+      "Keep your torso upright throughout.",
+      "Keep your core lightly engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast into the lunge.",
+      "Don't lean your torso forward.",
+      "Don't let your front knee travel past your toes."
+    ]
+  },
+  {
+    "exercise_id": "leap_dynamic_chest",
+    "exercise_name": "Dynamic Chest",
+    "short_description": "A dynamic chest-opening movement that mobilises the shoulders and stretches the pectoral muscles.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart.",
+      "Extend both arms out in front of you at chest height.",
+      "Sweep your arms wide and back, squeezing your shoulder blades together.",
+      "Return to the start in a controlled arc.",
+      "Repeat with a smooth, rhythmic motion."
+    ],
+    "correct": [
+      "Keep your chest open as you swing back.",
+      "Keep your shoulders down away from your ears.",
+      "Keep your core stable and upright.",
+      "Move with control, not momentum."
+    ],
+    "mistakes": [
+      "Don't hunch your shoulders forward.",
+      "Don't swing your arms too fast to feel the stretch.",
+      "Don't arch your lower back as you open.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_ski_squat_leg_lift",
+    "exercise_name": "Ski Squat & Leg Lift",
+    "short_description": "A squat and leg-lift combination that targets the glutes, quads and hip abductors.",
+    "how_to": [
+      "Stand with your feet hip-width apart.",
+      "Sit back into a squat, keeping your chest up.",
+      "Drive through your heels to stand, then lift one leg out to the side.",
+      "Lower your leg and sit back into the next squat.",
+      "Alternate the leg lift each rep."
+    ],
+    "correct": [
+      "Keep your knees over your toes in the squat.",
+      "Keep your heels down as you lower.",
+      "Keep your torso upright through each rep.",
+      "Keep your core tight during the leg lift."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast into the squat.",
+      "Don't lean to the side on the leg lift.",
+      "Don't round your lower back."
+    ]
+  },
+  {
+    "exercise_id": "leap_push_up_with_toe_tap",
+    "exercise_name": "Push-Up with Toe Tap",
+    "short_description": "A push-up variation that adds a toe tap at the top to challenge the core and shoulder stability.",
+    "how_to": [
+      "Start in a push-up position with your hands under your shoulders.",
+      "Lower your chest toward the floor.",
+      "Press back up to the top position.",
+      "Shift your weight to one hand and tap the opposite foot with the free hand.",
+      "Return to centre and repeat, alternating the tap each rep."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled on the way down.",
+      "Keep your hips square during the toe tap.",
+      "Breathe out as you press up."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't rotate your hips as you tap.",
+      "Don't rush and lose body alignment."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_jumping_squat",
+    "exercise_name": "Dumbbell Jumping Squat",
+    "short_description": "An explosive weighted squat that builds leg power and raises the heart rate.",
+    "how_to": [
+      "Hold a dumbbell in each hand at your sides.",
+      "Stand with your feet shoulder-width apart.",
+      "Lower into a squat, keeping your chest up.",
+      "Drive through your feet to jump off the ground.",
+      "Land softly, bend your knees to absorb the impact, and flow into the next squat."
+    ],
+    "correct": [
+      "Land softly.",
+      "Keep your knees over your toes.",
+      "Keep your heels down on the way into the squat.",
+      "Keep your chest upright throughout."
+    ],
+    "mistakes": [
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't drop too fast out of control.",
+      "Don't round your back as you lower."
+    ]
+  },
+  {
+    "exercise_id": "leap_standing_side_bend",
+    "exercise_name": "Standing Side Bend",
+    "short_description": "A standing lateral bend that stretches the obliques and side of the torso.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Raise one arm overhead and place the other hand on your hip.",
+      "Bend slowly to the side opposite your raised arm.",
+      "Hold at the bottom for a breath, then return to centre.",
+      "Repeat on the other side."
+    ],
+    "correct": [
+      "Keep your body in one flat plane as you bend.",
+      "Keep your hips square and still.",
+      "Reach long through your fingertips.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't twist your torso as you bend.",
+      "Don't let your hips shift sideways.",
+      "Don't collapse through your waist.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_hops_on_the_spot",
+    "exercise_name": "Hops on the Spot",
+    "short_description": "A quick in-place hop drill that warms up the calves, ankles and cardiovascular system.",
+    "how_to": [
+      "Stand with your feet hip-width apart and a slight bend in your knees.",
+      "Push off the balls of your feet and hop lightly in place.",
+      "Keep hops small and controlled.",
+      "Maintain a fast, steady rhythm for the set duration."
+    ],
+    "correct": [
+      "Land softly.",
+      "Keep your knees over your toes.",
+      "Keep your core lightly braced.",
+      "Stay on the balls of your feet."
+    ],
+    "mistakes": [
+      "Don't land hard on your heels.",
+      "Don't let your knees cave inward.",
+      "Don't tense your shoulders.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_up_down_nods",
+    "exercise_name": "Up & Down Nods",
+    "short_description": "A gentle neck nod that moves the head up and down to release tension in the cervical spine.",
+    "how_to": [
+      "Sit or stand tall with your shoulders relaxed.",
+      "Slowly lower your chin toward your chest.",
+      "Gently raise your chin back to neutral, then tilt it slightly upward.",
+      "Return to neutral and repeat.",
+      "Keep the motion slow and deliberate."
+    ],
+    "correct": [
+      "Keep your shoulders down and relaxed.",
+      "Move slowly through each nod.",
+      "Keep the range comfortable for your neck.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't jerk your head quickly.",
+      "Don't force your chin further than feels comfortable.",
+      "Don't tense your shoulders.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_crab_kicks",
+    "exercise_name": "Crab Kicks",
+    "short_description": "A crab-position kick that targets the core, triceps and hip flexors from a reverse tabletop.",
+    "how_to": [
+      "Sit on the floor with your hands behind you and feet flat.",
+      "Press through your hands and feet to lift your hips into a crab position.",
+      "Kick one leg up toward the ceiling, keeping your hips lifted.",
+      "Lower that foot and kick the other leg up.",
+      "Alternate kicks for the target reps."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your hips lifted throughout.",
+      "Keep your supporting wrists stacked under your shoulders.",
+      "Move with a steady, controlled rhythm."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your hips sag between kicks.",
+      "Don't rush and lose your balance."
+    ]
+  },
+  {
+    "exercise_id": "leap_claps_over_head",
+    "exercise_name": "Claps Over Head",
+    "short_description": "A rhythmic overhead clap movement that raises the heart rate and warms up the shoulders.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart.",
+      "Raise both arms out and up until your hands meet overhead.",
+      "Clap at the top, then lower your arms back to your sides.",
+      "Repeat with a brisk, steady rhythm.",
+      "Keep your core lightly engaged throughout."
+    ],
+    "correct": [
+      "Keep your chest tall and shoulders back.",
+      "Keep your feet planted firmly.",
+      "Move your arms smoothly, not jerkily.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't shrug your shoulders on each rep.",
+      "Don't arch your lower back as you reach overhead.",
+      "Don't hold your breath.",
+      "Don't let your knees lock out."
+    ]
+  },
+  {
+    "exercise_id": "leap_lunge_knee_hops",
+    "exercise_name": "Lunge Knee Hops",
+    "short_description": "A dynamic lunge-to-hop movement that builds leg strength, balance and cardiovascular fitness.",
+    "how_to": [
+      "Stand with your feet hip-width apart.",
+      "Step one foot forward and lower into a lunge.",
+      "Drive through your front foot to stand, bringing your back knee up toward your chest.",
+      "Hop off your standing foot at the top.",
+      "Land softly and step back into the next lunge."
+    ],
+    "correct": [
+      "Land softly after each hop.",
+      "Keep your knees over your toes in the lunge.",
+      "Keep your torso upright throughout.",
+      "Keep your core engaged for balance."
+    ],
+    "mistakes": [
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't drop too fast into the lunge.",
+      "Don't lean your torso forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_butt_kicks",
+    "exercise_name": "Butt Kicks",
+    "short_description": "A running-in-place drill that kicks the heels toward the glutes to warm up the hamstrings and elevate the heart rate.",
+    "how_to": [
+      "Stand with your feet hip-width apart.",
+      "Begin jogging lightly in place.",
+      "Drive each heel up toward your glutes with each step.",
+      "Pump your arms naturally to keep your balance.",
+      "Maintain a quick, steady pace for the set duration."
+    ],
+    "correct": [
+      "Keep your knees pointing down toward the floor.",
+      "Keep your torso upright, not leaning forward.",
+      "Land softly on the balls of your feet.",
+      "Keep your core lightly engaged."
+    ],
+    "mistakes": [
+      "Don't lean your chest too far forward.",
+      "Don't let your knees flare outward.",
+      "Don't stomp your feet down.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_bird_dog",
+    "exercise_name": "Bird Dog",
+    "short_description": "A floor stability exercise that extends opposite arm and leg to strengthen the core and lower back.",
+    "how_to": [
+      "Start on all fours with your hands under your shoulders and knees under your hips.",
+      "Brace your core to keep your spine neutral.",
+      "Extend your right arm forward and your left leg back at the same time.",
+      "Hold for a breath, then return to the start.",
+      "Alternate sides for the target reps."
+    ],
+    "correct": [
+      "Keep your hips level throughout the movement.",
+      "Keep your lower back flat, not arched.",
+      "Keep your neck in line with your spine.",
+      "Move slowly and with control."
+    ],
+    "mistakes": [
+      "Don't let your hips rotate as you extend.",
+      "Don't arch your lower back.",
+      "Don't rush through the reps.",
+      "Don't hold your breath."
+    ]
+  }
+]

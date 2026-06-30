@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_dumbbell_decline_floor_press",
+    "exercise_name": "Dumbbell Decline Floor Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL DECLINE FLOOR PRESS"
+  },
+  {
+    "exercise_id": "leap_standing_crossover_toe_touches",
+    "exercise_name": "Standing Crossover Toe Touches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：STANDING CROSSOVER TOE TOUCHES"
+  },
+  {
+    "exercise_id": "leap_wood_chops",
+    "exercise_name": "Wood Chops",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：WOOD  CHOPS"
+  },
+  {
+    "exercise_id": "leap_tiger_bend_push_ups",
+    "exercise_name": "Tiger Bend Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：TIGER BEND PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_glute_kickback_pulse",
+    "exercise_name": "Glute Kickback Pulse",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：GLUTE KICKBACK PULSE"
+  },
+  {
+    "exercise_id": "leap_standing_oblique_crunches",
+    "exercise_name": "Standing Oblique Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：STANDING OBLIQUE CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_glute_stretch",
+    "exercise_name": "Glute Stretch",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：GLUTE STRETCH"
+  },
+  {
+    "exercise_id": "leap_side_plank_front_kick",
+    "exercise_name": "Side Plank Front Kick",
+    "group_label": "Planks",
+    "video_title": "How to Do：SIDE PLANK FRONT KICK"
+  },
+  {
+    "exercise_id": "leap_wall_standing_glute_kickbacks",
+    "exercise_name": "Wall Standing Glute Kickbacks",
+    "group_label": "Wall",
+    "video_title": "How to Do：WALL STANDING GLUTE KICKBACKS"
+  },
+  {
+    "exercise_id": "leap_side_step_jacks",
+    "exercise_name": "Side Step Jacks",
+    "group_label": "Equipment",
+    "video_title": "How to Do：SIDE STEP JACKS"
+  },
+  {
+    "exercise_id": "leap_wall_glute_kickback_hold",
+    "exercise_name": "Wall Glute Kickback Hold",
+    "group_label": "Wall",
+    "video_title": "How to Do：WALL GLUTE KICKBACK HOLD"
+  },
+  {
+    "exercise_id": "leap_glute_kickback_crossover_with_leg",
+    "exercise_name": "Glute Kickback Crossover with Leg",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：GLUTE KICKBACK CROSSOVER WITH LEG"
+  },
+  {
+    "exercise_id": "leap_side_lying_kickback",
+    "exercise_name": "Side Lying Kickback",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：SIDE LYING KICKBACK"
+  },
+  {
+    "exercise_id": "leap_fast_spider_lunges",
+    "exercise_name": "Fast Spider Lunges",
+    "group_label": "Lunges",
+    "video_title": "How to Do：FAST SPIDER LUNGES"
+  },
+  {
+    "exercise_id": "leap_flutter_kick_squats",
+    "exercise_name": "Flutter Kick Squats",
+    "group_label": "Squats",
+    "video_title": "How to Do：FLUTTER KICK SQUATS"
+  },
+  {
+    "exercise_id": "leap_plank_taps",
+    "exercise_name": "Plank Taps",
+    "group_label": "Planks",
+    "video_title": "How to Do：PLANK TAPS"
+  },
+  {
+    "exercise_id": "leap_standing_dumbbell_calf_raise",
+    "exercise_name": "Standing Dumbbell Calf Raise",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：STANDING DUMBBELL CALF RAISE"
+  },
+  {
+    "exercise_id": "leap_sumo_squat_leg_raises",
+    "exercise_name": "Sumo Squat & Leg Raises",
+    "group_label": "Squats",
+    "video_title": "How to Do：SUMO SQUAT & LEG RAISES"
+  },
+  {
+    "exercise_id": "leap_one_leg_bridge",
+    "exercise_name": "One Leg Bridge",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：ONE LEG BRIDGE"
+  },
+  {
+    "exercise_id": "leap_trunk_rotation",
+    "exercise_name": "Trunk Rotation",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：TRUNK ROTATION"
+  }
+]

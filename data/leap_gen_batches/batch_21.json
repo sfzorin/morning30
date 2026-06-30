@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_cobras",
+    "exercise_name": "Cobras",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do: COBRAS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_toe_touch_crunch",
+    "exercise_name": "Dumbbell Toe-Touch Crunch",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL TOE-TOUCH CRUNCH"
+  },
+  {
+    "exercise_id": "leap_dumbbell_up_n_overs",
+    "exercise_name": "Dumbbell Up-N-Overs",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL UP-N-OVERS"
+  },
+  {
+    "exercise_id": "leap_oblique_v_ups",
+    "exercise_name": "Oblique V-Ups",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：OBLIQUE V-UPS"
+  },
+  {
+    "exercise_id": "leap_x_man_crunch",
+    "exercise_name": "X Man Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: X MAN CRUNCH"
+  },
+  {
+    "exercise_id": "leap_one_down_two_ups",
+    "exercise_name": "One Down Two Ups",
+    "group_label": "Other",
+    "video_title": "How to Do：ONE DOWN TWO UPS"
+  },
+  {
+    "exercise_id": "leap_reverse_crunches_with_leg_raised",
+    "exercise_name": "Reverse Crunches with Leg Raised",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: REVERSE CRUNCHES WITH LEG RAISED"
+  },
+  {
+    "exercise_id": "leap_sit_up_twist",
+    "exercise_name": "Sit-Up Twist",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：SIT-UP TWIST"
+  },
+  {
+    "exercise_id": "leap_lying_twist_stretch",
+    "exercise_name": "Lying Twist Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: LYING TWIST STRETCH"
+  },
+  {
+    "exercise_id": "leap_dumbbell_bicycle_passes",
+    "exercise_name": "Dumbbell Bicycle Passes",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BICYCLE PASSES"
+  },
+  {
+    "exercise_id": "leap_v_hold",
+    "exercise_name": "V-Hold",
+    "group_label": "Other",
+    "video_title": "How to Do: V-HOLD"
+  },
+  {
+    "exercise_id": "leap_dumbbell_paddle_boats",
+    "exercise_name": "Dumbbell Paddle Boats",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL PADDLE BOATS"
+  },
+  {
+    "exercise_id": "leap_90_90_crunch",
+    "exercise_name": "90/90 Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：90/90 CRUNCH"
+  },
+  {
+    "exercise_id": "leap_superman",
+    "exercise_name": "Superman",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do: SUPERMAN"
+  },
+  {
+    "exercise_id": "leap_abdominal_crunches",
+    "exercise_name": "Abdominal Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: ABDOMINAL CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_clapping_crunches",
+    "exercise_name": "Clapping Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: CLAPPING CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_child_pose",
+    "exercise_name": "Child Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: CHILD POSE"
+  },
+  {
+    "exercise_id": "leap_sit_ups",
+    "exercise_name": "Sit-Ups",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：SIT-UPS"
+  },
+  {
+    "exercise_id": "leap_side_leg_raise",
+    "exercise_name": "Side Leg Raise",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: SIDE LEG RAISE"
+  },
+  {
+    "exercise_id": "leap_swimmer_and_superman",
+    "exercise_name": "Swimmer and Superman",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do：SWIMMER AND SUPERMAN"
+  }
+]

@@ -1,0 +1,241 @@
+[
+  {
+    "exercise_id": "leap_wall_calf_raises",
+    "exercise_name": "Wall Calf Raises",
+    "short_description": "A standing calf raise against a wall that strengthens the calf muscles with added balance support.",
+    "how_to": [
+      "Stand facing a wall with your fingertips lightly touching it.",
+      "Place your feet hip-width apart with toes pointing forward.",
+      "Rise onto the balls of your feet as high as you can.",
+      "Lower your heels slowly back to the floor.",
+      "Repeat for the full set."
+    ],
+    "correct": [
+      "Keep your body upright throughout.",
+      "Rise to your full height on each rep.",
+      "Lower your heels with control.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't lean heavily into the wall.",
+      "Don't drop your heels quickly.",
+      "Don't let your ankles roll outward.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_lateral_plank_walk",
+    "exercise_name": "Lateral Plank Walk",
+    "short_description": "A travelling plank that challenges core stability and shoulder strength as you step side to side.",
+    "how_to": [
+      "Start in a high plank with hands under your shoulders.",
+      "Step your right hand and right foot out to the right.",
+      "Follow with your left hand and left foot.",
+      "Repeat in the other direction for one rep.",
+      "Keep your hips level throughout."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips level as you step.",
+      "Move with a steady, controlled pace."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't let your hips sway side to side.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_leaning_stretcher_raises",
+    "exercise_name": "Leaning Stretcher Raises",
+    "short_description": "A leaning side-raise stretch that opens the hips and lengthens the inner thigh and lateral trunk.",
+    "how_to": [
+      "Stand with your feet wide apart.",
+      "Lean to one side and place your hand on your thigh for support.",
+      "Raise the opposite arm overhead and reach away.",
+      "Hold for a breath, then return to centre.",
+      "Alternate sides for the full set."
+    ],
+    "correct": [
+      "Keep your chest open and facing forward.",
+      "Breathe slowly into the stretch.",
+      "Keep a soft bend in both knees.",
+      "Reach long through your fingertips."
+    ],
+    "mistakes": [
+      "Don't round your upper back.",
+      "Don't force the stretch.",
+      "Don't hold your breath.",
+      "Don't let your hips shift backward."
+    ]
+  },
+  {
+    "exercise_id": "leap_inchworms",
+    "exercise_name": "Inchworms",
+    "short_description": "A full-body warm-up movement that stretches the hamstrings and activates the core and shoulders.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Hinge forward and place your hands on the floor in front of you.",
+      "Walk your hands out until you reach a plank position.",
+      "Walk your hands back toward your feet.",
+      "Stand up and repeat."
+    ],
+    "correct": [
+      "Keep your legs as straight as your flexibility allows.",
+      "Keep your core engaged in the plank position.",
+      "Move at a slow, deliberate pace.",
+      "Keep your back flat as you hinge."
+    ],
+    "mistakes": [
+      "Don't let your lower back arch in the plank.",
+      "Don't bend your knees excessively.",
+      "Don't rush through the steps.",
+      "Don't let your hips rise too high as you walk in."
+    ]
+  },
+  {
+    "exercise_id": "leap_quad_stretch_with_wall",
+    "exercise_name": "Quad Stretch with Wall",
+    "short_description": "A standing quad stretch using a wall for balance that lengthens the front of the thigh.",
+    "how_to": [
+      "Stand next to a wall and place one hand on it for support.",
+      "Bend one knee and bring your heel toward your glute.",
+      "Grasp your ankle with your free hand.",
+      "Hold where you feel a gentle stretch in your thigh.",
+      "Switch legs and repeat."
+    ],
+    "correct": [
+      "Keep your knees together.",
+      "Keep your body upright throughout.",
+      "Breathe steadily.",
+      "Hold the stretch without bouncing."
+    ],
+    "mistakes": [
+      "Don't lean forward from your hips.",
+      "Don't force the stretch.",
+      "Don't let your standing knee lock out.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_sumo_squat_calf_raises_with_wall",
+    "exercise_name": "Sumo Squat Calf Raises with Wall",
+    "short_description": "A wide-stance squat hold combined with calf raises against a wall that targets the inner thighs, glutes and calves.",
+    "how_to": [
+      "Stand facing a wall with your feet wide and toes turned out.",
+      "Touch the wall lightly with your fingertips for balance.",
+      "Lower into a sumo squat and hold the position.",
+      "Rise onto the balls of your feet, then lower your heels.",
+      "Repeat the calf raise from the squat hold."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down in the squat base.",
+      "Keep your chest upright throughout.",
+      "Move with control on each raise."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast into the squat.",
+      "Don't lean heavily on the wall.",
+      "Don't rush the calf raises."
+    ]
+  },
+  {
+    "exercise_id": "leap_calf_raise_with_splayed_foot",
+    "exercise_name": "Calf Raise with Splayed Foot",
+    "short_description": "A calf raise with toes turned out that targets the outer portion of the calf muscles.",
+    "how_to": [
+      "Stand with your feet hip-width apart and toes pointing outward.",
+      "Place your hands on your hips or hold a support if needed.",
+      "Rise onto the balls of your feet as high as you can.",
+      "Lower your heels slowly back to the floor.",
+      "Repeat for the full set."
+    ],
+    "correct": [
+      "Keep your body upright throughout.",
+      "Rise to your full height on each rep.",
+      "Lower with control.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your ankles roll inward.",
+      "Don't drop your heels quickly.",
+      "Don't rush the movement.",
+      "Don't lock your knees."
+    ]
+  },
+  {
+    "exercise_id": "leap_single_leg_calf_hop",
+    "exercise_name": "Single Leg Calf Hop",
+    "short_description": "A single-leg hopping drill that develops calf power and ankle stability on one leg at a time.",
+    "how_to": [
+      "Stand on one foot with a slight bend in your knee.",
+      "Spring off the ball of your foot and hop lightly.",
+      "Land on the same foot and immediately spring again.",
+      "Complete all reps, then switch legs."
+    ],
+    "correct": [
+      "Land softly.",
+      "Keep your knees over your toes.",
+      "Keep your core engaged for balance.",
+      "Stay on the ball of your foot throughout."
+    ],
+    "mistakes": [
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't let your heel slam down.",
+      "Don't lean excessively to one side."
+    ]
+  },
+  {
+    "exercise_id": "leap_calf_stretch",
+    "exercise_name": "Calf Stretch",
+    "short_description": "A standing calf stretch that lengthens the gastrocnemius and soleus by pressing the heel into the floor.",
+    "how_to": [
+      "Stand facing a wall and place both hands on it.",
+      "Step one foot back and press your heel firmly into the floor.",
+      "Keep the back leg straight and lean gently forward.",
+      "Hold where you feel the stretch in your calf.",
+      "Switch legs and repeat."
+    ],
+    "correct": [
+      "Keep your back heel flat on the floor.",
+      "Keep your back leg straight for the upper calf.",
+      "Breathe steadily.",
+      "Keep your hips square and forward."
+    ],
+    "mistakes": [
+      "Don't let your back heel lift.",
+      "Don't force the stretch.",
+      "Don't hold your breath.",
+      "Don't rotate your back foot inward."
+    ]
+  },
+  {
+    "exercise_id": "leap_straight_leg_raise",
+    "exercise_name": "Straight Leg Raise",
+    "short_description": "A supine leg raise that strengthens the hip flexors and lower abdominals while protecting the lower back.",
+    "how_to": [
+      "Lie on your back with your legs straight and hands by your sides.",
+      "Press your lower back gently into the floor.",
+      "Raise both legs together to about 90 degrees.",
+      "Lower them slowly without letting them touch the floor.",
+      "Repeat for the full set."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your legs straight throughout.",
+      "Lower your legs with control.",
+      "Breathe out as you raise your legs."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your legs drop quickly.",
+      "Don't bend your knees to make it easier."
+    ]
+  }
+]

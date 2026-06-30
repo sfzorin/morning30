@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_cobras",
+    "short_description": "A prone back extension that strengthens the spinal erectors and opens the chest.",
+    "how_to": ["Lie face down with your hands under your shoulders.", "Press through your palms and lift your chest off the floor.", "Keep your hips and legs relaxed on the ground.", "Hold briefly at the top, then lower with control.", "Repeat for the desired reps."],
+    "correct": ["Keep your neck neutral.", "Move with control.", "Keep your elbows slightly bent at the top.", "Keep your hips pressed into the floor."],
+    "mistakes": ["Don't throw your head back.", "Don't over-arch your lower back.", "Don't push up with locked elbows.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_toe_touch_crunch",
+    "short_description": "A weighted crunch where you reach a dumbbell toward your raised feet to target the upper abs.",
+    "how_to": ["Lie on your back and raise your legs straight toward the ceiling.", "Hold a dumbbell with both hands and extend your arms up.", "Crunch your shoulders off the floor and reach the dumbbell toward your feet.", "Lower your shoulders back slowly and repeat."],
+    "correct": ["Keep your lower back controlled.", "Keep your legs as vertical as you can.", "Keep the movement smooth and deliberate.", "Breathe out as you crunch up."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't swing the dumbbell with momentum.", "Don't drop your shoulders back quickly."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_up_n_overs",
+    "short_description": "A rotational dumbbell swing that works the shoulders, core and obliques through a wide arc.",
+    "how_to": ["Stand with your feet shoulder-width apart and hold a dumbbell with both hands.", "Start with the dumbbell at one hip.", "Swing it up and across your body in a diagonal arc.", "Guide it back to the starting position with control.", "Alternate sides each rep."],
+    "correct": ["Keep your core braced throughout.", "Keep your knees slightly bent.", "Move with control on both the up and down phases.", "Keep your grip firm."],
+    "mistakes": ["Don't use your lower back to drive the movement.", "Don't let your arms go limp on the return.", "Don't twist your knees under load.", "Don't rush through the arc."]
+  },
+  {
+    "exercise_id": "leap_oblique_v_ups",
+    "short_description": "A side-lying crunch that targets the obliques by lifting the legs and torso together.",
+    "how_to": ["Lie on your side with your legs stacked and one hand behind your head.", "Brace your core and lift both legs off the floor.", "At the same time, crunch your top elbow toward your hip.", "Lower back down with control and repeat on the same side."],
+    "correct": ["Keep your lower back controlled.", "Keep your top hip stacked over the lower hip.", "Move your legs and torso together.", "Breathe out as you crunch."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't let your legs drop without control.", "Don't rock backward to create momentum."]
+  },
+  {
+    "exercise_id": "leap_x_man_crunch",
+    "short_description": "A crunch variation with arms and legs spread wide that challenges the entire core.",
+    "how_to": ["Lie on your back with your arms and legs spread into an X shape.", "Crunch your shoulders off the floor while drawing your opposite hand toward your opposite foot.", "Lower back down and repeat on the other side.", "Keep the movement controlled throughout."],
+    "correct": ["Keep your lower back controlled.", "Keep your movements deliberate.", "Breathe out as you crunch.", "Keep your feet light on the floor between reps."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't rush the rotation.", "Don't let momentum replace muscle effort."]
+  },
+  {
+    "exercise_id": "leap_one_down_two_ups",
+    "short_description": "A tempo push-up variation that builds chest and tricep strength with a slow descent and two-phase press.",
+    "how_to": ["Start in a push-up position with your hands under your shoulders.", "Lower your chest to the floor in one slow count.", "Press halfway up, pause briefly.", "Press all the way up to the start position.", "That is one rep — repeat."],
+    "correct": ["Keep your body straight from head to heels.", "Keep your elbows controlled.", "Keep your core tight throughout.", "Move at a steady, deliberate pace."],
+    "mistakes": ["Don't let your hips drop.", "Don't flare your elbows out wide.", "Don't rush the lowering phase.", "Don't sag through your lower back."]
+  },
+  {
+    "exercise_id": "leap_reverse_crunches_with_leg_raised",
+    "short_description": "A reverse crunch with legs elevated that intensifies lower-ab engagement.",
+    "how_to": ["Lie on your back with your arms flat at your sides.", "Raise your legs to ninety degrees and keep them there.", "Use your abs to curl your hips off the floor.", "Lower your hips back down slowly without letting your legs drop.", "Repeat for the desired reps."],
+    "correct": ["Keep your lower back controlled.", "Keep your legs at ninety degrees throughout.", "Use your abs to lift, not momentum.", "Breathe out as you curl your hips up."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't swing your legs for momentum.", "Don't let your hips drop quickly on the way down."]
+  },
+  {
+    "exercise_id": "leap_sit_up_twist",
+    "short_description": "A sit-up with a rotation at the top that works the abs and obliques together.",
+    "how_to": ["Lie on your back with your knees bent and your hands behind your head.", "Sit all the way up, then rotate your torso to one side.", "Return to center and lower back down slowly.", "Alternate the twist direction each rep."],
+    "correct": ["Keep your lower back controlled.", "Keep your feet flat on the floor.", "Rotate from your torso, not your neck.", "Move with control on the way down."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't jerk up with momentum.", "Don't twist your hips when rotating."]
+  },
+  {
+    "exercise_id": "leap_lying_twist_stretch",
+    "short_description": "A supine spinal rotation that releases tension in the lower back and hips.",
+    "how_to": ["Lie on your back with your knees bent and your arms out to the sides.", "Let both knees fall slowly to one side.", "Keep both shoulders flat on the floor.", "Hold the stretch, then bring your knees back to center and repeat on the other side."],
+    "correct": ["Keep both shoulders flat on the floor.", "Breathe steadily.", "Let gravity do the work.", "Keep your knees together as they lower."],
+    "mistakes": ["Don't force the stretch.", "Don't hold your breath.", "Don't lift your shoulders off the floor.", "Don't rush between sides."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_bicycle_passes",
+    "short_description": "A weighted bicycle crunch that passes a dumbbell between hands to challenge the abs and obliques.",
+    "how_to": ["Lie on your back with your knees raised and a dumbbell in one hand.", "Crunch up and bring your opposite knee in as you pass the dumbbell to the other hand.", "Extend that leg out and repeat on the other side.", "Alternate sides in a smooth bicycle rhythm."],
+    "correct": ["Keep your lower back controlled.", "Keep the pass controlled and intentional.", "Keep your shoulders off the floor between reps.", "Breathe steadily throughout."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't drop the dumbbell between passes.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_v_hold",
+    "short_description": "An isometric core hold in a V-sit position that builds deep ab and hip-flexor strength.",
+    "how_to": ["Sit on the floor and lean back slightly.", "Lift your legs off the floor and extend them at roughly forty-five degrees.", "Reach your arms forward alongside your legs.", "Hold this V shape and breathe steadily."],
+    "correct": ["Keep your spine long, not rounded.", "Keep your core tight the whole time.", "Breathe steadily.", "Keep your legs close together."],
+    "mistakes": ["Don't round your back to reach your legs.", "Don't hold your breath.", "Don't let your legs drop without control.", "Don't collapse through your lower back."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_paddle_boats",
+    "short_description": "A seated rowing movement with dumbbells that mimics paddling and works the upper back and core.",
+    "how_to": ["Sit on the floor in a V-hold position with a dumbbell in each hand.", "Lean back slightly and brace your core.", "Alternate rowing each dumbbell back in a circular paddling motion.", "Keep your torso steady as you row."],
+    "correct": ["Keep your spine long.", "Keep your core engaged throughout.", "Keep your movements smooth and rhythmic.", "Breathe steadily."],
+    "mistakes": ["Don't round your lower back.", "Don't rock your torso with each row.", "Don't hold your breath.", "Don't rush the rowing motion."]
+  },
+  {
+    "exercise_id": "leap_90_90_crunch",
+    "short_description": "A crunch with hips and knees both at ninety degrees that isolates the upper abs.",
+    "how_to": ["Lie on your back and raise your legs so your hips and knees are both at ninety degrees.", "Place your hands lightly behind your head.", "Crunch your shoulders off the floor toward your knees.", "Lower back down slowly and repeat."],
+    "correct": ["Keep your lower back controlled.", "Keep your hips at ninety degrees throughout.", "Keep your chin away from your chest.", "Breathe out as you crunch."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't drop your legs out of position.", "Don't bounce off the floor between reps."]
+  },
+  {
+    "exercise_id": "leap_superman",
+    "short_description": "A prone hold that strengthens the lower back, glutes and rear shoulders by lifting opposite limbs.",
+    "how_to": ["Lie face down with your arms extended overhead and your legs straight.", "Lift your arms, chest and legs off the floor at the same time.", "Hold the top position briefly.", "Lower back down with control and repeat."],
+    "correct": ["Keep your neck neutral.", "Move with control.", "Keep your glutes and core engaged at the top.", "Keep your arms and legs long."],
+    "mistakes": ["Don't throw your head back.", "Don't over-arch your lower back.", "Don't jerk your limbs up quickly.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_abdominal_crunches",
+    "short_description": "A foundational crunch that targets the upper abs through a short, controlled range of motion.",
+    "how_to": ["Lie on your back with your knees bent and feet flat on the floor.", "Place your hands lightly behind your head.", "Crunch your shoulder blades off the floor by contracting your abs.", "Lower back slowly to just above the floor and repeat."],
+    "correct": ["Keep your lower back controlled.", "Keep your chin slightly away from your chest.", "Keep your feet flat on the floor.", "Breathe out as you crunch up."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't use momentum to swing up.", "Don't let your feet lift off the floor."]
+  },
+  {
+    "exercise_id": "leap_clapping_crunches",
+    "short_description": "A crunch variation where you clap under your knees at the top to engage the abs with added coordination.",
+    "how_to": ["Lie on your back with your knees bent and arms at your sides.", "Crunch your shoulders off the floor.", "Bring your hands together under your thighs and clap.", "Lower back down with control and repeat."],
+    "correct": ["Keep your lower back controlled.", "Keep the clap deliberate, not a flick.", "Breathe out as you crunch.", "Keep your feet flat on the floor."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't rush the clap and lose form.", "Don't use momentum to throw yourself up."]
+  },
+  {
+    "exercise_id": "leap_child_pose",
+    "short_description": "A resting yoga pose that gently stretches the lower back, hips and thighs.",
+    "how_to": ["Kneel on the floor and sit back toward your heels.", "Extend your arms forward and lower your forehead to the floor.", "Let your chest sink toward the ground.", "Hold and breathe steadily."],
+    "correct": ["Keep your hips moving toward your heels.", "Breathe slowly and deeply.", "Relax your shoulders.", "Keep your arms extended and soft."],
+    "mistakes": ["Don't hold your breath.", "Don't force the stretch.", "Don't tense your shoulders.", "Don't lift your hips off your heels prematurely."]
+  },
+  {
+    "exercise_id": "leap_sit_ups",
+    "short_description": "A classic core exercise that lifts the torso all the way up to work the abs and hip flexors.",
+    "how_to": ["Lie on your back with your knees bent and feet flat on the floor.", "Place your hands behind your head or cross them over your chest.", "Engage your core and sit all the way up.", "Lower back down with control and repeat."],
+    "correct": ["Keep your lower back controlled.", "Keep your feet flat on the floor.", "Move with a smooth, steady pace.", "Breathe out as you rise."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't drop back down without control.", "Don't anchor your feet if it causes lower-back strain."]
+  },
+  {
+    "exercise_id": "leap_side_leg_raise",
+    "short_description": "A side-lying leg lift that targets the outer hip and glute medius.",
+    "how_to": ["Lie on your side with your body in a straight line.", "Keep your bottom leg extended and your top leg straight.", "Lift your top leg toward the ceiling without rotating your hip.", "Lower it back down slowly and repeat, then switch sides."],
+    "correct": ["Keep your lower back controlled.", "Keep your hips stacked.", "Keep your top foot flexed.", "Move at a slow, controlled pace."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't roll your hip forward to gain range.", "Don't let your leg drop quickly on the way down."]
+  },
+  {
+    "exercise_id": "leap_swimmer_and_superman",
+    "short_description": "A prone sequence combining alternating swimmers and a full superman hold to strengthen the entire posterior chain.",
+    "how_to": ["Lie face down with your arms extended overhead.", "Alternate lifting one arm with the opposite leg in a swimming motion for several reps.", "Then lift both arms and both legs together into a superman hold.", "Hold briefly, lower with control, and repeat the sequence."],
+    "correct": ["Keep your neck neutral.", "Move with control.", "Keep your core lightly engaged throughout.", "Breathe steadily between phases."],
+    "mistakes": ["Don't throw your head back.", "Don't over-arch your lower back.", "Don't jerk your limbs up with momentum.", "Don't hold your breath during the hold."]
+  }
+]

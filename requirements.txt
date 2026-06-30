@@ -1,0 +1,7 @@
+# Tooling for the Leap Fitness How-To import pipeline (scripts/). Offline content
+# tooling only — the app itself is Go and does not depend on these.
+requests
+python-dotenv
+python-slugify
+tqdm
+yt-dlp

@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_straight_arm_knee_plank",
+    "exercise_name": "Straight-Arm Knee Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do: STRAIGHT-ARM KNEE PLANK"
+  },
+  {
+    "exercise_id": "leap_pigeon_pose",
+    "exercise_name": "Pigeon Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: PIGEON POSE"
+  },
+  {
+    "exercise_id": "leap_spine_lumbar_twist_stretch",
+    "exercise_name": "Spine Lumbar Twist Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: SPINE LUMBAR TWIST STRETCH"
+  },
+  {
+    "exercise_id": "leap_chair",
+    "exercise_name": "Chair",
+    "group_label": "Equipment",
+    "video_title": "How to Do: CHAIR"
+  },
+  {
+    "exercise_id": "leap_fish_pose",
+    "exercise_name": "Fish Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: FISH POSE"
+  },
+  {
+    "exercise_id": "leap_warrior_i",
+    "exercise_name": "Warrior I",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: WARRIOR I"
+  },
+  {
+    "exercise_id": "leap_camel",
+    "exercise_name": "Camel",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: CAMEL"
+  },
+  {
+    "exercise_id": "leap_shoulder_shrugs",
+    "exercise_name": "Shoulder Shrugs",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do: SHOULDER SHRUGS"
+  },
+  {
+    "exercise_id": "leap_star_jumps",
+    "exercise_name": "Star Jumps",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：STAR JUMPS"
+  },
+  {
+    "exercise_id": "leap_pendulum_swings",
+    "exercise_name": "Pendulum Swings",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：PENDULUM SWINGS"
+  },
+  {
+    "exercise_id": "leap_windshield_wipers",
+    "exercise_name": "Windshield Wipers",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：WINDSHIELD WIPERS"
+  },
+  {
+    "exercise_id": "leap_leg_spreads",
+    "exercise_name": "Leg Spreads",
+    "group_label": "Other",
+    "video_title": "How to Do：LEG SPREADS"
+  },
+  {
+    "exercise_id": "leap_back_bow_pulls",
+    "exercise_name": "Back Bow Pulls",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do：BACK BOW PULLS"
+  },
+  {
+    "exercise_id": "leap_body_saw",
+    "exercise_name": "Body Saw",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：BODY SAW"
+  },
+  {
+    "exercise_id": "leap_prone_flutter_kicks",
+    "exercise_name": "Prone Flutter Kicks",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：PRONE FLUTTER KICKS"
+  },
+  {
+    "exercise_id": "leap_sitting_hamstring_stretch",
+    "exercise_name": "Sitting Hamstring Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SITTING HAMSTRING STRETCH"
+  },
+  {
+    "exercise_id": "leap_seated_butterfly_stretch",
+    "exercise_name": "Seated Butterfly Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SEATED BUTTERFLY STRETCH"
+  },
+  {
+    "exercise_id": "leap_dumbbell_pullover_on_floor",
+    "exercise_name": "Dumbbell Pullover on Floor",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL PULLOVER ON FLOOR"
+  },
+  {
+    "exercise_id": "leap_squat_jacks",
+    "exercise_name": "Squat Jacks",
+    "group_label": "Squats",
+    "video_title": "How to Do：SQUAT JACKS"
+  },
+  {
+    "exercise_id": "leap_crossbody_mountain_climber",
+    "exercise_name": "Crossbody Mountain Climber",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：CROSSBODY MOUNTAIN CLIMBER"
+  }
+]

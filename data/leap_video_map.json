@@ -1,0 +1,128 @@
+[
+  {
+    "exercise_id": "P01",
+    "matched_from": "Push-Ups",
+    "video_url": "https://www.youtube.com/watch?v=TGQi4VsPIhU",
+    "video_id": "TGQi4VsPIhU",
+    "video_title": "How to Do：PUSH-UPS"
+  },
+  {
+    "exercise_id": "CD04",
+    "matched_from": "Sphinx Pose",
+    "video_url": "https://www.youtube.com/watch?v=7a_WhOoegHE",
+    "video_id": "7a_WhOoegHE",
+    "video_title": "How to Do: SPHINX POSE"
+  },
+  {
+    "exercise_id": "B08",
+    "matched_from": "Reverse Plank",
+    "video_url": "https://www.youtube.com/watch?v=mX_SX6I2DSI",
+    "video_id": "mX_SX6I2DSI",
+    "video_title": "How to Do: REVERSE PLANK"
+  },
+  {
+    "exercise_id": "C10",
+    "matched_from": "Up and Down Plank",
+    "video_url": "https://www.youtube.com/watch?v=Rr1Xq5Hmg7A",
+    "video_id": "Rr1Xq5Hmg7A",
+    "video_title": "How to Do：UP AND DOWN PLANK"
+  },
+  {
+    "exercise_id": "W09",
+    "matched_from": "Arm Swings",
+    "video_url": "https://www.youtube.com/watch?v=dW3Pi-RXSyM",
+    "video_id": "dW3Pi-RXSyM",
+    "video_title": "How to Do：ARM SWINGS"
+  },
+  {
+    "exercise_id": "L03",
+    "matched_from": "Hip Hinge",
+    "video_url": "https://www.youtube.com/watch?v=VyFDPMOy-eA",
+    "video_id": "VyFDPMOy-eA",
+    "video_title": "How to Do：HIP HINGE"
+  },
+  {
+    "exercise_id": "C03",
+    "matched_from": "Scissors",
+    "video_url": "https://www.youtube.com/watch?v=2cc_hUFvTKU",
+    "video_id": "2cc_hUFvTKU",
+    "video_title": "How to Do：SCISSORS"
+  },
+  {
+    "exercise_id": "P06",
+    "matched_from": "Pike Push Ups",
+    "video_url": "https://www.youtube.com/watch?v=Q2koXI9jphI",
+    "video_id": "Q2koXI9jphI",
+    "video_title": "How to Do：PIKE PUSH UPS"
+  },
+  {
+    "exercise_id": "CD01",
+    "matched_from": "Chest Stretch",
+    "video_url": "https://www.youtube.com/watch?v=NS64IgKUyeY",
+    "video_id": "NS64IgKUyeY",
+    "video_title": "How to Do：CHEST STRETCH"
+  },
+  {
+    "exercise_id": "B02",
+    "matched_from": "Reverse Snow Angels",
+    "video_url": "https://www.youtube.com/watch?v=0qLP2RNKX4A",
+    "video_id": "0qLP2RNKX4A",
+    "video_title": "How to Do：REVERSE SNOW ANGELS"
+  },
+  {
+    "exercise_id": "P05",
+    "matched_from": "Staggered Push-Ups",
+    "video_url": "https://www.youtube.com/watch?v=JWNTTiAQMhc",
+    "video_id": "JWNTTiAQMhc",
+    "video_title": "How to Do：STAGGERED PUSH-UPS"
+  },
+  {
+    "exercise_id": "J08",
+    "matched_from": "Burpees",
+    "video_url": "https://www.youtube.com/watch?v=818SkLAPyKY",
+    "video_id": "818SkLAPyKY",
+    "video_title": "How to Do：BURPEES"
+  },
+  {
+    "exercise_id": "J04",
+    "matched_from": "Mountain Climber",
+    "video_url": "https://www.youtube.com/watch?v=wQq3ybaLZeA",
+    "video_id": "wQq3ybaLZeA",
+    "video_title": "How to Do: MOUNTAIN CLIMBER"
+  },
+  {
+    "exercise_id": "J03",
+    "matched_from": "Jumping Jacks",
+    "video_url": "https://www.youtube.com/watch?v=2W4ZNSwoW_4",
+    "video_id": "2W4ZNSwoW_4",
+    "video_title": "How to Do: JUMPING JACKS"
+  },
+  {
+    "exercise_id": "C04",
+    "matched_from": "Flutter Kicks",
+    "video_url": "https://www.youtube.com/watch?v=K5wuM_gNWyw",
+    "video_id": "K5wuM_gNWyw",
+    "video_title": "How to Do: FLUTTER KICKS"
+  },
+  {
+    "exercise_id": "C07",
+    "matched_from": "Side Plank",
+    "video_url": "https://www.youtube.com/watch?v=2W96p2PIoPg",
+    "video_id": "2W96p2PIoPg",
+    "video_title": "How to Do: SIDE PLANK"
+  },
+  {
+    "exercise_id": "C13",
+    "matched_from": "Bicycle Crunches",
+    "video_url": "https://www.youtube.com/watch?v=-nJkAJpQemI",
+    "video_id": "-nJkAJpQemI",
+    "video_title": "How to Do: BICYCLE CRUNCHES"
+  },
+  {
+    "exercise_id": "CD07",
+    "matched_from": "Child's Pose",
+    "video_url": "https://www.youtube.com/watch?v=74oEGdu4_dI",
+    "video_id": "74oEGdu4_dI",
+    "video_title": "How to Do: CHILD'S POSE"
+  }
+]

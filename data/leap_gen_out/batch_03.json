@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_gate_pose",
+    "short_description": "A kneeling side stretch that opens the hips, inner thighs and lateral torso.",
+    "how_to": ["Kneel with your knees hip-width apart.", "Extend your right leg straight out to the side.", "Raise your left arm overhead and lean toward the right.", "Hold for several breaths, then switch sides."],
+    "correct": ["Keep your hips stacked and square.", "Reach long through your top arm.", "Breathe steadily.", "Keep your extended leg foot flat on the floor."],
+    "mistakes": ["Don't collapse your torso forward.", "Don't rush the side bend.", "Don't hold your breath.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_spinal_rolling",
+    "short_description": "A seated rolling movement that mobilises the entire spine and massages the back muscles.",
+    "how_to": ["Sit on the floor with your knees bent and feet flat.", "Wrap your arms around your shins.", "Tuck your chin and round your spine.", "Roll back smoothly onto your upper back, then roll back up to sitting."],
+    "correct": ["Keep your chin tucked throughout.", "Round your spine evenly.", "Breathe steadily.", "Control the movement in both directions."],
+    "mistakes": ["Don't roll onto your neck.", "Don't use momentum to jerk yourself up.", "Don't hold your breath.", "Don't land flat on your back."]
+  },
+  {
+    "exercise_id": "leap_prone_scorpion_kicks",
+    "short_description": "A prone hip and spine rotation that stretches the hip flexors and strengthens the lower back.",
+    "how_to": ["Lie face down with your arms extended to the sides.", "Bend your right knee and swing your right foot across toward your left hand.", "Pause at the end range, then return.", "Repeat on the other side."],
+    "correct": ["Keep your neck neutral.", "Move with control.", "Keep your shoulders pressed into the floor.", "Breathe steadily throughout."],
+    "mistakes": ["Don't throw your head back.", "Don't over-arch your lower back.", "Don't force the foot further than your range allows.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_lumbar_cat_cow",
+    "short_description": "A gentle floor movement that targets the lower spine, relieving stiffness and improving lumbar mobility.",
+    "how_to": ["Start on hands and knees with your wrists under your shoulders.", "Inhale and let your lower back drop toward the floor.", "Exhale and draw your lower belly up to round the lumbar spine.", "Move slowly between the two positions."],
+    "correct": ["Keep your hips over your knees.", "Focus the movement on your lower back.", "Breathe with each phase.", "Keep your arms straight."],
+    "mistakes": ["Don't rush between positions.", "Don't let your shoulders collapse.", "Don't hold your breath.", "Don't lock your elbows."]
+  },
+  {
+    "exercise_id": "leap_thoracic_spine_cat_cow",
+    "short_description": "A hands-and-knees movement that mobilises the mid-back, improving thoracic extension and flexion.",
+    "how_to": ["Start on all fours with a neutral spine.", "Inhale and arch through your upper back, lifting your chest.", "Exhale and round through your mid-back, drawing your shoulder blades apart.", "Repeat in a slow, controlled rhythm."],
+    "correct": ["Focus the movement between your shoulder blades.", "Keep your core lightly engaged.", "Breathe with each transition.", "Keep your hips level."],
+    "mistakes": ["Don't let your lower back do all the work.", "Don't rush the movement.", "Don't drop your head suddenly.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_wide_leg_hamstring_stretch",
+    "short_description": "A wide-leg forward fold that lengthens the hamstrings and inner thighs.",
+    "how_to": ["Set your feet wide apart.", "Keep your back straight and hinge from your hips.", "Reach your hands toward the floor.", "Hold where you feel a gentle stretch."],
+    "correct": ["Keep your back straight.", "Hinge from your hips.", "Keep a soft bend in your knees.", "Breathe slowly."],
+    "mistakes": ["Don't round your back.", "Don't lock your knees.", "Don't bounce.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_forward_spine_stretch_pulse",
+    "short_description": "A seated forward stretch with small pulses that mobilises the spine and lengthens the hamstrings.",
+    "how_to": ["Sit tall with your legs straight in front of you.", "Reach both arms forward at shoulder height.", "Hinge from your hips and reach toward your feet.", "Pulse gently forward a few inches without bouncing hard."],
+    "correct": ["Keep your back as straight as possible.", "Hinge from your hips, not your waist.", "Keep a soft bend in your knees.", "Breathe steadily."],
+    "mistakes": ["Don't round your upper back aggressively.", "Don't jerk or bounce forcefully.", "Don't hold your breath.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_easy_butterfly_pose",
+    "short_description": "A gentle seated inner-thigh and hip stretch with a relaxed upright posture.",
+    "how_to": ["Sit on the floor and bring the soles of your feet together.", "Let your knees fall out to the sides.", "Hold your feet or ankles.", "Sit tall and breathe steadily for the hold."],
+    "correct": ["Keep your spine tall.", "Relax your inner thighs.", "Breathe slowly and steadily.", "Keep your shoulders relaxed."],
+    "mistakes": ["Don't push down on your knees forcefully.", "Don't round your lower back.", "Don't hold your breath.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_butterfly_pose",
+    "short_description": "A seated hip-opener that stretches the inner thighs and groin with a deeper forward fold.",
+    "how_to": ["Sit on the floor and place the soles of your feet together.", "Draw your heels close to your body.", "Hinge forward from the hips over your feet.", "Hold the position and breathe steadily."],
+    "correct": ["Keep your spine long as you fold.", "Relax your inner thighs downward.", "Breathe steadily.", "Keep your shoulders away from your ears."],
+    "mistakes": ["Don't round your back to chase depth.", "Don't force your knees down.", "Don't hold your breath.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_easy_kneeling_hamstring_stretch",
+    "short_description": "A kneeling stretch that gently lengthens the hamstring of the extended leg.",
+    "how_to": ["Kneel on one knee with your other leg extended in front.", "Keep your front foot flat on the floor.", "Sit tall and hinge slightly forward from the hips.", "Hold where you feel a gentle pull behind the thigh."],
+    "correct": ["Keep your back straight.", "Keep a soft bend in your extended knee.", "Breathe slowly.", "Keep your hips level."],
+    "mistakes": ["Don't round your lower back.", "Don't lock your extended knee.", "Don't force the stretch.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_kneeling_hamstring_stretch",
+    "short_description": "A kneeling hamstring stretch that builds on the easy version with a deeper hip hinge.",
+    "how_to": ["Kneel on one knee with the other leg extended straight in front.", "Flex your front foot and point your toes up.", "Hinge forward from the hips, keeping your back flat.", "Hold at your comfortable end range and breathe."],
+    "correct": ["Keep your back flat.", "Hinge from the hips, not the waist.", "Breathe steadily.", "Keep your hips square."],
+    "mistakes": ["Don't round your spine.", "Don't lock your extended knee hard.", "Don't hold your breath.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_runner_s_lunge",
+    "short_description": "A deep lunge stretch that opens the hip flexors and groin while building lower-body stability.",
+    "how_to": ["Step one foot forward into a long lunge position.", "Lower your back knee to the floor.", "Keep your front shin vertical and your chest tall.", "Hold the position and breathe steadily."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down on your front foot.", "Keep your torso upright.", "Breathe slowly."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't round your back.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_tree_pose",
+    "short_description": "A single-leg balance pose that strengthens the legs and improves focus and stability.",
+    "how_to": ["Stand tall and shift your weight onto one foot.", "Place the sole of your other foot on your inner calf or thigh, avoiding the knee.", "Bring your hands to prayer at your chest or raise them overhead.", "Hold and breathe steadily, then switch sides."],
+    "correct": ["Keep your standing leg slightly soft, not locked.", "Keep your hips level.", "Fix your gaze on a still point ahead.", "Breathe steadily."],
+    "mistakes": ["Don't press your foot against your knee joint.", "Don't hunch your shoulders.", "Don't hold your breath.", "Don't rush the balance."]
+  },
+  {
+    "exercise_id": "leap_corpse_pose",
+    "short_description": "A supine relaxation pose that allows the body and nervous system to rest fully.",
+    "how_to": ["Lie flat on your back with your legs slightly apart.", "Let your arms rest at your sides, palms facing up.", "Close your eyes and release all tension.", "Breathe naturally and stay still for the hold."],
+    "correct": ["Relax your shoulders, jaw and hands.", "Breathe naturally.", "Keep your body still and heavy.", "Allow your feet to fall open."],
+    "mistakes": ["Don't tense your muscles.", "Don't fight the stillness.", "Don't breathe forcefully.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_bow_pose",
+    "short_description": "A prone backbend that strengthens the back extensors and stretches the chest, shoulders and hip flexors.",
+    "how_to": ["Lie face down with your legs hip-width apart.", "Bend your knees and reach back to hold your ankles.", "Inhale and lift your chest and thighs off the floor.", "Hold and breathe, then lower with control."],
+    "correct": ["Keep your neck neutral.", "Move with control.", "Keep your knees hip-width apart.", "Breathe steadily throughout."],
+    "mistakes": ["Don't throw your head back.", "Don't over-arch your lower back.", "Don't hold your breath.", "Don't jerk your ankles to gain height."]
+  },
+  {
+    "exercise_id": "leap_push_up_hold",
+    "short_description": "An isometric push-up that builds chest, shoulder and core strength by holding the lowered position.",
+    "how_to": ["Start in a push-up position with your hands under your shoulders.", "Lower halfway down until your elbows are bent.", "Hold there with your body in a straight line.", "Breathe steadily and keep your core tight."],
+    "correct": ["Keep your body straight from head to heels.", "Keep your core engaged.", "Keep your elbows close to your body.", "Breathe steadily."],
+    "mistakes": ["Don't let your hips drop.", "Don't raise your hips too high.", "Don't flare your elbows out wide.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_kneel_plank",
+    "short_description": "A kneeling plank that builds core and shoulder stability with reduced body-weight load.",
+    "how_to": ["Start on your hands and knees.", "Walk your hands forward until your body forms a straight line from knees to shoulders.", "Engage your core and hold the position.", "Breathe steadily throughout."],
+    "correct": ["Keep your body in one line.", "Keep your core engaged.", "Keep your shoulders over your wrists.", "Breathe steadily."],
+    "mistakes": ["Don't let your lower back sag.", "Don't lift your hips too high.", "Don't hold your breath.", "Don't let your head drop."]
+  },
+  {
+    "exercise_id": "leap_lizard_pose",
+    "short_description": "A deep lunge hip-opener that stretches the hip flexors, groin and inner thigh of the back leg.",
+    "how_to": ["Step one foot forward to the outside of your same-side hand.", "Lower your back knee to the floor.", "Keep both hands inside your front foot.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Keep your hips low and level.", "Breathe steadily.", "Relax your shoulders."],
+    "mistakes": ["Don't let your front knee collapse inward.", "Don't arch your lower back.", "Don't hold your breath.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_sage_marichi_s_pose_iii",
+    "short_description": "A seated spinal twist that stretches the back muscles and improves thoracic rotation.",
+    "how_to": ["Sit with both legs extended.", "Bend your right knee and place your right foot flat on the floor.", "Twist your torso to the right and hook your left elbow outside your right knee.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your spine tall as you twist.", "Breathe steadily.", "Keep both sitting bones grounded.", "Relax your shoulders."],
+    "mistakes": ["Don't collapse your spine as you rotate.", "Don't force the twist beyond your range.", "Don't hold your breath.", "Don't hunch your upper back."]
+  },
+  {
+    "exercise_id": "leap_boat_pose",
+    "short_description": "A seated balance that works the core and hip flexors by holding a V-shape with the torso and legs.",
+    "how_to": ["Sit on the floor with your knees bent.", "Lean back slightly and lift your feet so your shins are parallel to the floor.", "Extend your arms forward at shoulder height.", "Hold the position and breathe steadily."],
+    "correct": ["Keep your lower back controlled.", "Keep your chest lifted.", "Breathe steadily.", "Keep your shoulders relaxed."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't hold your breath.", "Don't let your chest collapse."]
+  }
+]

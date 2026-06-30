@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_wall_sumo_squats_and_calf_raise",
+    "exercise_name": "Wall Sumo Squats and Calf Raise",
+    "group_label": "Wall",
+    "video_title": "How to Do: WALL SUMO SQUATS AND CALF RAISE"
+  },
+  {
+    "exercise_id": "leap_wall_standing_thoracic_left",
+    "exercise_name": "Wall Standing Thoracic Left",
+    "group_label": "Wall",
+    "video_title": "How to Do: WALL STANDING THORACIC LEFT"
+  },
+  {
+    "exercise_id": "leap_dumbbell_reverse_curl",
+    "exercise_name": "Dumbbell Reverse Curl",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL REVERSE CURL"
+  },
+  {
+    "exercise_id": "leap_revolved_side_angle",
+    "exercise_name": "Revolved Side Angle",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: REVOLVED SIDE ANGLE"
+  },
+  {
+    "exercise_id": "leap_cow_face",
+    "exercise_name": "Cow Face",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do: COW FACE"
+  },
+  {
+    "exercise_id": "leap_standing_forward_bend_with_shoulder_opener",
+    "exercise_name": "Standing Forward Bend with Shoulder Opener",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do: STANDING FORWARD BEND WITH SHOULDER OPENER"
+  },
+  {
+    "exercise_id": "leap_half_moon_pose",
+    "exercise_name": "Half Moon Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: HALF MOON POSE"
+  },
+  {
+    "exercise_id": "leap_warrior_iii",
+    "exercise_name": "Warrior Iii",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: WARRIOR III"
+  },
+  {
+    "exercise_id": "leap_reverse_warrior",
+    "exercise_name": "Reverse Warrior",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: REVERSE WARRIOR"
+  },
+  {
+    "exercise_id": "leap_warrior_ii",
+    "exercise_name": "Warrior Ii",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: WARRIOR II"
+  },
+  {
+    "exercise_id": "leap_humble_warrior",
+    "exercise_name": "Humble Warrior",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: HUMBLE WARRIOR"
+  },
+  {
+    "exercise_id": "leap_revolved_triangle_pose",
+    "exercise_name": "Revolved Triangle Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: REVOLVED TRIANGLE POSE"
+  },
+  {
+    "exercise_id": "leap_extended_side_angle",
+    "exercise_name": "Extended Side Angle",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: EXTENDED SIDE ANGLE"
+  },
+  {
+    "exercise_id": "leap_happy_baby_pose",
+    "exercise_name": "Happy Baby Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: HAPPY BABY POSE"
+  },
+  {
+    "exercise_id": "leap_crescent_low_lunge_with_cactus_arms",
+    "exercise_name": "Crescent Low Lunge with Cactus Arms",
+    "group_label": "Lunges",
+    "video_title": "How to Do: CRESCENT LOW LUNGE WITH CACTUS ARMS"
+  },
+  {
+    "exercise_id": "leap_revolved_crescent_low_lunge",
+    "exercise_name": "Revolved Crescent Low Lunge",
+    "group_label": "Lunges",
+    "video_title": "How to Do: REVOLVED CRESCENT LOW LUNGE"
+  },
+  {
+    "exercise_id": "leap_crescent_low_lunge_with_arm_extended_up",
+    "exercise_name": "Crescent Low Lunge with Arm Extended Up",
+    "group_label": "Lunges",
+    "video_title": "How to Do: CRESCENT LOW LUNGE WITH ARM EXTENDED UP"
+  },
+  {
+    "exercise_id": "leap_crescent_low_lunge",
+    "exercise_name": "Crescent Low Lunge",
+    "group_label": "Lunges",
+    "video_title": "How to Do: CRESCENT LOW LUNGE"
+  },
+  {
+    "exercise_id": "leap_walk_the_dog",
+    "exercise_name": "Walk the Dog",
+    "group_label": "Other",
+    "video_title": "How to Do: WALK THE DOG"
+  },
+  {
+    "exercise_id": "leap_down_dog_with_knee_drives",
+    "exercise_name": "Down Dog with Knee Drives",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do: DOWN DOG WITH KNEE DRIVES"
+  }
+]

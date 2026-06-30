@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_dumbbell_side_lateral_raise",
+    "exercise_name": "Dumbbell Side Lateral Raise",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SIDE LATERAL RAISE"
+  },
+  {
+    "exercise_id": "leap_military_press",
+    "exercise_name": "Military Press",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：MILITARY PRESS"
+  },
+  {
+    "exercise_id": "leap_diagonal_plank",
+    "exercise_name": "Diagonal Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do：DIAGONAL PLANK"
+  },
+  {
+    "exercise_id": "leap_chest_press_pulse",
+    "exercise_name": "Chest Press Pulse",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：CHEST PRESS PULSE"
+  },
+  {
+    "exercise_id": "leap_diamond_push_ups",
+    "exercise_name": "Diamond Push-Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：DIAMOND PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_shoulder_outward_rotation",
+    "exercise_name": "Shoulder Outward Rotation",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：SHOULDER OUTWARD ROTATION"
+  },
+  {
+    "exercise_id": "leap_triceps_stretch",
+    "exercise_name": "Triceps Stretch",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：TRICEPS STRETCH"
+  },
+  {
+    "exercise_id": "leap_anterior_shoulder_stretch",
+    "exercise_name": "Anterior Shoulder Stretch",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：ANTERIOR SHOULDER STRETCH"
+  },
+  {
+    "exercise_id": "leap_punches",
+    "exercise_name": "Punches",
+    "group_label": "Other",
+    "video_title": "How to Do：PUNCHES"
+  },
+  {
+    "exercise_id": "leap_standing_biceps_stretch",
+    "exercise_name": "Standing Biceps Stretch",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：STANDING BICEPS STRETCH"
+  },
+  {
+    "exercise_id": "leap_lying_dumbbell_lateral_raise",
+    "exercise_name": "Lying Dumbbell Lateral Raise",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：LYING DUMBBELL LATERAL RAISE"
+  },
+  {
+    "exercise_id": "leap_shoulder_rolls",
+    "exercise_name": "Shoulder Rolls",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：SHOULDER ROLLS"
+  },
+  {
+    "exercise_id": "leap_arm_circles",
+    "exercise_name": "Arm Circles",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：ARM CIRCLES"
+  },
+  {
+    "exercise_id": "leap_wall_push_ups",
+    "exercise_name": "Wall Push-Ups",
+    "group_label": "Wall",
+    "video_title": "How to Do：WALL PUSH-UPS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_front_raise",
+    "exercise_name": "Dumbbell Front Raise",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL FRONT RAISE"
+  },
+  {
+    "exercise_id": "leap_doorway_curls",
+    "exercise_name": "Doorway Curls",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：DOORWAY CURLS"
+  },
+  {
+    "exercise_id": "leap_leg_barbell_curl",
+    "exercise_name": "Leg Barbell Curl",
+    "group_label": "Equipment",
+    "video_title": "How to Do：LEG BARBELL CURL"
+  },
+  {
+    "exercise_id": "leap_modified_push_up_low_hold",
+    "exercise_name": "Modified Push-Up Low Hold",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：MODIFIED PUSH-UP LOW HOLD"
+  },
+  {
+    "exercise_id": "leap_one_arm_dumbbell_lateral_raise",
+    "exercise_name": "One Arm Dumbbell Lateral Raise",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：ONE ARM DUMBBELL LATERAL RAISE"
+  },
+  {
+    "exercise_id": "leap_military_push_ups",
+    "exercise_name": "Military Push Ups",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：MILITARY PUSH UPS"
+  }
+]

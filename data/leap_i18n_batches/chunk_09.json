@@ -1,0 +1,462 @@
+[
+  {
+    "exercise_id": "leap_straight_leg_fire_hydrant",
+    "exercise_name": "Straight Leg Fire Hydrant",
+    "short_description": "A quadruped hip abduction with a straight leg that targets the glutes and outer hips.",
+    "how_to": [
+      "Start on all fours with your wrists under your shoulders.",
+      "Keep one leg straight and lift it out to the side.",
+      "Raise it until your hip is at its limit.",
+      "Lower with control and repeat, then switch sides."
+    ],
+    "correct": [
+      "Keep your hips level throughout.",
+      "Keep your core engaged.",
+      "Move with a slow, controlled tempo.",
+      "Keep your supporting knee under your hip."
+    ],
+    "mistakes": [
+      "Don't rotate your pelvis to gain height.",
+      "Don't rush the movement.",
+      "Don't lock your elbows.",
+      "Don't let your back arch."
+    ]
+  },
+  {
+    "exercise_id": "leap_clasp_hands_behind_back",
+    "exercise_name": "Clasp Hands Behind Back",
+    "short_description": "A standing chest and shoulder opener that releases tension by clasping the hands behind the back.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Bring your arms behind you and clasp your fingers together.",
+      "Gently draw your shoulders back and down.",
+      "Hold the position and breathe steadily."
+    ],
+    "correct": [
+      "Keep your chest open and lifted.",
+      "Keep your chin parallel to the floor.",
+      "Breathe slowly and deeply.",
+      "Relax your shoulders away from your ears."
+    ],
+    "mistakes": [
+      "Don't jut your chin forward.",
+      "Don't hold your breath.",
+      "Don't force the stretch.",
+      "Don't arch your lower back excessively."
+    ]
+  },
+  {
+    "exercise_id": "leap_nose_touching",
+    "exercise_name": "Nose Touching",
+    "short_description": "A gentle face exercise that engages the muscles around the nose and mid-face.",
+    "how_to": [
+      "Sit or stand comfortably with your spine tall.",
+      "Scrunch your nose upward as if trying to touch it with your upper lip.",
+      "Hold briefly, then release completely.",
+      "Repeat for the desired number of reps."
+    ],
+    "correct": [
+      "Keep your neck relaxed.",
+      "Move only the target muscles.",
+      "Breathe steadily throughout.",
+      "Keep your jaw unclenched."
+    ],
+    "mistakes": [
+      "Don't tense your neck.",
+      "Don't squint your eyes unnecessarily.",
+      "Don't hold your breath.",
+      "Don't rush between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_hamstring_curl",
+    "exercise_name": "Dumbbell Hamstring Curl",
+    "short_description": "A lying dumbbell curl that isolates the hamstrings by bending the knees against resistance.",
+    "how_to": [
+      "Lie face down on a mat and grip a dumbbell between your feet.",
+      "Keep your hips pressed into the mat.",
+      "Curl your feet toward your glutes by bending your knees.",
+      "Lower the dumbbell slowly back to the start."
+    ],
+    "correct": [
+      "Keep your hips on the mat throughout.",
+      "Control the weight on the way down.",
+      "Keep your core engaged.",
+      "Move through the full range of motion."
+    ],
+    "mistakes": [
+      "Don't let your hips lift off the mat.",
+      "Don't drop the weight on the lowering phase.",
+      "Don't swing your legs for momentum.",
+      "Don't rush the repetitions."
+    ]
+  },
+  {
+    "exercise_id": "leap_smiling_fish_face",
+    "exercise_name": "Smiling Fish Face",
+    "short_description": "A face exercise that works the cheek and lip muscles by combining a smile with a fish-face pucker.",
+    "how_to": [
+      "Sit or stand with a tall spine.",
+      "Smile wide, then suck your cheeks inward at the same time.",
+      "Hold the expression for a few seconds.",
+      "Release fully and repeat."
+    ],
+    "correct": [
+      "Keep your neck and shoulders relaxed.",
+      "Breathe steadily.",
+      "Hold each rep for a moment before releasing.",
+      "Keep your eyes soft."
+    ],
+    "mistakes": [
+      "Don't tense your neck.",
+      "Don't hold your breath.",
+      "Don't rush between repetitions.",
+      "Don't squeeze your eyes shut."
+    ]
+  },
+  {
+    "exercise_id": "leap_seated_side_bend",
+    "exercise_name": "Seated Side Bend",
+    "short_description": "A seated lateral stretch that lengthens the obliques and side of the torso.",
+    "how_to": [
+      "Sit tall on the floor or a chair with your feet flat.",
+      "Raise one arm overhead.",
+      "Lean your torso to the opposite side until you feel a stretch.",
+      "Hold, then return to center and switch sides."
+    ],
+    "correct": [
+      "Keep your sit bones grounded.",
+      "Reach long through the raised hand.",
+      "Breathe steadily.",
+      "Keep your hips even."
+    ],
+    "mistakes": [
+      "Don't collapse through the waist.",
+      "Don't hold your breath.",
+      "Don't force the stretch.",
+      "Don't hunch your shoulders."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_single_leg_deadlift",
+    "exercise_name": "Dumbbell Single Leg Deadlift",
+    "short_description": "A single-leg hip hinge with a dumbbell that builds hamstring strength and balance.",
+    "how_to": [
+      "Stand on one foot holding a dumbbell in the opposite hand.",
+      "Hinge at your hip and lower the dumbbell toward the floor.",
+      "Keep your back flat and your lifted leg extending behind you.",
+      "Drive through your standing heel to return to upright, then switch sides."
+    ],
+    "correct": [
+      "Keep your back flat throughout.",
+      "Keep your hips square to the floor.",
+      "Keep a soft bend in your standing knee.",
+      "Move with slow, controlled tempo."
+    ],
+    "mistakes": [
+      "Don't round your back.",
+      "Don't rotate your hips open.",
+      "Don't rush the movement.",
+      "Don't lock your standing knee."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_lying_triceps_extension",
+    "exercise_name": "Dumbbell Lying Triceps Extension",
+    "short_description": "A lying overhead extension with dumbbells that isolates the triceps through a full range of motion.",
+    "how_to": [
+      "Lie on your back holding dumbbells above your chest with arms extended.",
+      "Bend your elbows to lower the weights toward your forehead.",
+      "Keep your upper arms still and pointing upward.",
+      "Extend your arms back to the start position."
+    ],
+    "correct": [
+      "Keep your upper arms vertical and still.",
+      "Keep your body straight.",
+      "Keep your elbows controlled.",
+      "Lower the weights with control."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't use momentum.",
+      "Don't let the weights drop fast."
+    ]
+  },
+  {
+    "exercise_id": "leap_neck_lift",
+    "exercise_name": "Neck Lift",
+    "short_description": "A supine neck strengthening exercise that works the deep flexors by lifting the head off the floor.",
+    "how_to": [
+      "Lie on your back with your legs straight.",
+      "Tuck your chin slightly toward your chest.",
+      "Slowly lift your head just off the floor.",
+      "Hold briefly, then lower with control."
+    ],
+    "correct": [
+      "Keep the movement slow and controlled.",
+      "Keep your chin tucked gently.",
+      "Breathe steadily.",
+      "Keep your shoulders relaxed on the floor."
+    ],
+    "mistakes": [
+      "Don't jerk your head up quickly.",
+      "Don't hold your breath.",
+      "Don't strain your jaw or face.",
+      "Don't lift your shoulders off the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_puffy_cheeks",
+    "exercise_name": "Puffy Cheeks",
+    "short_description": "A face exercise that tones the cheek muscles by inflating and holding the cheeks with air.",
+    "how_to": [
+      "Sit or stand with a tall, relaxed posture.",
+      "Close your lips and inhale through your nose.",
+      "Puff both cheeks out fully with the trapped air.",
+      "Hold for a few seconds, then exhale and release."
+    ],
+    "correct": [
+      "Keep your lips sealed throughout the hold.",
+      "Keep your neck relaxed.",
+      "Breathe in before each rep.",
+      "Keep your jaw unclenched."
+    ],
+    "mistakes": [
+      "Don't tense your neck or shoulders.",
+      "Don't puff only one cheek.",
+      "Don't rush between reps.",
+      "Don't squeeze your eyes shut."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_cuban_rotation",
+    "exercise_name": "Dumbbell Cuban Rotation",
+    "short_description": "A shoulder rotation exercise with dumbbells that strengthens the rotator cuff and upper back.",
+    "how_to": [
+      "Stand with feet shoulder-width apart holding dumbbells at your sides.",
+      "Raise your upper arms out to the sides until parallel to the floor.",
+      "Rotate your forearms upward so your hands point toward the ceiling.",
+      "Reverse the motion back to the start."
+    ],
+    "correct": [
+      "Keep your upper arms parallel to the floor.",
+      "Move with slow, deliberate control.",
+      "Keep your core engaged.",
+      "Keep your wrists straight."
+    ],
+    "mistakes": [
+      "Don't use weights that force you to swing.",
+      "Don't rush the rotation.",
+      "Don't shrug your shoulders.",
+      "Don't let your elbows drop below parallel."
+    ]
+  },
+  {
+    "exercise_id": "leap_cross_body_hammer_curl",
+    "exercise_name": "Cross Body Hammer Curl",
+    "short_description": "A curl variation that brings the dumbbell across the body to target the brachialis and forearm muscles.",
+    "how_to": [
+      "Stand tall holding a dumbbell in each hand with palms facing in.",
+      "Curl one dumbbell across your body toward the opposite shoulder.",
+      "Lower with control, then repeat on the other side.",
+      "Alternate arms for the desired reps."
+    ],
+    "correct": [
+      "Keep your elbows close to your sides.",
+      "Keep your torso upright and still.",
+      "Lower the weight with control.",
+      "Keep your wrist neutral."
+    ],
+    "mistakes": [
+      "Don't swing your torso for momentum.",
+      "Don't let your elbow drift forward.",
+      "Don't rush the lowering phase.",
+      "Don't grip the handle too tightly."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_single_arm_otis_up",
+    "exercise_name": "Dumbbell Single Arm Otis Up",
+    "short_description": "A single-arm sit-up with a dumbbell pressed overhead that challenges the core and shoulder together.",
+    "how_to": [
+      "Lie on your back with your knees bent and one dumbbell pressed above your chest.",
+      "Keep the dumbbell arm extended straight toward the ceiling.",
+      "Sit up by engaging your core, keeping the weight overhead.",
+      "Lower back slowly to the floor and repeat, then switch arms."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep the dumbbell directly above your shoulder.",
+      "Move with a steady, controlled tempo.",
+      "Keep your free arm helping for balance only."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let the dumbbell drift forward.",
+      "Don't rush the lowering phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_wide_bicep_curls",
+    "exercise_name": "Dumbbell Wide Bicep Curls",
+    "short_description": "A wide-grip curl with dumbbells that emphasizes the short head of the biceps.",
+    "how_to": [
+      "Stand tall holding dumbbells with your elbows angled out slightly wider than your torso.",
+      "Keep your palms facing up.",
+      "Curl both dumbbells upward while keeping your upper arms still.",
+      "Lower slowly back to the start."
+    ],
+    "correct": [
+      "Keep your elbows wide and stable.",
+      "Keep your torso upright.",
+      "Lower the weight with control.",
+      "Keep your wrists straight."
+    ],
+    "mistakes": [
+      "Don't swing your body back.",
+      "Don't let your elbows drop to your sides.",
+      "Don't rush the lowering phase.",
+      "Don't use more weight than you can control."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_triceps_extension",
+    "exercise_name": "Dumbbell Triceps Extension",
+    "short_description": "An overhead triceps extension with a dumbbell that targets all three heads of the triceps.",
+    "how_to": [
+      "Stand or sit tall holding one dumbbell with both hands overhead.",
+      "Keep your upper arms close to your head.",
+      "Bend your elbows to lower the dumbbell behind your head.",
+      "Extend your arms back to the start."
+    ],
+    "correct": [
+      "Keep your upper arms still and vertical.",
+      "Keep your core engaged.",
+      "Keep your elbows controlled.",
+      "Lower the weight with control."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't arch your lower back.",
+      "Don't use momentum to lift."
+    ]
+  },
+  {
+    "exercise_id": "leap_lion",
+    "exercise_name": "Lion",
+    "short_description": "A breathing face exercise that releases facial tension by opening the eyes wide and extending the tongue.",
+    "how_to": [
+      "Sit comfortably with a tall spine.",
+      "Inhale through your nose.",
+      "Open your eyes wide, stretch your tongue out and downward.",
+      "Exhale forcefully with a 'ha' sound, then relax."
+    ],
+    "correct": [
+      "Keep your neck relaxed.",
+      "Open your mouth fully during the exhale.",
+      "Breathe in deeply before each rep.",
+      "Keep your shoulders down."
+    ],
+    "mistakes": [
+      "Don't tense your neck.",
+      "Don't hold your breath at the top.",
+      "Don't do this in a way that strains your jaw.",
+      "Don't rush between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_punch",
+    "exercise_name": "Dumbbell Punch",
+    "short_description": "A standing dumbbell punch that trains the shoulders and arms with a rhythmic pressing motion.",
+    "how_to": [
+      "Stand with feet shoulder-width apart holding light dumbbells at shoulder height.",
+      "Punch one arm straight out in front at shoulder level.",
+      "Bring it back and alternate with the other arm.",
+      "Keep a steady rhythm throughout."
+    ],
+    "correct": [
+      "Keep your core engaged.",
+      "Keep your knees soft.",
+      "Keep your wrists straight on each punch.",
+      "Control the return of each arm."
+    ],
+    "mistakes": [
+      "Don't lock your elbow at full extension.",
+      "Don't shrug your shoulders.",
+      "Don't use weights that compromise your control.",
+      "Don't lean back as you punch."
+    ]
+  },
+  {
+    "exercise_id": "leap_smile",
+    "exercise_name": "Smile",
+    "short_description": "A face exercise that strengthens the muscles around the mouth by holding a wide smile.",
+    "how_to": [
+      "Sit or stand with a relaxed, tall posture.",
+      "Stretch your lips into a wide smile without showing your teeth.",
+      "Hold the expression for a few seconds.",
+      "Release fully and repeat."
+    ],
+    "correct": [
+      "Keep your neck and shoulders relaxed.",
+      "Breathe steadily.",
+      "Hold each rep for a full count.",
+      "Keep your jaw unclenched."
+    ],
+    "mistakes": [
+      "Don't tense your neck.",
+      "Don't hold your breath.",
+      "Don't squint your eyes hard.",
+      "Don't rush between repetitions."
+    ]
+  },
+  {
+    "exercise_id": "leap_drawn_cheeks",
+    "exercise_name": "Drawn Cheeks",
+    "short_description": "A face exercise that tones the cheeks by sucking them inward and holding the contraction.",
+    "how_to": [
+      "Sit or stand comfortably with your spine tall.",
+      "Close your lips and suck your cheeks inward toward your back teeth.",
+      "Hold the hollow position for a few seconds.",
+      "Release and repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your lips sealed throughout.",
+      "Keep your neck relaxed.",
+      "Breathe steadily through your nose.",
+      "Keep your jaw still."
+    ],
+    "mistakes": [
+      "Don't tense your neck or shoulders.",
+      "Don't hold your breath.",
+      "Don't bite down on your cheeks.",
+      "Don't rush between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_floor_slides",
+    "exercise_name": "Floor Slides",
+    "short_description": "A prone shoulder mobility drill that strengthens the lower traps and rotator cuff by sliding the arms along the floor.",
+    "how_to": [
+      "Lie face down on the floor with your arms at your sides.",
+      "Press your forearms lightly into the floor.",
+      "Slide your arms overhead in a Y shape, squeezing your shoulder blades.",
+      "Slide them back down slowly and repeat."
+    ],
+    "correct": [
+      "Keep your neck neutral.",
+      "Move with control.",
+      "Keep your core lightly engaged.",
+      "Keep your chin tucked slightly."
+    ],
+    "mistakes": [
+      "Don't throw your head back.",
+      "Don't over-arch your lower back.",
+      "Don't let your elbows flare out past your ears.",
+      "Don't rush the movement."
+    ]
+  }
+]

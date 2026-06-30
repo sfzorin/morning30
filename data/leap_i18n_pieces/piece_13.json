@@ -1,0 +1,242 @@
+[
+  {
+    "exercise_id": "leap_arm_raises",
+    "exercise_name": "Arm Raises",
+    "short_description": "A standing shoulder exercise that lifts both arms to build shoulder endurance and upper-body mobility.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Let your arms hang at your sides.",
+      "Raise both arms straight out in front to shoulder height.",
+      "Lower them slowly back to the start.",
+      "Repeat with a steady, controlled pace."
+    ],
+    "correct": [
+      "Keep your shoulders relaxed, not shrugged.",
+      "Keep your core lightly engaged.",
+      "Move your arms at a controlled speed.",
+      "Keep a soft bend in your elbows."
+    ],
+    "mistakes": [
+      "Don't swing your arms using momentum.",
+      "Don't shrug your shoulders on the way up.",
+      "Don't lean back as you raise your arms.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_squats",
+    "exercise_name": "Squats",
+    "short_description": "A fundamental lower-body exercise that strengthens the quads, glutes, and hamstrings.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and toes slightly turned out.",
+      "Brace your core and keep your chest up.",
+      "Push your hips back and bend your knees to lower down.",
+      "Descend until your thighs are parallel to the floor.",
+      "Press through your heels to stand back up."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down throughout the movement.",
+      "Keep your chest up and back straight.",
+      "Breathe in on the way down, out on the way up."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't round your lower back.",
+      "Don't let your heels lift off the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_cat_cow_pose",
+    "exercise_name": "Cat Cow Pose",
+    "short_description": "A spinal mobility flow that alternates between arching and rounding the back to loosen the spine.",
+    "how_to": [
+      "Start on all fours with your wrists under your shoulders and knees under your hips.",
+      "Inhale, drop your belly, lift your chest and tailbone into Cow pose.",
+      "Exhale, round your spine toward the ceiling and tuck your chin into Cat pose.",
+      "Flow between the two positions with your breath.",
+      "Repeat for the desired number of breaths."
+    ],
+    "correct": [
+      "Breathe slowly and match each movement to your breath.",
+      "Keep your wrists stacked under your shoulders.",
+      "Move through your whole spine, not just one section.",
+      "Relax your neck rather than forcing it."
+    ],
+    "mistakes": [
+      "Don't rush through the movement.",
+      "Don't hold your breath.",
+      "Don't strain your neck by forcing it too far.",
+      "Don't collapse your wrists inward."
+    ]
+  },
+  {
+    "exercise_id": "leap_lying_swing_legs",
+    "exercise_name": "Lying Swing Legs",
+    "short_description": "A supine mobility drill that swings the legs side to side to open the hips and improve spinal rotation.",
+    "how_to": [
+      "Lie on your back with your arms out to your sides for support.",
+      "Raise both legs so they are perpendicular to the floor.",
+      "Slowly lower your legs to one side, keeping them together.",
+      "Bring them back to the center and lower to the opposite side.",
+      "Continue alternating sides with a controlled swing."
+    ],
+    "correct": [
+      "Keep your shoulders flat on the floor.",
+      "Move your legs at a slow, controlled pace.",
+      "Breathe steadily throughout.",
+      "Keep your core gently engaged."
+    ],
+    "mistakes": [
+      "Don't let your opposite shoulder lift off the floor.",
+      "Don't force your legs all the way to the ground.",
+      "Don't hold your breath.",
+      "Don't swing your legs with momentum."
+    ]
+  },
+  {
+    "exercise_id": "leap_crunch_kicks",
+    "exercise_name": "Crunch Kicks",
+    "short_description": "A combined core exercise that pairs a crunch with an alternating leg kick to work the abs and hip flexors.",
+    "how_to": [
+      "Lie on your back with your hands behind your head.",
+      "Lift your shoulders off the floor into a crunch.",
+      "Extend one leg out straight while keeping the other bent.",
+      "Switch legs in a controlled kicking motion.",
+      "Continue alternating legs while holding the crunch."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep your chin away from your chest.",
+      "Keep your shoulders lifted throughout each rep.",
+      "Move your legs in a smooth, deliberate motion."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't rush the kicks.",
+      "Don't let your shoulders drop between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_cobra_stretch",
+    "exercise_name": "Cobra Stretch",
+    "short_description": "A prone back-extension stretch that opens the chest and lengthens the abdominal muscles.",
+    "how_to": [
+      "Lie face down with your hands flat under your shoulders.",
+      "Press through your hands and lift your chest off the floor.",
+      "Straighten your arms as much as feels comfortable.",
+      "Hold the top position for the desired duration.",
+      "Lower back down slowly and with control."
+    ],
+    "correct": [
+      "Keep your neck neutral and gaze forward.",
+      "Move with control on the way up and down.",
+      "Keep your hips pressed gently into the floor.",
+      "Breathe steadily in the hold."
+    ],
+    "mistakes": [
+      "Don't throw your head back.",
+      "Don't over-arch your lower back.",
+      "Don't tense your glutes excessively.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_crunches",
+    "exercise_name": "Dumbbell Crunches",
+    "short_description": "A weighted crunch that adds resistance to the upper abs by holding a dumbbell at the chest.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat.",
+      "Hold a dumbbell against your chest with both hands.",
+      "Curl your shoulders up off the floor toward your knees.",
+      "Pause briefly at the top, then lower with control.",
+      "Repeat for the desired number of reps."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep your chin slightly tucked, not forced to your chest.",
+      "Move slowly and with control on the descent.",
+      "Keep your feet flat on the floor."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't use momentum to swing up.",
+      "Don't drop back down without control."
+    ]
+  },
+  {
+    "exercise_id": "leap_heels_to_the_heavens",
+    "exercise_name": "Heels to the Heavens",
+    "short_description": "A supine leg-lift variation that targets the lower abs by pressing the heels straight up toward the ceiling.",
+    "how_to": [
+      "Lie on your back with your arms flat at your sides.",
+      "Raise both legs until they are perpendicular to the floor.",
+      "Press your heels toward the ceiling by lifting your hips slightly.",
+      "Lower your hips back down with control.",
+      "Repeat without letting your legs drop below vertical."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep your legs as straight as you can manage.",
+      "Press through your heels, not your toes.",
+      "Breathe out as you lift your hips."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't swing your hips using momentum.",
+      "Don't let your legs drift past vertical on the way down."
+    ]
+  },
+  {
+    "exercise_id": "leap_alt_v_up",
+    "exercise_name": "Alt V-Up",
+    "short_description": "An alternating V-up that challenges the core by reaching one hand toward the opposite raised foot.",
+    "how_to": [
+      "Lie flat on your back with your arms extended overhead and legs straight.",
+      "Simultaneously lift your right leg and reach your left hand toward your right foot.",
+      "Lower back to the starting position with control.",
+      "Repeat on the opposite side, lifting your left leg and reaching your right hand.",
+      "Continue alternating sides with a steady rhythm."
+    ],
+    "correct": [
+      "Keep your core tight throughout the movement.",
+      "Keep your lowered leg just above the floor, not resting on it.",
+      "Reach long through your arm on every rep.",
+      "Breathe out on each lift."
+    ],
+    "mistakes": [
+      "Don't let your lower back arch away from the floor.",
+      "Don't bend your knee to make the reach easier.",
+      "Don't use a swinging motion to get up.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_leg_raises",
+    "exercise_name": "Leg Raises",
+    "short_description": "A supine core exercise that lifts straight legs to strengthen the lower abs and hip flexors.",
+    "how_to": [
+      "Lie on your back with your legs straight and hands flat beside your hips.",
+      "Brace your core and slowly raise both legs to vertical.",
+      "Lower your legs back down in a controlled manner.",
+      "Stop just before they touch the floor and raise again.",
+      "Repeat for the desired number of reps."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep your legs as straight as possible.",
+      "Lower slowly rather than dropping.",
+      "Breathe out as you raise your legs."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your legs drop with gravity.",
+      "Don't hold your breath."
+    ]
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_plank_hip_dips",
+    "short_description": "A plank variation that rotates the hips side to side to work the obliques and core.",
+    "how_to": ["Start in a forearm plank with your elbows under your shoulders.", "Keep your body in one line from head to heels.", "Rotate your hips and lower one side toward the floor.", "Return to center and dip the other side.", "Continue alternating at a steady pace."],
+    "correct": ["Keep your body in one line.", "Keep your core engaged.", "Keep your hips low throughout.", "Move with control, not momentum."],
+    "mistakes": ["Don't let your lower back sag.", "Don't lift your hips too high.", "Don't rush through the rotation.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_close_grip_floor_press",
+    "short_description": "A floor press with a narrow grip that targets the triceps and inner chest.",
+    "how_to": ["Lie on your back with knees bent and feet flat.", "Hold a dumbbell in each hand with palms facing each other.", "Press the dumbbells up until your arms are straight.", "Lower them under control until your upper arms touch the floor.", "Press back up and repeat."],
+    "correct": ["Keep your back flat on the floor.", "Keep your elbows close to your sides.", "Lower with control each rep.", "Keep your wrists straight."],
+    "mistakes": ["Don't bounce your elbows off the floor.", "Don't let your wrists bend back.", "Don't rush the lowering phase.", "Don't arch your lower back off the floor."]
+  },
+  {
+    "exercise_id": "leap_straight_arm_plank_to_pike",
+    "short_description": "A straight-arm plank that shifts into a pike to challenge the core and shoulders.",
+    "how_to": ["Start in a straight-arm plank with your hands under your shoulders.", "Keep your body in one line.", "Push your hips up and back into a pike position.", "Hold briefly at the top.", "Return to the plank and repeat."],
+    "correct": ["Keep your body in one line.", "Keep your core engaged.", "Keep your arms straight throughout.", "Press the floor away in the pike."],
+    "mistakes": ["Don't let your lower back sag in the plank.", "Don't lift your hips too high past a straight line in the plank.", "Don't bend your elbows as you pike.", "Don't let your shoulders creep up to your ears."]
+  },
+  {
+    "exercise_id": "leap_downward_facing_dog",
+    "short_description": "A yoga pose that stretches the hamstrings, calves and spine while strengthening the shoulders.",
+    "how_to": ["Start on your hands and knees with hands shoulder-width apart.", "Tuck your toes and lift your hips up and back.", "Straighten your legs as much as you can.", "Press your heels toward the floor.", "Hold and breathe steadily."],
+    "correct": ["Keep your spine long and straight.", "Relax your neck between your arms.", "Press your palms flat into the floor.", "Breathe slowly and steadily."],
+    "mistakes": ["Don't round your upper back.", "Don't lock your knees hard.", "Don't let your heels flare outward.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_oblique_crunch_reach",
+    "short_description": "A crunch with a lateral reach that targets the obliques and side core.",
+    "how_to": ["Lie on your back with knees bent and feet flat.", "Place one hand behind your head and extend the other to the side.", "Crunch up and reach the extended hand toward your ankle.", "Lower with control and repeat.", "Switch sides after completing your reps."],
+    "correct": ["Keep your lower back controlled.", "Keep your chin off your chest.", "Move with a controlled crunch, not a swing.", "Keep your feet flat on the floor."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't jerk upward with momentum.", "Don't let your feet lift off the floor."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_floor_fly_to_close_grip_press",
+    "short_description": "A two-part floor exercise combining a chest fly and a close-grip press to work the chest and triceps.",
+    "how_to": ["Lie on your back with knees bent, holding a dumbbell in each hand.", "Open your arms out to the sides in a fly, then bring them back together.", "Without pausing, turn your palms in and press the dumbbells straight up.", "Lower back down and repeat the sequence."],
+    "correct": ["Keep a soft bend in your elbows during the fly.", "Keep your back flat on the floor.", "Move smoothly between the fly and the press.", "Keep your wrists straight throughout."],
+    "mistakes": ["Don't lock your elbows straight during the fly.", "Don't arch your lower back off the floor.", "Don't drop the weights fast on either phase.", "Don't let your elbows flare wide on the press."]
+  },
+  {
+    "exercise_id": "leap_twisting_piston",
+    "short_description": "A rotational mobility drill that opens the thoracic spine and hips.",
+    "how_to": ["Start in a deep lunge with one foot forward and both hands on the floor.", "Lift the inside hand and rotate your upper body toward your front knee.", "Reach that arm up toward the ceiling.", "Hold briefly, then return to the start.", "Complete your reps and switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Rotate from your mid-back, not your lower back.", "Breathe steadily through the movement.", "Keep your back knee low and stable."],
+    "mistakes": ["Don't twist only from the shoulders.", "Don't let your front knee collapse inward.", "Don't hold your breath during the rotation.", "Don't rush past the end range."]
+  },
+  {
+    "exercise_id": "leap_mouth_circles",
+    "short_description": "A gentle facial mobility drill that loosens the muscles around the mouth and jaw.",
+    "how_to": ["Sit or stand tall with your shoulders relaxed.", "Open your mouth slightly.", "Draw slow circles with your lips in one direction.", "Complete several circles, then reverse direction.", "Keep the movement smooth throughout."],
+    "correct": ["Keep your jaw relaxed.", "Keep your shoulders down and relaxed.", "Move slowly and with control.", "Breathe steadily."],
+    "mistakes": ["Don't tense your neck or shoulders.", "Don't make the circles too fast.", "Don't clench your teeth between reps.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_cheek_firmer",
+    "short_description": "A facial toning exercise that engages the cheek muscles through controlled resistance.",
+    "how_to": ["Sit or stand tall with a relaxed face.", "Smile wide while pressing your fingers lightly against your cheeks.", "Hold the contraction for a count.", "Release and relax fully.", "Repeat for the desired reps."],
+    "correct": ["Keep your neck long and relaxed.", "Keep the pressure from your fingers gentle.", "Breathe steadily throughout.", "Relax fully between each rep."],
+    "mistakes": ["Don't press your fingers into your skin too hard.", "Don't tense your neck during the hold.", "Don't rush through the release.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_floor_press",
+    "short_description": "A chest press performed on the floor that works the chest, shoulders and triceps with limited range of motion.",
+    "how_to": ["Lie on your back with knees bent and a dumbbell in each hand.", "Hold the dumbbells at chest level with palms facing forward.", "Press both weights straight up until your arms are extended.", "Lower slowly until your upper arms rest on the floor.", "Press back up and repeat."],
+    "correct": ["Keep your back flat on the floor.", "Keep your elbows at roughly 45 degrees from your body.", "Lower with control each rep.", "Keep your wrists straight."],
+    "mistakes": ["Don't bounce your arms off the floor.", "Don't lock your elbows at the top.", "Don't arch your lower back off the floor.", "Don't let the dumbbells drift apart at the top."]
+  },
+  {
+    "exercise_id": "leap_bent_over_row",
+    "short_description": "A hip-hinge pulling exercise that strengthens the upper back and biceps.",
+    "how_to": ["Stand with feet hip-width apart, holding a weight in each hand.", "Hinge forward at the hips until your torso is roughly parallel to the floor.", "Let the weights hang straight down.", "Pull both weights up toward your lower chest.", "Lower with control and repeat."],
+    "correct": ["Keep your back straight and flat.", "Keep your core engaged throughout.", "Keep your elbows close to your body as you pull.", "Keep your neck in line with your spine."],
+    "mistakes": ["Don't round your upper or lower back.", "Don't jerk the weights up with momentum.", "Don't let the weights swing forward on the way down.", "Don't shrug your shoulders up to your ears."]
+  },
+  {
+    "exercise_id": "leap_havyk_raises",
+    "short_description": "A shoulder raise variation that works the deltoids through a wide arc of motion.",
+    "how_to": ["Stand tall with feet hip-width apart and weights in each hand.", "Start with your arms at your sides.", "Raise both arms out and up in a wide arc.", "Lower slowly back to the start.", "Repeat for the desired reps."],
+    "correct": ["Keep a soft bend in your elbows.", "Keep your core engaged throughout.", "Lower with control each rep.", "Keep your shoulders down, not shrugged."],
+    "mistakes": ["Don't swing the weights up with momentum.", "Don't shrug your shoulders as you lift.", "Don't lock your elbows straight.", "Don't lean back to help the movement."]
+  },
+  {
+    "exercise_id": "leap_standing_knee_to_chest",
+    "short_description": "A standing balance and hip-flexor exercise that draws one knee up toward the chest.",
+    "how_to": ["Stand tall with your feet together.", "Shift your weight onto one foot.", "Lift the other knee up toward your chest.", "Hold for a moment, then lower.", "Repeat on both sides."],
+    "correct": ["Keep your standing leg slightly bent.", "Keep your chest tall throughout.", "Keep your core engaged for balance.", "Breathe steadily."],
+    "mistakes": ["Don't round your back to pull the knee up.", "Don't lock the standing knee.", "Don't let your hip drop on the standing side.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_knee_circle",
+    "short_description": "A standing knee mobility drill that loosens the knee joint and surrounding muscles.",
+    "how_to": ["Stand with feet together and hands resting on your knees.", "Bend your knees slightly.", "Draw slow circles with your knees in one direction.", "Complete several circles, then reverse.", "Keep the movement smooth throughout."],
+    "correct": ["Keep your movements slow and deliberate.", "Keep a gentle bend in your knees throughout.", "Breathe steadily.", "Keep your feet flat on the floor."],
+    "mistakes": ["Don't force your knees past a comfortable range.", "Don't move too fast.", "Don't lock your knees at any point.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_wrists_ankles_stretch",
+    "short_description": "A mobility warm-up that rotates the wrists and ankles to improve joint range of motion.",
+    "how_to": ["Sit or stand tall.", "Extend one hand and draw slow circles with your wrist in both directions.", "Lift one foot slightly and draw slow circles with your ankle in both directions.", "Repeat on the other side.", "Move through the full range comfortably."],
+    "correct": ["Breathe steadily throughout.", "Keep the circles slow and controlled.", "Work through your comfortable range only.", "Relax your shoulders while you rotate your wrists."],
+    "mistakes": ["Don't force the joint past a comfortable range.", "Don't rush through the circles.", "Don't hold your breath.", "Don't tense the rest of your body during the stretch."]
+  },
+  {
+    "exercise_id": "leap_double_knees_to_chest",
+    "short_description": "A supine core and lower-back release that draws both knees toward the chest.",
+    "how_to": ["Lie on your back on the floor.", "Bend both knees and bring them toward your chest.", "Wrap your hands around your shins.", "Hold and breathe steadily.", "Release and lower your feet to the start."],
+    "correct": ["Keep your lower back controlled.", "Keep your shoulders relaxed on the floor.", "Breathe slowly and steadily.", "Keep your chin away from your chest."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't force your knees in harder than is comfortable.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_pistol_box_squat",
+    "short_description": "A single-leg squat to a box that builds unilateral leg strength and balance.",
+    "how_to": ["Stand on one foot in front of a sturdy box or chair.", "Extend your free leg forward off the floor.", "Sit back and lower onto the box with control.", "Pause briefly, then press through your heel to stand back up.", "Complete your reps and switch legs."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down throughout.", "Keep your chest tall as you lower.", "Keep your core engaged for balance."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast onto the box.", "Don't round your lower back.", "Don't push off the box with your hands unless necessary."]
+  },
+  {
+    "exercise_id": "leap_straight_leg_bounds",
+    "short_description": "A plyometric bounding drill that builds explosive power and calf strength with straight legs.",
+    "how_to": ["Stand tall with feet hip-width apart.", "Spring off both feet and bound forward, keeping your legs straight.", "Land on the balls of your feet.", "Absorb the impact and immediately bound again.", "Continue for the desired distance or reps."],
+    "correct": ["Land softly.", "Keep your knees over your toes.", "Keep your core engaged during flight.", "Keep your arms pumping to help your rhythm."],
+    "mistakes": ["Don't land hard on your heels.", "Don't let your knees cave inward.", "Don't hunch your upper body forward.", "Don't hold your breath between bounds."]
+  },
+  {
+    "exercise_id": "leap_x_burpees",
+    "short_description": "An explosive burpee variation that adds an X-jump at the top to increase cardio demand.",
+    "how_to": ["Stand tall, then drop your hands to the floor.", "Jump your feet back into a plank.", "Perform one push-up.", "Jump your feet back toward your hands.", "Leap up, spreading your arms and legs into an X shape, then land and repeat."],
+    "correct": ["Land softly.", "Keep your knees over your toes.", "Keep your body straight in the plank.", "Keep your core tight throughout."],
+    "mistakes": ["Don't land hard.", "Don't let your knees cave inward.", "Don't let your hips sag in the plank.", "Don't flare your elbows out wide on the push-up."]
+  },
+  {
+    "exercise_id": "leap_standing_dumbbell_chest_fly",
+    "short_description": "A standing fly that uses dumbbells to work the chest and shoulder muscles through a wide arc.",
+    "how_to": ["Stand tall with feet hip-width apart and a dumbbell in each hand.", "Hold the weights at shoulder height with palms facing each other.", "Open your arms wide out to the sides, keeping a soft bend in your elbows.", "Bring the weights back together in front of your chest.", "Repeat with a smooth, controlled motion."],
+    "correct": ["Keep a soft bend in your elbows throughout.", "Keep your core engaged for stability.", "Keep your back straight, not arched.", "Move with control on the way out and in."],
+    "mistakes": ["Don't lock your elbows straight during the fly.", "Don't lean back to help the movement.", "Don't let the weights drop below shoulder height.", "Don't use momentum to swing the weights together."]
+  }
+]

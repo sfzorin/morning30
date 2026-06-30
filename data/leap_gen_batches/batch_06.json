@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_triangle_pose",
+    "exercise_name": "Triangle Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do：TRIANGLE POSE"
+  },
+  {
+    "exercise_id": "leap_dumbbell_bulgarian_split_squat",
+    "exercise_name": "Dumbbell Bulgarian Split Squat",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BULGARIAN SPLIT SQUAT"
+  },
+  {
+    "exercise_id": "leap_dumbbell_curtsy_lunges",
+    "exercise_name": "Dumbbell Curtsy Lunges",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CURTSY LUNGES"
+  },
+  {
+    "exercise_id": "leap_shoulder_stretch_with_chair",
+    "exercise_name": "Shoulder Stretch with Chair",
+    "group_label": "Equipment",
+    "video_title": "How to Do：SHOULDER STRETCH WITH CHAIR"
+  },
+  {
+    "exercise_id": "leap_dumbbell_hip_hinge",
+    "exercise_name": "Dumbbell Hip Hinge",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL HIP HINGE"
+  },
+  {
+    "exercise_id": "leap_levator_scapulae_stretch",
+    "exercise_name": "Levator Scapulae Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：LEVATOR SCAPULAE STRETCH"
+  },
+  {
+    "exercise_id": "leap_open_chain_knee_extension",
+    "exercise_name": "Open Chain Knee Extension",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：OPEN CHAIN KNEE EXTENSION"
+  },
+  {
+    "exercise_id": "leap_dumbbell_squats",
+    "exercise_name": "Dumbbell Squats",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SQUATS"
+  },
+  {
+    "exercise_id": "leap_cross_leg_side_bend",
+    "exercise_name": "Cross Leg Side Bend",
+    "group_label": "Other",
+    "video_title": "How to Do：CROSS LEG SIDE BEND"
+  },
+  {
+    "exercise_id": "leap_dumbbell_fire_hydrant",
+    "exercise_name": "Dumbbell Fire Hydrant",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL FIRE HYDRANT"
+  },
+  {
+    "exercise_id": "leap_dumbbell_close_grip_bench_press",
+    "exercise_name": "Dumbbell Close Grip Bench Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CLOSE GRIP BENCH PRESS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_side_lunges",
+    "exercise_name": "Dumbbell Side Lunges",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SIDE LUNGES"
+  },
+  {
+    "exercise_id": "leap_side_neck_stretch",
+    "exercise_name": "Side Neck Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SIDE NECK STRETCH"
+  },
+  {
+    "exercise_id": "leap_supine_hamstring_stretch",
+    "exercise_name": "Supine Hamstring Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：SUPINE HAMSTRING STRETCH"
+  },
+  {
+    "exercise_id": "leap_quarter_wall_squat",
+    "exercise_name": "Quarter Wall Squat",
+    "group_label": "Wall",
+    "video_title": "How to Do：QUARTER WALL SQUAT"
+  },
+  {
+    "exercise_id": "leap_single_leg_drops",
+    "exercise_name": "Single Leg Drops",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：SINGLE LEG DROPS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_step_up_onto_chair",
+    "exercise_name": "Dumbbell Step-Up Onto Chair",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：Dumbbell STEP-UP ONTO CHAIR"
+  },
+  {
+    "exercise_id": "leap_mountain_climber_squat_thrust",
+    "exercise_name": "Mountain Climber Squat Thrust",
+    "group_label": "Squats",
+    "video_title": "How to Do：MOUNTAIN CLIMBER SQUAT THRUST"
+  },
+  {
+    "exercise_id": "leap_starfish_crunch",
+    "exercise_name": "Starfish Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：STARFISH CRUNCH"
+  },
+  {
+    "exercise_id": "leap_crab_kick_up",
+    "exercise_name": "Crab Kick Up",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：CRAB KICK UP"
+  }
+]

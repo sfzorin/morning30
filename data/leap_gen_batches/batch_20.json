@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_arm_raises",
+    "exercise_name": "Arm Raises",
+    "group_label": "Other",
+    "video_title": "How to Do：ARM RAISES"
+  },
+  {
+    "exercise_id": "leap_squats",
+    "exercise_name": "Squats",
+    "group_label": "Squats",
+    "video_title": "How to Do：SQUATS"
+  },
+  {
+    "exercise_id": "leap_cat_cow_pose",
+    "exercise_name": "Cat Cow Pose",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do：CAT COW POSE"
+  },
+  {
+    "exercise_id": "leap_lying_swing_legs",
+    "exercise_name": "Lying Swing Legs",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：LYING SWING LEGS"
+  },
+  {
+    "exercise_id": "leap_crunch_kicks",
+    "exercise_name": "Crunch Kicks",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: CRUNCH KICKS"
+  },
+  {
+    "exercise_id": "leap_cobra_stretch",
+    "exercise_name": "Cobra Stretch",
+    "group_label": "Back & Posture",
+    "video_title": "How to Do: COBRA STRETCH"
+  },
+  {
+    "exercise_id": "leap_dumbbell_crunches",
+    "exercise_name": "Dumbbell Crunches",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_heels_to_the_heavens",
+    "exercise_name": "Heels to the Heavens",
+    "group_label": "Other",
+    "video_title": "How to Do: HEELS TO THE HEAVENS"
+  },
+  {
+    "exercise_id": "leap_alt_v_up",
+    "exercise_name": "Alt V-Up",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：ALT V-UP"
+  },
+  {
+    "exercise_id": "leap_leg_raises",
+    "exercise_name": "Leg Raises",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: LEG RAISES"
+  },
+  {
+    "exercise_id": "leap_leg_in_outs",
+    "exercise_name": "Leg in & Outs",
+    "group_label": "Other",
+    "video_title": "How to Do：LEG IN & OUTS"
+  },
+  {
+    "exercise_id": "leap_reverse_crunches",
+    "exercise_name": "Reverse Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: REVERSE CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_cross_knee_plank",
+    "exercise_name": "Cross Knee Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do: CROSS KNEE PLANK"
+  },
+  {
+    "exercise_id": "leap_dumbbell_torture_tucks",
+    "exercise_name": "Dumbbell Torture Tucks",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL TORTURE TUCKS"
+  },
+  {
+    "exercise_id": "leap_seated_abs_circles",
+    "exercise_name": "Seated Abs Circles",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：SEATED ABS CIRCLES"
+  },
+  {
+    "exercise_id": "leap_butt_bridge",
+    "exercise_name": "Butt Bridge",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do: BUTT BRIDGE"
+  },
+  {
+    "exercise_id": "leap_dumbbell_side_bend",
+    "exercise_name": "Dumbbell Side Bend",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SIDE BEND"
+  },
+  {
+    "exercise_id": "leap_side_crunches",
+    "exercise_name": "Side Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: SIDE CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_crunches_with_legs_raised",
+    "exercise_name": "Crunches with Legs Raised",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: CRUNCHES WITH LEGS RAISED"
+  },
+  {
+    "exercise_id": "leap_t_plank",
+    "exercise_name": "T Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do：T PLANK"
+  }
+]

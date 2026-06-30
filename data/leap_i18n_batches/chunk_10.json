@@ -1,0 +1,481 @@
+[
+  {
+    "exercise_id": "leap_seated_spinal_twist",
+    "exercise_name": "Seated Spinal Twist",
+    "short_description": "A seated rotation that mobilises the spine and stretches the hips and outer back.",
+    "how_to": [
+      "Sit tall on the floor with your legs extended.",
+      "Bend your right knee and place your right foot outside your left knee.",
+      "Place your right hand behind you for support.",
+      "Hook your left elbow outside your right knee and twist to the right.",
+      "Hold, then repeat on the other side."
+    ],
+    "correct": [
+      "Keep your spine tall throughout.",
+      "Breathe slowly and deepen the twist on each exhale.",
+      "Keep both sitting bones on the floor.",
+      "Relax your shoulders away from your ears."
+    ],
+    "mistakes": [
+      "Don't round your lower back.",
+      "Don't force the rotation.",
+      "Don't hold your breath.",
+      "Don't let your hips lift off the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_boat_hold",
+    "exercise_name": "Dumbbell Boat Hold",
+    "short_description": "An isometric V-sit with dumbbells that challenges core stability and hip flexor strength.",
+    "how_to": [
+      "Sit on the floor holding a dumbbell in each hand.",
+      "Lean back slightly and lift your feet off the floor.",
+      "Extend your legs to form a V shape with your torso.",
+      "Hold the dumbbells at chest height and keep your balance.",
+      "Breathe steadily and hold for the target time."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest lifted.",
+      "Keep your legs together and steady.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your feet drop to the floor.",
+      "Don't round your upper back."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_drag_curls",
+    "exercise_name": "Dumbbell Drag Curls",
+    "short_description": "A bicep curl variation that drags the dumbbells up the body to shift emphasis to the peak of the bicep.",
+    "how_to": [
+      "Stand tall holding a dumbbell in each hand at your sides.",
+      "Pull your elbows back as you drag the dumbbells up along your torso.",
+      "Curl until your hands reach your upper abdomen.",
+      "Lower slowly back to the start.",
+      "Repeat with a controlled tempo."
+    ],
+    "correct": [
+      "Keep your elbows pulled back throughout.",
+      "Keep your torso upright.",
+      "Lower the dumbbells with control.",
+      "Keep your wrists neutral."
+    ],
+    "mistakes": [
+      "Don't swing your torso to lift the weight.",
+      "Don't let your elbows drift forward.",
+      "Don't rush the lowering phase.",
+      "Don't shrug your shoulders."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_rear_delt_row",
+    "exercise_name": "Dumbbell Rear Delt Row",
+    "short_description": "A bent-over row targeting the rear deltoids and upper back by flaring the elbows wide.",
+    "how_to": [
+      "Hold a dumbbell in each hand and hinge forward at the hips.",
+      "Keep your back flat and your chest facing the floor.",
+      "Pull both dumbbells up and out, leading with your elbows wide.",
+      "Squeeze your rear delts at the top.",
+      "Lower with control and repeat."
+    ],
+    "correct": [
+      "Keep your back flat throughout.",
+      "Keep your elbows flared wide, not tucked.",
+      "Squeeze your shoulder blades at the top.",
+      "Keep your neck in line with your spine."
+    ],
+    "mistakes": [
+      "Don't round your back.",
+      "Don't use momentum to swing the weights up.",
+      "Don't shrug your shoulders.",
+      "Don't let your elbows drop to your sides."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_squat_clean_and_press",
+    "exercise_name": "Dumbbell Squat Clean and Press",
+    "short_description": "A full-body compound movement combining a squat, a clean, and an overhead press with dumbbells.",
+    "how_to": [
+      "Stand with feet shoulder-width apart, a dumbbell in each hand at your sides.",
+      "Lower into a squat with the dumbbells near the floor.",
+      "Drive up and pull the dumbbells to shoulder height in one fluid motion.",
+      "Press the dumbbells overhead until your arms are straight.",
+      "Lower back to shoulders, then squat down for the next rep."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down in the squat.",
+      "Keep your core braced through every phase.",
+      "Press straight up, not forward."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast on the squat.",
+      "Don't arch your lower back on the press.",
+      "Don't rush the transition between phases."
+    ]
+  },
+  {
+    "exercise_id": "leap_single_arm_renegade_row",
+    "exercise_name": "Single Arm Renegade Row",
+    "short_description": "A plank-position single-arm row that builds back strength and anti-rotation core stability.",
+    "how_to": [
+      "Start in a push-up position with one hand on a dumbbell.",
+      "Brace your core and keep your hips level.",
+      "Pull the dumbbell straight up toward your hip.",
+      "Lower it with control.",
+      "Complete your reps, then switch sides."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips square to the floor.",
+      "Pull with your back, not just your arm."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't rotate your hips as you row.",
+      "Don't rush between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_fly_to_close_grip_press",
+    "exercise_name": "Dumbbell Fly to Close Grip Press",
+    "short_description": "A chest exercise combining a dumbbell fly and a close-grip press to target the pecs from two angles.",
+    "how_to": [
+      "Lie on your back with a dumbbell in each hand held above your chest.",
+      "Lower the dumbbells out to the sides in a wide arc until your chest opens.",
+      "Bring them back together above your chest.",
+      "Bend your elbows and press the dumbbells up in a close-grip press.",
+      "Lower and return to the fly position for the next rep."
+    ],
+    "correct": [
+      "Keep your body straight.",
+      "Keep your elbows controlled on the fly arc.",
+      "Keep a slight bend in your elbows during the fly.",
+      "Press straight up on the press phase."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide on the press.",
+      "Don't lower the dumbbells too fast on the fly.",
+      "Don't lock out your elbows at the top."
+    ]
+  },
+  {
+    "exercise_id": "leap_elbow_plank_rotation",
+    "exercise_name": "Elbow Plank Rotation",
+    "short_description": "A dynamic plank variation that adds a lateral hip rotation to challenge core and oblique stability.",
+    "how_to": [
+      "Start in an elbow plank with your forearms on the floor.",
+      "Brace your core and keep your body in a straight line.",
+      "Rotate your hips to one side, lowering them toward the floor.",
+      "Return to the centre and rotate to the other side.",
+      "Alternate sides with a steady, controlled tempo."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Move your hips in a controlled arc.",
+      "Keep your elbows directly under your shoulders."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't hold your breath.",
+      "Don't let your hips touch the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_seated_in_outs",
+    "exercise_name": "Dumbbell Seated in & Outs",
+    "short_description": "A seated core exercise holding dumbbells that adds resistance to the classic in-and-out movement.",
+    "how_to": [
+      "Sit on the floor holding a dumbbell in each hand at your sides.",
+      "Lean back slightly and lift your feet off the floor.",
+      "Tuck your knees in toward your chest.",
+      "Extend your legs straight out.",
+      "Repeat the tuck-and-extend with a steady rhythm."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest lifted.",
+      "Move your legs in a smooth arc.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your feet touch the floor between reps.",
+      "Don't round your upper back."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_side_boat_hold",
+    "exercise_name": "Dumbbell Side Boat Hold",
+    "short_description": "A lateral V-sit hold with a dumbbell that targets the obliques and hip flexors.",
+    "how_to": [
+      "Sit on the floor and turn slightly to one side.",
+      "Hold a dumbbell with both hands at hip height on the same side.",
+      "Lean back and lift your feet off the floor.",
+      "Balance on one hip and hold the V position.",
+      "Breathe steadily for the target time, then switch sides."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest lifted.",
+      "Breathe steadily.",
+      "Keep your legs together and elevated."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your feet drop between reps.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_bicep_curl_to_press",
+    "exercise_name": "Dumbbell Bicep Curl to Press",
+    "short_description": "A shoulder and bicep combo movement that links a dumbbell curl directly into an overhead press.",
+    "how_to": [
+      "Stand tall with a dumbbell in each hand, palms facing forward.",
+      "Curl both dumbbells up to shoulder height.",
+      "Rotate your palms out and press the dumbbells overhead.",
+      "Lower them back to the shoulders, then reverse the curl.",
+      "Repeat in one fluid motion."
+    ],
+    "correct": [
+      "Keep your elbows at your sides during the curl.",
+      "Keep your torso upright throughout.",
+      "Press straight up without leaning back.",
+      "Lower with control on every phase."
+    ],
+    "mistakes": [
+      "Don't swing your body to curl the weight.",
+      "Don't arch your lower back on the press.",
+      "Don't rush between the curl and press phases.",
+      "Don't shrug your shoulders at the top."
+    ]
+  },
+  {
+    "exercise_id": "leap_standing_hip_circle",
+    "exercise_name": "Standing Hip Circle",
+    "short_description": "A standing mobility drill that draws large circles with the hips to loosen the hip joints and surrounding muscles.",
+    "how_to": [
+      "Stand with your feet hip-width apart and hands on your hips.",
+      "Begin circling your hips in one direction in a wide, slow arc.",
+      "Complete the set number of circles.",
+      "Reverse direction and repeat."
+    ],
+    "correct": [
+      "Keep your feet flat on the floor.",
+      "Move slowly and with full range.",
+      "Keep your upper body relatively still.",
+      "Breathe slowly throughout."
+    ],
+    "mistakes": [
+      "Don't rush through the circles.",
+      "Don't let your knees lock out.",
+      "Don't tense your shoulders.",
+      "Don't reduce the range of motion."
+    ]
+  },
+  {
+    "exercise_id": "leap_overhead_arm_circles",
+    "exercise_name": "Overhead Arm Circles",
+    "short_description": "An overhead shoulder mobility drill that rotates the arms in large circles to warm up the shoulder joints.",
+    "how_to": [
+      "Stand tall with your feet shoulder-width apart.",
+      "Extend both arms out to the sides at shoulder height.",
+      "Raise them overhead and bring them together at the top.",
+      "Continue the circular path back down and out to the sides.",
+      "Repeat in a smooth, continuous motion."
+    ],
+    "correct": [
+      "Keep your core braced.",
+      "Keep your arms extended throughout.",
+      "Move through a full range of motion.",
+      "Keep your neck relaxed."
+    ],
+    "mistakes": [
+      "Don't hunch your shoulders.",
+      "Don't rush the movement.",
+      "Don't bend your elbows mid-circle.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_aeiou",
+    "exercise_name": "\"aeiou\"",
+    "short_description": "A face and jaw mobility drill that moves the mouth through exaggerated vowel shapes to warm up the facial muscles.",
+    "how_to": [
+      "Sit or stand in a comfortable position.",
+      "Open your mouth wide and form the shape of each vowel in sequence: A, E, I, O, U.",
+      "Exaggerate each shape as much as possible.",
+      "Move through the sequence slowly and with control.",
+      "Repeat for the target number of rounds."
+    ],
+    "correct": [
+      "Move your jaw and lips through a full range.",
+      "Breathe normally throughout.",
+      "Keep your neck and shoulders relaxed.",
+      "Keep each shape distinct."
+    ],
+    "mistakes": [
+      "Don't rush through the vowels.",
+      "Don't tense your neck.",
+      "Don't force a movement that causes discomfort.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_alternating_renegade_row",
+    "exercise_name": "Alternating Renegade Row",
+    "short_description": "A plank-based rowing exercise that alternates arms to build back strength and core stability simultaneously.",
+    "how_to": [
+      "Start in a push-up position with a dumbbell in each hand.",
+      "Brace your core and keep your hips level.",
+      "Row one dumbbell up toward your hip.",
+      "Lower it, then row the other side.",
+      "Alternate sides with a steady, controlled rhythm."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips square to the floor.",
+      "Pull each dumbbell with your back, not just your arm."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't rotate your hips as you row.",
+      "Don't rush the alternating tempo."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_v_up",
+    "exercise_name": "Dumbbell V-Up",
+    "short_description": "A V-up performed holding dumbbells that intensifies the core challenge and works the hip flexors.",
+    "how_to": [
+      "Lie flat on your back holding a dumbbell in each hand, arms overhead.",
+      "In one movement, lift your legs and raise your upper body.",
+      "Reach the dumbbells toward your feet at the top.",
+      "Lower back down with control.",
+      "Repeat without letting your heels touch the floor."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your arms and legs straight.",
+      "Move in a smooth arc both up and down.",
+      "Keep your neck relaxed."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't jerk up with momentum.",
+      "Don't drop your legs to the floor between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_offset_push_ups",
+    "exercise_name": "Offset Push-Ups",
+    "short_description": "A push-up variation with one hand placed higher than the other to shift load between sides and build unilateral chest strength.",
+    "how_to": [
+      "Start in a push-up position with one hand placed slightly higher than the other.",
+      "Keep your body in a straight line from head to heels.",
+      "Lower your chest toward the floor with control.",
+      "Press back up to the start.",
+      "Complete your reps, then switch hand positions."
+    ],
+    "correct": [
+      "Keep your body straight.",
+      "Keep your elbows controlled.",
+      "Lower all the way until your chest nearly touches.",
+      "Keep your core braced throughout."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't rush the lowering phase.",
+      "Don't let your lower back arch."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_shrug",
+    "exercise_name": "Dumbbell Shrug",
+    "short_description": "A dumbbell trapezius exercise that lifts the shoulders straight up to strengthen the upper traps.",
+    "how_to": [
+      "Stand tall holding a dumbbell in each hand at your sides.",
+      "Keep your arms straight and lift your shoulders straight up toward your ears.",
+      "Hold the top position briefly.",
+      "Lower your shoulders back down with control.",
+      "Repeat with a steady tempo."
+    ],
+    "correct": [
+      "Keep your arms straight throughout.",
+      "Lift straight up, not forward or back.",
+      "Lower with control.",
+      "Keep your neck relaxed at the top."
+    ],
+    "mistakes": [
+      "Don't roll your shoulders in a circle.",
+      "Don't use your arms to lift the weight.",
+      "Don't let the dumbbells drift forward.",
+      "Don't rush through the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_standing_hip_abduction",
+    "exercise_name": "Dumbbell Standing Hip Abduction",
+    "short_description": "A standing lateral raise for the hip that uses a dumbbell held at the side to strengthen the outer glutes and hip abductors.",
+    "how_to": [
+      "Stand tall with a dumbbell in one hand at your side.",
+      "Shift your weight onto the opposite foot.",
+      "Lift the weighted leg straight out to the side in a controlled arc.",
+      "Lower it back without letting your foot touch the floor.",
+      "Complete your reps, then switch sides."
+    ],
+    "correct": [
+      "Keep your torso upright throughout.",
+      "Keep a soft bend in the standing knee.",
+      "Move your leg in a controlled arc.",
+      "Keep your hips level."
+    ],
+    "mistakes": [
+      "Don't lean away from the working side.",
+      "Don't swing the leg up with momentum.",
+      "Don't let your hips tilt.",
+      "Don't lock your standing knee."
+    ]
+  },
+  {
+    "exercise_id": "leap_seated_in_outs",
+    "exercise_name": "Seated in & Outs",
+    "short_description": "A seated bodyweight core exercise that tucks the knees in and out to target the hip flexors and abs.",
+    "how_to": [
+      "Sit on the floor with your hands behind you for support.",
+      "Lean back slightly and lift your feet off the floor.",
+      "Tuck both knees in toward your chest.",
+      "Extend your legs straight out.",
+      "Repeat the tuck-and-extend with a steady rhythm."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest lifted.",
+      "Move your legs in a smooth arc.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your feet touch the floor between reps.",
+      "Don't round your upper back."
+    ]
+  }
+]

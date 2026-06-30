@@ -1,0 +1,462 @@
+[
+  {
+    "exercise_id": "leap_the_roll",
+    "short_description": "A supine rolling movement that mobilises the spine and engages the core through a full range of motion.",
+    "how_to": [
+      "Lie on your back with your knees pulled into your chest.",
+      "Hug your shins and tuck your chin slightly.",
+      "Rock forward onto your tailbone, then roll back smoothly.",
+      "Use the momentum to roll up and down your spine.",
+      "Move slowly and with control each rep."
+    ],
+    "correct": [
+      "Keep your chin gently tucked.",
+      "Keep your core braced throughout the roll.",
+      "Move smoothly along your spine.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't roll onto your neck.",
+      "Don't use jerky, uncontrolled momentum.",
+      "Don't hold your breath.",
+      "Don't flatten your lower back forcefully."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_jumping_lunge",
+    "short_description": "An explosive lunge variation with dumbbells that builds leg power and challenges coordination.",
+    "how_to": [
+      "Stand tall holding a dumbbell in each hand at your sides.",
+      "Step one foot forward and lower into a lunge.",
+      "Push off both feet and jump, switching legs in the air.",
+      "Land with the opposite foot forward in a lunge.",
+      "Repeat, alternating legs with each jump."
+    ],
+    "correct": [
+      "Land softly on the balls of your feet.",
+      "Keep your knees over your toes.",
+      "Keep your chest up and shoulders back.",
+      "Keep your core engaged throughout."
+    ],
+    "mistakes": [
+      "Don't land hard on your heels.",
+      "Don't let your knees cave inward.",
+      "Don't lean excessively forward.",
+      "Don't drop too fast into the lunge."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_chest_fly",
+    "short_description": "A lying dumbbell fly that stretches and strengthens the chest muscles through a wide arc.",
+    "how_to": [
+      "Lie on your back on a flat surface with a dumbbell in each hand.",
+      "Press the dumbbells above your chest with a slight bend in your elbows.",
+      "Lower your arms out to the sides in a wide arc until you feel a chest stretch.",
+      "Bring the dumbbells back together above your chest.",
+      "Repeat with a smooth, controlled motion."
+    ],
+    "correct": [
+      "Keep a soft bend in your elbows throughout.",
+      "Keep your back flat on the surface.",
+      "Move with a slow, controlled arc.",
+      "Keep your shoulders pressed down."
+    ],
+    "mistakes": [
+      "Don't straighten your elbows fully.",
+      "Don't lower the weights beyond a comfortable range.",
+      "Don't arch your lower back.",
+      "Don't rush through the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_split_squat",
+    "short_description": "A stationary split-stance squat with dumbbells that targets the quads, glutes and hip flexors.",
+    "how_to": [
+      "Stand in a staggered stance with one foot forward and one foot back.",
+      "Hold a dumbbell in each hand at your sides.",
+      "Lower your back knee toward the floor, keeping your torso upright.",
+      "Push through your front heel to return to the start.",
+      "Complete all reps on one side, then switch."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down on the front foot.",
+      "Keep your torso upright throughout.",
+      "Keep your core engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast into the bottom.",
+      "Don't lean excessively forward.",
+      "Don't let your front heel rise."
+    ]
+  },
+  {
+    "exercise_id": "leap_bent_knee_side_hip_raises",
+    "short_description": "A side-lying hip abduction with a bent knee that isolates the outer glutes.",
+    "how_to": [
+      "Lie on your side with your hips and knees bent at about 90 degrees.",
+      "Stack your hips and keep your feet together.",
+      "Lift your top knee upward, rotating at the hip.",
+      "Lower it back with control without letting your hips roll back.",
+      "Complete all reps on one side, then switch."
+    ],
+    "correct": [
+      "Keep your hips stacked throughout.",
+      "Keep your feet together during the lift.",
+      "Move slowly and with control.",
+      "Keep your core lightly engaged."
+    ],
+    "mistakes": [
+      "Don't let your top hip roll backward.",
+      "Don't use momentum to swing the knee up.",
+      "Don't rush the lowering phase.",
+      "Don't tilt your pelvis."
+    ]
+  },
+  {
+    "exercise_id": "leap_slow_mountain_climber",
+    "short_description": "A deliberate, slow mountain climber that builds core stability and hip flexor strength.",
+    "how_to": [
+      "Start in a high plank with your hands under your shoulders.",
+      "Brace your core and keep your hips level.",
+      "Slowly draw one knee toward your chest.",
+      "Return it to the start with control.",
+      "Alternate legs with a slow, steady tempo."
+    ],
+    "correct": [
+      "Keep your body in one straight line.",
+      "Keep your hips level throughout.",
+      "Keep your core tight on every rep.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your hips rise or drop.",
+      "Don't rush the movement.",
+      "Don't hold your breath.",
+      "Don't let your lower back sag."
+    ]
+  },
+  {
+    "exercise_id": "leap_chair_bicycle_crunch",
+    "short_description": "A seated bicycle crunch using a chair that works the obliques and core with added stability challenge.",
+    "how_to": [
+      "Sit on the edge of a sturdy chair and grip the sides lightly.",
+      "Lean back slightly and lift both feet off the floor.",
+      "Bring one knee toward your chest while rotating your opposite elbow toward it.",
+      "Extend that leg out as you switch to the other side.",
+      "Alternate in a smooth pedaling motion."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest open as you rotate.",
+      "Move with a steady, controlled rhythm.",
+      "Breathe out as you crunch."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't rush and lose the rotation.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_double_leg_circles",
+    "short_description": "A supine core exercise where both legs trace circles to challenge lower abdominal control.",
+    "how_to": [
+      "Lie on your back with your arms at your sides.",
+      "Lift both legs to about 45 degrees.",
+      "Slowly trace a large circle with both legs together.",
+      "Keep your lower back pressed toward the floor throughout.",
+      "Reverse direction after each set."
+    ],
+    "correct": [
+      "Keep your lower back in contact with the floor.",
+      "Keep your legs together throughout.",
+      "Move slowly and with control.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your lower back arch off the floor.",
+      "Don't drop your legs too low if your back lifts.",
+      "Don't rush the circles.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_eyes_circles",
+    "short_description": "A gentle eye mobility exercise that rotates the gaze in a circle to relax and mobilise the eye muscles.",
+    "how_to": [
+      "Sit or stand in a relaxed, upright position.",
+      "Keep your head still and look straight ahead.",
+      "Slowly rotate your gaze in a wide clockwise circle.",
+      "Complete the set, then reverse direction.",
+      "Blink naturally throughout."
+    ],
+    "correct": [
+      "Keep your head still throughout.",
+      "Move your gaze slowly and smoothly.",
+      "Relax your jaw and shoulders.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't move your head instead of your eyes.",
+      "Don't rush through each circle.",
+      "Don't strain or squint.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_run_on_the_wall",
+    "short_description": "A wall-supported high-knee drill that builds hip flexor strength and running mechanics.",
+    "how_to": [
+      "Stand facing a wall and place both hands flat on it at chest height.",
+      "Lean your body forward at a slight angle.",
+      "Drive one knee up toward your chest.",
+      "Quickly switch legs in a running motion.",
+      "Maintain a steady, alternating pace."
+    ],
+    "correct": [
+      "Keep your body in a straight line from heel to head.",
+      "Keep your core braced throughout.",
+      "Drive your knees high with each rep.",
+      "Keep your foot flexed as you lift."
+    ],
+    "mistakes": [
+      "Don't let your hips sag toward the wall.",
+      "Don't look down at your feet.",
+      "Don't shuffle instead of driving the knees up.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_push_up_row",
+    "short_description": "A push-up paired with a dumbbell row that strengthens the chest, back and core together.",
+    "how_to": [
+      "Start in a high plank with a dumbbell in each hand on the floor.",
+      "Perform one push-up, keeping your body straight.",
+      "At the top, row one dumbbell to your hip.",
+      "Lower it and row the other side.",
+      "Repeat the push-up and alternate rows each rep."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled on the push-up.",
+      "Keep your hips square during the row.",
+      "Keep your core tight throughout."
+    ],
+    "mistakes": [
+      "Don't let your hips drop on the push-up.",
+      "Don't flare your elbows out wide.",
+      "Don't rotate your hips when you row.",
+      "Don't rush between the push-up and the row."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_butt_bridge",
+    "short_description": "A glute bridge with a dumbbell across the hips that increases resistance for the glutes and hamstrings.",
+    "how_to": [
+      "Lie on your back with knees bent and feet flat on the floor.",
+      "Place a dumbbell across your hips and hold it in place.",
+      "Press through your heels and lift your hips toward the ceiling.",
+      "Squeeze your glutes at the top.",
+      "Lower your hips with control and repeat."
+    ],
+    "correct": [
+      "Keep your feet flat on the floor throughout.",
+      "Squeeze your glutes at the top of each rep.",
+      "Keep your knees tracking over your toes.",
+      "Move with control on the way down."
+    ],
+    "mistakes": [
+      "Don't let your knees fall inward.",
+      "Don't hyperextend your lower back at the top.",
+      "Don't drop your hips quickly.",
+      "Don't let the dumbbell slide."
+    ]
+  },
+  {
+    "exercise_id": "leap_lying_knee_hug",
+    "short_description": "A supine knee-to-chest stretch that gently decompresses the lower back and releases the glutes.",
+    "how_to": [
+      "Lie on your back on a flat surface.",
+      "Draw both knees toward your chest.",
+      "Wrap your arms around your shins or behind your knees.",
+      "Gently pull your knees closer until you feel a stretch.",
+      "Hold and breathe slowly."
+    ],
+    "correct": [
+      "Keep your head relaxed on the floor.",
+      "Relax your shoulders away from your ears.",
+      "Breathe slowly and steadily.",
+      "Keep the pull gentle."
+    ],
+    "mistakes": [
+      "Don't strain your neck to lift your head.",
+      "Don't pull so hard it causes discomfort.",
+      "Don't hold your breath.",
+      "Don't force the stretch."
+    ]
+  },
+  {
+    "exercise_id": "leap_butterfly_bridge",
+    "short_description": "A glute bridge with the soles of the feet together that targets the inner thighs and glutes.",
+    "how_to": [
+      "Lie on your back and bring the soles of your feet together.",
+      "Let your knees fall out to the sides.",
+      "Press through your feet and lift your hips toward the ceiling.",
+      "Squeeze your glutes at the top.",
+      "Lower with control and repeat."
+    ],
+    "correct": [
+      "Keep the soles of your feet together throughout.",
+      "Squeeze your glutes at the top.",
+      "Keep your core engaged as you lift.",
+      "Move with a slow, controlled tempo."
+    ],
+    "mistakes": [
+      "Don't let your lower back hyperextend.",
+      "Don't rush the movement.",
+      "Don't let your feet drift apart.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_hip_bridge_leg_lift",
+    "short_description": "A dumbbell hip bridge combined with a single-leg lift that challenges glute strength and pelvic stability.",
+    "how_to": [
+      "Lie on your back with knees bent, feet flat, and a dumbbell on your hips.",
+      "Press through both heels and raise your hips into a bridge.",
+      "Extend one leg straight out at hip height.",
+      "Hold briefly, then lower that leg and return your hips to the floor.",
+      "Alternate the lifting leg each rep."
+    ],
+    "correct": [
+      "Keep your hips level when you lift one leg.",
+      "Keep your core engaged throughout.",
+      "Squeeze your glutes at the top.",
+      "Move with control on every phase."
+    ],
+    "mistakes": [
+      "Don't let your hips tilt when extending the leg.",
+      "Don't drop your hips as you lift.",
+      "Don't let the dumbbell slide.",
+      "Don't rush through the leg extension."
+    ]
+  },
+  {
+    "exercise_id": "leap_marchin_hip_raises",
+    "short_description": "A glute bridge march that lifts alternating knees while holding the hips up to work the glutes and core.",
+    "how_to": [
+      "Lie on your back with knees bent and feet flat on the floor.",
+      "Press through your heels and raise your hips into a bridge.",
+      "Lift one knee toward your chest, keeping your hips level.",
+      "Lower that foot and lift the other knee.",
+      "Continue alternating in a slow marching rhythm."
+    ],
+    "correct": [
+      "Keep your hips level throughout the march.",
+      "Keep your core braced on every rep.",
+      "Squeeze your glutes as you march.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your hips drop when you lift a knee.",
+      "Don't tilt your pelvis to one side.",
+      "Don't rush the marching tempo.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_single_arm_fly",
+    "short_description": "A one-arm lying fly with a dumbbell that isolates one side of the chest and challenges core stability.",
+    "how_to": [
+      "Lie on your back holding one dumbbell in your working hand above your chest.",
+      "Keep a slight bend in that elbow.",
+      "Lower your arm out to the side in a wide arc.",
+      "Return the dumbbell above your chest with control.",
+      "Complete all reps on one side before switching."
+    ],
+    "correct": [
+      "Keep a soft bend in your elbow throughout.",
+      "Keep your back flat on the surface.",
+      "Move through a smooth, controlled arc.",
+      "Keep your free arm relaxed at your side."
+    ],
+    "mistakes": [
+      "Don't straighten your elbow during the arc.",
+      "Don't lower the weight past a comfortable stretch.",
+      "Don't arch your lower back.",
+      "Don't rush the return phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_toe_tap",
+    "short_description": "A supine core exercise that lowers alternating legs to tap the toes on the floor and build lower abdominal control.",
+    "how_to": [
+      "Lie on your back with both legs raised to 90 degrees.",
+      "Press your lower back into the floor and brace your core.",
+      "Slowly lower one foot to lightly tap the floor.",
+      "Raise it back to the start before lowering the other leg.",
+      "Alternate legs with a steady, controlled tempo."
+    ],
+    "correct": [
+      "Keep your lower back controlled and pressed down.",
+      "Keep your core braced throughout.",
+      "Move slowly on the way down.",
+      "Breathe out as you lower."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your lower back lift off the floor.",
+      "Don't rush the lowering phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_lips_down_pull",
+    "short_description": "A facial muscle exercise that pulls the lips downward to engage and tone the muscles around the mouth.",
+    "how_to": [
+      "Sit or stand in a relaxed, upright position.",
+      "Close your mouth and relax your jaw.",
+      "Pull the corners of your lips downward as if frowning.",
+      "Hold the contraction for a moment.",
+      "Release and repeat."
+    ],
+    "correct": [
+      "Keep your jaw and neck relaxed.",
+      "Keep the movement intentional and controlled.",
+      "Breathe steadily.",
+      "Relax your shoulders throughout."
+    ],
+    "mistakes": [
+      "Don't tense your neck or jaw.",
+      "Don't hold your breath.",
+      "Don't force an extreme range.",
+      "Don't rush through each rep."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_single_leg_hip_thrust",
+    "short_description": "A single-leg hip thrust with a dumbbell that maximally loads one glute at a time for strength and balance.",
+    "how_to": [
+      "Sit with your upper back against a bench and a dumbbell on your hips.",
+      "Plant one foot flat on the floor and extend the other leg straight.",
+      "Drive through the planted heel to thrust your hips upward.",
+      "Squeeze your glute hard at the top.",
+      "Lower with control and repeat, then switch legs."
+    ],
+    "correct": [
+      "Keep your hips level at the top.",
+      "Squeeze your glute fully at the top of each rep.",
+      "Keep your core engaged throughout.",
+      "Keep the dumbbell stable on your hips."
+    ],
+    "mistakes": [
+      "Don't let your hips tilt to one side.",
+      "Don't hyperextend your lower back at the top.",
+      "Don't rush the lowering phase.",
+      "Don't let the dumbbell slide during the thrust."
+    ]
+  }
+]

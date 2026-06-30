@@ -175,6 +175,41 @@ tables and a `Lang` entry — there are no translation files to wire up.
 Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for
 the build/regenerate workflow and conventions.
 
+## Leap Fitness How-To import
+
+Offline tooling (in `scripts/`, Python) that builds an exercise catalogue from the
+public **"How to Do …"** videos on the *Leap Fitness Official* YouTube channel.
+No video is ever downloaded — only public titles/URLs are read, and all card text
+is written **originally** in this project's house style (nothing is copied from a
+video, description or subtitle). Every card carries its source video link and a
+`review_status` for manual review before publishing.
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+.venv/bin/python scripts/fetch_leap_howto_videos.py       # → data/leap_howto_videos.raw.json
+.venv/bin/python scripts/enrich_leap_dates.py             # (optional) fill publish dates
+.venv/bin/python scripts/normalize_leap_exercises.py      # dedup (keep newest) + match + group
+.venv/bin/python scripts/generate_leap_exercise_cards.py  # assemble house-style cards
+.venv/bin/python scripts/validate_leap_exercise_cards.py  # validate
+```
+
+Source preference: the **YouTube Data API** when `YOUTUBE_API_KEY` is set
+(`.env`), otherwise **yt-dlp** (metadata only). Card text comes from the authored
+house-style pass; with `OPENAI_API_KEY` set the generator can fill any gaps via
+OpenAI, else it uses safe generic drafts. See [.env.example](.env.example).
+
+Outputs:
+
+| File | What |
+|------|------|
+| `data/leap_howto_videos.raw.json` | every "How to Do" video found (title, URL, thumbnail) |
+| `data/leap_howto_exercises.normalized.json` | unique exercises (freshest duplicate kept), grouped, matched to existing |
+| `data/leap_video_map.json` | exercises that match the app's library → just attach a video |
+| `content/leap_exercise_cards.en.json` / `.md` | the assembled cards (English) |
+| `content/leap_exercise_cards.review.csv` | flat review sheet (`exercise_id,name,video_url,status,issues`) |
+| `content/leap_exercise_cards.validation.json` | validation report |
+
 ## License
 
 Licensed under the **Apache License, Version 2.0**. See [LICENSE](LICENSE) and

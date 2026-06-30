@@ -1,0 +1,482 @@
+[
+  {
+    "exercise_id": "leap_valley_press",
+    "exercise_name": "Valley Press",
+    "short_description": "A chest-focused pressing movement that works the pectorals and front shoulders through a valley-shaped arm path.",
+    "how_to": [
+      "Stand or sit with a dumbbell in each hand at chest height.",
+      "Press the weights together in front of your chest.",
+      "Squeeze your chest at the top of the movement.",
+      "Lower the weights slowly back to the start.",
+      "Repeat with controlled presses."
+    ],
+    "correct": [
+      "Keep your chest up throughout.",
+      "Keep your core braced.",
+      "Move with a slow, controlled tempo.",
+      "Keep your shoulders down and back."
+    ],
+    "mistakes": [
+      "Don't rush the press.",
+      "Don't shrug your shoulders up.",
+      "Don't let the weights drift apart at the top.",
+      "Don't arch your lower back excessively."
+    ]
+  },
+  {
+    "exercise_id": "leap_half_bending_pushing_forward",
+    "exercise_name": "Half Bending Pushing Forward",
+    "short_description": "A half-bent push-forward movement that engages the upper back and shoulders through a horizontal pressing action.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and hinge slightly at the hips.",
+      "Hold your arms bent at your sides.",
+      "Push both arms forward at shoulder height.",
+      "Pull them back to the start with control.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your back flat throughout.",
+      "Keep your core engaged.",
+      "Move your arms at a steady pace.",
+      "Keep a slight bend in your knees."
+    ],
+    "mistakes": [
+      "Don't round your upper back.",
+      "Don't lock your knees.",
+      "Don't swing your torso to add momentum.",
+      "Don't let your shoulders creep up."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_upright_row",
+    "exercise_name": "Dumbbell Upright-Row",
+    "short_description": "A dumbbell upright row that targets the upper traps and lateral deltoids by pulling the weights vertically.",
+    "how_to": [
+      "Stand tall holding a dumbbell in each hand in front of your thighs.",
+      "Pull the dumbbells straight up close to your body.",
+      "Lead with your elbows until they reach shoulder height.",
+      "Lower the weights slowly back to the start.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep the dumbbells close to your body.",
+      "Keep your elbows higher than your wrists.",
+      "Keep your core tight.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't jerk the weights up.",
+      "Don't pull the dumbbells higher than your chin.",
+      "Don't lean back as you lift.",
+      "Don't let your wrists lead the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_bent_over_dumbbell_rows",
+    "exercise_name": "Bent Over Dumbbell Rows",
+    "short_description": "A bent-over dumbbell row that strengthens the upper and mid back by pulling the weights toward your torso.",
+    "how_to": [
+      "Stand with feet hip-width apart and hold a dumbbell in each hand.",
+      "Hinge at the hips until your torso is nearly parallel to the floor.",
+      "Let the dumbbells hang below your chest.",
+      "Pull both weights up toward your ribcage, squeezing your shoulder blades.",
+      "Lower the dumbbells slowly and repeat."
+    ],
+    "correct": [
+      "Keep your back flat and parallel to the floor.",
+      "Keep your core tight.",
+      "Squeeze your shoulder blades at the top.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't round your lower back.",
+      "Don't jerk the weights up.",
+      "Don't let your elbows flare out wide.",
+      "Don't lift your torso to assist the row."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_kickbacks",
+    "exercise_name": "Dumbbell Kickbacks",
+    "short_description": "A dumbbell kickback that isolates the triceps by extending the arm backward from a hinged position.",
+    "how_to": [
+      "Stand with feet hip-width apart and hinge forward at the hips.",
+      "Hold a dumbbell in each hand with your upper arms tucked against your sides.",
+      "Extend both arms straight back, squeezing the triceps.",
+      "Slowly return to the bent position.",
+      "Repeat without swinging."
+    ],
+    "correct": [
+      "Keep your upper arms still throughout.",
+      "Keep your back flat.",
+      "Squeeze your triceps at full extension.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't swing your arms to build momentum.",
+      "Don't round your back.",
+      "Don't drop your elbows during the movement.",
+      "Don't use a weight too heavy to control."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_donkey_kicks",
+    "exercise_name": "Dumbbell Donkey Kicks",
+    "short_description": "A dumbbell donkey kick that targets the glutes by driving one leg back and up against added resistance.",
+    "how_to": [
+      "Start on all fours with a dumbbell tucked behind one knee.",
+      "Keep your core tight and your back flat.",
+      "Drive that leg back and up until your thigh is parallel to the floor.",
+      "Squeeze your glute at the top.",
+      "Lower slowly and repeat, then switch legs."
+    ],
+    "correct": [
+      "Keep your back flat throughout.",
+      "Keep your hips level.",
+      "Squeeze your glute at the top.",
+      "Move with slow, controlled reps."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't let your hips rotate open.",
+      "Don't swing the leg for momentum.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_backward_lunge",
+    "exercise_name": "Dumbbell Backward Lunge",
+    "short_description": "A dumbbell backward lunge that works the quads, glutes and hamstrings while adding load with dumbbells.",
+    "how_to": [
+      "Stand tall holding a dumbbell in each hand at your sides.",
+      "Step one foot back and lower your back knee toward the floor.",
+      "Keep your front shin vertical and your torso upright.",
+      "Push through your front heel to return to standing.",
+      "Alternate legs for the desired reps."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down on the front foot.",
+      "Keep your chest up throughout.",
+      "Keep your core engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't let your front knee push past your toes.",
+      "Don't lean your torso forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_single_leg_deadlift",
+    "exercise_name": "Single Leg Deadlift",
+    "short_description": "A single-leg deadlift that challenges hamstring strength and balance by hinging on one leg.",
+    "how_to": [
+      "Stand on one leg with a soft bend in the knee.",
+      "Hinge forward at the hips while raising your free leg behind you.",
+      "Lower your hands toward the floor while keeping your back flat.",
+      "Return to standing by driving your hips forward.",
+      "Complete your reps then switch legs."
+    ],
+    "correct": [
+      "Keep your back flat throughout the hinge.",
+      "Keep your hips square to the floor.",
+      "Keep your standing knee soft.",
+      "Move with slow, deliberate control."
+    ],
+    "mistakes": [
+      "Don't round your lower back.",
+      "Don't let your hips rotate open.",
+      "Don't lock out your standing knee.",
+      "Don't rush the return."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_hip_thrust",
+    "exercise_name": "Dumbbell Hip Thrust",
+    "short_description": "A dumbbell hip thrust that builds glute strength by driving the hips up against resistance from a dumbbell.",
+    "how_to": [
+      "Sit with your upper back against a bench and a dumbbell resting on your hips.",
+      "Plant your feet flat on the floor, hip-width apart.",
+      "Drive your hips upward until your body forms a straight line from knees to shoulders.",
+      "Squeeze your glutes at the top.",
+      "Lower slowly and repeat."
+    ],
+    "correct": [
+      "Keep your chin tucked throughout.",
+      "Squeeze your glutes hard at the top.",
+      "Keep your feet flat on the floor.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't hyperextend your lower back at the top.",
+      "Don't let your knees fall inward.",
+      "Don't bounce at the bottom.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_spiderman_plank",
+    "exercise_name": "Spiderman Plank",
+    "short_description": "A dynamic plank variation that works the core, obliques and hip flexors by drawing the knee toward the elbow.",
+    "how_to": [
+      "Start in a high plank with your hands under your shoulders.",
+      "Bring one knee out and toward the same-side elbow.",
+      "Return the foot to the start position.",
+      "Alternate sides for the desired reps.",
+      "Keep your hips level throughout."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips level as you move your leg.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't twist your torso as you bring the knee in.",
+      "Don't rush and lose alignment."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_pullover",
+    "exercise_name": "Dumbbell Pullover",
+    "short_description": "A dumbbell pullover that stretches and works the chest, lats and serratus by arcing the weight overhead from a lying position.",
+    "how_to": [
+      "Lie on your back on a bench with both hands gripping one dumbbell above your chest.",
+      "Keep a slight bend in your elbows throughout.",
+      "Lower the dumbbell in an arc behind your head until you feel a stretch.",
+      "Pull the weight back up over your chest along the same arc.",
+      "Repeat with controlled movement."
+    ],
+    "correct": [
+      "Keep your core braced.",
+      "Keep a soft bend in your elbows.",
+      "Move through a full but comfortable arc.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't lock your elbows straight.",
+      "Don't drop the weight too fast.",
+      "Don't let your lower back arch off the bench.",
+      "Don't use momentum to swing the weight up."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_swing",
+    "exercise_name": "Dumbbell Swing",
+    "short_description": "A dumbbell swing that trains the posterior chain and builds power by hinging and driving the hips forward.",
+    "how_to": [
+      "Stand with feet shoulder-width apart and hold one dumbbell with both hands.",
+      "Hinge at the hips and let the dumbbell swing back between your legs.",
+      "Drive your hips forward explosively to swing the weight to shoulder height.",
+      "Let the weight swing back down as you hinge again.",
+      "Repeat in a smooth, rhythmic motion."
+    ],
+    "correct": [
+      "Drive from your hips, not your arms.",
+      "Keep your back flat throughout.",
+      "Keep your core tight.",
+      "Keep your heels on the floor."
+    ],
+    "mistakes": [
+      "Don't squat the movement instead of hinging.",
+      "Don't round your lower back.",
+      "Don't use your arms to muscle the weight up.",
+      "Don't let the dumbbell pull you forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_tricep_dumbbell_flick_back",
+    "exercise_name": "Tricep Dumbbell Flick Back",
+    "short_description": "A tricep flick-back that isolates the back of the upper arm through a short, controlled extension.",
+    "how_to": [
+      "Stand with feet hip-width apart and hinge slightly forward at the hips.",
+      "Hold a dumbbell in each hand with your elbows bent at your sides.",
+      "Extend your forearms back and slightly flick at the wrist at the end range.",
+      "Return to the bent position with control.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your upper arms still and close to your sides.",
+      "Keep your back flat.",
+      "Move only from the elbow down.",
+      "Keep the movement slow and deliberate."
+    ],
+    "mistakes": [
+      "Don't swing your torso to help the movement.",
+      "Don't let your elbows drop.",
+      "Don't use a weight too heavy to control.",
+      "Don't rush the extension."
+    ]
+  },
+  {
+    "exercise_id": "leap_knee_lift",
+    "exercise_name": "Knee Lift",
+    "short_description": "A standing knee lift that activates the hip flexors and challenges balance by raising one knee at a time.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Shift your weight onto one foot.",
+      "Drive the opposite knee up toward your chest.",
+      "Lower your foot back down with control.",
+      "Alternate sides for the desired reps."
+    ],
+    "correct": [
+      "Keep your core engaged throughout.",
+      "Keep your standing leg slightly bent.",
+      "Keep your chest up and shoulders relaxed.",
+      "Move with steady control."
+    ],
+    "mistakes": [
+      "Don't lean back as you lift the knee.",
+      "Don't let your standing knee collapse inward.",
+      "Don't rush between reps.",
+      "Don't hunch your shoulders."
+    ]
+  },
+  {
+    "exercise_id": "leap_seated_overhead_tricep_extension",
+    "exercise_name": "Seated Overhead Tricep Extension",
+    "short_description": "A seated overhead tricep extension that isolates the triceps by extending a dumbbell from behind the head.",
+    "how_to": [
+      "Sit upright on a bench or chair and hold one dumbbell with both hands.",
+      "Raise the dumbbell overhead and lower it behind your head by bending your elbows.",
+      "Extend your arms back to the top, squeezing your triceps.",
+      "Keep your elbows pointing forward throughout.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your elbows close to your head.",
+      "Keep your core braced and your back upright.",
+      "Squeeze your triceps at the top.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't let your elbows flare out wide.",
+      "Don't arch your lower back.",
+      "Don't use momentum to swing the weight up.",
+      "Don't lock out your elbows aggressively at the top."
+    ]
+  },
+  {
+    "exercise_id": "leap_jaw_line",
+    "exercise_name": "Jaw Line",
+    "short_description": "A facial toning exercise that targets the jaw muscles and neck by controlled jaw and chin movements.",
+    "how_to": [
+      "Sit or stand with a tall, relaxed posture.",
+      "Tilt your chin slightly upward.",
+      "Open and close your mouth in a slow, exaggerated chewing motion.",
+      "Hold the open position for a breath, then close.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your neck relaxed.",
+      "Move slowly and with control.",
+      "Breathe steadily throughout.",
+      "Keep your shoulders down."
+    ],
+    "mistakes": [
+      "Don't strain or force the movement.",
+      "Don't tense your neck muscles unnecessarily.",
+      "Don't hold your breath.",
+      "Don't jut your chin aggressively forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_arm_triceps_kickback",
+    "exercise_name": "Dumbbell Arm Triceps Kickback",
+    "short_description": "A single-arm dumbbell triceps kickback that isolates the triceps through a controlled arm extension.",
+    "how_to": [
+      "Stand with one knee and hand on a bench for support.",
+      "Hold a dumbbell in the free hand with your upper arm parallel to the floor.",
+      "Extend your forearm back until your arm is straight.",
+      "Squeeze your triceps at the top.",
+      "Lower slowly and repeat, then switch arms."
+    ],
+    "correct": [
+      "Keep your upper arm still and parallel to the floor.",
+      "Keep your back flat.",
+      "Squeeze your triceps at full extension.",
+      "Lower with control."
+    ],
+    "mistakes": [
+      "Don't swing your arm for momentum.",
+      "Don't let your elbow drop during the movement.",
+      "Don't round your back.",
+      "Don't use a weight you cannot fully control."
+    ]
+  },
+  {
+    "exercise_id": "leap_underchin_duck",
+    "exercise_name": "Underchin Duck",
+    "short_description": "A facial and neck exercise that targets the area under the chin by drawing the head in a gentle duck motion.",
+    "how_to": [
+      "Sit or stand with a tall posture and relaxed shoulders.",
+      "Gently tuck your chin toward your chest.",
+      "Push your lower jaw forward slightly in a scooping motion.",
+      "Return to the neutral position with control.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your shoulders down and relaxed.",
+      "Move slowly and with control.",
+      "Keep your neck relaxed throughout.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't force your chin down aggressively.",
+      "Don't tense your neck muscles.",
+      "Don't hold your breath.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_eye_lift",
+    "exercise_name": "Eye Lift",
+    "short_description": "A facial toning exercise that works the muscles around the eyes through controlled upward eye movements.",
+    "how_to": [
+      "Sit comfortably with your head upright and shoulders relaxed.",
+      "Place your index fingers gently under your eyebrows.",
+      "Look upward while resisting with your fingers.",
+      "Hold briefly, then relax the muscles.",
+      "Repeat for the desired reps."
+    ],
+    "correct": [
+      "Keep your facial muscles relaxed except for those being targeted.",
+      "Move slowly and deliberately.",
+      "Breathe steadily throughout.",
+      "Keep your shoulders and neck relaxed."
+    ],
+    "mistakes": [
+      "Don't strain or squint your eyes.",
+      "Don't press too hard with your fingers.",
+      "Don't hold your breath.",
+      "Don't tilt your head back to compensate."
+    ]
+  },
+  {
+    "exercise_id": "leap_marilyn",
+    "exercise_name": "Marilyn",
+    "short_description": "A facial toning exercise that targets the muscles around the mouth and cheeks through a pursed-lip expression.",
+    "how_to": [
+      "Sit or stand with a relaxed, upright posture.",
+      "Purse your lips together as if about to give a kiss.",
+      "Hold the position for a breath, then relax.",
+      "Repeat in a slow, steady rhythm.",
+      "Perform for the desired number of reps."
+    ],
+    "correct": [
+      "Keep your shoulders and neck relaxed.",
+      "Keep the expression controlled and deliberate.",
+      "Breathe steadily between reps.",
+      "Keep your jaw relaxed."
+    ],
+    "mistakes": [
+      "Don't force or strain the expression.",
+      "Don't tense your neck muscles.",
+      "Don't hold your breath.",
+      "Don't rush through the reps."
+    ]
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_fire_hydrant_pulse",
+    "exercise_name": "Fire Hydrant Pulse",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：FIRE HYDRANT PULSE"
+  },
+  {
+    "exercise_id": "leap_downward_facing_dog_on_the_wall",
+    "exercise_name": "Downward Facing Dog on the Wall",
+    "group_label": "Wall",
+    "video_title": "How to Do：DOWNWARD FACING DOG ON THE WALL"
+  },
+  {
+    "exercise_id": "leap_walking_squats",
+    "exercise_name": "Walking Squats",
+    "group_label": "Squats",
+    "video_title": "How to Do：WALKING SQUATS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_plank_rotation",
+    "exercise_name": "Dumbbell Plank Rotation",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL PLANK ROTATION"
+  },
+  {
+    "exercise_id": "leap_donkey_kicks_pulse",
+    "exercise_name": "Donkey Kicks Pulse",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：DONKEY KICKS PULSE"
+  },
+  {
+    "exercise_id": "leap_oblique_crossover_crunch",
+    "exercise_name": "Oblique Crossover Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：OBLIQUE CROSSOVER CRUNCH"
+  },
+  {
+    "exercise_id": "leap_pilates_leg_pulls",
+    "exercise_name": "Pilates Leg Pulls",
+    "group_label": "Other",
+    "video_title": "How to Do：PILATES LEG PULLS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_bent_leg_twist",
+    "exercise_name": "Dumbbell Bent Leg Twist",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BENT LEG TWIST"
+  },
+  {
+    "exercise_id": "leap_dumbbell_bench_press",
+    "exercise_name": "Dumbbell Bench Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BENCH PRESS"
+  },
+  {
+    "exercise_id": "leap_side_plank_knee_crunch",
+    "exercise_name": "Side Plank Knee Crunch",
+    "group_label": "Planks",
+    "video_title": "How to Do：SIDE PLANK KNEE CRUNCH"
+  },
+  {
+    "exercise_id": "leap_standing_dumbbell_curl",
+    "exercise_name": "Standing Dumbbell Curl",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：STANDING DUMBBELL CURL"
+  },
+  {
+    "exercise_id": "leap_arm_swings_with_lateral_steps",
+    "exercise_name": "Arm Swings with Lateral Steps",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：ARM SWINGS WITH LATERAL STEPS"
+  },
+  {
+    "exercise_id": "leap_side_lying_forward_leg_lift",
+    "exercise_name": "Side Lying Forward Leg Lift",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：SIDE LYING FORWARD LEG LIFT"
+  },
+  {
+    "exercise_id": "leap_leg_lateral_raise",
+    "exercise_name": "Leg Lateral Raise",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：LEG LATERAL RAISE"
+  },
+  {
+    "exercise_id": "leap_chair_squats",
+    "exercise_name": "Chair Squats",
+    "group_label": "Equipment",
+    "video_title": "How to Do：CHAIR SQUATS"
+  },
+  {
+    "exercise_id": "leap_zottman_curl",
+    "exercise_name": "Zottman Curl",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：ZOTTMAN CURL"
+  },
+  {
+    "exercise_id": "leap_dumbbell_concentration_curl",
+    "exercise_name": "Dumbbell Concentration Curl",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CONCENTRATION CURL"
+  },
+  {
+    "exercise_id": "leap_kneeling_side_plank",
+    "exercise_name": "Kneeling Side Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do：KNEELING SIDE PLANK"
+  },
+  {
+    "exercise_id": "leap_air_cycling",
+    "exercise_name": "Air Cycling",
+    "group_label": "Other",
+    "video_title": "How to Do：AIR CYCLING"
+  },
+  {
+    "exercise_id": "leap_alternate_hammer_curl",
+    "exercise_name": "Alternate Hammer Curl",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：ALTERNATE HAMMER CURL"
+  }
+]

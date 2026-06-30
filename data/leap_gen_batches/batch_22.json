@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_cross_arm_crunches",
+    "exercise_name": "Cross Arm Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: CROSS ARM CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_long_arm_crunches",
+    "exercise_name": "Long Arm Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: LONG ARM CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_plank",
+    "exercise_name": "Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do: PLANK"
+  },
+  {
+    "exercise_id": "leap_russian_twist",
+    "exercise_name": "Russian Twist",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: RUSSIAN TWIST"
+  },
+  {
+    "exercise_id": "leap_high_stepping",
+    "exercise_name": "High Stepping",
+    "group_label": "Other",
+    "video_title": "How to Do: HIGH STEPPING"
+  },
+  {
+    "exercise_id": "leap_v_crunch",
+    "exercise_name": "V Crunch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：V CRUNCH"
+  },
+  {
+    "exercise_id": "leap_heel_touch",
+    "exercise_name": "Heel Touch",
+    "group_label": "Other",
+    "video_title": "How to Do: HEEL TOUCH"
+  },
+  {
+    "exercise_id": "leap_standing_bicycle_crunches",
+    "exercise_name": "Standing Bicycle Crunches",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: STANDING BICYCLE CRUNCHES"
+  },
+  {
+    "exercise_id": "leap_bent_leg_twist",
+    "exercise_name": "Bent Leg Twist",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：BENT LEG TWIST"
+  },
+  {
+    "exercise_id": "leap_dead_bug",
+    "exercise_name": "Dead Bug",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: DEAD BUG"
+  },
+  {
+    "exercise_id": "leap_dumbbell_russian_twist",
+    "exercise_name": "Dumbbell Russian Twist",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL RUSSIAN TWIST"
+  },
+  {
+    "exercise_id": "leap_reclined_oblique_twist",
+    "exercise_name": "Reclined Oblique Twist",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: RECLINED OBLIQUE TWIST"
+  },
+  {
+    "exercise_id": "leap_dumbbell_crunch_and_punches",
+    "exercise_name": "Dumbbell Crunch and Punches",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CRUNCH AND PUNCHES"
+  },
+  {
+    "exercise_id": "leap_side_bridges",
+    "exercise_name": "Side Bridges",
+    "group_label": "Glutes & Hips",
+    "video_title": "How to Do：SIDE BRIDGES"
+  },
+  {
+    "exercise_id": "leap_v_up",
+    "exercise_name": "V-Up",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do: V-UP"
+  },
+  {
+    "exercise_id": "leap_alternating_knee_to_chest_stretch",
+    "exercise_name": "Alternating Knee to Chest Stretch",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：ALTERNATING KNEE TO CHEST STRETCH"
+  },
+  {
+    "exercise_id": "leap_open_chain_knee_extension_left",
+    "exercise_name": "Open Chain Knee Extension Left",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：OPEN CHAIN KNEE EXTENSION LEFT"
+  },
+  {
+    "exercise_id": "leap_oblique_v_up",
+    "exercise_name": "Oblique V-Up",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：OBLIQUE V-UP"
+  },
+  {
+    "exercise_id": "leap_clockwise_arm_swings",
+    "exercise_name": "Clockwise Arm Swings",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do: CLOCKWISE ARM SWINGS"
+  },
+  {
+    "exercise_id": "leap_backward_lunge_with_front",
+    "exercise_name": "Backward Lunge with Front",
+    "group_label": "Lunges",
+    "video_title": "How to Do: BACKWARD LUNGE WITH FRONT"
+  }
+]

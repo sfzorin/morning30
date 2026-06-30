@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_wall_sumo_squats_and_calf_raise",
+    "short_description": "A wall-supported sumo squat with a calf raise that targets the inner thighs, glutes and calves.",
+    "how_to": ["Stand with your back against a wall and your feet wide, toes turned out.", "Slide down the wall until your thighs are parallel to the floor.", "Hold the squat position and rise onto your toes.", "Lower your heels slowly and repeat the calf raise.", "Keep your back flat against the wall throughout."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down at the start of each rep.", "Keep your back flat against the wall.", "Move with control on each raise and lower."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast into the squat.", "Don't bounce your heels off the floor.", "Don't arch your lower back away from the wall."]
+  },
+  {
+    "exercise_id": "leap_wall_standing_thoracic_left",
+    "short_description": "A wall-assisted standing rotation that mobilises the left side of the thoracic spine.",
+    "how_to": ["Stand sideways with your left side close to a wall.", "Place your left hand on the wall at shoulder height.", "Rotate your upper body gently toward the wall.", "Hold the rotated position and breathe steadily.", "Release and return to the start position."],
+    "correct": ["Keep your hips square and facing forward.", "Breathe steadily throughout the hold.", "Keep your feet flat on the floor.", "Move slowly into the rotation."],
+    "mistakes": ["Don't force the rotation past a comfortable range.", "Don't hold your breath.", "Don't let your hips rotate with your upper body.", "Don't hunch your shoulders."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_reverse_curl",
+    "short_description": "A dumbbell curl with a pronated grip that targets the brachialis and forearm muscles.",
+    "how_to": ["Stand tall holding dumbbells with your palms facing down.", "Keep your elbows at your sides.", "Curl the dumbbells up toward your shoulders.", "Lower slowly back to the start position."],
+    "correct": ["Keep your elbows controlled and close to your sides.", "Keep your wrists straight throughout the curl.", "Lower the weight with control.", "Keep your shoulders relaxed."],
+    "mistakes": ["Don't swing your torso to lift the weight.", "Don't let your elbows drift forward.", "Don't drop the dumbbells on the way down.", "Don't let your wrists bend during the curl."]
+  },
+  {
+    "exercise_id": "leap_revolved_side_angle",
+    "short_description": "A twisted lunge pose that stretches the hips and chest while building balance and spinal rotation.",
+    "how_to": ["Step your right foot forward into a lunge with your back knee down.", "Place your left hand on the floor inside your right foot.", "Rotate your chest open and extend your right arm toward the ceiling.", "Hold the position and breathe steadily.", "Switch sides and repeat."],
+    "correct": ["Keep your front knee over your ankle.", "Breathe steadily in the hold.", "Keep your back leg active and extended.", "Rotate from your thoracic spine, not your lower back."],
+    "mistakes": ["Don't collapse your front knee inward.", "Don't hold your breath.", "Don't force the twist.", "Don't let your hips sag toward the floor."]
+  },
+  {
+    "exercise_id": "leap_cow_face",
+    "short_description": "A seated hip and shoulder stretch that opens the outer hips and chest simultaneously.",
+    "how_to": ["Sit on the floor and stack your right knee on top of your left.", "Reach your left arm up and bend it behind your head.", "Reach your right arm behind your back and clasp your hands.", "Hold the position and breathe steadily.", "Switch sides and repeat."],
+    "correct": ["Sit tall with your spine upright.", "Breathe steadily throughout the hold.", "Keep both sit bones grounded.", "Hold only where you feel a comfortable stretch."],
+    "mistakes": ["Don't force the shoulder bind if your hands cannot reach.", "Don't hold your breath.", "Don't round your lower back.", "Don't force the stretch."]
+  },
+  {
+    "exercise_id": "leap_standing_forward_bend_with_shoulder_opener",
+    "short_description": "A standing forward fold with hands clasped behind the back that stretches the hamstrings and opens the shoulders.",
+    "how_to": ["Stand with your feet hip-width apart.", "Clasp your hands behind your lower back.", "Hinge forward from your hips and let your arms rise overhead.", "Hold where you feel a stretch in your hamstrings and chest.", "Breathe slowly and hold the position."],
+    "correct": ["Keep your back straight as you hinge forward.", "Keep a soft bend in your knees.", "Breathe slowly throughout the hold.", "Let gravity open your shoulders gradually."],
+    "mistakes": ["Don't round your back on the way down.", "Don't lock your knees.", "Don't force the stretch.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_half_moon_pose",
+    "short_description": "A standing balance pose that strengthens the legs and core while stretching the side body.",
+    "how_to": ["Stand with your right foot forward and your left foot back.", "Shift your weight onto your right foot and hinge forward.", "Place your right hand on the floor or a block under your shoulder.", "Lift your left leg until it is parallel to the floor.", "Open your hips and extend your left arm toward the ceiling."],
+    "correct": ["Keep your standing leg slightly bent.", "Keep your hips stacked and open.", "Breathe steadily in the hold.", "Keep your gaze steady to help your balance."],
+    "mistakes": ["Don't lock your standing knee.", "Don't hold your breath.", "Don't let your lifted hip drop.", "Don't rush into the position."]
+  },
+  {
+    "exercise_id": "leap_warrior_iii",
+    "short_description": "A single-leg balance pose that strengthens the legs, glutes and core while challenging stability.",
+    "how_to": ["Stand tall and shift your weight onto your right foot.", "Hinge forward from your hips and lift your left leg behind you.", "Extend your arms forward until your body forms a straight line.", "Hold the position with your hips level.", "Breathe steadily and then switch sides."],
+    "correct": ["Keep your hips level and square to the floor.", "Breathe steadily in the hold.", "Keep your standing leg slightly soft.", "Engage your core to stay stable."],
+    "mistakes": ["Don't let your lifted hip rotate open.", "Don't hold your breath.", "Don't lock your standing knee.", "Don't rush the transition out of the pose."]
+  },
+  {
+    "exercise_id": "leap_reverse_warrior",
+    "short_description": "A standing pose that opens the side body and strengthens the legs from a Warrior II base.",
+    "how_to": ["Start in Warrior II with your right foot forward.", "Flip your front palm to face up.", "Slide your back hand down your rear leg.", "Reach your front arm up and back in a long arc.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Breathe steadily in the hold.", "Keep your back leg straight and strong.", "Relax your shoulders away from your ears."],
+    "mistakes": ["Don't let your front knee drift inward.", "Don't hold your breath.", "Don't collapse into your lower back.", "Don't shorten your stance."]
+  },
+  {
+    "exercise_id": "leap_warrior_ii",
+    "short_description": "A foundational standing pose that strengthens the legs and hips while building focus and stability.",
+    "how_to": ["Step your feet wide apart and turn your right foot out ninety degrees.", "Bend your right knee until it is above your ankle.", "Extend your arms to the sides at shoulder height.", "Turn your head to look over your right hand.", "Hold the position and breathe steadily."],
+    "correct": ["Keep your front knee over your toes.", "Keep your arms parallel to the floor.", "Breathe steadily in the hold.", "Relax your shoulders away from your ears."],
+    "mistakes": ["Don't let your front knee cave inward.", "Don't lean your torso forward.", "Don't hold your breath.", "Don't let your back heel lift."]
+  },
+  {
+    "exercise_id": "leap_humble_warrior",
+    "short_description": "A forward-folding warrior pose that stretches the chest and shoulders while strengthening the legs.",
+    "how_to": ["Start in Warrior I with your right foot forward.", "Clasp your hands behind your back.", "Hinge forward and fold your torso inside your right thigh.", "Let your clasped arms rise and your head drop.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Breathe steadily in the hold.", "Keep your back heel grounded.", "Relax your neck and let your head hang."],
+    "mistakes": ["Don't let your front knee cave inward.", "Don't hold your breath.", "Don't force your arms higher than comfortable.", "Don't let your back heel lift off the floor."]
+  },
+  {
+    "exercise_id": "leap_revolved_triangle_pose",
+    "short_description": "A standing twist that stretches the hamstrings and spine while challenging balance.",
+    "how_to": ["Stand with your right foot forward and your left foot back at a forty-five degree angle.", "Keep your legs straight and hinge forward over your right leg.", "Place your left hand on the floor outside your right foot.", "Rotate your torso and extend your right arm toward the ceiling.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your back leg straight and grounded.", "Breathe steadily in the hold.", "Rotate from your thoracic spine.", "Keep your hips level."],
+    "mistakes": ["Don't hold your breath.", "Don't force the twist past a comfortable range.", "Don't let your hips rise unevenly.", "Don't lock your knees."]
+  },
+  {
+    "exercise_id": "leap_extended_side_angle",
+    "short_description": "A standing side-stretch pose that lengthens the side body and strengthens the legs.",
+    "how_to": ["Step your feet wide apart and turn your right foot out.", "Bend your right knee over your ankle.", "Lower your right forearm onto your right thigh.", "Extend your left arm overhead in a long diagonal line.", "Hold the position, then switch sides."],
+    "correct": ["Keep your front knee over your toes.", "Breathe steadily in the hold.", "Extend through your top arm for full length.", "Keep your back foot firmly grounded."],
+    "mistakes": ["Don't let your front knee cave inward.", "Don't hold your breath.", "Don't collapse your torso down onto your thigh.", "Don't let your back heel lift."]
+  },
+  {
+    "exercise_id": "leap_happy_baby_pose",
+    "short_description": "A supine hip-opener that gently releases the lower back and inner groin.",
+    "how_to": ["Lie on your back and draw your knees toward your chest.", "Grab the outer edges of your feet with your hands.", "Open your knees wider than your torso.", "Flex your feet and press them gently toward the ceiling.", "Hold the position and breathe steadily."],
+    "correct": ["Keep your lower back flat on the floor.", "Breathe steadily in the hold.", "Keep your head and shoulders relaxed.", "Hold only where it feels comfortable."],
+    "mistakes": ["Don't force the stretch.", "Don't hold your breath.", "Don't lift your head off the floor.", "Don't rock so much that you lose control."]
+  },
+  {
+    "exercise_id": "leap_crescent_low_lunge_with_cactus_arms",
+    "short_description": "A low lunge with cactus arms that opens the hip flexors and chest while building lower-body strength.",
+    "how_to": ["Step your right foot forward and lower your left knee to the floor.", "Lift your torso upright and raise your arms.", "Bend your elbows to ninety degrees at shoulder height, forming a cactus shape.", "Press your hips gently forward and down.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Keep your heels down on your front foot.", "Breathe steadily in the hold.", "Keep your shoulders away from your ears."],
+    "mistakes": ["Don't let your front knee drift past your toes.", "Don't drop too fast into the lunge.", "Don't hold your breath.", "Don't let your lower back arch excessively."]
+  },
+  {
+    "exercise_id": "leap_revolved_crescent_low_lunge",
+    "short_description": "A twisted low lunge that combines hip flexor lengthening with spinal rotation and balance.",
+    "how_to": ["Step your right foot forward and lower your left knee to the floor.", "Bring your hands together at your chest.", "Rotate your torso to the right and hook your left elbow outside your right knee.", "Press your palms together and hold the twist.", "Breathe steadily, then switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Breathe steadily in the hold.", "Rotate from your thoracic spine.", "Keep your back knee on the floor for stability."],
+    "mistakes": ["Don't let your front knee cave inward.", "Don't hold your breath.", "Don't force the twist further than feels comfortable.", "Don't let your hips sway sideways."]
+  },
+  {
+    "exercise_id": "leap_crescent_low_lunge_with_arm_extended_up",
+    "short_description": "A low lunge with one arm raised overhead that stretches the hip flexors and side body.",
+    "how_to": ["Step your right foot forward and lower your left knee to the floor.", "Lift your torso upright.", "Reach your right arm straight up toward the ceiling.", "Press your hips gently forward and down.", "Hold and breathe, then switch sides."],
+    "correct": ["Keep your front knee over your ankle.", "Keep your heels down on your front foot.", "Breathe steadily in the hold.", "Relax your shoulder on the raised arm."],
+    "mistakes": ["Don't let your front knee drift past your toes.", "Don't drop too fast into the lunge.", "Don't hold your breath.", "Don't hike your shoulder toward your ear on the raised side."]
+  },
+  {
+    "exercise_id": "leap_crescent_low_lunge",
+    "short_description": "A foundational low lunge that stretches the hip flexors and builds leg and core stability.",
+    "how_to": ["Step your right foot forward and lower your left knee to the floor.", "Lift your torso upright and raise both arms overhead.", "Press your hips gently forward and down.", "Hold the position and breathe steadily.", "Switch sides and repeat."],
+    "correct": ["Keep your front knee over your ankle.", "Keep your heels down on your front foot.", "Breathe steadily in the hold.", "Keep your core engaged for balance."],
+    "mistakes": ["Don't let your front knee drift past your toes.", "Don't drop too fast into the lunge.", "Don't hold your breath.", "Don't let your lower back arch excessively."]
+  },
+  {
+    "exercise_id": "leap_walk_the_dog",
+    "short_description": "A dynamic downward-dog variation that alternately pedals the heels to stretch the calves and hamstrings.",
+    "how_to": ["Start in a downward-facing dog position.", "Press your right heel toward the floor while bending your left knee.", "Alternate heels in a slow, steady pedalling motion.", "Keep your hips high and your spine long.", "Continue for the desired duration."],
+    "correct": ["Keep your hips raised throughout the movement.", "Breathe steadily.", "Keep your arms straight and your hands pressed into the floor.", "Move with a slow, controlled rhythm."],
+    "mistakes": ["Don't hold your breath.", "Don't let your lower back round.", "Don't rush the pedalling motion.", "Don't let your shoulders collapse toward the floor."]
+  },
+  {
+    "exercise_id": "leap_down_dog_with_knee_drives",
+    "short_description": "A downward-dog variation with alternating knee drives that activates the core and hip flexors.",
+    "how_to": ["Start in a downward-facing dog position with your hips high.", "Drive your right knee toward your chest in one controlled movement.", "Extend your right leg back to the start.", "Drive your left knee toward your chest.", "Alternate sides with a steady rhythm."],
+    "correct": ["Keep your hips level throughout each drive.", "Breathe steadily.", "Keep your arms straight and stable.", "Engage your core before each knee drive."],
+    "mistakes": ["Don't let your hips drop when you drive the knee.", "Don't hold your breath.", "Don't rush and lose your balance.", "Don't let your lower back round."]
+  }
+]

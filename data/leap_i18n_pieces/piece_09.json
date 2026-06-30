@@ -1,0 +1,232 @@
+[
+  {
+    "exercise_id": "leap_side_lying_floor_stretch",
+    "exercise_name": "Side-Lying Floor Stretch",
+    "short_description": "A side-lying stretch that opens the hip flexors and lengthens the side body.",
+    "how_to": [
+      "Lie on your side with your body in a straight line.",
+      "Bend your top knee and reach back to hold your foot.",
+      "Gently pull your heel toward your glutes.",
+      "Hold where you feel a comfortable stretch, then switch sides."
+    ],
+    "correct": [
+      "Keep your hips stacked on top of each other.",
+      "Keep your bottom arm extended under your head.",
+      "Breathe steadily throughout the hold.",
+      "Move into the stretch slowly and with control."
+    ],
+    "mistakes": [
+      "Don't roll your hips forward or back.",
+      "Don't force your foot closer than is comfortable.",
+      "Don't hold your breath.",
+      "Don't rush through the hold."
+    ]
+  },
+  {
+    "exercise_id": "leap_arm_scissors",
+    "exercise_name": "Arm Scissors",
+    "short_description": "A standing arm movement that warms up the shoulders and upper back.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Extend both arms straight out in front at shoulder height.",
+      "Cross your right arm over your left, then open them wide.",
+      "Alternate the crossing arm each rep in a steady scissors motion."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest open and your posture upright.",
+      "Keep your arms at shoulder height throughout.",
+      "Move at a steady, controlled pace."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your arms drop below shoulder level.",
+      "Don't hunch your shoulders toward your ears."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_hop",
+    "exercise_name": "Side Hop",
+    "short_description": "A lateral jump that trains leg power and improves coordination.",
+    "how_to": [
+      "Stand with your feet together and a slight bend in your knees.",
+      "Push off your right foot and hop to the left.",
+      "Land on your left foot with a soft bend in the knee.",
+      "Immediately hop back to the right and continue alternating."
+    ],
+    "correct": [
+      "Land softly.",
+      "Keep your knees over your toes.",
+      "Keep your chest up and your gaze forward.",
+      "Keep your core tight throughout."
+    ],
+    "mistakes": [
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't lean your torso too far to the side.",
+      "Don't lock your knees on landing."
+    ]
+  },
+  {
+    "exercise_id": "leap_floor_y_raises",
+    "exercise_name": "Floor Y Raises",
+    "short_description": "A prone Y-raise that strengthens the lower trapezius and rear shoulders.",
+    "how_to": [
+      "Lie face down with your arms extended overhead in a Y shape.",
+      "Keep your thumbs pointing up.",
+      "Squeeze your shoulder blades together and lift your arms off the floor.",
+      "Hold briefly at the top, then lower with control."
+    ],
+    "correct": [
+      "Keep your neck neutral.",
+      "Move with control.",
+      "Keep your core gently braced.",
+      "Squeeze your shoulder blades at the top of each rep."
+    ],
+    "mistakes": [
+      "Don't throw your head back.",
+      "Don't over-arch your lower back.",
+      "Don't shrug your shoulders toward your ears.",
+      "Don't rush through the lift."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_lying_leg_lift",
+    "exercise_name": "Side-Lying Leg Lift",
+    "short_description": "A side-lying raise that targets the outer glutes and hip abductors.",
+    "how_to": [
+      "Lie on your side with your legs stacked and your body in a straight line.",
+      "Rest your head on your lower arm.",
+      "Keeping your top leg straight, lift it toward the ceiling.",
+      "Lower it with control and repeat, then switch sides."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your hips stacked throughout.",
+      "Keep your top leg straight as you raise it.",
+      "Move slowly rather than swinging the leg."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't roll your hips backward to gain height.",
+      "Don't rush the lowering phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_reverse_flutter_kicks",
+    "exercise_name": "Reverse Flutter Kicks",
+    "short_description": "A prone flutter kick that strengthens the lower back and glutes.",
+    "how_to": [
+      "Lie face down with your arms flat by your sides.",
+      "Engage your glutes and lift both feet off the floor.",
+      "Alternate lifting each leg slightly higher in a fluttering motion.",
+      "Continue at a steady pace while breathing normally."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your neck neutral and your forehead near the floor.",
+      "Keep the kicks small and controlled.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't hold your breath.",
+      "Don't kick so high that your lower back strains."
+    ]
+  },
+  {
+    "exercise_id": "leap_prone_triceps_push_ups",
+    "exercise_name": "Prone Triceps Push Ups",
+    "short_description": "A prone push-up variation that isolates the triceps and challenges core stability.",
+    "how_to": [
+      "Lie face down and place your hands under your shoulders with your elbows close to your sides.",
+      "Keep your neck neutral and your body in a straight line.",
+      "Press your palms into the floor and straighten your arms to lift your torso.",
+      "Lower back down with control and repeat."
+    ],
+    "correct": [
+      "Keep your body straight.",
+      "Keep your elbows controlled.",
+      "Keep your neck neutral.",
+      "Move with control on the way down."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't throw your head back.",
+      "Don't over-arch your lower back."
+    ]
+  },
+  {
+    "exercise_id": "leap_hover_push_up",
+    "exercise_name": "Hover Push Up",
+    "short_description": "A push-up variation where you pause just above the floor to build chest and triceps strength.",
+    "how_to": [
+      "Start in a high push-up position with your hands under your shoulders.",
+      "Lower yourself toward the floor until you are a few centimetres from it.",
+      "Pause and hold that position for a breath.",
+      "Press back up to the start and repeat."
+    ],
+    "correct": [
+      "Keep your body straight from head to heels.",
+      "Keep your elbows controlled as you lower.",
+      "Keep your core engaged during the hold.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't hold your breath during the pause.",
+      "Don't rush past the hold position."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_leg_circles",
+    "exercise_name": "Side Leg Circles",
+    "short_description": "A side-lying hip exercise that mobilises the hip joint and works the outer glutes.",
+    "how_to": [
+      "Lie on your side with your legs stacked and your body straight.",
+      "Lift your top leg to hip height.",
+      "Draw slow circles in the air with your raised foot.",
+      "Complete your reps, reverse direction, then switch sides."
+    ],
+    "correct": [
+      "Keep your hips stacked and still.",
+      "Keep the circles smooth and controlled.",
+      "Keep your core gently engaged.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't rock your hips to make the circles larger.",
+      "Don't rush the movement.",
+      "Don't tense your neck and shoulders.",
+      "Don't let the top leg drop between reps."
+    ]
+  },
+  {
+    "exercise_id": "leap_reclined_rhomboid_squeezes",
+    "exercise_name": "Reclined Rhomboid Squeezes",
+    "short_description": "A floor-based squeeze that activates the rhomboids and improves upper-back posture.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat on the floor.",
+      "Extend your arms out to the sides at shoulder height.",
+      "Press the backs of your arms into the floor and squeeze your shoulder blades together.",
+      "Hold the squeeze briefly, release, and repeat."
+    ],
+    "correct": [
+      "Keep your lower back relaxed on the floor.",
+      "Focus on drawing your shoulder blades toward each other.",
+      "Keep your chin tucked and your neck relaxed.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't shrug your shoulders up toward your ears.",
+      "Don't hold your breath.",
+      "Don't press so hard that you strain your neck.",
+      "Don't rush the squeeze."
+    ]
+  }
+]

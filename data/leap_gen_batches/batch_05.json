@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_plank_hip_dips",
+    "exercise_name": "Plank Hip Dips",
+    "group_label": "Planks",
+    "video_title": "How to Do：PLANK HIP DIPS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_close_grip_floor_press",
+    "exercise_name": "Dumbbell Close Grip Floor Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL CLOSE GRIP FLOOR PRESS"
+  },
+  {
+    "exercise_id": "leap_straight_arm_plank_to_pike",
+    "exercise_name": "Straight Arm Plank to Pike",
+    "group_label": "Planks",
+    "video_title": "How to Do：STRAIGHT ARM PLANK TO PIKE"
+  },
+  {
+    "exercise_id": "leap_downward_facing_dog",
+    "exercise_name": "Downward Facing Dog",
+    "group_label": "Yoga & Poses",
+    "video_title": "How to Do：DOWNWARD FACING DOG"
+  },
+  {
+    "exercise_id": "leap_oblique_crunch_reach",
+    "exercise_name": "Oblique Crunch Reach",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：OBLIQUE CRUNCH REACH"
+  },
+  {
+    "exercise_id": "leap_dumbbell_floor_fly_to_close_grip_press",
+    "exercise_name": "Dumbbell Floor Fly to Close Grip Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL FLOOR FLY TO CLOSE GRIP PRESS"
+  },
+  {
+    "exercise_id": "leap_twisting_piston",
+    "exercise_name": "Twisting Piston",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：TWISTING PISTON"
+  },
+  {
+    "exercise_id": "leap_mouth_circles",
+    "exercise_name": "Mouth Circles",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：MOUTH CIRCLES"
+  },
+  {
+    "exercise_id": "leap_cheek_firmer",
+    "exercise_name": "Cheek Firmer",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do：CHEEK FIRMER"
+  },
+  {
+    "exercise_id": "leap_dumbbell_floor_press",
+    "exercise_name": "Dumbbell Floor Press",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL FLOOR PRESS"
+  },
+  {
+    "exercise_id": "leap_bent_over_row",
+    "exercise_name": "Bent Over Row",
+    "group_label": "Other",
+    "video_title": "How to Do：BENT OVER ROW"
+  },
+  {
+    "exercise_id": "leap_havyk_raises",
+    "exercise_name": "Havyk Raises",
+    "group_label": "Other",
+    "video_title": "How to Do：HAVYK RAISES"
+  },
+  {
+    "exercise_id": "leap_standing_knee_to_chest",
+    "exercise_name": "Standing Knee to Chest",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：STANDING KNEE TO CHEST"
+  },
+  {
+    "exercise_id": "leap_knee_circle",
+    "exercise_name": "Knee Circle",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：KNEE CIRCLE"
+  },
+  {
+    "exercise_id": "leap_wrists_ankles_stretch",
+    "exercise_name": "Wrists & Ankles Stretch",
+    "group_label": "Mobility & Stretch",
+    "video_title": "How to Do：WRISTS & ANKLES STRETCH"
+  },
+  {
+    "exercise_id": "leap_double_knees_to_chest",
+    "exercise_name": "Double Knees to Chest",
+    "group_label": "Core & Abs",
+    "video_title": "How to Do：DOUBLE KNEES TO CHEST"
+  },
+  {
+    "exercise_id": "leap_pistol_box_squat",
+    "exercise_name": "Pistol Box Squat",
+    "group_label": "Squats",
+    "video_title": "How to Do：PISTOL BOX SQUAT"
+  },
+  {
+    "exercise_id": "leap_straight_leg_bounds",
+    "exercise_name": "Straight Leg Bounds",
+    "group_label": "Other",
+    "video_title": "How to Do：STRAIGHT LEG BOUNDS"
+  },
+  {
+    "exercise_id": "leap_x_burpees",
+    "exercise_name": "X-Burpees",
+    "group_label": "Cardio & Jumps",
+    "video_title": "How to Do：X-BURPEES"
+  },
+  {
+    "exercise_id": "leap_standing_dumbbell_chest_fly",
+    "exercise_name": "Standing Dumbbell Chest Fly",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：STANDING DUMBBELL CHEST FLY"
+  }
+]

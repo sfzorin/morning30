@@ -1,0 +1,70 @@
+[
+  {
+    "exercise_id": "leap_seated_in_and_out",
+    "short_description": "A seated core exercise that works the abs and hip flexors by drawing the knees in and extending the legs out.",
+    "how_to": [
+      "Sit on the floor with your hands behind your hips for support.",
+      "Lean back slightly and lift your feet off the floor.",
+      "Draw both knees in toward your chest.",
+      "Extend your legs back out straight without touching the floor.",
+      "Continue in a steady, controlled rhythm."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chest up and your torso stable.",
+      "Breathe steadily throughout the movement.",
+      "Keep your core tight on every rep."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your feet drop to the floor between reps.",
+      "Don't rush and lose control of the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_abdominal_crunch",
+    "short_description": "A fundamental ab exercise that contracts the rectus abdominis by curling your upper body toward your knees.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat on the floor.",
+      "Place your fingertips lightly at the sides of your head.",
+      "Exhale and curl your upper back off the floor.",
+      "Pause briefly at the top, then lower back down with control."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chin away from your chest.",
+      "Relax your neck and let your abs do the work.",
+      "Move slowly on the way down."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't jerk up with momentum.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_alternating_bird_dog",
+    "short_description": "A stability exercise that strengthens the lower back, glutes and core by extending opposite arm and leg from a tabletop position.",
+    "how_to": [
+      "Start on all fours with your wrists under your shoulders and knees under your hips.",
+      "Brace your core and keep your back flat.",
+      "Extend your right arm forward and your left leg back at the same time.",
+      "Hold for a moment, then return to the start.",
+      "Switch sides and repeat in a slow, controlled alternating pattern."
+    ],
+    "correct": [
+      "Keep your hips level throughout the movement.",
+      "Keep your back flat, not arched or rounded.",
+      "Move with control rather than speed.",
+      "Breathe steadily and don't hold your breath."
+    ],
+    "mistakes": [
+      "Don't rotate your hips as you extend.",
+      "Don't rush through the movement.",
+      "Don't let your lower back sag.",
+      "Don't look up; keep your gaze down."
+    ]
+  }
+]

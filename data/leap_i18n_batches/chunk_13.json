@@ -1,0 +1,482 @@
+[
+  {
+    "exercise_id": "leap_one_leg_push_ups",
+    "exercise_name": "One Leg Push-Ups",
+    "short_description": "A push-up variation performed with one foot raised to increase core and chest demand.",
+    "how_to": [
+      "Start in a push-up position with your hands under your shoulders.",
+      "Lift one foot off the floor and hold it there.",
+      "Lower your chest toward the floor with control.",
+      "Push back up to the start and repeat.",
+      "Switch legs each set."
+    ],
+    "correct": [
+      "Keep your body straight from head to heel.",
+      "Keep your elbows controlled.",
+      "Keep your hips level throughout.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't let your hips drop.",
+      "Don't flare your elbows out wide.",
+      "Don't twist your hips as you lower.",
+      "Don't rush the movement."
+    ]
+  },
+  {
+    "exercise_id": "leap_tip_toe_squats",
+    "exercise_name": "Tip Toe Squats",
+    "short_description": "A squat performed on the balls of the feet to work the quads, glutes and calves together.",
+    "how_to": [
+      "Stand with your feet hip-width apart.",
+      "Rise onto your toes and hold that position.",
+      "Bend your knees and lower into a squat.",
+      "Hold briefly at the bottom, then press back up.",
+      "Stay on your toes throughout the set."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your chest up and tall.",
+      "Keep your core engaged.",
+      "Move at a controlled pace."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't lean too far forward.",
+      "Don't let your heels touch down mid-rep."
+    ]
+  },
+  {
+    "exercise_id": "leap_squat_thrust_with_twist",
+    "exercise_name": "Squat Thrust with Twist",
+    "short_description": "A dynamic squat thrust that adds a rotational reach to engage the core and improve mobility.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart.",
+      "Lower into a squat and place your hands on the floor.",
+      "Jump or step your feet back to a plank position.",
+      "Jump or step your feet back in.",
+      "Stand and rotate your torso with one arm reaching up.",
+      "Alternate the twist each rep."
+    ],
+    "correct": [
+      "Keep your knees over your toes on the squat.",
+      "Keep your core braced in the plank.",
+      "Move through the twist with control.",
+      "Keep your chest up as you stand."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast on the squat.",
+      "Don't rush and lose your balance.",
+      "Don't collapse your lower back in the plank."
+    ]
+  },
+  {
+    "exercise_id": "leap_lunge_twist",
+    "exercise_name": "Lunge Twist",
+    "short_description": "A forward lunge with a torso rotation that works the legs, glutes and obliques.",
+    "how_to": [
+      "Stand tall with your feet together.",
+      "Step forward into a lunge and lower your back knee toward the floor.",
+      "At the bottom, rotate your torso toward your front leg.",
+      "Rotate back to centre and push off to return to standing.",
+      "Alternate legs each rep."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your front heel down.",
+      "Keep your chest up through the twist.",
+      "Keep your core engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't rotate before your hips are stable.",
+      "Don't lean back as you twist."
+    ]
+  },
+  {
+    "exercise_id": "leap_skater_jump",
+    "exercise_name": "Skater Jump",
+    "short_description": "A lateral jumping drill that trains single-leg power, balance and coordination.",
+    "how_to": [
+      "Stand on your right foot with a slight knee bend.",
+      "Push off and leap to the left, landing on your left foot.",
+      "Swing your right leg behind as you land.",
+      "Pause briefly, then leap back to the right.",
+      "Continue alternating sides with a steady rhythm."
+    ],
+    "correct": [
+      "Land softly.",
+      "Keep your knees over your toes.",
+      "Keep your chest up on landing.",
+      "Keep your core braced throughout."
+    ],
+    "mistakes": [
+      "Don't land hard.",
+      "Don't let your knees cave inward.",
+      "Don't rush and skip the landing control.",
+      "Don't let your trunk collapse forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_kneeling_lunge_stretch",
+    "exercise_name": "Kneeling Lunge Stretch",
+    "short_description": "A kneeling hip-flexor stretch that opens the front of the hip and thigh.",
+    "how_to": [
+      "Kneel on one knee with the other foot forward.",
+      "Shift your hips gently forward until you feel a stretch at the front of the rear hip.",
+      "Keep your torso upright and your front knee over your ankle.",
+      "Hold the position and breathe steadily.",
+      "Switch sides and repeat."
+    ],
+    "correct": [
+      "Keep your torso tall.",
+      "Relax your shoulders.",
+      "Breathe slowly and steadily.",
+      "Keep your front heel down."
+    ],
+    "mistakes": [
+      "Don't force the stretch.",
+      "Don't arch your lower back.",
+      "Don't let your front knee travel past your toes.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_leaning_dumbbell_one_leg_calf_raise",
+    "exercise_name": "Leaning Dumbbell One Leg Calf Raise",
+    "short_description": "A single-leg calf raise with a dumbbell and a wall lean to isolate the calf muscle.",
+    "how_to": [
+      "Stand facing a wall and place one hand lightly against it for balance.",
+      "Hold a dumbbell in the opposite hand at your side.",
+      "Lift the foot on the same side as the dumbbell off the floor.",
+      "Press up onto the toes of the supporting leg.",
+      "Lower with control and repeat before switching sides."
+    ],
+    "correct": [
+      "Keep your supporting leg straight at the top.",
+      "Move through the full range of motion.",
+      "Keep your ankle stable throughout.",
+      "Lower slowly on the way down."
+    ],
+    "mistakes": [
+      "Don't bounce at the bottom.",
+      "Don't lean too heavily on the wall.",
+      "Don't let your ankle roll outward.",
+      "Don't rush the lowering phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_bridge",
+    "exercise_name": "Bridge",
+    "short_description": "A floor exercise that strengthens the glutes and hamstrings by lifting the hips from a supine position.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat on the floor.",
+      "Place your arms by your sides with palms down.",
+      "Press through your heels and lift your hips toward the ceiling.",
+      "Squeeze your glutes at the top.",
+      "Lower your hips with control and repeat."
+    ],
+    "correct": [
+      "Keep your feet flat on the floor.",
+      "Keep your core engaged throughout.",
+      "Keep your knees in line with your feet.",
+      "Squeeze at the top of each rep."
+    ],
+    "mistakes": [
+      "Don't let your knees splay outward.",
+      "Don't push through your toes instead of your heels.",
+      "Don't drop your hips quickly.",
+      "Don't over-arch your lower back at the top."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_to_side_turns",
+    "exercise_name": "Side-To-Side Turns",
+    "short_description": "A standing rotation drill that mobilises the torso and warms up the spine.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and knees slightly bent.",
+      "Hold your arms out or cross them over your chest.",
+      "Rotate your torso smoothly to the right.",
+      "Return to centre, then rotate to the left.",
+      "Continue alternating at a steady pace."
+    ],
+    "correct": [
+      "Keep your hips facing forward.",
+      "Relax your shoulders throughout.",
+      "Move with controlled rotation.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't jerk or snap through the rotation.",
+      "Don't let your hips swing with your torso.",
+      "Don't hold your breath.",
+      "Don't rush past the end range."
+    ]
+  },
+  {
+    "exercise_id": "leap_plank_and_reach",
+    "exercise_name": "Plank and Reach",
+    "short_description": "A plank variation where one arm reaches forward to challenge core stability and balance.",
+    "how_to": [
+      "Start in a forearm or high plank with your body in a straight line.",
+      "Brace your core and keep your hips level.",
+      "Slowly extend one arm straight out in front.",
+      "Hold for a moment, then return and switch arms.",
+      "Keep your hips still throughout."
+    ],
+    "correct": [
+      "Keep your body in one line.",
+      "Keep your core engaged.",
+      "Keep your hips from rotating as you reach.",
+      "Move each arm slowly and with control."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't twist your hips when reaching.",
+      "Don't rush the extension."
+    ]
+  },
+  {
+    "exercise_id": "leap_bench_glute_kick_back",
+    "exercise_name": "Bench Glute Kick Back",
+    "short_description": "A kneeling kick-back on a bench that isolates the glutes through hip extension.",
+    "how_to": [
+      "Kneel on a bench with your hands on the edge for support.",
+      "Extend one leg back and up, squeezing the glute at the top.",
+      "Lower the leg with control without touching the bench.",
+      "Complete your reps, then switch to the other leg."
+    ],
+    "correct": [
+      "Keep your hips square to the bench.",
+      "Squeeze your glute at the top of each rep.",
+      "Keep your lower back neutral.",
+      "Move with control throughout."
+    ],
+    "mistakes": [
+      "Don't swing your leg to gain momentum.",
+      "Don't arch your lower back to lift higher.",
+      "Don't let your hips rotate.",
+      "Don't rush the lowering phase."
+    ]
+  },
+  {
+    "exercise_id": "leap_squat_kicks",
+    "exercise_name": "Squat Kicks",
+    "short_description": "A squat paired with a forward kick that works the legs, glutes and hip flexors.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart.",
+      "Lower into a squat with your chest up.",
+      "As you rise, extend one leg forward in a controlled kick.",
+      "Return your foot to the floor and repeat, alternating the kicking leg."
+    ],
+    "correct": [
+      "Keep your knees over your toes in the squat.",
+      "Keep your lower back controlled.",
+      "Keep your supporting leg stable during the kick.",
+      "Keep your core engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't swing the kicking leg for momentum."
+    ]
+  },
+  {
+    "exercise_id": "leap_single_leg_hip_rotation",
+    "exercise_name": "Single Leg Hip Rotation",
+    "short_description": "A standing single-leg drill that mobilises the hip joint through controlled circular movement.",
+    "how_to": [
+      "Stand on one foot with a slight bend in your knee.",
+      "Lift the opposite knee to hip height.",
+      "Draw slow circles with your knee, rotating at the hip.",
+      "Complete your reps, then reverse the direction.",
+      "Switch legs and repeat."
+    ],
+    "correct": [
+      "Keep your standing knee slightly bent.",
+      "Keep your torso upright.",
+      "Move slowly through the full range.",
+      "Breathe steadily."
+    ],
+    "mistakes": [
+      "Don't rush through the circles.",
+      "Don't lean your torso to compensate.",
+      "Don't lock your standing knee.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_cross_touch_and_reach",
+    "exercise_name": "Cross Touch and Reach",
+    "short_description": "A dynamic cross-body touch-and-reach that improves coordination, balance and hip mobility.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Shift your weight onto your right foot and reach your left hand down toward your right foot.",
+      "Stand back up and extend your left arm overhead.",
+      "Return to the start and repeat on the other side.",
+      "Alternate sides with a smooth, controlled motion."
+    ],
+    "correct": [
+      "Keep a soft bend in your standing knee.",
+      "Hinge from your hips as you reach down.",
+      "Keep your back straight on the way down.",
+      "Move with control on each rep."
+    ],
+    "mistakes": [
+      "Don't round your back to reach lower.",
+      "Don't rush between the touch and the reach.",
+      "Don't lock your standing knee.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_pilates_clamshell",
+    "exercise_name": "Pilates Clamshell",
+    "short_description": "A side-lying hip exercise that activates the glute medius by opening the knees like a clamshell.",
+    "how_to": [
+      "Lie on your side with your hips and knees bent at about 45 degrees.",
+      "Stack your feet and keep them together.",
+      "Keeping your feet touching, lift your top knee as high as you comfortably can.",
+      "Lower with control and repeat.",
+      "Switch sides for the next set."
+    ],
+    "correct": [
+      "Keep your pelvis stable throughout.",
+      "Keep your feet stacked and touching.",
+      "Move only at the hip, not the pelvis.",
+      "Control the lowering phase."
+    ],
+    "mistakes": [
+      "Don't roll your hips back as you lift.",
+      "Don't rush the movement.",
+      "Don't let your top hip swing forward.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_quick_feet",
+    "exercise_name": "Quick Feet",
+    "short_description": "A rapid foot-shuffling drill that builds speed, agility and cardiovascular endurance.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and knees slightly bent.",
+      "Shift your weight forward onto the balls of your feet.",
+      "Shuffle your feet in place as fast as you can.",
+      "Keep your arms bent and moving naturally.",
+      "Maintain the pace for the full interval."
+    ],
+    "correct": [
+      "Keep your knees bent throughout.",
+      "Keep your torso upright.",
+      "Stay light on the balls of your feet.",
+      "Keep your arms relaxed."
+    ],
+    "mistakes": [
+      "Don't pound your feet into the floor.",
+      "Don't lock your knees as you move.",
+      "Don't let your upper body tense up.",
+      "Don't lean too far forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_quad_stretch",
+    "exercise_name": "Quad Stretch",
+    "short_description": "A standing quadriceps stretch that lengthens the front of the thigh.",
+    "how_to": [
+      "Stand on one foot and bend the opposite knee behind you.",
+      "Grasp your ankle and draw your heel toward your glute.",
+      "Keep your knees together and your torso upright.",
+      "Hold the stretch and breathe steadily.",
+      "Switch legs and repeat."
+    ],
+    "correct": [
+      "Keep your knees close together.",
+      "Keep your chest up and tall.",
+      "Breathe slowly throughout.",
+      "Keep a soft bend in your standing knee."
+    ],
+    "mistakes": [
+      "Don't force the stretch.",
+      "Don't arch your lower back to pull your heel closer.",
+      "Don't lock your standing knee.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_crab_walk",
+    "exercise_name": "Crab Walk",
+    "short_description": "A reverse table-top walk that strengthens the triceps, glutes and core.",
+    "how_to": [
+      "Sit on the floor with your hands behind you and feet flat.",
+      "Press through your hands and heels to lift your hips off the floor.",
+      "Walk forward by moving your opposite hand and foot together.",
+      "Continue for the target distance or time, then reverse.",
+      "Keep your hips raised throughout."
+    ],
+    "correct": [
+      "Keep your hips level as you move.",
+      "Keep your core engaged.",
+      "Keep your fingers pointing toward your feet.",
+      "Move at a steady, controlled pace."
+    ],
+    "mistakes": [
+      "Don't let your hips sag to the floor.",
+      "Don't hold your breath.",
+      "Don't rush and lose control.",
+      "Don't let your wrists collapse inward."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_plie_squats",
+    "exercise_name": "Dumbbell Plie Squats",
+    "short_description": "A wide-stance squat holding a dumbbell that targets the inner thighs, quads and glutes.",
+    "how_to": [
+      "Stand with your feet wider than shoulder-width and toes turned outward.",
+      "Hold one dumbbell vertically with both hands in front of you.",
+      "Lower your hips straight down, keeping your torso upright.",
+      "Press through your heels to return to standing.",
+      "Repeat for the target reps."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down throughout.",
+      "Keep your chest tall.",
+      "Keep your core engaged."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast.",
+      "Don't lean forward as you lower.",
+      "Don't let your heels rise off the floor."
+    ]
+  },
+  {
+    "exercise_id": "leap_star_crawl",
+    "exercise_name": "Star Crawl",
+    "short_description": "A crawling pattern with limbs reaching out in a star shape to build total-body coordination and core stability.",
+    "how_to": [
+      "Start on all fours with your knees just off the floor.",
+      "Extend your right arm forward and your left leg back at the same time.",
+      "Hold briefly, then switch to the left arm and right leg.",
+      "Continue alternating while keeping your hips level.",
+      "Move slowly and with control throughout."
+    ],
+    "correct": [
+      "Keep your hips parallel to the floor.",
+      "Keep your core braced throughout.",
+      "Extend fully on each reach.",
+      "Move with control, not speed."
+    ],
+    "mistakes": [
+      "Don't let your hips rotate as you extend.",
+      "Don't rush through the reps.",
+      "Don't let your lower back arch.",
+      "Don't hold your breath."
+    ]
+  }
+]

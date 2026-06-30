@@ -1,0 +1,282 @@
+{
+  "W01": {
+    "ru": "Круги плечами",
+    "en": "Shoulder circles"
+  },
+  "W02": {
+    "ru": "Малые круги руками",
+    "en": "Small arm circles"
+  },
+  "W03": {
+    "ru": "Повороты корпуса стоя",
+    "en": "Standing twists"
+  },
+  "W04": {
+    "ru": "Наклон с прямой спиной",
+    "en": "Hip hinge"
+  },
+  "W05": {
+    "ru": "Неглубокий присед",
+    "en": "Shallow squat"
+  },
+  "W06": {
+    "ru": "Высокая планка с переносом веса",
+    "en": "High plank weight shift"
+  },
+  "W07": {
+    "ru": "Дыхание с вытяжением",
+    "en": "Standing breathing + reach"
+  },
+  "W08": {
+    "ru": "Вращения корпуса стоя",
+    "en": "Standing torso rotations"
+  },
+  "W09": {
+    "ru": "Махи руками",
+    "en": "Arm swings"
+  },
+  "C01": {
+    "ru": "Планка на локтях",
+    "en": "Forearm plank"
+  },
+  "C02": {
+    "ru": "RKC-планка",
+    "en": "RKC plank"
+  },
+  "C03": {
+    "ru": "Ножницы",
+    "en": "Scissors"
+  },
+  "C04": {
+    "ru": "Флаттер",
+    "en": "Flutter kicks"
+  },
+  "C05": {
+    "ru": "Обратные скручивания",
+    "en": "Reverse crunch"
+  },
+  "C06": {
+    "ru": "Hollow hold (лёгкий)",
+    "en": "Hollow hold (easy)"
+  },
+  "C07": {
+    "ru": "Боковая планка",
+    "en": "Side plank"
+  },
+  "C08": {
+    "ru": "Боковая планка с подъёмом таза",
+    "en": "Side plank hip lift"
+  },
+  "C09": {
+    "ru": "Планка с касанием плеч",
+    "en": "Plank shoulder taps"
+  },
+  "C10": {
+    "ru": "Планка вверх-вниз",
+    "en": "Up-down plank"
+  },
+  "C11": {
+    "ru": "Касания пяток лёжа",
+    "en": "Heel taps"
+  },
+  "C12": {
+    "ru": "Дэд-баг (усложнённый)",
+    "en": "Dead bug (advanced)"
+  },
+  "C13": {
+    "ru": "Велосипед",
+    "en": "Bicycle crunches"
+  },
+  "P01": {
+    "ru": "Отжимания",
+    "en": "Push-ups"
+  },
+  "P02": {
+    "ru": "Узкие отжимания",
+    "en": "Narrow push-ups"
+  },
+  "P03": {
+    "ru": "Отжимания с паузой",
+    "en": "Paused push-ups"
+  },
+  "P04": {
+    "ru": "Медленные отжимания 3-1-3",
+    "en": "Slow push-ups 3-1-3"
+  },
+  "P05": {
+    "ru": "Отжимания со смещением рук",
+    "en": "Staggered push-ups"
+  },
+  "P06": {
+    "ru": "Отжимания «домиком»",
+    "en": "Pike push-ups"
+  },
+  "P08": {
+    "ru": "Отжимания сфинкса",
+    "en": "Sphinx push-ups"
+  },
+  "B01": {
+    "ru": "Кобра (удержание)",
+    "en": "Cobra hold"
+  },
+  "B02": {
+    "ru": "Обратные снежные ангелы",
+    "en": "Reverse snow angels"
+  },
+  "B03": {
+    "ru": "W-подъём лёжа",
+    "en": "Prone W-raise"
+  },
+  "B04": {
+    "ru": "Y-подъём лёжа",
+    "en": "Prone Y-raise"
+  },
+  "B05": {
+    "ru": "T-подъём лёжа",
+    "en": "Prone T-raise"
+  },
+  "B06": {
+    "ru": "Супермен с притягиванием",
+    "en": "Superman pull-down"
+  },
+  "B07": {
+    "ru": "Пловец лёжа",
+    "en": "Swimmers"
+  },
+  "B08": {
+    "ru": "Обратная планка",
+    "en": "Reverse plank"
+  },
+  "B09": {
+    "ru": "Разгибания спины (пульс)",
+    "en": "Back extension pulses"
+  },
+  "B10": {
+    "ru": "Кобра с W-тягой",
+    "en": "Cobra to W-pull"
+  },
+  "B11": {
+    "ru": "Пловец (по сторонам)",
+    "en": "Swimmers"
+  },
+  "A01": {
+    "ru": "Бицепс с самосопротивлением",
+    "en": "Self-resist curl"
+  },
+  "A02": {
+    "ru": "Изометрия бицепса 90°",
+    "en": "Biceps isometric 90°"
+  },
+  "A03": {
+    "ru": "«Крюк» ладонями",
+    "en": "Palm-hook pull"
+  },
+  "A04": {
+    "ru": "Негатив с самосопротивлением",
+    "en": "Slow negative curl"
+  },
+  "L01": {
+    "ru": "Неглубокий присед",
+    "en": "Shallow squat"
+  },
+  "L02": {
+    "ru": "Присед с паузой",
+    "en": "Paused squat"
+  },
+  "L03": {
+    "ru": "Наклон с прямой спиной",
+    "en": "Hip hinge"
+  },
+  "L04": {
+    "ru": "Мост на одной ноге",
+    "en": "Single-leg glute bridge"
+  },
+  "L05": {
+    "ru": "Мост с шагами",
+    "en": "Glute bridge march"
+  },
+  "L06": {
+    "ru": "Ягодичный мост с паузой",
+    "en": "Glute bridge hold"
+  },
+  "L07": {
+    "ru": "Подъём на носки",
+    "en": "Calf raises"
+  },
+  "L09": {
+    "ru": "Боковая планка с подъёмом ноги",
+    "en": "Side plank leg lift"
+  },
+  "L10": {
+    "ru": "Приседания",
+    "en": "Air squats"
+  },
+  "L11": {
+    "ru": "Обратные выпады",
+    "en": "Reverse lunges"
+  },
+  "L12": {
+    "ru": "Медленные приседания",
+    "en": "Slow air squats"
+  },
+  "J01": {
+    "ru": "Низкие пого-прыжки",
+    "en": "Low pogo jumps"
+  },
+  "J02": {
+    "ru": "Высокие колени на месте",
+    "en": "Marching high knees"
+  },
+  "J03": {
+    "ru": "Джампинг-джеки",
+    "en": "Jumping jacks"
+  },
+  "J04": {
+    "ru": "Скалолаз",
+    "en": "Mountain climbers"
+  },
+  "J05": {
+    "ru": "Выпрыгивания из приседа",
+    "en": "Squat jumps"
+  },
+  "J06": {
+    "ru": "Конькобежец",
+    "en": "Skater hops"
+  },
+  "J07": {
+    "ru": "Высокий бег на месте",
+    "en": "High knees"
+  },
+  "J08": {
+    "ru": "Бёрпи",
+    "en": "Burpees"
+  },
+  "J09": {
+    "ru": "Прыжковые выпады",
+    "en": "Jump lunges"
+  },
+  "CD01": {
+    "ru": "Растяжка груди",
+    "en": "Chest stretch"
+  },
+  "CD02": {
+    "ru": "Растяжка задней поверхности бедра",
+    "en": "Hamstring stretch"
+  },
+  "CD03": {
+    "ru": "Скручивание лёжа",
+    "en": "Supine twist"
+  },
+  "CD04": {
+    "ru": "Поза сфинкса",
+    "en": "Sphinx pose"
+  },
+  "CD05": {
+    "ru": "Спокойное дыхание лёжа",
+    "en": "Lying breathing"
+  },
+  "CD07": {
+    "ru": "Поза ребёнка",
+    "en": "Child's pose"
+  }
+}

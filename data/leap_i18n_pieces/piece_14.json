@@ -1,0 +1,242 @@
+[
+  {
+    "exercise_id": "leap_leg_in_outs",
+    "exercise_name": "Leg in & Outs",
+    "short_description": "A seated core exercise that draws the knees in and extends the legs out to work the abs and hip flexors.",
+    "how_to": [
+      "Sit on the floor with your hands behind you for support.",
+      "Lean back slightly and lift your feet off the floor.",
+      "Draw your knees in toward your chest.",
+      "Extend both legs back out straight.",
+      "Repeat at a steady pace, keeping your feet from touching the floor."
+    ],
+    "correct": [
+      "Keep your core engaged throughout.",
+      "Keep your back straight, not hunched.",
+      "Control the extension rather than kicking out.",
+      "Breathe steadily with each rep."
+    ],
+    "mistakes": [
+      "Don't let your feet rest on the floor between reps.",
+      "Don't round your back heavily.",
+      "Don't use your arms to push yourself through the movement.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_reverse_crunches",
+    "exercise_name": "Reverse Crunches",
+    "short_description": "A supine core exercise that curls the hips up toward the chest to target the lower abs.",
+    "how_to": [
+      "Lie on your back with your hands flat beside you for support.",
+      "Bend your knees and lift your feet off the floor.",
+      "Draw your knees toward your chest by curling your hips up.",
+      "Lower your hips back down with control.",
+      "Repeat without letting your feet touch the floor."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep the movement slow and deliberate.",
+      "Curl your hips, not just your knees.",
+      "Breathe out as you draw your knees in."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't swing your legs to generate momentum.",
+      "Don't let your hips crash back down."
+    ]
+  },
+  {
+    "exercise_id": "leap_cross_knee_plank",
+    "exercise_name": "Cross Knee Plank",
+    "short_description": "A dynamic plank variation that drives the knee across to the opposite elbow to engage the core and obliques.",
+    "how_to": [
+      "Start in a high plank with your hands under your shoulders.",
+      "Brace your core and keep your hips level.",
+      "Drive your right knee diagonally toward your left elbow.",
+      "Return your foot to the start and repeat on the other side.",
+      "Alternate sides at a controlled pace."
+    ],
+    "correct": [
+      "Keep your body in one line between reps.",
+      "Keep your core engaged at all times.",
+      "Keep your hips from rotating as you drive the knee.",
+      "Breathe steadily throughout."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't rush the movement and lose hip control.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_torture_tucks",
+    "exercise_name": "Dumbbell Torture Tucks",
+    "short_description": "A seated dumbbell exercise that tucks the knees in while holding weights to load the core and hip flexors.",
+    "how_to": [
+      "Sit on the floor holding a dumbbell at your chest with both hands.",
+      "Lean back slightly and lift your feet off the floor.",
+      "Draw your knees in toward your chest.",
+      "Extend your legs back out while maintaining your lean.",
+      "Repeat without letting your feet rest on the floor."
+    ],
+    "correct": [
+      "Keep your core tight throughout the movement.",
+      "Keep your back straight rather than rounded.",
+      "Hold the dumbbell steady against your chest.",
+      "Breathe out as you tuck your knees in."
+    ],
+    "mistakes": [
+      "Don't let your feet touch the floor between reps.",
+      "Don't round your back excessively.",
+      "Don't use the dumbbell's weight as a counterbalance.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_seated_abs_circles",
+    "exercise_name": "Seated Abs Circles",
+    "short_description": "A seated core exercise that traces slow circles with the torso to strengthen the obliques and deep abdominals.",
+    "how_to": [
+      "Sit upright with your knees bent and feet flat or raised slightly.",
+      "Clasp your hands in front of you or cross them over your chest.",
+      "Lean back slightly to engage your core.",
+      "Slowly trace a large circle with your upper body.",
+      "Complete the desired reps in each direction."
+    ],
+    "correct": [
+      "Keep your core engaged throughout the full circle.",
+      "Move slowly and deliberately in each direction.",
+      "Keep your back flat rather than heavily rounded.",
+      "Breathe steadily as you circle."
+    ],
+    "mistakes": [
+      "Don't rush through the circles.",
+      "Don't collapse forward and lose your core tension.",
+      "Don't hold your breath.",
+      "Don't anchor your movement only at the shoulders."
+    ]
+  },
+  {
+    "exercise_id": "leap_butt_bridge",
+    "exercise_name": "Butt Bridge",
+    "short_description": "A supine glute exercise that presses the hips up to strengthen the glutes and hamstrings.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat on the floor.",
+      "Place your arms flat at your sides.",
+      "Press through your heels and lift your hips toward the ceiling.",
+      "Squeeze your glutes at the top.",
+      "Lower your hips back down with control and repeat."
+    ],
+    "correct": [
+      "Keep your feet flat and hip-width apart.",
+      "Squeeze your glutes fully at the top position.",
+      "Keep your knees pointing forward, not falling outward.",
+      "Breathe out as you press up."
+    ],
+    "mistakes": [
+      "Don't push your hips so high that your back arches excessively.",
+      "Don't let your knees fall outward.",
+      "Don't drop your hips without control.",
+      "Don't hold your breath at the top."
+    ]
+  },
+  {
+    "exercise_id": "leap_dumbbell_side_bend",
+    "exercise_name": "Dumbbell Side Bend",
+    "short_description": "A standing dumbbell exercise that bends the torso sideways to work the obliques.",
+    "how_to": [
+      "Stand with your feet hip-width apart, holding a dumbbell in one hand.",
+      "Place your free hand behind your head or on your hip.",
+      "Keep your back straight and slowly bend sideways toward the dumbbell.",
+      "Return to upright by contracting the opposite oblique.",
+      "Complete the desired reps and switch sides."
+    ],
+    "correct": [
+      "Keep your back straight throughout the movement.",
+      "Move directly to the side, not forward or back.",
+      "Control the return to upright rather than snapping back.",
+      "Keep your shoulders level."
+    ],
+    "mistakes": [
+      "Don't lean forward or backward as you bend.",
+      "Don't use a heavy swing to move the weight.",
+      "Don't shrug your shoulder on the working side.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_side_crunches",
+    "exercise_name": "Side Crunches",
+    "short_description": "A lateral crunch that targets the obliques by curling the torso sideways.",
+    "how_to": [
+      "Lie on your back with your knees bent and feet flat.",
+      "Place both hands behind your head.",
+      "Curl your right shoulder toward your right hip.",
+      "Lower back with control and repeat on the same side.",
+      "Switch sides after the desired reps."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep your elbows wide, not pulled forward.",
+      "Focus the movement on the side of your waist.",
+      "Breathe out on each crunch."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't rotate excessively — keep the motion lateral.",
+      "Don't use momentum to reach higher."
+    ]
+  },
+  {
+    "exercise_id": "leap_crunches_with_legs_raised",
+    "exercise_name": "Crunches with Legs Raised",
+    "short_description": "A crunch performed with legs raised vertically to increase lower-ab engagement.",
+    "how_to": [
+      "Lie on your back and raise both legs straight up to vertical.",
+      "Place your hands behind your head.",
+      "Curl your shoulders off the floor toward your raised legs.",
+      "Lower your shoulders back down with control.",
+      "Repeat while keeping your legs vertical throughout."
+    ],
+    "correct": [
+      "Keep your lower back controlled against the floor.",
+      "Keep your legs as straight as possible.",
+      "Keep your chin slightly tucked, not forced to your chest.",
+      "Breathe out on each crunch."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't let your legs drift away from vertical.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_t_plank",
+    "exercise_name": "T Plank",
+    "short_description": "A rotating plank that lifts one arm to the ceiling, challenging core stability and shoulder strength.",
+    "how_to": [
+      "Begin in a high plank with your hands under your shoulders.",
+      "Shift your weight to your right hand.",
+      "Rotate your body open and lift your left arm straight toward the ceiling.",
+      "Hold for a moment, then return to plank.",
+      "Repeat on the other side, alternating each rep."
+    ],
+    "correct": [
+      "Keep your body in one line during the rotation.",
+      "Keep your core engaged so your hips don't drop.",
+      "Stack your feet or stagger them for balance.",
+      "Breathe steadily through each rotation."
+    ],
+    "mistakes": [
+      "Don't let your lower back sag.",
+      "Don't lift your hips too high.",
+      "Don't rush the rotation and lose control.",
+      "Don't hold your breath."
+    ]
+  }
+]

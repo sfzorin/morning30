@@ -1,0 +1,142 @@
+[
+  {
+    "exercise_id": "leap_fire_hydrant_pulse",
+    "short_description": "A kneeling hip-abduction pulse that targets the glutes and outer hips.",
+    "how_to": ["Start on all fours with your wrists under your shoulders.", "Lift one knee out to the side at hip height.", "Pulse the leg upward a few inches repeatedly.", "Keep your hips square throughout.", "Switch sides and repeat."],
+    "correct": ["Keep your hips level and square.", "Keep your core engaged.", "Move only from the hip joint.", "Breathe steadily."],
+    "mistakes": ["Don't rotate your hips to lift higher.", "Don't let your lower back arch.", "Don't rush the pulses.", "Don't shift your weight to one side."]
+  },
+  {
+    "exercise_id": "leap_downward_facing_dog_on_the_wall",
+    "short_description": "A wall-assisted downward-dog stretch that opens the shoulders and lengthens the spine and hamstrings.",
+    "how_to": ["Stand facing a wall, arms-length away.", "Place your hands flat on the wall at hip height.", "Walk your feet back until your body forms an L-shape.", "Press your hands into the wall and lengthen through your spine.", "Hold the position and breathe slowly."],
+    "correct": ["Keep your back flat and long.", "Keep your arms straight.", "Relax your neck so your head hangs between your arms.", "Breathe steadily."],
+    "mistakes": ["Don't let your lower back round.", "Don't lock your elbows aggressively.", "Don't hold your breath.", "Don't force the stretch beyond your range."]
+  },
+  {
+    "exercise_id": "leap_walking_squats",
+    "short_description": "A traveling squat variation that strengthens the legs, glutes and hips while adding lateral movement.",
+    "how_to": ["Stand with your feet shoulder-width apart.", "Lower into a squat position and hold it.", "Step one foot out to the side, then bring the other foot to meet it.", "Continue stepping in one direction for several reps.", "Reverse direction and repeat."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down.", "Keep your chest up throughout.", "Stay low and avoid bouncing up between steps."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast.", "Don't stand fully upright between steps.", "Don't round your back."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_plank_rotation",
+    "short_description": "A plank-based dumbbell rotation that challenges core stability while building shoulder and oblique strength.",
+    "how_to": ["Start in a high plank with one dumbbell in each hand.", "Rotate your body to one side, lifting the top dumbbell toward the ceiling.", "Hold briefly, then return to plank position.", "Repeat on the other side, alternating with control."],
+    "correct": ["Keep your body in one line.", "Keep your core engaged throughout.", "Keep your body straight from head to heels.", "Keep your elbows controlled.", "Move slowly and with control."],
+    "mistakes": ["Don't let your hips drop.", "Don't lift your hips too high.", "Don't flare your elbows out wide.", "Don't rush the rotation.", "Don't let your hips twist out of alignment."]
+  },
+  {
+    "exercise_id": "leap_donkey_kicks_pulse",
+    "short_description": "A kneeling glute exercise where short pulses at the top of the kick intensify the contraction.",
+    "how_to": ["Start on all fours with your wrists under your shoulders.", "Lift one leg, keeping the knee bent at 90 degrees.", "Kick your heel toward the ceiling until your thigh is parallel to the floor.", "Pulse the leg up a few inches repeatedly at the top.", "Lower and switch sides."],
+    "correct": ["Keep your hips square and level.", "Keep your core engaged.", "Keep the knee bent throughout.", "Breathe steadily."],
+    "mistakes": ["Don't arch your lower back to lift higher.", "Don't rotate your hips open.", "Don't use momentum instead of muscle control.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_oblique_crossover_crunch",
+    "short_description": "A floor crunch variation that crosses the elbow toward the opposite knee to target the obliques.",
+    "how_to": ["Lie on your back with your knees bent and feet flat.", "Place your hands lightly behind your head.", "Lift your shoulders off the floor and rotate to bring one elbow toward the opposite knee.", "Lower with control and repeat on the other side."],
+    "correct": ["Keep your lower back controlled.", "Keep your chin away from your chest.", "Focus on rotating through your torso, not your neck.", "Move slowly and with control."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't use momentum to swing up.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_pilates_leg_pulls",
+    "short_description": "A Pilates-based core and hip-flexor exercise performed from a reverse plank position, alternating leg lifts.",
+    "how_to": ["Sit on the floor with your legs extended and hands placed behind your hips.", "Press your hips up until your body forms a straight line.", "Lift one leg as high as comfortable, keeping it straight.", "Lower it with control and repeat with the other leg."],
+    "correct": ["Keep your hips lifted throughout.", "Keep your core engaged.", "Keep your toes pointed or flexed consistently.", "Breathe steadily."],
+    "mistakes": ["Don't let your hips sag between reps.", "Don't bend the lifting leg.", "Don't rush the movement.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_bent_leg_twist",
+    "short_description": "A seated dumbbell twist with bent knees that trains the obliques and rotational core strength.",
+    "how_to": ["Sit on the floor with your knees bent and feet slightly off the ground.", "Hold one dumbbell with both hands in front of your chest.", "Rotate your torso to one side, moving the dumbbell with you.", "Return to center and rotate to the other side.", "Keep your core braced throughout."],
+    "correct": ["Keep your lower back controlled.", "Keep your chest tall, not hunched.", "Rotate from your torso, not your arms.", "Keep your feet steady."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't swing the dumbbell with momentum.", "Don't let your feet touch the floor if you want added challenge."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_bench_press",
+    "short_description": "A classic dumbbell chest press performed on a bench that develops the pectorals, shoulders and triceps.",
+    "how_to": ["Lie flat on a bench with a dumbbell in each hand at chest level.", "Plant your feet flat on the floor.", "Press both dumbbells straight up until your arms are extended.", "Lower the weights slowly back to the start position."],
+    "correct": ["Keep your body straight and stable on the bench.", "Keep your elbows controlled on the way down.", "Keep your feet flat on the floor.", "Lower the weights with control, don't drop them."],
+    "mistakes": ["Don't let your hips drop off the bench.", "Don't flare your elbows out wide.", "Don't bounce the weights off your chest.", "Don't hold your breath during the press."]
+  },
+  {
+    "exercise_id": "leap_side_plank_knee_crunch",
+    "short_description": "A side-plank variation that adds a knee crunch to challenge the obliques and hip flexors.",
+    "how_to": ["Start in a side plank on one hand or forearm, feet stacked.", "Extend your top arm overhead.", "Draw your top knee and top elbow toward each other.", "Extend back to the side plank and repeat.", "Switch sides after your set."],
+    "correct": ["Keep your body in one line during the plank.", "Keep your core engaged throughout.", "Move with control on both the crunch and the extension.", "Keep your hips lifted."],
+    "mistakes": ["Don't let your lower back sag.", "Don't lift your hips too high.", "Don't rush the crunch.", "Don't let your bottom hip drop toward the floor."]
+  },
+  {
+    "exercise_id": "leap_standing_dumbbell_curl",
+    "short_description": "A standing bicep curl with dumbbells that builds arm strength and elbow flexor size.",
+    "how_to": ["Stand tall with a dumbbell in each hand, arms by your sides.", "Keep your elbows close to your torso.", "Curl both dumbbells up toward your shoulders.", "Lower slowly back to the starting position."],
+    "correct": ["Keep your elbows close to your sides.", "Keep your upper arms still throughout.", "Lower the weights with control.", "Keep your shoulders relaxed."],
+    "mistakes": ["Don't swing your body to lift the weights.", "Don't let your elbows drift forward.", "Don't drop the weights fast on the way down.", "Don't shrug your shoulders during the curl."]
+  },
+  {
+    "exercise_id": "leap_arm_swings_with_lateral_steps",
+    "short_description": "A dynamic warm-up that combines lateral stepping with wide arm swings to mobilize the shoulders and hips.",
+    "how_to": ["Stand tall with your feet together.", "Step one foot out to the side as you swing both arms wide open.", "Bring your foot back in as you cross your arms in front of your chest.", "Continue stepping side to side with a steady rhythm."],
+    "correct": ["Keep your chest open on the swing.", "Keep your movements fluid and controlled.", "Keep a slight bend in your knees throughout.", "Breathe steadily."],
+    "mistakes": ["Don't lock your knees on the lateral step.", "Don't swing your arms faster than your steps.", "Don't hunch your shoulders.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_side_lying_forward_leg_lift",
+    "short_description": "A side-lying exercise that lifts the top leg forward to engage the hip flexors and outer thigh.",
+    "how_to": ["Lie on your side with your body in a straight line.", "Rest your head on your lower arm.", "Keeping your leg straight, lift the top leg forward and slightly up.", "Lower with control and repeat.", "Switch sides for the next set."],
+    "correct": ["Keep your lower back controlled.", "Keep your core gently engaged.", "Move your leg with control, not momentum.", "Keep your hips stacked."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't let your top hip roll backward.", "Don't swing the leg for momentum."]
+  },
+  {
+    "exercise_id": "leap_leg_lateral_raise",
+    "short_description": "A standing leg raise to the side that targets the hip abductors and outer glutes.",
+    "how_to": ["Stand tall with your feet together and hands on your hips or a support.", "Shift your weight onto one foot.", "Lift the other leg straight out to the side.", "Lower with control and repeat.", "Switch sides."],
+    "correct": ["Keep your torso upright throughout.", "Keep your standing leg slightly soft, not locked.", "Keep the lifting leg straight.", "Breathe steadily."],
+    "mistakes": ["Don't lean your torso to the opposite side.", "Don't swing your leg up with momentum.", "Don't lock your standing knee.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_chair_squats",
+    "short_description": "A squat-to-chair exercise that builds leg and glute strength using a chair as a depth guide.",
+    "how_to": ["Stand in front of a sturdy chair with your feet shoulder-width apart.", "Hinge at the hips and bend your knees to lower toward the seat.", "Lightly touch the chair, then press through your heels to stand.", "Keep the movement controlled throughout."],
+    "correct": ["Keep your knees over your toes.", "Keep your heels down as you lower.", "Keep your chest tall throughout.", "Keep your core engaged."],
+    "mistakes": ["Don't let your knees cave inward.", "Don't drop too fast or collapse onto the chair.", "Don't round your back on the descent.", "Don't use your hands to push off the chair."]
+  },
+  {
+    "exercise_id": "leap_zottman_curl",
+    "short_description": "A dumbbell curl variation that combines a supinated lift and pronated lower to work both the biceps and forearms.",
+    "how_to": ["Stand with a dumbbell in each hand, palms facing up.", "Curl the weights up toward your shoulders.", "At the top, rotate your wrists so your palms face down.", "Lower the weights slowly in that pronated position.", "Rotate back to the start and repeat."],
+    "correct": ["Keep your elbows close to your sides.", "Keep your upper arms still.", "Lower slowly, especially on the pronated phase.", "Keep your shoulders relaxed and down."],
+    "mistakes": ["Don't swing your body to lift.", "Don't rush the wrist rotation at the top.", "Don't drop the weights quickly on the way down.", "Don't let your elbows drift forward."]
+  },
+  {
+    "exercise_id": "leap_dumbbell_concentration_curl",
+    "short_description": "A seated, single-arm curl braced against the inner thigh that isolates the bicep for focused strength work.",
+    "how_to": ["Sit on a bench or chair with your feet flat and knees apart.", "Hold a dumbbell in one hand and brace the back of your upper arm against your inner thigh.", "Curl the weight up toward your shoulder.", "Lower slowly and with control.", "Complete your reps, then switch arms."],
+    "correct": ["Keep your upper arm pressed against your thigh throughout.", "Keep your torso upright.", "Lower the weight with full control.", "Keep your shoulder relaxed."],
+    "mistakes": ["Don't swing your torso to help lift.", "Don't let your elbow leave your thigh.", "Don't drop the weight quickly on the way down.", "Don't shrug your shoulder during the curl."]
+  },
+  {
+    "exercise_id": "leap_kneeling_side_plank",
+    "short_description": "A modified side plank from the knees that builds oblique and hip stability with reduced load.",
+    "how_to": ["Lie on your side and place your bottom knee on the floor, legs stacked.", "Prop yourself up on your bottom forearm.", "Lift your hips off the floor to form a straight line from knee to shoulder.", "Hold the position and breathe steadily.", "Switch sides."],
+    "correct": ["Keep your body in one line from knee to shoulder.", "Keep your core engaged.", "Keep your top hip from rotating forward.", "Breathe steadily."],
+    "mistakes": ["Don't let your lower back sag.", "Don't lift your hips too high.", "Don't let your bottom hip drop toward the floor.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_air_cycling",
+    "short_description": "A supine leg-cycling exercise that works the hip flexors, lower abs and improves coordination.",
+    "how_to": ["Lie on your back with your hands under your lower back or by your sides.", "Lift both legs a few inches off the floor.", "Alternate pedaling your legs in a smooth cycling motion.", "Keep the movement controlled and your lower back pressed down.", "Continue for the desired time."],
+    "correct": ["Keep your lower back controlled and pressed toward the floor.", "Keep your core engaged throughout.", "Keep your movements smooth, not jerky.", "Breathe steadily."],
+    "mistakes": ["Don't arch your lower back.", "Don't pull on your neck.", "Don't let your legs drop to the floor between reps.", "Don't hold your breath."]
+  },
+  {
+    "exercise_id": "leap_alternate_hammer_curl",
+    "short_description": "An alternating dumbbell curl with a neutral grip that targets the biceps and brachialis for arm thickness.",
+    "how_to": ["Stand with a dumbbell in each hand, palms facing each other.", "Keep your elbows close to your torso.", "Curl one dumbbell up toward your shoulder, keeping the neutral grip.", "Lower it with control and curl the other arm.", "Alternate for the desired reps."],
+    "correct": ["Keep your elbows close to your sides.", "Keep your upper arms still throughout.", "Lower each rep with control.", "Keep your shoulders relaxed."],
+    "mistakes": ["Don't swing your body to lift.", "Don't rotate your wrist during the curl.", "Don't drop the weight quickly on the descent.", "Don't let your elbows drift forward."]
+  }
+]

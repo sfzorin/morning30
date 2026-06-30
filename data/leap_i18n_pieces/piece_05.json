@@ -1,0 +1,242 @@
+[
+  {
+    "exercise_id": "leap_reverse_flys",
+    "exercise_name": "Reverse Flys",
+    "short_description": "A standing or hinged rear-delt fly that strengthens the upper back and improves posture.",
+    "how_to": [
+      "Stand with your feet hip-width apart and hinge forward slightly.",
+      "Hold your arms out to the sides with a soft bend at the elbows.",
+      "Squeeze your shoulder blades together as you raise your arms.",
+      "Lower your arms slowly back to the start.",
+      "Repeat for the target reps."
+    ],
+    "correct": [
+      "Keep your chest up and back flat.",
+      "Keep a soft bend in your elbows throughout.",
+      "Squeeze your shoulder blades at the top.",
+      "Move at a controlled pace."
+    ],
+    "mistakes": [
+      "Don't round your upper back.",
+      "Don't swing your arms with momentum.",
+      "Don't shrug your shoulders up.",
+      "Don't lock your elbows straight."
+    ]
+  },
+  {
+    "exercise_id": "leap_alternating_hooks",
+    "exercise_name": "Alternating Hooks",
+    "short_description": "A shadowboxing hook punch that trains shoulder rotation and upper-body power.",
+    "how_to": [
+      "Stand with your feet shoulder-width apart and your knees slightly bent.",
+      "Raise your fists to guard position near your chin.",
+      "Drive your right fist in a horizontal arc at shoulder height, rotating your torso.",
+      "Return to guard, then repeat on the left side.",
+      "Alternate sides with a steady rhythm."
+    ],
+    "correct": [
+      "Keep your core braced on each punch.",
+      "Rotate your torso to power each hook.",
+      "Keep your non-punching hand at your chin.",
+      "Keep your feet planted and stable."
+    ],
+    "mistakes": [
+      "Don't punch above your shoulder line.",
+      "Don't drop your guard hand while punching.",
+      "Don't tense your neck and shoulders.",
+      "Don't lean forward off your base."
+    ]
+  },
+  {
+    "exercise_id": "leap_arm_curls_crunch",
+    "exercise_name": "Arm Curls Crunch",
+    "short_description": "A crunch combined with a bicep curl motion that targets the abs and arms together.",
+    "how_to": [
+      "Lie on your back with your knees bent and your feet flat.",
+      "Hold your arms along your sides with your palms facing up.",
+      "Curl your shoulders off the floor while curling your forearms toward your shoulders.",
+      "Lower slowly back to the start.",
+      "Repeat for the target reps."
+    ],
+    "correct": [
+      "Keep your lower back controlled.",
+      "Keep your chin off your chest.",
+      "Curl with control on the way up and down.",
+      "Breathe out as you crunch up."
+    ],
+    "mistakes": [
+      "Don't arch your lower back.",
+      "Don't pull on your neck.",
+      "Don't jerk upward with momentum.",
+      "Don't hold your breath."
+    ]
+  },
+  {
+    "exercise_id": "leap_arnold_dumbbell_press",
+    "exercise_name": "Arnold Dumbbell Press",
+    "short_description": "A rotating dumbbell press that works the front and side deltoids through a full arc of motion.",
+    "how_to": [
+      "Sit or stand with a dumbbell in each hand at shoulder height, palms facing you.",
+      "Press the dumbbells upward while rotating your palms to face forward.",
+      "Extend your arms fully overhead.",
+      "Reverse the rotation as you lower the dumbbells back to the start.",
+      "Repeat in a smooth, controlled cycle."
+    ],
+    "correct": [
+      "Keep your core engaged throughout.",
+      "Keep your elbows tracked under the weights.",
+      "Rotate your wrists smoothly and evenly.",
+      "Keep your lower back from arching."
+    ],
+    "mistakes": [
+      "Don't press with a jerky motion.",
+      "Don't shrug your shoulders at the top.",
+      "Don't arch your lower back.",
+      "Don't rush the rotation."
+    ]
+  },
+  {
+    "exercise_id": "leap_shoulder_gators",
+    "exercise_name": "Shoulder Gators",
+    "short_description": "A shoulder mobility drill that circles the arms in opposite directions to loosen the joints and warm up the deltoids.",
+    "how_to": [
+      "Stand tall with your feet hip-width apart.",
+      "Extend your arms out to the sides at shoulder height.",
+      "Circle one arm forward and the other arm backward at the same time.",
+      "Keep the circles smooth and even.",
+      "Switch directions after the target reps."
+    ],
+    "correct": [
+      "Keep your chest open and your back straight.",
+      "Keep the circles the same size on each side.",
+      "Relax your neck and jaw.",
+      "Move at a steady, controlled pace."
+    ],
+    "mistakes": [
+      "Don't hunch your shoulders up toward your ears.",
+      "Don't swing from your torso.",
+      "Don't hold your breath.",
+      "Don't rush through the rotation."
+    ]
+  },
+  {
+    "exercise_id": "leap_alternating_dumbbell_shoulder_press",
+    "exercise_name": "Alternating Dumbbell Shoulder Press",
+    "short_description": "A single-arm overhead press alternated side to side that builds shoulder strength and stability.",
+    "how_to": [
+      "Stand or sit with a dumbbell in each hand at shoulder height, palms forward.",
+      "Press your right arm overhead until fully extended.",
+      "Lower it back to shoulder height, then press your left arm overhead.",
+      "Alternate sides with control.",
+      "Keep your core tight throughout."
+    ],
+    "correct": [
+      "Keep your core braced on every rep.",
+      "Keep your elbow slightly in front of your ear at the top.",
+      "Keep your lower back from arching.",
+      "Lower each dumbbell with control."
+    ],
+    "mistakes": [
+      "Don't lean sideways to press the weight up.",
+      "Don't lock out your elbow with a snap.",
+      "Don't shrug your shoulder at the top.",
+      "Don't rush the alternating tempo."
+    ]
+  },
+  {
+    "exercise_id": "leap_standing_glute_kickbacks",
+    "exercise_name": "Standing Glute Kickbacks",
+    "short_description": "A standing rear leg raise that isolates and strengthens the glutes.",
+    "how_to": [
+      "Stand tall with your feet together and your hands on a wall or your hips for balance.",
+      "Shift your weight onto your left foot.",
+      "Squeeze your right glute and kick your right leg straight back.",
+      "Hold briefly at the top, then lower with control.",
+      "Complete your reps on one side before switching."
+    ],
+    "correct": [
+      "Keep your hips level throughout.",
+      "Keep your core engaged to avoid swaying.",
+      "Squeeze your glute at the top of each rep.",
+      "Keep your standing leg slightly soft."
+    ],
+    "mistakes": [
+      "Don't arch your lower back to get more height.",
+      "Don't swing your leg up with momentum.",
+      "Don't tilt your hips to the side.",
+      "Don't let your torso collapse forward."
+    ]
+  },
+  {
+    "exercise_id": "leap_sumo_squat_calf_raises",
+    "exercise_name": "Sumo Squat Calf Raises",
+    "short_description": "A wide-stance squat held at the bottom while raising your heels to target the inner thighs, glutes, and calves.",
+    "how_to": [
+      "Set your feet wider than shoulder-width with your toes turned out.",
+      "Lower into a sumo squat and hold the position.",
+      "Raise both heels off the floor as high as you can.",
+      "Lower your heels back down with control.",
+      "Repeat the calf raise from the squat position."
+    ],
+    "correct": [
+      "Keep your knees over your toes.",
+      "Keep your heels down as you lower into the squat.",
+      "Keep your chest tall and your back straight.",
+      "Control each calf raise up and down."
+    ],
+    "mistakes": [
+      "Don't let your knees cave inward.",
+      "Don't drop too fast into the squat.",
+      "Don't round your lower back.",
+      "Don't bounce on your toes."
+    ]
+  },
+  {
+    "exercise_id": "leap_glute_kick_back",
+    "exercise_name": "Glute Kick Back",
+    "short_description": "An on-all-fours glute kickback that isolates the glutes and hamstrings.",
+    "how_to": [
+      "Start on your hands and knees with your wrists under your shoulders.",
+      "Keep your core braced and your back flat.",
+      "Drive your right foot straight back and up until your leg is parallel to the floor.",
+      "Squeeze your glute at the top, then lower with control.",
+      "Finish your reps on one side, then switch."
+    ],
+    "correct": [
+      "Keep your hips square to the floor.",
+      "Keep your core engaged throughout.",
+      "Squeeze your glute at the top of each rep.",
+      "Keep your back flat, not arched."
+    ],
+    "mistakes": [
+      "Don't arch your lower back to kick higher.",
+      "Don't rotate your hip out to the side.",
+      "Don't swing your leg with momentum.",
+      "Don't let your shoulders collapse."
+    ]
+  },
+  {
+    "exercise_id": "leap_toy_soldiers",
+    "exercise_name": "Toy Soldiers",
+    "short_description": "A dynamic hamstring stretch performed by kicking your legs straight up as you walk forward.",
+    "how_to": [
+      "Stand tall with your arms extended forward at shoulder height.",
+      "Step forward with your left foot.",
+      "Swing your right leg straight up to meet your outstretched left hand.",
+      "Lower your right foot and step forward, then swing the left leg up.",
+      "Continue alternating in a march-like pattern."
+    ],
+    "correct": [
+      "Keep your kicking leg straight.",
+      "Keep your standing leg slightly soft.",
+      "Keep your torso upright and tall.",
+      "Move at a controlled, rhythmic pace."
+    ],
+    "mistakes": [
+      "Don't round your back as you kick.",
+      "Don't swing your leg past your natural range.",
+      "Don't hold your breath.",
+      "Don't lean back to get more height."
+    ]
+  }
+]

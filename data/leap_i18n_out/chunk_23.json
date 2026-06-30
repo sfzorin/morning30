@@ -1,0 +1,419 @@
+[
+  {
+    "exercise_id": "leap_seated_in_and_out",
+    "ru": {
+      "name": "Сидячие сгибания ног",
+      "short_description": "Упражнение на пресс сидя: подтягивай колени к груди и вытягивай ноги — работают мышцы живота и сгибатели бёдер.",
+      "how_to": [
+        "Сядь на пол, упрись руками за бёдрами для опоры.",
+        "Слегка отклонись назад и подними ступни от пола.",
+        "Подтяни оба колена к груди.",
+        "Вытяни ноги вперёд, не касаясь пола.",
+        "Продолжай в ровном, контролируемом ритме."
+      ],
+      "correct": [
+        "Держи поясницу под контролем.",
+        "Держи грудь раскрытой, корпус стабильным.",
+        "Дыши равномерно на протяжении всего движения.",
+        "Держи пресс в напряжении в каждом повторении."
+      ],
+      "mistakes": [
+        "Не прогибай поясницу.",
+        "Не тяни шею.",
+        "Не опускай ступни на пол между повторениями.",
+        "Не торопись и не теряй контроль над движением."
+      ]
+    },
+    "tr": {
+      "name": "Oturarak Bacak İçe-Dışa",
+      "short_description": "Dizleri göğse çekip bacakları uzatarak karın kaslarını ve kalça fleksörlerini çalıştıran oturur pozisyonda karın egzersizi.",
+      "how_to": [
+        "Ellerini kalçalarının arkasına koy ve destek alarak yere otur.",
+        "Hafifçe geriye yaslan ve ayaklarını yerden kaldır.",
+        "Her iki dizini göğsüne doğru çek.",
+        "Bacaklarını yere değdirmeden öne uzat.",
+        "Sabit ve kontrollü bir ritimde devam et."
+      ],
+      "correct": [
+        "Bel bölgeni kontrollü tut.",
+        "Göğsünü dik ve gövdeni sabit tut.",
+        "Hareket boyunca düzenli nefes al.",
+        "Her tekrarda karın kaslarını sıkı tut."
+      ],
+      "mistakes": [
+        "Belini yaylandırma.",
+        "Boynunu çekme.",
+        "Tekrarlar arasında ayaklarını yere değdirme.",
+        "Acele edip hareket kontrolünü kaybetme."
+      ]
+    },
+    "de": {
+      "name": "Sitzende Beinzüge",
+      "short_description": "Eine sitzende Bauchübung, die Bauchmuskeln und Hüftbeuger trainiert, indem du die Knie einziehst und die Beine ausstreckst.",
+      "how_to": [
+        "Setze dich auf den Boden und stütze dich mit den Händen hinter deinen Hüften ab.",
+        "Lehne dich leicht zurück und hebe die Füße vom Boden.",
+        "Ziehe beide Knie zur Brust.",
+        "Strecke die Beine wieder gerade aus, ohne den Boden zu berühren.",
+        "Führe die Bewegung in einem gleichmäßigen, kontrollierten Rhythmus aus."
+      ],
+      "correct": [
+        "Halte deinen unteren Rücken kontrolliert.",
+        "Halte die Brust aufrecht und den Rumpf stabil.",
+        "Atme gleichmäßig durch die ganze Übung.",
+        "Spanne die Mitte bei jeder Wiederholung an."
+      ],
+      "mistakes": [
+        "Mach keinen Hohlkreuz.",
+        "Zieh nicht am Nacken.",
+        "Lass die Füße zwischen den Wiederholungen nicht auf den Boden fallen.",
+        "Überhaste dich nicht und verlier nicht die Kontrolle."
+      ]
+    },
+    "es": {
+      "name": "Encogimiento de piernas sentado",
+      "short_description": "Ejercicio abdominal sentado que trabaja los abdominales y los flexores de cadera acercando las rodillas al pecho y extendiendo las piernas.",
+      "how_to": [
+        "Siéntate en el suelo con las manos detrás de las caderas como apoyo.",
+        "Inclínate ligeramente hacia atrás y levanta los pies del suelo.",
+        "Acerca ambas rodillas hacia el pecho.",
+        "Extiende las piernas hacia adelante sin tocar el suelo.",
+        "Continúa con un ritmo constante y controlado."
+      ],
+      "correct": [
+        "Mantén la zona lumbar bajo control.",
+        "Mantén el pecho arriba y el torso estable.",
+        "Respira de manera constante durante todo el movimiento.",
+        "Mantén el core apretado en cada repetición."
+      ],
+      "mistakes": [
+        "No arquees la zona lumbar.",
+        "No tires del cuello.",
+        "No dejes que los pies toquen el suelo entre repeticiones.",
+        "No te apresures ni pierdas el control del movimiento."
+      ]
+    },
+    "fr": {
+      "name": "Rentrés-sortis jambes assis",
+      "short_description": "Un exercice abdominal assis qui sollicite les abdos et les fléchisseurs de hanche en ramenant les genoux vers la poitrine et en tendant les jambes.",
+      "how_to": [
+        "Assieds-toi sur le sol avec les mains derrière les hanches pour te soutenir.",
+        "Incline-toi légèrement en arrière et lève les pieds du sol.",
+        "Ramène les deux genoux vers ta poitrine.",
+        "Tends les jambes sans toucher le sol.",
+        "Continue à un rythme régulier et contrôlé."
+      ],
+      "correct": [
+        "Garde le bas du dos sous contrôle.",
+        "Garde la poitrine haute et le tronc stable.",
+        "Respire régulièrement tout au long du mouvement.",
+        "Garde la sangle abdominale contractée à chaque répétition."
+      ],
+      "mistakes": [
+        "Ne creuse pas le bas du dos.",
+        "Ne tire pas sur la nuque.",
+        "Ne laisse pas tes pieds toucher le sol entre les répétitions.",
+        "Ne te précipite pas au point de perdre le contrôle du mouvement."
+      ]
+    },
+    "it": {
+      "name": "Aperture gambe da seduto",
+      "short_description": "Esercizio addominale da seduto che lavora sugli addominali e sui flessori dell'anca portando le ginocchia al petto ed estendendo le gambe.",
+      "how_to": [
+        "Siediti sul pavimento con le mani dietro i fianchi per il sostegno.",
+        "Inclinati leggermente all'indietro e solleva i piedi dal pavimento.",
+        "Porta entrambe le ginocchia verso il petto.",
+        "Stendi le gambe in avanti senza toccare il pavimento.",
+        "Continua con un ritmo costante e controllato."
+      ],
+      "correct": [
+        "Tieni la zona lombare sotto controllo.",
+        "Tieni il petto alto e il busto stabile.",
+        "Respira in modo costante durante tutto il movimento.",
+        "Mantieni il core contratto a ogni ripetizione."
+      ],
+      "mistakes": [
+        "Non inarcare la zona lombare.",
+        "Non tirare il collo.",
+        "Non far toccare i piedi al pavimento tra le ripetizioni.",
+        "Non avere fretta perdendo il controllo del movimento."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_abdominal_crunch",
+    "ru": {
+      "name": "Скручивание на пресс",
+      "short_description": "Базовое упражнение на пресс: сокращай прямую мышцу живота, скручивая верхнюю часть тела к коленям.",
+      "how_to": [
+        "Ляг на спину, согни колени, ступни стоят на полу.",
+        "Положи кончики пальцев по бокам головы.",
+        "Выдохни и подними верхнюю часть спины от пола.",
+        "Сделай короткую паузу наверху, затем медленно опустись обратно."
+      ],
+      "correct": [
+        "Держи поясницу под контролем.",
+        "Держи подбородок подальше от груди.",
+        "Расслабь шею — пусть пресс выполняет работу.",
+        "Опускайся медленно."
+      ],
+      "mistakes": [
+        "Не прогибай поясницу.",
+        "Не тяни шею руками.",
+        "Не вскидывайся рывком за счёт инерции.",
+        "Не задерживай дыхание."
+      ]
+    },
+    "tr": {
+      "name": "Karın Crunch",
+      "short_description": "Üst gövdeyi dizlere doğru kıvırarak düz karın kasını çalıştıran temel karın egzersizi.",
+      "how_to": [
+        "Sırt üstü uzan, dizlerini bük ve ayaklarını yere düz bas.",
+        "Parmak uçlarını hafifçe başının yanlarına koy.",
+        "Nefes ver ve üst sırtını yerden kaldır.",
+        "Üstte kısa bir an bekle, ardından kontrollü şekilde geri in."
+      ],
+      "correct": [
+        "Bel bölgeni kontrollü tut.",
+        "Çeneni göğsünden uzak tut.",
+        "Boynunu gevşet, karın kasların çalışsın.",
+        "Aşağı inerken yavaş hareket et."
+      ],
+      "mistakes": [
+        "Belini yaylandırma.",
+        "Boynunu çekme.",
+        "Momentum kullanarak ani hareketle kalkma.",
+        "Nefesini tutma."
+      ]
+    },
+    "de": {
+      "name": "Bauchcrunch",
+      "short_description": "Eine grundlegende Bauchübung, die den geraden Bauchmuskel anspannt, indem du den Oberkörper zu den Knien curlst.",
+      "how_to": [
+        "Leg dich auf den Rücken, Knie gebeugt, Füße flach auf dem Boden.",
+        "Lege die Fingerspitzen locker seitlich an den Kopf.",
+        "Atme aus und curle den oberen Rücken vom Boden hoch.",
+        "Kurz oben halten, dann kontrolliert absenken."
+      ],
+      "correct": [
+        "Halte deinen unteren Rücken kontrolliert.",
+        "Halte das Kinn vom Brustbein entfernt.",
+        "Entspanne den Nacken und lass die Bauchmuskeln die Arbeit machen.",
+        "Senke dich langsam ab."
+      ],
+      "mistakes": [
+        "Mach keinen Hohlkreuz.",
+        "Zieh nicht am Nacken.",
+        "Schwinge dich nicht mit Schwung hoch.",
+        "Halte nicht die Luft an."
+      ]
+    },
+    "es": {
+      "name": "Crunch abdominal",
+      "short_description": "Un ejercicio abdominal fundamental que contrae el recto abdominal enrollando la parte superior del cuerpo hacia las rodillas.",
+      "how_to": [
+        "Túmbate boca arriba con las rodillas dobladas y los pies apoyados en el suelo.",
+        "Coloca las yemas de los dedos suavemente a los lados de la cabeza.",
+        "Exhala y despega la parte superior de la espalda del suelo.",
+        "Haz una breve pausa arriba y baja de forma controlada."
+      ],
+      "correct": [
+        "Mantén la zona lumbar bajo control.",
+        "Mantén el mentón separado del pecho.",
+        "Relaja el cuello y deja que los abdominales hagan el trabajo.",
+        "Baja despacio."
+      ],
+      "mistakes": [
+        "No arquees la zona lumbar.",
+        "No tires del cuello.",
+        "No te impulses con inercia.",
+        "No contengas la respiración."
+      ]
+    },
+    "fr": {
+      "name": "Crunch abdominal",
+      "short_description": "Un exercice abdominal fondamental qui contracte le grand droit en enroulant le haut du corps vers les genoux.",
+      "how_to": [
+        "Allonge-toi sur le dos, genoux fléchis, pieds à plat sur le sol.",
+        "Pose légèrement le bout des doigts sur les côtés de la tête.",
+        "Expire et décolle le haut du dos du sol.",
+        "Marque une courte pause en haut, puis redescends avec contrôle."
+      ],
+      "correct": [
+        "Garde le bas du dos sous contrôle.",
+        "Garde le menton écarté de la poitrine.",
+        "Relâche la nuque et laisse les abdos faire le travail.",
+        "Redescends lentement."
+      ],
+      "mistakes": [
+        "Ne creuse pas le bas du dos.",
+        "Ne tire pas sur la nuque.",
+        "Ne te propulse pas avec de l'élan.",
+        "Ne retiens pas ta respiration."
+      ]
+    },
+    "it": {
+      "name": "Crunch addominale",
+      "short_description": "Un esercizio addominale fondamentale che contrae il retto dell'addome arrotolando la parte superiore del busto verso le ginocchia.",
+      "how_to": [
+        "Sdraiati sulla schiena con le ginocchia piegate e i piedi piatti sul pavimento.",
+        "Poggia delicatamente la punta delle dita sui lati della testa.",
+        "Espira e solleva la parte superiore della schiena dal pavimento.",
+        "Fai una breve pausa in alto, poi abbassati con controllo."
+      ],
+      "correct": [
+        "Tieni la zona lombare sotto controllo.",
+        "Tieni il mento lontano dal petto.",
+        "Rilassa il collo e lascia che siano gli addominali a lavorare.",
+        "Scendi lentamente."
+      ],
+      "mistakes": [
+        "Non inarcare la zona lombare.",
+        "Non tirare il collo.",
+        "Non slanciarti verso l'alto con l'inerzia.",
+        "Non trattenere il respiro."
+      ]
+    }
+  },
+  {
+    "exercise_id": "leap_alternating_bird_dog",
+    "ru": {
+      "name": "Попеременный «птица-собака»",
+      "short_description": "Упражнение на стабильность, укрепляющее поясницу, ягодицы и кор: вытягивай противоположные руку и ногу из положения на четвереньках.",
+      "how_to": [
+        "Встань на четвереньки: запястья под плечами, колени под бёдрами.",
+        "Напряги кор и держи спину прямой.",
+        "Одновременно вытяни правую руку вперёд и левую ногу назад.",
+        "Удержи позицию на мгновение, затем вернись в исходное положение.",
+        "Смени стороны и повторяй в медленном, контролируемом чередовании."
+      ],
+      "correct": [
+        "Держи бёдра на одном уровне на протяжении всего движения.",
+        "Держи спину прямой — без прогиба и округления.",
+        "Двигайся плавно, не торопясь.",
+        "Дыши равномерно, не задерживай дыхание."
+      ],
+      "mistakes": [
+        "Не поворачивай бёдра при вытягивании.",
+        "Не спеши с выполнением движения.",
+        "Не позволяй пояснице провисать.",
+        "Не задирай голову вверх — взгляд направлен вниз."
+      ]
+    },
+    "tr": {
+      "name": "Dönüşümlü Kuş-Köpek",
+      "short_description": "Masa üstü pozisyondan karşı kol ve bacağı uzatarak bel, kalça ve koru güçlendiren denge egzersizi.",
+      "how_to": [
+        "Bileklerin omuzlarının, dizlerin kalçalarının altında olacak şekilde dört ayak üstüne geç.",
+        "Korunu sık ve sırtını düz tut.",
+        "Sağ kolunu öne, sol bacağını eş zamanlı olarak arkaya uzat.",
+        "Bir an bekle, ardından başlangıç pozisyonuna dön.",
+        "Tarafları değiştir ve yavaş, kontrollü bir şekilde dönüşümlü olarak tekrarla."
+      ],
+      "correct": [
+        "Kalçalarını hareket boyunca düz tut.",
+        "Sırtını düz tut, ne çukur ne yuvarlak olsun.",
+        "Hız yerine kontrollü hareket et.",
+        "Düzenli nefes al, nefesini tutma."
+      ],
+      "mistakes": [
+        "Uzatırken kalçalarını döndürme.",
+        "Hareketi aceleyle yapma.",
+        "Belinin çökmesine izin verme.",
+        "Başını kaldırma; bakışlarını aşağı yönelt."
+      ]
+    },
+    "de": {
+      "name": "Wechselseitiger Bird Dog",
+      "short_description": "Eine Stabilitätsübung, die unteren Rücken, Gesäß und Rumpf stärkt, indem du aus dem Vierfüßlerstand den gegenüberliegenden Arm und das gegenüberliegende Bein ausstreckst.",
+      "how_to": [
+        "Geh in den Vierfüßlerstand: Handgelenke unter den Schultern, Knie unter den Hüften.",
+        "Spanne den Rumpf an und halte den Rücken gerade.",
+        "Strecke gleichzeitig den rechten Arm nach vorn und das linke Bein nach hinten.",
+        "Halte kurz inne, dann kehre zur Ausgangsposition zurück.",
+        "Wechsle die Seite und wiederhole in einem langsamen, kontrollierten Wechsel."
+      ],
+      "correct": [
+        "Halte die Hüften während der ganzen Übung auf gleicher Höhe.",
+        "Halte den Rücken flach – nicht hohl und nicht rund.",
+        "Bewege dich kontrolliert, nicht schnell.",
+        "Atme gleichmäßig und halte nicht die Luft an."
+      ],
+      "mistakes": [
+        "Lass die Hüften beim Strecken nicht rotieren.",
+        "Haste nicht durch die Übung.",
+        "Lass den unteren Rücken nicht durchhängen.",
+        "Schau nicht nach oben – Blick bleibt nach unten."
+      ]
+    },
+    "es": {
+      "name": "Pájaro-perro alternado",
+      "short_description": "Ejercicio de estabilidad que fortalece la zona lumbar, los glúteos y el core extendiendo el brazo y la pierna opuestos desde la posición de cuadrupedia.",
+      "how_to": [
+        "Colócate a cuatro patas con las muñecas bajo los hombros y las rodillas bajo las caderas.",
+        "Activa el core y mantén la espalda recta.",
+        "Extiende el brazo derecho hacia adelante y la pierna izquierda hacia atrás al mismo tiempo.",
+        "Mantén un momento la posición y vuelve al punto de partida.",
+        "Cambia de lado y repite en una alternancia lenta y controlada."
+      ],
+      "correct": [
+        "Mantén las caderas a la misma altura durante todo el movimiento.",
+        "Mantén la espalda recta, sin arquear ni redondear.",
+        "Muévete con control, no con velocidad.",
+        "Respira de manera constante y no contengas el aliento."
+      ],
+      "mistakes": [
+        "No rotes las caderas al extender.",
+        "No hagas el movimiento a toda prisa.",
+        "No dejes que la zona lumbar se hunda.",
+        "No levantes la cabeza; mantén la mirada hacia abajo."
+      ]
+    },
+    "fr": {
+      "name": "Bird Dog alterné",
+      "short_description": "Un exercice de stabilité qui renforce le bas du dos, les fessiers et le gainage en étendant le bras et la jambe opposés depuis la position à quatre pattes.",
+      "how_to": [
+        "Mets-toi à quatre pattes, poignets sous les épaules et genoux sous les hanches.",
+        "Engage le gainage et garde le dos plat.",
+        "Tends le bras droit en avant et la jambe gauche en arrière simultanément.",
+        "Tiens un instant, puis reviens à la position de départ.",
+        "Change de côté et répète en alternance lente et contrôlée."
+      ],
+      "correct": [
+        "Garde les hanches à la même hauteur tout au long du mouvement.",
+        "Garde le dos plat, ni creux ni arrondi.",
+        "Bouge avec contrôle plutôt qu'avec vitesse.",
+        "Respire régulièrement et ne retiens pas ta respiration."
+      ],
+      "mistakes": [
+        "Ne fais pas pivoter les hanches en étendant.",
+        "Ne te précipite pas dans le mouvement.",
+        "Ne laisse pas le bas du dos s'affaisser.",
+        "Ne lève pas la tête ; garde le regard vers le bas."
+      ]
+    },
+    "it": {
+      "name": "Bird Dog alternato",
+      "short_description": "Un esercizio di stabilità che rinforza la zona lombare, i glutei e il core estendendo il braccio e la gamba opposti dalla posizione in quadrupedia.",
+      "how_to": [
+        "Mettiti a quattro zampe con i polsi sotto le spalle e le ginocchia sotto i fianchi.",
+        "Attiva il core e tieni la schiena piatta.",
+        "Estendi il braccio destro in avanti e la gamba sinistra indietro contemporaneamente.",
+        "Tieni la posizione un momento, poi torna alla partenza.",
+        "Cambia lato e ripeti in una alternanza lenta e controllata."
+      ],
+      "correct": [
+        "Tieni i fianchi allo stesso livello per tutta la durata del movimento.",
+        "Tieni la schiena piatta, né inarcata né arrotondata.",
+        "Muoviti con controllo, non con velocità.",
+        "Respira in modo costante e non trattenere il respiro."
+      ],
+      "mistakes": [
+        "Non ruotare i fianchi durante l'estensione.",
+        "Non eseguire il movimento di fretta.",
+        "Non lasciare che la zona lombare ceda verso il basso.",
+        "Non alzare la testa; tieni lo sguardo rivolto verso il basso."
+      ]
+    }
+  }
+]

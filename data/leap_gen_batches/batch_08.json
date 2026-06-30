@@ -1,0 +1,122 @@
+[
+  {
+    "exercise_id": "leap_valley_press",
+    "exercise_name": "Valley Press",
+    "group_label": "Push-ups & Pressing",
+    "video_title": "How to Do：VALLEY PRESS"
+  },
+  {
+    "exercise_id": "leap_half_bending_pushing_forward",
+    "exercise_name": "Half Bending Pushing Forward",
+    "group_label": "Other",
+    "video_title": "How to Do：HALF BENDING PUSHING FORWARD"
+  },
+  {
+    "exercise_id": "leap_dumbbell_upright_row",
+    "exercise_name": "Dumbbell Upright-Row",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL UPRIGHT-ROW"
+  },
+  {
+    "exercise_id": "leap_bent_over_dumbbell_rows",
+    "exercise_name": "Bent Over Dumbbell Rows",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：BENT OVER DUMBBELL ROWS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_kickbacks",
+    "exercise_name": "Dumbbell Kickbacks",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL KICKBACKS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_donkey_kicks",
+    "exercise_name": "Dumbbell Donkey Kicks",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL DONKEY KICKS"
+  },
+  {
+    "exercise_id": "leap_dumbbell_backward_lunge",
+    "exercise_name": "Dumbbell Backward Lunge",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL BACKWARD LUNGE"
+  },
+  {
+    "exercise_id": "leap_single_leg_deadlift",
+    "exercise_name": "Single Leg Deadlift",
+    "group_label": "Other",
+    "video_title": "How to Do：SINGLE LEG DEADLIFT"
+  },
+  {
+    "exercise_id": "leap_dumbbell_hip_thrust",
+    "exercise_name": "Dumbbell Hip Thrust",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL HIP THRUST"
+  },
+  {
+    "exercise_id": "leap_spiderman_plank",
+    "exercise_name": "Spiderman Plank",
+    "group_label": "Planks",
+    "video_title": "How to Do：SPIDERMAN PLANK"
+  },
+  {
+    "exercise_id": "leap_dumbbell_pullover",
+    "exercise_name": "Dumbbell Pullover",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL PULLOVER"
+  },
+  {
+    "exercise_id": "leap_dumbbell_swing",
+    "exercise_name": "Dumbbell Swing",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL SWING"
+  },
+  {
+    "exercise_id": "leap_tricep_dumbbell_flick_back",
+    "exercise_name": "Tricep Dumbbell Flick Back",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：TRICEP DUMBBELL FLICK BACK"
+  },
+  {
+    "exercise_id": "leap_knee_lift",
+    "exercise_name": "Knee Lift",
+    "group_label": "Other",
+    "video_title": "How to Do：KNEE LIFT"
+  },
+  {
+    "exercise_id": "leap_seated_overhead_tricep_extension",
+    "exercise_name": "Seated Overhead Tricep Extension",
+    "group_label": "Arms & Shoulders",
+    "video_title": "How to Do：SEATED OVERHEAD TRICEP EXTENSION"
+  },
+  {
+    "exercise_id": "leap_jaw_line",
+    "exercise_name": "Jaw Line",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do：JAW LINE"
+  },
+  {
+    "exercise_id": "leap_dumbbell_arm_triceps_kickback",
+    "exercise_name": "Dumbbell Arm Triceps Kickback",
+    "group_label": "Dumbbell",
+    "video_title": "How to Do：DUMBBELL ARM TRICEPS KICKBACK"
+  },
+  {
+    "exercise_id": "leap_underchin_duck",
+    "exercise_name": "Underchin Duck",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do：UNDERCHIN DUCK"
+  },
+  {
+    "exercise_id": "leap_eye_lift",
+    "exercise_name": "Eye Lift",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do：EYE LIFT"
+  },
+  {
+    "exercise_id": "leap_marilyn",
+    "exercise_name": "Marilyn",
+    "group_label": "Face & Neck",
+    "video_title": "How to Do：MARILYN"
+  }
+]
