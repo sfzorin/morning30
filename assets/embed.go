@@ -24,6 +24,18 @@ var Player []byte
 //go:embed exupload.js
 var ExUpload []byte
 
+// LeapLibrary is the localized exercise library imported from the Leap Fitness
+// "How to Do" videos (names + cards in 7 languages + source video). Parsed by
+// the internal/library package.
+//
+//go:embed leap_library.json
+var LeapLibrary []byte
+
+// LeapVideoMap maps existing app exercise IDs to a matching demo video.
+//
+//go:embed leap_video_map.json
+var LeapVideoMap []byte
+
 // static holds the static/ directory tree (icons, manifest, sw, exercise SVGs),
 // embedded recursively and exposed via Static() for the UseFS middleware.
 //

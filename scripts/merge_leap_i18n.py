@@ -55,6 +55,8 @@ def main() -> None:
         })
 
     lc.write_json(OUT, out)
+    # Embeddable copy for the Go app (assets/ is the go:embed root).
+    lc.write_json(lc.ROOT / "assets" / "leap_library.json", out)
     print(json.dumps({
         "cards": len(out),
         "languages": ORDER,

@@ -117,6 +117,8 @@ def main() -> None:
 
     lc.write_json(OUT_JSON, cards)
     lc.write_json(VIDEO_MAP, video_map)
+    # Embeddable copy for the Go app (assets/ is the go:embed root).
+    lc.write_json(lc.ROOT / "assets" / "leap_video_map.json", video_map)
     _write_md(cards)
     _write_csv(cards)
 

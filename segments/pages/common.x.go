@@ -140,31 +140,45 @@ func (h header) Main() gox.Elem {
 				}
 				__e = __c.Close(); if __e != nil { return }
 //line common.gox:75
-				__e = (doors.ALink{Model: path.Path{Page: path.Settings}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+				__e = (doors.ALink{Model: path.Path{Page: path.Library}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
 //line common.gox:75
 						__e = __c.Set("class", "icon-btn"); if __e != nil { return }
 //line common.gox:75
+						__e = __c.Set("aria-label", i18n.T(l, "nav.library")); if __e != nil { return }
+						__e = __c.Submit(); if __e != nil { return }
+						__e = __c.Text("📚"); if __e != nil { return }
+					}
+					__e = __c.Close(); if __e != nil { return }
+				return })); if __e != nil { return }
+//line common.gox:76
+				__e = (doors.ALink{Model: path.Path{Page: path.Settings}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+					ctx := __c.Context(); _ = ctx
+					__e = __c.Init("a"); if __e != nil { return }
+					{
+//line common.gox:76
+						__e = __c.Set("class", "icon-btn"); if __e != nil { return }
+//line common.gox:76
 						__e = __c.Set("aria-label", i18n.T(l, "nav.settings")); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Text("⚙️"); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
-//line common.gox:76
-				if !h.sess.IsGuest {
 //line common.gox:77
+				if !h.sess.IsGuest {
+//line common.gox:78
 					__e = (doors.AClick{On: h.logout}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line common.gox:77
+//line common.gox:78
 							__e = __c.Set("class", "icon-btn"); if __e != nil { return }
-//line common.gox:77
+//line common.gox:78
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line common.gox:77
+//line common.gox:78
 							__e = __c.Set("aria-label", i18n.T(l, "nav.logout")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("⎋"); if __e != nil { return }
@@ -177,7 +191,7 @@ func (h header) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line common.gox:81
+//line common.gox:82
 }
 
 func (h header) logout(ctx context.Context, r doors.RequestPointer) bool {

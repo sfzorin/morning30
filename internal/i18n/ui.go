@@ -14,6 +14,15 @@ var ui = map[string][7]string{
 	"nav.settings": {"Настройки", "Settings", "Ayarlar", "Einstellungen", "Ajustes", "Réglages", "Impostazioni"},
 	"nav.logout":   {"Выйти", "Log out", "Çıkış", "Abmelden", "Salir", "Déconnexion", "Esci"},
 	"nav.close":    {"Закрыть", "Close", "Kapat", "Schließen", "Cerrar", "Fermer", "Chiudi"},
+	"nav.library":  {"Библиотека", "Library", "Kütüphane", "Bibliothek", "Biblioteca", "Bibliothèque", "Libreria"},
+
+	// Exercise library
+	"library.title":    {"Библиотека упражнений", "Exercise library", "Egzersiz kütüphanesi", "Übungsbibliothek", "Biblioteca de ejercicios", "Bibliothèque d'exercices", "Libreria di esercizi"},
+	"library.intro":    {"Упражнения по группам, у каждого — демо-видео.", "Exercises grouped by type, each with a demo video.", "Türüne göre gruplanmış egzersizler, her birinde demo videosu.", "Übungen nach Typ gruppiert, jede mit Demo-Video.", "Ejercicios agrupados por tipo, cada uno con un vídeo demostrativo.", "Exercices regroupés par type, chacun avec une vidéo de démonstration.", "Esercizi raggruppati per tipo, ognuno con un video dimostrativo."},
+	"library.howto":    {"Как делать", "How to", "Nasıl yapılır", "So geht's", "Cómo hacerlo", "Comment faire", "Come si fa"},
+	"library.correct":  {"Правильно", "Correct", "Doğru", "Richtig", "Correcto", "Correct", "Corretto"},
+	"library.mistakes": {"Ошибки", "Mistakes", "Hatalar", "Fehler", "Errores", "Erreurs", "Errori"},
+	"library.source":   {"Источник: видео на YouTube", "Source: video on YouTube", "Kaynak: YouTube videosu", "Quelle: YouTube-Video", "Fuente: vídeo de YouTube", "Source : vidéo YouTube", "Fonte: video su YouTube"},
 
 	// Auth
 	"auth.login":          {"Вход", "Log in", "Giriş", "Anmelden", "Iniciar sesión", "Connexion", "Accedi"},
@@ -79,6 +88,7 @@ var ui = map[string][7]string{
 	"info.breathing": {"Дыхание", "Breathing", "Nefes", "Atmung", "Respiración", "Respiration", "Respirazione"},
 	"info.warning":   {"Внимание", "Caution", "Dikkat", "Achtung", "Atención", "Attention", "Attenzione"},
 	"info.replace":   {"Заменить упражнение", "Replace exercise", "Egzersizi değiştir", "Übung ersetzen", "Reemplazar ejercicio", "Remplacer l'exercice", "Sostituisci esercizio"},
+	"info.watch":     {"▶ Видео-демонстрация", "▶ Watch demo video", "▶ Demo videosunu izle", "▶ Demo-Video ansehen", "▶ Ver vídeo demostrativo", "▶ Voir la vidéo démo", "▶ Guarda il video demo"},
 	"info.close":     {"Закрыть", "Close", "Kapat", "Schließen", "Cerrar", "Fermer", "Chiudi"},
 
 	// Safety disclaimer (spec §20)

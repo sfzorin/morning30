@@ -1,0 +1,155 @@
+package pages
+
+import (
+	"context"
+
+	"morning30/internal/auth"
+	"morning30/internal/i18n"
+	"morning30/internal/library"
+	"morning30/path"
+
+	"github.com/doors-dev/doors"
+	"github.com/doors-dev/gox"
+)
+
+// libState is the library browser's position: a group key, then an exercise id.
+// "" group = the group list; group set, id "" = that group's exercises; id set =
+// the exercise detail (video + card). One Source drives all three levels.
+type libState struct {
+	Group string
+	ID    string
+}
+
+// libraryPage is the browse-only exercise library imported from Leap Fitness:
+// grouped lists down to a localized card with the source demo video embedded.
+type libraryPage struct {
+	sess auth.Session
+	auth doors.Source[auth.Session]
+	path doors.Source[path.Path]
+}
+
+elem (p libraryPage) Main() {
+	~{
+		l := i18n.Lang(p.sess.Lang)
+		lang := string(l)
+		st := doors.NewSource(libState{})
+	}
+	<title>~(i18n.T(l, "library.title"))</title>
+	<main class="screen">
+		<section class="library">
+			~(st.Bind(elem(s libState) {
+				~(if s.ID != "" {
+					~(p.detail(l, lang, st, s))
+				} else {
+					~(if s.Group != "" {
+						~(p.groupView(l, lang, st, s.Group))
+					} else {
+						~(p.groupList(l, st))
+					})
+				})
+			}))
+		</section>
+	</main>
+}
+
+// groupList is level 1: every browse category with its exercise count.
+elem (p libraryPage) groupList(l i18n.Lang, st doors.Source[libState]) {
+	<div class="lib-head">
+		<h1>~(i18n.T(l, "library.title"))</h1>
+		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-x" aria-label=(i18n.T(l, "workout.quit"))>✕</a>
+	</div>
+	<p class="lib-intro">~(i18n.T(l, "library.intro"))</p>
+	<div class="lib-groups">
+		~(for _, g := range library.Groups() {
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				st.Update(ctx, libState{Group: g.Key})
+				return false
+			}}
+			<button class="lib-grow" type="button">
+				<span class="lib-grow-name">~(g.Label)</span>
+				<span class="lib-grow-count">~(len(g.Cards))</span>
+			</button>
+		})
+	</div>
+}
+
+// groupView is level 2: the exercises in one group.
+elem (p libraryPage) groupView(l i18n.Lang, lang string, st doors.Source[libState], group string) {
+	~{
+		var cards []*library.Card
+		label := group
+		for _, g := range library.Groups() {
+			if g.Key == group {
+				cards = g.Cards
+				label = g.Label
+				break
+			}
+		}
+	}
+	<div class="lib-head">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, libState{})
+			return false
+		}} <button class="lib-back" type="button" aria-label="←">←</button>
+		<h1>~(label)</h1>
+	</div>
+	<div class="lib-list">
+		~(for _, c := range cards {
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				st.Update(ctx, libState{Group: group, ID: c.ID})
+				return false
+			}}
+			<button class="lib-item" type="button">
+				<img class="lib-thumb" loading="lazy" src=(c.Source.Thumbnail) alt="">
+				<span class="lib-item-name">~(c.Name(lang))</span>
+			</button>
+		})
+	</div>
+}
+
+// detail is level 3: the localized card with the source video embedded.
+elem (p libraryPage) detail(l i18n.Lang, lang string, st doors.Source[libState], s libState) {
+	~{
+		c, ok := library.ByID(s.ID)
+	}
+	~(if !ok {
+		<p>~(i18n.T(l, "library.title"))</p>
+	} else {
+		~{
+			t := c.Text(lang)
+		}
+		<div class="lib-head">
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				st.Update(ctx, libState{Group: s.Group})
+				return false
+			}} <button class="lib-back" type="button" aria-label="←">←</button>
+			<h1>~(c.Name(lang))</h1>
+		</div>
+		<div class="lib-video">
+			<iframe
+				src=("https://www.youtube-nocookie.com/embed/" + c.Source.VideoID)
+				title=(c.Name(lang))
+				loading="lazy"
+				allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+		</div>
+		<p class="lib-desc">~(t.ShortDescription)</p>
+
+		<div class="lib-sec">
+			<h2>~(i18n.T(l, "library.howto"))</h2>
+			<ul>~(for _, line := range t.HowTo { <li>~(line)</li> })</ul>
+		</div>
+		<div class="lib-sec lib-correct">
+			<h2>~(i18n.T(l, "library.correct"))</h2>
+			<ul>~(for _, line := range t.Correct { <li>~(line)</li> })</ul>
+		</div>
+		<div class="lib-sec lib-mistakes">
+			<h2>~(i18n.T(l, "library.mistakes"))</h2>
+			<ul>~(for _, line := range t.Mistakes { <li>~(line)</li> })</ul>
+		</div>
+
+		<p class="lib-src">
+			<a href=(c.Source.VideoURL) target="_blank" rel="noopener noreferrer">~(i18n.T(l, "library.source"))</a>
+		</p>
+	})
+}
