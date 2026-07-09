@@ -75,6 +75,33 @@ func TestStreakConsecutive(t *testing.T) {
 	}
 }
 
+func TestCompleteCycleDay(t *testing.T) {
+	d := openTest(t)
+	u, _ := d.CreateUser("ccd@b.com", "h", "en", "Test")
+	const total = 30
+
+	if err := d.CompleteCycleDay(u.ID, 1, total); err != nil {
+		t.Fatal(err)
+	}
+	if p, _ := d.Position(u.ID); p != 1 {
+		t.Fatalf("after day 1: position = %d, want 1", p)
+	}
+
+	_ = d.CompleteCycleDay(u.ID, 17, total)
+	p, _ := d.Position(u.ID)
+	if p != 17 {
+		t.Fatalf("after manual day 17: position = %d, want 17", p)
+	}
+	if cur := p%total + 1; cur != 18 {
+		t.Fatalf("next day = %d, want 18", cur)
+	}
+
+	_ = d.CompleteCycleDay(u.ID, 14, total)
+	if p2, _ := d.Position(u.ID); p2 != 17 {
+		t.Fatalf("after replay day 14: position = %d, want 17", p2)
+	}
+}
+
 func TestCyclePositionLoops(t *testing.T) {
 	d := openTest(t)
 	u, _ := d.CreateUser("c@b.com", "h", "en", "Test")

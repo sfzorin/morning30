@@ -67,6 +67,7 @@
     infoBtn: $(".info-btn"),
     infoOverlay: $(".info-overlay"),
     infoMedia: $(".info-media"),
+    infoVideo: $(".info-video"),
     infoName: $(".info-name"),
     infoDesc: $(".info-desc"),
     infoHow: $(".info-how"),
@@ -276,11 +277,20 @@
     }
   }
 
+  // setSlotTheme paints the whole player in the active phase colour
+  // (warm-up = blue, main = amber, cool-down = mint) so counters, rest
+  // overlay and primary buttons match the status-bar segment.
+  function setSlotTheme(slot) {
+    root.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
+    if (slot) root.classList.add("slot-" + slot);
+  }
+
   // setPhaseLabel writes the phase + round into the top label, slot-coloured.
   function setPhaseLabel(it) {
     el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round;
     el.phase.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
     el.phase.classList.add("slot-" + it.slot);
+    setSlotTheme(it.slot);
   }
 
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
@@ -301,10 +311,6 @@
     el.warn.textContent = it.warning ? "⚠️ " + it.warning : "";
     el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
-    // Slot-coloured counter so you can see at a glance whether you're in the
-    // warm-up, main set, or cool-down.
-    el.value.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
-    el.value.classList.add("slot-" + it.slot);
     renderProgress(i, it.slot);
     runSide(it, 1);
   }
@@ -630,7 +636,11 @@
     infoWasPaused = paused;
     paused = true;
     shutUp();
-    el.infoMedia.src = it.video || it.svg;
+    el.infoMedia.src = it.svg;
+    if (el.infoVideo) {
+      if (it.video) { el.infoVideo.href = it.video; el.infoVideo.classList.remove("hidden"); }
+      else el.infoVideo.classList.add("hidden");
+    }
     el.infoName.textContent = it.name;
     el.infoDesc.textContent = it.desc || "";
     fillList(el.infoHow, it.howTo);

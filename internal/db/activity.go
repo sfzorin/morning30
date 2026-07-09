@@ -98,6 +98,34 @@ func (d *DB) AdvancePosition(userID int64) error {
 	return err
 }
 
+// CompleteCycleDay updates the user's cycle position after finishing a workout.
+// totalDays is the program length (30). The current program day is position%totalDays+1.
+// Finishing the current day advances by one; finishing a later day (manual pick in
+// the cycle grid) jumps ahead so the next session is day+1; replaying an earlier
+// day leaves position unchanged.
+func (d *DB) CompleteCycleDay(userID int64, finishedDay, totalDays int) error {
+	if finishedDay < 1 {
+		finishedDay = 1
+	}
+	if finishedDay > totalDays {
+		finishedDay = totalDays
+	}
+	pos, err := d.Position(userID)
+	if err != nil {
+		return err
+	}
+	cur := pos%totalDays + 1
+	switch {
+	case finishedDay == cur:
+		return d.AdvancePosition(userID)
+	case finishedDay > cur:
+		_, err := d.sql.Exec(`UPDATE users SET position = ? WHERE id = ?`, finishedDay, userID)
+		return err
+	default:
+		return nil // replay — don't regress
+	}
+}
+
 // ResetProgress clears activity and the cycle position.
 func (d *DB) ResetProgress(userID int64) error {
 	if _, err := d.sql.Exec(`DELETE FROM activity WHERE user_id = ?`, userID); err != nil {

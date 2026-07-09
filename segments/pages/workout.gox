@@ -252,20 +252,18 @@ func (w workoutPage) payloadJSON() string {
 }
 
 // complete is the JS hook fired when a day finishes. It records today's activity
-// (streak/calendar) and advances the looping 30-day cycle when the finished day
-// is the current one. Returns the streak.
+// (streak/calendar) and advances the looping 30-day cycle. Returns the streak.
 func (w workoutPage) complete(ctx context.Context, r doors.RequestHook[completeReq]) (any, bool) {
 	uid := w.sess.UserID
-	day := w.clampDay()
 	today := app.Today()
-
 	_ = app.DB.RecordActivity(uid, today)
 
-	if pos, err := app.DB.Position(uid); err == nil {
-		if day == pos%content.TotalDays+1 {
-			_ = app.DB.AdvancePosition(uid)
-		}
+	// Prefer the day the client just finished (payload), fall back to the route day.
+	day := r.Data().Day
+	if day < 1 {
+		day = w.day
 	}
+	_ = app.DB.CompleteCycleDay(uid, day, content.TotalDays)
 
 	streak, _ := app.DB.Streak(uid, today)
 	return streak, false
