@@ -449,7 +449,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .pbar-seg-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--seg-bright); border-radius: 999px; transition: width .4s ease; }
 .pbar-seg.active { background: var(--seg-mid); box-shadow: 0 0 5px -1px var(--seg-bright); }
 .pbar-seg.slot-warmup   { --seg-dim: rgba(56,189,248,.16); --seg-mid: rgba(56,189,248,.42); --seg-bright: #38bdf8; }
-.pbar-seg.slot-main     { --seg-dim: rgba(251,146,60,.16); --seg-mid: rgba(251,146,60,.42); --seg-bright: var(--accent); }
+.pbar-seg.slot-main     { --seg-dim: rgba(251,146,60,.16); --seg-mid: rgba(251,146,60,.42); --seg-bright: #fb923c; }
 .pbar-seg.slot-cooldown { --seg-dim: rgba(52,211,153,.16); --seg-mid: rgba(52,211,153,.42); --seg-bright: #34d399; }
 /* Phase theme: warm-up / cool-down recolour every accent element to match the bar. */
 .player.slot-warmup {
