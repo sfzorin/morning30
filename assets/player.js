@@ -59,10 +59,7 @@
     index: $(".ex-index"),
     svg: $(".ex-svg"),
     name: $(".ex-name"),
-    side: $(".ex-side"),
     value: $(".ex-value"),
-    hint: $(".ex-hint"),
-    warn: $(".ex-warn"),
     stage: $(".stage"),
     infoBtn: $(".info-btn"),
     infoOverlay: $(".info-overlay"),
@@ -84,7 +81,6 @@
     infoClose: $(".info-close"),
     controls: $(".controls"),
     prev: $(".ctl-prev"),
-    pause: $(".ctl-pause"),
     skip: $(".ctl-skip"),
     done: $(".ctl-done"),
     rest: $(".rest-overlay"),
@@ -190,13 +186,9 @@
     narrTimer = setTimeout(step, 3000); // small pause after "Go" before instructions
   }
 
-  // flashHalf marks the midpoint of a timed set: shows and (when talkative)
-  // speaks "half the time", clear of both the start and the closing count.
-  var halfTimer = null;
+  // flashHalf speaks "half the time" at the midpoint of a timed set, clear of
+  // both the start and the closing count. Voice only — nothing on screen.
   function flashHalf() {
-    el.side.textContent = cues.halfway || "";
-    if (halfTimer) clearTimeout(halfTimer);
-    halfTimer = setTimeout(function () { el.side.textContent = ""; }, 3500);
     if (talkative()) sayNow(cues.halfway);
   }
 
@@ -307,8 +299,6 @@
     el.svg.src = it.svg;
     el.svg.alt = it.name;
     el.name.textContent = it.name;
-    el.hint.textContent = it.hint || "";
-    el.warn.textContent = it.warning ? "⚠️ " + it.warning : "";
     el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
     renderProgress(i, it.slot);
@@ -322,7 +312,6 @@
   function runSide(it, side) {
     curSide = side;
     clearNarr();
-    el.side.textContent = "";
     sayNow(it.vStart);   // "Go" / "Старт"
     startNarr(it);       // first instruction ~3 s later
 
@@ -412,7 +401,6 @@
     shutUp();
     clearTicker();
     paused = false;
-    el.pause.textContent = t("pause");
     var target = vis(el.rest) ? i : Math.max(0, i - 1);
     doRest(3, items[target], true, function () { startItem(target); });
   }
@@ -577,12 +565,6 @@
     var f = pendingStart; pendingStart = null;
     if (f) f();
   });
-  el.pause.addEventListener("click", function () {
-    paused = !paused;
-    el.pause.textContent = paused ? t("resume") : t("pause");
-    root.classList.toggle("frozen", paused); // freeze the screen; controls stay live
-    if (paused) shutUp();
-  });
 
   // ---- in-workout difficulty nudge (this session only) ----
   function clampLevel(n) { return n < -3 ? -3 : (n > 3 ? 3 : n); }
@@ -682,7 +664,7 @@
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
 
   // Static control labels
-  el.pause.textContent = t("pause");
+  el.prev.textContent = t("prev");
   el.skip.textContent = t("skip");
   el.done.textContent = t("done");
   el.restSkip.textContent = t("skip");

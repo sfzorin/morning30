@@ -192,8 +192,6 @@ func (w workoutPage) payloadJSON() string {
 		"rest":       i18n.T(l, "workout.rest"),
 		"ready":      i18n.T(l, "workout.get_ready"),
 		"next":       i18n.T(l, "workout.next"),
-		"pause":      i18n.T(l, "workout.pause"),
-		"resume":     i18n.T(l, "workout.resume"),
 		"skip":       i18n.T(l, "workout.skip"),
 		"prev":       i18n.T(l, "workout.prev"),
 		"done":       i18n.T(l, "workout.done"),
@@ -293,18 +291,14 @@ elem (w workoutPage) Main() {
 			<div class="ex-index"></div>
 			<img class="ex-svg" alt="">
 			<div class="ex-name"></div>
-			<div class="ex-side"></div>
 			<div class="ex-value"></div>
-			<div class="ex-hint"></div>
-			<div class="ex-warn"></div>
 		</div>
 
 		<div class="done-row">
 			<button class="ctl-done btn primary" type="button"></button>
 		</div>
 		<div class="controls">
-			<button class="ctl-prev btn" type="button" aria-label=(i18n.T(l, "workout.prev"))>◀</button>
-			<button class="ctl-pause btn" type="button"></button>
+			<button class="ctl-prev btn" type="button"></button>
 			<button class="ctl-skip btn" type="button"></button>
 		</div>
 

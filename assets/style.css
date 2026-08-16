@@ -495,9 +495,6 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .ex-name { font-size: 23px; font-weight: 800; padding: 0 10px; line-height: 1.15; }
 .ex-value { font-size: 40px; font-weight: 800; color: var(--accent); }
 .ex-value.timer { font-variant-numeric: tabular-nums; }
-.ex-side { color: var(--accent); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
-.ex-hint { color: var(--muted); font-size: 14px; max-width: 24em; line-height: 1.35; }
-.ex-warn { color: #fbbf24; font-size: 13px; max-width: 24em; line-height: 1.3; }
 .info-btn { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; padding: 4px 8px; }
 
 /* Exercise detail card */
@@ -548,9 +545,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .done-row .ctl-done { width: 100%; padding: 16px 12px; }
 .controls { display: flex; gap: 10px; padding: 12px 0 8px; }
 .controls .btn { flex: 1; padding: 14px 12px; }
-.ctl-prev { flex: 0 0 52px !important; background: var(--card2); font-size: 18px; }
-.ctl-pause { background: var(--card2); }
-.ctl-skip { background: var(--card2); }
+.ctl-prev, .ctl-skip { background: var(--card2); }
 .ex-value.prep { color: var(--ok); }
 .hidden { display: none !important; }
 
