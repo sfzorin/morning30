@@ -77,6 +77,7 @@ var ui = map[string][7]string{
 	"workout.sec":       {"сек", "sec", "sn", "Sek", "seg", "s", "sec"},
 	"workout.breaths":   {"дыханий", "breaths", "nefes", "Atemzüge", "respiraciones", "respirations", "respiri"},
 	"workout.side":      {"сторона", "side", "taraf", "Seite", "lado", "côté", "lato"},
+	"workout.per_side":  {"на каждую сторону", "per side", "her taraf", "pro Seite", "por lado", "par côté", "per lato"},
 	"workout.harder":    {"Сложнее", "Harder", "Daha zor", "Schwerer", "Más difícil", "Plus dur", "Più difficile"},
 	"workout.easier":    {"Легче", "Easier", "Daha kolay", "Leichter", "Más fácil", "Plus facile", "Più facile"},
 

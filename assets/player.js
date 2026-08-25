@@ -211,23 +211,55 @@
     }, 1000);
   }
 
+  var wakeGestureRetry = null;
   async function requestWake() {
     try {
-      if ("wakeLock" in navigator && document.visibilityState === "visible" && !wakeLock) {
-        wakeLock = await navigator.wakeLock.request("screen");
-        wakeLock.addEventListener("release", function () { wakeLock = null; });
+      if (!("wakeLock" in navigator) || document.visibilityState !== "visible") return;
+      if (wakeLock) {
+        if (!wakeLock.released) return;
+        wakeLock = null;
       }
+      wakeLock = await navigator.wakeLock.request("screen");
+      wakeLock.addEventListener("release", function () { wakeLock = null; });
+      clearWakeGestureRetry();
     } catch (e) { wakeLock = null; }
   }
   function releaseWake() {
+    clearWakeGestureRetry();
     try { if (wakeLock) { wakeLock.release(); wakeLock = null; } } catch (e) {}
+  }
+  function clearWakeGestureRetry() {
+    if (!wakeGestureRetry) return;
+    document.removeEventListener("pointerdown", wakeGestureRetry, true);
+    wakeGestureRetry = null;
+  }
+  // iOS may refuse a silent re-acquire after app switch; the next tap fixes it.
+  function scheduleWakeGestureRetry() {
+    if (finished) return;
+    clearWakeGestureRetry();
+    wakeGestureRetry = function () {
+      clearWakeGestureRetry();
+      if (!finished) requestWake();
+    };
+    document.addEventListener("pointerdown", wakeGestureRetry, true);
+  }
+  function resumeWake() {
+    if (finished) return;
+    requestWake();
   }
   // The OS auto-releases the wake lock whenever the page is hidden (screen off,
   // tab switch). Re-acquire it on return so the screen stays on mid-workout.
-  function onVisible() {
-    if (document.visibilityState === "visible" && !finished) requestWake();
+  function onVisibility() {
+    if (document.visibilityState === "hidden") {
+      wakeLock = null;
+      return;
+    }
+    resumeWake();
+    scheduleWakeGestureRetry();
   }
-  document.addEventListener("visibilitychange", onVisible);
+  document.addEventListener("visibilitychange", onVisibility);
+  window.addEventListener("pageshow", resumeWake);
+  window.addEventListener("focus", resumeWake);
 
   // ---- rendering --------------------------------------------------------
   // The top bar is split into one segment per phase (warm-up / main / cool-down),
@@ -286,7 +318,9 @@
   }
 
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
-  var curSide = 1;         // retained so the rep "Done" handler can call nextSide
+  var curSide = 1;
+
+  function sides(it) { return it.perSide ? 2 : 1; }
 
   function startItem(idx) {
     i = idx;
@@ -305,54 +339,95 @@
     runSide(it, 1);
   }
 
-  // runSide runs the exercise. Per-side splitting was removed — every exercise is
-  // a single set in seconds or reps; the user does both sides themselves. Voice:
-  // a start cue, technique narration, "half the time" at the midpoint of a timed
-  // exercise, and a 5-second warning.
+  // runSide runs one side of an exercise (or the only side). Per-side reps show
+  // the per-side count; timed per-side sets run the timer, then a spoken side
+  // switch with a 3-2-1 lead-in before the other side.
   function runSide(it, side) {
     curSide = side;
     clearNarr();
-    sayNow(it.vStart);   // "Go" / "Старт"
-    startNarr(it);       // first instruction ~3 s later
+    if (side === 1) {
+      sayNow(it.vStart);   // "Go" / "Старт"
+      startNarr(it);       // first instruction ~3 s later
+    }
 
     if (it.unit === "seconds") {
       el.done.classList.add("hidden");
       el.value.classList.add("timer");
+      el.value.classList.remove("prep");
       var D = val(it);
       var halfAt = Math.round(D * 0.5);
+      var lastSide = side >= sides(it);
       countdown(D, function (r) {
         el.value.textContent = r + "″";
         if (D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
         if (r === 4) clearNarr();                // silence narration before the count
-        if (r <= 3 && r >= 1) sayNow(String(r)); // digits land exactly on the second
+        if (r <= 3 && r >= 1 && (!it.perSide || lastSide)) sayNow(String(r));
       }, function () { nextSide(it, side); });
     } else {
       // reps / breaths: wait for the user to tap Done.
       clearTicker();
-      el.value.classList.remove("timer");
-      el.value.textContent = it.unit === "breaths"
-        ? val(it) + " " + t("breaths")
-        : "× " + val(it);
+      el.value.classList.remove("timer", "prep");
+      el.value.textContent = valueDisplay(it);
       el.done.classList.remove("hidden");
     }
   }
 
-  function nextSide(it, side) {
+  // switchSidePrep gives three seconds to turn over before the other side starts.
+  function switchSidePrep(onDone) {
     clearNarr();
-    endItem();
+    shutUp();
+    sayNow(cues.switch_side);
+    el.value.classList.add("timer", "prep");
+    countdown(3, function (r) {
+      el.value.textContent = r;
+      if (r <= 3 && r >= 1) sayNow(String(r));
+    }, function () {
+      el.value.classList.remove("prep");
+      if (onDone) onDone();
+    });
   }
 
-  // unitFor returns the spoken / written unit word for an item.
-  function unitWord(it) {
-    if (it.unit === "seconds") return cues.seconds || t("sec");
-    if (it.unit === "breaths") return t("breaths");
-    return cues.reps || t("reps");
+  function nextSide(it, side) {
+    clearNarr();
+    if (side < sides(it)) {
+      if (it.unit === "seconds") {
+        switchSidePrep(function () { runSide(it, side + 1); });
+      } else {
+        sayNow(cues.switch_side);
+        runSide(it, side + 1);
+      }
+    } else {
+      endItem();
+    }
   }
-  function nextDisplay(it) { // on-screen "Name · ×12" / "Name · 30″"
-    var v = it.unit === "seconds" ? val(it) + "″"
-      : it.unit === "breaths" ? val(it) + " " + t("breaths")
-      : "× " + val(it);
-    return it.name + " · " + v;
+
+  // valueDisplay is the on-screen count for reps/breaths and the rest preview.
+  function valueDisplay(it) {
+    var v = val(it);
+    if (it.unit === "seconds") {
+      return it.perSide ? v + "″ " + t("per_side") : v + "″";
+    }
+    if (it.unit === "breaths") {
+      return it.perSide ? v + " " + t("breaths") + " " + t("per_side") : v + " " + t("breaths");
+    }
+    return it.perSide ? "× " + v + " " + t("per_side") : "× " + v;
+  }
+
+  // unitFor returns the spoken unit word for an item.
+  function unitWord(it) {
+    if (it.unit === "seconds") {
+      var w = cues.seconds || t("sec");
+      return it.perSide ? w + " " + t("per_side") : w;
+    }
+    if (it.unit === "breaths") {
+      var w = t("breaths");
+      return it.perSide ? w + " " + t("per_side") : w;
+    }
+    var w = cues.reps || t("reps");
+    return it.perSide ? w + " " + t("per_side") : w;
+  }
+  function nextDisplay(it) { // on-screen "Name · ×12 per side" / "Name · 30″ per side"
+    return it.name + " · " + valueDisplay(it);
   }
 
   // doRest shows the rest/get-ready overlay and counts down. The big number
@@ -584,7 +659,7 @@
     // the new level applies from the next set on.
     var it = items[i];
     if (it && vis(el.stage) && it.unit !== "seconds") {
-      el.value.textContent = it.unit === "breaths" ? val(it) + " " + t("breaths") : "× " + val(it);
+      el.value.textContent = valueDisplay(it);
     }
   }
   if (el.diffUp) el.diffUp.addEventListener("click", function () { changeLevel(1); });
@@ -671,7 +746,12 @@
   if (el.restBack) el.restBack.textContent = t("prev");
 
   // ---- go ---------------------------------------------------------------
-  $sys.clean(function () { clearTicker(); clearNarr(); shutUp(); releaseWake(); document.removeEventListener("visibilitychange", onVisible); });
+  $sys.clean(function () {
+    clearTicker(); clearNarr(); shutUp(); releaseWake();
+    document.removeEventListener("visibilitychange", onVisibility);
+    window.removeEventListener("pageshow", resumeWake);
+    window.removeEventListener("focus", resumeWake);
+  });
 
   requestWake();
   buildBar();

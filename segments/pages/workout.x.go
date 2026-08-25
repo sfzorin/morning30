@@ -202,6 +202,7 @@ func (w workoutPage) payloadJSON() string {
 		"reps":       i18n.T(l, "workout.x_reps"),
 		"breaths":    i18n.T(l, "workout.breaths"),
 		"side":       i18n.T(l, "workout.side"),
+		"per_side":   i18n.T(l, "workout.per_side"),
 		"done_title": i18n.T(l, "done.title"),
 		"bravo":      i18n.T(l, "done.bravo"),
 		"day_done":   i18n.T(l, "done.day_done"),
