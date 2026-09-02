@@ -94,6 +94,7 @@
     doneTitle: $(".done-title"),
     doneEnc: $(".done-enc"),
     doneStreak: $(".done-streak"),
+    backHome: $(".back-home"),
     diffUp: $(".lvl-up"),
     diffDown: $(".lvl-down"),
     diffLabel: $(".lvl-label")
@@ -320,7 +321,9 @@
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
   var curSide = 1;
 
-  function sides(it) { return it.perSide ? 2 : 1; }
+  // Timed per-side sets run two clocks. Reps/breaths per-side are one tap, with
+  // the "per side" label — the user does both sides in that single set.
+  function sides(it) { return it.perSide && it.unit === "seconds" ? 2 : 1; }
 
   function startItem(idx) {
     i = idx;
@@ -339,9 +342,9 @@
     runSide(it, 1);
   }
 
-  // runSide runs one side of an exercise (or the only side). Per-side reps show
-  // the per-side count; timed per-side sets run the timer, then a spoken side
-  // switch with a 3-2-1 lead-in before the other side.
+  // runSide runs one side of an exercise (or the only side). Timed per-side
+  // sets skip the closing 3-2-1 on the first side, speak "change sides", and
+  // start the other clock immediately.
   function runSide(it, side) {
     curSide = side;
     clearNarr();
@@ -361,7 +364,7 @@
         el.value.textContent = r + "″";
         if (D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
         if (r === 4) clearNarr();                // silence narration before the count
-        if (r <= 3 && r >= 1 && (!it.perSide || lastSide)) sayNow(String(r));
+        if (r <= 3 && r >= 1 && lastSide) sayNow(String(r));
       }, function () { nextSide(it, side); });
     } else {
       // reps / breaths: wait for the user to tap Done.
@@ -372,30 +375,11 @@
     }
   }
 
-  // switchSidePrep gives three seconds to turn over before the other side starts.
-  function switchSidePrep(onDone) {
-    clearNarr();
-    shutUp();
-    sayNow(cues.switch_side);
-    el.value.classList.add("timer", "prep");
-    countdown(3, function (r) {
-      el.value.textContent = r;
-      if (r <= 3 && r >= 1) sayNow(String(r));
-    }, function () {
-      el.value.classList.remove("prep");
-      if (onDone) onDone();
-    });
-  }
-
   function nextSide(it, side) {
     clearNarr();
     if (side < sides(it)) {
-      if (it.unit === "seconds") {
-        switchSidePrep(function () { runSide(it, side + 1); });
-      } else {
-        sayNow(cues.switch_side);
-        runSide(it, side + 1);
-      }
+      sayNow(cues.switch_side);
+      runSide(it, side + 1);
     } else {
       endItem();
     }
@@ -494,6 +478,8 @@
   async function finish() {
     if (finished) return;
     finished = true;
+    // Record first so a fast tap on Back home still counts the day.
+    var completeP = $hook("complete", { day: payload.day }).catch(function () { return null; });
     renderProgress(items.length, null); // every phase fully filled
     clearTicker();
     clearNarr();
@@ -502,6 +488,7 @@
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
     el.done.classList.add("hidden");
+    if (el.done.parentElement) el.done.parentElement.classList.add("hidden");
     el.rest.classList.add("hidden");
     el.doneOverlay.classList.remove("hidden");
 
@@ -515,7 +502,7 @@
     if (message) setTimeout(function () { speak(message); }, 1100);
 
     try {
-      var streak = await $hook("complete", { day: payload.day });
+      var streak = await completeP;
       if (typeof streak === "number") {
         el.doneStreak.textContent = "🔥 " + streak + " · " + t("streak");
       }
@@ -629,6 +616,14 @@
     var it = items[i];
     if (it && it.unit !== "seconds") { nextSide(it, curSide); }
   });
+  // Full page load — Doors ALink can pushState to "/" before the server
+  // reroutes, after which further taps no-op and the overlay never closes.
+  if (el.backHome) {
+    el.backHome.addEventListener("click", function (e) {
+      e.preventDefault();
+      location.assign("/");
+    });
+  }
   el.skip.addEventListener("click", function () { shutUp(); clearNarr(); endItem(); });
   el.prev.addEventListener("click", prev);
   if (el.restBack) el.restBack.addEventListener("click", prev);

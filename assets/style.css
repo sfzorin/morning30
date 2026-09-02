@@ -431,14 +431,27 @@ h1, h2, h3 { margin: 0 0 .4em; }
 }
 .btn.small { padding: 9px 16px; font-size: 14px; align-self: flex-start; }
 
+/* Workout page: pin the player to the visual viewport so iOS Safari's
+   URL bar cannot create a 1-screen rubber-band scroll. */
+html:has(.player),
+body:has(.player) {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 /* ---- Player ---- */
 .player {
-  position: relative;
-  height: 100dvh;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 12px 16px env(safe-area-inset-bottom);
+  padding: max(8px, env(safe-area-inset-top)) 16px env(safe-area-inset-bottom, 8px);
   background: radial-gradient(120% 60% at 50% 0%, #15233e, var(--bg));
 }
 .player-top { display: flex; align-items: center; gap: 12px; position: relative; z-index: 10; }
@@ -490,7 +503,20 @@ h1, h2, h3 { margin: 0 0 .4em; }
   pointer-events: none;
 }
 .ex-index { color: var(--muted); font-size: 14px; font-weight: 600; }
-.ex-svg { width: min(60vw, 230px, 34vh); aspect-ratio: 1; height: auto; border-radius: 22px; background: #fff; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ex-svg {
+  width: min(60vw, 230px, 100%);
+  max-height: min(230px, 34vh);
+  max-height: min(230px, 34svh);
+  aspect-ratio: 1;
+  height: auto;
+  min-height: 0;
+  flex: 0 1 auto;
+  object-fit: contain;
+  border-radius: 22px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
 .ex-svg:active { transform: scale(.98); }
 .ex-name { font-size: 23px; font-weight: 800; padding: 0 10px; line-height: 1.15; }
 .ex-value { font-size: 40px; font-weight: 800; color: var(--accent); }
@@ -548,6 +574,13 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .ctl-prev, .ctl-skip { background: var(--card2); }
 .ex-value.prep { color: var(--ok); }
 .hidden { display: none !important; }
+
+@media (max-height: 700px) {
+  .lvl-row { padding: 2px 0 0; }
+  .stage { gap: 6px; }
+  .controls { padding: 8px 0 4px; }
+  .done-row .ctl-done { padding: 14px 12px; }
+}
 
 .rest-actions { display: flex; gap: 10px; margin-top: 10px; }
 .rest-back, .rest-skip { background: var(--card2); color: var(--fg); border: none; border-radius: 999px; padding: 12px 26px; font-size: 15px; cursor: pointer; }
@@ -622,7 +655,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .done-title { font-size: 30px; font-weight: 800; }
 .done-enc { font-size: 18px; color: var(--accent); font-weight: 600; max-width: 18em; }
 .done-streak { font-size: 20px; font-weight: 700; background: var(--card2); padding: 8px 18px; border-radius: 999px; }
-.back-home { margin-top: 18px; min-width: 60%; }
+.back-home { margin-top: 18px; min-width: 60%; position: relative; z-index: 2; }
 
 @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); } }
 
@@ -634,6 +667,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
   height: 14px;
   border-radius: 2px;
   opacity: .9;
+  pointer-events: none;
   animation: fall 2.2s linear forwards;
 }
 @keyframes fall {

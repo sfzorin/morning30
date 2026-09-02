@@ -265,7 +265,7 @@ func (w workoutPage) complete(ctx context.Context, r doors.RequestHook[completeR
 	_ = app.DB.CompleteCycleDay(uid, day, content.TotalDays)
 
 	streak, _ := app.DB.Streak(uid, today)
-	return streak, false
+	return streak, true
 }
 
 elem (w workoutPage) Main() {
@@ -350,7 +350,7 @@ elem (w workoutPage) Main() {
 			<div class="done-title"></div>
 			<div class="done-enc"></div>
 			<div class="done-streak"></div>
-			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="btn primary back-home">~(i18n.T(l, "done.back_home"))</a>
+			<a class="btn primary back-home" href="/">~(i18n.T(l, "done.back_home"))</a>
 		</div>
 
 		<script

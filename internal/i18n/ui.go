@@ -180,7 +180,7 @@ var ui = map[string][7]string{
 	"cue.last":        {"Последнее упражнение", "Last exercise", "Son egzersiz", "Letzte Übung", "Último ejercicio", "Dernier exercice", "Ultimo esercizio"},
 	"cue.well_done":   {"Молодец", "Well done", "Aferin", "Gut gemacht", "Bien hecho", "Bien joué", "Bravo"},
 	"cue.five":        {"Осталось пять", "Five seconds", "Beş saniye", "Noch fünf", "Cinco segundos", "Cinq secondes", "Cinque secondi"},
-	"cue.switch_side": {"Другая сторона", "Other side", "Diğer taraf", "Andere Seite", "Otro lado", "Autre côté", "Altro lato"},
+	"cue.switch_side": {"Смените сторону", "Change sides", "Taraf değiştirin", "Seite wechseln", "Cambie de lado", "Changez de côté", "Cambiate lato"},
 	"cue.workout_end": {"Тренировка завершена", "Workout complete", "Antrenman bitti", "Workout fertig", "Entrenamiento completado", "Séance terminée", "Allenamento finito"},
 
 	// Random encouragement shown/spoken at the end (one picked at random)
