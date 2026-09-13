@@ -102,6 +102,31 @@ var exerciseInfo = map[string]info{
 		Technique: [2]string{"Руки в стороны, маленькие круги вперёд, затем назад. Плечи не поднимай к ушам.", "Arms out to the sides, small circles forward then back. Don't raise the shoulders to the ears."},
 		Mistake:   [2]string{"Слишком большая амплитуда и напряжение шеи.", "Too much range and neck tension."},
 	},
+	"D01": {
+		Technique: [2]string{"Гантель 0,5 кг. Локоть согнут на 90° и прижат к боку. Предплечье медленно отводи наружу и так же медленно верни.", "0.5 kg dumbbell. Elbow bent 90° and glued to the side. Forearm rotates slowly outward, then back."},
+		Mistake:   [2]string{"Локоть отрывается от корпуса или движение рывком.", "Elbow leaves the body, or the move is jerked."},
+		Warning:   [2]string{"Только гантели 0,5 кг. При боли в плече остановись.", "0.5 kg dumbbells only. Stop if the shoulder hurts."},
+	},
+	"D02": {
+		Technique: [2]string{"Наклон с прямой спиной, гантели 0,5 кг в обеих руках. Подними руки в стороны до уровня плеч, сведи лопатки, опусти медленно.", "Hinge with a straight back, 0.5 kg in each hand. Raise the arms out to shoulder height, squeeze the blades, lower slowly."},
+		Mistake:   [2]string{"Округление спины или махи по инерции.", "Rounding the back, or swinging with momentum."},
+		Warning:   [2]string{"Не выше плеч. Не бегай с гантелями.", "No higher than the shoulders. Don't run with the dumbbells."},
+	},
+	"D03": {
+		Technique: [2]string{"Обе гантели 0,5 кг у груди. Присед: таз назад, пятки на полу, колени по линии носков.", "Hold both 0.5 kg dumbbells at the chest. Squat: hips back, heels down, knees track the toes."},
+		Mistake:   [2]string{"Колени заваливаются внутрь, гантели уходят вперёд.", "Knees cave in, or the dumbbells drift forward."},
+		Warning:   [2]string{"Не прыгай с гантелями. Если колено болит — обычный присед без веса.", "Don't jump with the dumbbells. If a knee hurts, switch to a bodyweight squat."},
+	},
+	"D04": {
+		Technique: [2]string{"Гантели 0,5 кг выжми вверх и держи. Руки у ушей, живот подтянут, не прогибай поясницу.", "Press 0.5 kg dumbbells overhead and hold. Arms by the ears, belly tight, don't arch the lower back."},
+		Mistake:   [2]string{"Прогиб в пояснице или плечи к ушам.", "Arching the lower back, or shrugging the shoulders."},
+		Warning:   [2]string{"Только удержание, без рывков. При дрожи в плече опусти гантели.", "Hold only, no jerks. If the shoulder shakes, lower the dumbbells."},
+	},
+	"D05": {
+		Technique: [2]string{"Одна гантель 0,5 кг в одной руке вдоль тела. Стой ровно, не наклоняйся ни к весу, ни от него.", "One 0.5 kg dumbbell hanging in one hand. Stand tall, don't lean toward or away from the weight."},
+		Mistake:   [2]string{"Завал корпуса вбок.", "Leaning the torso sideways."},
+		Warning:   [2]string{"Не ходи и не прыгай с гантелей. Потом смени руку.", "Don't walk or jump with the dumbbell. Then switch hands."},
+	},
 }
 
 func pick2(row [2]string, l Lang) string {

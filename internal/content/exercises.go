@@ -1,8 +1,8 @@
 // Package content defines the exercise library and the 30-day programs. The
-// library is shared by every standard set; each set (Sergey, Vlad, …) selects
-// from it per day. Floor/mat only, no equipment. The Sergey set is jump-free;
-// the Vlad set adds plyometric/cardio movements (the J* group: jumps, burpees,
-// mountain climbers) and lunges for a fitter profile.
+// library is shared by every standard set; each set (Sergey, Vlad, Ilya, …)
+// selects from it per day. Floor/mat only, except the Ilya D* group (0.5 kg
+// dumbbells). The Sergey set is jump-free; the Vlad set adds plyometric/cardio
+// movements (the J* group) and lunges; Ilya is a kid tennis set.
 package content
 
 // Unit is how an exercise is measured.
@@ -147,6 +147,13 @@ var library = []Exercise{
 	{ID: "J07", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeLow, Replacement: "J02"},                // high knees
 	{ID: "J08", Slot: Main, Unit: Reps, Difficulty: 4, KneeLoad: KneeMedium, Replacement: "J03"},                // burpees
 	{ID: "J09", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 4, KneeLoad: KneeMedium, Replacement: "L11"}, // jump lunges (per side)
+
+	// ---- Light dumbbells, 0.5 kg (Ilya set) ----
+	{ID: "D01", Slot: Main, Unit: Reps, PerSide: true, Difficulty: 2, KneeLoad: KneeNone, Replacement: "B03"},  // external shoulder rotation
+	{ID: "D02", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeNone, Replacement: "B05"},                 // bent-over reverse fly
+	{ID: "D03", Slot: Main, Unit: Reps, Difficulty: 2, KneeLoad: KneeMedium, Replacement: "L10"},                // goblet squat
+	{ID: "D04", Slot: Main, Unit: Seconds, Difficulty: 2, KneeLoad: KneeNone, Replacement: "B01"},                // overhead hold
+	{ID: "D05", Slot: Main, Unit: Seconds, PerSide: true, Difficulty: 2, KneeLoad: KneeNone, Replacement: "C07"}, // suitcase hold
 
 	// ---- Cool-down (fixed, 4 exercises, 1 round) ----
 	{ID: "CD01", Slot: Cooldown, Unit: Seconds, Difficulty: 1, KneeLoad: KneeNone},                      // chest stretch

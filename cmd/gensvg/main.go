@@ -44,6 +44,8 @@ var archetype = map[string]string{
 	"G01": "bridge", "G02": "bridge", "L01": "squat",
 	// Arms / shoulders
 	"A01": "armcircle", "A02": "armcircle", "S01": "armcircle",
+	// Ilya light dumbbells
+	"D01": "armcircle", "D02": "superman", "D03": "squat", "D04": "armcircle", "D05": "calf",
 	// Cool-down
 	"CD01": "kneechest", "CD02": "cobra", "CD03": "twist", "CD04": "fold",
 	"CD05": "kneechest", "CD06": "cobra",

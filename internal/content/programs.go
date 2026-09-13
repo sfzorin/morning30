@@ -13,8 +13,7 @@ type StandardProgram struct {
 var StandardPrograms = []StandardProgram{
 	{Key: "sergey", Name: "Sergey", Build: ResolveBuiltin},
 	{Key: "vlad", Name: "Vlad", Build: resolveVlad},
-	// Add more standard sets here, e.g.:
-	// {Key: "mobility", Name: "Mobility", Build: resolveMobility},
+	{Key: "ilya", Name: "Ilya", Build: resolveIlya},
 }
 
 // StandardByKey returns the Resolved program for a standard key.

@@ -20,7 +20,8 @@ small client-side workout engine.
 ## Features
 
 - **Named workout programs.** Ships with more than one built-in program (e.g.
-  *Sergey* — floor/mat, no jumps; *Vlad / Level 2* — plyometric + cardio). Each
+  *Sergey* — floor/mat, no jumps; *Vlad / Level 2* — plyometric + cardio;
+  *Ilya* — kid tennis, 0.5 kg dumbbells). Each
   is a 30-day plan with baked-in day-to-day progression. Adding another program
   is a single registry entry.
 - **Universal difficulty.** A per-user level from **−3 to +3** scales every

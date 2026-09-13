@@ -133,6 +133,59 @@ func TestVladStructureAndCounts(t *testing.T) {
 	}
 }
 
+// The Ilya set: 6 warm-up + (block × 2 rounds) + 4 cool-down, 20→30 screens,
+// kid volumes, 0.5 kg dumbbells, no adult plyo (burpees / jump lunges / pike / RKC).
+func TestIlyaStructureAndCounts(t *testing.T) {
+	r := resolveIlya()
+	if r.Name != "Ilya" || len(r.Warmup) != 6 || r.WarmupRounds != 1 || len(r.Cooldown) != 4 {
+		t.Fatalf("ilya: name=%q warmup=%d rounds=%d cooldown=%d", r.Name, len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
+	}
+	if _, ok := StandardByKey("ilya"); !ok {
+		t.Fatal("ilya is not registered in StandardPrograms")
+	}
+	usedD := map[string]bool{}
+	for day := 1; day <= TotalDays; day++ {
+		w := r.Workout(day, 0, Rests{Warmup: 5, Main: 18})
+		count := wantMainCount[day]
+		if got := len(w.Items); got != 6+count*2+4 {
+			t.Fatalf("ilya day %d: %d items, want %d", day, got, 6+count*2+4)
+		}
+		for i := 0; i < 6; i++ {
+			if w.Items[i].Slot != Warmup {
+				t.Fatalf("ilya day %d: item %d not warm-up", day, i)
+			}
+		}
+		for _, it := range w.Items[len(w.Items)-4:] {
+			if it.Slot != Cooldown {
+				t.Fatalf("ilya day %d: tail not cool-down (%s)", day, it.ExerciseID)
+			}
+		}
+		if got := len(mainOf(w)); got != count*2 {
+			t.Errorf("ilya day %d: %d main items, want %d", day, got, count*2)
+		}
+		for _, it := range w.Items {
+			if _, ok := Get(it.ExerciseID); !ok {
+				t.Errorf("ilya day %d: unknown exercise %s", day, it.ExerciseID)
+			}
+			switch it.ExerciseID {
+			case "J08", "J09", "P04", "P05", "P06", "C02", "A01", "A02", "A03", "A04":
+				t.Errorf("ilya day %d: adult exercise %s", day, it.ExerciseID)
+			}
+			if strings.HasPrefix(it.ExerciseID, "D") {
+				if it.Slot != Main {
+					t.Errorf("ilya day %d: dumbbell %s outside main", day, it.ExerciseID)
+				}
+				usedD[it.ExerciseID] = true
+			}
+		}
+	}
+	for _, id := range []string{"D01", "D02", "D03", "D04", "D05"} {
+		if !usedD[id] {
+			t.Errorf("ilya never uses %s", id)
+		}
+	}
+}
+
 func TestForbiddenExercisesAbsent(t *testing.T) {
 	forbidden := []string{"jump", "burpee", "jack", "mountain", "lunge", "highknee", "stepup"}
 	for id := range Pool {

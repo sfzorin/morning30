@@ -80,6 +80,13 @@ var exerciseNames = map[string][7]string{
 	"J08": {"Бёрпи", "Burpees", "Burpee", "Burpees", "Burpees", "Burpees", "Burpee"},
 	"J09": {"Прыжковые выпады", "Jump lunges", "Sıçramalı hamle", "Sprung-Ausfallschritte", "Zancadas con salto", "Fentes sautées", "Affondi con salto"},
 
+	// ---- Light dumbbells (Ilya) ----
+	"D01": {"Внешняя ротация плеча", "External shoulder rotation", "Omuz dış rotasyonu", "Außenrotation der Schulter", "Rotación externa de hombro", "Rotation externe d'épaule", "Rotazione esterna della spalla"},
+	"D02": {"Разведение в наклоне", "Bent-over reverse fly", "Eğilerek reverse fly", "Reverse Fly im Vornüberbeugen", "Aperturas invertidas inclinadas", "Oiseau penché", "Reverse fly piegato"},
+	"D03": {"Присед с гантелями у груди", "Goblet squat", "Goblet squat", "Goblet-Kniebeuge", "Sentadilla goblet", "Squat goblet", "Goblet squat"},
+	"D04": {"Удержание гантелей над головой", "Overhead dumbbell hold", "Baş üzeri dumbbell tutuş", "Überkopf-Hantelhalte", "Sostén de mancuernas arriba", "Maintien d'haltères au-dessus de la tête", "Tenuta manubri sopra la testa"},
+	"D05": {"Чемодан", "Suitcase hold", "Valiz tutuşu", "Kofferhalten", "Sostén de maleta", "Hold valise", "Tenuta valigia"},
+
 	// ---- Cool-down ----
 	"CD01": {"Растяжка груди", "Chest stretch", "Göğüs esnetme", "Brustdehnung", "Estiramiento de pecho", "Étirement pectoral", "Allungamento pettorali"},
 	"CD02": {"Растяжка задней поверхности бедра", "Hamstring stretch", "Arka bacak esnetme", "Beinrückseite dehnen", "Estiramiento de isquios", "Étirement des ischio-jambiers", "Allungamento femorali"},

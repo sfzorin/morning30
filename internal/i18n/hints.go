@@ -33,6 +33,11 @@ var hints = map[string][2]string{
 	"J08": {"Темп ровный, спина нейтральна.", "Steady pace, neutral spine."},
 	"J09": {"Колено над стопой, мягко вниз.", "Knee over foot, land soft."},
 	"L11": {"Колено над пяткой, корпус прямой.", "Knee over heel, torso tall."},
+	"D01": {"Локоть прижат к боку, только 0,5 кг.", "Elbow glued to the side, 0.5 kg only."},
+	"D02": {"Спина прямая, гантели не выше плеч.", "Straight back, dumbbells no higher than the shoulders."},
+	"D03": {"Гантели у груди, пятки на полу.", "Dumbbells at the chest, heels down."},
+	"D04": {"Руки над головой, рёбра вниз, не прогибайся.", "Arms overhead, ribs down, don't lean back."},
+	"D05": {"Стой ровно, не заваливайся к гантели.", "Stand tall, don't lean toward the dumbbell."},
 }
 
 // Hint returns the short technique cue for an exercise (empty if none).
