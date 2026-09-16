@@ -66,9 +66,11 @@
   }
 
   var root = document.querySelector(".player") || (document.currentScript && document.currentScript.parentElement);
+  // Call sites pass CSS selectors (".pbar", ".ex-svg"). Do not prepend another
+  // "." — querySelector("..pbar") throws and leaves the player blank.
   var $ = function (sel) {
     if (!root) return null;
-    return root.getElementsByClassName(sel)[0] || root.querySelector("." + sel) || root.querySelector(sel);
+    return root.querySelector(sel);
   };
 
   var el = {
