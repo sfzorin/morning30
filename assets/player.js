@@ -5,7 +5,13 @@
 // Loaded as a managed inline script: $data / $hook / $sys are injected by doors.
 
 (function () {
-  var payload = JSON.parse($data("payload"));
+  var raw;
+  try { raw = $data("payload"); } catch (e) { raw = null; }
+  var payload = {};
+  try {
+    if (typeof raw === "string") payload = JSON.parse(raw);
+    else if (raw && typeof raw === "object") payload = raw;
+  } catch (e) { payload = {}; }
   var items = payload.items || [];
   var labels = payload.labels || {};
   var cues = payload.cues || {};
@@ -59,8 +65,11 @@
     window.speechSynthesis.onvoiceschanged = loadVoices;
   }
 
-  var root = document.currentScript.parentElement; // .player
-  var $ = function (sel) { return root.querySelector("." + sel); };
+  var root = document.querySelector(".player") || (document.currentScript && document.currentScript.parentElement);
+  var $ = function (sel) {
+    if (!root) return null;
+    return root.getElementsByClassName(sel)[0] || root.querySelector("." + sel) || root.querySelector(sel);
+  };
 
   var el = {
     pbar: $(".pbar"),
@@ -280,6 +289,7 @@
   var barSegs = [];
   function buildBar() {
     barSegs = [];
+    if (!el.pbar) return;
     el.pbar.textContent = "";
     var start = 0;
     for (var k = 1; k <= items.length; k++) {
@@ -339,15 +349,15 @@
     i = idx;
     var it = items[i];
     if (!it || !el.svg) return;
-    root.classList.remove("frozen"); // a fresh set is always running, not paused
-    el.rest.classList.add("hidden");
-    el.stage.classList.remove("hidden");
-    el.controls.classList.remove("hidden");
+    if (root) root.classList.remove("frozen"); // a fresh set is always running, not paused
+    if (el.rest) el.rest.classList.add("hidden");
+    if (el.stage) el.stage.classList.remove("hidden");
+    if (el.controls) el.controls.classList.remove("hidden");
 
     el.svg.src = it.svg;
     el.svg.alt = it.name;
-    el.name.textContent = it.name;
-    el.index.textContent = (i + 1) + " / " + items.length;
+    if (el.name) el.name.textContent = it.name;
+    if (el.index) el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
     renderProgress(i, it.slot);
     runSide(it, 1);
@@ -431,6 +441,7 @@
   // after a short beat so it never lands on top of the previous set's "one".
   // The get-ready before an exercise is just the spoken 3-2-1, leading into "Go".
   function doRest(seconds, upItem, isReady, onDone) {
+    if (!el.rest) { if (onDone) onDone(); return; }
     clearNarr();
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
@@ -631,7 +642,7 @@
   }
 
   // ---- controls ---------------------------------------------------------
-  el.done.addEventListener("click", function () {
+  if (el.done) el.done.addEventListener("click", function () {
     var it = items[i];
     if (it && it.unit !== "seconds") { nextSide(it, curSide); }
   });
@@ -643,11 +654,11 @@
       location.assign("/");
     });
   }
-  el.skip.addEventListener("click", function () { shutUp(); clearNarr(); endItem(); });
-  el.prev.addEventListener("click", prev);
+  if (el.skip) el.skip.addEventListener("click", function () { shutUp(); clearNarr(); endItem(); });
+  if (el.prev) el.prev.addEventListener("click", prev);
   if (el.restBack) el.restBack.addEventListener("click", prev);
   // Skip jumps straight to whatever the rest/ready countdown was about to start.
-  el.restSkip.addEventListener("click", function () {
+  if (el.restSkip) el.restSkip.addEventListener("click", function () {
     clearTicker();
     clearNarr();
     shutUp();
@@ -753,10 +764,10 @@
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
 
   // Static control labels
-  el.prev.textContent = t("prev");
-  el.skip.textContent = t("skip");
-  el.done.textContent = t("done");
-  el.restSkip.textContent = t("skip");
+  if (el.prev) el.prev.textContent = t("prev");
+  if (el.skip) el.skip.textContent = t("skip");
+  if (el.done) el.done.textContent = t("done");
+  if (el.restSkip) el.restSkip.textContent = t("skip");
   if (el.restBack) el.restBack.textContent = t("prev");
 
   // ---- go ---------------------------------------------------------------

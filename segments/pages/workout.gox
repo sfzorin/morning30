@@ -2,7 +2,6 @@ package pages
 
 import (
 	"context"
-	"encoding/json"
 	"strconv"
 
 	"morning30/assets"
@@ -140,8 +139,9 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, v
 	}
 }
 
-// payloadJSON serializes everything the client player needs.
-func (w workoutPage) payloadJSON() string {
+// playerData is everything the client player needs. Doors JSON-encodes this
+// into $data("payload") as an object (not a double-encoded string).
+func (w workoutPage) playerData() playerPayload {
 	l := i18n.Lang(w.sess.Lang)
 	day := w.clampDay()
 	wk, level := app.UserWorkoutBase(w.sess.UserID, day) // base values; client scales by level
@@ -260,8 +260,7 @@ func (w workoutPage) payloadJSON() string {
 		Cues:   cues,
 		Enc:    enc,
 	}
-	b, _ := json.Marshal(p)
-	return string(b)
+	return p
 }
 
 // complete is the JS hook fired when a day finishes. It records today's activity
@@ -285,7 +284,7 @@ func (w workoutPage) complete(ctx context.Context, r doors.RequestHook[completeR
 elem (w workoutPage) Main() {
 	~{
 		l := i18n.Lang(w.sess.Lang)
-		payloadStr := w.payloadJSON()
+		payload := w.playerData()
 	}
 	<title>~(i18n.T(l, "app.name"))</title>
 	<div class="player">
@@ -371,7 +370,7 @@ elem (w workoutPage) Main() {
 		<script
 			src=(assets.Player)
 			inline
-			data:payload=(payloadStr)
+			data:payload=(payload)
 			(doors.AHook[completeReq]{Name: "complete", On: w.complete})>
 		</script>
 	</div>
