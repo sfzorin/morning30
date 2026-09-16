@@ -1,5 +1,7 @@
 package i18n
 
+import "math/rand/v2"
+
 // restJokes are short rest-pause lines for kids. Column 0 is Russian, 1 is English.
 // Other languages fall back to English. Keep them speakable: one or two short sentences.
 var restJokes = [][2]string{
@@ -131,4 +133,20 @@ func RestJokes(l Lang) []string {
 		out[i] = s
 	}
 	return out
+}
+
+// RestJokesSample returns n unique jokes in random order. n is clamped to the
+// list size. The player only needs one joke per rest, so we send a short
+// deck instead of the whole book in the workout payload.
+func RestJokesSample(l Lang, n int) []string {
+	all := RestJokes(l)
+	if n < 1 {
+		return nil
+	}
+	if n > len(all) {
+		n = len(all)
+	}
+	out := append([]string(nil), all...)
+	rand.Shuffle(len(out), func(i, j int) { out[i], out[j] = out[j], out[i] })
+	return out[:n]
 }

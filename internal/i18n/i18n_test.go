@@ -74,4 +74,15 @@ func TestRestJokes(t *testing.T) {
 	if en[0] != RestJokes(EN)[0] {
 		t.Errorf("non-Russian languages should use English jokes")
 	}
+	sample := RestJokesSample(RU, 12)
+	if len(sample) != 12 {
+		t.Errorf("sample size = %d, want 12", len(sample))
+	}
+	seen := map[string]bool{}
+	for _, s := range sample {
+		if seen[s] {
+			t.Errorf("sample repeated %q", s)
+		}
+		seen[s] = true
+	}
 }

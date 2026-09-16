@@ -237,7 +237,13 @@ func (w workoutPage) payloadJSON() string {
 	}
 	var jokes []string
 	if w.sess.Jokes {
-		jokes = i18n.RestJokes(l)
+		n := 8
+		for _, it := range items {
+			if it.Rest > 0 {
+				n++
+			}
+		}
+		jokes = i18n.RestJokesSample(l, n)
 	}
 	p := playerPayload{
 		Day:       day,

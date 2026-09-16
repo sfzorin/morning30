@@ -21,8 +21,8 @@
   var jokePool = (payload.jokes || []).slice();
   function nextJoke() {
     if (!jokesOn || !jokePool.length) return "";
-    var i = Math.floor(Math.random() * jokePool.length);
-    return jokePool.splice(i, 1)[0] || "";
+    var jokeIdx = Math.floor(Math.random() * jokePool.length);
+    return jokePool.splice(jokeIdx, 1)[0] || "";
   }
 
   // jsScale mirrors the server's ScaleValue: ±10% per level on reps/seconds,
@@ -60,7 +60,7 @@
   }
 
   var root = document.currentScript.parentElement; // .player
-  var $ = function (sel) { return root.querySelector(sel) || root.querySelector("." + sel); };
+  var $ = function (sel) { return root.querySelector("." + sel); };
 
   var el = {
     pbar: $(".pbar"),
@@ -338,6 +338,7 @@
   function startItem(idx) {
     i = idx;
     var it = items[i];
+    if (!it || !el.svg) return;
     root.classList.remove("frozen"); // a fresh set is always running, not paused
     el.rest.classList.add("hidden");
     el.stage.classList.remove("hidden");
