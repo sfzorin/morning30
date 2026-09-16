@@ -278,7 +278,7 @@ func (a authPage) guest(ctx context.Context, r doors.RequestPointer) bool {
 	doors.SessionExpire(ctx, auth.SessionTTL)
 	a.auth.Update(ctx, auth.Session{
 		Authorized: true, UserID: gu.ID, Email: gu.Email, Name: gu.Name,
-		Lang: gu.Lang, Rest: gu.Rest, Voice: gu.Voice, VoiceMode: gu.VoiceMode, IsGuest: true,
+		Lang: gu.Lang, Rest: gu.Rest, Voice: gu.Voice, VoiceMode: gu.VoiceMode, Jokes: gu.Jokes, IsGuest: true,
 	})
 	a.path.Update(ctx, path.Path{Page: path.Home})
 	return false
@@ -366,6 +366,7 @@ func (a authPage) submit(msg doors.Source[string]) func(context.Context, doors.R
 			Rest:       u.Rest,
 			Voice:      u.Voice,
 			VoiceMode:  u.VoiceMode,
+			Jokes:      u.Jokes,
 		})
 		a.path.Update(ctx, path.Path{Page: path.Home})
 		return false

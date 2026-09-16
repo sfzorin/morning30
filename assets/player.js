@@ -15,6 +15,15 @@
   var voiceLang = payload.bcp47 || "en-US";        // e.g. "tr-TR"
   var voicePrefix = (payload.lang || "en").toLowerCase(); // e.g. "tr"
   var level = payload.level || 0;                  // difficulty −3..+3, nudged in-workout
+  var jokesOn = !!payload.jokesOn;
+  // One copy of the list per workout: pick at random, splice out so a joke
+  // cannot repeat until the pool is empty (it won't be, in a normal session).
+  var jokePool = (payload.jokes || []).slice();
+  function nextJoke() {
+    if (!jokesOn || !jokePool.length) return "";
+    var i = Math.floor(Math.random() * jokePool.length);
+    return jokePool.splice(i, 1)[0] || "";
+  }
 
   // jsScale mirrors the server's ScaleValue: ±10% per level on reps/seconds,
   // breaths fixed, with min clamps. Lets us re-scale main sets on the fly.
@@ -51,7 +60,7 @@
   }
 
   var root = document.currentScript.parentElement; // .player
-  var $ = function (sel) { return root.querySelector(sel); };
+  var $ = function (sel) { return root.querySelector(sel) || root.querySelector("." + sel); };
 
   var el = {
     pbar: $(".pbar"),
@@ -86,6 +95,7 @@
     rest: $(".rest-overlay"),
     restCount: $(".rest-count"),
     restNext: $(".rest-next"),
+    restJoke: $(".rest-joke"),
     restSkip: $(".rest-skip"),
     restBack: $(".rest-back"),
     restTitle: $(".rest-title"),
@@ -427,6 +437,13 @@
     el.rest.classList.remove("hidden");
     el.restTitle.textContent = isReady ? t("ready") : t("rest");
     el.restNext.textContent = upItem ? t("next") + ": " + nextDisplay(upItem) : "";
+    var joke = "";
+    if (el.restJoke) {
+      joke = (!isReady && jokesOn) ? nextJoke() : "";
+      el.restJoke.textContent = joke;
+      if (joke) el.restJoke.classList.remove("hidden");
+      else el.restJoke.classList.add("hidden");
+    }
     // Keep the counter, phase label and bar aligned with the exercise the rest
     // leads into — the upcoming phase lights up during its lead-in pause.
     if (upItem) {
@@ -441,7 +458,8 @@
         announceTimer = null;
         if (paused || el.rest.classList.contains("hidden")) return;
         shutUp();
-        if (cues.rest) utter(cues.rest); // "Rest" (queued)
+        if (joke) utter(joke);
+        else if (cues.rest) utter(cues.rest); // "Rest" (queued)
         utter((cues.next_ex || t("next")) + ": " + upItem.name + ", " + val(upItem) + " " + unitWord(upItem));
       }, 700);
     }

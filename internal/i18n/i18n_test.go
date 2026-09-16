@@ -48,3 +48,30 @@ func TestParseAndFallback(t *testing.T) {
 		t.Errorf("calendar localization failed")
 	}
 }
+
+func TestRestJokes(t *testing.T) {
+	if n := len(restJokes); n < 100 {
+		t.Errorf("want at least 100 rest jokes, got %d", n)
+	}
+	seenRU, seenEN := map[string]bool{}, map[string]bool{}
+	for i, row := range restJokes {
+		if row[0] == "" || row[1] == "" {
+			t.Errorf("joke %d missing ru or en", i)
+		}
+		if seenRU[row[0]] {
+			t.Errorf("duplicate Russian joke: %q", row[0])
+		}
+		seenRU[row[0]] = true
+		if seenEN[row[1]] {
+			t.Errorf("duplicate English joke: %q", row[1])
+		}
+		seenEN[row[1]] = true
+	}
+	ru, en := RestJokes(RU), RestJokes(DE)
+	if ru[0] == en[0] {
+		t.Errorf("Russian jokes should not fall back to English")
+	}
+	if en[0] != RestJokes(EN)[0] {
+		t.Errorf("non-Russian languages should use English jokes")
+	}
+}

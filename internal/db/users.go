@@ -12,14 +12,15 @@ func scanUser(row interface {
 	Scan(dest ...any) error
 }) (User, error) {
 	var u User
-	var voice, guest int
-	err := row.Scan(&u.ID, &u.Email, &u.Name, &u.Lang, &u.Rest, &voice, &guest, &u.VoiceMode, &u.Level, &u.Created)
+	var voice, guest, jokes int
+	err := row.Scan(&u.ID, &u.Email, &u.Name, &u.Lang, &u.Rest, &voice, &guest, &u.VoiceMode, &u.Level, &jokes, &u.Created)
 	u.Voice = voice != 0
 	u.IsGuest = guest != 0
+	u.Jokes = jokes != 0
 	return u, err
 }
 
-const userCols = `id, email, name, lang, rest_seconds, voice, is_guest, voice_mode, level, created_at`
+const userCols = `id, email, name, lang, rest_seconds, voice, is_guest, voice_mode, level, jokes, created_at`
 
 // CreateUser inserts a new account. Returns ErrEmailTaken on duplicate email.
 func (d *DB) CreateUser(email, passHash, lang, name string) (User, error) {
@@ -97,14 +98,18 @@ func (d *DB) PassHash(email string) (hash string, ok bool, err error) {
 
 // UpdateSettings updates per-user preferences, including the three per-phase
 // rest durations. voiceMode is off|min|normal|detailed.
-func (d *DB) UpdateSettings(userID int64, name, lang string, restWarmup, restMain, restCooldown int, voiceMode string) error {
+func (d *DB) UpdateSettings(userID int64, name, lang string, restWarmup, restMain, restCooldown int, voiceMode string, jokes bool) error {
 	v := 1
 	if voiceMode == "off" {
 		v = 0
 	}
+	j := 0
+	if jokes {
+		j = 1
+	}
 	_, err := d.sql.Exec(
-		`UPDATE users SET name = ?, lang = ?, rest_seconds = ?, rest_warmup = ?, rest_cooldown = ?, voice = ?, voice_mode = ? WHERE id = ?`,
-		name, lang, restMain, restWarmup, restCooldown, v, voiceMode, userID,
+		`UPDATE users SET name = ?, lang = ?, rest_seconds = ?, rest_warmup = ?, rest_cooldown = ?, voice = ?, voice_mode = ?, jokes = ? WHERE id = ?`,
+		name, lang, restMain, restWarmup, restCooldown, v, voiceMode, j, userID,
 	)
 	return err
 }

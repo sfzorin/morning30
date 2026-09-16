@@ -153,6 +153,7 @@ func sessionFromUser(u db.User) auth.Session {
 		Rest:       u.Rest,
 		Voice:      u.Voice,
 		VoiceMode:  u.VoiceMode,
+		Jokes:      u.Jokes,
 		IsGuest:    u.IsGuest,
 		Level:      u.Level,
 	}

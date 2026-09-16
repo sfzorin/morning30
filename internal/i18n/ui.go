@@ -129,6 +129,7 @@ var ui = map[string][7]string{
 	"settings.language":  {"Язык", "Language", "Dil", "Sprache", "Idioma", "Langue", "Lingua"},
 	"settings.voice":     {"Голосовые подсказки", "Voice cues", "Sesli komutlar", "Sprachansagen", "Indicaciones de voz", "Indications vocales", "Indicazioni vocali"},
 	"settings.sex":       {"Фигура", "Figure", "Figür", "Figur", "Figura", "Silhouette", "Figura"},
+	"settings.jokes":     {"Шутки в паузах", "Jokes during rest", "Mola şakaları", "Witze in der Pause", "Chistes en el descanso", "Blagues pendant le repos", "Battute in pausa"},
 	"sex.male":           {"Муж", "Male", "Erkek", "Mann", "Hombre", "Homme", "Uomo"},
 	"sex.female":         {"Жен", "Female", "Kadın", "Frau", "Mujer", "Femme", "Donna"},
 	"voice.off":          {"Выкл", "Off", "Kapalı", "Aus", "No", "Non", "No"},

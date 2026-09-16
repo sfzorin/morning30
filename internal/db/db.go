@@ -23,6 +23,7 @@ type User struct {
 	Rest      int    // rest seconds between exercises (10..40)
 	Voice     bool   // voice cues enabled (derived: VoiceMode != "off")
 	VoiceMode string // off | min | normal | detailed
+	Jokes     bool   // silly rest-pause jokes (spoken + on-screen)
 	IsGuest   bool   // anonymous cookie-only account
 	Level     int    // universal difficulty level (−3..+3); ±10% per step
 	Created   string
@@ -75,6 +76,7 @@ CREATE TABLE IF NOT EXISTS users (
     active_program TEXT NOT NULL DEFAULT 'builtin', -- builtin | custom
     custom_exercises TEXT NOT NULL DEFAULT '',   -- per-user custom exercise library (map id -> Doc JSON)
     level          INTEGER NOT NULL DEFAULT 0,   -- universal difficulty level (−3..+3)
+    jokes        INTEGER NOT NULL DEFAULT 0,   -- silly rest-pause jokes
     created_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -138,6 +140,7 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN sex TEXT NOT NULL DEFAULT 'm'`,
 		`ALTER TABLE users ADD COLUMN rest_warmup INTEGER NOT NULL DEFAULT 10`,
 		`ALTER TABLE users ADD COLUMN rest_cooldown INTEGER NOT NULL DEFAULT 10`,
+		`ALTER TABLE users ADD COLUMN jokes INTEGER NOT NULL DEFAULT 0`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

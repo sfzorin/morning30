@@ -26,6 +26,7 @@ type Session struct {
 	Rest       int
 	Voice      bool
 	VoiceMode  string
+	Jokes      bool // silly rest-pause jokes
 	IsGuest    bool
 	Level      int // universal difficulty level (−3..+3)
 }

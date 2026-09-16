@@ -603,6 +603,14 @@ body:has(.player) {
 .rest-title { font-size: 20px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 .rest-count { font-size: 88px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .rest-next { font-size: 18px; color: var(--fg); }
+.rest-joke {
+  max-width: 22em;
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--accent);
+  font-weight: 650;
+}
+.joke-check { width: 22px; height: 22px; accent-color: var(--accent); cursor: pointer; }
 
 /* Feedback overlay */
 .feedback-overlay {

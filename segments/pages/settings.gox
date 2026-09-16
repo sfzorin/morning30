@@ -26,6 +26,7 @@ type settingsForm struct {
 	RestCooldown int    `form:"rest_cooldown"`
 	VoiceMode    string `form:"voice_mode"`
 	Sex          string `form:"sex"`
+	Jokes        string `form:"jokes"`
 }
 
 // editState is the editor's working copy: the selected day plus the program as
@@ -142,6 +143,10 @@ elem (s settingsPage) Main() {
 							<option value="m" selected=func { return curSex != "f" }>~(i18n.T(l, "sex.male"))</option>
 							<option value="f" selected=func { return curSex == "f" }>~(i18n.T(l, "sex.female"))</option>
 						</select>
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.jokes"))</span>
+						<input class="joke-check" type="checkbox" name="jokes" value="1" checked=func { return s.sess.Jokes }>
 					</div>
 					<div class="srow save-row">
 						<button class="btn primary" type="submit">~(i18n.T(l, "settings.save"))</button>
@@ -377,13 +382,15 @@ func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors
 		default:
 			mode = "normal"
 		}
-		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode)
+		jokesOn := f.Jokes == "1" || f.Jokes == "on" || f.Jokes == "true"
+		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode, jokesOn)
 		_ = app.DB.SetSex(s.sess.UserID, f.Sex)
 		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
 			cur.Name = name
 			cur.Rest = restMain
 			cur.VoiceMode = mode
 			cur.Voice = mode != "off"
+			cur.Jokes = jokesOn
 			return cur
 		})
 		saved.Update(ctx, true)
