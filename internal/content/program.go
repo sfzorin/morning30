@@ -201,15 +201,13 @@ func seqItems(seq []setDef, slot Slot) []RItem {
 	return out
 }
 
-// mainItemsFrom builds base MAIN items from a day's block: the block run for 2
-// rounds. The universal difficulty level scales these at runtime.
-func mainItemsFrom(defs []setDef) []RItem {
-	out := make([]RItem, 0, len(defs)*2)
-	for r := 1; r <= 2; r++ {
-		for _, s := range defs {
-			e := Pool[s.ID]
-			out = append(out, RItem{ID: s.ID, Unit: e.Unit, Value: s.Val, PerSide: e.PerSide, Slot: Main, Round: r})
-		}
+// mainItemsOnce builds one round of MAIN items from a day's block.
+// How many times that round runs is RDay.Rounds (1–10).
+func mainItemsOnce(defs []setDef) []RItem {
+	out := make([]RItem, 0, len(defs))
+	for _, s := range defs {
+		e := Pool[s.ID]
+		out = append(out, RItem{ID: s.ID, Unit: e.Unit, Value: s.Val, PerSide: e.PerSide, Slot: Main, Round: 1})
 	}
 	return out
 }
@@ -229,10 +227,31 @@ func (s programSpec) resolve() Resolved {
 	r.Warmup = seqItems(s.warmup, Warmup)
 	r.Cooldown = seqItems(s.cooldown, Cooldown)
 	for day := 1; day <= TotalDays; day++ {
-		r.Days = append(r.Days, RDay{Day: day, Items: mainItemsFrom(s.days[clampDay(day)])})
+		r.Days = append(r.Days, RDay{Day: day, Rounds: 2, Items: mainItemsOnce(s.days[clampDay(day)])})
 	}
 	return r
 }
 
 // sergeySpec is the original built-in set (floor/mat only, no jumps).
 var sergeySpec = programSpec{name: "Sergey", warmup: warmupSeq, cooldown: cooldownSeq, days: dayBlocks}
+
+// ClampRounds keeps a round count in 1–10.
+func ClampRounds(n int) int {
+	if n < 1 {
+		return 1
+	}
+	if n > 10 {
+		return 10
+	}
+	return n
+}
+
+// FigureIDs are the built-in illustration keys a custom exercise may reuse.
+func FigureIDs() []string {
+	lib := Library()
+	ids := make([]string, len(lib))
+	for i, e := range lib {
+		ids[i] = e.ID
+	}
+	return ids
+}

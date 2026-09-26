@@ -1,5 +1,8 @@
 package content
 
+// Vlad / Level 2 is no longer a selectable product. Kept so existing accounts
+// can be snapshotted into a personal JSON file.
+//
 // Vlad / Level 2 is the second standard set: a fitter profile (jumps allowed,
 // knees fine). It adds plyometric/cardio work (jumps, burpees, mountain
 // climbers, lunges) on top of the shared strength/core/back library. Same

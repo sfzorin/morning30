@@ -2,11 +2,20 @@
 package app
 
 import (
+	"errors"
+	"strings"
 	"time"
 
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/db"
+)
+
+var (
+	// ErrInvalidProgram is returned when uploaded program JSON is not a usable cycle.
+	ErrInvalidProgram = errors.New("invalid program")
+	// ErrInvalidExercise is returned when a custom exercise document is unusable.
+	ErrInvalidExercise = errors.New("invalid exercise")
 )
 
 // DB is the application database, set once at startup in main.
@@ -58,9 +67,35 @@ func UserCatalog(userID int64) catalog.Catalog {
 
 // SaveCustomExercise adds or overrides a custom exercise in the user's library.
 func SaveCustomExercise(userID int64, d catalog.Doc) error {
+	d.ID = strings.TrimSpace(d.ID)
+	if d.Slot == "" {
+		d.Slot = string(content.Main)
+	}
+	if d.Unit == "" {
+		d.Unit = string(content.Reps)
+	}
+	if !catalog.ValidDoc(d) {
+		return ErrInvalidExercise
+	}
+	d.SVG = catalog.NormalizeFigure(d.SVG, d.ID)
 	c := UserCatalog(userID)
 	c.Put(d)
 	return DB.SetCustomExercises(userID, c.Marshal())
+}
+
+// SnapshotAll copies leftover named built-in plans into personal files for every
+// existing account. Idempotent; used at process start and by MCP.
+func SnapshotAll() {
+	if DB == nil {
+		return
+	}
+	accs, err := DB.ListAccounts()
+	if err != nil {
+		return
+	}
+	for _, a := range accs {
+		SnapshotLegacy(a.ID)
+	}
 }
 
 // HasCustomProgram reports whether the user saved a custom program.
@@ -69,10 +104,69 @@ func HasCustomProgram(userID int64) bool {
 	return err == nil && j != ""
 }
 
+// SnapshotLegacy copies a previously named built-in plan (Sergey / Vlad / Ilya)
+// into the user's personal file. Registered accounts still on the old default
+// (`builtin`) get the Sergey cycle. Guests and new demo accounts are left on
+// the live demo. Cycle position, streaks and activity are never touched.
+func SnapshotLegacy(userID int64) {
+	if DB == nil || HasCustomProgram(userID) {
+		return
+	}
+	k, _ := DB.ActiveProgram(userID)
+	u, err := DB.UserByID(userID)
+	if err != nil {
+		return
+	}
+	legacyKey := k
+	switch k {
+	case "ilya", "vlad", "sergey":
+		// keep
+	case "builtin", "":
+		if u.IsGuest {
+			return
+		}
+		legacyKey = "sergey"
+	default:
+		return
+	}
+	r, ok := content.LegacyNamed(legacyKey)
+	if !ok {
+		return
+	}
+	_ = DB.SetProgramJSON(userID, r.Marshal())
+	_ = DB.SetActiveProgram(userID, "custom")
+}
+
+// SetUserProgram stores a personal cycle from JSON and makes it active.
+// It does not reset cycle position, streaks, or activity.
+func SetUserProgram(userID int64, raw string) error {
+	r, err := content.ParseResolved(strings.TrimSpace(raw))
+	if err != nil || len(r.Days) == 0 {
+		return ErrInvalidProgram
+	}
+	if strings.TrimSpace(r.Name) == "" {
+		r.Name = "My program"
+	}
+	if err := DB.SetProgramJSON(userID, r.Marshal()); err != nil {
+		return err
+	}
+	return DB.SetActiveProgram(userID, "custom")
+}
+
+// RestoreDemo clears the personal file so the user runs the public demo.
+// Progress is left as-is.
+func RestoreDemo(userID int64) error {
+	if err := DB.SetProgramJSON(userID, ""); err != nil {
+		return err
+	}
+	return DB.SetActiveProgram(userID, content.DefaultStandardKey())
+}
+
 // ActiveProgramKey returns the user's selected program key: "custom" when a saved
 // custom program is active, otherwise a valid standard program key (the default
 // when the stored value is empty or a legacy/unknown key).
 func ActiveProgramKey(userID int64) string {
+	SnapshotLegacy(userID)
 	k, _ := DB.ActiveProgram(userID)
 	if k == "custom" && HasCustomProgram(userID) {
 		return "custom"

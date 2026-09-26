@@ -8,12 +8,14 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 
 	"morning30/assets"
 	"morning30/internal/app"
 	"morning30/internal/auth"
 	"morning30/internal/db"
 	"morning30/internal/i18n"
+	"morning30/internal/mcp"
 
 	"github.com/doors-dev/doors"
 	"github.com/doors-dev/gox"
@@ -62,6 +64,7 @@ func main() {
 	defer database.Close()
 	app.DB = database
 	app.SeedBuiltins() // populate the global exercise library (idempotent)
+	app.SnapshotAll()  // copy leftover named plans into personal files
 
 	a := doors.NewApp(func(ctx context.Context, r doors.Request) gox.Comp {
 		// Bootstrap the shared reactive session once per browser session.
@@ -133,6 +136,8 @@ func main() {
 			`</urlset>`))
 	})
 
+	mux.Handle("/api/", mcp.Handler(strings.TrimSpace(os.Getenv("MORNING_MCP_TOKEN"))))
+
 	mux.Handle("/", a)
 
 	addr := ":8080"
@@ -153,7 +158,6 @@ func sessionFromUser(u db.User) auth.Session {
 		Rest:       u.Rest,
 		Voice:      u.Voice,
 		VoiceMode:  u.VoiceMode,
-		Jokes:      u.Jokes,
 		IsGuest:    u.IsGuest,
 		Level:      u.Level,
 	}

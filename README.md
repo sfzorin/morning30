@@ -7,9 +7,10 @@ routine you can run with the screen in your pocket, guided entirely by voice.
 - **License:** [Apache-2.0](LICENSE)
 - **Status:** active development
 
-Each day is a single session — **warm-up → main block (×2 rounds) → cool-down** —
-that grows from ~20 to ~30 exercises over the cycle, with lighter recovery days
-mixed in. Progress, streaks and preferences are stored per user on the server.
+Each day is a single session — **warm-up (1–10 rounds) → main block (1–10 rounds) → cool-down** —
+on a 30-day cycle. New accounts run a short public **demo**. Everyone else keeps
+their own plan as JSON on the account (no named picker). Progress, streaks and
+preferences are stored per user on the server.
 
 Built with the [doors](https://github.com/doors-dev/doors) Go framework and its
 GoX templates (server-driven reactive UI), a pure-Go SQLite database, and a
@@ -19,17 +20,22 @@ small client-side workout engine.
 
 ## Features
 
-- **Named workout programs.** Ships with more than one built-in program (e.g.
-  *Sergey* — floor/mat, no jumps; *Vlad / Level 2* — plyometric + cardio;
-  *Ilya* — kid tennis, 0.5 kg dumbbells). Each
-  is a 30-day plan with baked-in day-to-day progression. Adding another program
-  is a single registry entry.
+- **One public demo, personal plans.** Guests and new accounts run a short
+  no-jump demo cycle. Existing named plans (Sergey / Ilya / Vlad) were copied
+  into that account's personal JSON on first load; cycle position and streaks
+  stay put. Settings edit *this* account only — there is no Sergey/Vlad/Ilya
+  picker.
+- **In-app editor.** Reorder, add, remove, retime; warm-up and main rounds 1–10;
+  save as this account's version, or restore the demo.
+- **Exercise JSON.** Download any exercise as a file, paste or upload one back.
+  Custom exercises overlay the built-in library and reuse a figure from that
+  library (no image upload).
+- **MCP.** Agents write exercises and the 30-day cycle straight into the user's
+  SQLite row (`custom_exercises` / `program_json`). Same data the editor and
+  file import use. Progress is never reset.
 - **Universal difficulty.** A per-user level from **−3 to +3** scales every
   program by ±10% per step (reps and seconds only; breaths and warm-up/cool-down
   stay fixed).
-- **Custom programs & exercises.** A full in-app editor (reorder, add, remove,
-  retime) plus per-exercise JSON import/export. A user's custom exercises overlay
-  the built-in library.
 - **Two exercise types.** Reps (tap *Done*) and timed (countdown). Counts are
   shown as-is; the athlete does both sides of any one-sided movement themselves.
 - **Voice-first player (client-side).** Progress bar, pause / skip / back, rest
@@ -78,8 +84,9 @@ The app is **server-driven** for everything except the workout itself:
 - **Layered exercise catalog** (`internal/catalog/`) resolves each exercise
   through three layers, the first match winning:
   `per-user custom → global DB library → built-in code`.
-- **Content** (`internal/content/`) holds the exercise library and the named
-  standard programs; a program is a shared warm-up/cool-down plus a per-day main
+- **Content** (`internal/content/`) holds the exercise library, the public demo,
+  and leftover named cycles used only to snapshot existing accounts into a
+  personal file. A program is a shared warm-up/cool-down plus a per-day main
   block, flattened and difficulty-scaled at run time.
 - **i18n** (`internal/i18n/`) holds all 7-language UI strings, exercise names and
   spoken cues.
@@ -93,12 +100,14 @@ main.go              entry point: open DB, bootstrap session, routing, static fi
 app.gox              HTML shell, PWA <head>, service-worker registration, root router
 path/                URL path model (/, /login, /register, /day/:n, /settings)
 internal/
-  content/           exercise library + named 30-day programs + difficulty scaling
+  content/           exercise library + demo 30-day cycle + legacy snapshots
   catalog/           per-user exercise catalog (custom over DB over code)
   i18n/              7-language UI strings, exercise names, voice cues
   db/                SQLite: users, sessions, activity (streaks), exercise library
   auth/              bcrypt, session tokens, the shared Session value
   app/               process-wide deps (DB) + per-user program/workout resolution
+  mcp/               stdio JSON-RPC + optional Bearer HTTP /api
+cmd/morning-mcp      stdio MCP server (same SQLite file as the app)
 segments/pages/      router, auth, home, workout, settings, shared header
 components/           shared UI (e.g. 404)
 assets/
@@ -144,11 +153,45 @@ Dockerfile           multi-stage container build
 
 **Configuration**
 
-| Env          | Default      | Description |
-|--------------|--------------|-------------|
-| `MORNING_DB` | `morning.db` | SQLite database file path (the container points this at the persistent `/data` volume) |
+| Env                 | Default      | Description |
+|---------------------|--------------|-------------|
+| `MORNING_DB`        | `morning.db` | SQLite database file path (the container points this at the persistent `/data` volume) |
+| `MORNING_MCP_TOKEN` | *(unset)*    | Optional **admin** Bearer token: list/edit any account. Per-user tokens from Settings work without this. |
 
 The server listens on `:8080`.
+
+---
+
+## MCP (agents)
+
+Agents edit **this user's** overlay, not a global catalog:
+
+- `custom_exercises` — per-exercise JSON (same document the settings download/upload uses)
+- `program_json` — the 30-day cycle (same shape the in-app editor saves)
+
+stdio (local Cursor / Claude against the same DB file):
+
+```bash
+MORNING_DB=morning.db go run ./cmd/morning-mcp
+```
+
+Tools: `list_accounts`, `get_program`, `set_program`, `restore_demo`,
+`list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
+`list_figures`. `account` is a user id, email, or unique display name.
+`put_exercise` stores `svg` as a built-in figure id from `list_figures`.
+
+HTTP is always on `/api/*`. Issue a token in **Settings → MCP token** (shown once;
+**Reissue** invalidates the old one). That Bearer is scoped to the account:
+
+```bash
+curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/accounts
+curl -H "Authorization: Bearer m30_…" \
+  -X PUT --data-binary @P08.json \
+  http://localhost:8080/api/accounts/me/exercises/P08
+```
+
+`MORNING_MCP_TOKEN` is an optional operator override that can still address any
+account by id/email/name.
 
 ---
 

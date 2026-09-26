@@ -1,7 +1,7 @@
 // Package content defines the exercise library and the 30-day programs. The
-// library is shared by every standard set; each set (Sergey, Vlad, Ilya, …)
-// selects from it per day. Floor/mat only, except the Ilya D* group (0.5 kg
-// dumbbells). The Sergey set is jump-free; the Vlad set adds plyometric/cardio
+// library is shared by the public demo and by personal JSON files. Floor/mat
+// only, except the Ilya D* group (0.5 kg dumbbells). The demo and the legacy
+// Sergey set are jump-free; the legacy Vlad set adds plyometric/cardio
 // movements (the J* group) and lunges; Ilya is a kid tennis set.
 package content
 

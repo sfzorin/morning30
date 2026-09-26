@@ -8,6 +8,7 @@ package catalog
 import (
 	"encoding/json"
 	"sort"
+	"strings"
 
 	"morning30/internal/content"
 	"morning30/internal/i18n"
@@ -275,18 +276,48 @@ func (c Catalog) SVG(id string) string {
 }
 
 // Figure returns the figure URL for an exercise, choosing the male/female
-// variant by sex ("m"/"f"). A custom (per-user) exercise keeps its own SVG; the
-// built-in figures live under /static/ex/<sex>/<id>.png.
+// variant by sex ("m"/"f"). Custom exercises reuse a built-in illustration id
+// stored in SVG (no uploads).
 func (c Catalog) Figure(id, sex string) string {
-	if c.IsCustom(id) {
-		if d, ok := c.resolve(id); ok && d.SVG != "" {
-			return d.SVG
-		}
-	}
 	if sex != "f" {
 		sex = "m"
 	}
-	return "/static/ex/" + sex + "/" + id + ".png"
+	key := id
+	if d, ok := c.resolve(id); ok {
+		key = content.FigureKey(d.SVG, id)
+	}
+	return "/static/ex/" + sex + "/" + key + ".png"
+}
+
+// ValidDoc sanity-checks an imported or MCP-written exercise document.
+func ValidDoc(d Doc) bool {
+	if strings.TrimSpace(d.ID) == "" {
+		return false
+	}
+	switch content.Slot(d.Slot) {
+	case content.Warmup, content.Main, content.Cooldown:
+	default:
+		return false
+	}
+	switch content.Unit(d.Unit) {
+	case content.Reps, content.Seconds, content.Breaths:
+	default:
+		return false
+	}
+	return true
+}
+
+// NormalizeFigure maps a stored SVG path or raw id onto a built-in illustration
+// key. Custom exercises reuse those keys; there is no image upload.
+func NormalizeFigure(svg, fallback string) string {
+	key := content.FigureKey(svg, fallback)
+	if _, ok := content.Get(key); ok {
+		return key
+	}
+	if _, ok := content.Get(fallback); ok {
+		return fallback
+	}
+	return "P08"
 }
 
 // Doc returns the self-contained doc for an exercise (custom -> base -> built-in).
@@ -326,6 +357,20 @@ func (c Catalog) List(l i18n.Lang) []Entry {
 	sort.Strings(extra)
 	for _, id := range extra {
 		out = append(out, Entry{ID: id, Slot: c.slotOf(id), Name: c.Name(l, id)})
+	}
+	return out
+}
+
+// Custom returns the per-user overlay documents in id order.
+func (c Catalog) Custom() []Doc {
+	ids := make([]string, 0, len(c.custom))
+	for id := range c.custom {
+		ids = append(ids, id)
+	}
+	sort.Strings(ids)
+	out := make([]Doc, 0, len(ids))
+	for _, id := range ids {
+		out = append(out, c.custom[id])
 	}
 	return out
 }

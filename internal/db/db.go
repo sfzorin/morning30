@@ -16,14 +16,14 @@ type DB struct {
 
 // User is an account row.
 type User struct {
-	ID      int64
-	Email   string
-	Name    string
-	Lang    string
+	ID        int64
+	Email     string
+	Name      string
+	Lang      string
 	Rest      int    // rest seconds between exercises (10..40)
 	Voice     bool   // voice cues enabled (derived: VoiceMode != "off")
 	VoiceMode string // off | min | normal | detailed
-	Jokes     bool   // silly rest-pause jokes (spoken + on-screen)
+	Jokes     bool   // unused leftover column; jokes were removed from the UI
 	IsGuest   bool   // anonymous cookie-only account
 	Level     int    // universal difficulty level (−3..+3); ±10% per step
 	Created   string
@@ -73,10 +73,11 @@ CREATE TABLE IF NOT EXISTS users (
     low_energy     INTEGER NOT NULL DEFAULT 0,  -- consecutive "worse" energy reports
     safety_ack     INTEGER NOT NULL DEFAULT 0,  -- safety disclaimer acknowledged
     program_json   TEXT NOT NULL DEFAULT '',     -- custom program (Resolved JSON); empty = none
-    active_program TEXT NOT NULL DEFAULT 'builtin', -- builtin | custom
+    active_program TEXT NOT NULL DEFAULT 'demo', -- demo | custom | legacy named keys
     custom_exercises TEXT NOT NULL DEFAULT '',   -- per-user custom exercise library (map id -> Doc JSON)
     level          INTEGER NOT NULL DEFAULT 0,   -- universal difficulty level (−3..+3)
     jokes        INTEGER NOT NULL DEFAULT 0,   -- silly rest-pause jokes
+    mcp_token_hash TEXT NOT NULL DEFAULT '', -- sha256 of the per-user MCP bearer token
     created_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -141,6 +142,7 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN rest_warmup INTEGER NOT NULL DEFAULT 10`,
 		`ALTER TABLE users ADD COLUMN rest_cooldown INTEGER NOT NULL DEFAULT 10`,
 		`ALTER TABLE users ADD COLUMN jokes INTEGER NOT NULL DEFAULT 0`,
+		`ALTER TABLE users ADD COLUMN mcp_token_hash TEXT NOT NULL DEFAULT ''`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {
@@ -148,5 +150,6 @@ DROP TABLE IF EXISTS progress;
 			}
 		}
 	}
+	_, _ = d.sql.Exec(`CREATE UNIQUE INDEX IF NOT EXISTS idx_users_mcp_token ON users(mcp_token_hash) WHERE mcp_token_hash != ''`)
 	return nil
 }

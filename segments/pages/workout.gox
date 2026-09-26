@@ -47,7 +47,6 @@ type playerItem struct {
 	Hint    string `json:"hint"`    // short on-screen cue (localized)
 	Warning string `json:"warning"` // inline safety warning (localized)
 	SVG     string `json:"svg"`
-	Video   string `json:"video"`
 	// Detail card (Russian canonical content).
 	Desc      string   `json:"desc"`
 	HowTo     []string `json:"howTo"`
@@ -72,8 +71,6 @@ type playerPayload struct {
 	VoiceMode string            `json:"voiceMode"`
 	Name      string            `json:"name"`
 	Level     int               `json:"level"` // current difficulty level (−3..+3); the client scales main exercises
-	JokesOn   bool              `json:"jokesOn"`
-	Jokes     []string          `json:"jokes,omitempty"`
 	Items     []playerItem      `json:"items"`
 	Labels    map[string]string `json:"labels"`
 	Cues      map[string]string `json:"cues"`
@@ -171,7 +168,6 @@ func (w workoutPage) playerData() playerPayload {
 			Hint:      cat.Hint(l, id),
 			Warning:   cat.Warning(l, id),
 			SVG:       cat.Figure(id, sex),
-			Video:     content.Pool[id].Video,
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
 			Correct:   d.Correct,
@@ -235,16 +231,6 @@ func (w workoutPage) playerData() playerPayload {
 	if mode == "" {
 		mode = "normal"
 	}
-	var jokes []string
-	if w.sess.Jokes {
-		n := 8
-		for _, it := range items {
-			if it.Rest > 0 {
-				n++
-			}
-		}
-		jokes = i18n.RestJokesSample(l, n)
-	}
 	p := playerPayload{
 		Day:       day,
 		Lang:      w.sess.Lang,
@@ -253,8 +239,6 @@ func (w workoutPage) playerData() playerPayload {
 		VoiceMode: mode,
 		Name:      w.sess.Name,
 		Level:     level,
-		JokesOn:   w.sess.Jokes,
-		Jokes:     jokes,
 		Items:     items,
 		Labels: labels,
 		Cues:   cues,
@@ -320,7 +304,6 @@ elem (w workoutPage) Main() {
 			<div class="rest-index"></div>
 			<div class="rest-title"></div>
 			<div class="rest-count"></div>
-			<div class="rest-joke hidden"></div>
 			<div class="rest-next"></div>
 			<div class="rest-actions">
 				<button class="rest-back" type="button"></button>

@@ -409,6 +409,8 @@ h1, h2, h3 { margin: 0 0 .4em; }
   font-size: 16px;
 }
 .text-input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.mcp-token { font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.mcp-hint { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
 
 /* Personalized greeting shown as the top line (in the header) */
 .greet { font-size: 20px; font-weight: 800; color: var(--fg); flex: 1; min-width: 0; margin-right: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -603,14 +605,6 @@ body:has(.player) {
 .rest-title { font-size: 20px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 .rest-count { font-size: 88px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .rest-next { font-size: 18px; color: var(--fg); }
-.rest-joke {
-  max-width: 22em;
-  font-size: 16px;
-  line-height: 1.35;
-  color: var(--accent);
-  font-weight: 650;
-}
-.joke-check { width: 22px; height: 22px; accent-color: var(--accent); cursor: pointer; }
 
 /* Feedback overlay */
 .feedback-overlay {

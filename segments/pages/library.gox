@@ -2,6 +2,7 @@ package pages
 
 import (
 	"context"
+	"strings"
 
 	"morning30/internal/auth"
 	"morning30/internal/i18n"
@@ -14,14 +15,14 @@ import (
 
 // libState is the library browser's position: a group key, then an exercise id.
 // "" group = the group list; group set, id "" = that group's exercises; id set =
-// the exercise detail (video + card). One Source drives all three levels.
+// the exercise detail (card). One Source drives all three levels.
 type libState struct {
 	Group string
 	ID    string
 }
 
 // libraryPage is the browse-only exercise library imported from Leap Fitness:
-// grouped lists down to a localized card with the source demo video embedded.
+// grouped lists down to a localized card.
 type libraryPage struct {
 	sess auth.Session
 	auth doors.Source[auth.Session]
@@ -100,14 +101,16 @@ elem (p libraryPage) groupView(l i18n.Lang, lang string, st doors.Source[libStat
 				return false
 			}}
 			<button class="lib-item" type="button">
-				<img class="lib-thumb" loading="lazy" src=(c.Source.Thumbnail) alt="">
+				~(if thumb := localThumb(c.Source.Thumbnail); thumb != "" {
+					<img class="lib-thumb" loading="lazy" src=(thumb) alt="">
+				})
 				<span class="lib-item-name">~(c.Name(lang))</span>
 			</button>
 		})
 	</div>
 }
 
-// detail is level 3: the localized card with the source video embedded.
+// detail is level 3: the localized card.
 elem (p libraryPage) detail(l i18n.Lang, lang string, st doors.Source[libState], s libState) {
 	~{
 		c, ok := library.ByID(s.ID)
@@ -125,14 +128,6 @@ elem (p libraryPage) detail(l i18n.Lang, lang string, st doors.Source[libState],
 			}} <button class="lib-back" type="button" aria-label="←">←</button>
 			<h1>~(c.Name(lang))</h1>
 		</div>
-		<div class="lib-video">
-			<iframe
-				src=("https://www.youtube-nocookie.com/embed/" + c.Source.VideoID)
-				title=(c.Name(lang))
-				loading="lazy"
-				allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-		</div>
 		<p class="lib-desc">~(t.ShortDescription)</p>
 
 		<div class="lib-sec">
@@ -147,9 +142,13 @@ elem (p libraryPage) detail(l i18n.Lang, lang string, st doors.Source[libState],
 			<h2>~(i18n.T(l, "library.mistakes"))</h2>
 			<ul>~(for _, line := range t.Mistakes { <li>~(line)</li> })</ul>
 		</div>
-
-		<p class="lib-src">
-			<a href=(c.Source.VideoURL) target="_blank" rel="noopener noreferrer">~(i18n.T(l, "library.source"))</a>
-		</p>
 	})
+}
+
+func localThumb(url string) string {
+	u := strings.ToLower(url)
+	if u == "" || strings.Contains(u, "youtu") || strings.Contains(u, "ytimg") {
+		return ""
+	}
+	return url
 }

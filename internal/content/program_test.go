@@ -140,9 +140,6 @@ func TestIlyaStructureAndCounts(t *testing.T) {
 	if r.Name != "Ilya" || len(r.Warmup) != 6 || r.WarmupRounds != 1 || len(r.Cooldown) != 4 {
 		t.Fatalf("ilya: name=%q warmup=%d rounds=%d cooldown=%d", r.Name, len(r.Warmup), r.WarmupRounds, len(r.Cooldown))
 	}
-	if _, ok := StandardByKey("ilya"); !ok {
-		t.Fatal("ilya is not registered in StandardPrograms")
-	}
 	usedD := map[string]bool{}
 	for day := 1; day <= TotalDays; day++ {
 		w := r.Workout(day, 0, Rests{Warmup: 5, Main: 18})
@@ -230,5 +227,63 @@ func TestLevelScalingInWorkout(t *testing.T) {
 	}
 	if got := mainOf(r.Workout(1, 3, Rests{Warmup: 5, Main: 18}))[0].Value; got != 16 {
 		t.Errorf("level +3 push-ups = %d, want 16", got)
+	}
+}
+
+func TestDemoIsPublicAndEasier(t *testing.T) {
+	if len(StandardPrograms) != 1 || StandardPrograms[0].Key != "demo" {
+		t.Fatalf("StandardPrograms = %+v, want only demo", StandardPrograms)
+	}
+	if _, ok := StandardByKey("ilya"); ok {
+		t.Fatal("ilya is still a public program")
+	}
+	if _, ok := StandardByKey("sergey"); ok {
+		t.Fatal("sergey is still a public program")
+	}
+	r := ResolveDemo()
+	if r.Name != "Demo" || len(r.Days) != TotalDays || len(r.Warmup) != 6 || len(r.Cooldown) != 4 {
+		t.Fatalf("demo: name=%q days=%d warmup=%d cooldown=%d", r.Name, len(r.Days), len(r.Warmup), len(r.Cooldown))
+	}
+	if r.Marshal() == ResolveBuiltin().Marshal() {
+		t.Fatal("demo is a rename of Sergey")
+	}
+	peak := 0
+	for day := 1; day <= TotalDays; day++ {
+		w := r.Workout(day, 0, Rests{Warmup: 5, Main: 18})
+		count := len(r.Days[day-1].Items)
+		rounds := ClampRounds(r.Days[day-1].Rounds)
+		want := len(r.Warmup)*ClampRounds(r.WarmupRounds) + count*rounds + len(r.Cooldown)
+		if len(w.Items) != want {
+			t.Fatalf("demo day %d: %d items, want %d", day, len(w.Items), want)
+		}
+		if count > peak {
+			peak = count
+		}
+		if isRecoveryDay(day) && count != 4 {
+			t.Errorf("demo recovery day %d has %d main exercises, want 4", day, count)
+		}
+		for _, it := range w.Items {
+			if _, ok := Get(it.ExerciseID); !ok {
+				t.Errorf("demo day %d: unknown %s", day, it.ExerciseID)
+			}
+			if strings.HasPrefix(it.ExerciseID, "J") {
+				t.Errorf("demo day %d uses jump %s", day, it.ExerciseID)
+			}
+		}
+	}
+	if peak > 7 {
+		t.Errorf("demo peak main block = %d, want ≤7", peak)
+	}
+}
+
+func TestClampRoundsAndFigureKey(t *testing.T) {
+	if ClampRounds(0) != 1 || ClampRounds(11) != 10 || ClampRounds(3) != 3 {
+		t.Fatal("ClampRounds")
+	}
+	if FigureKey("/static/ex/m/P08.png", "X01") != "P08" {
+		t.Fatal("FigureKey path")
+	}
+	if FigureKey("P08", "X01") != "P08" {
+		t.Fatal("FigureKey id")
 	}
 }

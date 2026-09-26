@@ -2,6 +2,7 @@ package db
 
 import (
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 )
@@ -28,11 +29,11 @@ func TestUserAndSettings(t *testing.T) {
 	if _, err := d.CreateUser("a@b.com", "h2", "en", "Test"); err != ErrEmailTaken {
 		t.Errorf("expected ErrEmailTaken, got %v", err)
 	}
-	if err := d.UpdateSettings(u.ID, "Sergey", "de", 5, 35, 0, "min", true); err != nil {
+	if err := d.UpdateSettings(u.ID, "Sergey", "de", 5, 35, 0, "min"); err != nil {
 		t.Fatal(err)
 	}
 	u2, _ := d.UserByID(u.ID)
-	if u2.Lang != "de" || u2.Rest != 35 || u2.VoiceMode != "min" || !u2.Voice || u2.Name != "Sergey" || !u2.Jokes {
+	if u2.Lang != "de" || u2.Rest != 35 || u2.VoiceMode != "min" || !u2.Voice || u2.Name != "Sergey" {
 		t.Errorf("settings not saved: %+v", u2)
 	}
 }
@@ -171,5 +172,76 @@ func TestSessions(t *testing.T) {
 	_ = d.CreateSession("old", u.ID, -time.Hour)
 	if _, ok, _ := d.SessionUser("old"); ok {
 		t.Errorf("expired session accepted")
+	}
+}
+
+func TestCreateUserStartsOnDemo(t *testing.T) {
+	d := openTest(t)
+	u, err := d.CreateUser("demo@b.com", "h", "en", "D")
+	if err != nil {
+		t.Fatal(err)
+	}
+	k, err := d.ActiveProgram(u.ID)
+	if err != nil || k != "demo" {
+		t.Fatalf("active_program = %q err=%v, want demo", k, err)
+	}
+	j, _ := d.GetProgramJSON(u.ID)
+	if j != "" {
+		t.Fatal("new user already has a personal program")
+	}
+}
+
+func TestListAndFindAccount(t *testing.T) {
+	d := openTest(t)
+	u, _ := d.CreateUser("ilya@b.com", "h", "ru", "Ilya")
+	_, _ = d.CreateGuest("guest:z", "en")
+	accs, err := d.ListAccounts()
+	if err != nil || len(accs) != 2 {
+		t.Fatalf("list = %d err=%v", len(accs), err)
+	}
+	got, err := d.FindAccount("ilya@b.com")
+	if err != nil || got.ID != u.ID {
+		t.Fatalf("email lookup: %+v %v", got, err)
+	}
+	got, err = d.FindAccount("Ilya")
+	if err != nil || got.ID != u.ID {
+		t.Fatalf("name lookup: %+v %v", got, err)
+	}
+	got, err = d.FindAccount("1")
+	if err != nil || got.ID != u.ID {
+		t.Fatalf("id lookup: %+v %v", got, err)
+	}
+	if _, err := d.FindAccount("nobody"); err != ErrAccountNotFound {
+		t.Fatalf("missing: %v", err)
+	}
+}
+
+func TestMCPTokenIssueAndReissue(t *testing.T) {
+	d := openTest(t)
+	u, _ := d.CreateUser("tok@b.com", "h", "en", "Tok")
+	if d.HasMCPToken(u.ID) {
+		t.Fatal("new user already has a token")
+	}
+	a, err := d.IssueMCPToken(u.ID)
+	if err != nil || !strings.HasPrefix(a, "m30_") {
+		t.Fatalf("issue: %q %v", a, err)
+	}
+	if !d.HasMCPToken(u.ID) {
+		t.Fatal("hash not stored")
+	}
+	got, err := d.AccountByMCPToken(a)
+	if err != nil || got.ID != u.ID {
+		t.Fatalf("lookup: %+v %v", got, err)
+	}
+	b, err := d.IssueMCPToken(u.ID)
+	if err != nil || b == a {
+		t.Fatalf("reissue: %v same=%v", err, b == a)
+	}
+	if _, err := d.AccountByMCPToken(a); err != ErrAccountNotFound {
+		t.Fatal("old token still valid")
+	}
+	got, err = d.AccountByMCPToken(b)
+	if err != nil || got.ID != u.ID {
+		t.Fatalf("new token: %+v %v", got, err)
 	}
 }

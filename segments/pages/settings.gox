@@ -26,7 +26,15 @@ type settingsForm struct {
 	RestCooldown int    `form:"rest_cooldown"`
 	VoiceMode    string `form:"voice_mode"`
 	Sex          string `form:"sex"`
-	Jokes        string `form:"jokes"`
+}
+
+type newExForm struct {
+	ID      string `form:"ex_id"`
+	Name    string `form:"ex_name"`
+	Slot    string `form:"ex_slot"`
+	Unit    string `form:"ex_unit"`
+	PerSide string `form:"ex_perside"`
+	Figure  string `form:"ex_figure"`
 }
 
 // editState is the editor's working copy: the selected day plus the program as
@@ -45,6 +53,11 @@ type settingsPage struct {
 	path doors.Source[path.Path]
 }
 
+type mcpTokState struct {
+	Has   bool
+	Fresh string // plaintext, only right after issue/reissue
+}
+
 elem (s settingsPage) Main() {
 	~{
 		l := i18n.Lang(s.sess.Lang)
@@ -53,7 +66,6 @@ elem (s settingsPage) Main() {
 		restWVal := doors.NewSource(restW)
 		restMVal := doors.NewSource(restM)
 		restCVal := doors.NewSource(restC)
-		active := app.ActiveProgramKey(s.sess.UserID)
 		hasCustom := app.HasCustomProgram(s.sess.UserID)
 		cat := app.UserCatalog(s.sess.UserID)
 		entries := cat.List(l)
@@ -68,6 +80,7 @@ elem (s settingsPage) Main() {
 		levelSrc := doors.NewSource(s.sess.Level)
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirmReset := doors.NewSource(false)
+		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
@@ -144,10 +157,6 @@ elem (s settingsPage) Main() {
 							<option value="f" selected=func { return curSex == "f" }>~(i18n.T(l, "sex.female"))</option>
 						</select>
 					</div>
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.jokes"))</span>
-						<input class="joke-check" type="checkbox" name="jokes" value="1" checked=func { return s.sess.Jokes }>
-					</div>
 					<div class="srow save-row">
 						<button class="btn primary" type="submit">~(i18n.T(l, "settings.save"))</button>
 						~(saved.Bind(elem(ok bool) {
@@ -171,22 +180,27 @@ elem (s settingsPage) Main() {
 					<input type="range" min="-3" max="3" step="1" value=(s.sess.Level) (doors.AChange{On: s.setLevel(levelSrc)})>
 				</div>
 
-				~// Collapsible cycle viewer/editor: choose program, browse days, full CRUD, save your version.
+				~// Personal 30-day cycle: edit this account's plan only (no other programs to pick).
 				<details class="cycle-details">
 					<summary>~(i18n.T(l, "settings.cycle"))</summary>
 
-					~// Program selector — standard sets are always available and cannot be deleted.
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.program"))</span>
-						<select class="lang-select compact" (doors.AChange{On: s.selectProgram})>
-							~(for _, p := range content.StandardPrograms {
-								<option value=(p.Key) selected=func { return active == p.Key }>~(p.Name)</option>
-							})
-							~(if hasCustom {
-								<option value="custom" selected=func { return active == "custom" }>~(i18n.T(l, "settings.my_version"))</option>
-							})
-						</select>
+						<span>~(if hasCustom && prog.Name != "" { prog.Name } else { i18n.T(l, "program.demo") })</span>
 					</div>
+
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.download"))</span>
+						~{ b := []byte(prog.Marshal()) }
+						<a class="btn small" (doors.ResourceBytes(b)) name="workout.json">workout.json</a>
+					</div>
+					~>doors.ARawSubmit{On: s.importProgram} <form class="ex-import-form">
+						<textarea class="ex-import" name="progjson" rows="3" placeholder=(i18n.T(l, "settings.paste_program"))></textarea>
+						<div class="srow ex-import-row">
+							<input class="ex-file" type="file" accept=".json,application/json">
+							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
+						</div>
+					</form>
 
 					<div class="srow">
 						<span>~(i18n.T(l, "home.day"))</span>
@@ -197,8 +211,6 @@ elem (s settingsPage) Main() {
 						</select>
 					</div>
 
-					~// Reactive editor: shared warm-up + cool-down (whole series) and the
-					~// selected day's main block. Editing warm-up/cool-down affects all days.
 					~(editSrc.Bind(elem(st editState) {
 						~{
 							p, _ := content.ParseResolved(st.JSON)
@@ -206,12 +218,32 @@ elem (s settingsPage) Main() {
 							if idx < 0 {
 								idx = 0
 							}
+							mainRounds := 2
+							if len(p.Days) > 0 {
+								mainRounds = content.ClampRounds(p.Days[idx].Rounds)
+							}
 						}
-						<div class="cyc-head">~(i18n.T(l, "settings.warmup_series"), " · ", p.WarmupRounds, "×")</div>
+						<div class="srow">
+							<span>~(i18n.T(l, "settings.warmup_rounds"))</span>
+							<select class="lang-select compact" (doors.AChange{On: s.setWarmupRounds(editSrc)})>
+								~(for n := 1; n <= 10; n++ {
+									<option value=(n) selected=func { return n == p.WarmupRounds }>~(n)</option>
+								})
+							</select>
+						</div>
+						<div class="cyc-head">~(i18n.T(l, "settings.warmup_series"))</div>
 						~(s.editList(editSrc, cat, entries, l, p.Warmup, "warmup", st.Open))
 
 						~(if len(p.Days) > 0 {
 							~{ rd := p.Days[idx] }
+							<div class="srow">
+								<span>~(i18n.T(l, "settings.main_rounds"))</span>
+								<select class="lang-select compact" (doors.AChange{On: s.setMainRounds(editSrc)})>
+									~(for n := 1; n <= 10; n++ {
+										<option value=(n) selected=func { return n == mainRounds }>~(n)</option>
+									})
+								</select>
+							</div>
 							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
 							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
 						})
@@ -230,7 +262,7 @@ elem (s settingsPage) Main() {
 					</div>
 
 					~(if hasCustom {
-						~>doors.AClick{On: s.deleteProgram} <button class="btn danger small" type="button">~(i18n.T(l, "settings.delete_version"))</button>
+						~>doors.AClick{On: s.deleteProgram} <button class="btn danger small" type="button">~(i18n.T(l, "settings.restore_demo"))</button>
 					})
 				</details>
 
@@ -251,6 +283,35 @@ elem (s settingsPage) Main() {
 					~(selSrc.Bind(elem(id string) {
 						~(s.exDetail(l, cat, id))
 					}))
+					~>doors.ASubmit[newExForm]{On: s.createExercise} <form class="ex-import-form">
+						<div class="srow col">
+							<span>~(i18n.T(l, "settings.new_exercise"))</span>
+							<input class="text-input compact" name="ex_id" type="text" maxlength="12" placeholder="X01">
+							<input class="text-input compact" name="ex_name" type="text" maxlength="60" placeholder=(i18n.T(l, "settings.exercise"))>
+						</div>
+						<div class="srow">
+							<span>~(i18n.T(l, "settings.figure"))</span>
+							<select class="lang-select compact" name="ex_figure">
+								~(for _, e := range entries {
+									<option value=(e.ID)>~(e.Name)</option>
+								})
+							</select>
+						</div>
+						<div class="srow">
+							<select class="lang-select compact" name="ex_slot">
+								<option value="warmup">~(i18n.T(l, "workout.warmup"))</option>
+								<option value="main" selected=func { return true }>~(i18n.T(l, "workout.main"))</option>
+								<option value="cooldown">~(i18n.T(l, "workout.cooldown"))</option>
+							</select>
+							<select class="lang-select compact" name="ex_unit">
+								<option value="reps">~(i18n.T(l, "workout.x_reps"))</option>
+								<option value="seconds">~(i18n.T(l, "workout.sec"))</option>
+								<option value="breaths">~(i18n.T(l, "workout.breaths"))</option>
+							</select>
+							<label><input type="checkbox" name="ex_perside" value="1"> ~(i18n.T(l, "workout.side"))</label>
+							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.add_exercise"))</button>
+						</div>
+					</form>
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.download"))</span>
 						~(selSrc.Bind(elem(id string) {
@@ -279,6 +340,27 @@ elem (s settingsPage) Main() {
 						<span class="email">~(s.sess.Email)</span>
 					})
 				</div>
+
+				~(mcpSrc.Bind(elem(st mcpTokState) {
+					~{
+						mcpBtn := i18n.T(l, "settings.mcp_create")
+						if st.Has {
+							mcpBtn = i18n.T(l, "settings.mcp_reissue")
+						}
+					}
+					<div class="srow col">
+						<span>~(i18n.T(l, "settings.mcp"))</span>
+						~(if st.Fresh != "" {
+							<input class="text-input compact mcp-token" type="text" readonly value=(st.Fresh)>
+							<p class="mcp-hint">~(i18n.T(l, "settings.mcp_copy"))</p>
+						} else if st.Has {
+							<span>~(i18n.T(l, "settings.mcp_active"))</span>
+						} else {
+							<span>~(i18n.T(l, "settings.mcp_none"))</span>
+						})
+						~>doors.AClick{On: s.issueMCP(mcpSrc)} <button class="btn small" type="button">~(mcpBtn)</button>
+					</div>
+				}))
 
 				<div class="srow save-row">
 					~(confirmReset.Bind(elem(c bool) {
@@ -382,15 +464,13 @@ func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors
 		default:
 			mode = "normal"
 		}
-		jokesOn := f.Jokes == "1" || f.Jokes == "on" || f.Jokes == "true"
-		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode, jokesOn)
+		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode)
 		_ = app.DB.SetSex(s.sess.UserID, f.Sex)
 		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
 			cur.Name = name
 			cur.Rest = restMain
 			cur.VoiceMode = mode
 			cur.Voice = mode != "off"
-			cur.Jokes = jokesOn
 			return cur
 		})
 		saved.Update(ctx, true)
@@ -693,11 +773,114 @@ func (s settingsPage) saveEditor(editSrc doors.Source[editState], nameSrc doors.
 			name = name[:40]
 		}
 		p.Name = name
-		_ = app.DB.SetProgramJSON(s.sess.UserID, p.Marshal())
-		_ = app.DB.SetActiveProgram(s.sess.UserID, "custom")
+		_ = app.SetUserProgram(s.sess.UserID, p.Marshal())
 		_ = r.After(doors.ActionLocationReload{})
 		return false
 	}
+}
+
+func mutateProgram(ctx context.Context, editSrc doors.Source[editState], fn func(*content.Resolved)) {
+	st := editSrc.Get()
+	p, err := content.ParseResolved(st.JSON)
+	if err != nil {
+		return
+	}
+	fn(&p)
+	p.WarmupRounds = content.ClampRounds(p.WarmupRounds)
+	for i := range p.Days {
+		p.Days[i].Rounds = content.ClampRounds(p.Days[i].Rounds)
+	}
+	st.JSON = p.Marshal()
+	editSrc.Update(ctx, st)
+}
+
+// setWarmupRounds sets how many times the shared warm-up runs (1–10).
+func (s settingsPage) setWarmupRounds(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		n, err := strconv.Atoi(r.Event().Value)
+		if err != nil {
+			return false
+		}
+		mutateProgram(ctx, editSrc, func(p *content.Resolved) {
+			p.WarmupRounds = content.ClampRounds(n)
+		})
+		return false
+	}
+}
+
+// setMainRounds sets how many times this day's main block runs (1–10).
+func (s settingsPage) setMainRounds(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		n, err := strconv.Atoi(r.Event().Value)
+		if err != nil {
+			return false
+		}
+		mutateProgram(ctx, editSrc, func(p *content.Resolved) {
+			d := clampDay(editSrc.Get().Day, len(p.Days))
+			if d < 1 {
+				return
+			}
+			p.Days[d-1].Rounds = content.ClampRounds(n)
+		})
+		return false
+	}
+}
+
+// importProgram stores an uploaded/pasted cycle JSON as this user's personal plan.
+func (s settingsPage) importProgram(ctx context.Context, r doors.RequestRawForm) bool {
+	pf, err := r.ParseForm(1 << 20)
+	if err != nil {
+		return false
+	}
+	raw := strings.TrimSpace(pf.FormValue("progjson"))
+	if raw == "" {
+		return false
+	}
+	if app.SetUserProgram(s.sess.UserID, raw) != nil {
+		return false
+	}
+	_ = r.After(doors.ActionLocationReload{})
+	return false
+}
+
+// createExercise adds a custom exercise that reuses a built-in figure.
+func (s settingsPage) createExercise(ctx context.Context, r doors.RequestForm[newExForm]) bool {
+	f := r.Data()
+	id := strings.TrimSpace(f.ID)
+	name := strings.TrimSpace(f.Name)
+	if id == "" || name == "" {
+		return false
+	}
+	fig := content.FigureKey(f.Figure, id)
+	if _, ok := content.Get(fig); !ok {
+		fig = "P08"
+	}
+	slot := f.Slot
+	switch content.Slot(slot) {
+	case content.Warmup, content.Main, content.Cooldown:
+	default:
+		slot = string(content.Main)
+	}
+	unit := f.Unit
+	switch content.Unit(unit) {
+	case content.Reps, content.Seconds, content.Breaths:
+	default:
+		unit = string(content.Reps)
+	}
+	lang := string(i18n.Lang(s.sess.Lang))
+	d := catalog.Doc{
+		ID: id, Slot: slot, Unit: unit, PerSide: f.PerSide == "1" || f.PerSide == "on",
+		Difficulty: 2, SVG: fig,
+		Content: map[string]catalog.Loc{lang: {Name: name}, "en": {Name: name}},
+	}
+	if !catalog.ValidDoc(d) {
+		return false
+	}
+	if app.SaveCustomExercise(s.sess.UserID, d) != nil {
+		return false
+	}
+	_ = r.After(doors.ActionLocationReload{})
+	return false
 }
 
 // importExercise stores an uploaded/pasted per-exercise JSON into the user's
@@ -715,46 +898,30 @@ func (s settingsPage) importExercise(ctx context.Context, r doors.RequestRawForm
 	if json.Unmarshal([]byte(raw), &d) != nil {
 		return false
 	}
-	if !validDoc(d) {
+	if app.SaveCustomExercise(s.sess.UserID, d) != nil {
 		return false
 	}
-	_ = app.SaveCustomExercise(s.sess.UserID, d)
 	_ = r.After(doors.ActionLocationReload{})
 	return false
 }
 
-// validDoc sanity-checks an imported exercise document.
-func validDoc(d catalog.Doc) bool {
-	if strings.TrimSpace(d.ID) == "" {
-		return false
-	}
-	switch content.Slot(d.Slot) {
-	case content.Warmup, content.Main, content.Cooldown:
-	default:
-		return false
-	}
-	switch content.Unit(d.Unit) {
-	case content.Reps, content.Seconds, content.Breaths:
-	default:
-		return false
-	}
-	return true
-}
-
-// selectProgram switches the active program (a standard key or "custom") and reloads.
-func (s settingsPage) selectProgram(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-	app.DB.SetActiveProgram(s.sess.UserID, r.Event().Value)
-	_ = r.After(doors.ActionLocationReload{})
-	return false
-}
-
-// deleteProgram removes the custom program and reverts to the default standard
-// program (which can never be deleted), then reloads.
+// deleteProgram clears the personal file and returns this account to the demo.
 func (s settingsPage) deleteProgram(ctx context.Context, r doors.RequestPointer) bool {
-	_ = app.DB.SetProgramJSON(s.sess.UserID, "")
-	_ = app.DB.SetActiveProgram(s.sess.UserID, content.DefaultStandardKey())
+	_ = app.RestoreDemo(s.sess.UserID)
 	_ = r.After(doors.ActionLocationReload{})
 	return false
+}
+
+// issueMCP creates or replaces this account's MCP bearer token and shows it once.
+func (s settingsPage) issueMCP(src doors.Source[mcpTokState]) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		tok, err := app.DB.IssueMCPToken(s.sess.UserID)
+		if err != nil || tok == "" {
+			return false
+		}
+		src.Update(ctx, mcpTokState{Has: true, Fresh: tok})
+		return false
+	}
 }
 
 // reset clears all progress and returns to the home screen.

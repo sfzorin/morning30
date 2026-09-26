@@ -1,5 +1,9 @@
 package content
 
+// Ilya is a personal tennis-prep routine for an 8-year-old (no longer a
+// selectable product). Kept so existing accounts can be snapshotted into a
+// personal JSON file.
+//
 // Ilya is the third standard set: a home tennis-prep routine for an 8-year-old
 // who trains alone and races yesterday, not a partner. Same skeleton as
 // Sergey/Vlad — 6 warm-up, main block × 2 rounds, 4 cool-down, 20→30 screens —
