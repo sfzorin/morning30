@@ -38,7 +38,13 @@ var poseKinds = map[string][2]string{
 	"D01": {"stand", "stand"}, "D02": {"hinge", "hinge"}, "D03": {"stand", "squat"},
 	"D04": {"stand", "stand"}, "D05": {"stand", "stand"},
 	"CD01": {"supine", "supine"}, "CD02": {"supine", "supine"}, "CD03": {"supine", "supine"},
-	"CD04": {"prone", "prone"}, "CD07": {"kneel", "kneel"},
+	"CD04": {"prone", "prone"}, "CD05": {"supine", "supine"}, "CD07": {"kneel", "kneel"},
+	"W07": {"stand", "stand"}, "W08": {"stand", "stand"},
+	"B07": {"prone", "prone"}, "B08": {"reverse", "reverse"}, "B09": {"prone", "prone"},
+	"B11": {"prone", "prone"},
+	"J01": {"stand", "air"}, "J04": {"plank", "plank"}, "J08": {"squat", "plank"},
+	"J09": {"squat", "air"},
+	"L09": {"side", "side"},
 }
 
 // SeedPoseStills loads {ID}-1.png and {ID}-2.png into the shared pose catalog
