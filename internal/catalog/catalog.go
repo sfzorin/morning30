@@ -47,6 +47,7 @@ type Doc struct {
 	Difficulty  int            `json:"difficulty"`
 	Replacement string         `json:"replacement,omitempty"`
 	SVG         string         `json:"svg,omitempty"`
+	Poses       []string       `json:"poses,omitempty"` // 1 or 2 stills from the shared pose catalog
 	Content     map[string]Loc `json:"content"`
 }
 
@@ -276,8 +277,7 @@ func (c Catalog) SVG(id string) string {
 }
 
 // Figure returns the figure URL for an exercise, choosing the male/female
-// variant by sex ("m"/"f"). Custom exercises reuse a built-in illustration id
-// stored in SVG (no uploads).
+// variant by sex ("m"/"f"). Used when the pose catalog has no stills yet.
 func (c Catalog) Figure(id, sex string) string {
 	if sex != "f" {
 		sex = "m"
@@ -318,6 +318,47 @@ func NormalizeFigure(svg, fallback string) string {
 		return fallback
 	}
 	return "P08"
+}
+
+func clipPoseID(s string) string {
+	s = strings.ToLower(strings.TrimSpace(s))
+	if s == "" || len(s) > 64 {
+		return ""
+	}
+	for i, r := range s {
+		ok := (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == '_' || r == '-'
+		if !ok || (i == 0 && (r == '_' || r == '-')) {
+			return ""
+		}
+	}
+	return s
+}
+
+// ClipPoses keeps at most two distinct pose catalog ids (static = one, moving = two).
+func ClipPoses(ids []string) []string {
+	out := make([]string, 0, 2)
+	seen := map[string]bool{}
+	for _, raw := range ids {
+		id := clipPoseID(raw)
+		if id == "" || seen[id] {
+			continue
+		}
+		seen[id] = true
+		out = append(out, id)
+		if len(out) == 2 {
+			break
+		}
+	}
+	return out
+}
+
+// PoseIDs returns the catalog stills this exercise uses (empty = legacy figure).
+func (c Catalog) PoseIDs(id string) []string {
+	d, ok := c.resolve(id)
+	if !ok {
+		return nil
+	}
+	return ClipPoses(d.Poses)
 }
 
 // Doc returns the self-contained doc for an exercise (custom -> base -> built-in).

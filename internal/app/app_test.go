@@ -2,8 +2,11 @@ package app
 
 import (
 	"path/filepath"
+	"strings"
 	"testing"
+	"testing/fstest"
 
+	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/db"
 )
@@ -139,5 +142,108 @@ func TestSetUserProgramAndRestoreDemo(t *testing.T) {
 	}
 	if p, _ := d.Position(u.ID); p != 1 {
 		t.Fatalf("position reset to %d", p)
+	}
+}
+
+var tinyPNG = []byte{
+	0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
+	0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01,
+	0x08, 0x06, 0x00, 0x00, 0x00, 0x1f, 0x15, 0xc4, 0x89, 0x00, 0x00, 0x00,
+	0x0a, 0x49, 0x44, 0x41, 0x54, 0x78, 0x9c, 0x63, 0x00, 0x01, 0x00, 0x00,
+	0x05, 0x00, 0x01, 0x0d, 0x0a, 0x2d, 0xb4, 0x00, 0x00, 0x00, 0x00, 0x49,
+	0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
+}
+
+func TestSeedBuiltinsKeepsPoseAssignment(t *testing.T) {
+	d := openAppDB(t)
+	SeedBuiltins()
+	if err := d.PutPose("plank-high", "plank", "High", "m", tinyPNG); err != nil {
+		t.Fatal(err)
+	}
+	if err := d.PutPose("plank-low", "plank", "Low", "m", tinyPNG); err != nil {
+		t.Fatal(err)
+	}
+	if err := SetLibraryPoses("P08", []string{"plank-high", "plank-low"}); err != nil {
+		t.Fatal(err)
+	}
+	SeedBuiltins()
+	cat := UserCatalog(0)
+	ids := cat.PoseIDs("P08")
+	if len(ids) != 2 || ids[0] != "plank-high" || ids[1] != "plank-low" {
+		t.Fatalf("poses after seed: %#v", ids)
+	}
+	frames := ExerciseFrames(cat, "P08", "m")
+	if len(frames) != 2 || !strings.Contains(frames[0], "/poses/plank-high") {
+		t.Fatalf("frames: %#v", frames)
+	}
+}
+
+func TestExerciseFramesFallsBackToFigure(t *testing.T) {
+	d := openAppDB(t)
+	SeedBuiltins()
+	_ = d
+	frames := ExerciseFrames(UserCatalog(0), "P08", "f")
+	if len(frames) != 1 || !strings.Contains(frames[0], "/static/ex/f/P08.png") {
+		t.Fatalf("fallback: %#v", frames)
+	}
+}
+
+func TestSeedPoseStillsKeepsProgressAndManualPoses(t *testing.T) {
+	d := openAppDB(t)
+	SeedBuiltins()
+	u, _ := d.CreateUser("seed@b.com", "h", "en", "Seed")
+	if err := d.RecordActivity(u.ID, "2026-09-01"); err != nil {
+		t.Fatal(err)
+	}
+	fsys := fstest.MapFS{
+		"body/out/P08-1.png": {Data: tinyPNG},
+		"body/out/P08-2.png": {Data: append([]byte{}, tinyPNG...)},
+	}
+	if err := SeedPoseStills(fsys); err != nil {
+		t.Fatal(err)
+	}
+	ids := UserCatalog(0).PoseIDs("P08")
+	if len(ids) != 2 || ids[0] != "p08-1" || ids[1] != "p08-2" {
+		t.Fatalf("assigned %#v", ids)
+	}
+	frames := ExerciseFrames(UserCatalog(0), "P08", "f")
+	if len(frames) != 2 || !strings.Contains(frames[0], "/poses/p08-1") {
+		t.Fatalf("frames %#v", frames)
+	}
+	if ok, err := d.HasActivity(u.ID, "2026-09-01"); err != nil || !ok {
+		t.Fatalf("activity after seed: %v %v", ok, err)
+	}
+	if err := SetLibraryPoses("P08", []string{"p08-1"}); err != nil {
+		t.Fatal(err)
+	}
+	if err := SeedPoseStills(fsys); err != nil {
+		t.Fatal(err)
+	}
+	ids = UserCatalog(0).PoseIDs("P08")
+	if len(ids) != 1 || ids[0] != "p08-1" {
+		t.Fatalf("manual poses overwritten: %#v", ids)
+	}
+	if frames := ExerciseFrames(UserCatalog(0), "W01", "m"); len(frames) != 1 || !strings.Contains(frames[0], "/static/ex/") {
+		t.Fatalf("unseeded figure: %#v", frames)
+	}
+}
+
+func TestAssignExercisePosesCustomOverlay(t *testing.T) {
+	d := openAppDB(t)
+	SeedBuiltins()
+	u, _ := d.CreateUser("p@b.com", "h", "en", "Pat")
+	_ = d.PutPose("sit", "", "Sit", "m", tinyPNG)
+	if err := SaveCustomExercise(u.ID, catalog.Doc{
+		ID: "X01", Slot: "main", Unit: "reps", SVG: "P08",
+		Content: map[string]catalog.Loc{"en": {Name: "Wall sit"}},
+	}); err != nil {
+		t.Fatal(err)
+	}
+	if err := AssignExercisePoses(u.ID, "X01", []string{"sit"}); err != nil {
+		t.Fatal(err)
+	}
+	got, _ := UserCatalog(u.ID).Doc("X01")
+	if len(got.Poses) != 1 || got.Poses[0] != "sit" {
+		t.Fatalf("overlay poses: %#v", got.Poses)
 	}
 }

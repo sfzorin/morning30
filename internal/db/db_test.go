@@ -245,3 +245,38 @@ func TestMCPTokenIssueAndReissue(t *testing.T) {
 		t.Fatalf("new token: %+v %v", got, err)
 	}
 }
+
+// tinyPNG is a 1×1 transparent PNG.
+var tinyPNG = []byte{
+	0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
+	0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01,
+	0x08, 0x06, 0x00, 0x00, 0x00, 0x1f, 0x15, 0xc4, 0x89, 0x00, 0x00, 0x00,
+	0x0a, 0x49, 0x44, 0x41, 0x54, 0x78, 0x9c, 0x63, 0x00, 0x01, 0x00, 0x00,
+	0x05, 0x00, 0x01, 0x0d, 0x0a, 0x2d, 0xb4, 0x00, 0x00, 0x00, 0x00, 0x49,
+	0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
+}
+
+func TestPoseCatalogRoundTrip(t *testing.T) {
+	d := openTest(t)
+	if err := d.PutPose("Plank-High", "plank", "High plank", "m", tinyPNG); err != nil {
+		t.Fatal(err)
+	}
+	if err := d.PutPose("plank-high", "plank", "", "f", tinyPNG); err != nil {
+		t.Fatal(err)
+	}
+	p, err := d.GetPose("plank-high")
+	if err != nil || p.ID != "plank-high" || p.Kind != "plank" || p.Label != "High plank" || !p.HasM || !p.HasF {
+		t.Fatalf("meta: %+v %v", p, err)
+	}
+	mime, data, err := d.PoseImage("plank-high", "m")
+	if err != nil || mime != "image/png" || len(data) != len(tinyPNG) {
+		t.Fatalf("image: %s %d %v", mime, len(data), err)
+	}
+	list, err := d.ListPoses()
+	if err != nil || len(list) != 1 {
+		t.Fatalf("list: %d %v", len(list), err)
+	}
+	if err := d.PutPose("nope", "", "", "m", []byte("not-an-image")); err == nil {
+		t.Fatal("accepted garbage")
+	}
+}

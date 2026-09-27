@@ -102,6 +102,22 @@ CREATE TABLE IF NOT EXISTS exercises (
     updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Shared pose catalog. Taxonomy (kind) is a free slug until the pose table
+-- arrives; images are BLOBs, one row per pose × sex (m/f).
+CREATE TABLE IF NOT EXISTS poses (
+    id         TEXT PRIMARY KEY,
+    kind       TEXT NOT NULL DEFAULT '',
+    label      TEXT NOT NULL DEFAULT '',
+    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE TABLE IF NOT EXISTS pose_images (
+    pose_id TEXT NOT NULL REFERENCES poses(id) ON DELETE CASCADE,
+    sex     TEXT NOT NULL,                     -- m | f
+    mime    TEXT NOT NULL DEFAULT 'image/png',
+    data    BLOB NOT NULL,
+    PRIMARY KEY (pose_id, sex)
+);
+
 -- One row per calendar day the user worked out (drives streaks + date calendar).
 CREATE TABLE IF NOT EXISTS activity (
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,

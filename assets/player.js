@@ -113,7 +113,39 @@
 
   var i = 0;          // current item index
   var paused = false;
-  var ticker = null;  // active 1s interval
+  var ticker = null;
+  var frameTimer = null;
+  var frameIdx = 0;
+
+  function framesOf(it) {
+    if (it && it.frames && it.frames.length) return it.frames;
+    if (it && it.svg) return [it.svg];
+    return [];
+  }
+  function stopFrames() {
+    if (frameTimer) { clearInterval(frameTimer); frameTimer = null; }
+    frameIdx = 0;
+  }
+  function paintFrame(it, idx) {
+    var frames = framesOf(it);
+    if (!frames.length) return;
+    var src = frames[idx % frames.length];
+    if (el.svg) el.svg.src = src;
+    if (el.infoMedia) el.infoMedia.src = src;
+  }
+  function showFrames(it) {
+    stopFrames();
+    var frames = framesOf(it);
+    if (!frames.length) return;
+    if (el.svg) el.svg.alt = it.name || "";
+    paintFrame(it, 0);
+    if (frames.length < 2) return;
+    for (var k = 1; k < frames.length; k++) { (new Image()).src = frames[k]; }
+    frameTimer = setInterval(function () {
+      frameIdx = (frameIdx + 1) % frames.length;
+      paintFrame(it, frameIdx);
+    }, 1000);
+  }  // active 1s interval
   var finished = false;
   var wakeLock = null;
 
@@ -345,8 +377,7 @@
     if (el.stage) el.stage.classList.remove("hidden");
     if (el.controls) el.controls.classList.remove("hidden");
 
-    el.svg.src = it.svg;
-    el.svg.alt = it.name;
+    showFrames(it);
     if (el.name) el.name.textContent = it.name;
     if (el.index) el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
@@ -495,6 +526,7 @@
     var completeP = $hook("complete", { day: payload.day }).catch(function () { return null; });
     renderProgress(items.length, null); // every phase fully filled
     clearTicker();
+    stopFrames();
     clearNarr();
     shutUp();
     releaseWake();
@@ -701,7 +733,7 @@
     infoWasPaused = paused;
     paused = true;
     shutUp();
-    el.infoMedia.src = it.svg;
+    paintFrame(it, frameIdx);
     el.infoName.textContent = it.name;
     el.infoDesc.textContent = it.desc || "";
     fillList(el.infoHow, it.howTo);
@@ -728,7 +760,7 @@
     items[i] = {
       id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
       round: it.round, rest: it.rest, name: r.name, hint: r.hint, warning: r.warning,
-      svg: r.svg, video: "", desc: "", howTo: [], correct: [], wrong: [],
+      svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), video: "", desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
       vFinish: cues.well_done, repl: null
     };
@@ -751,7 +783,7 @@
 
   // ---- go ---------------------------------------------------------------
   $sys.clean(function () {
-    clearTicker(); clearNarr(); shutUp(); releaseWake();
+    clearTicker(); stopFrames(); clearNarr(); shutUp(); releaseWake();
     document.removeEventListener("visibilitychange", onVisibility);
     window.removeEventListener("pageshow", resumeWake);
     window.removeEventListener("focus", resumeWake);

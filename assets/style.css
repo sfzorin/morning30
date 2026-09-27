@@ -520,6 +520,11 @@ body:has(.player) {
   -webkit-tap-highlight-color: transparent;
 }
 .ex-svg:active { transform: scale(.98); }
+.pose-preview { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.pose-thumb {
+  width: 72px; height: 72px; object-fit: contain; border-radius: 12px;
+  background: #fff;
+}
 .ex-name { font-size: 23px; font-weight: 800; padding: 0 10px; line-height: 1.15; }
 .ex-value { font-size: 40px; font-weight: 800; color: var(--accent); }
 .ex-value.timer { font-variant-numeric: tabular-nums; }

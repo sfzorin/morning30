@@ -28,11 +28,13 @@ small client-side workout engine.
 - **In-app editor.** Reorder, add, remove, retime; warm-up and main rounds 1–10;
   save as this account's version, or restore the demo.
 - **Exercise JSON.** Download any exercise as a file, paste or upload one back.
-  Custom exercises overlay the built-in library and reuse a figure from that
-  library (no image upload).
+  Custom exercises overlay the built-in library. Each exercise can use one
+  catalog still (static) or two (they swap once a second). Legacy built-in
+  PNGs remain the fallback until photos are assigned.
 - **MCP.** Agents write exercises and the 30-day cycle straight into the user's
   SQLite row (`custom_exercises` / `program_json`). Same data the editor and
-  file import use. Progress is never reset.
+  file import use. Progress is never reset. They also upload stills into the
+  shared pose catalog and pick 1–2 photos per exercise.
 - **Universal difficulty.** A per-user level from **−3 to +3** scales every
   program by ±10% per step (reps and seconds only; breaths and warm-up/cool-down
   stay fixed).
@@ -46,8 +48,8 @@ small client-side workout engine.
   announcement of the next exercise with its count, a 3-2-1 lead-in, a half-time
   marker on timed sets, and running technique narration (how to do it / common
   mistakes). Four levels in settings: off · minimal · normal · detailed.
-- **Male / female figures.** Each exercise has a static illustration; a settings
-  toggle picks the male or female variant.
+- **Male / female figures.** A settings toggle picks the variant. Moving
+  exercises show two catalog stills that alternate every second; holds use one.
 - **Accounts.** Email + password (bcrypt). A **guest mode** lets people start
   immediately; signing up later upgrades the guest in place, keeping all progress.
 - **Streaks & calendar.** Consecutive-day streaks and a monthly activity calendar.
@@ -103,7 +105,7 @@ internal/
   content/           exercise library + demo 30-day cycle + legacy snapshots
   catalog/           per-user exercise catalog (custom over DB over code)
   i18n/              7-language UI strings, exercise names, voice cues
-  db/                SQLite: users, sessions, activity (streaks), exercise library
+  db/                SQLite: users, sessions, activity, exercise library, pose stills
   auth/              bcrypt, session tokens, the shared Session value
   app/               process-wide deps (DB) + per-user program/workout resolution
   mcp/               stdio JSON-RPC + optional Bearer HTTP /api
@@ -120,9 +122,9 @@ deploy/              production docker-compose
 Dockerfile           multi-stage container build
 ```
 
-> **Note:** exercise figures live under `assets/static/ex/<m|f>/<id>.png` and are
-> produced by a separate figure-rendering pipeline that is being extracted into
-> its own repository; it is intentionally not documented here.
+> **Note:** leftover built-in figures live under `assets/static/ex/<m|f>/<id>.png`.
+> New stills go into the SQLite pose catalog (`poses` / `pose_images`) and are
+> served at `/poses/{id}?sex=m|f`.
 
 ---
 
@@ -164,7 +166,8 @@ The server listens on `:8080`.
 
 ## MCP (agents)
 
-Agents edit **this user's** overlay, not a global catalog:
+Agents edit **this user's** overlay for exercises and the 30-day cycle, plus a
+**shared pose catalog** (stills in SQLite that every account can pick from):
 
 - `custom_exercises` — per-exercise JSON (same document the settings download/upload uses)
 - `program_json` — the 30-day cycle (same shape the in-app editor saves)
@@ -177,8 +180,11 @@ MORNING_DB=morning.db go run ./cmd/morning-mcp
 
 Tools: `list_accounts`, `get_program`, `set_program`, `restore_demo`,
 `list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
-`list_figures`. `account` is a user id, email, or unique display name.
-`put_exercise` stores `svg` as a built-in figure id from `list_figures`.
+`list_figures`, `list_poses`, `put_pose`, `set_exercise_poses`.
+`account` is a user id, email, or unique display name.
+`put_exercise` may set `poses` to 1–2 ids from `list_poses` (`svg` stays the
+legacy figure fallback). `put_pose` uploads a still (base64 png/jpeg/webp).
+`set_exercise_poses` assigns those stills on a global library exercise.
 
 HTTP is always on `/api/*`. Issue a token in **Settings → MCP token** (shown once;
 **Reissue** invalidates the old one). That Bearer is scoped to the account:
@@ -188,6 +194,10 @@ curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/accounts
 curl -H "Authorization: Bearer m30_…" \
   -X PUT --data-binary @P08.json \
   http://localhost:8080/api/accounts/me/exercises/P08
+curl -H "Authorization: Bearer m30_…" \
+  -H "Content-Type: image/png" \
+  --data-binary @plank-high.png \
+  "http://localhost:8080/api/poses/plank-high?sex=m&kind=plank&label=High%20plank"
 ```
 
 `MORNING_MCP_TOKEN` is an optional operator override that can still address any

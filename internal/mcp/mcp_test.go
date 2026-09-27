@@ -125,9 +125,42 @@ func TestUserMCPTokenScoped(t *testing.T) {
 
 func TestHandleRPCToolsList(t *testing.T) {
 	raw := handleRPC([]byte(`{"jsonrpc":"2.0","id":1,"method":"tools/list"}`))
-	if !bytes.Contains(raw, []byte("put_exercise")) || !bytes.Contains(raw, []byte("set_program")) {
+	if !bytes.Contains(raw, []byte("put_exercise")) || !bytes.Contains(raw, []byte("set_program")) ||
+		!bytes.Contains(raw, []byte("put_pose")) || !bytes.Contains(raw, []byte("set_exercise_poses")) {
 		t.Fatalf("tools/list: %s", raw)
 	}
+}
+
+func TestPutPoseAndSetExercisePoses(t *testing.T) {
+	d := setupMCP(t)
+	png := "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+	res := callTool("put_pose", jsonRaw(map[string]any{
+		"id": "plank-high", "kind": "plank", "label": "High plank", "sex": "m", "image": png,
+	}))
+	if res.IsError {
+		t.Fatalf("put_pose: %s", res.Content[0].Text)
+	}
+	res = callTool("put_pose", jsonRaw(map[string]any{
+		"id": "plank-low", "kind": "plank", "label": "Low plank", "sex": "m", "image": png,
+	}))
+	if res.IsError {
+		t.Fatalf("put_pose 2: %s", res.Content[0].Text)
+	}
+	res = callTool("set_exercise_poses", jsonRaw(map[string]any{
+		"id": "P08", "poses": []string{"plank-high", "plank-low"},
+	}))
+	if res.IsError {
+		t.Fatalf("set: %s", res.Content[0].Text)
+	}
+	ids := app.UserCatalog(0).PoseIDs("P08")
+	if len(ids) != 2 {
+		t.Fatalf("assigned %#v", ids)
+	}
+	list := callTool("list_poses", jsonRaw(map[string]any{}))
+	if list.IsError || !strings.Contains(list.Content[0].Text, "plank-high") {
+		t.Fatalf("list: %+v", list)
+	}
+	_ = d
 }
 
 func jsonRaw(v any) json.RawMessage {

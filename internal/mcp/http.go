@@ -136,6 +136,100 @@ func Handler(adminToken string) http.Handler {
 	mux.HandleFunc("GET /api/figures", func(w http.ResponseWriter, _ *http.Request) {
 		writeJSON(w, content.FigureIDs())
 	})
+	mux.HandleFunc("GET /api/poses", func(w http.ResponseWriter, r *http.Request) {
+		poses, err := app.DB.ListPoses()
+		if err != nil {
+			writeErr(w, http.StatusInternalServerError, err)
+			return
+		}
+		if poses == nil {
+			poses = []db.Pose{}
+		}
+		writeJSON(w, poses)
+	})
+	mux.HandleFunc("GET /api/poses/{id}", func(w http.ResponseWriter, r *http.Request) {
+		p, err := app.DB.GetPose(r.PathValue("id"))
+		if err != nil {
+			http.NotFound(w, r)
+			return
+		}
+		writeJSON(w, p)
+	})
+	mux.HandleFunc("PUT /api/poses/{id}", func(w http.ResponseWriter, r *http.Request) {
+		body, err := io.ReadAll(io.LimitReader(r.Body, 6<<20))
+		if err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		id := r.PathValue("id")
+		kind := r.URL.Query().Get("kind")
+		label := r.URL.Query().Get("label")
+		sex := r.URL.Query().Get("sex")
+		ct := r.Header.Get("Content-Type")
+		var data []byte
+		if strings.HasPrefix(ct, "image/") {
+			data = body
+		} else {
+			var a poseArgs
+			if err := json.Unmarshal(body, &a); err != nil {
+				writeErr(w, http.StatusBadRequest, err)
+				return
+			}
+			if a.ID != "" {
+				id = a.ID
+			}
+			if a.Kind != "" {
+				kind = a.Kind
+			}
+			if a.Label != "" {
+				label = a.Label
+			}
+			if a.Sex != "" {
+				sex = a.Sex
+			}
+			data, err = decodePoseImage(a.Image)
+			if err != nil {
+				writeErr(w, http.StatusBadRequest, err)
+				return
+			}
+		}
+		if err := app.DB.PutPose(id, kind, label, sex, data); err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		p, err := app.DB.GetPose(id)
+		if err != nil {
+			writeErr(w, http.StatusInternalServerError, err)
+			return
+		}
+		writeJSON(w, p)
+	})
+	mux.HandleFunc("PUT /api/exercises/{id}/poses", func(w http.ResponseWriter, r *http.Request) {
+		body, err := io.ReadAll(io.LimitReader(r.Body, 1<<16))
+		if err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		var a setPosesArgs
+		if err := json.Unmarshal(body, &a); err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		id := r.PathValue("id")
+		if a.ID != "" {
+			id = a.ID
+		}
+		if err := app.SetLibraryPoses(id, a.Poses); err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		d, ok := catalog.NewLayered(mustAllExercises(), "").Doc(id)
+		if !ok {
+			http.NotFound(w, r)
+			return
+		}
+		writeJSON(w, d)
+	})
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		got := strings.TrimSpace(strings.TrimPrefix(r.Header.Get("Authorization"), "Bearer "))
 		if adminToken != "" && got == adminToken {

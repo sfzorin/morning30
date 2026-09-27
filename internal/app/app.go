@@ -2,7 +2,9 @@
 package app
 
 import (
+	"encoding/json"
 	"errors"
+	"net/url"
 	"strings"
 	"time"
 
@@ -48,10 +50,18 @@ func ProgramByKey(userID int64, key string) content.Resolved {
 func SeedBuiltins() {
 	ids := make([]string, 0, len(content.Library()))
 	for _, ex := range content.Library() {
-		if d, ok := catalog.Builtin(ex.ID); ok {
-			_ = DB.SetExercise(ex.ID, d.Compact()) // upsert (code is canonical)
-			ids = append(ids, ex.ID)
+		d, ok := catalog.Builtin(ex.ID)
+		if !ok {
+			continue
 		}
+		if raw, err := DB.GetExercise(ex.ID); err == nil && raw != "" {
+			var old catalog.Doc
+			if json.Unmarshal([]byte(raw), &old) == nil {
+				d.Poses = catalog.ClipPoses(old.Poses)
+			}
+		}
+		_ = DB.SetExercise(ex.ID, d.Compact()) // upsert (code is canonical; poses kept)
+		ids = append(ids, ex.ID)
 	}
 	_ = DB.PruneExercises(ids) // drop exercises removed from the library
 }
@@ -78,9 +88,62 @@ func SaveCustomExercise(userID int64, d catalog.Doc) error {
 		return ErrInvalidExercise
 	}
 	d.SVG = catalog.NormalizeFigure(d.SVG, d.ID)
+	d.Poses = catalog.ClipPoses(d.Poses)
 	c := UserCatalog(userID)
 	c.Put(d)
 	return DB.SetCustomExercises(userID, c.Marshal())
+}
+
+// AssignExercisePoses stores 0–2 pose catalog ids on an exercise. Custom
+// overlay wins for that account; otherwise the global library row is updated
+// (SeedBuiltins keeps those ids).
+func AssignExercisePoses(userID int64, exerciseID string, poses []string) error {
+	exerciseID = strings.TrimSpace(exerciseID)
+	poses = catalog.ClipPoses(poses)
+	cat := UserCatalog(userID)
+	d, ok := cat.Doc(exerciseID)
+	if !ok {
+		return ErrInvalidExercise
+	}
+	d.Poses = poses
+	if cat.IsCustom(exerciseID) {
+		return SaveCustomExercise(userID, d)
+	}
+	return DB.SetExercise(exerciseID, d.Compact())
+}
+
+// SetLibraryPoses writes pose ids onto a global library exercise (MCP).
+func SetLibraryPoses(exerciseID string, poses []string) error {
+	exerciseID = strings.TrimSpace(exerciseID)
+	raw, err := DB.GetExercise(exerciseID)
+	if err != nil || raw == "" {
+		return ErrInvalidExercise
+	}
+	var d catalog.Doc
+	if json.Unmarshal([]byte(raw), &d) != nil {
+		return ErrInvalidExercise
+	}
+	d.ID = exerciseID
+	d.Poses = catalog.ClipPoses(poses)
+	return DB.SetExercise(exerciseID, d.Compact())
+}
+
+// ExerciseFrames returns 1 or 2 image URLs for the player. Pose catalog stills
+// win when present; otherwise the legacy built-in PNG.
+func ExerciseFrames(cat catalog.Catalog, id, sex string) []string {
+	if sex != "f" {
+		sex = "m"
+	}
+	var out []string
+	for _, pid := range cat.PoseIDs(id) {
+		if DB != nil && DB.HasPose(pid) {
+			out = append(out, "/poses/"+url.PathEscape(pid)+"?sex="+url.QueryEscape(sex))
+		}
+	}
+	if len(out) == 0 {
+		return []string{cat.Figure(id, sex)}
+	}
+	return out
 }
 
 // SnapshotAll copies leftover named built-in plans into personal files for every

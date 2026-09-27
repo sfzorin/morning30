@@ -6,6 +6,7 @@ package mcp
 import (
 	"bufio"
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -60,6 +61,19 @@ type exerciseArgs struct {
 	Account  string          `json:"account"`
 	ID       string          `json:"id"`
 	Exercise json.RawMessage `json:"exercise"`
+}
+
+type poseArgs struct {
+	ID    string `json:"id"`
+	Kind  string `json:"kind"`
+	Label string `json:"label"`
+	Sex   string `json:"sex"`
+	Image string `json:"image"`
+}
+
+type setPosesArgs struct {
+	ID    string   `json:"id"`
+	Poses []string `json:"poses"`
 }
 
 type programView struct {
@@ -126,13 +140,37 @@ func tools() []map[string]any {
 		},
 		{
 			"name":        "put_exercise",
-			"description": "Write a custom exercise into the account's library. svg must be a built-in figure id (no image upload).",
+			"description": "Write a custom exercise into the account's library. poses is 1–2 ids from list_poses (two stills alternate every second). svg remains a built-in figure fallback.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "exercise": map[string]any{"type": "object"}}, "required": []string{"account", "exercise"}},
 		},
 		{
 			"name":        "list_figures",
-			"description": "Built-in illustration ids a custom exercise may reuse as svg.",
+			"description": "Built-in illustration ids a custom exercise may reuse as svg (legacy fallback).",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
+		},
+		{
+			"name":        "list_poses",
+			"description": "Shared pose catalog (id, kind, label, which sexes have an image). Pick 1–2 ids per exercise.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
+		},
+		{
+			"name":        "put_pose",
+			"description": "Upload one still into the shared pose catalog. image is raw base64 (png/jpeg/webp). sex is m or f. kind is the taxonomy group (optional until the table exists).",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
+				"id":    map[string]any{"type": "string"},
+				"kind":  map[string]any{"type": "string"},
+				"label": map[string]any{"type": "string"},
+				"sex":   map[string]any{"type": "string", "description": "m or f"},
+				"image": map[string]any{"type": "string", "description": "base64 still"},
+			}, "required": []string{"id", "image"}},
+		},
+		{
+			"name":        "set_exercise_poses",
+			"description": "Assign 1–2 pose catalog ids to a global library exercise. Two stills alternate every second; one is static. Does not reset progress.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
+				"id":    map[string]any{"type": "string", "description": "Exercise id"},
+				"poses": map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
+			}, "required": []string{"id", "poses"}},
 		},
 	}
 }
@@ -254,6 +292,39 @@ func callTool(name string, args json.RawMessage) toolResult {
 		return textResult(got, nil)
 	case "list_figures":
 		return textResult(content.FigureIDs(), nil)
+	case "list_poses":
+		poses, err := app.DB.ListPoses()
+		if poses == nil {
+			poses = []db.Pose{}
+		}
+		return textResult(poses, err)
+	case "put_pose":
+		var a poseArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		img, err := decodePoseImage(a.Image)
+		if err != nil {
+			return textResult(nil, err)
+		}
+		if err := app.DB.PutPose(a.ID, a.Kind, a.Label, a.Sex, img); err != nil {
+			return textResult(nil, err)
+		}
+		p, err := app.DB.GetPose(a.ID)
+		return textResult(p, err)
+	case "set_exercise_poses":
+		var a setPosesArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		if err := app.SetLibraryPoses(a.ID, a.Poses); err != nil {
+			return textResult(nil, err)
+		}
+		d, ok := catalog.NewLayered(mustAllExercises(), "").Doc(strings.TrimSpace(a.ID))
+		if !ok {
+			return textResult(nil, fmt.Errorf("exercise %q not found", a.ID))
+		}
+		return textResult(d, nil)
 	default:
 		return textResult(nil, fmt.Errorf("unknown tool %q", name))
 	}
@@ -272,6 +343,29 @@ func programJSON(raw json.RawMessage) (string, error) {
 		return strings.TrimSpace(s), nil
 	}
 	return string(raw), nil
+}
+
+func decodePoseImage(s string) ([]byte, error) {
+	s = strings.TrimSpace(s)
+	if i := strings.Index(s, ","); i >= 0 && strings.Contains(strings.ToLower(s[:i]), "base64") {
+		s = s[i+1:]
+	}
+	b, err := base64.StdEncoding.DecodeString(s)
+	if err != nil {
+		b, err = base64.RawStdEncoding.DecodeString(s)
+	}
+	if err != nil {
+		return nil, errors.New("image must be base64")
+	}
+	return b, nil
+}
+
+func mustAllExercises() map[string]string {
+	m, _ := app.DB.AllExercises()
+	if m == nil {
+		return map[string]string{}
+	}
+	return m
 }
 
 func handleRPC(body []byte) []byte {

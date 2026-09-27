@@ -11,6 +11,7 @@ import (
 	"morning30/internal/auth"
 	"morning30/internal/catalog"
 	"morning30/internal/content"
+	"morning30/internal/db"
 	"morning30/internal/i18n"
 	"morning30/path"
 
@@ -35,6 +36,8 @@ type newExForm struct {
 	Unit    string `form:"ex_unit"`
 	PerSide string `form:"ex_perside"`
 	Figure  string `form:"ex_figure"`
+	PoseA   string `form:"ex_pose_a"`
+	PoseB   string `form:"ex_pose_b"`
 }
 
 // editState is the editor's working copy: the selected day plus the program as
@@ -51,6 +54,12 @@ type settingsPage struct {
 	sess auth.Session
 	auth doors.Source[auth.Session]
 	path doors.Source[path.Path]
+}
+
+type posePickForm struct {
+	ID    string `form:"pose_ex"`
+	PoseA string `form:"pose_a"`
+	PoseB string `form:"pose_b"`
 }
 
 type mcpTokState struct {
@@ -81,6 +90,10 @@ elem (s settingsPage) Main() {
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirmReset := doors.NewSource(false)
 		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
+		poseList, _ := app.DB.ListPoses()
+		if poseList == nil {
+			poseList = []db.Pose{}
+		}
 	}
 	<title>~(i18n.T(l, "settings.title"))</title>
 	<main class="screen">
@@ -283,11 +296,58 @@ elem (s settingsPage) Main() {
 					~(selSrc.Bind(elem(id string) {
 						~(s.exDetail(l, cat, id))
 					}))
+					~(selSrc.Bind(elem(id string) {
+						~{
+							cur := cat.PoseIDs(id)
+							poseA, poseB := "", ""
+							if len(cur) > 0 {
+								poseA = cur[0]
+							}
+							if len(cur) > 1 {
+								poseB = cur[1]
+							}
+							sex := app.DB.GetSex(s.sess.UserID)
+							thumbs := app.ExerciseFrames(cat, id, sex)
+						}
+						~>doors.ASubmit[posePickForm]{On: s.assignPoses} <form class="ex-import-form">
+							<input type="hidden" name="pose_ex" value=(id)>
+							<div class="pose-preview">
+								~(for _, u := range thumbs {
+									<img class="pose-thumb" src=(u) alt="">
+								})
+							</div>
+							<div class="srow col">
+								<span>~(i18n.T(l, "settings.pose_a"))</span>
+								<select class="lang-select compact" name="pose_a">
+									~(s.poseOptions(poseList, poseA, i18n.T(l, "settings.pose_none")))
+								</select>
+							</div>
+							<div class="srow col">
+								<span>~(i18n.T(l, "settings.pose_b"))</span>
+								<select class="lang-select compact" name="pose_b">
+									~(s.poseOptions(poseList, poseB, i18n.T(l, "settings.pose_none")))
+								</select>
+							</div>
+							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.pose_save"))</button>
+						</form>
+					}))
 					~>doors.ASubmit[newExForm]{On: s.createExercise} <form class="ex-import-form">
 						<div class="srow col">
 							<span>~(i18n.T(l, "settings.new_exercise"))</span>
 							<input class="text-input compact" name="ex_id" type="text" maxlength="12" placeholder="X01">
 							<input class="text-input compact" name="ex_name" type="text" maxlength="60" placeholder=(i18n.T(l, "settings.exercise"))>
+						</div>
+						<div class="srow col">
+							<span>~(i18n.T(l, "settings.pose_a"))</span>
+							<select class="lang-select compact" name="ex_pose_a">
+								~(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none")))
+							</select>
+						</div>
+						<div class="srow col">
+							<span>~(i18n.T(l, "settings.pose_b"))</span>
+							<select class="lang-select compact" name="ex_pose_b">
+								~(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none")))
+							</select>
 						</div>
 						<div class="srow">
 							<span>~(i18n.T(l, "settings.figure"))</span>
@@ -435,6 +495,22 @@ elem (s settingsPage) exOptions(entries []catalog.Entry, l i18n.Lang, cur string
 	~(s.exGroup(entries, l, cur, "warmup", "workout.warmup"))
 	~(s.exGroup(entries, l, cur, "main", "workout.main"))
 	~(s.exGroup(entries, l, cur, "cooldown", "workout.cooldown"))
+}
+
+elem (s settingsPage) poseOptions(poses []db.Pose, cur, noneLabel string) {
+	<option value="">~(noneLabel)</option>
+	~(for _, p := range poses {
+		~{
+			lab := p.ID
+			if p.Label != "" {
+				lab = p.Label + " (" + p.ID + ")"
+			}
+			if p.Kind != "" {
+				lab = p.Kind + " · " + lab
+			}
+		}
+		<option value=(p.ID) selected=func { return p.ID == cur }>~(lab)</option>
+	})
 }
 
 elem (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, labelKey string) {
@@ -870,13 +946,26 @@ func (s settingsPage) createExercise(ctx context.Context, r doors.RequestForm[ne
 	lang := string(i18n.Lang(s.sess.Lang))
 	d := catalog.Doc{
 		ID: id, Slot: slot, Unit: unit, PerSide: f.PerSide == "1" || f.PerSide == "on",
-		Difficulty: 2, SVG: fig,
+		Difficulty: 2, SVG: fig, Poses: catalog.ClipPoses([]string{f.PoseA, f.PoseB}),
 		Content: map[string]catalog.Loc{lang: {Name: name}, "en": {Name: name}},
 	}
 	if !catalog.ValidDoc(d) {
 		return false
 	}
 	if app.SaveCustomExercise(s.sess.UserID, d) != nil {
+		return false
+	}
+	_ = r.After(doors.ActionLocationReload{})
+	return false
+}
+
+// assignPoses stores 0–2 catalog stills on the selected exercise.
+func (s settingsPage) assignPoses(ctx context.Context, r doors.RequestForm[posePickForm]) bool {
+	f := r.Data()
+	if strings.TrimSpace(f.ID) == "" {
+		return false
+	}
+	if app.AssignExercisePoses(s.sess.UserID, f.ID, []string{f.PoseA, f.PoseB}) != nil {
 		return false
 	}
 	_ = r.After(doors.ActionLocationReload{})

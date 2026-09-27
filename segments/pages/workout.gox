@@ -28,9 +28,10 @@ type playerRepl struct {
 	Unit    string `json:"unit"`
 	Value   int    `json:"value"`
 	Scale   bool   `json:"scale"`
-	PerSide bool   `json:"perSide"`
-	SVG     string `json:"svg"`
-	Hint    string `json:"hint"`
+	PerSide bool     `json:"perSide"`
+	SVG     string   `json:"svg"`
+	Frames  []string `json:"frames,omitempty"`
+	Hint    string   `json:"hint"`
 	Warning string `json:"warning"`
 }
 
@@ -45,8 +46,9 @@ type playerItem struct {
 	Rest    int    `json:"rest"`
 	Name    string `json:"name"`
 	Hint    string `json:"hint"`    // short on-screen cue (localized)
-	Warning string `json:"warning"` // inline safety warning (localized)
-	SVG     string `json:"svg"`
+	Warning string   `json:"warning"` // inline safety warning (localized)
+	SVG     string   `json:"svg"`
+	Frames  []string `json:"frames,omitempty"`
 	// Detail card (Russian canonical content).
 	Desc      string   `json:"desc"`
 	HowTo     []string `json:"howTo"`
@@ -124,13 +126,15 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, v
 	if !ok {
 		return nil
 	}
+	frames := app.ExerciseFrames(cat, rid, sex)
 	return &playerRepl{
 		ID:      rid,
 		Name:    cat.Name(l, rid),
 		Unit:    string(r.Unit),
 		Value:   content.ConvertValue(ex.Unit, r.Unit, value),
 		PerSide: r.PerSide,
-		SVG:     cat.Figure(rid, sex),
+		SVG:     frames[0],
+		Frames:  frames,
 		Hint:    cat.Hint(l, rid),
 		Warning: cat.Warning(l, rid),
 	}
@@ -155,6 +159,7 @@ func (w workoutPage) playerData() playerPayload {
 		if repl != nil {
 			repl.Scale = scale
 		}
+		frames := app.ExerciseFrames(cat, id, sex)
 		items = append(items, playerItem{
 			ID:        id,
 			Unit:      string(it.Unit),
@@ -167,7 +172,8 @@ func (w workoutPage) playerData() playerPayload {
 			Name:      cat.Name(l, id),
 			Hint:      cat.Hint(l, id),
 			Warning:   cat.Warning(l, id),
-			SVG:       cat.Figure(id, sex),
+			SVG:       frames[0],
+			Frames:    frames,
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
 			Correct:   d.Correct,
