@@ -9,14 +9,15 @@ import (
 // Resolved is the editable program. Shared phases can be overridden for an
 // individual day; an explicit empty day phase disables the shared sequence.
 type Resolved struct {
-	Version         int     `json:"version"`
-	Name            string  `json:"name"`
-	TotalDays       int     `json:"totalDays"`
-	WarmupRounds    int     `json:"warmupRounds"`
-	Warmup          []RItem `json:"warmup"`
-	Days            []RDay  `json:"days"`
-	Cooldown        []RItem `json:"cooldown"`
-	FixedDifficulty bool    `json:"fixedDifficulty,omitempty"`
+	Version          int     `json:"version"`
+	Name             string  `json:"name"`
+	TotalDays        int     `json:"totalDays"`
+	WarmupRounds     int     `json:"warmupRounds"`
+	Warmup           []RItem `json:"warmup"`
+	Days             []RDay  `json:"days"`
+	Cooldown         []RItem `json:"cooldown"`
+	FixedDifficulty  bool    `json:"fixedDifficulty,omitempty"`
+	SelfManagedSides bool    `json:"selfManagedSides,omitempty"`
 }
 
 // RDay is one day's main sequence, repeated Rounds times (1–10).
@@ -214,10 +215,14 @@ func (r Resolved) Workout(day, level int, rests Rests) Workout {
 		if scale && !r.FixedDifficulty {
 			val = ScaleValue(unit, val, level)
 		}
+		sideRest := clampRest(ri.SideRest, 0, 90)
+		if r.SelfManagedSides {
+			sideRest = 0
+		}
 		items = append(items, Item{
 			ExerciseID: ri.ID, Unit: unit, Value: val,
 			Slot: ri.Slot, PerSide: perSide, Round: round,
-			restOverride: ri.Rest, SideRest: clampRest(ri.SideRest, 0, 90), RepSeconds: ri.RepSeconds,
+			restOverride: ri.Rest, SideRest: sideRest, RepSeconds: ri.RepSeconds,
 		})
 	}
 
@@ -236,7 +241,7 @@ func (r Resolved) Workout(day, level int, rests Rests) Workout {
 	}
 
 	est := assignRestsAndEst(items, rests)
-	return Workout{Day: day, Items: items, EstSec: est, FixedDifficulty: r.FixedDifficulty}
+	return Workout{Day: day, Items: items, EstSec: est, FixedDifficulty: r.FixedDifficulty, SelfManagedSides: r.SelfManagedSides}
 }
 
 // FigureKey extracts a built-in illustration id from a stored SVG path or raw id.

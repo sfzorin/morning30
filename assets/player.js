@@ -1,8 +1,8 @@
 // Morning workout player — runs entirely client-side from a server-provided
 // payload. It steps through exercises (reps + timed), rest periods, voice cues
-// and the celebratory finish, then reports completion to the server via $hook.
+// and the celebratory finish, then durably reports completion through the stable HTTP API.
 //
-// Loaded as a managed inline script: $data / $hook / $sys are injected by doors.
+// Loaded as a managed inline script: $data / $sys are injected by doors.
 
 (function () {
   var raw;
@@ -12,7 +12,12 @@
     if (typeof raw === "string") payload = JSON.parse(raw);
     else if (raw && typeof raw === "object") payload = raw;
   } catch (e) { payload = {}; }
-  var items = payload.items || [];
+  var items = (payload.items || []).slice();
+  var originalItems = items.slice();
+  var slotRounds = Object.create(null);
+  items.forEach(function (it) { slotRounds[it.slot] = Math.max(slotRounds[it.slot] || 1, it.round || 1); });
+  var store = window.MorningWorkoutState;
+  if (store) store.start(payload.userId);
   var labels = payload.labels || {};
   var cues = payload.cues || {};
   var enc = payload.enc || [];
@@ -21,6 +26,7 @@
   var voiceLang = payload.bcp47 || "en-US";        // e.g. "tr-TR"
   var voicePrefix = (payload.lang || "en").toLowerCase(); // e.g. "tr"
   var fixedDifficulty = !!payload.fixedDifficulty;
+  var selfManagedSides = !!payload.selfManagedSides;
   var level = fixedDifficulty ? 0 : (payload.level || 0); // difficulty −3..+3
 
   // jsScale mirrors the server's ScaleValue: ±10% per level on reps/seconds,
@@ -102,6 +108,7 @@
     restTitle: $(".rest-title"),
     restIndex: $(".rest-index"),
     doneOverlay: $(".done-overlay"),
+    applause: $(".applause"),
     doneTitle: $(".done-title"),
     doneEnc: $(".done-enc"),
     doneStreak: $(".done-streak"),
@@ -118,6 +125,25 @@
   var ticker = null;
   var frameTimer = null;
   var frameIdx = 0;
+  var disposed = false;
+  var resumeNeeded = false;
+  var redirecting = false;
+  var restoring = false;
+  var activeClock = null;
+  var state = {
+    index: 0, side: 1, phase: "ready", remainingMs: 3000,
+    nextIndex: 0, nextSide: 1, level: level, swaps: {},
+    eventId: store ? store.newEventId() : String(Date.now()) + Math.random().toString(16).slice(2).repeat(3),
+    completion: null
+  };
+  function checkpoint() {
+    state.index = i;
+    state.side = curSide || 1;
+    state.level = level;
+    if (store && !disposed) store.saveCheckpoint(payload, state);
+  }
+  function running() { return !disposed && !finished && !paused && document.visibilityState === "visible"; }
+
 
   function framesOf(it) {
     if (it && it.frames && it.frames.length) return it.frames;
@@ -146,7 +172,7 @@
     if (!frames.length) return;
     if (el.svg) el.svg.alt = it.name || "";
     paintFrame(it, 0);
-    if (frames.length < 2) return;
+    if (frames.length < 2 || !running()) return;
     for (var k = 1; k < frames.length; k++) { (new Image()).src = frames[k]; }
     frameTimer = setInterval(function () {
       frameIdx = (frameIdx + 1) % frames.length;
@@ -173,7 +199,7 @@
   //   utter(text)  — plain queued speech (narration, the rest announcement,
   //                  finish messages); any sayNow cuts the current line off.
   function utter(text) {
-    if (!voiceOn || !text || !("speechSynthesis" in window)) return;
+    if (!voiceOn || !text || disposed || paused || document.visibilityState !== "visible" || !("speechSynthesis" in window)) return;
     try {
       if (!voices.length || !chosenVoice) loadVoices();
       var u = new SpeechSynthesisUtterance(text);
@@ -244,74 +270,100 @@
     if (talkative()) sayNow(cues.halfway);
   }
 
-  // Run a 1-second countdown; onTick(remaining) each second, onDone() at 0.
-  // Respects the paused flag.
-  function countdown(seconds, onTick, onDone) {
+  // Keep the remaining duration outside the timer closure so every phase can
+  // survive page recreation. Hidden time never counts as exercise time.
+  function countdown(seconds, onTick, onDone, remainingMs) {
     clearTicker();
-    var remaining = seconds;
-    onTick(remaining);
+    state.remainingMs = remainingMs == null ? seconds * 1000 : remainingMs;
+    activeClock = { lastAt: Date.now(), onTick: onTick, onDone: onDone, shown: -1 };
+    onTick(Math.ceil(state.remainingMs / 1000));
+    activeClock.shown = Math.ceil(state.remainingMs / 1000);
+    checkpoint();
+    if (paused) return;
+    if (state.remainingMs <= 0) { activeClock = null; onDone(); return; }
     ticker = setInterval(function () {
-      if (paused) return;
-      remaining -= 1;
-      if (remaining <= 0) {
-        onTick(0);
-        clearTicker();
-        onDone();
-      } else {
-        onTick(remaining);
+      if (!running()) return;
+      var clock = activeClock;
+      if (!clock) return;
+      state.remainingMs = Math.max(0, state.remainingMs - Math.max(0, Date.now() - clock.lastAt));
+      clock.lastAt = Date.now();
+      var remaining = Math.ceil(state.remainingMs / 1000);
+      if (remaining !== clock.shown) { clock.shown = remaining; clock.onTick(remaining); }
+      checkpoint();
+      if (state.remainingMs <= 0) {
+        clearTicker(); activeClock = null;
+        clock.onDone();
       }
     }, 1000);
   }
 
-  var wakeGestureRetry = null;
+  function freezeClock() {
+    if (activeClock && !paused) {
+      state.remainingMs = Math.max(0, state.remainingMs - Math.max(0, Date.now() - activeClock.lastAt));
+      activeClock.lastAt = Date.now();
+    }
+    clearTicker();
+  }
+
+  var wakeRequest = null;
   async function requestWake() {
+    if (!running() || !("wakeLock" in navigator) || wakeRequest || (wakeLock && !wakeLock.released)) return;
+    var request;
     try {
-      if (!("wakeLock" in navigator) || document.visibilityState !== "visible") return;
-      if (wakeLock) {
-        if (!wakeLock.released) return;
-        wakeLock = null;
-      }
-      wakeLock = await navigator.wakeLock.request("screen");
-      wakeLock.addEventListener("release", function () { wakeLock = null; });
-      clearWakeGestureRetry();
-    } catch (e) { wakeLock = null; }
+      request = navigator.wakeLock.request("screen");
+      wakeRequest = request;
+      var sentinel = await request;
+      if (!running()) { await sentinel.release(); return; }
+      wakeLock = sentinel;
+      sentinel.addEventListener("release", function () { if (wakeLock === sentinel) wakeLock = null; });
+    } catch (e) {
+      // The Continue tap retries when a browser requires a user gesture.
+    } finally {
+      if (wakeRequest === request) wakeRequest = null;
+    }
   }
   function releaseWake() {
-    clearWakeGestureRetry();
-    try { if (wakeLock) { wakeLock.release(); wakeLock = null; } } catch (e) {}
+    var sentinel = wakeLock;
+    wakeLock = null;
+    try { if (sentinel) sentinel.release(); } catch (e) {}
   }
-  function clearWakeGestureRetry() {
-    if (!wakeGestureRetry) return;
-    document.removeEventListener("pointerdown", wakeGestureRetry, true);
-    wakeGestureRetry = null;
+  function pauseForReturn() {
+    if (disposed || finished) return;
+    freezeClock();
+    paused = true;
+    resumeNeeded = true;
+    clearNarr(); stopFrames(); shutUp(); releaseWake();
+    if (el.infoOverlay) el.infoOverlay.classList.add("hidden");
+    root.classList.add("frozen");
+    checkpoint();
+    if (el.resumeOverlay) el.resumeOverlay.classList.remove("hidden");
   }
-  // iOS may refuse a silent re-acquire after app switch; the next tap fixes it.
-  function scheduleWakeGestureRetry() {
-    if (finished) return;
-    clearWakeGestureRetry();
-    wakeGestureRetry = function () {
-      clearWakeGestureRetry();
-      if (!finished) requestWake();
-    };
-    document.addEventListener("pointerdown", wakeGestureRetry, true);
+  // A scheduled cycle restart changes which day this page may run. Let the
+  // server resolve the current day instead of resuming an overnight snapshot.
+  function redirectAfterRestart() {
+    if (disposed || finished || document.visibilityState !== "visible") return false;
+    if (redirecting) return true;
+    var deadline = typeof payload.restartAt === "string" ? Date.parse(payload.restartAt) : NaN;
+    if (!Number.isFinite(deadline) || Date.now() < deadline) return false;
+    redirecting = true;
+    freezeClock(); paused = true;
+    clearNarr(); stopFrames(); shutUp(); releaseWake();
+    location.assign("/start");
+    return true;
   }
-  function resumeWake() {
-    if (finished) return;
-    requestWake();
-  }
-  // The OS auto-releases the wake lock whenever the page is hidden (screen off,
-  // tab switch). Re-acquire it on return so the screen stays on mid-workout.
   function onVisibility() {
-    if (document.visibilityState === "hidden") {
-      wakeLock = null;
-      return;
-    }
-    resumeWake();
-    scheduleWakeGestureRetry();
+    if (document.visibilityState !== "visible") pauseForReturn();
+    else if (!redirectAfterRestart() && resumeNeeded && el.resumeOverlay) el.resumeOverlay.classList.remove("hidden");
+  }
+  function onPageShow() {
+    if (redirectAfterRestart()) return;
+    if (resumeNeeded && el.resumeOverlay) el.resumeOverlay.classList.remove("hidden");
+    else if (running()) requestWake();
   }
   document.addEventListener("visibilitychange", onVisibility);
-  window.addEventListener("pageshow", resumeWake);
-  window.addEventListener("focus", resumeWake);
+  window.addEventListener("pagehide", pauseForReturn);
+  window.addEventListener("pageshow", onPageShow);
+  window.addEventListener("focus", onPageShow);
 
   // ---- rendering --------------------------------------------------------
   // The top bar is split into one segment per phase (warm-up / main / cool-down),
@@ -364,7 +416,8 @@
 
   // setPhaseLabel writes the phase + round into the top label, slot-coloured.
   function setPhaseLabel(it) {
-    el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round;
+    var totalRounds = slotRounds[it.slot] || 1;
+    el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round + (totalRounds > 1 ? "/" + totalRounds : "");
     el.phase.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
     el.phase.classList.add("slot-" + it.slot);
     setSlotTheme(it.slot);
@@ -373,15 +426,16 @@
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
   var curSide = 1;
 
-  // Timed sets use two clocks. A prescribed side pause also splits rep sets
-  // into two Done taps; legacy reps still cover both sides in a single tap.
-  function sides(it) { return it.perSide && (it.unit === "seconds" || it.sideRest > 0) ? 2 : 1; }
+  // Self-managed sides share one step; timed work still includes both sides.
+  // Other plans retain separate timed sides and any prescribed switching pause.
+  function sides(it) { return !selfManagedSides && it.perSide && (it.unit === "seconds" || it.sideRest > 0) ? 2 : 1; }
+  function timedDuration(it) { return val(it) * (selfManagedSides && it.perSide ? 2 : 1); }
 
-  function startItem(idx) {
+  function startItem(idx, side, remainingMs) {
     i = idx;
     var it = items[i];
     if (!it || !el.svg) return;
-    if (root) root.classList.remove("frozen"); // a fresh set is always running, not paused
+    if (root) root.classList.toggle("frozen", paused);
     if (el.rest) el.rest.classList.add("hidden");
     if (el.stage) el.stage.classList.remove("hidden");
     if (el.controls) el.controls.classList.remove("hidden");
@@ -391,19 +445,24 @@
     if (el.index) el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
     renderProgress(i, it.slot);
-    runSide(it, 1);
+    runSide(it, side || 1, remainingMs);
   }
 
   // runSide runs one side. Each explicit side gets its own visible position.
-  function runSide(it, side) {
+  function runSide(it, side, remainingMs) {
     curSide = side;
+    state.phase = "exercise";
+    state.nextIndex = i;
+    state.nextSide = side;
+    state.remainingMs = it.unit === "seconds" ? (remainingMs == null ? timedDuration(it) * 1000 : remainingMs) : null;
     if (el.rest) el.rest.classList.add("hidden");
     if (el.stage) el.stage.classList.remove("hidden");
     if (el.controls) el.controls.classList.remove("hidden");
     setPhaseLabel(it);
     if (sides(it) === 2) el.phase.textContent += " · " + t("side") + " " + side + "/2";
+    if (selfManagedSides && it.perSide && it.unit === "seconds") el.phase.textContent += " · " + valueDisplay(it);
     clearNarr();
-    if (side === 1) {
+    if (side === 1 && !restoring) {
       sayNow(it.vStart);   // "Go" / "Старт"
       startNarr(it);       // first instruction ~3 s later
     }
@@ -412,7 +471,7 @@
       el.done.classList.add("hidden");
       el.value.classList.add("timer");
       el.value.classList.remove("prep");
-      var D = val(it);
+      var D = timedDuration(it);
       var halfAt = Math.round(D * 0.5);
       var lastSide = side >= sides(it);
       countdown(D, function (r) {
@@ -420,13 +479,14 @@
         if (D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
         if (r === 4) clearNarr();                // silence narration before the count
         if (r <= 3 && r >= 1 && lastSide) sayNow(String(r));
-      }, function () { nextSide(it, side); });
+      }, function () { nextSide(it, side); }, remainingMs);
     } else {
       // reps / breaths: wait for the user to tap Done.
-      clearTicker();
+      clearTicker(); activeClock = null;
       el.value.classList.remove("timer", "prep");
       el.value.textContent = activeValueDisplay(it);
       el.done.classList.remove("hidden");
+      checkpoint();
     }
   }
 
@@ -438,7 +498,7 @@
         doRest(it.sideRest, it, true, function () {
           sayNow(cues.go);
           runSide(it, side + 1);
-        });
+        }, side + 1);
         el.restTitle.textContent = cues.switch_side || t("side");
         el.restNext.textContent = it.name + " · " + t("side") + " " + (side + 1) + "/2";
       } else {
@@ -489,9 +549,13 @@
   // For a real rest it then speaks "Rest" + the next exercise with its count —
   // after a short beat so it never lands on top of the previous set's "one".
   // The get-ready before an exercise is just the spoken 3-2-1, leading into "Go".
-  function doRest(seconds, upItem, isReady, onDone) {
+  function doRest(seconds, upItem, isReady, onDone, nextSide, remainingMs) {
     if (!el.rest) { if (onDone) onDone(); return; }
-    clearNarr();
+    clearNarr(); stopFrames();
+    state.phase = nextSide > 1 ? "side-rest" : (isReady ? "ready" : "rest");
+    state.nextIndex = items.indexOf(upItem);
+    state.nextSide = nextSide || 1;
+    state.remainingMs = remainingMs == null ? seconds * 1000 : remainingMs;
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
     el.done.classList.add("hidden"); // Done lives on its own row, outside .controls
@@ -506,8 +570,12 @@
       setPhaseLabel(upItem);
       renderProgress(upIdx, upItem.slot);
     }
+    if (state.phase === "side-rest") {
+      el.restTitle.textContent = cues.switch_side || t("side");
+      el.restNext.textContent = upItem.name + " · " + t("side") + " " + state.nextSide + "/2";
+    }
     pendingStart = onDone;
-    if (upItem && !isReady && seconds >= 6) {
+    if (upItem && !isReady && seconds >= 6 && !restoring && !paused) {
       announceTimer = setTimeout(function () {
         announceTimer = null;
         if (paused || el.rest.classList.contains("hidden")) return;
@@ -522,12 +590,13 @@
     }, function () {
       var f = pendingStart; pendingStart = null;
       if (f) f();
-    });
+    }, remainingMs);
   }
 
   // prev returns to the previous exercise (or restarts the current one when
   // resting), in case the user skipped or advanced by accident.
   function prev() {
+    if (paused || finished) return;
     shutUp();
     clearTicker();
     paused = false;
@@ -545,40 +614,68 @@
     doRest(rest, items[next], false, function () { startItem(next); });
   }
 
-  // finish ends the workout: celebrate and report completion to the server.
-  async function finish() {
-    if (finished) return;
-    finished = true;
-    // Record first so a fast tap on Back home still counts the day.
-    var completeP = $hook("complete", { day: payload.day }).catch(function () { return null; });
-    renderProgress(items.length, null); // every phase fully filled
-    clearTicker();
-    stopFrames();
-    clearNarr();
-    shutUp();
-    releaseWake();
-    el.stage.classList.add("hidden");
-    el.controls.classList.add("hidden");
-    el.done.classList.add("hidden");
-    if (el.done.parentElement) el.done.parentElement.classList.add("hidden");
-    el.rest.classList.add("hidden");
-    el.doneOverlay.classList.remove("hidden");
-
+  function localDate(date) {
+    return date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0") + "-" + String(date.getDate()).padStart(2, "0");
+  }
+  var celebrated = false;
+  function showCompletionStatus(status, receipt, durable) {
+    if (disposed || !finished) return;
+    el.saveStatus.textContent = t(status === "saved" ? "saved" : status === "saving" ? "saving" : (durable === false ? "save_unavailable" : "save_pending"));
+    el.saveRetry.classList.toggle("hidden", status !== "pending");
+    if (status !== "saved") {
+      el.doneTitle.textContent = t("day_done");
+      return;
+    }
+    if (el.applause) el.applause.classList.remove("hidden");
+    el.doneStreak.classList.remove("hidden");
     var name = (payload.name || "").trim();
     el.doneTitle.textContent = name ? name + ", " + t("bravo") : t("done_title");
-    var message = enc.length ? enc[Math.floor(Math.random() * enc.length)] : "";
-    el.doneEnc.textContent = message;
-
-    celebrate();
-    speak(name ? name + ", " + cues.well_done : cues.workout_end);
-    if (message) setTimeout(function () { speak(message); }, 1100);
-
-    try {
-      var streak = await completeP;
-      if (typeof streak === "number") {
-        el.doneStreak.textContent = "🔥 " + streak + " · " + t("streak");
+    if (receipt && typeof receipt.streak === "number") el.doneStreak.textContent = "🔥 " + receipt.streak + " · " + t("streak");
+    if (!celebrated) {
+      celebrated = true;
+      var message = enc.length ? enc[Math.floor(Math.random() * enc.length)] : "";
+      el.doneEnc.textContent = message;
+      if (document.visibilityState === "visible") {
+        celebrate();
+        speak(name ? name + ", " + cues.well_done : cues.workout_end);
       }
-    } catch (e) {}
+    }
+  }
+  function sendCompletion() {
+    if (!state.completion || disposed) return;
+    if (!store) { showCompletionStatus("pending", null, false); return; }
+    var queued = store.queueCompletion(state.completion);
+    showCompletionStatus("saving", null, queued.durable);
+    store.sendCompletion(state.completion).then(function (saved) {
+      showCompletionStatus("saved", saved);
+    }).catch(function () { showCompletionStatus("pending", null, queued.durable); });
+  }
+  // The event is stored before any network call. Closing the page while offline
+  // leaves the same event for the authenticated home page to retry.
+  function finish() {
+    if (finished) return;
+    finished = true;
+    paused = false;
+    state.phase = "complete";
+    state.remainingMs = null;
+    if (!state.completion) {
+      var date = new Date();
+      state.completion = { eventId: state.eventId, userId: payload.userId, day: payload.day,
+        position: payload.position, completedAt: date.toISOString(), completedOn: localDate(date) };
+    }
+    checkpoint();
+    renderProgress(items.length, null);
+    clearTicker(); activeClock = null;
+    stopFrames(); clearNarr(); shutUp(); releaseWake();
+    el.resumeOverlay.classList.add("hidden");
+    root.classList.remove("frozen");
+    el.stage.classList.add("hidden"); el.controls.classList.add("hidden");
+    el.done.classList.add("hidden");
+    if (el.done.parentElement) el.done.parentElement.classList.add("hidden");
+    el.rest.classList.add("hidden"); el.doneOverlay.classList.remove("hidden");
+    if (el.applause) el.applause.classList.add("hidden");
+    el.doneStreak.classList.add("hidden");
+    sendCompletion();
   }
 
   // ---- celebration: confetti + a roaring crowd (applause, cheers, whistles) ----
@@ -686,7 +783,7 @@
   // ---- controls ---------------------------------------------------------
   if (el.done) el.done.addEventListener("click", function () {
     var it = items[i];
-    if (it && it.unit !== "seconds") { nextSide(it, curSide); }
+    if (!paused && !finished && it && it.unit !== "seconds") { nextSide(it, curSide); }
   });
   // Full page load — Doors ALink can pushState to "/" before the server
   // reroutes, after which further taps no-op and the overlay never closes.
@@ -696,11 +793,12 @@
       location.assign("/");
     });
   }
-  if (el.skip) el.skip.addEventListener("click", function () { shutUp(); clearNarr(); endItem(); });
+  if (el.skip) el.skip.addEventListener("click", function () { if (paused || finished) return; shutUp(); clearNarr(); endItem(); });
   if (el.prev) el.prev.addEventListener("click", prev);
   if (el.restBack) el.restBack.addEventListener("click", prev);
   // Skip jumps straight to whatever the rest/ready countdown was about to start.
   if (el.restSkip) el.restSkip.addEventListener("click", function () {
+    if (paused || finished) return;
     clearTicker();
     clearNarr();
     shutUp();
@@ -719,7 +817,7 @@
     if (el.diffUp) el.diffUp.disabled = fixedDifficulty || level >= 3;
   }
   function changeLevel(delta) {
-    if (fixedDifficulty) return;
+    if (fixedDifficulty || paused || finished) return;
     var nl = clampLevel(level + delta);
     if (nl === level) return;
     level = nl;
@@ -730,6 +828,7 @@
     if (it && vis(el.stage) && it.unit !== "seconds") {
       el.value.textContent = activeValueDisplay(it);
     }
+    checkpoint();
   }
   if (el.diffUp) el.diffUp.addEventListener("click", function () { changeLevel(1); });
   if (el.diffDown) el.diffDown.addEventListener("click", function () { changeLevel(-1); });
@@ -763,11 +862,14 @@
     }
   }
   function openInfo() {
+    if (resumeNeeded || finished) return;
     var it = items[i];
     if (!it) return;
     infoWasPaused = paused;
+    freezeClock();
     paused = true;
-    shutUp();
+    clearNarr(); stopFrames(); shutUp();
+    checkpoint();
     paintFrame(it, frameIdx);
     el.infoName.textContent = it.name;
     el.infoDesc.textContent = it.desc || "";
@@ -784,21 +886,28 @@
   }
   function closeInfo() {
     el.infoOverlay.classList.add("hidden");
+    if (resumeNeeded) return;
     paused = infoWasPaused;
+    if (!paused) restorePhase();
     root.classList.toggle("frozen", paused);
   }
   // doReplace swaps the current exercise for its replacement and restarts it.
-  function doReplace() {
-    var it = items[i];
-    if (!it || !it.repl) return;
+  function replacementItem(it) {
     var r = it.repl;
-    items[i] = {
+    return {
       id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
       round: it.round, rest: it.rest, sideRest: it.sideRest, name: r.name, hint: r.hint, warning: r.warning,
       svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), video: "", desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
       vFinish: cues.well_done, repl: null
     };
+  }
+  function doReplace() {
+    if (resumeNeeded || finished) return;
+    var it = items[i];
+    if (!it || !it.repl) return;
+    state.swaps[i] = it.repl.id;
+    items[i] = replacementItem(it);
     el.infoOverlay.classList.add("hidden");
     paused = false;
     shutUp();
@@ -816,20 +925,133 @@
   if (el.restSkip) el.restSkip.textContent = t("skip");
   if (el.restBack) el.restBack.textContent = t("prev");
 
+  // Controls are created here so older cached page markup can also recover.
+  function addNode(parent, tag, cls, text) {
+    var node = document.createElement(tag);
+    node.className = cls;
+    if (text) node.textContent = text;
+    parent.appendChild(node);
+    return node;
+  }
+  el.resumeOverlay = addNode(root, "div", "resume-overlay rest-overlay hidden");
+  el.resumeOverlay.style.zIndex = "30";
+  el.resumeOverlay.setAttribute("role", "dialog");
+  el.resumeOverlay.setAttribute("aria-modal", "true");
+  el.resumeOverlay.setAttribute("aria-label", t("resume_title"));
+  addNode(el.resumeOverlay, "h2", "resume-title", t("resume_title"));
+  el.resume = addNode(el.resumeOverlay, "button", "resume-continue btn primary", t("resume"));
+  el.restart = addNode(el.resumeOverlay, "button", "resume-restart btn", t("restart"));
+  el.resume.type = el.restart.type = "button";
+  el.saveStatus = addNode(el.doneOverlay, "p", "save-status");
+  el.saveStatus.setAttribute("role", "status");
+  el.saveRetry = addNode(el.doneOverlay, "button", "save-retry btn hidden", t("save_retry"));
+  el.saveRetry.type = "button";
+  el.saveRetry.addEventListener("click", sendCompletion);
+
+  function restorePhase() {
+    var snapshot = Object.assign({}, state);
+    i = snapshot.index; curSide = snapshot.side;
+    restoring = true;
+    if (snapshot.phase === "complete") { restoring = false; finish(); return; }
+    if (snapshot.phase === "exercise") {
+      startItem(i, curSide, snapshot.remainingMs);
+    } else {
+      var target = snapshot.nextIndex, side = snapshot.nextSide;
+      doRest(Math.ceil(snapshot.remainingMs / 1000), items[target], snapshot.phase !== "rest", function () {
+        startItem(target, side);
+      }, snapshot.phase === "side-rest" ? side : 1, snapshot.remainingMs);
+    }
+    restoring = false;
+    checkpoint();
+  }
+  function validSnapshot(s) {
+    if (!s || !Number.isInteger(s.index) || s.index < 0 || s.index >= items.length ||
+        !Number.isInteger(s.side) || s.side < 1 || s.side > 2 ||
+        ["exercise", "ready", "rest", "side-rest", "complete"].indexOf(s.phase) < 0 ||
+        typeof s.eventId !== "string" || s.eventId.length < 32 || s.eventId.length > 128 ||
+        !Number.isInteger(s.level) || s.level < -3 || s.level > 3 ||
+        !s.swaps || typeof s.swaps !== "object" || Array.isArray(s.swaps)) return false;
+    var validSwaps = Object.keys(s.swaps).every(function (key) {
+      var idx = Number(key), it = originalItems[idx];
+      return String(idx) === key && Number.isInteger(idx) && it && it.repl && it.repl.id === s.swaps[key];
+    });
+    if (!validSwaps) return false;
+    if (s.phase === "complete") return s.completion && s.completion.eventId === s.eventId &&
+      s.completion.userId === payload.userId && s.completion.day === payload.day && s.completion.position === payload.position &&
+      typeof s.completion.completedAt === "string" && Number.isFinite(Date.parse(s.completion.completedAt)) &&
+      /^\d{4}-\d{2}-\d{2}$/.test(s.completion.completedOn);
+    if (!Number.isInteger(s.nextIndex) || s.nextIndex < 0 || s.nextIndex >= items.length ||
+        !Number.isInteger(s.nextSide) || s.nextSide < 1 || s.nextSide > 2) return false;
+    var it = s.swaps[s.index] ? replacementItem(originalItems[s.index]) : originalItems[s.index];
+    if (s.side > sides(it)) return false;
+    if (s.phase === "side-rest" && (sides(it) !== 2 || s.nextIndex !== s.index || s.nextSide !== 2)) return false;
+    if (s.phase !== "exercise" || it.unit === "seconds") {
+      if (!Number.isFinite(s.remainingMs) || s.remainingMs < 0 || s.remainingMs > 86400000) return false;
+    }
+    return true;
+  }
+  el.resume.addEventListener("click", function () {
+    if (disposed || finished || document.visibilityState !== "visible" || redirectAfterRestart()) return;
+    resumeNeeded = false; paused = false;
+    el.resumeOverlay.classList.add("hidden");
+    root.classList.remove("frozen");
+    restorePhase();
+    requestWake();
+  });
+  el.restart.addEventListener("click", function () {
+    if (disposed || finished || redirectAfterRestart()) return;
+    if (store) store.clearCheckpoint(payload);
+    items = originalItems.slice();
+    i = 0; curSide = 1;
+    level = fixedDifficulty ? 0 : (payload.level || 0);
+    state = { index: 0, side: 1, phase: "ready", remainingMs: 3000, nextIndex: 0, nextSide: 1,
+      level: level, swaps: {}, eventId: store ? store.newEventId() : state.eventId, completion: null };
+    paused = false; resumeNeeded = false;
+    updateDiff();
+    el.resumeOverlay.classList.add("hidden");
+    root.classList.remove("frozen");
+    doRest(3, items[0], true, function () { startItem(0); });
+    requestWake();
+  });
+  var unsubscribe = store ? store.subscribe(function (event) {
+    if (event.userId === payload.userId && event.eventId === state.eventId) showCompletionStatus(event.status, event.receipt, event.durable);
+  }) : function () {};
+
   // ---- go ---------------------------------------------------------------
   $sys.clean(function () {
+    if (!finished) { freezeClock(); checkpoint(); }
+    disposed = true;
     clearTicker(); stopFrames(); clearNarr(); shutUp(); releaseWake();
+    unsubscribe();
     document.removeEventListener("visibilitychange", onVisibility);
-    window.removeEventListener("pageshow", resumeWake);
-    window.removeEventListener("focus", resumeWake);
+    window.removeEventListener("pagehide", pauseForReturn);
+    window.removeEventListener("pageshow", onPageShow);
+    window.removeEventListener("focus", onPageShow);
+    if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged === loadVoices) window.speechSynthesis.onvoiceschanged = null;
   });
 
-  requestWake();
+  if (redirectAfterRestart()) return;
   buildBar();
-  if (items.length === 0) {
+  var saved = store ? store.loadCheckpoint(payload) : null;
+  if (saved && validSnapshot(saved)) {
+    state = saved;
+    Object.keys(state.swaps || {}).forEach(function (key) { items[key] = replacementItem(originalItems[key]); });
+    i = state.index; curSide = state.side;
+    level = fixedDifficulty ? 0 : state.level;
+    updateDiff();
+    if (state.phase === "complete") finish();
+    else {
+      paused = true; resumeNeeded = true;
+      restorePhase();
+      root.classList.add("frozen");
+      el.resumeOverlay.classList.remove("hidden");
+    }
+  } else if (items.length === 0) {
     finish();
   } else {
-    // A short "get ready" 3-2-1 leads into the first exercise.
+    if (saved && store) store.clearCheckpoint(payload);
     doRest(3, items[0], true, function () { startItem(0); });
+    if (document.visibilityState !== "visible") pauseForReturn();
+    else requestWake();
   }
 })();

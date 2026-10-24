@@ -5,16 +5,63 @@ import vm from 'node:vm';
 
 // Drive the shipped player with a small DOM and a deterministic clock: these
 // tests check actual transitions, Done/Skip buttons and visible side labels.
-function player(items, extra = {}) {
+function memoryState(options = {}) {
+  const data = { checkpoint: null, events: new Map(), receipts: new Map(), subscribers: new Set(), nextId: 0 };
+  let userId;
+  const copy = value => value == null ? value : JSON.parse(JSON.stringify(value));
+  const notify = event => data.subscribers.forEach(fn => fn(event));
+  const api = {
+    start(id) { userId = id; },
+    newEventId() { return (++data.nextId).toString(16).padStart(32, '0'); },
+    saveCheckpoint(payload, state) { data.checkpoint = { payload: copy(payload), state: copy(state) }; return !options.storageUnavailable; },
+    loadCheckpoint(payload) {
+      const record = data.checkpoint;
+      if (!record) return null;
+      if (!['userId', 'position', 'day', 'resumeKey'].every(k => record.payload[k] === payload[k])) {
+        data.checkpoint = null; return null;
+      }
+      return copy(record.state);
+    },
+    clearCheckpoint() { data.checkpoint = null; },
+    queueCompletion(event) { if (!data.events.has(event.eventId)) data.events.set(event.eventId, copy(event)); return { durable: !options.storageUnavailable }; },
+    sendCompletion(event) {
+      api.queueCompletion(event);
+      notify({ ...event, status: 'saving' });
+      if (options.rejectCompletion) {
+        notify({ ...event, status: 'pending', durable: !options.storageUnavailable });
+        return Promise.reject(new Error('Offline'));
+      }
+      return Promise.resolve().then(() => {
+        const receipt = { saved: true, eventId: event.eventId, streak: 1, position: event.position + 1 };
+        data.receipts.set(event.eventId, receipt);
+        if (data.checkpoint?.state.eventId === event.eventId) data.checkpoint = null;
+        notify({ ...event, status: 'saved', receipt });
+        return receipt;
+      });
+    },
+    ack(eventId, id) { return id === userId ? data.receipts.get(eventId) : null; },
+    subscribe(fn) { data.subscribers.add(fn); return () => data.subscribers.delete(fn); },
+  };
+  return { api, data, options };
+}
+function player(items, extra = {}, options = {}) {
   const nodes = new Map();
   const timers = new Map();
-  const completed = [];
   const spoken = [];
-  let now = 0, nextTimer = 1;
+  const navigations = [];
+  const persistence = options.persistence || memoryState(options);
+  let now = 0, nextTimer = 1, cleanup = () => {};
+  function eventTarget(target = {}) {
+    const events = new Map();
+    return Object.assign(target, {
+      addEventListener(name, fn) { if (!events.has(name)) events.set(name, new Set()); events.get(name).add(fn); },
+      removeEventListener(name, fn) { events.get(name)?.delete(fn); },
+      dispatch(name, event = {}) { [...(events.get(name) || [])].forEach(fn => fn(event)); },
+    });
+  }
   function element() {
     const classes = new Set();
-    const events = new Map();
-    return {
+    const node = eventTarget({
       textContent: '', style: {}, children: [], disabled: false,
       classList: {
         add(...xs) { xs.forEach(x => classes.add(x)); },
@@ -22,43 +69,66 @@ function player(items, extra = {}) {
         contains(x) { return classes.has(x); },
         toggle(x, yes) { if (yes ?? !classes.has(x)) classes.add(x); else classes.delete(x); },
       },
-      addEventListener(name, fn) { events.set(name, fn); },
-      appendChild(child) { this.children.push(child); },
+      appendChild(child) { this.children.push(child); child.parentElement = this; },
+      setAttribute(name, value) { this[name] = value; },
       removeAttribute(name) { delete this[name]; },
-      click() { if (!this.disabled) events.get('click')?.({ preventDefault() {} }); },
-    };
+      click() { if (!this.disabled) this.dispatch('click', { preventDefault() {} }); },
+    });
+    Object.defineProperty(node, 'className', {
+      get: () => [...classes].join(' '),
+      set: value => { classes.clear(); value.split(/\s+/).forEach(cls => { classes.add(cls); if (cls && !nodes.has('.' + cls)) nodes.set('.' + cls, node); }); },
+    });
+    return node;
   }
   const root = element();
   const get = selector => {
     if (!nodes.has(selector)) {
       const node = element();
       node.parentElement = element();
+      if (['.info-overlay', '.done-overlay', '.rest-overlay'].includes(selector)) node.classList.add('hidden');
       nodes.set(selector, node);
     }
     return nodes.get(selector);
   };
   root.querySelector = get;
-  const document = {
-    querySelector: () => root, createElement: element,
-    addEventListener() {}, removeEventListener() {}, visibilityState: 'visible',
-  };
+  const document = eventTarget({ querySelector: () => root, createElement: element, visibilityState: 'visible' });
   const schedule = (fn, delay, interval) => {
     const id = nextTimer++;
     timers.set(id, { fn, due: now + delay, interval });
     return id;
   };
+  const window = eventTarget({
+    MorningWorkoutState: persistence.api,
+    speechSynthesis: { getVoices: () => [], cancel() {}, speak: utterance => spoken.push(utterance.text) },
+  });
+  const base = Date.parse('2026-10-24T08:00:00Z');
+  class ClockDate extends Date {
+    constructor(...args) { super(...(args.length ? args : [base + now])); }
+    static now() { return base + now; }
+  }
   const context = {
-    document, navigator: {}, window: {
-      addEventListener() {}, removeEventListener() {},
-      speechSynthesis: { getVoices: () => [], cancel() {}, speak: utterance => spoken.push(utterance.text) },
-    },
+    document, navigator: options.navigator || {}, window, Date: ClockDate,
+    location: { assign(url) { navigations.push(url); } },
+    Image: function () {},
     SpeechSynthesisUtterance: function (text) { this.text = text; },
-    $data: () => ({ items, voiceMode: 'off', cues: { switch_side: 'Change sides', go: 'Go' }, labels: { side: 'Side', per_side: 'per side' }, ...extra }),
-    $hook: (...args) => { completed.push(args); return Promise.resolve(1); },
-    $sys: { clean() {} },
+    $data: () => ({ userId: 1, position: 0, day: 1, resumeKey: 'plan:0:1', programKey: 'plan', items, voiceMode: 'off',
+      cues: { switch_side: 'Change sides', go: 'Go' }, labels: { side: 'Side', per_side: 'per side', resume_title: 'Paused', resume: 'Continue',
+        saving: 'Saving', saved: 'Saved', save_pending: 'Waiting for connection', save_unavailable: 'Keep this page open', save_retry: 'Retry' }, ...extra }),
+    $hook: () => { throw new Error('Completion must not depend on Doors hooks'); },
+    $sys: { clean(fn) { cleanup = fn; } },
     setInterval: (fn, delay) => schedule(fn, delay, delay), clearInterval: id => timers.delete(id),
     setTimeout: (fn, delay) => schedule(fn, delay, 0), clearTimeout: id => timers.delete(id),
   };
+  if (options.realStore) {
+    const values = options.storageValues || new Map();
+    delete window.MorningWorkoutState;
+    window.localStorage = {
+      get length() { return values.size; }, key: index => [...values.keys()][index] || null,
+      getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key),
+    };
+    window.fetch = options.fetch || (() => Promise.reject(new Error('Offline')));
+    vm.runInNewContext(readFileSync(new URL('./workout-state.js', import.meta.url), 'utf8'), context);
+  }
   vm.runInNewContext(readFileSync(new URL('./player.js', import.meta.url), 'utf8'), context);
   function advance(seconds) {
     const end = now + seconds * 1000;
@@ -72,7 +142,12 @@ function player(items, extra = {}) {
     }
     now = end;
   }
-  return { get, advance, completed, spoken };
+  return {
+    get, advance, spoken, navigations, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
+    get completed() { return [...persistence.data.events.values()]; },
+    hide() { document.visibilityState = 'hidden'; document.dispatch('visibilitychange'); window.dispatch('pagehide'); },
+    show() { document.visibilityState = 'visible'; document.dispatch('visibilitychange'); window.dispatch('pageshow'); window.dispatch('focus'); },
+  };
 }
 const item = (fields = {}) => ({ id: 'a', name: 'Exercise', unit: 'reps', value: 6, slot: 'main', round: 1, rest: 0, ...fields });
 const hidden = node => node.classList.contains('hidden');
@@ -136,6 +211,65 @@ test('legacy reps use one Done tap for both sides, legacy timers switch immediat
   assert.equal(p.completed.length, 1);
 });
 
+test('self-managed sides use one Done tap and one combined timer with the per-side dose visible', () => {
+  const p = player([
+    item({ perSide: true, sideRest: 10 }),
+    item({ id: 'hold', name: 'Hold', unit: 'seconds', value: 5, perSide: true, sideRest: 10 }),
+    item({ id: 'next', name: 'Next', unit: 'seconds', value: 5 }),
+  ], { selfManagedSides: true, voiceMode: 'normal' });
+  p.advance(3);
+  assert.equal(p.get('.ex-value').textContent, '× 6 per side');
+  assert.doesNotMatch(p.get('.phase').textContent, /Side [12]\/2/);
+  p.get('.ctl-done').click();
+  assert.equal(p.get('.ex-name').textContent, 'Hold');
+  assert.equal(p.get('.ex-value').textContent, '10″');
+  assert.match(p.get('.phase').textContent, /5″ per side/);
+  assert.doesNotMatch(p.get('.phase').textContent, /Side [12]\/2/);
+  assert.ok(hidden(p.get('.rest-overlay')));
+  assert.ok(hidden(p.get('.ctl-done')));
+  p.advance(5);
+  assert.equal(p.get('.ex-name').textContent, 'Hold');
+  assert.equal(p.get('.ex-value').textContent, '5″');
+  assert.ok(hidden(p.get('.rest-overlay')));
+  p.advance(5);
+  assert.equal(p.get('.ex-name').textContent, 'Next');
+  assert.equal(p.get('.ex-value').textContent, '5″');
+  assert.ok(!p.spoken.includes('Change sides'));
+  p.advance(5);
+  assert.equal(p.completed.length, 1);
+});
+
+test('self-managed combined timer resumes its saved remainder without doubling it again', () => {
+  const items = [item({ unit: 'seconds', value: 5, perSide: true }), item({ name: 'Next' })];
+  const first = player(items, { selfManagedSides: true });
+  first.advance(9); // 3 seconds ready, 6 seconds of the combined 10-second hold.
+  first.hide(); first.cleanup();
+  assert.equal(first.persistence.data.checkpoint.state.remainingMs, 4000);
+  const second = player(items, { selfManagedSides: true }, { persistence: first.persistence });
+  assert.equal(second.get('.ex-value').textContent, '4″');
+  assert.match(second.get('.phase').textContent, /5″ per side/);
+  second.advance(30);
+  assert.equal(second.get('.ex-value').textContent, '4″');
+  second.get('.resume-continue').click();
+  second.advance(4);
+  assert.equal(second.get('.ex-name').textContent, 'Next');
+});
+
+test('phase shows current and total main rounds while single-round warmup and cooldown stay compact', () => {
+  const p = player([
+    item({ id: 'warm', slot: 'warmup' }),
+    item({ id: 'a', round: 1 }), item({ id: 'b', round: 1 }),
+    item({ id: 'a', round: 2 }), item({ id: 'b', round: 2 }),
+    item({ id: 'cool', slot: 'cooldown' }),
+  ], { labels: { round: 'Круг' } });
+  p.advance(3);
+  assert.match(p.get('.phase').textContent, /Круг 1$/);
+  for (const expected of ['1/2', '1/2', '2/2', '2/2', '1']) {
+    p.get('.ctl-done').click();
+    assert.ok(p.get('.phase').textContent.endsWith('Круг ' + expected));
+  }
+});
+
 test('fixed difficulty ignores saved level and all in-session level controls', () => {
   const p = player([item({ scale: true, value: 10 })], { fixedDifficulty: true, level: 3 });
   p.advance(3);
@@ -172,4 +306,261 @@ test('exercise details show both warning and safety, without repeating identical
     assert.equal(p.get('.info-warn').textContent, expected);
     assert.ok(!hidden(p.get('.info-warn-sec')));
   }
+});
+
+const settle = async () => { for (let n = 0; n < 20; n++) await Promise.resolve(); };
+
+test('hiding freezes a fractional timer, stops narration and requires an explicit Continue', () => {
+  const p = player([item({ unit: 'seconds', value: 20, correct: ['Stay steady'] }), item({ name: 'Next' })], { voiceMode: 'normal' });
+  p.advance(8.4); // ready 3s + work 5.4s
+  p.hide();
+  const atHide = p.persistence.data.checkpoint.state;
+  assert.equal(atHide.phase, 'exercise');
+  assert.equal(atHide.remainingMs, 14600);
+  const spoken = p.spoken.length;
+  p.advance(120);
+  p.show();
+  p.advance(30);
+  assert.equal(p.spoken.length, spoken);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 14600);
+  assert.ok(!hidden(p.get('.resume-overlay')));
+  p.get('.ctl-skip').click(); // covered controls cannot accidentally advance
+  assert.equal(p.get('.ex-name').textContent, 'Exercise');
+  p.get('.resume-continue').click();
+  assert.ok(hidden(p.get('.resume-overlay')));
+  p.advance(14);
+  assert.equal(p.get('.ex-name').textContent, 'Exercise');
+  p.advance(1);
+  assert.equal(p.get('.ex-name').textContent, 'Next');
+});
+
+for (const unit of ['reps', 'seconds']) {
+  test(`${unit}: reload during side pause preserves its remaining time and target side`, () => {
+    const items = [item({ unit, value: 5, perSide: true, sideRest: 10, rest: 90 }), item({ name: 'Next' })];
+    const first = player(items);
+    first.advance(3);
+    if (unit === 'seconds') first.advance(5); else first.get('.ctl-done').click();
+    first.advance(4);
+    first.cleanup();
+    const second = player(items, {}, { persistence: first.persistence });
+    assert.equal(second.get('.rest-title').textContent, 'Change sides');
+    assert.equal(second.get('.rest-count').textContent, 6);
+    assert.ok(!hidden(second.get('.resume-overlay')));
+    second.advance(60);
+    assert.equal(second.get('.rest-count').textContent, 6);
+    second.get('.resume-continue').click();
+    second.advance(6);
+    assert.match(second.get('.phase').textContent, /Side 2\/2/);
+    if (unit === 'seconds') second.advance(2);
+    second.hide(); second.cleanup();
+    const third = player(items, {}, { persistence: second.persistence });
+    assert.match(third.get('.phase').textContent, /Side 2\/2/);
+    if (unit === 'seconds') assert.equal(third.get('.ex-value').textContent, '3″');
+    third.get('.resume-continue').click();
+    if (unit === 'seconds') third.advance(3); else third.get('.ctl-done').click();
+    assert.equal(third.get('.rest-count').textContent, 90);
+  });
+}
+
+test('reload during normal rest keeps its destination and Skip starts that exercise', () => {
+  const items = [item({ rest: 90 }), item({ id: 'b', name: 'Next' })];
+  const first = player(items);
+  first.advance(3); first.get('.ctl-done').click(); first.advance(17); first.cleanup();
+  const second = player(items, {}, { persistence: first.persistence });
+  assert.equal(second.get('.rest-count').textContent, 73);
+  assert.equal(second.get('.rest-index').textContent, '2 / 2');
+  second.get('.resume-continue').click();
+  second.get('.rest-skip').click();
+  assert.equal(second.get('.ex-name').textContent, 'Next');
+});
+
+test('switching away with exercise details open cannot accidentally resume on closing details', () => {
+  const p = player([item({ unit: 'seconds', value: 20 })]);
+  p.advance(8); p.get('.info-btn').click(); p.advance(8); p.hide(); p.show();
+  p.get('.info-close').click(); p.advance(30);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 15000);
+  assert.ok(!hidden(p.get('.resume-overlay')));
+  p.get('.resume-continue').click(); p.advance(1);
+  assert.equal(p.get('.ex-value').textContent, '14″');
+});
+
+test('session difficulty and a manual replacement restore from canonical payload data', () => {
+  const items = [item({ scale: true, value: 10, repl: { id: 'replacement', name: 'Alternative', unit: 'seconds', value: 20, scale: true } })];
+  const first = player(items);
+  first.advance(3); first.get('.lvl-up').click(); first.get('.info-btn').click(); first.get('.info-replace').click(); first.advance(4); first.cleanup();
+  const second = player(items, {}, { persistence: first.persistence });
+  assert.equal(second.get('.ex-name').textContent, 'Alternative');
+  assert.equal(second.get('.ex-value').textContent, '18″'); // +10% 22 sec - 4
+  assert.match(second.get('.lvl-label').textContent, /\+1/);
+  second.get('.resume-restart').click(); second.advance(3);
+  assert.equal(second.get('.ex-name').textContent, 'Exercise');
+  assert.equal(second.get('.ex-value').textContent, '× 10');
+});
+
+for (const mismatch of [{ userId: 2 }, { resumeKey: 'new-plan:0:1' }, { position: 1 }]) {
+  test('different account, plan or cycle does not restore a stale workout: ' + JSON.stringify(mismatch), () => {
+    const items = [item({ unit: 'seconds', value: 20 })];
+    const first = player(items); first.advance(10); first.cleanup();
+    const second = player(items, mismatch, { persistence: first.persistence });
+    assert.ok(hidden(second.get('.resume-overlay')));
+    second.advance(3);
+    assert.equal(second.get('.ex-value').textContent, '20″');
+  });
+}
+
+test('malformed snapshot is ignored without breaking a new workout', () => {
+  const items = [item()];
+  const first = player(items); first.advance(3); first.cleanup();
+  first.persistence.data.checkpoint.state = { ...first.persistence.data.checkpoint.state, phase: 'complete', completion: { eventId: 'x' }, swaps: { constructor: 'x' } };
+  const second = player(items, {}, { persistence: first.persistence });
+  second.advance(3);
+  assert.equal(second.get('.ex-name').textContent, 'Exercise');
+  assert.equal(second.completed.length, 0);
+});
+
+test('offline completion is pending across reload, reuses its event and celebrates only after acknowledgment', async () => {
+  const persistence = memoryState({ rejectCompletion: true });
+  const items = [item()];
+  const first = player(items, {}, { persistence });
+  first.advance(3); first.get('.ctl-done').click();
+  await settle();
+  const event = first.completed[0];
+  assert.equal(first.get('.save-status').textContent, 'Waiting for connection');
+  assert.ok(!hidden(first.get('.save-retry')));
+  assert.equal(first.get('.done-overlay').children.filter(n => n.className === 'confetti-piece').length, 0);
+  first.cleanup();
+  const second = player(items, {}, { persistence });
+  await settle();
+  assert.equal(second.completed.length, 1);
+  assert.equal(second.completed[0].eventId, event.eventId);
+  assert.equal(second.completed[0].completedAt, event.completedAt);
+  persistence.options.rejectCompletion = false;
+  second.get('.save-retry').click();
+  await settle();
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+  assert.equal(persistence.data.checkpoint, null);
+  assert.equal(second.get('.done-overlay').children.filter(n => n.className === 'confetti-piece').length, 60);
+});
+
+test('unavailable storage allows exercise and explains that offline completion is not durable', async () => {
+  const p = player([item()], {}, { storageUnavailable: true, rejectCompletion: true });
+  p.advance(3); p.get('.ctl-done').click();
+  await settle();
+  assert.equal(p.get('.save-status').textContent, 'Keep this page open');
+  assert.ok(!hidden(p.get('.save-retry')));
+});
+
+test('duplicate resume events do not create extra timers or wake locks; late locks are released after cleanup', async () => {
+  let resolveWake, requests = 0, releases = 0;
+  const navigator = { wakeLock: { request() { requests++; return new Promise(resolve => { resolveWake = resolve; }); } } };
+  const p = player([item({ unit: 'seconds', value: 20 })], {}, { navigator });
+  p.show(); p.show();
+  assert.equal(requests, 1);
+  p.advance(8); p.hide(); p.show(); p.show();
+  assert.equal(requests, 1);
+  p.get('.resume-continue').click(); p.show();
+  p.advance(1);
+  assert.equal(p.get('.ex-value').textContent, '14″');
+  p.cleanup();
+  resolveWake({ released: false, release() { releases++; return Promise.resolve(); }, addEventListener() {} });
+  await settle();
+  assert.equal(releases, 1);
+  assert.equal(requests, 1);
+});
+
+test('real shared storage restores a paused timer in a fresh page and records the same finished event', async () => {
+  const storageValues = new Map(), requests = [];
+  const items = [item({ unit: 'seconds', value: 20 })];
+  const first = player(items, {}, { realStore: true, storageValues });
+  first.advance(8.25); first.hide(); first.cleanup();
+  const second = player(items, {}, {
+    realStore: true, storageValues,
+    fetch: async (url, init) => {
+      const event = JSON.parse(init.body);
+      assert.equal(url, '/api/workouts/complete');
+      const pending = second.stateStore.pending(1);
+      assert.equal(pending[0].eventId, event.eventId); // persisted before send
+      requests.push(event);
+      return { ok: true, json: async () => ({ saved: true, eventId: event.eventId, position: 1, streak: 2 }) };
+    },
+  });
+  assert.equal(second.get('.ex-value').textContent, '15″');
+  second.advance(60);
+  assert.equal(requests.length, 0);
+  second.get('.resume-continue').click(); second.advance(15);
+  await settle();
+  assert.equal(requests.length, 1);
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+  assert.equal(second.stateStore.pending(1).length, 0);
+  assert.equal(second.stateStore.getResume(1, 0, 'plan'), null);
+});
+
+test('real module retries a pending finish after page eviction without a new event or false success', async () => {
+  const storageValues = new Map(), requests = [];
+  const first = player([item()], {}, { realStore: true, storageValues });
+  first.advance(3); first.get('.ctl-done').click(); await settle();
+  const originalEvent = first.stateStore.pending(1)[0];
+  assert.equal(first.get('.save-status').textContent, 'Waiting for connection');
+  assert.ok(hidden(first.get('.applause')));
+  assert.ok(hidden(first.get('.done-streak')));
+  first.cleanup();
+  const second = player([item()], {}, { realStore: true, storageValues, fetch: async (url, init) => {
+    const event = JSON.parse(init.body); requests.push(event);
+    return { ok: true, json: async () => ({ saved: true, eventId: event.eventId, position: 1, streak: 3 }) };
+  } });
+  await settle();
+  assert.equal(requests.length, 1);
+  assert.equal(requests[0].eventId, originalEvent.eventId);
+  assert.equal(requests[0].completedAt, originalEvent.completedAt);
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+  assert.ok(!hidden(second.get('.applause')));
+  assert.equal(second.stateStore.getResume(1, 0, 'plan'), null);
+});
+
+test('an expired scheduled restart resolves the current day before reading an old checkpoint', () => {
+  const persistence = memoryState();
+  const first = player([item({ unit: 'seconds', value: 20 })], {}, { persistence });
+  first.advance(8); first.cleanup();
+  const original = JSON.stringify(persistence.data.checkpoint);
+  const second = player([item({ unit: 'seconds', value: 20 })], { restartAt: '2026-10-24T07:59:59Z' }, { persistence });
+  assert.deepEqual(second.navigations, ['/start']);
+  assert.equal(JSON.stringify(persistence.data.checkpoint), original);
+  second.advance(30);
+  assert.equal(second.completed.length, 0);
+});
+
+test('a scheduled restart redirects on return, but never navigates while hidden', () => {
+  const p = player([item({ unit: 'seconds', value: 20 })], { restartAt: '2026-10-24T08:00:10Z' });
+  p.advance(8); p.hide(); p.advance(100);
+  assert.equal(p.navigations.length, 0);
+  p.show(); p.show();
+  assert.deepEqual(p.navigations, ['/start']);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 15000);
+  p.advance(20);
+  assert.equal(p.completed.length, 0);
+});
+
+for (const control of ['.resume-continue', '.resume-restart']) {
+  test(control + ' checks the restart deadline while already showing the paused page', () => {
+    const p = player([item({ unit: 'seconds', value: 20 })], { restartAt: '2026-10-24T08:00:10Z' });
+    p.advance(8); p.hide(); p.show(); p.advance(3);
+    p.get(control).click();
+    assert.deepEqual(p.navigations, ['/start']);
+    p.advance(30);
+    assert.equal(p.completed.length, 0);
+  });
+}
+
+test('invalid restart deadlines are ignored and a finished pending event is preserved after the deadline', async () => {
+  const invalid = player([item()], { restartAt: 'not-a-date' });
+  invalid.advance(3);
+  assert.equal(invalid.get('.ex-name').textContent, 'Exercise');
+  assert.equal(invalid.navigations.length, 0);
+  const p = player([item()], { restartAt: '2026-10-24T08:00:10Z' }, { rejectCompletion: true });
+  p.advance(3); p.get('.ctl-done').click(); await settle();
+  const event = p.completed[0];
+  p.hide(); p.advance(100); p.show();
+  assert.equal(p.navigations.length, 0);
+  assert.equal(p.completed[0].eventId, event.eventId);
+  assert.equal(p.get('.save-status').textContent, 'Waiting for connection');
 });

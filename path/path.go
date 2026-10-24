@@ -11,10 +11,11 @@ const (
 	Day
 	Settings
 	Library
+	Start
 )
 
 // Path is the single path model. The Day field is populated for /day/:Day.
 type Path struct {
-	Page Page `path:"/ | /login | /register | /day/:Day | /settings | /library"`
+	Page Page `path:"/ | /login | /register | /day/:Day | /settings | /library | /start"`
 	Day  int
 }

@@ -41,14 +41,21 @@ small client-side workout engine.
 - **Prescribed sessions.** Program JSON supports per-item `rest` (including zero),
   `sideRest`, and `repSeconds` for duration estimates. A day's `warmup`/`cooldown`
   overrides the shared phase; `[]` disables it. Explicit side rests give each side
-  its own timer or Done tap. See [Ilya's six-day bundle](programs/ilya-tennis/README.md).
+  its own timer or Done tap. Programs with `selfManagedSides` use one Done tap
+  for both sides, or a combined hold timer with the time per side shown.
+  See [Ilya's six-day bundle](programs/ilya-tennis/README.md).
 - **Two exercise types.** Reps (tap *Done*) and timed (countdown). Counts are
   shown as-is; timed per-side exercises run twice. Rep sets without `sideRest`
   retain the single Done tap after both sides.
 - **Voice-first player (client-side).** Progress bar, pause / skip / back, rest
   periods, screen wake-lock, and a celebratory finish (applause, confetti,
   localized encouragement). The player runs entirely in the browser from a
-  server-provided JSON payload and reports completion back through a hook.
+  server-provided JSON payload. Leaving the app pauses the workout; returning
+  or reopening offers to resume the saved exercise, side and timer.
+- **Reliable completion.** Results are queued on the device before sending to
+  `/api/workouts/complete`. Retries retain the original local date and cannot
+  advance the cycle twice. The player confirms the streak only after the server
+  has saved it; the home page also retries pending results.
 - **Spoken guidance** via the browser Web Speech API: a start cue, a rest
   announcement of the next exercise with its count, a 3-2-1 lead-in, a half-time
   marker on timed sets, and running technique narration (how to do it / common
@@ -86,8 +93,13 @@ The app is **server-driven** for everything except the workout itself:
 - **The workout player** (`assets/player.js`) is the one client-side piece. The
   server builds a self-contained JSON payload (the day's items, localized labels
   and voice cues, the user's voice mode and figure variant) and hands it to the
-  player, which owns all timing, speech, pausing and rest. On finish it calls a
-  server hook to record the day and advance the cycle.
+  player, which owns all timing, speech, pausing and rest. `assets/workout-state.js`
+  keeps per-account checkpoints and a completion outbox in local storage. A
+  program fingerprint and captured cycle position prevent resuming stale state.
+  The authenticated completion endpoint is independent of Doors page lifetimes;
+  one SQLite transaction records the receipt, activity date and conditional cycle
+  advance. Scheduled cycle restarts advance to a new boundary without deleting
+  the activity calendar.
 - **Layered exercise catalog** (`internal/catalog/`) resolves each exercise
   through three layers, the first match winning:
   `per-user custom → global DB library → built-in code`.
@@ -120,6 +132,8 @@ components/           shared UI (e.g. 404)
 assets/
   style.css          mobile-first dark theme
   player.js          client-side workout engine (timer, TTS, rest, finish)
+  workout-state.js   per-account checkpoints and durable completion retries
+  workout-home.js    resume link and pending-result status on the dashboard
   exupload.js        per-exercise JSON import helper
   static/            manifest, service worker, icons, exercise figures
 cmd/genicons         PWA icon generator

@@ -19,10 +19,11 @@ type Item struct {
 
 // Workout is a full session for one day.
 type Workout struct {
-	Day             int    `json:"day"`
-	Items           []Item `json:"items"`
-	EstSec          int    `json:"estSec"`
-	FixedDifficulty bool   `json:"fixedDifficulty,omitempty"`
+	Day              int    `json:"day"`
+	Items            []Item `json:"items"`
+	EstSec           int    `json:"estSec"`
+	FixedDifficulty  bool   `json:"fixedDifficulty,omitempty"`
+	SelfManagedSides bool   `json:"selfManagedSides,omitempty"`
 }
 
 // ScaleValue applies the universal difficulty level to a value: ±10% per step

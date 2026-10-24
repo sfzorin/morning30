@@ -1,9 +1,11 @@
 package ilyaten_test
 
 import (
+	"bytes"
 	"encoding/json"
 	"os"
 	"reflect"
+	"strings"
 	"testing"
 
 	"morning30/internal/catalog"
@@ -19,16 +21,69 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !p.FixedDifficulty || len(p.Days) != 30 {
-		t.Fatal("expected fixed 30-day program")
+	if !p.FixedDifficulty || !p.SelfManagedSides || len(p.Days) != 30 {
+		t.Fatal("expected fixed 30-day program with self-managed sides")
 	}
-	wantDuration := []int{1644, 1132, 731, 1612, 1132, 731}
-	wantMain := []int{13, 11, 10, 12, 11, 10}
+	if bytes.Contains(raw, []byte(`"sideRest"`)) {
+		t.Fatal("Ilya manages side changes without separate pauses")
+	}
+	wantDuration := []int{1580, 1238, 761, 1628, 1238, 761}
+	wantMain := []int{6, 5, 8, 6, 5, 8}
+	// Combined main-block dose across both rounds and both sides. Reordering
+	// into circuits must not multiply the earlier two-set workload again.
+	wantDose := []map[string]int{
+		{"IT07": 12, "IT08": 24, "IT09": 12, "IT10": 16, "IT11": 32, "IT12": 20},
+		{"IT15": 60, "IT16": 8, "IT17": 80, "IT18": 40, "IT19": 24},
+		{"IT01": 120, "IT03": 16, "IT20": 8, "IT21": 12, "IT22": 8, "IT13": 80, "IT23": 80, "IT14": 60},
+		{"IT24": 12, "IT25": 20, "IT09": 12, "IT26": 20, "IT27": 24, "IT28": 60},
+		{"IT29": 12, "IT30": 20, "IT31": 60, "IT32": 12, "IT33": 24},
+		{"IT01": 120, "IT03": 16, "IT20": 8, "IT21": 12, "IT22": 8, "IT13": 80, "IT23": 80, "IT14": 60},
+	}
 	for i, day := range p.Days {
-		if day.Rounds != 1 || len(day.Items) != wantMain[i%6] {
-			t.Fatalf("day %d: set order/count changed", i+1)
+		if day.Rounds != 2 || len(day.Items) != wantMain[i%6] {
+			t.Fatalf("day %d: expected two complete circuits", i+1)
+		}
+		seen := map[string]bool{}
+		for _, it := range day.Items {
+			if seen[it.ID] {
+				t.Fatalf("day %d repeats %s inside one round", i+1, it.ID)
+			}
+			seen[it.ID] = true
+			if it.Rest == nil || *it.Rest <= 0 {
+				t.Fatalf("day %d needs a prescribed pause after %s, including the round boundary", i+1, it.ID)
+			}
 		}
 		workout := p.Workout(i+1, 3, content.Rests{Warmup: 40, Main: 40, Cooldown: 40})
+		if !workout.SelfManagedSides {
+			t.Fatal("player must receive self-managed sides")
+		}
+		dose := map[string]int{}
+		main := []content.Item{}
+		for _, it := range workout.Items {
+			if it.SideRest != 0 {
+				t.Fatalf("unexpected side pause in %s", it.ExerciseID)
+			}
+			if it.Slot != content.Main {
+				continue
+			}
+			main = append(main, it)
+			n := it.Value
+			if it.PerSide {
+				n *= 2
+			}
+			dose[it.ExerciseID] += n
+		}
+		if !reflect.DeepEqual(dose, wantDose[i%6]) {
+			t.Fatalf("day %d main dose=%v want %v", i+1, dose, wantDose[i%6])
+		}
+		if len(main) != 2*len(day.Items) {
+			t.Fatalf("day %d expanded main count", i+1)
+		}
+		for n, it := range main {
+			if it.ExerciseID != day.Items[n%len(day.Items)].ID || it.Round != n/len(day.Items)+1 {
+				t.Fatalf("day %d must run A→B→C, then repeat the round", i+1)
+			}
+		}
 		if workout.EstSec != wantDuration[i%6] {
 			t.Fatalf("day %d duration=%d want %d", i+1, workout.EstSec, wantDuration[i%6])
 		}
@@ -43,9 +98,7 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 			t.Fatalf("day %d affected by level/rest preferences", i+1)
 		}
 	}
-	if p.Days[0].Items[0].ID != "IT07" || p.Days[0].Items[1].ID != "IT07" || p.Days[0].Items[2].ID != "IT07" {
-		t.Fatal("sets must be consecutive")
-	}
+
 }
 
 func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
@@ -71,9 +124,28 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 		ids[doc.ID] = doc
 		for _, lang := range []string{"ru", "en", "tr", "de", "es", "fr", "it"} {
 			x := doc.Content[lang]
+			if doc.Unit == "reps" {
+				for _, step := range x.HowTo {
+					for _, signal := range []string{"сигнал", "signal", "işaret", "señal", "segnale"} {
+						if strings.Contains(strings.ToLower(step), signal) {
+							t.Errorf("%s %s tells a counted exercise to wait for a timer: %s", doc.ID, lang, step)
+						}
+					}
+				}
+			}
 			if x.Name == "" || x.Hint == "" || x.Desc == "" || len(x.HowTo) == 0 || len(x.Correct) == 0 || len(x.Wrong) == 0 || x.Breathing == "" || x.Safety == "" || x.Voice.Start == "" || len(x.Voice.Mid) == 0 || x.Voice.Finish == "" {
 				t.Errorf("incomplete %s %s", doc.ID, lang)
 			}
+		}
+	}
+	for _, id := range []string{"IT02", "IT04", "IT05", "IT06", "IT16", "IT18", "IT29", "IT30"} {
+		if ids[id].Unit != "reps" {
+			t.Errorf("countable dynamic exercise %s must use repetitions", id)
+		}
+	}
+	for _, id := range []string{"IT01", "IT13", "IT14", "IT15", "IT17", "IT23", "IT28", "IT31"} {
+		if ids[id].Unit != "seconds" {
+			t.Errorf("continuous work or static hold %s must retain its duration", id)
 		}
 	}
 	raw, _ = os.ReadFile("program.json")

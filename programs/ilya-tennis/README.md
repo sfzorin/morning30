@@ -6,17 +6,63 @@ Italian instructions and voice cues. No automatic progression or level scaling.
 
 | Cycle day | Session | Estimated duration including rests |
 | --- | --- | --- |
-| 1 | Strength A and controlled stops | 27:24 |
-| 2 | Footwork and coordination | 18:52 |
-| 3 | Recovery | 12:11 |
-| 4 | Strength B and controlled landings | 26:52 |
-| 5 | Footwork and balance | 18:52 |
-| 6 | Same recovery session as day 3 | 12:11 |
+| 1 | Strength A and controlled stops | 26:20 |
+| 2 | Footwork and coordination | 20:38 |
+| 3 | Recovery | 12:41 |
+| 4 | Strength B and controlled landings | 27:08 |
+| 5 | Footwork and balance | 20:38 |
+| 6 | Same recovery session as day 3 | 12:41 |
 
-`program.json` stores sets consecutively, with `rounds: 1`. Recovery days disable
-shared warm-up/cool-down through explicit empty arrays. Per-side exercises have
-a 10-second switch; the short cool-down calf stretch switches immediately.
-The initial push-up dose is six. Repetition tempo is an estimate, not a timer.
+Every day has **two complete main rounds**: A → B → C → …, then the same
+sequence again. `program.json` stores each main exercise once with `rounds: 2`.
+The shared warm-up and cool-down run once. Recovery days use explicit empty
+warm-up/cool-down arrays and two lighter rounds of their own sequence.
+
+`selfManagedSides: true` means the child handles both sides on one exercise
+screen. Repetition counts are **per side** where marked; tap Done after both.
+Static unilateral holds use one combined timer lasting twice the per-side dose;
+switch sides independently halfway through. No occurrence has `sideRest`.
+The compatible player must be deployed before installing this program.
+
+The earlier volume is preserved when converting consecutive sets to circuits:
+IT07 changes from 3 × 4 to 2 × 6 total repetitions; IT15 and IT31 change from
+3 × 20 seconds to 2 × 30 seconds. Single recovery sets are divided between the
+two rounds; repeated stretches keep their earlier per-round dose. Push-ups
+remain six per round. There is no new progression or maximum-effort work.
+
+### Doses in each main round
+
+Counts followed by “each” apply to each side. Times followed by “each” have one
+combined timer; for example, 20 seconds each displays 40 seconds total.
+
+| Day | Main sequence, repeated twice | Pause after each exercise |
+| --- | --- | --- |
+| 1 | IT07 ×6 total; IT08 ×6 each; IT09 ×6; IT10 ×8; IT11 ×8 each; IT12 ×5 each | 60 s |
+| 2 | IT15 30 s; IT16 ×4 full compass sequences; IT17 20 s each; IT18 ×20 total touches; IT19 ×6 each | 45 s |
+| 3, 6 | IT01 60 s; IT03 ×4 each; IT20 ×4; IT21 ×3 each; IT22 ×4; IT13 20 s each; IT23 20 s each; IT14 30 s | 15 s |
+| 4 | IT24 ×6 total; IT25 ×10; IT09 ×6; IT26 ×10; IT27 ×6 each; IT28 15 s each | 90 s after IT24, otherwise 60 s |
+| 5 | IT29 ×6 full crossing-and-return sequences; IT30 ×10 total diagonal steps with return; IT31 30 s; IT32 ×3 three-tap sequences each; IT33 ×6 each | 45 s |
+
+The pause also separates the two main rounds. On active days the same pause
+follows the final main exercise before cool-down. No rest follows the final
+exercise of the whole session. Durations estimate repetition tempo, include
+prescribed rests, and exclude the player's initial three-second ready count.
+They are estimates, not targets to rush toward.
+
+### Counted warm-up and coordination work
+
+The shared warm-up is IT01 45 seconds, IT02 ×12 alternating ankle rocks total,
+IT04 ×12 movements (4 shoulder circles backward, 4 forward, 4 complete arm
+swings), IT05 ×10 hip hinges and IT06 ×10 shallow squats, with 15 seconds after
+each exercise. The four counted warm-up exercises previously used 45-second
+timers. Main drills IT16, IT18, IT29 and IT30 now use the counts in the table.
+
+Walking, continuous side steps (IT15), continuous rhythm steps (IT31), quiet
+breathing and static holds remain timed. All seven instruction languages define
+what counts as one repetition and explain independent side changes. The
+cool-down remains IT01 60 seconds, IT13 20 seconds per side and IT14 20 seconds,
+without added pauses.
+
 New movements need instruction and supervised technique checks; fatigue calls
 for the recovery session, with no make-up workload.
 

@@ -165,8 +165,10 @@ h1, h2, h3 { margin: 0 0 .4em; }
   font-weight: 600;
 }
 .day-num { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
-.day-meta { display: flex; gap: 16px; justify-content: center; color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
+.day-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
 .cycle-done { color: var(--ok); font-size: 14px; margin-top: 12px; }
+.resume-workout { width: 100%; margin-top: 12px; }
+.home-save-status { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
 
 .streak-row {
   display: flex;
@@ -610,6 +612,9 @@ body:has(.player) {
 .rest-title { font-size: 20px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 .rest-count { font-size: 88px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .rest-next { font-size: 18px; color: var(--fg); }
+.resume-overlay { z-index: 30; }
+.resume-overlay .btn { min-width: 220px; max-width: 100%; }
+.save-status { max-width: 28em; line-height: 1.5; color: var(--muted); }
 
 /* Feedback overlay */
 .feedback-overlay {

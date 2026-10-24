@@ -18,6 +18,23 @@ var Style []byte
 //go:embed player.js
 var Player []byte
 
+// WorkoutState stores interrupted workouts and retries unacknowledged finishes.
+//
+//go:embed workout-state.js
+var WorkoutState []byte
+
+// PersistentPlayer initializes the shared store before the page's player runs.
+func PersistentPlayer() []byte {
+	return append(append([]byte{}, WorkoutState...), Player...)
+}
+
+//go:embed workout-home.js
+var workoutHome []byte
+
+func WorkoutHome() []byte {
+	return append(append([]byte{}, WorkoutState...), workoutHome...)
+}
+
 // ExUpload wires the exercise-JSON file picker to its textarea (read via
 // FileReader so the server only ever receives text). Served as an inline script.
 //

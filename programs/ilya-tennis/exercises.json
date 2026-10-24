@@ -218,7 +218,7 @@
   {
     "id": "IT02",
     "slot": "warmup",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -227,12 +227,12 @@
         "name": "Перекаты колена над стопой",
         "hint": "Колено вперёд, пятка остаётся на полу.",
         "warning": "Не продавливай движение и не отрывай пятку.",
-        "desc": "Плавная разминка голеностопа с чередованием ног по времени.",
+        "desc": "Плавная разминка голеностопа с чередованием ног и подсчётом повторов.",
         "howTo": [
           "Поставь одну стопу немного впереди другой.",
           "Мягко подай переднее колено вперёд по направлению носка.",
           "Верни колено назад, сохраняя пятку на полу.",
-          "Поменяй ноги и повторяй поочерёдно до сигнала."
+          "Перекат вперёд и назад — один повтор; меняй ногу после каждого и считай общее число."
         ],
         "correct": [
           "Передняя пятка всё время на полу.",
@@ -245,7 +245,7 @@
         "breathing": "Дыши спокойно и непрерывно.",
         "safety": "Двигайся только в удобной амплитуде; при боли остановись.",
         "voice": {
-          "start": "Поочерёдно подавай колено вперёд. Пятка на полу.",
+          "start": "Поочерёдно подавай колено вперёд. Пятка на полу. Перекат вперёд и назад — один повтор; меняй ногу после каждого и считай общее число.",
           "mid": [
             "Колено по направлению носка. Не торопись."
           ],
@@ -256,12 +256,12 @@
         "name": "Alternating ankle rocks",
         "hint": "Move your knee forward while your heel stays down.",
         "warning": "Do not force the movement or lift your heel.",
-        "desc": "Gentle timed ankle warm-up, alternating legs.",
+        "desc": "Gentle ankle warm-up, alternating legs and counting repetitions.",
         "howTo": [
           "Place one foot slightly in front of the other.",
           "Gently move the front knee forward in the direction of your toes.",
           "Move the knee back, keeping the heel on the floor.",
-          "Switch legs and keep alternating until the signal."
+          "One forward-and-back rock is one repetition; switch legs each time and count the total."
         ],
         "correct": [
           "Keep the front heel on the floor.",
@@ -274,7 +274,7 @@
         "breathing": "Keep breathing calmly and continuously.",
         "safety": "Use a comfortable range and stop if it hurts.",
         "voice": {
-          "start": "Alternate gently moving each knee forward. Keep your heel down.",
+          "start": "Alternate gently moving each knee forward. Keep your heel down. One forward-and-back rock is one repetition; switch legs each time and count the total.",
           "mid": [
             "Knee follows the toes. Take your time."
           ],
@@ -285,12 +285,12 @@
         "name": "Dönüşümlü ayak bileği hareketi",
         "hint": "Topuğun yerde kalırken dizini öne götür.",
         "warning": "Hareketi zorlama, topuğunu kaldırma.",
-        "desc": "Bacakları dönüşümlü kullanarak yapılan, süreli ve yumuşak ayak bileği ısınması.",
+        "desc": "Bacakları sırayla kullanıp tekrarları sayarak yapılan yumuşak ayak bileği ısınması.",
         "howTo": [
           "Bir ayağını diğerinin biraz önüne koy.",
           "Öndeki dizini ayak parmaklarının yönünde yavaşça öne götür.",
           "Topuğun yerde kalırken dizini geri getir.",
-          "Bacak değiştir ve işarete kadar sırayla devam et."
+          "Öne ve geri bir hareket bir tekrardır; her seferinde bacak değiştir ve toplamı say."
         ],
         "correct": [
           "Öndeki topuğunu hep yerde tut.",
@@ -303,7 +303,7 @@
         "breathing": "Sakin ve kesintisiz nefes al.",
         "safety": "Yalnızca rahat hareket aralığında çalış; ağrı olursa dur.",
         "voice": {
-          "start": "Sırayla her dizini yavaşça öne götür. Topuğun yerde kalsın.",
+          "start": "Sırayla her dizini yavaşça öne götür. Topuğun yerde kalsın. Öne ve geri bir hareket bir tekrardır; her seferinde bacak değiştir ve toplamı say.",
           "mid": [
             "Dizin, ayak parmaklarınla aynı yönde olsun. Acele etme."
           ],
@@ -314,12 +314,12 @@
         "name": "Sprunggelenke abwechselnd mobilisieren",
         "hint": "Schieb das Knie nach vorn, die Ferse bleibt am Boden.",
         "warning": "Erzwinge die Bewegung nicht und heb die Ferse nicht an.",
-        "desc": "Sanftes Aufwärmen der Sprunggelenke auf Zeit, mit abwechselnden Beinen.",
+        "desc": "Sanftes Aufwärmen der Sprunggelenke: Beine abwechseln und Wiederholungen zählen.",
         "howTo": [
           "Stell einen Fuß etwas vor den anderen.",
           "Schieb das vordere Knie sanft in Richtung der Zehen nach vorn.",
           "Führe das Knie zurück und lass die Ferse am Boden.",
-          "Wechsle das Bein und mach bis zum Signal abwechselnd weiter."
+          "Einmal vor und zurück ist eine Wiederholung; wechsle jedes Mal das Bein und zähle insgesamt."
         ],
         "correct": [
           "Die vordere Ferse bleibt die ganze Zeit am Boden.",
@@ -332,7 +332,7 @@
         "breathing": "Atme ruhig und gleichmäßig weiter.",
         "safety": "Bewege dich nur so weit, wie es angenehm ist; hör bei Schmerzen auf.",
         "voice": {
-          "start": "Schieb abwechselnd jedes Knie sanft nach vorn. Die Ferse bleibt unten.",
+          "start": "Schieb abwechselnd jedes Knie sanft nach vorn. Die Ferse bleibt unten. Einmal vor und zurück ist eine Wiederholung; wechsle jedes Mal das Bein und zähle insgesamt.",
           "mid": [
             "Das Knie folgt den Zehen. Lass dir Zeit."
           ],
@@ -343,12 +343,12 @@
         "name": "Movilidad de tobillos alternando piernas",
         "hint": "Lleva la rodilla hacia delante sin levantar el talón.",
         "warning": "No fuerces el movimiento ni levantes el talón.",
-        "desc": "Calentamiento suave de tobillos por tiempo, alternando las piernas.",
+        "desc": "Calentamiento suave de tobillos, alternando piernas y contando repeticiones.",
         "howTo": [
           "Coloca un pie un poco por delante del otro.",
           "Lleva suavemente la rodilla delantera hacia delante, siguiendo la dirección de los dedos del pie.",
           "Devuelve la rodilla atrás sin despegar el talón.",
-          "Cambia de pierna y sigue alternando hasta la señal."
+          "Un movimiento de ida y vuelta es una repetición; cambia de pierna cada vez y cuenta el total."
         ],
         "correct": [
           "Mantén el talón delantero en el suelo.",
@@ -361,7 +361,7 @@
         "breathing": "Respira de forma tranquila y continua.",
         "safety": "Muévete solo hasta donde resulte cómodo y para si duele.",
         "voice": {
-          "start": "Lleva cada rodilla hacia delante por turnos. Mantén el talón en el suelo.",
+          "start": "Lleva cada rodilla hacia delante por turnos. Mantén el talón en el suelo. Un movimiento de ida y vuelta es una repetición; cambia de pierna cada vez y cuenta el total.",
           "mid": [
             "Rodilla en la dirección de los dedos. Sin prisa."
           ],
@@ -372,12 +372,12 @@
         "name": "Mobilité des chevilles en alternance",
         "hint": "Avance le genou en gardant le talon au sol.",
         "warning": "Ne force pas le mouvement et ne lève pas le talon.",
-        "desc": "Un échauffement doux des chevilles, en alternant les jambes pendant le temps prévu.",
+        "desc": "Un échauffement doux des chevilles en alternant les jambes et en comptant les répétitions.",
         "howTo": [
           "Place un pied un peu devant l’autre.",
           "Avance doucement le genou de devant dans la direction des orteils.",
           "Ramène le genou en gardant le talon au sol.",
-          "Change de jambe et continue en alternant jusqu’au signal."
+          "Un aller-retour fait une répétition ; change de jambe à chaque fois et compte le total."
         ],
         "correct": [
           "Garde le talon de devant au sol.",
@@ -390,7 +390,7 @@
         "breathing": "Respire calmement et sans interruption.",
         "safety": "Bouge dans une amplitude confortable et arrête si tu as mal.",
         "voice": {
-          "start": "Avance doucement un genou puis l’autre. Garde le talon au sol.",
+          "start": "Avance doucement un genou puis l’autre. Garde le talon au sol. Un aller-retour fait une répétition ; change de jambe à chaque fois et compte le total.",
           "mid": [
             "Le genou suit les orteils. Prends ton temps."
           ],
@@ -401,12 +401,12 @@
         "name": "Mobilità delle caviglie alternando le gambe",
         "hint": "Porta il ginocchio avanti tenendo il tallone a terra.",
         "warning": "Non forzare il movimento e non sollevare il tallone.",
-        "desc": "Riscaldamento dolce delle caviglie a tempo, alternando le gambe.",
+        "desc": "Riscaldamento dolce delle caviglie, alternando le gambe e contando le ripetizioni.",
         "howTo": [
           "Metti un piede poco davanti all’altro.",
           "Porta dolcemente il ginocchio anteriore avanti, nella direzione delle dita del piede.",
           "Riporta il ginocchio indietro tenendo il tallone a terra.",
-          "Cambia gamba e continua ad alternare fino al segnale."
+          "Un movimento avanti e indietro è una ripetizione; cambia gamba ogni volta e conta il totale."
         ],
         "correct": [
           "Tieni il tallone anteriore a terra.",
@@ -419,7 +419,7 @@
         "breathing": "Respira con calma e senza interruzioni.",
         "safety": "Muoviti solo fin dove è comodo e fermati se senti dolore.",
         "voice": {
-          "start": "Porta dolcemente avanti un ginocchio alla volta. Tallone a terra.",
+          "start": "Porta dolcemente avanti un ginocchio alla volta. Tallone a terra. Un movimento avanti e indietro è una ripetizione; cambia gamba ogni volta e conta il totale.",
           "mid": [
             "Il ginocchio segue le dita del piede. Non avere fretta."
           ],
@@ -448,7 +448,8 @@
           "Выставь рабочую стопу немного вперёд; при необходимости коснись стены рукой.",
           "Плавно подай колено вперёд по направлению пальцев стопы.",
           "Вернись назад — это один повтор.",
-          "Закончи повторы на этой ноге, затем смени сторону по сигналу."
+          "Выполни назначенные повторы одной ногой, затем сам смени ногу и повтори столько же.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Пятка рабочей ноги остаётся на полу.",
@@ -477,7 +478,8 @@
           "Place the working foot slightly forward; touch a wall for balance if needed.",
           "Slowly move its knee forward in the direction of the toes.",
           "Move back to the start; that is one repetition.",
-          "Complete this leg before switching at the signal."
+          "Complete the assigned repetitions on one leg, then switch yourself and repeat the same number.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Keep the working heel on the floor.",
@@ -506,7 +508,8 @@
           "Çalışan ayağını biraz öne koy; gerekirse denge için duvara dokun.",
           "Dizini ayak parmaklarının yönünde yavaşça öne götür.",
           "Başlangıca dön; bu bir tekrardır.",
-          "Bu bacağın tekrarlarını bitir, sonra işaretle taraf değiştir."
+          "Bir bacakla belirtilen tekrarları bitir, sonra kendin bacak değiştirip aynı sayıyı yap.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Çalışan ayağının topuğu yerde kalsın.",
@@ -535,7 +538,8 @@
           "Stell den arbeitenden Fuß etwas nach vorn; berühre bei Bedarf eine Wand für das Gleichgewicht.",
           "Schieb das Knie langsam in Richtung der Zehen nach vorn.",
           "Kehre zurück; das ist eine Wiederholung.",
-          "Beende die Wiederholungen mit diesem Bein, dann wechsle beim Signal die Seite."
+          "Mach die vorgegebenen Wiederholungen auf einem Bein, wechsle selbst und wiederhole die gleiche Anzahl.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Die Ferse des arbeitenden Beins bleibt am Boden.",
@@ -564,7 +568,8 @@
           "Adelanta un poco el pie que trabaja; toca una pared si necesitas equilibrio.",
           "Lleva lentamente la rodilla hacia delante, en la dirección de los dedos del pie.",
           "Vuelve al inicio: eso es una repetición.",
-          "Termina las repeticiones de esta pierna y cambia cuando suene la señal."
+          "Completa las repeticiones indicadas con una pierna, cambia tú mismo y repite la misma cantidad.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Mantén el talón de la pierna que trabaja en el suelo.",
@@ -593,7 +598,8 @@
           "Avance légèrement le pied qui travaille ; touche un mur si tu as besoin d’équilibre.",
           "Avance lentement le genou dans la direction des orteils.",
           "Reviens au départ : cela fait une répétition.",
-          "Termine les répétitions de cette jambe, puis change au signal."
+          "Fais les répétitions prévues sur une jambe, puis change toi-même et fais le même nombre.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Garde le talon du pied qui travaille au sol.",
@@ -622,7 +628,8 @@
           "Porta poco avanti il piede che lavora; tocca un muro se ti serve equilibrio.",
           "Muovi lentamente il ginocchio avanti nella direzione delle dita del piede.",
           "Torna all’inizio: questa è una ripetizione.",
-          "Completa le ripetizioni di questa gamba e cambia al segnale."
+          "Completa le ripetizioni indicate su una gamba, poi cambia da solo e ripeti lo stesso numero.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Tieni a terra il tallone della gamba che lavora.",
@@ -650,7 +657,7 @@
   {
     "id": "IT04",
     "slot": "warmup",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "none",
     "difficulty": 1,
@@ -662,9 +669,9 @@
         "desc": "Мягкая разминка плеч и рук без гантелей.",
         "howTo": [
           "Встань удобно и свободно опусти руки.",
-          "Сделай несколько медленных кругов плечами назад, затем вперёд.",
-          "Перейди к небольшим свободным махам руками вперёд-назад.",
-          "Продолжай плавно, оставляя шею расслабленной."
+          "Сделай 4 медленных круга плечами назад, затем 4 вперёд.",
+          "Сделай 4 небольших маха руками вперёд-назад; полный мах туда-обратно считай за один.",
+          "Всего 12 движений. Считай сам, шея расслаблена."
         ],
         "correct": [
           "Корпус остаётся спокойным.",
@@ -677,7 +684,7 @@
         "breathing": "Дыши свободно и ровно.",
         "safety": "Проверь, что руки не задевают мебель; при боли уменьши движение или остановись.",
         "voice": {
-          "start": "Начни с плавных кругов плечами. Затем мягко помаши руками.",
+          "start": "Сделай 4 медленных круга плечами назад, затем 4 вперёд. Сделай 4 небольших маха руками вперёд-назад; полный мах туда-обратно считай за один.",
           "mid": [
             "Шея расслаблена, движения небольшие."
           ],
@@ -691,9 +698,9 @@
         "desc": "A gentle shoulder and arm warm-up without weights.",
         "howTo": [
           "Stand comfortably and let your arms hang.",
-          "Make a few slow shoulder circles backward, then forward.",
-          "Change to small, relaxed forward-and-back arm swings.",
-          "Keep moving smoothly with a relaxed neck."
+          "Make 4 slow shoulder circles backward, then 4 forward.",
+          "Make 4 small forward-and-back arm swings; a full out-and-back swing counts as one.",
+          "Count 12 movements in total. Keep your neck relaxed."
         ],
         "correct": [
           "Keep your body still.",
@@ -706,7 +713,7 @@
         "breathing": "Breathe freely and evenly.",
         "safety": "Leave enough room for your arms; reduce the movement or stop if it hurts.",
         "voice": {
-          "start": "Start with smooth shoulder circles, then gentle arm swings.",
+          "start": "Make 4 slow shoulder circles backward, then 4 forward. Make 4 small forward-and-back arm swings; a full out-and-back swing counts as one.",
           "mid": [
             "Relax your neck. Keep the movements small."
           ],
@@ -720,9 +727,9 @@
         "desc": "Dambıl kullanmadan omuzları ve kolları yumuşakça ısıtma.",
         "howTo": [
           "Rahatça ayakta dur, kollarını serbest bırak.",
-          "Omuzlarınla önce geriye, sonra öne birkaç yavaş daire çiz.",
-          "Ardından kollarını küçük hareketlerle öne ve arkaya salla.",
-          "Boynunu gevşek tutarak yumuşakça devam et."
+          "Omuzlarınla geriye 4, sonra öne 4 yavaş daire çiz.",
+          "Kollarını 4 kez küçük hareketlerle öne ve arkaya salla; tam bir gidiş-dönüş bir sayılır.",
+          "Toplam 12 hareketi kendin say. Boynun gevşek kalsın."
         ],
         "correct": [
           "Gövden sabit kalsın.",
@@ -735,7 +742,7 @@
         "breathing": "Rahat ve düzenli nefes al.",
         "safety": "Kollarının mobilyalara çarpmadığından emin ol; ağrı olursa hareketi küçült veya dur.",
         "voice": {
-          "start": "Omuzlarınla yavaşça daireler çiz. Sonra kollarını hafifçe salla.",
+          "start": "Omuzlarınla geriye 4, sonra öne 4 yavaş daire çiz. Kollarını 4 kez küçük hareketlerle öne ve arkaya salla; tam bir gidiş-dönüş bir sayılır.",
           "mid": [
             "Boynunu gevşet. Hareketler küçük olsun."
           ],
@@ -749,9 +756,9 @@
         "desc": "Sanftes Aufwärmen der Schultern und Arme ohne Hanteln.",
         "howTo": [
           "Stell dich bequem hin und lass die Arme locker hängen.",
-          "Kreise mit den Schultern einige Male langsam nach hinten, dann nach vorn.",
-          "Schwinge danach die Arme mit kleinen, lockeren Bewegungen vor und zurück.",
-          "Mach ruhig weiter und lass den Nacken entspannt."
+          "Kreise mit den Schultern 4-mal langsam nach hinten, dann 4-mal nach vorn.",
+          "Schwinge die Arme 4-mal klein vor und zurück; ein vollständiges Vor-und-zurück zählt als eins.",
+          "Zähle insgesamt 12 Bewegungen. Lass den Nacken entspannt."
         ],
         "correct": [
           "Der Oberkörper bleibt ruhig.",
@@ -764,7 +771,7 @@
         "breathing": "Atme frei und gleichmäßig.",
         "safety": "Achte darauf, dass deine Arme keine Möbel berühren; verkleinere die Bewegung oder hör auf, wenn es wehtut.",
         "voice": {
-          "start": "Beginne mit ruhigen Schulterkreisen. Schwinge danach die Arme locker.",
+          "start": "Kreise mit den Schultern 4-mal langsam nach hinten, dann 4-mal nach vorn. Schwinge die Arme 4-mal klein vor und zurück; ein vollständiges Vor-und-zurück zählt als eins.",
           "mid": [
             "Nacken locker, kleine Bewegungen."
           ],
@@ -778,9 +785,9 @@
         "desc": "Calentamiento suave de hombros y brazos sin pesas.",
         "howTo": [
           "Ponte de pie cómodamente y deja los brazos sueltos.",
-          "Haz unos círculos lentos con los hombros hacia atrás y luego hacia delante.",
-          "Pasa a pequeños balanceos relajados de brazos hacia delante y atrás.",
-          "Sigue con suavidad y mantén el cuello relajado."
+          "Haz 4 círculos lentos de hombros hacia atrás y luego 4 hacia delante.",
+          "Haz 4 balanceos pequeños de brazos hacia delante y atrás; una ida y vuelta cuenta como uno.",
+          "Cuenta 12 movimientos en total. Mantén el cuello relajado."
         ],
         "correct": [
           "Mantén el cuerpo quieto.",
@@ -793,7 +800,7 @@
         "breathing": "Respira libremente y de forma regular.",
         "safety": "Deja espacio para los brazos; reduce el movimiento o para si duele.",
         "voice": {
-          "start": "Empieza con círculos suaves de hombros y luego balancea los brazos.",
+          "start": "Haz 4 círculos lentos de hombros hacia atrás y luego 4 hacia delante. Haz 4 balanceos pequeños de brazos hacia delante y atrás; una ida y vuelta cuenta como uno.",
           "mid": [
             "Relaja el cuello. Haz movimientos pequeños."
           ],
@@ -807,9 +814,9 @@
         "desc": "Un échauffement doux des épaules et des bras sans haltères.",
         "howTo": [
           "Mets-toi debout confortablement et laisse pendre les bras.",
-          "Fais quelques cercles lents avec les épaules vers l’arrière, puis vers l’avant.",
-          "Passe à de petits balancements souples des bras d’avant en arrière.",
-          "Continue doucement en gardant le cou détendu."
+          "Fais 4 cercles lents avec les épaules vers l’arrière, puis 4 vers l’avant.",
+          "Fais 4 petits balancements des bras d’avant en arrière ; un aller-retour compte pour un.",
+          "Compte 12 mouvements au total. Garde le cou détendu."
         ],
         "correct": [
           "Garde le corps tranquille.",
@@ -822,7 +829,7 @@
         "breathing": "Respire librement et régulièrement.",
         "safety": "Vérifie que tes bras ne touchent pas les meubles ; réduis le mouvement ou arrête si tu as mal.",
         "voice": {
-          "start": "Commence par des cercles d’épaules doux, puis balance les bras.",
+          "start": "Fais 4 cercles lents avec les épaules vers l’arrière, puis 4 vers l’avant. Fais 4 petits balancements des bras d’avant en arrière ; un aller-retour compte pour un.",
           "mid": [
             "Détends le cou. Fais de petits mouvements."
           ],
@@ -836,9 +843,9 @@
         "desc": "Riscaldamento dolce di spalle e braccia senza pesi.",
         "howTo": [
           "Mettiti in piedi comodamente e lascia scendere le braccia.",
-          "Fai alcuni cerchi lenti con le spalle all’indietro, poi in avanti.",
-          "Passa a piccole oscillazioni rilassate delle braccia avanti e indietro.",
-          "Continua dolcemente tenendo il collo rilassato."
+          "Fai 4 cerchi lenti con le spalle all’indietro, poi 4 in avanti.",
+          "Fai 4 piccole oscillazioni delle braccia avanti e indietro; un giro completo di andata e ritorno vale uno.",
+          "Conta 12 movimenti in tutto. Tieni il collo rilassato."
         ],
         "correct": [
           "Tieni fermo il corpo.",
@@ -851,7 +858,7 @@
         "breathing": "Respira liberamente e in modo regolare.",
         "safety": "Lascia spazio alle braccia; riduci il movimento o fermati se senti dolore.",
         "voice": {
-          "start": "Inizia con cerchi dolci delle spalle, poi oscilla le braccia.",
+          "start": "Fai 4 cerchi lenti con le spalle all’indietro, poi 4 in avanti. Fai 4 piccole oscillazioni delle braccia avanti e indietro; un giro completo di andata e ritorno vale uno.",
           "mid": [
             "Collo rilassato. Movimenti piccoli."
           ],
@@ -866,7 +873,7 @@
   {
     "id": "IT05",
     "slot": "warmup",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -880,7 +887,7 @@
           "Поставь стопы на ширине бёдер, слегка согни колени.",
           "Отведи таз назад, будто закрываешь им дверцу.",
           "Наклони корпус немного вперёд, сохраняя ровную спину.",
-          "Плавно выпрямись и повторяй до сигнала."
+          "Плавно выпрямись — это один повтор. Считай наклоны без спешки."
         ],
         "correct": [
           "Шея продолжает линию спины.",
@@ -893,7 +900,7 @@
         "breathing": "Вдох на наклоне, выдох при выпрямлении.",
         "safety": "Наклоняйся только до глубины, на которой можешь сохранить спину ровной.",
         "voice": {
-          "start": "Колени мягкие. Отведи таз назад и слегка наклонись.",
+          "start": "Колени мягкие. Отведи таз назад и слегка наклонись. Плавно выпрямись — это один повтор. Считай наклоны без спешки.",
           "mid": [
             "Ровная спина. Движение начинается с таза."
           ],
@@ -909,7 +916,7 @@
           "Stand with feet hip-width apart and knees slightly bent.",
           "Send your hips backward as if closing a drawer behind you.",
           "Tip your body a little forward while keeping your back straight.",
-          "Stand up smoothly and repeat until the signal."
+          "Stand up smoothly to finish one repetition. Count each bend without rushing."
         ],
         "correct": [
           "Keep your neck in line with your back.",
@@ -922,7 +929,7 @@
         "breathing": "Breathe in as you bend and out as you stand.",
         "safety": "Bend only as far as you can keep your back straight.",
         "voice": {
-          "start": "Soft knees. Send your hips back and lean slightly forward.",
+          "start": "Soft knees. Send your hips back and lean slightly forward. Stand up smoothly to finish one repetition. Count each bend without rushing.",
           "mid": [
             "Long back. Start the movement with your hips."
           ],
@@ -938,7 +945,7 @@
           "Ayaklarını kalça genişliğinde aç, dizlerini hafifçe bük.",
           "Arkandaki bir çekmeceyi kapatır gibi kalçanı geriye gönder.",
           "Sırtını düz tutarak gövdeni biraz öne eğ.",
-          "Yavaşça doğrul ve işarete kadar tekrarla."
+          "Yavaşça doğrul; bu bir tekrardır. Eğilmeleri acele etmeden say."
         ],
         "correct": [
           "Boynun sırtınla aynı çizgide olsun.",
@@ -951,7 +958,7 @@
         "breathing": "Eğilirken nefes al, doğrulurken ver.",
         "safety": "Yalnızca sırtını düz tutabildiğin kadar eğil.",
         "voice": {
-          "start": "Dizlerin hafif bükülü olsun. Kalçanı geriye gönder ve biraz öne eğil.",
+          "start": "Dizlerin hafif bükülü olsun. Kalçanı geriye gönder ve biraz öne eğil. Yavaşça doğrul; bu bir tekrardır. Eğilmeleri acele etmeden say.",
           "mid": [
             "Sırtın düz olsun. Hareket kalçandan başlasın."
           ],
@@ -967,7 +974,7 @@
           "Stell die Füße hüftbreit hin und beuge die Knie leicht.",
           "Schieb die Hüfte zurück, als würdest du damit eine Schublade schließen.",
           "Neige den Oberkörper etwas nach vorn und halte den Rücken gerade.",
-          "Richte dich ruhig auf und wiederhole bis zum Signal."
+          "Richte dich ruhig auf: Das ist eine Wiederholung. Zähle die Vorbeugen ohne Eile."
         ],
         "correct": [
           "Der Nacken bildet eine Linie mit dem Rücken.",
@@ -980,7 +987,7 @@
         "breathing": "Atme beim Beugen ein und beim Aufrichten aus.",
         "safety": "Beuge dich nur so weit, wie du den Rücken gerade halten kannst.",
         "voice": {
-          "start": "Knie locker. Schieb die Hüfte zurück und beuge dich leicht vor.",
+          "start": "Knie locker. Schieb die Hüfte zurück und beuge dich leicht vor. Richte dich ruhig auf: Das ist eine Wiederholung. Zähle die Vorbeugen ohne Eile.",
           "mid": [
             "Rücken lang. Die Bewegung beginnt in der Hüfte."
           ],
@@ -996,7 +1003,7 @@
           "Separa los pies al ancho de las caderas y flexiona un poco las rodillas.",
           "Lleva las caderas atrás como si cerraras un cajón detrás de ti.",
           "Inclina un poco el cuerpo hacia delante manteniendo la espalda recta.",
-          "Enderézate suavemente y repite hasta la señal."
+          "Enderézate suavemente: eso es una repetición. Cuenta las inclinaciones sin prisa."
         ],
         "correct": [
           "Mantén el cuello alineado con la espalda.",
@@ -1009,7 +1016,7 @@
         "breathing": "Inspira al inclinarte y espira al enderezarte.",
         "safety": "Inclínate solo hasta donde puedas mantener la espalda recta.",
         "voice": {
-          "start": "Rodillas suaves. Lleva las caderas atrás e inclínate un poco.",
+          "start": "Rodillas suaves. Lleva las caderas atrás e inclínate un poco. Enderézate suavemente: eso es una repetición. Cuenta las inclinaciones sin prisa.",
           "mid": [
             "Espalda larga. El movimiento empieza en las caderas."
           ],
@@ -1025,7 +1032,7 @@
           "Écarte les pieds à la largeur des hanches et plie un peu les genoux.",
           "Recule les hanches comme pour fermer un tiroir derrière toi.",
           "Incline légèrement le corps vers l’avant en gardant le dos droit.",
-          "Redresse-toi doucement et recommence jusqu’au signal."
+          "Redresse-toi doucement : cela fait une répétition. Compte les inclinaisons sans te presser."
         ],
         "correct": [
           "Garde le cou dans le prolongement du dos.",
@@ -1038,7 +1045,7 @@
         "breathing": "Inspire en t’inclinant et expire en te redressant.",
         "safety": "Incline-toi seulement tant que tu peux garder le dos droit.",
         "voice": {
-          "start": "Genoux souples. Recule les hanches et penche-toi légèrement.",
+          "start": "Genoux souples. Recule les hanches et penche-toi légèrement. Redresse-toi doucement : cela fait une répétition. Compte les inclinaisons sans te presser.",
           "mid": [
             "Dos allongé. Le mouvement part des hanches."
           ],
@@ -1054,7 +1061,7 @@
           "Apri i piedi alla larghezza delle anche e piega leggermente le ginocchia.",
           "Porta il bacino indietro come per chiudere un cassetto alle tue spalle.",
           "Inclina un poco il corpo avanti tenendo la schiena dritta.",
-          "Raddrizzati dolcemente e ripeti fino al segnale."
+          "Raddrizzati dolcemente: questa è una ripetizione. Conta i piegamenti senza fretta."
         ],
         "correct": [
           "Tieni il collo in linea con la schiena.",
@@ -1067,7 +1074,7 @@
         "breathing": "Inspira mentre ti inclini ed espira mentre ti raddrizzi.",
         "safety": "Inclinati solo finché riesci a mantenere la schiena dritta.",
         "voice": {
-          "start": "Ginocchia morbide. Porta il bacino indietro e inclinati un poco.",
+          "start": "Ginocchia morbide. Porta il bacino indietro e inclinati un poco. Raddrizzati dolcemente: questa è una ripetizione. Conta i piegamenti senza fretta.",
           "mid": [
             "Schiena lunga. Il movimento parte dalle anche."
           ],
@@ -1082,7 +1089,7 @@
   {
     "id": "IT06",
     "slot": "warmup",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -1096,7 +1103,7 @@
           "Поставь стопы чуть шире бёдер, руки удобно перед собой.",
           "Немного отведи таз назад и мягко согни колени.",
           "Опустись неглубоко, сохраняя пятки на полу.",
-          "Плавно встань и продолжай в спокойном темпе."
+          "Плавно встань — это один повтор. Считай приседания в спокойном темпе."
         ],
         "correct": [
           "Колени смотрят туда же, куда носки.",
@@ -1109,7 +1116,7 @@
         "breathing": "Вдох вниз, выдох при подъёме.",
         "safety": "Выбирай безболезненную глубину и не ускоряйся ради числа повторов.",
         "voice": {
-          "start": "Начни плавные неглубокие приседания. Пятки на полу.",
+          "start": "Начни плавные неглубокие приседания. Пятки на полу. Плавно встань — это один повтор. Считай приседания в спокойном темпе.",
           "mid": [
             "Колени вдоль носков. Вставай спокойно."
           ],
@@ -1125,7 +1132,7 @@
           "Stand with feet slightly wider than your hips and hands comfortably in front.",
           "Move your hips back a little and softly bend your knees.",
           "Lower only a short way, keeping heels on the floor.",
-          "Stand smoothly and continue at an easy pace."
+          "Stand smoothly to finish one repetition. Count the squats at an easy pace."
         ],
         "correct": [
           "Point your knees in the same direction as your toes.",
@@ -1138,7 +1145,7 @@
         "breathing": "Breathe in going down and out coming up.",
         "safety": "Use a pain-free range and do not rush to do more repetitions.",
         "voice": {
-          "start": "Start gentle shallow squats. Keep your heels down.",
+          "start": "Start gentle shallow squats. Keep your heels down. Stand smoothly to finish one repetition. Count the squats at an easy pace.",
           "mid": [
             "Knees follow your toes. Stand up smoothly."
           ],
@@ -1154,7 +1161,7 @@
           "Ayaklarını kalçandan biraz daha geniş aç, ellerini rahatça önünde tut.",
           "Kalçanı biraz geriye gönder ve dizlerini yumuşakça bük.",
           "Topukların yerde kalırken az miktarda alçal.",
-          "Yavaşça kalk ve sakin tempoda devam et."
+          "Yavaşça kalk; bu bir tekrardır. Çömelmeleri sakin tempoda say."
         ],
         "correct": [
           "Dizlerin, ayak parmaklarınla aynı yöne baksın.",
@@ -1167,7 +1174,7 @@
         "breathing": "İnerken nefes al, kalkarken ver.",
         "safety": "Ağrısız bir derinlik seç; daha çok tekrar için hızlanma.",
         "voice": {
-          "start": "Yavaşça, fazla alçalmadan çömelmeye başla. Topukların yerde kalsın.",
+          "start": "Yavaşça, fazla alçalmadan çömelmeye başla. Topukların yerde kalsın. Yavaşça kalk; bu bir tekrardır. Çömelmeleri sakin tempoda say.",
           "mid": [
             "Dizlerin ayak parmaklarınla aynı yönde olsun. Sakin kalk."
           ],
@@ -1183,7 +1190,7 @@
           "Stell die Füße etwas weiter als hüftbreit hin und halte die Hände bequem vor dir.",
           "Schieb die Hüfte etwas zurück und beuge die Knie locker.",
           "Geh nur ein kleines Stück nach unten, die Fersen bleiben am Boden.",
-          "Richte dich ruhig auf und mach in entspanntem Tempo weiter."
+          "Richte dich ruhig auf: Das ist eine Wiederholung. Zähle die Kniebeugen in ruhigem Tempo."
         ],
         "correct": [
           "Die Knie zeigen in dieselbe Richtung wie die Zehen.",
@@ -1196,7 +1203,7 @@
         "breathing": "Atme beim Absenken ein und beim Aufstehen aus.",
         "safety": "Wähle eine schmerzfreie Tiefe und werde nicht schneller, um mehr Wiederholungen zu schaffen.",
         "voice": {
-          "start": "Beginne mit langsamen, flachen Kniebeugen. Die Fersen bleiben am Boden.",
+          "start": "Beginne mit langsamen, flachen Kniebeugen. Die Fersen bleiben am Boden. Richte dich ruhig auf: Das ist eine Wiederholung. Zähle die Kniebeugen in ruhigem Tempo.",
           "mid": [
             "Knie in Richtung der Zehen. Steh ruhig auf."
           ],
@@ -1212,7 +1219,7 @@
           "Separa los pies un poco más que las caderas y coloca las manos cómodamente delante.",
           "Lleva un poco las caderas atrás y flexiona suavemente las rodillas.",
           "Baja poco, sin despegar los talones del suelo.",
-          "Levántate suavemente y continúa a un ritmo tranquilo."
+          "Levántate suavemente: eso es una repetición. Cuenta las sentadillas a un ritmo tranquilo."
         ],
         "correct": [
           "Las rodillas apuntan en la misma dirección que los dedos.",
@@ -1225,7 +1232,7 @@
         "breathing": "Inspira al bajar y espira al subir.",
         "safety": "Elige una profundidad sin dolor y no corras para hacer más repeticiones.",
         "voice": {
-          "start": "Empieza las sentadillas suaves y poco profundas. Talones apoyados.",
+          "start": "Empieza las sentadillas suaves y poco profundas. Talones apoyados. Levántate suavemente: eso es una repetición. Cuenta las sentadillas a un ritmo tranquilo.",
           "mid": [
             "Rodillas en la dirección de los dedos. Sube con calma."
           ],
@@ -1241,7 +1248,7 @@
           "Écarte les pieds un peu plus que les hanches et place les mains confortablement devant toi.",
           "Recule un peu les hanches et plie doucement les genoux.",
           "Descends peu en gardant les talons au sol.",
-          "Remonte doucement et continue à un rythme tranquille."
+          "Remonte doucement : cela fait une répétition. Compte les squats à un rythme tranquille."
         ],
         "correct": [
           "Les genoux suivent la direction des orteils.",
@@ -1254,7 +1261,7 @@
         "breathing": "Inspire en descendant et expire en remontant.",
         "safety": "Choisis une profondeur sans douleur et ne te presse pas pour faire plus de répétitions.",
         "voice": {
-          "start": "Commence les petits squats tout en douceur. Talons au sol.",
+          "start": "Commence les petits squats tout en douceur. Talons au sol. Remonte doucement : cela fait une répétition. Compte les squats à un rythme tranquille.",
           "mid": [
             "Genoux dans l’axe des orteils. Remonte tranquillement."
           ],
@@ -1270,7 +1277,7 @@
           "Apri i piedi un poco più delle anche e tieni comodamente le mani davanti.",
           "Porta un poco il bacino indietro e piega dolcemente le ginocchia.",
           "Scendi poco tenendo i talloni a terra.",
-          "Rialzati dolcemente e continua a un ritmo tranquillo."
+          "Rialzati dolcemente: questa è una ripetizione. Conta gli squat a un ritmo tranquillo."
         ],
         "correct": [
           "Le ginocchia seguono la direzione delle dita dei piedi.",
@@ -1283,7 +1290,7 @@
         "breathing": "Inspira scendendo ed espira risalendo.",
         "safety": "Scegli una profondità senza dolore e non accelerare per fare più ripetizioni.",
         "voice": {
-          "start": "Inizia gli squat dolci e poco profondi. Talloni a terra.",
+          "start": "Inizia gli squat dolci e poco profondi. Talloni a terra. Rialzati dolcemente: questa è una ripetizione. Conta gli squat a un ritmo tranquillo.",
           "mid": [
             "Ginocchia nella direzione dei piedi. Risali con calma."
           ],
@@ -1529,7 +1536,7 @@
           "Другой ногой шагни назад и опускайся 2 секунды, сгибая обе ноги.",
           "Остановись на 1 секунду в удобной глубине.",
           "Оттолкнись передней стопой и верни заднюю ногу; это один повтор.",
-          "Выполни все повторы с одной рабочей ногой, затем смени её."
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Переднее колено направлено вдоль носка.",
@@ -1559,7 +1566,7 @@
           "Step the other foot back and lower for 2 seconds, bending both knees.",
           "Pause for 1 second at a comfortable depth.",
           "Push through the front foot and bring the back foot in for one repetition.",
-          "Finish all repetitions with this working leg, then switch."
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Keep the front knee pointing with its toes.",
@@ -1589,7 +1596,7 @@
           "Diğer ayağınla geriye adım at ve iki dizini bükerek 2 saniyede alçal.",
           "Rahat bir derinlikte 1 saniye dur.",
           "Öndeki ayağınla yeri it ve arkadaki ayağını geri getir; bu bir tekrardır.",
-          "Aynı bacak önde kalacak şekilde bütün tekrarları bitir, sonra değiştir."
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Öndeki dizin, ayak parmaklarınla aynı yöne baksın.",
@@ -1619,7 +1626,7 @@
           "Mach mit dem anderen Fuß einen Schritt zurück und senke dich 2 Sekunden lang ab, beide Knie beugen sich.",
           "Halte 1 Sekunde in einer angenehmen Tiefe.",
           "Drück dich über den vorderen Fuß hoch und hol den hinteren Fuß zurück; das ist eine Wiederholung.",
-          "Beende alle Wiederholungen mit diesem Bein vorn, dann wechsle."
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Das vordere Knie zeigt in Richtung der Zehen.",
@@ -1649,7 +1656,7 @@
           "Da un paso atrás con la otra pierna y baja en 2 segundos, flexionando ambas rodillas.",
           "Haz una pausa de 1 segundo a una profundidad cómoda.",
           "Empuja con el pie delantero y vuelve a juntar los pies: eso es una repetición.",
-          "Termina todas las repeticiones con esta pierna delante y luego cambia."
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Rodilla delantera en la dirección de los dedos del pie.",
@@ -1679,7 +1686,7 @@
           "Recule l’autre pied et descends en 2 secondes en pliant les deux genoux.",
           "Fais une pause de 1 seconde à une profondeur confortable.",
           "Pousse sur le pied de devant et ramène l’autre pied : cela fait une répétition.",
-          "Termine les répétitions avec cette jambe devant, puis change."
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Garde le genou de devant dans la direction des orteils.",
@@ -1709,7 +1716,7 @@
           "Fai un passo indietro con l’altro piede e scendi in 2 secondi, piegando entrambe le ginocchia.",
           "Fermati per 1 secondo a una profondità comoda.",
           "Spingi con il piede davanti e riporta avanti quello dietro: questa è una ripetizione.",
-          "Completa le ripetizioni con questa gamba davanti, poi cambia."
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Il ginocchio davanti segue la direzione delle dita del piede.",
@@ -2183,7 +2190,8 @@
           "Встань рядом со стеной и коснись её пальцами.",
           "Перенеси вес на рабочую ногу, другую слегка подними.",
           "Поднимись на носок рабочей ноги и задержись на 1 секунду.",
-          "Плавно опусти пятку — это один повтор; после подхода смени ногу."
+          "Плавно опусти пятку — это один повтор; после подхода смени ногу.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Пятка движется вверх без завала наружу.",
@@ -2212,7 +2220,8 @@
           "Stand beside a wall and touch it with your fingertips.",
           "Put your weight on the working leg and lift the other foot slightly.",
           "Rise onto the ball of the working foot and hold for 1 second.",
-          "Lower the heel smoothly for one repetition; switch legs after the set."
+          "Lower the heel smoothly for one repetition; switch legs after the set.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Lift the heel without rolling the ankle outward.",
@@ -2241,7 +2250,8 @@
           "Duvarın yanında dur ve parmak uçlarınla duvara dokun.",
           "Ağırlığını çalışan bacağına ver, diğer ayağını biraz kaldır.",
           "Çalışan ayağının parmak ucuna yüksel ve 1 saniye tut.",
-          "Topuğunu yavaşça indir; bu bir tekrardır. Setten sonra bacak değiştir."
+          "Topuğunu yavaşça indir; bu bir tekrardır. Setten sonra bacak değiştir.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Bileğini dışa devirmeden topuğunu kaldır.",
@@ -2270,7 +2280,8 @@
           "Stell dich neben eine Wand und berühre sie mit den Fingerspitzen.",
           "Verlagere dein Gewicht auf das arbeitende Bein und heb den anderen Fuß leicht an.",
           "Heb die Ferse des Standbeins, sodass du auf dem Fußballen stehst, und halte 1 Sekunde.",
-          "Senke die Ferse ruhig ab; das ist eine Wiederholung. Wechsle nach dem Satz das Bein."
+          "Senke die Ferse ruhig ab; das ist eine Wiederholung. Wechsle nach dem Satz das Bein.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Die Ferse geht nach oben, ohne dass der Knöchel nach außen kippt.",
@@ -2299,7 +2310,8 @@
           "Ponte junto a una pared y tócala con la punta de los dedos.",
           "Pasa el peso a la pierna que trabaja y levanta un poco el otro pie.",
           "Sube sobre la parte delantera del pie de apoyo y mantén 1 segundo.",
-          "Baja el talón suavemente: eso es una repetición; cambia de pierna al terminar la serie."
+          "Baja el talón suavemente: eso es una repetición; cambia de pierna al terminar la serie.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Levanta el talón sin inclinar el tobillo hacia fuera.",
@@ -2328,7 +2340,8 @@
           "Place-toi près d’un mur et touche-le du bout des doigts.",
           "Passe ton poids sur la jambe qui travaille et soulève un peu l’autre pied.",
           "Monte sur l’avant du pied d’appui et tiens 1 seconde.",
-          "Redescends doucement le talon : cela fait une répétition ; change de jambe après la série."
+          "Redescends doucement le talon : cela fait une répétition ; change de jambe après la série.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Le talon monte sans que la cheville bascule vers l’extérieur.",
@@ -2357,7 +2370,8 @@
           "Stai vicino a un muro e toccalo con la punta delle dita.",
           "Porta il peso sulla gamba che lavora e solleva poco l’altro piede.",
           "Sali sull’avampiede della gamba d’appoggio e mantieni per 1 secondo.",
-          "Abbassa dolcemente il tallone: questa è una ripetizione; cambia gamba dopo la serie."
+          "Abbassa dolcemente il tallone: questa è una ripetizione; cambia gamba dopo la serie.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Solleva il tallone senza inclinare la caviglia verso l’esterno.",
@@ -2399,7 +2413,8 @@
           "Ляг на спину, руки вверх; подними согнутые ноги, колени над тазом.",
           "Медленно отводи правую руку за голову и выпрямляй левую ногу, не касаясь пола.",
           "Верни их обратно — это один повтор; двигайся только пока поясница неподвижна.",
-          "Выполни назначенные повторы этой парой, затем смени пару по сигналу."
+          "Выполни назначенные повторы этой парой, затем сам смени пару и повтори столько же.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Поясница сохраняет спокойное положение.",
@@ -2428,7 +2443,8 @@
           "Lie on your back with arms up and bent knees over your hips.",
           "Slowly reach your right arm overhead and straighten your left leg without touching the floor.",
           "Return them for one repetition; move only while your lower back stays still.",
-          "Complete the assigned repetitions with this pair, then switch pairs at the signal."
+          "Complete the assigned repetitions with this pair, then switch pairs yourself and do the same number.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Keep your lower back in a steady position.",
@@ -2457,7 +2473,8 @@
           "Sırtüstü yat, kolların yukarıda olsun; bacaklarını bükülü kaldır, dizlerin kalçanın üzerinde olsun.",
           "Sağ kolunu başının arkasına götürürken sol bacağını yere değdirmeden yavaşça uzat.",
           "İkisini geri getir; bu bir tekrardır. Yalnızca belin sabit kalırken hareket et.",
-          "Bu kol ve bacakla verilen tekrarları bitir, sonra işaretle diğer çifte geç."
+          "Bu kol-bacak çiftiyle belirtilen tekrarları bitir, sonra kendin değiştirip aynı sayıyı yap.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Belinin konumu sabit kalsın.",
@@ -2486,7 +2503,8 @@
           "Leg dich auf den Rücken, strecke die Arme nach oben und heb die angewinkelten Beine, Knie über der Hüfte.",
           "Führe den rechten Arm langsam über den Kopf und strecke das linke Bein, ohne den Boden zu berühren.",
           "Führe beide zurück; das ist eine Wiederholung. Bewege dich nur so weit, wie der untere Rücken ruhig bleibt.",
-          "Beende die vorgegebenen Wiederholungen mit diesem Paar und wechsle beim Signal zum anderen."
+          "Mach die vorgegebenen Wiederholungen mit diesem Paar, wechsle selbst und wiederhole die gleiche Anzahl.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Der untere Rücken bleibt in seiner Position.",
@@ -2515,7 +2533,8 @@
           "Túmbate boca arriba con los brazos hacia el techo y las rodillas flexionadas sobre las caderas.",
           "Lleva lentamente el brazo derecho hacia atrás, por encima de la cabeza, y estira la pierna izquierda sin tocar el suelo.",
           "Vuelve al inicio: eso es una repetición; muévete solo mientras la zona lumbar permanezca quieta.",
-          "Completa las repeticiones con esta pareja y cambia a la otra cuando suene la señal."
+          "Completa las repeticiones indicadas con esta pareja, cambia tú mismo y haz la misma cantidad.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Mantén estable la zona lumbar.",
@@ -2544,7 +2563,8 @@
           "Allonge-toi sur le dos, bras vers le plafond et genoux pliés au-dessus des hanches.",
           "Amène lentement le bras droit au-delà de la tête et tends la jambe gauche sans toucher le sol.",
           "Ramène-les : cela fait une répétition ; bouge seulement tant que le bas du dos reste immobile.",
-          "Fais les répétitions prévues avec cette paire, puis change de paire au signal."
+          "Fais les répétitions prévues avec cette paire, puis change toi-même et fais le même nombre.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Garde le bas du dos dans une position stable.",
@@ -2573,7 +2593,8 @@
           "Sdraiati sulla schiena con le braccia in alto e le ginocchia piegate sopra le anche.",
           "Porta lentamente il braccio destro oltre la testa e distendi la gamba sinistra senza toccare il pavimento.",
           "Riportali all’inizio: questa è una ripetizione; muoviti solo mentre la zona lombare resta ferma.",
-          "Completa le ripetizioni con questa coppia, poi cambia coppia al segnale."
+          "Completa le ripetizioni indicate con questa coppia, poi cambia da solo e fai lo stesso numero.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Tieni la zona lombare in una posizione stabile.",
@@ -2615,7 +2636,7 @@
           "Упрись ладонями в стену, одну ногу отставь назад.",
           "Переднее колено мягко согни; заднюю ногу держи почти прямой.",
           "Оставь заднюю пятку на полу и слегка подай тело к стене.",
-          "Удерживай лёгкое натяжение до сигнала, затем смени ногу."
+          "Сам смени сторону на половине общего времени; один таймер включает обе стороны."
         ],
         "correct": [
           "Задняя стопа направлена вперёд.",
@@ -2628,7 +2649,7 @@
         "breathing": "Дыши спокойно без задержек.",
         "safety": "Если чувствуешь давление в колене или боль в пятке, уменьши шаг или остановись.",
         "voice": {
-          "start": "Задняя пятка на полу. Мягко потяни икру у стены.",
+          "start": "Задняя пятка на полу. Мягко потяни икру у стены. Сам смени сторону на половине общего времени; один таймер включает обе стороны.",
           "mid": [
             "Не пружинь. Оставь только лёгкое натяжение."
           ],
@@ -2644,7 +2665,7 @@
           "Place your palms on a wall and step one foot back.",
           "Bend the front knee slightly and keep the back leg almost straight.",
           "Keep the back heel down and gently lean toward the wall.",
-          "Hold a light stretch until the signal, then switch legs."
+          "Switch sides yourself halfway through the total time; one timer covers both sides."
         ],
         "correct": [
           "Point the back foot forward.",
@@ -2657,7 +2678,7 @@
         "breathing": "Breathe calmly without holding your breath.",
         "safety": "If you feel knee pressure or heel pain, shorten the stance or stop.",
         "voice": {
-          "start": "Keep your back heel down. Gently stretch the calf by the wall.",
+          "start": "Keep your back heel down. Gently stretch the calf by the wall. Switch sides yourself halfway through the total time; one timer covers both sides.",
           "mid": [
             "No bouncing. Keep only a light stretch."
           ],
@@ -2673,7 +2694,7 @@
           "Avuçlarını duvara koy ve bir ayağını geriye al.",
           "Öndeki dizini hafifçe bük, arkadaki bacağını neredeyse düz tut.",
           "Arkadaki topuğun yerde kalırken duvara doğru hafifçe eğil.",
-          "İşarete kadar hafif esnemeyi koru, sonra bacak değiştir."
+          "Toplam sürenin yarısında tarafı kendin değiştir; tek sayaç iki tarafı da kapsar."
         ],
         "correct": [
           "Arkadaki ayağın öne baksın.",
@@ -2686,7 +2707,7 @@
         "breathing": "Nefesini tutmadan sakin nefes al.",
         "safety": "Dizinde baskı veya topuğunda ağrı hissedersen adım aralığını kısalt ya da dur.",
         "voice": {
-          "start": "Arkadaki topuğun yerde kalsın. Duvarda baldırını hafifçe esnet.",
+          "start": "Arkadaki topuğun yerde kalsın. Duvarda baldırını hafifçe esnet. Toplam sürenin yarısında tarafı kendin değiştir; tek sayaç iki tarafı da kapsar.",
           "mid": [
             "Yaylanma. Esneme hafif olsun."
           ],
@@ -2702,7 +2723,7 @@
           "Stütz die Handflächen an eine Wand und stell einen Fuß zurück.",
           "Beuge das vordere Knie leicht und lass das hintere Bein fast gestreckt.",
           "Lass die hintere Ferse unten und neige dich sanft zur Wand.",
-          "Halte die leichte Dehnung bis zum Signal, dann wechsle das Bein."
+          "Wechsle selbst nach der Hälfte der Gesamtzeit; ein Timer gilt für beide Seiten."
         ],
         "correct": [
           "Der hintere Fuß zeigt nach vorn.",
@@ -2715,7 +2736,7 @@
         "breathing": "Atme ruhig, ohne die Luft anzuhalten.",
         "safety": "Wenn du Druck im Knie oder Schmerzen an der Ferse spürst, verkürze den Abstand der Füße oder hör auf.",
         "voice": {
-          "start": "Die hintere Ferse bleibt unten. Dehne die Wade sanft an der Wand.",
+          "start": "Die hintere Ferse bleibt unten. Dehne die Wade sanft an der Wand. Wechsle selbst nach der Hälfte der Gesamtzeit; ein Timer gilt für beide Seiten.",
           "mid": [
             "Nicht federn. Nur leicht dehnen."
           ],
@@ -2731,7 +2752,7 @@
           "Apoya las palmas en la pared y lleva un pie atrás.",
           "Flexiona un poco la rodilla delantera y deja la pierna trasera casi recta.",
           "Mantén el talón trasero apoyado e inclínate suavemente hacia la pared.",
-          "Mantén una tensión ligera hasta la señal y cambia de pierna."
+          "Cambia tú de lado a mitad del tiempo total; un solo temporizador cubre ambos lados."
         ],
         "correct": [
           "Orienta el pie trasero hacia delante.",
@@ -2744,7 +2765,7 @@
         "breathing": "Respira con calma sin aguantar el aire.",
         "safety": "Si notas presión en la rodilla o dolor en el talón, acorta la separación de los pies o para.",
         "voice": {
-          "start": "Talón trasero apoyado. Estira suavemente el gemelo junto a la pared.",
+          "start": "Talón trasero apoyado. Estira suavemente el gemelo junto a la pared. Cambia tú de lado a mitad del tiempo total; un solo temporizador cubre ambos lados.",
           "mid": [
             "Sin rebotes. Mantén solo una tensión ligera."
           ],
@@ -2760,7 +2781,7 @@
           "Pose les paumes sur un mur et recule un pied.",
           "Plie un peu le genou de devant et garde la jambe arrière presque tendue.",
           "Garde le talon arrière au sol et penche-toi doucement vers le mur.",
-          "Garde une légère tension jusqu’au signal, puis change de jambe."
+          "Change toi-même de côté à la moitié du temps total ; un seul minuteur couvre les deux côtés."
         ],
         "correct": [
           "Le pied arrière pointe vers l’avant.",
@@ -2773,7 +2794,7 @@
         "breathing": "Respire calmement sans bloquer ton souffle.",
         "safety": "Si tu sens une pression au genou ou une douleur au talon, rapproche les pieds ou arrête.",
         "voice": {
-          "start": "Talon arrière au sol. Étire doucement le mollet près du mur.",
+          "start": "Talon arrière au sol. Étire doucement le mollet près du mur. Change toi-même de côté à la moitié du temps total ; un seul minuteur couvre les deux côtés.",
           "mid": [
             "Sans rebondir. Garde seulement une légère tension."
           ],
@@ -2789,7 +2810,7 @@
           "Appoggia i palmi al muro e porta un piede indietro.",
           "Piega un poco il ginocchio davanti e tieni la gamba dietro quasi dritta.",
           "Tieni a terra il tallone dietro e inclinati dolcemente verso il muro.",
-          "Mantieni una lieve tensione fino al segnale, poi cambia gamba."
+          "Cambia lato da solo a metà del tempo totale; un solo timer comprende entrambi i lati."
         ],
         "correct": [
           "Il piede dietro punta in avanti.",
@@ -2802,7 +2823,7 @@
         "breathing": "Respira con calma senza trattenere il fiato.",
         "safety": "Se senti pressione al ginocchio o dolore al tallone, avvicina i piedi o fermati.",
         "voice": {
-          "start": "Tallone dietro a terra. Allunga dolcemente il polpaccio vicino al muro.",
+          "start": "Tallone dietro a terra. Allunga dolcemente il polpaccio vicino al muro. Cambia lato da solo a metà del tempo totale; un solo timer comprende entrambi i lati.",
           "mid": [
             "Senza molleggi. Solo una lieve tensione."
           ],
@@ -3249,7 +3270,7 @@
   {
     "id": "IT16",
     "slot": "main",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -3263,7 +3284,7 @@
           "Выбери центр ковра, встань устойчиво.",
           "Шагни вперёд и вернись в центр.",
           "Шагни вправо и вернись; затем назад и обратно.",
-          "Заверши шагом влево и возвращением, повторяй круг до сигнала."
+          "Шагни влево и вернись. Все четыре направления с возвратами — один повтор."
         ],
         "correct": [
           "Каждый раз возвращайся в ту же точку.",
@@ -3276,7 +3297,7 @@
         "breathing": "Дыши свободно.",
         "safety": "Шагай на 30–50 см и заранее проверь свободное место позади себя.",
         "voice": {
-          "start": "Компас: вперёд, вправо, назад и влево. Между шагами возвращайся в центр.",
+          "start": "Компас: вперёд, вправо, назад и влево. Между шагами возвращайся в центр. Шагни влево и вернись. Все четыре направления с возвратами — один повтор.",
           "mid": [
             "Короткие шаги. Каждый раз находи центр."
           ],
@@ -3292,7 +3313,7 @@
           "Choose a centre point and stand steadily.",
           "Step forward and return to the centre.",
           "Step right and return, then back and return.",
-          "Finish with a step left and back to centre; repeat until the signal."
+          "Step left and return. All four directions with returns make one repetition."
         ],
         "correct": [
           "Return to the same place each time.",
@@ -3305,7 +3326,7 @@
         "breathing": "Breathe freely.",
         "safety": "Use 30–50 cm steps and check the space behind you first.",
         "voice": {
-          "start": "Compass: forward, right, back and left. Return to centre between steps.",
+          "start": "Compass: forward, right, back and left. Return to centre between steps. Step left and return. All four directions with returns make one repetition.",
           "mid": [
             "Short steps. Find the centre every time."
           ],
@@ -3321,7 +3342,7 @@
           "Bir merkez noktası seç ve dengeli dur.",
           "Öne adım at ve ortaya dön.",
           "Sağa adım atıp dön, sonra geriye adım atıp dön.",
-          "Sola adım atıp ortaya dönerek diziyi tamamla; işarete kadar tekrarla."
+          "Sola adım at ve dön. Dört yönün tamamı ve geri dönüşler bir tekrardır."
         ],
         "correct": [
           "Her seferinde aynı noktaya dön.",
@@ -3334,7 +3355,7 @@
         "breathing": "Rahatça nefes al.",
         "safety": "30–50 cm uzunluğunda adımlar at; önce arkandaki alanı kontrol et.",
         "voice": {
-          "start": "Dört yön: öne, sağa, arkaya ve sola. Her adım arasında ortaya dön.",
+          "start": "Dört yön: öne, sağa, arkaya ve sola. Her adım arasında ortaya dön. Sola adım at ve dön. Dört yönün tamamı ve geri dönüşler bir tekrardır.",
           "mid": [
             "Kısa adımlar. Her seferinde merkezi bul."
           ],
@@ -3350,7 +3371,7 @@
           "Wähle einen Mittelpunkt und stell dich sicher hin.",
           "Mach einen Schritt nach vorn und kehre zur Mitte zurück.",
           "Mach einen Schritt nach rechts und zurück, dann nach hinten und zurück.",
-          "Zum Schluss ein Schritt nach links und zurück zur Mitte; wiederhole bis zum Signal."
+          "Schritt nach links und zurück. Alle vier Richtungen mit Rückkehr zählen als eine Wiederholung."
         ],
         "correct": [
           "Kehre jedes Mal an denselben Platz zurück.",
@@ -3363,7 +3384,7 @@
         "breathing": "Atme frei weiter.",
         "safety": "Mach 30–50 cm lange Schritte und prüfe zuerst, ob hinter dir Platz ist.",
         "voice": {
-          "start": "Vier Richtungen: vor, rechts, zurück und links. Dazwischen immer zur Mitte.",
+          "start": "Vier Richtungen: vor, rechts, zurück und links. Dazwischen immer zur Mitte. Schritt nach links und zurück. Alle vier Richtungen mit Rückkehr zählen als eine Wiederholung.",
           "mid": [
             "Kurze Schritte. Finde jedes Mal die Mitte."
           ],
@@ -3379,7 +3400,7 @@
           "Elige un punto central y colócate con estabilidad.",
           "Da un paso adelante y vuelve al centro.",
           "Da un paso a la derecha y vuelve; luego atrás y vuelve.",
-          "Termina con un paso a la izquierda y vuelve al centro; repite hasta la señal."
+          "Da un paso a la izquierda y vuelve. Las cuatro direcciones con sus vueltas forman una repetición."
         ],
         "correct": [
           "Vuelve al mismo punto cada vez.",
@@ -3392,7 +3413,7 @@
         "breathing": "Respira libremente.",
         "safety": "Da pasos de 30–50 cm y comprueba antes el espacio que hay detrás.",
         "voice": {
-          "start": "Brújula: delante, derecha, atrás e izquierda. Vuelve al centro entre pasos.",
+          "start": "Brújula: delante, derecha, atrás e izquierda. Vuelve al centro entre pasos. Da un paso a la izquierda y vuelve. Las cuatro direcciones con sus vueltas forman una repetición.",
           "mid": [
             "Pasos cortos. Encuentra el centro cada vez."
           ],
@@ -3408,7 +3429,7 @@
           "Choisis un point central et place-toi bien en équilibre.",
           "Fais un pas devant et reviens au centre.",
           "Fais un pas à droite et reviens, puis derrière et reviens.",
-          "Termine par un pas à gauche et reviens au centre ; répète jusqu’au signal."
+          "Fais un pas à gauche et reviens. Les quatre directions avec leurs retours font une répétition."
         ],
         "correct": [
           "Reviens au même endroit à chaque fois.",
@@ -3421,7 +3442,7 @@
         "breathing": "Respire librement.",
         "safety": "Fais des pas de 30–50 cm et vérifie d’abord l’espace derrière toi.",
         "voice": {
-          "start": "Boussole : devant, droite, derrière, gauche. Reviens au centre entre les pas.",
+          "start": "Boussole : devant, droite, derrière, gauche. Reviens au centre entre les pas. Fais un pas à gauche et reviens. Les quatre directions avec leurs retours font une répétition.",
           "mid": [
             "Petits pas. Retrouve le centre à chaque fois."
           ],
@@ -3437,7 +3458,7 @@
           "Scegli un punto centrale e mettiti in equilibrio.",
           "Fai un passo avanti e torna al centro.",
           "Fai un passo a destra e torna, poi indietro e torna.",
-          "Finisci con un passo a sinistra e torna al centro; ripeti fino al segnale."
+          "Fai un passo a sinistra e torna. Tutte e quattro le direzioni con i ritorni formano una ripetizione."
         ],
         "correct": [
           "Torna ogni volta nello stesso punto.",
@@ -3450,7 +3471,7 @@
         "breathing": "Respira liberamente.",
         "safety": "Fai passi di 30–50 cm e controlla prima lo spazio dietro di te.",
         "voice": {
-          "start": "Bussola: avanti, destra, indietro e sinistra. Torna al centro tra i passi.",
+          "start": "Bussola: avanti, destra, indietro e sinistra. Torna al centro tra i passi. Fai un passo a sinistra e torna. Tutte e quattro le direzioni con i ritorni formano una ripetizione.",
           "mid": [
             "Passi corti. Ritrova il centro ogni volta."
           ],
@@ -3474,12 +3495,12 @@
         "name": "Равновесие на одной ноге",
         "hint": "Смотри перед собой, опорное колено мягкое.",
         "warning": "При потере равновесия спокойно поставь стопу.",
-        "desc": "Спокойная стойка на одной ноге с отдельным удержанием каждой стороны.",
+        "desc": "Спокойная стойка на одной ноге: сам смени ногу на половине общего времени.",
         "howTo": [
           "Встань рядом со стеной на случай, если понадобится опора.",
           "Перенеси вес на одну ногу и немного подними другую стопу.",
           "Смотри на неподвижную точку впереди, руки разведи удобно.",
-          "Удерживай положение до сигнала, затем опусти стопу и смени ногу."
+          "Сам смени сторону на половине общего времени; один таймер включает обе стороны."
         ],
         "correct": [
           "Таз остаётся ровным.",
@@ -3492,7 +3513,7 @@
         "breathing": "Дыши спокойно, не задерживай дыхание.",
         "safety": "Можно касаться стены пальцами; не пытайся спасти равновесие резким прыжком.",
         "voice": {
-          "start": "Подними одну стопу. Смотри на точку перед собой.",
+          "start": "Подними одну стопу. Смотри на точку перед собой. Сам смени сторону на половине общего времени; один таймер включает обе стороны.",
           "mid": [
             "Мягкое колено и ровный таз."
           ],
@@ -3503,12 +3524,12 @@
         "name": "Single-leg balance",
         "hint": "Look ahead and keep the standing knee soft.",
         "warning": "Put your foot down calmly if you lose balance.",
-        "desc": "A quiet one-leg stand with a separate hold on each side.",
+        "desc": "A quiet one-leg stand: switch legs yourself halfway through the total time.",
         "howTo": [
           "Stand near a wall in case you need support.",
           "Shift weight to one leg and lift the other foot a little.",
           "Look at a fixed point ahead and place your arms comfortably.",
-          "Hold until the signal, then put the foot down and switch legs."
+          "Switch sides yourself halfway through the total time; one timer covers both sides."
         ],
         "correct": [
           "Keep your hips level.",
@@ -3521,7 +3542,7 @@
         "breathing": "Breathe calmly without holding your breath.",
         "safety": "You may touch the wall with your fingertips; avoid sudden hops to catch your balance.",
         "voice": {
-          "start": "Lift one foot. Look at a point ahead.",
+          "start": "Lift one foot. Look at a point ahead. Switch sides yourself halfway through the total time; one timer covers both sides.",
           "mid": [
             "Soft knee and level hips."
           ],
@@ -3532,12 +3553,12 @@
         "name": "Tek ayak dengesi",
         "hint": "Karşıya bak, yerdeki bacağının dizini hafif bükülü tut.",
         "warning": "Dengeni kaybedersen ayağını sakince yere koy.",
-        "desc": "Her taraf için ayrı yapılan, sakin tek ayak duruşu.",
+        "desc": "Sakin tek ayak duruşu: toplam sürenin yarısında bacağı kendin değiştir.",
         "howTo": [
           "Gerekirse destek alabileceğin bir duvarın yakınında dur.",
           "Ağırlığını bir bacağına ver, diğer ayağını biraz kaldır.",
           "Karşındaki sabit bir noktaya bak, kollarını rahatça yerleştir.",
-          "İşarete kadar dur, sonra ayağını yere koyup bacak değiştir."
+          "Toplam sürenin yarısında tarafı kendin değiştir; tek sayaç iki tarafı da kapsar."
         ],
         "correct": [
           "Kalçanın iki yanı aynı seviyede olsun.",
@@ -3550,7 +3571,7 @@
         "breathing": "Nefesini tutmadan sakin nefes al.",
         "safety": "Parmak uçlarınla duvara dokunabilirsin; dengeni toplamak için aniden sıçrama.",
         "voice": {
-          "start": "Bir ayağını kaldır. Karşındaki bir noktaya bak.",
+          "start": "Bir ayağını kaldır. Karşındaki bir noktaya bak. Toplam sürenin yarısında tarafı kendin değiştir; tek sayaç iki tarafı da kapsar.",
           "mid": [
             "Dizin hafif bükülü, kalçan düz olsun."
           ],
@@ -3561,12 +3582,12 @@
         "name": "Gleichgewicht auf einem Bein",
         "hint": "Schau nach vorn und lass das Standknie locker.",
         "warning": "Setz den Fuß ruhig ab, wenn du das Gleichgewicht verlierst.",
-        "desc": "Ruhiger Einbeinstand mit einer eigenen Haltezeit auf jeder Seite.",
+        "desc": "Ruhiger Einbeinstand: Wechsle selbst nach der Hälfte der Gesamtzeit das Bein.",
         "howTo": [
           "Stell dich nahe an eine Wand, falls du Unterstützung brauchst.",
           "Verlagere dein Gewicht auf ein Bein und heb den anderen Fuß leicht an.",
           "Schau auf einen festen Punkt vor dir und halte die Arme bequem.",
-          "Halte bis zum Signal, setz dann den Fuß ab und wechsle das Bein."
+          "Wechsle selbst nach der Hälfte der Gesamtzeit; ein Timer gilt für beide Seiten."
         ],
         "correct": [
           "Halte die Hüfte auf beiden Seiten gleich hoch.",
@@ -3579,7 +3600,7 @@
         "breathing": "Atme ruhig, ohne die Luft anzuhalten.",
         "safety": "Du darfst die Wand mit den Fingerspitzen berühren; versuche nicht, dich mit plötzlichen Sprüngen auszubalancieren.",
         "voice": {
-          "start": "Heb einen Fuß an. Schau auf einen Punkt vor dir.",
+          "start": "Heb einen Fuß an. Schau auf einen Punkt vor dir. Wechsle selbst nach der Hälfte der Gesamtzeit; ein Timer gilt für beide Seiten.",
           "mid": [
             "Knie locker, Hüfte gerade."
           ],
@@ -3590,12 +3611,12 @@
         "name": "Equilibrio sobre una pierna",
         "hint": "Mira al frente y mantén suave la rodilla de apoyo.",
         "warning": "Si pierdes el equilibrio, apoya el pie con calma.",
-        "desc": "Equilibrio tranquilo a una pierna, con un tiempo separado para cada lado.",
+        "desc": "Equilibrio tranquilo a una pierna: cambia tú de pierna a mitad del tiempo total.",
         "howTo": [
           "Ponte cerca de una pared por si necesitas apoyo.",
           "Pasa el peso a una pierna y levanta un poco el otro pie.",
           "Mira un punto fijo delante y coloca los brazos cómodamente.",
-          "Mantén hasta la señal, apoya el pie y cambia de pierna."
+          "Cambia tú de lado a mitad del tiempo total; un solo temporizador cubre ambos lados."
         ],
         "correct": [
           "Mantén las caderas al mismo nivel.",
@@ -3608,7 +3629,7 @@
         "breathing": "Respira con calma sin aguantar el aire.",
         "safety": "Puedes tocar la pared con los dedos; evita saltos bruscos para recuperar el equilibrio.",
         "voice": {
-          "start": "Levanta un pie. Mira un punto delante.",
+          "start": "Levanta un pie. Mira un punto delante. Cambia tú de lado a mitad del tiempo total; un solo temporizador cubre ambos lados.",
           "mid": [
             "Rodilla suave y caderas al mismo nivel."
           ],
@@ -3619,12 +3640,12 @@
         "name": "Équilibre sur une jambe",
         "hint": "Regarde devant et garde le genou d’appui souple.",
         "warning": "Pose calmement le pied si tu perds l’équilibre.",
-        "desc": "Un équilibre tranquille sur une jambe, avec une tenue séparée de chaque côté.",
+        "desc": "Un équilibre tranquille sur une jambe : change toi-même à la moitié du temps total.",
         "howTo": [
           "Place-toi près d’un mur au cas où tu aurais besoin d’appui.",
           "Passe ton poids sur une jambe et lève un peu l’autre pied.",
           "Regarde un point fixe devant toi et place les bras confortablement.",
-          "Tiens jusqu’au signal, puis pose le pied et change de jambe."
+          "Change toi-même de côté à la moitié du temps total ; un seul minuteur couvre les deux côtés."
         ],
         "correct": [
           "Garde les hanches au même niveau.",
@@ -3637,7 +3658,7 @@
         "breathing": "Respire calmement sans bloquer ton souffle.",
         "safety": "Tu peux toucher le mur du bout des doigts ; évite les sauts brusques pour retrouver l’équilibre.",
         "voice": {
-          "start": "Lève un pied. Regarde un point devant toi.",
+          "start": "Lève un pied. Regarde un point devant toi. Change toi-même de côté à la moitié du temps total ; un seul minuteur couvre les deux côtés.",
           "mid": [
             "Genou souple et hanches au même niveau."
           ],
@@ -3648,12 +3669,12 @@
         "name": "Equilibrio su una gamba",
         "hint": "Guarda avanti e tieni morbido il ginocchio d’appoggio.",
         "warning": "Se perdi equilibrio, appoggia il piede con calma.",
-        "desc": "Equilibrio tranquillo su una gamba, con una tenuta separata per lato.",
+        "desc": "Equilibrio tranquillo su una gamba: cambia da solo a metà del tempo totale.",
         "howTo": [
           "Stai vicino a un muro, nel caso ti serva appoggio.",
           "Porta il peso su una gamba e solleva un poco l’altro piede.",
           "Guarda un punto fisso davanti e metti comodamente le braccia.",
-          "Mantieni fino al segnale, poi appoggia il piede e cambia gamba."
+          "Cambia lato da solo a metà del tempo totale; un solo timer comprende entrambi i lati."
         ],
         "correct": [
           "Tieni le anche alla stessa altezza.",
@@ -3666,7 +3687,7 @@
         "breathing": "Respira con calma senza trattenere il fiato.",
         "safety": "Puoi toccare il muro con le dita; evita saltelli improvvisi per ritrovare l’equilibrio.",
         "voice": {
-          "start": "Solleva un piede. Guarda un punto davanti.",
+          "start": "Solleva un piede. Guarda un punto davanti. Cambia lato da solo a metà del tempo totale; un solo timer comprende entrambi i lati.",
           "mid": [
             "Ginocchio morbido e anche alla stessa altezza."
           ],
@@ -3681,7 +3702,7 @@
   {
     "id": "IT18",
     "slot": "main",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -3695,7 +3716,7 @@
           "Встань прямо, руки свободно перед собой.",
           "Подними левое колено и коснись его правой ладонью.",
           "Опусти ногу, затем коснись правого колена левой ладонью.",
-          "Продолжай чередовать стороны в ровном спокойном ритме."
+          "Одно касание колена и возврат стопы на пол — один повтор; чередуй стороны и считай общее число."
         ],
         "correct": [
           "Корпус остаётся высоким.",
@@ -3708,7 +3729,7 @@
         "breathing": "Дыши свободно в удобном ритме.",
         "safety": "Если равновесие теряется, поднимай колено ниже и замедлись.",
         "voice": {
-          "start": "Правая ладонь к левому колену. Затем наоборот.",
+          "start": "Правая ладонь к левому колену. Затем наоборот. Одно касание колена и возврат стопы на пол — один повтор; чередуй стороны и считай общее число.",
           "mid": [
             "Стой прямо. Касания лёгкие."
           ],
@@ -3724,7 +3745,7 @@
           "Stand tall with hands loose in front.",
           "Raise your left knee and touch it with your right palm.",
           "Put it down, then touch your right knee with your left palm.",
-          "Keep alternating at a steady, easy rhythm."
+          "One knee touch followed by putting the foot down is one repetition; alternate and count the total."
         ],
         "correct": [
           "Keep your body tall.",
@@ -3737,7 +3758,7 @@
         "breathing": "Breathe freely at a comfortable pace.",
         "safety": "If you lose balance, lift the knees lower and slow down.",
         "voice": {
-          "start": "Right hand to left knee, then the other way.",
+          "start": "Right hand to left knee, then the other way. One knee touch followed by putting the foot down is one repetition; alternate and count the total.",
           "mid": [
             "Stand tall. Keep each touch gentle."
           ],
@@ -3753,7 +3774,7 @@
           "Dik dur, ellerini rahatça önünde tut.",
           "Sol dizini kaldır ve sağ avucunla dokun.",
           "Ayağını indir, sonra sağ dizine sol avucunla dokun.",
-          "Düzenli ve rahat bir ritimle sırayla devam et."
+          "Dize bir dokunuş ve ayağı yere koymak bir tekrardır; tarafları değiştirerek toplamı say."
         ],
         "correct": [
           "Gövdeni dik tut.",
@@ -3766,7 +3787,7 @@
         "breathing": "Rahat bir tempoda serbestçe nefes al.",
         "safety": "Dengeni kaybedersen dizlerini daha az kaldır ve yavaşla.",
         "voice": {
-          "start": "Sağ el sol dize, sonra diğer taraf.",
+          "start": "Sağ el sol dize, sonra diğer taraf. Dize bir dokunuş ve ayağı yere koymak bir tekrardır; tarafları değiştirerek toplamı say.",
           "mid": [
             "Dik dur. Her dokunuş hafif olsun."
           ],
@@ -3782,7 +3803,7 @@
           "Steh aufrecht und halte die Hände locker vor dir.",
           "Heb das linke Knie und berühre es mit der rechten Handfläche.",
           "Setz den Fuß ab, dann berühre das rechte Knie mit der linken Handfläche.",
-          "Mach abwechselnd in einem gleichmäßigen, ruhigen Rhythmus weiter."
+          "Eine Knieberührung mit anschließendem Absetzen des Fußes ist eine Wiederholung; wechsle ab und zähle insgesamt."
         ],
         "correct": [
           "Halte den Oberkörper aufrecht.",
@@ -3795,7 +3816,7 @@
         "breathing": "Atme frei und in angenehmem Tempo.",
         "safety": "Wenn du das Gleichgewicht verlierst, heb die Knie weniger hoch und werde langsamer.",
         "voice": {
-          "start": "Rechte Hand zum linken Knie, dann andersherum.",
+          "start": "Rechte Hand zum linken Knie, dann andersherum. Eine Knieberührung mit anschließendem Absetzen des Fußes ist eine Wiederholung; wechsle ab und zähle insgesamt.",
           "mid": [
             "Steh aufrecht. Berühre das Knie nur leicht."
           ],
@@ -3811,7 +3832,7 @@
           "Ponte erguido con las manos sueltas delante.",
           "Levanta la rodilla izquierda y tócala con la palma derecha.",
           "Baja el pie y toca la rodilla derecha con la palma izquierda.",
-          "Sigue alternando a un ritmo tranquilo y regular."
+          "Un toque de rodilla y volver a apoyar el pie es una repetición; alterna y cuenta el total."
         ],
         "correct": [
           "Mantén el cuerpo erguido.",
@@ -3824,7 +3845,7 @@
         "breathing": "Respira libremente a un ritmo cómodo.",
         "safety": "Si pierdes el equilibrio, levanta menos las rodillas y baja el ritmo.",
         "voice": {
-          "start": "Mano derecha a rodilla izquierda y luego al revés.",
+          "start": "Mano derecha a rodilla izquierda y luego al revés. Un toque de rodilla y volver a apoyar el pie es una repetición; alterna y cuenta el total.",
           "mid": [
             "Cuerpo erguido. Cada toque es suave."
           ],
@@ -3840,7 +3861,7 @@
           "Tiens-toi droit, mains relâchées devant toi.",
           "Lève le genou gauche et touche-le avec la paume droite.",
           "Repose le pied, puis touche le genou droit avec la paume gauche.",
-          "Continue en alternant à un rythme tranquille et régulier."
+          "Un contact avec le genou suivi du retour du pied au sol fait une répétition ; alterne et compte le total."
         ],
         "correct": [
           "Garde le corps droit.",
@@ -3853,7 +3874,7 @@
         "breathing": "Respire librement à un rythme confortable.",
         "safety": "Si tu perds l’équilibre, monte moins les genoux et ralentis.",
         "voice": {
-          "start": "Main droite sur genou gauche, puis l’inverse.",
+          "start": "Main droite sur genou gauche, puis l’inverse. Un contact avec le genou suivi du retour du pied au sol fait une répétition ; alterne et compte le total.",
           "mid": [
             "Tiens-toi droit. Chaque touche est douce."
           ],
@@ -3869,7 +3890,7 @@
           "Stai dritto con le mani rilassate davanti.",
           "Alza il ginocchio sinistro e toccalo con il palmo destro.",
           "Abbassa il piede, poi tocca il ginocchio destro con il palmo sinistro.",
-          "Continua ad alternare a un ritmo tranquillo e regolare."
+          "Un tocco al ginocchio seguito dal piede di nuovo a terra è una ripetizione; alterna e conta il totale."
         ],
         "correct": [
           "Tieni il corpo dritto.",
@@ -3882,7 +3903,7 @@
         "breathing": "Respira liberamente a un ritmo comodo.",
         "safety": "Se perdi equilibrio, alza meno le ginocchia e rallenta.",
         "voice": {
-          "start": "Mano destra al ginocchio sinistro, poi al contrario.",
+          "start": "Mano destra al ginocchio sinistro, poi al contrario. Un tocco al ginocchio seguito dal piede di nuovo a terra è una ripetizione; alterna e conta il totale.",
           "mid": [
             "Stai dritto. Ogni tocco è delicato."
           ],
@@ -3911,7 +3932,8 @@
           "Встань в стойку: стопы чуть шире бёдер, колени мягкие, руки перед собой.",
           "Плавно поверни плечи и таз в рабочую сторону.",
           "Позволь стопам немного повернуться вместе с телом.",
-          "Вернись лицом вперёд — это один повтор; после подхода смени сторону."
+          "Вернись лицом вперёд — это один повтор; после подхода смени сторону.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Движение плавное, равновесие сохраняется.",
@@ -3940,7 +3962,8 @@
           "Stand with feet slightly wider than hips, soft knees and hands in front.",
           "Slowly turn shoulders and hips toward the working side.",
           "Allow your feet to pivot a little with your body.",
-          "Return to face forward for one repetition; switch sides after the set."
+          "Return to face forward for one repetition; switch sides after the set.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Move smoothly and stay balanced.",
@@ -3969,7 +3992,8 @@
           "Ayaklarını kalçandan biraz geniş aç, dizlerini hafif bük, ellerini önünde tut.",
           "Omuzlarını ve kalçanı çalışan tarafa yavaşça döndür.",
           "Ayaklarının da gövdenle birlikte biraz dönmesine izin ver.",
-          "Yeniden öne dön; bu bir tekrardır. Setten sonra taraf değiştir."
+          "Yeniden öne dön; bu bir tekrardır. Setten sonra taraf değiştir.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Yumuşak hareket et ve dengeni koru.",
@@ -3998,7 +4022,8 @@
           "Steh mit etwas mehr als hüftbreiten Füßen, lockeren Knien und Händen vor dir.",
           "Dreh Schultern und Hüfte langsam zur arbeitenden Seite.",
           "Lass die Füße leicht mit dem Körper mitdrehen.",
-          "Dreh dich wieder nach vorn; das ist eine Wiederholung. Wechsle nach dem Satz die Seite."
+          "Dreh dich wieder nach vorn; das ist eine Wiederholung. Wechsle nach dem Satz die Seite.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Bewege dich ruhig und bleib im Gleichgewicht.",
@@ -4027,7 +4052,8 @@
           "Separa los pies un poco más que las caderas, con rodillas suaves y manos delante.",
           "Gira lentamente hombros y caderas hacia el lado que trabaja.",
           "Deja que los pies giren un poco con el cuerpo.",
-          "Vuelve a mirar al frente: eso es una repetición; cambia de lado al terminar la serie."
+          "Vuelve a mirar al frente: eso es una repetición; cambia de lado al terminar la serie.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Muévete suavemente y mantén el equilibrio.",
@@ -4056,7 +4082,8 @@
           "Écarte les pieds un peu plus que les hanches, genoux souples et mains devant.",
           "Tourne lentement les épaules et les hanches du côté qui travaille.",
           "Laisse les pieds pivoter un peu avec le corps.",
-          "Reviens face devant : cela fait une répétition ; change de côté après la série."
+          "Reviens face devant : cela fait une répétition ; change de côté après la série.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Bouge doucement en gardant l’équilibre.",
@@ -4085,7 +4112,8 @@
           "Apri i piedi poco più delle anche, con ginocchia morbide e mani davanti.",
           "Ruota lentamente spalle e bacino verso il lato che lavora.",
           "Lascia girare un poco i piedi insieme al corpo.",
-          "Torna a guardare avanti: questa è una ripetizione; cambia lato dopo la serie."
+          "Torna a guardare avanti: questa è una ripetizione; cambia lato dopo la serie.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Muoviti dolcemente e resta in equilibrio.",
@@ -4343,7 +4371,8 @@
           "Ляг на бок, согни ноги, сложи колени вместе; руки вытяни перед собой ладонь на ладонь.",
           "Плавно раскрой верхнюю руку в сторону и немного назад, следуя за ней взглядом.",
           "Оставь колени вместе и двигайся только до удобного положения.",
-          "Верни ладонь к нижней — это один повтор; после подхода смени бок."
+          "Верни ладонь к нижней — это один повтор; после подхода смени бок.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Таз и колени остаются спокойными.",
@@ -4372,7 +4401,8 @@
           "Lie on your side with bent knees together and arms straight in front, palms together.",
           "Slowly open the top arm sideways and slightly behind you, following it with your eyes.",
           "Keep knees together and move only as far as comfortable.",
-          "Bring the palms together for one repetition; change sides after the set."
+          "Bring the palms together for one repetition; change sides after the set.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Keep hips and knees still.",
@@ -4401,7 +4431,8 @@
           "Yan yat, bükülü dizlerin bir arada olsun; kollarını öne uzat, avuçlarını birleştir.",
           "Üstteki kolunu yana ve biraz arkaya yavaşça aç, gözlerinle elini takip et.",
           "Dizlerini bir arada tut, yalnızca rahat ettiğin kadar dön.",
-          "Avuçlarını birleştir; bu bir tekrardır. Setten sonra taraf değiştir."
+          "Avuçlarını birleştir; bu bir tekrardır. Setten sonra taraf değiştir.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Kalçan ve dizlerin sabit kalsın.",
@@ -4430,7 +4461,8 @@
           "Leg dich auf die Seite, angewinkelte Knie zusammen, Arme nach vorn gestreckt und Handflächen aufeinander.",
           "Öffne den oberen Arm langsam zur Seite und etwas nach hinten, folge ihm mit den Augen.",
           "Lass die Knie zusammen und drehe dich nur so weit, wie es angenehm ist.",
-          "Führe die Handflächen zusammen; das ist eine Wiederholung. Wechsle nach dem Satz die Seite."
+          "Führe die Handflächen zusammen; das ist eine Wiederholung. Wechsle nach dem Satz die Seite.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Hüfte und Knie bleiben ruhig.",
@@ -4459,7 +4491,8 @@
           "Túmbate de lado con las rodillas flexionadas y juntas, brazos estirados delante y palmas juntas.",
           "Abre lentamente el brazo de arriba hacia el lado y un poco hacia atrás, siguiéndolo con la mirada.",
           "Mantén juntas las rodillas y gira solo hasta donde resulte cómodo.",
-          "Junta de nuevo las palmas: eso es una repetición; cambia de lado tras la serie."
+          "Junta de nuevo las palmas: eso es una repetición; cambia de lado tras la serie.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Mantén quietas las caderas y las rodillas.",
@@ -4488,7 +4521,8 @@
           "Allonge-toi sur le côté, genoux pliés et joints, bras tendus devant et paumes ensemble.",
           "Ouvre lentement le bras du dessus sur le côté et un peu derrière toi, en le suivant du regard.",
           "Garde les genoux ensemble et tourne seulement jusqu’à une position confortable.",
-          "Ramène les paumes ensemble : cela fait une répétition ; change de côté après la série."
+          "Ramène les paumes ensemble : cela fait une répétition ; change de côté après la série.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Garde les hanches et les genoux immobiles.",
@@ -4517,7 +4551,8 @@
           "Sdraiati su un fianco con le ginocchia piegate e unite, braccia distese davanti e palmi uniti.",
           "Apri lentamente il braccio sopra di lato e un poco dietro, seguendolo con lo sguardo.",
           "Tieni unite le ginocchia e muoviti solo fin dove è comodo.",
-          "Riunisci i palmi: questa è una ripetizione; cambia lato dopo la serie."
+          "Riunisci i palmi: questa è una ripetizione; cambia lato dopo la serie.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Tieni ferme anche e ginocchia.",
@@ -4775,7 +4810,7 @@
           "Ляг на спину, одну стопу поставь на пол, другую ногу подними согнутой.",
           "Обхвати руками заднюю поверхность поднятого бедра, не колено.",
           "Мягко выпрями поднятую ногу до лёгкого натяжения сзади бедра.",
-          "Удерживай до сигнала, затем согни ногу и спокойно опусти."
+          "На половине общего времени согни и опусти ногу, затем сам смени её; один таймер включает обе стороны."
         ],
         "correct": [
           "Голова и плечи спокойно лежат.",
@@ -4788,7 +4823,7 @@
         "breathing": "Дыши свободно и спокойно.",
         "safety": "Остановись при боли, покалывании или онемении; не тяни через неприятные ощущения.",
         "voice": {
-          "start": "Поддержи поднятое бедро руками. Мягко выпрями колено.",
+          "start": "Поддержи поднятое бедро руками. Мягко выпрями колено. Сам смени сторону на половине общего времени; один таймер включает обе стороны.",
           "mid": [
             "Только лёгкое натяжение. Голова на полу."
           ],
@@ -4804,7 +4839,7 @@
           "Lie on your back with one foot on the floor and lift the other leg bent.",
           "Hold the back of the raised thigh, not the knee.",
           "Gently straighten that leg until you feel a light stretch behind the thigh.",
-          "Hold until the signal, then bend the leg and lower it calmly."
+          "Halfway through the total time, bend and lower the leg, then switch yourself; one timer covers both sides."
         ],
         "correct": [
           "Rest your head and shoulders.",
@@ -4817,7 +4852,7 @@
         "breathing": "Breathe freely and calmly.",
         "safety": "Stop if you feel pain, tingling or numbness; never pull through discomfort.",
         "voice": {
-          "start": "Hold behind your raised thigh. Gently straighten the knee.",
+          "start": "Hold behind your raised thigh. Gently straighten the knee. Switch sides yourself halfway through the total time; one timer covers both sides.",
           "mid": [
             "Only a light stretch. Keep your head resting down."
           ],
@@ -4833,7 +4868,7 @@
           "Sırtüstü yat, bir ayağın yerde kalsın; diğer bacağını bükülü kaldır.",
           "Kaldırdığın bacağın dizini değil, uyluğunun arkasını tut.",
           "Uyluğunun arkasında hafif bir esneme hissedene kadar dizini yavaşça düzleştir.",
-          "İşarete kadar tut, sonra bacağını bük ve yavaşça indir."
+          "Toplam sürenin yarısında bacağını büküp indir ve kendin değiştir; tek sayaç iki tarafı da kapsar."
         ],
         "correct": [
           "Başın ve omuzların rahatça yerde olsun.",
@@ -4846,7 +4881,7 @@
         "breathing": "Rahat ve sakin nefes al.",
         "safety": "Ağrı, karıncalanma veya uyuşma hissedersen dur; rahatsızlığa rağmen çekme.",
         "voice": {
-          "start": "Kaldırdığın uyluğunun arkasını tut. Dizini yavaşça düzleştir.",
+          "start": "Kaldırdığın uyluğunun arkasını tut. Dizini yavaşça düzleştir. Toplam sürenin yarısında tarafı kendin değiştir; tek sayaç iki tarafı da kapsar.",
           "mid": [
             "Yalnızca hafif esneme. Başın yerde dinlensin."
           ],
@@ -4862,7 +4897,7 @@
           "Leg dich auf den Rücken, ein Fuß steht am Boden; heb das andere Bein angewinkelt an.",
           "Halte die Rückseite des angehobenen Oberschenkels, nicht das Knie.",
           "Strecke das Bein sanft, bis du hinten am Oberschenkel eine leichte Dehnung spürst.",
-          "Halte bis zum Signal, beuge dann das Bein und senke es ruhig ab."
+          "Beuge und senke das Bein nach der Hälfte der Gesamtzeit, dann wechsle selbst; ein Timer gilt für beide Seiten."
         ],
         "correct": [
           "Kopf und Schultern liegen entspannt auf.",
@@ -4875,7 +4910,7 @@
         "breathing": "Atme frei und ruhig.",
         "safety": "Hör bei Schmerzen, Kribbeln oder Taubheit auf; zieh nie in ein unangenehmes Gefühl hinein.",
         "voice": {
-          "start": "Halte hinter dem angehobenen Oberschenkel. Strecke das Knie sanft.",
+          "start": "Halte hinter dem angehobenen Oberschenkel. Strecke das Knie sanft. Wechsle selbst nach der Hälfte der Gesamtzeit; ein Timer gilt für beide Seiten.",
           "mid": [
             "Nur eine leichte Dehnung. Lass den Kopf liegen."
           ],
@@ -4891,7 +4926,7 @@
           "Túmbate boca arriba con un pie apoyado y levanta la otra pierna flexionada.",
           "Sujeta por detrás el muslo levantado, no la rodilla.",
           "Estira suavemente esa pierna hasta notar una tensión ligera detrás del muslo.",
-          "Mantén hasta la señal, flexiona la pierna y bájala con calma."
+          "A mitad del tiempo total, dobla y baja la pierna y cambia tú mismo; un temporizador cubre ambos lados."
         ],
         "correct": [
           "Deja descansar la cabeza y los hombros.",
@@ -4904,7 +4939,7 @@
         "breathing": "Respira libremente y con calma.",
         "safety": "Para si notas dolor, hormigueo o adormecimiento; nunca fuerces cuando haya molestias.",
         "voice": {
-          "start": "Sujeta por detrás el muslo levantado. Estira suavemente la rodilla.",
+          "start": "Sujeta por detrás el muslo levantado. Estira suavemente la rodilla. Cambia tú de lado a mitad del tiempo total; un solo temporizador cubre ambos lados.",
           "mid": [
             "Solo una tensión ligera. Cabeza apoyada."
           ],
@@ -4920,7 +4955,7 @@
           "Allonge-toi sur le dos, un pied au sol, et lève l’autre jambe pliée.",
           "Tiens l’arrière de la cuisse levée, pas le genou.",
           "Tends doucement cette jambe jusqu’à une légère tension derrière la cuisse.",
-          "Tiens jusqu’au signal, puis plie la jambe et repose-la calmement."
+          "À la moitié du temps total, plie et repose la jambe, puis change toi-même ; un minuteur couvre les deux côtés."
         ],
         "correct": [
           "Repose la tête et les épaules.",
@@ -4933,7 +4968,7 @@
         "breathing": "Respire librement et calmement.",
         "safety": "Arrête en cas de douleur, de fourmillements ou d’engourdissement ; ne force jamais malgré une gêne.",
         "voice": {
-          "start": "Tiens l’arrière de la cuisse levée. Tends doucement le genou.",
+          "start": "Tiens l’arrière de la cuisse levée. Tends doucement le genou. Change toi-même de côté à la moitié du temps total ; un seul minuteur couvre les deux côtés.",
           "mid": [
             "Seulement une légère tension. Garde la tête posée."
           ],
@@ -4949,7 +4984,7 @@
           "Sdraiati sulla schiena con un piede a terra e solleva l’altra gamba piegata.",
           "Afferra la parte posteriore della coscia sollevata, non il ginocchio.",
           "Distendi dolcemente la gamba fino a una lieve tensione dietro la coscia.",
-          "Mantieni fino al segnale, poi piega la gamba e abbassala con calma."
+          "A metà del tempo totale piega e abbassa la gamba, poi cambia da solo; un timer comprende entrambi i lati."
         ],
         "correct": [
           "Lascia riposare testa e spalle.",
@@ -4962,7 +4997,7 @@
         "breathing": "Respira liberamente e con calma.",
         "safety": "Fermati se senti dolore, formicolio o intorpidimento; non tirare mai nonostante il fastidio.",
         "voice": {
-          "start": "Sostieni la coscia sollevata da dietro. Distendi dolcemente il ginocchio.",
+          "start": "Sostieni la coscia sollevata da dietro. Distendi dolcemente il ginocchio. Cambia lato da solo a metà del tempo totale; un solo timer comprende entrambi i lati.",
           "mid": [
             "Solo una lieve tensione. Tieni appoggiata la testa."
           ],
@@ -5639,7 +5674,8 @@
           "Ляг на спину, согни колени, руки положи на пол.",
           "Оставь рабочую стопу на полу, другую ногу подними согнутой.",
           "Надави рабочей стопой и подними таз до ровной линии плечи–таз–колено; удержи 1 секунду.",
-          "Плавно опусти таз — это один повтор; после подхода смени опорную ногу."
+          "Плавно опусти таз — это один повтор; после подхода смени опорную ногу.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Таз поднимается без поворота.",
@@ -5668,7 +5704,8 @@
           "Lie on your back with knees bent and arms on the floor.",
           "Keep the working foot down and lift the other leg with its knee bent.",
           "Press through the working foot and lift hips into a shoulder–hip–knee line; hold for 1 second.",
-          "Lower smoothly for one repetition; switch the supporting leg after the set."
+          "Lower smoothly for one repetition; switch the supporting leg after the set.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Lift without twisting your hips.",
@@ -5697,7 +5734,8 @@
           "Sırtüstü yat, dizlerin bükülü, kolların yerde olsun.",
           "Çalışan ayağını yerde tut; diğer bacağını dizi bükülü olarak kaldır.",
           "Çalışan ayağınla yeri it; omuz, kalça ve diz aynı çizgiye gelene kadar kalçanı kaldır, 1 saniye tut.",
-          "Yavaşça indir; bu bir tekrardır. Setten sonra destek bacağını değiştir."
+          "Yavaşça indir; bu bir tekrardır. Setten sonra destek bacağını değiştir.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Kalçanı döndürmeden kaldır.",
@@ -5726,7 +5764,8 @@
           "Leg dich auf den Rücken, Knie gebeugt und Arme auf dem Boden.",
           "Lass den arbeitenden Fuß unten und heb das andere Bein mit gebeugtem Knie an.",
           "Drück über den Standfuß und heb die Hüfte, bis Schulter, Hüfte und Knie eine Linie bilden; halte 1 Sekunde.",
-          "Senke ruhig ab; das ist eine Wiederholung. Wechsle nach dem Satz das Stützbein."
+          "Senke ruhig ab; das ist eine Wiederholung. Wechsle nach dem Satz das Stützbein.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Heb die Hüfte an, ohne sie zu verdrehen.",
@@ -5755,7 +5794,8 @@
           "Túmbate boca arriba con las rodillas flexionadas y los brazos apoyados.",
           "Mantén apoyado el pie que trabaja y levanta la otra pierna con la rodilla flexionada.",
           "Empuja con el pie apoyado y sube las caderas formando una línea hombros–caderas–rodilla; mantén 1 segundo.",
-          "Baja suavemente: eso es una repetición; cambia de pierna de apoyo tras la serie."
+          "Baja suavemente: eso es una repetición; cambia de pierna de apoyo tras la serie.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Sube sin girar las caderas.",
@@ -5784,7 +5824,8 @@
           "Allonge-toi sur le dos, genoux pliés et bras au sol.",
           "Garde le pied qui travaille au sol et lève l’autre jambe, genou plié.",
           "Pousse dans le pied d’appui et lève les hanches pour aligner épaule, hanche et genou ; tiens 1 seconde.",
-          "Redescends doucement : cela fait une répétition ; change de jambe d’appui après la série."
+          "Redescends doucement : cela fait une répétition ; change de jambe d’appui après la série.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Monte sans faire tourner les hanches.",
@@ -5813,7 +5854,8 @@
           "Sdraiati sulla schiena, ginocchia piegate e braccia a terra.",
           "Tieni appoggiato il piede che lavora e solleva l’altra gamba con il ginocchio piegato.",
           "Spingi con il piede d’appoggio e alza il bacino allineando spalla, anca e ginocchio; mantieni per 1 secondo.",
-          "Scendi dolcemente: questa è una ripetizione; cambia gamba d’appoggio dopo la serie."
+          "Scendi dolcemente: questa è una ripetizione; cambia gamba d’appoggio dopo la serie.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Sali senza ruotare il bacino.",
@@ -5855,7 +5897,7 @@
           "Ляг на бок, согни колени, поставь нижний локоть под плечом.",
           "Обопрись на предплечье и нижнее колено, подними таз.",
           "Сохраняй ровную линию плечо–таз–колени и спокойно дыши.",
-          "После сигнала опусти таз, затем смени сторону."
+          "На половине общего времени опусти таз и сам смени сторону; один таймер включает обе стороны."
         ],
         "correct": [
           "Плечо не прижимается к уху.",
@@ -5868,7 +5910,7 @@
         "breathing": "Дыши ровно на всём протяжении удержания.",
         "safety": "Сначала разучи со взрослым. При боли в плече остановись; если положение теряется, закончи удержание раньше.",
         "voice": {
-          "start": "Локоть под плечом, колени согнуты. Подними таз и дыши.",
+          "start": "Локоть под плечом, колени согнуты. Подними таз и дыши. Сам смени сторону на половине общего времени; один таймер включает обе стороны.",
           "mid": [
             "Не провисай. Плечо далеко от уха."
           ],
@@ -5884,7 +5926,7 @@
           "Lie on your side, bend your knees and place the lower elbow beneath your shoulder.",
           "Press through your forearm and lower knee to lift your hips.",
           "Keep a straight shoulder–hip–knee line and breathe calmly.",
-          "Lower your hips after the signal, then switch sides."
+          "Halfway through the total time, lower your hips and switch sides yourself; one timer covers both sides."
         ],
         "correct": [
           "Keep your shoulder away from your ear.",
@@ -5897,7 +5939,7 @@
         "breathing": "Breathe evenly throughout the hold.",
         "safety": "Learn this with an adult first. Stop for shoulder pain; end the hold early if you lose the position.",
         "voice": {
-          "start": "Elbow under shoulder and knees bent. Lift your hips and keep breathing.",
+          "start": "Elbow under shoulder and knees bent. Lift your hips and keep breathing. Switch sides yourself halfway through the total time; one timer covers both sides.",
           "mid": [
             "Keep your hips up and shoulder away from your ear."
           ],
@@ -5913,7 +5955,7 @@
           "Yan yat, dizlerini bük, alttaki dirseğini omzunun altına koy.",
           "Önkolun ve alttaki dizinle yeri iterek kalçanı kaldır.",
           "Omuz, kalça ve dizini aynı çizgide tut, sakin nefes al.",
-          "İşaretten sonra kalçanı indir, ardından taraf değiştir."
+          "Toplam sürenin yarısında kalçanı indirip tarafı kendin değiştir; tek sayaç iki tarafı da kapsar."
         ],
         "correct": [
           "Omzunu kulağından uzak tut.",
@@ -5926,7 +5968,7 @@
         "breathing": "Duruş boyunca düzenli nefes al.",
         "safety": "Önce bir yetişkinle öğren. Omzun ağrırsa dur; duruşu kaybedersen süre dolmadan bitir.",
         "voice": {
-          "start": "Dirseğin omzunun altında, dizlerin bükülü. Kalçanı kaldır ve nefes almaya devam et.",
+          "start": "Dirseğin omzunun altında, dizlerin bükülü. Kalçanı kaldır ve nefes almaya devam et. Toplam sürenin yarısında tarafı kendin değiştir; tek sayaç iki tarafı da kapsar.",
           "mid": [
             "Kalçan yukarıda, omzun kulağından uzak olsun."
           ],
@@ -5942,7 +5984,7 @@
           "Leg dich auf die Seite, beuge die Knie und stell den unteren Ellbogen unter die Schulter.",
           "Drück über Unterarm und unteres Knie und heb die Hüfte an.",
           "Halte Schulter, Hüfte und Knie in einer geraden Linie und atme ruhig.",
-          "Senke nach dem Signal die Hüfte und wechsle dann die Seite."
+          "Senke die Hüfte nach der Hälfte der Gesamtzeit und wechsle selbst; ein Timer gilt für beide Seiten."
         ],
         "correct": [
           "Die Schulter bleibt weg vom Ohr.",
@@ -5955,7 +5997,7 @@
         "breathing": "Atme während der ganzen Haltezeit gleichmäßig.",
         "safety": "Lerne die Übung zuerst mit einem Erwachsenen. Hör bei Schulterschmerzen auf; beende das Halten früher, wenn du die Position verlierst.",
         "voice": {
-          "start": "Ellbogen unter die Schulter, Knie gebeugt. Heb die Hüfte und atme weiter.",
+          "start": "Ellbogen unter die Schulter, Knie gebeugt. Heb die Hüfte und atme weiter. Wechsle selbst nach der Hälfte der Gesamtzeit; ein Timer gilt für beide Seiten.",
           "mid": [
             "Hüfte oben, Schulter weg vom Ohr."
           ],
@@ -5971,7 +6013,7 @@
           "Túmbate de lado, flexiona las rodillas y coloca el codo de abajo bajo el hombro.",
           "Empuja con el antebrazo y la rodilla de abajo para subir las caderas.",
           "Mantén una línea recta hombro–caderas–rodillas y respira con calma.",
-          "Baja las caderas tras la señal y cambia de lado."
+          "A mitad del tiempo total, baja las caderas y cambia tú de lado; un temporizador cubre ambos lados."
         ],
         "correct": [
           "Aleja el hombro de la oreja.",
@@ -5984,7 +6026,7 @@
         "breathing": "Respira de forma regular durante toda la posición.",
         "safety": "Apréndelo primero con un adulto. Para si te duele el hombro; termina antes si pierdes la postura.",
         "voice": {
-          "start": "Codo bajo el hombro y rodillas flexionadas. Sube las caderas y sigue respirando.",
+          "start": "Codo bajo el hombro y rodillas flexionadas. Sube las caderas y sigue respirando. Cambia tú de lado a mitad del tiempo total; un solo temporizador cubre ambos lados.",
           "mid": [
             "Caderas arriba y hombro lejos de la oreja."
           ],
@@ -6000,7 +6042,7 @@
           "Allonge-toi sur le côté, plie les genoux et place le coude du dessous sous l’épaule.",
           "Pousse dans l’avant-bras et le genou du dessous pour lever les hanches.",
           "Garde une ligne droite épaule–hanche–genou et respire calmement.",
-          "Baisse les hanches au signal, puis change de côté."
+          "À la moitié du temps total, baisse les hanches et change toi-même de côté ; un minuteur couvre les deux côtés."
         ],
         "correct": [
           "Éloigne l’épaule de l’oreille.",
@@ -6013,7 +6055,7 @@
         "breathing": "Respire régulièrement pendant toute la tenue.",
         "safety": "Apprends d’abord avec un adulte. Arrête si l’épaule fait mal ; termine plus tôt si tu perds la position.",
         "voice": {
-          "start": "Coude sous l’épaule et genoux pliés. Lève les hanches et continue à respirer.",
+          "start": "Coude sous l’épaule et genoux pliés. Lève les hanches et continue à respirer. Change toi-même de côté à la moitié du temps total ; un seul minuteur couvre les deux côtés.",
           "mid": [
             "Hanches levées, épaule loin de l’oreille."
           ],
@@ -6029,7 +6071,7 @@
           "Sdraiati sul fianco, piega le ginocchia e metti il gomito sotto la spalla.",
           "Spingi sull’avambraccio e sul ginocchio inferiore per sollevare il bacino.",
           "Tieni una linea dritta spalla–anca–ginocchio e respira con calma.",
-          "Abbassa il bacino dopo il segnale, poi cambia lato."
+          "A metà del tempo totale abbassa il bacino e cambia lato da solo; un timer comprende entrambi i lati."
         ],
         "correct": [
           "Allontana la spalla dall’orecchio.",
@@ -6042,7 +6084,7 @@
         "breathing": "Respira in modo regolare per tutta la tenuta.",
         "safety": "Impara prima con un adulto. Fermati se senti dolore alla spalla; termina prima se perdi la posizione.",
         "voice": {
-          "start": "Gomito sotto la spalla e ginocchia piegate. Alza il bacino e continua a respirare.",
+          "start": "Gomito sotto la spalla e ginocchia piegate. Alza il bacino e continua a respirare. Cambia lato da solo a metà del tempo totale; un solo timer comprende entrambi i lati.",
           "mid": [
             "Bacino alto e spalla lontana dall’orecchio."
           ],
@@ -6057,7 +6099,7 @@
   {
     "id": "IT29",
     "slot": "main",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -6071,7 +6113,7 @@
           "Представь линию на полу перед стопами.",
           "Шагни правой ногой через линию и приставь левую, оставляя между стопами место.",
           "Верни правую назад за линию, затем левую.",
-          "Повторяй до сигнала; следующий подход начинай левой ногой."
+          "Вперёд двумя ногами и обратно — один повтор; в следующем круге начинай левой ногой."
         ],
         "correct": [
           "Шаги короткие и тихие.",
@@ -6084,7 +6126,7 @@
         "breathing": "Дыши свободно, не задерживай дыхание ради ритма.",
         "safety": "Используй воображаемую линию или плоскую разметку, о которую невозможно споткнуться.",
         "voice": {
-          "start": "Шагни через линию, приставь другую ногу, затем вернись.",
+          "start": "Шагни через линию, приставь другую ногу, затем вернись. Вперёд двумя ногами и обратно — один повтор; в следующем круге начинай левой ногой.",
           "mid": [
             "Короткие шаги, без прыжков."
           ],
@@ -6100,7 +6142,7 @@
           "Imagine a line on the floor in front of your feet.",
           "Step the right foot across, then bring the left across, leaving space between them.",
           "Step the right foot back behind the line, then the left.",
-          "Repeat until the signal; lead with the left foot in the next set."
+          "Both feet across and back make one repetition; lead with the left foot in the next round."
         ],
         "correct": [
           "Take short, quiet steps.",
@@ -6113,7 +6155,7 @@
         "breathing": "Breathe freely without holding your breath to follow the rhythm.",
         "safety": "Use an imaginary line or flat marking that cannot trip you.",
         "voice": {
-          "start": "Step across the line, bring the other foot, then return.",
+          "start": "Step across the line, bring the other foot, then return. Both feet across and back make one repetition; lead with the left foot in the next round.",
           "mid": [
             "Short steps without jumping."
           ],
@@ -6129,7 +6171,7 @@
           "Ayaklarının önünde yerde bir çizgi hayal et.",
           "Sağ ayağınla çizgiyi geç, sonra solu getir; ayaklarının arasında boşluk bırak.",
           "Önce sağ ayağını, sonra solunu çizginin gerisine al.",
-          "İşarete kadar tekrarla; sonraki sette sol ayakla başla."
+          "İki ayağı çizgiden geçirip geri getirmek bir tekrardır; sonraki turda sol ayakla başla."
         ],
         "correct": [
           "Kısa ve sessiz adımlar at.",
@@ -6142,7 +6184,7 @@
         "breathing": "Ritmi takip etmek için nefesini tutma; rahatça nefes al.",
         "safety": "Hayali bir çizgi veya takılmayacağın düz bir işaret kullan.",
         "voice": {
-          "start": "Çizgiyi bir ayakla geç, diğerini getir, sonra geri dön.",
+          "start": "Çizgiyi bir ayakla geç, diğerini getir, sonra geri dön. İki ayağı çizgiden geçirip geri getirmek bir tekrardır; sonraki turda sol ayakla başla.",
           "mid": [
             "Sıçramadan kısa adımlar at."
           ],
@@ -6158,7 +6200,7 @@
           "Stell dir vor deinen Füßen eine Linie auf dem Boden vor.",
           "Steig mit dem rechten Fuß darüber, dann mit dem linken; lass Abstand zwischen den Füßen.",
           "Setz zuerst den rechten Fuß hinter die Linie zurück, dann den linken.",
-          "Wiederhole bis zum Signal; beginne im nächsten Satz mit dem linken Fuß."
+          "Beide Füße über die Linie und zurück zählen als eine Wiederholung; beginne in der nächsten Runde links."
         ],
         "correct": [
           "Mach kurze, leise Schritte.",
@@ -6171,7 +6213,7 @@
         "breathing": "Atme frei und halte für den Rhythmus nicht die Luft an.",
         "safety": "Nimm eine gedachte Linie oder eine flache Markierung, über die du nicht stolpern kannst.",
         "voice": {
-          "start": "Steig über die Linie, hol den anderen Fuß nach und geh wieder zurück.",
+          "start": "Steig über die Linie, hol den anderen Fuß nach und geh wieder zurück. Beide Füße über die Linie und zurück zählen als eine Wiederholung; beginne in der nächsten Runde links.",
           "mid": [
             "Kurze Schritte, ohne Springen."
           ],
@@ -6187,7 +6229,7 @@
           "Imagina una línea en el suelo delante de los pies.",
           "Cruza con el pie derecho y después con el izquierdo, dejando espacio entre ellos.",
           "Vuelve detrás de la línea con el pie derecho y después con el izquierdo.",
-          "Repite hasta la señal; en la siguiente serie empieza con el izquierdo."
+          "Pasar ambos pies y volver es una repetición; en la siguiente ronda empieza con el izquierdo."
         ],
         "correct": [
           "Da pasos cortos y silenciosos.",
@@ -6200,7 +6242,7 @@
         "breathing": "Respira libremente, sin aguantar el aire para seguir el ritmo.",
         "safety": "Usa una línea imaginaria o una marca plana con la que no puedas tropezar.",
         "voice": {
-          "start": "Cruza la línea con un pie, trae el otro y vuelve atrás.",
+          "start": "Cruza la línea con un pie, trae el otro y vuelve atrás. Pasar ambos pies y volver es una repetición; en la siguiente ronda empieza con el izquierdo.",
           "mid": [
             "Pasos cortos, sin saltar."
           ],
@@ -6216,7 +6258,7 @@
           "Imagine une ligne au sol devant tes pieds.",
           "Passe le pied droit de l’autre côté, puis le gauche, en gardant un espace entre les pieds.",
           "Ramène le pied droit derrière la ligne, puis le gauche.",
-          "Répète jusqu’au signal ; commence avec le pied gauche à la série suivante."
+          "Passer les deux pieds puis revenir fait une répétition ; commence du pied gauche au prochain tour."
         ],
         "correct": [
           "Fais de petits pas silencieux.",
@@ -6229,7 +6271,7 @@
         "breathing": "Respire librement sans bloquer ton souffle pour suivre le rythme.",
         "safety": "Utilise une ligne imaginaire ou une marque plate qui ne risque pas de te faire trébucher.",
         "voice": {
-          "start": "Passe la ligne avec un pied, puis l’autre, et reviens.",
+          "start": "Passe la ligne avec un pied, puis l’autre, et reviens. Passer les deux pieds puis revenir fait une répétition ; commence du pied gauche au prochain tour.",
           "mid": [
             "Petits pas, sans sauter."
           ],
@@ -6245,7 +6287,7 @@
           "Immagina una linea sul pavimento davanti ai piedi.",
           "Porta oltre il piede destro, poi il sinistro, lasciando spazio tra i due.",
           "Riporta il piede destro dietro la linea, poi il sinistro.",
-          "Ripeti fino al segnale; nella serie successiva parti con il piede sinistro."
+          "Passare con entrambi i piedi e tornare è una ripetizione; nel prossimo giro parti con il sinistro."
         ],
         "correct": [
           "Fai passi corti e silenziosi.",
@@ -6258,7 +6300,7 @@
         "breathing": "Respira liberamente, senza trattenere il fiato per seguire il ritmo.",
         "safety": "Usa una linea immaginaria o un segno piatto che non faccia inciampare.",
         "voice": {
-          "start": "Passa la linea con un piede, porta l’altro e torna indietro.",
+          "start": "Passa la linea con un piede, porta l’altro e torna indietro. Passare con entrambi i piedi e tornare è una ripetizione; nel prossimo giro parti con il sinistro.",
           "mid": [
             "Passi corti senza saltare."
           ],
@@ -6273,7 +6315,7 @@
   {
     "id": "IT30",
     "slot": "main",
-    "unit": "seconds",
+    "unit": "reps",
     "perSide": false,
     "kneeLoad": "low",
     "difficulty": 1,
@@ -6287,7 +6329,7 @@
           "Встань в центре, колени слегка согнуты.",
           "Правой ногой шагни по диагонали вперёд-вправо, затем верни её в центр.",
           "Левой ногой шагни вперёд-влево и вернись.",
-          "Продолжай чередовать стороны, рисуя шагами букву V."
+          "Один диагональный шаг и возврат — один повтор; чередуй стороны и считай общее число."
         ],
         "correct": [
           "Колено шагающей ноги смотрит вдоль носка.",
@@ -6300,7 +6342,7 @@
         "breathing": "Дыши спокойно и непрерывно.",
         "safety": "Проверь место по обеим диагоналям; шагай в удобной амплитуде.",
         "voice": {
-          "start": "Шаг по диагонали вправо и обратно. Затем влево.",
+          "start": "Шаг по диагонали вправо и обратно. Затем влево. Один диагональный шаг и возврат — один повтор; чередуй стороны и считай общее число.",
           "mid": [
             "Возвращайся в центр. Шаги короткие."
           ],
@@ -6316,7 +6358,7 @@
           "Stand in the centre with slightly bent knees.",
           "Step your right foot diagonally forward-right, then bring it back to centre.",
           "Step your left foot forward-left and bring it back.",
-          "Keep alternating, tracing a V shape with your steps."
+          "One diagonal step and return make one repetition; alternate sides and count the total."
         ],
         "correct": [
           "Point the stepping knee along its toes.",
@@ -6329,7 +6371,7 @@
         "breathing": "Breathe calmly and continuously.",
         "safety": "Check both diagonal paths and use a comfortable step length.",
         "voice": {
-          "start": "Step diagonally right and back, then left and back.",
+          "start": "Step diagonally right and back, then left and back. One diagonal step and return make one repetition; alternate sides and count the total.",
           "mid": [
             "Return to the centre. Keep steps short."
           ],
@@ -6345,7 +6387,7 @@
           "Ortada dur, dizlerin hafif bükülü olsun.",
           "Sağ ayağınla çapraz sağ öne adım at, sonra ortaya geri getir.",
           "Sol ayağınla sol öne adım at ve geri getir.",
-          "Adımlarınla V çizerek sırayla devam et."
+          "Bir çapraz adım ve geri dönüş bir tekrardır; tarafları değiştirerek toplamı say."
         ],
         "correct": [
           "Adım atan dizin, ayak parmaklarınla aynı yönde olsun.",
@@ -6358,7 +6400,7 @@
         "breathing": "Sakin ve kesintisiz nefes al.",
         "safety": "İki çapraz yöndeki alanı kontrol et, rahat bir adım uzunluğu seç.",
         "voice": {
-          "start": "Çapraz sağa adım at ve dön, sonra sola adım at ve dön.",
+          "start": "Çapraz sağa adım at ve dön, sonra sola adım at ve dön. Bir çapraz adım ve geri dönüş bir tekrardır; tarafları değiştirerek toplamı say.",
           "mid": [
             "Ortaya dön. Adımların kısa olsun."
           ],
@@ -6374,7 +6416,7 @@
           "Steh in der Mitte mit leicht gebeugten Knien.",
           "Setz den rechten Fuß schräg nach rechts vorn und hol ihn zur Mitte zurück.",
           "Setz den linken Fuß schräg nach links vorn und hol ihn zurück.",
-          "Mach abwechselnd weiter, deine Schritte zeichnen ein V."
+          "Ein diagonaler Schritt und zurück ist eine Wiederholung; wechsle die Seiten ab und zähle insgesamt."
         ],
         "correct": [
           "Das Knie des Schrittfußes zeigt in Richtung seiner Zehen.",
@@ -6387,7 +6429,7 @@
         "breathing": "Atme ruhig und ohne Unterbrechung.",
         "safety": "Prüfe den Platz in beiden diagonalen Richtungen und wähle eine angenehme Schrittlänge.",
         "voice": {
-          "start": "Schritt schräg nach rechts und zurück, dann nach links und zurück.",
+          "start": "Schritt schräg nach rechts und zurück, dann nach links und zurück. Ein diagonaler Schritt und zurück ist eine Wiederholung; wechsle die Seiten ab und zähle insgesamt.",
           "mid": [
             "Zurück zur Mitte. Halte die Schritte kurz."
           ],
@@ -6403,7 +6445,7 @@
           "Ponte en el centro con las rodillas un poco flexionadas.",
           "Da un paso diagonal delante a la derecha con el pie derecho y devuélvelo al centro.",
           "Da un paso delante a la izquierda con el pie izquierdo y vuelve.",
-          "Sigue alternando, dibujando una V con los pasos."
+          "Un paso diagonal y vuelta es una repetición; alterna los lados y cuenta el total."
         ],
         "correct": [
           "La rodilla del paso sigue la dirección de sus dedos.",
@@ -6416,7 +6458,7 @@
         "breathing": "Respira de forma tranquila y continua.",
         "safety": "Comprueba ambos recorridos diagonales y usa una longitud de paso cómoda.",
         "voice": {
-          "start": "Paso diagonal a la derecha y vuelve; luego a la izquierda y vuelve.",
+          "start": "Paso diagonal a la derecha y vuelve; luego a la izquierda y vuelve. Un paso diagonal y vuelta es una repetición; alterna los lados y cuenta el total.",
           "mid": [
             "Vuelve al centro. Pasos cortos."
           ],
@@ -6432,7 +6474,7 @@
           "Place-toi au centre avec les genoux légèrement pliés.",
           "Avance le pied droit en diagonale vers la droite, puis ramène-le au centre.",
           "Avance le pied gauche devant à gauche, puis ramène-le.",
-          "Continue en alternant pour dessiner un V avec tes pas."
+          "Un pas en diagonale avec retour fait une répétition ; alterne les côtés et compte le total."
         ],
         "correct": [
           "Le genou qui avance suit la direction de ses orteils.",
@@ -6445,7 +6487,7 @@
         "breathing": "Respire calmement et sans interruption.",
         "safety": "Vérifie les deux diagonales et choisis une longueur de pas confortable.",
         "voice": {
-          "start": "Pas en diagonale à droite et retour, puis à gauche et retour.",
+          "start": "Pas en diagonale à droite et retour, puis à gauche et retour. Un pas en diagonale avec retour fait une répétition ; alterne les côtés et compte le total.",
           "mid": [
             "Reviens au centre. Garde des petits pas."
           ],
@@ -6461,7 +6503,7 @@
           "Stai al centro con le ginocchia leggermente piegate.",
           "Porta il piede destro in diagonale avanti a destra, poi riportalo al centro.",
           "Porta il sinistro avanti a sinistra e riportalo indietro.",
-          "Continua ad alternare, disegnando una V con i passi."
+          "Un passo diagonale e ritorno è una ripetizione; alterna i lati e conta il totale."
         ],
         "correct": [
           "Il ginocchio che avanza segue le dita del piede.",
@@ -6474,7 +6516,7 @@
         "breathing": "Respira con calma e senza interruzioni.",
         "safety": "Controlla entrambe le diagonali e scegli una lunghezza del passo comoda.",
         "voice": {
-          "start": "Passo diagonale a destra e ritorno, poi a sinistra e ritorno.",
+          "start": "Passo diagonale a destra e ritorno, poi a sinistra e ritorno. Un passo diagonale e ritorno è una ripetizione; alterna i lati e conta il totale.",
           "mid": [
             "Torna al centro. Passi corti."
           ],
@@ -6719,7 +6761,8 @@
           "Встань на рабочую опорную ногу, слегка согни её колено; рядом может быть стена.",
           "Носком свободной ноги легко коснись пола впереди, верни его к опорной стопе.",
           "Так же коснись пола сбоку и затем сзади, каждый раз возвращаясь.",
-          "Вся последовательность из трёх касаний — один повтор; после подхода смени опорную ногу."
+          "Вся последовательность из трёх касаний — один повтор; после подхода смени опорную ногу.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Вес остаётся в основном на опорной ноге.",
@@ -6748,7 +6791,8 @@
           "Stand on the working support leg with a soft knee; stay near a wall if needed.",
           "Lightly tap the free toes in front, then bring them back beside the standing foot.",
           "Tap to the side and then behind, returning between taps.",
-          "The full three-tap sequence is one repetition; switch the standing leg after the set."
+          "The full three-tap sequence is one repetition; switch the standing leg after the set.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Keep most weight on the standing leg.",
@@ -6777,7 +6821,8 @@
           "Çalışan destek bacağının üzerinde, dizin hafif bükülü dur; gerekirse duvara yakın ol.",
           "Boştaki ayağının ucuyla öne hafifçe dokun, sonra destek ayağının yanına geri getir.",
           "Yana, ardından arkaya dokun; dokunuşlar arasında ayağını geri getir.",
-          "Üç dokunuşun tamamı bir tekrardır; setten sonra destek bacağını değiştir."
+          "Üç dokunuşun tamamı bir tekrardır; setten sonra destek bacağını değiştir.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Ağırlığının çoğu destek bacağında kalsın.",
@@ -6806,7 +6851,8 @@
           "Steh auf dem arbeitenden Standbein mit lockerem Knie; bleib bei Bedarf nahe an einer Wand.",
           "Tippe mit den freien Zehen leicht vor dir auf und führe sie wieder neben den Standfuß.",
           "Tippe seitlich und dann hinten auf; kehre zwischen den Berührungen zurück.",
-          "Die ganze Folge mit drei Berührungen ist eine Wiederholung; wechsle nach dem Satz das Standbein."
+          "Die ganze Folge mit drei Berührungen ist eine Wiederholung; wechsle nach dem Satz das Standbein.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Das meiste Gewicht bleibt auf dem Standbein.",
@@ -6835,7 +6881,8 @@
           "Apóyate en la pierna que trabaja con la rodilla suave; ponte cerca de la pared si hace falta.",
           "Toca suavemente delante con la punta del pie libre y vuelve junto al pie de apoyo.",
           "Toca al lado y después detrás, volviendo entre los toques.",
-          "La secuencia completa de tres toques es una repetición; cambia de pierna de apoyo tras la serie."
+          "La secuencia completa de tres toques es una repetición; cambia de pierna de apoyo tras la serie.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Mantén la mayor parte del peso en la pierna de apoyo.",
@@ -6864,7 +6911,8 @@
           "Tiens-toi sur la jambe d’appui qui travaille, genou souple ; reste près d’un mur si besoin.",
           "Touche légèrement devant avec les orteils libres, puis ramène-les près du pied d’appui.",
           "Touche sur le côté, puis derrière, en revenant entre les touches.",
-          "La séquence complète de trois touches fait une répétition ; change de jambe d’appui après la série."
+          "La séquence complète de trois touches fait une répétition ; change de jambe d’appui après la série.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Garde presque tout ton poids sur la jambe d’appui.",
@@ -6893,7 +6941,8 @@
           "Stai sulla gamba d’appoggio che lavora con il ginocchio morbido; resta vicino al muro se serve.",
           "Tocca piano davanti con le dita del piede libero e riportalo accanto al piede d’appoggio.",
           "Tocca di lato e poi dietro, tornando al centro tra i tocchi.",
-          "La sequenza completa di tre tocchi è una ripetizione; cambia gamba d’appoggio dopo la serie."
+          "La sequenza completa di tre tocchi è una ripetizione; cambia gamba d’appoggio dopo la serie.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Tieni quasi tutto il peso sulla gamba d’appoggio.",
@@ -6935,7 +6984,8 @@
           "Встань в центре в стойку: стопы чуть шире бёдер, колени мягкие.",
           "Сделай короткий шаг в рабочую сторону и устойчиво поставь стопу.",
           "Плавно поверни туда плечи и таз, позволяя стопам немного развернуться.",
-          "Вернись лицом вперёд и шагни в центр — это один повтор; после подхода смени сторону."
+          "Вернись лицом вперёд и шагни в центр — это один повтор; после подхода смени сторону.",
+          "Указанное число — на каждую сторону. Считай сам и нажимай «Готово» только после обеих сторон."
         ],
         "correct": [
           "Сначала устойчивый шаг, затем плавный поворот.",
@@ -6964,7 +7014,8 @@
           "Start at the centre in a ready stance with feet slightly wider than hips and soft knees.",
           "Take a short step toward the working side and plant the foot steadily.",
           "Gently turn shoulders and hips that way, allowing your feet to pivot a little.",
-          "Face forward and step back to centre for one repetition; switch sides after the set."
+          "Face forward and step back to centre for one repetition; switch sides after the set.",
+          "The shown count is for each side. Count yourself and tap Done only after both sides."
         ],
         "correct": [
           "Find a steady step before making a smooth turn.",
@@ -6993,7 +7044,8 @@
           "Ortada hazırlık duruşuyla başla; ayakların kalçandan biraz geniş, dizlerin hafif bükülü olsun.",
           "Çalışan tarafa kısa bir adım at ve ayağını sağlam bas.",
           "Omuzlarını ve kalçanı o yöne yavaşça döndür; ayakların da biraz dönsün.",
-          "Öne dön ve adımla ortaya gel; bu bir tekrardır. Setten sonra taraf değiştir."
+          "Öne dön ve adımla ortaya gel; bu bir tekrardır. Setten sonra taraf değiştir.",
+          "Gösterilen sayı her taraf içindir. Kendin say ve iki tarafı da bitirince Tamam’a bas."
         ],
         "correct": [
           "Yumuşak dönüşten önce dengeli bas.",
@@ -7022,7 +7074,8 @@
           "Beginne in der Mitte in Bereitschaftsstellung, Füße etwas weiter als hüftbreit und Knie locker.",
           "Mach einen kurzen Schritt zur arbeitenden Seite und setz den Fuß sicher auf.",
           "Dreh Schultern und Hüfte sanft dorthin, die Füße dürfen sich leicht mitdrehen.",
-          "Schau wieder nach vorn und geh zur Mitte zurück; das ist eine Wiederholung. Wechsle nach dem Satz die Seite."
+          "Schau wieder nach vorn und geh zur Mitte zurück; das ist eine Wiederholung. Wechsle nach dem Satz die Seite.",
+          "Die angezeigte Anzahl gilt pro Seite. Zähle selbst und tippe erst nach beiden Seiten auf Fertig."
         ],
         "correct": [
           "Steh nach dem Schritt sicher, bevor du dich ruhig drehst.",
@@ -7051,7 +7104,8 @@
           "Empieza en el centro en postura de preparación, pies un poco más separados que las caderas y rodillas suaves.",
           "Da un paso corto hacia el lado que trabaja y apoya el pie con estabilidad.",
           "Gira suavemente hombros y caderas hacia ese lado, dejando que los pies giren un poco.",
-          "Mira al frente y vuelve con un paso al centro: eso es una repetición; cambia de lado tras la serie."
+          "Mira al frente y vuelve con un paso al centro: eso es una repetición; cambia de lado tras la serie.",
+          "La cantidad indicada es para cada lado. Cuenta tú y pulsa Listo solo después de ambos lados."
         ],
         "correct": [
           "Estabiliza el paso antes de girar suavemente.",
@@ -7080,7 +7134,8 @@
           "Pars du centre en position de préparation, pieds un peu plus écartés que les hanches et genoux souples.",
           "Fais un petit pas du côté qui travaille et pose le pied de façon stable.",
           "Tourne doucement épaules et hanches de ce côté en laissant les pieds pivoter un peu.",
-          "Reviens face devant et fais un pas vers le centre : cela fait une répétition ; change de côté après la série."
+          "Reviens face devant et fais un pas vers le centre : cela fait une répétition ; change de côté après la série.",
+          "Le nombre affiché est par côté. Compte toi-même et appuie sur Terminé après les deux côtés."
         ],
         "correct": [
           "Stabilise le pas avant de tourner doucement.",
@@ -7109,7 +7164,8 @@
           "Parti al centro in posizione di attesa, piedi poco più larghi delle anche e ginocchia morbide.",
           "Fai un passo corto verso il lato che lavora e appoggia bene il piede.",
           "Ruota dolcemente spalle e bacino da quella parte, lasciando girare un poco i piedi.",
-          "Torna a guardare avanti e fai un passo al centro: questa è una ripetizione; cambia lato dopo la serie."
+          "Torna a guardare avanti e fai un passo al centro: questa è una ripetizione; cambia lato dopo la serie.",
+          "Il numero indicato è per lato. Conta da solo e premi Fatto solo dopo entrambi i lati."
         ],
         "correct": [
           "Trova un appoggio stabile prima di ruotare dolcemente.",

@@ -145,6 +145,7 @@ func main() {
 	})
 
 	mux.Handle("GET /poses/{id}", http.HandlerFunc(app.ServePose))
+	mux.HandleFunc("/api/workouts/complete", app.CompleteWorkoutHTTP)
 	mux.Handle("/api/", mcp.Handler(strings.TrimSpace(os.Getenv("MORNING_MCP_TOKEN"))))
 
 	mux.Handle("/", a)

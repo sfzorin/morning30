@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS users (
     sex          TEXT NOT NULL DEFAULT 'm',     -- m | f; picks the figure variant
     is_guest     INTEGER NOT NULL DEFAULT 0,    -- anonymous cookie-only account
     position     INTEGER NOT NULL DEFAULT 0,   -- completed sessions in the looping 30-day cycle
+    cycle_restart_on TEXT NOT NULL DEFAULT '', -- UTC instant of a scheduled cycle restart
     adapt_level    INTEGER NOT NULL DEFAULT 0,  -- variant delta for the next workout
     adapt_force_r  INTEGER NOT NULL DEFAULT 0,  -- force the next workout to recovery
     knee_block     INTEGER NOT NULL DEFAULT 0,  -- sessions left without mini-squat
@@ -125,6 +126,17 @@ CREATE TABLE IF NOT EXISTS activity (
     PRIMARY KEY (user_id, done_on)
 );
 
+-- Durable completion receipts make retries safe after a lost response or reload.
+CREATE TABLE IF NOT EXISTS workout_completions (
+    user_id      INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    event_id     TEXT NOT NULL,
+    day          INTEGER NOT NULL,
+    position     INTEGER NOT NULL,
+    completed_at TEXT NOT NULL,
+    completed_on TEXT NOT NULL,
+    PRIMARY KEY (user_id, event_id)
+);
+
 CREATE TABLE IF NOT EXISTS sessions (
     token      TEXT PRIMARY KEY,
     user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -140,6 +152,7 @@ DROP TABLE IF EXISTS progress;
 	// Add columns to pre-existing user tables (ignore if already present).
 	for _, alter := range []string{
 		`ALTER TABLE users ADD COLUMN position INTEGER NOT NULL DEFAULT 0`,
+		`ALTER TABLE users ADD COLUMN cycle_restart_on TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN name TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN is_guest INTEGER NOT NULL DEFAULT 0`,
 		`ALTER TABLE users ADD COLUMN adapt_level INTEGER NOT NULL DEFAULT 0`,

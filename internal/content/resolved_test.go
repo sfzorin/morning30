@@ -79,3 +79,28 @@ func TestRoundCollapseDoesNotLosePrescriptions(t *testing.T) {
 		t.Fatal("different prescribed rounds were collapsed")
 	}
 }
+
+func TestSelfManagedSidesPreservesDoseAndRoundTrip(t *testing.T) {
+	p, err := ParseResolved(`{"version":2,"selfManagedSides":true,"days":[{"rounds":2,"items":[{"id":"custom-reps","unit":"reps","value":6,"perSide":true,"slot":"main","rest":0,"sideRest":10},{"id":"custom-hold","unit":"seconds","value":20,"perSide":true,"slot":"main","rest":0,"sideRest":10}]}]}`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	q, err := ParseResolved(p.Marshal())
+	if err != nil || !reflect.DeepEqual(p, q) || !q.SelfManagedSides {
+		t.Fatalf("self-managed sides lost on export/import: %+v, %v", q, err)
+	}
+	w := q.Workout(1, 0, Rests{Main: 20})
+	if !w.SelfManagedSides || len(w.Items) != 4 || w.EstSec != (6*3*2+20*2)*2 {
+		t.Fatalf("combined-side dose or rounds changed: %+v", w)
+	}
+	for i, it := range w.Items {
+		if !it.PerSide || it.SideRest != 0 || it.Round != i/2+1 {
+			t.Fatalf("item %d has split sides or wrong round: %+v", i, it)
+		}
+	}
+	q.SelfManagedSides = false
+	legacy := q.Workout(1, 0, Rests{Main: 20})
+	if legacy.SelfManagedSides || legacy.EstSec != w.EstSec+4*10 || legacy.Items[0].SideRest != 10 {
+		t.Fatalf("standard side behavior changed: %+v", legacy)
+	}
+}
