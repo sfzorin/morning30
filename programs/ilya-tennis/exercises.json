@@ -213,7 +213,12 @@
     },
     "poses": [
       "ilya-boy-it01-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it01-demo-v1"
+    }
   },
   {
     "id": "IT02",
@@ -429,7 +434,12 @@
     },
     "poses": [
       "ilya-boy-it02-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it02-demo-v1"
+    }
   },
   {
     "id": "IT03",
@@ -652,7 +662,12 @@
     },
     "poses": [
       "ilya-boy-it02-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it02-demo-v1"
+    }
   },
   {
     "id": "IT04",
@@ -868,7 +883,12 @@
     },
     "poses": [
       "ilya-boy-it04-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it04-demo-v1"
+    }
   },
   {
     "id": "IT05",
@@ -1084,7 +1104,12 @@
     },
     "poses": [
       "ilya-boy-it05-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it05-demo-v1"
+    }
   },
   {
     "id": "IT06",
@@ -1300,7 +1325,12 @@
     },
     "poses": [
       "ilya-boy-it06-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it06-demo-v1"
+    }
   },
   {
     "id": "IT07",
@@ -1516,7 +1546,12 @@
     },
     "poses": [
       "ilya-boy-it07-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it07-demo-v1"
+    }
   },
   {
     "id": "IT08",
@@ -1739,7 +1774,12 @@
     },
     "poses": [
       "ilya-boy-it08-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it08-demo-v1"
+    }
   },
   {
     "id": "IT09",
@@ -1955,7 +1995,12 @@
     },
     "poses": [
       "ilya-boy-it09-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it09-demo-v1"
+    }
   },
   {
     "id": "IT10",
@@ -2171,7 +2216,12 @@
     },
     "poses": [
       "ilya-boy-it10-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it10-demo-v1"
+    }
   },
   {
     "id": "IT11",
@@ -2394,7 +2444,12 @@
     },
     "poses": [
       "ilya-boy-it11-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it11-demo-v1"
+    }
   },
   {
     "id": "IT12",
@@ -2617,7 +2672,12 @@
     },
     "poses": [
       "ilya-boy-it12-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it12-demo-v1"
+    }
   },
   {
     "id": "IT13",
@@ -2833,7 +2893,12 @@
     },
     "poses": [
       "ilya-boy-it13-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it13-demo-v1"
+    }
   },
   {
     "id": "IT14",
@@ -3049,7 +3114,12 @@
     },
     "poses": [
       "ilya-boy-it14-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it14-demo-v1"
+    }
   },
   {
     "id": "IT15",
@@ -3265,7 +3335,12 @@
     },
     "poses": [
       "ilya-boy-it15-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it15-demo-v1"
+    }
   },
   {
     "id": "IT16",
@@ -3481,7 +3556,13 @@
     },
     "poses": [
       "ilya-boy-it16-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it16-demo-v1",
+      "otherPose": "ilya-boy-it16-demo-other-v1"
+    }
   },
   {
     "id": "IT17",
@@ -3697,7 +3778,12 @@
     },
     "poses": [
       "ilya-boy-it17-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it17-demo-v1"
+    }
   },
   {
     "id": "IT18",
@@ -3913,7 +3999,12 @@
     },
     "poses": [
       "ilya-boy-it18-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it18-demo-v1"
+    }
   },
   {
     "id": "IT19",
@@ -4136,7 +4227,12 @@
     },
     "poses": [
       "ilya-boy-it19-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it19-demo-v1"
+    }
   },
   {
     "id": "IT20",
@@ -4352,7 +4448,12 @@
     },
     "poses": [
       "ilya-boy-it20-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it20-demo-v1"
+    }
   },
   {
     "id": "IT21",
@@ -4575,7 +4676,13 @@
     },
     "poses": [
       "ilya-boy-it21-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it21-demo-v1",
+      "otherPose": "ilya-boy-it21-demo-other-v1"
+    }
   },
   {
     "id": "IT22",
@@ -4791,7 +4898,12 @@
     },
     "poses": [
       "ilya-boy-it22-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it22-demo-v1"
+    }
   },
   {
     "id": "IT23",
@@ -5007,7 +5119,12 @@
     },
     "poses": [
       "ilya-boy-it23-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it23-demo-v1"
+    }
   },
   {
     "id": "IT24",
@@ -5223,7 +5340,12 @@
     },
     "poses": [
       "ilya-boy-it24-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it24-demo-v1"
+    }
   },
   {
     "id": "IT25",
@@ -5439,7 +5561,12 @@
     },
     "poses": [
       "ilya-boy-it25-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it25-demo-v1"
+    }
   },
   {
     "id": "IT26",
@@ -5655,7 +5782,12 @@
     },
     "poses": [
       "ilya-boy-it26-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it26-demo-v1"
+    }
   },
   {
     "id": "IT27",
@@ -5878,7 +6010,12 @@
     },
     "poses": [
       "ilya-boy-it27-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it27-demo-v1"
+    }
   },
   {
     "id": "IT28",
@@ -6094,7 +6231,12 @@
     },
     "poses": [
       "ilya-boy-it28-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it28-demo-v1"
+    }
   },
   {
     "id": "IT29",
@@ -6310,7 +6452,13 @@
     },
     "poses": [
       "ilya-boy-it29-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "sequence",
+      "pose": "ilya-boy-it29-demo-v1",
+      "otherPose": "ilya-boy-it29-demo-other-v1"
+    }
   },
   {
     "id": "IT30",
@@ -6526,7 +6674,12 @@
     },
     "poses": [
       "ilya-boy-it30-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it30-demo-v1"
+    }
   },
   {
     "id": "IT31",
@@ -6742,7 +6895,12 @@
     },
     "poses": [
       "ilya-boy-it01-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it01-demo-v1"
+    }
   },
   {
     "id": "IT32",
@@ -6965,7 +7123,13 @@
     },
     "poses": [
       "ilya-boy-it32-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "sequence",
+      "pose": "ilya-boy-it32-demo-v1",
+      "otherPose": "ilya-boy-it32-demo-other-v1"
+    }
   },
   {
     "id": "IT33",
@@ -7188,6 +7352,11 @@
     },
     "poses": [
       "ilya-boy-it33-v1"
-    ]
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it33-demo-v1"
+    }
   }
 ]

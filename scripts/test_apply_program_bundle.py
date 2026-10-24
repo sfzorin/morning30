@@ -2,6 +2,7 @@ import importlib.util
 import json
 from pathlib import Path
 import sqlite3
+import struct
 import tempfile
 import unittest
 
@@ -120,6 +121,39 @@ class ApplyBundleTests(unittest.TestCase):
         self.assertEqual(tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone()), before)
         self.assertEqual(self.connection.execute("SELECT count(*) FROM pose_images WHERE pose_id='fresh'").fetchone()[0], 0)
         self.assertEqual(self.connection.execute("SELECT data FROM pose_images WHERE pose_id='collision'").fetchone()[0], b"old")
+
+    def test_animation_only_metadata_preserves_doses_text_and_other_fields(self):
+        existing = {"existing": {"id": "existing", "poses": ["old"], "unit": "reps", "content": {"ru": {"name": "Personal"}}}}
+        self.connection.execute("UPDATE users SET custom_exercises=? WHERE id=44", (json.dumps(existing),))
+        self.connection.commit()
+        animation = {"pose": "motion", "otherPose": "other", "frames": 3, "kind": "movement"}
+        png = b"\x89PNG\r\n\x1a\n\0\0\0\rIHDR" + struct.pack(">II", 300, 100)
+        supplied = {"existing": {"poses": ["old"], "animation": animation, "unit": "seconds"}}
+        images = [{"id": "old", "data": b"still"}, {"id": "motion", "data": png}, {"id": "other", "data": png}]
+        bundle.apply_bundle(self.connection, 44, "Ilya", {}, supplied, images, self.backup, images_only=True)
+        expected = existing
+        expected["existing"]["animation"] = animation
+        row = self.connection.execute("SELECT * FROM users WHERE id=44").fetchone()
+        self.assertEqual(json.loads(row["custom_exercises"]), expected)
+        self.assertEqual((row["program_json"], row["position"], row["level"]), ("{}", 39, 2))
+
+    def test_invalid_or_missing_animation_refuses_atomically(self):
+        png = b"\x89PNG\r\n\x1a\n\0\0\0\rIHDR" + struct.pack(">II", 300, 100)
+        cases = [
+            ({"pose": "missing", "frames": 3, "kind": "movement"}, png),
+            ({"pose": "motion", "otherPose": "missing", "frames": 3, "kind": "sequence"}, png),
+            ({"pose": "motion", "frames": 3, "kind": "alternating"}, png[:-8] + struct.pack(">II", 100, 100)),
+            ({"pose": "motion", "frames": 2, "kind": "alternating"}, png),
+            ({"pose": "../motion", "frames": 3, "kind": "movement"}, png),
+        ]
+        before = tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone())
+        for animation, data in cases:
+            with self.subTest(animation=animation):
+                with self.assertRaises(ValueError):
+                    bundle.apply_bundle(self.connection, 44, "Ilya", {}, {"existing": {"poses": ["motion"], "animation": animation}}, [{"id": "motion", "data": data}], self.backup, images_only=True)
+                self.assertFalse(self.backup.exists())
+                self.assertEqual(tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone()), before)
+                self.assertEqual(self.connection.execute("SELECT count(*) FROM pose_images").fetchone()[0], 0)
 
 
 if __name__ == "__main__":

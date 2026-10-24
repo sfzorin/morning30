@@ -94,16 +94,53 @@ cause the transaction to fail. Exercises without pictures display text and voice
 until their pose references are installed. Keep account backups outside Git.
 
 For the second publication, add `--images-only` to the install command. This
-requires the exercises to exist and only changes their `poses` fields, preserving
-the live program and all exercise text as well as progress.
+requires the exercises to exist and only changes their `poses` and supplied
+`animation` fields, preserving the live program, exercise text and progress.
 
 ## Character and illustrations
 
 All 33 exercises use the same fictional eight-year-old boy from
 `references/boy-turnaround.png` and `references/boy-ready.png`. The 31 selected
 PNG illustrations live in `images/`; IT02/IT03 share the ankle-rock pose and
-IT01/IT31 share the walking pose. Each shows a key position; sequence, timing and
-side changes are explained by the localized instructions and player.
+IT01/IT31 share the walking pose. These stills remain library thumbnails and
+fallbacks if a demonstration cannot load.
+
+`animations/*.png` preserves the original generated strips; `animations/aligned/`
+contains the published strips of three equal 640×640 square frames. The
+player shows one frame at a time, with a one-second interval. A `movement` strip
+plays start–middle–end–middle; an `alternating` strip plays neutral–one side–neutral–
+other side. Complex exercises can use `otherPose` for a second three-frame strip:
+`movement` finishes and returns on each side; `sequence` walks through all six
+frames in order; `alternating` returns to neutral between all four directions
+of the compass exercise. This is a technique demonstration, not a rep counter or a pace
+to match. The prescribed dose and self-managed sides remain unchanged.
+
+Tapping the figure opens the technique card and pauses the workout clock. The
+demonstration can be paused, played or inspected frame by frame. Leaving the app
+stops playback; the workout still requires Continue on return. Reduced-motion
+preferences disable autoplay, with manual playback available in the card.
+
+Only the current exercise's strips are loaded. Animation URLs are immutable pose
+IDs; missing images fall back to the original still. The bundle installer validates
+frame count, references and square-cell dimensions before changing the account.
+
+The final frames are cropped and registered algorithmically, without redrawing:
+
+```sh
+python3 scripts/align_exercise_frames.py programs/ilya-tennis/animations \
+  programs/ilya-tennis/animations/aligned
+python3 -m unittest discover -s scripts -p 'test_*.py'
+```
+
+This offline authoring tool requires Pillow and numpy. It detects actual gaps
+between the source figures (which may not be equal thirds), aligns camera scale
+and anchors, then applies a shared crop to every pose of an exercise. It preserves
+posture changes instead of enlarging a lower pose to fill its frame. Hinges use
+planted feet; jumps retain the landing floor; line steps use the blue line;
+stationary-head drills keep the head fixed; floor exercises use the whole visible
+mat, including disconnected regions. `aligned/alignment.json` records every
+source rectangle, anchor and uniform affine transform. The original images stay
+unchanged and allow the process to be rerun exactly.
 
 Images were generated with the built-in ImageGen tool using both character
 references. Exact prompts and any corrections are saved in `prompts-*.json`;

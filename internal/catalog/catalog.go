@@ -36,6 +36,22 @@ type Loc struct {
 	Voice     VoiceDoc `json:"voice,omitempty"`
 }
 
+// Animation is a horizontal strip of equal square frames in the pose catalog.
+// Alternating demos return to the start between the two sides.
+type Animation struct {
+	Pose      string `json:"pose"`
+	OtherPose string `json:"otherPose,omitempty"` // optional second strip, e.g. the other side
+	Frames    int    `json:"frames"`
+	Kind      string `json:"kind"` // movement, alternating, or sequence
+}
+
+func ValidAnimation(a *Animation) bool {
+	return a == nil || (a.Pose != "" && clipPoseID(a.Pose) == a.Pose &&
+		(a.OtherPose == "" || clipPoseID(a.OtherPose) == a.OtherPose) &&
+		a.Frames >= 2 && a.Frames <= 3 &&
+		(a.Kind == "movement" || a.Kind == "sequence" || (a.Kind == "alternating" && a.Frames == 3)))
+}
+
 // Doc is a self-contained exercise: definition + localized content for every
 // language. This is the unit of per-exercise JSON (download / upload).
 type Doc struct {
@@ -48,6 +64,7 @@ type Doc struct {
 	Replacement string         `json:"replacement,omitempty"`
 	SVG         string         `json:"svg,omitempty"`
 	Poses       []string       `json:"poses,omitempty"` // 1 or 2 stills from the shared pose catalog
+	Animation   *Animation     `json:"animation,omitempty"`
 	Content     map[string]Loc `json:"content"`
 }
 
@@ -294,7 +311,7 @@ func (c Catalog) Figure(id, sex string) string {
 
 // ValidDoc sanity-checks an imported or MCP-written exercise document.
 func ValidDoc(d Doc) bool {
-	if strings.TrimSpace(d.ID) == "" {
+	if strings.TrimSpace(d.ID) == "" || !ValidAnimation(d.Animation) {
 		return false
 	}
 	switch content.Slot(d.Slot) {

@@ -4,17 +4,47 @@
 Dry run is the default. Apply only to an explicitly identified existing account,
 back up its program fields, and change those fields atomically. Progress, tokens,
 preferences, and other accounts are never written. With --images-only, preserve
-the saved program and all exercise fields except the supplied pose assignments.
+the saved program and all exercise fields except supplied illustration metadata.
 """
 import argparse
 import datetime
 import json
 import os
+import re
 from pathlib import Path
 import sqlite3
+import struct
 
 
 LANGUAGES = {"ru", "en", "tr", "de", "es", "fr", "it"}
+
+
+def animation_poses(doc):
+    animation = doc.get("animation")
+    if animation is None:
+        return []
+    if not isinstance(animation, dict):
+        raise ValueError("Invalid animation")
+    if "otherPose" in animation and not isinstance(animation["otherPose"], str):
+        raise ValueError("Invalid animation")
+    poses = [animation.get("pose")]
+    if animation.get("otherPose"):
+        poses.append(animation["otherPose"])
+    frames, kind = animation.get("frames"), animation.get("kind")
+    if (type(frames) is not int or frames not in {2, 3}
+            or not isinstance(kind, str) or kind not in {"movement", "alternating", "sequence"}
+            or (kind == "alternating" and frames != 3)
+            or any(not isinstance(pose, str) or not re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,63}", pose) for pose in poses)):
+        raise ValueError("Invalid animation")
+    return poses
+
+
+def validate_strip(data, frames):
+    if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+        raise ValueError("Invalid animation PNG")
+    width, height = struct.unpack(">II", data[16:24])
+    if height < 64 or width != frames * height:
+        raise ValueError("Animation must contain equal square frames")
 
 
 def load_bundle(folder):
@@ -25,6 +55,7 @@ def load_bundle(folder):
     if len(exercises) != len(docs):
         raise ValueError("Duplicate exercise IDs")
     for doc in docs:
+        animation_poses(doc)
         if doc["unit"] not in {"seconds", "reps", "breaths"}:
             raise ValueError(f"Invalid unit: {doc['id']}")
         if set(doc["content"]) != LANGUAGES:
@@ -61,6 +92,11 @@ def load_bundle(folder):
         if not data.startswith(b"\x89PNG\r\n\x1a\n") or len(data) > 4 * 1024 * 1024:
             raise ValueError(f"Invalid PNG: {path}")
         image["data"] = data
+    by_id = {image["id"]: image["data"] for image in images}
+    for doc in docs:
+        for pose in animation_poses(doc):
+            if pose in by_id:
+                validate_strip(by_id[pose], doc["animation"]["frames"])
     return program, exercises, images
 
 
@@ -87,15 +123,24 @@ def apply_bundle(connection, account, expected_name, program, exercises, images,
                     raise ValueError(f"Nonempty pose assignment required: {exercise_id}")
             for exercise_id, doc in exercises.items():
                 current[exercise_id]["poses"] = list(doc["poses"])
+                if "animation" in doc:
+                    current[exercise_id]["animation"] = doc["animation"]
         else:
             current.update(exercises)
         supplied = {image["id"] for image in images}
+        supplied_data = {image["id"]: image["data"] for image in images}
         for doc in exercises.values():
-            for pose in doc.get("poses", []):
+            strips = animation_poses(doc)
+            for pose in doc.get("poses", []) + strips:
                 if pose not in supplied and not connection.execute(
                     "SELECT 1 FROM pose_images WHERE pose_id=? LIMIT 1", (pose,)
                 ).fetchone():
                     raise ValueError(f"Pose image not found: {pose}")
+            for pose in strips:
+                data = supplied_data.get(pose)
+                if data is None:
+                    data = connection.execute("SELECT data FROM pose_images WHERE pose_id=? LIMIT 1", (pose,)).fetchone()[0]
+                validate_strip(data, doc["animation"]["frames"])
         backup = dict(row)
         backup["saved_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         backup_path = Path(backup_path)
@@ -147,7 +192,7 @@ def main():
     parser.add_argument("--apply", action="store_true")
     parser.add_argument(
         "--images-only", action="store_true",
-        help="Only assign poses to existing exercises; preserve the saved program and exercise content",
+        help="Only assign illustrations to existing exercises; preserve the saved program and exercise content",
     )
     parser.add_argument("--backup", type=Path)
     args = parser.parse_args()

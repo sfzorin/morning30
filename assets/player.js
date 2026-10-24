@@ -76,12 +76,20 @@
     phase: $(".phase"),
     index: $(".ex-index"),
     svg: $(".ex-svg"),
+    visual: $(".ex-visual"),
+    demoCaption: $(".demo-caption"),
     name: $(".ex-name"),
     value: $(".ex-value"),
     stage: $(".stage"),
     infoBtn: $(".info-btn"),
     infoOverlay: $(".info-overlay"),
     infoMedia: $(".info-media"),
+    infoVisual: $(".info-visual"),
+    demoControls: $(".demo-controls"),
+    demoToggle: $(".demo-toggle"),
+    demoPrev: $(".demo-prev"),
+    demoNext: $(".demo-next"),
+    demoFrame: $(".demo-frame"),
     infoName: $(".info-name"),
     infoDesc: $(".info-desc"),
     infoHow: $(".info-how"),
@@ -125,6 +133,9 @@
   var ticker = null;
   var frameTimer = null;
   var frameIdx = 0;
+  var frameStep = 0;
+  var failedAnimations = Object.create(null);
+  var reducedMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   var disposed = false;
   var resumeNeeded = false;
   var redirecting = false;
@@ -152,33 +163,99 @@
   }
   function stopFrames() {
     if (frameTimer) { clearInterval(frameTimer); frameTimer = null; }
-    frameIdx = 0;
+    if (el.demoToggle) el.demoToggle.textContent = t("demo_play");
+  }
+  function animationOf(it) {
+    var a = it && it.animation;
+    var poseURL = /^\/poses\/[a-z0-9_-]+(?:\?sex=[mf])?$/;
+    return a && el.visual && el.infoVisual && typeof a.src === "string" &&
+      poseURL.test(a.src) && !failedAnimations[a.src] &&
+      (!a.otherSrc || (typeof a.otherSrc === "string" && poseURL.test(a.otherSrc) && !failedAnimations[a.otherSrc])) &&
+      (a.frames === 2 || a.frames === 3) &&
+      (a.kind === "movement" || a.kind === "sequence" || (a.kind === "alternating" && a.frames === 3)) ? a : null;
+  }
+  function frameCount(it) {
+    var a = animationOf(it);
+    return a ? a.frames * (a.otherSrc ? 2 : 1) : framesOf(it).length;
   }
   function paintFrame(it, idx) {
-    var frames = framesOf(it);
-    if (!frames.length) return;
-    var src = frames[idx % frames.length];
-    if (el.svg) el.svg.src = src;
-    if (el.infoMedia) el.infoMedia.src = src;
+    var a = animationOf(it), frames = framesOf(it), count = frameCount(it);
+    if (!count) return;
+    frameIdx = ((idx % count) + count) % count;
+    if (a) {
+      [el.visual, el.infoVisual].forEach(function (visual) {
+        visual.style.backgroundImage = 'url("' + (frameIdx < a.frames ? a.src : a.otherSrc) + '")';
+        visual.style.backgroundPosition = ((frameIdx % a.frames) * 100 / (a.frames - 1)) + "% 50%";
+      });
+    } else {
+      var src = frames[frameIdx];
+      if (el.svg) el.svg.src = src;
+      if (el.infoMedia) el.infoMedia.src = src;
+    }
+    if (el.demoFrame) el.demoFrame.textContent = t("demo_frame") + " " + (frameIdx + 1) + "/" + count;
+  }
+  function playFrames(it, inInfo) {
+    stopFrames();
+    var a = animationOf(it), count = frameCount(it);
+    if (count < 2 || disposed || document.visibilityState !== "visible" || (!inInfo && !running())) return;
+    // Return through the middle for a movement, or through neutral between sides.
+    var order = [];
+    if (a && a.kind === "sequence") {
+      for (var n = 0; n < count; n++) order.push(n);
+    } else if (a && a.kind === "alternating") order = a.otherSrc ? [0, 1, 0, 2, 3, 4, 3, 5] : [0, 1, 0, 2];
+    else {
+      var stripSize = a ? a.frames : count;
+      for (var base = 0; base < count; base += stripSize) {
+        for (var f = 0; f < stripSize; f++) order.push(base + f);
+        for (var back = stripSize - 2; back >= (a && a.otherSrc ? 0 : 1); back--) order.push(base + back);
+      }
+    }
+    frameStep = Math.max(0, order.indexOf(frameIdx));
+    if (el.demoToggle) el.demoToggle.textContent = t("demo_pause");
+    frameTimer = setInterval(function () {
+      if (disposed || document.visibilityState !== "visible" || (inInfo ? !vis(el.infoOverlay) : !running())) { stopFrames(); return; }
+      frameStep = (frameStep + 1) % order.length;
+      paintFrame(it, order[frameStep]);
+    }, 1000);
   }
   function showFrames(it) {
     stopFrames();
-    var frames = framesOf(it);
+    var a = animationOf(it), frames = framesOf(it), count = frameCount(it);
+    [el.visual, el.infoVisual].forEach(function (visual) {
+      if (!visual) return;
+      visual.classList.toggle("hidden", !count);
+      visual.style.backgroundImage = a ? 'url("' + a.src + '")' : "none";
+      visual.style.backgroundSize = a ? (a.frames * 100) + "% 100%" : "";
+      visual.setAttribute("aria-label", it.name || "");
+    });
     [el.svg, el.infoMedia].forEach(function (img) {
       if (!img) return;
-      img.classList.toggle("hidden", !frames.length);
-      if (!frames.length) img.removeAttribute("src");
+      img.classList.toggle("hidden", !!a || !frames.length);
+      if (a || !frames.length) img.removeAttribute("src");
+      img.alt = it.name || "";
     });
-    if (!frames.length) return;
-    if (el.svg) el.svg.alt = it.name || "";
+    if (el.demoCaption) {
+      el.demoCaption.classList.toggle("hidden", !a);
+      el.demoCaption.textContent = a && (a.kind === "alternating" || (a.otherSrc && it.perSide)) ? t("demo_both") : t("demo_play");
+    }
+    [el.demoControls, el.demoFrame].forEach(function (node) { if (node) node.classList.toggle("hidden", count < 2); });
     paintFrame(it, 0);
-    if (frames.length < 2 || !running()) return;
-    for (var k = 1; k < frames.length; k++) { (new Image()).src = frames[k]; }
-    frameTimer = setInterval(function () {
-      frameIdx = (frameIdx + 1) % frames.length;
-      paintFrame(it, frameIdx);
-    }, 1000);
-  }  // active 1s interval
+    if (a) {
+      // Load only this exercise. A missing strip must retain the original still.
+      [a.src, a.otherSrc].filter(Boolean).forEach(function (src) {
+        var preload = new Image();
+        preload.onerror = function () {
+          failedAnimations[src] = true;
+          if (!disposed && items[i] === it) {
+            showFrames(it);
+            if (vis(el.infoOverlay) && !reducedMotion) playFrames(it, true);
+          }
+        };
+        preload.src = src;
+      });
+    }
+    if (!reducedMotion) playFrames(it, false);
+  }
   var finished = false;
   var wakeLock = null;
 
@@ -440,7 +517,6 @@
     if (el.stage) el.stage.classList.remove("hidden");
     if (el.controls) el.controls.classList.remove("hidden");
 
-    showFrames(it);
     if (el.name) el.name.textContent = it.name;
     if (el.index) el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
@@ -450,6 +526,7 @@
 
   // runSide runs one side. Each explicit side gets its own visible position.
   function runSide(it, side, remainingMs) {
+    showFrames(it);
     curSide = side;
     state.phase = "exercise";
     state.nextIndex = i;
@@ -883,8 +960,10 @@
       else el.infoReplace.classList.add("hidden");
     }
     el.infoOverlay.classList.remove("hidden");
+    if (!reducedMotion) playFrames(it, true);
   }
   function closeInfo() {
+    stopFrames();
     el.infoOverlay.classList.add("hidden");
     if (resumeNeeded) return;
     paused = infoWasPaused;
@@ -897,7 +976,7 @@
     return {
       id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
       round: it.round, rest: it.rest, sideRest: it.sideRest, name: r.name, hint: r.hint, warning: r.warning,
-      svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), video: "", desc: "", howTo: [], correct: [], wrong: [],
+      svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), animation: r.animation, desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
       vFinish: cues.well_done, repl: null
     };
@@ -914,9 +993,20 @@
     startItem(i);
   }
   if (el.infoBtn) el.infoBtn.addEventListener("click", openInfo);
-  if (el.svg) el.svg.addEventListener("click", openInfo); // tap the figure → pause + show details
+  if (el.visual || el.svg) (el.visual || el.svg).addEventListener("click", openInfo);
   if (el.infoClose) el.infoClose.addEventListener("click", closeInfo);
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
+  if (el.demoToggle) el.demoToggle.addEventListener("click", function () {
+    if (!vis(el.infoOverlay)) return;
+    if (frameTimer) stopFrames(); else playFrames(items[i], true);
+  });
+  function stepFrame(delta) {
+    if (!vis(el.infoOverlay)) return;
+    stopFrames();
+    paintFrame(items[i], frameIdx + delta);
+  }
+  if (el.demoPrev) el.demoPrev.addEventListener("click", function () { stepFrame(-1); });
+  if (el.demoNext) el.demoNext.addEventListener("click", function () { stepFrame(1); });
 
   // Static control labels
   if (el.prev) el.prev.textContent = t("prev");

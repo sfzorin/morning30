@@ -178,6 +178,38 @@ func TestSeedBuiltinsKeepsPoseAssignment(t *testing.T) {
 	}
 }
 
+func TestExerciseAnimationSurvivesSeedingAndRequiresBothStrips(t *testing.T) {
+	d := openAppDB(t)
+	SeedBuiltins()
+	doc, _ := UserCatalog(0).Doc("P08")
+	doc.Animation = &catalog.Animation{Pose: "motion", OtherPose: "other", Frames: 3, Kind: "movement"}
+	if err := d.SetExercise("P08", doc.Compact()); err != nil {
+		t.Fatal(err)
+	}
+	SeedBuiltins()
+	cat := UserCatalog(0)
+	saved, _ := cat.Doc("P08")
+	if saved.Animation == nil || *saved.Animation != *doc.Animation {
+		t.Fatal("seeding discarded the animation")
+	}
+	if err := d.PutPose("motion", "demo", "Movement", "m", tinyPNG); err != nil {
+		t.Fatal(err)
+	}
+	if ExerciseAnimation(cat, "P08", "m") != nil {
+		t.Fatal("published an incomplete demonstration")
+	}
+	if err := d.PutPose("other", "demo", "Other side", "m", tinyPNG); err != nil {
+		t.Fatal(err)
+	}
+	a := ExerciseAnimation(cat, "P08", "m")
+	if a == nil || a.Src != "/poses/motion?sex=m" || a.OtherSrc != "/poses/other?sex=m" || a.Frames != 3 {
+		t.Fatalf("animation: %#v", a)
+	}
+	if len(ExerciseFrames(cat, "P08", "m")) == 0 {
+		t.Fatal("animation removed still fallback")
+	}
+}
+
 func TestExerciseFramesFallsBackToFigure(t *testing.T) {
 	d := openAppDB(t)
 	SeedBuiltins()

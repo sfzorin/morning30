@@ -58,6 +58,9 @@ func SeedBuiltins() {
 			var old catalog.Doc
 			if json.Unmarshal([]byte(raw), &old) == nil {
 				d.Poses = catalog.ClipPoses(old.Poses)
+				if catalog.ValidAnimation(old.Animation) {
+					d.Animation = old.Animation
+				}
 			}
 		}
 		_ = DB.SetExercise(ex.ID, d.Compact()) // upsert (code is canonical; poses kept)
@@ -146,6 +149,36 @@ func ExerciseFrames(cat catalog.Catalog, id, sex string) []string {
 		}
 	}
 	return out
+}
+
+// ExerciseDemo resolves optional animation metadata, retaining stills as fallback.
+type ExerciseDemo struct {
+	Src      string `json:"src"`
+	OtherSrc string `json:"otherSrc,omitempty"`
+	Frames   int    `json:"frames"`
+	Kind     string `json:"kind"`
+}
+
+func ExerciseAnimation(cat catalog.Catalog, id, sex string) *ExerciseDemo {
+	d, ok := cat.Doc(id)
+	if !ok || d.Animation == nil || !catalog.ValidAnimation(d.Animation) || DB == nil || !DB.HasPose(d.Animation.Pose) {
+		return nil
+	}
+	if sex != "f" {
+		sex = "m"
+	}
+	otherSrc := ""
+	if d.Animation.OtherPose != "" {
+		if !DB.HasPose(d.Animation.OtherPose) {
+			return nil
+		}
+		otherSrc = "/poses/" + url.PathEscape(d.Animation.OtherPose) + "?sex=" + url.QueryEscape(sex)
+	}
+	return &ExerciseDemo{
+		Src:      "/poses/" + url.PathEscape(d.Animation.Pose) + "?sex=" + url.QueryEscape(sex),
+		OtherSrc: otherSrc,
+		Frames:   d.Animation.Frames, Kind: d.Animation.Kind,
+	}
 }
 
 // SnapshotAll copies leftover named built-in plans into personal files for every

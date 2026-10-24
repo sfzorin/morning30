@@ -26,6 +26,7 @@ type playerRepl struct {
 	PerSide bool     `json:"perSide"`
 	SVG     string   `json:"svg"`
 	Frames  []string `json:"frames,omitempty"`
+	Animation *app.ExerciseDemo `json:"animation,omitempty"`
 	Hint    string   `json:"hint"`
 	Warning string `json:"warning"`
 }
@@ -45,6 +46,7 @@ type playerItem struct {
 	Warning string   `json:"warning"` // inline safety warning (localized)
 	SVG     string   `json:"svg"`
 	Frames  []string `json:"frames,omitempty"`
+	Animation *app.ExerciseDemo `json:"animation,omitempty"`
 	// Detail card (Russian canonical content).
 	Desc      string   `json:"desc"`
 	HowTo     []string `json:"howTo"`
@@ -145,6 +147,7 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, v
 		PerSide: r.PerSide,
 		SVG:     firstFrame(frames),
 		Frames:  frames,
+		Animation: app.ExerciseAnimation(cat, rid, sex),
 		Hint:    cat.Hint(l, rid),
 		Warning: cat.Warning(l, rid),
 	}
@@ -185,6 +188,7 @@ func (w workoutPage) playerData() playerPayload {
 			Warning:   cat.Warning(l, id),
 			SVG:       firstFrame(frames),
 			Frames:    frames,
+			Animation: app.ExerciseAnimation(cat, id, sex),
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
 			Correct:   d.Correct,
@@ -232,6 +236,10 @@ func (w workoutPage) playerData() playerPayload {
 		"save_retry": i18n.T(l, "done.save_retry"),
 		"save_unavailable": i18n.T(l, "done.save_unavailable"),
 		"saved": i18n.T(l, "done.saved"),
+		"demo_play": i18n.T(l, "demo.play"),
+		"demo_pause": i18n.T(l, "demo.pause"),
+		"demo_frame": i18n.T(l, "demo.frame"),
+		"demo_both": i18n.T(l, "demo.both"),
 	}
 	cues := map[string]string{
 		"ready":       i18n.Cue(l, "ready"),
@@ -304,7 +312,8 @@ elem (w workoutPage) Main() {
 
 		<div class="stage">
 			<div class="ex-index"></div>
-			<img class="ex-svg" alt="">
+			<button class="ex-visual" type="button" aria-label=(i18n.T(l, "info.how"))><img class="ex-svg" alt=""></button>
+			<div class="demo-caption hidden"></div>
 			<div class="ex-name"></div>
 			<button class="info-btn" type="button" aria-label=(i18n.T(l, "info.technique"))>ⓘ ~(i18n.T(l, "info.how"))</button>
 			<div class="ex-value"></div>
@@ -332,7 +341,13 @@ elem (w workoutPage) Main() {
 		~// Exercise detail card (full technique / mistake / safety warning).
 		<div class="info-overlay hidden">
 			<div class="info-card">
-				<img class="info-media" alt="">
+				<div class="info-visual"><img class="info-media" alt=""></div>
+				<div class="demo-controls hidden">
+					<button class="demo-prev btn" type="button" aria-label=(i18n.T(l, "demo.prev"))>←</button>
+					<button class="demo-toggle btn" type="button"></button>
+					<button class="demo-next btn" type="button" aria-label=(i18n.T(l, "demo.next"))>→</button>
+				</div>
+				<div class="demo-frame hidden"></div>
 				<h2 class="info-name"></h2>
 				<p class="info-desc"></p>
 				<div class="info-sec info-how-sec">

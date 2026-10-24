@@ -215,5 +215,250 @@
     "sex": "m",
     "kind": "stand",
     "label": "Side step, preparation turn and return · boy"
+  },
+  {
+    "id": "ilya-boy-it01-demo-v1",
+    "file": "animations/aligned/it01-v1.png",
+    "kind": "tennis-demo",
+    "label": "Спокойная ходьба — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it02-demo-v1",
+    "file": "animations/aligned/it02-v1.png",
+    "kind": "tennis-demo",
+    "label": "Перекаты колена над стопой — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it04-demo-v1",
+    "file": "animations/aligned/it04-v1.png",
+    "kind": "tennis-demo",
+    "label": "Круги плечами и махи руками — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it05-demo-v1",
+    "file": "animations/aligned/it05-v1.png",
+    "kind": "tennis-demo",
+    "label": "Наклоны от таза — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it06-demo-v1",
+    "file": "animations/aligned/it06-v1.png",
+    "kind": "tennis-demo",
+    "label": "Плавный неглубокий присед — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it07-demo-v1",
+    "file": "animations/aligned/it07-v1.png",
+    "kind": "tennis-demo",
+    "label": "Подскок, шаг и остановка — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it08-demo-v1",
+    "file": "animations/aligned/it08-v1.png",
+    "kind": "tennis-demo",
+    "label": "Выпад назад с паузой — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it09-demo-v1",
+    "file": "animations/aligned/it09-v1.png",
+    "kind": "tennis-demo",
+    "label": "Отжимания с медленным опусканием — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it10-demo-v1",
+    "file": "animations/aligned/it10-v1.png",
+    "kind": "tennis-demo",
+    "label": "Подъём рук буквой W — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it11-demo-v1",
+    "file": "animations/aligned/it11-v1.png",
+    "kind": "tennis-demo",
+    "label": "Подъём на носок одной ноги — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it12-demo-v1",
+    "file": "animations/aligned/it12-v1.png",
+    "kind": "tennis-demo",
+    "label": "Мёртвый жук — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it13-demo-v1",
+    "file": "animations/aligned/it13-v1.png",
+    "kind": "tennis-demo",
+    "label": "Растяжка икры у стены — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it14-demo-v1",
+    "file": "animations/aligned/it14-v1.png",
+    "kind": "tennis-demo",
+    "label": "Спокойное дыхание лёжа — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it15-demo-v1",
+    "file": "animations/aligned/it15-v1.png",
+    "kind": "tennis-demo",
+    "label": "Приставные шаги — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it16-demo-v1",
+    "file": "animations/aligned/it16-v1.png",
+    "kind": "tennis-demo",
+    "label": "Шаги «Компас» — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it16-demo-other-v1",
+    "file": "animations/aligned/it16-other-v1.png",
+    "kind": "tennis-demo",
+    "label": "Шаги «Компас» — продолжение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it17-demo-v1",
+    "file": "animations/aligned/it17-v1.png",
+    "kind": "tennis-demo",
+    "label": "Равновесие на одной ноге — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it18-demo-v1",
+    "file": "animations/aligned/it18-v1.png",
+    "kind": "tennis-demo",
+    "label": "Перекрёстный марш — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it19-demo-v1",
+    "file": "animations/aligned/it19-v1.png",
+    "kind": "tennis-demo",
+    "label": "Поворот в подготовку к удару — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it20-demo-v1",
+    "file": "animations/aligned/it20-v1.png",
+    "kind": "tennis-demo",
+    "label": "Кошка — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it21-demo-v1",
+    "file": "animations/aligned/it21-v1.png",
+    "kind": "tennis-demo",
+    "label": "Открытая книга — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it21-demo-other-v1",
+    "file": "animations/aligned/it21-other-v1.png",
+    "kind": "tennis-demo",
+    "label": "Открытая книга — продолжение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it22-demo-v1",
+    "file": "animations/aligned/it22-v1.png",
+    "kind": "tennis-demo",
+    "label": "Таз к пяткам на четвереньках — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it23-demo-v1",
+    "file": "animations/aligned/it23-v1.png",
+    "kind": "tennis-demo",
+    "label": "Растяжка задней поверхности бедра лёжа — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it24-demo-v1",
+    "file": "animations/aligned/it24-v1.png",
+    "kind": "tennis-demo",
+    "label": "Боковой прыжок с фиксацией — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it25-demo-v1",
+    "file": "animations/aligned/it25-v1.png",
+    "kind": "tennis-demo",
+    "label": "Присед с гантелями у груди — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it26-demo-v1",
+    "file": "animations/aligned/it26-v1.png",
+    "kind": "tennis-demo",
+    "label": "Тяга гантелей в наклоне — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it27-demo-v1",
+    "file": "animations/aligned/it27-v1.png",
+    "kind": "tennis-demo",
+    "label": "Ягодичный мост на одной ноге — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it28-demo-v1",
+    "file": "animations/aligned/it28-v1.png",
+    "kind": "tennis-demo",
+    "label": "Боковая планка с колен — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it29-demo-v1",
+    "file": "animations/aligned/it29-v1.png",
+    "kind": "tennis-demo",
+    "label": "Шаги через линию и обратно — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it29-demo-other-v1",
+    "file": "animations/aligned/it29-other-v1.png",
+    "kind": "tennis-demo",
+    "label": "Шаги через линию и обратно — продолжение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it30-demo-v1",
+    "file": "animations/aligned/it30-v1.png",
+    "kind": "tennis-demo",
+    "label": "Шаги буквой V — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it32-demo-v1",
+    "file": "animations/aligned/it32-v1.png",
+    "kind": "tennis-demo",
+    "label": "Три касания носком на одной ноге — движение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it32-demo-other-v1",
+    "file": "animations/aligned/it32-other-v1.png",
+    "kind": "tennis-demo",
+    "label": "Три касания носком на одной ноге — продолжение",
+    "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it33-demo-v1",
+    "file": "animations/aligned/it33-v1.png",
+    "kind": "tennis-demo",
+    "label": "Шаг, подготовительный поворот и возврат — движение",
+    "sex": "m"
   }
 ]

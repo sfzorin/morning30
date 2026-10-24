@@ -49,6 +49,7 @@ function player(items, extra = {}, options = {}) {
   const timers = new Map();
   const spoken = [];
   const navigations = [];
+  const images = [];
   const persistence = options.persistence || memoryState(options);
   let now = 0, nextTimer = 1, cleanup = () => {};
   function eventTarget(target = {}) {
@@ -98,6 +99,7 @@ function player(items, extra = {}, options = {}) {
     return id;
   };
   const window = eventTarget({
+    matchMedia: () => ({ matches: !!options.reducedMotion }),
     MorningWorkoutState: persistence.api,
     speechSynthesis: { getVoices: () => [], cancel() {}, speak: utterance => spoken.push(utterance.text) },
   });
@@ -109,7 +111,7 @@ function player(items, extra = {}, options = {}) {
   const context = {
     document, navigator: options.navigator || {}, window, Date: ClockDate,
     location: { assign(url) { navigations.push(url); } },
-    Image: function () {},
+    Image: function () { images.push(this); },
     SpeechSynthesisUtterance: function (text) { this.text = text; },
     $data: () => ({ userId: 1, position: 0, day: 1, resumeKey: 'plan:0:1', programKey: 'plan', items, voiceMode: 'off',
       cues: { switch_side: 'Change sides', go: 'Go' }, labels: { side: 'Side', per_side: 'per side', resume_title: 'Paused', resume: 'Continue',
@@ -143,7 +145,7 @@ function player(items, extra = {}, options = {}) {
     now = end;
   }
   return {
-    get, advance, spoken, navigations, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
+    get, advance, spoken, navigations, images, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
     get completed() { return [...persistence.data.events.values()]; },
     hide() { document.visibilityState = 'hidden'; document.dispatch('visibilitychange'); window.dispatch('pagehide'); },
     show() { document.visibilityState = 'visible'; document.dispatch('visibilitychange'); window.dispatch('pageshow'); window.dispatch('focus'); },
@@ -563,4 +565,136 @@ test('invalid restart deadlines are ignored and a finished pending event is pres
   assert.equal(p.navigations.length, 0);
   assert.equal(p.completed[0].eventId, event.eventId);
   assert.equal(p.get('.save-status').textContent, 'Waiting for connection');
+});
+
+const demo = (kind = 'alternating', fields = {}) => ({ src: '/poses/demo', frames: 3, kind, ...fields });
+const demoPosition = p => p.get('.ex-visual').style.backgroundPosition;
+
+test('alternating demonstration shows both legs through neutral without adding workout steps', () => {
+  const p = player([item({ perSide: true, animation: demo() }), item({ id: 'next' })], { selfManagedSides: true });
+  p.advance(3);
+  const positions = [demoPosition(p)];
+  for (let n = 0; n < 4; n++) { p.advance(1); positions.push(demoPosition(p)); }
+  assert.deepEqual(positions, ['0% 50%', '50% 50%', '0% 50%', '100% 50%', '0% 50%']);
+  assert.ok(hidden(p.get('.ex-svg')));
+  assert.match(p.get('.ex-value').textContent, /6.*per side/);
+  p.get('.ctl-done').click();
+  assert.equal(p.get('.ex-index').textContent, '2 / 2');
+  assert.equal(p.get('.ex-visual').style.backgroundImage, 'none');
+  assert.ok(hidden(p.get('.ex-visual')));
+});
+
+test('movement returns through its middle and a second strip demonstrates the other side', () => {
+  const p = player([item({ animation: demo('movement', { otherSrc: '/poses/other' }) })]);
+  p.advance(3);
+  const shown = [];
+  for (let n = 0; n < 11; n++) {
+    shown.push([p.get('.ex-visual').style.backgroundImage, demoPosition(p)]);
+    p.advance(1);
+  }
+  assert.deepEqual(shown.map(x => x[1]), ['0% 50%', '50% 50%', '100% 50%', '50% 50%', '0% 50%', '0% 50%', '50% 50%', '100% 50%', '50% 50%', '0% 50%', '0% 50%']);
+  assert.ok(shown.slice(0, 5).every(x => x[0] === 'url("/poses/demo")'));
+  assert.ok(shown.slice(5, 10).every(x => x[0] === 'url("/poses/other")'));
+});
+
+test('a forward/back step sequence plays all phases in order instead of reversing the lead foot', () => {
+  const p = player([item({ animation: demo('sequence', { otherSrc: '/poses/return' }) })]);
+  p.advance(3);
+  const shown = [];
+  for (let n = 0; n < 7; n++) {
+    shown.push([p.get('.ex-visual').style.backgroundImage, demoPosition(p)]);
+    p.advance(1);
+  }
+  assert.deepEqual(shown, [
+    ['url("/poses/demo")', '0% 50%'], ['url("/poses/demo")', '50% 50%'], ['url("/poses/demo")', '100% 50%'],
+    ['url("/poses/return")', '0% 50%'], ['url("/poses/return")', '50% 50%'], ['url("/poses/return")', '100% 50%'],
+    ['url("/poses/demo")', '0% 50%'],
+  ]);
+});
+
+test('detail demonstration can be paused and stepped without consuming exercise time', () => {
+  const p = player([item({ unit: 'seconds', value: 20, animation: demo() })]);
+  p.advance(5);
+  p.get('.ex-visual').click();
+  const remaining = p.persistence.data.checkpoint.state.remainingMs;
+  assert.ok(!hidden(p.get('.info-overlay')));
+  p.advance(3);
+  p.get('.demo-toggle').click();
+  const position = demoPosition(p);
+  p.advance(10);
+  assert.equal(demoPosition(p), position);
+  p.get('.demo-next').click();
+  assert.notEqual(demoPosition(p), position);
+  p.get('.demo-prev').click();
+  assert.equal(demoPosition(p), position);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining);
+  p.get('.info-close').click();
+  p.advance(1);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining - 1000);
+  p.cleanup();
+  const stopped = demoPosition(p);
+  p.advance(20);
+  assert.equal(demoPosition(p), stopped);
+});
+
+test('hidden app pauses the demonstration and requires Continue before restarting', () => {
+  const p = player([item({ animation: demo() })]);
+  p.advance(4);
+  p.get('.info-btn').click();
+  p.hide();
+  const stopped = demoPosition(p);
+  p.advance(10);
+  p.show();
+  p.advance(10);
+  assert.equal(demoPosition(p), stopped);
+  assert.ok(hidden(p.get('.info-overlay')));
+  p.get('.resume-continue').click();
+  p.advance(1);
+  assert.equal(demoPosition(p), '50% 50%');
+});
+
+test('missing animation falls back to the still and only current exercise strips are loaded', () => {
+  const p = player([item({ svg: '/poses/still', animation: demo() }), item({ id: 'later', animation: demo('movement', { src: '/poses/later' }) })]);
+  p.advance(3);
+  assert.deepEqual(p.images.map(image => image.src), ['/poses/demo']);
+  p.images[0].onerror();
+  assert.equal(p.get('.ex-svg').src, '/poses/still');
+  assert.ok(!hidden(p.get('.ex-svg')));
+  assert.equal(p.get('.ex-visual').style.backgroundImage, 'none');
+  p.advance(4);
+  assert.equal(p.images.length, 1);
+});
+
+test('reduced motion keeps a still frame but allows intentional playback in details', () => {
+  const p = player([item({ animation: demo() })], {}, { reducedMotion: true });
+  p.advance(10);
+  assert.equal(demoPosition(p), '0% 50%');
+  p.get('.info-btn').click();
+  p.advance(2);
+  assert.equal(demoPosition(p), '0% 50%');
+  p.get('.demo-toggle').click();
+  p.advance(1);
+  assert.equal(demoPosition(p), '50% 50%');
+});
+
+test('compass demonstration visits all four directions with a return to neutral', () => {
+  const p = player([item({ animation: demo('alternating', { otherSrc: '/poses/back-left' }) })]);
+  p.advance(3);
+  const shown = [];
+  for (let n = 0; n < 8; n++) {
+    shown.push([p.get('.ex-visual').style.backgroundImage, demoPosition(p)]);
+    p.advance(1);
+  }
+  assert.deepEqual(shown.map(x => x[1]), ['0% 50%', '50% 50%', '0% 50%', '100% 50%', '0% 50%', '50% 50%', '0% 50%', '100% 50%']);
+  assert.ok(shown.slice(0, 4).every(x => x[0] === 'url("/poses/demo")'));
+  assert.ok(shown.slice(4).every(x => x[0] === 'url("/poses/back-left")'));
+});
+
+test('separate-side plans restart the demonstration after their switching rest', () => {
+  const p = player([item({ unit: 'seconds', value: 5, perSide: true, sideRest: 3, animation: demo('movement') })]);
+  p.advance(11);
+  assert.match(p.get('.phase').textContent, /Side 2\/2/);
+  assert.equal(demoPosition(p), '0% 50%');
+  p.advance(1);
+  assert.equal(demoPosition(p), '50% 50%');
 });

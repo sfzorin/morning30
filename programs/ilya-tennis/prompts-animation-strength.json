@@ -1,0 +1,112 @@
+{
+  "IT09": {
+    "kind": "movement",
+    "prompt": "Use case: scientific-educational. Create ONE horizontal PNG animation sprite sheet, exact 3:1 canvas, preferably 2400x800 pixels (or 3072x1024). Three exactly equal square cells laid edge-to-edge in one row, NO borders, NO gutters, NO text, NO arrows. Each third is an independent animation frame of the SAME boy doing a slow floor push-up. Reference images 1 and 2 establish the exact fictional eight-year-old boy's identity and clean realistic 3D illustration style: tousled brown hair, brown eyes, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child proportions. Reference image 3 establishes this exercise's technique and light-gray mat; preserve identity and outfit.\nWithin each square show the WHOLE boy and whole thin light-gray mat with 10% empty margin on all sides. Pure white seamless studio background and subtle contact shadows. Fixed side-three-quarter camera looking at his near side, head points to the RIGHT in every frame, feet to LEFT. EXACTLY the same scale, horizontal body placement, mat placement and ground line in all three cells. Do not enlarge the low pose or change camera angle.\nLEFT cell: top of push-up, palms flat slightly wider than shoulders, elbows extended, knees off mat, toes supporting, straight head-shoulder-hip-heel line.\nMIDDLE cell: halfway down, elbows bend backward about 45 degrees from torso, shoulder and hip descend together, body still straight, neck neutral and gaze at mat.\nRIGHT cell: controlled bottom position, elbows bent roughly 90 degrees, chest low but not touching mat, palms and toes still supporting, knees remain straight off mat, hips neither sag nor pike.\nThese three poses will animate 0,1,2,1. Anatomically correct two arms, two legs, five fingers on each visible hand. Both hands and both feet stay at the same contact coordinates within each square across all poses. No equipment other than mat, no logos or watermarks.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/images/it09.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-0651a094-5463-454d-895f-03cfc88e0ec0.png",
+    "path": "programs/ilya-tennis/animations/it09-v1.png"
+  },
+  "IT08": {
+    "kind": "alternating",
+    "prompt": "Use case: scientific-educational. Produce ONE horizontal PNG sprite sheet with exact 3:1 canvas (target 2400x800 or 3072x1024), three exactly equal SQUARE animation cells edge-to-edge in one row. NO text, labels, panel lines, borders, gutters, arrows, logos, watermark, motion ghosts or extra characters. Images1 and2 are strict character/style references: the SAME fictional eight-year-old boy, identical tousled brown hair, brown eyes and face, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child body proportions, clean realistic soft3D illustration. Image3 is the exercise reference. White studio background, soft contact shadows. Fixed camera and identical scale in ALL3 cells; locked floor level at88% cell height; figure centered in its own cell. Important: fit the WHOLE head, hands and feet within central76% of EACH square, leaving at least12% white padding from EACH cell edge. Do not enlarge lower poses. No cropping. Correction to image3: it incorrectly repeats the same lunge in cells2and3. Replace RIGHTMOST frame with the OPPOSITE leg lunge, clearly different from middle. In middle frame front planted foot lies on screen-RIGHT and rear bent leg on screen-LEFT. In rightmost frame front planted foot MUST lie on screen-LEFT, while rear bent leg goes back toward screen-RIGHT. The rightmost torso faces the viewer, shoulders approximately horizontal, without rotating the entire boy to profile. The rightmost LEFT-HAND-side-of-image knee is forward above its flat planted foot; RIGHT-HAND-side-of-image rear knee hovers above floor and rear heel lifted. Keep neutral first frame. Strict common front camera and same child scale. Both feet always remain inside each cell with10%padding. Do not simply duplicate middle frame. Frame layout0neutral,1one-side,2opposite-side.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-6309cc5d-de51-49f3-bab8-d3f2d03e1707.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-a326187f-829c-4579-a0ec-2c2951c21235.png",
+    "path": "programs/ilya-tennis/animations/it08-v1.png"
+  },
+  "IT10": {
+    "kind": "movement",
+    "prompt": "Use case: scientific-educational. Produce ONE horizontal PNG sprite sheet with exact 3:1 canvas (target 2400x800 or 3072x1024), three exactly equal SQUARE animation cells edge-to-edge in one row. NO text, labels, panel lines, borders, gutters, arrows, logos, watermark, motion ghosts or extra characters. Images1 and2 are strict character/style references: the SAME fictional eight-year-old boy, identical tousled brown hair, brown eyes and face, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child body proportions, clean realistic soft3D illustration. Image3 is the exercise reference. White studio background, soft contact shadows. Fixed camera and identical scale in ALL3 cells; locked floor level at88% cell height; figure centered in its own cell. Important: fit the WHOLE head, hands and feet within central76% of EACH square, leaving at least12% white padding from EACH cell edge. Do not enlarge lower poses. No cropping. Exercise: prone W arm lift, no weights. In ALL3cells the boy lies face down on the same thin light-gray mat, chest/pelvis/legs resting, forehead on a thin folded gray towel. Constant elevated camera from behind his feet, head points toward TOP of each cell, feet towardBOTTOM; wholebody and mat fit insidecentral76% of cell. Arms bent into Wshape: upperarms diagonally out from shoulders, elbows bent roughly90degrees, forearms point diagonally towardhead, hands nearheadside. LEFT: arms/elbows/hands gently rest onfloor. MIDDLE: BOTH elbows and hands lift slightly about2cm, chest remains onmat. RIGHT: BOTH bent arms lift a little higher about4cm, softly drawing shoulderblades together, shoulders remain awayfromears, chest and head DO NOT lift. Onlyarms move. All3images mustvisiblydiffer in height of arms with tinygap/contactshadows. No Superman pose, no straightarmflight, no raisedchest, no knee bend. Animation0,1,2,1.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/images/it10.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-e6ab345b-cdfb-4869-a130-7a400b6cf981.png",
+    "path": "programs/ilya-tennis/animations/it10-v1.png"
+  },
+  "IT25": {
+    "kind": "movement",
+    "prompt": "Edit ONLY the standing boy's leg stance in LEFT frame of image3. Preserve all other details, allthreeframes, dimensions, whitebackground, identity,outfit,dumbbells, and middle/right poses exactly. The LEFT standing pose currently has a narrower foot stance than the squat poses. Spread the standing feet20% farther apart: move its left foot a little farther left and right foot a little farther right, keeping both solesflat and kneesnearlystraight/soft. The standing stance should be just as wide as the stance in RIGHT bottom squat. No stepping is depicted: all3poses represent the SAME fixed stancewidth throughout a squat. Keep knees alignedwithtoes. No other changes, no text or arrows. Preserve exact3:1sprite layout.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-8608bc4e-e04c-48f6-baea-95b6920b937b.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-4aa1dbe5-cb13-4921-b6d2-ebdea00f127e.png",
+    "path": "programs/ilya-tennis/animations/it25-v1.png"
+  },
+  "IT26": {
+    "kind": "movement",
+    "prompt": "Use case: scientific-educational. Produce ONE horizontal PNG sprite sheet with exact 3:1 canvas (target 2400x800 or 3072x1024), three exactly equal SQUARE animation cells edge-to-edge in one row. NO text, labels, panel lines, borders, gutters, arrows, logos, watermark, motion ghosts or extra characters. Images1 and2 are strict character/style references: the SAME fictional eight-year-old boy, identical tousled brown hair, brown eyes and face, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child body proportions, clean realistic soft3D illustration. Image3 is the exercise reference. White studio background, soft contact shadows. Fixed camera and identical scale in ALL3 cells; locked floor level at88% cell height; figure centered in its own cell. Important: fit the WHOLE head, hands and feet within central76% of EACH square, leaving at least12% white padding from EACH cell edge. Do not enlarge lower poses. No cropping. Exercise: bent-over dumbbell row with two tiny gray0.5kg dumbbells, one in EACH hand, no labels. Same slight side-three-quarter camera in all3frames, headtowardRIGHT. Same hip hinge in ALL frames: hips back, knees soft, back flat diagonally forward, neck continues spine, chin tucked, feet flat hipwidth apart and unmoving. LEFT cell arms hanging straight towardfloor under shoulders, holding both dumbbells. MIDDLE cell elbows bending backward beside ribs, dumbbells halfway up. RIGHT cell elbows pulled backward toward hips, dumbbells beside lower ribs, brief top pause. Only elbows/arms move; torso/head/hips/knees/feet frozen. No biceps curl: elbows finish BEHIND torso, forearms approximatelyvertical. No upright stand, no shrug, no mat. Animate0,1,2,1.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/images/it26.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-6e5ed994-9b54-44c6-a139-628c4ec3b492.png",
+    "path": "programs/ilya-tennis/animations/it26-v1.png"
+  },
+  "IT24": {
+    "kind": "movement",
+    "prompt": "Use case: scientific-educational. Produce ONE horizontal PNG sprite sheet with exact 3:1 canvas (target 2400x800 or 3072x1024), three exactly equal SQUARE animation cells edge-to-edge in one row. NO text, labels, panel lines, borders, gutters, arrows, logos, watermark, motion ghosts or extra characters. Images1 and2 are strict character/style references: the SAME fictional eight-year-old boy, identical tousled brown hair, brown eyes and face, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child body proportions, clean realistic soft3D illustration. Image3 is the exercise reference. White studio background, soft contact shadows. Fixed camera and identical scale in ALL3 cells; locked floor level at88% cell height; figure centered in its own cell. Important: fit the WHOLE head, hands and feet within central76% of EACH square, leaving at least12% white padding from EACH cell edge. Do not enlarge lower poses. No cropping. Exercise: very SMALL lateral two-foot hop followed by a soft landing. Constant FRONT camera, chest stays facing viewer. Each cell has exactly the same world view and scale. Across the3frames the boy moves modestly toward screenRIGHT within the cell; his whole body always stays insidecentral76%. LEFTcell takeoff preparation: feet hipwidth apart flat onfloor, bodycenter at42%cellwidth, knees softly bent, arms slightlyforward. MIDDLEcell: bothfeet together airborne just3–4cm abovefloor, bodycenter at50%cellwidth, feet stillhipwidth, knees soft, tiny low hop sideways RIGHT, not a high verticaljump. RIGHTcell: stable landing on BOTHfeet at58%cellwidth, soles fullyonfloor and heelsdown, knees andhips bend softly to absorb, knees tracktoes, chest steady; stopafterlanding. No straight-knee landing, no kneecollapse, no one-leg jump. Same fixed whitefloor and contactshadow position reference, no mat, no arrows (REMOVE the arrow shown in exercisereference), no text. Allbodyparts fullyvisible. These are preparation,lowflight,stablelanding frames played0,1,2,1.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/images/it24.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-5138a320-0d46-40ef-8775-7ddd6267318d.png",
+    "path": "programs/ilya-tennis/animations/it24-v1.png"
+  },
+  "IT11": {
+    "kind": "alternating",
+    "prompt": "Correct exercise technique in image3, keeping the same3-frame sheet and exactboyidentity,clothing,wall,camera. The legs ALREADY switch correctly; preserve exactly which leg isfree in eachframe. LEFTframe bothfeetflat neutral. MIDDLEframe supportleg onSCREENLEFT, freebentleg onSCREENRIGHT. RIGHTframe supportleg onSCREENRIGHT, freebentleg onSCREENLEFT. In MIDDLE andRIGHT the working heel MUST be visiblylifted off thefloor into a clear single-leg calf raise: ONLY balloffootandtoes touchfloor; angle sole diagonally with heelraised about5cm and obvious airgapunderheel. Turn plantedfoot slightlyoutward20degrees so sideofraisedheel is visible fromcamera. Raise pelvis/head naturally a fewcentimeters withcalfraisenotjump. Freefoot remains inair. Do NOT switchbackto sameleg, do NOT putheel flat, do NOT standoncurled toetips. Fingertips keep lightcontactwithwall. No text,arrows or addedobjects.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-1f0f87ac-c111-4d41-94d7-2c9de8393584.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-0ed68e58-0717-484c-944d-296db8a8b992.png",
+    "path": "programs/ilya-tennis/animations/it11-v1.png"
+  },
+  "IT27": {
+    "kind": "alternating",
+    "prompt": "Use case: scientific-educational. Make one horizontal 3:1 PNG sprite sheet, three equal square panels edge-to-edge, target 2400x800. Same fictional eight-year-old boy as images 1 and 2: identical brown hair and face, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child proportions, clean soft realistic 3D. Image 3 demonstrates the single-leg glute bridge, but use a FIXED ELEVATED FRONTAL VIEW FROM THE FEET so the two sides are clearly distinguishable. Thin light gray mat on white studio floor, soft shadows. Boy's head at TOP CENTER of each square, feet toward BOTTOM, hips and shoulders square to camera. Whole body in each frame with ample margin, same scale. LEFT frame: neutral, lying on back with head and shoulders supported, hips DOWN on mat, knees bent, both soles flat on mat hip-width apart, arms beside body palms down. MIDDLE frame: ONE-LEG BRIDGE, support foot on SCREEN LEFT flat on mat, free leg on SCREEN RIGHT with knee bent and lifted toward chest and entire free foot clearly airborne. Pelvis raised evenly into a straight shoulder-hip-support-knee line, head and shoulders still on mat. RIGHT frame: opposite ONE-LEG BRIDGE, support foot on SCREEN RIGHT flat on mat, free leg on SCREEN LEFT with knee bent and lifted toward chest and free foot clearly airborne. Pelvis raised evenly at the same height. Make the support leg SWITCH unmistakably between middle and right. Do not raise both feet, no pelvis twist, no back arch, no pushing through neck. Two arms, two legs, natural joints. No text, arrows, borders, panel lines, labels, extra people, or logos.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/images/it27.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-fe176fa8-67e5-4efc-a065-36eb76b989c2.png",
+    "path": "programs/ilya-tennis/animations/it27-v1.png"
+  },
+  "IT28": {
+    "kind": "alternating",
+    "prompt": "Use case: scientific-educational. Create one wide horizontal 3:1 PNG sprite sheet, THREE equal square frames edge-to-edge. Same fictional eight-year-old boy as references 1 and 2, brown tousled hair and brown eyes, sky-blue T-shirt, navy knee-length shorts, barefoot, natural child proportions, clean soft realistic 3D. Reference 3 shows the correct bent-knee side-plank support. White studio background, thin light-gray exercise mat, soft shadows. Fixed frontal camera and same body scale, whole body in every cell, ample margins. LEFT frame: neutral transition seated on the mat, knees bent in front, feet resting, palms on mat beside hips, facing viewer. MIDDLE frame: bent-knee SIDE PLANK, head toward SCREEN LEFT and knees toward SCREEN RIGHT, chest faces camera; lower forearm and lower bent knee support the body, elbow directly below shoulder, hips lifted, shoulder-hip-knee line straight, both knees bent 90 degrees with feet behind, free upper hand rests on hip. RIGHT frame: opposite-side bent-knee SIDE PLANK, head toward SCREEN RIGHT and knees toward SCREEN LEFT, chest still faces camera; now OPPOSITE forearm and OPPOSITE lower bent knee support the body, elbow under shoulder, hips raised, free hand on hip. The boy turns round between middle and right so the support side genuinely changes. Both side planks should match reference 3 technique and be obvious opposite poses. Keep shoulders away from ears, no sagging or twisting hips, no straight-leg plank, no lifted foot, no extra limbs. No text, numbers, arrows, panel borders, labels, logos or watermarks.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/images/it28.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-63ef2cdf-d9e2-4325-911a-4adff93adc7c.png",
+    "path": "programs/ilya-tennis/animations/it28-v1.png"
+  },
+  "IT12": {
+    "kind": "alternating",
+    "prompt": "Use case: scientific-educational. Correct ONLY the non-reaching arms in image 3, keeping the same three-frame sheet, same overhead camera, exact boy identity, torso, head, legs, mat and white background. The switching legs and two diagonal reaching arms are correct and must remain unchanged. This camera looks down at the boy: arms pointing straight UP AT THE CAMERA should be strongly FORESHORTENED, NOT extended toward top of picture. LEFT cell: both arms point vertically toward camera from shoulders, elbows straight; show strongly foreshortened upper arms and forearms with two open palms directly above the shoulder/chest area, hands on SCREEN LEFT and SCREEN RIGHT of the chest at chin height, NOT beyond the head. MIDDLE cell: preserve long overhead reaching arm on SCREEN LEFT; change only arm on SCREEN RIGHT to point vertically toward camera, with strongly foreshortened arm and hand projected just above the right side of the chest at chin height, NOT above the head. RIGHT cell: preserve long overhead reaching arm on SCREEN RIGHT; change only arm on SCREEN LEFT to point toward camera, hand projected just above left side of chest at chin height. Natural perspective, anatomically correct straight elbows. Important difference is an arm points AT THE VIEWER versus an arm reaching along the mat PAST THE HEAD. No text, borders, arrows or extra limbs. Full boy in every cell.",
+    "referencePaths": [
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-turnaround.png",
+      "/Users/sergeyzorin/ai/morning/programs/ilya-tennis/references/boy-ready.png",
+      "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-b1d02954-272b-42b0-8f4f-f44ed3e307a6.png"
+    ],
+    "sourcePath": "/Users/sergeyzorin/.codex/generated_images/01a16dd4-0b49-7311-8f90-4936eaae548e/exec-0be9ed35-f314-464f-b31c-719ac4ac2333.png",
+    "path": "programs/ilya-tennis/animations/it12-v1.png"
+  }
+}

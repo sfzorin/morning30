@@ -2,6 +2,13 @@ package i18n
 
 // ui maps a string key to translations in Order = [ru, en, tr, de, es, fr, it].
 var ui = map[string][7]string{
+	// Exercise demonstration controls.
+	"demo.play":  {"Показ движения", "Play demonstration", "Hareketi göster", "Bewegung abspielen", "Ver movimiento", "Voir le mouvement", "Mostra movimento"},
+	"demo.pause": {"Остановить показ", "Pause demonstration", "Gösterimi duraklat", "Vorführung pausieren", "Pausar demostración", "Mettre en pause", "Pausa dimostrazione"},
+	"demo.prev":  {"Предыдущий кадр", "Previous frame", "Önceki kare", "Vorheriges Bild", "Fotograma anterior", "Image précédente", "Fotogramma precedente"},
+	"demo.next":  {"Следующий кадр", "Next frame", "Sonraki kare", "Nächstes Bild", "Fotograma siguiente", "Image suivante", "Fotogramma successivo"},
+	"demo.frame": {"Кадр", "Frame", "Kare", "Bild", "Fotograma", "Image", "Fotogramma"},
+	"demo.both":  {"Показ на обе стороны", "Both sides shown", "İki taraf da gösterilir", "Beide Seiten gezeigt", "Se muestran ambos lados", "Les deux côtés sont montrés", "Mostra entrambi i lati"},
 	// App / brand
 	"app.name":    {"morning30.com", "morning30.com", "morning30.com", "morning30.com", "morning30.com", "morning30.com", "morning30.com"},
 	"app.tagline": {"Утренняя зарядка за 30 дней", "30-day morning workout", "30 günlük sabah egzersizi", "30-Tage-Morgenworkout", "Rutina matutina de 30 días", "Routine matinale de 30 jours", "Allenamento mattutino di 30 giorni"},

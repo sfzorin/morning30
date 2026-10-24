@@ -3,6 +3,7 @@ package ilyaten_test
 import (
 	"bytes"
 	"encoding/json"
+	"image/png"
 	"os"
 	"reflect"
 	"strings"
@@ -99,6 +100,62 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 		}
 	}
 
+}
+
+func TestEveryExerciseHasAnAlignedDemonstration(t *testing.T) {
+	raw, err := os.ReadFile("exercises.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var docs []catalog.Doc
+	if err := json.Unmarshal(raw, &docs); err != nil {
+		t.Fatal(err)
+	}
+	raw, err = os.ReadFile("images.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var manifest []struct {
+		ID   string `json:"id"`
+		File string `json:"file"`
+	}
+	if err := json.Unmarshal(raw, &manifest); err != nil {
+		t.Fatal(err)
+	}
+	images := map[string]string{}
+	for _, entry := range manifest {
+		images[entry.ID] = entry.File
+	}
+	for _, doc := range docs {
+		a := doc.Animation
+		if a == nil || !catalog.ValidAnimation(a) {
+			t.Fatalf("missing/invalid demonstration: %s", doc.ID)
+		}
+		if doc.PerSide && a.Kind != "alternating" && a.OtherPose == "" {
+			t.Errorf("%s must demonstrate both sides", doc.ID)
+		}
+		for _, pose := range []string{a.Pose, a.OtherPose} {
+			if pose == "" {
+				continue
+			}
+			path := images[pose]
+			if !strings.HasPrefix(path, "animations/aligned/") {
+				t.Fatalf("%s uses an unaligned/missing strip: %s", doc.ID, path)
+			}
+			file, err := os.Open(path)
+			if err != nil {
+				t.Fatal(err)
+			}
+			cfg, err := png.DecodeConfig(file)
+			file.Close()
+			if err != nil {
+				t.Fatal(err)
+			}
+			if cfg.Height != 640 || cfg.Width != a.Frames*cfg.Height {
+				t.Fatalf("%s has unequal frames", doc.ID)
+			}
+		}
+	}
 }
 
 func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
