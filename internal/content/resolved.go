@@ -2,39 +2,60 @@ package content
 
 import (
 	"encoding/json"
+	"reflect"
 	"strings"
 )
 
-// Resolved is the editable, flat program: a shared warm-up and cool-down series
-// (the same for every day) plus a per-day MAIN block. This is what the editor
-// edits and what Workout builds from. Warm-up/cool-down are stored once so
-// editing them applies to the whole series; only the main block is per-day.
-// The cycle length is always 30 days. Warm-up and main run 1–10 rounds.
+// Resolved is the editable program. Shared phases can be overridden for an
+// individual day; an explicit empty day phase disables the shared sequence.
 type Resolved struct {
-	Version      int     `json:"version"`
-	Name         string  `json:"name"`
-	TotalDays    int     `json:"totalDays"`
-	WarmupRounds int     `json:"warmupRounds"`
-	Warmup       []RItem `json:"warmup"`   // shared, one round (repeated WarmupRounds times)
-	Days         []RDay  `json:"days"`     // per-day MAIN items (one round, repeated Rounds times)
-	Cooldown     []RItem `json:"cooldown"` // shared, one round
+	Version         int     `json:"version"`
+	Name            string  `json:"name"`
+	TotalDays       int     `json:"totalDays"`
+	WarmupRounds    int     `json:"warmupRounds"`
+	Warmup          []RItem `json:"warmup"`
+	Days            []RDay  `json:"days"`
+	Cooldown        []RItem `json:"cooldown"`
+	FixedDifficulty bool    `json:"fixedDifficulty,omitempty"`
 }
 
-// RDay is one day's MAIN block: one sequence, repeated Rounds times (1–10).
+// RDay is one day's main sequence, repeated Rounds times (1–10).
+// Nil phase overrides inherit the shared phase; a pointer to [] skips it.
 type RDay struct {
-	Day    int     `json:"day"`
-	Rounds int     `json:"rounds"`
-	Items  []RItem `json:"items"`
+	Day      int      `json:"day"`
+	Rounds   int      `json:"rounds"`
+	Items    []RItem  `json:"items"`
+	Warmup   *[]RItem `json:"warmup,omitempty"`
+	Cooldown *[]RItem `json:"cooldown,omitempty"`
 }
 
-// RItem is one exercise occurrence with its value.
+// RItem is one exercise occurrence. Explicit rests belong after this occurrence,
+// including phase transitions; omitted rests retain the user's phase settings.
 type RItem struct {
-	ID      string `json:"id"`
-	Unit    Unit   `json:"unit"`
-	Value   int    `json:"value"`
-	PerSide bool   `json:"perSide"`
-	Slot    Slot   `json:"slot"`
-	Round   int    `json:"round"`
+	ID         string `json:"id"`
+	Unit       Unit   `json:"unit"`
+	Value      int    `json:"value"`
+	PerSide    bool   `json:"perSide"`
+	Slot       Slot   `json:"slot"`
+	Round      int    `json:"round"`
+	Rest       *int   `json:"rest,omitempty"`
+	SideRest   int    `json:"sideRest,omitempty"`
+	RepSeconds int    `json:"repSeconds,omitempty"`
+}
+
+// WarmupFor and CooldownFor return the effective phases for a zero-based day.
+func (r Resolved) WarmupFor(index int) []RItem {
+	if index >= 0 && index < len(r.Days) && r.Days[index].Warmup != nil {
+		return *r.Days[index].Warmup
+	}
+	return r.Warmup
+}
+
+func (r Resolved) CooldownFor(index int) []RItem {
+	if index >= 0 && index < len(r.Days) && r.Days[index].Cooldown != nil {
+		return *r.Days[index].Cooldown
+	}
+	return r.Cooldown
 }
 
 // ResolveBuiltin flattens the legacy Sergey program (personal-file snapshot).
@@ -57,25 +78,39 @@ func (r *Resolved) normalize() {
 	r.TotalDays = TotalDays
 	r.WarmupRounds = ClampRounds(r.WarmupRounds)
 	if len(r.Warmup) == 0 && len(r.Cooldown) == 0 && len(r.Days) > 0 {
-		// Legacy: lift the shared warm-up (round 1) and cool-down out of day 1,
-		// then strip warm-up/cool-down from every day, leaving main only.
-		for _, it := range r.Days[0].Items {
-			switch {
-			case it.Slot == Warmup && it.Round <= 1:
-				r.Warmup = append(r.Warmup, it)
-			case it.Slot == Cooldown:
-				r.Cooldown = append(r.Cooldown, it)
+		// Legacy full-day lists: retain differing phases as per-day overrides.
+		legacy := false
+		for _, d := range r.Days {
+			for _, it := range d.Items {
+				legacy = legacy || it.Slot == Warmup || it.Slot == Cooldown
 			}
 		}
-		if len(r.Warmup) > 0 || len(r.Cooldown) > 0 {
+		if legacy {
 			for di := range r.Days {
-				main := make([]RItem, 0, len(r.Days[di].Items))
-				for _, it := range r.Days[di].Items {
-					if it.Slot == Main {
+				d := &r.Days[di]
+				wu, cd, main := []RItem{}, []RItem{}, []RItem{}
+				for _, it := range d.Items {
+					switch it.Slot {
+					case Warmup:
+						if it.Round <= 1 {
+							wu = append(wu, it)
+						}
+					case Cooldown:
+						cd = append(cd, it)
+					default:
 						main = append(main, it)
 					}
 				}
-				r.Days[di].Items = main
+				if di == 0 {
+					r.Warmup, r.Cooldown = wu, cd
+				}
+				if d.Warmup == nil && !reflect.DeepEqual(wu, r.Warmup) {
+					d.Warmup = &wu
+				}
+				if d.Cooldown == nil && !reflect.DeepEqual(cd, r.Cooldown) {
+					d.Cooldown = &cd
+				}
+				d.Items = main
 			}
 		}
 	}
@@ -132,7 +167,9 @@ func collapseMainRounds(items []RItem) ([]RItem, int) {
 			return items, 1
 		}
 		for i := range base {
-			if byRound[r][i].ID != base[i].ID || byRound[r][i].Value != base[i].Value {
+			left, right := byRound[r][i], base[i]
+			left.Round, right.Round = 1, 1
+			if !reflect.DeepEqual(left, right) {
 				return items, 1
 			}
 		}
@@ -174,17 +211,18 @@ func (r Resolved) Workout(day, level int, rests Rests) Workout {
 			unit, perSide = e.Unit, e.PerSide
 		}
 		val := ri.Value
-		if scale {
+		if scale && !r.FixedDifficulty {
 			val = ScaleValue(unit, val, level)
 		}
 		items = append(items, Item{
 			ExerciseID: ri.ID, Unit: unit, Value: val,
 			Slot: ri.Slot, PerSide: perSide, Round: round,
+			restOverride: ri.Rest, SideRest: clampRest(ri.SideRest, 0, 90), RepSeconds: ri.RepSeconds,
 		})
 	}
 
 	for rnd := 1; rnd <= wuRounds; rnd++ {
-		for _, ri := range r.Warmup {
+		for _, ri := range r.WarmupFor(day - 1) {
 			emit(ri, rnd, false)
 		}
 	}
@@ -193,12 +231,12 @@ func (r Resolved) Workout(day, level int, rests Rests) Workout {
 			emit(ri, rnd, true)
 		}
 	}
-	for _, ri := range r.Cooldown {
+	for _, ri := range r.CooldownFor(day - 1) {
 		emit(ri, 1, false)
 	}
 
 	est := assignRestsAndEst(items, rests)
-	return Workout{Day: day, Items: items, EstSec: est}
+	return Workout{Day: day, Items: items, EstSec: est, FixedDifficulty: r.FixedDifficulty}
 }
 
 // FigureKey extracts a built-in illustration id from a stored SVG path or raw id.

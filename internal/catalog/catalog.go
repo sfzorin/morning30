@@ -286,6 +286,9 @@ func (c Catalog) Figure(id, sex string) string {
 	if d, ok := c.resolve(id); ok {
 		key = content.FigureKey(d.SVG, id)
 	}
+	if _, ok := content.Get(key); !ok {
+		return "" // A custom exercise may be published before its pictures.
+	}
 	return "/static/ex/" + sex + "/" + key + ".png"
 }
 
@@ -310,6 +313,11 @@ func ValidDoc(d Doc) bool {
 // NormalizeFigure maps a stored SVG path or raw id onto a built-in illustration
 // key. Custom exercises reuse those keys; there is no image upload.
 func NormalizeFigure(svg, fallback string) string {
+	if strings.TrimSpace(svg) == "" {
+		if _, builtin := content.Get(fallback); !builtin {
+			return ""
+		}
+	}
 	key := content.FigureKey(svg, fallback)
 	if _, ok := content.Get(key); ok {
 		return key

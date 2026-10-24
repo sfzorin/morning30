@@ -37,9 +37,14 @@ small client-side workout engine.
   shared pose catalog and pick 1–2 photos per exercise.
 - **Universal difficulty.** A per-user level from **−3 to +3** scales every
   program by ±10% per step (reps and seconds only; breaths and warm-up/cool-down
-  stay fixed).
+  stay fixed). Prescribed programs can lock their doses with `fixedDifficulty`.
+- **Prescribed sessions.** Program JSON supports per-item `rest` (including zero),
+  `sideRest`, and `repSeconds` for duration estimates. A day's `warmup`/`cooldown`
+  overrides the shared phase; `[]` disables it. Explicit side rests give each side
+  its own timer or Done tap. See [Ilya's six-day bundle](programs/ilya-tennis/README.md).
 - **Two exercise types.** Reps (tap *Done*) and timed (countdown). Counts are
-  shown as-is; the athlete does both sides of any one-sided movement themselves.
+  shown as-is; timed per-side exercises run twice. Rep sets without `sideRest`
+  retain the single Done tap after both sides.
 - **Voice-first player (client-side).** Progress bar, pause / skip / back, rest
   periods, screen wake-lock, and a celebratory finish (applause, confetti,
   localized encouragement). The player runs entirely in the browser from a

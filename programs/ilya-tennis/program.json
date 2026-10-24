@@ -1,0 +1,3636 @@
+{
+  "version": 2,
+  "name": "Ilya · Tennis & strength · 6 days",
+  "totalDays": 30,
+  "fixedDifficulty": true,
+  "warmupRounds": 1,
+  "warmup": [
+    {
+      "id": "IT01",
+      "unit": "seconds",
+      "value": 45,
+      "perSide": false,
+      "slot": "warmup",
+      "round": 1,
+      "rest": 15
+    },
+    {
+      "id": "IT02",
+      "unit": "seconds",
+      "value": 45,
+      "perSide": false,
+      "slot": "warmup",
+      "round": 1,
+      "rest": 15
+    },
+    {
+      "id": "IT04",
+      "unit": "seconds",
+      "value": 45,
+      "perSide": false,
+      "slot": "warmup",
+      "round": 1,
+      "rest": 15
+    },
+    {
+      "id": "IT05",
+      "unit": "seconds",
+      "value": 45,
+      "perSide": false,
+      "slot": "warmup",
+      "round": 1,
+      "rest": 15
+    },
+    {
+      "id": "IT06",
+      "unit": "seconds",
+      "value": 45,
+      "perSide": false,
+      "slot": "warmup",
+      "round": 1,
+      "rest": 15
+    }
+  ],
+  "cooldown": [
+    {
+      "id": "IT01",
+      "unit": "seconds",
+      "value": 60,
+      "perSide": false,
+      "slot": "cooldown",
+      "round": 1,
+      "rest": 0
+    },
+    {
+      "id": "IT13",
+      "unit": "seconds",
+      "value": 20,
+      "perSide": true,
+      "slot": "cooldown",
+      "round": 1,
+      "rest": 0,
+      "sideRest": 0
+    },
+    {
+      "id": "IT14",
+      "unit": "seconds",
+      "value": 20,
+      "perSide": false,
+      "slot": "cooldown",
+      "round": 1,
+      "rest": 0
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 3
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 4,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 7,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 3
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 10,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 13,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 3
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 16,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 19,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 3
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 22,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 25,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT07",
+          "unit": "reps",
+          "value": 4,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 6
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT08",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT10",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT11",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT12",
+          "unit": "reps",
+          "value": 5,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT15",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT16",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT17",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT18",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT19",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 3
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    },
+    {
+      "day": 28,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT24",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 90,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT25",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT09",
+          "unit": "reps",
+          "value": 6,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 3
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT26",
+          "unit": "reps",
+          "value": 10,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT27",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 60,
+          "sideRest": 10
+        },
+        {
+          "id": "IT28",
+          "unit": "seconds",
+          "value": 15,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT29",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT30",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT31",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 30
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT32",
+          "unit": "reps",
+          "value": 3,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 8
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 30,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT33",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 0,
+          "sideRest": 10,
+          "repSeconds": 4
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "rounds": 1,
+      "items": [
+        {
+          "id": "IT01",
+          "unit": "seconds",
+          "value": 120,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15
+        },
+        {
+          "id": "IT03",
+          "unit": "reps",
+          "value": 8,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT20",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT21",
+          "unit": "reps",
+          "value": 6,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10,
+          "repSeconds": 5
+        },
+        {
+          "id": "IT22",
+          "unit": "reps",
+          "value": 8,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "repSeconds": 4
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT13",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT23",
+          "unit": "seconds",
+          "value": 20,
+          "perSide": true,
+          "slot": "main",
+          "round": 1,
+          "rest": 15,
+          "sideRest": 10
+        },
+        {
+          "id": "IT14",
+          "unit": "seconds",
+          "value": 60,
+          "perSide": false,
+          "slot": "main",
+          "round": 1,
+          "rest": 0
+        }
+      ],
+      "warmup": [],
+      "cooldown": []
+    }
+  ]
+}

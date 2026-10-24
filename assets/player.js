@@ -20,7 +20,8 @@
   var voiceOn = voiceMode !== "off";
   var voiceLang = payload.bcp47 || "en-US";        // e.g. "tr-TR"
   var voicePrefix = (payload.lang || "en").toLowerCase(); // e.g. "tr"
-  var level = payload.level || 0;                  // difficulty −3..+3, nudged in-workout
+  var fixedDifficulty = !!payload.fixedDifficulty;
+  var level = fixedDifficulty ? 0 : (payload.level || 0); // difficulty −3..+3
 
   // jsScale mirrors the server's ScaleValue: ±10% per level on reps/seconds,
   // breaths fixed, with min clamps. Lets us re-scale main sets on the fly.
@@ -31,7 +32,7 @@
     if (unit === "seconds" && out < 5) out = 5;
     return out;
   }
-  function val(it) { return it && it.scale ? jsScale(it.value, it.unit, level) : (it ? it.value : 0); }
+  function val(it) { return it && it.scale && !fixedDifficulty ? jsScale(it.value, it.unit, level) : (it ? it.value : 0); }
 
   // Voice selection. Browsers otherwise default to an English voice even when
   // utterance.lang is "tr-TR", so we explicitly pick a voice whose lang matches
@@ -105,6 +106,7 @@
     doneEnc: $(".done-enc"),
     doneStreak: $(".done-streak"),
     backHome: $(".back-home"),
+    diff: $(".lvl-row"),
     diffUp: $(".lvl-up"),
     diffDown: $(".lvl-down"),
     diffLabel: $(".lvl-label")
@@ -136,6 +138,11 @@
   function showFrames(it) {
     stopFrames();
     var frames = framesOf(it);
+    [el.svg, el.infoMedia].forEach(function (img) {
+      if (!img) return;
+      img.classList.toggle("hidden", !frames.length);
+      if (!frames.length) img.removeAttribute("src");
+    });
     if (!frames.length) return;
     if (el.svg) el.svg.alt = it.name || "";
     paintFrame(it, 0);
@@ -217,7 +224,9 @@
     var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
     narrQ = []; narrI = 0;
     for (k = 0; k < nc; k++) narrQ.push(c[k]); // how to do it (phrased as a do)
-    for (k = 0; k < nw; k++) narrQ.push(w[k]); // common mistake (phrased as a don't)
+    // Custom cards may describe a mistake rather than phrase it as "don't".
+    // Introduce either form explicitly so it cannot sound like a command.
+    for (k = 0; k < nw; k++) narrQ.push(t("mistake_reminder") + ": " + w[k]);
     if (!narrQ.length) return;
     var gap = voiceMode === "detailed" ? 6500 : 11000;
     function step() {
@@ -364,9 +373,9 @@
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
   var curSide = 1;
 
-  // Timed per-side sets run two clocks. Reps/breaths per-side are one tap, with
-  // the "per side" label — the user does both sides in that single set.
-  function sides(it) { return it.perSide && it.unit === "seconds" ? 2 : 1; }
+  // Timed sets use two clocks. A prescribed side pause also splits rep sets
+  // into two Done taps; legacy reps still cover both sides in a single tap.
+  function sides(it) { return it.perSide && (it.unit === "seconds" || it.sideRest > 0) ? 2 : 1; }
 
   function startItem(idx) {
     i = idx;
@@ -385,11 +394,14 @@
     runSide(it, 1);
   }
 
-  // runSide runs one side of an exercise (or the only side). Timed per-side
-  // sets skip the closing 3-2-1 on the first side, speak "change sides", and
-  // start the other clock immediately.
+  // runSide runs one side. Each explicit side gets its own visible position.
   function runSide(it, side) {
     curSide = side;
+    if (el.rest) el.rest.classList.add("hidden");
+    if (el.stage) el.stage.classList.remove("hidden");
+    if (el.controls) el.controls.classList.remove("hidden");
+    setPhaseLabel(it);
+    if (sides(it) === 2) el.phase.textContent += " · " + t("side") + " " + side + "/2";
     clearNarr();
     if (side === 1) {
       sayNow(it.vStart);   // "Go" / "Старт"
@@ -413,7 +425,7 @@
       // reps / breaths: wait for the user to tap Done.
       clearTicker();
       el.value.classList.remove("timer", "prep");
-      el.value.textContent = valueDisplay(it);
+      el.value.textContent = activeValueDisplay(it);
       el.done.classList.remove("hidden");
     }
   }
@@ -422,10 +434,25 @@
     clearNarr();
     if (side < sides(it)) {
       sayNow(cues.switch_side);
-      runSide(it, side + 1);
+      if (it.sideRest > 0) {
+        doRest(it.sideRest, it, true, function () {
+          sayNow(cues.go);
+          runSide(it, side + 1);
+        });
+        el.restTitle.textContent = cues.switch_side || t("side");
+        el.restNext.textContent = it.name + " · " + t("side") + " " + (side + 1) + "/2";
+      } else {
+        runSide(it, side + 1);
+      }
     } else {
       endItem();
     }
+  }
+
+  function activeValueDisplay(it) {
+    if (sides(it) !== 2) return valueDisplay(it);
+    var displayItem = Object.assign({}, it, { perSide: false });
+    return valueDisplay(displayItem);
   }
 
   // valueDisplay is the on-screen count for reps/breaths and the rest preview.
@@ -684,13 +711,15 @@
   // ---- in-workout difficulty nudge (this session only) ----
   function clampLevel(n) { return n < -3 ? -3 : (n > 3 ? 3 : n); }
   function updateDiff() {
+    if (el.diff) el.diff.classList.toggle("hidden", fixedDifficulty);
     if (!el.diffLabel) return;
     var s = level > 0 ? "+" + level : (level < 0 ? "−" + (-level) : "0");
     el.diffLabel.textContent = (labels.difficulty || "") + " " + s;
-    if (el.diffDown) el.diffDown.disabled = level <= -3;
-    if (el.diffUp) el.diffUp.disabled = level >= 3;
+    if (el.diffDown) el.diffDown.disabled = fixedDifficulty || level <= -3;
+    if (el.diffUp) el.diffUp.disabled = fixedDifficulty || level >= 3;
   }
   function changeLevel(delta) {
+    if (fixedDifficulty) return;
     var nl = clampLevel(level + delta);
     if (nl === level) return;
     level = nl;
@@ -699,7 +728,7 @@
     // the new level applies from the next set on.
     var it = items[i];
     if (it && vis(el.stage) && it.unit !== "seconds") {
-      el.value.textContent = valueDisplay(it);
+      el.value.textContent = activeValueDisplay(it);
     }
   }
   if (el.diffUp) el.diffUp.addEventListener("click", function () { changeLevel(1); });
@@ -714,6 +743,12 @@
     if (!sec) return;
     if (text) { p.textContent = text; sec.classList.remove("hidden"); }
     else { sec.classList.add("hidden"); }
+  }
+  function cautionText(it) {
+    var warning = (it.warning || "").trim();
+    var safety = (it.safety || "").trim();
+    if (warning && safety && warning !== safety) return warning + " " + safety;
+    return warning || safety;
   }
   function fillList(list, arr) {
     if (!list) return;
@@ -740,7 +775,7 @@
     fillList(el.infoCorrect, it.correct);
     fillList(el.infoWrong, it.wrong);
     setSec(el.infoBreathingSec, el.infoBreathing, it.breathing);
-    setSec(el.infoWarnSec, el.infoWarn, it.warning || it.safety);
+    setSec(el.infoWarnSec, el.infoWarn, cautionText(it));
     if (el.infoReplace) {
       if (it.repl) el.infoReplace.classList.remove("hidden");
       else el.infoReplace.classList.add("hidden");
@@ -759,7 +794,7 @@
     var r = it.repl;
     items[i] = {
       id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
-      round: it.round, rest: it.rest, name: r.name, hint: r.hint, warning: r.warning,
+      round: it.round, rest: it.rest, sideRest: it.sideRest, name: r.name, hint: r.hint, warning: r.warning,
       svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), video: "", desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
       vFinish: cues.well_done, repl: null

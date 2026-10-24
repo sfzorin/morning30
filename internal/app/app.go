@@ -141,7 +141,9 @@ func ExerciseFrames(cat catalog.Catalog, id, sex string) []string {
 		}
 	}
 	if len(out) == 0 {
-		return []string{cat.Figure(id, sex)}
+		if figure := cat.Figure(id, sex); figure != "" {
+			return []string{figure}
+		}
 	}
 	return out
 }

@@ -44,6 +44,7 @@ type playerItem struct {
 	PerSide bool   `json:"perSide"`
 	Round   int    `json:"round"`
 	Rest    int    `json:"rest"`
+	SideRest int `json:"sideRest,omitempty"`
 	Name    string `json:"name"`
 	Hint    string `json:"hint"`    // short on-screen cue (localized)
 	Warning string   `json:"warning"` // inline safety warning (localized)
@@ -72,11 +73,19 @@ type playerPayload struct {
 	Voice     bool              `json:"voice"`
 	VoiceMode string            `json:"voiceMode"`
 	Name      string            `json:"name"`
+	FixedDifficulty bool        `json:"fixedDifficulty,omitempty"`
 	Level     int               `json:"level"` // current difficulty level (−3..+3); the client scales main exercises
 	Items     []playerItem      `json:"items"`
 	Labels    map[string]string `json:"labels"`
 	Cues      map[string]string `json:"cues"`
 	Enc       []string          `json:"enc"`
+}
+
+func firstFrame(frames []string) string {
+	if len(frames) == 0 {
+		return ""
+	}
+	return frames[0]
 }
 
 // workoutPage renders the client-driven player for one day.
@@ -133,7 +142,7 @@ func (w workoutPage) replFor(l i18n.Lang, cat catalog.Catalog, sex, id string, v
 		Unit:    string(r.Unit),
 		Value:   content.ConvertValue(ex.Unit, r.Unit, value),
 		PerSide: r.PerSide,
-		SVG:     frames[0],
+		SVG:     firstFrame(frames),
 		Frames:  frames,
 		Hint:    cat.Hint(l, rid),
 		Warning: cat.Warning(l, rid),
@@ -152,7 +161,7 @@ func (w workoutPage) playerData() playerPayload {
 	items := make([]playerItem, 0, len(wk.Items))
 	for _, it := range wk.Items {
 		id := it.ExerciseID
-		scale := it.Slot == content.Main
+		scale := it.Slot == content.Main && !wk.FixedDifficulty
 		d, _ := cat.Detail(l, id)
 		vs, vm, vl, vf := w.voiceFor(l, cat.HasVoiceLang(l, id), d)
 		repl := w.replFor(l, cat, sex, id, it.Value)
@@ -169,10 +178,11 @@ func (w workoutPage) playerData() playerPayload {
 			PerSide:   it.PerSide,
 			Round:     it.Round,
 			Rest:      it.Rest,
+			SideRest:  it.SideRest,
 			Name:      cat.Name(l, id),
 			Hint:      cat.Hint(l, id),
 			Warning:   cat.Warning(l, id),
-			SVG:       frames[0],
+			SVG:       firstFrame(frames),
 			Frames:    frames,
 			Desc:      d.Desc,
 			HowTo:     d.HowTo,
@@ -212,6 +222,7 @@ func (w workoutPage) playerData() playerPayload {
 		"difficulty": i18n.T(l, "settings.difficulty"),
 		"harder":     i18n.T(l, "workout.harder"),
 		"easier":     i18n.T(l, "workout.easier"),
+		"mistake_reminder": i18n.T(l, "workout.mistake_reminder"),
 	}
 	cues := map[string]string{
 		"ready":       i18n.Cue(l, "ready"),
@@ -245,6 +256,7 @@ func (w workoutPage) playerData() playerPayload {
 		VoiceMode: mode,
 		Name:      w.sess.Name,
 		Level:     level,
+		FixedDifficulty: wk.FixedDifficulty,
 		Items:     items,
 		Labels: labels,
 		Cues:   cues,
@@ -295,6 +307,7 @@ elem (w workoutPage) Main() {
 			<div class="ex-index"></div>
 			<img class="ex-svg" alt="">
 			<div class="ex-name"></div>
+			<button class="info-btn" type="button" aria-label=(i18n.T(l, "info.technique"))>ⓘ ~(i18n.T(l, "info.how"))</button>
 			<div class="ex-value"></div>
 		</div>
 

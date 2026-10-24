@@ -188,6 +188,14 @@ func TestExerciseFramesFallsBackToFigure(t *testing.T) {
 	}
 }
 
+func TestExerciseFramesCanAwaitCustomIllustrations(t *testing.T) {
+	openAppDB(t)
+	cat := catalog.New(`{"IT01":{"id":"IT01","slot":"main","unit":"seconds","content":{"en":{"name":"Walking"}}}}`)
+	if frames := ExerciseFrames(cat, "IT01", "m"); len(frames) != 0 {
+		t.Fatalf("unillustrated exercise must not show a broken or unrelated picture: %#v", frames)
+	}
+}
+
 func TestSeedPoseStillsKeepsProgressAndManualPoses(t *testing.T) {
 	d := openAppDB(t)
 	SeedBuiltins()

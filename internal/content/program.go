@@ -5,20 +5,24 @@ const TotalDays = 30
 
 // Item is one step the player walks the user through.
 type Item struct {
-	ExerciseID string `json:"id"`
-	Unit       Unit   `json:"unit"`
-	Value      int    `json:"value"`
-	Slot       Slot   `json:"slot"`
-	PerSide    bool   `json:"perSide"`
-	Round      int    `json:"round"`
-	Rest       int    `json:"rest"` // seconds of rest AFTER this item (0 on the last)
+	ExerciseID   string `json:"id"`
+	Unit         Unit   `json:"unit"`
+	Value        int    `json:"value"`
+	Slot         Slot   `json:"slot"`
+	PerSide      bool   `json:"perSide"`
+	Round        int    `json:"round"`
+	Rest         int    `json:"rest"` // seconds of rest AFTER this item (0 on the last)
+	SideRest     int    `json:"sideRest,omitempty"`
+	RepSeconds   int    `json:"repSeconds,omitempty"`
+	restOverride *int
 }
 
 // Workout is a full session for one day.
 type Workout struct {
-	Day    int    `json:"day"`
-	Items  []Item `json:"items"`
-	EstSec int    `json:"estSec"`
+	Day             int    `json:"day"`
+	Items           []Item `json:"items"`
+	EstSec          int    `json:"estSec"`
+	FixedDifficulty bool   `json:"fixedDifficulty,omitempty"`
 }
 
 // ScaleValue applies the universal difficulty level to a value: ±10% per step
@@ -111,8 +115,8 @@ var dayBlocks = map[int][]setDef{
 	25: {{"C12", 10}, {"B01", 35}, {"L03", 14}, {"B02", 12}, {"C01", 60}}, // recovery
 	26: {{"P03", 12}, {"B10", 14}, {"C03", 45}, {"L01", 16}, {"P02", 10}, {"B04", 14}, {"C06", 30}, {"L05", 14}, {"A04", 8}, {"C01", 85}},
 	27: {{"P01", 16}, {"B06", 16}, {"C04", 40}, {"L02", 12}, {"P08", 8}, {"C07", 45}, {"C05", 15}, {"B03", 15}},
-	28: {{"C11", 14}, {"B01", 35}, {"L06", 14}, {"B02", 12}, {"C01", 65}}, // recovery
-	29: {{"P04", 10}, {"B01", 50}, {"C03", 45}, {"L02", 14}, {"P06", 8}, {"C05", 16}, {"B02", 18}, {"L04", 14}, {"A02", 25}, {"C02", 30}}, // peak
+	28: {{"C11", 14}, {"B01", 35}, {"L06", 14}, {"B02", 12}, {"C01", 65}},                                                                  // recovery
+	29: {{"P04", 10}, {"B01", 50}, {"C03", 45}, {"L02", 14}, {"P06", 8}, {"C05", 16}, {"B02", 18}, {"L04", 14}, {"A02", 25}, {"C02", 30}},  // peak
 	30: {{"P01", 16}, {"B06", 18}, {"C04", 45}, {"L01", 15}, {"P02", 10}, {"B03", 15}, {"C05", 15}, {"C08", 12}, {"L04", 12}, {"C01", 90}}, // control
 }
 
@@ -165,23 +169,30 @@ func restAfter(slot Slot, r Rests) int {
 // assignRestsAndEst sets each item's rest and returns a rough duration estimate.
 // The rest after an item is the NEXT item's phase rest — i.e. the pause belongs
 // to the exercise it leads into (warm-up / main / cool-down) and always honours
-// the user's per-phase setting (including between the two main rounds; there is
-// no special longer between-rounds pause).
+// the user's per-phase setting unless an occurrence prescribes an explicit rest.
 func assignRestsAndEst(items []Item, r Rests) int {
 	est := 0
 	for i := range items {
 		it := items[i]
+		items[i].Rest = 0
 		if i < len(items)-1 {
-			items[i].Rest = restAfter(items[i+1].Slot, r) // rest belongs to the next exercise
+			items[i].Rest = restAfter(items[i+1].Slot, r)
+			if it.restOverride != nil {
+				items[i].Rest = clampRest(*it.restOverride, 0, 90)
+			}
 		}
 		work := it.Value
 		if it.Unit == Reps {
-			work *= 3
+			seconds := 3
+			if it.RepSeconds > 0 {
+				seconds = clampRest(it.RepSeconds, 1, 30)
+			}
+			work *= seconds
 		} else if it.Unit == Breaths {
 			work *= 4
 		}
 		if it.PerSide {
-			work *= 2
+			work = work*2 + clampRest(it.SideRest, 0, 90)
 		}
 		est += work + items[i].Rest
 	}

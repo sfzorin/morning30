@@ -180,7 +180,8 @@ elem (s settingsPage) Main() {
 					</div>
 				</form>
 
-				~// Universal difficulty level — applies to any program, ±10% per step.
+				~// Programs with prescribed dosing opt out of universal scaling.
+				~(if !prog.FixedDifficulty {
 				<div class="srow col">
 					<div class="row-between">
 						<span>~(i18n.T(l, "settings.difficulty"))</span>
@@ -192,6 +193,8 @@ elem (s settingsPage) Main() {
 					</div>
 					<input type="range" min="-3" max="3" step="1" value=(s.sess.Level) (doors.AChange{On: s.setLevel(levelSrc)})>
 				</div>
+
+				})
 
 				~// Personal 30-day cycle: edit this account's plan only (no other programs to pick).
 				<details class="cycle-details">
@@ -232,8 +235,11 @@ elem (s settingsPage) Main() {
 								idx = 0
 							}
 							mainRounds := 2
+							warmTarget, coolTarget := "warmup", "cooldown"
 							if len(p.Days) > 0 {
 								mainRounds = content.ClampRounds(p.Days[idx].Rounds)
+								if p.Days[idx].Warmup != nil { warmTarget = "day-warmup" }
+								if p.Days[idx].Cooldown != nil { coolTarget = "day-cooldown" }
 							}
 						}
 						<div class="srow">
@@ -244,8 +250,8 @@ elem (s settingsPage) Main() {
 								})
 							</select>
 						</div>
-						<div class="cyc-head">~(i18n.T(l, "settings.warmup_series"))</div>
-						~(s.editList(editSrc, cat, entries, l, p.Warmup, "warmup", st.Open))
+						<div class="cyc-head">~(if warmTarget == "day-warmup" { ~(i18n.T(l, "workout.warmup"), " · ", i18n.T(l, "home.day"), " ", st.Day) } else { ~(i18n.T(l, "settings.warmup_series")) })</div>
+						~(s.editList(editSrc, cat, entries, l, p.WarmupFor(idx), warmTarget, st.Open))
 
 						~(if len(p.Days) > 0 {
 							~{ rd := p.Days[idx] }
@@ -261,8 +267,8 @@ elem (s settingsPage) Main() {
 							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
 						})
 
-						<div class="cyc-head">~(i18n.T(l, "settings.cooldown_series"))</div>
-						~(s.editList(editSrc, cat, entries, l, p.Cooldown, "cooldown", st.Open))
+						<div class="cyc-head">~(if coolTarget == "day-cooldown" { ~(i18n.T(l, "workout.cooldown"), " · ", i18n.T(l, "home.day"), " ", st.Day) } else { ~(i18n.T(l, "settings.cooldown_series")) })</div>
+						~(s.editList(editSrc, cat, entries, l, p.CooldownFor(idx), coolTarget, st.Open))
 					}))
 
 					<div class="srow cyc-save">
@@ -613,9 +619,9 @@ func (s settingsPage) setDay(editSrc doors.Source[editState]) func(context.Conte
 // slotForTarget maps an editor section to the slot its items belong to.
 func slotForTarget(target string) content.Slot {
 	switch target {
-	case "warmup":
+	case "warmup", "day-warmup":
 		return content.Warmup
-	case "cooldown":
+	case "cooldown", "day-cooldown":
 		return content.Cooldown
 	default:
 		return content.Main
@@ -631,20 +637,34 @@ func mutateList(ctx context.Context, editSrc doors.Source[editState], target str
 	if err != nil {
 		return
 	}
+	editProgramList(&p, st.Day, target, fn)
+	st.JSON = p.Marshal()
+	editSrc.Update(ctx, st)
+}
+
+// editProgramList keeps explicit day phases and prescription metadata intact.
+func editProgramList(p *content.Resolved, day int, target string, fn func([]content.RItem) []content.RItem) {
 	switch target {
 	case "warmup":
 		p.Warmup = fn(p.Warmup)
 	case "cooldown":
 		p.Cooldown = fn(p.Cooldown)
 	default:
-		d := clampDay(st.Day, len(p.Days))
-		if d < 1 {
-			return
+		d := clampDay(day, len(p.Days))
+		if d < 1 { return }
+		switch target {
+		case "day-warmup":
+			items := fn(p.WarmupFor(d-1))
+			if items == nil { items = []content.RItem{} }
+			p.Days[d-1].Warmup = &items
+		case "day-cooldown":
+			items := fn(p.CooldownFor(d-1))
+			if items == nil { items = []content.RItem{} }
+			p.Days[d-1].Cooldown = &items
+		default:
+			p.Days[d-1].Items = fn(p.Days[d-1].Items)
 		}
-		p.Days[d-1].Items = fn(p.Days[d-1].Items)
 	}
-	st.JSON = p.Marshal()
-	editSrc.Update(ctx, st)
 }
 
 // editList renders one CRUD section (warm-up / day main / cool-down).
@@ -661,14 +681,18 @@ elem (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Cata
 					~(s.exOptions(entries, l, it.ID))
 				</select>
 				<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, target, ii)})>
-				<span class="cyc-unit">~(unitWord(l, it.Unit, false))</span>
+				<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
 				~>doors.AClick{On: s.editPeek(editSrc, target, ii)} <button class="cyc-op cyc-info" type="button" aria-label=(i18n.T(l, "settings.view"))>ⓘ</button>
 				~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
 				~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
 				~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
 			</li>
 			~(if open == key {
-				<li class="cyc-peek">~(s.exDetail(l, cat, it.ID))</li>
+				<li class="cyc-peek">
+					~(if it.Rest != nil { <p>~(i18n.T(l, "workout.rest"), ": ", *it.Rest, " ", i18n.T(l, "workout.sec"))</p> })
+					~(if it.SideRest > 0 { <p>~(i18n.Cue(l, "switch_side"), ": ", it.SideRest, " ", i18n.T(l, "workout.sec"))</p> })
+					~(s.exDetail(l, cat, it.ID))
+				</li>
 			})
 		})
 	</ol>
@@ -724,6 +748,7 @@ func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.C
 			its[ii] = content.RItem{
 				ID: newID, Unit: def.Unit, PerSide: def.PerSide, Slot: slotForTarget(target),
 				Value: content.ConvertValue(old.Unit, def.Unit, old.Value), Round: old.Round,
+				Rest: old.Rest, SideRest: old.SideRest,
 			}
 			return its
 		})
@@ -816,9 +841,9 @@ func (s settingsPage) editAdd(editSrc doors.Source[editState], cat catalog.Catal
 func defaultItem(cat catalog.Catalog, target string) content.RItem {
 	id := "M01"
 	switch target {
-	case "warmup":
+	case "warmup", "day-warmup":
 		id = "W03"
-	case "cooldown":
+	case "cooldown", "day-cooldown":
 		id = "CD02"
 	}
 	unit, perSide := content.Reps, false
