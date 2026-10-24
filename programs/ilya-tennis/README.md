@@ -46,3 +46,20 @@ Pictures are published separately after the program. `images.json`, when present
 lists bundle-local PNG files and immutable pose IDs; existing different images
 cause the transaction to fail. Exercises without pictures display text and voice
 until their pose references are installed. Keep account backups outside Git.
+
+For the second publication, add `--images-only` to the install command. This
+requires the exercises to exist and only changes their `poses` fields, preserving
+the live program and all exercise text as well as progress.
+
+## Character and illustrations
+
+All 33 exercises use the same fictional eight-year-old boy from
+`references/boy-turnaround.png` and `references/boy-ready.png`. The 31 selected
+PNG illustrations live in `images/`; IT02/IT03 share the ankle-rock pose and
+IT01/IT31 share the walking pose. Each shows a key position; sequence, timing and
+side changes are explained by the localized instructions and player.
+
+Images were generated with the built-in ImageGen tool using both character
+references. Exact prompts and any corrections are saved in `prompts-*.json`;
+reference prompts are in `references/prompts.json`. Only inspected child images
+are published. Adult drafts and rejected variants are excluded.

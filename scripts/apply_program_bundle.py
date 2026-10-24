@@ -3,7 +3,8 @@
 
 Dry run is the default. Apply only to an explicitly identified existing account,
 back up its program fields, and change those fields atomically. Progress, tokens,
-preferences, and other accounts are never written.
+preferences, and other accounts are never written. With --images-only, preserve
+the saved program and all exercise fields except the supplied pose assignments.
 """
 import argparse
 import datetime
@@ -63,7 +64,7 @@ def load_bundle(folder):
     return program, exercises, images
 
 
-def apply_bundle(connection, account, expected_name, program, exercises, images, backup_path):
+def apply_bundle(connection, account, expected_name, program, exercises, images, backup_path, *, images_only=False):
     connection.execute("BEGIN IMMEDIATE")
     try:
         row = connection.execute(
@@ -73,7 +74,21 @@ def apply_bundle(connection, account, expected_name, program, exercises, images,
         if row is None or row["name"] != expected_name:
             raise ValueError("Target account does not match the expected name")
         current = json.loads(row["custom_exercises"] or "{}")
-        current.update(exercises)
+        if images_only:
+            # Validate every assignment before creating a backup or inserting any
+            # pictures. Stage two must not create or replace exercise content.
+            for exercise_id, doc in exercises.items():
+                if exercise_id not in current or not isinstance(current[exercise_id], dict):
+                    raise ValueError(f"Existing exercise not found: {exercise_id}")
+                poses = doc.get("poses")
+                if not isinstance(poses, list) or not poses or not all(
+                    isinstance(pose, str) and pose.strip() for pose in poses
+                ):
+                    raise ValueError(f"Nonempty pose assignment required: {exercise_id}")
+            for exercise_id, doc in exercises.items():
+                current[exercise_id]["poses"] = list(doc["poses"])
+        else:
+            current.update(exercises)
         supplied = {image["id"] for image in images}
         for doc in exercises.values():
             for pose in doc.get("poses", []):
@@ -106,10 +121,16 @@ def apply_bundle(connection, account, expected_name, program, exercises, images,
                 "INSERT OR IGNORE INTO pose_images(pose_id,sex,mime,data) VALUES(?,?,?,?)",
                 (image["id"], image.get("sex", "m"), "image/png", image["data"]),
             )
-        connection.execute(
-            "UPDATE users SET program_json=?,custom_exercises=?,active_program='custom' WHERE id=?",
-            (json.dumps(program, ensure_ascii=False), json.dumps(current, ensure_ascii=False), account),
-        )
+        if images_only:
+            connection.execute(
+                "UPDATE users SET custom_exercises=? WHERE id=?",
+                (json.dumps(current, ensure_ascii=False), account),
+            )
+        else:
+            connection.execute(
+                "UPDATE users SET program_json=?,custom_exercises=?,active_program='custom' WHERE id=?",
+                (json.dumps(program, ensure_ascii=False), json.dumps(current, ensure_ascii=False), account),
+            )
         connection.commit()
         return row["position"]
     except Exception:
@@ -124,6 +145,10 @@ def main():
     parser.add_argument("--account", type=int)
     parser.add_argument("--expected-name")
     parser.add_argument("--apply", action="store_true")
+    parser.add_argument(
+        "--images-only", action="store_true",
+        help="Only assign poses to existing exercises; preserve the saved program and exercise content",
+    )
     parser.add_argument("--backup", type=Path)
     args = parser.parse_args()
     program, exercises, images = load_bundle(args.bundle)
@@ -135,7 +160,10 @@ def main():
     connection = sqlite3.connect(f"{args.db.resolve().as_uri()}?mode=rw", uri=True, timeout=10)
     connection.row_factory = sqlite3.Row
     try:
-        position = apply_bundle(connection, args.account, args.expected_name, program, exercises, images, args.backup)
+        position = apply_bundle(
+            connection, args.account, args.expected_name, program, exercises, images, args.backup,
+            images_only=args.images_only,
+        )
         print(f"Applied to account {args.account}; position {position} preserved; backup: {args.backup}")
     finally:
         connection.close()

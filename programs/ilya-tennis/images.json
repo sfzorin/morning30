@@ -1,0 +1,219 @@
+[
+  {
+    "id": "ilya-boy-it01-v1",
+    "file": "images/it01.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Easy walking · boy"
+  },
+  {
+    "id": "ilya-boy-it02-v1",
+    "file": "images/it02.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Alternating ankle rocks · boy"
+  },
+  {
+    "id": "ilya-boy-it04-v1",
+    "file": "images/it04.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Shoulder circles and arm swings · boy"
+  },
+  {
+    "id": "ilya-boy-it05-v1",
+    "file": "images/it05.png",
+    "sex": "m",
+    "kind": "hinge",
+    "label": "Hip hinges · boy"
+  },
+  {
+    "id": "ilya-boy-it06-v1",
+    "file": "images/it06.png",
+    "sex": "m",
+    "kind": "squat",
+    "label": "Slow shallow squats · boy"
+  },
+  {
+    "id": "ilya-boy-it07-v1",
+    "file": "images/it07.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Split step, side step and hold · boy"
+  },
+  {
+    "id": "ilya-boy-it08-v1",
+    "file": "images/it08.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Reverse lunge with a pause · boy"
+  },
+  {
+    "id": "ilya-boy-it09-v1",
+    "file": "images/it09.png",
+    "sex": "m",
+    "kind": "plank",
+    "label": "Slow-lowering push-ups · boy"
+  },
+  {
+    "id": "ilya-boy-it10-v1",
+    "file": "images/it10.png",
+    "sex": "m",
+    "kind": "prone",
+    "label": "Prone W raises · boy"
+  },
+  {
+    "id": "ilya-boy-it11-v1",
+    "file": "images/it11.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Single-leg calf raise · boy"
+  },
+  {
+    "id": "ilya-boy-it12-v1",
+    "file": "images/it12.png",
+    "sex": "m",
+    "kind": "supine",
+    "label": "Dead bug · boy"
+  },
+  {
+    "id": "ilya-boy-it13-v1",
+    "file": "images/it13.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Wall calf stretch · boy"
+  },
+  {
+    "id": "ilya-boy-it14-v1",
+    "file": "images/it14.png",
+    "sex": "m",
+    "kind": "supine",
+    "label": "Quiet breathing on your back · boy"
+  },
+  {
+    "id": "ilya-boy-it15-v1",
+    "file": "images/it15.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Side steps · boy"
+  },
+  {
+    "id": "ilya-boy-it16-v1",
+    "file": "images/it16.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Compass steps · boy"
+  },
+  {
+    "id": "ilya-boy-it17-v1",
+    "file": "images/it17.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Single-leg balance · boy"
+  },
+  {
+    "id": "ilya-boy-it18-v1",
+    "file": "images/it18.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Cross-body march · boy"
+  },
+  {
+    "id": "ilya-boy-it19-v1",
+    "file": "images/it19.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Tennis preparation turn · boy"
+  },
+  {
+    "id": "ilya-boy-it20-v1",
+    "file": "images/it20.png",
+    "sex": "m",
+    "kind": "kneel",
+    "label": "Gentle cat stretch · boy"
+  },
+  {
+    "id": "ilya-boy-it21-v1",
+    "file": "images/it21.png",
+    "sex": "m",
+    "kind": "side",
+    "label": "Side-lying open book · boy"
+  },
+  {
+    "id": "ilya-boy-it22-v1",
+    "file": "images/it22.png",
+    "sex": "m",
+    "kind": "kneel",
+    "label": "Hands-and-knees rock back · boy"
+  },
+  {
+    "id": "ilya-boy-it23-v1",
+    "file": "images/it23.png",
+    "sex": "m",
+    "kind": "supine",
+    "label": "Lying hamstring stretch · boy"
+  },
+  {
+    "id": "ilya-boy-it24-v1",
+    "file": "images/it24.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Lateral hop and hold · boy"
+  },
+  {
+    "id": "ilya-boy-it25-v1",
+    "file": "images/it25.png",
+    "sex": "m",
+    "kind": "squat",
+    "label": "Squat with light dumbbells · boy"
+  },
+  {
+    "id": "ilya-boy-it26-v1",
+    "file": "images/it26.png",
+    "sex": "m",
+    "kind": "hinge",
+    "label": "Bent-over dumbbell row · boy"
+  },
+  {
+    "id": "ilya-boy-it27-v1",
+    "file": "images/it27.png",
+    "sex": "m",
+    "kind": "supine",
+    "label": "Single-leg glute bridge · boy"
+  },
+  {
+    "id": "ilya-boy-it28-v1",
+    "file": "images/it28.png",
+    "sex": "m",
+    "kind": "side",
+    "label": "Side plank from bent knees · boy"
+  },
+  {
+    "id": "ilya-boy-it29-v1",
+    "file": "images/it29.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Step over a line and back · boy"
+  },
+  {
+    "id": "ilya-boy-it30-v1",
+    "file": "images/it30-v2.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "V-shaped diagonal steps · boy"
+  },
+  {
+    "id": "ilya-boy-it32-v1",
+    "file": "images/it32.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Single-leg three-way toe taps · boy"
+  },
+  {
+    "id": "ilya-boy-it33-v1",
+    "file": "images/it33.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Side step, preparation turn and return · boy"
+  }
+]

@@ -210,7 +210,10 @@
           "finish": "Fatto. Fermati dolcemente."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it01-v1"
+    ]
   },
   {
     "id": "IT02",
@@ -423,7 +426,10 @@
           "finish": "Fatto. Avvicina i piedi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it02-v1"
+    ]
   },
   {
     "id": "IT03",
@@ -636,7 +642,10 @@
           "finish": "Serie finita. Raddrizzati con calma."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it02-v1"
+    ]
   },
   {
     "id": "IT04",
@@ -849,7 +858,10 @@
           "finish": "Fatto. Abbassa le braccia."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it04-v1"
+    ]
   },
   {
     "id": "IT05",
@@ -1062,7 +1074,10 @@
           "finish": "Fatto. Raddrizzati dolcemente."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it05-v1"
+    ]
   },
   {
     "id": "IT06",
@@ -1275,7 +1290,10 @@
           "finish": "Fatto. Raddrizzati e rilassa le gambe."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it06-v1"
+    ]
   },
   {
     "id": "IT07",
@@ -1488,7 +1506,10 @@
           "finish": "Fatto. Fermati comodamente al centro."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it07-v1"
+    ]
   },
   {
     "id": "IT08",
@@ -1708,7 +1729,10 @@
           "finish": "Serie finita. Avvicina i piedi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it08-v1"
+    ]
   },
   {
     "id": "IT09",
@@ -1921,7 +1945,10 @@
           "finish": "Serie finita. Appoggia le ginocchia e riposa."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it09-v1"
+    ]
   },
   {
     "id": "IT10",
@@ -2134,7 +2161,10 @@
           "finish": "Fatto. Appoggia le braccia a terra e rilassati."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it10-v1"
+    ]
   },
   {
     "id": "IT11",
@@ -2347,7 +2377,10 @@
           "finish": "Serie finita. Appoggia entrambi i piedi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it11-v1"
+    ]
   },
   {
     "id": "IT12",
@@ -2560,7 +2593,10 @@
           "finish": "Serie finita. Appoggia i piedi a terra."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it12-v1"
+    ]
   },
   {
     "id": "IT13",
@@ -2773,7 +2809,10 @@
           "finish": "Fatto. Esci dolcemente dall’allungamento."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it13-v1"
+    ]
   },
   {
     "id": "IT14",
@@ -2986,7 +3025,10 @@
           "finish": "Fatto. Girati su un fianco e alzati piano."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it14-v1"
+    ]
   },
   {
     "id": "IT15",
@@ -3199,7 +3241,10 @@
           "finish": "Fatto. Torna al centro."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it15-v1"
+    ]
   },
   {
     "id": "IT16",
@@ -3412,7 +3457,10 @@
           "finish": "Fatto. Resta al centro."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it16-v1"
+    ]
   },
   {
     "id": "IT17",
@@ -3625,7 +3673,10 @@
           "finish": "Fatto. Appoggia entrambi i piedi a terra."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it17-v1"
+    ]
   },
   {
     "id": "IT18",
@@ -3838,7 +3889,10 @@
           "finish": "Fatto. Fermati dolcemente."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it18-v1"
+    ]
   },
   {
     "id": "IT19",
@@ -4051,7 +4105,10 @@
           "finish": "Serie finita. Torna nella posizione di attesa."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it19-v1"
+    ]
   },
   {
     "id": "IT20",
@@ -4264,7 +4321,10 @@
           "finish": "Fatto. Riposa comodamente a quattro appoggi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it20-v1"
+    ]
   },
   {
     "id": "IT21",
@@ -4477,7 +4537,10 @@
           "finish": "Serie finita. Riunisci i palmi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it21-v1"
+    ]
   },
   {
     "id": "IT22",
@@ -4690,7 +4753,10 @@
           "finish": "Fatto. Torna a quattro appoggi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it22-v1"
+    ]
   },
   {
     "id": "IT23",
@@ -4903,7 +4969,10 @@
           "finish": "Fatto. Piega la gamba e abbassala dolcemente."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it23-v1"
+    ]
   },
   {
     "id": "IT24",
@@ -5116,7 +5185,10 @@
           "finish": "Serie finita. Stai in piedi comodamente."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it24-v1"
+    ]
   },
   {
     "id": "IT25",
@@ -5329,7 +5401,10 @@
           "finish": "Serie finita. Appoggia i pesi con attenzione."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it25-v1"
+    ]
   },
   {
     "id": "IT26",
@@ -5542,7 +5617,10 @@
           "finish": "Serie finita. Raddrizzati e appoggia i pesi con attenzione."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it26-v1"
+    ]
   },
   {
     "id": "IT27",
@@ -5755,7 +5833,10 @@
           "finish": "Serie finita. Appoggia entrambi i piedi e rilassati."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it27-v1"
+    ]
   },
   {
     "id": "IT28",
@@ -5968,7 +6049,10 @@
           "finish": "Fatto. Abbassa dolcemente il bacino."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it28-v1"
+    ]
   },
   {
     "id": "IT29",
@@ -6181,7 +6265,10 @@
           "finish": "Fatto. Cambia il piede che parte nella prossima serie."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it29-v1"
+    ]
   },
   {
     "id": "IT30",
@@ -6394,7 +6481,10 @@
           "finish": "Fatto. Resta al centro."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it30-v1"
+    ]
   },
   {
     "id": "IT31",
@@ -6607,7 +6697,10 @@
           "finish": "Fatto. Fermati comodamente in piedi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it01-v1"
+    ]
   },
   {
     "id": "IT32",
@@ -6820,7 +6913,10 @@
           "finish": "Serie finita. Appoggia entrambi i piedi."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it32-v1"
+    ]
   },
   {
     "id": "IT33",
@@ -7033,6 +7129,9 @@
           "finish": "Serie finita. Torna in una posizione di attesa rilassata."
         }
       }
-    }
+    },
+    "poses": [
+      "ilya-boy-it33-v1"
+    ]
   }
 ]
