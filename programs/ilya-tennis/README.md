@@ -66,6 +66,10 @@ without added pauses.
 New movements need instruction and supervised technique checks; fatigue calls
 for the recovery session, with no make-up workload.
 
+The `wrong` cues are spoken directly, without a heading. Author each as a negative
+instruction in all seven languages (for example, “Не своди колени и не отрывай
+пятки”), keeping every prohibited action in a compound sentence negated.
+
 ## Validate and install
 
 ```sh

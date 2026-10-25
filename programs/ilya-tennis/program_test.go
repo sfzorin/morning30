@@ -6,12 +6,57 @@ import (
 	"image/png"
 	"os"
 	"reflect"
+	"regexp"
 	"strings"
 	"testing"
 
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 )
+
+func TestSpokenMistakeCuesUseNegativeInstructions(t *testing.T) {
+	raw, err := os.ReadFile("exercises.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var docs []catalog.Doc
+	if err := json.Unmarshal(raw, &docs); err != nil {
+		t.Fatal(err)
+	}
+	for _, ex := range content.Library() {
+		doc, ok := catalog.Builtin(ex.ID)
+		if !ok {
+			t.Fatalf("missing built-in %s", ex.ID)
+		}
+		docs = append(docs, doc)
+	}
+	// These are authoring conventions, not a runtime grammar converter. Keep
+	// reviewing compound cues too: each prohibited action must stay negated.
+	patterns := map[string]*regexp.Regexp{
+		"ru": regexp.MustCompile(`^Не `),
+		"en": regexp.MustCompile(`^(Don't |Don’t |Do not |Never )`),
+		"tr": regexp.MustCompile(`(ma|me|mayın|meyin|masın|mesin)[.!]?$`),
+		"de": regexp.MustCompile(`(?i)\b(nicht|kein\w*)\b`),
+		"es": regexp.MustCompile(`^No `),
+		"fr": regexp.MustCompile(`^(Ne |N['’])`),
+		"it": regexp.MustCompile(`^Non `),
+	}
+	for _, doc := range docs {
+		for lang, pattern := range patterns {
+			cues := doc.Content[lang].Wrong
+			if len(cues) == 0 {
+				t.Errorf("%s %s has no mistake cues", doc.ID, lang)
+			}
+			for _, cue := range cues {
+				// Built-ins without a translation currently fall back to English.
+				fallback := !strings.HasPrefix(doc.ID, "IT") && patterns["en"].MatchString(cue)
+				if !pattern.MatchString(cue) && !fallback {
+					t.Errorf("%s %s must phrase the mistake as a negative instruction: %q", doc.ID, lang, cue)
+				}
+			}
+		}
+	}
+}
 
 func TestPrescribedSixDayCycle(t *testing.T) {
 	raw, err := os.ReadFile("program.json")

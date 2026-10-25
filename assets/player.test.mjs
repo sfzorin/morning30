@@ -284,7 +284,7 @@ test('fixed difficulty ignores saved level and all in-session level controls', (
 
 test('voice keeps technique and mistake cues without a spoken introduction', () => {
   const correct = ['Колени направлены по линии стоп.', 'Пятки остаются на полу.', 'Двигайся плавно.'];
-  const wrong = ['Сводить колени или отрывать пятки.', 'Не своди колени.'];
+  const wrong = ['Не своди колени и не отрывай пятки.', 'Не задерживай дыхание.'];
   for (const voiceMode of ['off', 'min', 'normal', 'detailed']) {
     const p = player([item({ correct, wrong, vStart: 'Начали.' })], { voiceMode });
     p.advance(60);

@@ -23,8 +23,8 @@
           "Шаги тихие и ровные."
         ],
         "wrong": [
-          "Топать и высоко поднимать колени.",
-          "Зажимать плечи или сжимать кулаки."
+          "Не топай и не поднимай колени высоко.",
+          "Не напрягай плечи и не сжимай кулаки."
         ],
         "breathing": "Дыши свободно, не подстраивай дыхание через силу.",
         "safety": "Выбери место, где ковёр не скользит и нет предметов под ногами.",
@@ -52,8 +52,8 @@
           "Take quiet, steady steps."
         ],
         "wrong": [
-          "Stomping or lifting your knees high.",
-          "Tensing your shoulders or clenching your fists."
+          "Don't stomp, and don't lift your knees high.",
+          "Don't tense your shoulders, and don't clench your fists."
         ],
         "breathing": "Breathe freely without forcing a rhythm.",
         "safety": "Use a nonslip area with nothing under your feet.",
@@ -81,8 +81,8 @@
           "Sessiz ve düzenli adımlar at."
         ],
         "wrong": [
-          "Ayaklarını yere vurmak veya dizlerini çok yukarı kaldırmak.",
-          "Omuzlarını kasmak veya yumruklarını sıkmak."
+          "Ayaklarını yere sert vurma ve dizlerini çok yukarı kaldırma.",
+          "Omuzlarını kasma ve yumruklarını sıkma."
         ],
         "breathing": "Nefesini bir ritme zorlamadan rahatça nefes al.",
         "safety": "Kaymayan ve ayaklarının altında eşya bulunmayan bir yer seç.",
@@ -110,8 +110,8 @@
           "Mach leise, gleichmäßige Schritte."
         ],
         "wrong": [
-          "Stampfen oder die Knie hochziehen.",
-          "Die Schultern anspannen oder die Fäuste ballen."
+          "Stampfe nicht und zieh die Knie nicht hoch.",
+          "Spanne die Schultern nicht an und balle die Fäuste nicht."
         ],
         "breathing": "Atme frei, ohne dich zu einem bestimmten Rhythmus zu zwingen.",
         "safety": "Wähle einen rutschfesten Platz ohne Gegenstände unter deinen Füßen.",
@@ -139,8 +139,8 @@
           "Da pasos silenciosos y regulares."
         ],
         "wrong": [
-          "Dar pisotones o levantar mucho las rodillas.",
-          "Tensar los hombros o apretar los puños."
+          "No des pisotones ni levantes mucho las rodillas.",
+          "No tenses los hombros ni aprietes los puños."
         ],
         "breathing": "Respira libremente, sin forzar el ritmo.",
         "safety": "Elige un lugar donde la alfombra no resbale y no haya objetos bajo los pies.",
@@ -168,8 +168,8 @@
           "Fais des pas silencieux et réguliers."
         ],
         "wrong": [
-          "Taper des pieds ou monter les genoux trop haut.",
-          "Crisper les épaules ou serrer les poings."
+          "Ne tape pas des pieds et ne monte pas les genoux trop haut.",
+          "Ne crispe pas les épaules et ne serre pas les poings."
         ],
         "breathing": "Respire librement, sans forcer le rythme.",
         "safety": "Choisis un endroit où le tapis ne glisse pas, sans objet sous les pieds.",
@@ -197,8 +197,8 @@
           "Fai passi silenziosi e regolari."
         ],
         "wrong": [
-          "Battere forte i piedi o sollevare molto le ginocchia.",
-          "Irrigidire le spalle o stringere i pugni."
+          "Non battere forte i piedi e non sollevare troppo le ginocchia.",
+          "Non irrigidire le spalle e non stringere i pugni."
         ],
         "breathing": "Respira liberamente, senza forzare il ritmo.",
         "safety": "Scegli un punto in cui il tappeto non scivoli e non ci siano oggetti sotto i piedi.",
@@ -244,8 +244,8 @@
           "Колено движется туда же, куда смотрят пальцы стопы."
         ],
         "wrong": [
-          "Заваливать колено внутрь.",
-          "Двигаться рывками и отрывать пятку."
+          "Не заваливай колено внутрь.",
+          "Не двигайся рывками и не отрывай пятку."
         ],
         "breathing": "Дыши спокойно и непрерывно.",
         "safety": "Двигайся только в удобной амплитуде; при боли остановись.",
@@ -273,8 +273,8 @@
           "Let the knee follow the direction of the toes."
         ],
         "wrong": [
-          "Letting the knee fall inward.",
-          "Jerking forward or lifting the heel."
+          "Don't let your knee fall inward.",
+          "Don't jerk forward, and don't lift your heel."
         ],
         "breathing": "Keep breathing calmly and continuously.",
         "safety": "Use a comfortable range and stop if it hurts.",
@@ -302,8 +302,8 @@
           "Dizin, ayak parmaklarınla aynı yöne hareket etsin."
         ],
         "wrong": [
-          "Dizini içeri düşürmek.",
-          "Ani hareket etmek veya topuğunu kaldırmak."
+          "Dizini içeri düşürme.",
+          "Ani hareket etme ve topuğunu kaldırma."
         ],
         "breathing": "Sakin ve kesintisiz nefes al.",
         "safety": "Yalnızca rahat hareket aralığında çalış; ağrı olursa dur.",
@@ -331,8 +331,8 @@
           "Das Knie bewegt sich in dieselbe Richtung wie die Zehen."
         ],
         "wrong": [
-          "Das Knie nach innen kippen lassen.",
-          "Ruckartig nach vorn gehen oder die Ferse anheben."
+          "Lass das Knie nicht nach innen kippen.",
+          "Bewege dich nicht ruckartig nach vorn und heb die Ferse nicht an."
         ],
         "breathing": "Atme ruhig und gleichmäßig weiter.",
         "safety": "Bewege dich nur so weit, wie es angenehm ist; hör bei Schmerzen auf.",
@@ -360,8 +360,8 @@
           "La rodilla sigue la dirección de los dedos del pie."
         ],
         "wrong": [
-          "Dejar que la rodilla caiga hacia dentro.",
-          "Moverte a tirones o levantar el talón."
+          "No dejes que la rodilla caiga hacia dentro.",
+          "No te muevas a tirones ni levantes el talón."
         ],
         "breathing": "Respira de forma tranquila y continua.",
         "safety": "Muévete solo hasta donde resulte cómodo y para si duele.",
@@ -389,8 +389,8 @@
           "Le genou suit la direction des orteils."
         ],
         "wrong": [
-          "Laisser le genou rentrer vers l’intérieur.",
-          "Avancer par à-coups ou lever le talon."
+          "Ne laisse pas le genou rentrer vers l’intérieur.",
+          "N’avance pas par à-coups et ne lève pas le talon."
         ],
         "breathing": "Respire calmement et sans interruption.",
         "safety": "Bouge dans une amplitude confortable et arrête si tu as mal.",
@@ -418,8 +418,8 @@
           "Il ginocchio segue la direzione delle dita del piede."
         ],
         "wrong": [
-          "Lasciare cadere il ginocchio verso l’interno.",
-          "Muoversi a scatti o sollevare il tallone."
+          "Non lasciare cadere il ginocchio verso l’interno.",
+          "Non muoverti a scatti e non sollevare il tallone."
         ],
         "breathing": "Respira con calma e senza interruzioni.",
         "safety": "Muoviti solo fin dove è comodo e fermati se senti dolore.",
@@ -466,8 +466,8 @@
           "Движение плавное, стопа не заваливается."
         ],
         "wrong": [
-          "Отрывать пятку.",
-          "Уводить колено внутрь или давить через неприятное ощущение."
+          "Не отрывай пятку.",
+          "Не уводи колено внутрь и не дави через неприятное ощущение."
         ],
         "breathing": "Дыши спокойно без задержек.",
         "safety": "Не стремись продвинуть колено как можно дальше; при боли прекрати упражнение.",
@@ -496,8 +496,8 @@
           "Move smoothly without rolling the foot."
         ],
         "wrong": [
-          "Lifting the heel.",
-          "Letting the knee fall inward or pushing into discomfort."
+          "Don't lift your heel.",
+          "Don't let your knee fall inward, and don't push into discomfort."
         ],
         "breathing": "Breathe calmly without holding your breath.",
         "safety": "Do not try to push the knee as far as possible; stop if it hurts.",
@@ -526,8 +526,8 @@
           "Ayağını yana devirmeden yumuşak hareket et."
         ],
         "wrong": [
-          "Topuğunu kaldırmak.",
-          "Dizini içeri kaçırmak veya rahatsızlık hissine rağmen zorlamak."
+          "Topuğunu kaldırma.",
+          "Dizini içeri kaçırma ve rahatsızlık hissedersen zorlama."
         ],
         "breathing": "Nefesini tutmadan sakin nefes al.",
         "safety": "Dizini olabildiğince ileri götürmeye çalışma; ağrı olursa bırak.",
@@ -556,8 +556,8 @@
           "Bewege dich ruhig, ohne den Fuß seitlich wegzukippen."
         ],
         "wrong": [
-          "Die Ferse anheben.",
-          "Das Knie nach innen kippen lassen oder in ein unangenehmes Gefühl hineindrücken."
+          "Heb die Ferse nicht an.",
+          "Lass das Knie nicht nach innen kippen und drück nicht weiter, wenn es sich unangenehm anfühlt."
         ],
         "breathing": "Atme ruhig, ohne die Luft anzuhalten.",
         "safety": "Versuche nicht, das Knie möglichst weit vorzuschieben; hör bei Schmerzen auf.",
@@ -586,8 +586,8 @@
           "Muévete con suavidad sin inclinar el pie hacia un lado."
         ],
         "wrong": [
-          "Levantar el talón.",
-          "Llevar la rodilla hacia dentro o forzar hasta sentir molestias."
+          "No levantes el talón.",
+          "No lleves la rodilla hacia dentro ni fuerces si notas molestias."
         ],
         "breathing": "Respira con calma, sin aguantar el aire.",
         "safety": "No intentes llevar la rodilla lo más lejos posible; para si duele.",
@@ -616,8 +616,8 @@
           "Bouge doucement sans laisser le pied basculer."
         ],
         "wrong": [
-          "Lever le talon.",
-          "Laisser le genou rentrer ou forcer malgré une gêne."
+          "Ne lève pas le talon.",
+          "Ne laisse pas le genou rentrer et ne force pas si tu ressens une gêne."
         ],
         "breathing": "Respire calmement sans bloquer ton souffle.",
         "safety": "Ne cherche pas à pousser le genou le plus loin possible ; arrête si tu as mal.",
@@ -646,8 +646,8 @@
           "Muoviti dolcemente senza far inclinare il piede."
         ],
         "wrong": [
-          "Sollevare il tallone.",
-          "Portare il ginocchio all’interno o spingere fino a sentire fastidio."
+          "Non sollevare il tallone.",
+          "Non portare il ginocchio all’interno e non forzare se senti fastidio."
         ],
         "breathing": "Respira con calma senza trattenere il fiato.",
         "safety": "Non cercare di spingere il ginocchio il più lontano possibile; fermati se senti dolore.",
@@ -693,8 +693,8 @@
           "Движения рук свободные и небольшие."
         ],
         "wrong": [
-          "Задирать плечи к ушам.",
-          "Раскачиваться всем телом или резко бросать руки."
+          "Не поднимай плечи к ушам.",
+          "Не раскачивайся всем телом и не бросай руки резко."
         ],
         "breathing": "Дыши свободно и ровно.",
         "safety": "Проверь, что руки не задевают мебель; при боли уменьши движение или остановись.",
@@ -722,8 +722,8 @@
           "Let the arms move freely through a small range."
         ],
         "wrong": [
-          "Shrugging the shoulders toward the ears.",
-          "Rocking your whole body or flinging your arms."
+          "Don't shrug your shoulders toward your ears.",
+          "Don't rock your whole body, and don't fling your arms."
         ],
         "breathing": "Breathe freely and evenly.",
         "safety": "Leave enough room for your arms; reduce the movement or stop if it hurts.",
@@ -751,8 +751,8 @@
           "Kolların küçük bir aralıkta serbestçe hareket etsin."
         ],
         "wrong": [
-          "Omuzlarını kulaklarına çekmek.",
-          "Bütün vücudunla sallanmak veya kollarını aniden savurmak."
+          "Omuzlarını kulaklarına çekme.",
+          "Bütün vücudunla sallanma ve kollarını aniden savurma."
         ],
         "breathing": "Rahat ve düzenli nefes al.",
         "safety": "Kollarının mobilyalara çarpmadığından emin ol; ağrı olursa hareketi küçült veya dur.",
@@ -780,8 +780,8 @@
           "Die Arme bewegen sich locker in einem kleinen Bereich."
         ],
         "wrong": [
-          "Die Schultern zu den Ohren ziehen.",
-          "Mit dem ganzen Körper schaukeln oder die Arme ruckartig schleudern."
+          "Zieh die Schultern nicht zu den Ohren.",
+          "Schaukle nicht mit dem ganzen Körper und schleudere die Arme nicht ruckartig."
         ],
         "breathing": "Atme frei und gleichmäßig.",
         "safety": "Achte darauf, dass deine Arme keine Möbel berühren; verkleinere die Bewegung oder hör auf, wenn es wehtut.",
@@ -809,8 +809,8 @@
           "Mueve los brazos libremente con movimientos pequeños."
         ],
         "wrong": [
-          "Subir los hombros hacia las orejas.",
-          "Balancear todo el cuerpo o lanzar los brazos bruscamente."
+          "No subas los hombros hacia las orejas.",
+          "No balancees todo el cuerpo ni lances los brazos bruscamente."
         ],
         "breathing": "Respira libremente y de forma regular.",
         "safety": "Deja espacio para los brazos; reduce el movimiento o para si duele.",
@@ -838,8 +838,8 @@
           "Les bras bougent librement avec de petits mouvements."
         ],
         "wrong": [
-          "Monter les épaules vers les oreilles.",
-          "Balancer tout le corps ou lancer les bras brusquement."
+          "Ne monte pas les épaules vers les oreilles.",
+          "Ne balance pas tout le corps et ne lance pas les bras brusquement."
         ],
         "breathing": "Respire librement et régulièrement.",
         "safety": "Vérifie que tes bras ne touchent pas les meubles ; réduis le mouvement ou arrête si tu as mal.",
@@ -867,8 +867,8 @@
           "Muovi liberamente le braccia con movimenti piccoli."
         ],
         "wrong": [
-          "Alzare le spalle verso le orecchie.",
-          "Dondolare con tutto il corpo o lanciare bruscamente le braccia."
+          "Non alzare le spalle verso le orecchie.",
+          "Non dondolare con tutto il corpo e non lanciare bruscamente le braccia."
         ],
         "breathing": "Respira liberamente e in modo regolare.",
         "safety": "Lascia spazio alle braccia; riduci il movimento o fermati se senti dolore.",
@@ -914,8 +914,8 @@
           "Вес распределён по всей стопе."
         ],
         "wrong": [
-          "Округлять поясницу или запрокидывать голову.",
-          "Приседать глубоко вместо отведения таза назад."
+          "Не округляй поясницу и не запрокидывай голову.",
+          "Не приседай глубоко вместо того, чтобы отводить таз назад."
         ],
         "breathing": "Вдох на наклоне, выдох при выпрямлении.",
         "safety": "Наклоняйся только до глубины, на которой можешь сохранить спину ровной.",
@@ -943,8 +943,8 @@
           "Keep your weight spread across each foot."
         ],
         "wrong": [
-          "Rounding your lower back or lifting your chin.",
-          "Squatting deeply instead of sending the hips backward."
+          "Don't round your lower back, and don't lift your chin.",
+          "Don't squat deeply instead of sending your hips backward."
         ],
         "breathing": "Breathe in as you bend and out as you stand.",
         "safety": "Bend only as far as you can keep your back straight.",
@@ -972,8 +972,8 @@
           "Ağırlığını ayak tabanlarına dengeli dağıt."
         ],
         "wrong": [
-          "Belini yuvarlamak veya çeneni yukarı kaldırmak.",
-          "Kalçanı geriye göndermek yerine derin çömelmek."
+          "Belini yuvarlama ve çeneni yukarı kaldırma.",
+          "Kalçanı geriye göndermek yerine derin çömelme."
         ],
         "breathing": "Eğilirken nefes al, doğrulurken ver.",
         "safety": "Yalnızca sırtını düz tutabildiğin kadar eğil.",
@@ -1001,8 +1001,8 @@
           "Verteile dein Gewicht über den ganzen Fuß."
         ],
         "wrong": [
-          "Den unteren Rücken rund machen oder das Kinn anheben.",
-          "Tief in die Knie gehen, statt die Hüfte zurückzuschieben."
+          "Mach den unteren Rücken nicht rund und heb das Kinn nicht an.",
+          "Geh nicht tief in die Knie, statt die Hüfte zurückzuschieben."
         ],
         "breathing": "Atme beim Beugen ein und beim Aufrichten aus.",
         "safety": "Beuge dich nur so weit, wie du den Rücken gerade halten kannst.",
@@ -1030,8 +1030,8 @@
           "Reparte el peso por toda la planta de cada pie."
         ],
         "wrong": [
-          "Redondear la zona lumbar o levantar la barbilla.",
-          "Hacer una sentadilla profunda en lugar de llevar las caderas atrás."
+          "No redondees la zona lumbar ni levantes la barbilla.",
+          "No hagas una sentadilla profunda en lugar de llevar las caderas atrás."
         ],
         "breathing": "Inspira al inclinarte y espira al enderezarte.",
         "safety": "Inclínate solo hasta donde puedas mantener la espalda recta.",
@@ -1059,8 +1059,8 @@
           "Répartis ton poids sur toute la plante de chaque pied."
         ],
         "wrong": [
-          "Arrondir le bas du dos ou lever le menton.",
-          "S’accroupir profondément au lieu de reculer les hanches."
+          "N’arrondis pas le bas du dos et ne lève pas le menton.",
+          "Ne t’accroupis pas profondément au lieu de reculer les hanches."
         ],
         "breathing": "Inspire en t’inclinant et expire en te redressant.",
         "safety": "Incline-toi seulement tant que tu peux garder le dos droit.",
@@ -1088,8 +1088,8 @@
           "Distribuisci il peso su tutta la pianta di ciascun piede."
         ],
         "wrong": [
-          "Incurvare la zona lombare o sollevare il mento.",
-          "Accovacciarsi molto invece di portare il bacino indietro."
+          "Non incurvare la zona lombare e non sollevare il mento.",
+          "Non accovacciarti troppo invece di portare il bacino indietro."
         ],
         "breathing": "Inspira mentre ti inclini ed espira mentre ti raddrizzi.",
         "safety": "Inclinati solo finché riesci a mantenere la schiena dritta.",
@@ -1135,8 +1135,8 @@
           "Спина ровная, стопы устойчивы."
         ],
         "wrong": [
-          "Падать вниз или резко выпрямлять колени.",
-          "Сводить колени внутрь и поднимать пятки."
+          "Не падай вниз и не выпрямляй колени резко.",
+          "Не своди колени внутрь и не поднимай пятки."
         ],
         "breathing": "Вдох вниз, выдох при подъёме.",
         "safety": "Выбирай безболезненную глубину и не ускоряйся ради числа повторов.",
@@ -1164,8 +1164,8 @@
           "Keep your back straight and feet steady."
         ],
         "wrong": [
-          "Dropping down or snapping your knees straight.",
-          "Letting knees fall inward or lifting heels."
+          "Don't drop down, and don't snap your knees straight.",
+          "Don't let your knees fall inward, and don't lift your heels."
         ],
         "breathing": "Breathe in going down and out coming up.",
         "safety": "Use a pain-free range and do not rush to do more repetitions.",
@@ -1193,8 +1193,8 @@
           "Sırtın düz, ayakların sabit olsun."
         ],
         "wrong": [
-          "Aşağı düşer gibi inmek veya dizlerini hızla düzleştirmek.",
-          "Dizlerini içeri kaçırmak veya topuklarını kaldırmak."
+          "Aşağı düşer gibi inme ve dizlerini hızla düzleştirme.",
+          "Dizlerini içeri kaçırma ve topuklarını kaldırma."
         ],
         "breathing": "İnerken nefes al, kalkarken ver.",
         "safety": "Ağrısız bir derinlik seç; daha çok tekrar için hızlanma.",
@@ -1222,8 +1222,8 @@
           "Der Rücken bleibt gerade, die Füße stehen sicher."
         ],
         "wrong": [
-          "Nach unten fallen oder die Knie ruckartig durchstrecken.",
-          "Die Knie nach innen kippen lassen oder die Fersen anheben."
+          "Lass dich nicht nach unten fallen und strecke die Knie nicht ruckartig durch.",
+          "Lass die Knie nicht nach innen kippen und heb die Fersen nicht an."
         ],
         "breathing": "Atme beim Absenken ein und beim Aufstehen aus.",
         "safety": "Wähle eine schmerzfreie Tiefe und werde nicht schneller, um mehr Wiederholungen zu schaffen.",
@@ -1251,8 +1251,8 @@
           "Mantén la espalda recta y los pies estables."
         ],
         "wrong": [
-          "Dejarte caer o estirar las rodillas de golpe.",
-          "Juntar las rodillas hacia dentro o levantar los talones."
+          "No te dejes caer ni estires las rodillas de golpe.",
+          "No lleves las rodillas hacia dentro ni levantes los talones."
         ],
         "breathing": "Inspira al bajar y espira al subir.",
         "safety": "Elige una profundidad sin dolor y no corras para hacer más repeticiones.",
@@ -1280,8 +1280,8 @@
           "Garde le dos droit et les pieds stables."
         ],
         "wrong": [
-          "Se laisser tomber ou tendre les genoux brusquement.",
-          "Laisser les genoux rentrer ou lever les talons."
+          "Ne te laisse pas tomber et ne tends pas les genoux brusquement.",
+          "Ne laisse pas les genoux rentrer et ne lève pas les talons."
         ],
         "breathing": "Inspire en descendant et expire en remontant.",
         "safety": "Choisis une profondeur sans douleur et ne te presse pas pour faire plus de répétitions.",
@@ -1309,8 +1309,8 @@
           "Tieni la schiena dritta e i piedi stabili."
         ],
         "wrong": [
-          "Lasciarsi cadere o raddrizzare di colpo le ginocchia.",
-          "Portare le ginocchia all’interno o alzare i talloni."
+          "Non lasciarti cadere e non raddrizzare di colpo le ginocchia.",
+          "Non portare le ginocchia all’interno e non alzare i talloni."
         ],
         "breathing": "Inspira scendendo ed espira risalendo.",
         "safety": "Scegli una profondità senza dolore e non accelerare per fare più ripetizioni.",
@@ -1356,8 +1356,8 @@
           "После шага можешь спокойно замереть."
         ],
         "wrong": [
-          "Прыгать высоко или делать слишком широкий шаг.",
-          "Скрещивать стопы и заваливать колени внутрь."
+          "Не прыгай высоко и не делай слишком широкий шаг.",
+          "Не скрещивай стопы и не заваливай колени внутрь."
         ],
         "breathing": "Дыши свободно; не задерживай дыхание при остановке.",
         "safety": "Сначала разучи со взрослым. Прыгай без гантелей на нескользком ковре; при неустойчивости замени подскок подъёмом на носки.",
@@ -1385,8 +1385,8 @@
           "Finish the step in a position you can hold."
         ],
         "wrong": [
-          "Jumping high or stepping too far.",
-          "Crossing the feet or letting the knees fall inward."
+          "Don't jump high, and don't step too far.",
+          "Don't cross your feet, and don't let your knees fall inward."
         ],
         "breathing": "Breathe freely, including while holding the stop.",
         "safety": "Learn this with an adult first. Use no weights and a nonslip mat; if unsteady, replace the hop with a rise onto your toes.",
@@ -1414,8 +1414,8 @@
           "Adımı, dengede tutabildiğin bir duruşta bitir."
         ],
         "wrong": [
-          "Yükseğe sıçramak veya çok büyük adım atmak.",
-          "Ayaklarını çaprazlamak veya dizlerini içeri kaçırmak."
+          "Yükseğe sıçrama ve çok büyük adım atma.",
+          "Ayaklarını çaprazlama ve dizlerini içeri kaçırma."
         ],
         "breathing": "Dururken de rahatça nefes almaya devam et.",
         "safety": "Önce bir yetişkinle öğren. Ağırlık kullanma, kaymayan matta çalış; dengede kalamıyorsan sıçramak yerine parmak uçlarına yüksel.",
@@ -1443,8 +1443,8 @@
           "Beende den Schritt in einer Haltung, die du sicher halten kannst."
         ],
         "wrong": [
-          "Hoch springen oder zu große Schritte machen.",
-          "Die Füße kreuzen oder die Knie nach innen kippen lassen."
+          "Spring nicht hoch und mach keine zu großen Schritte.",
+          "Kreuze die Füße nicht und lass die Knie nicht nach innen kippen."
         ],
         "breathing": "Atme frei weiter, auch während du die Position hältst.",
         "safety": "Lerne die Übung zuerst mit einem Erwachsenen. Ohne Gewichte und auf einer rutschfesten Matte üben; wenn du unsicher stehst, heb nur die Fersen statt zu springen.",
@@ -1472,8 +1472,8 @@
           "Termina el paso en una posición que puedas mantener."
         ],
         "wrong": [
-          "Saltar alto o dar un paso demasiado largo.",
-          "Cruzar los pies o dejar que las rodillas caigan hacia dentro."
+          "No saltes demasiado alto ni des un paso demasiado largo.",
+          "No cruces los pies ni dejes que las rodillas caigan hacia dentro."
         ],
         "breathing": "Respira libremente, también mientras mantienes la parada.",
         "safety": "Apréndelo primero con un adulto. Sin pesas y sobre una alfombra que no resbale; si te cuesta equilibrarte, cambia el salto por una elevación sobre las puntas.",
@@ -1501,8 +1501,8 @@
           "Termine le pas dans une position que tu peux tenir."
         ],
         "wrong": [
-          "Sauter trop haut ou faire un pas trop grand.",
-          "Croiser les pieds ou laisser les genoux rentrer."
+          "Ne saute pas trop haut et ne fais pas un pas trop grand.",
+          "Ne croise pas les pieds et ne laisse pas les genoux rentrer."
         ],
         "breathing": "Respire librement, même pendant l’arrêt.",
         "safety": "Apprends d’abord avec un adulte. Sans haltères, sur un tapis qui ne glisse pas ; si tu manques d’équilibre, remplace le saut par une montée sur les pointes.",
@@ -1530,8 +1530,8 @@
           "Finisci il passo in una posizione che riesci a mantenere."
         ],
         "wrong": [
-          "Saltare troppo in alto o fare un passo troppo lungo.",
-          "Incrociare i piedi o lasciare cadere le ginocchia all’interno."
+          "Non saltare troppo in alto e non fare un passo troppo lungo.",
+          "Non incrociare i piedi e non lasciare cadere le ginocchia all’interno."
         ],
         "breathing": "Respira liberamente, anche mentre resti fermo.",
         "safety": "Impara prima con un adulto. Senza pesi e su un tappeto antiscivolo; se perdi equilibrio, sostituisci il saltello con una salita sulle punte.",
@@ -1578,8 +1578,8 @@
           "Корпус устойчив, передняя пятка на полу."
         ],
         "wrong": [
-          "Ставить стопы на одну узкую линию.",
-          "Падать вниз или отталкиваться руками от колена."
+          "Не ставь стопы на одну узкую линию.",
+          "Не падай вниз и не отталкивайся руками от колена."
         ],
         "breathing": "Вдох при опускании, выдох при подъёме.",
         "safety": "Сначала разучи со взрослым. При потере равновесия слегка придерживайся за стену; колено пола не касается.",
@@ -1608,8 +1608,8 @@
           "Keep your body steady and the front heel down."
         ],
         "wrong": [
-          "Placing your feet on a tightrope line.",
-          "Dropping down or pushing your hands against your knee."
+          "Don't place your feet in one narrow line.",
+          "Don't drop down, and don't push your hands against your knee."
         ],
         "breathing": "Breathe in as you lower and out as you rise.",
         "safety": "Learn this with an adult first. Touch a wall lightly if you need balance; keep the back knee off the floor.",
@@ -1638,8 +1638,8 @@
           "Gövden sabit, öndeki topuğun yerde olsun."
         ],
         "wrong": [
-          "Ayaklarını tek bir dar çizgiye koymak.",
-          "Aşağı düşer gibi inmek veya ellerinle dizinden destek almak."
+          "Ayaklarını tek bir dar çizgi üzerine koyma.",
+          "Aşağı düşer gibi inme ve ellerinle dizinden destek alma."
         ],
         "breathing": "Alçalırken nefes al, kalkarken ver.",
         "safety": "Önce bir yetişkinle öğren. Denge için gerekirse duvara hafifçe dokun; arkadaki dizin yere değmesin.",
@@ -1668,8 +1668,8 @@
           "Der Oberkörper bleibt ruhig und die vordere Ferse am Boden."
         ],
         "wrong": [
-          "Die Füße auf eine einzige schmale Linie stellen.",
-          "Nach unten fallen oder sich mit den Händen am Knie hochdrücken."
+          "Stell die Füße nicht auf eine einzige schmale Linie.",
+          "Lass dich nicht nach unten fallen und drück dich nicht mit den Händen am Knie hoch."
         ],
         "breathing": "Atme beim Absenken ein und beim Aufrichten aus.",
         "safety": "Lerne die Übung zuerst mit einem Erwachsenen. Berühre bei Bedarf leicht die Wand für das Gleichgewicht; das hintere Knie bleibt über dem Boden.",
@@ -1698,8 +1698,8 @@
           "Cuerpo estable y talón delantero apoyado."
         ],
         "wrong": [
-          "Colocar los pies en una sola línea muy estrecha.",
-          "Dejarte caer o empujar la rodilla con las manos."
+          "No coloques los pies sobre una sola línea estrecha.",
+          "No te dejes caer ni empujes la rodilla con las manos."
         ],
         "breathing": "Inspira al bajar y espira al subir.",
         "safety": "Apréndelo primero con un adulto. Toca suavemente una pared si necesitas equilibrio; la rodilla trasera no toca el suelo.",
@@ -1728,8 +1728,8 @@
           "Le corps reste stable et le talon de devant au sol."
         ],
         "wrong": [
-          "Placer les pieds sur une ligne trop étroite.",
-          "Se laisser tomber ou pousser sur le genou avec les mains."
+          "Ne place pas les pieds sur une seule ligne étroite.",
+          "Ne te laisse pas tomber et ne pousse pas sur le genou avec les mains."
         ],
         "breathing": "Inspire en descendant et expire en remontant.",
         "safety": "Apprends d’abord avec un adulte. Touche légèrement un mur si tu as besoin d’équilibre ; le genou arrière ne touche pas le sol.",
@@ -1758,8 +1758,8 @@
           "Corpo stabile e tallone davanti a terra."
         ],
         "wrong": [
-          "Mettere i piedi su una linea troppo stretta.",
-          "Lasciarsi cadere o spingere sul ginocchio con le mani."
+          "Non mettere i piedi su un’unica linea stretta.",
+          "Non lasciarti cadere e non spingere sul ginocchio con le mani."
         ],
         "breathing": "Inspira scendendo ed espira risalendo.",
         "safety": "Impara prima con un adulto. Tocca leggermente il muro se ti serve equilibrio; il ginocchio dietro non tocca il pavimento.",
@@ -1805,8 +1805,8 @@
           "Взгляд в пол, шея продолжает линию спины."
         ],
         "wrong": [
-          "Провисать в пояснице или задирать таз.",
-          "Разводить локти строго в стороны и тянуть голову к полу."
+          "Не провисай в пояснице и не задирай таз.",
+          "Не разводи локти строго в стороны и не тяни голову к полу."
         ],
         "breathing": "Вдох вниз, выдох при отталкивании.",
         "safety": "Разучи технику со взрослым. Останови подход до потери формы, оставляя запас примерно двух аккуратных повторов.",
@@ -1834,8 +1834,8 @@
           "Look at the floor with your neck in line with your back."
         ],
         "wrong": [
-          "Letting your lower back sag or lifting your hips.",
-          "Flaring elbows straight sideways or reaching your head down."
+          "Don't let your lower back sag, and don't lift your hips.",
+          "Don't flare your elbows straight out to the sides, and don't reach your head down."
         ],
         "breathing": "Breathe in as you lower and out as you press up.",
         "safety": "Learn the technique with an adult. End the set before your form changes, leaving about two good repetitions in reserve.",
@@ -1863,8 +1863,8 @@
           "Yere bak; boynun sırtınla aynı çizgide kalsın."
         ],
         "wrong": [
-          "Belini aşağı bırakmak veya kalçanı yukarı kaldırmak.",
-          "Dirseklerini tam yana açmak veya başını yere uzatmak."
+          "Belini aşağı bırakma ve kalçanı yukarı kaldırma.",
+          "Dirseklerini tam yana açma ve başını yere uzatma."
         ],
         "breathing": "Alçalırken nefes al, yukarı iterken ver.",
         "safety": "Tekniği bir yetişkinle öğren. Duruşun bozulmadan seti bitir; yaklaşık iki düzgün tekrar daha yapabilecek gücün kalsın.",
@@ -1892,8 +1892,8 @@
           "Schau zum Boden, der Nacken bleibt in einer Linie mit dem Rücken."
         ],
         "wrong": [
-          "Den unteren Rücken durchhängen lassen oder die Hüfte hochschieben.",
-          "Die Ellbogen ganz zur Seite spreizen oder den Kopf zum Boden strecken."
+          "Lass den unteren Rücken nicht durchhängen und schieb die Hüfte nicht hoch.",
+          "Spreize die Ellbogen nicht ganz zur Seite und strecke den Kopf nicht zum Boden."
         ],
         "breathing": "Atme beim Absenken ein und beim Hochdrücken aus.",
         "safety": "Lerne die Technik mit einem Erwachsenen. Beende den Satz, bevor die Haltung nachlässt; du solltest noch ungefähr zwei saubere Wiederholungen schaffen können.",
@@ -1921,8 +1921,8 @@
           "Mira al suelo con el cuello alineado con la espalda."
         ],
         "wrong": [
-          "Hundir la zona lumbar o levantar las caderas.",
-          "Abrir los codos totalmente hacia los lados o estirar la cabeza hacia el suelo."
+          "No hundas la zona lumbar ni levantes las caderas.",
+          "No abras los codos completamente hacia los lados ni estires la cabeza hacia el suelo."
         ],
         "breathing": "Inspira al bajar y espira al empujar para subir.",
         "safety": "Aprende la técnica con un adulto. Termina antes de perder la postura, dejando unas dos repeticiones bien hechas en reserva.",
@@ -1950,8 +1950,8 @@
           "Regarde le sol avec le cou dans le prolongement du dos."
         ],
         "wrong": [
-          "Creuser le bas du dos ou lever les hanches.",
-          "Écarter les coudes tout droit sur les côtés ou avancer la tête vers le sol."
+          "Ne creuse pas le bas du dos et ne lève pas les hanches.",
+          "N’écarte pas les coudes complètement sur les côtés et n’avance pas la tête vers le sol."
         ],
         "breathing": "Inspire en descendant et expire en poussant pour remonter.",
         "safety": "Apprends la technique avec un adulte. Termine la série avant de perdre la posture, en gardant environ deux bonnes répétitions en réserve.",
@@ -1979,8 +1979,8 @@
           "Guarda il pavimento, con il collo in linea con la schiena."
         ],
         "wrong": [
-          "Lasciare cedere la zona lombare o alzare il bacino.",
-          "Aprire i gomiti completamente di lato o allungare la testa verso il pavimento."
+          "Non lasciare cedere la zona lombare e non alzare il bacino.",
+          "Non aprire i gomiti completamente di lato e non allungare la testa verso il pavimento."
         ],
         "breathing": "Inspira scendendo ed espira mentre spingi per risalire.",
         "safety": "Impara la tecnica con un adulto. Termina prima di perdere la posizione, lasciando circa due ripetizioni ben fatte di riserva.",
@@ -2026,8 +2026,8 @@
           "Руки поднимаются совсем немного, шея расслаблена."
         ],
         "wrong": [
-          "Задирать голову и грудь.",
-          "Резко сжимать лопатки или поднимать плечи к ушам."
+          "Не задирай голову и не поднимай грудь высоко.",
+          "Не сжимай лопатки резко и не поднимай плечи к ушам."
         ],
         "breathing": "Выдох при подъёме рук, вдох при опускании.",
         "safety": "Работай без гантелей. Если шея напрягается, подложи под лоб тонко сложенное полотенце.",
@@ -2055,8 +2055,8 @@
           "Lift only a little and relax your neck."
         ],
         "wrong": [
-          "Lifting the head and chest high.",
-          "Squeezing suddenly or shrugging the shoulders."
+          "Don't lift your head high, and don't lift your chest high.",
+          "Don't squeeze your shoulder blades together suddenly, and don't shrug your shoulders."
         ],
         "breathing": "Breathe out as you lift and in as you lower.",
         "safety": "Use no weights. If your neck feels tense, rest your forehead on a thin folded towel.",
@@ -2084,8 +2084,8 @@
           "Kollarını yalnızca biraz kaldır, boynunu gevşet."
         ],
         "wrong": [
-          "Başını ve göğsünü çok kaldırmak.",
-          "Kürek kemiklerini aniden sıkıştırmak veya omuzlarını kulaklarına çekmek."
+          "Başını çok kaldırma ve göğsünü çok kaldırma.",
+          "Kürek kemiklerini aniden sıkıştırma ve omuzlarını kulaklarına çekme."
         ],
         "breathing": "Kollarını kaldırırken nefes ver, indirirken al.",
         "safety": "Dambıl kullanma. Boynun kasılıyorsa alnının altına ince katlanmış bir havlu koy.",
@@ -2113,8 +2113,8 @@
           "Heb die Arme nur wenig und lass den Nacken locker."
         ],
         "wrong": [
-          "Kopf und Brust hoch anheben.",
-          "Die Schulterblätter ruckartig zusammenziehen oder die Schultern hochziehen."
+          "Heb den Kopf nicht hoch und heb die Brust nicht hoch.",
+          "Zieh die Schulterblätter nicht ruckartig zusammen und zieh die Schultern nicht hoch."
         ],
         "breathing": "Atme beim Anheben aus und beim Absenken ein.",
         "safety": "Übe ohne Hanteln. Wenn sich der Nacken verspannt, leg ein dünn gefaltetes Handtuch unter die Stirn.",
@@ -2142,8 +2142,8 @@
           "Levanta muy poco los brazos y relaja el cuello."
         ],
         "wrong": [
-          "Levantar mucho la cabeza y el pecho.",
-          "Juntar los omóplatos bruscamente o encoger los hombros."
+          "No levantes demasiado la cabeza ni el pecho.",
+          "No juntes los omóplatos bruscamente ni encojas los hombros."
         ],
         "breathing": "Espira al levantar los brazos e inspira al bajarlos.",
         "safety": "Sin pesas. Si se tensa el cuello, apoya la frente en una toalla doblada fina.",
@@ -2171,8 +2171,8 @@
           "Lève très peu les bras et détends le cou."
         ],
         "wrong": [
-          "Lever trop haut la tête et la poitrine.",
-          "Serrer brusquement les omoplates ou hausser les épaules."
+          "Ne lève pas trop haut la tête ni la poitrine.",
+          "Ne serre pas brusquement les omoplates et ne hausse pas les épaules."
         ],
         "breathing": "Expire en levant les bras et inspire en les baissant.",
         "safety": "Sans haltères. Si le cou se crispe, pose le front sur une serviette pliée finement.",
@@ -2200,8 +2200,8 @@
           "Solleva pochissimo le braccia e rilassa il collo."
         ],
         "wrong": [
-          "Sollevare molto testa e petto.",
-          "Stringere di colpo le scapole o alzare le spalle."
+          "Non sollevare troppo la testa e il petto.",
+          "Non stringere di colpo le scapole e non alzare le spalle."
         ],
         "breathing": "Espira sollevando le braccia e inspira abbassandole.",
         "safety": "Senza pesi. Se senti il collo teso, appoggia la fronte su un asciugamano piegato sottile.",
@@ -2248,8 +2248,8 @@
           "Корпус прямой, опора рукой лёгкая."
         ],
         "wrong": [
-          "Подпрыгивать или резко ронять пятку.",
-          "Сильно тянуть себя рукой вверх."
+          "Не подпрыгивай и не роняй пятку резко.",
+          "Не тяни себя сильно вверх рукой."
         ],
         "breathing": "Выдох при подъёме, вдох при опускании.",
         "safety": "Выполняй на ровном полу, не на краю ступени; при боли остановись.",
@@ -2278,8 +2278,8 @@
           "Stand tall and use only light hand support."
         ],
         "wrong": [
-          "Bouncing or dropping the heel.",
-          "Pulling yourself upward with your arm."
+          "Don't bounce, and don't drop your heel.",
+          "Don't pull yourself upward with your arm."
         ],
         "breathing": "Breathe out as you rise and in as you lower.",
         "safety": "Use a flat floor, not the edge of a step; stop if it hurts.",
@@ -2308,8 +2308,8 @@
           "Dik dur, elinden yalnızca hafif destek al."
         ],
         "wrong": [
-          "Zıplamak veya topuğunu aniden indirmek.",
-          "Kolunla kendini güçlüce yukarı çekmek."
+          "Zıplama ve topuğunu aniden indirme.",
+          "Kolunla kendini güçlüce yukarı çekme."
         ],
         "breathing": "Yükselirken nefes ver, inerken al.",
         "safety": "Basamak kenarında değil, düz zeminde çalış; ağrı olursa dur.",
@@ -2338,8 +2338,8 @@
           "Steh aufrecht und stütze dich nur leicht mit der Hand ab."
         ],
         "wrong": [
-          "Federn oder die Ferse fallen lassen.",
-          "Sich mit dem Arm kräftig hochziehen."
+          "Federe nicht und lass die Ferse nicht fallen.",
+          "Zieh dich nicht mit dem Arm kräftig hoch."
         ],
         "breathing": "Atme beim Anheben aus und beim Absenken ein.",
         "safety": "Übe auf ebenem Boden, nicht an einer Stufenkante; hör bei Schmerzen auf.",
@@ -2368,8 +2368,8 @@
           "Mantén el cuerpo recto y apóyate muy poco con la mano."
         ],
         "wrong": [
-          "Rebotar o dejar caer el talón.",
-          "Tirar fuerte con el brazo para subir."
+          "No rebotes ni dejes caer el talón de golpe.",
+          "No tires fuerte con el brazo para subir."
         ],
         "breathing": "Espira al subir e inspira al bajar.",
         "safety": "Hazlo en suelo llano, no en el borde de un escalón; para si duele.",
@@ -2398,8 +2398,8 @@
           "Tiens-toi droit avec un appui très léger de la main."
         ],
         "wrong": [
-          "Rebondir ou laisser tomber le talon.",
-          "Se tirer vers le haut avec le bras."
+          "Ne rebondis pas et ne laisse pas tomber le talon brusquement.",
+          "Ne te tire pas vers le haut avec le bras."
         ],
         "breathing": "Expire en montant et inspire en descendant.",
         "safety": "Fais-le sur un sol plat, pas au bord d’une marche ; arrête si tu as mal.",
@@ -2428,8 +2428,8 @@
           "Stai dritto e appoggiati pochissimo con la mano."
         ],
         "wrong": [
-          "Rimbalzare o lasciar cadere il tallone.",
-          "Tirarti forte verso l’alto con il braccio."
+          "Non rimbalzare e non lasciar cadere il tallone di colpo.",
+          "Non tirarti forte verso l’alto con il braccio."
         ],
         "breathing": "Espira salendo e inspira scendendo.",
         "safety": "Fallo su un pavimento piano, non sul bordo di un gradino; fermati se senti dolore.",
@@ -2476,8 +2476,8 @@
           "Шея расслаблена, движение медленное."
         ],
         "wrong": [
-          "Опускать ногу слишком низко и прогибать поясницу.",
-          "Торопиться или задерживать дыхание."
+          "Не опускай ногу слишком низко и не прогибай поясницу.",
+          "Не торопись и не задерживай дыхание."
         ],
         "breathing": "Выдох при вытяжении руки и ноги, вдох при возвращении.",
         "safety": "Уменьши размах или оставь колено согнутым, если поясница начинает двигаться.",
@@ -2506,8 +2506,8 @@
           "Relax your neck and move slowly."
         ],
         "wrong": [
-          "Lowering the leg too far and arching the back.",
-          "Rushing or holding your breath."
+          "Don't lower your leg too far, and don't arch your back.",
+          "Don't rush, and don't hold your breath."
         ],
         "breathing": "Breathe out as you reach and in as you return.",
         "safety": "Shorten the reach or keep your knee bent if your lower back starts to move.",
@@ -2536,8 +2536,8 @@
           "Boynunu gevşet, yavaş hareket et."
         ],
         "wrong": [
-          "Bacağını fazla aşağı indirerek belini çukurlaştırmak.",
-          "Acele etmek veya nefesini tutmak."
+          "Bacağını fazla aşağı indirme ve belini çukurlaştırma.",
+          "Acele etme ve nefesini tutma."
         ],
         "breathing": "Kol ve bacağını uzatırken nefes ver, geri getirirken al.",
         "safety": "Belin hareket etmeye başlarsa daha az uzan veya dizini bükülü tut.",
@@ -2566,8 +2566,8 @@
           "Lass den Nacken locker und bewege dich langsam."
         ],
         "wrong": [
-          "Das Bein zu tief absenken und ins Hohlkreuz gehen.",
-          "Sich beeilen oder die Luft anhalten."
+          "Senke das Bein nicht zu tief ab und geh nicht ins Hohlkreuz.",
+          "Beeile dich nicht und halte die Luft nicht an."
         ],
         "breathing": "Atme beim Strecken aus und beim Zurückführen ein.",
         "safety": "Verkleinere die Bewegung oder lass das Knie gebeugt, wenn sich der untere Rücken mitbewegt.",
@@ -2596,8 +2596,8 @@
           "Relaja el cuello y muévete despacio."
         ],
         "wrong": [
-          "Bajar demasiado la pierna y arquear la espalda.",
-          "Ir deprisa o aguantar la respiración."
+          "No bajes demasiado la pierna ni arquees la espalda.",
+          "No vayas deprisa ni aguantes la respiración."
         ],
         "breathing": "Espira al estirar el brazo y la pierna e inspira al volver.",
         "safety": "Reduce el recorrido o deja la rodilla flexionada si empieza a moverse la zona lumbar.",
@@ -2626,8 +2626,8 @@
           "Détends le cou et bouge lentement."
         ],
         "wrong": [
-          "Descendre la jambe trop bas et creuser le dos.",
-          "Se précipiter ou bloquer la respiration."
+          "Ne descends pas la jambe trop bas et ne creuse pas le dos.",
+          "Ne te précipite pas et ne bloque pas ta respiration."
         ],
         "breathing": "Expire en allongeant le bras et la jambe, inspire en revenant.",
         "safety": "Réduis l’amplitude ou garde le genou plié si le bas du dos commence à bouger.",
@@ -2656,8 +2656,8 @@
           "Rilassa il collo e muoviti lentamente."
         ],
         "wrong": [
-          "Abbassare troppo la gamba e inarcare la schiena.",
-          "Avere fretta o trattenere il respiro."
+          "Non abbassare troppo la gamba e non inarcare la schiena.",
+          "Non avere fretta e non trattenere il respiro."
         ],
         "breathing": "Espira mentre allunghi braccio e gamba, inspira tornando indietro.",
         "safety": "Riduci il movimento o tieni il ginocchio piegato se la zona lombare inizia a muoversi.",
@@ -2703,8 +2703,8 @@
           "Плечи расслаблены, пятка не поднимается."
         ],
         "wrong": [
-          "Пружинить или давить через боль.",
-          "Разворачивать заднюю стопу наружу."
+          "Не пружинь и не дави через боль.",
+          "Не разворачивай заднюю стопу наружу."
         ],
         "breathing": "Дыши спокойно без задержек.",
         "safety": "Если чувствуешь давление в колене или боль в пятке, уменьши шаг или остановись.",
@@ -2732,8 +2732,8 @@
           "Relax your shoulders and keep the heel down."
         ],
         "wrong": [
-          "Bouncing or pushing through pain.",
-          "Turning the back foot outward."
+          "Don't bounce, and don't push through pain.",
+          "Don't turn your back foot outward."
         ],
         "breathing": "Breathe calmly without holding your breath.",
         "safety": "If you feel knee pressure or heel pain, shorten the stance or stop.",
@@ -2761,8 +2761,8 @@
           "Omuzlarını gevşet, topuğunu yerde tut."
         ],
         "wrong": [
-          "Yaylanmak veya ağrıya rağmen zorlamak.",
-          "Arkadaki ayağı dışa çevirmek."
+          "Yaylanma ve ağrıya rağmen zorlama.",
+          "Arkadaki ayağını dışa çevirme."
         ],
         "breathing": "Nefesini tutmadan sakin nefes al.",
         "safety": "Dizinde baskı veya topuğunda ağrı hissedersen adım aralığını kısalt ya da dur.",
@@ -2790,8 +2790,8 @@
           "Entspann die Schultern und lass die Ferse unten."
         ],
         "wrong": [
-          "Federn oder trotz Schmerzen weiterdrücken.",
-          "Den hinteren Fuß nach außen drehen."
+          "Federe nicht und drück nicht trotz Schmerzen weiter.",
+          "Dreh den hinteren Fuß nicht nach außen."
         ],
         "breathing": "Atme ruhig, ohne die Luft anzuhalten.",
         "safety": "Wenn du Druck im Knie oder Schmerzen an der Ferse spürst, verkürze den Abstand der Füße oder hör auf.",
@@ -2819,8 +2819,8 @@
           "Relaja los hombros y mantén el talón apoyado."
         ],
         "wrong": [
-          "Rebotar o forzar aunque duela.",
-          "Girar el pie trasero hacia fuera."
+          "No rebotes ni fuerces si te duele.",
+          "No gires el pie trasero hacia fuera."
         ],
         "breathing": "Respira con calma sin aguantar el aire.",
         "safety": "Si notas presión en la rodilla o dolor en el talón, acorta la separación de los pies o para.",
@@ -2848,8 +2848,8 @@
           "Relâche les épaules et garde le talon au sol."
         ],
         "wrong": [
-          "Rebondir ou forcer malgré la douleur.",
-          "Tourner le pied arrière vers l’extérieur."
+          "Ne fais pas de rebonds et ne force pas si tu as mal.",
+          "Ne tourne pas le pied arrière vers l’extérieur."
         ],
         "breathing": "Respire calmement sans bloquer ton souffle.",
         "safety": "Si tu sens une pression au genou ou une douleur au talon, rapproche les pieds ou arrête.",
@@ -2877,8 +2877,8 @@
           "Rilassa le spalle e tieni il tallone a terra."
         ],
         "wrong": [
-          "Molleggiare o forzare nonostante il dolore.",
-          "Girare il piede dietro verso l’esterno."
+          "Non molleggiare e non forzare se senti dolore.",
+          "Non girare il piede dietro verso l’esterno."
         ],
         "breathing": "Respira con calma senza trattenere il fiato.",
         "safety": "Se senti pressione al ginocchio o dolore al tallone, avvicina i piedi o fermati.",
@@ -2924,8 +2924,8 @@
           "Тело лежит свободно."
         ],
         "wrong": [
-          "Задерживать дыхание.",
-          "Стараться вдохнуть как можно больше."
+          "Не задерживай дыхание.",
+          "Не старайся вдохнуть как можно больше."
         ],
         "breathing": "Обычные спокойные вдохи и выдохи, без счёта.",
         "safety": "Если закружилась голова, вернись к обычному дыханию и сообщи взрослому.",
@@ -2953,8 +2953,8 @@
           "Let your body rest."
         ],
         "wrong": [
-          "Holding your breath.",
-          "Trying to take the biggest possible breath."
+          "Don't hold your breath.",
+          "Don't try to take the biggest possible breath."
         ],
         "breathing": "Take ordinary, calm breaths without counting.",
         "safety": "If you feel dizzy, return to ordinary breathing and tell an adult.",
@@ -2982,8 +2982,8 @@
           "Vücudunu dinlendir."
         ],
         "wrong": [
-          "Nefesini tutmak.",
-          "Mümkün olan en büyük nefesi almaya çalışmak."
+          "Nefesini tutma.",
+          "Mümkün olan en büyük nefesi almaya çalışma."
         ],
         "breathing": "Saymadan, normal ve sakin nefes al.",
         "safety": "Başın dönerse normal nefesine dön ve bir yetişkine söyle.",
@@ -3011,8 +3011,8 @@
           "Lass deinen Körper ruhen."
         ],
         "wrong": [
-          "Die Luft anhalten.",
-          "So tief wie nur möglich einatmen wollen."
+          "Halte die Luft nicht an.",
+          "Versuche nicht, so tief wie nur möglich einzuatmen."
         ],
         "breathing": "Atme ganz normal und ruhig, ohne zu zählen.",
         "safety": "Wenn dir schwindelig wird, atme wieder ganz normal und sag einem Erwachsenen Bescheid.",
@@ -3040,8 +3040,8 @@
           "Deja descansar el cuerpo."
         ],
         "wrong": [
-          "Aguantar la respiración.",
-          "Intentar tomar todo el aire posible."
+          "No aguantes la respiración.",
+          "No intentes tomar todo el aire posible."
         ],
         "breathing": "Respira normalmente y con calma, sin contar.",
         "safety": "Si te mareas, vuelve a respirar normalmente y avisa a un adulto.",
@@ -3069,8 +3069,8 @@
           "Laisse ton corps se reposer."
         ],
         "wrong": [
-          "Bloquer sa respiration.",
-          "Chercher à inspirer le plus d’air possible."
+          "Ne bloque pas ta respiration.",
+          "Ne cherche pas à inspirer le plus d’air possible."
         ],
         "breathing": "Respire normalement et calmement, sans compter.",
         "safety": "Si tu as la tête qui tourne, reprends une respiration normale et préviens un adulte.",
@@ -3098,8 +3098,8 @@
           "Lascia riposare il corpo."
         ],
         "wrong": [
-          "Trattenere il respiro.",
-          "Cercare di prendere più aria possibile."
+          "Non trattenere il respiro.",
+          "Non cercare di prendere più aria possibile."
         ],
         "breathing": "Respira normalmente e con calma, senza contare.",
         "safety": "Se ti gira la testa, torna a respirare normalmente e avvisa un adulto.",
@@ -3145,8 +3145,8 @@
           "Голова остаётся примерно на одной высоте."
         ],
         "wrong": [
-          "Подпрыгивать или бежать боком.",
-          "Сильно наклоняться и сводить колени."
+          "Не подпрыгивай и не беги боком.",
+          "Не наклоняйся сильно и не своди колени."
         ],
         "breathing": "Дыши свободно и ровно.",
         "safety": "Оставайся внутри свободного места; ковёр должен лежать ровно и не скользить.",
@@ -3174,8 +3174,8 @@
           "Keep your head at roughly the same height."
         ],
         "wrong": [
-          "Bouncing or running sideways.",
-          "Leaning far over or letting knees fall inward."
+          "Don't bounce, and don't run sideways.",
+          "Don't lean far over, and don't let your knees fall inward."
         ],
         "breathing": "Breathe freely and evenly.",
         "safety": "Stay within your clear space and use a flat, nonslip mat.",
@@ -3203,8 +3203,8 @@
           "Başını yaklaşık aynı yükseklikte tut."
         ],
         "wrong": [
-          "Zıplamak veya yana koşmak.",
-          "Gövdeni fazla yana eğmek veya dizlerini içeri kaçırmak."
+          "Zıplama ve yana koşma.",
+          "Gövdeni fazla yana eğme ve dizlerini içeri kaçırma."
         ],
         "breathing": "Rahat ve düzenli nefes al.",
         "safety": "Boş alanının içinde kal, düz ve kaymayan bir mat kullan.",
@@ -3232,8 +3232,8 @@
           "Halte den Kopf ungefähr auf derselben Höhe."
         ],
         "wrong": [
-          "Hüpfen oder seitwärts rennen.",
-          "Den Oberkörper stark neigen oder die Knie nach innen kippen lassen."
+          "Hüpfe nicht und renne nicht seitwärts.",
+          "Neige den Oberkörper nicht stark und lass die Knie nicht nach innen kippen."
         ],
         "breathing": "Atme frei und gleichmäßig.",
         "safety": "Bleib innerhalb deiner freien Fläche und übe auf einer ebenen, rutschfesten Matte.",
@@ -3261,8 +3261,8 @@
           "Mantén la cabeza aproximadamente a la misma altura."
         ],
         "wrong": [
-          "Rebotar o correr de lado.",
-          "Inclinarte demasiado o dejar que las rodillas caigan hacia dentro."
+          "No rebotes ni corras de lado.",
+          "No te inclines demasiado ni dejes que las rodillas caigan hacia dentro."
         ],
         "breathing": "Respira libremente y de forma regular.",
         "safety": "Quédate en el espacio despejado y usa una alfombra plana que no resbale.",
@@ -3290,8 +3290,8 @@
           "Garde la tête à peu près à la même hauteur."
         ],
         "wrong": [
-          "Rebondir ou courir de côté.",
-          "Trop se pencher ou laisser les genoux rentrer."
+          "Ne rebondis pas et ne cours pas de côté.",
+          "Ne te penche pas trop et ne laisse pas les genoux rentrer."
         ],
         "breathing": "Respire librement et régulièrement.",
         "safety": "Reste dans l’espace dégagé, sur un tapis plat qui ne glisse pas.",
@@ -3319,8 +3319,8 @@
           "Tieni la testa più o meno alla stessa altezza."
         ],
         "wrong": [
-          "Rimbalzare o correre di lato.",
-          "Inclinarti troppo o lasciare cadere le ginocchia all’interno."
+          "Non rimbalzare e non correre di lato.",
+          "Non inclinarti troppo e non lasciare cadere le ginocchia all’interno."
         ],
         "breathing": "Respira liberamente e in modo regolare.",
         "safety": "Resta nello spazio libero e usa un tappeto piano e antiscivolo.",
@@ -3366,8 +3366,8 @@
           "Сначала точность, затем ровный ритм."
         ],
         "wrong": [
-          "Пропускать возвращение в центр.",
-          "Смотреть только под ноги и спешить."
+          "Не пропускай возвращение в центр.",
+          "Не смотри только под ноги и не спеши."
         ],
         "breathing": "Дыши свободно.",
         "safety": "Шагай на 30–50 см и заранее проверь свободное место позади себя.",
@@ -3395,8 +3395,8 @@
           "Find accuracy first, then an even rhythm."
         ],
         "wrong": [
-          "Skipping the return to centre.",
-          "Rushing or looking only at your feet."
+          "Don't skip the return to centre.",
+          "Don't rush, and don't look only at your feet."
         ],
         "breathing": "Breathe freely.",
         "safety": "Use 30–50 cm steps and check the space behind you first.",
@@ -3424,8 +3424,8 @@
           "Önce doğru basmaya, sonra düzenli ritme odaklan."
         ],
         "wrong": [
-          "Ortaya dönüşü atlamak.",
-          "Acele etmek veya yalnızca ayaklarına bakmak."
+          "Ortaya dönüşü atlama.",
+          "Acele etme ve yalnızca ayaklarına bakma."
         ],
         "breathing": "Rahatça nefes al.",
         "safety": "30–50 cm uzunluğunda adımlar at; önce arkandaki alanı kontrol et.",
@@ -3453,8 +3453,8 @@
           "Achte zuerst auf Genauigkeit, dann auf einen gleichmäßigen Rhythmus."
         ],
         "wrong": [
-          "Den Rückweg zur Mitte auslassen.",
-          "Sich beeilen oder nur auf die Füße schauen."
+          "Lass den Rückweg zur Mitte nicht aus.",
+          "Beeile dich nicht und schau nicht nur auf die Füße."
         ],
         "breathing": "Atme frei weiter.",
         "safety": "Mach 30–50 cm lange Schritte und prüfe zuerst, ob hinter dir Platz ist.",
@@ -3482,8 +3482,8 @@
           "Primero busca precisión y después un ritmo regular."
         ],
         "wrong": [
-          "Saltarte la vuelta al centro.",
-          "Ir deprisa o mirar solo los pies."
+          "No te saltes la vuelta al centro.",
+          "No vayas deprisa ni mires solo los pies."
         ],
         "breathing": "Respira libremente.",
         "safety": "Da pasos de 30–50 cm y comprueba antes el espacio que hay detrás.",
@@ -3511,8 +3511,8 @@
           "Cherche d’abord la précision, puis un rythme régulier."
         ],
         "wrong": [
-          "Oublier de revenir au centre.",
-          "Se précipiter ou ne regarder que ses pieds."
+          "N’oublie pas de revenir au centre.",
+          "Ne te précipite pas et ne regarde pas seulement tes pieds."
         ],
         "breathing": "Respire librement.",
         "safety": "Fais des pas de 30–50 cm et vérifie d’abord l’espace derrière toi.",
@@ -3540,8 +3540,8 @@
           "Cerca prima la precisione, poi un ritmo regolare."
         ],
         "wrong": [
-          "Saltare il ritorno al centro.",
-          "Avere fretta o guardare solo i piedi."
+          "Non saltare il ritorno al centro.",
+          "Non avere fretta e non guardare solo i piedi."
         ],
         "breathing": "Respira liberamente.",
         "safety": "Fai passi di 30–50 cm e controlla prima lo spazio dietro di te.",
@@ -3588,8 +3588,8 @@
           "Опорная стопа спокойно лежит на полу."
         ],
         "wrong": [
-          "Сильно наклоняться в сторону.",
-          "Зажмуриваться или выпрямлять колено до жёсткого упора."
+          "Не наклоняйся сильно в сторону.",
+          "Не зажмуривайся и не выпрямляй колено до жёсткого упора."
         ],
         "breathing": "Дыши спокойно, не задерживай дыхание.",
         "safety": "Можно касаться стены пальцами; не пытайся спасти равновесие резким прыжком.",
@@ -3617,8 +3617,8 @@
           "Keep the standing foot steady on the floor."
         ],
         "wrong": [
-          "Leaning far to one side.",
-          "Closing your eyes or locking your knee."
+          "Don't lean far to one side.",
+          "Don't close your eyes, and don't lock your knee."
         ],
         "breathing": "Breathe calmly without holding your breath.",
         "safety": "You may touch the wall with your fingertips; avoid sudden hops to catch your balance.",
@@ -3646,8 +3646,8 @@
           "Yerdeki ayağın sabit kalsın."
         ],
         "wrong": [
-          "Bir yana fazla eğilmek.",
-          "Gözlerini kapatmak veya dizini kilitlemek."
+          "Bir yana fazla eğilme.",
+          "Gözlerini kapatma ve dizini kilitleme."
         ],
         "breathing": "Nefesini tutmadan sakin nefes al.",
         "safety": "Parmak uçlarınla duvara dokunabilirsin; dengeni toplamak için aniden sıçrama.",
@@ -3675,8 +3675,8 @@
           "Der Standfuß bleibt ruhig am Boden."
         ],
         "wrong": [
-          "Sich stark zu einer Seite neigen.",
-          "Die Augen schließen oder das Knie durchdrücken."
+          "Neige dich nicht stark zu einer Seite.",
+          "Schließe die Augen nicht und drück das Knie nicht durch."
         ],
         "breathing": "Atme ruhig, ohne die Luft anzuhalten.",
         "safety": "Du darfst die Wand mit den Fingerspitzen berühren; versuche nicht, dich mit plötzlichen Sprüngen auszubalancieren.",
@@ -3704,8 +3704,8 @@
           "Mantén estable el pie apoyado."
         ],
         "wrong": [
-          "Inclinarte mucho hacia un lado.",
-          "Cerrar los ojos o bloquear la rodilla."
+          "No te inclines mucho hacia un lado.",
+          "No cierres los ojos ni bloquees la rodilla."
         ],
         "breathing": "Respira con calma sin aguantar el aire.",
         "safety": "Puedes tocar la pared con los dedos; evita saltos bruscos para recuperar el equilibrio.",
@@ -3733,8 +3733,8 @@
           "Garde le pied d’appui stable au sol."
         ],
         "wrong": [
-          "Se pencher beaucoup d’un côté.",
-          "Fermer les yeux ou verrouiller le genou."
+          "Ne te penche pas trop d’un côté.",
+          "Ne ferme pas les yeux et ne verrouille pas le genou."
         ],
         "breathing": "Respire calmement sans bloquer ton souffle.",
         "safety": "Tu peux toucher le mur du bout des doigts ; évite les sauts brusques pour retrouver l’équilibre.",
@@ -3762,8 +3762,8 @@
           "Tieni stabile a terra il piede d’appoggio."
         ],
         "wrong": [
-          "Inclinarti molto da un lato.",
-          "Chiudere gli occhi o bloccare il ginocchio."
+          "Non inclinarti troppo da un lato.",
+          "Non chiudere gli occhi e non bloccare il ginocchio."
         ],
         "breathing": "Respira con calma senza trattenere il fiato.",
         "safety": "Puoi toccare il muro con le dita; evita saltelli improvvisi per ritrovare l’equilibrio.",
@@ -3809,8 +3809,8 @@
           "Касание лёгкое, шаги тихие."
         ],
         "wrong": [
-          "Сгибаться к колену всем корпусом.",
-          "Прыгать между шагами или бить ладонью по колену."
+          "Не сгибайся к колену всем корпусом.",
+          "Не прыгай между шагами и не бей ладонью по колену."
         ],
         "breathing": "Дыши свободно в удобном ритме.",
         "safety": "Если равновесие теряется, поднимай колено ниже и замедлись.",
@@ -3838,8 +3838,8 @@
           "Use a light touch and quiet steps."
         ],
         "wrong": [
-          "Folding your body down toward the knee.",
-          "Hopping between steps or slapping the knee."
+          "Don't fold your body down toward your knee.",
+          "Don't hop between steps, and don't slap your knee."
         ],
         "breathing": "Breathe freely at a comfortable pace.",
         "safety": "If you lose balance, lift the knees lower and slow down.",
@@ -3867,8 +3867,8 @@
           "Hafifçe dokun, sessiz adımlar at."
         ],
         "wrong": [
-          "Gövdeni dizine doğru katlamak.",
-          "Adımlar arasında sıçramak veya dize vurmak."
+          "Gövdeni dizine doğru katlama.",
+          "Adımlar arasında sıçrama ve dizine vurma."
         ],
         "breathing": "Rahat bir tempoda serbestçe nefes al.",
         "safety": "Dengeni kaybedersen dizlerini daha az kaldır ve yavaşla.",
@@ -3896,8 +3896,8 @@
           "Berühre das Knie leicht und setze die Füße leise auf."
         ],
         "wrong": [
-          "Den Oberkörper zum Knie herunterklappen.",
-          "Zwischen den Schritten hüpfen oder auf das Knie schlagen."
+          "Klappe den Oberkörper nicht zum Knie herunter.",
+          "Hüpfe nicht zwischen den Schritten und schlage nicht auf das Knie."
         ],
         "breathing": "Atme frei und in angenehmem Tempo.",
         "safety": "Wenn du das Gleichgewicht verlierst, heb die Knie weniger hoch und werde langsamer.",
@@ -3925,8 +3925,8 @@
           "Toca suavemente y da pasos silenciosos."
         ],
         "wrong": [
-          "Doblar el cuerpo hacia la rodilla.",
-          "Saltar entre pasos o golpear la rodilla."
+          "No dobles el cuerpo hacia la rodilla.",
+          "No saltes entre pasos ni golpees la rodilla."
         ],
         "breathing": "Respira libremente a un ritmo cómodo.",
         "safety": "Si pierdes el equilibrio, levanta menos las rodillas y baja el ritmo.",
@@ -3954,8 +3954,8 @@
           "Touche doucement et pose les pieds sans bruit."
         ],
         "wrong": [
-          "Pencher le corps vers le genou.",
-          "Sautiller entre les pas ou taper sur le genou."
+          "Ne penche pas le corps vers le genou.",
+          "Ne sautille pas entre les pas et ne tape pas sur le genou."
         ],
         "breathing": "Respire librement à un rythme confortable.",
         "safety": "Si tu perds l’équilibre, monte moins les genoux et ralentis.",
@@ -3983,8 +3983,8 @@
           "Tocca piano e fai passi silenziosi."
         ],
         "wrong": [
-          "Piegare il corpo verso il ginocchio.",
-          "Saltellare tra i passi o colpire il ginocchio."
+          "Non piegare il corpo verso il ginocchio.",
+          "Non saltellare tra i passi e non colpire il ginocchio."
         ],
         "breathing": "Respira liberamente a un ritmo comodo.",
         "safety": "Se perdi equilibrio, alza meno le ginocchia e rallenta.",
@@ -4031,8 +4031,8 @@
           "Колени следуют направлению стоп."
         ],
         "wrong": [
-          "Скручивать колени при неподвижных стопах.",
-          "Имитировать резкий сильный удар."
+          "Не скручивай колени при неподвижных стопах.",
+          "Не имитируй резкий сильный удар."
         ],
         "breathing": "Выдох при повороте, вдох при возвращении.",
         "safety": "Не поворачивайся до предела; сначала разучи положение с тренером.",
@@ -4061,8 +4061,8 @@
           "Keep knees aligned with your feet."
         ],
         "wrong": [
-          "Twisting knees while keeping feet fixed.",
-          "Imitating a fast, forceful shot."
+          "Don't twist your knees while keeping your feet fixed.",
+          "Don't imitate a fast, forceful shot."
         ],
         "breathing": "Breathe out as you turn and in as you return.",
         "safety": "Avoid turning to your limit; learn the position with your coach first.",
@@ -4091,8 +4091,8 @@
           "Dizlerin ayaklarınla aynı yönde kalsın."
         ],
         "wrong": [
-          "Ayaklar sabitken dizleri burmak.",
-          "Hızlı ve güçlü bir vuruşu taklit etmek."
+          "Ayakların sabitken dizlerini burma.",
+          "Hızlı ve güçlü bir vuruşu taklit etme."
         ],
         "breathing": "Dönerken nefes ver, geri gelirken al.",
         "safety": "Son sınırına kadar dönme; duruşu önce antrenörünle öğren.",
@@ -4121,8 +4121,8 @@
           "Die Knie bleiben in Richtung der Füße ausgerichtet."
         ],
         "wrong": [
-          "Die Knie verdrehen, während die Füße feststehen.",
-          "Einen schnellen, kraftvollen Schlag nachahmen."
+          "Verdrehe die Knie nicht, während die Füße feststehen.",
+          "Ahme keinen schnellen, kraftvollen Schlag nach."
         ],
         "breathing": "Atme beim Drehen aus und beim Zurückdrehen ein.",
         "safety": "Dreh dich nicht bis an deine Grenze; lerne die Haltung zuerst mit deinem Trainer.",
@@ -4151,8 +4151,8 @@
           "Mantén las rodillas alineadas con los pies."
         ],
         "wrong": [
-          "Torcer las rodillas dejando los pies fijos.",
-          "Imitar un golpe rápido y fuerte."
+          "No tuerzas las rodillas dejando los pies fijos.",
+          "No imites un golpe rápido y fuerte."
         ],
         "breathing": "Espira al girar e inspira al volver.",
         "safety": "No gires hasta tu límite; aprende antes la posición con tu entrenador.",
@@ -4181,8 +4181,8 @@
           "Garde les genoux dans l’axe des pieds."
         ],
         "wrong": [
-          "Tordre les genoux en laissant les pieds fixes.",
-          "Imiter une frappe rapide et puissante."
+          "Ne tords pas les genoux en laissant les pieds fixes.",
+          "N’imite pas une frappe rapide et puissante."
         ],
         "breathing": "Expire en tournant et inspire en revenant.",
         "safety": "Ne tourne pas jusqu’à ta limite ; apprends d’abord la position avec ton entraîneur.",
@@ -4211,8 +4211,8 @@
           "Tieni le ginocchia allineate ai piedi."
         ],
         "wrong": [
-          "Torcere le ginocchia lasciando fermi i piedi.",
-          "Imitare un colpo rapido e forte."
+          "Non torcere le ginocchia lasciando fermi i piedi.",
+          "Non imitare un colpo rapido e forte."
         ],
         "breathing": "Espira ruotando e inspira tornando al centro.",
         "safety": "Non ruotare fino al limite; impara prima la posizione con il tuo allenatore.",
@@ -4258,8 +4258,8 @@
           "Руки и колени остаются на месте."
         ],
         "wrong": [
-          "Резко выгибать поясницу.",
-          "Тянуть голову высоко вверх или задерживать дыхание."
+          "Не выгибай поясницу резко.",
+          "Не тяни голову высоко вверх и не задерживай дыхание."
         ],
         "breathing": "Выдох при округлении, вдох при возвращении.",
         "safety": "Под коленями должен быть мягкий нескользкий ковёр; при боли в запястьях прекрати упражнение.",
@@ -4287,8 +4287,8 @@
           "Keep hands and knees in place."
         ],
         "wrong": [
-          "Sharply arching the lower back.",
-          "Lifting the head high or holding your breath."
+          "Don't arch your lower back sharply.",
+          "Don't lift your head high, and don't hold your breath."
         ],
         "breathing": "Breathe out while rounding and in while returning.",
         "safety": "Use a soft nonslip mat under your knees; stop if your wrists hurt.",
@@ -4316,8 +4316,8 @@
           "Ellerin ve dizlerin yerinde kalsın."
         ],
         "wrong": [
-          "Belini aniden çukurlaştırmak.",
-          "Başını çok kaldırmak veya nefesini tutmak."
+          "Belini aniden çukurlaştırma.",
+          "Başını çok kaldırma ve nefesini tutma."
         ],
         "breathing": "Yuvarlarken nefes ver, geri dönerken al.",
         "safety": "Dizlerinin altında yumuşak, kaymayan bir mat olsun; bileklerin ağrırsa dur.",
@@ -4345,8 +4345,8 @@
           "Hände und Knie bleiben an ihrem Platz."
         ],
         "wrong": [
-          "Den unteren Rücken stark durchdrücken.",
-          "Den Kopf hochheben oder die Luft anhalten."
+          "Drück den unteren Rücken nicht stark durch.",
+          "Heb den Kopf nicht hoch und halte die Luft nicht an."
         ],
         "breathing": "Atme beim Rundmachen aus und beim Zurückkommen ein.",
         "safety": "Leg eine weiche, rutschfeste Matte unter die Knie; hör auf, wenn die Handgelenke wehtun.",
@@ -4374,8 +4374,8 @@
           "Mantén manos y rodillas en su sitio."
         ],
         "wrong": [
-          "Arquear bruscamente la zona lumbar.",
-          "Levantar mucho la cabeza o aguantar la respiración."
+          "No arquees bruscamente la zona lumbar.",
+          "No levantes demasiado la cabeza ni aguantes la respiración."
         ],
         "breathing": "Espira al redondear e inspira al volver.",
         "safety": "Pon una alfombra suave y antideslizante bajo las rodillas; para si te duelen las muñecas.",
@@ -4403,8 +4403,8 @@
           "Garde les mains et les genoux en place."
         ],
         "wrong": [
-          "Creuser brusquement le bas du dos.",
-          "Lever la tête trop haut ou bloquer le souffle."
+          "Ne creuse pas brusquement le bas du dos.",
+          "Ne lève pas la tête trop haut et ne bloque pas ta respiration."
         ],
         "breathing": "Expire en arrondissant le dos et inspire en revenant.",
         "safety": "Place un tapis doux et antidérapant sous les genoux ; arrête si les poignets font mal.",
@@ -4432,8 +4432,8 @@
           "Tieni ferme mani e ginocchia."
         ],
         "wrong": [
-          "Inarcare bruscamente la zona lombare.",
-          "Sollevare molto la testa o trattenere il respiro."
+          "Non inarcare bruscamente la zona lombare.",
+          "Non sollevare troppo la testa e non trattenere il respiro."
         ],
         "breathing": "Espira arrotondando la schiena e inspira tornando.",
         "safety": "Usa un tappeto morbido e antiscivolo sotto le ginocchia; fermati se ti fanno male i polsi.",
@@ -4480,8 +4480,8 @@
           "Шея поворачивается мягко вместе с взглядом."
         ],
         "wrong": [
-          "Раздвигать колени и перекатывать всё тело.",
-          "Давить рукой на пол или двигаться рывком."
+          "Не раздвигай колени и не перекатывай всё тело.",
+          "Не дави рукой на пол и не двигайся рывком."
         ],
         "breathing": "Выдох при раскрытии, вдох при возвращении.",
         "safety": "Можно положить под голову тонкую подушку; уменьшай поворот при дискомфорте.",
@@ -4510,8 +4510,8 @@
           "Let your neck turn gently with your gaze."
         ],
         "wrong": [
-          "Separating the knees and rolling the whole body.",
-          "Pushing the hand down or moving suddenly."
+          "Don't separate your knees, and don't roll your whole body.",
+          "Don't push your hand down, and don't move suddenly."
         ],
         "breathing": "Breathe out as you open and in as you return.",
         "safety": "A thin pillow may support your head; shorten the turn if uncomfortable.",
@@ -4540,8 +4540,8 @@
           "Bakışınla birlikte boynun da hafifçe dönsün."
         ],
         "wrong": [
-          "Dizlerini ayırıp bütün vücudunu yuvarlamak.",
-          "Elini aşağı bastırmak veya ani hareket etmek."
+          "Dizlerini ayırma ve bütün vücudunu yuvarlama.",
+          "Elini aşağı bastırma ve ani hareket etme."
         ],
         "breathing": "Açılırken nefes ver, geri dönerken al.",
         "safety": "Başının altına ince bir yastık koyabilirsin; rahatsızlık olursa daha az dön.",
@@ -4570,8 +4570,8 @@
           "Der Nacken dreht sich sanft mit deinem Blick."
         ],
         "wrong": [
-          "Die Knie auseinandernehmen und den ganzen Körper mitrollen.",
-          "Die Hand nach unten drücken oder sich ruckartig bewegen."
+          "Nimm die Knie nicht auseinander und rolle nicht mit dem ganzen Körper mit.",
+          "Drück die Hand nicht nach unten und bewege dich nicht ruckartig."
         ],
         "breathing": "Atme beim Öffnen aus und beim Zurückführen ein.",
         "safety": "Du kannst ein dünnes Kissen unter den Kopf legen; verkleinere die Drehung, wenn sie unangenehm ist.",
@@ -4600,8 +4600,8 @@
           "Deja que el cuello gire suavemente con la mirada."
         ],
         "wrong": [
-          "Separar las rodillas y rodar con todo el cuerpo.",
-          "Empujar la mano hacia abajo o moverte bruscamente."
+          "No separes las rodillas ni gires con todo el cuerpo.",
+          "No empujes la mano hacia el suelo ni te muevas bruscamente."
         ],
         "breathing": "Espira al abrir e inspira al volver.",
         "safety": "Puedes apoyar la cabeza en una almohada fina; reduce el giro si notas molestias.",
@@ -4630,8 +4630,8 @@
           "Laisse le cou tourner doucement avec le regard."
         ],
         "wrong": [
-          "Écarter les genoux et rouler avec tout le corps.",
-          "Pousser la main vers le sol ou bouger brusquement."
+          "N’écarte pas les genoux et ne roule pas avec tout le corps.",
+          "Ne pousse pas la main vers le sol et ne bouge pas brusquement."
         ],
         "breathing": "Expire en ouvrant et inspire en revenant.",
         "safety": "Un coussin fin peut soutenir ta tête ; réduis la rotation si tu sens une gêne.",
@@ -4660,8 +4660,8 @@
           "Lascia ruotare dolcemente il collo con lo sguardo."
         ],
         "wrong": [
-          "Separare le ginocchia e rotolare con tutto il corpo.",
-          "Spingere la mano in basso o muoverti di colpo."
+          "Non separare le ginocchia e non rotolare con tutto il corpo.",
+          "Non spingere la mano verso il pavimento e non muoverti di colpo."
         ],
         "breathing": "Espira aprendo e inspira tornando.",
         "safety": "Puoi sostenere la testa con un cuscino sottile; riduci la rotazione se senti fastidio.",
@@ -4708,8 +4708,8 @@
           "Плечи и шея расслаблены."
         ],
         "wrong": [
-          "С силой садиться на пятки.",
-          "Двигаться рывком или зажимать плечи."
+          "Не садись на пятки с силой.",
+          "Не двигайся рывком и не напрягай плечи."
         ],
         "breathing": "Выдох назад, вдох при возвращении.",
         "safety": "Выбирай глубину без давления в коленях; при боли остановись.",
@@ -4737,8 +4737,8 @@
           "Relax shoulders and neck."
         ],
         "wrong": [
-          "Forcing your hips onto your heels.",
-          "Moving suddenly or tensing the shoulders."
+          "Don't force your hips onto your heels.",
+          "Don't move suddenly, and don't tense your shoulders."
         ],
         "breathing": "Breathe out going back and in as you return.",
         "safety": "Choose a depth without knee pressure; stop if it hurts.",
@@ -4766,8 +4766,8 @@
           "Omuzlarını ve boynunu gevşet."
         ],
         "wrong": [
-          "Kalçanı topuklarına zorla bastırmak.",
-          "Ani hareket etmek veya omuzlarını kasmak."
+          "Kalçanı topuklarına zorla bastırma.",
+          "Ani hareket etme ve omuzlarını kasma."
         ],
         "breathing": "Geri giderken nefes ver, öne dönerken al.",
         "safety": "Dizlerinde baskı yaratmayan bir derinlik seç; ağrı olursa dur.",
@@ -4795,8 +4795,8 @@
           "Entspann Schultern und Nacken."
         ],
         "wrong": [
-          "Die Hüfte mit Gewalt auf die Fersen drücken.",
-          "Sich ruckartig bewegen oder die Schultern anspannen."
+          "Drück die Hüfte nicht mit Gewalt auf die Fersen.",
+          "Bewege dich nicht ruckartig und spanne die Schultern nicht an."
         ],
         "breathing": "Atme beim Zurückschieben aus und beim Zurückkehren ein.",
         "safety": "Wähle eine Tiefe ohne Druck auf die Knie; hör bei Schmerzen auf.",
@@ -4824,8 +4824,8 @@
           "Relaja hombros y cuello."
         ],
         "wrong": [
-          "Forzar las caderas hasta los talones.",
-          "Moverte de golpe o tensar los hombros."
+          "No fuerces para llevar las caderas hasta los talones.",
+          "No te muevas de golpe ni tenses los hombros."
         ],
         "breathing": "Espira al ir atrás e inspira al volver.",
         "safety": "Elige un recorrido sin presión en las rodillas; para si duele.",
@@ -4853,8 +4853,8 @@
           "Relâche les épaules et le cou."
         ],
         "wrong": [
-          "Forcer les hanches jusqu’aux talons.",
-          "Bouger brusquement ou crisper les épaules."
+          "Ne force pas pour poser les fesses sur les talons.",
+          "Ne bouge pas brusquement et ne crispe pas les épaules."
         ],
         "breathing": "Expire en reculant et inspire en revenant.",
         "safety": "Choisis une amplitude sans pression aux genoux ; arrête si tu as mal.",
@@ -4882,8 +4882,8 @@
           "Rilassa spalle e collo."
         ],
         "wrong": [
-          "Forzare il bacino fino ai talloni.",
-          "Muoversi di colpo o irrigidire le spalle."
+          "Non forzare per portare il bacino fino ai talloni.",
+          "Non muoverti di colpo e non irrigidire le spalle."
         ],
         "breathing": "Espira andando indietro e inspira tornando.",
         "safety": "Scegli un movimento senza pressione alle ginocchia; fermati se senti dolore.",
@@ -4929,8 +4929,8 @@
           "Колено остаётся слегка согнутым, если так удобнее."
         ],
         "wrong": [
-          "Тянуть за колено или стопу.",
-          "Прижимать ногу к лицу и пружинить."
+          "Не тяни за колено и не тяни за стопу.",
+          "Не прижимай ногу к лицу и не пружинь."
         ],
         "breathing": "Дыши свободно и спокойно.",
         "safety": "Остановись при боли, покалывании или онемении; не тяни через неприятные ощущения.",
@@ -4958,8 +4958,8 @@
           "Keep the knee slightly bent if that feels better."
         ],
         "wrong": [
-          "Pulling on the knee or foot.",
-          "Pulling the leg toward your face or bouncing."
+          "Don't pull on your knee, and don't pull on your foot.",
+          "Don't pull your leg toward your face, and don't bounce."
         ],
         "breathing": "Breathe freely and calmly.",
         "safety": "Stop if you feel pain, tingling or numbness; never pull through discomfort.",
@@ -4987,8 +4987,8 @@
           "Daha rahatsa dizini hafif bükülü tut."
         ],
         "wrong": [
-          "Dizini veya ayağını çekmek.",
-          "Bacağını yüzüne çekmek veya yaylanmak."
+          "Dizini çekme ve ayağını çekme.",
+          "Bacağını yüzüne çekme ve yaylanma."
         ],
         "breathing": "Rahat ve sakin nefes al.",
         "safety": "Ağrı, karıncalanma veya uyuşma hissedersen dur; rahatsızlığa rağmen çekme.",
@@ -5016,8 +5016,8 @@
           "Lass das Knie leicht gebeugt, wenn sich das besser anfühlt."
         ],
         "wrong": [
-          "Am Knie oder Fuß ziehen.",
-          "Das Bein zum Gesicht ziehen oder federn."
+          "Zieh nicht am Knie und zieh nicht am Fuß.",
+          "Zieh das Bein nicht zum Gesicht und federe nicht."
         ],
         "breathing": "Atme frei und ruhig.",
         "safety": "Hör bei Schmerzen, Kribbeln oder Taubheit auf; zieh nie in ein unangenehmes Gefühl hinein.",
@@ -5045,8 +5045,8 @@
           "Mantén la rodilla un poco flexionada si te resulta más cómodo."
         ],
         "wrong": [
-          "Tirar de la rodilla o del pie.",
-          "Llevar la pierna hacia la cara o hacer rebotes."
+          "No tires de la rodilla ni del pie.",
+          "No lleves la pierna hacia la cara ni hagas rebotes."
         ],
         "breathing": "Respira libremente y con calma.",
         "safety": "Para si notas dolor, hormigueo o adormecimiento; nunca fuerces cuando haya molestias.",
@@ -5074,8 +5074,8 @@
           "Garde le genou un peu plié si c’est plus confortable."
         ],
         "wrong": [
-          "Tirer sur le genou ou le pied.",
-          "Tirer la jambe vers le visage ou faire des rebonds."
+          "Ne tire pas sur le genou ni sur le pied.",
+          "Ne tire pas la jambe vers le visage et ne fais pas de rebonds."
         ],
         "breathing": "Respire librement et calmement.",
         "safety": "Arrête en cas de douleur, de fourmillements ou d’engourdissement ; ne force jamais malgré une gêne.",
@@ -5103,8 +5103,8 @@
           "Tieni il ginocchio un poco piegato se è più comodo."
         ],
         "wrong": [
-          "Tirare il ginocchio o il piede.",
-          "Tirare la gamba verso il viso o molleggiare."
+          "Non tirare il ginocchio né il piede.",
+          "Non tirare la gamba verso il viso e non molleggiare."
         ],
         "breathing": "Respira liberamente e con calma.",
         "safety": "Fermati se senti dolore, formicolio o intorpidimento; non tirare mai nonostante il fastidio.",
@@ -5150,8 +5150,8 @@
           "Между прыжками есть полная остановка."
         ],
         "wrong": [
-          "Прыгать далеко или сразу отскакивать обратно.",
-          "Приземляться на прямые ноги и сводить колени."
+          "Не прыгай далеко и не отскакивай сразу обратно.",
+          "Не приземляйся на прямые ноги и не своди колени."
         ],
         "breathing": "Дыши свободно, можно мягко выдыхать при приземлении.",
         "safety": "Сначала разучи со взрослым. Без гантелей; если остановка неустойчива, замени прыжок шагом вбок с такой же фиксацией.",
@@ -5179,8 +5179,8 @@
           "Come to a complete stop between hops."
         ],
         "wrong": [
-          "Jumping far or immediately bouncing back.",
-          "Landing with straight legs or knees falling inward."
+          "Don't jump far, and don't bounce back immediately.",
+          "Don't land with straight legs, and don't let your knees fall inward."
         ],
         "breathing": "Breathe freely; a gentle exhale on landing may help.",
         "safety": "Learn this with an adult first. Use no weights; if the stop is unsteady, replace the hop with a side step and the same hold.",
@@ -5208,8 +5208,8 @@
           "Sıçramalar arasında tamamen dur."
         ],
         "wrong": [
-          "Uzağa sıçramak veya hemen geri sıçramak.",
-          "Düz bacaklarla ya da dizler içeri kaçmışken yere inmek."
+          "Uzağa sıçrama ve hemen geri sıçrama.",
+          "Düz bacaklarla yere inme ve inerken dizlerini içeri kaçırma."
         ],
         "breathing": "Rahatça nefes al; inerken hafifçe nefes vermek yardımcı olabilir.",
         "safety": "Önce bir yetişkinle öğren. Ağırlık kullanma; dengeli duramıyorsan sıçrama yerine yan adım at ve aynı süre bekle.",
@@ -5237,8 +5237,8 @@
           "Komm zwischen den Sprüngen ganz zum Stillstand."
         ],
         "wrong": [
-          "Weit springen oder sofort zurückfedern.",
-          "Mit gestreckten Beinen landen oder die Knie nach innen kippen lassen."
+          "Spring nicht weit und federe nicht sofort zurück.",
+          "Lande nicht mit gestreckten Beinen und lass die Knie nicht nach innen kippen."
         ],
         "breathing": "Atme frei; sanftes Ausatmen bei der Landung kann helfen.",
         "safety": "Lerne die Übung zuerst mit einem Erwachsenen. Ohne Gewichte; wenn der Stopp unsicher ist, mach stattdessen einen Seitwärtsschritt mit derselben Haltezeit.",
@@ -5266,8 +5266,8 @@
           "Detente por completo entre saltos."
         ],
         "wrong": [
-          "Saltar lejos o rebotar inmediatamente de vuelta.",
-          "Aterrizar con las piernas rectas o las rodillas hacia dentro."
+          "No saltes lejos ni rebotes inmediatamente de vuelta.",
+          "No aterrices con las piernas rectas ni dejes que las rodillas caigan hacia dentro."
         ],
         "breathing": "Respira libremente; una espiración suave al aterrizar puede ayudar.",
         "safety": "Apréndelo primero con un adulto. Sin pesas; si la parada no es estable, cambia el salto por un paso lateral con la misma pausa.",
@@ -5295,8 +5295,8 @@
           "Arrête-toi complètement entre les sauts."
         ],
         "wrong": [
-          "Sauter loin ou rebondir tout de suite pour revenir.",
-          "Atterrir jambes tendues ou genoux vers l’intérieur."
+          "Ne saute pas loin et ne rebondis pas tout de suite pour revenir.",
+          "N’atterris pas jambes tendues et ne laisse pas les genoux rentrer."
         ],
         "breathing": "Respire librement ; une petite expiration à l’atterrissage peut aider.",
         "safety": "Apprends d’abord avec un adulte. Sans haltères ; si l’arrêt manque de stabilité, remplace le saut par un pas de côté avec la même pause.",
@@ -5324,8 +5324,8 @@
           "Fermati del tutto tra i saltelli."
         ],
         "wrong": [
-          "Saltare lontano o rimbalzare subito indietro.",
-          "Atterrare con le gambe dritte o le ginocchia all’interno."
+          "Non saltare lontano e non rimbalzare subito indietro.",
+          "Non atterrare con le gambe dritte e non lasciare cadere le ginocchia all’interno."
         ],
         "breathing": "Respira liberamente; una dolce espirazione all’atterraggio può aiutare.",
         "safety": "Impara prima con un adulto. Senza pesi; se l’arresto non è stabile, sostituisci il saltello con un passo laterale e la stessa pausa.",
@@ -5371,8 +5371,8 @@
           "Гантели близко к груди, спина ровная."
         ],
         "wrong": [
-          "Сводить колени или отрывать пятки.",
-          "Ронять корпус вперёд и бросать гантели вниз."
+          "Не своди колени и не отрывай пятки.",
+          "Не роняй корпус вперёд и не бросай гантели вниз."
         ],
         "breathing": "Вдох вниз, выдох при подъёме.",
         "safety": "Сначала разучи присед со взрослым без веса. Если удержание гантелей мешает технике, выполни упражнение без них.",
@@ -5400,8 +5400,8 @@
           "Hold weights close to the chest and keep your back straight."
         ],
         "wrong": [
-          "Letting knees fall inward or lifting heels.",
-          "Folding forward or dropping the weights."
+          "Don't let your knees fall inward, and don't lift your heels.",
+          "Don't fold forward, and don't drop the weights."
         ],
         "breathing": "Breathe in going down and out as you stand.",
         "safety": "Learn the squat without weights with an adult first. Use no weights if holding them interferes with your form.",
@@ -5429,8 +5429,8 @@
           "Ağırlıkları göğsüne yakın tut, sırtın düz kalsın."
         ],
         "wrong": [
-          "Dizlerini içeri kaçırmak veya topuklarını kaldırmak.",
-          "Öne katlanmak veya ağırlıkları düşürmek."
+          "Dizlerini içeri kaçırma ve topuklarını kaldırma.",
+          "Öne katlanma ve ağırlıkları düşürme."
         ],
         "breathing": "İnerken nefes al, kalkarken ver.",
         "safety": "Önce bir yetişkinle ağırlıksız çömelmeyi öğren. Ağırlıkları tutmak duruşunu bozuyorsa onları kullanma.",
@@ -5458,8 +5458,8 @@
           "Halte die Gewichte nah an der Brust und den Rücken gerade."
         ],
         "wrong": [
-          "Die Knie nach innen kippen lassen oder die Fersen anheben.",
-          "Nach vorn zusammenklappen oder die Gewichte fallen lassen."
+          "Lass die Knie nicht nach innen kippen und heb die Fersen nicht an.",
+          "Klappe nicht nach vorn zusammen und lass die Gewichte nicht fallen."
         ],
         "breathing": "Atme beim Absenken ein und beim Aufstehen aus.",
         "safety": "Lerne die Kniebeuge zuerst ohne Gewichte mit einem Erwachsenen. Lass die Gewichte weg, wenn das Halten deine Technik stört.",
@@ -5487,8 +5487,8 @@
           "Mantén las pesas cerca del pecho y la espalda recta."
         ],
         "wrong": [
-          "Dejar que las rodillas caigan hacia dentro o levantar los talones.",
-          "Doblarte hacia delante o soltar las pesas."
+          "No dejes que las rodillas caigan hacia dentro ni levantes los talones.",
+          "No te dobles hacia delante ni sueltes las pesas."
         ],
         "breathing": "Inspira al bajar y espira al levantarte.",
         "safety": "Aprende primero la sentadilla sin pesas con un adulto. Hazla sin pesas si sujetarlas te hace perder la postura.",
@@ -5516,8 +5516,8 @@
           "Garde les haltères près de la poitrine et le dos droit."
         ],
         "wrong": [
-          "Laisser les genoux rentrer ou lever les talons.",
-          "Se plier vers l’avant ou lâcher les haltères."
+          "Ne laisse pas les genoux rentrer et ne lève pas les talons.",
+          "Ne te plie pas vers l’avant et ne lâche pas les haltères."
         ],
         "breathing": "Inspire en descendant et expire en te redressant.",
         "safety": "Apprends d’abord le squat sans haltères avec un adulte. Fais-le sans haltères si les tenir t’empêche de garder une bonne posture.",
@@ -5545,8 +5545,8 @@
           "Tieni i pesi vicino al petto e la schiena dritta."
         ],
         "wrong": [
-          "Lasciare cadere le ginocchia all’interno o alzare i talloni.",
-          "Piegarti in avanti o lasciar cadere i pesi."
+          "Non lasciare cadere le ginocchia all’interno e non alzare i talloni.",
+          "Non piegarti in avanti e non lasciar cadere i pesi."
         ],
         "breathing": "Inspira scendendo ed espira risalendo.",
         "safety": "Impara prima lo squat senza pesi con un adulto. Fallo senza pesi se tenerli ti impedisce di mantenere la posizione corretta.",
@@ -5592,8 +5592,8 @@
           "Плечи остаются далеко от ушей."
         ],
         "wrong": [
-          "Раскачиваться и дёргать гантели.",
-          "Округлять спину или поднимать подбородок."
+          "Не раскачивайся и не дёргай гантели.",
+          "Не округляй спину и не поднимай подбородок."
         ],
         "breathing": "Выдох при тяге, вдох при опускании.",
         "safety": "Сначала разучи наклон со взрослым; при усталости спины выпрямись и закончи подход.",
@@ -5621,8 +5621,8 @@
           "Keep shoulders away from your ears."
         ],
         "wrong": [
-          "Rocking or jerking the weights.",
-          "Rounding the back or lifting the chin."
+          "Don't rock your body, and don't jerk the weights.",
+          "Don't round your back, and don't lift your chin."
         ],
         "breathing": "Breathe out as you pull and in as you lower.",
         "safety": "Learn the hip hinge with an adult first; if your back tires, stand up and end the set.",
@@ -5650,8 +5650,8 @@
           "Omuzlarını kulaklarından uzak tut."
         ],
         "wrong": [
-          "Sallanmak veya ağırlıkları ani hareketle çekmek.",
-          "Sırtını yuvarlamak veya çeneni kaldırmak."
+          "Sallanma ve ağırlıkları ani hareketle çekme.",
+          "Sırtını yuvarlama ve çeneni kaldırma."
         ],
         "breathing": "Çekerken nefes ver, indirirken al.",
         "safety": "Önce bir yetişkinle kalçadan eğilmeyi öğren; sırtın yorulursa doğrul ve seti bitir.",
@@ -5679,8 +5679,8 @@
           "Die Schultern bleiben weg von den Ohren."
         ],
         "wrong": [
-          "Schaukeln oder die Gewichte ruckartig ziehen.",
-          "Den Rücken rund machen oder das Kinn anheben."
+          "Schaukle nicht und zieh die Gewichte nicht ruckartig.",
+          "Mach den Rücken nicht rund und heb das Kinn nicht an."
         ],
         "breathing": "Atme beim Ziehen aus und beim Absenken ein.",
         "safety": "Lerne die Vorbeuge aus der Hüfte zuerst mit einem Erwachsenen; wenn der Rücken müde wird, richte dich auf und beende den Satz.",
@@ -5708,8 +5708,8 @@
           "Aleja los hombros de las orejas."
         ],
         "wrong": [
-          "Balancearte o mover las pesas a tirones.",
-          "Redondear la espalda o levantar la barbilla."
+          "No te balancees ni muevas las pesas a tirones.",
+          "No redondees la espalda ni levantes la barbilla."
         ],
         "breathing": "Espira al tirar e inspira al bajar.",
         "safety": "Aprende primero la inclinación de caderas con un adulto; si se cansa la espalda, enderézate y termina la serie.",
@@ -5737,8 +5737,8 @@
           "Éloigne les épaules des oreilles."
         ],
         "wrong": [
-          "Se balancer ou tirer les haltères par à-coups.",
-          "Arrondir le dos ou lever le menton."
+          "Ne te balance pas et ne tire pas les haltères par à-coups.",
+          "N’arrondis pas le dos et ne lève pas le menton."
         ],
         "breathing": "Expire en tirant et inspire en baissant.",
         "safety": "Apprends d’abord l’inclinaison des hanches avec un adulte ; si ton dos fatigue, redresse-toi et termine la série.",
@@ -5766,8 +5766,8 @@
           "Allontana le spalle dalle orecchie."
         ],
         "wrong": [
-          "Dondolare o tirare i pesi a scatti.",
-          "Incurvare la schiena o alzare il mento."
+          "Non dondolare e non tirare i pesi a scatti.",
+          "Non incurvare la schiena e non alzare il mento."
         ],
         "breathing": "Espira tirando e inspira abbassando.",
         "safety": "Impara prima il piegamento dalle anche con un adulto; se la schiena si stanca, raddrizzati e termina la serie.",
@@ -5814,8 +5814,8 @@
           "Плечи и голова спокойно лежат на полу."
         ],
         "wrong": [
-          "Выталкивать таз слишком высоко и прогибать поясницу.",
-          "Разворачивать таз или отталкиваться шеей."
+          "Не выталкивай таз слишком высоко и не прогибай поясницу.",
+          "Не разворачивай таз и не отталкивайся шеей."
         ],
         "breathing": "Выдох при подъёме, вдох при опускании.",
         "safety": "Сначала разучи со взрослым. Если не получается держать таз ровно, закончи подход.",
@@ -5844,8 +5844,8 @@
           "Rest your head and shoulders on the floor."
         ],
         "wrong": [
-          "Lifting too high and arching your lower back.",
-          "Turning the hips or pushing through your neck."
+          "Don't lift your hips too high, and don't arch your lower back.",
+          "Don't turn your hips, and don't push through your neck."
         ],
         "breathing": "Breathe out as you lift and in as you lower.",
         "safety": "Learn this with an adult first. End the set if you cannot keep your hips level.",
@@ -5874,8 +5874,8 @@
           "Başın ve omuzların yerde dinlensin."
         ],
         "wrong": [
-          "Fazla yükselip belini çukurlaştırmak.",
-          "Kalçanı döndürmek veya boynundan güç alarak itmek."
+          "Kalçanı fazla yükseltme ve belini çukurlaştırma.",
+          "Kalçanı döndürme ve boynundan güç alarak kendini yukarı itme."
         ],
         "breathing": "Kaldırırken nefes ver, indirirken al.",
         "safety": "Önce bir yetişkinle öğren. Kalçanı düz tutamıyorsan seti bitir.",
@@ -5904,8 +5904,8 @@
           "Kopf und Schultern ruhen auf dem Boden."
         ],
         "wrong": [
-          "Zu hoch heben und ins Hohlkreuz gehen.",
-          "Die Hüfte verdrehen oder sich über den Nacken hochdrücken."
+          "Heb die Hüfte nicht zu hoch und geh nicht ins Hohlkreuz.",
+          "Verdrehe die Hüfte nicht und drück dich nicht über den Nacken hoch."
         ],
         "breathing": "Atme beim Anheben aus und beim Absenken ein.",
         "safety": "Lerne die Übung zuerst mit einem Erwachsenen. Beende den Satz, wenn du die Hüfte nicht gerade halten kannst.",
@@ -5934,8 +5934,8 @@
           "Deja la cabeza y los hombros apoyados."
         ],
         "wrong": [
-          "Subir demasiado y arquear la zona lumbar.",
-          "Girar las caderas o empujar con el cuello."
+          "No subas demasiado las caderas ni arquees la zona lumbar.",
+          "No gires las caderas ni empujes con el cuello."
         ],
         "breathing": "Espira al subir e inspira al bajar.",
         "safety": "Apréndelo primero con un adulto. Termina la serie si no puedes mantener las caderas niveladas.",
@@ -5964,8 +5964,8 @@
           "Garde la tête et les épaules posées au sol."
         ],
         "wrong": [
-          "Monter trop haut et creuser le bas du dos.",
-          "Tourner les hanches ou pousser sur le cou."
+          "Ne monte pas les hanches trop haut et ne creuse pas le bas du dos.",
+          "Ne tourne pas les hanches et ne pousse pas sur le cou."
         ],
         "breathing": "Expire en montant et inspire en descendant.",
         "safety": "Apprends d’abord avec un adulte. Termine la série si tu ne peux pas garder le bassin à niveau.",
@@ -5994,8 +5994,8 @@
           "Tieni testa e spalle appoggiate a terra."
         ],
         "wrong": [
-          "Salire troppo e inarcare la zona lombare.",
-          "Ruotare il bacino o spingere con il collo."
+          "Non sollevare troppo il bacino e non inarcare la zona lombare.",
+          "Non ruotare il bacino e non spingere con il collo."
         ],
         "breathing": "Espira salendo e inspira scendendo.",
         "safety": "Impara prima con un adulto. Termina la serie se non riesci a tenere il bacino allineato.",
@@ -6041,8 +6041,8 @@
           "Таз и грудь смотрят вперёд, тело не вращается."
         ],
         "wrong": [
-          "Провисать тазом или заваливаться вперёд.",
-          "Задерживать дыхание и сжимать шею."
+          "Не провисай тазом и не заваливайся вперёд.",
+          "Не задерживай дыхание и не напрягай шею."
         ],
         "breathing": "Дыши ровно на всём протяжении удержания.",
         "safety": "Сначала разучи со взрослым. При боли в плече остановись; если положение теряется, закончи удержание раньше.",
@@ -6070,8 +6070,8 @@
           "Keep chest and hips facing forward without rolling."
         ],
         "wrong": [
-          "Letting hips sag or rolling forward.",
-          "Holding your breath or tensing your neck."
+          "Don't let your hips sag, and don't roll forward.",
+          "Don't hold your breath, and don't tense your neck."
         ],
         "breathing": "Breathe evenly throughout the hold.",
         "safety": "Learn this with an adult first. Stop for shoulder pain; end the hold early if you lose the position.",
@@ -6099,8 +6099,8 @@
           "Gövden ve kalçan öne baksın, dönmesin."
         ],
         "wrong": [
-          "Kalçanı aşağı bırakmak veya öne yuvarlanmak.",
-          "Nefesini tutmak veya boynunu kasmak."
+          "Kalçanı aşağı bırakma ve öne yuvarlanma.",
+          "Nefesini tutma ve boynunu kasma."
         ],
         "breathing": "Duruş boyunca düzenli nefes al.",
         "safety": "Önce bir yetişkinle öğren. Omzun ağrırsa dur; duruşu kaybedersen süre dolmadan bitir.",
@@ -6128,8 +6128,8 @@
           "Brust und Hüfte zeigen nach vorn, ohne wegzurollen."
         ],
         "wrong": [
-          "Die Hüfte absinken lassen oder nach vorn rollen.",
-          "Die Luft anhalten oder den Nacken anspannen."
+          "Lass die Hüfte nicht absinken und rolle nicht nach vorn.",
+          "Halte die Luft nicht an und spanne den Nacken nicht an."
         ],
         "breathing": "Atme während der ganzen Haltezeit gleichmäßig.",
         "safety": "Lerne die Übung zuerst mit einem Erwachsenen. Hör bei Schulterschmerzen auf; beende das Halten früher, wenn du die Position verlierst.",
@@ -6157,8 +6157,8 @@
           "Mantén pecho y caderas orientados al frente, sin rodar."
         ],
         "wrong": [
-          "Dejar caer las caderas o girarte hacia delante.",
-          "Aguantar el aire o tensar el cuello."
+          "No dejes caer las caderas ni gires hacia delante.",
+          "No aguantes la respiración ni tenses el cuello."
         ],
         "breathing": "Respira de forma regular durante toda la posición.",
         "safety": "Apréndelo primero con un adulto. Para si te duele el hombro; termina antes si pierdes la postura.",
@@ -6186,8 +6186,8 @@
           "Garde poitrine et hanches face devant, sans rouler."
         ],
         "wrong": [
-          "Laisser tomber les hanches ou rouler vers l’avant.",
-          "Bloquer le souffle ou crisper le cou."
+          "Ne laisse pas tomber les hanches et ne roule pas vers l’avant.",
+          "Ne bloque pas ta respiration et ne crispe pas le cou."
         ],
         "breathing": "Respire régulièrement pendant toute la tenue.",
         "safety": "Apprends d’abord avec un adulte. Arrête si l’épaule fait mal ; termine plus tôt si tu perds la position.",
@@ -6215,8 +6215,8 @@
           "Tieni petto e bacino rivolti avanti, senza rotolare."
         ],
         "wrong": [
-          "Lasciare scendere il bacino o ruotare in avanti.",
-          "Trattenere il fiato o irrigidire il collo."
+          "Non lasciare scendere il bacino e non ruotare in avanti.",
+          "Non trattenere il respiro e non irrigidire il collo."
         ],
         "breathing": "Respira in modo regolare per tutta la tenuta.",
         "safety": "Impara prima con un adulto. Fermati se senti dolore alla spalla; termina prima se perdi la posizione.",
@@ -6262,8 +6262,8 @@
           "Корпус остаётся высоким, колени мягкие."
         ],
         "wrong": [
-          "Прыгать через линию.",
-          "Сталкивать стопы или сильно наклоняться."
+          "Не прыгай через линию.",
+          "Не ударяй стопами друг о друга и не наклоняйся сильно."
         ],
         "breathing": "Дыши свободно, не задерживай дыхание ради ритма.",
         "safety": "Используй воображаемую линию или плоскую разметку, о которую невозможно споткнуться.",
@@ -6291,8 +6291,8 @@
           "Stay tall with soft knees."
         ],
         "wrong": [
-          "Jumping over the line.",
-          "Knocking feet together or leaning far over."
+          "Don't jump over the line.",
+          "Don't knock your feet together, and don't lean far over."
         ],
         "breathing": "Breathe freely without holding your breath to follow the rhythm.",
         "safety": "Use an imaginary line or flat marking that cannot trip you.",
@@ -6320,8 +6320,8 @@
           "Dik dur, dizlerin hafif bükülü olsun."
         ],
         "wrong": [
-          "Çizginin üzerinden sıçramak.",
-          "Ayaklarını birbirine çarpmak veya fazla eğilmek."
+          "Çizginin üzerinden sıçrama.",
+          "Ayaklarını birbirine çarpma ve fazla eğilme."
         ],
         "breathing": "Ritmi takip etmek için nefesini tutma; rahatça nefes al.",
         "safety": "Hayali bir çizgi veya takılmayacağın düz bir işaret kullan.",
@@ -6349,8 +6349,8 @@
           "Steh aufrecht mit lockeren Knien."
         ],
         "wrong": [
-          "Über die Linie springen.",
-          "Die Füße zusammenstoßen lassen oder sich stark neigen."
+          "Spring nicht über die Linie.",
+          "Lass die Füße nicht zusammenstoßen und neige dich nicht stark."
         ],
         "breathing": "Atme frei und halte für den Rhythmus nicht die Luft an.",
         "safety": "Nimm eine gedachte Linie oder eine flache Markierung, über die du nicht stolpern kannst.",
@@ -6378,8 +6378,8 @@
           "Mantente erguido con las rodillas suaves."
         ],
         "wrong": [
-          "Saltar por encima de la línea.",
-          "Chocar los pies o inclinarte demasiado."
+          "No saltes por encima de la línea.",
+          "No choques los pies entre sí ni te inclines demasiado."
         ],
         "breathing": "Respira libremente, sin aguantar el aire para seguir el ritmo.",
         "safety": "Usa una línea imaginaria o una marca plana con la que no puedas tropezar.",
@@ -6407,8 +6407,8 @@
           "Tiens-toi droit avec les genoux souples."
         ],
         "wrong": [
-          "Sauter par-dessus la ligne.",
-          "Cogner les pieds ensemble ou trop se pencher."
+          "Ne saute pas par-dessus la ligne.",
+          "Ne cogne pas les pieds l’un contre l’autre et ne te penche pas trop."
         ],
         "breathing": "Respire librement sans bloquer ton souffle pour suivre le rythme.",
         "safety": "Utilise une ligne imaginaire ou une marque plate qui ne risque pas de te faire trébucher.",
@@ -6436,8 +6436,8 @@
           "Stai dritto con le ginocchia morbide."
         ],
         "wrong": [
-          "Saltare oltre la linea.",
-          "Far urtare i piedi o inclinarti troppo."
+          "Non saltare oltre la linea.",
+          "Non far urtare i piedi tra loro e non inclinarti troppo."
         ],
         "breathing": "Respira liberamente, senza trattenere il fiato per seguire il ritmo.",
         "safety": "Usa una linea immaginaria o un segno piatto che non faccia inciampare.",
@@ -6484,8 +6484,8 @@
           "После каждого шага восстанавливай устойчивую стойку."
         ],
         "wrong": [
-          "Превращать шаг в глубокий выпад.",
-          "Скрещивать стопы или прыгать при возвращении."
+          "Не превращай шаг в глубокий выпад.",
+          "Не скрещивай стопы и не прыгай при возвращении."
         ],
         "breathing": "Дыши спокойно и непрерывно.",
         "safety": "Проверь место по обеим диагоналям; шагай в удобной амплитуде.",
@@ -6513,8 +6513,8 @@
           "Find a balanced stance after each step."
         ],
         "wrong": [
-          "Turning the step into a deep lunge.",
-          "Crossing your feet or hopping back."
+          "Don't turn the step into a deep lunge.",
+          "Don't cross your feet, and don't hop back."
         ],
         "breathing": "Breathe calmly and continuously.",
         "safety": "Check both diagonal paths and use a comfortable step length.",
@@ -6542,8 +6542,8 @@
           "Her adımdan sonra dengeli duruşunu bul."
         ],
         "wrong": [
-          "Adımı derin bir hamleye çevirmek.",
-          "Ayaklarını çaprazlamak veya geri sıçramak."
+          "Adımı derin bir hamleye çevirme.",
+          "Ayaklarını çaprazlama ve geri sıçrama."
         ],
         "breathing": "Sakin ve kesintisiz nefes al.",
         "safety": "İki çapraz yöndeki alanı kontrol et, rahat bir adım uzunluğu seç.",
@@ -6571,8 +6571,8 @@
           "Finde nach jedem Schritt einen sicheren Stand."
         ],
         "wrong": [
-          "Aus dem Schritt einen tiefen Ausfallschritt machen.",
-          "Die Füße kreuzen oder zurückhüpfen."
+          "Mach aus dem Schritt keinen tiefen Ausfallschritt.",
+          "Kreuze die Füße nicht und hüpfe nicht zurück."
         ],
         "breathing": "Atme ruhig und ohne Unterbrechung.",
         "safety": "Prüfe den Platz in beiden diagonalen Richtungen und wähle eine angenehme Schrittlänge.",
@@ -6600,8 +6600,8 @@
           "Recupera una postura estable tras cada paso."
         ],
         "wrong": [
-          "Convertir el paso en una zancada profunda.",
-          "Cruzar los pies o volver saltando."
+          "No conviertas el paso en una zancada profunda.",
+          "No cruces los pies ni vuelvas saltando."
         ],
         "breathing": "Respira de forma tranquila y continua.",
         "safety": "Comprueba ambos recorridos diagonales y usa una longitud de paso cómoda.",
@@ -6629,8 +6629,8 @@
           "Retrouve une position équilibrée après chaque pas."
         ],
         "wrong": [
-          "Transformer le pas en fente profonde.",
-          "Croiser les pieds ou revenir en sautant."
+          "Ne transforme pas le pas en fente profonde.",
+          "Ne croise pas les pieds et ne reviens pas en sautant."
         ],
         "breathing": "Respire calmement et sans interruption.",
         "safety": "Vérifie les deux diagonales et choisis une longueur de pas confortable.",
@@ -6658,8 +6658,8 @@
           "Ritrova una posizione stabile dopo ogni passo."
         ],
         "wrong": [
-          "Trasformare il passo in un affondo profondo.",
-          "Incrociare i piedi o saltare al ritorno."
+          "Non trasformare il passo in un affondo profondo.",
+          "Non incrociare i piedi e non saltare al ritorno."
         ],
         "breathing": "Respira con calma e senza interruzioni.",
         "safety": "Controlla entrambe le diagonali e scegli una lunghezza del passo comoda.",
@@ -6705,8 +6705,8 @@
           "Шаги низкие, тихие, корпус спокоен."
         ],
         "wrong": [
-          "Подпрыгивать обеими ногами.",
-          "Разгоняться так, что сбивается ритм."
+          "Не подпрыгивай обеими ногами.",
+          "Не разгоняйся так, чтобы сбивался ритм."
         ],
         "breathing": "Дыши свободно, не привязывая вдох к каждому шагу.",
         "safety": "Если ритм потерялся, остановись и начни медленнее; скорость здесь вторична.",
@@ -6734,8 +6734,8 @@
           "Use low, quiet steps and a steady body."
         ],
         "wrong": [
-          "Hopping with both feet.",
-          "Going so fast that you lose the pattern."
+          "Don't hop with both feet.",
+          "Don't go so fast that you lose the pattern."
         ],
         "breathing": "Breathe freely without matching every breath to a step.",
         "safety": "If you lose the pattern, pause and restart more slowly; speed is secondary.",
@@ -6763,8 +6763,8 @@
           "Ayaklarını az kaldır, sessiz bas, gövden sabit olsun."
         ],
         "wrong": [
-          "İki ayakla sıçramak.",
-          "Düzeni kaybedecek kadar hızlanmak."
+          "İki ayakla sıçrama.",
+          "Ritmi kaybedecek kadar hızlanma."
         ],
         "breathing": "Her nefesi bir adıma denk getirmeye çalışmadan rahatça nefes al.",
         "safety": "Düzeni kaybedersen durakla ve daha yavaş başla; hız ikinci planda.",
@@ -6792,8 +6792,8 @@
           "Heb die Füße nur wenig, setze sie leise auf und halte den Körper ruhig."
         ],
         "wrong": [
-          "Mit beiden Füßen hüpfen.",
-          "So schnell werden, dass das Muster verloren geht."
+          "Hüpfe nicht mit beiden Füßen.",
+          "Werde nicht so schnell, dass du den Rhythmus verlierst."
         ],
         "breathing": "Atme frei, ohne jeden Atemzug an einen Schritt anzupassen.",
         "safety": "Wenn du das Muster verlierst, mach eine Pause und beginne langsamer; das Tempo ist zweitrangig.",
@@ -6821,8 +6821,8 @@
           "Pasos bajos y silenciosos, cuerpo estable."
         ],
         "wrong": [
-          "Saltar con los dos pies.",
-          "Ir tan deprisa que pierdas la secuencia."
+          "No saltes con los dos pies a la vez.",
+          "No vayas tan deprisa que pierdas la secuencia."
         ],
         "breathing": "Respira libremente sin hacer coincidir cada respiración con un paso.",
         "safety": "Si pierdes la secuencia, para y vuelve a empezar más despacio; la velocidad es secundaria.",
@@ -6850,8 +6850,8 @@
           "Fais des pas bas et silencieux, avec le corps stable."
         ],
         "wrong": [
-          "Sautiller à deux pieds.",
-          "Aller si vite que tu perds la séquence."
+          "Ne sautille pas à deux pieds.",
+          "Ne va pas si vite que tu perds la séquence."
         ],
         "breathing": "Respire librement sans caler chaque respiration sur un pas.",
         "safety": "Si tu perds la séquence, fais une pause et recommence plus lentement ; la vitesse passe après.",
@@ -6879,8 +6879,8 @@
           "Passi bassi e silenziosi, corpo stabile."
         ],
         "wrong": [
-          "Saltellare con entrambi i piedi.",
-          "Andare così veloce da perdere la sequenza."
+          "Non saltellare con entrambi i piedi.",
+          "Non andare così veloce da perdere la sequenza."
         ],
         "breathing": "Respira liberamente senza abbinare ogni respiro a un passo.",
         "safety": "Se perdi la sequenza, fermati e riparti più lentamente; la velocità viene dopo.",
@@ -6927,8 +6927,8 @@
           "Таз ровный, касания близкие и лёгкие."
         ],
         "wrong": [
-          "Переносить весь вес на касающуюся ногу.",
-          "Тянуться слишком далеко и наклонять корпус."
+          "Не переноси весь вес на касающуюся ногу.",
+          "Не тянись слишком далеко и не наклоняй корпус."
         ],
         "breathing": "Дыши спокойно на всей последовательности.",
         "safety": "Можно касаться стены пальцами; при потере равновесия спокойно поставь обе стопы.",
@@ -6957,8 +6957,8 @@
           "Keep hips level and taps short and light."
         ],
         "wrong": [
-          "Shifting all your weight onto the tapping foot.",
-          "Reaching too far and leaning your body."
+          "Don't shift all your weight onto the tapping foot.",
+          "Don't reach too far, and don't lean your body."
         ],
         "breathing": "Breathe calmly throughout the sequence.",
         "safety": "You may touch a wall with your fingertips; put both feet down calmly if balance is lost.",
@@ -6987,8 +6987,8 @@
           "Kalçan düz olsun, dokunuşlar kısa ve hafif olsun."
         ],
         "wrong": [
-          "Bütün ağırlığını dokunan ayağa aktarmak.",
-          "Çok uzağa uzanıp gövdeni eğmek."
+          "Bütün ağırlığını yere dokunan ayağına aktarma.",
+          "Çok uzağa uzanma ve gövdeni eğme."
         ],
         "breathing": "Hareket dizisi boyunca sakin nefes al.",
         "safety": "Parmak uçlarınla duvara dokunabilirsin; dengeni kaybedersen iki ayağını sakince yere koy.",
@@ -7017,8 +7017,8 @@
           "Halte die Hüfte gerade und die Berührungen kurz und leicht."
         ],
         "wrong": [
-          "Das ganze Gewicht auf den tippenden Fuß verlagern.",
-          "Zu weit greifen und den Körper neigen."
+          "Verlagere nicht dein ganzes Gewicht auf den tippenden Fuß.",
+          "Strecke den Fuß nicht zu weit aus und neige den Körper nicht."
         ],
         "breathing": "Atme während der ganzen Folge ruhig.",
         "safety": "Du darfst die Wand mit den Fingerspitzen berühren; stell bei Gleichgewichtsverlust beide Füße ruhig ab.",
@@ -7047,8 +7047,8 @@
           "Caderas niveladas y toques cortos y suaves."
         ],
         "wrong": [
-          "Pasar todo el peso al pie que toca.",
-          "Llegar demasiado lejos e inclinar el cuerpo."
+          "No pases todo el peso al pie que toca el suelo.",
+          "No llegues demasiado lejos ni inclines el cuerpo."
         ],
         "breathing": "Respira con calma durante toda la secuencia.",
         "safety": "Puedes tocar la pared con los dedos; si pierdes equilibrio, apoya los dos pies con calma.",
@@ -7077,8 +7077,8 @@
           "Hanches au même niveau, touches courtes et légères."
         ],
         "wrong": [
-          "Passer tout le poids sur le pied qui touche.",
-          "Aller trop loin et pencher le corps."
+          "Ne passe pas tout le poids sur le pied qui touche le sol.",
+          "Ne va pas trop loin et ne penche pas le corps."
         ],
         "breathing": "Respire calmement pendant toute la séquence.",
         "safety": "Tu peux toucher le mur du bout des doigts ; pose calmement les deux pieds si tu perds l’équilibre.",
@@ -7107,8 +7107,8 @@
           "Anche alla stessa altezza e tocchi corti e leggeri."
         ],
         "wrong": [
-          "Passare tutto il peso sul piede che tocca.",
-          "Arrivare troppo lontano e inclinare il corpo."
+          "Non passare tutto il peso sul piede che tocca il pavimento.",
+          "Non arrivare troppo lontano e non inclinare il corpo."
         ],
         "breathing": "Respira con calma per tutta la sequenza.",
         "safety": "Puoi toccare il muro con le dita; se perdi equilibrio, appoggia entrambi i piedi con calma.",
@@ -7156,8 +7156,8 @@
           "Колени следуют направлению стоп."
         ],
         "wrong": [
-          "Скручивать колени при неподвижных стопах.",
-          "Размахивать руками как при сильном ударе или терять центр."
+          "Не скручивай колени при неподвижных стопах.",
+          "Не размахивай руками как при сильном ударе и не забывай возвращаться в центр."
         ],
         "breathing": "Выдох при повороте, вдох при возвращении.",
         "safety": "Разучи связку с тренером; оставляй место для короткого шага в обе стороны.",
@@ -7186,8 +7186,8 @@
           "Keep knees pointing with your feet."
         ],
         "wrong": [
-          "Twisting the knees while feet stay fixed.",
-          "Throwing arms into a hard swing or missing the centre."
+          "Don't twist your knees while your feet stay fixed.",
+          "Don't throw your arms into a hard swing, and don't miss the return to centre."
         ],
         "breathing": "Breathe out as you turn and in as you return.",
         "safety": "Learn the sequence with your coach; leave room for a short step on either side.",
@@ -7216,8 +7216,8 @@
           "Dizlerin ayaklarınla aynı yönde kalsın."
         ],
         "wrong": [
-          "Ayaklar sabitken dizleri burmak.",
-          "Kollarını sert vuruşa savurmak veya ortaya dönememek."
+          "Ayakların sabitken dizlerini burma.",
+          "Kollarını sert bir vuruş yapar gibi savurma ve ortaya dönmeyi atlama."
         ],
         "breathing": "Dönerken nefes ver, geri gelirken al.",
         "safety": "Hareket dizisini antrenörünle öğren; iki yanında da kısa adımlık yer bırak.",
@@ -7246,8 +7246,8 @@
           "Die Knie zeigen in Richtung der Füße."
         ],
         "wrong": [
-          "Die Knie verdrehen, während die Füße feststehen.",
-          "Die Arme in einen kräftigen Schlag schleudern oder die Mitte verfehlen."
+          "Verdrehe die Knie nicht, während die Füße feststehen.",
+          "Schleudere die Arme nicht wie bei einem kräftigen Schlag und vergiss nicht, zur Mitte zurückzukehren."
         ],
         "breathing": "Atme beim Drehen aus und beim Zurückkehren ein.",
         "safety": "Lerne die Folge mit deinem Trainer; lass auf beiden Seiten Platz für einen kurzen Schritt.",
@@ -7276,8 +7276,8 @@
           "Mantén las rodillas en la dirección de los pies."
         ],
         "wrong": [
-          "Torcer las rodillas con los pies fijos.",
-          "Lanzar los brazos con fuerza o no volver al centro."
+          "No tuerzas las rodillas dejando los pies fijos.",
+          "No lances los brazos con fuerza ni olvides volver al centro."
         ],
         "breathing": "Espira al girar e inspira al volver.",
         "safety": "Aprende la secuencia con tu entrenador; deja espacio para un paso corto a cada lado.",
@@ -7306,8 +7306,8 @@
           "Les genoux suivent la direction des pieds."
         ],
         "wrong": [
-          "Tordre les genoux en gardant les pieds fixes.",
-          "Lancer les bras dans une frappe forte ou manquer le retour au centre."
+          "Ne tords pas les genoux en gardant les pieds fixes.",
+          "Ne lance pas les bras avec force et n’oublie pas de revenir au centre."
         ],
         "breathing": "Expire en tournant et inspire en revenant.",
         "safety": "Apprends la séquence avec ton entraîneur ; laisse la place pour un petit pas de chaque côté.",
@@ -7336,8 +7336,8 @@
           "Le ginocchia seguono la direzione dei piedi."
         ],
         "wrong": [
-          "Torcere le ginocchia lasciando fermi i piedi.",
-          "Lanciare le braccia in un colpo forte o non tornare al centro."
+          "Non torcere le ginocchia lasciando fermi i piedi.",
+          "Non lanciare le braccia con forza e non dimenticare di tornare al centro."
         ],
         "breathing": "Espira ruotando e inspira tornando.",
         "safety": "Impara la sequenza con il tuo allenatore; lascia spazio per un passo corto da ogni lato.",
