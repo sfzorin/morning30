@@ -282,15 +282,15 @@ test('fixed difficulty ignores saved level and all in-session level controls', (
   assert.equal(p.get('.ex-value').textContent, '× 10');
 });
 
-test('voice keeps technique cues while mistake descriptions stay in the detail card', () => {
+test('voice keeps technique and mistake cues without a spoken introduction', () => {
   const correct = ['Колени направлены по линии стоп.', 'Пятки остаются на полу.', 'Двигайся плавно.'];
   const wrong = ['Сводить колени или отрывать пятки.', 'Не своди колени.'];
   for (const voiceMode of ['off', 'min', 'normal', 'detailed']) {
     const p = player([item({ correct, wrong, vStart: 'Начали.' })], { voiceMode });
     p.advance(60);
     const expected = voiceMode === 'off' ? [] : ['3', '2', '1', 'Начали.'];
-    if (voiceMode === 'normal') expected.push(...correct.slice(0, 2));
-    if (voiceMode === 'detailed') expected.push(...correct);
+    if (voiceMode === 'normal') expected.push(...correct.slice(0, 2), ...wrong.slice(0, 1));
+    if (voiceMode === 'detailed') expected.push(...correct, ...wrong);
     assert.deepEqual(p.spoken, expected, voiceMode);
     p.get('.info-btn').click();
     assert.deepEqual(p.get('.info-wrong').children.map(node => node.textContent), wrong);

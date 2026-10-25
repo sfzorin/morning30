@@ -322,11 +322,12 @@
   // countdown; any sayNow cue cuts the current line off. detailed = all cues.
   function startNarr(it) {
     if (!voiceOn || !talkative()) return;
-    var c = it.correct || [], k;
+    var c = it.correct || [], w = it.wrong || [], k;
     var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
+    var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
     narrQ = []; narrI = 0;
     for (k = 0; k < nc; k++) narrQ.push(c[k]); // how to do it (phrased as a do)
-    // Mistake descriptions belong in the on-demand card, not spoken coaching.
+    for (k = 0; k < nw; k++) narrQ.push(w[k]); // speak the cue without an introduction
     if (!narrQ.length) return;
     var gap = voiceMode === "detailed" ? 6500 : 11000;
     function step() {
