@@ -308,7 +308,7 @@
   function talkative() { return voiceMode === "normal" || voiceMode === "detailed"; }
 
   // ---- scheduled speech: technique narration + the rest announcement -------
-  // narrTimer drives the "how to / how not to" lines; announceTimer holds the
+  // narrTimer drives the short technique cues; announceTimer holds the
   // delayed "Rest / next exercise" line. clearNarr cancels both — they are the
   // only pre-scheduled speech, and both must die on every transition.
   var narrTimer = null, narrQ = [], narrI = 0, announceTimer = null;
@@ -322,14 +322,11 @@
   // countdown; any sayNow cue cuts the current line off. detailed = all cues.
   function startNarr(it) {
     if (!voiceOn || !talkative()) return;
-    var c = it.correct || [], w = it.wrong || [], k;
+    var c = it.correct || [], k;
     var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
-    var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
     narrQ = []; narrI = 0;
     for (k = 0; k < nc; k++) narrQ.push(c[k]); // how to do it (phrased as a do)
-    // Custom cards may describe a mistake rather than phrase it as "don't".
-    // Introduce either form explicitly so it cannot sound like a command.
-    for (k = 0; k < nw; k++) narrQ.push(t("mistake_reminder") + ": " + w[k]);
+    // Mistake descriptions belong in the on-demand card, not spoken coaching.
     if (!narrQ.length) return;
     var gap = voiceMode === "detailed" ? 6500 : 11000;
     function step() {

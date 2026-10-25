@@ -282,15 +282,18 @@ test('fixed difficulty ignores saved level and all in-session level controls', (
   assert.equal(p.get('.ex-value').textContent, '× 10');
 });
 
-test('narration introduces mistakes explicitly, including descriptive and legacy negative wording', () => {
-  const reminder = 'Напоминание о частых ошибках';
-  for (const mistake of ['Сводить колени или отрывать пятки.', 'Не своди колени.']) {
-    const p = player([item({ wrong: [mistake] })], {
-      voiceMode: 'normal', labels: { mistake_reminder: reminder },
-    });
-    p.advance(6);
-    assert.ok(p.spoken.includes(reminder + ': ' + mistake));
-    assert.ok(!p.spoken.includes(mistake));
+test('voice keeps technique cues while mistake descriptions stay in the detail card', () => {
+  const correct = ['Колени направлены по линии стоп.', 'Пятки остаются на полу.', 'Двигайся плавно.'];
+  const wrong = ['Сводить колени или отрывать пятки.', 'Не своди колени.'];
+  for (const voiceMode of ['off', 'min', 'normal', 'detailed']) {
+    const p = player([item({ correct, wrong, vStart: 'Начали.' })], { voiceMode });
+    p.advance(60);
+    const expected = voiceMode === 'off' ? [] : ['3', '2', '1', 'Начали.'];
+    if (voiceMode === 'normal') expected.push(...correct.slice(0, 2));
+    if (voiceMode === 'detailed') expected.push(...correct);
+    assert.deepEqual(p.spoken, expected, voiceMode);
+    p.get('.info-btn').click();
+    assert.deepEqual(p.get('.info-wrong').children.map(node => node.textContent), wrong);
   }
 });
 

@@ -227,7 +227,6 @@ func (w workoutPage) playerData() playerPayload {
 		"difficulty": i18n.T(l, "settings.difficulty"),
 		"harder":     i18n.T(l, "workout.harder"),
 		"easier":     i18n.T(l, "workout.easier"),
-		"mistake_reminder": i18n.T(l, "workout.mistake_reminder"),
 		"resume_title": i18n.T(l, "workout.resume_title"),
 		"resume": i18n.T(l, "workout.resume"),
 		"restart": i18n.T(l, "workout.restart"),

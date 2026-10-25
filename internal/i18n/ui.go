@@ -91,7 +91,6 @@ var ui = map[string][7]string{
 	"workout.per_side":         {"на каждую сторону", "per side", "her taraf", "pro Seite", "por lado", "par côté", "per lato"},
 	"workout.harder":           {"Сложнее", "Harder", "Daha zor", "Schwerer", "Más difícil", "Plus dur", "Più difficile"},
 	"workout.easier":           {"Легче", "Easier", "Daha kolay", "Leichter", "Más fácil", "Plus facile", "Più facile"},
-	"workout.mistake_reminder": {"Напоминание о частых ошибках", "Common mistake reminder", "Sık yapılan hatalar hakkında hatırlatma", "Hinweis zu häufigen Fehlern", "Recordatorio sobre errores comunes", "Rappel sur les erreurs fréquentes", "Promemoria sugli errori comuni"},
 
 	// Exercise info card
 	"info.technique": {"Как правильно", "How to do it", "Nasıl yapılır", "Ausführung", "Cómo hacerlo", "Comment faire", "Come si fa"},
