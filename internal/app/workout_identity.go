@@ -39,6 +39,9 @@ func CycleRestartAt(userID int64) string {
 // affect it: a paused workout keeps its own chosen difficulty.
 func WorkoutProgramKey(userID int64) string {
 	warmup, main, cooldown := DB.Rests(userID)
-	data := fmt.Sprintf("%s\n%d,%d,%d", UserProgram(userID).Marshal(), warmup, main, cooldown)
+	// Timing rules are part of the checkpoint contract even if program JSON
+	// is unchanged. A combined timer saved before side-change preparation
+	// cannot safely be interpreted as one segment of the new timed exercise.
+	data := fmt.Sprintf("%s\n%d,%d,%d\nside-change:%d", UserProgram(userID).Marshal(), warmup, main, cooldown, content.SideChangeSeconds)
 	return fmt.Sprintf("%x", sha256.Sum256([]byte(data)))
 }

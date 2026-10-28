@@ -5,16 +5,14 @@ const TotalDays = 30
 
 // Item is one step the player walks the user through.
 type Item struct {
-	ExerciseID   string `json:"id"`
-	Unit         Unit   `json:"unit"`
-	Value        int    `json:"value"`
-	Slot         Slot   `json:"slot"`
-	PerSide      bool   `json:"perSide"`
-	Round        int    `json:"round"`
-	Rest         int    `json:"rest"` // seconds of rest AFTER this item (0 on the last)
-	SideRest     int    `json:"sideRest,omitempty"`
-	RepSeconds   int    `json:"repSeconds,omitempty"`
-	restOverride *int
+	ExerciseID string `json:"id"`
+	Unit       Unit   `json:"unit"`
+	Value      int    `json:"value"`
+	Slot       Slot   `json:"slot"`
+	PerSide    bool   `json:"perSide"`
+	Round      int    `json:"round"`
+	Rest       int    `json:"rest"` // seconds of rest AFTER this item (0 on the last)
+	RepSeconds int    `json:"repSeconds,omitempty"`
 }
 
 // Workout is a full session for one day.
@@ -137,12 +135,33 @@ func clampDay(day int) int {
 // isRecoveryDay reports whether the given day is a lighter recovery day.
 func isRecoveryDay(day int) bool { return recoveryDays[clampDay(day)] }
 
-// Rests holds the user's rest (seconds) for each phase. Warm-up and cool-down
-// may be 0 (flow straight through); main is clamped to a sensible minimum.
+// Every workout has one warm-up, two complete main rounds and one cool-down.
+const (
+	WarmupRounds = 1
+	MainRounds   = 2
+	RestMax      = 40
+	MainRestMin  = 5
+)
+
+// SideChangeSeconds is the fixed preparation countdown between timed sides.
+// It does not consume either side's exercise time or change rest preferences.
+const SideChangeSeconds = 3
+
+// Rests holds the user's rest (seconds) for each phase. These settings are the
+// only source of rest between exercises; prescriptions cannot override them.
 type Rests struct {
 	Warmup   int
 	Main     int
 	Cooldown int
+}
+
+// Normalize applies the same supported ranges as the settings controls.
+func (r Rests) Normalize() Rests {
+	return Rests{
+		Warmup:   clampRest(r.Warmup, 0, RestMax),
+		Main:     clampRest(r.Main, MainRestMin, RestMax),
+		Cooldown: clampRest(r.Cooldown, 0, RestMax),
+	}
 }
 
 func clampRest(v, lo, hi int) int {
@@ -158,19 +177,20 @@ func clampRest(v, lo, hi int) int {
 // restAfter maps a phase (slot) to its rest seconds. The rest before an exercise
 // belongs to that exercise's phase, so callers pass the UPCOMING item's slot.
 func restAfter(slot Slot, r Rests) int {
+	r = r.Normalize()
 	switch slot {
 	case Warmup:
-		return clampRest(r.Warmup, 0, 90)
+		return r.Warmup
 	case Cooldown:
-		return clampRest(r.Cooldown, 0, 90)
+		return r.Cooldown
 	}
-	return clampRest(r.Main, 5, 90)
+	return r.Main
 }
 
 // assignRestsAndEst sets each item's rest and returns a rough duration estimate.
 // The rest after an item is the NEXT item's phase rest — i.e. the pause belongs
 // to the exercise it leads into (warm-up / main / cool-down) and always honours
-// the user's per-phase setting unless an occurrence prescribes an explicit rest.
+// the user's per-phase setting, including phase and round boundaries.
 func assignRestsAndEst(items []Item, r Rests) int {
 	est := 0
 	for i := range items {
@@ -178,9 +198,6 @@ func assignRestsAndEst(items []Item, r Rests) int {
 		items[i].Rest = 0
 		if i < len(items)-1 {
 			items[i].Rest = restAfter(items[i+1].Slot, r)
-			if it.restOverride != nil {
-				items[i].Rest = clampRest(*it.restOverride, 0, 90)
-			}
 		}
 		work := it.Value
 		if it.Unit == Reps {
@@ -193,15 +210,15 @@ func assignRestsAndEst(items []Item, r Rests) int {
 			work *= 4
 		}
 		if it.PerSide {
-			work = work*2 + clampRest(it.SideRest, 0, 90)
+			work *= 2
+			if it.Unit == Seconds {
+				work += SideChangeSeconds
+			}
 		}
 		est += work + items[i].Rest
 	}
 	return est
 }
-
-// warmupRounds is how many times the shared warm-up series runs each session.
-const warmupRounds = 1
 
 // seqItems converts a fixed sequence (warm-up / cool-down) to base RItems.
 func seqItems(seq []setDef, slot Slot) []RItem {
@@ -235,28 +252,17 @@ type programSpec struct {
 }
 
 func (s programSpec) resolve() Resolved {
-	r := Resolved{Version: 1, Name: s.name, TotalDays: TotalDays, WarmupRounds: warmupRounds}
+	r := Resolved{Version: 1, Name: s.name, TotalDays: TotalDays, WarmupRounds: WarmupRounds}
 	r.Warmup = seqItems(s.warmup, Warmup)
 	r.Cooldown = seqItems(s.cooldown, Cooldown)
 	for day := 1; day <= TotalDays; day++ {
-		r.Days = append(r.Days, RDay{Day: day, Rounds: 2, Items: mainItemsOnce(s.days[clampDay(day)])})
+		r.Days = append(r.Days, RDay{Day: day, Rounds: MainRounds, Items: mainItemsOnce(s.days[clampDay(day)])})
 	}
 	return r
 }
 
 // sergeySpec is the original built-in set (floor/mat only, no jumps).
 var sergeySpec = programSpec{name: "Sergey", warmup: warmupSeq, cooldown: cooldownSeq, days: dayBlocks}
-
-// ClampRounds keeps a round count in 1–10.
-func ClampRounds(n int) int {
-	if n < 1 {
-		return 1
-	}
-	if n > 10 {
-		return 10
-	}
-	return n
-}
 
 // FigureIDs are the built-in illustration keys a custom exercise may reuse.
 func FigureIDs() []string {

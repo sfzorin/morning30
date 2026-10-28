@@ -7,7 +7,7 @@ routine you can run with the screen in your pocket, guided entirely by voice.
 - **License:** [Apache-2.0](LICENSE)
 - **Status:** active development
 
-Each day is a single session — **warm-up (1–10 rounds) → main block (1–10 rounds) → cool-down** —
+Each day is a single session — **warm-up once → two complete main rounds → cool-down once** —
 on a 30-day cycle. New accounts run a short public **demo**. Everyone else keeps
 their own plan as JSON on the account (no named picker). Progress, streaks and
 preferences are stored per user on the server.
@@ -25,8 +25,9 @@ small client-side workout engine.
   into that account's personal JSON on first load; cycle position and streaks
   stay put. Settings edit *this* account only — there is no Sergey/Vlad/Ilya
   picker.
-- **In-app editor.** Reorder, add, remove, retime; warm-up and main rounds 1–10;
-  save as this account's version, or restore the demo.
+- **In-app editor.** Reorder, add, remove and retime exercises; all three phases
+  remain nonempty, with exactly two main rounds. Save as this account's version,
+  or restore the demo.
 - **Exercise JSON.** Download any exercise as a file, paste or upload one back.
   Custom exercises overlay the built-in library. Each exercise can use one
   catalog still (static) or two (they swap once a second). Legacy built-in
@@ -38,15 +39,22 @@ small client-side workout engine.
 - **Universal difficulty.** A per-user level from **−3 to +3** scales every
   program by ±10% per step (reps and seconds only; breaths and warm-up/cool-down
   stay fixed). Prescribed programs can lock their doses with `fixedDifficulty`.
-- **Prescribed sessions.** Program JSON supports per-item `rest` (including zero),
-  `sideRest`, and `repSeconds` for duration estimates. A day's `warmup`/`cooldown`
-  overrides the shared phase; `[]` disables it. Explicit side rests give each side
-  its own timer or Done tap. Programs with `selfManagedSides` use one Done tap
-  for both sides, or a combined hold timer with the time per side shown.
-  See [Ilya's six-day bundle](programs/ilya-tennis/README.md).
+- **One rest policy.** Account settings control every pause between exercises:
+  warm-up and cool-down 0–40 seconds, main 5–40. A pause belongs to the upcoming
+  exercise's phase; the final exercise has no following pause. The same resolved
+  values drive estimates and player timers. Program JSON cannot prescribe pauses;
+  old `rest`/`sideRest` fields are ignored on import and omitted on export.
+- **Daily phases.** Every program includes a warm-up, two main rounds and a
+  cool-down. Empty day phases inherit the shared phase; missing shared phases
+  and empty main sequences use demo defaults. Legacy identical expanded rounds
+  collapse to one sequence; asymmetric old rounds are rejected visibly on import.
+  `repSeconds` only estimates duration. `selfManagedSides` uses one Done tap for
+  both sides, or a combined hold timer with the time per side shown.
+  See [Ilya's progressive 30-day bundle](programs/ilya-tennis/README.md).
 - **Two exercise types.** Reps (tap *Done*) and timed (countdown). Counts are
-  shown as-is; timed per-side exercises run twice. Rep sets without `sideRest`
-  retain the single Done tap after both sides.
+  shown as-is; timed per-side exercises include a shared three-second spoken
+  side-change countdown between working halves. Rep sets use a single Done tap
+  after both sides.
 - **Voice-first player (client-side).** Progress bar, pause / skip / back, rest
   periods, screen wake-lock, and a celebratory finish (applause, confetti,
   localized encouragement). The player runs entirely in the browser from a

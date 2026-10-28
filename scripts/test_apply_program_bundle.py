@@ -1,4 +1,5 @@
 import importlib.util
+import copy
 import json
 from pathlib import Path
 import sqlite3
@@ -9,6 +10,33 @@ import unittest
 spec = importlib.util.spec_from_file_location("apply_program_bundle", Path(__file__).with_name("apply_program_bundle.py"))
 bundle = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bundle)
+
+
+class BundleContractTests(unittest.TestCase):
+    def test_new_bundles_cannot_reintroduce_private_pauses_or_missing_phases(self):
+        source = Path(__file__).resolve().parents[1] / "programs/ilya-tennis"
+        program = json.loads((source / "program.json").read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            (folder / "exercises.json").write_text((source / "exercises.json").read_text())
+            cases = [
+                lambda p: p["warmup"][0].update(rest=15),
+                lambda p: p["days"][0]["items"][0].update(sideRest=10),
+                lambda p: p["days"][0].update(rounds=1),
+                lambda p: p.update(warmupRounds=2),
+                lambda p: p.update(warmup=[]),
+                lambda p: p["days"][0].update(cooldown=[]),
+                lambda p: p["days"][0].update(items=[]),
+            ]
+            (folder / "program.json").write_text(json.dumps(program))
+            bundle.load_bundle(folder)
+            for index, alter in enumerate(cases):
+                with self.subTest(case=index):
+                    invalid = copy.deepcopy(program)
+                    alter(invalid)
+                    (folder / "program.json").write_text(json.dumps(invalid))
+                    with self.assertRaises(ValueError):
+                        bundle.load_bundle(folder)
 
 
 class ApplyBundleTests(unittest.TestCase):

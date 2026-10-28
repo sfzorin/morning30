@@ -58,7 +58,7 @@ func TestSpokenMistakeCuesUseNegativeInstructions(t *testing.T) {
 	}
 }
 
-func TestPrescribedSixDayCycle(t *testing.T) {
+func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 	raw, err := os.ReadFile("program.json")
 	if err != nil {
 		t.Fatal(err)
@@ -67,105 +67,100 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !p.FixedDifficulty || !p.SelfManagedSides || len(p.Days) != 30 {
-		t.Fatal("expected fixed 30-day program with self-managed sides")
+	if p.FixedDifficulty || !p.SelfManagedSides || len(p.Days) != 30 {
+		t.Fatal("expected ordinary difficulty controls and self-managed sides over 30 days")
 	}
-	if bytes.Contains(raw, []byte(`"sideRest"`)) {
-		t.Fatal("Ilya manages side changes without separate pauses")
+	for _, field := range []string{`"rest"`, `"sideRest"`} {
+		if bytes.Contains(raw, []byte(field)) {
+			t.Fatalf("program must not own pauses: %s", field)
+		}
 	}
-	wantDuration := []int{1580, 1238, 1192, 1628, 1238, 1192}
-	wantMain := []int{6, 5, 8, 6, 5, 8}
 	if p.WarmupRounds != 1 || len(p.Warmup) != 5 || len(p.Cooldown) != 3 {
-		t.Fatal("every day needs the prescribed warm-up and cool-down once")
+		t.Fatal("every day needs the same warm-up and cool-down once")
 	}
-	// Combined main-block dose across both rounds and both sides. Reordering
-	// into circuits must not multiply the earlier two-set workload again.
-	wantDose := []map[string]int{
-		{"IT07": 12, "IT08": 24, "IT09": 12, "IT10": 16, "IT11": 32, "IT12": 20},
-		{"IT15": 60, "IT16": 8, "IT17": 80, "IT18": 40, "IT19": 24},
-		{"IT01": 120, "IT03": 16, "IT20": 8, "IT21": 12, "IT22": 8, "IT13": 80, "IT23": 80, "IT14": 60},
-		{"IT24": 12, "IT25": 20, "IT09": 12, "IT26": 20, "IT27": 24, "IT28": 60},
-		{"IT29": 12, "IT30": 20, "IT31": 60, "IT32": 12, "IT33": 24},
-		{"IT01": 120, "IT03": 16, "IT20": 8, "IT21": 12, "IT22": 8, "IT13": 80, "IT23": 80, "IT14": 60},
+	wantMain := []int{6, 5, 8, 6, 5, 8}
+	pushups := []int{6, 8, 10, 12, 14}
+	rests := content.Rests{Warmup: 15, Main: 20, Cooldown: 10}
+	faster := content.Rests{Warmup: 0, Main: 5, Cooldown: 0}
+	phaseRest := func(slot content.Slot, r content.Rests) int {
+		switch slot {
+		case content.Warmup:
+			return r.Warmup
+		case content.Cooldown:
+			return r.Cooldown
+		default:
+			return r.Main
+		}
 	}
-	for i, day := range p.Days {
-		if day.Rounds != 2 || len(day.Items) != wantMain[i%6] {
-			t.Fatalf("day %d: expected two complete circuits", i+1)
+	for di, day := range p.Days {
+		if day.Rounds != 2 || len(day.Items) != wantMain[di%6] {
+			t.Fatalf("day %d must have two complete rounds", di+1)
 		}
 		seen := map[string]bool{}
-		for _, it := range day.Items {
+		for n, it := range day.Items {
 			if seen[it.ID] {
-				t.Fatalf("day %d repeats %s inside one round", i+1, it.ID)
+				t.Fatalf("day %d repeats %s inside one round", di+1, it.ID)
 			}
 			seen[it.ID] = true
-			if it.Rest == nil || *it.Rest <= 0 {
-				t.Fatalf("day %d needs a prescribed pause after %s, including the round boundary", i+1, it.ID)
+			if it.ID == "IT09" && it.Value != pushups[di/6] {
+				t.Fatalf("day %d push-ups=%d", di+1, it.Value)
 			}
-		}
-		workout := p.Workout(i+1, 3, content.Rests{Warmup: 40, Main: 40, Cooldown: 40})
-		if !workout.SelfManagedSides {
-			t.Fatal("player must receive self-managed sides")
-		}
-		if !reflect.DeepEqual(p.WarmupFor(i), p.Warmup) || !reflect.DeepEqual(p.CooldownFor(i), p.Cooldown) {
-			t.Fatalf("day %d must retain both shared phases, including recovery days", i+1)
-		}
-		if len(workout.Items) != len(p.Warmup)+2*len(day.Items)+len(p.Cooldown) {
-			t.Fatalf("day %d must contain warm-up, two main rounds, and cool-down", i+1)
-		}
-		for _, phase := range []struct {
-			slot   content.Slot
-			items  []content.RItem
-			offset int
-		}{
-			{content.Warmup, p.Warmup, 0},
-			{content.Cooldown, p.Cooldown, len(workout.Items) - len(p.Cooldown)},
-		} {
-			for n, want := range phase.items {
-				got := workout.Items[phase.offset+n]
-				if got.Slot != phase.slot || got.ExerciseID != want.ID || got.Round != 1 {
-					t.Fatalf("day %d must show %s in its own %s phase once", i+1, want.ID, phase.slot)
+			if di >= 6 {
+				before := p.Days[di-6].Items[n]
+				if it.ID != before.ID || it.Value < before.Value {
+					t.Fatalf("day %d breaks the planned progression", di+1)
 				}
 			}
 		}
-		dose := map[string]int{}
-		main := []content.Item{}
-		for _, it := range workout.Items {
-			if it.SideRest != 0 {
-				t.Fatalf("unexpected side pause in %s", it.ExerciseID)
-			}
-			if it.Slot != content.Main {
-				continue
-			}
-			main = append(main, it)
-			n := it.Value
-			if it.PerSide {
-				n *= 2
-			}
-			dose[it.ExerciseID] += n
-		}
-		if !reflect.DeepEqual(dose, wantDose[i%6]) {
-			t.Fatalf("day %d main dose=%v want %v", i+1, dose, wantDose[i%6])
-		}
-		if len(main) != 2*len(day.Items) {
-			t.Fatalf("day %d expanded main count", i+1)
-		}
-		for n, it := range main {
-			if it.ExerciseID != day.Items[n%len(day.Items)].ID || it.Round != n/len(day.Items)+1 {
-				t.Fatalf("day %d must run A→B→C, then repeat the round", i+1)
+		if di%6 == 2 || di%6 == 5 {
+			if !reflect.DeepEqual(day.Items, p.Days[2].Items) {
+				t.Fatalf("day %d must remain light", di+1)
 			}
 		}
-		if workout.EstSec != wantDuration[i%6] {
-			t.Fatalf("day %d duration=%d want %d", i+1, workout.EstSec, wantDuration[i%6])
+		w := p.Workout(di+1, 0, rests)
+		quick := p.Workout(di+1, 0, faster)
+		if !w.SelfManagedSides {
+			t.Fatal("both sides must share one exercise screen")
 		}
-		if i >= 6 && !reflect.DeepEqual(day.Items, p.Days[i%6].Items) {
-			t.Fatalf("day %d adds unapproved progression", i+1)
+		want := append([]content.RItem{}, p.Warmup...)
+		want = append(want, day.Items...)
+		want = append(want, day.Items...)
+		want = append(want, p.Cooldown...)
+		if len(w.Items) != len(want) {
+			t.Fatalf("day %d has missing phases or incorrect round expansion", di+1)
 		}
-		base := p.Workout(i+1, 0, content.Rests{})
-		if !reflect.DeepEqual(workout, base) {
-			t.Fatalf("day %d affected by level/rest preferences", i+1)
+		delta := 0
+		for n, it := range w.Items {
+			round := 1
+			if n >= len(p.Warmup)+len(day.Items) && n < len(p.Warmup)+2*len(day.Items) {
+				round = 2
+			}
+			if it.ExerciseID != want[n].ID || it.Value != want[n].Value || it.Slot != want[n].Slot || it.Round != round {
+				t.Fatalf("day %d item %d must retain prescribed order, dose and circuit", di+1, n)
+			}
+			expectedRest := 0
+			if n+1 < len(w.Items) {
+				expectedRest = phaseRest(w.Items[n+1].Slot, rests)
+				delta += expectedRest - phaseRest(w.Items[n+1].Slot, faster)
+			}
+			if it.Rest != expectedRest {
+				t.Fatalf("day %d item %d ignores rest preferences", di+1, n)
+			}
+		}
+		if w.EstSec-quick.EstSec != delta {
+			t.Fatalf("day %d estimated duration ignores rest preferences", di+1)
+		}
+		harder := p.Workout(di+1, 1, rests)
+		for n, it := range harder.Items {
+			expected := w.Items[n].Value
+			if it.Slot == content.Main {
+				expected = content.ScaleValue(it.Unit, expected, 1)
+			}
+			if it.Value != expected {
+				t.Fatalf("day %d difficulty control ignored", di+1)
+			}
 		}
 	}
-
 }
 
 func TestEveryExerciseHasAnAlignedDemonstration(t *testing.T) {

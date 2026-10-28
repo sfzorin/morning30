@@ -1,70 +1,93 @@
 # Ilya: tennis and strength
 
-Personal 30-day bundle: six days repeated five times, independent of weekdays.
-Exercises have complete Russian, English, Turkish, German, Spanish, French and
-Italian instructions and voice cues. No automatic progression or level scaling.
+Personal 30-day program: the six-day sequence repeats five times with a gradual
+increase in the main exercises. It is independent of weekdays and tennis days.
+Instructions and voice cues cover Russian, English, Turkish, German, Spanish,
+French and Italian. The ordinary difficulty setting remains available; the
+numbers below are level 0 targets.
 
-| Cycle day | Session | Estimated duration including rests |
+Every session uses the application's common rules: **one warm-up, two complete
+main rounds, one cool-down**. The sequence is A → B → C → …, then the same
+sequence again. Recovery days retain both full rounds and both daily phases.
+
+**The program contains no rest durations.** Warm-up, main and cool-down pauses
+come only from the account settings. A transition uses the upcoming exercise's
+phase setting, including transitions between rounds and phases. The last
+exercise has no following pause. Changing settings changes both the actual
+countdown and estimated duration. Timed bilateral work includes one common
+three-second side-change countdown; the work clock resumes afterward.
+
+`selfManagedSides: true` keeps both sides on one screen. Counts marked “each”
+are per side; Done is pressed after both. Static one-sided holds use a combined
+timer twice the per-side dose, with a spoken side-change cue and 3–2–1 countdown halfway.
+Repetition exercises use counts and Done, not a countdown.
+
+## Six-day sequence and progression
+
+| Cycle day | Session | Main sequence, repeated twice |
 | --- | --- | --- |
-| 1 | Strength A and controlled stops | 26:20 |
-| 2 | Footwork and coordination | 20:38 |
-| 3 | Recovery | 19:52 |
-| 4 | Strength B and controlled landings | 27:08 |
-| 5 | Footwork and balance | 20:38 |
-| 6 | Same recovery session as day 3 | 19:52 |
+| 1 | Strength A and controlled stops | IT07, IT08, IT09, IT10, IT11, IT12 |
+| 2 | Footwork and coordination | IT15, IT16, IT17, IT18, IT19 |
+| 3 | Light movement and mobility | IT01, IT03, IT20, IT21, IT22, IT13, IT23, IT14 |
+| 4 | Strength B and controlled landings | IT24, IT25, IT09, IT26, IT27, IT28 |
+| 5 | Footwork and balance | IT29, IT30, IT31, IT32, IT33 |
+| 6 | Light movement and mobility | Same sequence and doses as day 3 |
 
-Every day has **two complete main rounds**: A → B → C → …, then the same
-sequence again. `program.json` stores each main exercise once with `rounds: 2`.
-The shared warm-up and cool-down run once every day, including recovery days.
-Recovery days keep two lighter main rounds between these shared phases.
+Each column gives the dose **in each main round**. Static holds and continuous
+steps are seconds; other numbers are repetitions or complete sequences.
 
-`selfManagedSides: true` means the child handles both sides on one exercise
-screen. Repetition counts are **per side** where marked; tap Done after both.
-Static unilateral holds use one combined timer lasting twice the per-side dose;
-switch sides independently halfway through. No occurrence has `sideRest`.
-The compatible player must be deployed before installing this program.
+| Exercise | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| IT07 hop, step, stop (total) | 6 | 6 | 6 | 6 | 6 |
+| IT08 reverse lunge (each) | 8 | 9 | 10 | 11 | 12 |
+| IT09 push-up, 2-second descent | **6** | **8** | **10** | **12** | **14** |
+| IT10 W arm lift | 10 | 10 | 12 | 12 | 14 |
+| IT11 single-leg calf raise (each) | 10 | 11 | 12 | 13 | 14 |
+| IT12 dead bug (each) | 6 | 7 | 8 | 9 | 10 |
+| IT15 side steps (seconds) | 40 | 40 | 45 | 45 | 50 |
+| IT16 compass (complete sequences) | 6 | 6 | 7 | 7 | 8 |
+| IT17 single-leg balance (seconds each) | 30 | 30 | 35 | 35 | 40 |
+| IT18 cross-body march (total) | 24 | 26 | 28 | 30 | 32 |
+| IT19 preparation turn (each) | 10 | 11 | 12 | 13 | 14 |
+| IT24 lateral jump and hold (total) | 6 | 6 | 6 | 6 | 6 |
+| IT25 squat, two 0.5 kg dumbbells | 12 | 13 | 14 | 15 | 16 |
+| IT26 dumbbell row | 12 | 13 | 14 | 15 | 16 |
+| IT27 single-leg bridge (each) | 8 | 9 | 10 | 11 | 12 |
+| IT28 side plank from knees (seconds each) | 20 | 25 | 30 | 35 | 40 |
+| IT29 line crossing and return (sequences) | 10 | 11 | 12 | 13 | 14 |
+| IT30 V steps with return (total) | 16 | 18 | 20 | 22 | 24 |
+| IT31 foot rhythm (seconds) | 40 | 40 | 45 | 45 | 50 |
+| IT32 three toe taps (sequences each) | 5 | 5 | 6 | 6 | 7 |
+| IT33 step, preparation turn, return (each) | 10 | 11 | 12 | 13 | 14 |
 
-The earlier volume is preserved when converting consecutive sets to circuits:
-IT07 changes from 3 × 4 to 2 × 6 total repetitions; IT15 and IT31 change from
-3 × 20 seconds to 2 × 30 seconds. Single recovery sets are divided between the
-two rounds; repeated stretches keep their earlier per-round dose. Push-ups
-remain six per round. There is no new progression or maximum-effort work.
+Light-day doses stay unchanged throughout the cycle: IT01 60 seconds;
+IT03 ×4 each; IT20 ×4; IT21 ×3 each; IT22 ×4; IT13 20 seconds each;
+IT23 20 seconds each; IT14 30 seconds. Both main rounds use those doses.
+Jump counts stay short; progression increases controlled strength and footwork.
+The targets assume clean technique with a small reserve, not repetitions to
+failure. Use the ordinary difficulty control if the target is too demanding.
 
-### Doses in each main round
+At rest settings **15 / 20 / 10 seconds** (warm-up/main/cool-down), estimated
+session times, including side changes, are:
 
-Counts followed by “each” apply to each side. Times followed by “each” have one
-combined timer; for example, 20 seconds each displays 40 seconds total.
+| Days | Strength A | Coordination | Light | Strength B | Balance | Light |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1–6 | 20:06 | 19:36 | 21:42 | 20:00 | 20:30 | 21:42 |
+| 7–12 | 21:02 | 19:56 | 21:42 | 21:06 | 21:08 | 21:42 |
+| 13–18 | 22:14 | 21:06 | 21:42 | 22:12 | 22:28 | 21:42 |
+| 19–24 | 23:10 | 21:26 | 21:42 | 23:18 | 23:06 | 21:42 |
+| 25–30 | 24:22 | 22:36 | 21:42 | 24:24 | 24:26 | 21:42 |
 
-| Day | Main sequence, repeated twice | Pause after each exercise |
-| --- | --- | --- |
-| 1 | IT07 ×6 total; IT08 ×6 each; IT09 ×6; IT10 ×8; IT11 ×8 each; IT12 ×5 each | 60 s |
-| 2 | IT15 30 s; IT16 ×4 full compass sequences; IT17 20 s each; IT18 ×20 total touches; IT19 ×6 each | 45 s |
-| 3, 6 | IT01 60 s; IT03 ×4 each; IT20 ×4; IT21 ×3 each; IT22 ×4; IT13 20 s each; IT23 20 s each; IT14 30 s | 15 s |
-| 4 | IT24 ×6 total; IT25 ×10; IT09 ×6; IT26 ×10; IT27 ×6 each; IT28 15 s each | 90 s after IT24, otherwise 60 s |
-| 5 | IT29 ×6 full crossing-and-return sequences; IT30 ×10 total diagonal steps with return; IT31 30 s; IT32 ×3 three-tap sequences each; IT33 ×6 each | 45 s |
+Times estimate repetition tempo and omit the initial three-second ready count.
+They are not targets to rush toward and change when the user changes rests.
 
-The pause also separates the two main rounds. Every day the same pause
-follows the final main exercise before cool-down. No rest follows the final
-exercise of the whole session. Durations estimate repetition tempo, include
-prescribed rests, and exclude the player's initial three-second ready count.
-They are estimates, not targets to rush toward.
+## Daily phases and content
 
-### Counted warm-up and coordination work
-
-The shared warm-up is IT01 45 seconds, IT02 ×12 alternating ankle rocks total,
+The warm-up is IT01 45 seconds, IT02 ×12 alternating ankle rocks total,
 IT04 ×12 movements (4 shoulder circles backward, 4 forward, 4 complete arm
-swings), IT05 ×10 hip hinges and IT06 ×10 shallow squats, with 15 seconds after
-each exercise. The four counted warm-up exercises previously used 45-second
-timers. Main drills IT16, IT18, IT29 and IT30 now use the counts in the table.
-
-Walking, continuous side steps (IT15), continuous rhythm steps (IT31), quiet
-breathing and static holds remain timed. All seven instruction languages define
-what counts as one repetition and explain independent side changes. The
-cool-down remains IT01 60 seconds, IT13 20 seconds per side and IT14 20 seconds,
-without added pauses.
-
-New movements need instruction and supervised technique checks; fatigue calls
-for the recovery session, with no make-up workload.
+swings), IT05 ×10 hip hinges and IT06 ×10 shallow squats.
+The cool-down is IT01 60 seconds, IT13 20 seconds per side and IT14 20 seconds.
+Both appear every day. Their pauses follow the same account settings.
 
 The `wrong` cues are spoken directly, without a heading. Author each as a negative
 instruction in all seven languages (for example, “Не своди колени и не отрывай

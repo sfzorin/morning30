@@ -76,8 +76,11 @@ func (s settingsPage) Main() gox.Elem {
 		ctx := __c.Context(); _ = ctx
 //line settings.gox:72
 		l := i18n.Lang(s.sess.Lang)
-		saved := doors.NewSource(false)
+		saveStatus := doors.NewSource("")
+		importStatus := doors.NewSource("")
 		restW, restM, restC := app.DB.Rests(s.sess.UserID)
+		rests := (content.Rests{Warmup: restW, Main: restM, Cooldown: restC}).Normalize()
+		restW, restM, restC = rests.Warmup, rests.Main, rests.Cooldown
 		restWVal := doors.NewSource(restW)
 		restMVal := doors.NewSource(restM)
 		restCVal := doors.NewSource(restC)
@@ -104,40 +107,40 @@ func (s settingsPage) Main() gox.Elem {
 		__e = __c.Init("title"); if __e != nil { return }
 		{
 			__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:98
+//line settings.gox:101
 			__e = __c.Any(i18n.T(l, "settings.title")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("main"); if __e != nil { return }
 		{
-//line settings.gox:99
+//line settings.gox:102
 			__e = __c.Set("class", "screen"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("section"); if __e != nil { return }
 			{
-//line settings.gox:100
+//line settings.gox:103
 				__e = __c.Set("class", "settings"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:101
+//line settings.gox:104
 					__e = __c.Set("class", "settings-head"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h1"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:102
+//line settings.gox:105
 						__e = __c.Any(i18n.T(l, "settings.title")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
-//line settings.gox:103
+//line settings.gox:106
 					__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("a"); if __e != nil { return }
 						{
-//line settings.gox:103
+//line settings.gox:106
 							__e = __c.Set("class", "quit"); if __e != nil { return }
-//line settings.gox:103
+//line settings.gox:106
 							__e = __c.Set("aria-label", i18n.T(l, "nav.close")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("✕"); if __e != nil { return }
@@ -146,7 +149,7 @@ func (s settingsPage) Main() gox.Elem {
 					return })); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line settings.gox:106
+//line settings.gox:109
 				vm := s.sess.VoiceMode
 				if vm == "" {
 					vm = "normal"
@@ -154,56 +157,56 @@ func (s settingsPage) Main() gox.Elem {
 
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:111
+//line settings.gox:114
 					__e = __c.Set("class", "settings-card"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line settings.gox:113
+//line settings.gox:116
 						__e = __c.Set("class", "srow"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("span"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:114
+//line settings.gox:117
 							__e = __c.Any(i18n.T(l, "settings.language")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:115
+//line settings.gox:118
 						__e = __c.Any(langSwitch{sess: s.sess, auth: s.auth, persist: true}); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
-//line settings.gox:118
-					__e = (doors.ASubmit[settingsForm]{On: s.save(saved)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+//line settings.gox:121
+					__e = (doors.ASubmit[settingsForm]{On: s.save(saveStatus)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("form"); if __e != nil { return }
 						{
-//line settings.gox:118
+//line settings.gox:121
 							__e = __c.Set("class", "settings-form"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:119
+//line settings.gox:122
 								__e = __c.Set("class", "srow"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:120
+//line settings.gox:123
 									__e = __c.Any(i18n.T(l, "auth.name")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line settings.gox:121
+//line settings.gox:124
 									__e = __c.Set("class", "text-input compact"); if __e != nil { return }
-//line settings.gox:121
+//line settings.gox:124
 									__e = __c.Set("name", "name"); if __e != nil { return }
-//line settings.gox:121
+//line settings.gox:124
 									__e = __c.Set("type", "text"); if __e != nil { return }
-//line settings.gox:121
+//line settings.gox:124
 									__e = __c.Set("maxlength", "40"); if __e != nil { return }
-//line settings.gox:121
+//line settings.gox:124
 									__e = __c.Set("value", s.sess.Name); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
@@ -211,34 +214,34 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:124
+//line settings.gox:127
 								__e = __c.Set("class", "srow col"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:125
+//line settings.gox:128
 									__e = __c.Set("class", "row-between"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:126
+//line settings.gox:129
 										__e = __c.Any(i18n.T(l, "settings.rest_warmup")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("output"); if __e != nil { return }
 									{
-//line settings.gox:127
+//line settings.gox:130
 										__e = __c.Set("class", "rest-out"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:127
+//line settings.gox:130
 										__e = __c.Any(restWVal.Bind(func(v int) gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
-//line settings.gox:127
+//line settings.gox:130
 									__e = __c.Many(v, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
 								return })
-//line settings.gox:127
+//line settings.gox:130
 							})); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -246,19 +249,19 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line settings.gox:129
+//line settings.gox:132
 									__e = __c.Set("type", "range"); if __e != nil { return }
-//line settings.gox:129
+//line settings.gox:132
 									__e = __c.Set("name", "rest_warmup"); if __e != nil { return }
-//line settings.gox:129
+//line settings.gox:132
 									__e = __c.Set("min", "0"); if __e != nil { return }
-//line settings.gox:129
-									__e = __c.Set("max", "40"); if __e != nil { return }
-//line settings.gox:129
+//line settings.gox:132
+									__e = __c.Set("max", content.RestMax); if __e != nil { return }
+//line settings.gox:132
 									__e = __c.Set("step", "5"); if __e != nil { return }
-//line settings.gox:129
+//line settings.gox:132
 									__e = __c.Set("value", restW); if __e != nil { return }
-//line settings.gox:130
+//line settings.gox:133
 									__e = __c.Modify(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								if n := r.Event().Number; n != nil { restWVal.Update(ctx, int(*n)) }
 								return false
@@ -269,34 +272,34 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:135
+//line settings.gox:138
 								__e = __c.Set("class", "srow col"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:136
+//line settings.gox:139
 									__e = __c.Set("class", "row-between"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:137
+//line settings.gox:140
 										__e = __c.Any(i18n.T(l, "settings.rest_main")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("output"); if __e != nil { return }
 									{
-//line settings.gox:138
+//line settings.gox:141
 										__e = __c.Set("class", "rest-out"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:138
+//line settings.gox:141
 										__e = __c.Any(restMVal.Bind(func(v int) gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
-//line settings.gox:138
+//line settings.gox:141
 									__e = __c.Many(v, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
 								return })
-//line settings.gox:138
+//line settings.gox:141
 							})); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -304,19 +307,19 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line settings.gox:140
+//line settings.gox:143
 									__e = __c.Set("type", "range"); if __e != nil { return }
-//line settings.gox:140
+//line settings.gox:143
 									__e = __c.Set("name", "rest"); if __e != nil { return }
-//line settings.gox:140
-									__e = __c.Set("min", "5"); if __e != nil { return }
-//line settings.gox:140
-									__e = __c.Set("max", "40"); if __e != nil { return }
-//line settings.gox:140
+//line settings.gox:143
+									__e = __c.Set("min", content.MainRestMin); if __e != nil { return }
+//line settings.gox:143
+									__e = __c.Set("max", content.RestMax); if __e != nil { return }
+//line settings.gox:143
 									__e = __c.Set("step", "5"); if __e != nil { return }
-//line settings.gox:140
+//line settings.gox:143
 									__e = __c.Set("value", restM); if __e != nil { return }
-//line settings.gox:141
+//line settings.gox:144
 									__e = __c.Modify(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								if n := r.Event().Number; n != nil { restMVal.Update(ctx, int(*n)) }
 								return false
@@ -327,34 +330,34 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:146
+//line settings.gox:149
 								__e = __c.Set("class", "srow col"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:147
+//line settings.gox:150
 									__e = __c.Set("class", "row-between"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:148
+//line settings.gox:151
 										__e = __c.Any(i18n.T(l, "settings.rest_cooldown")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("output"); if __e != nil { return }
 									{
-//line settings.gox:149
+//line settings.gox:152
 										__e = __c.Set("class", "rest-out"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:149
+//line settings.gox:152
 										__e = __c.Any(restCVal.Bind(func(v int) gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
-//line settings.gox:149
+//line settings.gox:152
 									__e = __c.Many(v, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
 								return })
-//line settings.gox:149
+//line settings.gox:152
 							})); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -362,19 +365,19 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line settings.gox:151
+//line settings.gox:154
 									__e = __c.Set("type", "range"); if __e != nil { return }
-//line settings.gox:151
+//line settings.gox:154
 									__e = __c.Set("name", "rest_cooldown"); if __e != nil { return }
-//line settings.gox:151
+//line settings.gox:154
 									__e = __c.Set("min", "0"); if __e != nil { return }
-//line settings.gox:151
-									__e = __c.Set("max", "40"); if __e != nil { return }
-//line settings.gox:151
+//line settings.gox:154
+									__e = __c.Set("max", content.RestMax); if __e != nil { return }
+//line settings.gox:154
 									__e = __c.Set("step", "5"); if __e != nil { return }
-//line settings.gox:151
+//line settings.gox:154
 									__e = __c.Set("value", restC); if __e != nil { return }
-//line settings.gox:152
+//line settings.gox:155
 									__e = __c.Modify(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								if n := r.Event().Number; n != nil { restCVal.Update(ctx, int(*n)) }
 								return false
@@ -385,64 +388,64 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:157
+//line settings.gox:160
 								__e = __c.Set("class", "srow"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:158
+//line settings.gox:161
 									__e = __c.Any(i18n.T(l, "settings.voice")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("select"); if __e != nil { return }
 								{
-//line settings.gox:159
+//line settings.gox:162
 									__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:159
+//line settings.gox:162
 									__e = __c.Set("name", "voice_mode"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:160
+//line settings.gox:163
 										__e = __c.Set("value", "off"); if __e != nil { return }
-//line settings.gox:160
+//line settings.gox:163
 										__e = __c.Set("selected", func() any { return vm == "off" }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:160
+//line settings.gox:163
 										__e = __c.Any(i18n.T(l, "voice.off")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:161
+//line settings.gox:164
 										__e = __c.Set("value", "min"); if __e != nil { return }
-//line settings.gox:161
+//line settings.gox:164
 										__e = __c.Set("selected", func() any { return vm == "min" }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:161
+//line settings.gox:164
 										__e = __c.Any(i18n.T(l, "voice.min")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:162
+//line settings.gox:165
 										__e = __c.Set("value", "normal"); if __e != nil { return }
-//line settings.gox:162
+//line settings.gox:165
 										__e = __c.Set("selected", func() any { return vm == "normal" }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:162
+//line settings.gox:165
 										__e = __c.Any(i18n.T(l, "voice.normal")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:163
+//line settings.gox:166
 										__e = __c.Set("value", "detailed"); if __e != nil { return }
-//line settings.gox:163
+//line settings.gox:166
 										__e = __c.Set("selected", func() any { return vm == "detailed" }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:163
+//line settings.gox:166
 										__e = __c.Any(i18n.T(l, "voice.detailed")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -452,42 +455,42 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:166
+//line settings.gox:169
 								__e = __c.Set("class", "srow"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:167
+//line settings.gox:170
 									__e = __c.Any(i18n.T(l, "settings.sex")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("select"); if __e != nil { return }
 								{
-//line settings.gox:168
+//line settings.gox:171
 									__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:168
+//line settings.gox:171
 									__e = __c.Set("name", "sex"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:169
+//line settings.gox:172
 										__e = __c.Set("value", "m"); if __e != nil { return }
-//line settings.gox:169
+//line settings.gox:172
 										__e = __c.Set("selected", func() any { return curSex != "f" }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:169
+//line settings.gox:172
 										__e = __c.Any(i18n.T(l, "sex.male")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:170
+//line settings.gox:173
 										__e = __c.Set("value", "f"); if __e != nil { return }
-//line settings.gox:170
+//line settings.gox:173
 										__e = __c.Set("selected", func() any { return curSex == "f" }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:170
+//line settings.gox:173
 										__e = __c.Any(i18n.T(l, "sex.female")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -497,76 +500,78 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:173
+//line settings.gox:176
 								__e = __c.Set("class", "srow save-row"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line settings.gox:174
+//line settings.gox:177
 									__e = __c.Set("class", "btn primary"); if __e != nil { return }
-//line settings.gox:174
+//line settings.gox:177
 									__e = __c.Set("type", "submit"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:174
+//line settings.gox:177
 									__e = __c.Any(i18n.T(l, "settings.save")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
-//line settings.gox:175
-								__e = __c.Any(saved.Bind(func(ok bool) gox.Elem {
+//line settings.gox:178
+								__e = __c.Any(saveStatus.Bind(func(key string) gox.Elem {
 							return gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
-//line settings.gox:176
-								if ok {
+//line settings.gox:179
+								if key != "" {
 									__e = __c.Init("span"); if __e != nil { return }
 									{
-//line settings.gox:177
-										__e = __c.Set("class", "saved-msg"); if __e != nil { return }
+//line settings.gox:180
+										__e = __c.Set("class", func() any { if key == "settings.save_failed" { return "err" }; return "saved-msg" }()); if __e != nil { return }
+//line settings.gox:180
+										__e = __c.Set("role", "status"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:177
-										__e = __c.Any(i18n.T(l, "settings.saved")); if __e != nil { return }
+//line settings.gox:180
+										__e = __c.Any(i18n.T(l, key)); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 								}
 							return })
-//line settings.gox:179
+//line settings.gox:182
 						})); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
-//line settings.gox:184
+//line settings.gox:187
 					if !prog.FixedDifficulty {
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:185
+//line settings.gox:188
 							__e = __c.Set("class", "srow col"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:186
+//line settings.gox:189
 								__e = __c.Set("class", "row-between"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:187
+//line settings.gox:190
 									__e = __c.Any(i18n.T(l, "settings.difficulty")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("output"); if __e != nil { return }
 								{
-//line settings.gox:188
+//line settings.gox:191
 									__e = __c.Set("class", "rest-out"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:189
+//line settings.gox:192
 									__e = __c.Any(levelSrc.Bind(func(v int) gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
-//line settings.gox:190
+//line settings.gox:193
 									__e = __c.Any(levelLabel(l, v)); if __e != nil { return }
 								return })
-//line settings.gox:191
+//line settings.gox:194
 							})); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -574,17 +579,17 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.InitVoid("input"); if __e != nil { return }
 							{
-//line settings.gox:194
+//line settings.gox:197
 								__e = __c.Set("type", "range"); if __e != nil { return }
-//line settings.gox:194
+//line settings.gox:197
 								__e = __c.Set("min", "-3"); if __e != nil { return }
-//line settings.gox:194
+//line settings.gox:197
 								__e = __c.Set("max", "3"); if __e != nil { return }
-//line settings.gox:194
+//line settings.gox:197
 								__e = __c.Set("step", "1"); if __e != nil { return }
-//line settings.gox:194
+//line settings.gox:197
 								__e = __c.Set("value", s.sess.Level); if __e != nil { return }
-//line settings.gox:194
+//line settings.gox:197
 								__e = __c.Modify(doors.AChange{On: s.setLevel(levelSrc)}); if __e != nil { return }
 							}
 							__e = __c.Submit(); if __e != nil { return }
@@ -593,32 +598,32 @@ func (s settingsPage) Main() gox.Elem {
 					}
 					__e = __c.Init("details"); if __e != nil { return }
 					{
-//line settings.gox:200
+//line settings.gox:203
 						__e = __c.Set("class", "cycle-details"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("summary"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:201
+//line settings.gox:204
 							__e = __c.Any(i18n.T(l, "settings.cycle")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:203
+//line settings.gox:206
 							__e = __c.Set("class", "srow"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:204
+//line settings.gox:207
 								__e = __c.Any(i18n.T(l, "settings.program")); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:205
+//line settings.gox:208
 								if hasCustom && prog.Name != "" {
 									__e = __c.Text(" prog.Name "); if __e != nil { return }
 								} else  {
@@ -630,25 +635,25 @@ func (s settingsPage) Main() gox.Elem {
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:208
+//line settings.gox:211
 							__e = __c.Set("class", "srow"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:209
+//line settings.gox:212
 								__e = __c.Any(i18n.T(l, "settings.download")); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
-//line settings.gox:210
+//line settings.gox:213
 							b := []byte(prog.Marshal())
 							__e = __c.Init("a"); if __e != nil { return }
 							{
-//line settings.gox:211
+//line settings.gox:214
 								__e = __c.Set("class", "btn small"); if __e != nil { return }
-//line settings.gox:211
+//line settings.gox:214
 								__e = __c.Modify(doors.ResourceBytes(b)); if __e != nil { return }
-//line settings.gox:211
+//line settings.gox:214
 								__e = __c.Set("name", "workout.json"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Text("workout.json"); if __e != nil { return }
@@ -656,87 +661,108 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:213
-						__e = (doors.ARawSubmit{On: s.importProgram}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+//line settings.gox:216
+						__e = (doors.ARawSubmit{On: s.importProgram(importStatus)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 							ctx := __c.Context(); _ = ctx
 							__e = __c.Init("form"); if __e != nil { return }
 							{
-//line settings.gox:213
+//line settings.gox:216
 								__e = __c.Set("class", "ex-import-form"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("textarea"); if __e != nil { return }
 								{
-//line settings.gox:214
+//line settings.gox:217
 									__e = __c.Set("class", "ex-import"); if __e != nil { return }
-//line settings.gox:214
+//line settings.gox:217
 									__e = __c.Set("name", "progjson"); if __e != nil { return }
-//line settings.gox:214
+//line settings.gox:217
 									__e = __c.Set("rows", "3"); if __e != nil { return }
-//line settings.gox:214
+//line settings.gox:217
 									__e = __c.Set("placeholder", i18n.T(l, "settings.paste_program")); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:215
+//line settings.gox:218
 									__e = __c.Set("class", "srow ex-import-row"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.InitVoid("input"); if __e != nil { return }
 									{
-//line settings.gox:216
+//line settings.gox:219
 										__e = __c.Set("class", "ex-file"); if __e != nil { return }
-//line settings.gox:216
+//line settings.gox:219
 										__e = __c.Set("type", "file"); if __e != nil { return }
-//line settings.gox:216
+//line settings.gox:219
 										__e = __c.Set("accept", ".json,application/json"); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line settings.gox:217
+//line settings.gox:220
 										__e = __c.Set("class", "btn primary small"); if __e != nil { return }
-//line settings.gox:217
+//line settings.gox:220
 										__e = __c.Set("type", "submit"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:217
+//line settings.gox:220
 										__e = __c.Any(i18n.T(l, "settings.import")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
+//line settings.gox:222
+								__e = __c.Any(importStatus.Bind(func(key string) gox.Elem {
+							return gox.Elem(func(__c gox.Cursor) (__e error) {
+								ctx := __c.Context(); _ = ctx
+//line settings.gox:223
+								if key != "" {
+									__e = __c.Init("p"); if __e != nil { return }
+									{
+//line settings.gox:223
+										__e = __c.Set("class", "err"); if __e != nil { return }
+//line settings.gox:223
+										__e = __c.Set("role", "alert"); if __e != nil { return }
+										__e = __c.Submit(); if __e != nil { return }
+//line settings.gox:223
+										__e = __c.Any(i18n.T(l, key)); if __e != nil { return }
+									}
+									__e = __c.Close(); if __e != nil { return }
+								}
+							return })
+//line settings.gox:224
+						})); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						return })); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:221
+//line settings.gox:227
 							__e = __c.Set("class", "srow"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:222
+//line settings.gox:228
 								__e = __c.Any(i18n.T(l, "home.day")); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("select"); if __e != nil { return }
 							{
-//line settings.gox:223
+//line settings.gox:229
 								__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:223
+//line settings.gox:229
 								__e = __c.Modify(doors.AChange{On: s.setDay(editSrc)}); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:224
+//line settings.gox:230
 								for d := 1; d <= len(prog.Days); d++ {
 									__e = __c.Init("option"); if __e != nil { return }
 									{
-//line settings.gox:225
+//line settings.gox:231
 										__e = __c.Set("value", d); if __e != nil { return }
-//line settings.gox:225
+//line settings.gox:231
 										__e = __c.Set("selected", func() any { return d == 1 }()); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:225
+//line settings.gox:231
 										__e = __c.Any(d); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -745,57 +771,39 @@ func (s settingsPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:230
+//line settings.gox:236
 						__e = __c.Any(editSrc.Bind(func(st editState) gox.Elem {
 						return gox.Elem(func(__c gox.Cursor) (__e error) {
 							ctx := __c.Context(); _ = ctx
-//line settings.gox:232
+//line settings.gox:238
 							p, _ := content.ParseResolved(st.JSON)
 							idx := clampDay(st.Day, len(p.Days)) - 1
 							if idx < 0 {
 								idx = 0
 							}
-							mainRounds := 2
 							warmTarget, coolTarget := "warmup", "cooldown"
 							if len(p.Days) > 0 {
-								mainRounds = content.ClampRounds(p.Days[idx].Rounds)
 								if p.Days[idx].Warmup != nil { warmTarget = "day-warmup" }
 								if p.Days[idx].Cooldown != nil { coolTarget = "day-cooldown" }
 							}
 
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:245
+//line settings.gox:249
 								__e = __c.Set("class", "srow"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:246
+//line settings.gox:250
 									__e = __c.Any(i18n.T(l, "settings.warmup_rounds")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
-								__e = __c.Init("select"); if __e != nil { return }
+								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line settings.gox:247
-									__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:247
-									__e = __c.Modify(doors.AChange{On: s.setWarmupRounds(editSrc)}); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:248
-									for n := 1; n <= 10; n++ {
-										__e = __c.Init("option"); if __e != nil { return }
-										{
-//line settings.gox:249
-											__e = __c.Set("value", n); if __e != nil { return }
-//line settings.gox:249
-											__e = __c.Set("selected", func() any { return n == p.WarmupRounds }()); if __e != nil { return }
-											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:249
-											__e = __c.Any(n); if __e != nil { return }
-										}
-										__e = __c.Close(); if __e != nil { return }
-									}
+//line settings.gox:251
+									__e = __c.Any(content.WarmupRounds); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							}
@@ -833,117 +841,101 @@ func (s settingsPage) Main() gox.Elem {
 										__e = __c.Any(i18n.T(l, "settings.main_rounds")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
-									__e = __c.Init("select"); if __e != nil { return }
+									__e = __c.Init("span"); if __e != nil { return }
 									{
-//line settings.gox:260
-										__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:260
-										__e = __c.Modify(doors.AChange{On: s.setMainRounds(editSrc)}); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:261
-										for n := 1; n <= 10; n++ {
-											__e = __c.Init("option"); if __e != nil { return }
-											{
-//line settings.gox:262
-												__e = __c.Set("value", n); if __e != nil { return }
-//line settings.gox:262
-												__e = __c.Set("selected", func() any { return n == mainRounds }()); if __e != nil { return }
-												__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:262
-												__e = __c.Any(n); if __e != nil { return }
-											}
-											__e = __c.Close(); if __e != nil { return }
-										}
+//line settings.gox:260
+										__e = __c.Any(content.MainRounds); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:266
+//line settings.gox:262
 									__e = __c.Set("class", "cyc-head"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:266
+//line settings.gox:262
 									__e = __c.Many(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
-//line settings.gox:267
+//line settings.gox:263
 								__e = __c.Any(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open)); if __e != nil { return }
 							}
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line settings.gox:270
+//line settings.gox:266
 								__e = __c.Set("class", "cyc-head"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:270
+//line settings.gox:266
 								if coolTarget == "day-cooldown" {
-//line settings.gox:270
+//line settings.gox:266
 									__e = __c.Many(i18n.T(l, "workout.cooldown"), " · ", i18n.T(l, "home.day"), " ", st.Day); if __e != nil { return }
 								} else  {
-//line settings.gox:270
+//line settings.gox:266
 									__e = __c.Any(i18n.T(l, "settings.cooldown_series")); if __e != nil { return }
 								}
 							}
 							__e = __c.Close(); if __e != nil { return }
-//line settings.gox:271
+//line settings.gox:267
 							__e = __c.Any(s.editList(editSrc, cat, entries, l, p.CooldownFor(idx), coolTarget, st.Open)); if __e != nil { return }
 						return })
-//line settings.gox:272
+//line settings.gox:268
 					})); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:274
+//line settings.gox:270
 							__e = __c.Set("class", "srow cyc-save"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.InitVoid("input"); if __e != nil { return }
 							{
-//line settings.gox:275
+//line settings.gox:271
 								__e = __c.Set("class", "text-input compact"); if __e != nil { return }
-//line settings.gox:275
+//line settings.gox:271
 								__e = __c.Set("type", "text"); if __e != nil { return }
-//line settings.gox:275
+//line settings.gox:271
 								__e = __c.Set("maxlength", "40"); if __e != nil { return }
-//line settings.gox:275
+//line settings.gox:271
 								__e = __c.Set("value", prog.Name); if __e != nil { return }
-//line settings.gox:275
+//line settings.gox:271
 								__e = __c.Set("placeholder", i18n.T(l, "settings.version_name")); if __e != nil { return }
-//line settings.gox:276
+//line settings.gox:272
 								__e = __c.Modify(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								nameSrc.Update(ctx, r.Event().Value)
 								return false
 							}}); if __e != nil { return }
 							}
 							__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:280
+//line settings.gox:276
 							__e = (doors.AClick{On: s.saveEditor(editSrc, nameSrc)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line settings.gox:280
+//line settings.gox:276
 									__e = __c.Set("class", "btn primary small"); if __e != nil { return }
-//line settings.gox:280
+//line settings.gox:276
 									__e = __c.Set("type", "button"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:280
+//line settings.gox:276
 									__e = __c.Any(i18n.T(l, "settings.save_version")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:283
+//line settings.gox:279
 						if hasCustom {
-//line settings.gox:284
+//line settings.gox:280
 							__e = (doors.AClick{On: s.deleteProgram}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line settings.gox:284
+//line settings.gox:280
 									__e = __c.Set("class", "btn danger small"); if __e != nil { return }
-//line settings.gox:284
+//line settings.gox:280
 									__e = __c.Set("type", "button"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:284
+//line settings.gox:280
 									__e = __c.Any(i18n.T(l, "settings.restore_demo")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -953,58 +945,58 @@ func (s settingsPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("details"); if __e != nil { return }
 					{
-//line settings.gox:290
+//line settings.gox:286
 						__e = __c.Set("class", "cycle-details"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("summary"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:291
+//line settings.gox:287
 							__e = __c.Any(i18n.T(l, "settings.exercise_content")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:292
+//line settings.gox:288
 							__e = __c.Set("class", "srow"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:293
+//line settings.gox:289
 								__e = __c.Any(i18n.T(l, "settings.exercise")); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 							__e = __c.Init("select"); if __e != nil { return }
 							{
-//line settings.gox:294
+//line settings.gox:290
 								__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:294
+//line settings.gox:290
 								__e = __c.Modify(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 							selSrc.Update(ctx, r.Event().Value)
 							return false
 						}}); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:298
+//line settings.gox:294
 								__e = __c.Any(s.exOptions(entries, l, firstID)); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:302
+//line settings.gox:298
+						__e = __c.Any(selSrc.Bind(func(id string) gox.Elem {
+						return gox.Elem(func(__c gox.Cursor) (__e error) {
+							ctx := __c.Context(); _ = ctx
+//line settings.gox:299
+							__e = __c.Any(s.exDetail(l, cat, id)); if __e != nil { return }
+						return })
+//line settings.gox:300
+					})); if __e != nil { return }
+//line settings.gox:301
 						__e = __c.Any(selSrc.Bind(func(id string) gox.Elem {
 						return gox.Elem(func(__c gox.Cursor) (__e error) {
 							ctx := __c.Context(); _ = ctx
 //line settings.gox:303
-							__e = __c.Any(s.exDetail(l, cat, id)); if __e != nil { return }
-						return })
-//line settings.gox:304
-					})); if __e != nil { return }
-//line settings.gox:305
-						__e = __c.Any(selSrc.Bind(func(id string) gox.Elem {
-						return gox.Elem(func(__c gox.Cursor) (__e error) {
-							ctx := __c.Context(); _ = ctx
-//line settings.gox:307
 							cur := cat.PoseIDs(id)
 							poseA, poseB := "", ""
 							if len(cur) > 0 {
@@ -1016,38 +1008,38 @@ func (s settingsPage) Main() gox.Elem {
 							sex := app.DB.GetSex(s.sess.UserID)
 							thumbs := app.ExerciseFrames(cat, id, sex)
 
-//line settings.gox:318
+//line settings.gox:314
 							__e = (doors.ASubmit[posePickForm]{On: s.assignPoses}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("form"); if __e != nil { return }
 								{
-//line settings.gox:318
+//line settings.gox:314
 									__e = __c.Set("class", "ex-import-form"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.InitVoid("input"); if __e != nil { return }
 									{
-//line settings.gox:319
+//line settings.gox:315
 										__e = __c.Set("type", "hidden"); if __e != nil { return }
-//line settings.gox:319
+//line settings.gox:315
 										__e = __c.Set("name", "pose_ex"); if __e != nil { return }
-//line settings.gox:319
+//line settings.gox:315
 										__e = __c.Set("value", id); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("div"); if __e != nil { return }
 									{
-//line settings.gox:320
+//line settings.gox:316
 										__e = __c.Set("class", "pose-preview"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:321
+//line settings.gox:317
 										for _, u := range thumbs {
 											__e = __c.InitVoid("img"); if __e != nil { return }
 											{
-//line settings.gox:322
+//line settings.gox:318
 												__e = __c.Set("class", "pose-thumb"); if __e != nil { return }
-//line settings.gox:322
+//line settings.gox:318
 												__e = __c.Set("src", u); if __e != nil { return }
-//line settings.gox:322
+//line settings.gox:318
 												__e = __c.Set("alt", ""); if __e != nil { return }
 											}
 											__e = __c.Submit(); if __e != nil { return }
@@ -1056,24 +1048,24 @@ func (s settingsPage) Main() gox.Elem {
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("div"); if __e != nil { return }
 									{
-//line settings.gox:325
+//line settings.gox:321
 										__e = __c.Set("class", "srow col"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.Init("span"); if __e != nil { return }
 										{
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:326
+//line settings.gox:322
 											__e = __c.Any(i18n.T(l, "settings.pose_a")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("select"); if __e != nil { return }
 										{
-//line settings.gox:327
+//line settings.gox:323
 											__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:327
+//line settings.gox:323
 											__e = __c.Set("name", "pose_a"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:328
+//line settings.gox:324
 											__e = __c.Any(s.poseOptions(poseList, poseA, i18n.T(l, "settings.pose_none"))); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -1081,24 +1073,24 @@ func (s settingsPage) Main() gox.Elem {
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("div"); if __e != nil { return }
 									{
-//line settings.gox:331
+//line settings.gox:327
 										__e = __c.Set("class", "srow col"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.Init("span"); if __e != nil { return }
 										{
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:332
+//line settings.gox:328
 											__e = __c.Any(i18n.T(l, "settings.pose_b")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("select"); if __e != nil { return }
 										{
-//line settings.gox:333
+//line settings.gox:329
 											__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:333
+//line settings.gox:329
 											__e = __c.Set("name", "pose_b"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:334
+//line settings.gox:330
 											__e = __c.Any(s.poseOptions(poseList, poseB, i18n.T(l, "settings.pose_none"))); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -1106,12 +1098,12 @@ func (s settingsPage) Main() gox.Elem {
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line settings.gox:337
+//line settings.gox:333
 										__e = __c.Set("class", "btn primary small"); if __e != nil { return }
-//line settings.gox:337
+//line settings.gox:333
 										__e = __c.Set("type", "submit"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:337
+//line settings.gox:333
 										__e = __c.Any(i18n.T(l, "settings.pose_save")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -1119,53 +1111,53 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
 						return })
-//line settings.gox:339
+//line settings.gox:335
 					})); if __e != nil { return }
-//line settings.gox:340
+//line settings.gox:336
 						__e = (doors.ASubmit[newExForm]{On: s.createExercise}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 							ctx := __c.Context(); _ = ctx
 							__e = __c.Init("form"); if __e != nil { return }
 							{
-//line settings.gox:340
+//line settings.gox:336
 								__e = __c.Set("class", "ex-import-form"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:341
+//line settings.gox:337
 									__e = __c.Set("class", "srow col"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:342
+//line settings.gox:338
 										__e = __c.Any(i18n.T(l, "settings.new_exercise")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.InitVoid("input"); if __e != nil { return }
 									{
-//line settings.gox:343
+//line settings.gox:339
 										__e = __c.Set("class", "text-input compact"); if __e != nil { return }
-//line settings.gox:343
+//line settings.gox:339
 										__e = __c.Set("name", "ex_id"); if __e != nil { return }
-//line settings.gox:343
+//line settings.gox:339
 										__e = __c.Set("type", "text"); if __e != nil { return }
-//line settings.gox:343
+//line settings.gox:339
 										__e = __c.Set("maxlength", "12"); if __e != nil { return }
-//line settings.gox:343
+//line settings.gox:339
 										__e = __c.Set("placeholder", "X01"); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.InitVoid("input"); if __e != nil { return }
 									{
-//line settings.gox:344
+//line settings.gox:340
 										__e = __c.Set("class", "text-input compact"); if __e != nil { return }
-//line settings.gox:344
+//line settings.gox:340
 										__e = __c.Set("name", "ex_name"); if __e != nil { return }
-//line settings.gox:344
+//line settings.gox:340
 										__e = __c.Set("type", "text"); if __e != nil { return }
-//line settings.gox:344
+//line settings.gox:340
 										__e = __c.Set("maxlength", "60"); if __e != nil { return }
-//line settings.gox:344
+//line settings.gox:340
 										__e = __c.Set("placeholder", i18n.T(l, "settings.exercise")); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
@@ -1173,24 +1165,24 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:346
+//line settings.gox:342
 									__e = __c.Set("class", "srow col"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:347
+//line settings.gox:343
 										__e = __c.Any(i18n.T(l, "settings.pose_a")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("select"); if __e != nil { return }
 									{
-//line settings.gox:348
+//line settings.gox:344
 										__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:348
+//line settings.gox:344
 										__e = __c.Set("name", "ex_pose_a"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:349
+//line settings.gox:345
 										__e = __c.Any(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none"))); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -1198,24 +1190,24 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:352
+//line settings.gox:348
 									__e = __c.Set("class", "srow col"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:353
+//line settings.gox:349
 										__e = __c.Any(i18n.T(l, "settings.pose_b")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("select"); if __e != nil { return }
 									{
-//line settings.gox:354
+//line settings.gox:350
 										__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:354
+//line settings.gox:350
 										__e = __c.Set("name", "ex_pose_b"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:355
+//line settings.gox:351
 										__e = __c.Any(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none"))); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -1223,31 +1215,31 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:358
+//line settings.gox:354
 									__e = __c.Set("class", "srow"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:359
+//line settings.gox:355
 										__e = __c.Any(i18n.T(l, "settings.figure")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("select"); if __e != nil { return }
 									{
-//line settings.gox:360
+//line settings.gox:356
 										__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:360
+//line settings.gox:356
 										__e = __c.Set("name", "ex_figure"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:361
+//line settings.gox:357
 										for _, e := range entries {
 											__e = __c.Init("option"); if __e != nil { return }
 											{
-//line settings.gox:362
+//line settings.gox:358
 												__e = __c.Set("value", e.ID); if __e != nil { return }
 												__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:362
+//line settings.gox:358
 												__e = __c.Any(e.Name); if __e != nil { return }
 											}
 											__e = __c.Close(); if __e != nil { return }
@@ -1258,42 +1250,42 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:366
+//line settings.gox:362
 									__e = __c.Set("class", "srow"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("select"); if __e != nil { return }
 									{
-//line settings.gox:367
+//line settings.gox:363
 										__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:367
+//line settings.gox:363
 										__e = __c.Set("name", "ex_slot"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.Init("option"); if __e != nil { return }
 										{
-//line settings.gox:368
+//line settings.gox:364
 											__e = __c.Set("value", "warmup"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:368
+//line settings.gox:364
 											__e = __c.Any(i18n.T(l, "workout.warmup")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("option"); if __e != nil { return }
 										{
-//line settings.gox:369
+//line settings.gox:365
 											__e = __c.Set("value", "main"); if __e != nil { return }
-//line settings.gox:369
+//line settings.gox:365
 											__e = __c.Set("selected", func() any { return true }()); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:369
+//line settings.gox:365
 											__e = __c.Any(i18n.T(l, "workout.main")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("option"); if __e != nil { return }
 										{
-//line settings.gox:370
+//line settings.gox:366
 											__e = __c.Set("value", "cooldown"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:370
+//line settings.gox:366
 											__e = __c.Any(i18n.T(l, "workout.cooldown")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -1301,35 +1293,35 @@ func (s settingsPage) Main() gox.Elem {
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("select"); if __e != nil { return }
 									{
-//line settings.gox:372
+//line settings.gox:368
 										__e = __c.Set("class", "lang-select compact"); if __e != nil { return }
-//line settings.gox:372
+//line settings.gox:368
 										__e = __c.Set("name", "ex_unit"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.Init("option"); if __e != nil { return }
 										{
-//line settings.gox:373
+//line settings.gox:369
 											__e = __c.Set("value", "reps"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:373
+//line settings.gox:369
 											__e = __c.Any(i18n.T(l, "workout.x_reps")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("option"); if __e != nil { return }
 										{
-//line settings.gox:374
+//line settings.gox:370
 											__e = __c.Set("value", "seconds"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:374
+//line settings.gox:370
 											__e = __c.Any(i18n.T(l, "workout.sec")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("option"); if __e != nil { return }
 										{
-//line settings.gox:375
+//line settings.gox:371
 											__e = __c.Set("value", "breaths"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:375
+//line settings.gox:371
 											__e = __c.Any(i18n.T(l, "workout.breaths")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -1340,26 +1332,26 @@ func (s settingsPage) Main() gox.Elem {
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.InitVoid("input"); if __e != nil { return }
 										{
-//line settings.gox:377
+//line settings.gox:373
 											__e = __c.Set("type", "checkbox"); if __e != nil { return }
-//line settings.gox:377
+//line settings.gox:373
 											__e = __c.Set("name", "ex_perside"); if __e != nil { return }
-//line settings.gox:377
+//line settings.gox:373
 											__e = __c.Set("value", "1"); if __e != nil { return }
 										}
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:377
+//line settings.gox:373
 										__e = __c.Any(i18n.T(l, "workout.side")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line settings.gox:378
+//line settings.gox:374
 										__e = __c.Set("class", "btn primary small"); if __e != nil { return }
-//line settings.gox:378
+//line settings.gox:374
 										__e = __c.Set("type", "submit"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:378
+//line settings.gox:374
 										__e = __c.Any(i18n.T(l, "settings.add_exercise")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -1370,86 +1362,86 @@ func (s settingsPage) Main() gox.Elem {
 						return })); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:381
+//line settings.gox:377
 							__e = __c.Set("class", "srow"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:382
+//line settings.gox:378
 								__e = __c.Any(i18n.T(l, "settings.download")); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
-//line settings.gox:383
+//line settings.gox:379
 							__e = __c.Any(selSrc.Bind(func(id string) gox.Elem {
 							return gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
-//line settings.gox:385
+//line settings.gox:381
 								doc, _ := cat.Doc(id)
 								b := doc.Marshal()
 
 								__e = __c.Init("a"); if __e != nil { return }
 								{
-//line settings.gox:388
+//line settings.gox:384
 									__e = __c.Set("class", "btn small"); if __e != nil { return }
-//line settings.gox:388
+//line settings.gox:384
 									__e = __c.Modify(doors.ResourceBytes(b)); if __e != nil { return }
-//line settings.gox:388
+//line settings.gox:384
 									__e = __c.Set("name", id + ".json"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:388
+//line settings.gox:384
 									__e = __c.Many(id, ".json"); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })
-//line settings.gox:389
+//line settings.gox:385
 						})); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:391
+//line settings.gox:387
 						__e = (doors.ARawSubmit{On: s.importExercise}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 							ctx := __c.Context(); _ = ctx
 							__e = __c.Init("form"); if __e != nil { return }
 							{
-//line settings.gox:391
+//line settings.gox:387
 								__e = __c.Set("class", "ex-import-form"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("textarea"); if __e != nil { return }
 								{
-//line settings.gox:392
+//line settings.gox:388
 									__e = __c.Set("class", "ex-import"); if __e != nil { return }
-//line settings.gox:392
+//line settings.gox:388
 									__e = __c.Set("name", "exjson"); if __e != nil { return }
-//line settings.gox:392
+//line settings.gox:388
 									__e = __c.Set("rows", "3"); if __e != nil { return }
-//line settings.gox:392
+//line settings.gox:388
 									__e = __c.Set("placeholder", i18n.T(l, "settings.paste_json")); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:393
+//line settings.gox:389
 									__e = __c.Set("class", "srow ex-import-row"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.InitVoid("input"); if __e != nil { return }
 									{
-//line settings.gox:394
+//line settings.gox:390
 										__e = __c.Set("class", "ex-file"); if __e != nil { return }
-//line settings.gox:394
+//line settings.gox:390
 										__e = __c.Set("type", "file"); if __e != nil { return }
-//line settings.gox:394
+//line settings.gox:390
 										__e = __c.Set("accept", ".json,application/json"); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line settings.gox:395
+//line settings.gox:391
 										__e = __c.Set("class", "btn primary small"); if __e != nil { return }
-//line settings.gox:395
+//line settings.gox:391
 										__e = __c.Set("type", "submit"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:395
+//line settings.gox:391
 										__e = __c.Any(i18n.T(l, "settings.import")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -1460,7 +1452,7 @@ func (s settingsPage) Main() gox.Elem {
 						return })); if __e != nil { return }
 						__e = __c.Init("script"); if __e != nil { return }
 						{
-//line settings.gox:398
+//line settings.gox:394
 							__e = __c.Set("src", assets.ExUpload); if __e != nil { return }
 							__e = __c.Set("inline", true); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
@@ -1471,27 +1463,27 @@ func (s settingsPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line settings.gox:401
+//line settings.gox:397
 						__e = __c.Set("class", "srow"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("span"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:402
+//line settings.gox:398
 							__e = __c.Any(i18n.T(l, "settings.account")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line settings.gox:403
+//line settings.gox:399
 						if s.sess.IsGuest {
-//line settings.gox:404
+//line settings.gox:400
 							__e = (doors.ALink{Model: path.Path{Page: path.Register}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("a"); if __e != nil { return }
 								{
-//line settings.gox:404
+//line settings.gox:400
 									__e = __c.Set("class", "btn primary small"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:404
+//line settings.gox:400
 									__e = __c.Any(i18n.T(l, "auth.register")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -1499,21 +1491,21 @@ func (s settingsPage) Main() gox.Elem {
 						} else  {
 							__e = __c.Init("span"); if __e != nil { return }
 							{
-//line settings.gox:406
+//line settings.gox:402
 								__e = __c.Set("class", "email"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:406
+//line settings.gox:402
 								__e = __c.Any(s.sess.Email); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						}
 					}
 					__e = __c.Close(); if __e != nil { return }
-//line settings.gox:410
+//line settings.gox:406
 					__e = __c.Any(mcpSrc.Bind(func(st mcpTokState) gox.Elem {
 					return gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
-//line settings.gox:412
+//line settings.gox:408
 						mcpBtn := i18n.T(l, "settings.mcp_create")
 						if st.Has {
 							mcpBtn = i18n.T(l, "settings.mcp_reissue")
@@ -1521,44 +1513,44 @@ func (s settingsPage) Main() gox.Elem {
 
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line settings.gox:417
+//line settings.gox:413
 							__e = __c.Set("class", "srow col"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:418
+//line settings.gox:414
 								__e = __c.Any(i18n.T(l, "settings.mcp")); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
-//line settings.gox:419
+//line settings.gox:415
 							if st.Fresh != "" {
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line settings.gox:420
+//line settings.gox:416
 									__e = __c.Set("class", "text-input compact mcp-token"); if __e != nil { return }
-//line settings.gox:420
+//line settings.gox:416
 									__e = __c.Set("type", "text"); if __e != nil { return }
 									__e = __c.Set("readonly", true); if __e != nil { return }
-//line settings.gox:420
+//line settings.gox:416
 									__e = __c.Set("value", st.Fresh); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("p"); if __e != nil { return }
 								{
-//line settings.gox:421
+//line settings.gox:417
 									__e = __c.Set("class", "mcp-hint"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:421
+//line settings.gox:417
 									__e = __c.Any(i18n.T(l, "settings.mcp_copy")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
-//line settings.gox:422
+//line settings.gox:418
 							} else if st.Has {
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:423
+//line settings.gox:419
 									__e = __c.Any(i18n.T(l, "settings.mcp_active")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -1566,22 +1558,22 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:425
+//line settings.gox:421
 									__e = __c.Any(i18n.T(l, "settings.mcp_none")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							}
-//line settings.gox:427
+//line settings.gox:423
 							__e = (doors.AClick{On: s.issueMCP(mcpSrc)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line settings.gox:427
+//line settings.gox:423
 									__e = __c.Set("class", "btn small"); if __e != nil { return }
-//line settings.gox:427
+//line settings.gox:423
 									__e = __c.Set("type", "button"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:427
+//line settings.gox:423
 									__e = __c.Any(mcpBtn); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -1589,20 +1581,20 @@ func (s settingsPage) Main() gox.Elem {
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })
-//line settings.gox:429
+//line settings.gox:425
 				})); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line settings.gox:431
+//line settings.gox:427
 						__e = __c.Set("class", "srow save-row"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:432
+//line settings.gox:428
 						__e = __c.Any(confirmReset.Bind(func(c bool) gox.Elem {
 						return gox.Elem(func(__c gox.Cursor) (__e error) {
 							ctx := __c.Context(); _ = ctx
-//line settings.gox:433
+//line settings.gox:429
 							if !c {
-//line settings.gox:434
+//line settings.gox:430
 								__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 								confirmReset.Update(ctx, true)
 								return false
@@ -1610,12 +1602,12 @@ func (s settingsPage) Main() gox.Elem {
 									ctx := __c.Context(); _ = ctx
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line settings.gox:437
+//line settings.gox:433
 										__e = __c.Set("class", "btn danger small"); if __e != nil { return }
-//line settings.gox:437
+//line settings.gox:433
 										__e = __c.Set("type", "button"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:437
+//line settings.gox:433
 										__e = __c.Any(i18n.T(l, "settings.reset")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -1623,39 +1615,39 @@ func (s settingsPage) Main() gox.Elem {
 							} else  {
 								__e = __c.Init("div"); if __e != nil { return }
 								{
-//line settings.gox:439
+//line settings.gox:435
 									__e = __c.Set("class", "confirm-reset"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
-//line settings.gox:440
+//line settings.gox:436
 										__e = __c.Set("class", "confirm-q"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:440
+//line settings.gox:436
 										__e = __c.Any(i18n.T(l, "settings.reset_confirm")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("div"); if __e != nil { return }
 									{
-//line settings.gox:441
+//line settings.gox:437
 										__e = __c.Set("class", "confirm-actions"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:442
+//line settings.gox:438
 										__e = (doors.AClick{On: s.reset}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 											ctx := __c.Context(); _ = ctx
 											__e = __c.Init("button"); if __e != nil { return }
 											{
-//line settings.gox:442
+//line settings.gox:438
 												__e = __c.Set("class", "btn danger small"); if __e != nil { return }
-//line settings.gox:442
+//line settings.gox:438
 												__e = __c.Set("type", "button"); if __e != nil { return }
 												__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:442
+//line settings.gox:438
 												__e = __c.Any(i18n.T(l, "settings.reset_yes")); if __e != nil { return }
 											}
 											__e = __c.Close(); if __e != nil { return }
 										return })); if __e != nil { return }
-//line settings.gox:443
+//line settings.gox:439
 										__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 										confirmReset.Update(ctx, false)
 										return false
@@ -1663,12 +1655,12 @@ func (s settingsPage) Main() gox.Elem {
 											ctx := __c.Context(); _ = ctx
 											__e = __c.Init("button"); if __e != nil { return }
 											{
-//line settings.gox:446
+//line settings.gox:442
 												__e = __c.Set("class", "btn small"); if __e != nil { return }
-//line settings.gox:446
+//line settings.gox:442
 												__e = __c.Set("type", "button"); if __e != nil { return }
 												__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:446
+//line settings.gox:442
 												__e = __c.Any(i18n.T(l, "settings.cancel")); if __e != nil { return }
 											}
 											__e = __c.Close(); if __e != nil { return }
@@ -1679,7 +1671,7 @@ func (s settingsPage) Main() gox.Elem {
 								__e = __c.Close(); if __e != nil { return }
 							}
 						return })
-//line settings.gox:450
+//line settings.gox:446
 					})); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -1690,66 +1682,66 @@ func (s settingsPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line settings.gox:455
+//line settings.gox:451
 }
 
 // exDetail renders the read-only content card for an exercise: description,
 // how-to, correct, mistakes, breathing and safety, localized.
-//line settings.gox:459
+//line settings.gox:455
 func (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line settings.gox:460
+//line settings.gox:456
 		d, _ := cat.Detail(l, id)
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line settings.gox:461
+//line settings.gox:457
 			__e = __c.Set("class", "ex-detail"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line settings.gox:462
+//line settings.gox:458
 				__e = __c.Set("class", "ex-detail-name"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:462
+//line settings.gox:458
 				__e = __c.Any(cat.Name(l, id)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line settings.gox:463
+//line settings.gox:459
 			if d.Desc != "" {
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line settings.gox:464
+//line settings.gox:460
 					__e = __c.Set("class", "ex-detail-desc"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:464
+//line settings.gox:460
 					__e = __c.Any(d.Desc); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
-//line settings.gox:466
+//line settings.gox:462
 			if len(d.HowTo) > 0 {
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:467
+//line settings.gox:463
 					__e = __c.Set("class", "ex-detail-sec"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h4"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:468
+//line settings.gox:464
 						__e = __c.Any(i18n.T(l, "info.how")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("ol"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:469
+//line settings.gox:465
 						for _, x := range d.HowTo {
 							__e = __c.Init("li"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:469
+//line settings.gox:465
 								__e = __c.Any(x); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
@@ -1759,29 +1751,29 @@ func (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) gox.
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
-//line settings.gox:472
+//line settings.gox:468
 			if len(d.Correct) > 0 {
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:473
+//line settings.gox:469
 					__e = __c.Set("class", "ex-detail-sec"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h4"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:474
+//line settings.gox:470
 						__e = __c.Any(i18n.T(l, "info.correct")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("ul"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:475
+//line settings.gox:471
 						for _, x := range d.Correct {
 							__e = __c.Init("li"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:475
+//line settings.gox:471
 								__e = __c.Any(x); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
@@ -1791,29 +1783,29 @@ func (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) gox.
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
-//line settings.gox:478
+//line settings.gox:474
 			if len(d.Wrong) > 0 {
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:479
+//line settings.gox:475
 					__e = __c.Set("class", "ex-detail-sec"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h4"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:480
+//line settings.gox:476
 						__e = __c.Any(i18n.T(l, "info.wrong")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("ul"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:481
+//line settings.gox:477
 						for _, x := range d.Wrong {
 							__e = __c.Init("li"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:481
+//line settings.gox:477
 								__e = __c.Any(x); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
@@ -1823,49 +1815,49 @@ func (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) gox.
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
-//line settings.gox:484
+//line settings.gox:480
 			if d.Breathing != "" {
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:485
+//line settings.gox:481
 					__e = __c.Set("class", "ex-detail-sec"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h4"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:486
+//line settings.gox:482
 						__e = __c.Any(i18n.T(l, "info.breathing")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:487
+//line settings.gox:483
 						__e = __c.Any(d.Breathing); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
-//line settings.gox:490
+//line settings.gox:486
 			if d.Safety != "" {
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line settings.gox:491
+//line settings.gox:487
 					__e = __c.Set("class", "ex-detail-sec"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("h4"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Text("⚠️ "); if __e != nil { return }
-//line settings.gox:492
+//line settings.gox:488
 						__e = __c.Any(i18n.T(l, "info.warning")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:493
+//line settings.gox:489
 						__e = __c.Any(d.Safety); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -1875,40 +1867,40 @@ func (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) gox.
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line settings.gox:497
+//line settings.gox:493
 }
 
 // exOptions renders the exercise dropdown options grouped by slot.
-//line settings.gox:500
+//line settings.gox:496
 func (s settingsPage) exOptions(entries []catalog.Entry, l i18n.Lang, cur string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line settings.gox:501
+//line settings.gox:497
 		__e = __c.Any(s.exGroup(entries, l, cur, "warmup", "workout.warmup")); if __e != nil { return }
-//line settings.gox:502
+//line settings.gox:498
 		__e = __c.Any(s.exGroup(entries, l, cur, "main", "workout.main")); if __e != nil { return }
-//line settings.gox:503
+//line settings.gox:499
 		__e = __c.Any(s.exGroup(entries, l, cur, "cooldown", "workout.cooldown")); if __e != nil { return }
 	return })
-//line settings.gox:504
+//line settings.gox:500
 }
 
-//line settings.gox:506
+//line settings.gox:502
 func (s settingsPage) poseOptions(poses []db.Pose, cur, noneLabel string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
 		__e = __c.Init("option"); if __e != nil { return }
 		{
-//line settings.gox:507
+//line settings.gox:503
 			__e = __c.Set("value", ""); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:507
+//line settings.gox:503
 			__e = __c.Any(noneLabel); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
-//line settings.gox:508
+//line settings.gox:504
 		for _, p := range poses {
-//line settings.gox:510
+//line settings.gox:506
 			lab := p.ID
 			if p.Label != "" {
 				lab = p.Label + " (" + p.ID + ")"
@@ -1919,41 +1911,41 @@ func (s settingsPage) poseOptions(poses []db.Pose, cur, noneLabel string) gox.El
 
 			__e = __c.Init("option"); if __e != nil { return }
 			{
-//line settings.gox:518
+//line settings.gox:514
 				__e = __c.Set("value", p.ID); if __e != nil { return }
-//line settings.gox:518
+//line settings.gox:514
 				__e = __c.Set("selected", func() any { return p.ID == cur }()); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:518
+//line settings.gox:514
 				__e = __c.Any(lab); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
 	return })
-//line settings.gox:520
+//line settings.gox:516
 }
 
-//line settings.gox:522
+//line settings.gox:518
 func (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, labelKey string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
 		__e = __c.Init("optgroup"); if __e != nil { return }
 		{
-//line settings.gox:523
+//line settings.gox:519
 			__e = __c.Set("label", i18n.T(l, labelKey)); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:524
+//line settings.gox:520
 			for _, e := range entries {
-//line settings.gox:525
+//line settings.gox:521
 				if e.Slot == slot {
 					__e = __c.Init("option"); if __e != nil { return }
 					{
-//line settings.gox:526
+//line settings.gox:522
 						__e = __c.Set("value", e.ID); if __e != nil { return }
-//line settings.gox:526
+//line settings.gox:522
 						__e = __c.Set("selected", func() any { return e.ID == cur }()); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:526
+//line settings.gox:522
 						__e = __c.Any(e.Name); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -1962,16 +1954,15 @@ func (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, l
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line settings.gox:530
+//line settings.gox:526
 }
 
 // save persists rest + voice and updates the reactive session.
-func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors.RequestForm[settingsForm]) bool {
+func (s settingsPage) save(status doors.Source[string]) func(context.Context, doors.RequestForm[settingsForm]) bool {
 	return func(ctx context.Context, r doors.RequestForm[settingsForm]) bool {
 		f := r.Data()
-		restMain := clampRange(f.Rest, 5, 40)
-		restWarm := clampRange(f.RestWarmup, 0, 40)
-		restCool := clampRange(f.RestCooldown, 0, 40)
+		status.Update(ctx, "")
+		rests := (content.Rests{Warmup: f.RestWarmup, Main: f.Rest, Cooldown: f.RestCooldown}).Normalize()
 		name := strings.TrimSpace(f.Name)
 		if len(name) > 40 {
 			name = name[:40]
@@ -1982,16 +1973,22 @@ func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors
 		default:
 			mode = "normal"
 		}
-		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode)
-		_ = app.DB.SetSex(s.sess.UserID, f.Sex)
+		if err := app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, rests.Warmup, rests.Main, rests.Cooldown, mode); err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
+		if err := app.DB.SetSex(s.sess.UserID, f.Sex); err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
 		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
 			cur.Name = name
-			cur.Rest = restMain
+			cur.Rest = rests.Main
 			cur.VoiceMode = mode
 			cur.Voice = mode != "off"
 			return cur
 		})
-		saved.Update(ctx, true)
+		status.Update(ctx, "settings.saved")
 		return false
 	}
 }
@@ -2025,17 +2022,6 @@ func clampDay(d, n int) int {
 		d = n
 	}
 	return d
-}
-
-// clampRange clamps v to [lo, hi].
-func clampRange(v, lo, hi int) int {
-	if v < lo {
-		return lo
-	}
-	if v > hi {
-		return hi
-	}
-	return v
 }
 
 // setDay switches the edited day, keeping the working JSON.
@@ -2078,155 +2064,155 @@ func mutateList(ctx context.Context, editSrc doors.Source[editState], target str
 	editSrc.Update(ctx, st)
 }
 
-// editProgramList keeps explicit day phases and prescription metadata intact.
+// editProgramList keeps every phase nonempty while editing its exercise sequence.
 func editProgramList(p *content.Resolved, day int, target string, fn func([]content.RItem) []content.RItem) {
 	switch target {
 	case "warmup":
-		p.Warmup = fn(p.Warmup)
+		if items := fn(p.Warmup); len(items) > 0 { p.Warmup = items }
 	case "cooldown":
-		p.Cooldown = fn(p.Cooldown)
+		if items := fn(p.Cooldown); len(items) > 0 { p.Cooldown = items }
 	default:
 		d := clampDay(day, len(p.Days))
 		if d < 1 { return }
 		switch target {
 		case "day-warmup":
 			items := fn(p.WarmupFor(d-1))
-			if items == nil { items = []content.RItem{} }
-			p.Days[d-1].Warmup = &items
+			if len(items) > 0 { p.Days[d-1].Warmup = &items }
 		case "day-cooldown":
 			items := fn(p.CooldownFor(d-1))
-			if items == nil { items = []content.RItem{} }
-			p.Days[d-1].Cooldown = &items
+			if len(items) > 0 { p.Days[d-1].Cooldown = &items }
 		default:
-			p.Days[d-1].Items = fn(p.Days[d-1].Items)
+			if items := fn(p.Days[d-1].Items); len(items) > 0 { p.Days[d-1].Items = items }
 		}
 	}
 }
 
 // editList renders one CRUD section (warm-up / day main / cool-down).
-//line settings.gox:671
+//line settings.gox:659
 func (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Catalog, entries []catalog.Entry, l i18n.Lang, items []content.RItem, target, open string) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
 		__e = __c.Init("ol"); if __e != nil { return }
 		{
-//line settings.gox:672
+//line settings.gox:660
 			__e = __c.Set("class", "cyc-list edit"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:673
+//line settings.gox:661
 			for ii := range items {
-//line settings.gox:675
+//line settings.gox:663
 				it := items[ii]
 				key := target + ":" + strconv.Itoa(ii)
 
 				__e = __c.Init("li"); if __e != nil { return }
 				{
-//line settings.gox:678
+//line settings.gox:666
 					__e = __c.Set("class", "cyc-row"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("span"); if __e != nil { return }
 					{
-//line settings.gox:679
+//line settings.gox:667
 						__e = __c.Set("class", "cyc-num"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("select"); if __e != nil { return }
 					{
-//line settings.gox:680
+//line settings.gox:668
 						__e = __c.Set("class", "cyc-select"); if __e != nil { return }
-//line settings.gox:680
+//line settings.gox:668
 						__e = __c.Modify(doors.AChange{On: s.editReplace(editSrc, cat, target, ii)}); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:681
+//line settings.gox:669
 						__e = __c.Any(s.exOptions(entries, l, it.ID)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.InitVoid("input"); if __e != nil { return }
 					{
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Set("class", "cyc-val"); if __e != nil { return }
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Set("type", "number"); if __e != nil { return }
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Set("inputmode", "numeric"); if __e != nil { return }
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Set("min", "1"); if __e != nil { return }
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Set("max", "600"); if __e != nil { return }
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Set("value", it.Value); if __e != nil { return }
-//line settings.gox:683
+//line settings.gox:671
 						__e = __c.Modify(doors.AChange{On: s.editSetValue(editSrc, target, ii)}); if __e != nil { return }
 					}
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("span"); if __e != nil { return }
 					{
-//line settings.gox:684
+//line settings.gox:672
 						__e = __c.Set("class", "cyc-unit"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:684
+//line settings.gox:672
 						__e = __c.Any(unitWord(l, it.Unit, it.PerSide)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
-//line settings.gox:685
+//line settings.gox:673
 					__e = (doors.AClick{On: s.editPeek(editSrc, target, ii)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line settings.gox:685
+//line settings.gox:673
 							__e = __c.Set("class", "cyc-op cyc-info"); if __e != nil { return }
-//line settings.gox:685
+//line settings.gox:673
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line settings.gox:685
+//line settings.gox:673
 							__e = __c.Set("aria-label", i18n.T(l, "settings.view")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("ⓘ"); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
-//line settings.gox:686
+//line settings.gox:674
 					__e = (doors.AClick{On: s.editMove(editSrc, target, ii, -1)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line settings.gox:686
+//line settings.gox:674
 							__e = __c.Set("class", "cyc-op"); if __e != nil { return }
-//line settings.gox:686
+//line settings.gox:674
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line settings.gox:686
+//line settings.gox:674
 							__e = __c.Set("aria-label", i18n.T(l, "settings.move_up")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("↑"); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
-//line settings.gox:687
+//line settings.gox:675
 					__e = (doors.AClick{On: s.editMove(editSrc, target, ii, 1)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line settings.gox:687
+//line settings.gox:675
 							__e = __c.Set("class", "cyc-op"); if __e != nil { return }
-//line settings.gox:687
+//line settings.gox:675
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line settings.gox:687
+//line settings.gox:675
 							__e = __c.Set("aria-label", i18n.T(l, "settings.move_down")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("↓"); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
-//line settings.gox:688
+//line settings.gox:676
 					__e = (doors.AClick{On: s.editDelete(editSrc, target, ii)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line settings.gox:688
+//line settings.gox:676
 							__e = __c.Set("class", "cyc-op danger"); if __e != nil { return }
-//line settings.gox:688
+//line settings.gox:676
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line settings.gox:688
+//line settings.gox:676
+							__e = __c.Set("disabled", len(items) <= 1); if __e != nil { return }
+//line settings.gox:676
 							__e = __c.Set("aria-label", i18n.T(l, "settings.remove")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Text("✕"); if __e != nil { return }
@@ -2235,34 +2221,14 @@ func (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Cata
 					return })); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line settings.gox:690
+//line settings.gox:678
 				if open == key {
 					__e = __c.Init("li"); if __e != nil { return }
 					{
-//line settings.gox:691
+//line settings.gox:679
 						__e = __c.Set("class", "cyc-peek"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:692
-						if it.Rest != nil {
-							__e = __c.Init("p"); if __e != nil { return }
-							{
-								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:692
-								__e = __c.Many(i18n.T(l, "workout.rest"), ": ", *it.Rest, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
-							}
-							__e = __c.Close(); if __e != nil { return }
-						}
-//line settings.gox:693
-						if it.SideRest > 0 {
-							__e = __c.Init("p"); if __e != nil { return }
-							{
-								__e = __c.Submit(); if __e != nil { return }
-//line settings.gox:693
-								__e = __c.Many(i18n.Cue(l, "switch_side"), ": ", it.SideRest, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
-							}
-							__e = __c.Close(); if __e != nil { return }
-						}
-//line settings.gox:694
+//line settings.gox:680
 						__e = __c.Any(s.exDetail(l, cat, it.ID)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -2270,24 +2236,24 @@ func (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Cata
 			}
 		}
 		__e = __c.Close(); if __e != nil { return }
-//line settings.gox:699
+//line settings.gox:685
 		__e = (doors.AClick{On: s.editAdd(editSrc, cat, target)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
 			__e = __c.Init("button"); if __e != nil { return }
 			{
-//line settings.gox:699
+//line settings.gox:685
 				__e = __c.Set("class", "btn small cyc-add"); if __e != nil { return }
-//line settings.gox:699
+//line settings.gox:685
 				__e = __c.Set("type", "button"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Text("＋ "); if __e != nil { return }
-//line settings.gox:699
+//line settings.gox:685
 				__e = __c.Any(i18n.T(l, "settings.add_exercise")); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		return })); if __e != nil { return }
 	return })
-//line settings.gox:700
+//line settings.gox:686
 }
 
 // levelLabel formats the difficulty level as a percent (or the "base" word).
@@ -2339,7 +2305,6 @@ func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.C
 			its[ii] = content.RItem{
 				ID: newID, Unit: def.Unit, PerSide: def.PerSide, Slot: slotForTarget(target),
 				Value: content.ConvertValue(old.Unit, def.Unit, old.Value), Round: old.Round,
-				Rest: old.Rest, SideRest: old.SideRest,
 			}
 			return its
 		})
@@ -2471,68 +2436,24 @@ func (s settingsPage) saveEditor(editSrc doors.Source[editState], nameSrc doors.
 	}
 }
 
-func mutateProgram(ctx context.Context, editSrc doors.Source[editState], fn func(*content.Resolved)) {
-	st := editSrc.Get()
-	p, err := content.ParseResolved(st.JSON)
-	if err != nil {
-		return
-	}
-	fn(&p)
-	p.WarmupRounds = content.ClampRounds(p.WarmupRounds)
-	for i := range p.Days {
-		p.Days[i].Rounds = content.ClampRounds(p.Days[i].Rounds)
-	}
-	st.JSON = p.Marshal()
-	editSrc.Update(ctx, st)
-}
-
-// setWarmupRounds sets how many times the shared warm-up runs (1–10).
-func (s settingsPage) setWarmupRounds(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
-	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-		n, err := strconv.Atoi(r.Event().Value)
+// importProgram validates a personal cycle before saving it. Rejected input
+// stays in the form and never replaces the saved program or changes progress.
+func (s settingsPage) importProgram(status doors.Source[string]) func(context.Context, doors.RequestRawForm) bool {
+	return func(ctx context.Context, r doors.RequestRawForm) bool {
+		status.Update(ctx, "")
+		pf, err := r.ParseForm(1 << 20)
 		if err != nil {
+			status.Update(ctx, "settings.import_failed")
 			return false
 		}
-		mutateProgram(ctx, editSrc, func(p *content.Resolved) {
-			p.WarmupRounds = content.ClampRounds(n)
-		})
-		return false
-	}
-}
-
-// setMainRounds sets how many times this day's main block runs (1–10).
-func (s settingsPage) setMainRounds(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
-	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-		n, err := strconv.Atoi(r.Event().Value)
-		if err != nil {
+		raw := strings.TrimSpace(pf.FormValue("progjson"))
+		if raw == "" || app.SetUserProgram(s.sess.UserID, raw) != nil {
+			status.Update(ctx, "settings.import_failed")
 			return false
 		}
-		mutateProgram(ctx, editSrc, func(p *content.Resolved) {
-			d := clampDay(editSrc.Get().Day, len(p.Days))
-			if d < 1 {
-				return
-			}
-			p.Days[d-1].Rounds = content.ClampRounds(n)
-		})
+		_ = r.After(doors.ActionLocationReload{})
 		return false
 	}
-}
-
-// importProgram stores an uploaded/pasted cycle JSON as this user's personal plan.
-func (s settingsPage) importProgram(ctx context.Context, r doors.RequestRawForm) bool {
-	pf, err := r.ParseForm(1 << 20)
-	if err != nil {
-		return false
-	}
-	raw := strings.TrimSpace(pf.FormValue("progjson"))
-	if raw == "" {
-		return false
-	}
-	if app.SetUserProgram(s.sess.UserID, raw) != nil {
-		return false
-	}
-	_ = r.After(doors.ActionLocationReload{})
-	return false
 }
 
 // createExercise adds a custom exercise that reuses a built-in figure.

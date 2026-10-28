@@ -40,7 +40,6 @@ type playerItem struct {
 	PerSide bool   `json:"perSide"`
 	Round   int    `json:"round"`
 	Rest    int    `json:"rest"`
-	SideRest int `json:"sideRest,omitempty"`
 	Name    string `json:"name"`
 	Hint    string `json:"hint"`    // short on-screen cue (localized)
 	Warning string   `json:"warning"` // inline safety warning (localized)
@@ -77,6 +76,7 @@ type playerPayload struct {
 	Name      string            `json:"name"`
 	FixedDifficulty bool        `json:"fixedDifficulty,omitempty"`
 	SelfManagedSides bool       `json:"selfManagedSides,omitempty"`
+	SideChangeSeconds int       `json:"sideChangeSeconds"`
 	Level     int               `json:"level"` // current difficulty level (−3..+3); the client scales main exercises
 	Items     []playerItem      `json:"items"`
 	Labels    map[string]string `json:"labels"`
@@ -182,7 +182,6 @@ func (w workoutPage) playerData() playerPayload {
 			PerSide:   it.PerSide,
 			Round:     it.Round,
 			Rest:      it.Rest,
-			SideRest:  it.SideRest,
 			Name:      cat.Name(l, id),
 			Hint:      cat.Hint(l, id),
 			Warning:   cat.Warning(l, id),
@@ -228,9 +227,6 @@ func (w workoutPage) playerData() playerPayload {
 		"harder":     i18n.T(l, "workout.harder"),
 		"easier":     i18n.T(l, "workout.easier"),
 		"resume_title": i18n.T(l, "workout.resume_title"),
-		"voice_check": i18n.T(l, "workout.voice_check"),
-		"voice_sample": i18n.T(l, "workout.voice_sample"),
-		"voice_listen": i18n.T(l, "workout.voice_listen"),
 		"voice_allow": i18n.T(l, "workout.voice_allow"),
 		"voice_engine": i18n.T(l, "workout.voice_engine"),
 		"voice_failed": i18n.T(l, "workout.voice_failed"),
@@ -244,7 +240,6 @@ func (w workoutPage) playerData() playerPayload {
 		"demo_play": i18n.T(l, "demo.play"),
 		"demo_pause": i18n.T(l, "demo.pause"),
 		"demo_frame": i18n.T(l, "demo.frame"),
-		"demo_both": i18n.T(l, "demo.both"),
 	}
 	cues := map[string]string{
 		"ready":       i18n.Cue(l, "ready"),
@@ -287,6 +282,7 @@ func (w workoutPage) playerData() playerPayload {
 		Level:     level,
 		FixedDifficulty: wk.FixedDifficulty,
 		SelfManagedSides: wk.SelfManagedSides,
+		SideChangeSeconds: content.SideChangeSeconds,
 		Items:     items,
 		Labels: labels,
 		Cues:   cues,
@@ -318,9 +314,7 @@ elem (w workoutPage) Main() {
 		<div class="stage">
 			<div class="ex-index"></div>
 			<button class="ex-visual" type="button" aria-label=(i18n.T(l, "info.how"))><img class="ex-svg" alt=""></button>
-			<div class="demo-caption hidden"></div>
 			<div class="ex-name"></div>
-			<button class="info-btn" type="button" aria-label=(i18n.T(l, "info.technique"))>ⓘ ~(i18n.T(l, "info.how"))</button>
 			<div class="ex-value"></div>
 		</div>
 

@@ -27,6 +27,7 @@
   var voicePrefix = (payload.lang || "en").toLowerCase(); // e.g. "tr"
   var fixedDifficulty = !!payload.fixedDifficulty;
   var selfManagedSides = !!payload.selfManagedSides;
+  var sideChangeSeconds = payload.sideChangeSeconds || 3;
   var level = fixedDifficulty ? 0 : (payload.level || 0); // difficulty −3..+3
 
   // jsScale mirrors the server's ScaleValue: ±10% per level on reps/seconds,
@@ -77,11 +78,9 @@
     index: $(".ex-index"),
     svg: $(".ex-svg"),
     visual: $(".ex-visual"),
-    demoCaption: $(".demo-caption"),
     name: $(".ex-name"),
     value: $(".ex-value"),
     stage: $(".stage"),
-    infoBtn: $(".info-btn"),
     infoOverlay: $(".info-overlay"),
     infoMedia: $(".info-media"),
     infoVisual: $(".info-visual"),
@@ -142,7 +141,7 @@
   var restoring = false;
   var activeClock = null;
   var state = {
-    index: 0, side: 1, phase: "ready", remainingMs: 3000,
+    index: 0, side: 1, phase: "ready", remainingMs: 3000, sideDurationMs: null,
     nextIndex: 0, nextSide: 1, level: level, swaps: {},
     eventId: store ? store.newEventId() : String(Date.now()) + Math.random().toString(16).slice(2).repeat(3),
     completion: null
@@ -234,10 +233,6 @@
       if (a || !frames.length) img.removeAttribute("src");
       img.alt = it.name || "";
     });
-    if (el.demoCaption) {
-      el.demoCaption.classList.toggle("hidden", !a);
-      el.demoCaption.textContent = a && (a.kind === "alternating" || (a.otherSrc && it.perSide)) ? t("demo_both") : t("demo_play");
-    }
     [el.demoControls, el.demoFrame].forEach(function (node) { if (node) node.classList.toggle("hidden", count < 2); });
     paintFrame(it, 0);
     if (a) {
@@ -275,25 +270,20 @@
   //                  half-time): cancels whatever is speaking, then speaks.
   //   utter(text)  — plain queued speech (narration, the rest announcement,
   //                  finish messages); any sayNow cuts the current line off.
-  var speechEpoch = 0, speechCheckTimer = null, speechUtterances = [];
+  var speechEpoch = 0, speechUtterances = [];
   function voiceStatus(key) {
     if (!el.voiceStatus) return;
     el.voiceStatus.textContent = key ? t(key) : "";
-    el.voiceStatus.classList.toggle("hidden", !key);
-  }
-  function clearSpeechCheck() {
-    if (speechCheckTimer) clearTimeout(speechCheckTimer);
-    speechCheckTimer = null;
+    el.voiceStatus.classList.toggle("hidden", !key || finished || vis(el.infoOverlay));
   }
   function speechError(code) {
     if (code === "canceled" || code === "interrupted") return;
-    clearSpeechCheck();
     if (code === "not-allowed") voiceStatus("voice_allow");
     else if (code === "language-unavailable" || code === "voice-unavailable" || code === "synthesis-unavailable") voiceStatus("voice_engine");
     else voiceStatus("voice_failed");
   }
-  function utter(text, manualCheck) {
-    if (!voiceOn || !text || disposed || (paused && !manualCheck) || document.visibilityState !== "visible") return;
+  function utter(text) {
+    if (!voiceOn || !text || disposed || paused || document.visibilityState !== "visible") return;
     if (!("speechSynthesis" in window)) { speechError("synthesis-unavailable"); return; }
     var epoch = speechEpoch;
     try {
@@ -311,14 +301,9 @@
       function release() { speechUtterances = speechUtterances.filter(function (x) { return x !== u; }); }
       u.onstart = function () {
         if (disposed || epoch !== speechEpoch) return;
-        if (manualCheck) { clearSpeechCheck(); voiceStatus("voice_listen"); }
-        else voiceStatus("");
+        voiceStatus("");
       };
-      u.onend = function () {
-        release();
-        if (disposed || epoch !== speechEpoch) return;
-        if (manualCheck) { clearSpeechCheck(); voiceStatus("voice_listen"); }
-      };
+      u.onend = release;
       u.onerror = function (event) {
         release();
         if (!disposed && epoch === speechEpoch) speechError(event.error);
@@ -335,7 +320,6 @@
   }
   function shutUp() {
     speechEpoch++;
-    clearSpeechCheck();
     speechUtterances = [];
     if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
   }
@@ -449,7 +433,7 @@
     resumeNeeded = true;
     clearNarr(); stopFrames(); shutUp(); releaseWake();
     if (el.infoOverlay) el.infoOverlay.classList.add("hidden");
-    if (el.voiceTools) el.voiceTools.classList.remove("hidden");
+    if (el.voiceStatus) el.voiceStatus.classList.toggle("hidden", !el.voiceStatus.textContent);
     root.classList.add("frozen");
     checkpoint();
     if (el.resumeOverlay) el.resumeOverlay.classList.remove("hidden");
@@ -542,12 +526,11 @@
   var pendingStart = null; // start-fn the rest/ready countdown will run at 0
   var curSide = 1;
 
-  // Self-managed sides share one step; timed work still includes both sides.
-  // Other plans retain separate timed sides and any prescribed switching pause.
-  function sides(it) { return !selfManagedSides && it.perSide && (it.unit === "seconds" || it.sideRest > 0) ? 2 : 1; }
-  function timedDuration(it) { return val(it) * (selfManagedSides && it.perSide ? 2 : 1); }
+  // Timed work always has two work segments for two sides. Self-managed plans
+  // keep one screen and show their combined remaining work; reps use one Done.
+  function sides(it) { return it.perSide && it.unit === "seconds" ? 2 : 1; }
 
-  function startItem(idx, side, remainingMs) {
+  function showItem(idx) {
     i = idx;
     var it = items[i];
     if (!it || !el.svg) return;
@@ -560,6 +543,12 @@
     if (el.index) el.index.textContent = (i + 1) + " / " + items.length;
     setPhaseLabel(it);
     renderProgress(i, it.slot);
+    return it;
+  }
+  function startItem(idx, side, remainingMs) {
+    var it = showItem(idx);
+    if (!it) return;
+    if (remainingMs == null) state.sideDurationMs = it.unit === "seconds" ? val(it) * 1000 : null;
     runSide(it, side || 1, remainingMs);
   }
 
@@ -570,29 +559,31 @@
     state.phase = "exercise";
     state.nextIndex = i;
     state.nextSide = side;
-    state.remainingMs = it.unit === "seconds" ? (remainingMs == null ? timedDuration(it) * 1000 : remainingMs) : null;
+    state.remainingMs = it.unit === "seconds" ? (remainingMs == null ? state.sideDurationMs : remainingMs) : null;
     if (el.rest) el.rest.classList.add("hidden");
     if (el.stage) el.stage.classList.remove("hidden");
     if (el.controls) el.controls.classList.remove("hidden");
     setPhaseLabel(it);
-    if (sides(it) === 2) el.phase.textContent += " · " + t("side") + " " + side + "/2";
-    if (selfManagedSides && it.perSide && it.unit === "seconds") el.phase.textContent += " · " + valueDisplay(it);
+    if (!selfManagedSides && sides(it) === 2) el.phase.textContent += " · " + t("side") + " " + side + "/2";
+    if (selfManagedSides && it.perSide && it.unit === "seconds") el.phase.textContent += " · " + (state.sideDurationMs / 1000) + "″ " + t("per_side");
     clearNarr();
     if (side === 1 && !restoring) {
       sayNow(it.vStart);   // "Go" / "Старт"
       startNarr(it);       // first instruction ~3 s later
+    } else if (side === 2 && !restoring) {
+      startNarr(it);       // leave the complete side-change phrase uninterrupted
     }
 
     if (it.unit === "seconds") {
       el.done.classList.add("hidden");
       el.value.classList.add("timer");
       el.value.classList.remove("prep");
-      var D = timedDuration(it);
+      var D = state.sideDurationMs / 1000;
       var halfAt = Math.round(D * 0.5);
       var lastSide = side >= sides(it);
       countdown(D, function (r) {
-        el.value.textContent = r + "″";
-        if (D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
+        el.value.textContent = (r + (selfManagedSides && sides(it) === 2 && side === 1 ? D : 0)) + "″";
+        if (!it.perSide && D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
         if (r === 4) clearNarr();                // silence narration before the count
         if (r <= 3 && r >= 1 && lastSide) sayNow(String(r));
       }, function () { nextSide(it, side); }, remainingMs);
@@ -609,24 +600,38 @@
   function nextSide(it, side) {
     clearNarr();
     if (side < sides(it)) {
-      sayNow(cues.switch_side);
-      if (it.sideRest > 0) {
-        doRest(it.sideRest, it, true, function () {
-          sayNow(cues.go);
-          runSide(it, side + 1);
-        }, side + 1);
-        el.restTitle.textContent = cues.switch_side || t("side");
-        el.restNext.textContent = it.name + " · " + t("side") + " " + (side + 1) + "/2";
-      } else {
-        runSide(it, side + 1);
-      }
+      beginSideChange();
     } else {
       endItem();
     }
   }
 
+  function sideChangeSpeech(remainingMs, announce) {
+    var count = Math.ceil(remainingMs / 1000), digits = [];
+    for (var n = count; n > 0; n--) digits.push(n);
+    return (announce ? (cues.switch_side || t("side")) + " " : "") + digits.join(", ") + ".";
+  }
+  function beginSideChange(remainingMs) {
+    var it = showItem(i);
+    showFrames(it);
+    stopFrames(); clearNarr();
+    curSide = 1;
+    state.phase = "side-change";
+    state.nextIndex = i;
+    state.nextSide = 2;
+    el.done.classList.add("hidden");
+    el.value.classList.add("timer", "prep");
+    el.phase.textContent += " · " + (cues.switch_side || t("side"));
+    if (remainingMs == null && !paused) sayNow(sideChangeSpeech(sideChangeSeconds * 1000, true));
+    // One queued phrase contains the instruction and all three numbers. The
+    // visual clock must not cancel it by speaking its first tick separately.
+    countdown(sideChangeSeconds, function (r) { el.value.textContent = r + "″"; }, function () {
+      runSide(it, 2);
+    }, remainingMs);
+  }
+
   function activeValueDisplay(it) {
-    if (sides(it) !== 2) return valueDisplay(it);
+    if (selfManagedSides || sides(it) !== 2) return valueDisplay(it);
     var displayItem = Object.assign({}, it, { perSide: false });
     return valueDisplay(displayItem);
   }
@@ -665,12 +670,12 @@
   // For a real rest it then speaks "Rest" + the next exercise with its count —
   // after a short beat so it never lands on top of the previous set's "one".
   // The get-ready before an exercise is just the spoken 3-2-1, leading into "Go".
-  function doRest(seconds, upItem, isReady, onDone, nextSide, remainingMs) {
+  function doRest(seconds, upItem, isReady, onDone, remainingMs) {
     if (!el.rest) { if (onDone) onDone(); return; }
     clearNarr(); stopFrames();
-    state.phase = nextSide > 1 ? "side-rest" : (isReady ? "ready" : "rest");
+    state.phase = isReady ? "ready" : "rest";
     state.nextIndex = items.indexOf(upItem);
-    state.nextSide = nextSide || 1;
+    state.nextSide = 1;
     state.remainingMs = remainingMs == null ? seconds * 1000 : remainingMs;
     el.stage.classList.add("hidden");
     el.controls.classList.add("hidden");
@@ -685,10 +690,6 @@
       el.restIndex.textContent = (upIdx + 1) + " / " + items.length;
       setPhaseLabel(upItem);
       renderProgress(upIdx, upItem.slot);
-    }
-    if (state.phase === "side-rest") {
-      el.restTitle.textContent = cues.switch_side || t("side");
-      el.restNext.textContent = upItem.name + " · " + t("side") + " " + state.nextSide + "/2";
     }
     pendingStart = onDone;
     if (upItem && !isReady && seconds >= 6 && !restoring && !paused) {
@@ -716,7 +717,7 @@
     shutUp();
     clearTicker();
     paused = false;
-    var target = vis(el.rest) ? i : Math.max(0, i - 1);
+    var target = vis(el.rest) || state.phase === "side-change" ? i : Math.max(0, i - 1);
     doRest(3, items[target], true, function () { startItem(target); });
   }
 
@@ -783,7 +784,7 @@
     renderProgress(items.length, null);
     clearTicker(); activeClock = null;
     stopFrames(); clearNarr(); shutUp(); releaseWake();
-    if (el.voiceTools) el.voiceTools.classList.add("hidden");
+    if (el.voiceStatus) el.voiceStatus.classList.add("hidden");
     el.resumeOverlay.classList.add("hidden");
     root.classList.remove("frozen");
     el.stage.classList.add("hidden"); el.controls.classList.add("hidden");
@@ -910,7 +911,12 @@
       location.assign("/");
     });
   }
-  if (el.skip) el.skip.addEventListener("click", function () { if (paused || finished) return; shutUp(); clearNarr(); endItem(); });
+  if (el.skip) el.skip.addEventListener("click", function () {
+    if (paused || finished) return;
+    shutUp(); clearNarr();
+    if (state.phase === "side-change") { clearTicker(); runSide(items[i], 2); }
+    else endItem();
+  });
   if (el.prev) el.prev.addEventListener("click", prev);
   if (el.restBack) el.restBack.addEventListener("click", prev);
   // Skip jumps straight to whatever the rest/ready countdown was about to start.
@@ -983,7 +989,7 @@
     var it = items[i];
     if (!it) return;
     infoWasPaused = paused;
-    if (el.voiceTools) el.voiceTools.classList.add("hidden");
+    if (el.voiceStatus) el.voiceStatus.classList.add("hidden");
     freezeClock();
     paused = true;
     clearNarr(); stopFrames(); shutUp();
@@ -1006,10 +1012,14 @@
   function closeInfo() {
     stopFrames();
     el.infoOverlay.classList.add("hidden");
-    if (el.voiceTools) el.voiceTools.classList.remove("hidden");
+    if (el.voiceStatus) el.voiceStatus.classList.toggle("hidden", !el.voiceStatus.textContent);
     if (resumeNeeded) return;
     paused = infoWasPaused;
-    if (!paused) restorePhase();
+    if (!paused) {
+      var wasSideChange = state.phase === "side-change";
+      restorePhase();
+      if (wasSideChange && state.phase === "side-change") sayNow(sideChangeSpeech(state.remainingMs, false));
+    }
     root.classList.toggle("frozen", paused);
   }
   // doReplace swaps the current exercise for its replacement and restarts it.
@@ -1017,7 +1027,7 @@
     var r = it.repl;
     return {
       id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
-      round: it.round, rest: it.rest, sideRest: it.sideRest, name: r.name, hint: r.hint, warning: r.warning,
+      round: it.round, rest: it.rest, name: r.name, hint: r.hint, warning: r.warning,
       svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), animation: r.animation, desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
       vFinish: cues.well_done, repl: null
@@ -1030,12 +1040,11 @@
     state.swaps[i] = it.repl.id;
     items[i] = replacementItem(it);
     el.infoOverlay.classList.add("hidden");
-    if (el.voiceTools) el.voiceTools.classList.remove("hidden");
+    if (el.voiceStatus) el.voiceStatus.classList.toggle("hidden", !el.voiceStatus.textContent);
     paused = false;
     shutUp();
     startItem(i);
   }
-  if (el.infoBtn) el.infoBtn.addEventListener("click", openInfo);
   if (el.visual || el.svg) (el.visual || el.svg).addEventListener("click", openInfo);
   if (el.infoClose) el.infoClose.addEventListener("click", closeInfo);
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
@@ -1076,21 +1085,8 @@
   el.restart = addNode(el.resumeOverlay, "button", "resume-restart btn", t("restart"));
   el.resume.type = el.restart.type = "button";
   if (voiceOn) {
-    el.voiceTools = addNode(root, "div", "voice-tools");
-    el.voiceCheck = addNode(el.voiceTools, "button", "voice-check", t("voice_check"));
-    el.voiceCheck.type = "button";
-    el.voiceStatus = addNode(el.voiceTools, "p", "voice-status hidden");
+    el.voiceStatus = addNode(root, "p", "voice-status hidden");
     el.voiceStatus.setAttribute("role", "status");
-    el.voiceCheck.addEventListener("click", function () {
-      if (disposed || finished || document.visibilityState !== "visible" || redirectAfterRestart()) return;
-      // The explicit tap unlocks speech where automatic playback is blocked.
-      // Pause the workout so its countdown cannot cut off the test phrase.
-      pauseForReturn();
-      loadVoices();
-      voiceStatus("voice_listen");
-      speechCheckTimer = setTimeout(function () { speechCheckTimer = null; voiceStatus("voice_failed"); }, 8000);
-      utter(t("voice_sample"), true);
-    });
   }
   el.saveStatus = addNode(el.doneOverlay, "p", "save-status");
   el.saveStatus.setAttribute("role", "status");
@@ -1105,11 +1101,13 @@
     if (snapshot.phase === "complete") { restoring = false; finish(); return; }
     if (snapshot.phase === "exercise") {
       startItem(i, curSide, snapshot.remainingMs);
+    } else if (snapshot.phase === "side-change") {
+      beginSideChange(snapshot.remainingMs);
     } else {
-      var target = snapshot.nextIndex, side = snapshot.nextSide;
+      var target = snapshot.nextIndex;
       doRest(Math.ceil(snapshot.remainingMs / 1000), items[target], snapshot.phase !== "rest", function () {
-        startItem(target, side);
-      }, snapshot.phase === "side-rest" ? side : 1, snapshot.remainingMs);
+        startItem(target);
+      }, snapshot.remainingMs);
     }
     restoring = false;
     checkpoint();
@@ -1117,7 +1115,7 @@
   function validSnapshot(s) {
     if (!s || !Number.isInteger(s.index) || s.index < 0 || s.index >= items.length ||
         !Number.isInteger(s.side) || s.side < 1 || s.side > 2 ||
-        ["exercise", "ready", "rest", "side-rest", "complete"].indexOf(s.phase) < 0 ||
+        ["exercise", "side-change", "ready", "rest", "complete"].indexOf(s.phase) < 0 ||
         typeof s.eventId !== "string" || s.eventId.length < 32 || s.eventId.length > 128 ||
         !Number.isInteger(s.level) || s.level < -3 || s.level > 3 ||
         !s.swaps || typeof s.swaps !== "object" || Array.isArray(s.swaps)) return false;
@@ -1134,7 +1132,13 @@
         !Number.isInteger(s.nextSide) || s.nextSide < 1 || s.nextSide > 2) return false;
     var it = s.swaps[s.index] ? replacementItem(originalItems[s.index]) : originalItems[s.index];
     if (s.side > sides(it)) return false;
-    if (s.phase === "side-rest" && (sides(it) !== 2 || s.nextIndex !== s.index || s.nextSide !== 2)) return false;
+    if (s.phase === "side-change") {
+      if (sides(it) !== 2 || s.side !== 1 || s.nextIndex !== s.index || s.nextSide !== 2 || s.remainingMs > sideChangeSeconds * 1000) return false;
+    } else if (s.phase !== "exercise" && s.nextSide !== 1) return false;
+    if ((s.phase === "exercise" && it.unit === "seconds") || s.phase === "side-change") {
+      if (!Number.isFinite(s.sideDurationMs) || s.sideDurationMs <= 0 || s.sideDurationMs > 86400000) return false;
+      if (s.phase === "exercise" && s.remainingMs > s.sideDurationMs) return false;
+    }
     if (s.phase !== "exercise" || it.unit === "seconds") {
       if (!Number.isFinite(s.remainingMs) || s.remainingMs < 0 || s.remainingMs > 86400000) return false;
     }
@@ -1146,11 +1150,14 @@
     resumeNeeded = false; paused = false;
     el.resumeOverlay.classList.add("hidden");
     root.classList.remove("frozen");
+    var resumedPhase = state.phase;
     restorePhase();
     if (state.phase === "exercise") {
       var resumed = items[i];
       if (resumed.unit !== "seconds" || state.remainingMs > 3000) sayNow(cues.go);
       if (resumed.unit !== "seconds" || state.remainingMs > 7000) startNarr(resumed);
+    } else if (state.phase === "side-change" && resumedPhase === "side-change") {
+      sayNow(sideChangeSpeech(state.remainingMs, false));
     } else if (state.remainingMs > 3000) {
       sayNow(state.phase === "rest" ? (cues.rest || t("rest")) : t("ready"));
     }
@@ -1162,7 +1169,7 @@
     items = originalItems.slice();
     i = 0; curSide = 1;
     level = fixedDifficulty ? 0 : (payload.level || 0);
-    state = { index: 0, side: 1, phase: "ready", remainingMs: 3000, nextIndex: 0, nextSide: 1,
+    state = { index: 0, side: 1, phase: "ready", remainingMs: 3000, sideDurationMs: null, nextIndex: 0, nextSide: 1,
       level: level, swaps: {}, eventId: store ? store.newEventId() : state.eventId, completion: null };
     paused = false; resumeNeeded = false;
     updateDiff();

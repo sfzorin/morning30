@@ -105,11 +105,21 @@ func (d *DB) UpdateSettings(userID int64, name, lang string, restWarmup, restMai
 	if voiceMode == "off" {
 		v = 0
 	}
-	_, err := d.sql.Exec(
+	result, err := d.sql.Exec(
 		`UPDATE users SET name = ?, lang = ?, rest_seconds = ?, rest_warmup = ?, rest_cooldown = ?, voice = ?, voice_mode = ? WHERE id = ?`,
 		name, lang, restMain, restWarmup, restCooldown, v, voiceMode, userID,
 	)
-	return err
+	if err != nil {
+		return err
+	}
+	changed, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+	if changed != 1 {
+		return ErrAccountNotFound
+	}
+	return nil
 }
 
 // Rests returns the user's per-phase rest seconds (warm-up, main, cool-down),
@@ -120,19 +130,6 @@ func (d *DB) Rests(userID int64) (warmup, main, cooldown int) {
 		`SELECT rest_warmup, rest_seconds, rest_cooldown FROM users WHERE id = ?`, userID,
 	).Scan(&warmup, &main, &cooldown)
 	return
-}
-
-// SafetyAck reports whether the user acknowledged the safety disclaimer.
-func (d *DB) SafetyAck(userID int64) (bool, error) {
-	var n int
-	err := d.sql.QueryRow(`SELECT safety_ack FROM users WHERE id = ?`, userID).Scan(&n)
-	return n != 0, err
-}
-
-// AckSafety records that the user acknowledged the safety disclaimer.
-func (d *DB) AckSafety(userID int64) error {
-	_, err := d.sql.Exec(`UPDATE users SET safety_ack = 1 WHERE id = ?`, userID)
-	return err
 }
 
 // GetProgramJSON returns the user's custom program JSON ("" = built-in).

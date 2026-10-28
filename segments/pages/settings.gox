@@ -70,8 +70,11 @@ type mcpTokState struct {
 elem (s settingsPage) Main() {
 	~{
 		l := i18n.Lang(s.sess.Lang)
-		saved := doors.NewSource(false)
+		saveStatus := doors.NewSource("")
+		importStatus := doors.NewSource("")
 		restW, restM, restC := app.DB.Rests(s.sess.UserID)
+		rests := (content.Rests{Warmup: restW, Main: restM, Cooldown: restC}).Normalize()
+		restW, restM, restC = rests.Warmup, rests.Main, rests.Cooldown
 		restWVal := doors.NewSource(restW)
 		restMVal := doors.NewSource(restM)
 		restCVal := doors.NewSource(restC)
@@ -115,7 +118,7 @@ elem (s settingsPage) Main() {
 					~(langSwitch{sess: s.sess, auth: s.auth, persist: true})
 				</div>
 
-				~>doors.ASubmit[settingsForm]{On: s.save(saved)} <form class="settings-form">
+				~>doors.ASubmit[settingsForm]{On: s.save(saveStatus)} <form class="settings-form">
 					<div class="srow">
 						<span>~(i18n.T(l, "auth.name"))</span>
 						<input class="text-input compact" name="name" type="text" maxlength="40" value=(s.sess.Name)>
@@ -126,7 +129,7 @@ elem (s settingsPage) Main() {
 							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
 							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
 						</div>
-						<input type="range" name="rest_warmup" min="0" max="40" step="5" value=(restW)
+						<input type="range" name="rest_warmup" min="0" max=(content.RestMax) step="5" value=(restW)
 							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								if n := r.Event().Number; n != nil { restWVal.Update(ctx, int(*n)) }
 								return false
@@ -137,7 +140,7 @@ elem (s settingsPage) Main() {
 							<span>~(i18n.T(l, "settings.rest_main"))</span>
 							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
 						</div>
-						<input type="range" name="rest" min="5" max="40" step="5" value=(restM)
+						<input type="range" name="rest" min=(content.MainRestMin) max=(content.RestMax) step="5" value=(restM)
 							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								if n := r.Event().Number; n != nil { restMVal.Update(ctx, int(*n)) }
 								return false
@@ -148,7 +151,7 @@ elem (s settingsPage) Main() {
 							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
 							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
 						</div>
-						<input type="range" name="rest_cooldown" min="0" max="40" step="5" value=(restC)
+						<input type="range" name="rest_cooldown" min="0" max=(content.RestMax) step="5" value=(restC)
 							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 								if n := r.Event().Number; n != nil { restCVal.Update(ctx, int(*n)) }
 								return false
@@ -172,9 +175,9 @@ elem (s settingsPage) Main() {
 					</div>
 					<div class="srow save-row">
 						<button class="btn primary" type="submit">~(i18n.T(l, "settings.save"))</button>
-						~(saved.Bind(elem(ok bool) {
-							~(if ok {
-								<span class="saved-msg">~(i18n.T(l, "settings.saved"))</span>
+						~(saveStatus.Bind(elem(key string) {
+							~(if key != "" {
+								<span class=func { if key == "settings.save_failed" { return "err" }; return "saved-msg" } role="status">~(i18n.T(l, key))</span>
 							})
 						}))
 					</div>
@@ -210,12 +213,15 @@ elem (s settingsPage) Main() {
 						~{ b := []byte(prog.Marshal()) }
 						<a class="btn small" (doors.ResourceBytes(b)) name="workout.json">workout.json</a>
 					</div>
-					~>doors.ARawSubmit{On: s.importProgram} <form class="ex-import-form">
+					~>doors.ARawSubmit{On: s.importProgram(importStatus)} <form class="ex-import-form">
 						<textarea class="ex-import" name="progjson" rows="3" placeholder=(i18n.T(l, "settings.paste_program"))></textarea>
 						<div class="srow ex-import-row">
 							<input class="ex-file" type="file" accept=".json,application/json">
 							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
 						</div>
+						~(importStatus.Bind(elem(key string) {
+							~(if key != "" { <p class="err" role="alert">~(i18n.T(l, key))</p> })
+						}))
 					</form>
 
 					<div class="srow">
@@ -234,21 +240,15 @@ elem (s settingsPage) Main() {
 							if idx < 0 {
 								idx = 0
 							}
-							mainRounds := 2
 							warmTarget, coolTarget := "warmup", "cooldown"
 							if len(p.Days) > 0 {
-								mainRounds = content.ClampRounds(p.Days[idx].Rounds)
 								if p.Days[idx].Warmup != nil { warmTarget = "day-warmup" }
 								if p.Days[idx].Cooldown != nil { coolTarget = "day-cooldown" }
 							}
 						}
 						<div class="srow">
 							<span>~(i18n.T(l, "settings.warmup_rounds"))</span>
-							<select class="lang-select compact" (doors.AChange{On: s.setWarmupRounds(editSrc)})>
-								~(for n := 1; n <= 10; n++ {
-									<option value=(n) selected=func { return n == p.WarmupRounds }>~(n)</option>
-								})
-							</select>
+							<span>~(content.WarmupRounds)</span>
 						</div>
 						<div class="cyc-head">~(if warmTarget == "day-warmup" { ~(i18n.T(l, "workout.warmup"), " · ", i18n.T(l, "home.day"), " ", st.Day) } else { ~(i18n.T(l, "settings.warmup_series")) })</div>
 						~(s.editList(editSrc, cat, entries, l, p.WarmupFor(idx), warmTarget, st.Open))
@@ -257,11 +257,7 @@ elem (s settingsPage) Main() {
 							~{ rd := p.Days[idx] }
 							<div class="srow">
 								<span>~(i18n.T(l, "settings.main_rounds"))</span>
-								<select class="lang-select compact" (doors.AChange{On: s.setMainRounds(editSrc)})>
-									~(for n := 1; n <= 10; n++ {
-										<option value=(n) selected=func { return n == mainRounds }>~(n)</option>
-									})
-								</select>
+								<span>~(content.MainRounds)</span>
 							</div>
 							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
 							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
@@ -530,12 +526,11 @@ elem (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, l
 }
 
 // save persists rest + voice and updates the reactive session.
-func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors.RequestForm[settingsForm]) bool {
+func (s settingsPage) save(status doors.Source[string]) func(context.Context, doors.RequestForm[settingsForm]) bool {
 	return func(ctx context.Context, r doors.RequestForm[settingsForm]) bool {
 		f := r.Data()
-		restMain := clampRange(f.Rest, 5, 40)
-		restWarm := clampRange(f.RestWarmup, 0, 40)
-		restCool := clampRange(f.RestCooldown, 0, 40)
+		status.Update(ctx, "")
+		rests := (content.Rests{Warmup: f.RestWarmup, Main: f.Rest, Cooldown: f.RestCooldown}).Normalize()
 		name := strings.TrimSpace(f.Name)
 		if len(name) > 40 {
 			name = name[:40]
@@ -546,16 +541,22 @@ func (s settingsPage) save(saved doors.Source[bool]) func(context.Context, doors
 		default:
 			mode = "normal"
 		}
-		_ = app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, restWarm, restMain, restCool, mode)
-		_ = app.DB.SetSex(s.sess.UserID, f.Sex)
+		if err := app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, rests.Warmup, rests.Main, rests.Cooldown, mode); err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
+		if err := app.DB.SetSex(s.sess.UserID, f.Sex); err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
 		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
 			cur.Name = name
-			cur.Rest = restMain
+			cur.Rest = rests.Main
 			cur.VoiceMode = mode
 			cur.Voice = mode != "off"
 			return cur
 		})
-		saved.Update(ctx, true)
+		status.Update(ctx, "settings.saved")
 		return false
 	}
 }
@@ -589,17 +590,6 @@ func clampDay(d, n int) int {
 		d = n
 	}
 	return d
-}
-
-// clampRange clamps v to [lo, hi].
-func clampRange(v, lo, hi int) int {
-	if v < lo {
-		return lo
-	}
-	if v > hi {
-		return hi
-	}
-	return v
 }
 
 // setDay switches the edited day, keeping the working JSON.
@@ -642,27 +632,25 @@ func mutateList(ctx context.Context, editSrc doors.Source[editState], target str
 	editSrc.Update(ctx, st)
 }
 
-// editProgramList keeps explicit day phases and prescription metadata intact.
+// editProgramList keeps every phase nonempty while editing its exercise sequence.
 func editProgramList(p *content.Resolved, day int, target string, fn func([]content.RItem) []content.RItem) {
 	switch target {
 	case "warmup":
-		p.Warmup = fn(p.Warmup)
+		if items := fn(p.Warmup); len(items) > 0 { p.Warmup = items }
 	case "cooldown":
-		p.Cooldown = fn(p.Cooldown)
+		if items := fn(p.Cooldown); len(items) > 0 { p.Cooldown = items }
 	default:
 		d := clampDay(day, len(p.Days))
 		if d < 1 { return }
 		switch target {
 		case "day-warmup":
 			items := fn(p.WarmupFor(d-1))
-			if items == nil { items = []content.RItem{} }
-			p.Days[d-1].Warmup = &items
+			if len(items) > 0 { p.Days[d-1].Warmup = &items }
 		case "day-cooldown":
 			items := fn(p.CooldownFor(d-1))
-			if items == nil { items = []content.RItem{} }
-			p.Days[d-1].Cooldown = &items
+			if len(items) > 0 { p.Days[d-1].Cooldown = &items }
 		default:
-			p.Days[d-1].Items = fn(p.Days[d-1].Items)
+			if items := fn(p.Days[d-1].Items); len(items) > 0 { p.Days[d-1].Items = items }
 		}
 	}
 }
@@ -685,12 +673,10 @@ elem (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Cata
 				~>doors.AClick{On: s.editPeek(editSrc, target, ii)} <button class="cyc-op cyc-info" type="button" aria-label=(i18n.T(l, "settings.view"))>ⓘ</button>
 				~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
 				~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
-				~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" aria-label=(i18n.T(l, "settings.remove"))>✕</button>
+				~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" disabled=(len(items) <= 1) aria-label=(i18n.T(l, "settings.remove"))>✕</button>
 			</li>
 			~(if open == key {
 				<li class="cyc-peek">
-					~(if it.Rest != nil { <p>~(i18n.T(l, "workout.rest"), ": ", *it.Rest, " ", i18n.T(l, "workout.sec"))</p> })
-					~(if it.SideRest > 0 { <p>~(i18n.Cue(l, "switch_side"), ": ", it.SideRest, " ", i18n.T(l, "workout.sec"))</p> })
 					~(s.exDetail(l, cat, it.ID))
 				</li>
 			})
@@ -748,7 +734,6 @@ func (s settingsPage) editReplace(editSrc doors.Source[editState], cat catalog.C
 			its[ii] = content.RItem{
 				ID: newID, Unit: def.Unit, PerSide: def.PerSide, Slot: slotForTarget(target),
 				Value: content.ConvertValue(old.Unit, def.Unit, old.Value), Round: old.Round,
-				Rest: old.Rest, SideRest: old.SideRest,
 			}
 			return its
 		})
@@ -880,68 +865,24 @@ func (s settingsPage) saveEditor(editSrc doors.Source[editState], nameSrc doors.
 	}
 }
 
-func mutateProgram(ctx context.Context, editSrc doors.Source[editState], fn func(*content.Resolved)) {
-	st := editSrc.Get()
-	p, err := content.ParseResolved(st.JSON)
-	if err != nil {
-		return
-	}
-	fn(&p)
-	p.WarmupRounds = content.ClampRounds(p.WarmupRounds)
-	for i := range p.Days {
-		p.Days[i].Rounds = content.ClampRounds(p.Days[i].Rounds)
-	}
-	st.JSON = p.Marshal()
-	editSrc.Update(ctx, st)
-}
-
-// setWarmupRounds sets how many times the shared warm-up runs (1–10).
-func (s settingsPage) setWarmupRounds(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
-	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-		n, err := strconv.Atoi(r.Event().Value)
+// importProgram validates a personal cycle before saving it. Rejected input
+// stays in the form and never replaces the saved program or changes progress.
+func (s settingsPage) importProgram(status doors.Source[string]) func(context.Context, doors.RequestRawForm) bool {
+	return func(ctx context.Context, r doors.RequestRawForm) bool {
+		status.Update(ctx, "")
+		pf, err := r.ParseForm(1 << 20)
 		if err != nil {
+			status.Update(ctx, "settings.import_failed")
 			return false
 		}
-		mutateProgram(ctx, editSrc, func(p *content.Resolved) {
-			p.WarmupRounds = content.ClampRounds(n)
-		})
-		return false
-	}
-}
-
-// setMainRounds sets how many times this day's main block runs (1–10).
-func (s settingsPage) setMainRounds(editSrc doors.Source[editState]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
-	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-		n, err := strconv.Atoi(r.Event().Value)
-		if err != nil {
+		raw := strings.TrimSpace(pf.FormValue("progjson"))
+		if raw == "" || app.SetUserProgram(s.sess.UserID, raw) != nil {
+			status.Update(ctx, "settings.import_failed")
 			return false
 		}
-		mutateProgram(ctx, editSrc, func(p *content.Resolved) {
-			d := clampDay(editSrc.Get().Day, len(p.Days))
-			if d < 1 {
-				return
-			}
-			p.Days[d-1].Rounds = content.ClampRounds(n)
-		})
+		_ = r.After(doors.ActionLocationReload{})
 		return false
 	}
-}
-
-// importProgram stores an uploaded/pasted cycle JSON as this user's personal plan.
-func (s settingsPage) importProgram(ctx context.Context, r doors.RequestRawForm) bool {
-	pf, err := r.ParseForm(1 << 20)
-	if err != nil {
-		return false
-	}
-	raw := strings.TrimSpace(pf.FormValue("progjson"))
-	if raw == "" {
-		return false
-	}
-	if app.SetUserProgram(s.sess.UserID, raw) != nil {
-		return false
-	}
-	_ = r.After(doors.ActionLocationReload{})
-	return false
 }
 
 // createExercise adds a custom exercise that reuses a built-in figure.

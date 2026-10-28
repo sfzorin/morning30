@@ -38,6 +38,13 @@ func TestUserAndSettings(t *testing.T) {
 	}
 }
 
+func TestSettingsCannotSucceedForMissingAccount(t *testing.T) {
+	d := openTest(t)
+	if err := d.UpdateSettings(999, "Missing", "ru", 5, 15, 10, "normal"); err != ErrAccountNotFound {
+		t.Fatalf("missing account save returned %v", err)
+	}
+}
+
 func TestStreakConsecutive(t *testing.T) {
 	d := openTest(t)
 	u, _ := d.CreateUser("s@b.com", "h", "en", "Test")

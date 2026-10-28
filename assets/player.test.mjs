@@ -160,34 +160,32 @@ function player(items, extra = {}, options = {}) {
 const item = (fields = {}) => ({ id: 'a', name: 'Exercise', unit: 'reps', value: 6, slot: 'main', round: 1, rest: 0, ...fields });
 const hidden = node => node.classList.contains('hidden');
 
-test('speech failures are visible and a direct voice check pauses without losing workout time', () => {
+test('speech failures are visible and narration resumes after returning without losing workout time', () => {
   const p = player([item({ unit: 'seconds', value: 30, correct: ['Stay steady'] })], { voiceMode: 'normal' });
+  assert.ok(hidden(p.get('.voice-status')));
   p.advance(3);
   p.utterances.at(-1).onerror({ error: 'not-allowed' });
   assert.equal(p.get('.voice-status').textContent, 'voice_allow');
-  p.get('.voice-check').click();
-  assert.equal(p.spoken.at(-1), 'voice_sample');
+  p.hide();
   const remaining = p.persistence.data.checkpoint.state.remainingMs;
   p.advance(2);
+  p.show();
   assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining);
-  p.utterances.at(-1).onstart();
-  p.utterances.at(-1).onend();
-  assert.equal(p.get('.voice-status').textContent, 'voice_listen'); // only the user can confirm audibility
   p.get('.resume-continue').click();
+  p.utterances.at(-1).onstart();
+  assert.ok(hidden(p.get('.voice-status')));
   p.advance(3);
   assert.ok(p.spoken.includes('Stay steady'));
   assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining - 3000);
 });
 
-test('voice checks report missing engines, language failures and silent engines', () => {
+test('speech reports actual missing engines and synthesis failures', () => {
   const missing = player([item()], { voiceMode: 'normal' }, { noSpeech: true });
   assert.equal(missing.get('.voice-status').textContent, 'voice_engine');
   const p = player([item()], { voiceMode: 'normal' });
-  p.get('.voice-check').click();
   p.utterances.at(-1).onerror({ error: 'language-unavailable' });
   assert.equal(p.get('.voice-status').textContent, 'voice_engine');
-  p.get('.voice-check').click();
-  p.advance(8);
+  p.utterances.at(-1).onerror({ error: 'network' });
   assert.equal(p.get('.voice-status').textContent, 'voice_failed');
 });
 
@@ -197,30 +195,32 @@ test('speech recovers a paused synthesizer and ignores canceled or stale utteran
   p.utterances.at(-1).onerror({ error: 'canceled' });
   assert.ok(hidden(p.get('.voice-status')));
   const old = p.utterances.at(-1);
-  p.get('.voice-check').click();
+  p.hide();
   old.onerror({ error: 'network' });
-  assert.equal(p.get('.voice-status').textContent, 'voice_listen');
+  assert.ok(hidden(p.get('.voice-status')));
   p.cleanup();
-  p.utterances.at(-1).onerror({ error: 'network' });
+  old.onerror({ error: 'network' });
   p.advance(10);
-  assert.equal(p.get('.voice-status').textContent, 'voice_listen');
+  assert.ok(hidden(p.get('.voice-status')));
 });
 
-test('voice controls stay available on resume without covering exercise details or completion', () => {
+test('voice errors never cover exercise details or completion', () => {
   const p = player([item()], { voiceMode: 'normal' });
   p.advance(3);
-  p.get('.info-btn').click();
-  assert.ok(hidden(p.get('.voice-tools')));
+  p.utterances.at(-1).onerror({ error: 'not-allowed' });
+  assert.ok(!hidden(p.get('.voice-status')));
+  p.get('.ex-visual').click();
+  assert.ok(hidden(p.get('.voice-status')));
   p.get('.info-close').click();
-  assert.ok(!hidden(p.get('.voice-tools')));
-  p.get('.info-btn').click();
+  assert.ok(!hidden(p.get('.voice-status')));
+  p.get('.ex-visual').click();
   p.hide();
   p.show();
-  assert.ok(!hidden(p.get('.voice-tools')));
+  assert.ok(!hidden(p.get('.voice-status')));
   p.get('.resume-continue').click();
   p.get('.ctl-done').click();
   assert.ok(!hidden(p.get('.done-overlay')));
-  assert.ok(hidden(p.get('.voice-tools')));
+  assert.ok(hidden(p.get('.voice-status')));
 });
 
 test('unillustrated exercises clear the previous image until pictures are published', () => {
@@ -236,94 +236,142 @@ test('unillustrated exercises clear the previous image until pictures are publis
   assert.equal(p.get('.ex-svg').src, '/poses/new');
 });
 
-for (const unit of ['reps', 'seconds']) {
-  test(`${unit}: both sides use the prescribed 10-second switch, then the 90-second rest`, () => {
-    const p = player([item({ unit, value: 5, perSide: true, sideRest: 10, rest: 90 }), item({ id: 'b', name: 'Next' })]);
-    p.advance(3);
-    assert.match(p.get('.phase').textContent, /Side 1\/2/);
-    if (unit === 'seconds') p.advance(5); else p.get('.ctl-done').click();
-    assert.equal(p.get('.rest-title').textContent, 'Change sides');
-    assert.equal(p.get('.rest-count').textContent, 10);
-    assert.equal(p.get('.rest-index').textContent, '1 / 2');
-    p.advance(9);
-    assert.equal(p.get('.rest-count').textContent, 1);
-    p.advance(1);
-    assert.ok(hidden(p.get('.rest-overlay')));
-    assert.match(p.get('.phase').textContent, /Side 2\/2/);
-    if (unit === 'seconds') p.advance(5); else p.get('.ctl-done').click();
-    assert.equal(p.get('.rest-count').textContent, 90);
-    assert.equal(p.get('.rest-index').textContent, '2 / 2');
-    p.advance(90);
-    assert.equal(p.get('.ex-name').textContent, 'Next');
-  });
-}
-
-test('switch pause Skip starts the second side, without skipping the exercise', () => {
-  const p = player([item({ perSide: true, sideRest: 10 }), item({ name: 'Next' })]);
+test('stale authored side pauses cannot split counted work or change the universal preparation', () => {
+  const p = player([
+    item({ perSide: true, sideRest: 90, rest: 15 }),
+    item({ id: 'hold', unit: 'seconds', value: 5, perSide: true, sideRest: 90, rest: 20 }),
+    item({ id: 'next', name: 'Next' }),
+  ]);
   p.advance(3);
+  assert.equal(p.get('.ex-value').textContent, '× 6 per side');
+  assert.doesNotMatch(p.get('.phase').textContent, /Side [12]\/2/);
   p.get('.ctl-done').click();
-  p.get('.rest-skip').click();
-  assert.match(p.get('.phase').textContent, /Side 2\/2/);
-  assert.equal(p.get('.ex-name').textContent, 'Exercise');
-  p.get('.ctl-done').click();
-  assert.equal(p.get('.ex-name').textContent, 'Next');
+  assert.equal(p.get('.rest-count').textContent, 15);
+  p.advance(15);
+  assert.match(p.get('.phase').textContent, /Side 1\/2/);
+  p.advance(5);
+  assert.equal(p.persistence.data.checkpoint.state.phase, 'side-change');
+  assert.equal(p.get('.ex-value').textContent, '3″');
   assert.ok(hidden(p.get('.rest-overlay')));
+  p.advance(3);
+  assert.match(p.get('.phase').textContent, /Side 2\/2/);
+  p.advance(5);
+  assert.equal(p.get('.rest-count').textContent, 20);
+  p.advance(20);
+  assert.equal(p.get('.ex-name').textContent, 'Next');
 });
 
-test('legacy reps use one Done tap for both sides, legacy timers switch immediately', () => {
+test('counted sides use one Done tap and timed sides get one preparation', () => {
   const p = player([item({ perSide: true }), item({ unit: 'seconds', value: 5, perSide: true })]);
   p.advance(3);
   assert.equal(p.get('.ex-value').textContent, '× 6 per side');
   p.get('.ctl-done').click();
-  p.advance(5);
+  p.advance(8);
   assert.match(p.get('.phase').textContent, /Side 2\/2/);
   assert.ok(hidden(p.get('.rest-overlay')));
   p.advance(5);
   assert.equal(p.completed.length, 1);
 });
 
-test('self-managed sides use one Done tap and one combined timer with the per-side dose visible', () => {
+test('self-managed timed sides keep one screen and 40 seconds of work around three-second preparation', () => {
   const p = player([
-    item({ perSide: true, sideRest: 10 }),
-    item({ id: 'hold', name: 'Hold', unit: 'seconds', value: 5, perSide: true, sideRest: 10 }),
-    item({ id: 'next', name: 'Next', unit: 'seconds', value: 5 }),
-  ], { selfManagedSides: true, voiceMode: 'normal' });
+    item({ perSide: true }),
+    item({ id: 'hold', name: 'Hold', unit: 'seconds', value: 20, perSide: true }),
+    item({ id: 'next', name: 'Next' }),
+  ], { selfManagedSides: true, voiceMode: 'normal', cues: { switch_side: 'Change sides.', halfway: 'Halfway' } });
   p.advance(3);
   assert.equal(p.get('.ex-value').textContent, '× 6 per side');
-  assert.doesNotMatch(p.get('.phase').textContent, /Side [12]\/2/);
   p.get('.ctl-done').click();
-  assert.equal(p.get('.ex-name').textContent, 'Hold');
-  assert.equal(p.get('.ex-value').textContent, '10″');
-  assert.match(p.get('.phase').textContent, /5″ per side/);
+  assert.equal(p.get('.ex-value').textContent, '40″');
   assert.doesNotMatch(p.get('.phase').textContent, /Side [12]\/2/);
-  assert.ok(hidden(p.get('.rest-overlay')));
-  assert.ok(hidden(p.get('.ctl-done')));
-  p.advance(5);
+  p.advance(19);
+  assert.equal(p.get('.ex-value').textContent, '21″');
+  p.advance(1);
+  assert.equal(p.persistence.data.checkpoint.state.phase, 'side-change');
   assert.equal(p.get('.ex-name').textContent, 'Hold');
-  assert.equal(p.get('.ex-value').textContent, '5″');
+  assert.equal(p.get('.ex-value').textContent, '3″');
   assert.ok(hidden(p.get('.rest-overlay')));
-  p.advance(5);
+  assert.equal(p.spoken.at(-1), 'Change sides. 3, 2, 1.');
+  p.advance(3);
+  assert.equal(p.get('.ex-value').textContent, '20″');
+  assert.doesNotMatch(p.get('.phase').textContent, /Side [12]\/2/);
+  assert.equal(p.spoken.at(-1), 'Change sides. 3, 2, 1.'); // no Go cuts off the instruction
+  p.advance(19);
+  assert.equal(p.get('.ex-name').textContent, 'Hold');
+  assert.equal(p.get('.ex-value').textContent, '1″');
+  p.advance(1);
   assert.equal(p.get('.ex-name').textContent, 'Next');
-  assert.equal(p.get('.ex-value').textContent, '5″');
-  assert.ok(!p.spoken.includes('Change sides'));
-  p.advance(5);
-  assert.equal(p.completed.length, 1);
+  assert.equal(p.spoken.filter(x => x.includes('Change sides')).length, 1);
+  assert.ok(!p.spoken.includes('Halfway'));
 });
 
-test('self-managed combined timer resumes its saved remainder without doubling it again', () => {
-  const items = [item({ unit: 'seconds', value: 5, perSide: true }), item({ name: 'Next' })];
+test('self-managed second side resumes its saved remainder without repeating the first side', () => {
+  const items = [item({ unit: 'seconds', value: 20, perSide: true }), item({ name: 'Next' })];
   const first = player(items, { selfManagedSides: true });
-  first.advance(9); // 3 seconds ready, 6 seconds of the combined 10-second hold.
+  first.advance(32); // ready + first20 + preparation3 + second6
   first.hide(); first.cleanup();
-  assert.equal(first.persistence.data.checkpoint.state.remainingMs, 4000);
+  assert.equal(first.persistence.data.checkpoint.state.remainingMs, 14000);
   const second = player(items, { selfManagedSides: true }, { persistence: first.persistence });
-  assert.equal(second.get('.ex-value').textContent, '4″');
-  assert.match(second.get('.phase').textContent, /5″ per side/);
+  assert.equal(second.get('.ex-value').textContent, '14″');
   second.advance(30);
-  assert.equal(second.get('.ex-value').textContent, '4″');
+  assert.equal(second.get('.ex-value').textContent, '14″');
   second.get('.resume-continue').click();
-  second.advance(4);
+  second.advance(14);
   assert.equal(second.get('.ex-name').textContent, 'Next');
+});
+
+test('a difficulty change preserves both running side durations and their label across reload', () => {
+  const items = [item({ unit: 'seconds', value: 20, perSide: true, scale: true }), item({ name: 'Next', unit: 'seconds', value: 10, scale: true })];
+  const first = player(items, { selfManagedSides: true });
+  first.advance(8); first.get('.lvl-up').click(); first.hide(); first.cleanup();
+  const second = player(items, { selfManagedSides: true }, { persistence: first.persistence });
+  assert.equal(second.get('.ex-value').textContent, '35″');
+  assert.match(second.get('.phase').textContent, /20″ per side/);
+  second.get('.resume-continue').click(); second.advance(18);
+  assert.equal(second.get('.ex-value').textContent, '20″');
+  assert.match(second.get('.phase').textContent, /20″ per side/);
+  second.advance(20);
+  assert.equal(second.get('.ex-name').textContent, 'Next');
+  assert.equal(second.get('.ex-value').textContent, '11″');
+});
+
+for (const selfManagedSides of [false, true]) {
+  test(`side-change restores exact remaining preparation and targets side two (combined=${selfManagedSides})`, () => {
+    const items = [item({ unit: 'seconds', value: 20, perSide: true }), item({ name: 'Next' })];
+    const extra = { selfManagedSides, voiceMode: 'normal' };
+    const first = player(items, extra);
+    first.advance(24.4);
+    first.hide(); first.cleanup();
+    assert.equal(first.persistence.data.checkpoint.state.phase, 'side-change');
+    assert.equal(first.persistence.data.checkpoint.state.remainingMs, 1600);
+    assert.equal(first.persistence.data.checkpoint.state.sideDurationMs, 20000);
+    const second = player(items, extra, { persistence: first.persistence });
+    assert.equal(second.get('.ex-value').textContent, '2″');
+    second.advance(30);
+    second.get('.resume-continue').click();
+    assert.equal(second.spoken.at(-1), '2, 1.');
+    second.advance(2);
+    assert.equal(second.get('.ex-value').textContent, '20″');
+    assert.equal(second.persistence.data.checkpoint.state.side, 2);
+    assert.equal(second.spoken.filter(x => x.includes('Change sides')).length, 0);
+    second.advance(20);
+    assert.equal(second.get('.ex-name').textContent, 'Next');
+  });
+}
+
+test('side-change details, Skip and Back preserve the exercise and intended side', () => {
+  const p = player([item({ name: 'Before' }), item({ name: 'Hold', unit: 'seconds', value: 20, perSide: true }), item({ name: 'Next' })], { selfManagedSides: true });
+  p.advance(3); p.get('.ctl-done').click(); p.advance(21);
+  p.get('.ex-visual').click(); p.advance(10); p.get('.info-close').click();
+  assert.equal(p.get('.ex-value').textContent, '2″');
+  p.get('.ctl-prev').click(); p.advance(3);
+  assert.equal(p.get('.ex-name').textContent, 'Hold');
+  assert.equal(p.get('.ex-value').textContent, '40″');
+  p.advance(20); p.get('.ctl-skip').click();
+  assert.equal(p.get('.ex-name').textContent, 'Hold');
+  assert.equal(p.get('.ex-value').textContent, '20″');
+  p.advance(20);
+  assert.equal(p.get('.ex-name').textContent, 'Next');
 });
 
 test('phase shows current and total main rounds while single-round warmup and cooldown stay compact', () => {
@@ -361,7 +409,7 @@ test('voice keeps technique and mistake cues without a spoken introduction', () 
     if (voiceMode === 'normal') expected.push(...correct.slice(0, 2), ...wrong.slice(0, 1));
     if (voiceMode === 'detailed') expected.push(...correct, ...wrong);
     assert.deepEqual(p.spoken, expected, voiceMode);
-    p.get('.info-btn').click();
+    p.get('.ex-visual').click();
     assert.deepEqual(p.get('.info-wrong').children.map(node => node.textContent), wrong);
   }
 });
@@ -374,7 +422,7 @@ test('exercise details show both warning and safety, without repeating identical
   ]) {
     const p = player([item({ warning, safety })]);
     p.advance(3);
-    p.get('.info-btn').click();
+    p.get('.ex-visual').click();
     assert.ok(!hidden(p.get('.info-overlay')));
     assert.ok(hidden(p.get('.ex-svg')));
     assert.equal(p.get('.info-warn').textContent, expected);
@@ -408,33 +456,34 @@ test('hiding freezes a fractional timer, stops narration and requires an explici
   assert.equal(p.get('.ex-name').textContent, 'Next');
 });
 
-for (const unit of ['reps', 'seconds']) {
-  test(`${unit}: reload during side pause preserves its remaining time and target side`, () => {
-    const items = [item({ unit, value: 5, perSide: true, sideRest: 10, rest: 90 }), item({ name: 'Next' })];
-    const first = player(items);
-    first.advance(3);
-    if (unit === 'seconds') first.advance(5); else first.get('.ctl-done').click();
-    first.advance(4);
-    first.cleanup();
-    const second = player(items, {}, { persistence: first.persistence });
-    assert.equal(second.get('.rest-title').textContent, 'Change sides');
-    assert.equal(second.get('.rest-count').textContent, 6);
-    assert.ok(!hidden(second.get('.resume-overlay')));
-    second.advance(60);
-    assert.equal(second.get('.rest-count').textContent, 6);
-    second.get('.resume-continue').click();
-    second.advance(6);
-    assert.match(second.get('.phase').textContent, /Side 2\/2/);
-    if (unit === 'seconds') second.advance(2);
-    second.hide(); second.cleanup();
-    const third = player(items, {}, { persistence: second.persistence });
-    assert.match(third.get('.phase').textContent, /Side 2\/2/);
-    if (unit === 'seconds') assert.equal(third.get('.ex-value').textContent, '3″');
-    third.get('.resume-continue').click();
-    if (unit === 'seconds') third.advance(3); else third.get('.ctl-done').click();
-    assert.equal(third.get('.rest-count').textContent, 90);
-  });
-}
+test('reload during the second timed side preserves its side and remaining time', () => {
+  const items = [item({ unit: 'seconds', value: 5, perSide: true, rest: 20 }), item({ name: 'Next' })];
+  const first = player(items);
+  first.advance(13); // ready, first side, preparation, two seconds of the second side
+  first.hide(); first.cleanup();
+  const second = player(items, {}, { persistence: first.persistence });
+  assert.match(second.get('.phase').textContent, /Side 2\/2/);
+  assert.equal(second.get('.ex-value').textContent, '3″');
+  assert.ok(!hidden(second.get('.resume-overlay')));
+  second.advance(60);
+  assert.equal(second.get('.ex-value').textContent, '3″');
+  second.get('.resume-continue').click();
+  second.advance(3);
+  assert.equal(second.get('.rest-count').textContent, 20);
+});
+
+test('a removed side-rest checkpoint cannot run a program-owned pause', () => {
+  const items = [item({ unit: 'seconds', value: 5, perSide: true }), item({ name: 'Next' })];
+  const first = player(items);
+  first.advance(3); first.cleanup();
+  Object.assign(first.persistence.data.checkpoint.state, { phase: 'side-rest', nextSide: 2, remainingMs: 90000 });
+  const second = player(items, {}, { persistence: first.persistence });
+  assert.ok(hidden(second.get('.resume-overlay')));
+  assert.equal(second.get('.rest-count').textContent, 3);
+  second.advance(3);
+  assert.match(second.get('.phase').textContent, /Side 1\/2/);
+  assert.equal(second.completed.length, 0);
+});
 
 test('reload during normal rest keeps its destination and Skip starts that exercise', () => {
   const items = [item({ rest: 90 }), item({ id: 'b', name: 'Next' })];
@@ -450,7 +499,7 @@ test('reload during normal rest keeps its destination and Skip starts that exerc
 
 test('switching away with exercise details open cannot accidentally resume on closing details', () => {
   const p = player([item({ unit: 'seconds', value: 20 })]);
-  p.advance(8); p.get('.info-btn').click(); p.advance(8); p.hide(); p.show();
+  p.advance(8); p.get('.ex-visual').click(); p.advance(8); p.hide(); p.show();
   p.get('.info-close').click(); p.advance(30);
   assert.equal(p.persistence.data.checkpoint.state.remainingMs, 15000);
   assert.ok(!hidden(p.get('.resume-overlay')));
@@ -461,7 +510,7 @@ test('switching away with exercise details open cannot accidentally resume on cl
 test('session difficulty and a manual replacement restore from canonical payload data', () => {
   const items = [item({ scale: true, value: 10, repl: { id: 'replacement', name: 'Alternative', unit: 'seconds', value: 20, scale: true } })];
   const first = player(items);
-  first.advance(3); first.get('.lvl-up').click(); first.get('.info-btn').click(); first.get('.info-replace').click(); first.advance(4); first.cleanup();
+  first.advance(3); first.get('.lvl-up').click(); first.get('.ex-visual').click(); first.get('.info-replace').click(); first.advance(4); first.cleanup();
   const second = player(items, {}, { persistence: first.persistence });
   assert.equal(second.get('.ex-name').textContent, 'Alternative');
   assert.equal(second.get('.ex-value').textContent, '18″'); // +10% 22 sec - 4
@@ -712,7 +761,7 @@ test('detail demonstration can be paused and stepped without consuming exercise 
 test('hidden app pauses the demonstration and requires Continue before restarting', () => {
   const p = player([item({ animation: demo() })]);
   p.advance(4);
-  p.get('.info-btn').click();
+  p.get('.ex-visual').click();
   p.hide();
   const stopped = demoPosition(p);
   p.advance(10);
@@ -741,7 +790,7 @@ test('reduced motion keeps a still frame but allows intentional playback in deta
   const p = player([item({ animation: demo() })], {}, { reducedMotion: true });
   p.advance(10);
   assert.equal(demoPosition(p), '0% 50%');
-  p.get('.info-btn').click();
+  p.get('.ex-visual').click();
   p.advance(2);
   assert.equal(demoPosition(p), '0% 50%');
   p.get('.demo-toggle').click();
@@ -762,8 +811,8 @@ test('compass demonstration visits all four directions with a return to neutral'
   assert.ok(shown.slice(4).every(x => x[0] === 'url("/poses/back-left")'));
 });
 
-test('separate-side plans restart the demonstration after their switching rest', () => {
-  const p = player([item({ unit: 'seconds', value: 5, perSide: true, sideRest: 3, animation: demo('movement') })]);
+test('separate timed sides restart the demonstration when the side changes', () => {
+  const p = player([item({ unit: 'seconds', value: 5, perSide: true, animation: demo('movement') })]);
   p.advance(11);
   assert.match(p.get('.phase').textContent, /Side 2\/2/);
   assert.equal(demoPosition(p), '0% 50%');

@@ -251,8 +251,10 @@ func TestDemoIsPublicAndEasier(t *testing.T) {
 	for day := 1; day <= TotalDays; day++ {
 		w := r.Workout(day, 0, Rests{Warmup: 5, Main: 18})
 		count := len(r.Days[day-1].Items)
-		rounds := ClampRounds(r.Days[day-1].Rounds)
-		want := len(r.Warmup)*ClampRounds(r.WarmupRounds) + count*rounds + len(r.Cooldown)
+		if r.WarmupRounds != 1 || r.Days[day-1].Rounds != 2 {
+			t.Fatalf("demo day %d has nonstandard rounds", day)
+		}
+		want := len(r.Warmup) + count*2 + len(r.Cooldown)
 		if len(w.Items) != want {
 			t.Fatalf("demo day %d: %d items, want %d", day, len(w.Items), want)
 		}
@@ -276,10 +278,7 @@ func TestDemoIsPublicAndEasier(t *testing.T) {
 	}
 }
 
-func TestClampRoundsAndFigureKey(t *testing.T) {
-	if ClampRounds(0) != 1 || ClampRounds(11) != 10 || ClampRounds(3) != 3 {
-		t.Fatal("ClampRounds")
-	}
+func TestFigureKey(t *testing.T) {
 	if FigureKey("/static/ex/m/P08.png", "X01") != "P08" {
 		t.Fatal("FigureKey path")
 	}

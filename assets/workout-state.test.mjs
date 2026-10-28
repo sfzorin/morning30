@@ -7,7 +7,7 @@ const source = readFileSync(new URL('./workout-state.js', import.meta.url), 'utf
 const plain = value => JSON.parse(JSON.stringify(value));
 const payload = (fields = {}) => ({ userId: 1, position: 0, day: 1, programKey: 'plan-a', resumeKey: 'plan-a:0:1', ...fields });
 const event = (fields = {}) => ({ eventId: 'a'.repeat(32), userId: 1, day: 1, position: 0, completedAt: '2026-10-24T21:30:00Z', completedOn: '2026-10-25', ...fields });
-const state = (fields = {}) => ({ index: 3, side: 1, phase: 'side-rest', remainingMs: 7000, nextIndex: 3, nextSide: 1, level: 0, swaps: { 3: 'replacement' }, eventId: 'a'.repeat(32), completion: null, ...fields });
+const state = (fields = {}) => ({ index: 3, side: 1, phase: 'rest', remainingMs: 7000, nextIndex: 3, nextSide: 1, level: 0, swaps: { 3: 'replacement' }, eventId: 'a'.repeat(32), completion: null, ...fields });
 const response = (e, fields = {}) => ({ ok: true, status: 200, json: async () => ({ saved: true, eventId: e.eventId, streak: 4, position: 1, ...fields }) });
 
 function browser({ disk = new Map(), fetch = async (_url, options) => response(JSON.parse(options.body)), storageFails = false } = {}) {

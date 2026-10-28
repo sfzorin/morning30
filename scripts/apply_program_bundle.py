@@ -69,9 +69,13 @@ def load_bundle(folder):
                     raise ValueError(f"Missing {doc['id']}.{lang}.voice.{field}")
     if program.get("totalDays") != 30 or len(program["days"]) != 30:
         raise ValueError("Expected a 30-day cycle")
+    if program.get("warmupRounds", 1) != 1 or not program.get("warmup") or not program.get("cooldown"):
+        raise ValueError("Every program needs one warm-up and one cool-down")
     for number, day in enumerate(program["days"], 1):
-        if day["day"] != number or day["rounds"] < 1:
+        if day["day"] != number or day["rounds"] != 2 or not day["items"]:
             raise ValueError("Invalid day numbering/rounds")
+        if not day.get("warmup", program["warmup"]) or not day.get("cooldown", program["cooldown"]):
+            raise ValueError("Every day needs a warm-up and cool-down")
         items = day.get("warmup", program["warmup"]) + day["items"] + day.get("cooldown", program["cooldown"])
         for item in items:
             doc = exercises[item["id"]]
@@ -80,8 +84,8 @@ def load_bundle(folder):
             if not isinstance(item["value"], int) or item["value"] <= 0:
                 raise ValueError("Invalid exercise count")
             for field in ("rest", "sideRest"):
-                if field in item and not 0 <= item[field] <= 90:
-                    raise ValueError(f"Invalid {field}")
+                if field in item:
+                    raise ValueError("Exercise pauses belong to user settings, not the program")
     manifest_path = folder / "images.json"
     images = json.loads(manifest_path.read_text()) if manifest_path.exists() else []
     for image in images:
