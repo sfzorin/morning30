@@ -191,11 +191,6 @@ func TestPublishedDemonstrationsAreAligned(t *testing.T) {
 	}
 	for _, doc := range docs {
 		a := doc.Animation
-		// These three drills are deliberately published as text first. Their
-		// illustrations are a separate release after the program is live.
-		if a == nil && (doc.ID == "IT34" || doc.ID == "IT35" || doc.ID == "IT36") && len(doc.Poses) == 0 {
-			continue
-		}
 		if a == nil || !catalog.ValidAnimation(a) {
 			t.Fatalf("missing/invalid demonstration: %s", doc.ID)
 		}

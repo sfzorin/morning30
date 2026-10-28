@@ -7584,6 +7584,14 @@
           "finish": "Fatto. Fermati comodamente in piedi."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it34-v1"
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it34-demo-v1"
     }
   },
   {
@@ -7811,6 +7819,14 @@
           "finish": "Fatto. Fermati comodamente in piedi."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it35-v1"
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it35-demo-v1"
     }
   },
   {
@@ -8044,6 +8060,14 @@
         "left",
         "right"
       ]
+    },
+    "poses": [
+      "ilya-boy-it36-v1"
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it36-demo-v1"
     }
   }
 ]

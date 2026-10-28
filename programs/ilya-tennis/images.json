@@ -460,5 +460,47 @@
     "kind": "tennis-demo",
     "label": "Шаг, подготовительный поворот и возврат — движение",
     "sex": "m"
+  },
+  {
+    "id": "ilya-boy-it34-v1",
+    "file": "images/it34-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Quick lateral shuffles · boy"
+  },
+  {
+    "id": "ilya-boy-it34-demo-v1",
+    "file": "animations/aligned/it34-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Quick lateral shuffles · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it35-v1",
+    "file": "images/it35-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Quick steps over a line · boy"
+  },
+  {
+    "id": "ilya-boy-it35-demo-v1",
+    "file": "animations/aligned/it35-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Quick steps over a line · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it36-v1",
+    "file": "images/it36-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Quick feet and direction reaction · boy"
+  },
+  {
+    "id": "ilya-boy-it36-demo-v1",
+    "file": "animations/aligned/it36-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Quick feet and direction reaction · three-frame demonstration"
   }
 ]

@@ -71,6 +71,29 @@ class AlignmentTests(unittest.TestCase):
             with Image.open(source) as original:
                 self.assertEqual(original.size, (900, 300))
 
+    def test_new_line_drill_keeps_line_still_while_either_foot_moves_forward(self):
+        strip = Image.new("RGB", (900, 300), "white")
+        for index, (left_y, right_y) in enumerate([(220, 220), (270, 220), (220, 270)]):
+            frame = Image.new("RGB", (300, 300), "white")
+            draw = ImageDraw.Draw(frame)
+            draw.rectangle((0, 235, 299, 241), fill=(50, 150, 240))
+            draw.rectangle((110, 30, 190, 75), fill=(100, 60, 30))
+            draw.rectangle((100, 80, 200, 190), fill=(30, 130, 220))
+            draw.rectangle((100, 190, 120, left_y), fill=(240, 160, 110))
+            draw.rectangle((180, 190, 200, right_y), fill=(240, 160, 110))
+            strip.paste(frame, (index*300, 0))
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder)/"it35-v1.png"
+            strip.save(source)
+            output = Path(folder)/"aligned"
+            align.align_group([source], output, 320)
+            with Image.open(output/source.name) as result:
+                features = [align.analyse(result.crop((i*320, 0, (i+1)*320, 320)), False, line_anchor=True) for i in range(3)]
+            anchors = [row["anchor"][1] for row in features]
+            self.assertLessEqual(max(anchors)-min(anchors), 1)
+            self.assertLess(features[0]["bounds"][3], anchors[0])
+            self.assertTrue(all(row["bounds"][3] > row["anchor"][1] for row in features[1:]))
+
 
 if __name__ == "__main__":
     unittest.main()

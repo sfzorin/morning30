@@ -20,10 +20,12 @@ from PIL import Image
 
 FLOOR_IDS = {"it09", "it10", "it12", "it14", "it20", "it21", "it22", "it23", "it27", "it28"}
 FOOT_ANCHOR_IDS = {"it05", "it26"}  # a hinge moves the head, not the planted feet
+LINE_ANCHOR_IDS = {"it29", "it35"}  # keep the floor line fixed as either foot crosses it
 AIR_FRAMES = {"it07": {0}, "it24": {1}}
 # A stable camera must still show intentional lateral travel. Use a small,
 # explicit excursion within the shared crop, not the generator's panel drift.
-SIDE_TRAVEL = {"it07": [0, -.045, .045], "it15": [0, -.045, .045], "it24": [-.045, 0, .045]}
+SIDE_TRAVEL = {"it07": [0, -.045, .045], "it15": [0, -.045, .045], "it24": [-.045, 0, .045],
+               "it34": [0, -.045, .045], "it36": [0, -.045, .045]}
 NO_ZOOM_IDS = {"it13", "it28", "it33"}  # changing orientation is not camera zoom
 HEAD_ANCHOR_IDS = {"it12", "it13"}  # stationary head/shoulders while limbs move
 
@@ -145,7 +147,7 @@ def align_group(paths, output, size=640):
             image = source.crop((left, 0, right, source.height))
             try:
                 features = analyse(image, floor, exercise_id in FOOT_ANCHOR_IDS,
-                                   exercise_id == "it29", exercise_id in HEAD_ANCHOR_IDS,
+                                   exercise_id in LINE_ANCHOR_IDS, exercise_id in HEAD_ANCHOR_IDS,
                                    (-1 if "other" in path.name else 1) if exercise_id == "it32" else 0)
             except ValueError as error:
                 raise ValueError(f"{path.name} frame {index}: {error}") from error

@@ -145,16 +145,17 @@ requires the exercises to exist and only changes their `poses` and supplied
 
 ## Character and illustrations
 
-The 33 previously illustrated exercises use the same fictional eight-year-old boy from
-`references/boy-turnaround.png` and `references/boy-ready.png`. The 31 selected
+All 36 exercises use the same fictional eight-year-old boy from
+`references/boy-turnaround.png` and `references/boy-ready.png`. The 34 selected
 PNG illustrations live in `images/`; IT02/IT03 share the ankle-rock pose and
 IT01/IT31 share the walking pose. These stills remain library thumbnails and
 fallbacks if a demonstration cannot load.
 
-The library now has 36 exercises. IT34–IT36 are published first with complete
-text and voice in all seven languages. Their illustrations are pending a separate
-second publication using the same boy; no unrelated image is assigned as a
-placeholder.
+IT34–IT36 were published first with complete text and voice in all seven
+languages, followed by a separate illustration release. Each new drill has three
+aligned frames showing neutral position and work with both legs. The exact
+ImageGen prompts and the opposite-leg correction are in
+`prompts-dynamic-footwork.json`.
 
 `animations/*.png` preserves the original generated strips; `animations/aligned/`
 contains the published strips of three equal 640×640 square frames. The
@@ -166,9 +167,11 @@ frames in order; `alternating` returns to neutral between all four directions
 of the compass exercise. This is a technique demonstration, not a rep counter or a pace
 to match. The prescribed dose and self-managed sides remain unchanged.
 
-Tapping the figure opens the technique card and pauses the workout clock. The
+Tapping the figure or exercise name opens the technique card and pauses the workout clock. The
 demonstration can be paused, played or inspected frame by frame. Leaving the app
-stops playback; the workout still requires Continue on return. Reduced-motion
+stops playback; the workout still requires Continue on return. During active
+reaction work the figure stays neutral so the demonstration cannot contradict
+the random signal; its animation remains available in the technique card. Reduced-motion
 preferences disable autoplay, with manual playback available in the card.
 
 Only the current exercise's strips are loaded. Animation URLs are immutable pose
