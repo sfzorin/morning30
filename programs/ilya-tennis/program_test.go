@@ -73,8 +73,11 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 	if bytes.Contains(raw, []byte(`"sideRest"`)) {
 		t.Fatal("Ilya manages side changes without separate pauses")
 	}
-	wantDuration := []int{1580, 1238, 761, 1628, 1238, 761}
+	wantDuration := []int{1580, 1238, 1192, 1628, 1238, 1192}
 	wantMain := []int{6, 5, 8, 6, 5, 8}
+	if p.WarmupRounds != 1 || len(p.Warmup) != 5 || len(p.Cooldown) != 3 {
+		t.Fatal("every day needs the prescribed warm-up and cool-down once")
+	}
 	// Combined main-block dose across both rounds and both sides. Reordering
 	// into circuits must not multiply the earlier two-set workload again.
 	wantDose := []map[string]int{
@@ -102,6 +105,27 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 		workout := p.Workout(i+1, 3, content.Rests{Warmup: 40, Main: 40, Cooldown: 40})
 		if !workout.SelfManagedSides {
 			t.Fatal("player must receive self-managed sides")
+		}
+		if !reflect.DeepEqual(p.WarmupFor(i), p.Warmup) || !reflect.DeepEqual(p.CooldownFor(i), p.Cooldown) {
+			t.Fatalf("day %d must retain both shared phases, including recovery days", i+1)
+		}
+		if len(workout.Items) != len(p.Warmup)+2*len(day.Items)+len(p.Cooldown) {
+			t.Fatalf("day %d must contain warm-up, two main rounds, and cool-down", i+1)
+		}
+		for _, phase := range []struct {
+			slot   content.Slot
+			items  []content.RItem
+			offset int
+		}{
+			{content.Warmup, p.Warmup, 0},
+			{content.Cooldown, p.Cooldown, len(workout.Items) - len(p.Cooldown)},
+		} {
+			for n, want := range phase.items {
+				got := workout.Items[phase.offset+n]
+				if got.Slot != phase.slot || got.ExerciseID != want.ID || got.Round != 1 {
+					t.Fatalf("day %d must show %s in its own %s phase once", i+1, want.ID, phase.slot)
+				}
+			}
 		}
 		dose := map[string]int{}
 		main := []content.Item{}
@@ -132,9 +156,6 @@ func TestPrescribedSixDayCycle(t *testing.T) {
 		}
 		if workout.EstSec != wantDuration[i%6] {
 			t.Fatalf("day %d duration=%d want %d", i+1, workout.EstSec, wantDuration[i%6])
-		}
-		if i%3 == 2 && (len(p.WarmupFor(i)) != 0 || len(p.CooldownFor(i)) != 0) {
-			t.Fatalf("recovery day %d inherited phases", i+1)
 		}
 		if i >= 6 && !reflect.DeepEqual(day.Items, p.Days[i%6].Items) {
 			t.Fatalf("day %d adds unapproved progression", i+1)

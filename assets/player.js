@@ -275,8 +275,27 @@
   //                  half-time): cancels whatever is speaking, then speaks.
   //   utter(text)  — plain queued speech (narration, the rest announcement,
   //                  finish messages); any sayNow cuts the current line off.
-  function utter(text) {
-    if (!voiceOn || !text || disposed || paused || document.visibilityState !== "visible" || !("speechSynthesis" in window)) return;
+  var speechEpoch = 0, speechCheckTimer = null, speechUtterances = [];
+  function voiceStatus(key) {
+    if (!el.voiceStatus) return;
+    el.voiceStatus.textContent = key ? t(key) : "";
+    el.voiceStatus.classList.toggle("hidden", !key);
+  }
+  function clearSpeechCheck() {
+    if (speechCheckTimer) clearTimeout(speechCheckTimer);
+    speechCheckTimer = null;
+  }
+  function speechError(code) {
+    if (code === "canceled" || code === "interrupted") return;
+    clearSpeechCheck();
+    if (code === "not-allowed") voiceStatus("voice_allow");
+    else if (code === "language-unavailable" || code === "voice-unavailable" || code === "synthesis-unavailable") voiceStatus("voice_engine");
+    else voiceStatus("voice_failed");
+  }
+  function utter(text, manualCheck) {
+    if (!voiceOn || !text || disposed || (paused && !manualCheck) || document.visibilityState !== "visible") return;
+    if (!("speechSynthesis" in window)) { speechError("synthesis-unavailable"); return; }
+    var epoch = speechEpoch;
     try {
       if (!voices.length || !chosenVoice) loadVoices();
       var u = new SpeechSynthesisUtterance(text);
@@ -287,8 +306,26 @@
         u.lang = voiceLang; // no matching voice installed on this device
       }
       u.rate = 1.0;
+      u.volume = 1;
+      speechUtterances.push(u);
+      function release() { speechUtterances = speechUtterances.filter(function (x) { return x !== u; }); }
+      u.onstart = function () {
+        if (disposed || epoch !== speechEpoch) return;
+        if (manualCheck) { clearSpeechCheck(); voiceStatus("voice_listen"); }
+        else voiceStatus("");
+      };
+      u.onend = function () {
+        release();
+        if (disposed || epoch !== speechEpoch) return;
+        if (manualCheck) { clearSpeechCheck(); voiceStatus("voice_listen"); }
+      };
+      u.onerror = function (event) {
+        release();
+        if (!disposed && epoch === speechEpoch) speechError(event.error);
+      };
+      if (window.speechSynthesis.paused && typeof window.speechSynthesis.resume === "function") window.speechSynthesis.resume();
       window.speechSynthesis.speak(u);
-    } catch (e) {}
+    } catch (e) { speechError("synthesis-failed"); }
   }
   var speak = utter; // queued (finish / celebration messages)
   function sayNow(text) {
@@ -297,6 +334,9 @@
     utter(text);
   }
   function shutUp() {
+    speechEpoch++;
+    clearSpeechCheck();
+    speechUtterances = [];
     if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
   }
 
@@ -409,6 +449,7 @@
     resumeNeeded = true;
     clearNarr(); stopFrames(); shutUp(); releaseWake();
     if (el.infoOverlay) el.infoOverlay.classList.add("hidden");
+    if (el.voiceTools) el.voiceTools.classList.remove("hidden");
     root.classList.add("frozen");
     checkpoint();
     if (el.resumeOverlay) el.resumeOverlay.classList.remove("hidden");
@@ -742,6 +783,7 @@
     renderProgress(items.length, null);
     clearTicker(); activeClock = null;
     stopFrames(); clearNarr(); shutUp(); releaseWake();
+    if (el.voiceTools) el.voiceTools.classList.add("hidden");
     el.resumeOverlay.classList.add("hidden");
     root.classList.remove("frozen");
     el.stage.classList.add("hidden"); el.controls.classList.add("hidden");
@@ -941,6 +983,7 @@
     var it = items[i];
     if (!it) return;
     infoWasPaused = paused;
+    if (el.voiceTools) el.voiceTools.classList.add("hidden");
     freezeClock();
     paused = true;
     clearNarr(); stopFrames(); shutUp();
@@ -963,6 +1006,7 @@
   function closeInfo() {
     stopFrames();
     el.infoOverlay.classList.add("hidden");
+    if (el.voiceTools) el.voiceTools.classList.remove("hidden");
     if (resumeNeeded) return;
     paused = infoWasPaused;
     if (!paused) restorePhase();
@@ -986,6 +1030,7 @@
     state.swaps[i] = it.repl.id;
     items[i] = replacementItem(it);
     el.infoOverlay.classList.add("hidden");
+    if (el.voiceTools) el.voiceTools.classList.remove("hidden");
     paused = false;
     shutUp();
     startItem(i);
@@ -1030,6 +1075,23 @@
   el.resume = addNode(el.resumeOverlay, "button", "resume-continue btn primary", t("resume"));
   el.restart = addNode(el.resumeOverlay, "button", "resume-restart btn", t("restart"));
   el.resume.type = el.restart.type = "button";
+  if (voiceOn) {
+    el.voiceTools = addNode(root, "div", "voice-tools");
+    el.voiceCheck = addNode(el.voiceTools, "button", "voice-check", t("voice_check"));
+    el.voiceCheck.type = "button";
+    el.voiceStatus = addNode(el.voiceTools, "p", "voice-status hidden");
+    el.voiceStatus.setAttribute("role", "status");
+    el.voiceCheck.addEventListener("click", function () {
+      if (disposed || finished || document.visibilityState !== "visible" || redirectAfterRestart()) return;
+      // The explicit tap unlocks speech where automatic playback is blocked.
+      // Pause the workout so its countdown cannot cut off the test phrase.
+      pauseForReturn();
+      loadVoices();
+      voiceStatus("voice_listen");
+      speechCheckTimer = setTimeout(function () { speechCheckTimer = null; voiceStatus("voice_failed"); }, 8000);
+      utter(t("voice_sample"), true);
+    });
+  }
   el.saveStatus = addNode(el.doneOverlay, "p", "save-status");
   el.saveStatus.setAttribute("role", "status");
   el.saveRetry = addNode(el.doneOverlay, "button", "save-retry btn hidden", t("save_retry"));
@@ -1080,10 +1142,18 @@
   }
   el.resume.addEventListener("click", function () {
     if (disposed || finished || document.visibilityState !== "visible" || redirectAfterRestart()) return;
+    shutUp();
     resumeNeeded = false; paused = false;
     el.resumeOverlay.classList.add("hidden");
     root.classList.remove("frozen");
     restorePhase();
+    if (state.phase === "exercise") {
+      var resumed = items[i];
+      if (resumed.unit !== "seconds" || state.remainingMs > 3000) sayNow(cues.go);
+      if (resumed.unit !== "seconds" || state.remainingMs > 7000) startNarr(resumed);
+    } else if (state.remainingMs > 3000) {
+      sayNow(state.phase === "rest" ? (cues.rest || t("rest")) : t("ready"));
+    }
     requestWake();
   });
   el.restart.addEventListener("click", function () {

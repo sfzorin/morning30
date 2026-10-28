@@ -8,15 +8,15 @@ Italian instructions and voice cues. No automatic progression or level scaling.
 | --- | --- | --- |
 | 1 | Strength A and controlled stops | 26:20 |
 | 2 | Footwork and coordination | 20:38 |
-| 3 | Recovery | 12:41 |
+| 3 | Recovery | 19:52 |
 | 4 | Strength B and controlled landings | 27:08 |
 | 5 | Footwork and balance | 20:38 |
-| 6 | Same recovery session as day 3 | 12:41 |
+| 6 | Same recovery session as day 3 | 19:52 |
 
 Every day has **two complete main rounds**: A → B → C → …, then the same
 sequence again. `program.json` stores each main exercise once with `rounds: 2`.
-The shared warm-up and cool-down run once. Recovery days use explicit empty
-warm-up/cool-down arrays and two lighter rounds of their own sequence.
+The shared warm-up and cool-down run once every day, including recovery days.
+Recovery days keep two lighter main rounds between these shared phases.
 
 `selfManagedSides: true` means the child handles both sides on one exercise
 screen. Repetition counts are **per side** where marked; tap Done after both.
@@ -43,7 +43,7 @@ combined timer; for example, 20 seconds each displays 40 seconds total.
 | 4 | IT24 ×6 total; IT25 ×10; IT09 ×6; IT26 ×10; IT27 ×6 each; IT28 15 s each | 90 s after IT24, otherwise 60 s |
 | 5 | IT29 ×6 full crossing-and-return sequences; IT30 ×10 total diagonal steps with return; IT31 30 s; IT32 ×3 three-tap sequences each; IT33 ×6 each | 45 s |
 
-The pause also separates the two main rounds. On active days the same pause
+The pause also separates the two main rounds. Every day the same pause
 follows the final main exercise before cool-down. No rest follows the final
 exercise of the whole session. Durations estimate repetition tempo, include
 prescribed rests, and exclude the player's initial three-second ready count.

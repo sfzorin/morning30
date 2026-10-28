@@ -48,6 +48,8 @@ function player(items, extra = {}, options = {}) {
   const nodes = new Map();
   const timers = new Map();
   const spoken = [];
+  const utterances = [];
+  let speechResumes = 0;
   const navigations = [];
   const images = [];
   const persistence = options.persistence || memoryState(options);
@@ -101,8 +103,11 @@ function player(items, extra = {}, options = {}) {
   const window = eventTarget({
     matchMedia: () => ({ matches: !!options.reducedMotion }),
     MorningWorkoutState: persistence.api,
-    speechSynthesis: { getVoices: () => [], cancel() {}, speak: utterance => spoken.push(utterance.text) },
+    speechSynthesis: { paused: !!options.speechPaused, getVoices: () => [], cancel() {},
+      resume() { this.paused = false; speechResumes++; },
+      speak(utterance) { utterances.push(utterance); spoken.push(utterance.text); } },
   });
+  if (options.noSpeech) delete window.speechSynthesis;
   const base = Date.parse('2026-10-24T08:00:00Z');
   class ClockDate extends Date {
     constructor(...args) { super(...(args.length ? args : [base + now])); }
@@ -145,7 +150,8 @@ function player(items, extra = {}, options = {}) {
     now = end;
   }
   return {
-    get, advance, spoken, navigations, images, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
+    get, advance, spoken, utterances, navigations, images, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
+    get speechResumes() { return speechResumes; },
     get completed() { return [...persistence.data.events.values()]; },
     hide() { document.visibilityState = 'hidden'; document.dispatch('visibilitychange'); window.dispatch('pagehide'); },
     show() { document.visibilityState = 'visible'; document.dispatch('visibilitychange'); window.dispatch('pageshow'); window.dispatch('focus'); },
@@ -153,6 +159,69 @@ function player(items, extra = {}, options = {}) {
 }
 const item = (fields = {}) => ({ id: 'a', name: 'Exercise', unit: 'reps', value: 6, slot: 'main', round: 1, rest: 0, ...fields });
 const hidden = node => node.classList.contains('hidden');
+
+test('speech failures are visible and a direct voice check pauses without losing workout time', () => {
+  const p = player([item({ unit: 'seconds', value: 30, correct: ['Stay steady'] })], { voiceMode: 'normal' });
+  p.advance(3);
+  p.utterances.at(-1).onerror({ error: 'not-allowed' });
+  assert.equal(p.get('.voice-status').textContent, 'voice_allow');
+  p.get('.voice-check').click();
+  assert.equal(p.spoken.at(-1), 'voice_sample');
+  const remaining = p.persistence.data.checkpoint.state.remainingMs;
+  p.advance(2);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining);
+  p.utterances.at(-1).onstart();
+  p.utterances.at(-1).onend();
+  assert.equal(p.get('.voice-status').textContent, 'voice_listen'); // only the user can confirm audibility
+  p.get('.resume-continue').click();
+  p.advance(3);
+  assert.ok(p.spoken.includes('Stay steady'));
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining - 3000);
+});
+
+test('voice checks report missing engines, language failures and silent engines', () => {
+  const missing = player([item()], { voiceMode: 'normal' }, { noSpeech: true });
+  assert.equal(missing.get('.voice-status').textContent, 'voice_engine');
+  const p = player([item()], { voiceMode: 'normal' });
+  p.get('.voice-check').click();
+  p.utterances.at(-1).onerror({ error: 'language-unavailable' });
+  assert.equal(p.get('.voice-status').textContent, 'voice_engine');
+  p.get('.voice-check').click();
+  p.advance(8);
+  assert.equal(p.get('.voice-status').textContent, 'voice_failed');
+});
+
+test('speech recovers a paused synthesizer and ignores canceled or stale utterances', () => {
+  const p = player([item()], { voiceMode: 'normal' }, { speechPaused: true });
+  assert.equal(p.speechResumes, 1);
+  p.utterances.at(-1).onerror({ error: 'canceled' });
+  assert.ok(hidden(p.get('.voice-status')));
+  const old = p.utterances.at(-1);
+  p.get('.voice-check').click();
+  old.onerror({ error: 'network' });
+  assert.equal(p.get('.voice-status').textContent, 'voice_listen');
+  p.cleanup();
+  p.utterances.at(-1).onerror({ error: 'network' });
+  p.advance(10);
+  assert.equal(p.get('.voice-status').textContent, 'voice_listen');
+});
+
+test('voice controls stay available on resume without covering exercise details or completion', () => {
+  const p = player([item()], { voiceMode: 'normal' });
+  p.advance(3);
+  p.get('.info-btn').click();
+  assert.ok(hidden(p.get('.voice-tools')));
+  p.get('.info-close').click();
+  assert.ok(!hidden(p.get('.voice-tools')));
+  p.get('.info-btn').click();
+  p.hide();
+  p.show();
+  assert.ok(!hidden(p.get('.voice-tools')));
+  p.get('.resume-continue').click();
+  p.get('.ctl-done').click();
+  assert.ok(!hidden(p.get('.done-overlay')));
+  assert.ok(hidden(p.get('.voice-tools')));
+});
 
 test('unillustrated exercises clear the previous image until pictures are published', () => {
   const p = player([item({ svg: '/poses/old' }), item({ id: 'new' }), item({ svg: '/poses/new' })]);

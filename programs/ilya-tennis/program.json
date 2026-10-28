@@ -285,9 +285,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 4,
@@ -489,9 +487,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 7,
@@ -693,9 +689,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 10,
@@ -897,9 +891,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 13,
@@ -1101,9 +1093,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 16,
@@ -1305,9 +1295,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 19,
@@ -1509,9 +1497,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 22,
@@ -1713,9 +1699,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 25,
@@ -1917,9 +1901,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     },
     {
       "day": 28,
@@ -2121,9 +2103,7 @@
           "round": 1,
           "rest": 15
         }
-      ],
-      "warmup": [],
-      "cooldown": []
+      ]
     }
   ],
   "selfManagedSides": true

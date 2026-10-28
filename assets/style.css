@@ -459,6 +459,9 @@ body:has(.player) {
   background: radial-gradient(120% 60% at 50% 0%, #15233e, var(--bg));
 }
 .player-top { display: flex; align-items: center; gap: 12px; position: relative; z-index: 10; }
+.voice-tools { order: -1; position: relative; z-index: 35; flex-shrink: 0; text-align: center; }
+.voice-check { border: 0; border-radius: 8px; padding: 7px 12px; background: var(--card2); color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; }
+.voice-status { margin: 6px auto; max-width: 34em; padding: 8px; border-radius: 8px; background: var(--card2); color: var(--fg); font-size: 13px; line-height: 1.4; }
 .quit { font-size: 20px; color: var(--muted); width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; }
 /* Three-colour progress bar: one segment per phase (warm-up / main / cool-down). */
 .pbar { flex: 1; height: 8px; display: flex; gap: 3px; }
