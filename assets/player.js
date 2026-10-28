@@ -154,6 +154,51 @@
   }
   function running() { return !disposed && !finished && !paused && document.visibilityState === "visible"; }
 
+  // Reaction signals use elapsed WORK time, so hidden time and reading a detail
+  // card cannot produce overdue bursts. Every resume starts a fresh signal window.
+  var reactionNextMs = null, reactionHideMs = null, reactionBag = [];
+  var reactionMinSeconds = 3, reactionMaxSeconds = 5;
+  function reactionOf(it) {
+    var r = it && it.reaction, d = r && r.directions;
+    return it && it.unit === "seconds" && !it.perSide && Array.isArray(d) && d.length === 2 &&
+      ((d[0] === "left" && d[1] === "right") || (d[0] === "right" && d[1] === "left")) ? r : null;
+  }
+  function clearReaction() {
+    reactionNextMs = null; reactionHideMs = null; reactionBag = [];
+    if (el.reaction) el.reaction.classList.add("hidden");
+  }
+  function startReaction(it) {
+    clearReaction();
+    if (reactionOf(it) && running()) reactionNextMs = state.remainingMs - reactionMinSeconds * 1000;
+  }
+  function drawReactionDirection(it) {
+    if (!reactionBag.length) {
+      // A shuffled bag gives both directions without a predictable alternation.
+      reactionBag = it.reaction.directions.concat(it.reaction.directions);
+      for (var n = reactionBag.length - 1; n > 0; n--) {
+        var j = Math.floor(Math.random() * (n + 1));
+        var swap = reactionBag[n]; reactionBag[n] = reactionBag[j]; reactionBag[j] = swap;
+      }
+    }
+    return reactionBag.pop();
+  }
+  function tickReaction(it) {
+    if (!reactionOf(it) || !running()) return;
+    if (state.remainingMs <= 3000) { clearReaction(); return; }
+    if (reactionHideMs != null && state.remainingMs <= reactionHideMs) {
+      el.reaction.classList.add("hidden"); reactionHideMs = null;
+    }
+    if (reactionNextMs == null || state.remainingMs > reactionNextMs) return;
+    var direction = drawReactionDirection(it);
+    var word = cues["reaction_" + direction] || direction;
+    el.reactionArrow.textContent = direction === "left" ? "←" : "→";
+    el.reactionWord.textContent = word;
+    el.reaction.classList.remove("hidden");
+    sayNow(word);
+    reactionHideMs = state.remainingMs - 2000;
+    var delay = reactionMinSeconds + Math.floor(Math.random() * (reactionMaxSeconds - reactionMinSeconds + 1));
+    reactionNextMs = state.remainingMs - delay * 1000;
+  }
 
   function framesOf(it) {
     if (it && it.frames && it.frames.length) return it.frames;
@@ -196,7 +241,9 @@
   function playFrames(it, inInfo) {
     stopFrames();
     var a = animationOf(it), count = frameCount(it);
-    if (count < 2 || disposed || document.visibilityState !== "visible" || (!inInfo && !running())) return;
+    // During reaction work the random cue is the only directional instruction.
+    // Keep the stage figure neutral; the detail card can still demonstrate it.
+    if (count < 2 || disposed || document.visibilityState !== "visible" || (!inInfo && (!running() || reactionOf(it)))) return;
     // Return through the middle for a movement, or through neutral between sides.
     var order = [];
     if (a && a.kind === "sequence") {
@@ -222,7 +269,7 @@
     var a = animationOf(it), frames = framesOf(it), count = frameCount(it);
     [el.visual, el.infoVisual].forEach(function (visual) {
       if (!visual) return;
-      visual.classList.toggle("hidden", !count);
+      visual.classList.toggle("hidden", !count && !(visual === el.visual && reactionOf(it)));
       visual.style.backgroundImage = a ? 'url("' + a.src + '")' : "none";
       visual.style.backgroundSize = a ? (a.frames * 100) + "% 100%" : "";
       visual.setAttribute("aria-label", it.name || "");
@@ -345,7 +392,7 @@
   // cue), spaced out and low priority. runSide stops it before the closing
   // countdown; any sayNow cue cuts the current line off. detailed = all cues.
   function startNarr(it) {
-    if (!voiceOn || !talkative()) return;
+    if (!voiceOn || !talkative() || reactionOf(it)) return;
     var c = it.correct || [], w = it.wrong || [], k;
     var nc = voiceMode === "detailed" ? c.length : Math.min(2, c.length);
     var nw = voiceMode === "detailed" ? w.length : Math.min(1, w.length);
@@ -431,7 +478,7 @@
     freezeClock();
     paused = true;
     resumeNeeded = true;
-    clearNarr(); stopFrames(); shutUp(); releaseWake();
+    clearNarr(); clearReaction(); stopFrames(); shutUp(); releaseWake();
     if (el.infoOverlay) el.infoOverlay.classList.add("hidden");
     if (el.voiceStatus) el.voiceStatus.classList.toggle("hidden", !el.voiceStatus.textContent);
     root.classList.add("frozen");
@@ -447,7 +494,7 @@
     if (!Number.isFinite(deadline) || Date.now() < deadline) return false;
     redirecting = true;
     freezeClock(); paused = true;
-    clearNarr(); stopFrames(); shutUp(); releaseWake();
+    clearNarr(); clearReaction(); stopFrames(); shutUp(); releaseWake();
     location.assign("/start");
     return true;
   }
@@ -560,6 +607,7 @@
     state.nextIndex = i;
     state.nextSide = side;
     state.remainingMs = it.unit === "seconds" ? (remainingMs == null ? state.sideDurationMs : remainingMs) : null;
+    startReaction(it);
     if (el.rest) el.rest.classList.add("hidden");
     if (el.stage) el.stage.classList.remove("hidden");
     if (el.controls) el.controls.classList.remove("hidden");
@@ -583,7 +631,8 @@
       var lastSide = side >= sides(it);
       countdown(D, function (r) {
         el.value.textContent = (r + (selfManagedSides && sides(it) === 2 && side === 1 ? D : 0)) + "″";
-        if (!it.perSide && D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
+        tickReaction(it);
+        if (!reactionOf(it) && !it.perSide && D >= 12 && r === halfAt && r > 5) flashHalf(); // mid-set, clear of the count
         if (r === 4) clearNarr();                // silence narration before the count
         if (r <= 3 && r >= 1 && lastSide) sayNow(String(r));
       }, function () { nextSide(it, side); }, remainingMs);
@@ -672,7 +721,7 @@
   // The get-ready before an exercise is just the spoken 3-2-1, leading into "Go".
   function doRest(seconds, upItem, isReady, onDone, remainingMs) {
     if (!el.rest) { if (onDone) onDone(); return; }
-    clearNarr(); stopFrames();
+    clearNarr(); clearReaction(); stopFrames();
     state.phase = isReady ? "ready" : "rest";
     state.nextIndex = items.indexOf(upItem);
     state.nextSide = 1;
@@ -783,7 +832,7 @@
     checkpoint();
     renderProgress(items.length, null);
     clearTicker(); activeClock = null;
-    stopFrames(); clearNarr(); shutUp(); releaseWake();
+    stopFrames(); clearNarr(); clearReaction(); shutUp(); releaseWake();
     if (el.voiceStatus) el.voiceStatus.classList.add("hidden");
     el.resumeOverlay.classList.add("hidden");
     root.classList.remove("frozen");
@@ -992,7 +1041,7 @@
     if (el.voiceStatus) el.voiceStatus.classList.add("hidden");
     freezeClock();
     paused = true;
-    clearNarr(); stopFrames(); shutUp();
+    clearNarr(); clearReaction(); stopFrames(); shutUp();
     checkpoint();
     paintFrame(it, frameIdx);
     el.infoName.textContent = it.name;
@@ -1028,7 +1077,7 @@
     return {
       id: r.id, unit: r.unit, value: r.value, scale: r.scale, slot: it.slot, perSide: r.perSide,
       round: it.round, rest: it.rest, name: r.name, hint: r.hint, warning: r.warning,
-      svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), animation: r.animation, desc: "", howTo: [], correct: [], wrong: [],
+      svg: r.svg, frames: r.frames || (r.svg ? [r.svg] : []), animation: r.animation, reaction: r.reaction, desc: "", howTo: [], correct: [], wrong: [],
       breathing: "", safety: "", vStart: cues.go, vMid: [], vLast: cues.five || "",
       vFinish: cues.well_done, repl: null
     };
@@ -1046,6 +1095,7 @@
     startItem(i);
   }
   if (el.visual || el.svg) (el.visual || el.svg).addEventListener("click", openInfo);
+  if (el.name) el.name.addEventListener("click", openInfo);
   if (el.infoClose) el.infoClose.addEventListener("click", closeInfo);
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
   if (el.demoToggle) el.demoToggle.addEventListener("click", function () {
@@ -1075,6 +1125,11 @@
     parent.appendChild(node);
     return node;
   }
+  el.reaction = addNode(el.visual || el.stage, "span", "reaction-cue hidden");
+  el.reaction.setAttribute("role", "status");
+  el.reactionArrow = addNode(el.reaction, "span", "reaction-arrow");
+  el.reactionArrow.setAttribute("aria-hidden", "true");
+  el.reactionWord = addNode(el.reaction, "span", "reaction-word");
   el.resumeOverlay = addNode(root, "div", "resume-overlay rest-overlay hidden");
   el.resumeOverlay.style.zIndex = "30";
   el.resumeOverlay.setAttribute("role", "dialog");
@@ -1186,7 +1241,7 @@
   $sys.clean(function () {
     if (!finished) { freezeClock(); checkpoint(); }
     disposed = true;
-    clearTicker(); stopFrames(); clearNarr(); shutUp(); releaseWake();
+    clearTicker(); stopFrames(); clearNarr(); clearReaction(); shutUp(); releaseWake();
     unsubscribe();
     document.removeEventListener("visibilitychange", onVisibility);
     window.removeEventListener("pagehide", pauseForReturn);

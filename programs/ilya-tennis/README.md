@@ -26,10 +26,10 @@ Repetition exercises use counts and Done, not a countdown.
 
 | Cycle day | Session | Main sequence, repeated twice |
 | --- | --- | --- |
-| 1 | Strength A and controlled stops | IT07, IT08, IT09, IT10, IT11, IT12 |
+| 1 | Strength A, quick feet and reaction | IT07, IT34, IT08, IT09, IT35, IT11, IT36, IT12 |
 | 2 | Footwork and coordination | IT15, IT16, IT17, IT18, IT19 |
 | 3 | Light movement and mobility | IT01, IT03, IT20, IT21, IT22, IT13, IT23, IT14 |
-| 4 | Strength B and controlled landings | IT24, IT25, IT09, IT26, IT27, IT28 |
+| 4 | Strength B, quick feet and reaction | IT24, IT34, IT25, IT09, IT35, IT27, IT36, IT28 |
 | 5 | Footwork and balance | IT29, IT30, IT31, IT32, IT33 |
 | 6 | Light movement and mobility | Same sequence and doses as day 3 |
 
@@ -41,7 +41,6 @@ steps are seconds; other numbers are repetitions or complete sequences.
 | IT07 hop, step, stop (total) | 6 | 6 | 6 | 6 | 6 |
 | IT08 reverse lunge (each) | 8 | 9 | 10 | 11 | 12 |
 | IT09 push-up, 2-second descent | **6** | **8** | **10** | **12** | **14** |
-| IT10 W arm lift | 10 | 10 | 12 | 12 | 14 |
 | IT11 single-leg calf raise (each) | 10 | 11 | 12 | 13 | 14 |
 | IT12 dead bug (each) | 6 | 7 | 8 | 9 | 10 |
 | IT15 side steps (seconds) | 40 | 40 | 45 | 45 | 50 |
@@ -51,7 +50,6 @@ steps are seconds; other numbers are repetitions or complete sequences.
 | IT19 preparation turn (each) | 10 | 11 | 12 | 13 | 14 |
 | IT24 lateral jump and hold (total) | 6 | 6 | 6 | 6 | 6 |
 | IT25 squat, two 0.5 kg dumbbells | 12 | 13 | 14 | 15 | 16 |
-| IT26 dumbbell row | 12 | 13 | 14 | 15 | 16 |
 | IT27 single-leg bridge (each) | 8 | 9 | 10 | 11 | 12 |
 | IT28 side plank from knees (seconds each) | 20 | 25 | 30 | 35 | 40 |
 | IT29 line crossing and return (sequences) | 10 | 11 | 12 | 13 | 14 |
@@ -59,6 +57,27 @@ steps are seconds; other numbers are repetitions or complete sequences.
 | IT31 foot rhythm (seconds) | 40 | 40 | 45 | 45 | 50 |
 | IT32 three toe taps (sequences each) | 5 | 5 | 6 | 6 | 7 |
 | IT33 step, preparation turn, return (each) | 10 | 11 | 12 | 13 | 14 |
+| IT34 quick lateral shuffles (seconds) | 30 | 30 | 35 | 35 | 40 |
+| IT35 quick alternating steps over a line and back (seconds) | 30 | 30 | 35 | 35 | 40 |
+| IT36 quick feet and direction reaction (seconds) | 30 | 30 | 35 | 35 | 40 |
+
+Hard days 1 and 4 each contain three continuous footwork intervals per round:
+quick shuffles between flat marks 60–80 cm apart, alternating single-foot steps
+over a flat line and back, and a reaction drill. This adds **3 minutes of quick
+footwork** across both rounds at the start of the cycle and **4 minutes** at the
+end. The drills are interleaved with strength work; they use the same rest setting
+as every other main exercise. W arm lifts (IT10) and the light dumbbell row (IT26)
+remain in the library but are no longer in the hard-day circuits. All other
+strength doses, coordination days, recovery days and daily phases stay unchanged.
+
+The reaction drill uses `reaction: {"directions": ["left", "right"]}` in its
+exercise definition. The player gives unpredictable visible and spoken cues
+about every 3–5 seconds while the exercise clock keeps running. Directions refer
+to the child's own left and right. Take one or two short shuffle steps, brake,
+return to the centre and continue quick feet until the next cue. A visible cue
+still works with voice disabled; normal technique narration and the halfway
+announcement do not compete with direction cues. This is continuous timed work,
+not a counted sequence or an additional pause.
 
 Light-day doses stay unchanged throughout the cycle: IT01 60 seconds;
 IT03 ×4 each; IT20 ×4; IT21 ×3 each; IT22 ×4; IT13 20 seconds each;
@@ -72,11 +91,11 @@ session times, including side changes, are:
 
 | Days | Strength A | Coordination | Light | Strength B | Balance | Light |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1–6 | 20:06 | 19:36 | 21:42 | 20:00 | 20:30 | 21:42 |
-| 7–12 | 21:02 | 19:56 | 21:42 | 21:06 | 21:08 | 21:42 |
-| 13–18 | 22:14 | 21:06 | 21:42 | 22:12 | 22:28 | 21:42 |
-| 19–24 | 23:10 | 21:26 | 21:42 | 23:18 | 23:06 | 21:42 |
-| 25–30 | 24:22 | 22:36 | 21:42 | 24:24 | 24:26 | 21:42 |
+| 1–6 | 23:06 | 19:36 | 21:42 | 22:44 | 20:30 | 21:42 |
+| 7–12 | 24:02 | 19:56 | 21:42 | 23:42 | 21:08 | 21:42 |
+| 13–18 | 25:28 | 21:06 | 21:42 | 25:10 | 22:28 | 21:42 |
+| 19–24 | 26:24 | 21:26 | 21:42 | 26:08 | 23:06 | 21:42 |
+| 25–30 | 27:50 | 22:36 | 21:42 | 27:36 | 24:26 | 21:42 |
 
 Times estimate repetition tempo and omit the initial three-second ready count.
 They are not targets to rush toward and change when the user changes rests.
@@ -126,11 +145,16 @@ requires the exercises to exist and only changes their `poses` and supplied
 
 ## Character and illustrations
 
-All 33 exercises use the same fictional eight-year-old boy from
+The 33 previously illustrated exercises use the same fictional eight-year-old boy from
 `references/boy-turnaround.png` and `references/boy-ready.png`. The 31 selected
 PNG illustrations live in `images/`; IT02/IT03 share the ankle-rock pose and
 IT01/IT31 share the walking pose. These stills remain library thumbnails and
 fallbacks if a demonstration cannot load.
+
+The library now has 36 exercises. IT34–IT36 are published first with complete
+text and voice in all seven languages. Their illustrations are pending a separate
+second publication using the same boy; no unrelated image is assigned as a
+placeholder.
 
 `animations/*.png` preserves the original generated strips; `animations/aligned/`
 contains the published strips of three equal 640×640 square frames. The

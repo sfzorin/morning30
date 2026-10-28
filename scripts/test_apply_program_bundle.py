@@ -13,6 +13,64 @@ spec.loader.exec_module(bundle)
 
 
 class BundleContractTests(unittest.TestCase):
+    def test_reaction_drill_accepts_both_directions_without_pictures(self):
+        source = Path(__file__).resolve().parents[1] / "programs/ilya-tennis"
+        docs = json.loads((source / "exercises.json").read_text())
+        target = next(doc for doc in docs if doc["unit"] == "seconds" and not doc["perSide"])
+        target.pop("poses", None)
+        target.pop("animation", None)
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            (folder / "program.json").write_text((source / "program.json").read_text())
+            for directions in (["left", "right"], ["right", "left"]):
+                with self.subTest(directions=directions):
+                    target["reaction"] = {"directions": directions}
+                    (folder / "exercises.json").write_text(json.dumps(docs))
+                    _, exercises, images = bundle.load_bundle(folder)
+                    self.assertEqual(exercises[target["id"]]["reaction"], target["reaction"])
+                    self.assertNotIn("poses", exercises[target["id"]])
+                    self.assertEqual(images, [])
+
+    def test_reaction_rejects_invalid_direction_types_and_authored_timing(self):
+        valid = {"unit": "seconds", "perSide": False, "reaction": {"directions": ["left", "right"]}}
+        cases = [
+            {"reaction": []},
+            {"reaction": "left"},
+            {"reaction": {}},
+            {"reaction": {"directions": "left,right"}},
+            {"reaction": {"directions": ["left"]}},
+            {"reaction": {"directions": ["left", "left"]}},
+            {"reaction": {"directions": ["left", "forward"]}},
+            {"reaction": {"directions": ["left", "right", "left"]}},
+            {"reaction": {"directions": ["left", None]}},
+            {"reaction": {"directions": ["left", ["right"]]}},
+            {"reaction": {"directions": ["left", "right"], "interval": 3}},
+            {"reaction": {"directions": ["left", "right"], "rest": 10}},
+            {"reaction": {"directions": ["left", "right"], "sideRest": 3}},
+            {"unit": "reps"},
+            {"unit": "breaths"},
+            {"perSide": True},
+            {"perSide": 0},
+            {"perSide": "false"},
+        ]
+        for changes in cases:
+            with self.subTest(changes=changes):
+                with self.assertRaisesRegex(ValueError, "Invalid reaction"):
+                    bundle.validate_reaction(valid | changes)
+        bundle.validate_reaction({"unit": "reps", "perSide": True})
+        bundle.validate_reaction({"unit": "reps", "perSide": True, "reaction": None})
+
+    def test_load_bundle_validates_reaction_before_install(self):
+        source = Path(__file__).resolve().parents[1] / "programs/ilya-tennis"
+        docs = json.loads((source / "exercises.json").read_text())
+        docs[0]["reaction"] = {"directions": ["left", "right"], "interval": 3}
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            (folder / "program.json").write_text((source / "program.json").read_text())
+            (folder / "exercises.json").write_text(json.dumps(docs))
+            with self.assertRaisesRegex(ValueError, "Invalid reaction"):
+                bundle.load_bundle(folder)
+
     def test_new_bundles_cannot_reintroduce_private_pauses_or_missing_phases(self):
         source = Path(__file__).resolve().parents[1] / "programs/ilya-tennis"
         program = json.loads((source / "program.json").read_text())
@@ -71,6 +129,15 @@ class ApplyBundleTests(unittest.TestCase):
             bundle.apply_bundle(self.connection, 44, "Wrong", {}, {}, [], self.backup)
         self.assertFalse(self.backup.exists())
         self.assertEqual(self.connection.execute("SELECT position FROM users WHERE id=44").fetchone()[0], 39)
+
+    def test_invalid_reaction_refuses_before_backup_or_write(self):
+        before = tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone())
+        invalid = {"id": "IT36", "unit": "seconds", "perSide": False,
+                   "reaction": {"directions": ["left", "right"], "rest": 10}}
+        with self.assertRaisesRegex(ValueError, "Invalid reaction"):
+            bundle.apply_bundle(self.connection, 44, "Ilya", {"name": "New"}, {"IT36": invalid}, [], self.backup)
+        self.assertFalse(self.backup.exists())
+        self.assertEqual(tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone()), before)
 
     def test_pose_collision_rolls_back_every_picture_and_account_change(self):
         self.connection.execute("INSERT INTO poses VALUES('existing','test','Existing')")

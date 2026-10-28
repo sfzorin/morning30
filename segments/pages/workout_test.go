@@ -15,7 +15,59 @@ import (
 	"morning30/internal/auth"
 	"morning30/internal/content"
 	"morning30/internal/db"
+	"morning30/internal/i18n"
 )
+
+func TestPlayerCarriesReactionAndLocalizedSignalsForOrdinaryAndReplacementExercises(t *testing.T) {
+	database, err := db.Open(filepath.Join(t.TempDir(), "reaction.db"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	previous := app.DB
+	app.DB = database
+	t.Cleanup(func() { app.DB = previous; database.Close() })
+	u, err := database.CreateUser("reaction@example.com", "hash", "ru", "Test")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, err := range []error{
+		database.SetCustomExercises(u.ID, `{
+			"RX":{"id":"RX","slot":"main","unit":"seconds","perSide":false,"reaction":{"directions":["left","right"]}},
+			"OTHER":{"id":"OTHER","slot":"main","unit":"reps","replacement":"RX"}
+		}`),
+		database.SetProgramJSON(u.ID, `{"warmupRounds":1,"warmup":[{"id":"W01","slot":"warmup","unit":"seconds","value":5}],
+			"days":[{"day":1,"rounds":2,"items":[{"id":"RX","slot":"main","unit":"seconds","value":30},{"id":"OTHER","slot":"main","unit":"reps","value":6}]}],
+			"cooldown":[{"id":"CD01","slot":"cooldown","unit":"seconds","value":5}]}`),
+		database.SetActiveProgram(u.ID, "custom"),
+	} {
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+	wantWords := [][2]string{{"Влево", "Вправо"}, {"Left", "Right"}, {"Sola", "Sağa"}, {"Links", "Rechts"}, {"Izquierda", "Derecha"}, {"Gauche", "Droite"}, {"Sinistra", "Destra"}}
+	for n, lang := range i18n.Order {
+		p := (workoutPage{sess: auth.Session{UserID: u.ID, Lang: string(lang)}, day: 1}).playerData()
+		if p.Cues["reaction_left"] != wantWords[n][0] || p.Cues["reaction_right"] != wantWords[n][1] {
+			t.Fatalf("missing %s reaction translation", lang)
+		}
+		for _, it := range p.Items {
+			switch it.ID {
+			case "RX":
+				if it.Reaction == nil || !reflect.DeepEqual(it.Reaction.Directions, []string{"left", "right"}) {
+					t.Fatalf("missing runtime reaction: %#v", it)
+				}
+			case "OTHER":
+				if it.Reaction != nil || it.Repl == nil || it.Repl.Reaction == nil {
+					t.Fatalf("replacement reaction not carried independently: %#v", it)
+				}
+			default:
+				if it.Reaction != nil {
+					t.Fatal("reaction leaked into ordinary daily phases")
+				}
+			}
+		}
+	}
+}
 
 func TestStartResolvesCurrentCycleAfterScheduledRestart(t *testing.T) {
 	database, err := db.Open(filepath.Join(t.TempDir(), "workout.db"))

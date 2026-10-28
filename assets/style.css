@@ -509,6 +509,7 @@ body:has(.player) {
 }
 .ex-index { color: var(--muted); font-size: 14px; font-weight: 600; }
 .ex-visual {
+  position: relative;
   width: min(60vw, 230px, 34vh);
   width: min(60vw, 230px, 34svh);
   max-width: 100%;
@@ -524,6 +525,20 @@ body:has(.player) {
   -webkit-tap-highlight-color: transparent;
 }
 .ex-visual:active { transform: scale(.98); }
+.reaction-cue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, .96);
+  color: #172033;
+  pointer-events: none;
+}
+.reaction-arrow { font: 900 clamp(70px, 18vw, 112px)/1 system-ui, sans-serif; }
+.reaction-word { font: 800 clamp(20px, 5vw, 28px)/1.2 system-ui, sans-serif; }
 .ex-svg, .info-media { display: block; width: 100%; height: 100%; object-fit: contain; }
 .demo-frame { color: var(--muted); font-size: 12px; text-align: center; }
 .demo-controls { display: flex; gap: 8px; justify-content: center; }
@@ -534,7 +549,8 @@ body:has(.player) {
   width: 72px; height: 72px; object-fit: contain; border-radius: 12px;
   background: #fff;
 }
-.ex-name { font-size: 23px; font-weight: 800; padding: 0 10px; line-height: 1.15; }
+.ex-name { font-family: inherit; font-size: 23px; font-weight: 800; padding: 0 10px; line-height: 1.15; border: 0; background: none; color: inherit; cursor: pointer; }
+.ex-name:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
 .ex-value { font-size: 40px; font-weight: 800; color: var(--accent); }
 .ex-value.timer { font-variant-numeric: tabular-nums; }
 

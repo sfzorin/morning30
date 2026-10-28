@@ -115,6 +115,7 @@ function player(items, extra = {}, options = {}) {
   }
   const context = {
     document, navigator: options.navigator || {}, window, Date: ClockDate,
+    Math: options.random ? Object.assign(Object.create(Math), { random: options.random }) : Math,
     location: { assign(url) { navigations.push(url); } },
     Image: function () { images.push(this); },
     SpeechSynthesisUtterance: function (text) { this.text = text; },
@@ -159,6 +160,175 @@ function player(items, extra = {}, options = {}) {
 }
 const item = (fields = {}) => ({ id: 'a', name: 'Exercise', unit: 'reps', value: 6, slot: 'main', round: 1, rest: 0, ...fields });
 const hidden = node => node.classList.contains('hidden');
+
+const reactionItem = (fields = {}) => item({ unit: 'seconds', value: 30,
+  reaction: { directions: ['left', 'right'] }, correct: ['Keep moving'], wrong: ['Do not cross feet'], ...fields });
+const reactionCues = { go: 'Go', halfway: 'Half', reaction_left: 'Left', reaction_right: 'Right' };
+const directionsSaid = p => p.spoken.filter(word => word === 'Left' || word === 'Right');
+
+test('reaction cues share continuous work time and balance randomized directions without fixed alternation', () => {
+  const samples = [0, .99, .99, 0, 0, 0, 0];
+  const p = player([reactionItem()], { voiceMode: 'normal', cues: reactionCues }, { random: () => samples.shift() ?? 0 });
+  p.advance(3); // ready complete
+  assert.ok(hidden(p.get('.reaction-cue')));
+  assert.ok(!hidden(p.get('.ex-visual')), 'reaction still works before illustrations are published');
+  p.advance(2);
+  assert.equal(directionsSaid(p).length, 0);
+  p.advance(1);
+  assert.equal(p.get('.reaction-word').textContent, 'Left');
+  assert.equal(p.get('.reaction-arrow').textContent, '←');
+  assert.ok(!hidden(p.get('.reaction-cue')));
+  assert.equal(p.get('.ex-value').textContent, '27″');
+  p.advance(9);
+  assert.deepEqual(directionsSaid(p).slice(0, 4), ['Left', 'Left', 'Right', 'Right']);
+  assert.equal(p.get('.ex-value').textContent, '18″');
+  assert.ok(!p.spoken.includes('Keep moving') && !p.spoken.includes('Do not cross feet') && !p.spoken.includes('Half'));
+  p.advance(15);
+  assert.equal(p.get('.ex-value').textContent, '3″');
+  assert.ok(hidden(p.get('.reaction-cue')));
+  const count = directionsSaid(p).length;
+  p.advance(3);
+  assert.equal(directionsSaid(p).length, count);
+  assert.deepEqual(p.spoken.slice(-3), ['3', '2', '1']);
+  assert.equal(p.completed.length, 1);
+});
+
+test('reaction pacing varies from three to five seconds and muted cues remain visible', () => {
+  for (const voiceMode of ['off', 'min', 'detailed']) {
+    const p = player([reactionItem()], { voiceMode, cues: reactionCues }, { random: () => .99 });
+    p.advance(6); // 3 ready + 3 work
+    assert.equal(p.get('.reaction-word').textContent, 'Right');
+    assert.ok(!hidden(p.get('.reaction-cue')));
+    p.advance(2);
+    assert.ok(hidden(p.get('.reaction-cue')));
+    p.advance(2);
+    assert.ok(hidden(p.get('.reaction-cue')), 'five-second interval has not expired');
+    p.advance(1);
+    assert.equal(p.get('.reaction-word').textContent, 'Left');
+    assert.ok(!hidden(p.get('.reaction-cue')));
+    if (voiceMode === 'off') assert.equal(p.spoken.length, 0);
+    else assert.deepEqual(directionsSaid(p), ['Right', 'Left']);
+  }
+});
+
+test('reaction cues pause through app backgrounding and technique cards without overdue bursts', () => {
+  const p = player([reactionItem()], { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+  p.advance(6);
+  assert.equal(directionsSaid(p).length, 1);
+  p.hide();
+  assert.ok(hidden(p.get('.reaction-cue')));
+  p.advance(60);
+  p.show();
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 27000);
+  assert.equal(directionsSaid(p).length, 1);
+  p.get('.resume-continue').click();
+  p.advance(2);
+  assert.equal(directionsSaid(p).length, 1);
+  p.advance(1);
+  assert.equal(directionsSaid(p).length, 2);
+  p.get('.ex-visual').click();
+  assert.ok(hidden(p.get('.reaction-cue')));
+  p.advance(30);
+  p.get('.info-close').click();
+  p.advance(2);
+  assert.equal(directionsSaid(p).length, 2);
+  p.advance(1);
+  assert.equal(directionsSaid(p).length, 3);
+  assert.equal(p.get('.ex-value').textContent, '21″');
+  p.cleanup();
+  assert.ok(hidden(p.get('.reaction-cue')));
+  p.advance(60);
+  assert.equal(directionsSaid(p).length, 3);
+});
+
+test('reaction cues stop at rest, skip, back and replacement; ordinary exercises keep their narration', () => {
+  const p = player([reactionItem({ rest: 10 }), item({ id: 'next', unit: 'seconds', value: 30, correct: ['Steady'] })],
+    { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+  p.advance(6);
+  p.get('.ctl-skip').click();
+  assert.ok(hidden(p.get('.reaction-cue')));
+  p.advance(10);
+  p.advance(3);
+  assert.equal(directionsSaid(p).length, 1);
+  assert.ok(p.spoken.includes('Steady'));
+  p.get('.ctl-prev').click();
+  p.advance(3);
+  assert.ok(hidden(p.get('.reaction-cue')));
+  p.advance(3);
+  assert.equal(directionsSaid(p).length, 2);
+
+  const replacement = item({ id: 'calm', unit: 'seconds', value: 10 });
+  const swapped = player([reactionItem({ repl: replacement })], { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+  swapped.advance(6);
+  swapped.get('.ex-visual').click();
+  swapped.get('.info-replace').click();
+  assert.ok(hidden(swapped.get('.reaction-cue')));
+  swapped.advance(5);
+  assert.equal(directionsSaid(swapped).length, 1);
+
+  const intoReaction = player([item({ repl: reactionItem({ id: 'react' }) })], { voiceMode: 'off', cues: reactionCues }, { random: () => 0 });
+  intoReaction.advance(3);
+  intoReaction.get('.ex-visual').click();
+  intoReaction.get('.info-replace').click();
+  intoReaction.advance(3);
+  assert.ok(!hidden(intoReaction.get('.reaction-cue')));
+});
+
+test('reloading a reaction drill preserves work remaining and waits for a fresh signal after Continue', () => {
+  const persistence = memoryState();
+  const first = player([reactionItem()], { voiceMode: 'normal', cues: reactionCues }, { persistence, random: () => 0 });
+  first.advance(6);
+  first.hide();
+  first.cleanup();
+  const resumed = player([reactionItem()], { voiceMode: 'normal', cues: reactionCues }, { persistence, random: () => 0 });
+  assert.equal(resumed.get('.ex-value').textContent, '27″');
+  assert.ok(hidden(resumed.get('.reaction-cue')));
+  resumed.advance(60);
+  assert.equal(directionsSaid(resumed).length, 0);
+  resumed.get('.resume-continue').click();
+  resumed.advance(2);
+  assert.equal(directionsSaid(resumed).length, 0);
+  resumed.advance(1);
+  assert.equal(directionsSaid(resumed).length, 1);
+  assert.equal(resumed.get('.ex-value').textContent, '24″');
+});
+
+test('reaction remains disabled for invalid, counted, and bilateral configurations', () => {
+  for (const fields of [{ unit: 'reps' }, { perSide: true }, { reaction: { directions: ['left', 'left'] } }]) {
+    const p = player([reactionItem(fields)], { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+    p.advance(10);
+    assert.equal(directionsSaid(p).length, 0);
+    assert.ok(hidden(p.get('.reaction-cue')));
+    assert.ok(p.spoken.includes('Keep moving'));
+  }
+});
+
+test('reaction figure stays neutral while random signals run; technique card can play its demonstration', () => {
+  const animation = { src: '/poses/react', frames: 3, kind: 'alternating' };
+  const p = player([reactionItem({ animation })], { cues: reactionCues }, { random: () => 0 });
+  p.advance(6);
+  assert.equal(p.get('.ex-visual').style.backgroundPosition, '0% 50%');
+  p.get('.ex-name').click();
+  p.advance(1);
+  assert.equal(p.get('.info-visual').style.backgroundPosition, '50% 50%');
+  p.get('.info-close').click();
+  p.advance(5);
+  assert.equal(p.get('.ex-visual').style.backgroundPosition, '0% 50%');
+});
+
+test('exercise title opens technique before illustrations arrive and pauses work time', () => {
+  const p = player([item({ unit: 'seconds', value: 30, desc: 'Small quick steps' })]);
+  p.advance(5);
+  assert.ok(hidden(p.get('.ex-visual')));
+  p.get('.ex-name').click();
+  assert.ok(!hidden(p.get('.info-overlay')));
+  assert.equal(p.get('.info-desc').textContent, 'Small quick steps');
+  p.advance(10);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 28000);
+  p.get('.info-close').click();
+  p.advance(1);
+  assert.equal(p.get('.ex-value').textContent, '27″');
+});
 
 test('speech failures are visible and narration resumes after returning without losing workout time', () => {
   const p = player([item({ unit: 'seconds', value: 30, correct: ['Stay steady'] })], { voiceMode: 'normal' });

@@ -6,6 +6,7 @@
 package catalog
 
 import (
+	"bytes"
 	"encoding/json"
 	"sort"
 	"strings"
@@ -45,6 +46,30 @@ type Animation struct {
 	Kind      string `json:"kind"` // movement, alternating, or sequence
 }
 
+// Reaction requests unpredictable directional signals during continuous timed
+// work. Cue pacing belongs to the player, never to an exercise's rest settings.
+type Reaction struct {
+	Directions []string `json:"directions"`
+}
+
+func (r *Reaction) UnmarshalJSON(data []byte) error {
+	type plain Reaction
+	var value plain
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	if err := decoder.Decode(&value); err != nil {
+		return err
+	}
+	*r = Reaction(value)
+	return nil
+}
+
+func ValidReaction(r *Reaction) bool {
+	return r == nil || (len(r.Directions) == 2 &&
+		((r.Directions[0] == "left" && r.Directions[1] == "right") ||
+			(r.Directions[0] == "right" && r.Directions[1] == "left")))
+}
+
 func ValidAnimation(a *Animation) bool {
 	return a == nil || (a.Pose != "" && clipPoseID(a.Pose) == a.Pose &&
 		(a.OtherPose == "" || clipPoseID(a.OtherPose) == a.OtherPose) &&
@@ -65,6 +90,7 @@ type Doc struct {
 	SVG         string         `json:"svg,omitempty"`
 	Poses       []string       `json:"poses,omitempty"` // 1 or 2 stills from the shared pose catalog
 	Animation   *Animation     `json:"animation,omitempty"`
+	Reaction    *Reaction      `json:"reaction,omitempty"`
 	Content     map[string]Loc `json:"content"`
 }
 
@@ -311,7 +337,10 @@ func (c Catalog) Figure(id, sex string) string {
 
 // ValidDoc sanity-checks an imported or MCP-written exercise document.
 func ValidDoc(d Doc) bool {
-	if strings.TrimSpace(d.ID) == "" || !ValidAnimation(d.Animation) {
+	if strings.TrimSpace(d.ID) == "" || !ValidAnimation(d.Animation) || !ValidReaction(d.Reaction) {
+		return false
+	}
+	if d.Reaction != nil && (d.Unit != string(content.Seconds) || d.PerSide) {
 		return false
 	}
 	switch content.Slot(d.Slot) {
@@ -389,6 +418,16 @@ func (c Catalog) PoseIDs(id string) []string {
 // Doc returns the self-contained doc for an exercise (custom -> base -> built-in).
 func (c Catalog) Doc(id string) (Doc, bool) {
 	return c.resolve(id)
+}
+
+// Reaction returns a validated, owned copy for the workout payload. Existing
+// stored documents are checked too, since they predate import validation.
+func (c Catalog) Reaction(id string) *Reaction {
+	d, ok := c.resolve(id)
+	if !ok || d.Reaction == nil || !ValidDoc(d) {
+		return nil
+	}
+	return &Reaction{Directions: append([]string(nil), d.Reaction.Directions...)}
 }
 
 // Entry is one selectable exercise for the editor dropdown.

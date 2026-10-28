@@ -90,6 +90,14 @@
           "repSeconds": 6
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT08",
           "unit": "reps",
           "value": 8,
@@ -108,13 +116,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT10",
-          "unit": "reps",
-          "value": 10,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 30,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT11",
@@ -124,6 +131,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 3
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT12",
@@ -273,6 +288,14 @@
           "repSeconds": 5
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT25",
           "unit": "reps",
           "value": 12,
@@ -291,13 +314,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT26",
-          "unit": "reps",
-          "value": 12,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 30,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT27",
@@ -307,6 +329,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 4
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT28",
@@ -456,6 +486,14 @@
           "repSeconds": 6
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT08",
           "unit": "reps",
           "value": 9,
@@ -474,13 +512,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT10",
-          "unit": "reps",
-          "value": 10,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 30,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT11",
@@ -490,6 +527,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 3
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT12",
@@ -639,6 +684,14 @@
           "repSeconds": 5
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT25",
           "unit": "reps",
           "value": 13,
@@ -657,13 +710,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT26",
-          "unit": "reps",
-          "value": 13,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 30,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT27",
@@ -673,6 +725,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 4
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 30,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT28",
@@ -822,6 +882,14 @@
           "repSeconds": 6
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT08",
           "unit": "reps",
           "value": 10,
@@ -840,13 +908,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT10",
-          "unit": "reps",
-          "value": 12,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 35,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT11",
@@ -856,6 +923,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 3
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT12",
@@ -1005,6 +1080,14 @@
           "repSeconds": 5
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT25",
           "unit": "reps",
           "value": 14,
@@ -1023,13 +1106,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT26",
-          "unit": "reps",
-          "value": 14,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 35,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT27",
@@ -1039,6 +1121,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 4
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT28",
@@ -1188,6 +1278,14 @@
           "repSeconds": 6
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT08",
           "unit": "reps",
           "value": 11,
@@ -1206,13 +1304,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT10",
-          "unit": "reps",
-          "value": 12,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 35,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT11",
@@ -1222,6 +1319,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 3
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT12",
@@ -1371,6 +1476,14 @@
           "repSeconds": 5
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT25",
           "unit": "reps",
           "value": 15,
@@ -1389,13 +1502,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT26",
-          "unit": "reps",
-          "value": 15,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 35,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT27",
@@ -1405,6 +1517,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 4
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 35,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT28",
@@ -1554,6 +1674,14 @@
           "repSeconds": 6
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT08",
           "unit": "reps",
           "value": 12,
@@ -1572,13 +1700,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT10",
-          "unit": "reps",
-          "value": 14,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 40,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT11",
@@ -1588,6 +1715,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 3
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT12",
@@ -1737,6 +1872,14 @@
           "repSeconds": 5
         },
         {
+          "id": "IT34",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
+        },
+        {
           "id": "IT25",
           "unit": "reps",
           "value": 16,
@@ -1755,13 +1898,12 @@
           "repSeconds": 3
         },
         {
-          "id": "IT26",
-          "unit": "reps",
-          "value": 16,
+          "id": "IT35",
+          "unit": "seconds",
+          "value": 40,
           "perSide": false,
           "slot": "main",
-          "round": 1,
-          "repSeconds": 4
+          "round": 1
         },
         {
           "id": "IT27",
@@ -1771,6 +1913,14 @@
           "slot": "main",
           "round": 1,
           "repSeconds": 4
+        },
+        {
+          "id": "IT36",
+          "unit": "seconds",
+          "value": 40,
+          "perSide": false,
+          "slot": "main",
+          "round": 1
         },
         {
           "id": "IT28",

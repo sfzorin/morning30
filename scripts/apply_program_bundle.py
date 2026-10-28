@@ -19,6 +19,21 @@ import struct
 LANGUAGES = {"ru", "en", "tr", "de", "es", "fr", "it"}
 
 
+def validate_reaction(doc):
+    """Reaction cues use player timing; exercise authors supply directions only."""
+    reaction = doc.get("reaction")
+    if reaction is None:
+        return
+    if not isinstance(reaction, dict) or set(reaction) != {"directions"}:
+        raise ValueError("Invalid reaction")
+    directions = reaction["directions"]
+    if (doc.get("unit") != "seconds" or doc.get("perSide") is not False
+            or not isinstance(directions, list) or len(directions) != 2
+            or any(not isinstance(direction, str) for direction in directions)
+            or set(directions) != {"left", "right"}):
+        raise ValueError("Invalid reaction")
+
+
 def animation_poses(doc):
     animation = doc.get("animation")
     if animation is None:
@@ -56,6 +71,7 @@ def load_bundle(folder):
         raise ValueError("Duplicate exercise IDs")
     for doc in docs:
         animation_poses(doc)
+        validate_reaction(doc)
         if doc["unit"] not in {"seconds", "reps", "breaths"}:
             raise ValueError(f"Invalid unit: {doc['id']}")
         if set(doc["content"]) != LANGUAGES:
@@ -134,6 +150,8 @@ def apply_bundle(connection, account, expected_name, program, exercises, images,
         supplied = {image["id"] for image in images}
         supplied_data = {image["id"]: image["data"] for image in images}
         for doc in exercises.values():
+            if not images_only:
+                validate_reaction(doc)
             strips = animation_poses(doc)
             for pose in doc.get("poses", []) + strips:
                 if pose not in supplied and not connection.execute(

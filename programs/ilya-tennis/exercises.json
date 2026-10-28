@@ -7358,5 +7358,692 @@
       "kind": "alternating",
       "pose": "ilya-boy-it33-demo-v1"
     }
+  },
+  {
+    "id": "IT34",
+    "slot": "main",
+    "unit": "seconds",
+    "perSide": false,
+    "kneeLoad": "medium",
+    "difficulty": 3,
+    "content": {
+      "ru": {
+        "name": "Быстрые приставные шаги",
+        "hint": "Быстро двигайся между двумя метками; стопы не скрещивай.",
+        "warning": "Сохраняй контроль на развороте и оставайся внутри ковра.",
+        "desc": "Непрерывная быстрая работа ног в теннисной стойке: короткое перемещение в сторону, торможение и смена направления.",
+        "howTo": [
+          "Поставь две плоские метки на расстоянии 60–80 см, оставив свободное место вокруг. Встань между ними лицом вперёд, колени слегка согнуты.",
+          "Короткими быстрыми приставными шагами переместись к правой метке. Стопы остаются на расстоянии друг от друга.",
+          "Мягко затормози и сразу двигайся к левой метке. Продолжай менять направление до конца таймера.",
+          "Работай в самом быстром темпе, при котором шаги остаются короткими и точными."
+        ],
+        "correct": [
+          "Грудь направлена вперёд, голова остаётся примерно на одной высоте.",
+          "Обе ноги работают; перед сменой направления стопа уверенно опирается на пол."
+        ],
+        "wrong": [
+          "Не скрещивай стопы и не сталкивай их.",
+          "Не своди колени и не делай длинных скользящих шагов."
+        ],
+        "breathing": "Дыши непрерывно, выдыхай свободно.",
+        "safety": "Метки должны быть плоскими, а ковёр — неподвижным. Если стопы путаются, снизь скорость.",
+        "voice": {
+          "start": "Быстрые приставные шаги между метками.",
+          "mid": [
+            "Короткие шаги. Быстро меняй направление.",
+            "Не скрещивай стопы."
+          ],
+          "last": "Ещё немного, сохраняй точность.",
+          "finish": "Готово. Спокойно встань."
+        }
+      },
+      "en": {
+        "name": "Quick lateral shuffles",
+        "hint": "Move quickly between two marks without crossing your feet.",
+        "warning": "Keep control when changing direction and stay on the mat.",
+        "desc": "Continuous quick footwork in a tennis-ready stance: move sideways, brake and change direction over a short distance.",
+        "howTo": [
+          "Place two flat marks 60–80 cm apart with clear space around them. Stand between them facing forward with slightly bent knees.",
+          "Use short, quick shuffle steps towards the right mark. Keep space between your feet.",
+          "Brake softly, then move straight back towards the left mark. Keep changing direction until the timer ends.",
+          "Use the fastest pace that keeps your steps short and accurate."
+        ],
+        "correct": [
+          "Keep your chest facing forward and your head at roughly the same height.",
+          "Use both legs and plant your foot securely before changing direction."
+        ],
+        "wrong": [
+          "Don't cross your feet or knock them together.",
+          "Don't let your knees fall inward or take long sliding steps."
+        ],
+        "breathing": "Keep breathing and exhale freely.",
+        "safety": "Use flat marks and a mat that stays in place. Slow down if your feet get tangled.",
+        "voice": {
+          "start": "Quick shuffles between the marks.",
+          "mid": [
+            "Short steps. Change direction quickly.",
+            "Don't cross your feet."
+          ],
+          "last": "Keep your steps accurate.",
+          "finish": "Done. Stand comfortably."
+        }
+      },
+      "tr": {
+        "name": "Hızlı yan adımlar",
+        "hint": "Ayaklarını çaprazlamadan iki işaret arasında hızlı hareket et.",
+        "warning": "Yön değiştirirken kontrolü koru ve matın içinde kal.",
+        "desc": "Tenis hazırlık duruşunda kesintisiz hızlı ayak çalışması: yana kısa mesafe ilerle, yavaşla ve yön değiştir.",
+        "howTo": [
+          "Aralarında 60–80 cm olan iki düz işaret koy, çevrelerinde boş alan bırak. Aralarında yüzün öne dönük ve dizlerin hafif bükülü dur.",
+          "Sağdaki işarete doğru kısa ve hızlı yan adımlar at. Ayakların arasında boşluk kalsın.",
+          "Yumuşakça yavaşla ve hemen soldaki işarete doğru ilerle. Süre bitene kadar yön değiştir.",
+          "Adımların kısa ve düzgün kalabildiği en hızlı tempoda çalış."
+        ],
+        "correct": [
+          "Göğsün öne baksın, başın yaklaşık aynı yükseklikte kalsın.",
+          "İki bacağını da kullan; yön değiştirmeden önce ayağını yere sağlam bas."
+        ],
+        "wrong": [
+          "Ayaklarını çaprazlama ve birbirine çarpma.",
+          "Dizlerini içeri kaçırma ve uzun kayma adımları atma."
+        ],
+        "breathing": "Nefesini düzenli al, rahatça ver.",
+        "safety": "Düz işaretler ve yerinden oynamayan bir mat kullan. Ayakların karışırsa hızını azalt.",
+        "voice": {
+          "start": "İşaretler arasında hızlı yan adımlar.",
+          "mid": [
+            "Kısa adımlar. Hızlı yön değiştir.",
+            "Ayaklarını çaprazlama."
+          ],
+          "last": "Adımlarını düzgün tut.",
+          "finish": "Tamam. Rahatça dur."
+        }
+      },
+      "de": {
+        "name": "Schnelle Seitwärtsschritte",
+        "hint": "Bewege dich schnell zwischen zwei Markierungen, ohne die Füße zu kreuzen.",
+        "warning": "Behalte beim Richtungswechsel die Kontrolle und bleib auf der Matte.",
+        "desc": "Durchgehend schnelle Beinarbeit in Tennisbereitschaft: kurze Seitwärtsbewegung, Abbremsen und Richtungswechsel.",
+        "howTo": [
+          "Lege zwei flache Markierungen mit 60–80 cm Abstand und freiem Platz rundherum aus. Stell dich dazwischen, Blick nach vorn und Knie leicht gebeugt.",
+          "Mach kurze, schnelle Nachstellschritte zur rechten Markierung. Lass Abstand zwischen den Füßen.",
+          "Bremse weich ab und bewege dich sofort zur linken Markierung. Wechsle bis zum Ende des Timers die Richtung.",
+          "Wähle das schnellste Tempo, bei dem deine Schritte kurz und genau bleiben."
+        ],
+        "correct": [
+          "Die Brust zeigt nach vorn, der Kopf bleibt ungefähr auf gleicher Höhe.",
+          "Beide Beine arbeiten; vor jedem Richtungswechsel steht der Fuß sicher auf dem Boden."
+        ],
+        "wrong": [
+          "Kreuze die Füße nicht und stoße sie nicht zusammen.",
+          "Lass die Knie nicht nach innen kippen und mach keine langen Gleitschritte."
+        ],
+        "breathing": "Atme durchgehend und locker aus.",
+        "safety": "Verwende flache Markierungen und eine Matte, die nicht verrutscht. Werde langsamer, wenn du mit den Füßen durcheinanderkommst.",
+        "voice": {
+          "start": "Schnelle Seitwärtsschritte zwischen den Markierungen.",
+          "mid": [
+            "Kurze Schritte. Wechsle schnell die Richtung.",
+            "Kreuze die Füße nicht."
+          ],
+          "last": "Behalte genaue Schritte bei.",
+          "finish": "Fertig. Stell dich bequem hin."
+        }
+      },
+      "es": {
+        "name": "Pasos laterales rápidos",
+        "hint": "Muévete rápido entre dos marcas sin cruzar los pies.",
+        "warning": "Controla el cambio de dirección y quédate dentro de la alfombra.",
+        "desc": "Trabajo continuo y rápido de pies en postura de tenis: desplazamiento lateral corto, frenada y cambio de dirección.",
+        "howTo": [
+          "Coloca dos marcas planas separadas 60–80 cm, con espacio libre alrededor. Ponte entre ellas mirando al frente y con las rodillas ligeramente flexionadas.",
+          "Da pasos laterales cortos y rápidos hacia la marca derecha. Deja espacio entre los pies.",
+          "Frena suavemente y vuelve enseguida hacia la marca izquierda. Sigue cambiando de dirección hasta que termine el temporizador.",
+          "Usa el ritmo más rápido que te permita mantener pasos cortos y precisos."
+        ],
+        "correct": [
+          "El pecho mira al frente y la cabeza se mantiene casi a la misma altura.",
+          "Trabajan ambas piernas; apoya bien el pie antes de cambiar de dirección."
+        ],
+        "wrong": [
+          "No cruces los pies ni los golpees entre sí.",
+          "No metas las rodillas hacia dentro ni des pasos largos deslizándote."
+        ],
+        "breathing": "Respira continuamente y suelta el aire con libertad.",
+        "safety": "Usa marcas planas y una alfombra que no se mueva. Baja la velocidad si se te enredan los pies.",
+        "voice": {
+          "start": "Pasos laterales rápidos entre las marcas.",
+          "mid": [
+            "Pasos cortos. Cambia rápido de dirección.",
+            "No cruces los pies."
+          ],
+          "last": "Mantén la precisión.",
+          "finish": "Listo. Ponte de pie cómodamente."
+        }
+      },
+      "fr": {
+        "name": "Pas chassés rapides",
+        "hint": "Déplace-toi vite entre deux repères sans croiser les pieds.",
+        "warning": "Contrôle les changements de direction et reste sur le tapis.",
+        "desc": "Un travail continu et rapide des pieds en position de tennis : déplacement latéral court, freinage et changement de direction.",
+        "howTo": [
+          "Place deux repères plats espacés de 60 à 80 cm avec de la place autour. Mets-toi entre eux, face à l’avant et genoux légèrement fléchis.",
+          "Fais de petits pas chassés rapides vers le repère de droite. Garde un espace entre les pieds.",
+          "Freine en douceur et repars aussitôt vers le repère de gauche. Continue à changer de direction jusqu’à la fin du minuteur.",
+          "Choisis le rythme le plus rapide qui te permet de garder des pas courts et précis."
+        ],
+        "correct": [
+          "La poitrine reste face à l’avant et la tête à peu près à la même hauteur.",
+          "Les deux jambes travaillent ; pose le pied fermement avant de changer de direction."
+        ],
+        "wrong": [
+          "Ne croise pas les pieds et ne les cogne pas l’un contre l’autre.",
+          "Ne laisse pas les genoux rentrer et ne fais pas de grands pas glissés."
+        ],
+        "breathing": "Respire sans interruption et souffle librement.",
+        "safety": "Utilise des repères plats et un tapis qui ne bouge pas. Ralentis si tes pieds s’emmêlent.",
+        "voice": {
+          "start": "Pas chassés rapides entre les repères.",
+          "mid": [
+            "Petits pas. Change vite de direction.",
+            "Ne croise pas les pieds."
+          ],
+          "last": "Garde des pas précis.",
+          "finish": "Terminé. Tiens-toi debout confortablement."
+        }
+      },
+      "it": {
+        "name": "Passi laterali rapidi",
+        "hint": "Muoviti velocemente tra due segni senza incrociare i piedi.",
+        "warning": "Controlla il cambio di direzione e resta sul tappeto.",
+        "desc": "Lavoro continuo e rapido dei piedi in posizione da tennis: breve spostamento laterale, frenata e cambio di direzione.",
+        "howTo": [
+          "Metti due segni piatti a 60–80 cm di distanza, lasciando spazio libero intorno. Stai in mezzo, rivolto in avanti e con le ginocchia leggermente piegate.",
+          "Fai passi laterali corti e rapidi verso il segno destro. Mantieni spazio tra i piedi.",
+          "Frena dolcemente e riparti subito verso il segno sinistro. Continua a cambiare direzione fino alla fine del timer.",
+          "Scegli il ritmo più veloce che ti permette di mantenere passi corti e precisi."
+        ],
+        "correct": [
+          "Il petto resta rivolto in avanti e la testa circa alla stessa altezza.",
+          "Lavorano entrambe le gambe; appoggia bene il piede prima di cambiare direzione."
+        ],
+        "wrong": [
+          "Non incrociare i piedi e non farli urtare tra loro.",
+          "Non portare le ginocchia verso l’interno e non fare lunghi passi scivolati."
+        ],
+        "breathing": "Respira continuamente ed espira liberamente.",
+        "safety": "Usa segni piatti e un tappeto che non si sposti. Rallenta se i piedi si intrecciano.",
+        "voice": {
+          "start": "Passi laterali rapidi tra i segni.",
+          "mid": [
+            "Passi corti. Cambia direzione rapidamente.",
+            "Non incrociare i piedi."
+          ],
+          "last": "Mantieni passi precisi.",
+          "finish": "Fatto. Fermati comodamente in piedi."
+        }
+      }
+    }
+  },
+  {
+    "id": "IT35",
+    "slot": "main",
+    "unit": "seconds",
+    "perSide": false,
+    "kneeLoad": "medium",
+    "difficulty": 3,
+    "content": {
+      "ru": {
+        "name": "Быстрые шаги через линию",
+        "hint": "Одна стопа через линию и назад, затем другая — быстро и по очереди.",
+        "warning": "Перешагивай через плоскую линию, не прыгай.",
+        "desc": "Непрерывные быстрые шаги через линию с возвратом для ритма, точности и выносливости ног.",
+        "howTo": [
+          "Отметь на полу короткую плоскую линию. Встань за ней, стопы на ширине бёдер, колени мягкие.",
+          "Быстро шагни правой стопой за линию и верни её назад рядом с левой.",
+          "Затем так же шагни за линию левой стопой и верни её. Чередуй ноги до конца таймера.",
+          "Делай частые низкие шаги рядом с линией. Держи корпус спокойно, смотри немного вперёд."
+        ],
+        "correct": [
+          "Стопы пересекают линию по очереди; шаги тихие и короткие.",
+          "Обе ноги по очереди пересекают линию; колени смотрят туда же, куда носки."
+        ],
+        "wrong": [
+          "Не прыгай двумя ногами и не топай.",
+          "Не делай длинных шагов назад и не запрокидывай корпус."
+        ],
+        "breathing": "Дыши свободно, не задерживай дыхание ради скорости.",
+        "safety": "Используй плоскую нескользящую разметку; не ставь на линию предметы. Если сбился, продолжи медленнее.",
+        "voice": {
+          "start": "Одна стопа за линию и назад. Затем другая.",
+          "mid": [
+            "Чередуй правую и левую ногу.",
+            "Коротко и быстро. Не прыгай."
+          ],
+          "last": "Сохраняй ритм.",
+          "finish": "Готово. Спокойно встань."
+        }
+      },
+      "en": {
+        "name": "Quick steps over a line",
+        "hint": "One foot over the line and back, then the other: quick and alternating.",
+        "warning": "Step over a flat line without jumping.",
+        "desc": "Continuous quick steps over a line and back for rhythm, accuracy and leg endurance.",
+        "howTo": [
+          "Mark a short, flat line on the floor. Stand behind it with feet hip-width apart and soft knees.",
+          "Quickly step your right foot over the line and bring it back beside your left foot.",
+          "Then step your left foot over the line and bring it back. Keep alternating feet until the timer ends.",
+          "Take frequent low steps close to the line. Keep your body steady and look slightly ahead."
+        ],
+        "correct": [
+          "Feet cross the line one at a time, with short, quiet steps.",
+          "Both feet take turns crossing the line; knees point in the same direction as toes."
+        ],
+        "wrong": [
+          "Don't jump with both feet or stomp.",
+          "Don't take long backward steps or lean back."
+        ],
+        "breathing": "Breathe freely without holding your breath to go faster.",
+        "safety": "Use a flat, nonslip line, not an object to step over. If you lose the pattern, continue more slowly.",
+        "voice": {
+          "start": "One foot over the line and back. Then the other.",
+          "mid": [
+            "Alternate your right and left foot.",
+            "Short and quick. No jumping."
+          ],
+          "last": "Keep your rhythm.",
+          "finish": "Done. Stand comfortably."
+        }
+      },
+      "tr": {
+        "name": "Çizgi üzerinden hızlı adımlar",
+        "hint": "Bir ayak çizginin ötesine ve geriye, sonra diğeri: hızlı ve sırayla.",
+        "warning": "Düz bir çizginin üzerinden adımla geç, sıçrama.",
+        "desc": "Ritim, doğruluk ve bacak dayanıklılığı için çizginin üzerinden ileri ve geri kesintisiz hızlı adımlar.",
+        "howTo": [
+          "Yerde kısa ve düz bir çizgi belirle. Çizginin arkasında, ayakların kalça genişliğinde ve dizlerin hafif bükülü dur.",
+          "Sağ ayağınla hızla çizgiyi geç ve sol ayağının yanına geri getir.",
+          "Sonra sol ayağınla çizgiyi geç ve geri getir. Süre bitene kadar ayaklarını sırayla kullan.",
+          "Çizgiye yakın, sık ve alçak adımlar at. Gövdeni sabit tut, biraz ileriye bak."
+        ],
+        "correct": [
+          "Ayaklar çizgiyi sırayla geçer; adımlar kısa ve sessizdir.",
+          "İki ayak sırayla çizgiyi geçer; dizler ayak parmaklarıyla aynı yöne bakar."
+        ],
+        "wrong": [
+          "İki ayakla sıçrama ve ayaklarını yere vurma.",
+          "Geriye uzun adımlar atma ve gövdeni geriye yatırma."
+        ],
+        "breathing": "Hızlanmak için nefesini tutmadan rahatça nefes al.",
+        "safety": "Düz, kaymayan bir çizgi kullan; üzerinden geçilecek bir eşya koyma. Düzen bozulursa daha yavaş devam et.",
+        "voice": {
+          "start": "Bir ayak çizgiyi geçsin ve dönsün. Sonra diğeri.",
+          "mid": [
+            "Sağ ve sol ayağını sırayla kullan.",
+            "Kısa ve hızlı. Sıçrama."
+          ],
+          "last": "Ritmini koru.",
+          "finish": "Tamam. Rahatça dur."
+        }
+      },
+      "de": {
+        "name": "Schnelle Schritte über eine Linie",
+        "hint": "Ein Fuß über die Linie und zurück, dann der andere: schnell im Wechsel.",
+        "warning": "Steige über eine flache Linie, ohne zu springen.",
+        "desc": "Durchgehend schnelle Schritte über eine Linie und zurück für Rhythmus, Genauigkeit und Ausdauer der Beine.",
+        "howTo": [
+          "Markiere eine kurze, flache Linie auf dem Boden. Steh dahinter, Füße hüftbreit und Knie locker.",
+          "Setze den rechten Fuß schnell über die Linie und bring ihn neben den linken zurück.",
+          "Setze dann den linken Fuß über die Linie und bring ihn zurück. Wechsle bis zum Ende des Timers die Füße.",
+          "Mach häufige, niedrige Schritte nah an der Linie. Halte den Oberkörper ruhig und schau etwas nach vorn."
+        ],
+        "correct": [
+          "Die Füße überqueren die Linie nacheinander, mit kurzen, leisen Schritten.",
+          "Beide Füße überqueren abwechselnd die Linie; Knie und Zehen zeigen in dieselbe Richtung."
+        ],
+        "wrong": [
+          "Springe nicht mit beiden Füßen und stampfe nicht.",
+          "Mach keine langen Rückwärtsschritte und lehne dich nicht zurück."
+        ],
+        "breathing": "Atme frei, ohne für mehr Tempo die Luft anzuhalten.",
+        "safety": "Nutze eine flache, rutschfeste Linie statt eines Gegenstands. Wenn du den Rhythmus verlierst, mach langsamer weiter.",
+        "voice": {
+          "start": "Ein Fuß über die Linie und zurück. Dann der andere.",
+          "mid": [
+            "Wechsle zwischen rechts und links.",
+            "Kurz und schnell. Nicht springen."
+          ],
+          "last": "Halte deinen Rhythmus.",
+          "finish": "Fertig. Stell dich bequem hin."
+        }
+      },
+      "es": {
+        "name": "Pasos rápidos sobre una línea",
+        "hint": "Un pie cruza la línea y vuelve, luego el otro: rápido y por turnos.",
+        "warning": "Cruza una línea plana dando pasos, sin saltar.",
+        "desc": "Pasos continuos y rápidos sobre una línea y de vuelta para el ritmo, la precisión y la resistencia de piernas.",
+        "howTo": [
+          "Marca una línea corta y plana en el suelo. Ponte detrás con los pies a la anchura de las caderas y las rodillas suaves.",
+          "Pasa rápidamente el pie derecho al otro lado de la línea y devuélvelo junto al izquierdo.",
+          "Luego pasa el pie izquierdo al otro lado y devuélvelo. Sigue alternando los pies hasta que termine el temporizador.",
+          "Da pasos frecuentes y bajos junto a la línea. Mantén el cuerpo estable y mira un poco hacia delante."
+        ],
+        "correct": [
+          "Los pies cruzan de uno en uno, con pasos cortos y silenciosos.",
+          "Ambos pies se turnan para cruzar la línea; las rodillas apuntan hacia los dedos de los pies."
+        ],
+        "wrong": [
+          "No saltes con ambos pies ni des pisotones.",
+          "No des pasos largos hacia atrás ni eches el cuerpo hacia atrás."
+        ],
+        "breathing": "Respira libremente sin aguantar el aire para ir más rápido.",
+        "safety": "Usa una marca plana que no resbale, sin poner objetos en la línea. Si pierdes la secuencia, continúa más despacio.",
+        "voice": {
+          "start": "Un pie cruza la línea y vuelve. Luego el otro.",
+          "mid": [
+            "Alterna el pie derecho y el izquierdo.",
+            "Corto y rápido. Sin saltar."
+          ],
+          "last": "Mantén el ritmo.",
+          "finish": "Listo. Ponte de pie cómodamente."
+        }
+      },
+      "fr": {
+        "name": "Pas rapides par-dessus une ligne",
+        "hint": "Un pied passe la ligne et revient, puis l’autre : vite, chacun à son tour.",
+        "warning": "Enjambe une ligne plate sans sauter.",
+        "desc": "Des petits pas rapides et continus par-dessus une ligne, avec retour, pour le rythme, la précision et l’endurance des jambes.",
+        "howTo": [
+          "Trace une petite ligne plate au sol. Place-toi derrière, pieds à la largeur des hanches et genoux souples.",
+          "Passe vite le pied droit de l’autre côté de la ligne, puis ramène-le à côté du gauche.",
+          "Passe ensuite le pied gauche de l’autre côté et ramène-le. Alterne les pieds jusqu’à la fin du minuteur.",
+          "Fais de petits pas rapides près de la ligne. Garde le corps stable et regarde légèrement devant toi."
+        ],
+        "correct": [
+          "Les pieds passent l’un après l’autre, avec des pas courts et silencieux.",
+          "Les deux pieds passent la ligne à tour de rôle ; les genoux suivent la direction des orteils."
+        ],
+        "wrong": [
+          "Ne saute pas à pieds joints et ne tape pas des pieds.",
+          "Ne fais pas de grands pas en arrière et ne bascule pas le corps vers l’arrière."
+        ],
+        "breathing": "Respire librement sans bloquer ton souffle pour accélérer.",
+        "safety": "Utilise un repère plat qui ne glisse pas, sans objet à enjamber. Si tu perds la séquence, continue plus lentement.",
+        "voice": {
+          "start": "Un pied passe la ligne et revient. Puis l’autre.",
+          "mid": [
+            "Alterne le pied droit et le pied gauche.",
+            "Petits pas rapides. Sans sauter."
+          ],
+          "last": "Garde ton rythme.",
+          "finish": "Terminé. Tiens-toi debout confortablement."
+        }
+      },
+      "it": {
+        "name": "Passi rapidi oltre una linea",
+        "hint": "Un piede supera la linea e torna, poi l’altro: rapido e alternato.",
+        "warning": "Supera una linea piatta con dei passi, senza saltare.",
+        "desc": "Passi continui e rapidi oltre una linea e ritorno per ritmo, precisione e resistenza delle gambe.",
+        "howTo": [
+          "Segna una breve linea piatta sul pavimento. Stai dietro, con i piedi alla larghezza delle anche e le ginocchia morbide.",
+          "Porta rapidamente il piede destro oltre la linea e riportalo accanto al sinistro.",
+          "Poi porta il piede sinistro oltre la linea e riportalo indietro. Alterna i piedi fino alla fine del timer.",
+          "Fai passi frequenti e bassi vicino alla linea. Tieni fermo il corpo e guarda poco più avanti."
+        ],
+        "correct": [
+          "I piedi attraversano la linea uno alla volta, con passi corti e silenziosi.",
+          "Entrambi i piedi attraversano la linea a turno; le ginocchia seguono la direzione delle punte."
+        ],
+        "wrong": [
+          "Non saltare con entrambi i piedi e non pestare forte.",
+          "Non fare lunghi passi indietro e non inclinare il corpo all’indietro."
+        ],
+        "breathing": "Respira liberamente senza trattenere il fiato per accelerare.",
+        "safety": "Usa una linea piatta che non scivoli, senza oggetti da superare. Se perdi la sequenza, continua più lentamente.",
+        "voice": {
+          "start": "Un piede supera la linea e torna. Poi l’altro.",
+          "mid": [
+            "Alterna il piede destro e il sinistro.",
+            "Corto e rapido. Senza saltare."
+          ],
+          "last": "Mantieni il ritmo.",
+          "finish": "Fatto. Fermati comodamente in piedi."
+        }
+      }
+    }
+  },
+  {
+    "id": "IT36",
+    "slot": "main",
+    "unit": "seconds",
+    "perSide": false,
+    "kneeLoad": "medium",
+    "difficulty": 3,
+    "content": {
+      "ru": {
+        "name": "Быстрые ноги и реакция на сигнал",
+        "hint": "Быстрые шаги на месте; по сигналу шагни в сторону и вернись.",
+        "warning": "Смотри на экран перед собой; двигайся в свою левую или правую сторону.",
+        "desc": "Быстрый первый шаг, торможение и возврат в центр по непредсказуемому направлению. Приложение показывает и произносит «влево» или «вправо».",
+        "howTo": [
+          "Встань в центре свободного места лицом к экрану. Стопы чуть шире бёдер, колени мягкие, руки перед собой.",
+          "Делай частые короткие шаги на месте. Примерно каждые 3–5 секунд приложение даст случайный сигнал «влево» или «вправо».",
+          "По сигналу сделай один-два быстрых приставных шага в указанную сторону, мягко затормози и сразу вернись в центр.",
+          "Снова быстро переступай на месте и жди следующий сигнал до конца таймера. Направления — твои собственные левая и правая стороны."
+        ],
+        "correct": [
+          "На сигнал быстро отвечает первая нога, затем вторая; стопы не скрещиваются.",
+          "Каждый раз возвращайся в центр и сохраняй мягкие колени."
+        ],
+        "wrong": [
+          "Не угадывай направление заранее и не поворачивайся спиной к экрану.",
+          "Не скрещивай стопы и не делай широкий выпад за край ковра."
+        ],
+        "breathing": "Дыши непрерывно; коротко выдыхай при отталкивании.",
+        "safety": "Экран поставь перед собой, свободное место оставь с обеих сторон. Если не успеваешь вернуться, делай один меньший шаг.",
+        "voice": {
+          "start": "Быстрые ноги. Жди сигнал.",
+          "mid": [
+            "После шага возвращайся в центр.",
+            "Не скрещивай стопы."
+          ],
+          "last": "Сохраняй короткие шаги.",
+          "finish": "Готово. Спокойно встань."
+        }
+      },
+      "en": {
+        "name": "Quick feet and direction reaction",
+        "hint": "Quick steps in place; follow the direction cue and return.",
+        "warning": "Face the screen and move to your own left or right.",
+        "desc": "A quick first step, braking and return to centre in response to an unpredictable direction. The app shows and says left or right.",
+        "howTo": [
+          "Stand in the centre of your clear space facing the screen. Feet slightly wider than hips, knees soft and hands in front.",
+          "Take frequent small steps in place. About every 3–5 seconds, the app gives a random left or right cue.",
+          "On the cue, take one or two quick shuffle steps in that direction, brake softly and return straight to the centre.",
+          "Resume quick feet in place and wait for the next cue until the timer ends. Left and right mean your own left and right."
+        ],
+        "correct": [
+          "Move the first foot promptly on the cue, then the other, without crossing your feet.",
+          "Return to the centre every time and keep your knees soft."
+        ],
+        "wrong": [
+          "Don't guess the direction early or turn your back to the screen.",
+          "Don't cross your feet or take a wide lunge beyond the mat."
+        ],
+        "breathing": "Keep breathing, with a short exhale as you push off.",
+        "safety": "Put the screen in front of you and leave space on both sides. If returning takes too long, take one smaller step.",
+        "voice": {
+          "start": "Quick feet. Wait for the cue.",
+          "mid": [
+            "Return to the centre after moving.",
+            "Keep your feet from crossing."
+          ],
+          "last": "Keep your steps short.",
+          "finish": "Done. Stand comfortably."
+        }
+      },
+      "tr": {
+        "name": "Hızlı ayaklar ve yön tepkisi",
+        "hint": "Yerinde hızlı adımlar; yön işaretiyle yana git ve geri dön.",
+        "warning": "Ekrana bak; kendi sağına veya soluna hareket et.",
+        "desc": "Önceden bilinmeyen yöne göre hızlı ilk adım, yavaşlama ve ortaya dönüş. Uygulama sağ veya sol yönünü gösterir ve söyler.",
+        "howTo": [
+          "Boş alanın ortasında ekrana dönük dur. Ayakların kalçandan biraz geniş, dizlerin hafif bükülü ve ellerin önde olsun.",
+          "Yerinde sık ve küçük adımlar at. Uygulama yaklaşık her 3–5 saniyede rastgele sağ veya sol işareti verir.",
+          "İşaret gelince o yöne bir veya iki hızlı yan adım at, yumuşakça yavaşla ve hemen ortaya dön.",
+          "Yerinde hızlı adımlara devam et, süre bitene kadar sonraki işareti bekle. Sağ ve sol senin kendi yönlerindir."
+        ],
+        "correct": [
+          "İşaretle önce bir ayağın, sonra diğeri hızla hareket eder; ayaklar çaprazlanmaz.",
+          "Her seferinde ortaya dön ve dizlerini hafif bükülü tut."
+        ],
+        "wrong": [
+          "Yönü önceden tahmin etme ve ekrana sırtını dönme.",
+          "Ayaklarını çaprazlama ve matın dışına uzun bir hamle yapma."
+        ],
+        "breathing": "Nefes almaya devam et; itilirken kısa bir nefes ver.",
+        "safety": "Ekranı önüne koy ve iki yanında boşluk bırak. Dönmeye yetişemiyorsan daha küçük tek bir adım at.",
+        "voice": {
+          "start": "Hızlı ayaklar. İşareti bekle.",
+          "mid": [
+            "Adımdan sonra ortaya dön.",
+            "Ayaklarını çaprazlama."
+          ],
+          "last": "Adımların kısa kalsın.",
+          "finish": "Tamam. Rahatça dur."
+        }
+      },
+      "de": {
+        "name": "Schnelle Füße und Richtungsreaktion",
+        "hint": "Schnelle Schritte auf der Stelle; folge dem Richtungssignal und kehre zurück.",
+        "warning": "Schau zum Bildschirm und bewege dich zu deiner eigenen linken oder rechten Seite.",
+        "desc": "Ein schneller erster Schritt, Abbremsen und Rückkehr zur Mitte auf ein unvorhersehbares Richtungssignal. Die App zeigt und sagt links oder rechts.",
+        "howTo": [
+          "Steh in der Mitte deiner freien Fläche mit Blick zum Bildschirm. Füße etwas weiter als hüftbreit, Knie locker und Hände vor dem Körper.",
+          "Mach schnelle, kleine Schritte auf der Stelle. Etwa alle 3–5 Sekunden gibt die App zufällig links oder rechts vor.",
+          "Mach auf das Signal einen oder zwei schnelle Nachstellschritte in die Richtung, bremse weich ab und kehre sofort zur Mitte zurück.",
+          "Mach dort wieder schnelle Schritte und warte bis zum Timerende auf das nächste Signal. Links und rechts sind aus deiner eigenen Sicht gemeint."
+        ],
+        "correct": [
+          "Bewege auf das Signal erst einen Fuß schnell, dann den anderen, ohne die Füße zu kreuzen.",
+          "Kehre jedes Mal zur Mitte zurück und halte die Knie locker."
+        ],
+        "wrong": [
+          "Errate die Richtung nicht vorher und drehe dem Bildschirm nicht den Rücken zu.",
+          "Kreuze die Füße nicht und mach keinen weiten Ausfallschritt über den Mattenrand."
+        ],
+        "breathing": "Atme weiter und beim Abdrücken kurz aus.",
+        "safety": "Stell den Bildschirm vor dich und lass Platz zu beiden Seiten. Falls du nicht rechtzeitig zurückkommst, mach nur einen kleineren Schritt.",
+        "voice": {
+          "start": "Schnelle Füße. Warte aufs Signal.",
+          "mid": [
+            "Kehre nach dem Schritt zur Mitte zurück.",
+            "Kreuze die Füße nicht."
+          ],
+          "last": "Halte die Schritte kurz.",
+          "finish": "Fertig. Stell dich bequem hin."
+        }
+      },
+      "es": {
+        "name": "Pies rápidos y reacción a la dirección",
+        "hint": "Pasos rápidos en el sitio; sigue la señal lateral y vuelve.",
+        "warning": "Mira la pantalla y muévete a tu propia izquierda o derecha.",
+        "desc": "Primer paso rápido, frenada y vuelta al centro ante una dirección imprevisible. La aplicación muestra y dice izquierda o derecha.",
+        "howTo": [
+          "Ponte en el centro del espacio libre mirando la pantalla. Pies algo más separados que las caderas, rodillas suaves y manos delante.",
+          "Da pasos pequeños y frecuentes en el sitio. Aproximadamente cada 3–5 segundos, la aplicación da una señal aleatoria de izquierda o derecha.",
+          "Con la señal, da uno o dos pasos laterales rápidos hacia ese lado, frena suavemente y vuelve enseguida al centro.",
+          "Retoma los pasos rápidos en el sitio y espera la siguiente señal hasta que termine el temporizador. Izquierda y derecha son tus propios lados."
+        ],
+        "correct": [
+          "Mueve rápido un pie con la señal y después el otro, sin cruzarlos.",
+          "Vuelve al centro cada vez y mantén las rodillas suaves."
+        ],
+        "wrong": [
+          "No adivines la dirección antes de la señal ni des la espalda a la pantalla.",
+          "No cruces los pies ni hagas una zancada amplia fuera de la alfombra."
+        ],
+        "breathing": "Sigue respirando; suelta un poco de aire al impulsarte.",
+        "safety": "Coloca la pantalla delante y deja espacio a ambos lados. Si tardas en volver, da un solo paso más pequeño.",
+        "voice": {
+          "start": "Pies rápidos. Espera la señal.",
+          "mid": [
+            "Vuelve al centro después del paso.",
+            "No cruces los pies."
+          ],
+          "last": "Mantén pasos cortos.",
+          "finish": "Listo. Ponte de pie cómodamente."
+        }
+      },
+      "fr": {
+        "name": "Pieds rapides et réaction au signal",
+        "hint": "Petits pas rapides sur place ; suis la direction puis reviens au centre.",
+        "warning": "Regarde l’écran et va vers ta propre gauche ou droite.",
+        "desc": "Un premier pas rapide, un freinage et un retour au centre selon une direction imprévisible. L’application affiche et annonce gauche ou droite.",
+        "howTo": [
+          "Place-toi au centre de l’espace libre, face à l’écran. Pieds un peu plus écartés que les hanches, genoux souples et mains devant toi.",
+          "Fais de petits pas rapides sur place. Toutes les 3 à 5 secondes environ, l’application donne au hasard un signal à gauche ou à droite.",
+          "Au signal, fais un ou deux petits pas chassés rapides dans cette direction, freine en douceur et reviens aussitôt au centre.",
+          "Reprends les petits pas rapides sur place et attends le signal suivant jusqu’à la fin du minuteur. Il s’agit de ta propre gauche et de ta propre droite."
+        ],
+        "correct": [
+          "Au signal, déplace vite un pied puis l’autre, sans les croiser.",
+          "Reviens au centre à chaque fois et garde les genoux souples."
+        ],
+        "wrong": [
+          "Ne devine pas la direction à l’avance et ne tourne pas le dos à l’écran.",
+          "Ne croise pas les pieds et ne fais pas une grande fente hors du tapis."
+        ],
+        "breathing": "Continue à respirer et souffle brièvement quand tu pousses sur la jambe.",
+        "safety": "Place l’écran devant toi et garde de la place de chaque côté. Si tu reviens trop tard, fais un seul pas plus petit.",
+        "voice": {
+          "start": "Pieds rapides. Attends le signal.",
+          "mid": [
+            "Reviens au centre après le pas.",
+            "Ne croise pas les pieds."
+          ],
+          "last": "Garde des petits pas.",
+          "finish": "Terminé. Tiens-toi debout confortablement."
+        }
+      },
+      "it": {
+        "name": "Piedi rapidi e reazione al segnale",
+        "hint": "Passi rapidi sul posto; segui la direzione e torna al centro.",
+        "warning": "Guarda lo schermo e muoviti alla tua sinistra o destra.",
+        "desc": "Primo passo rapido, frenata e ritorno al centro in risposta a una direzione imprevedibile. L’app mostra e dice sinistra o destra.",
+        "howTo": [
+          "Stai al centro dello spazio libero, rivolto allo schermo. Piedi poco più larghi delle anche, ginocchia morbide e mani davanti.",
+          "Fai piccoli passi rapidi sul posto. Circa ogni 3–5 secondi l’app dà un segnale casuale di sinistra o destra.",
+          "Al segnale fai uno o due passi laterali rapidi in quella direzione, frena dolcemente e torna subito al centro.",
+          "Riprendi i passi rapidi sul posto e aspetta il segnale successivo fino alla fine del timer. Sinistra e destra sono dal tuo punto di vista."
+        ],
+        "correct": [
+          "Al segnale muovi subito un piede, poi l’altro, senza incrociarli.",
+          "Torna sempre al centro e mantieni le ginocchia morbide."
+        ],
+        "wrong": [
+          "Non indovinare la direzione in anticipo e non voltare le spalle allo schermo.",
+          "Non incrociare i piedi e non fare un lungo affondo fuori dal tappeto."
+        ],
+        "breathing": "Continua a respirare; espira brevemente mentre spingi con la gamba.",
+        "safety": "Metti lo schermo davanti a te e lascia spazio su entrambi i lati. Se torni troppo tardi, fai un solo passo più piccolo.",
+        "voice": {
+          "start": "Piedi rapidi. Aspetta il segnale.",
+          "mid": [
+            "Torna al centro dopo il passo.",
+            "Non incrociare i piedi."
+          ],
+          "last": "Mantieni passi corti.",
+          "finish": "Fatto. Fermati comodamente in piedi."
+        }
+      }
+    },
+    "reaction": {
+      "directions": [
+        "left",
+        "right"
+      ]
+    }
   }
 ]

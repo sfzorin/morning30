@@ -2,7 +2,9 @@ package ilyaten_test
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/json"
+	"fmt"
 	"image/png"
 	"os"
 	"reflect"
@@ -78,7 +80,7 @@ func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 	if p.WarmupRounds != 1 || len(p.Warmup) != 5 || len(p.Cooldown) != 3 {
 		t.Fatal("every day needs the same warm-up and cool-down once")
 	}
-	wantMain := []int{6, 5, 8, 6, 5, 8}
+	wantMain := []int{8, 5, 8, 8, 5, 8}
 	pushups := []int{6, 8, 10, 12, 14}
 	rests := content.Rests{Warmup: 15, Main: 20, Cooldown: 10}
 	faster := content.Rests{Warmup: 0, Main: 5, Cooldown: 0}
@@ -163,7 +165,7 @@ func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 	}
 }
 
-func TestEveryExerciseHasAnAlignedDemonstration(t *testing.T) {
+func TestPublishedDemonstrationsAreAligned(t *testing.T) {
 	raw, err := os.ReadFile("exercises.json")
 	if err != nil {
 		t.Fatal(err)
@@ -189,6 +191,11 @@ func TestEveryExerciseHasAnAlignedDemonstration(t *testing.T) {
 	}
 	for _, doc := range docs {
 		a := doc.Animation
+		// These three drills are deliberately published as text first. Their
+		// illustrations are a separate release after the program is live.
+		if a == nil && (doc.ID == "IT34" || doc.ID == "IT35" || doc.ID == "IT36") && len(doc.Poses) == 0 {
+			continue
+		}
 		if a == nil || !catalog.ValidAnimation(a) {
 			t.Fatalf("missing/invalid demonstration: %s", doc.ID)
 		}
@@ -228,7 +235,7 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 	if err := json.Unmarshal(raw, &docs); err != nil {
 		t.Fatal(err)
 	}
-	if len(docs) != 33 {
+	if len(docs) != 36 {
 		t.Fatalf("got %d exercises", len(docs))
 	}
 	ids := map[string]catalog.Doc{}
@@ -261,7 +268,7 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 			t.Errorf("countable dynamic exercise %s must use repetitions", id)
 		}
 	}
-	for _, id := range []string{"IT01", "IT13", "IT14", "IT15", "IT17", "IT23", "IT28", "IT31"} {
+	for _, id := range []string{"IT01", "IT13", "IT14", "IT15", "IT17", "IT23", "IT28", "IT31", "IT34", "IT35", "IT36"} {
 		if ids[id].Unit != "seconds" {
 			t.Errorf("continuous work or static hold %s must retain its duration", id)
 		}
@@ -277,6 +284,92 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 			if !ok || doc.Unit != string(it.Unit) || doc.PerSide != it.PerSide {
 				t.Errorf("definition mismatch %s", it.ExerciseID)
 			}
+		}
+	}
+}
+
+func TestHardDayUpdatePreservesOtherDaysAndDailyPhases(t *testing.T) {
+	raw, err := os.ReadFile("program.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var p map[string]any
+	if err := json.Unmarshal(raw, &p); err != nil {
+		t.Fatal(err)
+	}
+	protected := map[string]any{}
+	for _, key := range []string{"warmup", "cooldown", "warmupRounds", "selfManagedSides"} {
+		protected[key] = p[key]
+	}
+	var days []any
+	for _, d := range p["days"].([]any) {
+		day := d.(map[string]any)
+		cycleDay := (int(day["day"].(float64)) - 1) % 6
+		if cycleDay != 0 && cycleDay != 3 {
+			days = append(days, day)
+		}
+	}
+	protected["days"] = days
+	canonical, err := json.Marshal(protected)
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Baseline from the published program before adding the hard-day drills.
+	const unchanged = "fcf20fb92ec3e909730f5d8a5a8f87aa1f7c612321c398b2283a0b3fc0576bcc"
+	if got := fmt.Sprintf("%x", sha256.Sum256(canonical)); got != unchanged {
+		t.Fatalf("warm-up, cool-down or days 2/3/5/6 changed: %s", got)
+	}
+}
+
+func TestHardDaysHaveThreeContinuousFootworkDrills(t *testing.T) {
+	raw, err := os.ReadFile("program.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	p, err := content.ParseResolved(string(raw))
+	if err != nil {
+		t.Fatal(err)
+	}
+	orders := map[int][]string{
+		0: {"IT07", "IT34", "IT08", "IT09", "IT35", "IT11", "IT36", "IT12"},
+		3: {"IT24", "IT34", "IT25", "IT09", "IT35", "IT27", "IT36", "IT28"},
+	}
+	doses := []int{30, 30, 35, 35, 40}
+	for di, day := range p.Days {
+		order, hard := orders[di%6]
+		if !hard {
+			continue
+		}
+		if len(day.Items) != len(order) {
+			t.Fatalf("day %d has wrong circuit length", di+1)
+		}
+		for n, it := range day.Items {
+			if it.ID != order[n] {
+				t.Fatalf("day %d: item %d should be %s, got %s", di+1, n, order[n], it.ID)
+			}
+			if it.ID == "IT34" || it.ID == "IT35" || it.ID == "IT36" {
+				if it.Unit != content.Seconds || it.PerSide || it.Value != doses[di/6] {
+					t.Fatalf("day %d %s must be one continuous bilateral interval", di+1, it.ID)
+				}
+			}
+		}
+	}
+	raw, err = os.ReadFile("exercises.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var docs []map[string]any
+	if err := json.Unmarshal(raw, &docs); err != nil {
+		t.Fatal(err)
+	}
+	for _, doc := range docs {
+		if doc["id"] == "IT36" {
+			want := map[string]any{"directions": []any{"left", "right"}}
+			if !reflect.DeepEqual(doc["reaction"], want) {
+				t.Fatal("reaction drill needs app-driven left/right cues")
+			}
+		} else if _, hasReaction := doc["reaction"]; hasReaction {
+			t.Fatalf("unexpected reaction drill: %s", doc["id"])
 		}
 	}
 }
