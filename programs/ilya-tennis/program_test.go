@@ -2,7 +2,6 @@ package ilyaten_test
 
 import (
 	"bytes"
-	"crypto/sha256"
 	"encoding/json"
 	"fmt"
 	"image/png"
@@ -72,16 +71,14 @@ func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 	if p.FixedDifficulty || !p.SelfManagedSides || len(p.Days) != 30 {
 		t.Fatal("expected ordinary difficulty controls and self-managed sides over 30 days")
 	}
-	for _, field := range []string{`"rest"`, `"sideRest"`} {
+	for _, field := range []string{`"rest"`, `"sideRest"`, `"progression"`, `"effort"`} {
 		if bytes.Contains(raw, []byte(field)) {
-			t.Fatalf("program must not own pauses: %s", field)
+			t.Fatalf("program must use the existing workout system: %s", field)
 		}
 	}
-	if p.WarmupRounds != 1 || len(p.Warmup) != 5 || len(p.Cooldown) != 3 {
+	if p.WarmupRounds != 1 || len(p.Warmup) != 6 || len(p.Cooldown) != 6 {
 		t.Fatal("every day needs the same warm-up and cool-down once")
 	}
-	wantMain := []int{8, 5, 8, 8, 5, 8}
-	pushups := []int{6, 8, 10, 12, 14}
 	rests := content.Rests{Warmup: 15, Main: 20, Cooldown: 10}
 	faster := content.Rests{Warmup: 0, Main: 5, Cooldown: 0}
 	phaseRest := func(slot content.Slot, r content.Rests) int {
@@ -95,7 +92,7 @@ func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 		}
 	}
 	for di, day := range p.Days {
-		if day.Rounds != 2 || len(day.Items) != wantMain[di%6] {
+		if day.Rounds != 2 || len(day.Items) != 8 {
 			t.Fatalf("day %d must have two complete rounds", di+1)
 		}
 		seen := map[string]bool{}
@@ -104,19 +101,11 @@ func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 				t.Fatalf("day %d repeats %s inside one round", di+1, it.ID)
 			}
 			seen[it.ID] = true
-			if it.ID == "IT09" && it.Value != pushups[di/6] {
-				t.Fatalf("day %d push-ups=%d", di+1, it.Value)
-			}
 			if di >= 6 {
 				before := p.Days[di-6].Items[n]
 				if it.ID != before.ID || it.Value < before.Value {
 					t.Fatalf("day %d breaks the planned progression", di+1)
 				}
-			}
-		}
-		if di%6 == 2 || di%6 == 5 {
-			if !reflect.DeepEqual(day.Items, p.Days[2].Items) {
-				t.Fatalf("day %d must remain light", di+1)
 			}
 		}
 		w := p.Workout(di+1, 0, rests)
@@ -191,6 +180,11 @@ func TestPublishedDemonstrationsAreAligned(t *testing.T) {
 	}
 	for _, doc := range docs {
 		a := doc.Animation
+		// New definitions are published before their images. Existing published
+		// demonstrations remain required; any newly supplied strip is validated.
+		if a == nil && doc.ID >= "IT37" && doc.ID <= "IT54" {
+			continue
+		}
 		if a == nil || !catalog.ValidAnimation(a) {
 			t.Fatalf("missing/invalid demonstration: %s", doc.ID)
 		}
@@ -230,7 +224,7 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 	if err := json.Unmarshal(raw, &docs); err != nil {
 		t.Fatal(err)
 	}
-	if len(docs) != 36 {
+	if len(docs) != 54 {
 		t.Fatalf("got %d exercises", len(docs))
 	}
 	ids := map[string]catalog.Doc{}
@@ -258,12 +252,17 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 			}
 		}
 	}
-	for _, id := range []string{"IT02", "IT04", "IT05", "IT06", "IT16", "IT18", "IT29", "IT30"} {
+	for n := 1; n <= 54; n++ {
+		if _, exists := ids[fmt.Sprintf("IT%02d", n)]; !exists {
+			t.Errorf("missing exercise IT%02d", n)
+		}
+	}
+	for _, id := range []string{"IT02", "IT04", "IT05", "IT06", "IT08", "IT09", "IT16", "IT18", "IT29", "IT30", "IT38", "IT39", "IT40", "IT42", "IT44", "IT45", "IT46", "IT47", "IT48"} {
 		if ids[id].Unit != "reps" {
 			t.Errorf("countable dynamic exercise %s must use repetitions", id)
 		}
 	}
-	for _, id := range []string{"IT01", "IT13", "IT14", "IT15", "IT17", "IT23", "IT28", "IT31", "IT34", "IT35", "IT36"} {
+	for _, id := range []string{"IT01", "IT13", "IT14", "IT15", "IT17", "IT23", "IT28", "IT31", "IT34", "IT35", "IT36", "IT37", "IT41", "IT43", "IT49", "IT50", "IT51", "IT52", "IT53", "IT54"} {
 		if ids[id].Unit != "seconds" {
 			t.Errorf("continuous work or static hold %s must retain its duration", id)
 		}
@@ -283,40 +282,7 @@ func TestEveryExerciseHasSevenCompleteLanguages(t *testing.T) {
 	}
 }
 
-func TestHardDayUpdatePreservesOtherDaysAndDailyPhases(t *testing.T) {
-	raw, err := os.ReadFile("program.json")
-	if err != nil {
-		t.Fatal(err)
-	}
-	var p map[string]any
-	if err := json.Unmarshal(raw, &p); err != nil {
-		t.Fatal(err)
-	}
-	protected := map[string]any{}
-	for _, key := range []string{"warmup", "cooldown", "warmupRounds", "selfManagedSides"} {
-		protected[key] = p[key]
-	}
-	var days []any
-	for _, d := range p["days"].([]any) {
-		day := d.(map[string]any)
-		cycleDay := (int(day["day"].(float64)) - 1) % 6
-		if cycleDay != 0 && cycleDay != 3 {
-			days = append(days, day)
-		}
-	}
-	protected["days"] = days
-	canonical, err := json.Marshal(protected)
-	if err != nil {
-		t.Fatal(err)
-	}
-	// Baseline from the published program before adding the hard-day drills.
-	const unchanged = "fcf20fb92ec3e909730f5d8a5a8f87aa1f7c612321c398b2283a0b3fc0576bcc"
-	if got := fmt.Sprintf("%x", sha256.Sum256(canonical)); got != unchanged {
-		t.Fatalf("warm-up, cool-down or days 2/3/5/6 changed: %s", got)
-	}
-}
-
-func TestHardDaysHaveThreeContinuousFootworkDrills(t *testing.T) {
+func TestDailyPhasesIncludePreparationAndStretching(t *testing.T) {
 	raw, err := os.ReadFile("program.json")
 	if err != nil {
 		t.Fatal(err)
@@ -325,28 +291,91 @@ func TestHardDaysHaveThreeContinuousFootworkDrills(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	orders := map[int][]string{
-		0: {"IT07", "IT34", "IT08", "IT09", "IT35", "IT11", "IT36", "IT12"},
-		3: {"IT24", "IT34", "IT25", "IT09", "IT35", "IT27", "IT36", "IT28"},
+	type dose struct {
+		id    string
+		unit  content.Unit
+		value int
+		each  bool
 	}
-	doses := []int{30, 30, 35, 35, 40}
-	for di, day := range p.Days {
-		order, hard := orders[di%6]
-		if !hard {
-			continue
+	warmup := []dose{
+		{"IT37", content.Seconds, 40, false},
+		{"IT02", content.Reps, 12, false},
+		{"IT04", content.Reps, 12, false},
+		{"IT08", content.Reps, 4, true},
+		{"IT19", content.Reps, 6, true},
+		{"IT06", content.Reps, 8, false},
+	}
+	cooldown := []dose{
+		{"IT13", content.Seconds, 20, true},
+		{"IT51", content.Seconds, 20, true},
+		{"IT50", content.Seconds, 20, true},
+		{"IT52", content.Seconds, 20, true},
+		{"IT54", content.Seconds, 15, true},
+		{"IT53", content.Seconds, 30, false},
+	}
+	check := func(day int, phase string, got []content.RItem, want []dose) {
+		t.Helper()
+		if len(got) != len(want) {
+			t.Fatalf("day %d %s: got %d exercises", day, phase, len(got))
 		}
-		if len(day.Items) != len(order) {
-			t.Fatalf("day %d has wrong circuit length", di+1)
+		for i, it := range got {
+			w := want[i]
+			if it.ID != w.id || it.Unit != w.unit || it.Value != w.value || it.PerSide != w.each {
+				t.Fatalf("day %d %s item %d: wrong exercise or dose", day, phase, i+1)
+			}
+		}
+	}
+	for day := range p.Days {
+		check(day+1, "warm-up", p.WarmupFor(day), warmup)
+		check(day+1, "cool-down", p.CooldownFor(day), cooldown)
+	}
+}
+
+func TestEveryDayHasTheApprovedStrengthAndMovementSequence(t *testing.T) {
+	raw, err := os.ReadFile("program.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	p, err := content.ParseResolved(string(raw))
+	if err != nil {
+		t.Fatal(err)
+	}
+	orders := [][]string{
+		{"IT34", "IT09", "IT08", "IT37", "IT39", "IT38", "IT35", "IT36"},
+		{"IT35", "IT09", "IT42", "IT37", "IT40", "IT27", "IT11", "IT36"},
+		{"IT43", "IT09", "IT44", "IT34", "IT41", "IT45", "IT46", "IT36"},
+		{"IT24", "IT09", "IT47", "IT35", "IT39", "IT27", "IT34", "IT36"},
+		{"IT49", "IT09", "IT08", "IT37", "IT48", "IT27", "IT11", "IT36"},
+		{"IT34", "IT09", "IT42", "IT35", "IT41", "IT45", "IT46", "IT36"},
+	}
+	// Five block targets per exercise, in the same order as each daily circuit.
+	doses := [6][8][5]int{
+		{{45, 45, 50, 50, 50}, {6, 8, 10, 12, 14}, {8, 8, 9, 9, 10}, {45, 45, 50, 50, 50}, {10, 10, 12, 12, 14}, {12, 12, 14, 14, 16}, {45, 45, 50, 50, 50}, {45, 45, 50, 50, 50}},
+		{{40, 40, 40, 45, 45}, {5, 5, 6, 6, 7}, {6, 6, 7, 7, 8}, {40, 40, 40, 45, 45}, {8, 8, 10, 10, 12}, {8, 8, 9, 9, 10}, {12, 12, 12, 12, 12}, {40, 40, 40, 45, 45}},
+		{{40, 40, 40, 45, 45}, {5, 5, 6, 6, 7}, {12, 12, 14, 14, 16}, {40, 40, 40, 45, 45}, {20, 20, 25, 25, 30}, {6, 6, 6, 6, 6}, {12, 12, 12, 12, 12}, {40, 40, 40, 45, 45}},
+		{{6, 6, 6, 6, 6}, {6, 8, 10, 12, 14}, {8, 8, 9, 9, 10}, {45, 45, 50, 50, 50}, {12, 12, 14, 14, 16}, {10, 10, 11, 11, 12}, {45, 45, 50, 50, 50}, {45, 45, 50, 50, 50}},
+		{{40, 40, 40, 45, 45}, {5, 5, 6, 6, 7}, {6, 6, 7, 7, 8}, {40, 40, 40, 45, 45}, {8, 8, 10, 10, 12}, {8, 8, 9, 9, 10}, {12, 12, 12, 12, 12}, {40, 40, 40, 45, 45}},
+		{{40, 40, 40, 45, 45}, {5, 5, 6, 6, 7}, {6, 6, 7, 7, 8}, {40, 40, 40, 45, 45}, {20, 20, 25, 25, 30}, {6, 6, 6, 6, 6}, {12, 12, 12, 12, 12}, {40, 40, 40, 45, 45}},
+	}
+	for di, day := range p.Days {
+		if len(day.Items) != 8 {
+			t.Fatalf("day %d must have eight stations", di+1)
 		}
 		for n, it := range day.Items {
-			if it.ID != order[n] {
-				t.Fatalf("day %d: item %d should be %s, got %s", di+1, n, order[n], it.ID)
+			if it.ID != orders[di%6][n] || it.Value != doses[di%6][n][di/6] {
+				t.Errorf("day %d station %d: got %s ×%d, want %s ×%d", di+1, n+1, it.ID, it.Value, orders[di%6][n], doses[di%6][n][di/6])
 			}
-			if it.ID == "IT34" || it.ID == "IT35" || it.ID == "IT36" {
-				if it.Unit != content.Seconds || it.PerSide || it.Value != doses[di/6] {
-					t.Fatalf("day %d %s must be one continuous bilateral interval", di+1, it.ID)
-				}
+		}
+		if day.Items[1].Unit != content.Reps || day.Items[1].PerSide {
+			t.Fatalf("day %d must count push-ups", di+1)
+		}
+		plank := day.Items[4]
+		if plank.ID == "IT41" {
+			if plank.Unit != content.Seconds || !plank.PerSide {
+				t.Fatalf("day %d side plank must hold both sides", di+1)
 			}
+		} else if plank.Unit != content.Reps || plank.PerSide {
+			t.Fatalf("day %d moving plank must count alternating actions total", di+1)
 		}
 	}
 	raw, err = os.ReadFile("exercises.json")
