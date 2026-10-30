@@ -41,6 +41,19 @@ class AlignmentTests(unittest.TestCase):
             draw.rectangle((100, 190, 120, foot_y), fill=(240, 160, 110))
             self.assertEqual(align.analyse(frame, False, line_anchor=True)["anchor"][1], 238)
 
+    def test_wall_stays_fixed_when_supporting_foot_changes(self):
+        anchors = []
+        for foot_x in (110, 160, 190):
+            frame = Image.new("RGB", (300, 300), "white")
+            draw = ImageDraw.Draw(frame)
+            draw.rectangle((0, 0, 60, 299), fill=(210, 210, 210))
+            draw.rectangle((65, 255, 290, 285), fill=(180, 180, 180))
+            draw.rectangle((110, 25, 180, 65), fill=(100, 60, 30))
+            draw.rectangle((100, 70, 200, 200), fill=(30, 130, 220))
+            draw.rectangle((foot_x, 201, foot_x+15, 275), fill=(240, 160, 110))
+            anchors.append(align.analyse(frame, False, foot_anchor=True, wall_anchor=True)["anchor"])
+        self.assertEqual(anchors, [[60, 285]]*3)
+
     def test_camera_shift_is_removed_without_enlarging_crouching_pose(self):
         strip = Image.new("RGB", (900, 300), "white")
         for index, (offset, crouch) in enumerate([(0, 0), (18, 35), (-14, 70)]):

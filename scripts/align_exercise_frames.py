@@ -18,16 +18,18 @@ import numpy as np
 from PIL import Image
 
 
-FLOOR_IDS = {"it09", "it10", "it12", "it14", "it20", "it21", "it22", "it23", "it27", "it28"}
-FOOT_ANCHOR_IDS = {"it05", "it26"}  # a hinge moves the head, not the planted feet
+FLOOR_IDS = {"it09", "it10", "it12", "it14", "it20", "it21", "it22", "it23", "it27", "it28",
+             "it39", "it40", "it41", "it43", "it46", "it48", "it50", "it52", "it53"}
+FOOT_ANCHOR_IDS = {"it05", "it26", "it44", "it45", "it47", "it51", "it54"}  # keep planted feet fixed as the torso moves
 LINE_ANCHOR_IDS = {"it29", "it35"}  # keep the floor line fixed as either foot crosses it
 AIR_FRAMES = {"it07": {0}, "it24": {1}}
 # A stable camera must still show intentional lateral travel. Use a small,
 # explicit excursion within the shared crop, not the generator's panel drift.
 SIDE_TRAVEL = {"it07": [0, -.045, .045], "it15": [0, -.045, .045], "it24": [-.045, 0, .045],
-               "it34": [0, -.045, .045], "it36": [0, -.045, .045]}
-NO_ZOOM_IDS = {"it13", "it28", "it33"}  # changing orientation is not camera zoom
-HEAD_ANCHOR_IDS = {"it12", "it13"}  # stationary head/shoulders while limbs move
+               "it34": [0, -.045, .045], "it36": [0, -.045, .045], "it42": [0, .045, -.045]}
+NO_ZOOM_IDS = {"it13", "it28", "it33", "it37", "it41", "it45", "it46", "it47", "it51", "it54"}  # changing orientation is not camera zoom
+HEAD_ANCHOR_IDS = {"it12", "it13", "it46"}  # stationary head/shoulders while limbs move
+WALL_ANCHOR_IDS = {"it51", "it54"}  # keep the wall fixed while the child changes support
 
 
 def panel_cuts(image):
@@ -90,7 +92,7 @@ def bounds(mask):
             float(np.quantile(xs, .999)), float(np.quantile(ys, .999))]
 
 
-def analyse(image, floor, foot_anchor=False, line_anchor=False, head_anchor=False, support_side=0):
+def analyse(image, floor, foot_anchor=False, line_anchor=False, head_anchor=False, support_side=0, wall_anchor=False):
     pixels = np.asarray(image.convert("RGB"), dtype=float)
     r, g, b = pixels.transpose(2, 0, 1)
     chroma = pixels.max(axis=2) - pixels.min(axis=2)
@@ -131,6 +133,20 @@ def analyse(image, floor, foot_anchor=False, line_anchor=False, head_anchor=Fals
         yy, xx = np.indices(subject.shape)
         planted = subject & (yy > image.height*.6) & ((xx-anchor[0])*support_side > 0)
         anchor[1] = float(np.quantile(np.where(planted)[0], .999))
+    if wall_anchor:
+        # Wall strips include a grey wall at the left and a grey mat below.
+        # A two-foot setup and a one-foot hold have different foot centres;
+        # registering those centres would make the stationary wall jump.
+        yy, xx = np.indices(subject.shape)
+        grey = (chroma < 15) & (pixels.mean(axis=2) < 242) & (pixels.mean(axis=2) > 100)
+        upper_wall = grey & (xx < image.width*.4) & (yy > image.height*.15) & (yy < image.height*.45)
+        edges = [np.where(row)[0][-1] for row in upper_wall if row.any()]
+        if len(edges) < image.height*.1:
+            raise ValueError("Wall reference was not found")
+        wall_x = float(np.median(edges))
+        lower_mat = grey & (xx > wall_x+12) & (yy > image.height*.65)
+        mat = bounds(lower_mat)
+        anchor = [wall_x, mat[3]]
     return {"bounds": box, "anchor": anchor, "reference": reference, "hair": hair}
 
 
@@ -148,7 +164,8 @@ def align_group(paths, output, size=640):
             try:
                 features = analyse(image, floor, exercise_id in FOOT_ANCHOR_IDS,
                                    exercise_id in LINE_ANCHOR_IDS, exercise_id in HEAD_ANCHOR_IDS,
-                                   (-1 if "other" in path.name else 1) if exercise_id == "it32" else 0)
+                                   (-1 if "other" in path.name else 1) if exercise_id == "it32" else 0,
+                                   exercise_id in WALL_ANCHOR_IDS)
             except ValueError as error:
                 raise ValueError(f"{path.name} frame {index}: {error}") from error
             frames.append({"file": path.name, "index": index, "image": image,
@@ -191,7 +208,7 @@ def align_group(paths, output, size=640):
         frame["aligned"] = frame["image"].transform((size, size), Image.Transform.AFFINE,
             (1/scale, 0, -tx/scale, 0, 1/scale, -ty/scale), Image.Resampling.BICUBIC, fillcolor="white")
         report.append({key: value for key, value in frame.items() if key not in {"image", "aligned"}} |
-                      {"scale": float(scale), "translate": [float(tx), float(ty)], "targetAnchor": [target_x, target[1]], "mode": "mat" if floor else "ground"})
+                      {"scale": float(scale), "translate": [float(tx), float(ty)], "targetAnchor": [target_x, target[1]], "mode": "wall" if exercise_id in WALL_ANCHOR_IDS else ("head" if exercise_id in HEAD_ANCHOR_IDS else ("mat" if floor else "ground"))})
     output.mkdir(parents=True, exist_ok=True)
     for path in paths:
         strip = Image.new("RGB", (size*3, size), "white")

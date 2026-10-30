@@ -180,11 +180,6 @@ func TestPublishedDemonstrationsAreAligned(t *testing.T) {
 	}
 	for _, doc := range docs {
 		a := doc.Animation
-		// New definitions are published before their images. Existing published
-		// demonstrations remain required; any newly supplied strip is validated.
-		if a == nil && doc.ID >= "IT37" && doc.ID <= "IT54" {
-			continue
-		}
 		if a == nil || !catalog.ValidAnimation(a) {
 			t.Fatalf("missing/invalid demonstration: %s", doc.ID)
 		}

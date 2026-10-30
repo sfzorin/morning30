@@ -502,5 +502,264 @@
     "sex": "m",
     "kind": "stand",
     "label": "Quick feet and direction reaction · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it37-v1",
+    "file": "images/it37-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Short-step jogging in place · boy"
+  },
+  {
+    "id": "ilya-boy-it37-demo-v1",
+    "file": "animations/aligned/it37-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Short-step jogging in place · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it39-v1",
+    "file": "images/it39-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Plank with shoulder taps · boy"
+  },
+  {
+    "id": "ilya-boy-it39-demo-v1",
+    "file": "animations/aligned/it39-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Plank with shoulder taps · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it40-v1",
+    "file": "images/it40-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Forearm plank with small foot lifts · boy"
+  },
+  {
+    "id": "ilya-boy-it40-demo-v1",
+    "file": "animations/aligned/it40-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Forearm plank with small foot lifts · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it41-v1",
+    "file": "images/it41-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Side plank with staggered feet · boy"
+  },
+  {
+    "id": "ilya-boy-it41-demo-v1",
+    "file": "animations/aligned/it41-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Side plank with staggered feet · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it41-other-demo-v1",
+    "file": "animations/aligned/it41-other-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Side plank with staggered feet · additional three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it42-v1",
+    "file": "images/it42-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Lateral lunge · boy"
+  },
+  {
+    "id": "ilya-boy-it42-demo-v1",
+    "file": "animations/aligned/it42-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Lateral lunge · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it43-v1",
+    "file": "images/it43-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Two steps forward and back · boy"
+  },
+  {
+    "id": "ilya-boy-it43-demo-v1",
+    "file": "animations/aligned/it43-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Two steps forward and back · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it43-other-demo-v1",
+    "file": "animations/aligned/it43-other-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Two steps forward and back · additional three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it44-v1",
+    "file": "images/it44-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Squat and calf raise · boy"
+  },
+  {
+    "id": "ilya-boy-it44-demo-v1",
+    "file": "animations/aligned/it44-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Squat and calf raise · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it45-v1",
+    "file": "images/it45-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Single-leg hip hinge · boy"
+  },
+  {
+    "id": "ilya-boy-it45-demo-v1",
+    "file": "animations/aligned/it45-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Single-leg hip hinge · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it45-other-demo-v1",
+    "file": "animations/aligned/it45-other-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Single-leg hip hinge · additional three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it46-v1",
+    "file": "images/it46-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Prone Y–T–W arm lifts · boy"
+  },
+  {
+    "id": "ilya-boy-it46-demo-v1",
+    "file": "animations/aligned/it46-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Prone Y–T–W arm lifts · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it46-other-demo-v1",
+    "file": "animations/aligned/it46-other-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Prone Y–T–W arm lifts · additional three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it47-v1",
+    "file": "images/it47-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Stationary split squat · boy"
+  },
+  {
+    "id": "ilya-boy-it47-demo-v1",
+    "file": "animations/aligned/it47-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Stationary split squat · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it47-other-demo-v1",
+    "file": "animations/aligned/it47-other-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Stationary split squat · additional three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it48-v1",
+    "file": "images/it48-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Forearm plank with alternating side steps · boy"
+  },
+  {
+    "id": "ilya-boy-it48-demo-v1",
+    "file": "animations/aligned/it48-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Forearm plank with alternating side steps · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it50-v1",
+    "file": "images/it50-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Half-kneeling hip flexor stretch · boy"
+  },
+  {
+    "id": "ilya-boy-it50-demo-v1",
+    "file": "animations/aligned/it50-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Half-kneeling hip flexor stretch · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it51-v1",
+    "file": "images/it51-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Standing quad stretch by a wall · boy"
+  },
+  {
+    "id": "ilya-boy-it51-demo-v1",
+    "file": "animations/aligned/it51-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Standing quad stretch by a wall · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it52-v1",
+    "file": "images/it52-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Lying figure-four glute stretch · boy"
+  },
+  {
+    "id": "ilya-boy-it52-demo-v1",
+    "file": "animations/aligned/it52-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Lying figure-four glute stretch · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it53-v1",
+    "file": "images/it53-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Child’s pose: gentle back stretch · boy"
+  },
+  {
+    "id": "ilya-boy-it53-demo-v1",
+    "file": "animations/aligned/it53-v1.png",
+    "sex": "m",
+    "kind": "floor",
+    "label": "Child’s pose: gentle back stretch · three-frame demonstration"
+  },
+  {
+    "id": "ilya-boy-it54-v1",
+    "file": "images/it54-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Chest stretch with forearm on wall · boy"
+  },
+  {
+    "id": "ilya-boy-it54-demo-v1",
+    "file": "animations/aligned/it54-v1.png",
+    "sex": "m",
+    "kind": "stand",
+    "label": "Chest stretch with forearm on wall · three-frame demonstration"
   }
 ]

@@ -8295,6 +8295,14 @@
           "finish": "Finito. Rimani in piedi tranquillo."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it37-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it37-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -8522,6 +8530,14 @@
           "finish": "Finito. Resta dritto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it06-v1"
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "movement",
+      "pose": "ilya-boy-it06-demo-v1"
     }
   },
   {
@@ -8749,6 +8765,14 @@
           "finish": "Finito. Appoggia dolcemente le ginocchia."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it39-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it39-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -8976,6 +9000,14 @@
           "finish": "Finito. Appoggia dolcemente le ginocchia."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it40-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it40-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -9203,6 +9235,15 @@
           "finish": "Finito. Abbassa dolcemente il bacino."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it41-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it41-demo-v1",
+      "frames": 3,
+      "kind": "movement",
+      "otherPose": "ilya-boy-it41-other-demo-v1"
     }
   },
   {
@@ -9430,6 +9471,14 @@
           "finish": "Fatto. Stai in piedi."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it42-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it42-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -9650,6 +9699,15 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it43-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it43-demo-v1",
+      "frames": 3,
+      "kind": "movement",
+      "otherPose": "ilya-boy-it43-other-demo-v1"
     }
   },
   {
@@ -9870,6 +9928,14 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it44-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it44-demo-v1",
+      "frames": 3,
+      "kind": "sequence"
     }
   },
   {
@@ -10097,6 +10163,15 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it45-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it45-demo-v1",
+      "frames": 3,
+      "kind": "movement",
+      "otherPose": "ilya-boy-it45-other-demo-v1"
     }
   },
   {
@@ -10317,6 +10392,15 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it46-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it46-demo-v1",
+      "frames": 3,
+      "kind": "sequence",
+      "otherPose": "ilya-boy-it46-other-demo-v1"
     }
   },
   {
@@ -10544,6 +10628,15 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it47-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it47-demo-v1",
+      "frames": 3,
+      "kind": "movement",
+      "otherPose": "ilya-boy-it47-other-demo-v1"
     }
   },
   {
@@ -10764,6 +10857,14 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it48-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it48-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -10984,6 +11085,14 @@
           "finish": "Fatto."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it30-v1"
+    ],
+    "animation": {
+      "frames": 3,
+      "kind": "alternating",
+      "pose": "ilya-boy-it30-demo-v1"
     }
   },
   {
@@ -11211,6 +11320,14 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it50-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it50-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -11438,6 +11555,14 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it51-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it51-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -11665,6 +11790,14 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it52-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it52-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   },
   {
@@ -11892,6 +12025,14 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it53-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it53-demo-v1",
+      "frames": 3,
+      "kind": "movement"
     }
   },
   {
@@ -12119,6 +12260,14 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
+    },
+    "poses": [
+      "ilya-boy-it54-v1"
+    ],
+    "animation": {
+      "pose": "ilya-boy-it54-demo-v1",
+      "frames": 3,
+      "kind": "alternating"
     }
   }
 ]

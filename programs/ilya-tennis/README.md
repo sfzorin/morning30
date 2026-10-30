@@ -222,10 +222,25 @@ IT01/IT31 share the walking pose. These stills remain library thumbnails and
 fallbacks if a demonstration cannot load. Existing illustrations and aligned
 demonstrations are retained unchanged.
 
-IT37–IT54 are published first as complete text and voice in all seven languages.
-Their new pictures are a separate later publication; missing illustrations are
-allowed only for these new definitions during the text-first release. New images
-should use the same character references and aligned frame format.
+IT37–IT54 were published first as complete text and voice in all seven languages,
+then received a separate illustration release. All 54 definitions now require
+valid aligned demonstrations. Sixteen new exercises have their own stills and
+21 generated three-frame strips. IT38 reuses IT06's squat and IT49 reuses IT30's
+diagonal step: the movements match, while their prescribed timing differs.
+IT41, IT43, IT45 and IT47 include a second strip for the other side or leading leg;
+IT46 uses six sequential Y/T/W lowering-and-lifting frames. Every other new
+exercise has three frames, with both sides shown where applicable.
+
+The built-in ImageGen tool produced the new originals. Exact prompts, selected
+outputs and corrections are recorded in
+[strength A](prompts-daily-strength-a.json),
+[strength B](prompts-daily-strength-b.json) and
+[stretching](prompts-daily-stretches.json).
+Published media live in `images/` and `animations/aligned/`; the bundle contains
+109 immutable pose assets. Frame registration is performed offline with uniform
+scale and translation. Wall-supported stretches use the fixed wall and mat edge
+as their reference, so switching the supporting foot does not shift the scene.
+The previous 36 exercises' published assets remain byte-for-byte unchanged.
 
 IT34–IT36 were published first with complete text and voice in all seven
 languages, followed by a separate illustration release. Each new drill has three
