@@ -48,7 +48,9 @@ function player(items, extra = {}, options = {}) {
   const nodes = new Map();
   const timers = new Map();
   const spoken = [];
+  const speechEvents = [];
   const utterances = [];
+  let speechPending = 0;
   let speechResumes = 0;
   const navigations = [];
   const images = [];
@@ -103,9 +105,13 @@ function player(items, extra = {}, options = {}) {
   const window = eventTarget({
     matchMedia: () => ({ matches: !!options.reducedMotion }),
     MorningWorkoutState: persistence.api,
-    speechSynthesis: { paused: !!options.speechPaused, getVoices: () => [], cancel() {},
+    speechSynthesis: { paused: !!options.speechPaused, getVoices: () => [], cancel() { speechPending = 0; },
       resume() { this.paused = false; speechResumes++; },
-      speak(utterance) { utterances.push(utterance); spoken.push(utterance.text); } },
+      speak(utterance) {
+        utterances.push(utterance); spoken.push(utterance.text);
+        speechEvents.push({ at: now, text: utterance.text, pendingBefore: speechPending++,
+          arrow: get('.reaction-arrow').textContent, visible: !get('.reaction-cue').classList.contains('hidden') });
+      } },
   });
   if (options.noSpeech) delete window.speechSynthesis;
   const base = Date.parse('2026-10-24T08:00:00Z');
@@ -151,7 +157,7 @@ function player(items, extra = {}, options = {}) {
     now = end;
   }
   return {
-    get, advance, spoken, utterances, navigations, images, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
+    get, advance, spoken, speechEvents, utterances, navigations, images, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
     get speechResumes() { return speechResumes; },
     get completed() { return [...persistence.data.events.values()]; },
     hide() { document.visibilityState = 'hidden'; document.dispatch('visibilitychange'); window.dispatch('pagehide'); },
@@ -165,6 +171,113 @@ const reactionItem = (fields = {}) => item({ unit: 'seconds', value: 30,
   reaction: { directions: ['left', 'right'] }, correct: ['Keep moving'], wrong: ['Do not cross feet'], ...fields });
 const reactionCues = { go: 'Go', halfway: 'Half', reaction_left: 'Left', reaction_right: 'Right' };
 const directionsSaid = p => p.spoken.filter(word => word === 'Left' || word === 'Right');
+const directionEvents = p => p.speechEvents.filter(event => event.text === 'Left' || event.text === 'Right');
+const acceleratingReaction = (fields = {}) => reactionItem({
+  reaction: { directions: ['left', 'right'], cadence: { startSeconds: 3, endSeconds: 1 } }, ...fields });
+
+test('reaction cadence accelerates within active work and reaches one second before the closing count', () => {
+  const p = player([acceleratingReaction()], { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+  p.advance(3); // ready
+  p.advance(2.999);
+  assert.equal(directionEvents(p).length, 0);
+  p.advance(.001);
+  assert.equal(directionEvents(p)[0].at, 6000, 'first signal follows three active seconds');
+  p.advance(2.749);
+  assert.equal(directionEvents(p).length, 1);
+  p.advance(.001);
+  assert.equal(directionEvents(p)[1].at, 8750, 'the next interval is already shorter');
+  p.advance(21.25); // final countdown begins after 27 seconds of work
+  const events = directionEvents(p);
+  const gaps = events.slice(1).map((event, index) => event.at - events[index].at);
+  assert.ok(gaps.length > 10, 'reaction work becomes materially faster');
+  assert.ok(gaps.every((gap, index) => gap >= 1000 && (!index || gap <= gaps[index - 1])));
+  assert.deepEqual(gaps.slice(-2), [1000, 1000], 'fastest cadence is used before countdown');
+  assert.ok(events.every(event => event.at < 30000 && event.visible &&
+    event.arrow === (event.text === 'Left' ? '←' : '→') && event.pendingBefore === 0));
+  assert.ok(hidden(p.get('.reaction-cue')));
+  assert.equal(p.get('.ex-value').textContent, '3″');
+  p.advance(3);
+  assert.equal(directionEvents(p).length, events.length);
+  assert.deepEqual(p.spoken.slice(-3), ['3', '2', '1']);
+  assert.ok(!p.spoken.includes('Keep moving') && !p.spoken.includes('Do not cross feet'));
+});
+
+test('one-second reaction signals visibly flash even when the same direction repeats', () => {
+  let draw = 0;
+  const p = player([acceleratingReaction({ reaction: {
+    directions: ['left', 'right'], cadence: { startSeconds: 1, endSeconds: 1 },
+  } })], { voiceMode: 'normal', cues: reactionCues }, { random: () => [0, .99, .99][draw++ % 3] });
+  p.advance(4);
+  assert.equal(p.get('.reaction-word').textContent, 'Left');
+  p.advance(.749);
+  assert.ok(!hidden(p.get('.reaction-cue')));
+  p.advance(.001);
+  assert.ok(hidden(p.get('.reaction-cue')), 'a 250 ms gap separates consecutive arrows');
+  p.advance(.25);
+  assert.ok(!hidden(p.get('.reaction-cue')));
+  assert.deepEqual(directionsSaid(p), ['Left', 'Left']);
+  assert.deepEqual(directionEvents(p).map(event => event.at), [4000, 5000]);
+  assert.ok(directionEvents(p).every(event => event.pendingBefore === 0), 'spoken directions never queue');
+});
+
+test('reaction acceleration freezes while hidden or reading details and resumes without bursts', () => {
+  const p = player([acceleratingReaction()], { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+  p.advance(15); // 12 active seconds: current interval is two seconds
+  const count = directionEvents(p).length;
+  p.hide();
+  p.advance(90);
+  p.show();
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 18000);
+  assert.equal(directionEvents(p).length, count);
+  assert.ok(hidden(p.get('.reaction-cue')));
+  p.get('.resume-continue').click();
+  p.advance(1.999);
+  assert.equal(directionEvents(p).length, count);
+  p.advance(.001);
+  assert.equal(directionEvents(p).length, count + 1, 'resume preserves acceleration rather than restarting at three seconds');
+  p.get('.ex-name').click();
+  p.advance(60);
+  assert.equal(directionEvents(p).length, count + 1);
+  p.get('.info-close').click();
+  p.advance(1.832);
+  assert.equal(directionEvents(p).length, count + 1);
+  p.advance(.001);
+  assert.equal(directionEvents(p).length, count + 2, 'reading time did not advance the ramp');
+  p.cleanup();
+  p.advance(30);
+  assert.equal(directionEvents(p).length, count + 2);
+});
+
+test('reaction acceleration survives page recreation using saved active work remaining', () => {
+  const persistence = memoryState();
+  const first = player([acceleratingReaction()], { voiceMode: 'normal', cues: reactionCues }, { persistence });
+  first.advance(15);
+  first.hide(); first.cleanup();
+  const resumed = player([acceleratingReaction()], { voiceMode: 'normal', cues: reactionCues }, { persistence });
+  resumed.advance(120);
+  assert.equal(directionEvents(resumed).length, 0);
+  resumed.get('.resume-continue').click();
+  resumed.advance(1.999);
+  assert.equal(directionEvents(resumed).length, 0);
+  resumed.advance(.001);
+  assert.equal(directionEvents(resumed).length, 1);
+  assert.equal(resumed.get('.ex-value').textContent, '16″');
+});
+
+test('each reaction round starts at three seconds and retains the existing rest duration', () => {
+  const p = player([acceleratingReaction({ rest: 7 }), acceleratingReaction({ round: 2 })],
+    { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
+  p.advance(33); // ready and first complete round
+  const count = directionEvents(p).length;
+  assert.equal(p.get('.rest-count').textContent, 7);
+  p.advance(7);
+  assert.equal(p.get('.ex-value').textContent, '30″');
+  p.advance(2.999);
+  assert.equal(directionEvents(p).length, count);
+  p.advance(.001);
+  assert.equal(directionEvents(p).length, count + 1);
+  assert.equal(directionEvents(p).at(-1).at, 43000);
+});
 
 test('reaction cues share continuous work time and balance randomized directions without fixed alternation', () => {
   const samples = [0, .99, .99, 0, 0, 0, 0];
@@ -294,13 +407,36 @@ test('reloading a reaction drill preserves work remaining and waits for a fresh 
 });
 
 test('reaction remains disabled for invalid, counted, and bilateral configurations', () => {
-  for (const fields of [{ unit: 'reps' }, { perSide: true }, { reaction: { directions: ['left', 'left'] } }]) {
+  const invalidCadences = [null, [], {}, { startSeconds: 3 }, { endSeconds: 1 },
+    { startSeconds: '3', endSeconds: 1 }, { startSeconds: 3.5, endSeconds: 1 },
+    { startSeconds: 3, endSeconds: 1.5 }, { startSeconds: 0, endSeconds: 1 },
+    { startSeconds: 11, endSeconds: 1 }, { startSeconds: 3, endSeconds: 0 },
+    { startSeconds: 3, endSeconds: 4 }, { startSeconds: 3, endSeconds: 1, rest: 10 }];
+  for (const fields of [{ unit: 'reps' }, { perSide: true }, { reaction: { directions: ['left', 'left'] } },
+    ...invalidCadences.map(cadence => ({ reaction: { directions: ['left', 'right'], cadence } }))]) {
     const p = player([reactionItem(fields)], { voiceMode: 'normal', cues: reactionCues }, { random: () => 0 });
     p.advance(10);
     assert.equal(directionsSaid(p).length, 0);
     assert.ok(hidden(p.get('.reaction-cue')));
     assert.ok(p.spoken.includes('Keep moving'));
   }
+});
+
+test('accelerating reaction remains visible with voice off and yields completely to a short final countdown', () => {
+  const muted = player([acceleratingReaction()], { voiceMode: 'off', cues: reactionCues }, { random: () => 0 });
+  muted.advance(6);
+  assert.ok(!hidden(muted.get('.reaction-cue')));
+  assert.equal(muted.get('.reaction-arrow').textContent, '←');
+  muted.advance(2);
+  assert.ok(hidden(muted.get('.reaction-cue')));
+  muted.advance(.75);
+  assert.ok(!hidden(muted.get('.reaction-cue')));
+  assert.equal(muted.spoken.length, 0);
+
+  const short = player([acceleratingReaction({ value: 6 })], { voiceMode: 'normal', cues: reactionCues });
+  short.advance(9);
+  assert.equal(directionEvents(short).length, 0, 'a first direction cannot interrupt the final three seconds');
+  assert.deepEqual(short.spoken.slice(-3), ['3', '2', '1']);
 });
 
 test('reaction figure stays neutral while random signals run; technique card can play its demonstration', () => {

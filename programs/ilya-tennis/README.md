@@ -123,13 +123,17 @@ out-and-back side steps; the side plank holds for the listed time on each side.
 IT46 counts each Y, T or W raise separately: 12 raises are four Y–T–W sequences.
 IT24 remains six controlled hops per round throughout the program.
 
-IT36 is the final station every day. It retains the existing
-`reaction: {"directions": ["left", "right"]}` definition: unpredictable visible
-and spoken cues arrive about every 3–5 seconds while the clock continues.
-Directions mean the child's own left and right. Make one or two short side
-steps, stop under control, return to the centre and continue quick feet until
-the next cue. Visible cues work when voice is disabled. This is a continuous
-timed interval, without an extra exercise pause or an additional timer mode.
+IT36 is the final station every day. Its reaction definition keeps
+`directions: ["left", "right"]` and sets
+`cadence: {"startSeconds": 3, "endSeconds": 1}`. The first visible and spoken
+direction cue arrives after three seconds of active exercise time. Direction
+remains random while the interval shortens linearly from three seconds to one
+second before the final three-second countdown. That countdown takes priority:
+no new direction cues play during it. Directions mean the child's own left and
+right. Make one short side step, stop under control, return immediately to the
+centre and continue quick feet between cues and during the final countdown.
+Visible cues work when voice is disabled. This remains one continuous timed
+interval, without an extra exercise pause or an additional timer mode.
 
 The prescribed strength repetitions should keep controlled form and a small
 reserve. Use the existing difficulty control when needed. Program completion

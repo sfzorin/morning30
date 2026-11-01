@@ -3,6 +3,7 @@ package catalog
 import (
 	"encoding/json"
 	"reflect"
+	"strings"
 	"testing"
 )
 
@@ -54,18 +55,88 @@ func TestReactionDocumentValidationAndRoundTrip(t *testing.T) {
 }
 
 func TestCatalogReactionIsValidatedAndCopied(t *testing.T) {
-	c := New(`{"R":{"id":"R","slot":"main","unit":"seconds","reaction":{"directions":["left","right"]}}}`)
+	c := New(`{"R":{"id":"R","slot":"main","unit":"seconds","reaction":{"directions":["left","right"],"cadence":{"startSeconds":3,"endSeconds":1}}}}`)
 	r := c.Reaction("R")
 	if r == nil {
 		t.Fatal("missing reaction")
 	}
 	r.Directions[0] = "changed"
-	if got := c.Reaction("R"); got.Directions[0] != "left" {
+	r.Cadence.StartSeconds, r.Cadence.EndSeconds = 10, 9
+	if got := c.Reaction("R"); got.Directions[0] != "left" || *got.Cadence != (ReactionCadence{StartSeconds: 3, EndSeconds: 1}) {
 		t.Fatal("payload modified stored reaction")
 	}
 	c.Put(Doc{ID: "invalid", Slot: "main", Unit: "reps", Reaction: &Reaction{Directions: []string{"left", "right"}}})
 	if c.Reaction("invalid") != nil || c.Reaction("missing") != nil {
 		t.Fatal("invalid or missing document produced reaction cues")
+	}
+}
+
+func TestReactionCadenceRoundTripAndLegacyDefault(t *testing.T) {
+	for _, cadence := range []*ReactionCadence{nil,
+		{StartSeconds: 3, EndSeconds: 1}, {StartSeconds: 1, EndSeconds: 1},
+		{StartSeconds: 10, EndSeconds: 10}, {StartSeconds: 10, EndSeconds: 1},
+	} {
+		d := Doc{ID: "R", Slot: "main", Unit: "seconds", Reaction: &Reaction{Directions: []string{"left", "right"}, Cadence: cadence}}
+		if !ValidDoc(d) {
+			t.Fatalf("rejected cadence: %#v", cadence)
+		}
+		raw := d.Marshal()
+		if cadence == nil && strings.Contains(string(raw), `"cadence"`) {
+			t.Fatal("legacy reaction must omit cadence, retaining the player's default")
+		}
+		var got Doc
+		if err := json.Unmarshal(raw, &got); err != nil || !reflect.DeepEqual(got.Reaction, d.Reaction) {
+			t.Fatalf("cadence did not round trip: %#v, %v", got.Reaction, err)
+		}
+		for _, unit := range []string{"reps", "breaths"} {
+			got.Unit = unit
+			if ValidDoc(got) {
+				t.Fatalf("cadence enabled reaction on %s", unit)
+			}
+		}
+		got.Unit, got.PerSide = "seconds", true
+		if ValidDoc(got) {
+			t.Fatal("cadence enabled a reaction side-change timer")
+		}
+	}
+}
+
+func TestReactionCadenceRejectsMalformedJSON(t *testing.T) {
+	for _, raw := range []string{
+		`null`, `[]`, `"3,1"`, `true`, `3`, `{}`,
+		`{"startSeconds":3}`, `{"endSeconds":1}`,
+		`{"startSeconds":null,"endSeconds":1}`,
+		`{"startSeconds":3,"endSeconds":null}`,
+		`{"startSeconds":true,"endSeconds":1}`,
+		`{"startSeconds":"3","endSeconds":1}`,
+		`{"startSeconds":3.0,"endSeconds":1}`,
+		`{"startSeconds":3,"endSeconds":1.5}`,
+		`{"startSeconds":0,"endSeconds":1}`,
+		`{"startSeconds":11,"endSeconds":1}`,
+		`{"startSeconds":3,"endSeconds":0}`,
+		`{"startSeconds":3,"endSeconds":4}`,
+		`{"startSeconds":3,"endSeconds":1,"rest":10}`,
+		`{"StartSeconds":3,"endSeconds":1}`,
+	} {
+		t.Run(raw, func(t *testing.T) {
+			var d Doc
+			err := json.Unmarshal([]byte(`{"reaction":{"directions":["left","right"],"cadence":`+raw+`}}`), &d)
+			if err == nil {
+				t.Fatal("accepted malformed cadence")
+			}
+		})
+	}
+}
+
+func TestReactionCadenceValidatesDirectStructs(t *testing.T) {
+	for _, cadence := range []ReactionCadence{
+		{}, {StartSeconds: -1, EndSeconds: 1}, {StartSeconds: 11, EndSeconds: 1},
+		{StartSeconds: 3, EndSeconds: 0}, {StartSeconds: 3, EndSeconds: 4},
+	} {
+		d := Doc{ID: "R", Slot: "main", Unit: "seconds", Reaction: &Reaction{Directions: []string{"left", "right"}, Cadence: &cadence}}
+		if ValidDoc(d) {
+			t.Fatalf("accepted invalid cadence: %#v", cadence)
+		}
 	}
 }
 

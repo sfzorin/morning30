@@ -6,8 +6,8 @@
 package catalog
 
 import (
-	"bytes"
 	"encoding/json"
+	"errors"
 	"sort"
 	"strings"
 
@@ -47,25 +47,70 @@ type Animation struct {
 }
 
 // Reaction requests unpredictable directional signals during continuous timed
-// work. Cue pacing belongs to the player, never to an exercise's rest settings.
+// work. Optional cadence controls cue intervals, never exercise rest settings.
 type Reaction struct {
-	Directions []string `json:"directions"`
+	Directions []string         `json:"directions"`
+	Cadence    *ReactionCadence `json:"cadence,omitempty"`
+}
+
+// ReactionCadence accelerates cue intervals from start to end within an exercise.
+// An omitted cadence retains the player's legacy random timing.
+type ReactionCadence struct {
+	StartSeconds int `json:"startSeconds"`
+	EndSeconds   int `json:"endSeconds"`
+}
+
+func (c *ReactionCadence) UnmarshalJSON(data []byte) error {
+	var fields map[string]json.RawMessage
+	if err := json.Unmarshal(data, &fields); err != nil {
+		return err
+	}
+	if len(fields) != 2 || fields["startSeconds"] == nil || fields["endSeconds"] == nil {
+		return errors.New("reaction cadence requires startSeconds and endSeconds only")
+	}
+	type plain ReactionCadence
+	var value plain
+	if err := json.Unmarshal(data, &value); err != nil {
+		return err
+	}
+	if !validReactionCadence((*ReactionCadence)(&value)) {
+		return errors.New("reaction cadence must use integer seconds from 1 to 10 with endSeconds <= startSeconds")
+	}
+	*c = ReactionCadence(value)
+	return nil
+}
+
+func validReactionCadence(c *ReactionCadence) bool {
+	return c == nil || (c.StartSeconds >= 1 && c.StartSeconds <= 10 &&
+		c.EndSeconds >= 1 && c.EndSeconds <= c.StartSeconds)
 }
 
 func (r *Reaction) UnmarshalJSON(data []byte) error {
-	type plain Reaction
-	var value plain
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	if err := decoder.Decode(&value); err != nil {
+	var fields map[string]json.RawMessage
+	if err := json.Unmarshal(data, &fields); err != nil {
 		return err
 	}
-	*r = Reaction(value)
+	for key := range fields {
+		if key != "directions" && key != "cadence" {
+			return errors.New("unknown reaction field: " + key)
+		}
+	}
+	var value Reaction
+	if err := json.Unmarshal(fields["directions"], &value.Directions); err != nil {
+		return err
+	}
+	if cadence, present := fields["cadence"]; present {
+		value.Cadence = &ReactionCadence{}
+		if err := json.Unmarshal(cadence, value.Cadence); err != nil {
+			return err
+		}
+	}
+	*r = value
 	return nil
 }
 
 func ValidReaction(r *Reaction) bool {
-	return r == nil || (len(r.Directions) == 2 &&
+	return r == nil || (validReactionCadence(r.Cadence) && len(r.Directions) == 2 &&
 		((r.Directions[0] == "left" && r.Directions[1] == "right") ||
 			(r.Directions[0] == "right" && r.Directions[1] == "left")))
 }
@@ -427,7 +472,12 @@ func (c Catalog) Reaction(id string) *Reaction {
 	if !ok || d.Reaction == nil || !ValidDoc(d) {
 		return nil
 	}
-	return &Reaction{Directions: append([]string(nil), d.Reaction.Directions...)}
+	r := &Reaction{Directions: append([]string(nil), d.Reaction.Directions...)}
+	if d.Reaction.Cadence != nil {
+		cadence := *d.Reaction.Cadence
+		r.Cadence = &cadence
+	}
+	return r
 }
 
 // Entry is one selectable exercise for the editor dropdown.

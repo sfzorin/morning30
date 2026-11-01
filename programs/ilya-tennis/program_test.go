@@ -383,9 +383,15 @@ func TestEveryDayHasTheApprovedStrengthAndMovementSequence(t *testing.T) {
 	}
 	for _, doc := range docs {
 		if doc["id"] == "IT36" {
-			want := map[string]any{"directions": []any{"left", "right"}}
+			want := map[string]any{
+				"directions": []any{"left", "right"},
+				"cadence": map[string]any{
+					"startSeconds": float64(3),
+					"endSeconds":   float64(1),
+				},
+			}
 			if !reflect.DeepEqual(doc["reaction"], want) {
-				t.Fatal("reaction drill needs app-driven left/right cues")
+				t.Fatal("reaction drill needs app-driven left/right cues accelerating from 3 to 1 second")
 			}
 		} else if _, hasReaction := doc["reaction"]; hasReaction {
 			t.Fatalf("unexpected reaction drill: %s", doc["id"])

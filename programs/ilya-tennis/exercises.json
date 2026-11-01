@@ -7839,17 +7839,17 @@
     "content": {
       "ru": {
         "name": "Быстрые ноги и реакция на сигнал",
-        "hint": "Быстрые шаги на месте; по сигналу шагни в сторону и вернись.",
+        "hint": "Быстрые шаги на месте; сигналы постепенно учащаются.",
         "warning": "Смотри на экран перед собой; двигайся в свою левую или правую сторону.",
-        "desc": "Быстрый первый шаг, торможение и возврат в центр по непредсказуемому направлению. Приложение показывает и произносит «влево» или «вправо».",
+        "desc": "Короткий шаг в случайную сторону и возврат в центр. Приложение показывает и произносит «влево» или «вправо» всё чаще: промежутки сокращаются с 3 до 1 секунды.",
         "howTo": [
           "Встань в центре свободного места лицом к экрану. Стопы чуть шире бёдер, колени мягкие, руки перед собой.",
-          "Делай частые короткие шаги на месте. Примерно каждые 3–5 секунд приложение даст случайный сигнал «влево» или «вправо».",
-          "По сигналу сделай один-два быстрых приставных шага в указанную сторону, мягко затормози и сразу вернись в центр.",
-          "Снова быстро переступай на месте и жди следующий сигнал до конца таймера. Направления — твои собственные левая и правая стороны."
+          "Делай частые короткие шаги на месте. Первый случайный сигнал «влево» или «вправо» придёт через 3 секунды движения; затем промежутки плавно сократятся с 3 до 1 секунды.",
+          "По сигналу сделай один короткий шаг в указанную сторону, мягко затормози и сразу вернись в центр.",
+          "Вернувшись, снова быстро переступай на месте. Последние 3 секунды продолжай шаги на месте под обратный отсчёт, без новых направлений. Левая и правая — твои собственные стороны."
         ],
         "correct": [
-          "На сигнал быстро отвечает первая нога, затем вторая; стопы не скрещиваются.",
+          "Шаг короткий и в сторону сигнала; корпус остаётся лицом к экрану.",
           "Каждый раз возвращайся в центр и сохраняй мягкие колени."
         ],
         "wrong": [
@@ -7857,11 +7857,11 @@
           "Не скрещивай стопы и не делай широкий выпад за край ковра."
         ],
         "breathing": "Дыши непрерывно; коротко выдыхай при отталкивании.",
-        "safety": "Экран поставь перед собой, свободное место оставь с обеих сторон. Если не успеваешь вернуться, делай один меньший шаг.",
+        "safety": "Экран поставь перед собой, свободное место оставь с обеих сторон. Если не успеваешь вернуться до следующего сигнала, сократи шаг.",
         "voice": {
-          "start": "Быстрые ноги. Жди сигнал.",
+          "start": "Быстрые ноги. Сигналы будут ускоряться.",
           "mid": [
-            "После шага возвращайся в центр.",
+            "Короткий шаг и сразу в центр.",
             "Не скрещивай стопы."
           ],
           "last": "Сохраняй короткие шаги.",
@@ -7870,17 +7870,17 @@
       },
       "en": {
         "name": "Quick feet and direction reaction",
-        "hint": "Quick steps in place; follow the direction cue and return.",
+        "hint": "Quick steps in place; the cues gradually get quicker.",
         "warning": "Face the screen and move to your own left or right.",
-        "desc": "A quick first step, braking and return to centre in response to an unpredictable direction. The app shows and says left or right.",
+        "desc": "A short step in a random direction and a return to centre. The app shows and says left or right more frequently as the gaps shorten from 3 seconds to 1 second.",
         "howTo": [
           "Stand in the centre of your clear space facing the screen. Feet slightly wider than hips, knees soft and hands in front.",
-          "Take frequent small steps in place. About every 3–5 seconds, the app gives a random left or right cue.",
-          "On the cue, take one or two quick shuffle steps in that direction, brake softly and return straight to the centre.",
-          "Resume quick feet in place and wait for the next cue until the timer ends. Left and right mean your own left and right."
+          "Take frequent small steps in place. The first random left or right cue comes after 3 seconds of movement; the gaps then gradually shorten from 3 seconds to 1 second.",
+          "On the cue, take one short step in that direction, brake softly and return straight to the centre.",
+          "Resume quick feet in place when you return. During the final 3 seconds, keep stepping in place to the countdown without new direction cues. Left and right mean your own left and right."
         ],
         "correct": [
-          "Move the first foot promptly on the cue, then the other, without crossing your feet.",
+          "Take a short step toward the cue and keep your body facing the screen.",
           "Return to the centre every time and keep your knees soft."
         ],
         "wrong": [
@@ -7888,12 +7888,12 @@
           "Don't cross your feet or take a wide lunge beyond the mat."
         ],
         "breathing": "Keep breathing, with a short exhale as you push off.",
-        "safety": "Put the screen in front of you and leave space on both sides. If returning takes too long, take one smaller step.",
+        "safety": "Put the screen in front of you and leave space on both sides. If you cannot return before the next cue, make your step smaller.",
         "voice": {
-          "start": "Quick feet. Wait for the cue.",
+          "start": "Quick feet. Cues get quicker.",
           "mid": [
-            "Return to the centre after moving.",
-            "Keep your feet from crossing."
+            "Short step, then straight back to centre.",
+            "Don't cross your feet."
           ],
           "last": "Keep your steps short.",
           "finish": "Done. Stand comfortably."
@@ -7901,17 +7901,17 @@
       },
       "tr": {
         "name": "Hızlı ayaklar ve yön tepkisi",
-        "hint": "Yerinde hızlı adımlar; yön işaretiyle yana git ve geri dön.",
+        "hint": "Yerinde hızlı adımlar; işaretler giderek sıklaşır.",
         "warning": "Ekrana bak; kendi sağına veya soluna hareket et.",
-        "desc": "Önceden bilinmeyen yöne göre hızlı ilk adım, yavaşlama ve ortaya dönüş. Uygulama sağ veya sol yönünü gösterir ve söyler.",
+        "desc": "Rastgele bir yöne kısa adım ve ortaya dönüş. Uygulama sağ veya solu giderek daha sık gösterir ve söyler; aralıklar 3 saniyeden 1 saniyeye iner.",
         "howTo": [
           "Boş alanın ortasında ekrana dönük dur. Ayakların kalçandan biraz geniş, dizlerin hafif bükülü ve ellerin önde olsun.",
-          "Yerinde sık ve küçük adımlar at. Uygulama yaklaşık her 3–5 saniyede rastgele sağ veya sol işareti verir.",
-          "İşaret gelince o yöne bir veya iki hızlı yan adım at, yumuşakça yavaşla ve hemen ortaya dön.",
-          "Yerinde hızlı adımlara devam et, süre bitene kadar sonraki işareti bekle. Sağ ve sol senin kendi yönlerindir."
+          "Yerinde sık ve küçük adımlar at. İlk rastgele sağ veya sol işareti, 3 saniye hareket ettikten sonra gelir; ardından aralıklar kademeli olarak 3 saniyeden 1 saniyeye iner.",
+          "İşaret gelince o yöne tek bir kısa adım at, yumuşakça yavaşla ve hemen ortaya dön.",
+          "Dönünce yerinde hızlı adımlara devam et. Son 3 saniyede yeni yön işareti olmadan, geri sayım boyunca yerinde adım atmayı sürdür. Sağ ve sol senin kendi yönlerindir."
         ],
         "correct": [
-          "İşaretle önce bir ayağın, sonra diğeri hızla hareket eder; ayaklar çaprazlanmaz.",
+          "İşaretin yönüne kısa adım at; gövden ekrana dönük kalsın.",
           "Her seferinde ortaya dön ve dizlerini hafif bükülü tut."
         ],
         "wrong": [
@@ -7919,11 +7919,11 @@
           "Ayaklarını çaprazlama ve matın dışına uzun bir hamle yapma."
         ],
         "breathing": "Nefes almaya devam et; itilirken kısa bir nefes ver.",
-        "safety": "Ekranı önüne koy ve iki yanında boşluk bırak. Dönmeye yetişemiyorsan daha küçük tek bir adım at.",
+        "safety": "Ekranı önüne koy ve iki yanında boşluk bırak. Sonraki işaretten önce dönemiyorsan adımını küçült.",
         "voice": {
-          "start": "Hızlı ayaklar. İşareti bekle.",
+          "start": "Hızlı ayaklar. İşaretler giderek hızlanacak.",
           "mid": [
-            "Adımdan sonra ortaya dön.",
+            "Kısa adım, hemen ortaya dön.",
             "Ayaklarını çaprazlama."
           ],
           "last": "Adımların kısa kalsın.",
@@ -7932,17 +7932,17 @@
       },
       "de": {
         "name": "Schnelle Füße und Richtungsreaktion",
-        "hint": "Schnelle Schritte auf der Stelle; folge dem Richtungssignal und kehre zurück.",
+        "hint": "Schnelle Schritte auf der Stelle; die Signale kommen immer häufiger.",
         "warning": "Schau zum Bildschirm und bewege dich zu deiner eigenen linken oder rechten Seite.",
-        "desc": "Ein schneller erster Schritt, Abbremsen und Rückkehr zur Mitte auf ein unvorhersehbares Richtungssignal. Die App zeigt und sagt links oder rechts.",
+        "desc": "Ein kurzer Schritt in eine zufällige Richtung und zurück zur Mitte. Die App zeigt und sagt links oder rechts immer häufiger: Die Abstände verkürzen sich von 3 auf 1 Sekunde.",
         "howTo": [
           "Steh in der Mitte deiner freien Fläche mit Blick zum Bildschirm. Füße etwas weiter als hüftbreit, Knie locker und Hände vor dem Körper.",
-          "Mach schnelle, kleine Schritte auf der Stelle. Etwa alle 3–5 Sekunden gibt die App zufällig links oder rechts vor.",
-          "Mach auf das Signal einen oder zwei schnelle Nachstellschritte in die Richtung, bremse weich ab und kehre sofort zur Mitte zurück.",
-          "Mach dort wieder schnelle Schritte und warte bis zum Timerende auf das nächste Signal. Links und rechts sind aus deiner eigenen Sicht gemeint."
+          "Mach schnelle, kleine Schritte auf der Stelle. Das erste zufällige Links- oder Rechtssignal kommt nach 3 Sekunden Bewegung; danach verkürzen sich die Abstände gleichmäßig von 3 auf 1 Sekunde.",
+          "Mach auf das Signal einen kurzen Schritt in diese Richtung, bremse weich ab und kehre sofort zur Mitte zurück.",
+          "Mach danach wieder schnelle Schritte auf der Stelle. In den letzten 3 Sekunden läuft der Countdown ohne neue Richtungssignale; tritt dabei weiter auf der Stelle. Links und rechts sind aus deiner eigenen Sicht gemeint."
         ],
         "correct": [
-          "Bewege auf das Signal erst einen Fuß schnell, dann den anderen, ohne die Füße zu kreuzen.",
+          "Mach einen kurzen Schritt in die angezeigte Richtung; der Körper bleibt zum Bildschirm ausgerichtet.",
           "Kehre jedes Mal zur Mitte zurück und halte die Knie locker."
         ],
         "wrong": [
@@ -7950,11 +7950,11 @@
           "Kreuze die Füße nicht und mach keinen weiten Ausfallschritt über den Mattenrand."
         ],
         "breathing": "Atme weiter und beim Abdrücken kurz aus.",
-        "safety": "Stell den Bildschirm vor dich und lass Platz zu beiden Seiten. Falls du nicht rechtzeitig zurückkommst, mach nur einen kleineren Schritt.",
+        "safety": "Stell den Bildschirm vor dich und lass Platz zu beiden Seiten. Falls du vor dem nächsten Signal nicht zurückkommst, mach den Schritt kleiner.",
         "voice": {
-          "start": "Schnelle Füße. Warte aufs Signal.",
+          "start": "Schnelle Füße. Die Signale werden schneller.",
           "mid": [
-            "Kehre nach dem Schritt zur Mitte zurück.",
+            "Kurzer Schritt, sofort zurück zur Mitte.",
             "Kreuze die Füße nicht."
           ],
           "last": "Halte die Schritte kurz.",
@@ -7963,17 +7963,17 @@
       },
       "es": {
         "name": "Pies rápidos y reacción a la dirección",
-        "hint": "Pasos rápidos en el sitio; sigue la señal lateral y vuelve.",
+        "hint": "Pasos rápidos en el sitio; las señales llegan cada vez más seguidas.",
         "warning": "Mira la pantalla y muévete a tu propia izquierda o derecha.",
-        "desc": "Primer paso rápido, frenada y vuelta al centro ante una dirección imprevisible. La aplicación muestra y dice izquierda o derecha.",
+        "desc": "Un paso corto en una dirección aleatoria y vuelta al centro. La aplicación muestra y dice izquierda o derecha cada vez más seguido: los intervalos bajan de 3 a 1 segundo.",
         "howTo": [
           "Ponte en el centro del espacio libre mirando la pantalla. Pies algo más separados que las caderas, rodillas suaves y manos delante.",
-          "Da pasos pequeños y frecuentes en el sitio. Aproximadamente cada 3–5 segundos, la aplicación da una señal aleatoria de izquierda o derecha.",
-          "Con la señal, da uno o dos pasos laterales rápidos hacia ese lado, frena suavemente y vuelve enseguida al centro.",
-          "Retoma los pasos rápidos en el sitio y espera la siguiente señal hasta que termine el temporizador. Izquierda y derecha son tus propios lados."
+          "Da pasos pequeños y frecuentes en el sitio. La primera señal aleatoria de izquierda o derecha llega tras 3 segundos de movimiento; después los intervalos se acortan gradualmente de 3 a 1 segundo.",
+          "Con la señal, da un paso corto hacia ese lado, frena suavemente y vuelve enseguida al centro.",
+          "Al volver, retoma los pasos rápidos en el sitio. Durante los últimos 3 segundos, sigue dando pasos en el sitio con la cuenta atrás, sin nuevas señales de dirección. Izquierda y derecha son tus propios lados."
         ],
         "correct": [
-          "Mueve rápido un pie con la señal y después el otro, sin cruzarlos.",
+          "Da un paso corto hacia la dirección indicada y mantén el cuerpo mirando a la pantalla.",
           "Vuelve al centro cada vez y mantén las rodillas suaves."
         ],
         "wrong": [
@@ -7981,11 +7981,11 @@
           "No cruces los pies ni hagas una zancada amplia fuera de la alfombra."
         ],
         "breathing": "Sigue respirando; suelta un poco de aire al impulsarte.",
-        "safety": "Coloca la pantalla delante y deja espacio a ambos lados. Si tardas en volver, da un solo paso más pequeño.",
+        "safety": "Coloca la pantalla delante y deja espacio a ambos lados. Si no vuelves antes de la siguiente señal, acorta el paso.",
         "voice": {
-          "start": "Pies rápidos. Espera la señal.",
+          "start": "Pies rápidos. Las señales se aceleran.",
           "mid": [
-            "Vuelve al centro después del paso.",
+            "Paso corto y enseguida al centro.",
             "No cruces los pies."
           ],
           "last": "Mantén pasos cortos.",
@@ -7994,17 +7994,17 @@
       },
       "fr": {
         "name": "Pieds rapides et réaction au signal",
-        "hint": "Petits pas rapides sur place ; suis la direction puis reviens au centre.",
+        "hint": "Petits pas rapides sur place ; les signaux se rapprochent progressivement.",
         "warning": "Regarde l’écran et va vers ta propre gauche ou droite.",
-        "desc": "Un premier pas rapide, un freinage et un retour au centre selon une direction imprévisible. L’application affiche et annonce gauche ou droite.",
+        "desc": "Un petit pas dans une direction au hasard, puis le retour au centre. L’application affiche et annonce gauche ou droite de plus en plus souvent : les intervalles passent de 3 à 1 seconde.",
         "howTo": [
           "Place-toi au centre de l’espace libre, face à l’écran. Pieds un peu plus écartés que les hanches, genoux souples et mains devant toi.",
-          "Fais de petits pas rapides sur place. Toutes les 3 à 5 secondes environ, l’application donne au hasard un signal à gauche ou à droite.",
-          "Au signal, fais un ou deux petits pas chassés rapides dans cette direction, freine en douceur et reviens aussitôt au centre.",
-          "Reprends les petits pas rapides sur place et attends le signal suivant jusqu’à la fin du minuteur. Il s’agit de ta propre gauche et de ta propre droite."
+          "Fais de petits pas rapides sur place. Le premier signal au hasard à gauche ou à droite arrive après 3 secondes de mouvement ; les intervalles se raccourcissent ensuite progressivement de 3 à 1 seconde.",
+          "Au signal, fais un petit pas dans cette direction, freine en douceur et reviens aussitôt au centre.",
+          "Au retour, reprends les petits pas rapides sur place. Pendant les 3 dernières secondes, continue sur place pendant le compte à rebours, sans nouveau signal de direction. Il s’agit de ta propre gauche et de ta propre droite."
         ],
         "correct": [
-          "Au signal, déplace vite un pied puis l’autre, sans les croiser.",
+          "Fais un petit pas dans la direction indiquée et garde le corps face à l’écran.",
           "Reviens au centre à chaque fois et garde les genoux souples."
         ],
         "wrong": [
@@ -8012,11 +8012,11 @@
           "Ne croise pas les pieds et ne fais pas une grande fente hors du tapis."
         ],
         "breathing": "Continue à respirer et souffle brièvement quand tu pousses sur la jambe.",
-        "safety": "Place l’écran devant toi et garde de la place de chaque côté. Si tu reviens trop tard, fais un seul pas plus petit.",
+        "safety": "Place l’écran devant toi et garde de la place de chaque côté. Si tu ne reviens pas avant le signal suivant, fais un pas plus petit.",
         "voice": {
-          "start": "Pieds rapides. Attends le signal.",
+          "start": "Pieds rapides. Les signaux accélèrent.",
           "mid": [
-            "Reviens au centre après le pas.",
+            "Petit pas, puis aussitôt au centre.",
             "Ne croise pas les pieds."
           ],
           "last": "Garde des petits pas.",
@@ -8025,17 +8025,17 @@
       },
       "it": {
         "name": "Piedi rapidi e reazione al segnale",
-        "hint": "Passi rapidi sul posto; segui la direzione e torna al centro.",
+        "hint": "Passi rapidi sul posto; i segnali diventano sempre più frequenti.",
         "warning": "Guarda lo schermo e muoviti alla tua sinistra o destra.",
-        "desc": "Primo passo rapido, frenata e ritorno al centro in risposta a una direzione imprevedibile. L’app mostra e dice sinistra o destra.",
+        "desc": "Un passo corto in una direzione casuale e ritorno al centro. L’app mostra e dice sinistra o destra sempre più spesso: gli intervalli scendono da 3 a 1 secondo.",
         "howTo": [
           "Stai al centro dello spazio libero, rivolto allo schermo. Piedi poco più larghi delle anche, ginocchia morbide e mani davanti.",
-          "Fai piccoli passi rapidi sul posto. Circa ogni 3–5 secondi l’app dà un segnale casuale di sinistra o destra.",
-          "Al segnale fai uno o due passi laterali rapidi in quella direzione, frena dolcemente e torna subito al centro.",
-          "Riprendi i passi rapidi sul posto e aspetta il segnale successivo fino alla fine del timer. Sinistra e destra sono dal tuo punto di vista."
+          "Fai piccoli passi rapidi sul posto. Il primo segnale casuale di sinistra o destra arriva dopo 3 secondi di movimento; poi gli intervalli si accorciano gradualmente da 3 a 1 secondo.",
+          "Al segnale fai un passo corto in quella direzione, frena dolcemente e torna subito al centro.",
+          "Al ritorno, riprendi i passi rapidi sul posto. Negli ultimi 3 secondi continua a muoverti sul posto durante il conto alla rovescia, senza nuovi segnali di direzione. Sinistra e destra sono dal tuo punto di vista."
         ],
         "correct": [
-          "Al segnale muovi subito un piede, poi l’altro, senza incrociarli.",
+          "Fai un passo corto nella direzione indicata e mantieni il corpo rivolto allo schermo.",
           "Torna sempre al centro e mantieni le ginocchia morbide."
         ],
         "wrong": [
@@ -8043,11 +8043,11 @@
           "Non incrociare i piedi e non fare un lungo affondo fuori dal tappeto."
         ],
         "breathing": "Continua a respirare; espira brevemente mentre spingi con la gamba.",
-        "safety": "Metti lo schermo davanti a te e lascia spazio su entrambi i lati. Se torni troppo tardi, fai un solo passo più piccolo.",
+        "safety": "Metti lo schermo davanti a te e lascia spazio su entrambi i lati. Se non torni prima del segnale successivo, accorcia il passo.",
         "voice": {
-          "start": "Piedi rapidi. Aspetta il segnale.",
+          "start": "Piedi rapidi. I segnali accelerano.",
           "mid": [
-            "Torna al centro dopo il passo.",
+            "Passo corto e subito al centro.",
             "Non incrociare i piedi."
           ],
           "last": "Mantieni passi corti.",
@@ -8059,7 +8059,11 @@
       "directions": [
         "left",
         "right"
-      ]
+      ],
+      "cadence": {
+        "startSeconds": 3,
+        "endSeconds": 1
+      }
     },
     "poses": [
       "ilya-boy-it36-v1"

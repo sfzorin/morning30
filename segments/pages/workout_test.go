@@ -32,7 +32,7 @@ func TestPlayerCarriesReactionAndLocalizedSignalsForOrdinaryAndReplacementExerci
 	}
 	for _, err := range []error{
 		database.SetCustomExercises(u.ID, `{
-			"RX":{"id":"RX","slot":"main","unit":"seconds","perSide":false,"reaction":{"directions":["left","right"]}},
+			"RX":{"id":"RX","slot":"main","unit":"seconds","perSide":false,"reaction":{"directions":["left","right"],"cadence":{"startSeconds":3,"endSeconds":1}}},
 			"OTHER":{"id":"OTHER","slot":"main","unit":"reps","replacement":"RX"}
 		}`),
 		database.SetProgramJSON(u.ID, `{"warmupRounds":1,"warmup":[{"id":"W01","slot":"warmup","unit":"seconds","value":5}],
@@ -56,9 +56,15 @@ func TestPlayerCarriesReactionAndLocalizedSignalsForOrdinaryAndReplacementExerci
 				if it.Reaction == nil || !reflect.DeepEqual(it.Reaction.Directions, []string{"left", "right"}) {
 					t.Fatalf("missing runtime reaction: %#v", it)
 				}
+				if it.Reaction.Cadence == nil || it.Reaction.Cadence.StartSeconds != 3 || it.Reaction.Cadence.EndSeconds != 1 {
+					t.Fatalf("missing runtime reaction acceleration: %#v", it.Reaction)
+				}
 			case "OTHER":
 				if it.Reaction != nil || it.Repl == nil || it.Repl.Reaction == nil {
 					t.Fatalf("replacement reaction not carried independently: %#v", it)
+				}
+				if it.Repl.Reaction.Cadence == nil || it.Repl.Reaction.Cadence.StartSeconds != 3 || it.Repl.Reaction.Cadence.EndSeconds != 1 {
+					t.Fatalf("replacement lost reaction acceleration: %#v", it.Repl.Reaction)
 				}
 			default:
 				if it.Reaction != nil {

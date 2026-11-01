@@ -20,12 +20,20 @@ LANGUAGES = {"ru", "en", "tr", "de", "es", "fr", "it"}
 
 
 def validate_reaction(doc):
-    """Reaction cues use player timing; exercise authors supply directions only."""
+    """Validate directions and optional accelerating cue cadence, never rests."""
     reaction = doc.get("reaction")
     if reaction is None:
         return
-    if not isinstance(reaction, dict) or set(reaction) != {"directions"}:
+    if (not isinstance(reaction, dict)
+            or set(reaction) not in ({"directions"}, {"directions", "cadence"})):
         raise ValueError("Invalid reaction")
+    if "cadence" in reaction:
+        cadence = reaction["cadence"]
+        if (not isinstance(cadence, dict)
+                or set(cadence) != {"startSeconds", "endSeconds"}
+                or any(type(value) is not int for value in cadence.values())
+                or not 1 <= cadence["endSeconds"] <= cadence["startSeconds"] <= 10):
+            raise ValueError("Invalid reaction cadence")
     directions = reaction["directions"]
     if (doc.get("unit") != "seconds" or doc.get("perSide") is not False
             or not isinstance(directions, list) or len(directions) != 2

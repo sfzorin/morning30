@@ -156,20 +156,42 @@
 
   // Reaction signals use elapsed WORK time, so hidden time and reading a detail
   // card cannot produce overdue bursts. Every resume starts a fresh signal window.
-  var reactionNextMs = null, reactionHideMs = null, reactionBag = [];
+  var reactionNextMs = null, reactionCueTimer = null, reactionHideTimer = null, reactionBag = [];
   var reactionMinSeconds = 3, reactionMaxSeconds = 5;
   function reactionOf(it) {
-    var r = it && it.reaction, d = r && r.directions;
+    var r = it && it.reaction, d = r && r.directions, c = r && r.cadence;
+    if (c !== undefined && (!c || Array.isArray(c) || Object.keys(c).length !== 2 ||
+      !Number.isInteger(c.startSeconds) || !Number.isInteger(c.endSeconds) ||
+      c.startSeconds < 1 || c.startSeconds > 10 || c.endSeconds < 1 || c.endSeconds > c.startSeconds)) return null;
     return it && it.unit === "seconds" && !it.perSide && Array.isArray(d) && d.length === 2 &&
       ((d[0] === "left" && d[1] === "right") || (d[0] === "right" && d[1] === "left")) ? r : null;
   }
   function clearReaction() {
-    reactionNextMs = null; reactionHideMs = null; reactionBag = [];
+    if (reactionCueTimer != null) clearTimeout(reactionCueTimer);
+    if (reactionHideTimer != null) clearTimeout(reactionHideTimer);
+    reactionNextMs = null; reactionCueTimer = null; reactionHideTimer = null; reactionBag = [];
     if (el.reaction) el.reaction.classList.add("hidden");
+  }
+  function reactionDelay(it, remainingMs, first) {
+    var cadence = it.reaction.cadence;
+    if (!cadence) return 1000 * (first ? reactionMinSeconds :
+      reactionMinSeconds + Math.floor(Math.random() * (reactionMaxSeconds - reactionMinSeconds + 1)));
+    // Leave three fastest intervals before the closing 3–2–1. The ramp uses
+    // only consumed work, including after restoring a paused exercise.
+    var rampMs = Math.max(1, state.sideDurationMs - 3000 - 3 * cadence.endSeconds * 1000);
+    var progress = Math.max(0, Math.min(1, (state.sideDurationMs - remainingMs) / rampMs));
+    return Math.round(1000 * (cadence.startSeconds + (cadence.endSeconds - cadence.startSeconds) * progress));
+  }
+  function scheduleReaction(it, remainingMs, delay) {
+    reactionNextMs = remainingMs - delay;
+    reactionCueTimer = setTimeout(function () {
+      reactionCueTimer = null;
+      tickReaction(it);
+    }, delay);
   }
   function startReaction(it) {
     clearReaction();
-    if (reactionOf(it) && running()) reactionNextMs = state.remainingMs - reactionMinSeconds * 1000;
+    if (reactionOf(it) && running()) scheduleReaction(it, state.remainingMs, reactionDelay(it, state.remainingMs, true));
   }
   function drawReactionDirection(it) {
     if (!reactionBag.length) {
@@ -184,20 +206,27 @@
   }
   function tickReaction(it) {
     if (!reactionOf(it) || !running()) return;
-    if (state.remainingMs <= 3000) { clearReaction(); return; }
-    if (reactionHideMs != null && state.remainingMs <= reactionHideMs) {
-      el.reaction.classList.add("hidden"); reactionHideMs = null;
-    }
-    if (reactionNextMs == null || state.remainingMs > reactionNextMs) return;
+    // The workout display ticks once a second; reaction intervals can be
+    // fractional. Read the same active clock without advancing its checkpoint.
+    var remainingMs = state.remainingMs - (activeClock ? Math.max(0, Date.now() - activeClock.lastAt) : 0);
+    if (remainingMs <= 3000) { clearReaction(); return; }
+    if (reactionNextMs == null || remainingMs > reactionNextMs) return;
+    if (reactionCueTimer != null) clearTimeout(reactionCueTimer);
+    if (reactionHideTimer != null) clearTimeout(reactionHideTimer);
     var direction = drawReactionDirection(it);
     var word = cues["reaction_" + direction] || direction;
     el.reactionArrow.textContent = direction === "left" ? "←" : "→";
     el.reactionWord.textContent = word;
     el.reaction.classList.remove("hidden");
     sayNow(word);
-    reactionHideMs = state.remainingMs - 2000;
-    var delay = reactionMinSeconds + Math.floor(Math.random() * (reactionMaxSeconds - reactionMinSeconds + 1));
-    reactionNextMs = state.remainingMs - delay * 1000;
+    var delay = reactionDelay(it, remainingMs, false);
+    // Even repeated directions visibly flash at the one-second cadence.
+    reactionHideTimer = setTimeout(function () {
+      reactionHideTimer = null;
+      el.reaction.classList.add("hidden");
+    }, Math.min(2000, delay - 250));
+    // Schedule from current work time, never replay overdue signals in a burst.
+    scheduleReaction(it, remainingMs, delay);
   }
 
   function framesOf(it) {

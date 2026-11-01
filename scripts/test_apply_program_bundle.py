@@ -22,16 +22,20 @@ class BundleContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
             (folder / "program.json").write_text((source / "program.json").read_text())
-            for directions in (["left", "right"], ["right", "left"]):
-                with self.subTest(directions=directions):
-                    target["reaction"] = {"directions": directions}
+            for reaction in (
+                {"directions": ["left", "right"]},
+                {"directions": ["right", "left"]},
+                {"directions": ["left", "right"], "cadence": {"startSeconds": 3, "endSeconds": 1}},
+            ):
+                with self.subTest(reaction=reaction):
+                    target["reaction"] = reaction
                     (folder / "exercises.json").write_text(json.dumps(docs))
                     _, exercises, images = bundle.load_bundle(folder)
                     self.assertEqual(exercises[target["id"]]["reaction"], target["reaction"])
                     self.assertNotIn("poses", exercises[target["id"]])
                     self.assertEqual(images, [])
 
-    def test_reaction_rejects_invalid_direction_types_and_authored_timing(self):
+    def test_reaction_rejects_invalid_direction_types_and_unsupported_timing(self):
         valid = {"unit": "seconds", "perSide": False, "reaction": {"directions": ["left", "right"]}}
         cases = [
             {"reaction": []},
@@ -59,6 +63,41 @@ class BundleContractTests(unittest.TestCase):
                     bundle.validate_reaction(valid | changes)
         bundle.validate_reaction({"unit": "reps", "perSide": True})
         bundle.validate_reaction({"unit": "reps", "perSide": True, "reaction": None})
+
+    def test_reaction_cadence_accepts_bounds_and_rejects_malformed_fields(self):
+        def exercise(cadence):
+            return {"unit": "seconds", "perSide": False,
+                    "reaction": {"directions": ["left", "right"], "cadence": cadence}}
+
+        for start, end in ((3, 1), (1, 1), (10, 10), (10, 1)):
+            with self.subTest(valid=(start, end)):
+                bundle.validate_reaction(exercise({"startSeconds": start, "endSeconds": end}))
+
+        for cadence in (
+            None, [], "3,1", True, 3, {}, {"startSeconds": 3}, {"endSeconds": 1},
+            {"startSeconds": None, "endSeconds": 1},
+            {"startSeconds": 3, "endSeconds": None},
+            {"startSeconds": True, "endSeconds": 1},
+            {"startSeconds": 3, "endSeconds": True},
+            {"startSeconds": "3", "endSeconds": 1},
+            {"startSeconds": 3.0, "endSeconds": 1},
+            {"startSeconds": 3, "endSeconds": 1.5},
+            {"startSeconds": 0, "endSeconds": 1},
+            {"startSeconds": -1, "endSeconds": 1},
+            {"startSeconds": 11, "endSeconds": 1},
+            {"startSeconds": 3, "endSeconds": 0},
+            {"startSeconds": 3, "endSeconds": 4},
+            {"startSeconds": 3, "endSeconds": 1, "rest": 10},
+            {"StartSeconds": 3, "endSeconds": 1},
+        ):
+            with self.subTest(cadence=cadence):
+                with self.assertRaisesRegex(ValueError, "Invalid reaction cadence"):
+                    bundle.validate_reaction(exercise(cadence))
+
+        for change in ({"unit": "reps"}, {"unit": "breaths"}, {"perSide": True}):
+            with self.subTest(change=change):
+                with self.assertRaisesRegex(ValueError, "Invalid reaction"):
+                    bundle.validate_reaction(exercise({"startSeconds": 3, "endSeconds": 1}) | change)
 
     def test_load_bundle_validates_reaction_before_install(self):
         source = Path(__file__).resolve().parents[1] / "programs/ilya-tennis"
@@ -138,6 +177,25 @@ class ApplyBundleTests(unittest.TestCase):
             bundle.apply_bundle(self.connection, 44, "Ilya", {"name": "New"}, {"IT36": invalid}, [], self.backup)
         self.assertFalse(self.backup.exists())
         self.assertEqual(tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone()), before)
+
+    def test_invalid_cadence_refuses_before_backup_or_write(self):
+        before = tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone())
+        invalid = {"id": "R", "unit": "seconds", "perSide": False,
+                   "reaction": {"directions": ["left", "right"],
+                                "cadence": {"startSeconds": 1, "endSeconds": 3}}}
+        with self.assertRaisesRegex(ValueError, "Invalid reaction cadence"):
+            bundle.apply_bundle(self.connection, 44, "Ilya", {"name": "New"}, {"R": invalid}, [], self.backup)
+        self.assertFalse(self.backup.exists())
+        self.assertEqual(tuple(self.connection.execute("SELECT * FROM users WHERE id=44").fetchone()), before)
+
+    def test_cadence_survives_install_without_changing_progress(self):
+        exercise = {"id": "R", "unit": "seconds", "perSide": False,
+                    "reaction": {"directions": ["left", "right"],
+                                 "cadence": {"startSeconds": 3, "endSeconds": 1}}}
+        bundle.apply_bundle(self.connection, 44, "Ilya", {"name": "New"}, {"R": exercise}, [], self.backup)
+        row = self.connection.execute("SELECT custom_exercises,position,level FROM users WHERE id=44").fetchone()
+        self.assertEqual(json.loads(row["custom_exercises"])["R"], exercise)
+        self.assertEqual((row["position"], row["level"]), (39, 2))
 
     def test_pose_collision_rolls_back_every_picture_and_account_change(self):
         self.connection.execute("INSERT INTO poses VALUES('existing','test','Existing')")
