@@ -114,7 +114,7 @@ function player(items, extra = {}, options = {}) {
       } },
   });
   if (options.noSpeech) delete window.speechSynthesis;
-  const base = Date.parse('2026-10-24T08:00:00Z');
+  const base = Date.parse(options.startAt || '2026-10-24T08:00:00Z');
   class ClockDate extends Date {
     constructor(...args) { super(...(args.length ? args : [base + now])); }
     static now() { return base + now; }
@@ -158,6 +158,12 @@ function player(items, extra = {}, options = {}) {
   }
   return {
     get, advance, spoken, speechEvents, utterances, navigations, images, persistence, window, document, stateStore: window.MorningWorkoutState, cleanup: () => cleanup(),
+    elapse(seconds) {
+      // Let wall time pass without delivering callbacks, as a busy/frozen main
+      // thread can do just before visibilitychange or pagehide arrives.
+      now += seconds * 1000;
+      timers.forEach(timer => { if (timer.due < now) timer.due = now; });
+    },
     get speechResumes() { return speechResumes; },
     get completed() { return [...persistence.data.events.values()]; },
     hide() { document.visibilityState = 'hidden'; document.dispatch('visibilitychange'); window.dispatch('pagehide'); },
@@ -845,6 +851,105 @@ test('malformed snapshot is ignored without breaking a new workout', () => {
   second.advance(3);
   assert.equal(second.get('.ex-name').textContent, 'Exercise');
   assert.equal(second.completed.length, 0);
+});
+
+for (const interruption of ['hide', 'cleanup', 'details']) {
+  test('an expired final timer is saved before ' + interruption + ', with its original deadline', async () => {
+    const persistence = memoryState({ rejectCompletion: true });
+    const items = [item({ unit: 'seconds', value: 5 })];
+    const first = player(items, {}, { persistence });
+    first.advance(3);
+    first.elapse(5.1); // the final interval callback has not run yet
+    if (interruption === 'details') first.get('.ex-visual').click();
+    else first[interruption]();
+    assert.equal(first.completed.length, 1);
+    const originalEvent = first.completed[0];
+    assert.equal(originalEvent.completedAt, '2026-10-24T08:00:08.000Z');
+    assert.equal(originalEvent.completedOn, '2026-10-24');
+    assert.equal(persistence.data.checkpoint.state.phase, 'complete');
+    assert.ok(hidden(first.get('.resume-overlay')));
+    assert.ok(hidden(first.get('.info-overlay')));
+    first.cleanup();
+
+    const nextMorning = player(items, {}, { persistence, startAt: '2026-10-25T08:00:00Z' });
+    await settle();
+    assert.equal(nextMorning.completed.length, 1);
+    assert.deepEqual(nextMorning.completed[0], originalEvent);
+    assert.ok(hidden(nextMorning.get('.resume-overlay')));
+    assert.equal(nextMorning.get('.save-status').textContent, 'Waiting for connection');
+  });
+}
+
+test('a delayed final timer callback records its deadline rather than callback time', () => {
+  const p = player([item({ unit: 'seconds', value: 5 })]);
+  p.advance(3); p.elapse(5.7); p.advance(0);
+  assert.equal(p.completed.length, 1);
+  assert.equal(p.completed[0].completedAt, '2026-10-24T08:00:08.000Z');
+});
+
+test('hiding before the final deadline never credits hidden time; finishing next morning uses that date', () => {
+  const p = player([item({ unit: 'seconds', value: 5 })]);
+  p.advance(3); p.elapse(4.5); p.hide();
+  assert.equal(p.completed.length, 0);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 500);
+  p.elapse(24 * 60 * 60); p.hide(); p.show();
+  assert.equal(p.completed.length, 0);
+  assert.equal(p.persistence.data.checkpoint.state.remainingMs, 500);
+  p.get('.resume-continue').click(); p.advance(1);
+  assert.equal(p.completed.length, 1);
+  assert.equal(p.completed[0].completedAt, '2026-10-25T08:00:08.000Z');
+  assert.equal(p.completed[0].completedOn, '2026-10-25');
+});
+
+test('an expired first side of the final exercise still requires the second side', () => {
+  const p = player([item({ unit: 'seconds', value: 5, perSide: true })]);
+  p.advance(3); p.elapse(5.1); p.hide();
+  assert.equal(p.completed.length, 0);
+  assert.equal(p.persistence.data.checkpoint.state.side, 1);
+  p.elapse(24 * 60 * 60); p.show(); p.get('.resume-continue').click();
+  p.advance(3); // side change
+  assert.equal(p.completed.length, 0);
+  p.advance(5);
+  assert.equal(p.completed.length, 1);
+  assert.equal(p.completed[0].completedOn, '2026-10-25');
+});
+
+test('completion survives a finish-screen error before any network send and replays its original date', async () => {
+  const storageValues = new Map(), requests = [];
+  const first = player([item()], {}, { realStore: true, storageValues });
+  first.advance(3);
+  first.get('.stage').classList.add = () => { throw new Error('render interrupted'); };
+  assert.throws(() => first.get('.ctl-done').click(), /render interrupted/);
+  const originalEvent = first.stateStore.pending(1)[0];
+  assert.equal(originalEvent.completedOn, '2026-10-24');
+  assert.equal(first.stateStore.loadCheckpoint({ userId: 1, position: 0, day: 1,
+    resumeKey: 'plan:0:1', programKey: 'plan' }).phase, 'complete');
+  first.cleanup();
+  const second = player([item()], {}, { realStore: true, storageValues, startAt: '2026-10-25T08:00:00Z',
+    fetch: async (_url, init) => {
+      const event = JSON.parse(init.body); requests.push(event);
+      return { ok: true, json: async () => ({ saved: true, eventId: event.eventId, position: 1, streak: 2 }) };
+    },
+  });
+  await settle();
+  assert.equal(requests.length, 1);
+  assert.deepEqual(requests[0], JSON.parse(JSON.stringify(originalEvent)));
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+});
+
+test('a zero timer checkpoint with an existing completion reuses that event without another Continue tap', () => {
+  const persistence = memoryState({ rejectCompletion: true });
+  const items = [item({ unit: 'seconds', value: 5 })];
+  const first = player(items, {}, { persistence });
+  first.advance(8);
+  const originalEvent = first.completed[0];
+  Object.assign(persistence.data.checkpoint.state, { phase: 'exercise', remainingMs: 0 });
+  first.cleanup();
+  const second = player(items, {}, { persistence, startAt: '2026-10-25T08:00:00Z' });
+  assert.ok(hidden(second.get('.resume-overlay')));
+  assert.equal(persistence.data.checkpoint.state.phase, 'complete');
+  assert.equal(second.completed.length, 1);
+  assert.deepEqual(second.completed[0], originalEvent);
 });
 
 test('offline completion is pending across reload, reuses its event and celebrates only after acknowledgment', async () => {

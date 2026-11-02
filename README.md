@@ -63,7 +63,10 @@ small client-side workout engine.
 - **Reliable completion.** Results are queued on the device before sending to
   `/api/workouts/complete`. Retries retain the original local date and cannot
   advance the cycle twice. The player confirms the streak only after the server
-  has saved it; the home page also retries pending results.
+  has saved it; the home page also retries pending results. Finishing the final
+  timer while leaving the app records that finish immediately, before rendering
+  the celebration. Completed checkpoints are recovered into the pending queue
+  even if the program or cycle position has since changed.
 - **Spoken guidance** via the browser Web Speech API: a start cue, a rest
   announcement of the next exercise with its count, a 3-2-1 lead-in, a half-time
   marker on timed sets, and running technique narration (how to do it / common

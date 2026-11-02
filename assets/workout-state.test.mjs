@@ -208,3 +208,96 @@ test('subscriber-triggered retry shares the current request and another tab ackn
   b.emit('storage', { key: storageKey.replace(':1:', ':2:') });
   assert.equal(notices.length, 1);
 });
+
+const checkpointDisk = (savedState = state({ phase: 'complete', completion: event() })) => new Map([
+  ['morning.workout.v1:1:checkpoint', JSON.stringify({ identity: payload(), state: savedState })],
+]);
+
+test('finished checkpoint is recovered before incompatible player state is discarded or replaced', async t => {
+  for (const [name, invalidate] of [
+    ['changed program', api => api.loadCheckpoint(payload({ programKey: 'plan-b', resumeKey: 'plan-b:0:1' }))],
+    ['advanced position', api => api.getResume(1, 1, 'plan-a')],
+    ['cleared checkpoint', api => api.clearCheckpoint(payload())],
+    ['new workout checkpoint', api => api.saveCheckpoint(payload({ day: 2 }), state({ eventId: 'b'.repeat(32) }))],
+  ]) await t.test(name, async () => {
+    // Legacy state: the app stopped after saving its complete checkpoint but
+    // before creating a pending event. No outbox entry exists at startup.
+    const b = browser({ disk: checkpointDisk() });
+    invalidate(b.api);
+    assert.deepEqual(plain(b.api.pending(1)), [event()]);
+    let sent;
+    const reloaded = browser({ disk: b.disk, fetch: async (_url, options) => {
+      sent = JSON.parse(options.body);
+      return response(sent);
+    } });
+    await reloaded.api.start(1);
+    assert.deepEqual(sent, event(), 'recovery retains the original completion date and position');
+    assert.equal(reloaded.api.pending(1).length, 0);
+  });
+});
+
+test('startup flush recovers a completed checkpoint without requiring the workout page to reopen', async () => {
+  const sent = [];
+  const b = browser({ disk: checkpointDisk(), fetch: async (_url, options) => {
+    const e = JSON.parse(options.body);
+    sent.push(e);
+    return response(e);
+  } });
+  await b.api.start(2);
+  assert.deepEqual(sent, [], 'another signed-in account cannot send the completion');
+  await b.api.start(1);
+  assert.deepEqual(sent, [event()]);
+  assert.equal(b.api.loadCheckpoint(payload()), null);
+  assert.equal(b.api.ack(event().eventId, 1).saved, true);
+});
+
+test('saving a completed checkpoint also persists its completion before any UI or network work', () => {
+  const b = browser();
+  assert.equal(b.api.saveCheckpoint(payload(), state({ phase: 'complete', completion: event() })), true);
+  assert.deepEqual(plain(browser({ disk: b.disk }).api.pending(1)), [event()]);
+});
+
+test('checkpoint recovery keeps an existing immutable pending event and respects acknowledgment', async () => {
+  const disk = checkpointDisk(state({ phase: 'complete', completion: event({
+    completedAt: '2026-10-26T01:00:00Z', completedOn: '2026-10-26',
+  }) }));
+  disk.set('morning.workout.v1:1:pending:' + event().eventId, JSON.stringify(event()));
+  let sent;
+  const b = browser({ disk, fetch: async (_url, options) => {
+    sent = JSON.parse(options.body);
+    return response(sent);
+  } });
+  await b.api.start(1);
+  assert.deepEqual(sent, event());
+
+  const acknowledgedDisk = checkpointDisk();
+  acknowledgedDisk.set('morning.workout.v1:1:ack:' + event().eventId,
+    JSON.stringify({ saved: true, eventId: event().eventId, position: 1, streak: 4 }));
+  let calls = 0;
+  const acknowledged = browser({ disk: acknowledgedDisk, fetch: async () => { calls++; throw Error('unexpected send'); } });
+  await acknowledged.api.start(1);
+  acknowledged.api.getResume(1, 1, 'plan-a');
+  assert.equal(calls, 0);
+  assert.equal(acknowledged.api.pending(1).length, 0);
+});
+
+test('recovery never invents a finish from incomplete or mismatched checkpoint data', async t => {
+  const cases = [
+    ['unfinished', state({ phase: 'exercise', remainingMs: 0, completion: event() })],
+    ['missing completion', state({ phase: 'complete' })],
+    ['different event', state({ phase: 'complete', completion: event({ eventId: 'b'.repeat(32) }) })],
+    ['different account', state({ phase: 'complete', completion: event({ userId: 2 }) })],
+    ['different day', state({ phase: 'complete', completion: event({ day: 2 }) })],
+    ['different position', state({ phase: 'complete', completion: event({ position: 1 }) })],
+    ['invalid timestamp', state({ phase: 'complete', completion: event({ completedAt: 'invalid' }) })],
+    ['invalid date', state({ phase: 'complete', completion: event({ completedOn: '2026-02-30' }) })],
+  ];
+  for (const [name, snapshot] of cases) await t.test(name, async () => {
+    let calls = 0;
+    const b = browser({ disk: checkpointDisk(snapshot), fetch: async () => { calls++; throw Error('unexpected send'); } });
+    await b.api.start(1);
+    b.api.getResume(1, 1, 'plan-a');
+    assert.equal(b.api.pending(1).length, 0);
+    assert.equal(calls, 0);
+  });
+});

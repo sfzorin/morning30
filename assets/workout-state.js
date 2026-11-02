@@ -69,14 +69,31 @@
         !saved.state || typeof saved.state !== "object" || Array.isArray(saved.state)) return null;
     return saved;
   }
+  function recoverCompletion(saved) {
+    var state = saved && saved.state, event = state && state.completion;
+    if (!state || state.phase !== "complete" || !eventOK(event) ||
+        event.eventId !== state.eventId || event.userId !== saved.identity.userId ||
+        event.day !== saved.identity.day || event.position !== saved.identity.position ||
+        !Number.isFinite(Date.parse(event.completedAt)) || !/^\d{4}-\d{2}-\d{2}$/.test(event.completedOn) ||
+        !Number.isFinite(Date.parse(event.completedOn)) ||
+        new Date(event.completedOn).toISOString().slice(0, 10) !== event.completedOn) return;
+    // A finished checkpoint may be all that survived an app shutdown. Move its
+    // original event into the outbox before changing or discarding player state.
+    queueCompletion(event);
+  }
   function saveCheckpoint(payload, state) {
     if (!identityOK(payload) || !state || typeof state !== "object") return false;
-    return write(key(payload.userId, "checkpoint"), { identity: identity(payload), state: state });
+    recoverCompletion(checkpoint(payload.userId));
+    var saved = { identity: identity(payload), state: state };
+    var durable = write(key(payload.userId, "checkpoint"), saved);
+    recoverCompletion(saved);
+    return durable;
   }
   function loadCheckpoint(payload) {
     if (!identityOK(payload)) return null;
     var saved = checkpoint(payload.userId);
     if (!saved) return null;
+    recoverCompletion(saved);
     var matches = Object.keys(identity(payload)).every(function (field) {
       return saved.identity[field] === payload[field];
     });
@@ -86,12 +103,14 @@
   function clearCheckpoint(payload) {
     if (!identityOK(payload)) return;
     var saved = checkpoint(payload.userId);
+    recoverCompletion(saved);
     if (saved && saved.identity.resumeKey === payload.resumeKey) remove(key(payload.userId, "checkpoint"));
   }
   function getResume(userId, position, programKey) {
     if (!userOK(userId)) return null;
     var saved = checkpoint(userId);
     if (!saved) return null;
+    recoverCompletion(saved);
     if (saved.identity.position !== position || saved.identity.programKey !== programKey) {
       remove(key(userId, "checkpoint"));
       return null;
@@ -165,6 +184,7 @@
   }
   function flush(userId) {
     if (!userOK(userId) || userId !== activeUser) return Promise.resolve([]);
+    recoverCompletion(checkpoint(userId));
     return Promise.allSettled(pending(userId).map(sendCompletion));
   }
   function start(userId) {

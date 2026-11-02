@@ -451,6 +451,7 @@
     clearTicker();
     state.remainingMs = remainingMs == null ? seconds * 1000 : remainingMs;
     activeClock = { lastAt: Date.now(), onTick: onTick, onDone: onDone, shown: -1 };
+    if (!paused && finishElapsedFinalExercise(activeClock.lastAt)) return;
     onTick(Math.ceil(state.remainingMs / 1000));
     activeClock.shown = Math.ceil(state.remainingMs / 1000);
     checkpoint();
@@ -460,8 +461,11 @@
       if (!running()) return;
       var clock = activeClock;
       if (!clock) return;
-      state.remainingMs = Math.max(0, state.remainingMs - Math.max(0, Date.now() - clock.lastAt));
-      clock.lastAt = Date.now();
+      var deadline = clock.lastAt + state.remainingMs;
+      var now = Date.now();
+      state.remainingMs = Math.max(0, state.remainingMs - Math.max(0, now - clock.lastAt));
+      clock.lastAt = now;
+      if (finishElapsedFinalExercise(deadline)) return;
       var remaining = Math.ceil(state.remainingMs / 1000);
       if (remaining !== clock.shown) { clock.shown = remaining; clock.onTick(remaining); }
       checkpoint();
@@ -474,10 +478,23 @@
 
   function freezeClock() {
     if (activeClock && !paused) {
-      state.remainingMs = Math.max(0, state.remainingMs - Math.max(0, Date.now() - activeClock.lastAt));
-      activeClock.lastAt = Date.now();
+      var deadline = activeClock.lastAt + state.remainingMs;
+      var now = Date.now();
+      state.remainingMs = Math.max(0, state.remainingMs - Math.max(0, now - activeClock.lastAt));
+      activeClock.lastAt = now;
+      // A visibility/pagehide event may run before the final timer callback.
+      // Credit only work that already elapsed while this clock was active.
+      if (finishElapsedFinalExercise(deadline)) return;
     }
     clearTicker();
+  }
+
+  function finishElapsedFinalExercise(deadline) {
+    var it = items[i];
+    if (state.phase !== "exercise" || state.remainingMs !== 0 || !it ||
+        it.unit !== "seconds" || i !== items.length - 1 || curSide < sides(it)) return false;
+    finish(new Date(deadline));
+    return true;
   }
 
   var wakeRequest = null;
@@ -505,6 +522,7 @@
   function pauseForReturn() {
     if (disposed || finished) return;
     freezeClock();
+    if (finished) return;
     paused = true;
     resumeNeeded = true;
     clearNarr(); clearReaction(); stopFrames(); shutUp(); releaseWake();
@@ -522,7 +540,9 @@
     var deadline = typeof payload.restartAt === "string" ? Date.parse(payload.restartAt) : NaN;
     if (!Number.isFinite(deadline) || Date.now() < deadline) return false;
     redirecting = true;
-    freezeClock(); paused = true;
+    freezeClock();
+    if (finished) return false;
+    paused = true;
     clearNarr(); clearReaction(); stopFrames(); shutUp(); releaseWake();
     location.assign("/start");
     return true;
@@ -847,17 +867,19 @@
   }
   // The event is stored before any network call. Closing the page while offline
   // leaves the same event for the authenticated home page to retry.
-  function finish() {
+  function finish(completedAt) {
     if (finished) return;
     finished = true;
     paused = false;
     state.phase = "complete";
     state.remainingMs = null;
     if (!state.completion) {
-      var date = new Date();
+      var date = completedAt || new Date();
       state.completion = { eventId: state.eventId, userId: payload.userId, day: payload.day,
         position: payload.position, completedAt: date.toISOString(), completedOn: localDate(date) };
     }
+    // Persist the immutable event before any rendering or cleanup can fail.
+    if (store) store.queueCompletion(state.completion);
     checkpoint();
     renderProgress(items.length, null);
     clearTicker(); activeClock = null;
@@ -1069,6 +1091,7 @@
     infoWasPaused = paused;
     if (el.voiceStatus) el.voiceStatus.classList.add("hidden");
     freezeClock();
+    if (finished) return;
     paused = true;
     clearNarr(); clearReaction(); stopFrames(); shutUp();
     checkpoint();
@@ -1208,10 +1231,12 @@
       return String(idx) === key && Number.isInteger(idx) && it && it.repl && it.repl.id === s.swaps[key];
     });
     if (!validSwaps) return false;
-    if (s.phase === "complete") return s.completion && s.completion.eventId === s.eventId &&
+    var validCompletion = s.completion && s.completion.eventId === s.eventId &&
       s.completion.userId === payload.userId && s.completion.day === payload.day && s.completion.position === payload.position &&
       typeof s.completion.completedAt === "string" && Number.isFinite(Date.parse(s.completion.completedAt)) &&
       /^\d{4}-\d{2}-\d{2}$/.test(s.completion.completedOn);
+    if (s.phase === "complete") return validCompletion;
+    if (s.completion && !validCompletion) return false;
     if (!Number.isInteger(s.nextIndex) || s.nextIndex < 0 || s.nextIndex >= items.length ||
         !Number.isInteger(s.nextSide) || s.nextSide < 1 || s.nextSide > 2) return false;
     var it = s.swaps[s.index] ? replacementItem(originalItems[s.index]) : originalItems[s.index];
@@ -1288,7 +1313,7 @@
     i = state.index; curSide = state.side;
     level = fixedDifficulty ? 0 : state.level;
     updateDiff();
-    if (state.phase === "complete") finish();
+    if (state.phase === "complete" || state.completion) finish();
     else {
       paused = true; resumeNeeded = true;
       restorePhase();
