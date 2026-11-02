@@ -66,7 +66,9 @@ small client-side workout engine.
   has saved it; the home page also retries pending results. Finishing the final
   timer while leaving the app records that finish immediately, before rendering
   the celebration. Completed checkpoints are recovered into the pending queue
-  even if the program or cycle position has since changed.
+  even if the program or cycle position has since changed. Each newly finished
+  attempt gets its own completion ID, so two pages resumed from one checkpoint
+  cannot mistake an earlier receipt for the new result; retries keep that ID.
 - **Spoken guidance** via the browser Web Speech API: a start cue, a rest
   announcement of the next exercise with its count, a 3-2-1 lead-in, a half-time
   marker on timed sets, and running technique narration (how to do it / common

@@ -874,6 +874,10 @@
     state.phase = "complete";
     state.remainingMs = null;
     if (!state.completion) {
+      // Active checkpoints can be restored in more than one tab. Mint the
+      // completion identity here so another tab's old receipt cannot stand in
+      // for this finish. A stored completion keeps its identity on every retry.
+      if (store) state.eventId = store.newEventId();
       var date = completedAt || new Date();
       state.completion = { eventId: state.eventId, userId: payload.userId, day: payload.day,
         position: payload.position, completedAt: date.toISOString(), completedOn: localDate(date) };

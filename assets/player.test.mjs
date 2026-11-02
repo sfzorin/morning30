@@ -1051,6 +1051,94 @@ test('real module retries a pending finish after page eviction without a new eve
   assert.equal(second.stateStore.getResume(1, 0, 'plan'), null);
 });
 
+test('a restored active attempt cannot use an older cached receipt as proof of a new finish', async () => {
+  const storageValues = new Map(), requests = [];
+  const identity = { userId: 9, day: 19, position: 108, programKey: 'plan', resumeKey: 'plan:108:19' };
+  const savedResponse = event => ({ ok: true,
+    json: async () => ({ saved: true, eventId: event.eventId, position: 109, streak: 5 }) });
+  const first = player([item()], identity, { realStore: true, storageValues, startAt: '2026-10-30T08:00:00Z',
+    fetch: async (_url, init) => { const event = JSON.parse(init.body); requests.push(event); return savedResponse(event); },
+  });
+  first.advance(3);
+  const sharedAttemptId = first.stateStore.loadCheckpoint(identity).eventId;
+  let acknowledgeSecond;
+  const second = player([item()], identity, { realStore: true, storageValues, startAt: '2026-11-01T08:00:00Z',
+    fetch: async (_url, init) => {
+      const event = JSON.parse(init.body); requests.push(event);
+      return new Promise(resolve => { acknowledgeSecond = () => resolve(savedResponse(event)); });
+    },
+  });
+  assert.equal(second.stateStore.loadCheckpoint(identity).eventId, sharedAttemptId);
+  // Earlier clients completed using the shared checkpoint identity. Keep this
+  // legacy receipt to reproduce the failure on already installed applications.
+  await first.stateStore.sendCompletion({ eventId: sharedAttemptId, userId: 9, day: 19, position: 108,
+    completedAt: '2026-10-30T08:00:03.000Z', completedOn: '2026-10-30' });
+  second.get('.resume-continue').click(); second.get('.ctl-done').click();
+  await settle();
+  assert.equal(requests.length, 2, 'the new finish must reach the server despite the old cached acknowledgment');
+  assert.notEqual(requests[1].eventId, sharedAttemptId);
+  assert.equal(requests[1].completedOn, '2026-11-01');
+  assert.equal(requests[1].position, 108);
+  assert.equal(second.get('.save-status').textContent, 'Saving');
+  assert.ok(hidden(second.get('.applause')), 'no applause for the old receipt while the new request is pending');
+  acknowledgeSecond(); await settle();
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+  assert.ok(!hidden(second.get('.applause')));
+  assert.equal(second.get('.done-overlay').children.filter(node => node.className === 'confetti-piece').length, 60);
+});
+
+test('a new finish remains distinct from an older unsent completion with the shared attempt identity', async () => {
+  const storageValues = new Map(), requests = [];
+  let online = false;
+  const fetch = async (_url, init) => {
+    const event = JSON.parse(init.body); requests.push(event);
+    if (!online) throw Error('offline');
+    return { ok: true, json: async () => ({ saved: true, eventId: event.eventId, position: 1, streak: 2 }) };
+  };
+  const identity = { userId: 1, day: 1, position: 0, programKey: 'plan', resumeKey: 'plan:0:1' };
+  const first = player([item()], {}, { realStore: true, storageValues, fetch, startAt: '2026-10-30T08:00:00Z' });
+  first.advance(3);
+  const sharedAttemptId = first.stateStore.loadCheckpoint(identity).eventId;
+  const second = player([item()], {}, { realStore: true, storageValues, fetch, startAt: '2026-11-01T08:00:00Z' });
+  const original = { eventId: sharedAttemptId, userId: 1, day: 1, position: 0,
+    completedAt: '2026-10-30T08:00:03.000Z', completedOn: '2026-10-30' };
+  await assert.rejects(first.stateStore.sendCompletion(original), /offline/);
+  second.get('.resume-continue').click(); second.get('.ctl-done').click(); await settle();
+  const pending = JSON.parse(JSON.stringify(second.stateStore.pending(1)));
+  assert.equal(pending.length, 2, 'the older unsent event must not absorb the newer finish');
+  assert.deepEqual(pending.find(event => event.eventId === sharedAttemptId), original);
+  const current = pending.find(event => event.eventId !== sharedAttemptId);
+  assert.equal(current.completedOn, '2026-11-01');
+  assert.equal(current.position, original.position);
+  assert.ok(hidden(second.get('.applause')));
+  online = true;
+  await second.stateStore.flush(1);
+  assert.deepEqual(requests.slice(-2).sort((a, b) => a.completedOn.localeCompare(b.completedOn)), [original, current]);
+  assert.equal(second.stateStore.pending(1).length, 0);
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+});
+
+test('concurrent finishes from one shared active checkpoint have independent receipts and the same captured position', async () => {
+  const storageValues = new Map(), requests = [];
+  const fetch = async (_url, init) => {
+    const event = JSON.parse(init.body); requests.push(event);
+    return { ok: true, json: async () => ({ saved: true, eventId: event.eventId, position: 1, streak: 1 }) };
+  };
+  const identity = { userId: 1, day: 1, position: 0, programKey: 'plan', resumeKey: 'plan:0:1' };
+  const first = player([item()], {}, { realStore: true, storageValues, fetch });
+  first.advance(3);
+  const attemptId = first.stateStore.loadCheckpoint(identity).eventId;
+  const second = player([item()], {}, { realStore: true, storageValues, fetch });
+  assert.equal(second.stateStore.loadCheckpoint(identity).eventId, attemptId);
+  second.get('.resume-continue').click();
+  first.get('.ctl-done').click(); second.get('.ctl-done').click(); await settle();
+  assert.equal(requests.length, 2);
+  assert.equal(new Set(requests.map(event => event.eventId)).size, 2);
+  assert.ok(requests.every(event => event.eventId !== attemptId && event.position === 0 && event.day === 1));
+  assert.equal(first.get('.save-status').textContent, 'Saved');
+  assert.equal(second.get('.save-status').textContent, 'Saved');
+});
+
 test('an expired scheduled restart resolves the current day before reading an old checkpoint', () => {
   const persistence = memoryState();
   const first = player([item({ unit: 'seconds', value: 20 })], {}, { persistence });
