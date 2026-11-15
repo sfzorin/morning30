@@ -1,158 +1,158 @@
-# Ilya: daily strength and movement
+# Ilya: progressive strength and movement
 
-Personal 30-day program: six different sessions repeat five times. Every day
-contains eight main exercises, including push-ups in station 2 and a plank
-variation in station 5. Days 1 and 4 are the heavier sessions; days 2, 3, 5 and 6
-still include strength and continuous movement. There are no dedicated light or
-mobility-only days. The sequence is independent of weekdays and tennis sessions.
+This 30-day program varies both the number of exercises and their selection.
+The first day has 22 exercise screens; the largest sessions have 32. Recovery
+days return to 20 or 22 screens between fuller sessions. The count includes
+six warm-up exercises, both complete main rounds, and six cool-down stretches.
+The main sequence therefore contains four to ten stations:
 
-Instructions and voice cues cover Russian, English, Turkish, German, Spanish,
-French and Italian. Targets below are for the ordinary difficulty setting at
-level 0. Existing difficulty controls remain available.
+`total exercise screens = 6 + 2 × main stations + 6`
 
-Every session follows the application's common rules: **one warm-up, two complete
-main rounds, one cool-down**. All eight stations run in order, then the full
-sequence runs again. There are no additional rounds, special rests, confirmation
-steps or changes to how completion and streaks work. Doses follow the existing
-30-day program position, with five six-day blocks.
+A repeated station counts once in each round. Both sides share one screen;
+pauses are not exercise screens. Every day includes push-ups and one plank
+variation. The complete main sequence runs in order twice. The program uses
+existing exercise definitions, translations and illustrations throughout.
 
-**The program contains no rest durations.** Warm-up, main and cool-down pauses
-come only from account settings. Each transition uses the upcoming exercise's
-phase setting, including transitions between rounds and phases. The final
-exercise has no following pause. Changing those settings changes both the
-countdown and estimated duration.
+M means a moderate session, H a heavier session, and R active recovery. These
+are authoring labels in this document, not additional player modes. Recovery
+sessions retain the daily routine with fewer stations, reduced push-up/plank
+doses and gentle coordination or posture work. They omit the fast reaction
+exercise. Heavier sessions are separated by moderate or recovery days. When
+hops are included, they are the first main station.
 
-`selfManagedSides: true` keeps both sides on one exercise screen. Counts marked
-“each” are per side; Done is pressed after both sides. Repetition exercises use
-counts and Done, not a countdown. Timed one-sided holds combine both sides in
-one timer; halfway through, the spoken side-change cue and 3–2–1 countdown allow
-the position to change before the work clock resumes. This common three-second
-transition is included in the duration estimates.
+The ordinary difficulty control remains available; all doses below are level 0.
+Pauses come only from the account's warm-up/main/cool-down settings. A transition
+uses the next exercise's phase setting, including transitions between rounds
+and phases; the final exercise has no following pause. Changing those settings
+changes the countdown and estimated duration.
 
-## Six-day sequence and doses
+`selfManagedSides: true` keeps both sides together. Counted exercises use
+repetitions and Done; the user finishes both sides before pressing Done when
+`/side` is specified. Timed one-sided holds use twice the per-side dose, with the
+existing side-change cue and three-second countdown halfway through. Repetition
+tempo fields estimate duration; they do not turn repetitions into timer work.
 
-Each line is one station, in the order performed. Every dose is **per main
-round**; complete the whole eight-station sequence twice. Columns are the five
-six-day blocks, not five sets. “Total” counts alternate actions across both sides.
-Seconds describe continuous movement or a static hold. Counted exercises use
-controlled technique; the `repSeconds` values estimate duration only and do not
-turn repetitions into timed intervals.
+Installing the revised program preserves the current program position, completed
+workouts and streak. It does not restart the cycle: the existing position selects
+the corresponding day of the revised table. The cycle remains independent of
+weekdays and tennis sessions.
 
-### Day 1: Heavier A
+General authoring references include gradual progression, varied exercises,
+nonconsecutive strength-training sessions, dynamic preparation and stretching
+after exercise in the [AAP report, *Resistance Training for Children and
+Adolescents*](https://publications.aap.org/pediatrics/article/145/6/e20201011/76942/Resistance-Training-for-Children-and-Adolescents).
+The exact daily counts and doses below are this program's authored schedule.
 
-| Station / exercise | Dose | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1. IT34 Quick lateral shuffles | seconds | 45 | 45 | 50 | 50 | 50 |
-| 2. IT09 Slow-lowering push-ups | reps total | 6 | 8 | 10 | 12 | 14 |
-| 3. IT08 Reverse lunge with a pause | reps each | 8 | 8 | 9 | 9 | 10 |
-| 4. IT37 Short-step jogging in place | seconds | 45 | 45 | 50 | 50 | 50 |
-| 5. IT39 Plank with shoulder taps | reps total | 10 | 10 | 12 | 12 | 14 |
-| 6. IT38 Squat with a bottom pause | reps total | 12 | 12 | 14 | 14 | 16 |
-| 7. IT35 Quick steps over a line | seconds | 45 | 45 | 50 | 50 | 50 |
-| 8. IT36 Quick feet and direction reaction | seconds | 45 | 45 | 50 | 50 | 50 |
+## Count progression and main doses
 
-### Day 2: Strength and single-leg control
-
-| Station / exercise | Dose | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1. IT35 Quick steps over a line | seconds | 40 | 40 | 40 | 45 | 45 |
-| 2. IT09 Slow-lowering push-ups | reps total | 5 | 5 | 6 | 6 | 7 |
-| 3. IT42 Lateral lunge | reps each | 6 | 6 | 7 | 7 | 8 |
-| 4. IT37 Short-step jogging in place | seconds | 40 | 40 | 40 | 45 | 45 |
-| 5. IT40 Forearm plank with small foot lifts | reps total | 8 | 8 | 10 | 10 | 12 |
-| 6. IT27 Single-leg glute bridge | reps each | 8 | 8 | 9 | 9 | 10 |
-| 7. IT11 Single-leg calf raise | reps each | 12 | 12 | 12 | 12 | 12 |
-| 8. IT36 Quick feet and direction reaction | seconds | 40 | 40 | 40 | 45 | 45 |
-
-### Day 3: Strength and posture
-
-| Station / exercise | Dose | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1. IT43 Two steps forward and back | seconds | 40 | 40 | 40 | 45 | 45 |
-| 2. IT09 Slow-lowering push-ups | reps total | 5 | 5 | 6 | 6 | 7 |
-| 3. IT44 Squat and calf raise | reps total | 12 | 12 | 14 | 14 | 16 |
-| 4. IT34 Quick lateral shuffles | seconds | 40 | 40 | 40 | 45 | 45 |
-| 5. IT41 Side plank with staggered feet | seconds each | 20 | 20 | 25 | 25 | 30 |
-| 6. IT45 Single-leg hip hinge | reps each | 6 | 6 | 6 | 6 | 6 |
-| 7. IT46 Prone Y–T–W arm lifts | reps total | 12 | 12 | 12 | 12 | 12 |
-| 8. IT36 Quick feet and direction reaction | seconds | 40 | 40 | 40 | 45 | 45 |
-
-### Day 4: Heavier B
-
-| Station / exercise | Dose | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1. IT24 Lateral hop and hold | reps total | 6 | 6 | 6 | 6 | 6 |
-| 2. IT09 Slow-lowering push-ups | reps total | 6 | 8 | 10 | 12 | 14 |
-| 3. IT47 Stationary split squat | reps each | 8 | 8 | 9 | 9 | 10 |
-| 4. IT35 Quick steps over a line | seconds | 45 | 45 | 50 | 50 | 50 |
-| 5. IT39 Plank with shoulder taps | reps total | 12 | 12 | 14 | 14 | 16 |
-| 6. IT27 Single-leg glute bridge | reps each | 10 | 10 | 11 | 11 | 12 |
-| 7. IT34 Quick lateral shuffles | seconds | 45 | 45 | 50 | 50 | 50 |
-| 8. IT36 Quick feet and direction reaction | seconds | 45 | 45 | 50 | 50 | 50 |
-
-### Day 5: Strength and movement
-
-| Station / exercise | Dose | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1. IT49 Continuous diagonal steps and return | seconds | 40 | 40 | 40 | 45 | 45 |
-| 2. IT09 Slow-lowering push-ups | reps total | 5 | 5 | 6 | 6 | 7 |
-| 3. IT08 Reverse lunge with a pause | reps each | 6 | 6 | 7 | 7 | 8 |
-| 4. IT37 Short-step jogging in place | seconds | 40 | 40 | 40 | 45 | 45 |
-| 5. IT48 Forearm plank with alternating side steps | reps total | 8 | 8 | 10 | 10 | 12 |
-| 6. IT27 Single-leg glute bridge | reps each | 8 | 8 | 9 | 9 | 10 |
-| 7. IT11 Single-leg calf raise | reps each | 12 | 12 | 12 | 12 | 12 |
-| 8. IT36 Quick feet and direction reaction | seconds | 40 | 40 | 40 | 45 | 45 |
-
-### Day 6: Strength and posture variation
-
-| Station / exercise | Dose | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1. IT34 Quick lateral shuffles | seconds | 40 | 40 | 40 | 45 | 45 |
-| 2. IT09 Slow-lowering push-ups | reps total | 5 | 5 | 6 | 6 | 7 |
-| 3. IT42 Lateral lunge | reps each | 6 | 6 | 7 | 7 | 8 |
-| 4. IT35 Quick steps over a line | seconds | 40 | 40 | 40 | 45 | 45 |
-| 5. IT41 Side plank with staggered feet | seconds each | 20 | 20 | 25 | 25 | 30 |
-| 6. IT45 Single-leg hip hinge | reps each | 6 | 6 | 6 | 6 | 6 |
-| 7. IT46 Prone Y–T–W arm lifts | reps total | 12 | 12 | 12 | 12 | 12 |
-| 8. IT36 Quick feet and direction reaction | seconds | 40 | 40 | 40 | 45 | 45 |
-
-Push-ups progress from 6 to 14 per round on days 1 and 4 and from 5 to 7 on
-other days. All use the same controlled push-up with a two-second lowering
-phase. Moving plank variations count individual alternating taps, foot lifts or
-out-and-back side steps; the side plank holds for the listed time on each side.
-IT46 counts each Y, T or W raise separately: 12 raises are four Y–T–W sequences.
-IT24 remains six controlled hops per round throughout the program.
-
-IT36 is the final station every day. Its reaction definition keeps
-`directions: ["left", "right"]` and sets
-`cadence: {"startSeconds": 3, "endSeconds": 1}`. The first visible and spoken
-direction cue arrives after three seconds of active exercise time. Direction
-remains random while the interval shortens linearly from three seconds to one
-second before the final three-second countdown. That countdown takes priority:
-no new direction cues play during it. Directions mean the child's own left and
-right. Make one short side step, stop under control, return immediately to the
-centre and continue quick feet between cues and during the final countdown.
-Visible cues work when voice is disabled. This remains one continuous timed
-interval, without an extra exercise pause or an additional timer mode.
-
-The prescribed strength repetitions should keep controlled form and a small
-reserve. Use the existing difficulty control when needed. Program completion
-records that the session was completed; it does not assess technique or readiness.
-
-## Warm-up and cool-down every day
-
-The warm-up has six exercises, once, before the first main round:
-
-| Exercise | Dose |
+| Days | Six consecutive day totals |
 | --- | --- |
-| IT37 short-step jogging in place | 40 seconds |
-| IT02 alternating ankle rocks | 12 total |
-| IT04 shoulder circles and arm swings | 12 movements total |
-| IT08 reverse lunge with a pause | 4 each side |
-| IT19 preparation turn | 6 each side |
-| IT06 shallow squat | 8 |
+| 1–6 | 22, 24, 20, 24, 22, 20 |
+| 7–12 | 24, 26, 20, 26, 24, 22 |
+| 13–18 | 26, 28, 22, 28, 26, 20 |
+| 19–24 | 28, 30, 22, 30, 28, 22 |
+| 25–30 | 30, 32, 22, 30, 22, 32 |
 
-The cool-down has six exercises, once, after the second main round:
+These targets apply **per main round**, when the exercise appears. Values for
+counted exercises are repetitions; continuous movement values are seconds.
+
+| Exercise / session | Days 1–6 | 7–12 | 13–18 | 19–24 | 25–30 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| IT09 push-ups, M | 6 | 7 | 8 | 9 | 10 |
+| IT09 push-ups, H | 6 | 8 | 10 | 12 | 14 |
+| IT09 push-ups, R | 4 | 4 | 5 | 5 | 6 |
+| IT41 side plank, R, seconds each | 12 | 12 | 15 | 15 | 15 |
+| IT39 shoulder taps, M, total | 8 | 8 | 10 | 10 | 12 |
+| IT39 shoulder taps, H, total | 10 | 10 | 12 | 12 | 14 |
+| IT40 foot lifts / IT48 side steps, M, total | 6 | 6 | 8 | 8 | 10 |
+| IT40 foot lifts / IT48 side steps, H, total | 8 | 8 | 10 | 10 | 12 |
+| IT34/35/36/43/49 continuous movement, M, seconds | 35 | 35 | 40 | 40 | 40 |
+| IT34/35/36/43/49 continuous movement, H, seconds | 40 | 40 | 45 | 45 | 45 |
+
+IT09 retains the controlled two-second lowering phase. Moving planks count
+individual alternating actions: one tap, one foot lift, or one foot out and back.
+IT46 counts individual Y, T and W raises, so 9 or 12 repetitions make three or
+four complete Y–T–W sequences. Hops remain six per round. The targets retain
+controlled form and a small reserve; the existing difficulty control adjusts
+main-work doses when needed.
+
+IT36 ends each M and H main round. It uses the existing left/right reaction
+signals with `cadence: {"startSeconds": 3, "endSeconds": 1}`. Intervals shorten
+across the exercise while its clock continues. Directions mean the child's own
+left and right; make short side steps and return to the centre. Visible cues
+remain available with voice disabled. Recovery days do not contain IT36.
+
+## All 30 sessions
+
+Each sequence below is performed **twice**. `×N` means counted repetitions;
+`Ns` means seconds; `/side` means that dose on each side. Other counts are totals,
+including alternating actions. The exercise ID identifies the illustrated,
+translated instruction in `exercises.json`.
+
+Times are the application's estimates at level 0 with rests of **15 / 20 / 10
+seconds** for warm-up/main/cool-down. They include the actual warm-up override,
+both main rounds, all cool-down stretches and timed side changes. Early sessions
+and recovery days are deliberately shorter; they are not padded to twenty
+minutes. The longest estimate is 30:08. Actual time depends on repetition tempo,
+rest preferences and difficulty; the initial three-second ready count is omitted.
+
+| Day | Type | Total screens | Main sequence, twice | Estimated time |
+| ---: | :---: | ---: | --- | ---: |
+| 1 | M | 22 | IT34 35s; IT09 ×6; IT08 ×5/side; IT39 ×8; IT36 35s | 17:18 |
+| 2 | H | 24 | IT35 40s; IT09 ×6; IT38 ×10; IT40 ×8; IT27 ×6/side; IT36 40s | 19:38 |
+| 3 | R | 20 | IT18 ×16; IT09 ×4; IT10 ×6; IT41 12s/side | 14:18 |
+| 4 | H | 24 | IT07 ×6; IT09 ×6; IT47 ×6/side; IT39 ×10; IT34 40s; IT36 40s | 19:30 |
+| 5 | M | 22 | IT49 35s; IT09 ×6; IT44 ×8; IT48 ×6; IT36 35s | 16:50 |
+| 6 | R | 20 | IT16 ×3; IT09 ×4; IT20 ×6; IT41 12s/side | 14:22 |
+| 7 | M | 24 | IT43 35s; IT09 ×7; IT42 ×5/side; IT40 ×6; IT46 ×9; IT36 35s | 19:02 |
+| 8 | H | 26 | IT43 40s; IT09 ×8; IT42 ×6/side; IT48 ×8; IT38 ×10; IT46 ×9; IT36 40s | 21:24 |
+| 9 | R | 20 | IT29 ×10; IT09 ×4; IT21 ×4/side; IT41 12s/side | 14:50 |
+| 10 | H | 26 | IT24 ×6; IT09 ×8; IT08 ×6/side; IT41 15s/side; IT35 40s; IT26 ×8; IT36 40s | 21:36 |
+| 11 | M | 24 | IT34 35s; IT09 ×7; IT45 ×5/side; IT48 ×6; IT10 ×9; IT36 35s | 19:02 |
+| 12 | R | 22 | IT32 ×3/side; IT09 ×4; IT22 ×8; IT41 12s/side; IT10 ×6 | 16:02 |
+| 13 | M | 26 | IT49 40s; IT09 ×8; IT44 ×10; IT40 ×8; IT26 ×10; IT32 ×3/side; IT36 40s | 21:18 |
+| 14 | H | 28 | IT34 45s; IT09 ×10; IT47 ×7/side; IT39 ×12; IT27 ×7/side; IT46 ×12; IT43 45s; IT36 45s | 25:32 |
+| 15 | R | 22 | IT18 ×16; IT09 ×5; IT12 ×4/side; IT41 15s/side; IT10 ×6 | 16:20 |
+| 16 | H | 28 | IT24 ×6; IT09 ×10; IT38 ×12; IT48 ×10; IT45 ×5/side; IT26 ×10; IT35 45s; IT36 45s | 23:50 |
+| 17 | M | 26 | IT43 40s; IT09 ×8; IT42 ×6/side; IT40 ×8; IT27 ×6/side; IT16 ×3; IT36 40s | 22:06 |
+| 18 | R | 20 | IT30 ×8; IT09 ×5; IT20 ×6; IT41 15s/side | 14:40 |
+| 19 | M | 28 | IT07 ×6; IT09 ×9; IT47 ×6/side; IT48 ×8; IT27 ×6/side; IT46 ×12; IT35 40s; IT36 40s | 24:16 |
+| 20 | H | 30 | IT49 45s; IT09 ×12; IT08 ×7/side; IT40 ×10; IT38 ×12; IT46 ×12; IT32 ×3/side; IT34 45s; IT36 45s | 27:08 |
+| 21 | R | 22 | IT29 ×10; IT09 ×5; IT21 ×4/side; IT41 15s/side; IT10 ×6 | 16:24 |
+| 22 | H | 30 | IT24 ×6; IT09 ×12; IT47 ×7/side; IT41 20s/side; IT27 ×7/side; IT26 ×10; IT43 45s; IT11 ×8/side; IT36 45s | 27:56 |
+| 23 | M | 28 | IT49 40s; IT09 ×9; IT38 ×10; IT39 ×10; IT45 ×5/side; IT26 ×10; IT35 40s; IT36 40s | 23:24 |
+| 24 | R | 22 | IT16 ×3; IT09 ×5; IT22 ×8; IT41 15s/side; IT18 ×16 | 16:16 |
+| 25 | M | 30 | IT34 40s; IT09 ×10; IT08 ×6/side; IT39 ×12; IT45 ×5/side; IT26 ×10; IT43 40s; IT11 ×8/side; IT36 40s | 26:30 |
+| 26 | H | 32 | IT07 ×6; IT09 ×14; IT42 ×8/side; IT39 ×14; IT38 ×12; IT46 ×12; IT43 45s; IT27 ×8/side; IT35 45s; IT36 45s | 30:08 |
+| 27 | R | 22 | IT32 ×3/side; IT09 ×6; IT20 ×6; IT41 15s/side; IT10 ×6 | 16:26 |
+| 28 | H | 30 | IT34 45s; IT09 ×14; IT08 ×8/side; IT48 ×12; IT44 ×12; IT26 ×10; IT49 45s; IT32 ×3/side; IT36 45s | 27:36 |
+| 29 | R | 22 | IT30 ×8; IT09 ×6; IT21 ×4/side; IT41 15s/side; IT18 ×16 | 16:38 |
+| 30 | H | 32 | IT07 ×6; IT09 ×14; IT47 ×8/side; IT40 ×12; IT46 ×12; IT35 45s; IT38 ×12; IT26 ×10; IT49 45s; IT36 45s | 29:16 |
+
+Duration is computed from each expanded item: seconds use the displayed dose;
+repetitions use `value × repSeconds` (default three seconds); per-side work is
+doubled, with three seconds added for a timed side change. Each item except the
+last then adds the next item's phase rest. This includes per-day warm-ups rather
+than assuming every day's preparation has the same duration.
+
+## Six warm-up exercises and six stretches every day
+
+Preparation A is the shared warm-up: short-step jog 40 seconds, ankle rocks
+12 total, shoulder circles/arm swings 12 total, reverse lunge 4 each, preparation
+turn 6 each, shallow squat 8. Preparation B keeps six exercises and replaces the
+lunges/turns with hip hinges 8 and cross-body march 16 total. Recovery preparation
+uses B with a 30-second jog. On days 3, 15, 24 and 29, its march is replaced by
+preparation turns 4 each so the same march is not repeated in warm-up and main.
+
+| Preparation | Days | Sequence, once |
+| --- | --- | --- |
+| A | 1, 5, 7, 11, 13, 17, 19, 23, 25 | IT37 40s; IT02 ×12; IT04 ×12; IT08 ×4/side; IT19 ×6/side; IT06 ×8 |
+| B | 2, 4, 8, 10, 14, 16, 20, 22, 26, 28, 30 | IT37 40s; IT02 ×12; IT04 ×12; IT05 ×8; IT18 ×16; IT06 ×8 |
+| Recovery B with turns | 3, 15, 24, 29 | IT37 30s; IT02 ×12; IT04 ×12; IT05 ×8; IT19 ×4/side; IT06 ×8 |
+| Recovery B | 6, 9, 12, 18, 21, 27 | IT37 30s; IT02 ×12; IT04 ×12; IT05 ×8; IT18 ×16; IT06 ×8 |
+
+The cool-down always contains the following six stretches, once after the second
+main round. Its pauses use the account's cool-down setting.
 
 | Exercise | Dose |
 | --- | --- |
@@ -161,30 +161,12 @@ The cool-down has six exercises, once, after the second main round:
 | IT50 half-kneeling hip flexor stretch | 20 seconds each side |
 | IT52 lying figure-four glute stretch | 20 seconds each side |
 | IT54 chest stretch with the forearm on a wall | 15 seconds each side |
-| IT53 child’s pose for the back and lats | 30 seconds |
+| IT53 child's pose for the back and lats | 30 seconds |
 
-Both phases are part of every completed session. Their pauses use the same
-account settings as the rest of the program.
-
-At rest settings **15 / 20 / 10 seconds** (warm-up/main/cool-down), the application
-estimates the following session durations, including both rounds and side changes:
-
-| Days | Day 1 | Day 2 | Day 3 | Day 4 | Day 5 | Day 6 |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1–6 | 25:06 | 25:32 | 24:02 | 25:40 | 25:56 | 24:02 |
-| 7–12 | 25:18 | 25:32 | 24:02 | 25:52 | 25:56 | 24:02 |
-| 13–18 | 26:46 | 26:18 | 24:40 | 27:10 | 26:46 | 24:40 |
-| 19–24 | 26:58 | 26:48 | 25:10 | 27:22 | 27:16 | 25:10 |
-| 25–30 | 27:46 | 27:34 | 25:48 | 28:10 | 28:06 | 25:48 |
-
-Times estimate repetition tempo and omit the initial three-second ready count.
-They are not targets to rush toward and change when the user changes rests or
-difficulty. The estimates do not measure effort or calories.
-
-All 54 exercise definitions remain in the library, including exercises no longer
-used in the main circuits. The `wrong` cues are spoken directly, without a
-heading. Each is written as a negative instruction in all seven languages, with
-every prohibited action in a compound sentence negated.
+All 54 definitions remain in the library. Instructions and voice cues cover
+Russian, English, Turkish, German, Spanish, French and Italian. Mistake cues
+continue to be spoken directly as negative instructions, without an introductory
+heading. Keep every prohibited action in a compound sentence negated.
 
 ## Validate and install
 
