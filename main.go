@@ -15,6 +15,7 @@ import (
 	"morning30/internal/auth"
 	"morning30/internal/db"
 	"morning30/internal/i18n"
+	"morning30/internal/landing"
 	"morning30/internal/mcp"
 
 	"github.com/doors-dev/doors"
@@ -131,16 +132,24 @@ func main() {
 	// first and falls back to CDN stand-ins if absent.
 	mux.Handle("/body/models/", http.StripPrefix("/body/models/", http.FileServer(http.Dir("body/web/models"))))
 
-	// SEO: robots + sitemap (the only crawlable URL is the landing page).
+	// Public "… in 30 days" course pages (plain HTML, no session).
+	landing.Register(mux)
+
+	// SEO: robots + sitemap (the landing page plus the public course pages).
 	mux.HandleFunc("/robots.txt", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.Write([]byte("User-agent: *\nAllow: /\nSitemap: https://morning30.com/sitemap.xml\n"))
 	})
 	mux.HandleFunc("/sitemap.xml", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "application/xml; charset=utf-8")
+		var courses strings.Builder
+		for _, u := range landing.SitemapURLs() {
+			courses.WriteString(`<url><loc>` + u + `</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`)
+		}
 		w.Write([]byte(`<?xml version="1.0" encoding="UTF-8"?>` +
 			`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` +
 			`<url><loc>https://morning30.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>` +
+			courses.String() +
 			`</urlset>`))
 	})
 

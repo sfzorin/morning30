@@ -11,11 +11,16 @@ import (
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/db"
+	"morning30/internal/i18n"
 )
 
 var (
 	// ErrInvalidProgram is returned when uploaded program JSON is not a usable cycle.
 	ErrInvalidProgram = errors.New("invalid program")
+	// ErrUnknownCourse is returned when a "… in 30 days" course key matches nothing.
+	ErrUnknownCourse = errors.New("unknown course")
+	// ErrEmptyProgramName is returned when a program is renamed to nothing.
+	ErrEmptyProgramName = errors.New("program name is empty")
 	// ErrInvalidExercise is returned when a custom exercise document is unusable.
 	ErrInvalidExercise = errors.New("invalid exercise")
 )
@@ -249,6 +254,57 @@ func SetUserProgram(userID int64, raw string) error {
 		return err
 	}
 	return DB.SetActiveProgram(userID, "custom")
+}
+
+// ProgramNameMax is the longest program name, in characters.
+const ProgramNameMax = 40
+
+// CleanProgramName trims a user-typed program name and clips it on whole
+// characters. An empty result means "no name given".
+func CleanProgramName(name string) string {
+	name = strings.Join(strings.Fields(name), " ")
+	if runes := []rune(name); len(runes) > ProgramNameMax {
+		name = strings.TrimSpace(string(runes[:ProgramNameMax]))
+	}
+	return name
+}
+
+// ProgramTitle is the name shown for the account's active program: the
+// personal file's own name, or the localized demo label.
+func ProgramTitle(userID int64, lang string) string {
+	if HasCustomProgram(userID) {
+		if name := strings.TrimSpace(UserProgram(userID).Name); name != "" {
+			return name
+		}
+	}
+	return i18n.T(i18n.Lang(lang), "program.demo")
+}
+
+// RenameProgram gives the account's program a name of the user's choosing.
+// Exercises, doses, cycle position and streak are untouched. An account still
+// on the demo gets its own copy of the demo under that name.
+func RenameProgram(userID int64, name string) error {
+	name = CleanProgramName(name)
+	if name == "" {
+		return ErrEmptyProgramName
+	}
+	r := UserProgram(userID)
+	r.Name = name
+	return SetUserProgram(userID, r.Marshal())
+}
+
+// UseCourse makes a "… in 30 days" course this account's personal program,
+// titled in the user's language. From then on it is an ordinary personal file
+// the user may edit. Like any program change, it keeps the cycle position,
+// streak and activity calendar; it replaces the previous personal file.
+func UseCourse(userID int64, key, lang string) error {
+	c, ok := content.CourseByKey(key)
+	if !ok {
+		return ErrUnknownCourse
+	}
+	r := c.Resolve()
+	r.Name = c.TitleIn(lang)
+	return SetUserProgram(userID, r.Marshal())
 }
 
 // RestoreDemo clears the personal file so the user runs the public demo.

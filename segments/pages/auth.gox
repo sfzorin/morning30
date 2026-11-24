@@ -9,6 +9,7 @@ import (
 	"morning30/internal/auth"
 	"morning30/internal/db"
 	"morning30/internal/i18n"
+	"morning30/internal/landing"
 	"morning30/path"
 
 	"github.com/doors-dev/doors"
@@ -82,6 +83,7 @@ elem (a authPage) Main() {
 				~>doors.ALink{Model: switchTo} <a>~(switchLabel)</a>
 			</p>
 			~>doors.AClick{On: a.guest} <a class="guest-link" role="button">~(i18n.T(l, "auth.continue_guest"))</a>
+			<a class="courses-link" href=(landing.IndexPath(a.sess.Lang))>~(i18n.T(l, "home.courses"))</a>
 			~(langSwitch{sess: a.sess, auth: a.auth})
 		</div>
 	</main>

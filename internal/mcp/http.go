@@ -72,6 +72,60 @@ func Handler(adminToken string) http.Handler {
 		acc, _ = app.DB.AccountByID(acc.ID)
 		writeJSON(w, programView{Account: acc, Personal: true, Program: app.UserProgram(acc.ID)})
 	})
+	mux.HandleFunc("PUT /api/accounts/{who}/program/name", func(w http.ResponseWriter, r *http.Request) {
+		acc, ok := lookupAccount(w, r)
+		if !ok {
+			return
+		}
+		body, err := io.ReadAll(io.LimitReader(r.Body, 1<<12))
+		if err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		// The name may be sent as plain text or as {"name": "..."}.
+		name := string(body)
+		if trimmed := strings.TrimSpace(name); strings.HasPrefix(trimmed, "{") {
+			var a renameArgs
+			if err := json.Unmarshal([]byte(trimmed), &a); err != nil {
+				writeErr(w, http.StatusBadRequest, err)
+				return
+			}
+			name = a.Name
+		}
+		view, err := renameProgram(acc, name)
+		if err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		writeJSON(w, view)
+	})
+	mux.HandleFunc("POST /api/accounts/{who}/course/{key}", func(w http.ResponseWriter, r *http.Request) {
+		acc, ok := lookupAccount(w, r)
+		if !ok {
+			return
+		}
+		view, err := useCourse(acc, r.PathValue("key"), r.URL.Query().Get("lang"))
+		if errors.Is(err, app.ErrUnknownCourse) {
+			writeErr(w, http.StatusNotFound, err)
+			return
+		}
+		if err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		writeJSON(w, view)
+	})
+	mux.HandleFunc("GET /api/courses", func(w http.ResponseWriter, _ *http.Request) {
+		writeJSON(w, courseList())
+	})
+	mux.HandleFunc("GET /api/courses/{key}", func(w http.ResponseWriter, r *http.Request) {
+		view, err := courseDetail(r.PathValue("key"))
+		if err != nil {
+			writeErr(w, http.StatusNotFound, err)
+			return
+		}
+		writeJSON(w, view)
+	})
 	mux.HandleFunc("POST /api/accounts/{who}/restore-demo", func(w http.ResponseWriter, r *http.Request) {
 		acc, ok := lookupAccount(w, r)
 		if !ok {

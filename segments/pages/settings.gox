@@ -92,6 +92,7 @@ elem (s settingsPage) Main() {
 		levelSrc := doors.NewSource(s.sess.Level)
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirmReset := doors.NewSource(false)
+		courseSrc := doors.NewSource("") // key of the 30-day course being considered
 		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
 		poseList, _ := app.DB.ListPoses()
 		if poseList == nil {
@@ -199,14 +200,45 @@ elem (s settingsPage) Main() {
 
 				})
 
-				~// Personal 30-day cycle: edit this account's plan only (no other programs to pick).
+				~// "… in 30 days" courses: picking one copies it into this account's
+				~// personal plan. Cycle position and streak are untouched.
+				<div class="srow">
+					<span>~(i18n.T(l, "settings.program"))</span>
+					<input class="text-input compact" type="text" maxlength=(app.ProgramNameMax) value=(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) aria-label=(i18n.T(l, "settings.program"))
+						(doors.AChange{On: s.renameProgram})>
+				</div>
+				~(courseSrc.Bind(elem(picked string) {
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.course"))</span>
+						<select class="lang-select" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+							courseSrc.Update(ctx, r.Event().Value)
+							return false
+						}})>
+							<option value="" selected=func { return picked == "" }>~(i18n.T(l, "settings.course_pick"))</option>
+							~(for _, c := range content.Series30() {
+								<option value=(c.Key) selected=func { return c.Key == picked }>~(c.TitleIn(string(l)))</option>
+							})
+						</select>
+					</div>
+					~(if picked != "" {
+						<div class="srow">
+							<div class="confirm-reset">
+								<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))~(if hasCustom { ~(" ") <b>~(i18n.T(l, "settings.course_replace"))</b> })</span>
+								<div class="confirm-actions">
+									~>doors.AClick{On: s.useCourse(picked)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.course_use"))</button>
+									~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+										courseSrc.Update(ctx, "")
+										return false
+									}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
+								</div>
+							</div>
+						</div>
+					})
+				}))
+
+				~// Personal 30-day cycle: edit this account's plan only.
 				<details class="cycle-details">
 					<summary>~(i18n.T(l, "settings.cycle"))</summary>
-
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.program"))</span>
-						<span>~(if hasCustom && prog.Name != "" { prog.Name } else { i18n.T(l, "program.demo") })</span>
-					</div>
 
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.download"))</span>
@@ -851,12 +883,9 @@ func (s settingsPage) saveEditor(editSrc doors.Source[editState], nameSrc doors.
 		if err != nil {
 			return false
 		}
-		name := strings.TrimSpace(nameSrc.Get())
+		name := app.CleanProgramName(nameSrc.Get())
 		if name == "" {
 			name = "My program"
-		}
-		if len(name) > 40 {
-			name = name[:40]
 		}
 		p.Name = name
 		_ = app.SetUserProgram(s.sess.UserID, p.Marshal())
@@ -958,6 +987,25 @@ func (s settingsPage) importExercise(ctx context.Context, r doors.RequestRawForm
 	}
 	_ = r.After(doors.ActionLocationReload{})
 	return false
+}
+
+// renameProgram stores a new name for this account's program. An empty name
+// is ignored; the reload brings back the saved one.
+func (s settingsPage) renameProgram(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+	_ = app.RenameProgram(s.sess.UserID, r.Event().Value)
+	_ = r.After(doors.ActionLocationReload{})
+	return false
+}
+
+// useCourse installs a 30-day course as this account's personal program.
+func (s settingsPage) useCourse(key string) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if app.UseCourse(s.sess.UserID, key, s.sess.Lang) != nil {
+			return false
+		}
+		_ = r.After(doors.ActionLocationReload{})
+		return false
+	}
 }
 
 // deleteProgram clears the personal file and returns this account to the demo.

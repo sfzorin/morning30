@@ -167,3 +167,146 @@ func jsonRaw(v any) json.RawMessage {
 	b, _ := json.Marshal(v)
 	return b
 }
+
+// A token issued in settings drives the whole course flow for its own account:
+// list courses, start one, read it back, rename it, edit it, switch to another.
+// Cycle position and other accounts are never touched.
+func TestUserTokenRunsCourseFlowOverHTTP(t *testing.T) {
+	d := setupMCP(t)
+	a, _ := d.CreateUser("a@b.com", "h", "ru", "Ann")
+	b, _ := d.CreateUser("b@b.com", "h", "en", "Bob")
+	for i := 0; i < 3; i++ {
+		_ = d.AdvancePosition(a.ID)
+	}
+	tok, err := d.IssueMCPToken(a.ID)
+	if err != nil {
+		t.Fatal(err)
+	}
+	h := Handler("")
+	call := func(method, url, body string) (int, string) {
+		req := httptest.NewRequest(method, url, strings.NewReader(body))
+		req.Header.Set("Authorization", "Bearer "+tok)
+		rr := httptest.NewRecorder()
+		h.ServeHTTP(rr, req)
+		return rr.Code, rr.Body.String()
+	}
+	view := func(body string) programView {
+		var v programView
+		if err := json.Unmarshal([]byte(body), &v); err != nil {
+			t.Fatalf("bad program view: %v in %s", err, body)
+		}
+		return v
+	}
+
+	code, body := call("GET", "/api/courses", "")
+	var courses []courseView
+	if code != http.StatusOK || json.Unmarshal([]byte(body), &courses) != nil || len(courses) != len(content.Series30()) {
+		t.Fatalf("courses: %d %s", code, body)
+	}
+	if courses[0].Key != "plank30" || courses[0].Titles["ru"] != "Планка за 30 дней" || courses[0].Program != nil {
+		t.Fatalf("course list entry: %+v", courses[0])
+	}
+	code, body = call("GET", "/api/courses/plank30", "")
+	var one courseView
+	if code != http.StatusOK || json.Unmarshal([]byte(body), &one) != nil || one.Program == nil || len(one.Program.Days) != content.TotalDays {
+		t.Fatalf("course detail: %d %s", code, body)
+	}
+	if code, _ = call("GET", "/api/courses/nope30", ""); code != http.StatusNotFound {
+		t.Fatalf("unknown course detail: %d", code)
+	}
+
+	// Start a course: titled in the account's language, position kept.
+	code, body = call("POST", "/api/accounts/me/course/plank30", "")
+	v := view(body)
+	if code != http.StatusOK || !v.Personal || v.Program.Name != "Планка за 30 дней" || !v.Account.HasProgram {
+		t.Fatalf("use course: %d %s", code, body)
+	}
+	if code, _ = call("POST", "/api/accounts/me/course/nope30", ""); code != http.StatusNotFound {
+		t.Fatalf("unknown course: %d", code)
+	}
+	if code, _ = call("POST", "/api/accounts/"+strconv.FormatInt(b.ID, 10)+"/course/abs30", ""); code != http.StatusForbidden {
+		t.Fatalf("cross-account course: %d", code)
+	}
+
+	// Rename it, as plain text and as JSON.
+	code, body = call("PUT", "/api/accounts/me/program/name", "Моя планка")
+	if code != http.StatusOK || view(body).Program.Name != "Моя планка" {
+		t.Fatalf("rename text: %d %s", code, body)
+	}
+	code, body = call("PUT", "/api/accounts/me/program/name", `{"name": "Планка по утрам"}`)
+	if code != http.StatusOK || view(body).Program.Name != "Планка по утрам" {
+		t.Fatalf("rename json: %d %s", code, body)
+	}
+	if code, _ = call("PUT", "/api/accounts/me/program/name", "   "); code != http.StatusBadRequest {
+		t.Fatalf("empty rename: %d", code)
+	}
+
+	// The renamed course reads back as an ordinary program and can be edited
+	// and uploaded again through the existing endpoint.
+	code, body = call("GET", "/api/accounts/me/program", "")
+	v = view(body)
+	if code != http.StatusOK || v.Program.Name != "Планка по утрам" || len(v.Program.Days) != content.TotalDays {
+		t.Fatalf("get program: %d %s", code, body)
+	}
+	v.Program.Days[0].Items[0].Value = 45
+	code, body = call("PUT", "/api/accounts/me/program", v.Program.Marshal())
+	v = view(body)
+	if code != http.StatusOK || v.Program.Days[0].Items[0].Value != 45 || v.Program.Name != "Планка по утрам" {
+		t.Fatalf("put edited course: %d %s", code, body)
+	}
+
+	// Switch to another course with an explicit title language.
+	code, body = call("POST", "/api/accounts/me/course/abs30?lang=en", "")
+	if code != http.StatusOK || view(body).Program.Name != "Abs in 30 Days" {
+		t.Fatalf("switch course: %d %s", code, body)
+	}
+
+	if p, _ := d.Position(a.ID); p != 3 {
+		t.Fatalf("position moved to %d", p)
+	}
+	if app.HasCustomProgram(b.ID) {
+		t.Fatal("another account was changed")
+	}
+}
+
+// The same course flow through the stdio tools.
+func TestCourseToolsOverRPC(t *testing.T) {
+	d := setupMCP(t)
+	u, _ := d.CreateUser("c@b.com", "h", "de", "Cara")
+	_ = d.AdvancePosition(u.ID)
+
+	raw := handleRPC([]byte(`{"jsonrpc":"2.0","id":1,"method":"tools/list"}`))
+	for _, name := range []string{"list_courses", "get_course", "use_course", "rename_program"} {
+		if !bytes.Contains(raw, []byte(`"`+name+`"`)) {
+			t.Fatalf("tools/list lacks %s", name)
+		}
+	}
+	res := callTool("list_courses", jsonRaw(map[string]any{}))
+	if res.IsError || !strings.Contains(res.Content[0].Text, "slim30") {
+		t.Fatalf("list_courses: %s", res.Content[0].Text)
+	}
+	res = callTool("get_course", jsonRaw(map[string]any{"course": "slim30"}))
+	if res.IsError || !strings.Contains(res.Content[0].Text, `"totalDays": 30`) {
+		t.Fatalf("get_course: %s", res.Content[0].Text)
+	}
+	res = callTool("use_course", jsonRaw(map[string]any{"account": "c@b.com", "course": "pushups30"}))
+	if res.IsError || app.UserProgram(u.ID).Name != "Liegestütze in 30 Tagen" {
+		t.Fatalf("use_course: %s", res.Content[0].Text)
+	}
+	res = callTool("rename_program", jsonRaw(map[string]any{"account": "c@b.com", "name": "Mein Plan"}))
+	if res.IsError || app.UserProgram(u.ID).Name != "Mein Plan" {
+		t.Fatalf("rename_program: %s", res.Content[0].Text)
+	}
+	if res = callTool("use_course", jsonRaw(map[string]any{"account": "c@b.com", "course": "nope30"})); !res.IsError {
+		t.Fatal("unknown course accepted")
+	}
+	if res = callTool("rename_program", jsonRaw(map[string]any{"account": "c@b.com", "name": ""})); !res.IsError {
+		t.Fatal("empty name accepted")
+	}
+	if app.UserProgram(u.ID).Name != "Mein Plan" {
+		t.Fatal("failed calls changed the program")
+	}
+	if p, _ := d.Position(u.ID); p != 1 {
+		t.Fatalf("position moved to %d", p)
+	}
+}

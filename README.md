@@ -25,6 +25,12 @@ small client-side workout engine.
   into that account's personal JSON on first load; cycle position and streaks
   stay put. Settings edit *this* account only — there is no Sergey/Vlad/Ilya
   picker.
+- **"… in 30 days" courses.** Six goal-named courses (plank, abs, lose weight,
+  push-ups, posture, legs & glutes) are offered on the home screen and in
+  settings. Picking one copies it into the account's personal plan under the
+  course's name; from then on it is edited and renamed like any other plan.
+  Switching courses keeps the cycle day and streak. Each course also has a
+  public page per language (`/{lang}/courses/...`, listed in the sitemap).
 - **In-app editor.** Reorder, add, remove and retime exercises; all three phases
   remain nonempty, with exactly two main rounds. Save as this account's version,
   or restore the demo.
@@ -210,10 +216,14 @@ stdio (local Cursor / Claude against the same DB file):
 MORNING_DB=morning.db go run ./cmd/morning-mcp
 ```
 
-Tools: `list_accounts`, `get_program`, `set_program`, `restore_demo`,
-`list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
+Tools: `list_accounts`, `get_program`, `set_program`, `rename_program`,
+`list_courses`, `get_course`, `use_course`, `restore_demo`, `list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
 `list_figures`, `list_poses`, `put_pose`, `set_exercise_poses`.
 `account` is a user id, email, or unique display name.
+`use_course` copies a built-in "… in 30 days" course into the account's
+personal program (titled in the account's language unless `lang` is given);
+from then on it is an ordinary program for `get_program` / `set_program`.
+`rename_program` changes only the name. Neither moves the cycle day or streak.
 `put_exercise` may set `poses` to 1–2 ids from `list_poses` (`svg` stays the
 legacy figure fallback). `put_pose` uploads a still (base64 png/jpeg/webp).
 `set_exercise_poses` assigns those stills on a global library exercise.
@@ -226,6 +236,12 @@ curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/accounts
 curl -H "Authorization: Bearer m30_…" \
   -X PUT --data-binary @P08.json \
   http://localhost:8080/api/accounts/me/exercises/P08
+curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/courses
+curl -H "Authorization: Bearer m30_…" \
+  -X POST http://localhost:8080/api/accounts/me/course/plank30
+curl -H "Authorization: Bearer m30_…" \
+  -X PUT --data 'My morning plank' \
+  http://localhost:8080/api/accounts/me/program/name
 curl -H "Authorization: Bearer m30_…" \
   -H "Content-Type: image/png" \
   --data-binary @plank-high.png \

@@ -1,6 +1,7 @@
 // Package mcp is the agent interface: stdio JSON-RPC (Model Context Protocol)
-// plus optional Bearer HTTP /api. Agents write custom exercises and upload a
-// 30-day cycle into one account's personal JSON. Progress is never reset.
+// plus optional Bearer HTTP /api. Agents write custom exercises, upload a
+// 30-day cycle into one account's personal JSON, start one of the built-in
+// "… in 30 days" courses for it, or rename it. Progress is never reset.
 package mcp
 
 import (
@@ -76,6 +77,73 @@ type setPosesArgs struct {
 	Poses []string `json:"poses"`
 }
 
+type courseArgs struct {
+	Account string `json:"account"`
+	Course  string `json:"course"`
+	Lang    string `json:"lang"`
+}
+
+type renameArgs struct {
+	Account string `json:"account"`
+	Name    string `json:"name"`
+}
+
+// courseView describes one built-in "… in 30 days" course. Program is filled
+// only when a single course is requested.
+type courseView struct {
+	Key     string            `json:"key"`
+	Titles  map[string]string `json:"titles"`
+	Days    int               `json:"days"`
+	Program *content.Resolved `json:"program,omitempty"`
+}
+
+func courseList() []courseView {
+	out := []courseView{}
+	for _, c := range content.Series30() {
+		out = append(out, courseView{Key: c.Key, Titles: c.Title, Days: content.TotalDays})
+	}
+	return out
+}
+
+func courseDetail(key string) (courseView, error) {
+	c, ok := content.CourseByKey(strings.TrimSpace(key))
+	if !ok {
+		return courseView{}, app.ErrUnknownCourse
+	}
+	r := c.Resolve()
+	return courseView{Key: c.Key, Titles: c.Title, Days: content.TotalDays, Program: &r}, nil
+}
+
+// useCourse copies a course into the account's personal program. The title
+// is in lang, or in the account's own language when lang is empty.
+func useCourse(acc db.Account, key, lang string) (programView, error) {
+	lang = strings.TrimSpace(lang)
+	if lang == "" {
+		if u, err := app.DB.UserByID(acc.ID); err == nil {
+			lang = u.Lang
+		}
+	}
+	if err := app.UseCourse(acc.ID, strings.TrimSpace(key), lang); err != nil {
+		return programView{}, err
+	}
+	return currentProgram(acc.ID)
+}
+
+func renameProgram(acc db.Account, name string) (programView, error) {
+	if err := app.RenameProgram(acc.ID, name); err != nil {
+		return programView{}, err
+	}
+	return currentProgram(acc.ID)
+}
+
+func currentProgram(userID int64) (programView, error) {
+	acc, err := app.DB.AccountByID(userID)
+	if err != nil {
+		return programView{}, err
+	}
+	return programView{Account: acc, Personal: app.ActiveProgramKey(userID) == "custom", Program: app.UserProgram(userID)}, nil
+}
+
 type programView struct {
 	Account  db.Account       `json:"account"`
 	Personal bool             `json:"personal"`
@@ -117,6 +185,30 @@ func tools() []map[string]any {
 			"name":        "set_program",
 			"description": "Upload a 30-day cycle JSON into the account's personal file. Does not reset day position or streaks.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "program": map[string]any{"description": "Resolved program object or JSON string"}}, "required": []string{"account", "program"}},
+		},
+		{
+			"name":        "list_courses",
+			"description": "List the built-in \"… in 30 days\" courses (key and titles per language). Any of them can become an account's program with use_course.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
+		},
+		{
+			"name":        "get_course",
+			"description": "Get one built-in course with its full 30-day program JSON, e.g. to adapt it and upload the result with set_program.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"course": map[string]any{"type": "string", "description": "Course key from list_courses"}}, "required": []string{"course"}},
+		},
+		{
+			"name":        "use_course",
+			"description": "Copy a built-in course into the account's personal program, replacing the previous personal program. It is then an ordinary editable program. Does not reset day position or streaks.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
+				"account": account,
+				"course":  map[string]any{"type": "string", "description": "Course key from list_courses"},
+				"lang":    map[string]any{"type": "string", "description": "Language of the program name (ru, en, tr, de, es, fr, it). Defaults to the account's language."},
+			}, "required": []string{"account", "course"}},
+		},
+		{
+			"name":        "rename_program",
+			"description": "Give the account's program a new name (up to 40 characters). Exercises, day position and streaks are unchanged. An account on the demo gets its own copy of the demo under that name.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "name": map[string]any{"type": "string"}}, "required": []string{"account", "name"}},
 		},
 		{
 			"name":        "restore_demo",
@@ -230,6 +322,34 @@ func callTool(name string, args json.RawMessage) toolResult {
 		}
 		acc, _ = app.DB.AccountByID(acc.ID)
 		return textResult(programView{Account: acc, Personal: false, Program: app.UserProgram(acc.ID)}, nil)
+	case "list_courses":
+		return textResult(courseList(), nil)
+	case "get_course":
+		var a courseArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		return textResult(courseDetail(a.Course))
+	case "use_course":
+		var a courseArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		acc, err := app.DB.FindAccount(a.Account)
+		if err != nil {
+			return textResult(nil, err)
+		}
+		return textResult(useCourse(acc, a.Course, a.Lang))
+	case "rename_program":
+		var a renameArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		acc, err := app.DB.FindAccount(a.Account)
+		if err != nil {
+			return textResult(nil, err)
+		}
+		return textResult(renameProgram(acc, a.Name))
 	case "list_custom_exercises":
 		var a accountArgs
 		if err := json.Unmarshal(args, &a); err != nil {

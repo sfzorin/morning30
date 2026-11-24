@@ -164,6 +164,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
   margin: 0 0 12px;
   font-weight: 600;
 }
+.hero-program { display: block; color: var(--fg); font-size: 17px; font-weight: 700; text-decoration: none; margin-bottom: 6px; overflow-wrap: anywhere; }
 .day-num { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
 .day-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
 .cycle-done { color: var(--ok); font-size: 14px; margin-top: 12px; }
@@ -183,8 +184,22 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .streak-row .streak-n { font-size: 30px; font-weight: 800; }
 .streak-row .streak-label { color: var(--muted); font-size: 14px; }
 
+/* ---- 30-day courses ---- */
+.courses { margin-bottom: 18px; }
+.course-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.course-card {
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: space-between;
+  min-height: 76px; padding: 12px 14px; text-align: left;
+  background: var(--card); color: var(--fg); border: 2px solid transparent; border-radius: 14px;
+  font: inherit; cursor: pointer;
+}
+.course-card.on { border-color: var(--accent); background: var(--card2); }
+.course-title { font-weight: 700; font-size: 15px; line-height: 1.25; overflow-wrap: anywhere; }
+.course-meta { color: var(--muted); font-size: 13px; }
+.course-confirm { margin-top: 12px; }
+
 /* ---- Section headings ---- */
-.calendar h3, .cycle h3 { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .5px; }
+.calendar h3, .cycle h3, .courses h3 { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .5px; }
 .hero-cycle { color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; }
 
 /* ---- Date calendar (streak / habit) ---- */
@@ -260,6 +275,8 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .srow.save-row { justify-content: flex-start; gap: 14px; }
 .confirm-reset { display: flex; flex-direction: column; gap: 8px; width: 100%; }
 .confirm-q { color: var(--danger); font-size: 14px; }
+.confirm-q.calm { color: var(--muted); }
+.confirm-q.calm b { color: var(--danger); font-weight: 600; }
 .confirm-actions { display: flex; gap: 10px; }
 
 /* Collapsible cycle viewer/editor */
@@ -418,6 +435,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .greet { font-size: 20px; font-weight: 800; color: var(--fg); flex: 1; min-width: 0; margin-right: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* "Continue without signing up" link on the auth screen */
+.courses-link { display: block; margin-top: 12px; color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; }
 .guest-link { display: inline-block; margin-top: 16px; color: var(--muted); font-size: 14px; text-decoration: underline; }
 
 /* Guest mode note */

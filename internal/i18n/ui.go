@@ -30,6 +30,17 @@ var ui = map[string][7]string{
 	"library.mistakes": {"Ошибки", "Mistakes", "Hatalar", "Fehler", "Errores", "Erreurs", "Errori"},
 	"library.source":   {"Источник: видео на YouTube", "Source: video on YouTube", "Kaynak: YouTube videosu", "Quelle: YouTube-Video", "Fuente: vídeo de YouTube", "Source : vidéo YouTube", "Fonte: video su YouTube"},
 
+	// Public course pages
+	"landing.intro":    {"Бесплатные 30-дневные программы тренировок дома: без инвентаря, с таймером и голосовыми подсказками.", "Free 30-day home workout programs: no equipment, with a timer and voice guidance.", "Evde ücretsiz 30 günlük antrenman programları: ekipmansız, zamanlayıcı ve sesli yönlendirmeyle.", "Kostenlose 30-Tage-Trainingsprogramme für zu Hause: ohne Geräte, mit Timer und Sprachansagen.", "Programas gratuitos de 30 días para entrenar en casa: sin material, con temporizador y guía por voz.", "Des programmes gratuits de 30 jours à la maison : sans matériel, avec minuteur et guidage vocal.", "Programmi gratuiti di 30 giorni per allenarsi a casa: senza attrezzi, con timer e guida vocale."},
+	"landing.how":      {"Каждый день — разминка, два круга основных упражнений и заминка. Нагрузка растёт постепенно, лёгкие дни встроены в план. Программу можно менять под себя.", "Every day has a warm-up, two rounds of the main exercises and a cool-down. The load grows gradually, with lighter days built in. You can edit the program to suit you.", "Her gün ısınma, iki tur ana egzersiz ve soğuma var. Yük kademeli artar, hafif günler plana dahildir. Programı kendinize göre düzenleyebilirsiniz.", "Jeder Tag besteht aus Aufwärmen, zwei Runden Hauptübungen und Abwärmen. Die Belastung steigt allmählich, leichtere Tage sind eingeplant. Das Programm lässt sich anpassen.", "Cada día incluye calentamiento, dos rondas de ejercicios principales y enfriamiento. La carga sube poco a poco, con días suaves incluidos. Puedes editar el programa a tu gusto.", "Chaque jour : échauffement, deux tours d'exercices principaux et retour au calme. La charge augmente progressivement, avec des jours légers intégrés. Le programme est modifiable.", "Ogni giorno: riscaldamento, due giri di esercizi principali e defaticamento. Il carico cresce gradualmente, con giorni leggeri inclusi. Puoi modificare il programma."},
+	"landing.start":    {"Начать бесплатно", "Start for free", "Ücretsiz başla", "Kostenlos starten", "Empezar gratis", "Commencer gratuitement", "Inizia gratis"},
+	"landing.start_note": {"Откройте приложение и выберите этот курс на главной — регистрация не нужна.", "Open the app and pick this course on the home screen — no sign-up needed.", "Uygulamayı açın ve ana ekranda bu kursu seçin — kayıt gerekmez.", "Öffne die App und wähle diesen Kurs auf dem Startbildschirm – ohne Anmeldung.", "Abre la app y elige este curso en la pantalla principal: sin registro.", "Ouvrez l'application et choisissez ce cours sur l'écran d'accueil — sans inscription.", "Apri l'app e scegli questo corso nella schermata principale: senza registrazione."},
+	"landing.plan":     {"План на 30 дней", "The 30-day plan", "30 günlük plan", "Der 30-Tage-Plan", "El plan de 30 días", "Le plan sur 30 jours", "Il piano di 30 giorni"},
+	"landing.plan_note": {"Основные упражнения одного круга; каждый круг выполняется дважды.", "Main exercises for one round; each round is done twice.", "Bir turun ana egzersizleri; her tur iki kez yapılır.", "Hauptübungen einer Runde; jede Runde wird zweimal absolviert.", "Ejercicios principales de una ronda; cada ronda se hace dos veces.", "Exercices principaux d'un tour ; chaque tour est effectué deux fois.", "Esercizi principali di un giro; ogni giro si esegue due volte."},
+	"landing.light":    {"лёгкий день", "lighter day", "hafif gün", "leichter Tag", "día suave", "jour léger", "giorno leggero"},
+	"landing.all":      {"Все курсы", "All courses", "Tüm kurslar", "Alle Kurse", "Todos los cursos", "Tous les cours", "Tutti i corsi"},
+	"landing.a_day":    {"в день", "a day", "günde", "pro Tag", "al día", "par jour", "al giorno"},
+
 	// Auth
 	"auth.login":          {"Вход", "Log in", "Giriş", "Anmelden", "Iniciar sesión", "Connexion", "Accedi"},
 	"auth.register":       {"Регистрация", "Sign up", "Kayıt ol", "Registrieren", "Registrarse", "Inscription", "Registrati"},
@@ -63,6 +74,7 @@ var ui = map[string][7]string{
 	"home.est":            {"≈ время", "≈ time", "≈ süre", "≈ Zeit", "≈ tiempo", "≈ durée", "≈ tempo"},
 	"home.min":            {"мин", "min", "dk", "Min", "min", "min", "min"},
 	"home.exercises":      {"упражнений", "exercises", "egzersiz", "Übungen", "ejercicios", "exercices", "esercizi"},
+	"home.courses":        {"Курсы за 30 дней", "30-day courses", "30 günlük kurslar", "30-Tage-Kurse", "Cursos de 30 días", "Cours de 30 jours", "Corsi di 30 giorni"},
 	"home.cycle":          {"Цикл", "Cycle", "Döngü", "Zyklus", "Ciclo", "Cycle", "Ciclo"},
 	"home.diff":           {"Сложность растёт", "Difficulty increases", "Zorluk artar", "Schwierigkeit steigt", "La dificultad aumenta", "La difficulté augmente", "La difficoltà aumenta"},
 	"home.this_month":     {"Этот месяц", "This month", "Bu ay", "Dieser Monat", "Este mes", "Ce mois", "Questo mese"},
@@ -163,6 +175,11 @@ var ui = map[string][7]string{
 	"settings.cancel":           {"Отмена", "Cancel", "İptal", "Abbrechen", "Cancelar", "Annuler", "Annulla"},
 	"program.demo":              {"Демо", "Demo", "Demo", "Demo", "Demo", "Démo", "Demo"},
 	"settings.program":          {"Программа", "Program", "Program", "Programm", "Programa", "Programme", "Programma"},
+	"settings.course":           {"Курс за 30 дней", "30-day course", "30 günlük kurs", "30-Tage-Kurs", "Curso de 30 días", "Cours de 30 jours", "Corso di 30 giorni"},
+	"settings.course_pick":      {"Выбрать…", "Choose…", "Seç…", "Auswählen…", "Elegir…", "Choisir…", "Scegli…"},
+	"settings.course_note":      {"Курс станет вашей программой, и её можно менять. День цикла и серия сохранятся.", "The course becomes your program, and you can edit it. Your cycle day and streak stay.", "Kurs sizin programınız olur ve onu düzenleyebilirsiniz. Döngü günü ve seri korunur.", "Der Kurs wird dein Programm und lässt sich anpassen. Zyklustag und Serie bleiben erhalten.", "El curso pasa a ser tu programa y puedes editarlo. Se conservan el día del ciclo y la racha.", "Le cours devient votre programme, que vous pouvez modifier. Le jour du cycle et la série sont conservés.", "Il corso diventa il tuo programma e puoi modificarlo. Giorno del ciclo e serie restano."},
+	"settings.course_replace":   {"Текущая программа будет заменена.", "Your current program will be replaced.", "Mevcut programınız değiştirilecek.", "Dein aktuelles Programm wird ersetzt.", "Tu programa actual será reemplazado.", "Votre programme actuel sera remplacé.", "Il programma attuale verrà sostituito."},
+	"settings.course_use":       {"Начать курс", "Start course", "Kursa başla", "Kurs starten", "Empezar curso", "Commencer le cours", "Inizia il corso"},
 	"settings.restore_demo":     {"Вернуть демо", "Restore demo", "Demoyu geri yükle", "Demo wiederherstellen", "Restaurar demo", "Restaurer la démo", "Ripristina demo"},
 	"settings.paste_program":    {"Вставьте JSON плана зарядки", "Paste workout plan JSON", "Antrenman planı JSON'unu yapıştırın", "Trainingsplan-JSON einfügen", "Pega el JSON del plan", "Collez le JSON du plan", "Incolla il JSON del piano"},
 	"settings.warmup_rounds":    {"Круги разминки", "Warm-up rounds", "Isınma turları", "Aufwärm-Runden", "Rondas de calentamiento", "Tours d'échauffement", "Giri di riscaldamento"},

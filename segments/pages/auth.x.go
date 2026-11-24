@@ -12,6 +12,7 @@ import (
 	"morning30/internal/auth"
 	"morning30/internal/db"
 	"morning30/internal/i18n"
+	"morning30/internal/landing"
 	"morning30/path"
 
 	"github.com/doors-dev/doors"
@@ -33,11 +34,11 @@ type authPage struct {
 	register bool
 }
 
-//line auth.gox:33
+//line auth.gox:34
 func (a authPage) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line auth.gox:35
+//line auth.gox:36
 		l := i18n.Lang(a.sess.Lang)
 		// Local error message state for this render.
 		msg := doors.NewSource("")
@@ -57,23 +58,23 @@ func (a authPage) Main() gox.Elem {
 		__e = __c.Init("title"); if __e != nil { return }
 		{
 			__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:51
+//line auth.gox:52
 			__e = __c.Any(i18n.T(l, "app.name")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("main"); if __e != nil { return }
 		{
-//line auth.gox:52
+//line auth.gox:53
 			__e = __c.Set("class", "auth"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line auth.gox:53
+//line auth.gox:54
 				__e = __c.Set("class", "auth-card"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line auth.gox:54
+//line auth.gox:55
 					__e = __c.Set("class", "logo"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Text("🌅"); if __e != nil { return }
@@ -81,54 +82,54 @@ func (a authPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("h1"); if __e != nil { return }
 				{
-//line auth.gox:55
+//line auth.gox:56
 					__e = __c.Set("class", "brand"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:55
+//line auth.gox:56
 					__e = __c.Any(i18n.T(l, "app.name")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line auth.gox:56
+//line auth.gox:57
 					__e = __c.Set("class", "tagline"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:56
+//line auth.gox:57
 					__e = __c.Any(i18n.T(l, "app.tagline")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("h2"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:57
+//line auth.gox:58
 					__e = __c.Any(title); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line auth.gox:58
+//line auth.gox:59
 				__e = (doors.ASubmit[credentials]{On: a.submit(msg)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("form"); if __e != nil { return }
 					{
-//line auth.gox:58
+//line auth.gox:59
 						__e = __c.Set("class", "form"); if __e != nil { return }
 						__e = __c.Set("novalidate", true); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:59
+//line auth.gox:60
 						if a.register {
 							__e = __c.Init("label"); if __e != nil { return }
 							{
 								__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:61
+//line auth.gox:62
 								__e = __c.Any(i18n.T(l, "auth.name")); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line auth.gox:62
+//line auth.gox:63
 									__e = __c.Set("name", "name"); if __e != nil { return }
-//line auth.gox:62
+//line auth.gox:63
 									__e = __c.Set("type", "text"); if __e != nil { return }
-//line auth.gox:62
+//line auth.gox:63
 									__e = __c.Set("autocomplete", "given-name"); if __e != nil { return }
-//line auth.gox:62
+//line auth.gox:63
 									__e = __c.Set("maxlength", "40"); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
@@ -138,17 +139,17 @@ func (a authPage) Main() gox.Elem {
 						__e = __c.Init("label"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:66
+//line auth.gox:67
 							__e = __c.Any(i18n.T(l, "auth.email")); if __e != nil { return }
 							__e = __c.InitVoid("input"); if __e != nil { return }
 							{
-//line auth.gox:67
+//line auth.gox:68
 								__e = __c.Set("name", "email"); if __e != nil { return }
-//line auth.gox:67
+//line auth.gox:68
 								__e = __c.Set("type", "email"); if __e != nil { return }
-//line auth.gox:67
+//line auth.gox:68
 								__e = __c.Set("autocomplete", "email"); if __e != nil { return }
-//line auth.gox:67
+//line auth.gox:68
 								__e = __c.Set("inputmode", "email"); if __e != nil { return }
 								__e = __c.Set("required", true); if __e != nil { return }
 							}
@@ -158,48 +159,48 @@ func (a authPage) Main() gox.Elem {
 						__e = __c.Init("label"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:70
+//line auth.gox:71
 							__e = __c.Any(i18n.T(l, "auth.password")); if __e != nil { return }
 							__e = __c.InitVoid("input"); if __e != nil { return }
 							{
-//line auth.gox:71
+//line auth.gox:72
 								__e = __c.Set("name", "password"); if __e != nil { return }
-//line auth.gox:71
+//line auth.gox:72
 								__e = __c.Set("type", "password"); if __e != nil { return }
-//line auth.gox:71
+//line auth.gox:72
 								__e = __c.Set("autocomplete", "current-password"); if __e != nil { return }
 								__e = __c.Set("required", true); if __e != nil { return }
 							}
 							__e = __c.Submit(); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line auth.gox:73
+//line auth.gox:74
 						__e = __c.Any(msg.Bind(func(m string) gox.Elem {
 					return gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
-//line auth.gox:74
+//line auth.gox:75
 						if m != "" {
 							__e = __c.Init("p"); if __e != nil { return }
 							{
-//line auth.gox:75
+//line auth.gox:76
 								__e = __c.Set("class", "err"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:75
+//line auth.gox:76
 								__e = __c.Any(m); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						}
 					return })
-//line auth.gox:77
+//line auth.gox:78
 				})); if __e != nil { return }
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line auth.gox:78
+//line auth.gox:79
 							__e = __c.Set("class", "btn primary"); if __e != nil { return }
-//line auth.gox:78
+//line auth.gox:79
 							__e = __c.Set("type", "submit"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:78
+//line auth.gox:79
 							__e = __c.Any(submitLabel); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -208,47 +209,58 @@ func (a authPage) Main() gox.Elem {
 				return })); if __e != nil { return }
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line auth.gox:80
+//line auth.gox:81
 					__e = __c.Set("class", "switch"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:81
-					__e = __c.Many(switchText, " "); if __e != nil { return }
 //line auth.gox:82
+					__e = __c.Many(switchText, " "); if __e != nil { return }
+//line auth.gox:83
 					__e = (doors.ALink{Model: switchTo}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("a"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:82
+//line auth.gox:83
 							__e = __c.Any(switchLabel); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line auth.gox:84
+//line auth.gox:85
 				__e = (doors.AClick{On: a.guest}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line auth.gox:84
+//line auth.gox:85
 						__e = __c.Set("class", "guest-link"); if __e != nil { return }
-//line auth.gox:84
+//line auth.gox:85
 						__e = __c.Set("role", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line auth.gox:84
+//line auth.gox:85
 						__e = __c.Any(i18n.T(l, "auth.continue_guest")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
-//line auth.gox:85
+				__e = __c.Init("a"); if __e != nil { return }
+				{
+//line auth.gox:86
+					__e = __c.Set("class", "courses-link"); if __e != nil { return }
+//line auth.gox:86
+					__e = __c.Set("href", landing.IndexPath(a.sess.Lang)); if __e != nil { return }
+					__e = __c.Submit(); if __e != nil { return }
+//line auth.gox:86
+					__e = __c.Any(i18n.T(l, "home.courses")); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
+//line auth.gox:87
 				__e = __c.Any(langSwitch{sess: a.sess, auth: a.auth}); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line auth.gox:88
+//line auth.gox:90
 }
 
 // guest creates an anonymous guest session on demand ("continue as guest") and

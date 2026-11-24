@@ -5,6 +5,7 @@ import (
 	"strings"
 	"testing"
 	"testing/fstest"
+	"unicode/utf8"
 
 	"morning30/internal/catalog"
 	"morning30/internal/content"
@@ -285,5 +286,100 @@ func TestAssignExercisePosesCustomOverlay(t *testing.T) {
 	got, _ := UserCatalog(u.ID).Doc("X01")
 	if len(got.Poses) != 1 || got.Poses[0] != "sit" {
 		t.Fatalf("overlay poses: %#v", got.Poses)
+	}
+}
+
+// Picking a course, then switching to another, replaces only the plan: the
+// cycle position, streak calendar and the public demo stay as they were.
+func TestUseCourseKeepsProgressAcrossSwitches(t *testing.T) {
+	d := openAppDB(t)
+	u, _ := d.CreateUser("c@example.com", "h", "ru", "C")
+	for i := 0; i < 5; i++ {
+		_ = d.AdvancePosition(u.ID)
+	}
+	_ = d.RecordActivity(u.ID, "2026-11-23")
+	demo := content.ResolveDemo().Marshal()
+
+	if err := UseCourse(u.ID, "nope30", "ru"); err == nil {
+		t.Fatal("unknown course accepted")
+	}
+	if HasCustomProgram(u.ID) {
+		t.Fatal("rejected course still wrote a program")
+	}
+	for key, want := range map[string]string{"plank30": "Планка за 30 дней", "abs30": "Пресс за 30 дней"} {
+		if err := UseCourse(u.ID, key, "ru"); err != nil {
+			t.Fatal(err)
+		}
+		c, _ := content.CourseByKey(key)
+		got := UserProgram(u.ID)
+		if got.Name != want || ActiveProgramKey(u.ID) != "custom" {
+			t.Fatalf("%s: name %q, key %q", key, got.Name, ActiveProgramKey(u.ID))
+		}
+		ref := c.Resolve()
+		ref.Name = want
+		if got.Marshal() != ref.Marshal() {
+			t.Fatalf("%s: stored program differs from the course", key)
+		}
+		if p, _ := d.Position(u.ID); p != 5 {
+			t.Fatalf("%s: position moved to %d", key, p)
+		}
+		if ok, _ := d.HasActivity(u.ID, "2026-11-23"); !ok {
+			t.Fatalf("%s: activity lost", key)
+		}
+	}
+	if content.ResolveDemo().Marshal() != demo {
+		t.Fatal("demo changed")
+	}
+	other, _ := d.CreateUser("o@example.com", "h", "en", "O")
+	if HasCustomProgram(other.ID) || ActiveProgramKey(other.ID) != "demo" {
+		t.Fatal("another account was affected")
+	}
+}
+
+// Renaming changes only the name: the plan, cycle position and other accounts
+// stay put, and an account on the demo gets its own named copy.
+func TestRenameProgram(t *testing.T) {
+	d := openAppDB(t)
+	u, _ := d.CreateUser("r@example.com", "h", "ru", "R")
+	_ = d.AdvancePosition(u.ID)
+	_ = d.AdvancePosition(u.ID)
+	if got := ProgramTitle(u.ID, "ru"); got != "Демо" {
+		t.Fatalf("demo title = %q", got)
+	}
+	if err := RenameProgram(u.ID, "   "); err == nil || HasCustomProgram(u.ID) {
+		t.Fatal("empty name must be rejected without creating a program")
+	}
+
+	if err := RenameProgram(u.ID, "  Моя   зарядка "); err != nil {
+		t.Fatal(err)
+	}
+	demo := content.ResolveDemo()
+	demo.Name = "Моя зарядка"
+	if got := UserProgram(u.ID); got.Marshal() != demo.Marshal() || ProgramTitle(u.ID, "ru") != "Моя зарядка" {
+		t.Fatalf("renamed demo differs: %q", got.Name)
+	}
+
+	if err := UseCourse(u.ID, "plank30", "ru"); err != nil {
+		t.Fatal(err)
+	}
+	if got := ProgramTitle(u.ID, "ru"); got != "Планка за 30 дней" {
+		t.Fatalf("course title = %q", got)
+	}
+	long := strings.Repeat("Планка ", 10)
+	if err := RenameProgram(u.ID, long); err != nil {
+		t.Fatal(err)
+	}
+	got := UserProgram(u.ID)
+	if n := []rune(got.Name); len(n) > ProgramNameMax || !utf8.ValidString(got.Name) || !strings.HasPrefix(long, got.Name) {
+		t.Fatalf("clipped name = %q", got.Name)
+	}
+	c, _ := content.CourseByKey("plank30")
+	ref := c.Resolve()
+	ref.Name = got.Name
+	if got.Marshal() != ref.Marshal() {
+		t.Fatal("renaming changed the plan")
+	}
+	if p, _ := d.Position(u.ID); p != 2 {
+		t.Fatalf("position moved to %d", p)
 	}
 }
