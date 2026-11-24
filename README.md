@@ -29,8 +29,14 @@ small client-side workout engine.
   push-ups, posture, legs & glutes) are offered on the home screen and in
   settings. Picking one copies it into the account's personal plan under the
   course's name; from then on it is edited and renamed like any other plan.
-  Switching courses keeps the cycle day and streak. Each course also has a
+  Switching courses keeps the cycle day and streak. Once an account has its
+  own plan the courses are offered in settings only. Each course also has a
   public page per language (`/{lang}/courses/...`, listed in the sitemap).
+- **Saved programs.** Starting a course, importing a file, returning to the
+  demo or an agent upload never destroys a plan the user made or edited: it is
+  put aside in a per-account list (newest ten) and can be restored in settings.
+  Restoring swaps, so the plan it replaces is kept in turn. Untouched copies of
+  the demo or of a course are not kept; they can always be started again.
 - **In-app editor.** Reorder, add, remove and retime exercises; all three phases
   remain nonempty, with exactly two main rounds. Save as this account's version,
   or restore the demo.
@@ -217,13 +223,18 @@ MORNING_DB=morning.db go run ./cmd/morning-mcp
 ```
 
 Tools: `list_accounts`, `get_program`, `set_program`, `rename_program`,
-`list_courses`, `get_course`, `use_course`, `restore_demo`, `list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
+`list_courses`, `get_course`, `use_course`, `list_saved_programs`,
+`restore_saved_program`, `restore_demo`, `list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
 `list_figures`, `list_poses`, `put_pose`, `set_exercise_poses`.
 `account` is a user id, email, or unique display name.
 `use_course` copies a built-in "… in 30 days" course into the account's
 personal program (titled in the account's language unless `lang` is given);
 from then on it is an ordinary program for `get_program` / `set_program`.
 `rename_program` changes only the name. Neither moves the cycle day or streak.
+`set_program`, `use_course` and `restore_demo` put the user's own previous
+plan into the saved list; `list_saved_programs` / `restore_saved_program`
+(HTTP: `GET /api/accounts/me/saved-programs`,
+`POST /api/accounts/me/saved-programs/{id}/restore`) bring one back.
 `put_exercise` may set `poses` to 1–2 ids from `list_poses` (`svg` stays the
 legacy figure fallback). `put_pose` uploads a still (base64 png/jpeg/webp).
 `set_exercise_poses` assigns those stills on a global library exercise.

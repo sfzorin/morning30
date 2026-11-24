@@ -276,7 +276,9 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .confirm-reset { display: flex; flex-direction: column; gap: 8px; width: 100%; }
 .confirm-q { color: var(--danger); font-size: 14px; }
 .confirm-q.calm { color: var(--muted); }
-.confirm-q.calm b { color: var(--danger); font-weight: 600; }
+.saved-row { align-items: center; gap: 12px; }
+.srow .saved-row .saved-name { color: var(--fg); font-size: 15px; overflow-wrap: anywhere; }
+.saved-name small { display: block; color: var(--muted); font-size: 12px; }
 .confirm-actions { display: flex; gap: 10px; }
 
 /* Collapsible cycle viewer/editor */

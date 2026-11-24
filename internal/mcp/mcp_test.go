@@ -310,3 +310,67 @@ func TestCourseToolsOverRPC(t *testing.T) {
 		t.Fatalf("position moved to %d", p)
 	}
 }
+
+// An agent upload cannot wipe a user's own program either: it lands in the
+// saved list, which the same token can read and restore from.
+func TestAgentUploadKeepsOwnProgramAndCanRestoreIt(t *testing.T) {
+	d := setupMCP(t)
+	a, _ := d.CreateUser("a@b.com", "h", "en", "Ann")
+	b, _ := d.CreateUser("b@b.com", "h", "en", "Bob")
+	mine := content.ResolveDemo()
+	mine.Name = "Ann's plan"
+	mine.Days[0].Items[0].Value = 17
+	if err := app.SetUserProgram(a.ID, mine.Marshal()); err != nil {
+		t.Fatal(err)
+	}
+	want := app.UserProgram(a.ID).Marshal()
+	tok, _ := d.IssueMCPToken(a.ID)
+	tokB, _ := d.IssueMCPToken(b.ID)
+	h := Handler("")
+	call := func(token, method, url, body string) (int, string) {
+		req := httptest.NewRequest(method, url, strings.NewReader(body))
+		req.Header.Set("Authorization", "Bearer "+token)
+		rr := httptest.NewRecorder()
+		h.ServeHTTP(rr, req)
+		return rr.Code, rr.Body.String()
+	}
+
+	upload := content.ResolveDemo()
+	upload.Name = "Agent plan"
+	upload.Days[1].Items[0].Value = 31
+	if code, body := call(tok, "PUT", "/api/accounts/me/program", upload.Marshal()); code != http.StatusOK {
+		t.Fatalf("upload: %d %s", code, body)
+	}
+	code, body := call(tok, "GET", "/api/accounts/me/saved-programs", "")
+	var saved []db.SavedProgram
+	if code != http.StatusOK || json.Unmarshal([]byte(body), &saved) != nil || len(saved) != 1 || saved[0].Name != "Ann's plan" {
+		t.Fatalf("saved list: %d %s", code, body)
+	}
+	id := strconv.FormatInt(saved[0].ID, 10)
+	if code, _ = call(tokB, "POST", "/api/accounts/me/saved-programs/"+id+"/restore", ""); code != http.StatusNotFound {
+		t.Fatalf("another account restored it: %d", code)
+	}
+	if code, body = call(tok, "POST", "/api/accounts/me/saved-programs/"+id+"/restore", ""); code != http.StatusOK {
+		t.Fatalf("restore: %d %s", code, body)
+	}
+	if app.UserProgram(a.ID).Marshal() != want {
+		t.Fatal("restored program differs from the original")
+	}
+
+	// The same through the stdio tools: the agent's plan is now the saved one.
+	res := callTool("list_saved_programs", jsonRaw(map[string]any{"account": "a@b.com"}))
+	if res.IsError || !strings.Contains(res.Content[0].Text, "Agent plan") {
+		t.Fatalf("list_saved_programs: %s", res.Content[0].Text)
+	}
+	rows, _ := d.SavedPrograms(a.ID)
+	res = callTool("restore_saved_program", jsonRaw(map[string]any{"account": "a@b.com", "id": rows[0].ID}))
+	if res.IsError || app.UserProgram(a.ID).Name != "Agent plan" {
+		t.Fatalf("restore_saved_program: %s", res.Content[0].Text)
+	}
+	if rows, _ = d.SavedPrograms(a.ID); len(rows) != 1 || rows[0].Name != "Ann's plan" {
+		t.Fatalf("after swap: %+v", rows)
+	}
+	if app.HasCustomProgram(b.ID) {
+		t.Fatal("another account was changed")
+	}
+}

@@ -144,6 +144,16 @@ CREATE TABLE IF NOT EXISTS sessions (
 );
 CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id);
 
+-- Personal programs that were replaced, kept so the user can bring them back.
+CREATE TABLE IF NOT EXISTS saved_programs (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id      INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    name         TEXT NOT NULL,
+    program_json TEXT NOT NULL,
+    saved_at     TEXT NOT NULL                -- UTC, RFC 3339
+);
+CREATE INDEX IF NOT EXISTS idx_saved_programs_user ON saved_programs(user_id);
+
 DROP TABLE IF EXISTS progress;
 `
 	if _, err := d.sql.Exec(schema); err != nil {

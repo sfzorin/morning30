@@ -93,6 +93,8 @@ elem (s settingsPage) Main() {
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirmReset := doors.NewSource(false)
 		courseSrc := doors.NewSource("") // key of the 30-day course being considered
+		keepsCurrent := app.KeepsCurrentProgram(s.sess.UserID)
+		savedPrograms := app.SavedPrograms(s.sess.UserID)
 		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
 		poseList, _ := app.DB.ListPoses()
 		if poseList == nil {
@@ -223,7 +225,7 @@ elem (s settingsPage) Main() {
 					~(if picked != "" {
 						<div class="srow">
 							<div class="confirm-reset">
-								<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))~(if hasCustom { ~(" ") <b>~(i18n.T(l, "settings.course_replace"))</b> })</span>
+								<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))~(if keepsCurrent { ~(" ", i18n.T(l, "settings.course_keep")) })</span>
 								<div class="confirm-actions">
 									~>doors.AClick{On: s.useCourse(picked)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.course_use"))</button>
 									~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
@@ -235,6 +237,20 @@ elem (s settingsPage) Main() {
 						</div>
 					})
 				}))
+
+				~// Programs this account replaced (by a course, an import, the demo
+				~// or an agent). Bringing one back keeps the current one in turn.
+				~(if len(savedPrograms) > 0 {
+					<div class="srow col">
+						<span>~(i18n.T(l, "settings.saved_programs"))</span>
+						~(for _, sp := range savedPrograms {
+							<div class="row-between saved-row">
+								<span class="saved-name">~(sp.Name)<small>~(savedDate(sp.SavedAt))</small></span>
+								~>doors.AClick{On: s.restoreSaved(sp.ID)} <button class="btn small" type="button">~(i18n.T(l, "settings.saved_restore"))</button>
+							</div>
+						})
+					</div>
+				})
 
 				~// Personal 30-day cycle: edit this account's plan only.
 				<details class="cycle-details">
@@ -896,6 +912,7 @@ func (s settingsPage) saveEditor(editSrc doors.Source[editState], nameSrc doors.
 
 // importProgram validates a personal cycle before saving it. Rejected input
 // stays in the form and never replaces the saved program or changes progress.
+// An accepted import keeps the user's previous program in the saved list.
 func (s settingsPage) importProgram(status doors.Source[string]) func(context.Context, doors.RequestRawForm) bool {
 	return func(ctx context.Context, r doors.RequestRawForm) bool {
 		status.Update(ctx, "")
@@ -905,7 +922,7 @@ func (s settingsPage) importProgram(status doors.Source[string]) func(context.Co
 			return false
 		}
 		raw := strings.TrimSpace(pf.FormValue("progjson"))
-		if raw == "" || app.SetUserProgram(s.sess.UserID, raw) != nil {
+		if raw == "" || app.ReplaceUserProgram(s.sess.UserID, raw) != nil {
 			status.Update(ctx, "settings.import_failed")
 			return false
 		}
@@ -995,6 +1012,25 @@ func (s settingsPage) renameProgram(ctx context.Context, r doors.RequestEvent[do
 	_ = app.RenameProgram(s.sess.UserID, r.Event().Value)
 	_ = r.After(doors.ActionLocationReload{})
 	return false
+}
+
+// restoreSaved brings a saved program back as this account's program.
+func (s settingsPage) restoreSaved(id int64) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if app.RestoreSavedProgram(s.sess.UserID, id) != nil {
+			return false
+		}
+		_ = r.After(doors.ActionLocationReload{})
+		return false
+	}
+}
+
+// savedDate shows the day a program was put aside (stored as UTC RFC 3339).
+func savedDate(at string) string {
+	if len(at) >= 10 {
+		return at[:10]
+	}
+	return at
 }
 
 // useCourse installs a 30-day course as this account's personal program.

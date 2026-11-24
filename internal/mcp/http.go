@@ -65,7 +65,7 @@ func Handler(adminToken string) http.Handler {
 			writeErr(w, http.StatusBadRequest, err)
 			return
 		}
-		if err := app.SetUserProgram(acc.ID, string(body)); err != nil {
+		if err := app.ReplaceUserProgram(acc.ID, string(body)); err != nil {
 			writeErr(w, http.StatusBadRequest, err)
 			return
 		}
@@ -122,6 +122,39 @@ func Handler(adminToken string) http.Handler {
 		view, err := courseDetail(r.PathValue("key"))
 		if err != nil {
 			writeErr(w, http.StatusNotFound, err)
+			return
+		}
+		writeJSON(w, view)
+	})
+	mux.HandleFunc("GET /api/accounts/{who}/saved-programs", func(w http.ResponseWriter, r *http.Request) {
+		acc, ok := lookupAccount(w, r)
+		if !ok {
+			return
+		}
+		list, err := app.DB.SavedPrograms(acc.ID)
+		if err != nil {
+			writeErr(w, http.StatusInternalServerError, err)
+			return
+		}
+		writeJSON(w, list)
+	})
+	mux.HandleFunc("POST /api/accounts/{who}/saved-programs/{id}/restore", func(w http.ResponseWriter, r *http.Request) {
+		acc, ok := lookupAccount(w, r)
+		if !ok {
+			return
+		}
+		id, err := strconv.ParseInt(r.PathValue("id"), 10, 64)
+		if err != nil {
+			writeErr(w, http.StatusBadRequest, err)
+			return
+		}
+		view, err := restoreSaved(acc, id)
+		if errors.Is(err, db.ErrSavedProgramNotFound) {
+			writeErr(w, http.StatusNotFound, err)
+			return
+		}
+		if err != nil {
+			writeErr(w, http.StatusInternalServerError, err)
 			return
 		}
 		writeJSON(w, view)

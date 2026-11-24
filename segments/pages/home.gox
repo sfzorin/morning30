@@ -88,8 +88,10 @@ elem (h homePage) Main() {
 			<p class="home-save-status hidden" role="status" data-pending=(i18n.T(l, "done.save_pending")) data-saved=(i18n.T(l, "done.saved"))></p>
 		</section>
 
+		~// Courses are offered here only until the account has a program of its
+		~// own; after that they are started from settings, never by a stray tap.
 		~(if !hasCustom {
-			~(h.courses(hasCustom))
+			~(h.courses())
 		})
 
 		<section class="streak-row">
@@ -118,18 +120,14 @@ elem (h homePage) Main() {
 				})
 			</div>
 		</section>
-		~(if hasCustom {
-			~(h.courses(hasCustom))
-		})
 		<script src=(assets.WorkoutHome()) inline data:resume=(resumeData)></script>
 	</main>
 }
 
-// courses lists the "… in 30 days" series. Tapping a course asks first; only
-// "Start course" copies it into this account's program (position and streak
-// stay). Accounts still on the demo see the list right under today's session,
-// accounts with their own program at the bottom of the page.
-elem (h homePage) courses(hasCustom bool) {
+// courses lists the "… in 30 days" series for an account still on the demo.
+// Tapping a course asks first; only "Start course" copies it into this
+// account's program (position and streak stay).
+elem (h homePage) courses() {
 	~{
 		l := i18n.Lang(h.sess.Lang)
 		restW, restM, restC := app.DB.Rests(h.sess.UserID)
@@ -161,7 +159,7 @@ elem (h homePage) courses(hasCustom bool) {
 			</div>
 			~(if key != "" {
 				<div class="confirm-reset course-confirm">
-					<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))~(if hasCustom { ~(" ") <b>~(i18n.T(l, "settings.course_replace"))</b> })</span>
+					<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))</span>
 					<div class="confirm-actions">
 						~>doors.AClick{On: h.useCourse(key)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.course_use"))</button>
 						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {

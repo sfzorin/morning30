@@ -383,3 +383,127 @@ func TestRenameProgram(t *testing.T) {
 		t.Fatalf("position moved to %d", p)
 	}
 }
+
+// ownPlan is a program the user visibly made their own (not a ready-made one).
+func ownPlan(name string, firstDose int) string {
+	r := content.ResolveDemo()
+	r.Name = name
+	r.Days[0].Items[0].Value = firstDose
+	return r.Marshal()
+}
+
+// A program the user built can never be lost by starting courses, returning
+// to the demo or importing another file: it waits in the saved list and comes
+// back exactly as it was. Cycle position is never touched.
+func TestOwnProgramSurvivesEveryReplacement(t *testing.T) {
+	d := openAppDB(t)
+	u, _ := d.CreateUser("keep@example.com", "h", "ru", "K")
+	other, _ := d.CreateUser("other@example.com", "h", "ru", "O")
+	for i := 0; i < 4; i++ {
+		_ = d.AdvancePosition(u.ID)
+	}
+	if err := SetUserProgram(u.ID, ownPlan("Моя программа", 17)); err != nil {
+		t.Fatal(err)
+	}
+	mine := UserProgram(u.ID).Marshal()
+	if !KeepsCurrentProgram(u.ID) || len(SavedPrograms(u.ID)) != 0 {
+		t.Fatal("own program should be flagged as kept, with nothing saved yet")
+	}
+
+	// Editing in place and renaming are not replacements: nothing is put aside.
+	if err := RenameProgram(u.ID, "Моя программа"); err != nil || len(SavedPrograms(u.ID)) != 0 {
+		t.Fatalf("rename archived a program: %v", err)
+	}
+
+	// Two courses in a row: the own program is saved once and stays saved; the
+	// untouched first course is not worth keeping.
+	for _, key := range []string{"plank30", "abs30"} {
+		if err := UseCourse(u.ID, key, "ru"); err != nil {
+			t.Fatal(err)
+		}
+	}
+	saved := SavedPrograms(u.ID)
+	if len(saved) != 1 || saved[0].Name != "Моя программа" {
+		t.Fatalf("saved after two courses: %+v", saved)
+	}
+	if KeepsCurrentProgram(u.ID) {
+		t.Fatal("an untouched course must not be flagged as the user's own work")
+	}
+
+	// Another account cannot take it.
+	if err := RestoreSavedProgram(other.ID, saved[0].ID); err == nil || HasCustomProgram(other.ID) {
+		t.Fatal("saved program leaked to another account")
+	}
+
+	// Bring it back: identical, and the untouched course leaves nothing behind.
+	if err := RestoreSavedProgram(u.ID, saved[0].ID); err != nil {
+		t.Fatal(err)
+	}
+	if UserProgram(u.ID).Marshal() != mine || len(SavedPrograms(u.ID)) != 0 {
+		t.Fatal("restored program differs from the original")
+	}
+
+	// Demo and import each keep it too.
+	if err := RestoreDemo(u.ID); err != nil {
+		t.Fatal(err)
+	}
+	if HasCustomProgram(u.ID) || len(SavedPrograms(u.ID)) != 1 {
+		t.Fatal("restoring the demo lost the own program")
+	}
+	if err := ReplaceUserProgram(u.ID, ownPlan("Импорт", 23)); err != nil {
+		t.Fatal(err)
+	}
+	if len(SavedPrograms(u.ID)) != 1 { // the demo itself is not kept
+		t.Fatalf("saved after import: %+v", SavedPrograms(u.ID))
+	}
+
+	// Restoring over another own program swaps them, so neither is lost.
+	if err := RestoreSavedProgram(u.ID, SavedPrograms(u.ID)[0].ID); err != nil {
+		t.Fatal(err)
+	}
+	saved = SavedPrograms(u.ID)
+	if UserProgram(u.ID).Marshal() != mine || len(saved) != 1 || saved[0].Name != "Импорт" {
+		t.Fatalf("swap: current %q, saved %+v", UserProgram(u.ID).Name, saved)
+	}
+
+	// A rejected upload changes nothing.
+	if err := ReplaceUserProgram(u.ID, "{broken"); err == nil || UserProgram(u.ID).Marshal() != mine || len(SavedPrograms(u.ID)) != 1 {
+		t.Fatal("invalid program disturbed the account")
+	}
+	if p, _ := d.Position(u.ID); p != 4 {
+		t.Fatalf("position moved to %d", p)
+	}
+}
+
+// The saved list holds distinct programs only and is capped at the newest ten.
+func TestSavedProgramsAreDistinctAndCapped(t *testing.T) {
+	d := openAppDB(t)
+	u, _ := d.CreateUser("cap@example.com", "h", "en", "C")
+	for i := 1; i <= db.SavedProgramsMax+3; i++ {
+		if err := ReplaceUserProgram(u.ID, ownPlan("Plan", 10+i)); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if n := len(SavedPrograms(u.ID)); n != db.SavedProgramsMax {
+		t.Fatalf("%d saved, want %d", n, db.SavedProgramsMax)
+	}
+	// Putting aside a program that is already saved does not duplicate it.
+	first := UserProgram(u.ID).Marshal()
+	if err := ReplaceUserProgram(u.ID, ownPlan("Other", 99)); err != nil {
+		t.Fatal(err)
+	}
+	if err := ReplaceUserProgram(u.ID, first); err != nil {
+		t.Fatal(err)
+	}
+	if err := ReplaceUserProgram(u.ID, ownPlan("Other", 99)); err != nil {
+		t.Fatal(err)
+	}
+	seen := map[string]int{}
+	rows, _ := d.SavedPrograms(u.ID)
+	for _, p := range rows {
+		seen[p.Name]++
+	}
+	if len(rows) != db.SavedProgramsMax || seen["Other"] > 1 {
+		t.Fatalf("saved list after repeats: %d rows, %v", len(rows), seen)
+	}
+}

@@ -83,6 +83,11 @@ type courseArgs struct {
 	Lang    string `json:"lang"`
 }
 
+type savedArgs struct {
+	Account string `json:"account"`
+	ID      int64  `json:"id"`
+}
+
 type renameArgs struct {
 	Account string `json:"account"`
 	Name    string `json:"name"`
@@ -136,6 +141,13 @@ func renameProgram(acc db.Account, name string) (programView, error) {
 	return currentProgram(acc.ID)
 }
 
+func restoreSaved(acc db.Account, id int64) (programView, error) {
+	if err := app.RestoreSavedProgram(acc.ID, id); err != nil {
+		return programView{}, err
+	}
+	return currentProgram(acc.ID)
+}
+
 func currentProgram(userID int64) (programView, error) {
 	acc, err := app.DB.AccountByID(userID)
 	if err != nil {
@@ -183,7 +195,7 @@ func tools() []map[string]any {
 		},
 		{
 			"name":        "set_program",
-			"description": "Upload a 30-day cycle JSON into the account's personal file. Does not reset day position or streaks.",
+			"description": "Upload a 30-day cycle JSON into the account's personal file. Does not reset day position or streaks. The program it replaces is kept in the account's saved list when it is the user's own work (see list_saved_programs).",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "program": map[string]any{"description": "Resolved program object or JSON string"}}, "required": []string{"account", "program"}},
 		},
 		{
@@ -198,7 +210,7 @@ func tools() []map[string]any {
 		},
 		{
 			"name":        "use_course",
-			"description": "Copy a built-in course into the account's personal program, replacing the previous personal program. It is then an ordinary editable program. Does not reset day position or streaks.",
+			"description": "Copy a built-in course into the account's personal program. It is then an ordinary editable program. Does not reset day position or streaks. The program it replaces is kept in the account's saved list when it is the user's own work.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
 				"account": account,
 				"course":  map[string]any{"type": "string", "description": "Course key from list_courses"},
@@ -211,8 +223,18 @@ func tools() []map[string]any {
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "name": map[string]any{"type": "string"}}, "required": []string{"account", "name"}},
 		},
 		{
+			"name":        "list_saved_programs",
+			"description": "List programs this account replaced and can bring back (id, name, when it was put aside). Up to 10 are kept.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
+		},
+		{
+			"name":        "restore_saved_program",
+			"description": "Bring a saved program back as the account's program. The program it replaces is kept in the saved list in turn when it is the user's own work. Does not reset day position or streaks.",
+			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "id": map[string]any{"type": "integer", "description": "Saved program id from list_saved_programs"}}, "required": []string{"account", "id"}},
+		},
+		{
 			"name":        "restore_demo",
-			"description": "Clear the personal file so the account runs the public demo. Progress is kept.",
+			"description": "Clear the personal file so the account runs the public demo. Progress is kept, and the user's own program goes to the saved list.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
 		},
 		{
@@ -303,7 +325,7 @@ func callTool(name string, args json.RawMessage) toolResult {
 		if err != nil {
 			return textResult(nil, err)
 		}
-		if err := app.SetUserProgram(acc.ID, raw); err != nil {
+		if err := app.ReplaceUserProgram(acc.ID, raw); err != nil {
 			return textResult(nil, err)
 		}
 		acc, _ = app.DB.AccountByID(acc.ID)
@@ -350,6 +372,26 @@ func callTool(name string, args json.RawMessage) toolResult {
 			return textResult(nil, err)
 		}
 		return textResult(renameProgram(acc, a.Name))
+	case "list_saved_programs":
+		var a accountArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		acc, err := app.DB.FindAccount(a.Account)
+		if err != nil {
+			return textResult(nil, err)
+		}
+		return textResult(app.DB.SavedPrograms(acc.ID))
+	case "restore_saved_program":
+		var a savedArgs
+		if err := json.Unmarshal(args, &a); err != nil {
+			return textResult(nil, err)
+		}
+		acc, err := app.DB.FindAccount(a.Account)
+		if err != nil {
+			return textResult(nil, err)
+		}
+		return textResult(restoreSaved(acc, a.ID))
 	case "list_custom_exercises":
 		var a accountArgs
 		if err := json.Unmarshal(args, &a); err != nil {
