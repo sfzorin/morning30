@@ -31,6 +31,9 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   min-height: 100dvh;
+  /* viewport-fit=cover: keep content clear of the notch and the home bar
+     (iPhone app, home-screen web app); zero in an ordinary browser tab. */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -64,7 +67,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100dvh;
+  min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   padding: 24px;
 }
 .auth-card {
