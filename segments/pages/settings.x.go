@@ -366,7 +366,7 @@ func (s settingsPage) Main() gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
 //line settings.gox:147
-									__e = __c.Many(v, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
+									__e = __c.Any(i18n.Tf(l, "fmt.sec", v)); if __e != nil { return }
 								return })
 //line settings.gox:147
 							})); if __e != nil { return }
@@ -421,7 +421,7 @@ func (s settingsPage) Main() gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
 //line settings.gox:155
-									__e = __c.Many(v, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
+									__e = __c.Any(i18n.Tf(l, "fmt.sec", v)); if __e != nil { return }
 								return })
 //line settings.gox:155
 							})); if __e != nil { return }
@@ -476,7 +476,7 @@ func (s settingsPage) Main() gox.Elem {
 								return gox.Elem(func(__c gox.Cursor) (__e error) {
 									ctx := __c.Context(); _ = ctx
 //line settings.gox:163
-									__e = __c.Many(v, " ", i18n.T(l, "workout.sec")); if __e != nil { return }
+									__e = __c.Any(i18n.Tf(l, "fmt.sec", v)); if __e != nil { return }
 								return })
 //line settings.gox:163
 							})); if __e != nil { return }
@@ -943,7 +943,7 @@ func (s settingsPage) Main() gox.Elem {
 //line settings.gox:244
 								if warmTarget == "day-warmup" {
 //line settings.gox:244
-									__e = __c.Many(i18n.T(l, "workout.warmup"), " · ", i18n.T(l, "home.day"), " ", st.Day); if __e != nil { return }
+									__e = __c.Many(i18n.T(l, "workout.warmup"), " · ", i18n.Tf(l, "fmt.day", st.Day)); if __e != nil { return }
 								} else  {
 //line settings.gox:244
 									__e = __c.Any(i18n.T(l, "settings.warmup_series")); if __e != nil { return }
@@ -983,7 +983,7 @@ func (s settingsPage) Main() gox.Elem {
 									__e = __c.Set("class", "cyc-head"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 //line settings.gox:253
-									__e = __c.Many(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises")); if __e != nil { return }
+									__e = __c.Many(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tf(l, "fmt.exercises", len(rd.Items))); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 //line settings.gox:254
@@ -997,7 +997,7 @@ func (s settingsPage) Main() gox.Elem {
 //line settings.gox:257
 								if coolTarget == "day-cooldown" {
 //line settings.gox:257
-									__e = __c.Many(i18n.T(l, "workout.cooldown"), " · ", i18n.T(l, "home.day"), " ", st.Day); if __e != nil { return }
+									__e = __c.Many(i18n.T(l, "workout.cooldown"), " · ", i18n.Tf(l, "fmt.day", st.Day)); if __e != nil { return }
 								} else  {
 //line settings.gox:257
 									__e = __c.Any(i18n.T(l, "settings.cooldown_series")); if __e != nil { return }

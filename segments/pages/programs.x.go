@@ -298,7 +298,7 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 								__e = __c.Set("class", "sel-day"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:116
-								__e = __c.Many(i18n.T(l, "programs.day"), " ", sp.Day); if __e != nil { return }
+								__e = __c.Any(i18n.Tf(l, "fmt.on_day", sp.Day)); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 //line programs.gox:117
@@ -550,7 +550,7 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 											__e = __c.Set("class", "m"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:182
-											__e = __c.Many(first, "–", peak, " ", i18n.T(l, "home.min")); if __e != nil { return }
+											__e = __c.Any(i18n.Tf(l, "fmt.min_range", first, peak)); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 									}
@@ -737,7 +737,7 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 				__e = __c.Set("class", "pill"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:243
-				__e = __c.Many(first, "–", peak, " ", i18n.T(l, "home.min"), " ", i18n.T(l, "landing.a_day")); if __e != nil { return }
+				__e = __c.Many(i18n.Tf(l, "fmt.min_range", first, peak), " ", i18n.T(l, "landing.a_day")); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("span"); if __e != nil { return }
@@ -871,7 +871,7 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 						{
 							__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:277
-							__e = __c.Many(i18n.T(l, "home.day"), " ", d.Day); if __e != nil { return }
+							__e = __c.Any(i18n.Tf(l, "fmt.day", d.Day)); if __e != nil { return }
 //line programs.gox:277
 							if content.IsRecoveryDay(d.Day) {
 								__e = __c.Init("span"); if __e != nil { return }
@@ -893,7 +893,7 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 							__e = __c.Set("class", "m"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:278
-							__e = __c.Many("≈ ", (est+59)/60, " ", i18n.T(l, "home.min")); if __e != nil { return }
+							__e = __c.Many("≈ ", i18n.Tf(l, "fmt.min", (est+59)/60)); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					}

@@ -48,7 +48,7 @@ func (t todayPage) Main() gox.Elem {
 		{
 			__e = __c.Submit(); if __e != nil { return }
 //line today.gox:41
-			__e = __c.Any(i18n.T(l, "home.day")); if __e != nil { return }
+			__e = __c.Any(i18n.Tf(l, "fmt.day", app.CurrentDay(t.sess.UserID))); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("main"); if __e != nil { return }
@@ -125,7 +125,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 			{
 				__e = __c.Submit(); if __e != nil { return }
 //line today.gox:69
-				__e = __c.Many(i18n.T(l, "home.day"), " ", plan.Day, " · ", plan.Program); if __e != nil { return }
+				__e = __c.Many(i18n.Tf(l, "fmt.day", plan.Day), " · ", plan.Program); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
@@ -136,7 +136,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 			__e = __c.Set("class", "lib-intro"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 //line today.gox:71
-			__e = __c.Many(plan.Exercises, " ", i18n.T(l, "home.exercises"), " · ≈ ", plan.EstMinutes, " ", i18n.T(l, "home.min")); if __e != nil { return }
+			__e = __c.Many(i18n.Tf(l, "fmt.exercises", plan.Exercises), " · ≈ ", i18n.Tf(l, "fmt.min", plan.EstMinutes)); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 //line today.gox:72
@@ -165,7 +165,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:78
 				if part.Slot == "main" {
 //line today.gox:78
-					__e = __c.Many(" · ", plan.MainRounds, " ", i18n.T(l, "today.rounds")); if __e != nil { return }
+					__e = __c.Many(" · ", i18n.Tf(l, "fmt.rounds", plan.MainRounds)); if __e != nil { return }
 				}
 			}
 			__e = __c.Close(); if __e != nil { return }

@@ -173,7 +173,7 @@ func (d Doc) Compact() string {
 }
 
 // Builtin assembles the canonical Doc for a built-in exercise: its definition
-// plus name/hint/warning/technique/voice in all 7 languages.
+// plus name/hint/warning/technique/voice in every supported language.
 func Builtin(id string) (Doc, bool) {
 	if raw, ok := content.BundledDoc(id); ok {
 		var d Doc

@@ -47,7 +47,8 @@ func TestPlayerCarriesReactionAndLocalizedSignalsForOrdinaryAndReplacementExerci
 	wantWords := [][2]string{{"Влево", "Вправо"}, {"Left", "Right"}, {"Sola", "Sağa"}, {"Links", "Rechts"}, {"Izquierda", "Derecha"}, {"Gauche", "Droite"}, {"Sinistra", "Destra"}}
 	for n, lang := range i18n.Order {
 		p := (workoutPage{sess: auth.Session{UserID: u.ID, Lang: string(lang)}, day: 1}).playerData()
-		if p.Cues["reaction_left"] != wantWords[n][0] || p.Cues["reaction_right"] != wantWords[n][1] {
+		left, right := p.Cues["reaction_left"], p.Cues["reaction_right"]
+		if n < len(wantWords) && (left != wantWords[n][0] || right != wantWords[n][1]) || left == "" || right == "" || left == right {
 			t.Fatalf("missing %s reaction translation", lang)
 		}
 		for _, it := range p.Items {

@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Abdomen acasă, fără echipament: pe rând abdomenul inferior, oblicii și tot trunchiul. Crunch-uri, foarfece, bicicletă și planșe, cu creștere constantă a efortului.",
+  "title": "Abdomen în 30 de zile"
+ },
+ "age50": {
+  "about": "Un program liniștit pentru forța picioarelor și echilibru: ridicări de pe scaun, stat pe un picior și mers călcâi-vârf.",
+  "title": "Antrenament 50+"
+ },
+ "arms30": {
+  "about": "Brațe și umeri mai puternici fără greutăți: flotări pe genunchi, extensii pe scaun, lucru cu auto-rezistență și planșe inverse.",
+  "title": "Brațe în 30 de zile"
+ },
+ "backcare": {
+  "about": "Stabilizare blândă: McGill curl-up, bird dog, planșe laterale, fără sărituri sau îndoiri bruște. Nu este un tratament: discută cu medicul și oprește-te dacă durerea coboară în picior sau apare amorțeală.",
+  "title": "Îngrijirea spatelui în protruzii de disc"
+ },
+ "bedtime": {
+  "about": "Din culcat, încet, cu respirație calmă.",
+  "title": "Stretching înainte de culcare"
+ },
+ "climbing": {
+  "about": "Priză, omoplați și agățare de bară, trunchi puternic și antagoniști ai degetelor. Ai nevoie de o bară de tracțiuni.",
+  "title": "Pentru alpiniști"
+ },
+ "cycling": {
+  "about": "Fese, genunchi și zona lombară, apoi deschiderea pieptului și a șoldurilor după șa.",
+  "title": "Pentru cicliști"
+ },
+ "demo": {
+  "about": "Un program scurt pentru tot corpul, fără sărituri: un început blând al zilei și o creștere constantă a efortului.",
+  "title": "Antrenament de dimineață"
+ },
+ "feet": {
+  "about": "Bolta, degetele și gleznele: piciorul scurt, strângerea prosopului cu degetele, mersul pe vârfuri și pe călcâie. Ajută la piciorul plat, dar nu înlocuiește medicul.",
+  "title": "Picioare sănătoase"
+ },
+ "football": {
+  "about": "Ischiogambieri, interiorul coapselor, glezne și echilibru: antrenament care ajută la prevenirea accidentărilor.",
+  "title": "Pentru fotbaliști"
+ },
+ "frontsplit30": {
+  "about": "Fandări și întinderi pentru flexorii șoldului și ischiogambieri, cu sprijin în mâini.",
+  "title": "Spagat frontal în 30 de zile"
+ },
+ "golf": {
+  "about": "Rotația trunchiului, șolduri mobile, umeri și echilibru pe un picior. Ritm calm, potrivit și după 50 de ani.",
+  "title": "Pentru jucătorii de golf"
+ },
+ "hiking": {
+  "about": "Picioare pentru urcușuri, genunchi pentru coborâșuri, glezne puternice și un spate pregătit pentru rucsac.",
+  "title": "Drumeții și trekking"
+ },
+ "hips30": {
+  "about": "Fluturele, porumbelul și genuflexiunea adâncă pentru șolduri mai libere.",
+  "title": "Mobilitatea șoldurilor în 30 de zile"
+ },
+ "hockey": {
+  "about": "Poziție joasă, sărituri de patinator, echilibru și rotația trunchiului.",
+  "title": "Hochei și patinaj"
+ },
+ "jumpsports": {
+  "about": "Sărituri, aterizări line și glezne puternice.",
+  "title": "Baschet și volei"
+ },
+ "kids30": {
+  "about": "Pentru 7–12 ani: forță și mobilitate într-un ritm jucăuș.",
+  "title": "Antrenament pentru copii"
+ },
+ "kidsagility": {
+  "about": "Pentru copii: sărituri, echilibru și reacții rapide.",
+  "title": "Agilitate și coordonare"
+ },
+ "kidsball": {
+  "about": "Sărituri cu aterizări line, picioare rapide, reacții și brațe puternice.",
+  "title": "Baschet și volei pentru copii"
+ },
+ "kidsdance": {
+  "about": "Pași și bătăi din palme pe ritm, sărituri, plié-uri și echilibru.",
+  "title": "Dans și ritm pentru copii"
+ },
+ "kidsfeet": {
+  "about": "Exerciții jucăușe pentru picioare: mers pe vârfuri, pe călcâie și pe marginea exterioară, strângerea prosopului, omida. Nu înlocuiesc medicul.",
+  "title": "Exerciții pentru piciorul plat la copii"
+ },
+ "kidsfootball": {
+  "about": "Picioare, coordonare și echilibru pe un picior pentru micii fotbaliști.",
+  "title": "Fotbal pentru copii"
+ },
+ "kidsgym": {
+  "about": "Barca, rândunica, ghemuirea strânsă și plié-uri: flexibilitate, echilibru și trunchi puternic.",
+  "title": "Gimnastică pentru copii"
+ },
+ "kidshockey": {
+  "about": "Poziția patinatorului, sărituri laterale, pași rapizi și echilibru.",
+  "title": "Hochei și patinaj artistic pentru copii"
+ },
+ "kidskarate": {
+  "about": "Poziții, pumni și lovituri în aer, balansări de picior și echilibru.",
+  "title": "Karate și taekwondo pentru copii"
+ },
+ "kidsposture": {
+  "about": "Spate și umeri după ore lungi la bancă.",
+  "title": "Postură pentru școlari"
+ },
+ "kidsswim": {
+  "about": "Poziția hidrodinamică, bătăi de picioare, barca și mișcări de brațe pe uscat pentru micii înotători.",
+  "title": "Înot pentru copii"
+ },
+ "kidstennis": {
+  "about": "Joc de picioare, rotații de trunchi și umeri puternici pentru micii jucători de tenis.",
+  "title": "Tenis pentru copii"
+ },
+ "kidswrestling": {
+  "about": "Ghemuiri, rostogoliri sigure, mers ca ursul și mers ca crabul. Rostogoliri doar pe saltea sau pe un covor moale.",
+  "title": "Lupte și judo pentru copii"
+ },
+ "legs30": {
+  "about": "Genuflexiuni, punți pentru fese și fandări, fără echipament. Genuflexiunile cresc de la 10 la 24 pe serie; exercițiile cu sărituri apar din ziua 12.",
+  "title": "Picioare și fese în 30 de zile"
+ },
+ "martial": {
+  "about": "Box în gol, lovituri cu piciorul, forța trunchiului și mobilitatea șoldurilor.",
+  "title": "Pentru arte marțiale"
+ },
+ "morningstretch": {
+  "about": "Întinderi blânde imediat după trezire, fără efort.",
+  "title": "Stretching de dimineață"
+ },
+ "office30": {
+  "about": "Un program scurt după ore la calculator: gât, umeri, partea superioară a spatelui și postură.",
+  "title": "Gât și spate pentru cei de la birou"
+ },
+ "plank30": {
+  "about": "O planșă în fiecare zi, de la 20 de secunde până la 70 pe serie. Se alternează planșa frontală, laterală, în mișcare și inversă, cu lucru pentru spate ca să rămână echilibrul.",
+  "title": "Planșă în 30 de zile"
+ },
+ "posture30": {
+  "about": "Întărirea spatelui pentru o postură mai bună: omoplați, extensorii spatelui și toată partea din spate a corpului. Fără sărituri, fără echipament, totul pe saltea.",
+  "title": "Postură mai bună în 30 de zile"
+ },
+ "pullups30": {
+  "about": "De la agățarea de bară la primele tracțiuni: tracțiuni scapulare, negative și ramat la masă. Ai nevoie de o bară de tracțiuni.",
+  "title": "Tracțiuni în 30 de zile"
+ },
+ "pushups30": {
+  "about": "De la 4 la 15 flotări pe serie. Variantele mai grele (apropiate, lente, cu pauză) se adaugă pe rând, iar lucrul pentru spate echilibrează împingerea.",
+  "title": "Flotări în 30 de zile"
+ },
+ "racket": {
+  "about": "Pași de pregătire, fandări, pași laterali rapizi și un umăr puternic.",
+  "title": "Padel, badminton, tenis de masă"
+ },
+ "rowing": {
+  "about": "Spate și omoplați, un trunchi puternic la rotație și forță din șolduri.",
+  "title": "Canotaj, caiac, SUP"
+ },
+ "runners": {
+  "about": "Fese, gambe și echilibru: forță care protejează genunchii și gleznele în alergare.",
+  "title": "Pentru alergători"
+ },
+ "scoliosis": {
+  "about": "Lucru egal pe ambele părți: mușchii spatelui, trunchi, omoplați și respirație. Nu înlocuiește tratamentul sau programul individual al unui specialist.",
+  "title": "Simetria spatelui în scolioză"
+ },
+ "sidesplit30": {
+  "about": "Poziții cu picioarele depărtate și întinderi pentru interiorul coapselor, pas cu pas.",
+  "title": "Spagat lateral în 30 de zile"
+ },
+ "ski": {
+  "about": "Pregătire pentru sezon: rezistența picioarelor, echilibru și genunchi puternici.",
+  "title": "Schi și snowboard"
+ },
+ "slim30": {
+  "about": "Circuite cardio și exerciții de forță pentru tot corpul, pentru a arde mai multă energie. Cursul include sărituri; săriturile din genuflexiune și burpees apar doar în a doua jumătate.",
+  "title": "Slăbire în 30 de zile"
+ },
+ "stretch30": {
+  "about": "Tot corpul: picioare, spate și umeri. Flexibilitatea crește de la o zi la alta.",
+  "title": "Stretching în 30 de zile"
+ },
+ "swim": {
+  "about": "Antrenament pe uscat: omoplați și umeri, poziția hidrodinamică, trunchi puternic și glezne mobile.",
+  "title": "Pentru înotători"
+ },
+ "taichi30": {
+  "about": "Mișcări lente de tai chi pentru echilibru și calm: forme cunoscute în fiecare zi și secvențe noi pe parcurs.",
+  "title": "Tai chi în 30 de zile"
+ },
+ "tennis": {
+  "about": "Joc de picioare lateral, trunchi și umeri pentru un joc sigur.",
+  "title": "Pentru jucătorii de tenis"
+ },
+ "toetouch30": {
+  "about": "Aplecarea înainte: partea din spate a picioarelor și zona lombară.",
+  "title": "Atinge vârfurile degetelor în 30 de zile"
+ },
+ "wrestling": {
+  "about": "Pași de atac, sprawl, un gât puternic fără poduri pe cap și rezistența trunchiului.",
+  "title": "Lupte și judo"
+ }
+}

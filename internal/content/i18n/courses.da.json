@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Mavetræning derhjemme uden udstyr: nedre mave, skrå mavemuskler og hele kernen på skift. Crunches, sakse, cykler og planker med jævn opbygning.",
+  "title": "Mave på 30 dage"
+ },
+ "age50": {
+  "about": "Et roligt program til benstyrke og balance: rejse sig fra stol, stå på ét ben og gå hæl-til-tå.",
+  "title": "Træning 50+"
+ },
+ "arms30": {
+  "about": "Stærkere arme og skuldre uden vægte: armbøjninger på knæ, dips på stol, selvmodstand og omvendte planker.",
+  "title": "Arme på 30 dage"
+ },
+ "backcare": {
+  "about": "Skånsom stabilisering: McGill-curl-ups, bird dogs og sideplanker, uden hop eller kraftige bøjninger. Ikke en behandling: tal med din læge, og stop, hvis smerten breder sig ned i benet, eller der opstår følelsesløshed.",
+  "title": "Rygpleje ved diskusprolaps"
+ },
+ "bedtime": {
+  "about": "Liggende, langsomt og med rolig vejrtrækning.",
+  "title": "Udstrækning før sengetid"
+ },
+ "climbing": {
+  "about": "Greb, skulderblade og hængen i en stang, en stærk kerne og modtræning for fingrene. Kræver en chinsstang.",
+  "title": "Til klatrere"
+ },
+ "cycling": {
+  "about": "Baller, knæ og lænd, og derefter åbning af bryst og hofter efter sadlen.",
+  "title": "Til cyklister"
+ },
+ "demo": {
+  "about": "Et kort program for hele kroppen uden hop: en blid start på dagen og en jævn opbygning.",
+  "title": "Morgentræning"
+ },
+ "feet": {
+  "about": "Fodbue, tæer og ankler: den korte fod, håndklæde-scrunches og gang på tæer og hæle. Kan hjælpe ved fladfod, men erstatter ikke en læge.",
+  "title": "Sunde fødder"
+ },
+ "football": {
+  "about": "Baglår, indersider af lår, ankler og balance: træning, der er med til at forebygge skader.",
+  "title": "Til fodboldspillere"
+ },
+ "frontsplit30": {
+  "about": "Udfald og udstrækning af hoftebøjere og baglår med støtte fra hænderne.",
+  "title": "Front split på 30 dage"
+ },
+ "golf": {
+  "about": "Overkropsrotation, bevægelige hofter, skuldre og balance på ét ben. Roligt tempo, også velegnet efter 50.",
+  "title": "Til golfspillere"
+ },
+ "hiking": {
+  "about": "Ben til stigninger, knæ til nedstigninger, stærke ankler og en ryg, der er klar til en rygsæk.",
+  "title": "Vandring og trekking"
+ },
+ "hips30": {
+  "about": "Sommerfugl, due og dyb squat for friere hofter.",
+  "title": "Bevægelige hofter på 30 dage"
+ },
+ "hockey": {
+  "about": "En lav stilling, skater-hop, balance og overkropsrotation.",
+  "title": "Ishockey og skøjteløb"
+ },
+ "jumpsports": {
+  "about": "Hop, bløde landinger og stærke ankler.",
+  "title": "Basketball og volleyball"
+ },
+ "kids30": {
+  "about": "Til 7-12 år: styrke og bevægelighed i et legende tempo.",
+  "title": "Børnetræning"
+ },
+ "kidsagility": {
+  "about": "Til børn: hop, balance og hurtige reaktioner.",
+  "title": "Smidighed og koordination"
+ },
+ "kidsball": {
+  "about": "Hop med bløde landinger, hurtige fødder, reaktioner og stærke arme.",
+  "title": "Basketball og volleyball for børn"
+ },
+ "kidsdance": {
+  "about": "Trin og klap i takt, hop, pliéer og balance.",
+  "title": "Dans og rytme for børn"
+ },
+ "kidsfeet": {
+  "about": "Legende fodøvelser: gang på tæer, hæle og yderkanter, håndklæde-scrunches og larven. Erstatter ikke en læge.",
+  "title": "Fladfodsøvelser for børn"
+ },
+ "kidsfootball": {
+  "about": "Ben, koordination og balance på ét ben til unge fodboldspillere.",
+  "title": "Fodbold for børn"
+ },
+ "kidsgym": {
+  "about": "Både, svalen, hugsiddende hop og pliéer: smidighed, balance og en stærk kerne.",
+  "title": "Gymnastik for børn"
+ },
+ "kidshockey": {
+  "about": "Skaterstilling, sidehop, hurtige skridt og balance.",
+  "title": "Ishockey og kunstskøjteløb for børn"
+ },
+ "kidskarate": {
+  "about": "Stillinger, slag og spark i luften, bensving og balance.",
+  "title": "Karate og taekwondo for børn"
+ },
+ "kidsposture": {
+  "about": "Ryg og skuldre efter mange timer ved skolebordet.",
+  "title": "Kropsholdning for skolebørn"
+ },
+ "kidsswim": {
+  "about": "Strømlinet stilling, svømmefødder-spark, både og armtag på land for unge svømmere.",
+  "title": "Svømning for børn"
+ },
+ "kidstennis": {
+  "about": "Fodarbejde, drejninger i overkroppen og stærke skuldre til unge tennisspillere.",
+  "title": "Tennis for børn"
+ },
+ "kidswrestling": {
+  "about": "Sammenkrøbning, sikre rul, bjørnegang og krabbegang. Rul kun på en måtte eller et blødt tæppe.",
+  "title": "Brydning og judo for børn"
+ },
+ "legs30": {
+  "about": "Squats, glute bridges og udfald uden udstyr. Squats vokser fra 10 til 24 pr. sæt; hoppeøvelser kommer ind fra dag 12.",
+  "title": "Ben og baller på 30 dage"
+ },
+ "martial": {
+  "about": "Skyggeboksning, spark, kernestyrke og bevægelige hofter.",
+  "title": "Til kampsport"
+ },
+ "morningstretch": {
+  "about": "Blid udstrækning lige efter, du er vågnet, uden anstrengelse.",
+  "title": "Morgenudstrækning"
+ },
+ "office30": {
+  "about": "Et kort program efter timer ved computeren: nakke, skuldre, øvre ryg og kropsholdning.",
+  "title": "Nakke og ryg for kontorarbejdere"
+ },
+ "plank30": {
+  "about": "En planke hver dag, fra 20 sekunder op til 70 pr. sæt. Front-, side-, bevægelige og omvendte planker skifter, med rygøvelser for at holde balancen.",
+  "title": "Planke på 30 dage"
+ },
+ "posture30": {
+  "about": "Styrkelse af ryggen for bedre kropsholdning: skulderblade, rygstrækkere og hele kroppens bagside. Ingen hop, intet udstyr, alt foregår på en måtte.",
+  "title": "Bedre kropsholdning på 30 dage"
+ },
+ "pullups30": {
+  "about": "Fra hængen i stangen til dine første pull-ups: skulderbladstræk, negative gentagelser og bordrow. Du skal bruge en chinsstang.",
+  "title": "Pull-ups på 30 dage"
+ },
+ "pushups30": {
+  "about": "Fra 4 til 15 armbøjninger pr. sæt. Sværere varianter, som smalle, langsomme og med pause, kommer til én ad gangen, og rygøvelser balancerer presset.",
+  "title": "Armbøjninger på 30 dage"
+ },
+ "racket": {
+  "about": "Split steps, udfald, hurtige sidesteps og en stærk skulder.",
+  "title": "Padel, badminton, bordtennis"
+ },
+ "rowing": {
+  "about": "Ryg og skulderblade, en stærk roterende kerne og hoftedrive.",
+  "title": "Roning, kajak, SUP"
+ },
+ "runners": {
+  "about": "Baller, lægge og balance: styrke, der beskytter knæ og ankler på dine løbeture.",
+  "title": "Til løbere"
+ },
+ "scoliosis": {
+  "about": "Jævn belastning af begge sider: rygmuskler, kerne, skulderblade og vejrtrækning. Erstatter ikke behandling eller en specialists individuelle program.",
+  "title": "Rygsymmetri ved skoliose"
+ },
+ "sidesplit30": {
+  "about": "Brede stillinger og udstrækning af inderlår, trin for trin.",
+  "title": "Side split på 30 dage"
+ },
+ "ski": {
+  "about": "Gør dig klar til sæsonen: benudholdenhed, balance og stærke knæ.",
+  "title": "Ski og snowboard"
+ },
+ "slim30": {
+  "about": "Konditionscirkler og styrkeøvelser for hele kroppen, så du forbrænder mere energi. Forløbet indeholder hop; squat jumps og burpees kommer først i anden halvdel.",
+  "title": "Tab dig på 30 dage"
+ },
+ "stretch30": {
+  "about": "Hele kroppen: ben, ryg og skuldre. Smidigheden vokser dag for dag.",
+  "title": "Udstrækning på 30 dage"
+ },
+ "swim": {
+  "about": "Landtræning: skulderblade og skuldre, den strømlinede stilling, en stærk kerne og bevægelige ankler.",
+  "title": "Til svømmere"
+ },
+ "taichi30": {
+  "about": "Langsomme tai chi-bevægelser for balance og ro: velkendte former hver dag og nye sekvenser undervejs.",
+  "title": "Tai chi på 30 dage"
+ },
+ "tennis": {
+  "about": "Fodarbejde fra side til side, kerne og skuldre til sikkert spil.",
+  "title": "Til tennisspillere"
+ },
+ "toetouch30": {
+  "about": "Fremadbøjningen: bagsiden af benene og lænden.",
+  "title": "Rør tæerne på 30 dage"
+ },
+ "wrestling": {
+  "about": "Skudskridt, sprawls, en stærk nakke uden hovedbroer og udholdenhed i kernen.",
+  "title": "Brydning og judo"
+ }
+}

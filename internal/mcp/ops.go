@@ -221,7 +221,7 @@ func programRaw(a args) (string, error) {
 var ops = []op{
 	{
 		Name: "list_programs", Method: "GET", Paths: []string{"/api/programs", "/api/courses"},
-		Desc: "List every ready program of the catalog: key, category (start, strength, weightloss, stretch, backbalance, kids, sport), titles and one-line descriptions in 7 languages, tags (jumps, equipment) and minutes per session on day 1 and on the peak day.",
+		Desc: "List every ready program of the catalog: key, category (start, strength, weightloss, stretch, backbalance, kids, sport), titles and one-line descriptions in every supported language, tags (jumps, equipment) and minutes per session on day 1 and on the peak day.",
 		Run:  func(db.Account, args) (any, error) { return catalogList(), nil },
 	},
 	{

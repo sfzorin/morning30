@@ -15,9 +15,9 @@ func icon(name string, filled bool) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
 //line icons.gox:12
-		class := "ic"
+		class := "ic ic-" + name // the name lets right-to-left layouts mirror arrows
 		if filled {
-			class = "ic fill"
+			class += " fill"
 		}
 
 		__e = __c.Init("svg"); if __e != nil { return }

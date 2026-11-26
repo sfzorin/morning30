@@ -113,7 +113,7 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 								return false
 							}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.rename"))>~(icon("edit", false))</button>
 						})
-						<span class="sel-day">~(i18n.T(l, "programs.day"), " ", sp.Day)</span>
+						<span class="sel-day">~(i18n.Tf(l, "fmt.on_day", sp.Day))</span>
 						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 							if sp.Edited {
 								st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, ConfirmID: sp.ID})
@@ -179,7 +179,7 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 				} else {
 					<div class="prog-row">
 						~>doors.AClick{On: p.pickReady(rp.Key)} <button class="prog-main" type="button">
-							<span class="prog-top"><b>~(rp.TitleIn(p.sess.Lang))</b><span class="m">~(first, "–", peak, " ", i18n.T(l, "home.min"))</span></span>
+							<span class="prog-top"><b>~(rp.TitleIn(p.sess.Lang))</b><span class="m">~(i18n.Tf(l, "fmt.min_range", first, peak))</span></span>
 							<span class="prog-about">~(rp.AboutIn(p.sess.Lang))</span>
 							~(if tags.Jumps || tags.Equipment {
 								<span class="prog-tags">
@@ -240,7 +240,7 @@ elem (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 	</div>
 	<p class="lib-desc">~(rp.AboutIn(p.sess.Lang))</p>
 	<div class="pills">
-		<span class="pill">~(first, "–", peak, " ", i18n.T(l, "home.min"), " ", i18n.T(l, "landing.a_day"))</span>
+		<span class="pill">~(i18n.Tf(l, "fmt.min_range", first, peak), " ", i18n.T(l, "landing.a_day"))</span>
 		<span class="pill">~(if tags.Jumps { ~(i18n.T(l, "tag.jumps")) } else { ~(i18n.T(l, "tag.nojumps")) })</span>
 		<span class="pill">~(if tags.Equipment { ~(i18n.T(l, "tag.equipment")) } else { ~(i18n.T(l, "tag.noequipment")) })</span>
 	</div>
@@ -274,8 +274,8 @@ elem (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 			}
 			<li>
 				<div class="plan-head">
-					<b>~(i18n.T(l, "home.day"), " ", d.Day)~(if content.IsRecoveryDay(d.Day) { <span class="light"> · ~(i18n.T(l, "landing.light"))</span> })</b>
-					<span class="m">~("≈ ", (est+59)/60, " ", i18n.T(l, "home.min"))</span>
+					<b>~(i18n.Tf(l, "fmt.day", d.Day))~(if content.IsRecoveryDay(d.Day) { <span class="light"> · ~(i18n.T(l, "landing.light"))</span> })</b>
+					<span class="m">~("≈ ", i18n.Tf(l, "fmt.min", (est+59)/60))</span>
 				</div>
 				<p class="m">~(strings.Join(items, ", "))</p>
 			</li>

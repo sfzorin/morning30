@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Hasizomedzés otthon, eszköz nélkül: sorra jön az alsó has, a ferde hasizmok és az egész törzs. Felülések, ollózás, biciklizés és plank, fokozatos terheléssel.",
+  "title": "Has 30 nap alatt"
+ },
+ "age50": {
+  "about": "Nyugodt rutin a láberőért és az egyensúlyért: felállás ülésből, egylábas állás és sarok-lábujj séta.",
+  "title": "Edzés 50 felett"
+ },
+ "arms30": {
+  "about": "Erősebb kar és váll súlyzó nélkül: térdelő fekvőtámasz, székes tolódzkodás, önellenállásos gyakorlatok és fordított plank.",
+  "title": "Kar 30 nap alatt"
+ },
+ "backcare": {
+  "about": "Kíméletes stabilizálás: McGill-felülés, bird dog, oldalsó plank, ugrások és hirtelen hajlások nélkül. Nem kezelés: beszélj az orvosoddal, és hagyd abba, ha a fájdalom a lábadba sugárzik, vagy zsibbadást érzel.",
+  "title": "Hátvédelem sérvesedett porckorongra"
+ },
+ "bedtime": {
+  "about": "Fekve, lassan, nyugodt légzéssel.",
+  "title": "Nyújtás lefekvés előtt"
+ },
+ "climbing": {
+  "about": "Fogás, lapocka és függés a rúdon, erős törzs és az ujjak ellentétes izmai. Húzódzkodórúd szükséges.",
+  "title": "Mászóknak"
+ },
+ "cycling": {
+  "about": "Farizom, térd és derék, majd a mellkas és a csípő megnyitása a nyereg után.",
+  "title": "Kerékpárosoknak"
+ },
+ "demo": {
+  "about": "Rövid egésztest-rutin ugrások nélkül: lágy kezdés a naphoz és fokozatos terhelés.",
+  "title": "Reggeli edzés"
+ },
+ "feet": {
+  "about": "Lábboltozat, lábujjak és boka: rövid láb gyakorlat, törölközőgyűrés, séta lábujjhegyen és sarkon. Segíthet lúdtalp esetén, de nem helyettesíti az orvost.",
+  "title": "Egészséges láb"
+ },
+ "football": {
+  "about": "Combhajlító, belső comb, boka és egyensúly: edzés, amely segít megelőzni a sérüléseket.",
+  "title": "Focistáknak"
+ },
+ "frontsplit30": {
+  "about": "Kitörések és nyújtások a csípőhajlítóknak és a combhajlítóknak, kézzel támaszkodva.",
+  "title": "Spárga 30 nap alatt"
+ },
+ "golf": {
+  "about": "Törzsforgatás, mozgékony csípő, váll és egylábas egyensúly. Nyugodt tempó, 50 év felett is megfelelő.",
+  "title": "Golfozóknak"
+ },
+ "hiking": {
+  "about": "Láb az emelkedőkhöz, térd a lejtőkhöz, erős boka és hát, amely bírja a hátizsákot.",
+  "title": "Túrázás és trekking"
+ },
+ "hips30": {
+  "about": "Pillangó, galamb és mély guggolás a szabadabb csípőért.",
+  "title": "Csípőmobilitás 30 nap alatt"
+ },
+ "hockey": {
+  "about": "Mély alapállás, korcsolyázó ugrások, egyensúly és törzsforgatás.",
+  "title": "Jégkorong és korcsolyázás"
+ },
+ "jumpsports": {
+  "about": "Ugrások, puha érkezések és erős boka.",
+  "title": "Kosárlabda és röplabda"
+ },
+ "kids30": {
+  "about": "7–12 éveseknek: erő és mozgékonyság játékos tempóban.",
+  "title": "Gyerekedzés"
+ },
+ "kidsagility": {
+  "about": "Gyerekeknek: szökdelés, egyensúly és gyors reakciók.",
+  "title": "Fürgeség és koordináció"
+ },
+ "kidsball": {
+  "about": "Ugrások puha érkezéssel, gyors lábak, reakciók és erős kar.",
+  "title": "Kosárlabda és röplabda gyerekeknek"
+ },
+ "kidsdance": {
+  "about": "Lépések és tapsok a ritmusra, szökdelés, plié és egyensúly.",
+  "title": "Tánc és ritmus gyerekeknek"
+ },
+ "kidsfeet": {
+  "about": "Játékos lábgyakorlatok: séta lábujjhegyen, sarkon és a láb külső élén, törölközőgyűrés, a hernyó. Nem helyettesíti az orvost.",
+  "title": "Lúdtalp-gyakorlatok gyerekeknek"
+ },
+ "kidsfootball": {
+  "about": "Láb, koordináció és egylábas egyensúly fiatal focistáknak.",
+  "title": "Foci gyerekeknek"
+ },
+ "kidsgym": {
+  "about": "Hajó, fecske, guggoló ülés és plié: hajlékonyság, egyensúly és erős törzs.",
+  "title": "Torna gyerekeknek"
+ },
+ "kidshockey": {
+  "about": "Korcsolyázó alapállás, oldalugrások, gyors lépések és egyensúly.",
+  "title": "Jégkorong és műkorcsolya gyerekeknek"
+ },
+ "kidskarate": {
+  "about": "Alapállások, ütések és rúgások a levegőbe, lendítések és egyensúly.",
+  "title": "Karate és taekwondo gyerekeknek"
+ },
+ "kidsposture": {
+  "about": "Hát és váll a sok iskolapadban töltött óra után.",
+  "title": "Tartás iskolásoknak"
+ },
+ "kidsswim": {
+  "about": "Áramvonalas testhelyzet, lábcsapások, hajó és karmozdulatok szárazföldön fiatal úszóknak.",
+  "title": "Úszás gyerekeknek"
+ },
+ "kidstennis": {
+  "about": "Lábmunka, törzsfordítások és erős váll fiatal teniszezőknek.",
+  "title": "Tenisz gyerekeknek"
+ },
+ "kidswrestling": {
+  "about": "Összegömbölyödés, biztonságos gurulás, medvejárás és rákjárás. Gurulni csak tornaszőnyegen vagy puha szőnyegen szabad.",
+  "title": "Birkózás és dzsúdó gyerekeknek"
+ },
+ "legs30": {
+  "about": "Guggolás, csípőemelés és kitörés eszköz nélkül. A guggolás sorozatonként 10-ről 24-re nő; az ugrós gyakorlatok a 12. naptól jönnek.",
+  "title": "Láb és fenék 30 nap alatt"
+ },
+ "martial": {
+  "about": "Árnyékboksz, rúgások, törzserő és csípőmozgékonyság.",
+  "title": "Harcművészeknek"
+ },
+ "morningstretch": {
+  "about": "Kíméletes nyújtás közvetlenül ébredés után, erőlködés nélkül.",
+  "title": "Reggeli nyújtás"
+ },
+ "office30": {
+  "about": "Rövid rutin a számítógép előtt töltött órák után: nyak, váll, felső hát és tartás.",
+  "title": "Nyak és hát irodai dolgozóknak"
+ },
+ "plank30": {
+  "about": "Minden nap egy plank, sorozatonként 20 másodperctől 70-ig. Az álló, oldalsó, mozgó és fordított plank váltja egymást, hátgyakorlatokkal az egyensúlyért.",
+  "title": "Plank 30 nap alatt"
+ },
+ "posture30": {
+  "about": "Háterősítés a jobb tartásért: lapocka, hátfeszítők és a test teljes hátsó oldala. Ugrások és eszköz nélkül, végig szőnyegen.",
+  "title": "Jobb testtartás 30 nap alatt"
+ },
+ "pullups30": {
+  "about": "A rúdon függéstől az első húzódzkodásig: lapockahúzás, negatívok és asztali evezés. Húzódzkodórúd szükséges.",
+  "title": "Húzódzkodás 30 nap alatt"
+ },
+ "pushups30": {
+  "about": "Sorozatonként 4-ről 15 fekvőtámaszra. A nehezebb változatok – szűk, lassú, megállós – egyenként csatlakoznak, a hátgyakorlatok pedig egyensúlyt adnak a nyomómozgásoknak.",
+  "title": "Fekvőtámasz 30 nap alatt"
+ },
+ "racket": {
+  "about": "Split step, kitörések, gyors oldallépések és erős váll.",
+  "title": "Pádel, tollaslabda, asztalitenisz"
+ },
+ "rowing": {
+  "about": "Hát és lapocka, erős forgató törzs és csípőhajtás.",
+  "title": "Evezés, kajak, SUP"
+ },
+ "runners": {
+  "about": "Farizom, vádli és egyensúly: erő, amely védi a térdet és a bokát futás közben.",
+  "title": "Futóknak"
+ },
+ "scoliosis": {
+  "about": "Egyenletes munka mindkét oldalon: hátizmok, törzs, lapocka és légzés. Nem helyettesíti a kezelést vagy a szakember egyéni programját.",
+  "title": "Szimmetrikus hát gerincferdüléshez"
+ },
+ "sidesplit30": {
+  "about": "Széles terpeszállások és belső comb nyújtások, lépésről lépésre.",
+  "title": "Oldalspárga 30 nap alatt"
+ },
+ "ski": {
+  "about": "Készülj a szezonra: lábi állóképesség, egyensúly és erős térd.",
+  "title": "Síelés és snowboard"
+ },
+ "slim30": {
+  "about": "Kardiókörök és egésztest-erősítés a nagyobb energiafelhasználásért. A kurzus ugrásokat tartalmaz; a guggolóugrás és a burpee csak a második felében jön.",
+  "title": "Fogyás 30 nap alatt"
+ },
+ "stretch30": {
+  "about": "Az egész tested: láb, hát és váll. A hajlékonyság napról napra nő.",
+  "title": "Nyújtás 30 nap alatt"
+ },
+ "swim": {
+  "about": "Szárazföldi edzés: lapocka és váll, áramvonalas testhelyzet, erős törzs és mozgékony boka.",
+  "title": "Úszóknak"
+ },
+ "taichi30": {
+  "about": "Lassú tai chi mozdulatok az egyensúlyért és a nyugalomért: minden nap ismert formák, és menet közben új sorozatok.",
+  "title": "Tai chi 30 nap alatt"
+ },
+ "tennis": {
+  "about": "Oldalirányú lábmunka, törzs és váll a magabiztos játékhoz.",
+  "title": "Teniszezőknek"
+ },
+ "toetouch30": {
+  "about": "Az előrehajlás: a láb hátsó oldala és a derék.",
+  "title": "Lábujjérintés 30 nap alatt"
+ },
+ "wrestling": {
+  "about": "Támadólépések, sprawl, erős nyak fejhíd nélkül és törzs-állóképesség.",
+  "title": "Birkózás és dzsúdó"
+ }
+}

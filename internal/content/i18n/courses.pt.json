@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Abdômen em casa, sem equipamento: abdômen inferior, oblíquos e todo o core, um de cada vez. Abdominais, tesoura, bicicleta e pranchas com progressão constante.",
+  "title": "Abdômen em 30 dias"
+ },
+ "age50": {
+  "about": "Uma rotina tranquila para força nas pernas e equilíbrio: levantar da cadeira, apoio em uma perna e caminhada calcanhar-ponta.",
+  "title": "Treino 50+"
+ },
+ "arms30": {
+  "about": "Braços e ombros mais fortes sem pesos: flexões com joelhos apoiados, mergulho na cadeira, exercícios de autorresistência e prancha invertida.",
+  "title": "Braços em 30 dias"
+ },
+ "backcare": {
+  "about": "Estabilização suave: abdominal McGill, bird dog e pranchas laterais, sem saltos nem flexões bruscas. Não é um tratamento: consulte seu médico e pare se a dor se espalhar para a perna ou surgir dormência.",
+  "title": "Cuidado com as costas para protrusões de disco"
+ },
+ "bedtime": {
+  "about": "Deitado, devagar, com respiração calma.",
+  "title": "Alongamento para dormir"
+ },
+ "climbing": {
+  "about": "Pegada, escápulas e suspensão na barra, core forte e antagonistas dos dedos. Requer barra fixa.",
+  "title": "Para escaladores"
+ },
+ "cycling": {
+  "about": "Glúteos, joelhos e lombar, depois abertura do peito e do quadril após o selim.",
+  "title": "Para ciclistas"
+ },
+ "demo": {
+  "about": "Uma rotina curta para o corpo todo, sem saltos: um começo suave do dia e uma progressão constante.",
+  "title": "Treino matinal"
+ },
+ "feet": {
+  "about": "Arco, dedos e tornozelos: o pé curto, enrolar a toalha com os dedos, caminhar na ponta dos pés e nos calcanhares. Ajuda em caso de pé chato, mas não substitui o médico.",
+  "title": "Pés saudáveis"
+ },
+ "football": {
+  "about": "Posteriores de coxa, adutores, tornozelos e equilíbrio: um treino que ajuda a prevenir lesões.",
+  "title": "Para jogadores de futebol"
+ },
+ "frontsplit30": {
+  "about": "Afundos e alongamentos para os flexores do quadril e posteriores de coxa, com apoio das mãos.",
+  "title": "Espacate frontal em 30 dias"
+ },
+ "golf": {
+  "about": "Rotação do tronco, quadris móveis, ombros e equilíbrio em uma perna. Ritmo calmo, adequado também após os 50.",
+  "title": "Para golfistas"
+ },
+ "hiking": {
+  "about": "Pernas para as subidas, joelhos para as descidas, tornozelos fortes e costas prontas para a mochila.",
+  "title": "Caminhada e trekking"
+ },
+ "hips30": {
+  "about": "Borboleta, pombo e agachamento profundo para quadris mais livres.",
+  "title": "Mobilidade de quadril em 30 dias"
+ },
+ "hockey": {
+  "about": "Posição baixa, saltos de patinador, equilíbrio e rotação do tronco.",
+  "title": "Hóquei e patinação"
+ },
+ "jumpsports": {
+  "about": "Saltos, aterrissagens suaves e tornozelos fortes.",
+  "title": "Basquete e vôlei"
+ },
+ "kids30": {
+  "about": "Para 7 a 12 anos: força e mobilidade em ritmo de brincadeira.",
+  "title": "Treino infantil"
+ },
+ "kidsagility": {
+  "about": "Para crianças: saltitos, equilíbrio e reações rápidas.",
+  "title": "Agilidade e coordenação"
+ },
+ "kidsball": {
+  "about": "Saltos com aterrissagem suave, pés rápidos, reações e braços fortes.",
+  "title": "Basquete e vôlei para crianças"
+ },
+ "kidsdance": {
+  "about": "Passos e palmas no ritmo, skips, pliés e equilíbrio.",
+  "title": "Dança e ritmo para crianças"
+ },
+ "kidsfeet": {
+  "about": "Exercícios divertidos para os pés: andar na ponta dos pés, nos calcanhares e na borda externa, enrolar a toalha, a lagarta. Não substitui o médico.",
+  "title": "Exercícios para pé chato infantil"
+ },
+ "kidsfootball": {
+  "about": "Pernas, coordenação e equilíbrio em uma perna para jovens jogadores de futebol.",
+  "title": "Futebol para crianças"
+ },
+ "kidsgym": {
+  "about": "Barquinho, andorinha, grupado sentado e pliés: flexibilidade, equilíbrio e core forte.",
+  "title": "Ginástica para crianças"
+ },
+ "kidshockey": {
+  "about": "Posição de patinador, saltos laterais, passos rápidos e equilíbrio.",
+  "title": "Hóquei e patinação artística para crianças"
+ },
+ "kidskarate": {
+  "about": "Posições, socos e chutes no ar, balanço de pernas e equilíbrio.",
+  "title": "Caratê e taekwondo para crianças"
+ },
+ "kidsposture": {
+  "about": "Costas e ombros após longas horas na carteira da escola.",
+  "title": "Postura para estudantes"
+ },
+ "kidsswim": {
+  "about": "Posição hidrodinâmica, pernada de nadadeira, barquinho e braçadas em terra firme para jovens nadadores.",
+  "title": "Natação para crianças"
+ },
+ "kidstennis": {
+  "about": "Movimentação de pés, giros do tronco e ombros fortes para jovens tenistas.",
+  "title": "Tênis para crianças"
+ },
+ "kidswrestling": {
+  "about": "Grupados, rolamentos seguros, caminhada do urso e do caranguejo. Rolamentos apenas em tatame ou tapete macio.",
+  "title": "Luta e judô para crianças"
+ },
+ "legs30": {
+  "about": "Agachamentos, pontes de glúteos e afundos sem equipamento. Os agachamentos passam de 10 a 24 por série; os exercícios com salto entram a partir do dia 12.",
+  "title": "Pernas e glúteos em 30 dias"
+ },
+ "martial": {
+  "about": "Luta de sombra, chutes, força do core e mobilidade de quadril.",
+  "title": "Para artes marciais"
+ },
+ "morningstretch": {
+  "about": "Alongamento suave logo ao acordar, sem esforço.",
+  "title": "Alongamento matinal"
+ },
+ "office30": {
+  "about": "Uma rotina curta depois de horas no computador: pescoço, ombros, parte superior das costas e postura.",
+  "title": "Pescoço e costas para quem trabalha sentado"
+ },
+ "plank30": {
+  "about": "Uma prancha por dia, de 20 até 70 segundos por série. Pranchas frontal, lateral, em movimento e invertida se alternam, com exercícios para as costas para manter o equilíbrio.",
+  "title": "Prancha em 30 dias"
+ },
+ "posture30": {
+  "about": "Fortalecimento das costas para uma postura melhor: escápulas, extensores da coluna e toda a parte de trás do corpo. Sem saltos, sem equipamento, tudo no tapete.",
+  "title": "Postura melhor em 30 dias"
+ },
+ "pullups30": {
+  "about": "De pendurar na barra às primeiras barras: puxadas escapulares, negativas e remada na mesa. Você precisa de uma barra fixa.",
+  "title": "Barra fixa em 30 dias"
+ },
+ "pushups30": {
+  "about": "De 4 a 15 flexões por série. Variações mais difíceis, como fechada, lenta e com pausa, entram uma de cada vez, e os exercícios para as costas equilibram o trabalho de empurrar.",
+  "title": "Flexões em 30 dias"
+ },
+ "racket": {
+  "about": "Split step, afundos, passos laterais rápidos e ombro forte.",
+  "title": "Padel, badminton, tênis de mesa"
+ },
+ "rowing": {
+  "about": "Costas e escápulas, um core forte com rotação e impulso do quadril.",
+  "title": "Remo, caiaque, SUP"
+ },
+ "runners": {
+  "about": "Glúteos, panturrilhas e equilíbrio: força que protege joelhos e tornozelos nas suas corridas.",
+  "title": "Para corredores"
+ },
+ "scoliosis": {
+  "about": "Trabalho igual dos dois lados: músculos das costas, core, escápulas e respiração. Não substitui o tratamento nem um programa individual de um especialista.",
+  "title": "Simetria das costas na escoliose"
+ },
+ "sidesplit30": {
+  "about": "Posições abertas e alongamentos de adutores, passo a passo.",
+  "title": "Espacate lateral em 30 dias"
+ },
+ "ski": {
+  "about": "Prepare-se para a temporada: resistência das pernas, equilíbrio e joelhos fortes.",
+  "title": "Esqui e snowboard"
+ },
+ "slim30": {
+  "about": "Circuitos de cardio e exercícios de força para o corpo todo, para gastar mais energia. Este curso inclui saltos; agachamentos com salto e burpees aparecem só na segunda metade.",
+  "title": "Emagreça em 30 dias"
+ },
+ "stretch30": {
+  "about": "O corpo todo: pernas, costas e ombros. A flexibilidade aumenta dia após dia.",
+  "title": "Alongamento em 30 dias"
+ },
+ "swim": {
+  "about": "Treino em terra: escápulas e ombros, a posição hidrodinâmica, um core forte e tornozelos móveis.",
+  "title": "Para nadadores"
+ },
+ "taichi30": {
+  "about": "Movimentos lentos de tai chi para equilíbrio e calma: formas conhecidas todos os dias e novas sequências ao longo do curso.",
+  "title": "Tai chi em 30 dias"
+ },
+ "tennis": {
+  "about": "Movimentação lateral, core e ombros para jogar com confiança.",
+  "title": "Para tenistas"
+ },
+ "toetouch30": {
+  "about": "A flexão para a frente: a parte de trás das pernas e a lombar.",
+  "title": "Toque os pés em 30 dias"
+ },
+ "wrestling": {
+  "about": "Passos de entrada, sprawls, pescoço forte sem pontes sobre a cabeça e resistência do core.",
+  "title": "Luta e judô"
+ }
+}

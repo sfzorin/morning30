@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Břišní svaly doma bez vybavení: postupně dolní část břicha, šikmé svaly i celý střed těla. Zkrácené sklapovačky, nůžky, kolo vleže a prkna se stálým stupňováním.",
+  "title": "Břicho za 30 dní"
+ },
+ "age50": {
+  "about": "Klidná rutina pro sílu nohou a rovnováhu: vstávání ze židle, stoj na jedné noze a chůze pata-špička.",
+  "title": "Cvičení 50+"
+ },
+ "arms30": {
+  "about": "Silnější paže a ramena bez závaží: kliky na kolenou, dipy na židli, cviky s vlastním odporem a obrácený plank.",
+  "title": "Paže za 30 dní"
+ },
+ "backcare": {
+  "about": "Šetrná stabilizace: McGillovy zkrácené sklapovačky, bird dog, boční plank, žádné skoky ani ostré předklony. Nejde o léčbu: poraďte se s lékařem a přestaňte, pokud se bolest šíří do nohy nebo se objeví necitlivost.",
+  "title": "Péče o záda při výhřezu plotének"
+ },
+ "bedtime": {
+  "about": "Vleže, pomalu a s klidným dýcháním.",
+  "title": "Protažení před spaním"
+ },
+ "climbing": {
+  "about": "Úchop, lopatky a visy na hrazdě, silný střed těla a protisíla prstů. Potřebujete hrazdu.",
+  "title": "Pro lezce"
+ },
+ "cycling": {
+  "about": "Hýždě, kolena a dolní část zad, poté otevření hrudníku a kyčlí po sezení v sedle.",
+  "title": "Pro cyklisty"
+ },
+ "demo": {
+  "about": "Krátká cvičení pro celé tělo bez skoků: jemný start do dne a stálé stupňování.",
+  "title": "Ranní cvičení"
+ },
+ "feet": {
+  "about": "Klenba, prsty a kotníky: krátká noha, sbírání ručníku prsty, chůze po špičkách a patách. Pomáhá při plochých nohou, ale nenahrazuje lékaře.",
+  "title": "Zdravá chodidla"
+ },
+ "football": {
+  "about": "Zadní strana stehen, vnitřní strana stehen, kotníky a rovnováha: trénink, který pomáhá předcházet zraněním.",
+  "title": "Pro fotbalisty"
+ },
+ "frontsplit30": {
+  "about": "Výpady a protažení pro ohybače kyčlí a zadní stranu stehen s oporou rukou.",
+  "title": "Přední špagát za 30 dní"
+ },
+ "golf": {
+  "about": "Rotace trupu, pohyblivé kyčle, ramena a rovnováha na jedné noze. Klidné tempo, vhodné i po padesátce.",
+  "title": "Pro golfisty"
+ },
+ "hiking": {
+  "about": "Nohy na stoupání, kolena na klesání, silné kotníky a záda připravená na batoh.",
+  "title": "Turistika a trekking"
+ },
+ "hips30": {
+  "about": "Motýl, holub a hluboký dřep pro volnější kyčle.",
+  "title": "Pohyblivost kyčlí za 30 dní"
+ },
+ "hockey": {
+  "about": "Nízký postoj, bruslařské skoky, rovnováha a rotace trupu.",
+  "title": "Hokej a bruslení"
+ },
+ "jumpsports": {
+  "about": "Skoky, měkké dopady a silné kotníky.",
+  "title": "Basketbal a volejbal"
+ },
+ "kids30": {
+  "about": "Pro věk 7–12 let: síla a pohyblivost hravým tempem.",
+  "title": "Cvičení pro děti"
+ },
+ "kidsagility": {
+  "about": "Pro děti: poskoky, rovnováha a rychlé reakce.",
+  "title": "Hbitost a koordinace"
+ },
+ "kidsball": {
+  "about": "Skoky s měkkým dopadem, rychlé nohy, reakce a silné paže.",
+  "title": "Basketbal a volejbal pro děti"
+ },
+ "kidsdance": {
+  "about": "Kroky a tleskání do rytmu, poskoky, pliés a rovnováha.",
+  "title": "Tanec a rytmus pro děti"
+ },
+ "kidsfeet": {
+  "about": "Hravá cvičení pro chodidla: chůze po špičkách, patách a vnějších hranách, sbírání ručníku, housenka. Nenahrazuje lékaře.",
+  "title": "Cviky na ploché nohy pro děti"
+ },
+ "kidsfootball": {
+  "about": "Nohy, koordinace a rovnováha na jedné noze pro mladé fotbalisty.",
+  "title": "Fotbal pro děti"
+ },
+ "kidsgym": {
+  "about": "Loďky, vlaštovka, sed skrčmo a pliés: ohebnost, rovnováha a silný střed těla.",
+  "title": "Gymnastika pro děti"
+ },
+ "kidshockey": {
+  "about": "Bruslařský postoj, skoky do stran, rychlé kroky a rovnováha.",
+  "title": "Hokej a krasobruslení pro děti"
+ },
+ "kidskarate": {
+  "about": "Postoje, údery a kopy ve vzduchu, mávání nohama a rovnováha.",
+  "title": "Karate a taekwondo pro děti"
+ },
+ "kidsposture": {
+  "about": "Záda a ramena po dlouhých hodinách ve školní lavici.",
+  "title": "Držení těla pro školáky"
+ },
+ "kidsswim": {
+  "about": "Proudnicová poloha, nožní kopy, loďky a tempa pažemi na suchu pro mladé plavce.",
+  "title": "Plavání pro děti"
+ },
+ "kidstennis": {
+  "about": "Práce nohou, otáčení trupu a silná ramena pro mladé tenisty.",
+  "title": "Tenis pro děti"
+ },
+ "kidswrestling": {
+  "about": "Skrčené pozice, bezpečné kotouly, medvědí chůze a krabí chůze. Kotouly jen na podložce nebo měkkém koberci.",
+  "title": "Zápas a judo pro děti"
+ },
+ "legs30": {
+  "about": "Dřepy, zvedání pánve a výpady bez vybavení. Dřepy rostou z 10 na 24 v sérii; skokové cviky přicházejí od 12. dne.",
+  "title": "Nohy a hýždě za 30 dní"
+ },
+ "martial": {
+  "about": "Stínový box, kopy, síla středu těla a pohyblivost kyčlí.",
+  "title": "Pro bojová umění"
+ },
+ "morningstretch": {
+  "about": "Jemné protažení hned po probuzení, bez námahy.",
+  "title": "Ranní protažení"
+ },
+ "office30": {
+  "about": "Krátká rutina po hodinách u počítače: krk, ramena, horní část zad a držení těla.",
+  "title": "Krk a záda pro kancelářské pracovníky"
+ },
+ "plank30": {
+  "about": "Plank každý den, od 20 sekund až po 70 v sérii. Střídá se přední, boční, pohyblivý a obrácený plank, doplněný cviky na záda pro vyváženost.",
+  "title": "Plank za 30 dní"
+ },
+ "posture30": {
+  "about": "Posilování zad pro lepší držení těla: lopatky, zádové extenzory a celá zadní strana těla. Bez skoků, bez vybavení, vše na podložce.",
+  "title": "Lepší držení těla za 30 dní"
+ },
+ "pullups30": {
+  "about": "Od visu na hrazdě po první shyby: stahování lopatek, negativní fáze a přítahy pod stolem. Potřebujete hrazdu.",
+  "title": "Shyby za 30 dní"
+ },
+ "pushups30": {
+  "about": "Od 4 do 15 kliků v sérii. Těžší varianty (úzké, pomalé, s výdrží) přibývají postupně a cviky na záda vyvažují tlakovou práci.",
+  "title": "Kliky za 30 dní"
+ },
+ "racket": {
+  "about": "Přípravný poskok, výpady, rychlé kroky do stran a silné rameno.",
+  "title": "Padel, badminton, stolní tenis"
+ },
+ "rowing": {
+  "about": "Záda a lopatky, silný rotující střed těla a síla z kyčlí.",
+  "title": "Veslování, kajak, SUP"
+ },
+ "runners": {
+  "about": "Hýždě, lýtka a rovnováha: síla, která chrání kolena a kotníky při běhu.",
+  "title": "Pro běžce"
+ },
+ "scoliosis": {
+  "about": "Rovnoměrná práce na obou stranách: zádové svaly, střed těla, lopatky a dýchání. Nenahrazuje léčbu ani individuální program od specialisty.",
+  "title": "Symetrie zad při skolióze"
+ },
+ "sidesplit30": {
+  "about": "Široké postoje a protažení vnitřní strany stehen, krok za krokem.",
+  "title": "Boční špagát za 30 dní"
+ },
+ "ski": {
+  "about": "Příprava na sezonu: vytrvalost nohou, rovnováha a silná kolena.",
+  "title": "Lyže a snowboard"
+ },
+ "slim30": {
+  "about": "Kardio okruhy a posilování celého těla pro vyšší spotřebu energie. Tento kurz obsahuje skoky; výskoky z dřepu a burpees přicházejí až v druhé polovině.",
+  "title": "Zhubněte za 30 dní"
+ },
+ "stretch30": {
+  "about": "Celé tělo: nohy, záda a ramena. Ohebnost roste den za dnem.",
+  "title": "Protahování za 30 dní"
+ },
+ "swim": {
+  "about": "Trénink na suchu: lopatky a ramena, proudnicová poloha, silný střed těla a pohyblivé kotníky.",
+  "title": "Pro plavce"
+ },
+ "taichi30": {
+  "about": "Pomalé pohyby tai-chi pro rovnováhu a klid: známé formy každý den a nové sestavy postupně.",
+  "title": "Tai-chi za 30 dní"
+ },
+ "tennis": {
+  "about": "Práce nohou ze strany na stranu, střed těla a ramena pro jistou hru.",
+  "title": "Pro tenisty"
+ },
+ "toetouch30": {
+  "about": "Předklon: zadní strana nohou a dolní část zad.",
+  "title": "Dotek prstů u nohou za 30 dní"
+ },
+ "wrestling": {
+  "about": "Výpady do podhmatu, sprawly, silný krk bez zápasnických mostů a vytrvalost středu těla.",
+  "title": "Zápas a judo"
+ }
+}

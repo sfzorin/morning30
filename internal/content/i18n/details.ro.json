@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Menține o rezistență constantă.",
+   "Mișcă-te încet.",
+   "Ține cotul aproape de corp.",
+   "Ține umărul jos."
+  ],
+  "desc": "Exercițiu pentru bicepși fără echipament, în care o mână rezistă celeilalte.",
+  "howTo": [
+   "Stai sau șezi drept.",
+   "Îndoaie un cot ca la o flexie.",
+   "Apasă cu mâna opusă pe antebrațul care lucrează.",
+   "Flexează încet în sus, împotriva rezistenței.",
+   "Schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu face mișcarea fără rezistență reală.",
+   "Nu smuci brațul.",
+   "Nu ridica umărul.",
+   "Nu ține respirația."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Menține unghiul cotului stabil.",
+   "Menține tensiunea constantă.",
+   "Relaxează umerii.",
+   "Respiră în continuare."
+  ],
+  "desc": "Menținere statică pentru bicepși, cu auto-rezistență.",
+  "howTo": [
+   "Îndoaie un cot la aproximativ 90 de grade.",
+   "Apasă în jos cu mâna opusă.",
+   "Brațul care lucrează rezistă fără să se miște.",
+   "Menține tensiunea.",
+   "Schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu apăsa în smucituri scurte.",
+   "Nu răsuci trunchiul.",
+   "Nu ridica umărul.",
+   "Nu ține respirația."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Controlează tensiunea.",
+   "Ține umerii jos.",
+   "Ține încheieturile confortabile.",
+   "Respiră calm."
+  ],
+  "desc": "Exercițiu izometric pentru brațe și antebrațe, cu mâinile împotriva una alteia.",
+  "howTo": [
+   "Agață degetele sau mâinile una de alta.",
+   "Ține coatele ușor îndoite.",
+   "Trage mâinile în direcții opuse.",
+   "Menține o tensiune constantă.",
+   "Relaxează-te încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu trage cu smucitura.",
+   "Nu ridica umerii.",
+   "Nu îndoi excesiv încheieturile.",
+   "Nu ține respirația."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Coboară încet.",
+   "Menține rezistența constantă.",
+   "Ține cotul aproape de corp.",
+   "Relaxează umărul."
+  ],
+  "desc": "Exercițiu lent de coborâre pentru bicepși, cu auto-rezistență.",
+  "howTo": [
+   "Începe cu un cot îndoit.",
+   "Creează rezistență cu mâna opusă.",
+   "Coboară încet antebrațul care lucrează.",
+   "Continuă să reziști în timpul coborârii.",
+   "Schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa brațul să cadă repede.",
+   "Nu coborî fără rezistență.",
+   "Nu răsuci corpul.",
+   "Nu ține respirația."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Ridică-te puțin.",
+   "Ține gâtul în poziție neutră.",
+   "Trage omoplații înapoi și în jos.",
+   "Strânge ușor fesierii."
+  ],
+  "desc": "Exercițiu pentru postură, pentru partea superioară a spatelui, omoplați și extensorii coloanei.",
+  "howTo": [
+   "Întinde-te cu fața în jos.",
+   "Pune brațele pe lângă corp.",
+   "Rotește degetele mari ușor spre exterior.",
+   "Ridică ușor pieptul.",
+   "Trage omoplații înapoi și în jos.",
+   "Menține."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te ridica prea sus.",
+   "Nu arunca capul pe spate.",
+   "Nu arcui excesiv zona lombară.",
+   "Nu ridica umerii."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Relaxează gâtul.",
+   "Mișcă omoplații lin.",
+   "Ține ridicarea pieptului mică sau neutră.",
+   "Mișcă brațele fără grabă."
+  ],
+  "desc": "Exercițiu pentru partea superioară a spatelui și omoplați, făcut culcat cu fața în jos.",
+  "howTo": [
+   "Întinde-te pe burtă.",
+   "Ține capul cu fața în jos.",
+   "Mișcă brațele într-un arc larg, din lateral spre deasupra capului.",
+   "Revino pe același drum.",
+   "Menține mișcarea controlată."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu ridica capul.",
+   "Nu arcui prea mult zona lombară.",
+   "Nu balansa brațele.",
+   "Nu ridica umerii."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Ține amplitudinea mică.",
+   "Lasă omoplații să facă efortul.",
+   "Ține gâtul în poziție neutră.",
+   "Ține umerii departe de urechi."
+  ],
+  "desc": "Exercițiu pentru partea superioară a spatelui, omoplați și umerii din spate.",
+  "howTo": [
+   "Întinde-te cu fața în jos.",
+   "Îndoaie coatele în formă de W.",
+   "Ridică ușor coatele și mâinile.",
+   "Strânge omoplații.",
+   "Coboară controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te ridica prea sus.",
+   "Nu trage capul în sus.",
+   "Nu folosi elan.",
+   "Nu arcui excesiv zona lombară."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Ridică brațele doar puțin.",
+   "Ține gâtul în poziție neutră.",
+   "Ține umerii jos.",
+   "Mișcă-te controlat."
+  ],
+  "desc": "Exercițiu pentru omoplați, pentru trapezul inferior și partea superioară a spatelui.",
+  "howTo": [
+   "Întinde-te cu fața în jos.",
+   "Întinde brațele în diagonală deasupra capului, în formă de Y.",
+   "Ridică ușor brațele de la podea.",
+   "Coboară controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te ridica prea sus.",
+   "Nu ridica umerii.",
+   "Nu arcui zona lombară.",
+   "Nu te mișca prea repede."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Ține brațele în linie cu umerii.",
+   "Relaxează gâtul.",
+   "Mișcă omoplații blând.",
+   "Ține ridicarea mică."
+  ],
+  "desc": "Exercițiu pentru partea superioară a spatelui, umerii din spate și controlul omoplaților.",
+  "howTo": [
+   "Întinde-te cu fața în jos.",
+   "Întinde brațele în lateral, în formă de T.",
+   "Ridică ușor brațele.",
+   "Strânge omoplații.",
+   "Coboară încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arunca brațele în sus.",
+   "Nu ridica capul.",
+   "Nu ridica umerii.",
+   "Nu forța o amplitudine mare."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Trage coatele în jos controlat.",
+   "Strânge blând omoplații.",
+   "Ține gâtul în poziție neutră.",
+   "Ține zona lombară confortabilă."
+  ],
+  "desc": "Exercițiu pentru spate care imită o mișcare de tragere, fără echipament.",
+  "howTo": [
+   "Întinde-te pe burtă, cu brațele deasupra capului.",
+   "Ridică ușor pieptul.",
+   "Trage coatele în jos spre coaste.",
+   "Strânge omoplații.",
+   "Întinde din nou brațele înainte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu smuci brațele.",
+   "Nu te ridica prea sus.",
+   "Nu arunca capul pe spate.",
+   "Nu lăsa umerii să urce spre urechi."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Ține gâtul în poziție neutră.",
+   "Mișcă-te controlat.",
+   "Ține zona lombară confortabilă.",
+   "Respiră în continuare."
+  ],
+  "desc": "Exercițiu pentru spate și coordonare, făcut culcat cu fața în jos.",
+  "howTo": [
+   "Întinde-te pe burtă.",
+   "Ridică ușor pieptul.",
+   "Mișcă brațul și piciorul opus ca la înot, controlat.",
+   "Ține mișcarea mică și constantă."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te mișca prea repede.",
+   "Nu te ridica prea sus.",
+   "Nu arunca capul pe spate.",
+   "Nu forța zona lombară."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Ține pieptul deschis.",
+   "Ține șoldurile ridicate.",
+   "Ține umerii stabili.",
+   "Ține gâtul în poziție neutră."
+  ],
+  "desc": "Exercițiu pentru lanțul posterior: fesieri, ischiogambieri, umeri și spate.",
+  "howTo": [
+   "Șezi pe podea cu picioarele întinse.",
+   "Pune mâinile în spatele șoldurilor.",
+   "Apasă în mâini și în călcâie.",
+   "Ridică șoldurile.",
+   "Ține corpul într-o linie lungă."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile în jos.",
+   "Nu ridica umerii.",
+   "Nu arunca capul pe spate.",
+   "Nu forța încheieturile."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Ține ridicarea mică.",
+   "Fă pulsații line.",
+   "Ține gâtul lung.",
+   "Ține zona lombară controlată."
+  ],
+  "desc": "Exercițiu cu amplitudine mică pentru extensorii coloanei și postură.",
+  "howTo": [
+   "Întinde-te cu fața în jos.",
+   "Pune mâinile lângă corp sau ușor lângă piept.",
+   "Ridică ușor pieptul.",
+   "Fă pulsații mici, controlate.",
+   "Ține gâtul în poziție neutră."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu pulsa prea sus.",
+   "Nu folosi elan.",
+   "Nu privi înainte.",
+   "Nu împinge printr-o durere ascuțită în zona lombară."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Ține ridicarea pieptului mică.",
+   "Fă tragerea în W lin.",
+   "Trage omoplații înapoi și în jos.",
+   "Ține gâtul lung."
+  ],
+  "desc": "Exercițiu mai solicitant pentru spate, care combină o mică ridicare cobra cu o tragere a brațelor în W.",
+  "howTo": [
+   "Întinde-te cu fața în jos, cu brațele înainte.",
+   "Ridică ușor pieptul.",
+   "Trage coatele în jos și înapoi, în formă de W.",
+   "Strânge omoplații.",
+   "Întinde din nou brațele înainte și coboară controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui excesiv zona lombară.",
+   "Nu trage cu gâtul.",
+   "Nu te mișca prea repede.",
+   "Nu ridica umerii."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Ține ridicarea mică.",
+   "Lasă gâtul să urmeze coloana.",
+   "Ține fesierii strânși.",
+   "Mișcă-te constant."
+  ],
+  "desc": "Exercițiu pentru spate: ridici alternativ brațul și piciorul opus, într-o mișcare ca la înot.",
+  "howTo": [
+   "Întinde-te cu fața în jos, cu brațele deasupra capului.",
+   "Ridică ușor pieptul și picioarele.",
+   "Ridică un braț și piciorul opus.",
+   "Coboară și schimbă partea, alternând lin."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu forța zona lombară.",
+   "Nu ridica capul.",
+   "Nu te mișca în smucituri.",
+   "Nu ține respirația."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Ține corpul într-o singură linie.",
+   "Ține coatele sub umeri.",
+   "Ține abdomenul activ.",
+   "Respiră constant."
+  ],
+  "desc": "Exercițiu de stabilitate pentru abdomen, umeri, fesieri și trunchi.",
+  "howTo": [
+   "Pune coatele sub umeri.",
+   "Du picioarele înapoi.",
+   "Formează o linie dreaptă de la umeri la călcâie.",
+   "Strânge abdomenul și fesierii.",
+   "Menține poziția."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa zona lombară să cadă.",
+   "Nu ridica prea sus șoldurile.",
+   "Nu privi înainte.",
+   "Nu ține respirația."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Încordează tot corpul.",
+   "Ține fesierii activi.",
+   "Ține abdomenul încordat.",
+   "Respiră controlat."
+  ],
+  "desc": "Plank scurt și intens, cu tensiune în tot corpul.",
+  "howTo": [
+   "Începe într-un plank pe antebrațe.",
+   "Strânge puternic abdomenul.",
+   "Strânge fesierii.",
+   "Imaginează-ți că tragi coatele spre degetele de la picioare.",
+   "Menține cu control maxim."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu menține poziția ca pe un plank relaxat.",
+   "Nu lăsa șoldurile să cadă.",
+   "Nu ține respirația.",
+   "Nu încerca să reziști prea mult."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Ține zona lombară aproape de podea.",
+   "Ține picioarele controlate.",
+   "Relaxează gâtul.",
+   "Mișcă-te lin."
+  ],
+  "desc": "Exercițiu pentru abdomenul inferior, cu încrucișări controlate ale picioarelor.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Apasă ușor zona lombară spre podea.",
+   "Ridică picioarele.",
+   "Încrucișează un picior peste celălalt.",
+   "Continuă mișcarea de încrucișare, alternând."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui zona lombară.",
+   "Nu coborî prea mult picioarele.",
+   "Nu trage capul înainte.",
+   "Nu te mișca prea repede."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Ține amplitudinea mică.",
+   "Ține zona lombară stabilă.",
+   "Ține picioarele destul de sus.",
+   "Respiră constant."
+  ],
+  "desc": "Exercițiu pentru abdomenul inferior, cu lovituri scurte alternative ale picioarelor.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Apasă zona lombară spre podea.",
+   "Ridică picioarele.",
+   "Mișcă picioarele sus-jos, în lovituri scurte alternative."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui zona lombară.",
+   "Nu face lovituri mari.",
+   "Nu încorda gâtul.",
+   "Nu ține respirația."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Mișcă-te din abdomenul inferior.",
+   "Ridică bazinul controlat.",
+   "Relaxează gâtul.",
+   "Coboară încet."
+  ],
+  "desc": "Exercițiu pentru abdomen, axat pe ridicarea controlată a bazinului.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Îndoaie genunchii și ridică picioarele.",
+   "Folosește abdomenul ca să rotunjești bazinul ușor în sus.",
+   "Coboară încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu balansa picioarele.",
+   "Nu folosi elan.",
+   "Nu trage de gât.",
+   "Nu lăsa șoldurile să cadă repede."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Ține zona lombară pe podea.",
+   "Ține abdomenul încordat.",
+   "Relaxează gâtul.",
+   "Respiră în continuare."
+  ],
+  "desc": "Menținere statică pentru trunchi, cu pârghie scurtată pentru mai mult control.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Apasă zona lombară spre podea.",
+   "Ridică ușor umerii.",
+   "Ține genunchii îndoiți sau picioarele ridicate mai sus.",
+   "Menține poziția."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui zona lombară.",
+   "Nu coborî prea mult picioarele.",
+   "Nu trage bărbia înainte.",
+   "Nu ține respirația."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Ține cotul sub umăr.",
+   "Ține șoldurile ridicate.",
+   "Ține corpul lung.",
+   "Ține gâtul în poziție neutră."
+  ],
+  "desc": "Exercițiu lateral pentru oblici și stabilitatea umărului și a șoldului.",
+  "howTo": [
+   "Întinde-te pe o parte.",
+   "Pune cotul sub umăr.",
+   "Ridică șoldurile.",
+   "Ține corpul într-o linie dreaptă.",
+   "Menține poziția."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile să cadă.",
+   "Nu ridica umărul.",
+   "Nu rostogoli pieptul înainte.",
+   "Nu ține respirația."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Ține mișcarea mică și controlată.",
+   "Ține cotul sub umăr.",
+   "Mișcă șoldurile drept în sus și în jos.",
+   "Ține abdomenul încordat."
+  ],
+  "desc": "Variantă mai solicitantă de plank lateral, pentru oblici și șoldul lateral.",
+  "howTo": [
+   "Începe într-un plank lateral.",
+   "Coboară ușor șoldurile.",
+   "Ridică șoldurile la loc.",
+   "Repetă controlat.",
+   "Schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu coborî prea jos.",
+   "Nu răsuci trunchiul.",
+   "Nu te prăbuși peste umăr.",
+   "Nu te mișca prea repede."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Ține șoldurile drepte.",
+   "Ține abdomenul încordat.",
+   "Ține umerii stabili.",
+   "Mișcă-te încet."
+  ],
+  "desc": "Exercițiu pentru trunchi și umeri: atingi fiecare umăr în timp ce ții poziția de plank.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Ține șoldurile drepte și stabile.",
+   "Atinge cu o mână umărul opus.",
+   "Adu mâna înapoi și atinge cu cealaltă.",
+   "Ține corpul nemișcat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu legăna șoldurile dintr-o parte în alta.",
+   "Nu te mișca prea repede.",
+   "Nu lăsa zona lombară să cadă.",
+   "Nu răsuci trunchiul."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Ține șoldurile stabile.",
+   "Ține abdomenul activ.",
+   "Mișcă-te controlat.",
+   "Ține umerii deasupra mâinilor sau a coatelor."
+  ],
+  "desc": "Exercițiu pentru trunchi și tricepși, cu trecere între plank pe antebrațe și plank înalt.",
+  "howTo": [
+   "Începe într-un plank pe antebrațe.",
+   "Pune o mână pe podea și împinge în sus.",
+   "Adu și cealaltă mână într-un plank înalt.",
+   "Coboară înapoi pe antebrațe.",
+   "Alternează brațul cu care pornești."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu legăna șoldurile dintr-o parte în alta.",
+   "Nu lăsa zona lombară să cadă.",
+   "Nu te mișca prea repede.",
+   "Nu lăsa umerii să se prăbușească."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Ține zona lombară stabilă.",
+   "Mișcă-te încet.",
+   "Atinge podeaua blând cu călcâiul.",
+   "Ține bazinul nemișcat."
+  ],
+  "desc": "Exercițiu controlat pentru trunchi, o alternativă mai sigură la exercițiile mai grele cu ridicarea picioarelor.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Ridică picioarele în poziția de masă (tabletop).",
+   "Coboară un călcâi spre podea.",
+   "Atinge ușor și revino.",
+   "Alternează părțile."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa piciorul să cadă prea repede.",
+   "Nu arcui zona lombară.",
+   "Nu mișca ambele picioare deodată.",
+   "Nu te grăbi."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Ține zona lombară aproape de podea.",
+   "Mișcă-te încet.",
+   "Mișcă împreună brațul și piciorul opus.",
+   "Ține trunchiul nemișcat."
+  ],
+  "desc": "Exercițiu de control al trunchiului, pentru abdomenul profund și stabilitatea coloanei.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Ridică brațele și picioarele în poziția de masă (tabletop).",
+   "Întinde brațul și piciorul opus.",
+   "Ține zona lombară stabilă.",
+   "Revino și schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui zona lombară.",
+   "Nu te mișca prea repede.",
+   "Nu coborî prea jos piciorul.",
+   "Nu lăsa coastele să iasă în afară."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Rotește din trunchi.",
+   "Ține zona lombară controlată.",
+   "Relaxează gâtul.",
+   "Mișcă-te lin."
+  ],
+  "desc": "Exercițiu cu rotație pentru oblici și abdomenul frontal.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Ridică genunchii.",
+   "Pune ușor mâinile lângă cap.",
+   "Rotește trunchiul și apropie un cot de genunchiul opus.",
+   "Schimbă partea într-un ritm controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu trage de gât.",
+   "Nu mișca doar coatele.",
+   "Nu te grăbi cu repetările.",
+   "Nu arcui zona lombară."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Lasă pieptul să se deschidă ușor.",
+   "Ține umerii relaxați.",
+   "Ține zona lombară confortabilă.",
+   "Ține umerii fără durere."
+  ],
+  "desc": "Întindere blândă pentru piept și partea din față a umerilor.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Deschide brațele în lateral.",
+   "Relaxează umerii.",
+   "Lasă pieptul să se deschidă blând.",
+   "Respiră încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu forța brațele în jos.",
+   "Nu arcui zona lombară.",
+   "Nu încorda gâtul.",
+   "Nu te întinde prin durere."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Ține întinderea ușoară.",
+   "Lasă genunchiul ușor îndoit.",
+   "Ține zona lombară calmă.",
+   "Respiră încet."
+  ],
+  "desc": "Întindere blândă pentru partea din spate a coapsei.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Ridică un picior.",
+   "Prinde-l în spatele coapsei sau al gambei.",
+   "Trage blând piciorul spre tine.",
+   "Schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu trage prea tare.",
+   "Nu forța piciorul să fie drept.",
+   "Nu ridica șoldurile.",
+   "Nu împinge printr-o durere ascuțită în spatele genunchiului."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Mișcă-te încet.",
+   "Ține umerii jos.",
+   "Respiră relaxat.",
+   "Ține întinderea confortabilă."
+  ],
+  "desc": "Întindere blândă prin rotație pentru coloană și trunchi.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Îndoaie genunchii.",
+   "Lasă genunchii să cadă blând într-o parte.",
+   "Ține umerii pe podea.",
+   "Revino la centru și schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu forța genunchii spre podea.",
+   "Nu te răsuci repede.",
+   "Nu ridica umărul.",
+   "Nu te întinde prin durere."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Ține ridicarea ușoară.",
+   "Ține umerii departe de urechi.",
+   "Ține zona lombară confortabilă.",
+   "Ține gâtul în poziție neutră."
+  ],
+  "desc": "Întindere blândă a părții din față a corpului și extensie ușoară a spatelui.",
+  "howTo": [
+   "Întinde-te pe burtă.",
+   "Pune antebrațele pe podea.",
+   "Ridică blând pieptul.",
+   "Ține gâtul lung.",
+   "Respiră încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui excesiv zona lombară.",
+   "Nu arunca capul pe spate.",
+   "Nu ridica umerii.",
+   "Nu forța poziția."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Respiră calm.",
+   "Ține umerii relaxați.",
+   "Ține fața relaxată.",
+   "Lasă corpul să se liniștească."
+  ],
+  "desc": "Exercițiu calm de respirație, pentru încheierea antrenamentului.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Relaxează umerii și maxilarul.",
+   "Pune o mână pe burtă, dacă ți-e confortabil.",
+   "Inspiră blând.",
+   "Expiră încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu respira prea forțat.",
+   "Nu ține respirația.",
+   "Nu încorda gâtul.",
+   "Nu arcui zona lombară."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Lasă șoldurile să se așeze spre călcâie.",
+   "Alungește blând spatele.",
+   "Relaxează umerii.",
+   "Respiră încet."
+  ],
+  "desc": "Întindere de odihnă pentru spate, șolduri și umeri, ca să te liniștești.",
+  "howTo": [
+   "Îngenunchează și lasă șoldurile spre călcâie.",
+   "Întinde brațele înainte pe podea.",
+   "Lasă fruntea să se odihnească.",
+   "Respiră încet și relaxează-te."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu forța șoldurile în jos.",
+   "Nu încorda umerii.",
+   "Nu ține respirația.",
+   "Nu forța genunchii."
+  ]
+ },
+ "D01": {
+  "breathing": "Respiră uniform; nu ține respirația.",
+  "correct": [
+   "Ține cotul lipit de corp.",
+   "Mișcă-te încet, fără elan.",
+   "Ține umărul jos, departe de ureche.",
+   "Ține încheietura dreaptă."
+  ],
+  "desc": "Exercițiu lent pentru manșeta rotatorilor, care stabilizează umărul pentru serviciu și lovituri de fond. O haltera de 0,5 kg, un braț pe rând.",
+  "howTo": [
+   "Stai drept, cu o haltera de 0,5 kg în mână.",
+   "Îndoaie cotul la 90° și lipește-l de corp.",
+   "Începe cu antebrațul peste burtă.",
+   "Rotește încet antebrațul spre exterior, departe de corp.",
+   "Revino încet, apoi schimbă brațul."
+  ],
+  "safety": "Doar 0,5 kg. Oprește-te dacă te doare umărul. Nu alerga și nu sări niciodată cu haltera în mână.",
+  "voice": {
+   "finish": "Pune haltera jos.",
+   "last": "",
+   "mid": [
+    "Rotește încet antebrațul spre exterior.",
+    "Cotul rămâne pe loc."
+   ],
+   "start": "Haltera de o jumătate de kilogram. Cotul lipit de corp."
+  },
+  "wrong": [
+   "Nu lăsa cotul să se depărteze înainte sau în lateral.",
+   "Nu smuci greutatea.",
+   "Nu ridica umărul.",
+   "Nu folosi o haltera mai grea."
+  ]
+ },
+ "D02": {
+  "breathing": "Expiră când brațele urcă.",
+  "correct": [
+   "Ține spatele lung și drept.",
+   "Oprește-te la înălțimea umerilor.",
+   "Strânge omoplații.",
+   "Mișcă ambele brațe împreună."
+  ],
+  "desc": "Fluturări inverse aplecat, pentru umerii din spate și omoplați — mușchii de postură de care are nevoie un jucător de tenis.",
+  "howTo": [
+   "Ține în fiecare mână o haltera de 0,5 kg.",
+   "Apleacă-te din șolduri, cu spatele drept și genunchii ușor îndoiți.",
+   "Lasă brațele să atârne sub umeri.",
+   "Ridică brațele în lateral până la înălțimea umerilor și strânge omoplații.",
+   "Coboară încet."
+  ],
+  "safety": "Doar 0,5 kg. Genunchii ușor îndoiți. Nu sări niciodată cu halterele.",
+  "voice": {
+   "finish": "Ridică-te și pune-le jos.",
+   "last": "",
+   "mid": [
+    "Brațele în lateral.",
+    "Strânge omoplații."
+   ],
+   "start": "Apleacă-te, spatele drept, o jumătate de kilogram în fiecare mână."
+  },
+  "wrong": [
+   "Nu rotunji spatele.",
+   "Nu balansa greutățile.",
+   "Nu ridica brațele peste umeri.",
+   "Nu privi în sus, încordând gâtul."
+  ]
+ },
+ "D03": {
+  "breathing": "Inspiră la coborâre, expiră la ridicare.",
+  "correct": [
+   "Ține halterele la piept.",
+   "Ține călcâiele pe podea.",
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține spatele lung."
+  ],
+  "desc": "Genuflexiune goblet: două haltere de 0,5 kg ținute la piept, pentru picioare și o postură stabilă, pregătită pentru rachetă.",
+  "howTo": [
+   "Ține ambele haltere de 0,5 kg împreună, la piept.",
+   "Stai cu picioarele la lățimea umerilor.",
+   "Împinge șoldurile înapoi și îndoaie genunchii.",
+   "Ține călcâiele jos și pieptul ridicat.",
+   "Ridică-te fără să lași greutățile să se ducă înainte."
+  ],
+  "safety": "Nu sări cu halterele. Dacă te doare un genunchi, fă genuflexiuni fără greutăți.",
+  "voice": {
+   "finish": "Stai drept.",
+   "last": "",
+   "mid": [
+    "Călcâiele jos.",
+    "Genunchii deasupra degetelor."
+   ],
+   "start": "Halterele la piept. Genuflexiune lentă."
+  },
+  "wrong": [
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu ridica călcâiele.",
+   "Nu lăsa halterele să te tragă înainte.",
+   "Nu te săltă din poziția de jos."
+  ]
+ },
+ "D04": {
+  "breathing": "Respirații lente. Nu ține niciodată respirația.",
+  "correct": [
+   "Ține brațele lângă urechi.",
+   "Ține coastele jos, fără arcuirea spatelui.",
+   "Ține umerii departe de urechi.",
+   "Respiră în continuare."
+  ],
+  "desc": "Menținere nemișcată cu haltere de 0,5 kg deasupra capului, care antrenează stabilitatea umărului folosită la serviciu.",
+  "howTo": [
+   "Ține în fiecare mână o haltera de 0,5 kg.",
+   "Împinge ambele brațe drept deasupra capului.",
+   "Apropie bicepșii de urechi.",
+   "Ține coastele jos și abdomenul încordat.",
+   "Stai nemișcat și respiră până se termină timpul, apoi coboară încet."
+  ],
+  "safety": "Doar menținere — fără împingeri sau balansări. Dacă umărul tremură sau doare, coboară halterele.",
+  "voice": {
+   "finish": "Coboară încet.",
+   "last": "",
+   "mid": [
+    "Coastele jos.",
+    "Respiră în continuare."
+   ],
+   "start": "O jumătate de kilogram deasupra capului. Brațele lângă urechi."
+  },
+  "wrong": [
+   "Nu te apleca pe spate.",
+   "Nu ridica umerii.",
+   "Nu bloca și nu forța coatele.",
+   "Nu smuci greutățile în sus."
+  ]
+ },
+ "D05": {
+  "breathing": "Respirații calme pe nas, dacă poți.",
+  "correct": [
+   "Stai ca și cum un fir te trage de creștetul capului.",
+   "Ține ambii umeri la același nivel.",
+   "Ține coastele liniștite.",
+   "Ține genunchii ușor îndoiți, nu blocați."
+  ],
+  "desc": "Menținere cu valiza: o haltera de 0,5 kg într-o mână. Scopul este să rămâi drept și să nu te înclini — aceeași forță împotriva înclinării laterale folosită când te întinzi după minge.",
+  "howTo": [
+   "Ține o haltera de 0,5 kg într-o mână, cu brațul pe lângă coapsă.",
+   "Stai cu picioarele sub șolduri.",
+   "Rămâi drept: nu te înclina spre greutate și nici în partea opusă.",
+   "Stai nemișcat și respiră.",
+   "Schimbă mâna pentru cealaltă parte."
+  ],
+  "safety": "Stai pe loc. Nu merge, nu alerga și nu sări cu haltera.",
+  "voice": {
+   "finish": "Schimbă mâna.",
+   "last": "",
+   "mid": [
+    "Nu te înclina.",
+    "Umerii la același nivel."
+   ],
+   "start": "O jumătate de kilogram într-o mână. Stai drept."
+  },
+  "wrong": [
+   "Nu te înclina într-o parte.",
+   "Nu ridica umărul brațului cu greutate.",
+   "Nu merge și nu te salta.",
+   "Nu ține respirația."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Ține săriturile joase.",
+   "Aterizează moale și silențios.",
+   "Ține genunchii ușor îndoiți.",
+   "Stai drept."
+  ],
+  "desc": "Încălzire ușoară pentru glezne și gambe, cu sărituri mici și rapide.",
+  "howTo": [
+   "Stai drept, cu picioarele la lățimea șoldurilor.",
+   "Ține genunchii ușor moi.",
+   "Fă sărituri mici și rapide, folosind mai ales gleznele.",
+   "Aterizează încet și repetă."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu sări prea sus.",
+   "Nu ateriza zgomotos.",
+   "Nu bloca genunchii.",
+   "Nu lăsa gleznele să se întoarcă spre interior sau exterior."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Ține trunchiul vertical.",
+   "Ridică genunchii controlat.",
+   "Așază picioarele moale.",
+   "Respiră constant."
+  ],
+  "desc": "Alternativă de încălzire cu impact redus la genunchi sus.",
+  "howTo": [
+   "Stai drept.",
+   "Ridică un genunchi spre înălțimea șoldului.",
+   "Coboară-l controlat.",
+   "Schimbă piciorul și continuă să mărșăluiești.",
+   "Mișcă brațele natural."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te apleca pe spate.",
+   "Nu balansa picioarele fără control.",
+   "Nu lovi podeaua cu picioarele.",
+   "Nu ține respirația."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Aterizează moale.",
+   "Ține genunchii ușor îndoiți.",
+   "Mișcă brațele lin.",
+   "Respiră ritmic."
+  ],
+  "desc": "Exercițiu cardio pentru tot corpul, care accelerează pulsul și încălzește umerii, șoldurile și picioarele.",
+  "howTo": [
+   "Stai drept, cu brațele pe lângă corp.",
+   "Sari cu picioarele în lateral și ridică brațele deasupra capului.",
+   "Sari cu picioarele înapoi împreună și coboară brațele.",
+   "Repetă într-un ritm constant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu ateriza tare.",
+   "Nu bloca genunchii.",
+   "Nu ridica umerii.",
+   "Nu te mișca prea repede, pierzând controlul."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Menține un plank solid.",
+   "Ține abdomenul încordat.",
+   "Ține umerii deasupra mâinilor.",
+   "Mișcă genunchii controlat."
+  ],
+  "desc": "Exercițiu dinamic pentru trunchi și cardio, făcut dintr-un plank înalt.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Ține mâinile sub umeri.",
+   "Adu un genunchi spre piept.",
+   "Schimbă picioarele ritmic.",
+   "Ține șoldurile stabile."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile să sară sus.",
+   "Nu lăsa zona lombară să cadă.",
+   "Nu agita picioarele prea tare.",
+   "Nu lăsa umerii să se prăbușească."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Aterizează silențios.",
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține pieptul deschis.",
+   "Controlează fiecare săritură."
+  ],
+  "desc": "Exercițiu pliometric pentru picioare, pentru forță, condiție fizică și coordonare.",
+  "howTo": [
+   "Începe cu picioarele la lățimea umerilor.",
+   "Coboară într-o genuflexiune controlată.",
+   "Sari în sus.",
+   "Aterizează moale, cu genunchii ușor îndoiți.",
+   "Reia poziția înainte de următoarea săritură."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu ateriza tare.",
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu sări înainte ca genuflexiunea să fie stabilă.",
+   "Nu te grăbi fără să reiei poziția."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Aterizează silențios.",
+   "Ține genunchiul deasupra degetelor de la picioare.",
+   "Ține trunchiul controlat.",
+   "Mișcă-te lin dintr-o parte în alta."
+  ],
+  "desc": "Exercițiu de sărituri laterale pentru picioare, șolduri, echilibru și coordonare.",
+  "howTo": [
+   "Stai pe un picior.",
+   "Sari lateral pe celălalt picior.",
+   "Aterizează moale și stabilizează-te.",
+   "Repetă dintr-o parte în alta.",
+   "Folosește brațele pentru echilibru."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa genunchiul să cadă spre interior la aterizare.",
+   "Nu sări prea departe prea devreme.",
+   "Nu te prăbuși în aterizare.",
+   "Nu răsuci genunchiul la atingerea solului."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Ridică genunchii spre înălțimea șoldurilor.",
+   "Aterizează ușor.",
+   "Ține abdomenul activ.",
+   "Ține trunchiul drept."
+  ],
+  "desc": "Exercițiu cardio care accelerează pulsul și activează șoldurile, trunchiul și picioarele.",
+  "howTo": [
+   "Stai drept.",
+   "Aleargă pe loc, ridicând genunchii sus.",
+   "Mișcă brațele natural.",
+   "Ține ritmul rapid, dar controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te apleca pe spate.",
+   "Nu ateriza greu.",
+   "Nu lovi podeaua cu tălpile.",
+   "Nu pierde postura când crește ritmul."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Pune mâinile sub umeri.",
+   "Menține un plank solid.",
+   "Aterizează moale cu picioarele.",
+   "Controlează săritura."
+  ],
+  "desc": "Exercițiu de condiție fizică pentru tot corpul, care combină genuflexiunea, planckul și săritura. În acest program, folosește varianta fără flotare, dacă nu e prevăzută special o flotare.",
+  "howTo": [
+   "Stai drept.",
+   "Coboară în genuflexiune și pune mâinile pe podea.",
+   "Sari sau pășește cu picioarele înapoi într-un plank.",
+   "Sari sau pășește cu picioarele înainte.",
+   "Ridică-te și termină cu o săritură mică."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa zona lombară să cadă în plank.",
+   "Nu ateriza greu.",
+   "Nu te grăbi cu repetări neglijente.",
+   "Nu lăsa genunchii să cadă spre interior când sari înainte."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Aterizează moale și controlat.",
+   "Ține genunchiul din față deasupra degetelor de la picioare.",
+   "Ține trunchiul drept.",
+   "Ține amplitudinea sigură."
+  ],
+  "desc": "Exercițiu pliometric avansat pentru picioare, pentru forță, condiție fizică și coordonare.",
+  "howTo": [
+   "Începe în poziția de fandare.",
+   "Sari în sus.",
+   "Schimbă picioarele în aer.",
+   "Aterizează moale în fandarea opusă.",
+   "Echilibrează-te înainte de următoarea repetare."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu ateriza tare.",
+   "Nu lăsa genunchiul din față să cadă spre interior.",
+   "Nu coborî prea adânc.",
+   "Nu te mișca mai repede decât poți controla."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține călcâiele jos.",
+   "Ține spatele lung.",
+   "Ține adâncimea confortabilă."
+  ],
+  "desc": "Exercițiu controlat pentru picioare, pentru coapse, șolduri și postură.",
+  "howTo": [
+   "Stai cu picioarele ceva mai late decât șoldurile.",
+   "Împinge șoldurile înapoi.",
+   "Îndoaie genunchii la o adâncime mică, confortabilă.",
+   "Ridică-te încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu coborî prea adânc.",
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu ridica călcâiele.",
+   "Nu te lăsa repede în jos."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Ține pauza stabilă.",
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține pieptul deschis.",
+   "Ține călcâiele pe podea."
+  ],
+  "desc": "Variantă controlată de genuflexiune, cu o scurtă menținere într-o amplitudine sigură.",
+  "howTo": [
+   "Stai stabil pe picioare.",
+   "Coboară într-o genuflexiune mică, confortabilă.",
+   "Fă o scurtă pauză.",
+   "Ridică-te controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu coborî prea adânc.",
+   "Nu te săltă în poziția de jos.",
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu ține respirația."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Ține spatele drept.",
+   "Mișcă-te din șolduri.",
+   "Ține genunchii moi, nu adânc îndoiți.",
+   "Lasă gâtul să urmeze coloana."
+  ],
+  "desc": "Exercițiu de mișcare pentru șolduri, ischiogambieri și controlul zonei lombare.",
+  "howTo": [
+   "Stai drept, cu picioarele la lățimea șoldurilor.",
+   "Înmoaie ușor genunchii.",
+   "Împinge șoldurile înapoi.",
+   "Coboară trunchiul cu spatele drept.",
+   "Revino în picioare împingând șoldurile înainte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu rotunji spatele.",
+   "Nu o transforma în genuflexiune.",
+   "Nu coborî prea jos.",
+   "Nu ridica prea mult capul."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Ridică-te cu fesierul care lucrează.",
+   "Ține șoldurile la același nivel.",
+   "Mișcă-te controlat.",
+   "Ține zona lombară în poziție neutră."
+  ],
+  "desc": "Exercițiu mai solicitant pentru fesieri, cu un singur picior pe rând.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Îndoaie un genunchi și ține acel picior pe podea.",
+   "Întinde sau ridică celălalt picior.",
+   "Împinge prin călcâiul care lucrează.",
+   "Ridică șoldurile și coboară încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu răsuci bazinul.",
+   "Nu împinge prin degetele de la picioare.",
+   "Nu arcui zona lombară.",
+   "Nu coborî prea repede."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Ține șoldurile la același nivel.",
+   "Ține fesierii activi.",
+   "Mișcă-te încet.",
+   "Ține zona lombară confortabilă."
+  ],
+  "desc": "Exercițiu pentru fesieri și stabilitatea bazinului.",
+  "howTo": [
+   "Începe în poziția de pod pentru fesieri.",
+   "Ține șoldurile ridicate.",
+   "Ridică ușor un picior de la podea.",
+   "Pune-l jos și schimbă partea.",
+   "Ține bazinul stabil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile să cadă.",
+   "Nu te legăna dintr-o parte în alta.",
+   "Nu te mișca prea repede.",
+   "Nu arcui zona lombară."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Împinge prin călcâie.",
+   "Strânge fesierii în sus.",
+   "Ține coastele jos.",
+   "Nu lăsa zona lombară să se arcuiască excesiv."
+  ],
+  "desc": "Exercițiu pentru fesieri, care întărește șoldurile și lanțul posterior.",
+  "howTo": [
+   "Întinde-te pe spate.",
+   "Îndoaie genunchii și pune tălpile pe podea.",
+   "Ridică șoldurile.",
+   "Fă o pauză în sus.",
+   "Coboară încet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu arcui zona lombară în sus.",
+   "Nu ridica călcâiele.",
+   "Nu lăsa șoldurile să cadă prea repede.",
+   "Nu pune picioarele prea aproape."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Stai bine drept.",
+   "Mișcă-te lin.",
+   "Ține gleznele aliniate.",
+   "Coboară controlat."
+  ],
+  "desc": "Exercițiu pentru partea de jos a piciorului: gambe, glezne și controlul labei piciorului.",
+  "howTo": [
+   "Stai drept, cu picioarele la lățimea șoldurilor.",
+   "Ridică-te pe vârfuri.",
+   "Fă o scurtă pauză sus.",
+   "Coboară încet călcâiele."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa călcâiele să cadă repede.",
+   "Nu te legăna înainte.",
+   "Nu întoarce gleznele spre exterior.",
+   "Nu folosi elan."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Ține șoldurile ridicate.",
+   "Mișcă încet piciorul de sus.",
+   "Ține trunchiul stabil.",
+   "Ține umărul puternic."
+  ],
+  "desc": "Exercițiu pentru lanțul lateral: fesierii laterali, oblicii și stabilitatea șoldului.",
+  "howTo": [
+   "Începe într-un plank lateral.",
+   "Ține corpul într-o linie dreaptă.",
+   "Ridică ușor piciorul de sus.",
+   "Coboară-l controlat.",
+   "Repetă și schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile să cadă.",
+   "Nu balansa piciorul.",
+   "Nu rostogoli corpul pe spate.",
+   "Nu te prăbuși peste umăr."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține călcâiele pe podea.",
+   "Ține spatele lung.",
+   "Controlează adâncimea."
+  ],
+  "desc": "Genuflexiune de bază cu greutatea corpului, pentru picioare, șolduri și fesieri.",
+  "howTo": [
+   "Stai cu picioarele la lățimea umerilor.",
+   "Împinge ușor șoldurile înapoi.",
+   "Îndoaie genunchii și coboară în genuflexiune.",
+   "Ține pieptul deschis.",
+   "Ridică-te apăsând pe toată talpa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu ridica călcâiele.",
+   "Nu rotunji spatele.",
+   "Nu te lăsa prea repede în jos."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Ține genunchiul din față deasupra degetelor de la picioare.",
+   "Ține trunchiul drept.",
+   "Fă pasul înapoi controlat.",
+   "Ține călcâiul din față pe podea."
+  ],
+  "desc": "Exercițiu pentru partea inferioară a corpului: picioare, fesieri și echilibru.",
+  "howTo": [
+   "Stai drept.",
+   "Fă un pas înapoi cu un picior.",
+   "Coboară controlat în fandare.",
+   "Împinge prin piciorul din față ca să revii în picioare.",
+   "Schimbă partea."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa genunchiul din față să cadă spre interior.",
+   "Nu te apleca prea mult înainte.",
+   "Nu te lăsa repede în jos.",
+   "Nu te împinge prea tare din piciorul din spate."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Ține ritmul lent.",
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține călcâiele pe podea.",
+   "Ține spatele în poziție neutră."
+  ],
+  "desc": "Genuflexiune fără greutăți, făcută încet, pentru control și forța picioarelor.",
+  "howTo": [
+   "Stai cu picioarele la lățimea umerilor.",
+   "Coboară timp de aproximativ trei secunde.",
+   "Fă o scurtă pauză jos.",
+   "Ridică-te controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te lăsa repede în jos.",
+   "Nu te săltă din poziția de jos.",
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu ține respirația."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Ține corpul într-o singură linie.",
+   "Ține abdomenul încordat.",
+   "Ține coatele la aproximativ 30–45 de grade.",
+   "Mișcă-te controlat."
+  ],
+  "desc": "Exercițiu de bază pentru partea superioară a corpului: piept, tricepși, umeri și trunchi.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Pune mâinile sub umeri sau ceva mai late.",
+   "Coboară corpul controlat.",
+   "Împinge înapoi în sus, ținând corpul drept."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile să cadă.",
+   "Nu ridica prea sus șoldurile.",
+   "Nu deschide coatele drept în lateral.",
+   "Nu te prăbuși în poziția de jos."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Ține coatele aproape.",
+   "Ține corpul drept.",
+   "Ține umerii departe de urechi.",
+   "Ține încheieturile confortabile."
+  ],
+  "desc": "Variantă de flotare, cu mai mult accent pe tricepși.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Pune mâinile mai aproape decât la o flotare obișnuită.",
+   "Ține coatele lângă corp.",
+   "Coboară încet și împinge înapoi în sus."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu pune mâinile prea aproape.",
+   "Nu deschide coatele.",
+   "Nu lăsa zona lombară să cadă.",
+   "Nu împinge printr-o durere de încheietură sau de cot."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Ține pauza controlată.",
+   "Ține abdomenul încordat.",
+   "Ține pieptul activ.",
+   "Ține corpul drept."
+  ],
+  "desc": "Flotare controlată, cu o scurtă pauză în poziția de jos.",
+  "howTo": [
+   "Începe într-o poziție obișnuită de flotare.",
+   "Coboară încet.",
+   "Fă o pauză de o secundă aproape de jos.",
+   "Împinge în sus, fără să pierzi poziția corpului."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te relaxa jos.",
+   "Nu lăsa șoldurile să cadă.",
+   "Nu ține respirația.",
+   "Nu te săltă din poziția de jos."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Ține un ritm lent și egal.",
+   "Ține corpul drept.",
+   "Ține coatele controlate.",
+   "Respiră constant."
+  ],
+  "desc": "Variantă lentă de flotare, care crește controlul și timpul sub tensiune.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Coboară timp de aproximativ trei secunde.",
+   "Fă o pauză de o secundă aproape de jos.",
+   "Împinge în sus timp de aproximativ trei secunde."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te grăbi.",
+   "Nu te prăbuși jos.",
+   "Nu lăsa șoldurile să cadă.",
+   "Nu pierde tensiunea din abdomen."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Ține corpul orientat drept înainte.",
+   "Ține abdomenul încordat.",
+   "Ține ambii umeri stabili.",
+   "Mișcă-te controlat."
+  ],
+  "desc": "Variantă asimetrică de flotare, care solicită pieptul, umerii și trunchiul.",
+  "howTo": [
+   "Începe într-o poziție de flotare.",
+   "Pune o mână ușor înainte și cealaltă ușor înapoi.",
+   "Coboară controlat.",
+   "Împinge înapoi în sus.",
+   "Schimbă poziția mâinilor la următoarea parte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu răsuci trunchiul.",
+   "Nu lăsa un umăr să cadă.",
+   "Nu pune mâinile prea larg.",
+   "Nu forța amplitudinea dacă umărul te incomodează."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Ține șoldurile sus.",
+   "Îndoaie coatele controlat.",
+   "Ține umerii stabili.",
+   "Ține gâtul în poziție neutră."
+  ],
+  "desc": "Variantă de flotare axată pe umeri.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Apropie ușor picioarele și ridică șoldurile.",
+   "Ține capul între brațe.",
+   "Coboară capul spre podea.",
+   "Împinge înapoi în sus."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu cădea într-o flotare obișnuită.",
+   "Nu lăsa capul să conducă prea mult înainte.",
+   "Nu deschide prea mult coatele.",
+   "Nu împinge printr-o durere de umăr."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Ține abdomenul încordat.",
+   "Mișcă coatele lin.",
+   "Ține umerii jos.",
+   "Ține amplitudinea confortabilă."
+  ],
+  "desc": "Exercițiu pentru tricepși și umeri, făcut din poziția de sprijin pe antebrațe.",
+  "howTo": [
+   "Începe pe antebrațe, cu corpul lung.",
+   "Ține coatele sub umeri sau ușor în fața lor.",
+   "Împinge prin mâini și antebrațe.",
+   "Întinde ușor coatele.",
+   "Revino controlat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu forța coatele.",
+   "Nu lăsa șoldurile să cadă.",
+   "Nu ridica umerii.",
+   "Nu continua prin durere de cot sau de umăr."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Relaxează gâtul.",
+   "Mișcă umerii lin.",
+   "Ține brațele moi.",
+   "Stai bine drept."
+  ],
+  "desc": "Încălzire simplă pentru umeri, care pregătește gâtul, umerii și partea superioară a spatelui.",
+  "howTo": [
+   "Stai drept, cu brațele relaxate.",
+   "Fă cercuri lente cu umerii spre înapoi.",
+   "Apoi fă cercuri lente spre înainte.",
+   "Ține mișcarea lină și controlată."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu ridica tare umerii.",
+   "Nu te mișca prea repede.",
+   "Nu încorda gâtul.",
+   "Nu rotunji partea superioară a spatelui."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Ține brațele aproape de înălțimea umerilor.",
+   "Ține cercurile mici.",
+   "Ține umerii jos.",
+   "Relaxează gâtul."
+  ],
+  "desc": "Încălzire pentru umeri și partea superioară a spatelui, care activează deltoizii și stabilizatorii umărului.",
+  "howTo": [
+   "Stai drept și ridică brațele la înălțimea umerilor.",
+   "Fă cercuri mici spre înainte.",
+   "Apoi fă cercuri mici spre înapoi.",
+   "Ține cercurile strânse și controlate."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu face mișcări mari de balans.",
+   "Nu ridica umerii la urechi.",
+   "Nu arcui zona lombară.",
+   "Nu ține respirația."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Ține picioarele stabile.",
+   "Rotește din trunchi.",
+   "Rotește lin.",
+   "Ține genunchii nemișcați când te răsucești."
+  ],
+  "desc": "Exercițiu blând de rotație pentru trunchi și partea superioară a coloanei.",
+  "howTo": [
+   "Stai cu picioarele la lățimea șoldurilor.",
+   "Ține șoldurile mai ales orientate înainte.",
+   "Rotește partea superioară a corpului într-o parte.",
+   "Revino la centru și rotește în cealaltă parte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu răsuci genunchii odată cu corpul.",
+   "Nu te roti prea repede.",
+   "Nu te apleca pe spate.",
+   "Nu forța amplitudinea."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Ține spatele drept.",
+   "Mișcă-te din șolduri.",
+   "Ține genunchii moi, nu adânc îndoiți.",
+   "Lasă gâtul să urmeze coloana."
+  ],
+  "desc": "Exercițiu de mișcare pentru șolduri, ischiogambieri și controlul zonei lombare.",
+  "howTo": [
+   "Stai drept, cu picioarele la lățimea șoldurilor.",
+   "Înmoaie ușor genunchii.",
+   "Împinge șoldurile înapoi.",
+   "Coboară trunchiul cu spatele drept.",
+   "Revino în picioare împingând șoldurile înainte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu rotunji spatele.",
+   "Nu o transforma în genuflexiune.",
+   "Nu coborî prea jos.",
+   "Nu ridica prea mult capul."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Ține genunchii deasupra degetelor de la picioare.",
+   "Ține călcâiele pe podea.",
+   "Ține spatele lung.",
+   "Ține adâncimea moderată."
+  ],
+  "desc": "Încălzire controlată pentru picioare, într-o amplitudine sigură și mică.",
+  "howTo": [
+   "Stai cu picioarele ceva mai late decât șoldurile.",
+   "Împinge ușor șoldurile înapoi.",
+   "Îndoaie genunchii doar până la o adâncime confortabilă.",
+   "Revino încet în picioare."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu coborî prea adânc.",
+   "Nu lăsa genunchii să cadă spre interior.",
+   "Nu ridica călcâiele.",
+   "Nu te lăsa prea repede în jos."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Ține corpul într-o singură linie.",
+   "Ține umerii stabili.",
+   "Ține abdomenul activ.",
+   "Mișcă-te lin."
+  ],
+  "desc": "Încălzire pentru umeri, încheieturi și trunchi.",
+  "howTo": [
+   "Începe într-un plank înalt.",
+   "Mâinile sunt sub umeri.",
+   "Mută ușor corpul înainte.",
+   "Revino în poziția de start.",
+   "Ține mișcarea mică și controlată."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu lăsa șoldurile să cadă.",
+   "Nu împinge umerii spre urechi.",
+   "Nu te duce prea mult înainte.",
+   "Nu lăsa zona lombară să se lase."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Respiră lent și complet.",
+   "Relaxează umerii când expiri.",
+   "Ține coastele jos, nu arcui excesiv.",
+   "Mișcă-te fără grabă."
+  ],
+  "desc": "Exercițiu calm de început: respirație profundă cu o întindere blândă a întregului corp, pentru a alungi coloana.",
+  "howTo": [
+   "Stai drept, cu picioarele la lățimea șoldurilor.",
+   "Inspiră și ridică ambele brațe deasupra capului.",
+   "Alungește blând coloana.",
+   "Expiră și coboară brațele, lăsând umerii jos."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu ține respirația.",
+   "Nu arcui puternic zona lombară.",
+   "Nu ridica umerii la urechi.",
+   "Nu te grăbi cu întinderea."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Răsucește-te din trunchi.",
+   "Ține șoldurile mai ales înainte.",
+   "Ține picioarele pe loc.",
+   "Ține un ritm lin și egal."
+  ],
+  "desc": "Exercițiu blând de rotație, pentru încălzirea coloanei și a trunchiului.",
+  "howTo": [
+   "Stai cu picioarele la lățimea șoldurilor.",
+   "Lasă brațele să se legene liber.",
+   "Rotește partea superioară a corpului într-o parte.",
+   "Treci lin în cealaltă parte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu te răsuci tare din genunchi.",
+   "Nu smuci brațele.",
+   "Nu te roti prea repede.",
+   "Nu ține respirația."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Lasă brațele să se miște liber.",
+   "Ține umerii relaxați.",
+   "Lasă pieptul să se deschidă blând.",
+   "Stai bine drept."
+  ],
+  "desc": "Încălzire dinamică pentru umeri și piept, care pregătește partea superioară a corpului pentru flotări și sărituri.",
+  "howTo": [
+   "Stai drept, cu picioarele la lățimea șoldurilor.",
+   "Balansează brațele înainte și înapoi, controlat.",
+   "Lasă pieptul să se deschidă natural când brațele merg înapoi.",
+   "Ține mișcarea lină și relaxată."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nu balansa prea agresiv.",
+   "Nu ridica umerii la urechi.",
+   "Nu arcui zona lombară.",
+   "Nu lăsa mișcarea să devină elan necontrolat."
+  ]
+ }
+}

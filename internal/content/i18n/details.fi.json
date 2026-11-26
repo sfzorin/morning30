@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Pidä vastus tasaisena.",
+   "Liiku hitaasti.",
+   "Pidä kyynärpää lähellä vartaloa.",
+   "Pidä hartia alhaalla."
+  ],
+  "desc": "Varusteeton hauisharjoitus, jossa toinen käsi antaa vastusta toiselle.",
+  "howTo": [
+   "Seiso tai istu suorana.",
+   "Taivuta toinen kyynärpää kuin hauiskäännössä.",
+   "Paina vastakkaisella kädellä työskentelevää kyynärvartta alaspäin.",
+   "Käännä käsi hitaasti ylös vastusta vasten.",
+   "Vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä liikuta kättä ilman todellista vastusta.",
+   "Älä nykäise kättä.",
+   "Älä nosta hartiaa.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Pidä kyynärpään kulma samana.",
+   "Pidä jännitys tasaisena.",
+   "Rentouta hartiat.",
+   "Hengitä koko ajan."
+  ],
+  "desc": "Staattinen hauispito itse annetulla vastuksella.",
+  "howTo": [
+   "Taivuta toinen kyynärpää noin 90 asteeseen.",
+   "Paina vastakkaisella kädellä alaspäin.",
+   "Työskentelevä käsi vastustaa liikkumatta.",
+   "Pidä jännitys yllä.",
+   "Vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä paina lyhyinä nykäyksinä.",
+   "Älä kierrä vartaloa.",
+   "Älä nosta hartiaa.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Pidä jännitys hallittuna.",
+   "Pidä hartiat alhaalla.",
+   "Pidä ranteet mukavassa asennossa.",
+   "Pidä hengitys rauhallisena."
+  ],
+  "desc": "Isometrinen käsivarsien ja kyynärvarsien harjoitus, jossa kädet vetävät toisiaan vastaan.",
+  "howTo": [
+   "Tartu sormilla tai käsillä kiinni toisiisi.",
+   "Pidä kyynärpäät hieman koukussa.",
+   "Vedä käsiä erilleen toisistaan.",
+   "Pidä jännitys tasaisena.",
+   "Rentoudu hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä vedä nykäyksellä.",
+   "Älä nosta hartioita korviin.",
+   "Älä taivuta ranteita liikaa.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Laske hitaasti.",
+   "Pidä vastus tasaisena.",
+   "Pidä kyynärpää lähellä vartaloa.",
+   "Rentouta hartia."
+  ],
+  "desc": "Hidas laskuvaihe hauiksille itse annetulla vastuksella.",
+  "howTo": [
+   "Aloita toinen kyynärpää koukussa.",
+   "Anna vastusta vastakkaisella kädellä.",
+   "Laske työskentelevää kyynärvartta hitaasti alas.",
+   "Vastusta koko laskun ajan.",
+   "Vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna käden pudota nopeasti.",
+   "Älä tee liikettä ilman vastusta.",
+   "Älä kierrä vartaloa.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Pidä nosto pienenä.",
+   "Pidä niska neutraalina.",
+   "Vedä lapaluut taakse ja alas.",
+   "Jännitä pakaroita kevyesti."
+  ],
+  "desc": "Ryhtiä parantava selkäharjoitus yläselälle, lapaluille ja selän ojentajille.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Aseta kädet vartalon viereen.",
+   "Käännä peukalot hieman ulospäin.",
+   "Nosta rintakehää hieman.",
+   "Vedä lapaluut taakse ja alas.",
+   "Pidä asento."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nosta liian korkealle.",
+   "Älä heitä päätä taakse.",
+   "Älä notkista alaselkää liikaa.",
+   "Älä nosta hartioita korviin."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Rentouta niska.",
+   "Liikuta lapaluita pehmeästi.",
+   "Pidä rinnan nosto pienenä tai jätä se pois.",
+   "Liikuta käsiä kiirehtimättä."
+  ],
+  "desc": "Yläselän ja lapaluiden harjoitus mahallaan maaten.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Pidä katse alaspäin.",
+   "Liikuta käsiä leveässä kaaressa sivuilta pään yläpuolelle.",
+   "Palaa samaa reittiä takaisin.",
+   "Pidä liike hallittuna."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nosta päätä.",
+   "Älä notkista alaselkää liikaa.",
+   "Älä heiluta käsiä.",
+   "Älä nosta hartioita korviin."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Pidä liikelaajuus pienenä.",
+   "Anna lapaluiden tehdä työ.",
+   "Pidä niska neutraalina.",
+   "Pidä hartiat erossa korvista."
+  ],
+  "desc": "Yläselän harjoitus lapaluille ja takahartioille.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Taivuta kyynärpäät W-muotoon.",
+   "Nosta kyynärpäitä ja käsiä hieman.",
+   "Purista lapaluita yhteen.",
+   "Laske hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nosta liian korkealle.",
+   "Älä vedä päätä ylös.",
+   "Älä käytä vauhtia.",
+   "Älä notkista alaselkää liikaa."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Nosta käsiä vain vähän.",
+   "Pidä niska neutraalina.",
+   "Pidä hartiat alhaalla.",
+   "Liiku hallitusti."
+  ],
+  "desc": "Lapaluiden harjoitus alemmalle kolmipäiselle ja yläselälle.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Ojenna kädet vinosti pään yläpuolelle Y-muotoon.",
+   "Nosta käsiä hieman lattiasta.",
+   "Laske hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nosta liian korkealle.",
+   "Älä nosta hartioita korviin.",
+   "Älä notkista alaselkää.",
+   "Älä liiku liian nopeasti."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Pidä kädet hartioiden linjassa.",
+   "Rentouta niska.",
+   "Liikuta lapaluita pehmeästi.",
+   "Pidä nosto pienenä."
+  ],
+  "desc": "Yläselän harjoitus takahartioille ja lapaluiden hallintaan.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Ojenna kädet sivuille T-muotoon.",
+   "Nosta käsiä hieman.",
+   "Purista lapaluita yhteen.",
+   "Laske hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä heitä käsiä ylös.",
+   "Älä nosta päätä.",
+   "Älä nosta hartioita korviin.",
+   "Älä pakota suurta liikelaajuutta."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Vedä kyynärpäät alas hallitusti.",
+   "Purista lapaluita yhteen pehmeästi.",
+   "Pidä niska neutraalina.",
+   "Pidä alaselkä mukavassa asennossa."
+  ],
+  "desc": "Selkäharjoitus, joka jäljittelee vetoliikettä ilman välineitä.",
+  "howTo": [
+   "Käy mahalleen kädet pään yläpuolella.",
+   "Nosta rintakehää hieman.",
+   "Vedä kyynärpäät alas kylkiluita kohti.",
+   "Purista lapaluita yhteen.",
+   "Ojenna kädet taas eteen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nykäise käsiä.",
+   "Älä nosta liian korkealle.",
+   "Älä heitä päätä taakse.",
+   "Älä anna hartioiden nousta korviin."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Pidä niska neutraalina.",
+   "Liiku hallitusti.",
+   "Pidä alaselkä mukavassa asennossa.",
+   "Hengitä koko ajan."
+  ],
+  "desc": "Selkä- ja koordinaatioharjoitus mahallaan maaten.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Nosta rintakehää hieman.",
+   "Liikuta vastakkaista kättä ja jalkaa hallitusti uintiliikkeessä.",
+   "Pidä liike pienenä ja tasaisena."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä liiku liian nopeasti.",
+   "Älä nosta liian korkealle.",
+   "Älä heitä päätä taakse.",
+   "Älä pakota alaselkää."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Pidä rinta avoinna.",
+   "Pidä lantio ylhäällä.",
+   "Pidä hartiat vakaina.",
+   "Pidä niska neutraalina."
+  ],
+  "desc": "Takaketjun harjoitus pakaroille, takareisille, hartioille ja selälle.",
+  "howTo": [
+   "Istu lattialle jalat ojennettuina.",
+   "Aseta kädet lantion taakse.",
+   "Paina käsillä ja kantapäillä.",
+   "Nosta lantio ylös.",
+   "Pidä vartalo pitkänä linjana."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota lantiota.",
+   "Älä nosta hartioita korviin.",
+   "Älä heitä päätä taakse.",
+   "Älä pakota ranteita."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Pidä nosto pienenä.",
+   "Pidä pulssit pehmeinä.",
+   "Pidä niska pitkänä.",
+   "Pidä alaselkä hallinnassa."
+  ],
+  "desc": "Pienen liikelaajuuden selkäharjoitus selän ojentajille ja ryhdille.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Aseta kädet vartalon viereen tai kevyesti rinnan lähelle.",
+   "Nosta rintakehää hieman.",
+   "Tee pieniä hallittuja pulssivia liikkeitä.",
+   "Pidä niska neutraalina."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pulssaa liian korkealle.",
+   "Älä käytä vauhtia.",
+   "Älä katso eteenpäin.",
+   "Älä paina terävän alaselkäkivun läpi."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Pidä rinnan nosto pienenä.",
+   "Pidä W-veto pehmeänä.",
+   "Vedä lapaluut taakse ja alas.",
+   "Pidä niska pitkänä."
+  ],
+  "desc": "Vahvempi selkäharjoitus, jossa yhdistyvät pieni kobranosto ja W-muotoinen käsien veto.",
+  "howTo": [
+   "Käy mahalleen kädet eteen ojennettuina.",
+   "Nosta rintakehää hieman.",
+   "Vedä kyynärpäät alas ja taakse W-muotoon.",
+   "Purista lapaluita yhteen.",
+   "Ojenna kädet taas eteen ja laske hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää liikaa.",
+   "Älä vedä niskalla.",
+   "Älä liiku liian nopeasti.",
+   "Älä nosta hartioita korviin."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Pidä nosto pienenä.",
+   "Anna niskan seurata selkärankaa.",
+   "Pidä pakarat jännitettyinä.",
+   "Liiku tasaisesti."
+  ],
+  "desc": "Selkäharjoitus, jossa nostetaan vuorotellen vastakkaista kättä ja jalkaa uintia muistuttavassa liikkeessä.",
+  "howTo": [
+   "Käy mahalleen kädet pään yläpuolelle ojennettuina.",
+   "Nosta rintakehää ja jalkoja hieman.",
+   "Nosta yhtä kättä ja vastakkaista jalkaa.",
+   "Laske ja vaihda puolta, vuorottele sujuvasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pakota alaselkää koukkuun.",
+   "Älä nosta päätä.",
+   "Älä liiku nykäyksillä.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Pidä vartalo yhtenä linjana.",
+   "Pidä kyynärpäät hartioiden alla.",
+   "Pidä keskivartalo aktiivisena.",
+   "Pidä hengitys tasaisena."
+  ],
+  "desc": "Keskivartalon vakautusharjoitus vatsalihaksille, hartioille, pakaroille ja vartalolle.",
+  "howTo": [
+   "Aseta kyynärpäät hartioiden alle.",
+   "Astu jalat taakse.",
+   "Muodosta suora linja hartioista kantapäihin.",
+   "Jännitä vatsalihakset ja pakarat.",
+   "Pidä asento."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna alaselän pudota.",
+   "Älä nosta lantiota liian korkealle.",
+   "Älä katso eteenpäin.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Jännitä koko vartalo.",
+   "Pidä pakarat aktiivisina.",
+   "Pidä keskivartalo kireänä.",
+   "Pidä hengitys hallittuna."
+  ],
+  "desc": "Lyhyt, intensiivinen lankku, jossa koko vartalo on jännityksessä.",
+  "howTo": [
+   "Aloita kyynärnojalankusta.",
+   "Jännitä vatsalihakset voimakkaasti.",
+   "Purista pakarat yhteen.",
+   "Kuvittele vetäväsi kyynärpäitä kohti varpaita.",
+   "Pidä asento mahdollisimman hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pidä asentoa rentona lankkuna.",
+   "Älä anna lantion painua alas.",
+   "Älä pidätä hengitystä.",
+   "Älä yritä pitää liian pitkään."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Pidä alaselkä lähellä lattiaa.",
+   "Pidä jalat hallinnassa.",
+   "Rentouta niska.",
+   "Liiku pehmeästi."
+  ],
+  "desc": "Alavatsalihasten harjoitus, jossa jalat ristiintuvat hallitusti.",
+  "howTo": [
+   "Käy selälleen.",
+   "Paina alaselkä kevyesti lattiaa vasten.",
+   "Nosta jalat ilmaan.",
+   "Vie toinen jalka toisen yli.",
+   "Jatka ristiliikettä vuorotellen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää.",
+   "Älä laske jalkoja liian alas.",
+   "Älä vedä päätä eteen.",
+   "Älä liiku liian nopeasti."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Pidä liikelaajuus pienenä.",
+   "Pidä alaselkä vakaana.",
+   "Älä anna jalkojen pudota liian alas.",
+   "Pidä hengitys tasaisena."
+  ],
+  "desc": "Alavatsalihasten harjoitus lyhyillä vuorottaisilla jalkapotkuilla.",
+  "howTo": [
+   "Käy selälleen.",
+   "Paina alaselkä lattiaa vasten.",
+   "Nosta jalat ilmaan.",
+   "Liikuta jalkoja ylös ja alas lyhyinä vuorottaisina potkuina."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää.",
+   "Älä tee suuria potkuja.",
+   "Älä jännitä niskaa.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Liiku alavatsalihaksista.",
+   "Nosta lantiota hallitusti.",
+   "Rentouta niska.",
+   "Laske hitaasti."
+  ],
+  "desc": "Vatsalihasharjoitus, jossa lantiota nostetaan hallitusti.",
+  "howTo": [
+   "Käy selälleen.",
+   "Taivuta polvet ja nosta jalat ilmaan.",
+   "Käännä lantiota vatsalihaksilla hieman ylöspäin.",
+   "Laske takaisin hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä heiluta jalkoja.",
+   "Älä käytä vauhtia.",
+   "Älä vedä niskasta.",
+   "Älä pudota lantiota nopeasti."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Pidä alaselkä lattiassa.",
+   "Pidä vatsalihakset kireinä.",
+   "Rentouta niska.",
+   "Hengitä koko ajan."
+  ],
+  "desc": "Staattinen keskivartalon pito lyhennetyllä vipuvarrella paremman hallinnan vuoksi.",
+  "howTo": [
+   "Käy selälleen.",
+   "Paina alaselkä lattiaa vasten.",
+   "Nosta hartioita hieman.",
+   "Pidä polvet koukussa tai jalat korkeammalla.",
+   "Pidä asento."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää.",
+   "Älä laske jalkoja liian alas.",
+   "Älä työnnä leukaa eteen.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Pidä kyynärpää hartian alla.",
+   "Pidä lantio ylhäällä.",
+   "Pidä vartalo pitkänä.",
+   "Pidä niska neutraalina."
+  ],
+  "desc": "Sivuttainen keskivartaloharjoitus vinoille vatsalihaksille sekä hartian ja lantion vakaudelle.",
+  "howTo": [
+   "Käy kyljelleen.",
+   "Aseta kyynärpää hartian alle.",
+   "Nosta lantio ylös.",
+   "Pidä vartalo yhtenä suorana linjana.",
+   "Pidä asento."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota lantiota.",
+   "Älä nosta hartiaa korvaa kohti.",
+   "Älä käännä rintaa eteenpäin.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Pidä liike pienenä ja hallittuna.",
+   "Pidä kyynärpää hartian alla.",
+   "Liikuta lantiota suoraan ylös ja alas.",
+   "Pidä keskivartalo kireänä."
+  ],
+  "desc": "Vahvempi sivulankun muunnelma vinoille vatsalihaksille ja lantion sivuille.",
+  "howTo": [
+   "Aloita sivulankusta.",
+   "Laske lantiota hieman.",
+   "Nosta lantio takaisin ylös.",
+   "Toista hallitusti.",
+   "Vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä laske liian alas.",
+   "Älä kierrä vartaloa.",
+   "Älä lössähdä hartian varaan.",
+   "Älä liiku liian nopeasti."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Pidä lantio tasaisena.",
+   "Pidä keskivartalo kireänä.",
+   "Pidä hartiat vakaina.",
+   "Liiku hitaasti."
+  ],
+  "desc": "Keskivartalon ja hartioiden harjoitus: kosketa kutakin hartiaa lankussa ollessasi.",
+  "howTo": [
+   "Aloita suorassa lankussa käsien varassa.",
+   "Pidä lantio tasaisena ja vakaana.",
+   "Kosketa toisella kädellä vastakkaista hartiaa.",
+   "Palauta käsi ja kosketa toisella kädellä.",
+   "Pidä vartalo paikallaan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä keinuta lantiota sivulta toiselle.",
+   "Älä liiku liian nopeasti.",
+   "Älä anna alaselän pudota.",
+   "Älä kierrä vartaloa."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Pidä lantio vakaana.",
+   "Pidä keskivartalo aktiivisena.",
+   "Liiku hallitusti.",
+   "Pidä hartiat käsien tai kyynärpäiden päällä."
+  ],
+  "desc": "Keskivartalon ja ojentajien harjoitus, jossa liikutaan kyynärnojalankusta suoraan lankkuun.",
+  "howTo": [
+   "Aloita kyynärnojalankusta.",
+   "Aseta yksi käsi lattialle ja nouse ylös.",
+   "Tuo toinen käsi ylös suoraan lankkuun.",
+   "Laske takaisin kyynärvarsille.",
+   "Vaihda aloittavaa kättä vuorotellen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä keinuta lantiota sivulta toiselle.",
+   "Älä anna alaselän pudota.",
+   "Älä liiku liian nopeasti.",
+   "Älä anna hartioiden painua kasaan."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Pidä alaselkä vakaana.",
+   "Liiku hitaasti.",
+   "Kosketa kantapäällä lattiaa pehmeästi.",
+   "Pidä lantio vakaana."
+  ],
+  "desc": "Hallittu keskivartaloharjoitus ja turvallisempi vaihtoehto raskaammille jalannostoliikkeille.",
+  "howTo": [
+   "Käy selälleen.",
+   "Nosta jalat pöytäasentoon.",
+   "Laske toinen kantapää kohti lattiaa.",
+   "Kosketa kevyesti ja palaa takaisin.",
+   "Vaihda puolta vuorotellen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota jalkaa liian nopeasti.",
+   "Älä notkista alaselkää.",
+   "Älä liikuta molempia jalkoja yhtä aikaa.",
+   "Älä kiirehdi liikettä."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Pidä alaselkä lähellä lattiaa.",
+   "Liiku hitaasti.",
+   "Liikuta vastakkaista kättä ja jalkaa yhdessä.",
+   "Pidä ylävartalo paikallaan."
+  ],
+  "desc": "Keskivartalon hallintaharjoitus syville vatsalihaksille ja selkärangan vakaudelle.",
+  "howTo": [
+   "Käy selälleen.",
+   "Nosta kädet ja jalat pöytäasentoon.",
+   "Ojenna vastakkainen käsi ja jalka.",
+   "Pidä alaselkä vakaana.",
+   "Palaa takaisin ja vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää.",
+   "Älä liiku liian nopeasti.",
+   "Älä laske jalkaa liian alas.",
+   "Älä anna kylkiluiden aueta ulospäin."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Kierrä ylävartalosta.",
+   "Pidä alaselkä hallinnassa.",
+   "Rentouta niska.",
+   "Liiku pehmeästi."
+  ],
+  "desc": "Kiertävä vatsalihasharjoitus vinoille ja suorille vatsalihaksille.",
+  "howTo": [
+   "Käy selälleen.",
+   "Tuo polvet ylös.",
+   "Aseta kädet kevyesti pään viereen.",
+   "Kierrä ylävartaloa ja vie toinen kyynärpää kohti vastakkaista polvea.",
+   "Vaihda puolta hallitussa rytmissä."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä vedä niskasta.",
+   "Älä liikuta vain kyynärpäitä.",
+   "Älä kiirehdi toistoja.",
+   "Älä anna alaselän notkistua."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Anna rinnan avautua pehmeästi.",
+   "Pidä hartiat rentoina.",
+   "Pidä alaselkä mukavassa asennossa.",
+   "Pidä hartiat kivuttomina."
+  ],
+  "desc": "Lempeä venytys rinnalle ja hartioiden etuosalle.",
+  "howTo": [
+   "Käy selälleen.",
+   "Avaa kädet sivuille.",
+   "Rentouta hartiat.",
+   "Anna rinnan avautua lempeästi.",
+   "Hengitä hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pakota käsiä alas.",
+   "Älä notkista alaselkää.",
+   "Älä jännitä niskaa.",
+   "Älä venytä kivun läpi."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Pidä venytys miedon.",
+   "Anna polven pysyä hieman koukussa.",
+   "Pidä alaselkä rauhallisena.",
+   "Pidä hengitys hitaana."
+  ],
+  "desc": "Lempeä venytys reiden takaosalle.",
+  "howTo": [
+   "Käy selälleen.",
+   "Nosta yksi jalka ylös.",
+   "Tartu reiden takaa tai pohkeesta.",
+   "Vedä jalkaa lempeästi itseäsi kohti.",
+   "Vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä vedä liian kovaa.",
+   "Älä pakota jalkaa suoraksi.",
+   "Älä nosta lantiota.",
+   "Älä paina polven takana tuntuvan terävän kivun läpi."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Liiku hitaasti.",
+   "Pidä hartiat alhaalla.",
+   "Pidä hengitys rentona.",
+   "Pidä venytys miellyttävänä."
+  ],
+  "desc": "Lempeä kiertävä venytys selkärangalle ja vartalolle.",
+  "howTo": [
+   "Käy selälleen.",
+   "Taivuta polvet.",
+   "Anna polvien kallistua lempeästi toiselle sivulle.",
+   "Pidä hartiat lattiassa.",
+   "Palaa keskelle ja vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pakota polvia lattiaan.",
+   "Älä kierrä nopeasti.",
+   "Älä nosta hartiaa.",
+   "Älä venytä kivun läpi."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Pidä nosto miedon.",
+   "Pidä hartiat erossa korvista.",
+   "Pidä alaselkä mukavassa asennossa.",
+   "Pidä niska neutraalina."
+  ],
+  "desc": "Lempeä vartalon etuosan venytys ja miedon selän ojennus.",
+  "howTo": [
+   "Käy mahalleen.",
+   "Aseta kyynärvarret lattialle.",
+   "Nosta rintakehää lempeästi.",
+   "Pidä niska pitkänä.",
+   "Hengitä hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää liikaa.",
+   "Älä heitä päätä taakse.",
+   "Älä nosta hartioita korviin.",
+   "Älä pakota asentoa."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Pidä hengitys rauhallisena.",
+   "Pidä hartiat rentoina.",
+   "Pidä kasvot pehmeinä.",
+   "Anna kehon laskeutua lepoon."
+  ],
+  "desc": "Rauhallinen hengitysharjoitus treenin lopuksi.",
+  "howTo": [
+   "Käy selälleen.",
+   "Rentouta hartiat ja leuka.",
+   "Aseta yksi käsi vatsalle, jos se tuntuu hyvältä.",
+   "Hengitä sisään lempeästi.",
+   "Hengitä ulos hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä hengitä liian voimakkaasti.",
+   "Älä pidätä hengitystä.",
+   "Älä jännitä niskaa.",
+   "Älä notkista alaselkää."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Anna lantion laskeutua kohti kantapäitä.",
+   "Pidennä selkää lempeästi.",
+   "Rentouta hartiat.",
+   "Pidä hengitys hitaana."
+  ],
+  "desc": "Rauhoittava venytys selälle, lanteille ja hartioille loppuverryttelyyn.",
+  "howTo": [
+   "Polvistu ja istu lantio kohti kantapäitä.",
+   "Ojenna kädet eteen lattialle.",
+   "Anna otsan levätä lattialla.",
+   "Hengitä hitaasti ja rentoudu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pakota lantiota alas.",
+   "Älä jännitä hartioita.",
+   "Älä pidätä hengitystä.",
+   "Älä rasita polvia."
+  ]
+ },
+ "D01": {
+  "breathing": "Hengitä tasaisesti, älä pidätä hengitystä.",
+  "correct": [
+   "Pidä kyynärpää liimattuna kylkeen.",
+   "Liiku hitaasti, älä heilauta.",
+   "Pidä hartia alhaalla, erossa korvasta.",
+   "Pidä ranne suorana."
+  ],
+  "desc": "Hidas pyörittäjäkalvosimen harjoitus, joka vakauttaa olkapäätä syöttöjä ja lyöntejä varten. Yksi 0,5 kg:n käsipaino, yksi käsi kerrallaan.",
+  "howTo": [
+   "Seiso suorana ja pidä yhtä 0,5 kg:n käsipainoa.",
+   "Taivuta kyynärpää 90 asteeseen ja paina se kylkeä vasten.",
+   "Aloita kyynärvarsi vatsan edessä.",
+   "Käännä kyynärvartta hitaasti ulospäin, poispäin vartalosta.",
+   "Palaa hitaasti takaisin, sitten vaihda kättä."
+  ],
+  "safety": "Vain 0,5 kg. Lopeta, jos olkapäähän sattuu. Älä koskaan juokse tai hyppää käsipainon kanssa.",
+  "voice": {
+   "finish": "Laske käsipaino alas.",
+   "last": "",
+   "mid": [
+    "Käännä kyynärvartta hitaasti ulos.",
+    "Kyynärpää pysyy paikallaan."
+   ],
+   "start": "Puolen kilon käsipaino. Kyynärpää kiinni kyljessä."
+  },
+  "wrong": [
+   "Älä anna kyynärpään liukua eteen tai ulos.",
+   "Älä nykäise painoa.",
+   "Älä nosta hartioita.",
+   "Älä käytä raskaampaa käsipainoa."
+  ]
+ },
+ "D02": {
+  "breathing": "Hengitä ulos, kun kädet nousevat.",
+  "correct": [
+   "Pidä selkä pitkänä ja suorana.",
+   "Pysäytä liike hartiakorkeudelle.",
+   "Purista lapaluita yhteen.",
+   "Liikuta molempia käsiä yhdessä."
+  ],
+  "desc": "Etukumara vastakkainen sivuntaivutus takahartioille ja lapaluille, eli tennispelaajan tarvitsemille ryhtilihaksille.",
+  "howTo": [
+   "Pidä 0,5 kg:n käsipainoa kummassakin kädessä.",
+   "Taivuta lantiosta, selkä suorana ja polvet pehmeinä.",
+   "Anna käsien roikkua hartioiden alla.",
+   "Nosta kädet sivuille hartiakorkeuteen ja purista lapaluita yhteen.",
+   "Laske hitaasti."
+  ],
+  "safety": "Vain 0,5 kg. Pehmeät polvet. Älä koskaan hyppää käsipainojen kanssa.",
+  "voice": {
+   "finish": "Nouse ylös ja laske painot alas.",
+   "last": "",
+   "mid": [
+    "Kädet sivuille.",
+    "Purista lapaluita yhteen."
+   ],
+   "start": "Taivuta lantiosta, selkä suorana, puolen kilon paino kummassakin kädessä."
+  },
+  "wrong": [
+   "Älä pyöristä selkää.",
+   "Älä heiluta painoja.",
+   "Älä nosta hartioiden yläpuolelle.",
+   "Älä katso ylös niskaa rutistaen."
+  ]
+ },
+ "D03": {
+  "breathing": "Hengitä sisään alas mennessä, ulos ylös noustessa.",
+  "correct": [
+   "Pidä käsipainot rinnan edessä.",
+   "Pidä kantapäät lattiassa.",
+   "Pidä polvet varpaiden päällä.",
+   "Pidä selkä pitkänä."
+  ],
+  "desc": "Goblet-kyykky: kaksi 0,5 kg:n käsipainoa rinnan edessä jaloille ja vakaalle, mailavalmiille ryhdille.",
+  "howTo": [
+   "Pidä kahta 0,5 kg:n käsipainoa yhdessä rinnan edessä.",
+   "Seiso jalat noin hartioiden leveydellä.",
+   "Työnnä lantiota taakse ja taivuta polvia.",
+   "Pidä kantapäät maassa ja rinta pystyssä.",
+   "Nouse ylös antamatta painojen vetää eteen."
+  ],
+  "safety": "Älä hyppää käsipainojen kanssa. Jos polveen sattuu, tee kyykky ilman painoja.",
+  "voice": {
+   "finish": "Seiso suorana.",
+   "last": "",
+   "mid": [
+    "Kantapäät alas.",
+    "Polvet varpaiden päällä."
+   ],
+   "start": "Käsipainot rinnan edessä. Hidas kyykky."
+  },
+  "wrong": [
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä nosta kantapäitä.",
+   "Älä anna käsipainojen vetää itseäsi eteen.",
+   "Älä kimmota ylös alaasennosta."
+  ]
+ },
+ "D04": {
+  "breathing": "Hitaita hengityksiä. Älä koskaan pidätä hengitystä.",
+  "correct": [
+   "Pidä kädet korvien vieressä.",
+   "Pidä kylkiluut alhaalla, älä notkista selkää.",
+   "Pidä hartiat erossa korvista.",
+   "Hengitä koko ajan."
+  ],
+  "desc": "Paikallaan pysyvä pito pään yläpuolella 0,5 kg:n käsipainoilla, joka harjoittaa syötössä tarvittavaa olkapään vakautta.",
+  "howTo": [
+   "Pidä 0,5 kg:n käsipainoa kummassakin kädessä.",
+   "Paina molemmat kädet suoraksi pään yläpuolelle.",
+   "Tuo hauikset lähelle korvia.",
+   "Pidä kylkiluut alhaalla ja vatsa kireänä.",
+   "Pysy paikallaan ja hengitä ajan loppuun asti, sitten laske hitaasti."
+  ],
+  "safety": "Vain pito, ei punnerruksia eikä heilautuksia. Jos olkapää tärisee tai kipeytyy, laske käsipainot.",
+  "voice": {
+   "finish": "Laske hitaasti.",
+   "last": "",
+   "mid": [
+    "Kylkiluut alas.",
+    "Hengitä koko ajan."
+   ],
+   "start": "Puoli kiloa pään yläpuolella. Kädet korvien vieressä."
+  },
+  "wrong": [
+   "Älä nojaa taakse.",
+   "Älä nosta hartioita korviin.",
+   "Älä lukitse ja hankaa kyynärpäitä.",
+   "Älä nykäise painoja ylös."
+  ]
+ },
+ "D05": {
+  "breathing": "Rauhallisia hengityksiä sisään ja ulos nenän kautta, jos pystyt.",
+  "correct": [
+   "Seiso kuin naru vetäisi päälakea ylöspäin.",
+   "Pidä molemmat hartiat samalla tasolla.",
+   "Pidä kylkiluut rauhallisina.",
+   "Pidä polvet pehmeinä, älä lukitse niitä."
+  ],
+  "desc": "Matkalaukkupito: yksi 0,5 kg:n käsipaino yhdessä kädessä. Tehtävänä on pysyä suorana eikä kallistua, samaa sivutaivutusta vastustavaa voimaa tarvitaan, kun syöksyy pallon perään.",
+  "howTo": [
+   "Pidä yhtä 0,5 kg:n käsipainoa yhdessä kädessä, käsi roikkuu reiden vieressä.",
+   "Seiso jalat lantion alla.",
+   "Pysy suorana: älä nojaa painoa kohti äläkä siitä poispäin.",
+   "Pysy paikallaan ja hengitä.",
+   "Vaihda kättä toista puolta varten."
+  ],
+  "safety": "Seiso paikallasi. Älä kävele, juokse tai hyppää käsipainon kanssa.",
+  "voice": {
+   "finish": "Vaihda kättä.",
+   "last": "",
+   "mid": [
+    "Älä nojaa.",
+    "Hartiat samalla tasolla."
+   ],
+   "start": "Yksi puolen kilon paino yhdessä kädessä. Seiso suorana."
+  },
+  "wrong": [
+   "Älä nojaa sivulle.",
+   "Älä nosta painoa kantavan käden hartiaa.",
+   "Älä kävele tai pomppaa.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Pidä hypyt matalina.",
+   "Laskeudu pehmeästi ja hiljaa.",
+   "Pidä polvet hieman koukussa.",
+   "Seiso pitkänä."
+  ],
+  "desc": "Kevyt nilkkojen ja pohkeiden lämmittely pienillä, nopeilla hypyillä.",
+  "howTo": [
+   "Seiso suorana jalat noin lantion leveydellä.",
+   "Pidä polvet hieman pehmeinä.",
+   "Tee pieniä nopeita hyppyjä lähinnä nilkoilla.",
+   "Laskeudu hiljaa ja toista."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä hyppää liian korkealle.",
+   "Älä laskeudu kovaa.",
+   "Älä lukitse polvia.",
+   "Älä anna nilkkojen kaatua sisään tai ulos."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Pidä ylävartalo pystyssä.",
+   "Nosta polvet hallitusti.",
+   "Laske jalat pehmeästi.",
+   "Pidä hengitys tasaisena."
+  ],
+  "desc": "Vähän rasittava lämmittelyvaihtoehto polvennostojuoksulle.",
+  "howTo": [
+   "Seiso suorana.",
+   "Nosta yksi polvi lähelle lantion korkeutta.",
+   "Laske se hallitusti.",
+   "Vaihda puolta ja jatka marssimista.",
+   "Anna käsien liikkua luonnollisesti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nojaa taakse.",
+   "Älä heiluta jalkoja hallitsemattomasti.",
+   "Älä paiskaa jalkoja alas.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Laskeudu pehmeästi.",
+   "Pidä polvet hieman koukussa.",
+   "Liikuta käsiä sulavasti.",
+   "Pidä hengitys rytmikkäänä."
+  ],
+  "desc": "Koko kehon kardioharjoitus, joka nostaa sykettä ja lämmittää hartiat, lantion ja jalat.",
+  "howTo": [
+   "Seiso suorana kädet sivuilla.",
+   "Hypi jalat ulos ja nosta kädet pään yläpuolelle.",
+   "Hypi jalat takaisin yhteen ja laske kädet.",
+   "Toista tasaisella rytmillä."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä laskeudu kovaa.",
+   "Älä lukitse polvia.",
+   "Älä nosta hartioita korviin.",
+   "Älä mene liian nopeasti niin, että hallinta katoaa."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Pidä lankku vahvana.",
+   "Pidä keskivartalo kireänä.",
+   "Pidä hartiat käsien päällä.",
+   "Liikuta polvia hallitusti."
+  ],
+  "desc": "Dynaaminen keskivartalon ja kardion harjoitus suorasta lankusta.",
+  "howTo": [
+   "Aloita suorassa lankussa.",
+   "Pidä kädet hartioiden alla.",
+   "Vie yksi polvi kohti rintaa.",
+   "Vaihda jalkaa rytmikkäästi.",
+   "Pidä lantio vakaana."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna lantion pomppia korkealle.",
+   "Älä anna alaselän pudota.",
+   "Älä heiluta jalkoja liian villisti.",
+   "Älä anna hartioiden painua kasaan."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Laskeudu hiljaa.",
+   "Pidä polvet varpaiden päällä.",
+   "Pidä rinta avoinna.",
+   "Pidä jokainen hyppy hallittuna."
+  ],
+  "desc": "Plyometrinen jalkaharjoitus voimaan, kuntoon ja koordinaatioon.",
+  "howTo": [
+   "Aloita jalat noin hartioiden leveydellä.",
+   "Laskeudu hallittuun kyykkyyn.",
+   "Hyppää ylös.",
+   "Laskeudu pehmeästi polvet hieman koukussa.",
+   "Palauta asento ennen seuraavaa hyppyä."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä laskeudu kovaa.",
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä hyppää, ennen kuin kyykky on vakaa.",
+   "Älä kiirehdi palauttamatta asentoa."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Laskeudu hiljaa.",
+   "Pidä polvi varpaan päällä.",
+   "Pidä ylävartalo hallinnassa.",
+   "Liiku sujuvasti puolelta toiselle."
+  ],
+  "desc": "Sivuttainen hyppyharjoitus jaloille, lantiolle, tasapainolle ja koordinaatiolle.",
+  "howTo": [
+   "Seiso yhdellä jalalla.",
+   "Hyppää sivulle toiselle jalalle.",
+   "Laskeudu pehmeästi ja vakaudu.",
+   "Toista puolelta toiselle.",
+   "Käytä käsiä tasapainon apuna."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna polven painua sisäänpäin laskeutuessasi.",
+   "Älä hyppää liian pitkälle liian aikaisin.",
+   "Älä kaadu laskeutumiseen.",
+   "Älä kierrä polvea maahan osuessasi."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Nosta polvet kohti lantion korkeutta.",
+   "Pidä laskeutumiset kevyinä.",
+   "Pidä keskivartalo aktiivisena.",
+   "Pidä ylävartalo pystyssä."
+  ],
+  "desc": "Kardioharjoitus, joka nostaa sykettä ja aktivoi lantion, keskivartalon ja jalat.",
+  "howTo": [
+   "Seiso suorana.",
+   "Juokse paikallaan ja nosta polvet korkealle.",
+   "Liikuta käsiä luonnollisesti.",
+   "Pidä rytmi nopeana mutta hallittuna."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä nojaa taakse.",
+   "Älä laskeudu raskaasti.",
+   "Älä anna jalkojen läimiä lattiaan.",
+   "Älä menetä ryhtiä vauhdin kasvaessa."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Aseta kädet hartioiden alle.",
+   "Pidä lankku vahvana.",
+   "Laske jalat pehmeästi maahan.",
+   "Pidä hyppy hallittuna."
+  ],
+  "desc": "Koko kehon kuntoharjoitus, jossa yhdistyvät kyykky, lankku ja hyppy. Tässä ohjelmassa käytä versiota ilman punnerrusta, ellei punnerrusta erikseen ohjeisteta.",
+  "howTo": [
+   "Seiso suorana.",
+   "Mene kyykkyyn ja aseta kädet lattialle.",
+   "Hyppää tai astu jalat taakse lankkuun.",
+   "Hyppää tai astu jalat eteen.",
+   "Nouse ylös ja päätä pieneen hyppyyn."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna alaselän pudota lankussa.",
+   "Älä laskeudu raskaasti.",
+   "Älä kiirehdi huolimattomia toistoja.",
+   "Älä anna polvien painua sisäänpäin eteen hypätessäsi."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Laskeudu pehmeästi ja hallitusti.",
+   "Pidä etupolvi varpaiden päällä.",
+   "Pidä ylävartalo pystyssä.",
+   "Pidä liikelaajuus turvallisena."
+  ],
+  "desc": "Vaativa plyometrinen jalkaharjoitus voimaan, kuntoon ja koordinaatioon.",
+  "howTo": [
+   "Aloita askelkyykkyasennosta.",
+   "Hyppää ylös.",
+   "Vaihda jalat ilmassa.",
+   "Laskeudu pehmeästi vastakkaiseen askelkyykkyyn.",
+   "Hae tasapaino ennen seuraavaa toistoa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä laskeudu kovaa.",
+   "Älä anna etupolven painua sisäänpäin.",
+   "Älä mene liian syvälle.",
+   "Älä liiku nopeammin kuin hallitset."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Pidä polvet varpaiden päällä.",
+   "Pidä kantapäät alhaalla.",
+   "Pidä selkä pitkänä.",
+   "Pidä syvyys mukavana."
+  ],
+  "desc": "Hallittu jalkaharjoitus reisille, lantiolle ja ryhdille.",
+  "howTo": [
+   "Seiso jalat hieman lantiota leveämmällä.",
+   "Työnnä lantiota taakse.",
+   "Taivuta polvia mukavaan matalaan syvyyteen.",
+   "Nouse hitaasti takaisin ylös."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä tee kyykkyä liian syvälle.",
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä nosta kantapäitä.",
+   "Älä pudottaudu nopeasti."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Pidä tauko vakaana.",
+   "Pidä polvet varpaiden päällä.",
+   "Pidä rinta avoinna.",
+   "Pidä kantapäät lattiassa."
+  ],
+  "desc": "Hallittu kyykkymuunnelma lyhyellä pidolla turvallisella liikealueella.",
+  "howTo": [
+   "Seiso vakaasti.",
+   "Laskeudu mukavaan matalaan kyykkyyn.",
+   "Pysähdy hetkeksi.",
+   "Nouse takaisin ylös hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä mene liian syvälle.",
+   "Älä kimmota alaasennossa.",
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Pidä selkä suorana.",
+   "Liiku lantiosta.",
+   "Pidä polvet pehmeinä, älä taivuta niitä syvälle.",
+   "Anna niskan seurata selkärankaa."
+  ],
+  "desc": "Liikeharjoitus lantiolle, takareisille ja alaselän hallintaan.",
+  "howTo": [
+   "Seiso suorana jalat lantion leveydellä.",
+   "Pehmennä polvia hieman.",
+   "Työnnä lantiota taakse.",
+   "Laske ylävartaloa selkä suorana.",
+   "Nouse takaisin seisomaan työntämällä lantio eteen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pyöristä selkää.",
+   "Älä tee siitä kyykkyä.",
+   "Älä ojenna liian alas.",
+   "Älä nosta päätä liian korkealle."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Nosta työskentelevällä pakaralla.",
+   "Pidä lantio tasaisena.",
+   "Liiku hallitusti.",
+   "Pidä alaselkä neutraalina."
+  ],
+  "desc": "Vahvempi pakaraharjoitus, jossa käytetään yhtä jalkaa kerrallaan.",
+  "howTo": [
+   "Käy selälleen.",
+   "Taivuta toinen polvi ja pidä jalkaterä lattialla.",
+   "Ojenna tai nosta toinen jalka.",
+   "Paina työskentelevän jalan kantapäällä.",
+   "Nosta lantio ja laske hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä kierrä lantiota.",
+   "Älä paina varpaiden kautta.",
+   "Älä notkista alaselkää.",
+   "Älä pudota liian nopeasti."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Pidä lantio tasaisena.",
+   "Pidä pakarat aktiivisina.",
+   "Liiku hitaasti.",
+   "Pidä alaselkä mukavassa asennossa."
+  ],
+  "desc": "Pakaroiden ja lantion vakauden harjoitus.",
+  "howTo": [
+   "Aloita lantionnoston asennosta.",
+   "Pidä lantio ylhäällä.",
+   "Nosta yksi jalka hieman lattiasta.",
+   "Laske se alas ja vaihda puolta.",
+   "Pidä lantio vakaana."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna lantion pudota.",
+   "Älä keinu sivulta toiselle.",
+   "Älä liiku liian nopeasti.",
+   "Älä notkista alaselkää."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Paina kantapäillä.",
+   "Purista pakarat yhteen ylhäällä.",
+   "Pidä kylkiluut alhaalla.",
+   "Älä anna alaselän notkistua liikaa."
+  ],
+  "desc": "Pakaraharjoitus, joka vahvistaa lantiota ja takaketjua.",
+  "howTo": [
+   "Käy selälleen.",
+   "Taivuta polvet ja aseta jalat lattialle.",
+   "Nosta lantio ylös.",
+   "Pysähdy yläasentoon.",
+   "Laske hitaasti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä notkista alaselkää ylhäällä.",
+   "Älä nosta kantapäitä.",
+   "Älä pudota lantiota liian nopeasti.",
+   "Älä aseta jalkoja liian lähelle."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Seiso pitkänä.",
+   "Liiku sujuvasti.",
+   "Pidä nilkat linjassa.",
+   "Laske hallitusti."
+  ],
+  "desc": "Alajalan harjoitus pohkeille, nilkoille ja jalkaterän hallintaan.",
+  "howTo": [
+   "Seiso suorana jalat lantion leveydellä.",
+   "Nouse jalkaterien etuosien varaan.",
+   "Pysähdy hetkeksi ylhäällä.",
+   "Laske kantapäät hitaasti alas."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota kantapäitä nopeasti.",
+   "Älä keinu eteenpäin.",
+   "Älä anna nilkkojen kaatua ulospäin.",
+   "Älä käytä vauhtia."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Pidä lantio ylhäällä.",
+   "Liikuta ylempää jalkaa hitaasti.",
+   "Pidä ylävartalo vakaana.",
+   "Pidä hartia vahvana."
+  ],
+  "desc": "Sivuketjun harjoitus sivupakaroille, vinoille vatsalihaksille ja lantion vakaudelle.",
+  "howTo": [
+   "Aloita sivulankusta.",
+   "Pidä vartalo suorana linjana.",
+   "Nosta ylempää jalkaa hieman.",
+   "Laske se hallitusti.",
+   "Toista ja vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota lantiota.",
+   "Älä heiluta jalkaa.",
+   "Älä kierrä vartaloa taaksepäin.",
+   "Älä lössähdä hartian varaan."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Pidä polvet varpaiden päällä.",
+   "Pidä kantapäät lattiassa.",
+   "Pidä selkä pitkänä.",
+   "Pidä syvyys hallittuna."
+  ],
+  "desc": "Perus kyykky omalla painolla jaloille, lantiolle ja pakaroille.",
+  "howTo": [
+   "Seiso jalat noin hartioiden leveydellä.",
+   "Työnnä lantiota hieman taakse.",
+   "Taivuta polvia ja laskeudu kyykkyyn.",
+   "Pidä rinta avoinna.",
+   "Nouse takaisin ylös koko jalkaterän kautta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä nosta kantapäitä.",
+   "Älä pyöristä selkää.",
+   "Älä pudottaudu liian nopeasti."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Pidä etupolvi varpaiden päällä.",
+   "Pidä ylävartalo pystyssä.",
+   "Astu taakse hallitusti.",
+   "Pidä etukantapää maassa."
+  ],
+  "desc": "Alavartalon harjoitus jaloille, pakaroille ja tasapainolle.",
+  "howTo": [
+   "Seiso suorana.",
+   "Astu yksi jalka taakse.",
+   "Laskeudu askelkyykkyyn hallitusti.",
+   "Paina etujalalla ja palaa seisomaan.",
+   "Vaihda puolta."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä anna etupolven painua sisäänpäin.",
+   "Älä nojaa liikaa eteen.",
+   "Älä pudottaudu nopeasti.",
+   "Älä työnnä takajalalla liian voimakkaasti."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Pidä tempo hitaana.",
+   "Pidä polvet varpaiden päällä.",
+   "Pidä kantapäät maassa.",
+   "Pidä selkä neutraalina."
+  ],
+  "desc": "Hitaasti tehty ilmakyykky hallinnan ja jalkavoiman kehittämiseen.",
+  "howTo": [
+   "Seiso jalat hartioiden leveydellä.",
+   "Laskeudu noin kolmessa sekunnissa.",
+   "Pysähdy hetkeksi alas.",
+   "Nouse ylös hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudottaudu nopeasti alas.",
+   "Älä kimmota ylös alaasennosta.",
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Pidä vartalo yhtenä linjana.",
+   "Pidä keskivartalo kireänä.",
+   "Pidä kyynärpäät noin 30–45 asteen kulmassa.",
+   "Liiku hallitusti."
+  ],
+  "desc": "Perus ylävartaloharjoitus rinnalle, ojentajille, hartioille ja keskivartalolle.",
+  "howTo": [
+   "Aloita suorassa lankussa.",
+   "Aseta kädet hartioiden alle tai hieman leveämmälle.",
+   "Laske vartaloa hallitusti.",
+   "Paina takaisin ylös vartalo suorana."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota lantiota.",
+   "Älä nosta lantiota liian korkealle.",
+   "Älä levitä kyynärpäitä suoraan sivuille.",
+   "Älä kaadu alaasentoon."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Pidä kyynärpäät lähellä.",
+   "Pidä vartalo suorana.",
+   "Pidä hartiat erossa korvista.",
+   "Pidä ranteet mukavassa asennossa."
+  ],
+  "desc": "Punnerrusmuunnelma, jossa painotetaan enemmän ojentajia.",
+  "howTo": [
+   "Aloita suorassa lankussa.",
+   "Aseta kädet lähemmäs toisiaan kuin tavallisessa punnerruksessa.",
+   "Pidä kyynärpäät lähellä vartaloa.",
+   "Laskeudu hitaasti ja paina takaisin ylös."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä aseta käsiä liian lähelle toisiaan.",
+   "Älä levitä kyynärpäitä.",
+   "Älä anna alaselän pudota.",
+   "Älä paina ranne- tai kyynärpääkivun läpi."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Pidä tauko hallittuna.",
+   "Pidä keskivartalo kireänä.",
+   "Pidä rinta aktiivisena.",
+   "Pidä vartalo suorana."
+  ],
+  "desc": "Hallittu punnerrus, jossa alaasennossa on lyhyt tauko.",
+  "howTo": [
+   "Aloita tavallisessa punnerrusasennossa.",
+   "Laskeudu hitaasti.",
+   "Pysähdy sekunnin ajaksi lähelle alaasentoa.",
+   "Paina takaisin ylös menettämättä vartalon asentoa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä rentoudu alhaalla.",
+   "Älä pudota lantiota.",
+   "Älä pidätä hengitystä.",
+   "Älä kimmota ylös alaasennosta."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Pidä tempo hitaana ja tasaisena.",
+   "Pidä vartalo suorana.",
+   "Pidä kyynärpäät hallinnassa.",
+   "Pidä hengitys tasaisena."
+  ],
+  "desc": "Hidas punnerrusmuunnelma, joka lisää hallintaa ja lihasten jännitysaikaa.",
+  "howTo": [
+   "Aloita suorassa lankussa.",
+   "Laskeudu noin kolmessa sekunnissa.",
+   "Pysähdy sekunnin ajaksi lähelle alaasentoa.",
+   "Paina ylös noin kolmessa sekunnissa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä kiirehdi liikettä.",
+   "Älä romahda alhaalla.",
+   "Älä anna lantion painua alas.",
+   "Älä päästä keskivartalon jännitystä."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Pidä vartalo suorassa linjassa eteenpäin.",
+   "Pidä keskivartalo kireänä.",
+   "Pidä molemmat hartiat vakaina.",
+   "Liiku hallitusti."
+  ],
+  "desc": "Epäsymmetrinen punnerrusmuunnelma, joka haastaa rinnan, hartiat ja keskivartalon.",
+  "howTo": [
+   "Aloita punnerrusasennossa.",
+   "Aseta toinen käsi hieman eteen ja toinen hieman taakse.",
+   "Laskeudu hallitusti.",
+   "Paina takaisin ylös.",
+   "Vaihda käsien asentoa seuraavalla puolella."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä kierrä vartaloa.",
+   "Älä pudota toista hartiaa.",
+   "Älä aseta käsiä liian leveälle.",
+   "Älä pakota liikelaajuutta, jos olkapää tuntuu epämukavalta."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Pidä lantio korkealla.",
+   "Taivuta kyynärpäitä hallitusti.",
+   "Pidä hartiat vakaina.",
+   "Pidä niska neutraalina."
+  ],
+  "desc": "Hartioihin painottuva punnerrusmuunnelma.",
+  "howTo": [
+   "Aloita suorassa lankussa.",
+   "Kävele jalat hieman lähemmäs ja nosta lantio ylös.",
+   "Pidä pää käsien välissä.",
+   "Laske pää kohti lattiaa.",
+   "Paina takaisin ylös."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä vaihda tavalliseen punnerrukseen.",
+   "Älä anna pään kulkea liian pitkälle eteen.",
+   "Älä levitä kyynärpäitä liikaa.",
+   "Älä paina olkapääkivun läpi."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Pidä keskivartalo kireänä.",
+   "Liikuta kyynärpäitä sujuvasti.",
+   "Pidä hartiat alhaalla.",
+   "Pidä liikelaajuus mukavana."
+  ],
+  "desc": "Ojentaja- ja hartiaharjoitus kyynärtuennassa.",
+  "howTo": [
+   "Aloita kyynärvarsien varassa vartalo pitkänä.",
+   "Pidä kyynärpäät hartioiden alla tai hieman niiden edessä.",
+   "Paina käsien ja kyynärvarsien kautta.",
+   "Ojenna kyynärpäitä hieman.",
+   "Palaa takaisin hallitusti."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pakota kyynärpäitä.",
+   "Älä pudota lantiota.",
+   "Älä nosta hartioita korviin.",
+   "Älä liiku kyynärpää- tai olkapääkivun läpi."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Rentouta niska.",
+   "Liikuta hartioita sujuvasti.",
+   "Pidä kädet löysinä.",
+   "Seiso pitkänä."
+  ],
+  "desc": "Yksinkertainen hartioiden lämmittely niskan, hartioiden ja yläselän valmisteluun.",
+  "howTo": [
+   "Seiso suorana kädet rentoina.",
+   "Tee hitaita hartioiden ympyröitä taaksepäin.",
+   "Tee sitten hitaita ympyröitä eteenpäin.",
+   "Pidä liike sujuvana ja hallittuna."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä kohauta voimakkaasti.",
+   "Älä liiku liian nopeasti.",
+   "Älä jännitä niskaa.",
+   "Älä pyöristä yläselkää."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Pidä kädet hartiakorkeuden tuntumassa.",
+   "Pidä ympyrät pieninä.",
+   "Pidä hartiat alhaalla.",
+   "Rentouta niska."
+  ],
+  "desc": "Hartioiden ja yläselän lämmittely, joka aktivoi hartialihaksia ja hartioiden vakaajia.",
+  "howTo": [
+   "Seiso suorana ja nosta kädet hartiakorkeudelle.",
+   "Tee pieniä ympyröitä eteenpäin.",
+   "Tee sitten pieniä ympyröitä taaksepäin.",
+   "Pidä ympyrät tiukkoina ja hallittuina."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä tee suuria heiluvia liikkeitä.",
+   "Älä nosta hartioita korviin.",
+   "Älä notkista alaselkää.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Pidä jalat vakaina.",
+   "Käänny vartalosta.",
+   "Kierrä sujuvasti.",
+   "Pidä polvet paikallaan kääntyessäsi."
+  ],
+  "desc": "Lempeä kiertoharjoitus vartalolle ja ylemmälle selkärangalle.",
+  "howTo": [
+   "Seiso jalat lantion leveydellä.",
+   "Pidä lantio enimmäkseen eteenpäin.",
+   "Kierrä ylävartaloa toiselle sivulle.",
+   "Palaa keskelle ja kierrä toiselle sivulle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä käännä polvia vartalon mukana.",
+   "Älä kierrä liian nopeasti.",
+   "Älä nojaa taakse.",
+   "Älä pakota liikelaajuutta."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Pidä selkä suorana.",
+   "Liiku lantiosta.",
+   "Pidä polvet pehmeinä, älä taivuta niitä syvälle.",
+   "Anna niskan seurata selkärankaa."
+  ],
+  "desc": "Liikeharjoitus lantiolle, takareisille ja alaselän hallintaan.",
+  "howTo": [
+   "Seiso suorana jalat lantion leveydellä.",
+   "Pehmennä polvia hieman.",
+   "Työnnä lantiota taakse.",
+   "Laske ylävartaloa selkä suorana.",
+   "Nouse takaisin seisomaan työntämällä lantio eteen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pyöristä selkää.",
+   "Älä tee siitä kyykkyä.",
+   "Älä ojenna liian alas.",
+   "Älä nosta päätä liian korkealle."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Pidä polvet varpaiden päällä.",
+   "Pidä kantapäät lattiassa.",
+   "Pidä selkä pitkänä.",
+   "Pidä syvyys kohtuullisena."
+  ],
+  "desc": "Hallittu jalkojen lämmittely turvallisella, matalalla liikealueella.",
+  "howTo": [
+   "Seiso jalat hieman lantiota leveämmällä.",
+   "Työnnä lantiota hieman taakse.",
+   "Taivuta polvia vain mukavaan syvyyteen.",
+   "Palaa hitaasti seisomaan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä tee kyykkyä liian syvälle.",
+   "Älä anna polvien painua sisäänpäin.",
+   "Älä nosta kantapäitä.",
+   "Älä pudottaudu liian nopeasti."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Pidä vartalo yhtenä linjana.",
+   "Pidä hartiat vakaina.",
+   "Pidä keskivartalo aktiivisena.",
+   "Liiku sujuvasti."
+  ],
+  "desc": "Lämmittely hartioille, ranteille ja keskivartalolle.",
+  "howTo": [
+   "Aloita suorassa lankussa.",
+   "Kädet ovat hartioiden alla.",
+   "Siirrä vartaloa hieman eteenpäin.",
+   "Siirry takaisin lähtöasentoon.",
+   "Pidä liike pienenä ja hallittuna."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pudota lantiota.",
+   "Älä työnnä hartioita korviin.",
+   "Älä siirry liian pitkälle eteen.",
+   "Älä anna alaselän notkahtaa."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Hengitä hitaasti ja täyteen.",
+   "Rentouta hartiat ulos hengittäessäsi.",
+   "Pidä kylkiluut alhaalla, älä notkista selkää liikaa.",
+   "Liiku kiirehtimättä."
+  ],
+  "desc": "Rauhallinen aloitusharjoitus: syvä hengitys ja lempeä koko vartalon ojennus selkärangan pidentämiseen.",
+  "howTo": [
+   "Seiso suorana jalat lantion leveydellä.",
+   "Hengitä sisään ja ojenna molemmat kädet pään yläpuolelle.",
+   "Pidennä selkärankaa lempeästi.",
+   "Hengitä ulos ja laske kädet alas hartiat rentouttaen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä pidätä hengitystä.",
+   "Älä notkista alaselkää voimakkaasti.",
+   "Älä nosta hartioita korviin.",
+   "Älä kiirehdi ojennusta."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Käänny vartalosta.",
+   "Pidä lantio enimmäkseen eteenpäin.",
+   "Pidä jalat maassa.",
+   "Pidä tasainen ja sujuva tahti."
+  ],
+  "desc": "Lempeä kiertoharjoitus selkärangan ja vartalon lämmittelyyn.",
+  "howTo": [
+   "Seiso jalat lantion leveydellä.",
+   "Anna käsien heilua löysästi.",
+   "Kierrä ylävartaloa toiselle sivulle.",
+   "Virtaa sujuvasti toiselle sivulle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä väännä voimalla polvien kautta.",
+   "Älä nykäise käsiä.",
+   "Älä kierrä liian nopeasti.",
+   "Älä pidätä hengitystä."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Anna käsien liikkua vapaasti.",
+   "Pidä hartiat rentoina.",
+   "Anna rinnan avautua lempeästi.",
+   "Seiso pitkänä."
+  ],
+  "desc": "Dynaaminen hartioiden ja rinnan lämmittely, joka valmistaa ylävartaloa punnerruksiin ja hyppyharjoituksiin.",
+  "howTo": [
+   "Seiso suorana jalat lantion leveydellä.",
+   "Heiluta käsiä eteen ja taakse hallitusti.",
+   "Anna rinnan avautua luonnollisesti, kun kädet menevät taakse.",
+   "Pidä liike sujuvana ja rentona."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Älä heiluta liian rajusti.",
+   "Älä nosta hartioita korviin.",
+   "Älä notkista alaselkää.",
+   "Älä anna liikkeen muuttua hallitsemattomaksi vauhdiksi."
+  ]
+ }
+}

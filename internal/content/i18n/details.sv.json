@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Håll motståndet jämnt.",
+   "Rör dig långsamt.",
+   "Håll armbågen nära kroppen.",
+   "Håll axeln nere."
+  ],
+  "desc": "En bicepsövning utan redskap där ena handen ger motstånd åt den andra.",
+  "howTo": [
+   "Stå eller sitt rak.",
+   "Böj ena armbågen som i en curl.",
+   "Tryck med andra handen nedåt mot underarmen som arbetar.",
+   "Curla långsamt uppåt mot motståndet.",
+   "Byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rör dig inte utan riktigt motstånd.",
+   "Rycka inte i armen.",
+   "Lyft inte axeln.",
+   "Håll inte andan."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Håll armbågsvinkeln stabil.",
+   "Håll spänningen jämn.",
+   "Slappna av i axlarna.",
+   "Fortsätt andas."
+  ],
+  "desc": "Ett statiskt bicepshållande med eget motstånd.",
+  "howTo": [
+   "Böj ena armbågen till ungefär 90 grader.",
+   "Tryck nedåt med andra handen.",
+   "Armen som arbetar håller emot utan att röra sig.",
+   "Håll spänningen.",
+   "Byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tryck inte i korta ryck.",
+   "Vrid inte överkroppen.",
+   "Lyft inte axeln.",
+   "Håll inte andan."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Håll spänningen kontrollerad.",
+   "Håll axlarna nere.",
+   "Håll handlederna bekväma.",
+   "Andas lugnt."
+  ],
+  "desc": "En isometrisk övning för armar och underarmar där händerna drar mot varandra.",
+  "howTo": [
+   "Haka ihop fingrarna eller händerna.",
+   "Håll armbågarna lätt böjda.",
+   "Dra händerna från varandra.",
+   "Håll en jämn spänning.",
+   "Släpp långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Dra inte med ett ryck.",
+   "Dra inte upp axlarna.",
+   "Böj inte handlederna för mycket.",
+   "Håll inte andan."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Sänk långsamt.",
+   "Håll motståndet konstant.",
+   "Håll armbågen nära kroppen.",
+   "Slappna av i axeln."
+  ],
+  "desc": "En långsam sänkning för biceps med eget motstånd.",
+  "howTo": [
+   "Börja med ena armbågen böjd.",
+   "Ge motstånd med andra handen.",
+   "Sänk långsamt underarmen som arbetar.",
+   "Fortsätt hålla emot under hela sänkningen.",
+   "Byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte armen falla snabbt.",
+   "Gör inte rörelsen utan motstånd.",
+   "Vrid inte kroppen.",
+   "Håll inte andan."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Håll lyftet litet.",
+   "Håll nacken i neutralt läge.",
+   "Dra skulderbladen bakåt och nedåt.",
+   "Spänn skinkorna lätt."
+  ],
+  "desc": "En hållningsövning för övre ryggen, skulderbladen och ryggsträckarna.",
+  "howTo": [
+   "Ligg på mage.",
+   "Lägg armarna längs kroppen.",
+   "Vrid tummarna lätt utåt.",
+   "Lyft bröstkorgen lite.",
+   "Dra skulderbladen bakåt och nedåt.",
+   "Håll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lyft inte för högt.",
+   "Kasta inte huvudet bakåt.",
+   "Svanka inte för mycket i ländryggen.",
+   "Dra inte upp axlarna."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Slappna av i nacken.",
+   "Rör skulderbladen mjukt.",
+   "Håll bröstlyftet litet eller neutralt.",
+   "För armarna utan brådska."
+  ],
+  "desc": "En övning för övre ryggen och skulderbladen på mage.",
+  "howTo": [
+   "Ligg på mage.",
+   "Låt huvudet vila nedåt.",
+   "För armarna i en stor båge från sidorna till över huvudet.",
+   "Gå tillbaka samma väg.",
+   "Håll rörelsen kontrollerad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lyft inte huvudet.",
+   "Svanka inte för mycket i ländryggen.",
+   "Svinga inte armarna.",
+   "Dra inte upp axlarna."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Håll rörelseomfånget litet.",
+   "Låt skulderbladen göra jobbet.",
+   "Håll nacken i neutralt läge.",
+   "Håll axlarna borta från öronen."
+  ],
+  "desc": "En övning för övre ryggen, skulderbladen och bakre axlarna.",
+  "howTo": [
+   "Ligg på mage.",
+   "Böj armbågarna i en W-form.",
+   "Lyft armbågar och händer lite.",
+   "Tryck ihop skulderbladen.",
+   "Sänk med kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lyft inte för högt.",
+   "Dra inte upp huvudet.",
+   "Använd inte svängar.",
+   "Svanka inte för mycket i ländryggen."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Lyft armarna bara lite.",
+   "Håll nacken i neutralt läge.",
+   "Håll axlarna nere.",
+   "Rör dig med kontroll."
+  ],
+  "desc": "En skulderbladsövning för nedre trapezius och övre ryggen.",
+  "howTo": [
+   "Ligg på mage.",
+   "Sträck armarna snett framåt över huvudet i en Y-form.",
+   "Lyft armarna lite från golvet.",
+   "Sänk med kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lyft inte för högt.",
+   "Dra inte upp axlarna.",
+   "Svanka inte i ländryggen.",
+   "Rör dig inte för snabbt."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Håll armarna i linje med axlarna.",
+   "Slappna av i nacken.",
+   "Rör skulderbladen försiktigt.",
+   "Håll lyftet litet."
+  ],
+  "desc": "En övning för övre ryggen, bakre axlarna och skulderbladskontroll.",
+  "howTo": [
+   "Ligg på mage.",
+   "Sträck ut armarna åt sidorna i en T-form.",
+   "Lyft armarna lite.",
+   "Tryck ihop skulderbladen.",
+   "Sänk långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Kasta inte upp armarna.",
+   "Lyft inte huvudet.",
+   "Dra inte upp axlarna.",
+   "Tvinga inte fram ett stort rörelseomfång."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Dra armbågarna nedåt med kontroll.",
+   "Tryck försiktigt ihop skulderbladen.",
+   "Håll nacken i neutralt läge.",
+   "Håll ländryggen bekväm."
+  ],
+  "desc": "En ryggövning som härmar en dragande rörelse utan redskap.",
+  "howTo": [
+   "Ligg på mage med armarna över huvudet.",
+   "Lyft bröstkorgen lite.",
+   "Dra armbågarna nedåt mot revbenen.",
+   "Tryck ihop skulderbladen.",
+   "Sträck armarna framåt igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rycka inte i armarna.",
+   "Lyft inte för högt.",
+   "Kasta inte huvudet bakåt.",
+   "Låt inte axlarna åka upp mot öronen."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Håll nacken i neutralt läge.",
+   "Rör dig med kontroll.",
+   "Håll ländryggen bekväm.",
+   "Fortsätt andas."
+  ],
+  "desc": "En övning för ryggen och koordinationen på mage.",
+  "howTo": [
+   "Ligg på mage.",
+   "Lyft bröstkorgen lite.",
+   "För motsatt arm och ben i ett kontrollerat simmande mönster.",
+   "Håll rörelsen liten och jämn."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rör dig inte för snabbt.",
+   "Lyft inte för högt.",
+   "Kasta inte huvudet bakåt.",
+   "Pressa inte ländryggen."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Håll bröstkorgen öppen.",
+   "Håll höfterna lyfta.",
+   "Håll axlarna stabila.",
+   "Håll nacken i neutralt läge."
+  ],
+  "desc": "En övning för baksidan: skinkor, baksida lår, axlar och rygg.",
+  "howTo": [
+   "Sitt på golvet med benen utsträckta.",
+   "Placera händerna bakom höfterna.",
+   "Tryck genom händer och hälar.",
+   "Lyft höfterna.",
+   "Håll kroppen i en lång linje."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk inte höfterna.",
+   "Dra inte upp axlarna.",
+   "Kasta inte huvudet bakåt.",
+   "Tvinga inte handlederna."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Håll lyftet litet.",
+   "Gör pulserna mjuka.",
+   "Håll nacken lång.",
+   "Håll kontroll på ländryggen."
+  ],
+  "desc": "En ryggövning med litet rörelseomfång för ryggsträckarna och hållningen.",
+  "howTo": [
+   "Ligg på mage.",
+   "Placera händerna längs sidorna eller lätt nära bröstet.",
+   "Lyft bröstkorgen lite.",
+   "Gör små kontrollerade pulser.",
+   "Håll nacken i neutralt läge."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pulsera inte för högt.",
+   "Använd inte svängar.",
+   "Titta inte framåt.",
+   "Pressa inte vidare om det gör skarpt ont i ländryggen."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Håll bröstlyftet litet.",
+   "Gör W-draget mjukt.",
+   "Dra skulderbladen bakåt och nedåt.",
+   "Håll nacken lång."
+  ],
+  "desc": "En kraftigare ryggövning som kombinerar ett litet kobralyft med ett W-drag med armarna.",
+  "howTo": [
+   "Ligg på mage med armarna framåt.",
+   "Lyft bröstkorgen lite.",
+   "Dra armbågarna nedåt och bakåt i en W-form.",
+   "Tryck ihop skulderbladen.",
+   "Sträck fram armarna igen och sänk med kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte för mycket i ländryggen.",
+   "Dra inte med nacken.",
+   "Rör dig inte för snabbt.",
+   "Dra inte upp axlarna."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Håll lyftet litet.",
+   "Låt nacken följa ryggraden.",
+   "Håll skinkorna spända.",
+   "Rör dig jämnt."
+  ],
+  "desc": "En ryggövning där du lyfter motsatt arm och ben växelvis, som när man simmar.",
+  "howTo": [
+   "Ligg på mage med armarna sträckta över huvudet.",
+   "Lyft bröstkorgen och benen lite.",
+   "Lyft en arm och motsatt ben.",
+   "Sänk och byt sida, växla mjukt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Böj inte ländryggen för hårt.",
+   "Lyft inte huvudet.",
+   "Rör dig inte i ryck.",
+   "Håll inte andan."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Håll kroppen i en linje.",
+   "Håll armbågarna under axlarna.",
+   "Håll bålen aktiv.",
+   "Andas jämnt."
+  ],
+  "desc": "En stabilitetsövning för bålen: mage, axlar, skinkor och bål.",
+  "howTo": [
+   "Placera armbågarna under axlarna.",
+   "Kliv fötterna bakåt.",
+   "Bilda en rak linje från axlar till hälar.",
+   "Spänn mage och skinkor.",
+   "Håll positionen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte ländryggen sjunka.",
+   "Lyft inte höfterna för högt.",
+   "Titta inte framåt.",
+   "Håll inte andan."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Spänn hela kroppen.",
+   "Håll skinkorna aktiva.",
+   "Håll bålen hårt spänd.",
+   "Andas kontrollerat."
+  ],
+  "desc": "En kort, intensiv planka med full spänning i hela kroppen.",
+  "howTo": [
+   "Börja i planka på underarmar.",
+   "Spänn magen hårt.",
+   "Kläm ihop skinkorna.",
+   "Föreställ dig att du drar armbågarna mot tårna.",
+   "Håll med maximal kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Håll den inte som en avslappnad planka.",
+   "Låt inte höfterna sjunka.",
+   "Håll inte andan.",
+   "Försök inte hålla för länge."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Håll ländryggen nära golvet.",
+   "Håll benen under kontroll.",
+   "Slappna av i nacken.",
+   "Rör dig mjukt."
+  ],
+  "desc": "En övning för nedre magen med kontrollerade korsande benrörelser.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Tryck ländryggen försiktigt mot golvet.",
+   "Lyft benen.",
+   "Korsa ena benet över det andra.",
+   "Fortsätt växla korsningen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte i ländryggen.",
+   "Sänk inte benen för mycket.",
+   "Dra inte huvudet framåt.",
+   "Rör dig inte för snabbt."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Håll rörelseomfånget litet.",
+   "Håll ländryggen stabil.",
+   "Låt inte benen sjunka för lågt.",
+   "Andas jämnt."
+  ],
+  "desc": "En övning för nedre magen med korta växelvisa bensparkar.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Tryck ländryggen mot golvet.",
+   "Lyft benen.",
+   "Rör benen upp och ned i korta växelvisa sparkar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte i ländryggen.",
+   "Gör inte stora sparkar.",
+   "Spänn inte nacken.",
+   "Håll inte andan."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Arbeta från nedre magen.",
+   "Lyft bäckenet med kontroll.",
+   "Slappna av i nacken.",
+   "Sänk långsamt."
+  ],
+  "desc": "En magövning med fokus på att lyfta bäckenet med kontroll.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Böj knäna och lyft fötterna.",
+   "Använd magen för att rulla bäckenet lite uppåt.",
+   "Sänk långsamt tillbaka."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svinga inte benen.",
+   "Använd inte svängar.",
+   "Dra inte i nacken.",
+   "Släpp inte ned höfterna snabbt."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Håll ländryggen mot golvet.",
+   "Håll magen spänd.",
+   "Slappna av i nacken.",
+   "Fortsätt andas."
+  ],
+  "desc": "Ett statiskt bålhåll med kortare spak för bättre kontroll.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Tryck ländryggen mot golvet.",
+   "Lyft axlarna lite.",
+   "Håll knäna böjda eller benen högre.",
+   "Håll positionen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte i ländryggen.",
+   "Sänk inte benen för mycket.",
+   "Tryck inte hakan framåt.",
+   "Håll inte andan."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Håll armbågen under axeln.",
+   "Håll höfterna lyfta.",
+   "Håll kroppen lång.",
+   "Håll nacken i neutralt läge."
+  ],
+  "desc": "En sidoövning för sneda magmuskler samt axel- och höftstabilitet.",
+  "howTo": [
+   "Ligg på sidan.",
+   "Placera armbågen under axeln.",
+   "Lyft höfterna.",
+   "Håll kroppen i en rak linje.",
+   "Håll positionen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk inte höfterna.",
+   "Dra inte upp axeln.",
+   "Rulla inte bröstkorgen framåt.",
+   "Håll inte andan."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Håll rörelsen liten och kontrollerad.",
+   "Håll armbågen under axeln.",
+   "För höfterna rakt upp och ned.",
+   "Håll bålen spänd."
+  ],
+  "desc": "En svårare variant av sidoplanka för sneda magmuskler och sidan av höften.",
+  "howTo": [
+   "Börja i sidoplanka.",
+   "Sänk höfterna lite.",
+   "Lyft höfterna uppåt igen.",
+   "Upprepa med kontroll.",
+   "Byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk dig inte för lågt.",
+   "Vrid inte överkroppen.",
+   "Sjunk inte ihop i axeln.",
+   "Rör dig inte för snabbt."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Håll höfterna jämna.",
+   "Håll bålen spänd.",
+   "Håll axlarna stabila.",
+   "Rör dig långsamt."
+  ],
+  "desc": "En övning för bål och axlar: tryck handen mot motsatt axel i planka.",
+  "howTo": [
+   "Börja i hög planka.",
+   "Håll höfterna jämna och stabila.",
+   "Nudda motsatt axel med ena handen.",
+   "För tillbaka handen och nudda med den andra.",
+   "Håll kroppen stilla."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vicka inte med höfterna från sida till sida.",
+   "Rör dig inte för snabbt.",
+   "Låt inte ländryggen sjunka.",
+   "Vrid inte överkroppen."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Håll höfterna stabila.",
+   "Håll bålen aktiv.",
+   "Rör dig med kontroll.",
+   "Håll axlarna över händer eller armbågar."
+  ],
+  "desc": "En övning för bål och triceps som växlar mellan planka på underarmar och hög planka.",
+  "howTo": [
+   "Börja i planka på underarmar.",
+   "Sätt ena handen i golvet och tryck upp.",
+   "Ta upp andra handen i hög planka.",
+   "Sänk tillbaka till underarmarna.",
+   "Växla vilken arm som leder."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vicka inte med höfterna från sida till sida.",
+   "Låt inte ländryggen sjunka.",
+   "Rör dig inte för snabbt.",
+   "Låt inte axlarna sjunka ihop."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Håll ländryggen stabil.",
+   "Rör dig långsamt.",
+   "Sätt ned hälen mjukt.",
+   "Håll bäckenet stilla."
+  ],
+  "desc": "En kontrollerad bålövning och ett säkrare alternativ till tuffare benlyft.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Lyft benen till bordsposition.",
+   "Sänk en häl mot golvet.",
+   "Nudda lätt och gå tillbaka.",
+   "Växla sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk inte benet för snabbt.",
+   "Svanka inte i ländryggen.",
+   "Rör inte båda benen samtidigt.",
+   "Stressa inte rörelsen."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Håll ländryggen nära golvet.",
+   "Rör dig långsamt.",
+   "Rör motsatt arm och ben tillsammans.",
+   "Håll överkroppen stilla."
+  ],
+  "desc": "En bålkontrollövning för djupa magmuskler och ryggradens stabilitet.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Lyft armar och ben till bordsposition.",
+   "Sträck ut motsatt arm och ben.",
+   "Håll ländryggen stabil.",
+   "Gå tillbaka och byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte i ländryggen.",
+   "Rör dig inte för snabbt.",
+   "Sänk inte benet för lågt.",
+   "Låt inte revbenen glida ut."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Vrid från bålen.",
+   "Håll kontroll på ländryggen.",
+   "Slappna av i nacken.",
+   "Rör dig mjukt."
+  ],
+  "desc": "En roterande magövning för sneda och raka magmuskler.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Dra upp knäna.",
+   "Placera händerna lätt vid huvudet.",
+   "Vrid överkroppen och för ena armbågen mot motsatt knä.",
+   "Byt sida i kontrollerad rytm."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Dra inte i nacken.",
+   "Rör inte bara armbågarna.",
+   "Stressa inte upprepningarna.",
+   "Låt inte ländryggen svankas."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Låt bröstkorgen öppna sig mjukt.",
+   "Håll axlarna avslappnade.",
+   "Håll ländryggen bekväm.",
+   "Håll axlarna smärtfria."
+  ],
+  "desc": "Ett skonsamt stretch för bröstet och framsidan av axlarna.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Öppna armarna ut åt sidorna.",
+   "Slappna av i axlarna.",
+   "Låt bröstkorgen öppna sig försiktigt.",
+   "Andas långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tvinga inte ned armarna.",
+   "Svanka inte i ländryggen.",
+   "Spänn inte nacken.",
+   "Stretcha inte genom smärta."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Håll stretchen mild.",
+   "Låt knät vara lätt böjt.",
+   "Håll ländryggen lugn.",
+   "Andas långsamt."
+  ],
+  "desc": "Ett skonsamt stretch för baksidan av låret.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Lyft ett ben.",
+   "Håll bakom låret eller vaden.",
+   "Dra benet försiktigt mot dig.",
+   "Byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Dra inte för hårt.",
+   "Tvinga inte benet rakt.",
+   "Lyft inte höfterna.",
+   "Pressa inte vidare om det gör skarpt ont bakom knät."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Rör dig långsamt.",
+   "Håll axlarna nere.",
+   "Andas avslappnat.",
+   "Håll stretchen behaglig."
+  ],
+  "desc": "Ett skonsamt rotationsstretch för ryggraden och bålen.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Böj knäna.",
+   "Låt knäna röra sig försiktigt åt ena sidan.",
+   "Håll axlarna mot golvet.",
+   "Gå tillbaka till mitten och byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tvinga inte knäna mot golvet.",
+   "Vrid dig inte snabbt.",
+   "Lyft inte axeln.",
+   "Stretcha inte genom smärta."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Håll lyftet milt.",
+   "Håll axlarna borta från öronen.",
+   "Håll ländryggen bekväm.",
+   "Håll nacken i neutralt läge."
+  ],
+  "desc": "Ett skonsamt stretch för framsidan av kroppen och en mild ryggextension.",
+  "howTo": [
+   "Ligg på mage.",
+   "Placera underarmarna på golvet.",
+   "Lyft bröstkorgen försiktigt.",
+   "Håll nacken lång.",
+   "Andas långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte för mycket i ländryggen.",
+   "Kasta inte huvudet bakåt.",
+   "Dra inte upp axlarna.",
+   "Tvinga inte positionen."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Håll andningen lugn.",
+   "Håll axlarna avslappnade.",
+   "Håll ansiktet mjukt.",
+   "Låt kroppen sjunka till ro."
+  ],
+  "desc": "En lugn andningsövning för att avsluta passet.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Slappna av i axlar och käke.",
+   "Lägg en hand på magen om det känns bra.",
+   "Andas in försiktigt.",
+   "Andas ut långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Andas inte för kraftfullt.",
+   "Håll inte andan.",
+   "Spänn inte nacken.",
+   "Svanka inte i ländryggen."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Låt höfterna sjunka mot hälarna.",
+   "Förläng ryggen försiktigt.",
+   "Slappna av i axlarna.",
+   "Andas långsamt."
+  ],
+  "desc": "Ett vilsamt stretch för rygg, höfter och axlar för att varva ner.",
+  "howTo": [
+   "Knäsitt och för höfterna bakåt mot hälarna.",
+   "Sträck armarna framåt på golvet.",
+   "Låt pannan vila mot golvet.",
+   "Andas långsamt och slappna av."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tvinga inte ned höfterna.",
+   "Spänn inte axlarna.",
+   "Håll inte andan.",
+   "Belasta inte knäna för hårt."
+  ]
+ },
+ "D01": {
+  "breathing": "Andas jämnt, håll inte andan.",
+  "correct": [
+   "Håll armbågen fastlimmad vid sidan.",
+   "Rör dig långsamt, utan sving.",
+   "Håll axeln nere, bort från örat.",
+   "Håll handleden rak."
+  ],
+  "desc": "En långsam rotatorkuffsövning som stabiliserar axeln inför serve och grundslag. En hantel på 0,5 kg, en arm i taget.",
+  "howTo": [
+   "Stå rak med en hantel på 0,5 kg i handen.",
+   "Böj armbågen till 90° och håll den mot sidan.",
+   "Börja med underarmen tvärs över magen.",
+   "Rotera långsamt underarmen utåt, bort från kroppen.",
+   "Gå långsamt tillbaka och byt sedan arm."
+  ],
+  "safety": "Bara 0,5 kg. Avbryt om axeln gör ont. Spring eller hoppa aldrig med hanteln.",
+  "voice": {
+   "finish": "Lägg ned hanteln.",
+   "last": "",
+   "mid": [
+    "Rotera underarmen långsamt utåt.",
+    "Armbågen stannar kvar."
+   ],
+   "start": "Halvkilos hantel. Armbågen fastlimmad vid sidan."
+  },
+  "wrong": [
+   "Låt inte armbågen glida framåt eller utåt.",
+   "Rycka inte i vikten.",
+   "Dra inte upp axlarna.",
+   "Använd inte en tyngre hantel."
+  ]
+ },
+ "D02": {
+  "breathing": "Andas ut när armarna lyfts.",
+  "correct": [
+   "Håll ryggen lång och platt.",
+   "Sluta på axelhöjd.",
+   "Tryck ihop skulderbladen.",
+   "Rör båda armarna tillsammans."
+  ],
+  "desc": "En framåtlutad omvänd fluga för bakre axlarna och skulderbladen, hållningsmusklerna som en tennisspelare behöver.",
+  "howTo": [
+   "Håll en hantel på 0,5 kg i varje hand.",
+   "Böj dig framåt från höfterna med rak rygg och mjuka knän.",
+   "Låt armarna hänga under axlarna.",
+   "Lyft armarna ut åt sidorna upp till axelhöjd och tryck ihop skulderbladen.",
+   "Sänk långsamt."
+  ],
+  "safety": "Bara 0,5 kg. Mjuka knän. Hoppa aldrig med hantlarna.",
+  "voice": {
+   "finish": "Res dig och lägg ned dem.",
+   "last": "",
+   "mid": [
+    "Armarna ut åt sidorna.",
+    "Tryck ihop skulderbladen."
+   ],
+   "start": "Fäll framåt, rak rygg, en halvkilos i varje hand."
+  },
+  "wrong": [
+   "Runda inte ryggen.",
+   "Svinga inte vikterna.",
+   "Lyft inte över axlarna.",
+   "Titta inte upp så att nacken viks."
+  ]
+ },
+ "D03": {
+  "breathing": "Andas in på väg ned, ut på väg upp.",
+  "correct": [
+   "Håll hantlarna vid bröstet.",
+   "Håll hälarna i golvet.",
+   "Håll knäna över tårna.",
+   "Håll ryggen lång."
+  ],
+  "desc": "En bägarknäböj: två hantlar på 0,5 kg vid bröstet för ben och en stabil, racketklar hållning.",
+  "howTo": [
+   "Håll båda hantlarna på 0,5 kg ihop vid bröstet.",
+   "Stå med fötterna ungefär axelbrett isär.",
+   "För höfterna bakåt och böj knäna.",
+   "Håll hälarna i golvet och bröstkorgen rak.",
+   "Res dig utan att vikterna glider framåt."
+  ],
+  "safety": "Hoppa inte med hantlarna. Om ett knä gör ont, byt till en vanlig knäböj utan vikt.",
+  "voice": {
+   "finish": "Stå rak.",
+   "last": "",
+   "mid": [
+    "Hälarna ned.",
+    "Knäna över tårna."
+   ],
+   "start": "Hantlarna vid bröstet. Långsam knäböj."
+  },
+  "wrong": [
+   "Låt inte knäna falla inåt.",
+   "Lyft inte hälarna.",
+   "Låt inte hantlarna dra dig framåt.",
+   "Studsa inte upp ur botten."
+  ]
+ },
+ "D04": {
+  "breathing": "Långsamma andetag. Håll aldrig andan.",
+  "correct": [
+   "Håll armarna vid öronen.",
+   "Håll revbenen nere, svanka inte.",
+   "Håll axlarna borta från öronen.",
+   "Fortsätt andas."
+  ],
+  "desc": "Ett stilla hållande ovanför huvudet med hantlar på 0,5 kg som tränar den axelstabilitet som behövs vid serven.",
+  "howTo": [
+   "Håll en hantel på 0,5 kg i varje hand.",
+   "Pressa båda armarna rakt upp över huvudet.",
+   "För överarmarna nära öronen.",
+   "Håll revbenen nere och magen spänd.",
+   "Håll stilla och andas tills tiden är slut, sänk sedan långsamt."
+  ],
+  "safety": "Bara hållande, inga press eller svingar. Om axeln skakar eller gör ont, sänk hantlarna.",
+  "voice": {
+   "finish": "Sänk långsamt.",
+   "last": "",
+   "mid": [
+    "Revbenen ned.",
+    "Fortsätt andas."
+   ],
+   "start": "Halvkilo över huvudet. Armarna vid öronen."
+  },
+  "wrong": [
+   "Luta dig inte bakåt.",
+   "Dra inte upp axlarna.",
+   "Spärra inte och slita i armbågarna.",
+   "Rycka inte upp vikterna."
+  ]
+ },
+ "D05": {
+  "breathing": "Lugna andetag in och ut genom näsan om du kan.",
+  "correct": [
+   "Stå som om en lina drar hjässan uppåt.",
+   "Håll båda axlarna i nivå.",
+   "Håll revbenen stilla.",
+   "Håll knäna mjuka, inte spärrade."
+  ],
+  "desc": "Ett kappsäcksgrepp: en hantel på 0,5 kg i ena handen. Uppgiften är att stå rak och inte luta, samma styrka mot sidoböjning som behövs när du sträcker dig efter en boll.",
+  "howTo": [
+   "Håll en hantel på 0,5 kg i ena handen med armen hängande vid låret.",
+   "Stå med fötterna under höfterna.",
+   "Stå rak: luta dig varken mot vikten eller bort från den.",
+   "Håll stilla och andas.",
+   "Byt hand för andra sidan."
+  ],
+  "safety": "Stå still. Gå, spring eller hoppa aldrig med hanteln.",
+  "voice": {
+   "finish": "Byt hand.",
+   "last": "",
+   "mid": [
+    "Luta inte.",
+    "Axlarna i nivå."
+   ],
+   "start": "En halvkilos i ena handen. Stå rak."
+  },
+  "wrong": [
+   "Luta dig inte åt sidan.",
+   "Dra inte upp axeln på den arm som bär vikten.",
+   "Gå eller studsa inte.",
+   "Håll inte andan."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Håll hoppen låga.",
+   "Landa mjukt och tyst.",
+   "Håll knäna lätt böjda.",
+   "Stå rak."
+  ],
+  "desc": "Ett lätt uppvärmningsmoment för vrister och vader med små, snabba hopp.",
+  "howTo": [
+   "Stå rak med fötterna ungefär höftbrett isär.",
+   "Håll knäna lätt mjuka.",
+   "Gör små snabba hopp, mest från vristerna.",
+   "Landa tyst och upprepa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hoppa inte för högt.",
+   "Landa inte hårt.",
+   "Spärra inte knäna.",
+   "Låt inte vristerna rulla inåt eller utåt."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Håll överkroppen upprätt.",
+   "Lyft knäna under kontroll.",
+   "Sätt ned fötterna mjukt.",
+   "Andas jämnt."
+  ],
+  "desc": "Ett uppvärmningsalternativ med låg belastning istället för höga knän.",
+  "howTo": [
+   "Stå rak.",
+   "Lyft ett knä mot höfthöjd.",
+   "Sänk det med kontroll.",
+   "Byt sida och fortsätt marschera.",
+   "Låt armarna röra sig naturligt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Luta dig inte bakåt.",
+   "Svinga inte benen okontrollerat.",
+   "Slå inte fötterna i golvet.",
+   "Håll inte andan."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Landa mjukt.",
+   "Håll knäna lätt böjda.",
+   "För armarna mjukt.",
+   "Håll andningen rytmisk."
+  ],
+  "desc": "En konditionsövning för hela kroppen som höjer pulsen och värmer upp axlar, höfter och ben.",
+  "howTo": [
+   "Stå rak med armarna längs sidorna.",
+   "Hoppa ut med fötterna och lyft armarna över huvudet.",
+   "Hoppa in med fötterna och sänk armarna.",
+   "Upprepa i jämn rytm."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Landa inte hårt.",
+   "Spärra inte knäna.",
+   "Dra inte upp axlarna.",
+   "Rör dig inte så fort att du tappar kontrollen."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Håll en stark planka.",
+   "Håll bålen spänd.",
+   "Håll axlarna över händerna.",
+   "För knäna under kontroll."
+  ],
+  "desc": "En dynamisk bål- och konditionsövning från hög planka.",
+  "howTo": [
+   "Börja i hög planka.",
+   "Håll händerna under axlarna.",
+   "Driv ett knä mot bröstet.",
+   "Byt ben i rytm.",
+   "Håll höfterna stabila."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte höfterna studsa högt.",
+   "Låt inte ländryggen sjunka.",
+   "Flaxa inte vilt med fötterna.",
+   "Låt inte axlarna sjunka ihop."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Landa tyst.",
+   "Håll knäna över tårna.",
+   "Håll bröstkorgen öppen.",
+   "Håll varje hopp kontrollerat."
+  ],
+  "desc": "En plyometrisk benövning för kraft, kondition och koordination.",
+  "howTo": [
+   "Börja med fötterna ungefär axelbrett isär.",
+   "Sänk dig i en kontrollerad knäböj.",
+   "Hoppa uppåt.",
+   "Landa mjukt med lätt böjda knän.",
+   "Ställ in dig igen före nästa hopp."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Landa inte hårt.",
+   "Låt inte knäna falla inåt.",
+   "Hoppa inte innan knäböjen är stabil.",
+   "Hasta inte vidare utan att ställa in dig."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Landa tyst.",
+   "Håll knät över tårna.",
+   "Håll överkroppen kontrollerad.",
+   "Rör dig mjukt från sida till sida."
+  ],
+  "desc": "Ett sidledshopp för ben, höfter, balans och koordination.",
+  "howTo": [
+   "Stå på ett ben.",
+   "Hoppa i sidled till andra benet.",
+   "Landa mjukt och stabilisera.",
+   "Upprepa från sida till sida.",
+   "Använd armarna för balansen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte knät falla inåt vid landningen.",
+   "Hoppa inte för långt för tidigt.",
+   "Fall inte in i landningen.",
+   "Vrid inte knät när foten tar i."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Lyft knäna mot höfthöjd.",
+   "Håll landningarna lätta.",
+   "Håll bålen aktiv.",
+   "Håll överkroppen rak."
+  ],
+  "desc": "En konditionsövning som höjer pulsen och aktiverar höfter, bål och ben.",
+  "howTo": [
+   "Stå rak.",
+   "Spring på stället och lyft knäna högt.",
+   "Rör armarna naturligt.",
+   "Håll rytmen snabb men kontrollerad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Luta dig inte bakåt.",
+   "Landa inte tungt.",
+   "Låt inte fötterna slå i golvet.",
+   "Tappa inte hållningen när tempot ökar."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Sätt händerna under axlarna.",
+   "Håll en stark planka.",
+   "Landa mjukt med fötterna.",
+   "Håll hoppet kontrollerat."
+  ],
+  "desc": "En konditionsövning för hela kroppen som kombinerar knäböj, planka och hopp. I det här programmet gör du varianten utan armhävning om inte en armhävning uttryckligen anges.",
+  "howTo": [
+   "Stå rak.",
+   "Gå ned i knäböj och sätt händerna i golvet.",
+   "Hoppa eller kliv fötterna bakåt till planka.",
+   "Hoppa eller kliv fötterna framåt.",
+   "Res dig och avsluta med ett litet hopp."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte ländryggen sjunka i plankan.",
+   "Landa inte tungt.",
+   "Hasta inte igenom slarviga repetitioner.",
+   "Låt inte knäna falla inåt när du hoppar framåt."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Landa mjukt och kontrollerat.",
+   "Håll främre knät över tårna.",
+   "Håll överkroppen upprätt.",
+   "Håll rörelseomfånget säkert."
+  ],
+  "desc": "En avancerad plyometrisk benövning för kraft, kondition och koordination.",
+  "howTo": [
+   "Börja i utfallsposition.",
+   "Hoppa uppåt.",
+   "Byt ben i luften.",
+   "Landa mjukt i motsatt utfall.",
+   "Hitta balansen igen före nästa repetition."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Landa inte hårt.",
+   "Låt inte främre knät falla inåt.",
+   "Gå inte för djupt.",
+   "Rör dig inte snabbare än du kan kontrollera."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Håll knäna över tårna.",
+   "Håll hälarna nere.",
+   "Håll ryggen lång.",
+   "Håll djupet bekvämt."
+  ],
+  "desc": "En kontrollerad benövning för lår, höfter och hållning.",
+  "howTo": [
+   "Stå med fötterna något bredare än höftbrett.",
+   "För höfterna bakåt.",
+   "Böj knäna till ett bekvämt grunt djup.",
+   "Res dig långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå inte för djupt.",
+   "Låt inte knäna falla inåt.",
+   "Lyft inte hälarna.",
+   "Släpp dig inte ned snabbt."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Håll pausen stabil.",
+   "Håll knäna över tårna.",
+   "Håll bröstkorgen öppen.",
+   "Håll hälarna i golvet."
+  ],
+  "desc": "En kontrollerad knäböjsvariant med ett kort håll i ett säkert djup.",
+  "howTo": [
+   "Stå stadigt med fötterna.",
+   "Gå ned i en bekväm grund knäböj.",
+   "Pausa kort.",
+   "Res dig med kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå inte för djupt.",
+   "Studsa inte i bottenläget.",
+   "Låt inte knäna falla inåt.",
+   "Håll inte andan."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Håll ryggen rak.",
+   "Rör dig från höfterna.",
+   "Håll knäna mjuka, inte djupt böjda.",
+   "Låt nacken följa ryggraden."
+  ],
+  "desc": "En rörelseövning för höfter, baksida lår och kontroll över ländryggen.",
+  "howTo": [
+   "Stå rak med fötterna höftbrett isär.",
+   "Mjuka upp knäna lite.",
+   "För höfterna bakåt.",
+   "Sänk överkroppen med rak rygg.",
+   "Res dig genom att driva höfterna framåt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Runda inte ryggen.",
+   "Gör inte en knäböj av det.",
+   "Sträck dig inte för lågt.",
+   "Lyft inte huvudet för högt."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Lyft med den arbetande skinkan.",
+   "Håll höfterna i nivå.",
+   "Rör dig med kontroll.",
+   "Håll ländryggen neutral."
+  ],
+  "desc": "En kraftfullare skinkövning på ett ben i taget.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Böj ena knät och ha den foten kvar i golvet.",
+   "Sträck ut eller lyft det andra benet.",
+   "Tryck genom hälen på det arbetande benet.",
+   "Lyft höfterna och sänk långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vrid inte bäckenet.",
+   "Tryck inte genom tårna.",
+   "Svanka inte i ländryggen.",
+   "Sänk dig inte för snabbt."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Håll höfterna i nivå.",
+   "Håll skinkorna aktiva.",
+   "Rör dig långsamt.",
+   "Håll ländryggen bekväm."
+  ],
+  "desc": "En övning för skinkor och bäckenstabilitet.",
+  "howTo": [
+   "Börja i skinklyftsposition.",
+   "Håll höfterna lyfta.",
+   "Lyft en fot lite från golvet.",
+   "Sätt ned den och byt sida.",
+   "Håll bäckenet stabilt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte höfterna sjunka.",
+   "Gunga inte från sida till sida.",
+   "Rör dig inte för snabbt.",
+   "Svanka inte i ländryggen."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Tryck genom hälarna.",
+   "Kläm ihop skinkorna längst upp.",
+   "Håll revbenen nere.",
+   "Låt inte ländryggen svankas för mycket."
+  ],
+  "desc": "En skinkövning som stärker höfterna och baksidan av kroppen.",
+  "howTo": [
+   "Ligg på rygg.",
+   "Böj knäna och sätt fötterna i golvet.",
+   "Lyft höfterna.",
+   "Pausa längst upp.",
+   "Sänk långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svanka inte i ländryggen längst upp.",
+   "Lyft inte hälarna.",
+   "Släpp inte ned höfterna för snabbt.",
+   "Placera inte fötterna för nära."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Stå rak.",
+   "Rör dig mjukt.",
+   "Håll vristerna i linje.",
+   "Sänk med kontroll."
+  ],
+  "desc": "En underbensövning för vader, vrister och fotkontroll.",
+  "howTo": [
+   "Stå rak med fötterna höftbrett isär.",
+   "Res dig upp på trampdynorna.",
+   "Pausa kort längst upp.",
+   "Sänk hälarna långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Släpp inte ned hälarna snabbt.",
+   "Gunga inte framåt.",
+   "Rulla inte vristerna utåt.",
+   "Använd inte svängar."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Håll höfterna lyfta.",
+   "Rör det övre benet långsamt.",
+   "Håll överkroppen stabil.",
+   "Håll axeln stark."
+  ],
+  "desc": "En övning för sidokedjan: sidans skinkmuskler, sneda magmuskler och höftstabilitet.",
+  "howTo": [
+   "Börja i sidoplanka.",
+   "Håll kroppen i en rak linje.",
+   "Lyft det övre benet lite.",
+   "Sänk det med kontroll.",
+   "Upprepa och byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk inte höfterna.",
+   "Svinga inte benet.",
+   "Rulla inte kroppen bakåt.",
+   "Sjunk inte ihop i axeln."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Håll knäna över tårna.",
+   "Håll hälarna i golvet.",
+   "Håll ryggen lång.",
+   "Håll djupet kontrollerat."
+  ],
+  "desc": "En enkel knäböj med kroppsvikt för ben, höfter och skinkor.",
+  "howTo": [
+   "Stå med fötterna ungefär axelbrett isär.",
+   "För höfterna lite bakåt.",
+   "Böj knäna och gå ned i en knäböj.",
+   "Håll bröstkorgen öppen.",
+   "Res dig genom hela foten."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte knäna falla inåt.",
+   "Lyft inte hälarna.",
+   "Runda inte ryggen.",
+   "Släpp dig inte ned för snabbt."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Håll främre knät över tårna.",
+   "Håll överkroppen upprätt.",
+   "Kliv bakåt med kontroll.",
+   "Håll främre hälen i golvet."
+  ],
+  "desc": "En underkroppsövning för ben, skinkor och balans.",
+  "howTo": [
+   "Stå rak.",
+   "Kliv ena benet bakåt.",
+   "Gå ned i ett utfall med kontroll.",
+   "Tryck genom främre foten för att komma upp.",
+   "Byt sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Låt inte främre knät falla inåt.",
+   "Luta dig inte för mycket framåt.",
+   "Släpp dig inte ned snabbt.",
+   "Skjut inte ifrån för hårt med bakre benet."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Håll tempot långsamt.",
+   "Håll knäna över tårna.",
+   "Håll hälarna i golvet.",
+   "Håll ryggen neutral."
+  ],
+  "desc": "En knäböj utan vikt gjord långsamt för kontroll och benstyrka.",
+  "howTo": [
+   "Stå med fötterna axelbrett isär.",
+   "Sänk dig under ungefär tre sekunder.",
+   "Pausa kort längst ned.",
+   "Res dig med kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Släpp dig inte ned snabbt.",
+   "Studsa inte upp ur botten.",
+   "Låt inte knäna falla inåt.",
+   "Håll inte andan."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Håll kroppen i en linje.",
+   "Håll bålen spänd.",
+   "Håll armbågarna i ungefär 30 till 45 grader.",
+   "Rör dig med kontroll."
+  ],
+  "desc": "En grundläggande överkroppsövning för bröst, triceps, axlar och bål.",
+  "howTo": [
+   "Börja i hög planka.",
+   "Placera händerna under axlarna eller något bredare.",
+   "Sänk kroppen med kontroll.",
+   "Tryck upp igen med kroppen rak."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk inte höfterna.",
+   "Lyft inte höfterna för högt.",
+   "Sprid inte armbågarna rakt ut.",
+   "Fall inte ned i bottenläget."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Håll armbågarna nära.",
+   "Håll kroppen rak.",
+   "Håll axlarna borta från öronen.",
+   "Håll handlederna bekväma."
+  ],
+  "desc": "En armhävningsvariant med mer fokus på triceps.",
+  "howTo": [
+   "Börja i hög planka.",
+   "Placera händerna närmare varandra än i en vanlig armhävning.",
+   "Håll armbågarna nära kroppen.",
+   "Sänk långsamt och tryck upp igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Placera inte händerna för nära varandra.",
+   "Sprid inte armbågarna.",
+   "Låt inte ländryggen sjunka.",
+   "Pressa inte vidare om handled eller armbåge gör ont."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Håll pausen kontrollerad.",
+   "Håll bålen spänd.",
+   "Håll bröstet aktivt.",
+   "Håll kroppen rak."
+  ],
+  "desc": "En kontrollerad armhävning med en kort paus i bottenläget.",
+  "howTo": [
+   "Börja i vanlig armhävningsposition.",
+   "Sänk långsamt.",
+   "Pausa en sekund nära botten.",
+   "Tryck upp utan att tappa kroppshållningen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Slappna inte av i botten.",
+   "Sänk inte höfterna.",
+   "Håll inte andan.",
+   "Studsa inte upp ur bottenläget."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Håll ett långsamt, jämnt tempo.",
+   "Håll kroppen rak.",
+   "Håll armbågarna kontrollerade.",
+   "Andas jämnt."
+  ],
+  "desc": "En långsam armhävningsvariant som ger mer kontroll och längre tid under spänning.",
+  "howTo": [
+   "Börja i hög planka.",
+   "Sänk under ungefär tre sekunder.",
+   "Pausa en sekund nära botten.",
+   "Tryck upp under ungefär tre sekunder."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hasta inte genom rörelsen.",
+   "Sjunk inte ihop i botten.",
+   "Låt inte höfterna hänga.",
+   "Tappa inte spänningen i bålen."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Håll kroppen rak framåt.",
+   "Håll bålen spänd.",
+   "Håll båda axlarna stabila.",
+   "Rör dig med kontroll."
+  ],
+  "desc": "En asymmetrisk armhävningsvariant som utmanar bröst, axlar och bål.",
+  "howTo": [
+   "Börja i armhävningsposition.",
+   "Placera ena handen lite framåt och den andra lite bakåt.",
+   "Sänk med kontroll.",
+   "Tryck upp igen.",
+   "Byt handplacering vid nästa sida."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vrid inte överkroppen.",
+   "Sänk inte ena axeln.",
+   "Placera inte händerna för brett.",
+   "Tvinga inte rörelsen om axeln känns obekväm."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Håll höfterna högt.",
+   "Böj armbågarna med kontroll.",
+   "Håll axlarna stabila.",
+   "Håll nacken i neutralt läge."
+  ],
+  "desc": "En armhävningsvariant med fokus på axlarna.",
+  "howTo": [
+   "Börja i hög planka.",
+   "Gå fötterna lite närmare och lyft höfterna.",
+   "Håll huvudet mellan armarna.",
+   "Sänk huvudet mot golvet.",
+   "Tryck upp igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå inte över i en vanlig armhävning.",
+   "Låt inte huvudet leda för långt framåt.",
+   "Sprid inte armbågarna för mycket.",
+   "Pressa inte vidare genom axelsmärta."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Håll bålen spänd.",
+   "För armbågarna mjukt.",
+   "Håll axlarna nere.",
+   "Håll rörelseomfånget bekvämt."
+  ],
+  "desc": "En övning för triceps och axlar från stöd på underarmarna.",
+  "howTo": [
+   "Börja på underarmarna med kroppen lång.",
+   "Håll armbågarna under eller lite framför axlarna.",
+   "Tryck genom händer och underarmar.",
+   "Sträck armbågarna lite.",
+   "Gå tillbaka med kontroll."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tvinga inte armbågarna.",
+   "Sänk inte höfterna.",
+   "Dra inte upp axlarna.",
+   "Fortsätt inte genom smärta i armbåge eller axel."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Slappna av i nacken.",
+   "Rör axlarna mjukt.",
+   "Håll armarna lösa.",
+   "Stå rak."
+  ],
+  "desc": "En enkel axeluppvärmning som förbereder nacke, axlar och övre rygg.",
+  "howTo": [
+   "Stå rak med armarna avslappnade.",
+   "Gör långsamma cirklar med axlarna bakåt.",
+   "Gör sedan långsamma cirklar framåt.",
+   "Håll rörelsen mjuk och kontrollerad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rycka inte hårt upp axlarna.",
+   "Rör dig inte för snabbt.",
+   "Spänn inte nacken.",
+   "Runda inte övre ryggen."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Håll armarna nära axelhöjd.",
+   "Håll cirklarna små.",
+   "Håll axlarna nere.",
+   "Slappna av i nacken."
+  ],
+  "desc": "En uppvärmning för axlar och övre rygg som aktiverar axelmusklerna och axelstabilisatorerna.",
+  "howTo": [
+   "Stå rak och lyft armarna till axelhöjd.",
+   "Gör små cirklar framåt.",
+   "Gör sedan små cirklar bakåt.",
+   "Håll cirklarna små och kontrollerade."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gör inte stora svingande rörelser.",
+   "Dra inte upp axlarna mot öronen.",
+   "Svanka inte i ländryggen.",
+   "Håll inte andan."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Håll fötterna stabila.",
+   "Vrid från bålen.",
+   "Vrid mjukt.",
+   "Håll knäna stilla när du vrider dig."
+  ],
+  "desc": "En skonsam rotationsövning för bålen och övre ryggraden.",
+  "howTo": [
+   "Stå med fötterna höftbrett isär.",
+   "Håll höfterna mestadels riktade framåt.",
+   "Vrid överkroppen åt ena sidan.",
+   "Gå tillbaka till mitten och vrid åt andra sidan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vrid inte knäna med kroppen.",
+   "Vrid dig inte för snabbt.",
+   "Luta dig inte bakåt.",
+   "Tvinga inte rörelseomfånget."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Håll ryggen rak.",
+   "Rör dig från höfterna.",
+   "Håll knäna mjuka, inte djupt böjda.",
+   "Låt nacken följa ryggraden."
+  ],
+  "desc": "En rörelseövning för höfter, baksida lår och kontroll över ländryggen.",
+  "howTo": [
+   "Stå rak med fötterna höftbrett isär.",
+   "Mjuka upp knäna lite.",
+   "För höfterna bakåt.",
+   "Sänk överkroppen med rak rygg.",
+   "Res dig genom att driva höfterna framåt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Runda inte ryggen.",
+   "Gör inte en knäböj av det.",
+   "Sträck dig inte för lågt.",
+   "Lyft inte huvudet för högt."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Håll knäna över tårna.",
+   "Håll hälarna i golvet.",
+   "Håll ryggen lång.",
+   "Håll djupet måttligt."
+  ],
+  "desc": "En kontrollerad benuppvärmning i ett säkert, grunt rörelseomfång.",
+  "howTo": [
+   "Stå med fötterna något bredare än höftbrett.",
+   "För höfterna lite bakåt.",
+   "Böj knäna bara till ett bekvämt djup.",
+   "Res dig långsamt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå inte för djupt.",
+   "Låt inte knäna falla inåt.",
+   "Lyft inte hälarna.",
+   "Släpp dig inte ned för snabbt."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Håll kroppen i en linje.",
+   "Håll axlarna stabila.",
+   "Håll bålen aktiv.",
+   "Rör dig mjukt."
+  ],
+  "desc": "En uppvärmning för axlar, handleder och bål.",
+  "howTo": [
+   "Börja i hög plankaposition.",
+   "Händerna är under axlarna.",
+   "Flytta kroppen lite framåt.",
+   "Flytta tillbaka till startpositionen.",
+   "Håll rörelsen liten och kontrollerad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sänk inte höfterna.",
+   "Tryck inte upp axlarna mot öronen.",
+   "Flytta dig inte för långt framåt.",
+   "Låt inte ländryggen hänga."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Andas långsamt och fullt.",
+   "Slappna av i axlarna när du andas ut.",
+   "Håll revbenen nere, svanka inte.",
+   "Rör dig utan brådska."
+  ],
+  "desc": "En lugn öppningsövning: djupandning med en skonsam sträckning av hela kroppen som förlänger ryggraden.",
+  "howTo": [
+   "Stå rak med fötterna höftbrett isär.",
+   "Andas in och sträck båda armarna över huvudet.",
+   "Förläng försiktigt genom ryggraden.",
+   "Andas ut och sänk armarna, låt axlarna sjunka."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Håll inte andan.",
+   "Svanka inte hårt i ländryggen.",
+   "Dra inte upp axlarna mot öronen.",
+   "Hasta inte sträckningen."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Vrid från bålen.",
+   "Håll höfterna mestadels framåt.",
+   "Håll fötterna i golvet.",
+   "Håll ett mjukt, jämnt tempo."
+  ],
+  "desc": "En skonsam rotationsövning för att värma upp ryggraden och bålen.",
+  "howTo": [
+   "Stå med fötterna höftbrett isär.",
+   "Låt armarna svinga löst.",
+   "Vrid överkroppen åt ena sidan.",
+   "Flyt mjukt över till andra sidan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vrid inte hårt genom knäna.",
+   "Rycka inte i armarna.",
+   "Vrid dig inte för snabbt.",
+   "Håll inte andan."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Låt armarna röra sig fritt.",
+   "Håll axlarna avslappnade.",
+   "Låt bröstkorgen öppna sig försiktigt.",
+   "Stå rak."
+  ],
+  "desc": "En dynamisk uppvärmning för axlar och bröst som förbereder överkroppen för armhävningar och hoppövningar.",
+  "howTo": [
+   "Stå rak med fötterna höftbrett isär.",
+   "Svinga armarna framåt och bakåt på ett kontrollerat sätt.",
+   "Låt bröstkorgen öppna sig naturligt när armarna går bakåt.",
+   "Håll rörelsen mjuk och avslappnad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svinga inte för hårt.",
+   "Dra inte upp axlarna mot öronen.",
+   "Svanka inte i ländryggen.",
+   "Låt inte rörelsen bli okontrollerad fart."
+  ]
+ }
+}

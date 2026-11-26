@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Brzuch w domu bez sprzętu: kolejno dolne partie, mięśnie skośne i cały korpus. Brzuszki, nożyce, rowerek i deski ze stałym zwiększaniem obciążenia.",
+  "title": "Brzuch w 30 dni"
+ },
+ "age50": {
+  "about": "Spokojna rutyna na siłę nóg i równowagę: wstawanie z krzesła, stanie na jednej nodze i chód stopa za stopą.",
+  "title": "Trening 50+"
+ },
+ "arms30": {
+  "about": "Mocniejsze ramiona i barki bez obciążenia: pompki na kolanach, dipy na krześle, ćwiczenia z oporem własnej ręki i odwrócona deska.",
+  "title": "Ramiona w 30 dni"
+ },
+ "backcare": {
+  "about": "Łagodna stabilizacja: brzuszki McGilla, bird dog, deski boczne, bez skoków i gwałtownych skłonów. To nie jest leczenie: skonsultuj się z lekarzem i przerwij, jeśli ból promieniuje do nogi lub pojawia się drętwienie.",
+  "title": "Plecy po wypukliniach dysków"
+ },
+ "bedtime": {
+  "about": "W leżeniu, powoli, ze spokojnym oddechem.",
+  "title": "Rozciąganie przed snem"
+ },
+ "climbing": {
+  "about": "Chwyt, łopatki i zwis na drążku, mocny korpus oraz mięśnie antagonistyczne palców. Potrzebny jest drążek.",
+  "title": "Dla wspinaczy"
+ },
+ "cycling": {
+  "about": "Pośladki, kolana i dolny odcinek pleców, a potem otwieranie klatki piersiowej i bioder po jeździe na siodełku.",
+  "title": "Dla rowerzystów"
+ },
+ "demo": {
+  "about": "Krótka rutyna na całe ciało bez skoków: łagodny początek dnia i stopniowe zwiększanie obciążenia.",
+  "title": "Poranny trening"
+ },
+ "feet": {
+  "about": "Wysklepienie, palce i kostki: krótka stopa, zbieranie ręcznika palcami, chód na palcach i piętach. Pomaga przy płaskostopiu, ale nie zastępuje lekarza.",
+  "title": "Zdrowe stopy"
+ },
+ "football": {
+  "about": "Tylna strona ud, przywodziciele, kostki i równowaga: trening pomagający zapobiegać kontuzjom.",
+  "title": "Dla piłkarzy"
+ },
+ "frontsplit30": {
+  "about": "Wykroki i rozciąganie zginaczy bioder oraz tylnej strony ud z podparciem rąk.",
+  "title": "Szpagat w 30 dni"
+ },
+ "golf": {
+  "about": "Rotacja tułowia, ruchome biodra, barki i równowaga na jednej nodze. Spokojne tempo, odpowiednie także po 50. roku życia.",
+  "title": "Dla golfistów"
+ },
+ "hiking": {
+  "about": "Nogi na podejścia, kolana na zejścia, mocne kostki i plecy gotowe na plecak.",
+  "title": "Wędrówki i trekking"
+ },
+ "hips30": {
+  "about": "Motylek, gołąb i głęboki przysiad dla swobodniejszych bioder.",
+  "title": "Ruchomość bioder w 30 dni"
+ },
+ "hockey": {
+  "about": "Niska postawa, skoki łyżwiarza, równowaga i rotacja tułowia.",
+  "title": "Hokej i łyżwiarstwo"
+ },
+ "jumpsports": {
+  "about": "Skoki, miękkie lądowanie i mocne kostki.",
+  "title": "Koszykówka i siatkówka"
+ },
+ "kids30": {
+  "about": "Dla dzieci w wieku 7–12 lat: siła i ruchomość w zabawowym tempie.",
+  "title": "Trening dla dzieci"
+ },
+ "kidsagility": {
+  "about": "Dla dzieci: skoki, równowaga i szybkie reakcje.",
+  "title": "Zwinność i koordynacja"
+ },
+ "kidsball": {
+  "about": "Skoki z miękkim lądowaniem, szybkie nogi, refleks i mocne ramiona.",
+  "title": "Koszykówka i siatkówka dla dzieci"
+ },
+ "kidsdance": {
+  "about": "Kroki i klaskanie do rytmu, podskoki, plié i równowaga.",
+  "title": "Taniec i rytm dla dzieci"
+ },
+ "kidsfeet": {
+  "about": "Zabawowe ćwiczenia stóp: chodzenie na palcach, piętach i zewnętrznych krawędziach, zbieranie ręcznika palcami, gąsienica. Nie zastępuje lekarza.",
+  "title": "Ćwiczenia na płaskostopie dla dzieci"
+ },
+ "kidsfootball": {
+  "about": "Nogi, koordynacja i równowaga na jednej nodze dla młodych piłkarzy.",
+  "title": "Piłka nożna dla dzieci"
+ },
+ "kidsgym": {
+  "about": "Łódka, jaskółka, siad skulny i plié: gibkość, równowaga i mocny korpus.",
+  "title": "Gimnastyka dla dzieci"
+ },
+ "kidshockey": {
+  "about": "Postawa łyżwiarza, skoki w bok, szybkie kroki i równowaga.",
+  "title": "Hokej i łyżwiarstwo figurowe dla dzieci"
+ },
+ "kidskarate": {
+  "about": "Postawy, ciosy i kopnięcia w powietrzu, wymachy nóg i równowaga.",
+  "title": "Karate i taekwondo dla dzieci"
+ },
+ "kidsposture": {
+  "about": "Plecy i barki po długich godzinach w szkolnej ławce.",
+  "title": "Postawa dla uczniów"
+ },
+ "kidsswim": {
+  "about": "Pozycja opływowa, kopnięcia płetwami, łódki i ruchy ramion na lądzie dla młodych pływaków.",
+  "title": "Pływanie dla dzieci"
+ },
+ "kidstennis": {
+  "about": "Praca nóg, skręty tułowia i mocne barki dla młodych tenisistów.",
+  "title": "Tenis dla dzieci"
+ },
+ "kidswrestling": {
+  "about": "Skulenia, bezpieczne przewroty, chód niedźwiedzia i kraba. Przewroty tylko na macie lub miękkim dywanie.",
+  "title": "Zapasy i judo dla dzieci"
+ },
+ "legs30": {
+  "about": "Przysiady, mostki biodrowe i wykroki bez sprzętu. Liczba przysiadów rośnie z 10 do 24 na serię; ćwiczenia ze skokami pojawiają się od 12. dnia.",
+  "title": "Nogi i pośladki w 30 dni"
+ },
+ "martial": {
+  "about": "Walka z cieniem, kopnięcia, siła korpusu i ruchomość bioder.",
+  "title": "Dla sztuk walki"
+ },
+ "morningstretch": {
+  "about": "Łagodne rozciąganie zaraz po przebudzeniu, bez wysiłku.",
+  "title": "Poranne rozciąganie"
+ },
+ "office30": {
+  "about": "Krótka rutyna po wielu godzinach przy komputerze: szyja, barki, górna część pleców i postawa.",
+  "title": "Szyja i plecy dla pracujących przy biurku"
+ },
+ "plank30": {
+  "about": "Deska każdego dnia, od 20 do 70 sekund na serię. Na zmianę deska przodem, bokiem, w ruchu i odwrócona, a do tego ćwiczenia pleców dla równowagi.",
+  "title": "Deska w 30 dni"
+ },
+ "posture30": {
+  "about": "Wzmacnianie pleców dla lepszej postawy: łopatki, prostowniki grzbietu i cała tylna strona ciała. Bez skoków i sprzętu, wszystko na macie.",
+  "title": "Lepsza postawa w 30 dni"
+ },
+ "pullups30": {
+  "about": "Od zwisu na drążku do pierwszych podciągnięć: ruchy łopatek, opuszczanie i wiosłowanie przy stole. Potrzebny jest drążek.",
+  "title": "Podciąganie w 30 dni"
+ },
+ "pushups30": {
+  "about": "Od 4 do 15 pompek na serię. Trudniejsze odmiany — wąskie, wolne, z pauzą — dołączają po jednej, a ćwiczenia pleców równoważą pchanie.",
+  "title": "Pompki w 30 dni"
+ },
+ "racket": {
+  "about": "Podskok przed ruchem, wykroki, szybkie kroki w bok i mocny bark.",
+  "title": "Padel, badminton, tenis stołowy"
+ },
+ "rowing": {
+  "about": "Plecy i łopatki, mocny korpus w rotacji oraz praca bioder.",
+  "title": "Wioślarstwo, kajak, SUP"
+ },
+ "runners": {
+  "about": "Pośladki, łydki i równowaga: siła, która chroni kolana i kostki podczas biegania.",
+  "title": "Dla biegaczy"
+ },
+ "scoliosis": {
+  "about": "Równomierna praca po obu stronach: mięśnie pleców, korpus, łopatki i oddychanie. Nie zastępuje leczenia ani indywidualnego programu od specjalisty.",
+  "title": "Symetria pleców przy skoliozie"
+ },
+ "sidesplit30": {
+  "about": "Szerokie rozkroki i rozciąganie przywodzicieli, krok po kroku.",
+  "title": "Szpagat poprzeczny w 30 dni"
+ },
+ "ski": {
+  "about": "Przygotowanie do sezonu: wytrzymałość nóg, równowaga i mocne kolana.",
+  "title": "Narty i snowboard"
+ },
+ "slim30": {
+  "about": "Obwody cardio i ćwiczenia siłowe na całe ciało, by spalać więcej energii. Ten kurs zawiera skoki; przysiady z wyskokiem i burpees pojawiają się dopiero w drugiej połowie.",
+  "title": "Schudnij w 30 dni"
+ },
+ "stretch30": {
+  "about": "Całe ciało: nogi, plecy i barki. Gibkość rośnie z dnia na dzień.",
+  "title": "Rozciąganie w 30 dni"
+ },
+ "swim": {
+  "about": "Trening na lądzie: łopatki i barki, pozycja opływowa, mocny korpus i ruchome kostki.",
+  "title": "Dla pływaków"
+ },
+ "taichi30": {
+  "about": "Powolne ruchy tai chi dla równowagi i spokoju: znane formy każdego dnia i nowe sekwencje w trakcie kursu.",
+  "title": "Tai chi w 30 dni"
+ },
+ "tennis": {
+  "about": "Praca nóg na boki, korpus i barki dla pewnej gry.",
+  "title": "Dla tenisistów"
+ },
+ "toetouch30": {
+  "about": "Skłon w przód: tylna strona nóg i dolny odcinek pleców.",
+  "title": "Dotknij palców stóp w 30 dni"
+ },
+ "wrestling": {
+  "about": "Kroki do ataku, sprawl, mocna szyja bez mostków na głowie i wytrzymałość korpusu.",
+  "title": "Zapasy i judo"
+ }
+}

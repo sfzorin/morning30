@@ -237,4 +237,5 @@ func init() {
 		series30 = append(series30, c)
 	}
 	addExtraCourses()
+	addCourseTranslations()
 }

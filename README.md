@@ -62,7 +62,7 @@ small client-side workout engine.
   and the agent token. Every setting is saved as soon as it changes.
 - **Exercise documents.** Besides the original built-ins, exercises can be
   complete JSON documents (definition plus name, technique, mistakes,
-  breathing, safety and voice cues in all seven languages) in
+  breathing, safety and voice cues in every language) in
   `internal/content/exercises/*.json`; they join the built-in library at
   start-up. A test checks every document in every language.
 - **Exercise JSON.** Download any exercise as a file, paste or upload one back.
@@ -118,8 +118,13 @@ small client-side workout engine.
 - **Accounts.** Email + password (bcrypt). A **guest mode** lets people start
   immediately; signing up later upgrades the guest in place, keeping all progress.
 - **Streaks & calendar.** Consecutive-day streaks and a monthly activity calendar.
-- **7 languages.** Russian, English, Turkish, German, Spanish, French, Italian —
-  UI strings, exercise names, and voice cues.
+- **28 languages.** Russian, English, Turkish, German, Spanish, French, Italian,
+  Portuguese (Brazil), Polish, Dutch, Swedish, Danish, Norwegian, Finnish, Czech,
+  Romanian, Hungarian, Greek, Japanese, Korean, Chinese (Simplified and
+  Traditional), Indonesian, Vietnamese, Thai, Arabic, Hebrew and Persian — the
+  interface, voice cues, every exercise card and every program. Arabic, Hebrew
+  and Persian lay the screens out right to left. The language follows the
+  browser (zh-TW/zh-HK open Traditional Chinese) and can be changed in settings.
 - **Installable PWA** (web manifest + service worker + icons).
 
 ---
@@ -160,8 +165,8 @@ The app is **server-driven** for everything except the workout itself:
   and leftover named cycles used only to snapshot existing accounts into a
   personal file. A program is a shared warm-up/cool-down plus a per-day main
   block, flattened and difficulty-scaled at run time.
-- **i18n** (`internal/i18n/`) holds all 7-language UI strings, exercise names and
-  spoken cues.
+- **i18n** (`internal/i18n/`) holds the UI strings, exercise names and spoken
+  cues, one file per language in `locales/`.
 
 ---
 
@@ -174,7 +179,7 @@ path/                URL path model (/, /login, /register, /day/:n, /settings)
 internal/
   content/           exercise library + demo 30-day cycle + legacy snapshots
   catalog/           per-user exercise catalog (custom over DB over code)
-  i18n/              7-language UI strings, exercise names, voice cues
+  i18n/              UI strings, exercise names, voice cues (locales/<lang>.json)
   db/                SQLite: users, sessions, activity, exercise library, pose stills
   auth/              bcrypt, session tokens, the shared Session value
   app/               process-wide deps (DB) + per-user program/workout resolution
@@ -327,10 +332,21 @@ managed outside this repository** by the operator.
 
 ## Internationalization
 
-All user-facing text is centralized in `internal/i18n` as `[7]string` tables in
-the order `[ru, en, tr, de, es, fr, it]`. Exercise technique content lives in
-`internal/content` per language. Adding a language means adding a column to those
-tables and a `Lang` entry — there are no translation files to wire up.
+The list of languages lives in `internal/langs` (code, name, speech tag,
+right-to-left). Each language has:
+
+- `internal/i18n/locales/<lang>.json` — UI strings (with `%d` templates such as
+  `fmt.day` so every language puts numbers where it needs them), exercise names,
+  month and weekday names;
+- `internal/content/i18n/{courses,details,exercises}.<lang>.json` — program
+  titles and descriptions, the cards of the original exercises, and the cards
+  of the bundled exercises (the first seven languages keep theirs in the Go
+  tables and exercise documents).
+
+Anything missing falls back to English, and tests check that every language is
+complete: every UI key with the same placeholders, every exercise card with the
+same number of steps, and mistakes phrased as prohibitions in that language.
+Adding a language means adding it to `internal/langs` and adding those files.
 
 ---
 

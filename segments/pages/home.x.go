@@ -148,7 +148,7 @@ func (h homePage) Main() gox.Elem {
 					__e = __c.Set("class", "day-num"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:80
-					__e = __c.Many(i18n.T(l, "home.day"), " ", curDay); if __e != nil { return }
+					__e = __c.Any(i18n.Tf(l, "fmt.day", curDay)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
@@ -172,7 +172,7 @@ func (h homePage) Main() gox.Elem {
 							__e = __c.Set("class", "day-count"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 //line home.gox:83
-							__e = __c.Many(len(w.Items), " ", i18n.T(l, "home.exercises")); if __e != nil { return }
+							__e = __c.Any(i18n.Tf(l, "fmt.exercises", len(w.Items))); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
@@ -180,7 +180,7 @@ func (h homePage) Main() gox.Elem {
 					{
 						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:84
-						__e = __c.Many(i18n.T(l, "home.est"), " ", minutes(w.EstSec), " ", i18n.T(l, "home.min")); if __e != nil { return }
+						__e = __c.Many(i18n.T(l, "home.est"), " ", i18n.Tf(l, "fmt.min", minutes(w.EstSec))); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 //line home.gox:85
@@ -264,7 +264,7 @@ func (h homePage) Main() gox.Elem {
 					__e = __c.Set("class", "streak-label"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:100
-					__e = __c.Many(i18n.T(l, "home.streak"), " · ", streak, " ", i18n.T(l, "home.days")); if __e != nil { return }
+					__e = __c.Many(i18n.T(l, "home.streak"), " · ", i18n.Tf(l, "fmt.days", streak)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
@@ -287,7 +287,7 @@ func (h homePage) Main() gox.Elem {
 				{
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:110
-					__e = __c.Many(i18n.T(l, "home.cycle"), " ", cycle); if __e != nil { return }
+					__e = __c.Any(i18n.Tf(l, "fmt.cycle", cycle)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 //line home.gox:111
@@ -436,7 +436,7 @@ func (h homePage) programs(selected []app.SelectedView) gox.Elem {
 									__e = __c.Set("class", "course-meta"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 //line home.gox:157
-									__e = __c.Many(first, "–", peak, " ", i18n.T(l, "home.min")); if __e != nil { return }
+									__e = __c.Any(i18n.Tf(l, "fmt.min_range", first, peak)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							}
@@ -502,7 +502,7 @@ func (h homePage) programs(selected []app.SelectedView) gox.Elem {
 									__e = __c.Set("class", "course-meta"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 //line home.gox:174
-									__e = __c.Many(i18n.T(l, "programs.day"), " ", p.Day); if __e != nil { return }
+									__e = __c.Any(i18n.Tf(l, "fmt.on_day", p.Day)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							}

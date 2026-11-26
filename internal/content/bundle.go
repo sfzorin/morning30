@@ -73,6 +73,8 @@ func init() {
 			bundledDefs[def.ID] = def
 		}
 	}
+	mergeBundledTranslations()
+	loadDetailTranslations()
 }
 
 // BundledDoc returns the complete JSON document of a bundled exercise.

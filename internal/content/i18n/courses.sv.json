@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Magövningar hemma utan redskap: nedre buk, sneda magmuskler och hela bålen i tur och ordning. Crunches, sax, cykel och plankor med jämn stegring.",
+  "title": "Magmuskler på 30 dagar"
+ },
+ "age50": {
+  "about": "Ett lugnt pass för bensstyrka och balans: uppresningar från stol, ståenden på ett ben och häl-tå-gång.",
+  "title": "Träning 50+"
+ },
+ "arms30": {
+  "about": "Starkare armar och axlar utan vikter: armhävningar på knä, dips på stol, övningar med eget motstånd och omvända plankor.",
+  "title": "Armar på 30 dagar"
+ },
+ "backcare": {
+  "about": "Skonsam stabilisering: McGill-crunch, bird dog, sidoplankor, utan hopp och kraftiga böjningar. Inte en behandling: rådgör med din läkare och avbryt om smärtan strålar ner i benet eller om domningar uppstår.",
+  "title": "Ryggvård vid diskbråck"
+ },
+ "bedtime": {
+  "about": "Liggande, långsamt och med lugn andning.",
+  "title": "Stretching före sänggåendet"
+ },
+ "climbing": {
+  "about": "Grepp, skulderblad och hängande i en stång, stark bål och motövningar för fingrarna. Kräver ett räck.",
+  "title": "För klättrare"
+ },
+ "cycling": {
+  "about": "Säte, knän och ländrygg, sedan öppning av bröst och höfter efter cykelpasset.",
+  "title": "För cyklister"
+ },
+ "demo": {
+  "about": "Ett kort helkroppspass utan hopp: en mjuk start på dagen och jämn stegring.",
+  "title": "Morgonträning"
+ },
+ "feet": {
+  "about": "Fotvalv, tår och fotleder: korta foten, handdukskrafs, gång på tå och häl. Hjälper vid plattfot men ersätter inte läkare.",
+  "title": "Friska fötter"
+ },
+ "football": {
+  "about": "Baksida lår, insida lår, fotleder och balans: träning som hjälper till att förebygga skador.",
+  "title": "För fotbollsspelare"
+ },
+ "frontsplit30": {
+  "about": "Utfall och stretchar för höftböjare och baksida lår, med stöd av händerna.",
+  "title": "Främre spagat på 30 dagar"
+ },
+ "golf": {
+  "about": "Bålrotation, rörliga höfter, axlar och balans på ett ben. Lugnt tempo, passar även efter 50.",
+  "title": "För golfare"
+ },
+ "hiking": {
+  "about": "Ben för uppförsbackar, knän för nedförsbackar, starka fotleder och en rygg redo för ryggsäck.",
+  "title": "Vandring och trekking"
+ },
+ "hips30": {
+  "about": "Fjäril, duva och djup knäböj för fria höfter.",
+  "title": "Höftrörlighet på 30 dagar"
+ },
+ "hockey": {
+  "about": "Låg ställning, skridskohopp, balans och bålrotation.",
+  "title": "Hockey och skridskoåkning"
+ },
+ "jumpsports": {
+  "about": "Hopp, mjuka landningar och starka fotleder.",
+  "title": "Basket och volleyboll"
+ },
+ "kids30": {
+  "about": "För 7–12 år: styrka och rörlighet i lekfull takt.",
+  "title": "Barnträning"
+ },
+ "kidsagility": {
+  "about": "För barn: hopp, balans och snabba reaktioner.",
+  "title": "Smidighet och koordination"
+ },
+ "kidsball": {
+  "about": "Hopp med mjuka landningar, snabba fötter, reaktioner och starka armar.",
+  "title": "Basket och volleyboll för barn"
+ },
+ "kidsdance": {
+  "about": "Steg och klappar i takt, skutt, pliéer och balans.",
+  "title": "Dans och rytm för barn"
+ },
+ "kidsfeet": {
+  "about": "Lekfulla fotövningar: gång på tå, hälar och fotens ytterkanter, handdukskrafs, larven. Ersätter inte läkare.",
+  "title": "Övningar mot plattfot för barn"
+ },
+ "kidsfootball": {
+  "about": "Ben, koordination och balans på ett ben för unga fotbollsspelare.",
+  "title": "Fotboll för barn"
+ },
+ "kidsgym": {
+  "about": "Båten, svalan, hopkurad sittställning och pliéer: rörlighet, balans och stark bål.",
+  "title": "Gymnastik för barn"
+ },
+ "kidshockey": {
+  "about": "Skridskoställning, sidohopp, snabba steg och balans.",
+  "title": "Hockey och konståkning för barn"
+ },
+ "kidskarate": {
+  "about": "Ställningar, slag och sparkar i luften, bensvingar och balans.",
+  "title": "Karate och taekwondo för barn"
+ },
+ "kidsposture": {
+  "about": "Rygg och axlar efter långa timmar vid skolbänken.",
+  "title": "Hållning för skolbarn"
+ },
+ "kidsswim": {
+  "about": "Strömlinje, fenspark, båten och armtag på land för unga simmare.",
+  "title": "Simning för barn"
+ },
+ "kidstennis": {
+  "about": "Fotarbete, bålvridningar och starka axlar för unga tennisspelare.",
+  "title": "Tennis för barn"
+ },
+ "kidswrestling": {
+  "about": "Hopkurningar, säkra rullar, björngång och krabbgång. Rullar bara på matta eller mjuk heltäckningsmatta.",
+  "title": "Brottning och judo för barn"
+ },
+ "legs30": {
+  "about": "Knäböj, höftlyft och utfall utan redskap. Knäböjen ökar från 10 till 24 per set; hoppövningar kommer in från dag 12.",
+  "title": "Ben och säte på 30 dagar"
+ },
+ "martial": {
+  "about": "Skuggboxning, sparkar, bålstyrka och höftrörlighet.",
+  "title": "För kampsport"
+ },
+ "morningstretch": {
+  "about": "Skonsam stretching direkt efter uppvaknandet, utan ansträngning.",
+  "title": "Morgonstretching"
+ },
+ "office30": {
+  "about": "Ett kort pass efter timmar vid datorn: nacke, axlar, övre rygg och hållning.",
+  "title": "Nacke och rygg för kontorsarbetare"
+ },
+ "plank30": {
+  "about": "En planka varje dag, från 20 upp till 70 sekunder per set. Främre, sido-, rörliga och omvända plankor varvas, med ryggövningar för balans.",
+  "title": "Planka på 30 dagar"
+ },
+ "posture30": {
+  "about": "Ryggstärkning för bättre hållning: skulderblad, ryggresare och hela kroppens baksida. Inga hopp, inga redskap, allt på en matta.",
+  "title": "Bättre hållning på 30 dagar"
+ },
+ "pullups30": {
+  "about": "Från hängande i stången till dina första pull-ups: skulderbladsdrag, negativa repetitioner och bordsrodd. Du behöver ett räck.",
+  "title": "Pull-ups på 30 dagar"
+ },
+ "pushups30": {
+  "about": "Från 4 till 15 armhävningar per set. Svårare varianter, som smala, långsamma och med paus, tillkommer en i taget, och ryggövningar balanserar pressandet.",
+  "title": "Armhävningar på 30 dagar"
+ },
+ "racket": {
+  "about": "Delat steg, utfall, snabba sidosteg och en stark axel.",
+  "title": "Padel, badminton, bordtennis"
+ },
+ "rowing": {
+  "about": "Rygg och skulderblad, stark roterande bål och höftdrivning.",
+  "title": "Rodd, kajak, SUP"
+ },
+ "runners": {
+  "about": "Säte, vader och balans: styrka som skyddar knän och fotleder när du springer.",
+  "title": "För löpare"
+ },
+ "scoliosis": {
+  "about": "Jämnt arbete på båda sidor: ryggmuskler, bål, skulderblad och andning. Ersätter inte behandling eller en specialists individuella program.",
+  "title": "Ryggsymmetri vid skolios"
+ },
+ "sidesplit30": {
+  "about": "Breda ställningar och stretchar för insidan av låren, steg för steg.",
+  "title": "Sidospagat på 30 dagar"
+ },
+ "ski": {
+  "about": "Gör dig redo för säsongen: benuthållighet, balans och starka knän.",
+  "title": "Skidåkning och snowboard"
+ },
+ "slim30": {
+  "about": "Konditionscirklar och styrkeövningar för hela kroppen för att förbränna mer energi. Kursen innehåller hopp; knäböjshopp och burpees kommer först i andra halvan.",
+  "title": "Gå ner i vikt på 30 dagar"
+ },
+ "stretch30": {
+  "about": "Hela kroppen: ben, rygg och axlar. Rörligheten växer dag för dag.",
+  "title": "Stretching på 30 dagar"
+ },
+ "swim": {
+  "about": "Träning på land: skulderblad och axlar, strömlinjen, stark bål och rörliga fotleder.",
+  "title": "För simmare"
+ },
+ "taichi30": {
+  "about": "Långsamma tai chi-rörelser för balans och lugn: välbekanta former varje dag och nya sekvenser efter hand.",
+  "title": "Tai chi på 30 dagar"
+ },
+ "tennis": {
+  "about": "Fotarbete i sidled, bål och axlar för ett tryggt spel.",
+  "title": "För tennisspelare"
+ },
+ "toetouch30": {
+  "about": "Framåtböjningen: baksidan av benen och ländryggen.",
+  "title": "Nå tårna på 30 dagar"
+ },
+ "wrestling": {
+  "about": "Stegattacker, sprawls, en stark nacke utan bryggor på huvudet och bålens uthållighet.",
+  "title": "Brottning och judo"
+ }
+}

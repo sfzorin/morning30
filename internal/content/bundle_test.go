@@ -2,6 +2,8 @@ package content
 
 import (
 	"encoding/json"
+
+	"morning30/internal/langs"
 	"regexp"
 	"strings"
 	"testing"
@@ -26,18 +28,39 @@ type bundledLoc struct {
 	} `json:"voice"`
 }
 
-var bundleLangs = []string{"ru", "en", "tr", "de", "es", "fr", "it"}
+var bundleLangs = langs.Codes()
 
 // Mistakes are spoken as instructions, so every language phrases them as a
 // prohibition (the same convention the existing exercises follow).
 var negative = map[string]*regexp.Regexp{
-	"ru": regexp.MustCompile(`^Не `),
-	"en": regexp.MustCompile(`^(Don't |Don’t |Do not |Never )`),
-	"tr": regexp.MustCompile(`(ma|me|mayın|meyin|masın|mesin)[.!]?$`),
-	"de": regexp.MustCompile(`(?i)\b(nicht|kein\w*)\b`),
-	"es": regexp.MustCompile(`^No `),
-	"fr": regexp.MustCompile(`^(Ne |N['’])`),
-	"it": regexp.MustCompile(`^Non `),
+	"ru":      regexp.MustCompile(`^Не `),
+	"en":      regexp.MustCompile(`^(Don't |Don’t |Do not |Never )`),
+	"tr":      regexp.MustCompile(`(ma|me|mayın|meyin|masın|mesin)[.!]?$`),
+	"de":      regexp.MustCompile(`(?i)\b(nicht|kein\w*)\b`),
+	"es":      regexp.MustCompile(`^No `),
+	"fr":      regexp.MustCompile(`^(Ne |N['’])`),
+	"it":      regexp.MustCompile(`^Non `),
+	"pt":      regexp.MustCompile(`^Não `),
+	"pl":      regexp.MustCompile(`^Nie `),
+	"nl":      regexp.MustCompile(`(?i)\b(niet|geen|nooit)\b`),
+	"sv":      regexp.MustCompile(`(?i)\b(inte|inga|ingen|aldrig)\b`),
+	"da":      regexp.MustCompile(`(?i)\b(ikke|ingen|aldrig)\b`),
+	"nb":      regexp.MustCompile(`(?i)\b(ikke|ingen|aldri)\b`),
+	"fi":      regexp.MustCompile(`^(Älä|Älkää)\s`),
+	"cs":      regexp.MustCompile(`^Ne`),
+	"ro":      regexp.MustCompile(`^Nu[ -]`),
+	"hu":      regexp.MustCompile(`^Ne `),
+	"el":      regexp.MustCompile(`^(Μην|Μη) `),
+	"ja":      regexp.MustCompile(`(ないで|ないように|ません|しない|ないこと)(ください|ね)?[。．.！]?$`),
+	"ko":      regexp.MustCompile(`(마세요|마십시오|말아요)[.。]?$`),
+	"zh":      regexp.MustCompile(`^(不要|别|勿|切勿|避免|不)`),
+	"zh-hant": regexp.MustCompile(`^(不要|別|勿|切勿|避免|不)`),
+	"id":      regexp.MustCompile(`^Jangan `),
+	"vi":      regexp.MustCompile(`^(Đừng|Không) `),
+	"th":      regexp.MustCompile(`^(อย่า|ห้าม)`),
+	"ar":      regexp.MustCompile(`^لا `),
+	"he":      regexp.MustCompile(`^(לא|אל) `),
+	"fa":      regexp.MustCompile(`(^|\s)ن\S*[.؛]?$`),
 }
 
 func TestBundledExercisesAreComplete(t *testing.T) {

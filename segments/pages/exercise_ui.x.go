@@ -28,9 +28,9 @@ func doseLabel(l i18n.Lang, unit string, value int, perSide bool) string {
 	var s string
 	switch content.Unit(unit) {
 	case content.Seconds:
-		s = strconv.Itoa(value) + " " + i18n.T(l, "workout.sec")
+		s = i18n.Tf(l, "fmt.sec", value)
 	case content.Breaths:
-		s = strconv.Itoa(value) + " " + i18n.T(l, "workout.breaths")
+		s = i18n.Tf(l, "fmt.breaths", value)
 	default:
 		s = "× " + strconv.Itoa(value)
 	}

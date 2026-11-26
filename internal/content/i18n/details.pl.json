@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj stały opór.",
+   "Poruszaj się powoli.",
+   "Trzymaj łokieć blisko ciała.",
+   "Trzymaj bark nisko."
+  ],
+  "desc": "Ćwiczenie na biceps bez sprzętu: jedna ręka stawia opór drugiej.",
+  "howTo": [
+   "Stań lub usiądź prosto.",
+   "Zegnij jeden łokieć jak do uginania ramienia.",
+   "Drugą dłonią dociskaj od góry pracujące przedramię.",
+   "Powoli unoś przedramię do góry, pokonując opór.",
+   "Zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ćwicz bez prawdziwego oporu.",
+   "Nie szarp ręką.",
+   "Nie unoś barku.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj stały kąt w łokciu.",
+   "Utrzymuj równe napięcie.",
+   "Rozluźnij barki.",
+   "Oddychaj."
+  ],
+  "desc": "Statyczne utrzymanie bicepsa z oporem własnej ręki.",
+  "howTo": [
+   "Zegnij jeden łokieć mniej więcej do 90 stopni.",
+   "Drugą dłonią dociskaj od góry.",
+   "Pracująca ręka stawia opór bez ruchu.",
+   "Utrzymaj napięcie.",
+   "Zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie dociskaj krótkimi szarpnięciami.",
+   "Nie skręcaj tułowia.",
+   "Nie unoś barku.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Kontroluj napięcie.",
+   "Trzymaj barki nisko.",
+   "Dbaj o wygodę nadgarstków.",
+   "Oddychaj spokojnie."
+  ],
+  "desc": "Izometryczne ćwiczenie ramion i przedramion: dłonie stawiają opór sobie nawzajem.",
+  "howTo": [
+   "Zahacz palce lub dłonie o siebie.",
+   "Łokcie lekko zgięte.",
+   "Ciągnij dłonie w przeciwne strony.",
+   "Utrzymaj równe napięcie.",
+   "Powoli rozluźnij."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ciągnij szarpnięciem.",
+   "Nie unoś barków do uszu.",
+   "Nie zginaj nadgarstków zbyt mocno.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Opuszczaj powoli.",
+   "Utrzymuj stały opór.",
+   "Trzymaj łokieć blisko ciała.",
+   "Rozluźnij bark."
+  ],
+  "desc": "Powolne opuszczanie dla bicepsa z oporem własnej ręki.",
+  "howTo": [
+   "Zacznij z jednym zgiętym łokciem.",
+   "Drugą dłonią stawiaj opór.",
+   "Powoli opuszczaj pracujące przedramię.",
+   "Stawiaj opór przez całe opuszczanie.",
+   "Zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by ręka szybko opadła.",
+   "Nie ćwicz bez oporu.",
+   "Nie skręcaj ciała.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Unoś się tylko trochę.",
+   "Trzymaj szyję w linii z kręgosłupem.",
+   "Ściągaj łopatki do tyłu i w dół.",
+   "Lekko napnij pośladki."
+  ],
+  "desc": "Ćwiczenie na postawę: górna część pleców, łopatki i prostowniki grzbietu.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Ułóż ręce wzdłuż ciała.",
+   "Obróć kciuki lekko na zewnątrz.",
+   "Unieś klatkę piersiową odrobinę.",
+   "Ściągnij łopatki do tyłu i w dół.",
+   "Utrzymaj pozycję."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie unoś się zbyt wysoko.",
+   "Nie odchylaj głowy do tyłu.",
+   "Nie wyginaj nadmiernie lędźwi.",
+   "Nie unoś barków."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Rozluźnij szyję.",
+   "Poruszaj łopatkami płynnie.",
+   "Klatkę unoś tylko odrobinę lub wcale.",
+   "Poruszaj rękami bez pośpiechu."
+  ],
+  "desc": "Ćwiczenie na górę pleców i łopatki w leżeniu na brzuchu.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Głowę trzymaj skierowaną w dół.",
+   "Prowadź ręce szerokim łukiem od boków nad głowę.",
+   "Wróć tą samą drogą.",
+   "Kontroluj ruch."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie unoś głowy.",
+   "Nie wyginaj zbytnio lędźwi.",
+   "Nie rzucaj rękami.",
+   "Nie unoś barków."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj mały zakres ruchu.",
+   "Niech pracują łopatki.",
+   "Trzymaj szyję w linii z kręgosłupem.",
+   "Trzymaj barki z dala od uszu."
+  ],
+  "desc": "Ćwiczenie na górę pleców: łopatki i tylne części barków.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Zegnij łokcie w kształt litery W.",
+   "Unieś lekko łokcie i dłonie.",
+   "Ściśnij łopatki.",
+   "Opuść z kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie unoś się zbyt wysoko.",
+   "Nie podciągaj głowy.",
+   "Nie bierz rozpędu.",
+   "Nie wyginaj nadmiernie lędźwi."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Unoś ręce tylko odrobinę.",
+   "Trzymaj szyję w linii z kręgosłupem.",
+   "Trzymaj barki nisko.",
+   "Poruszaj się z kontrolą."
+  ],
+  "desc": "Ćwiczenie na łopatki: dolne partie czworobocznego i górna część pleców.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Wyciągnij ręce ukośnie nad głowę w kształt litery Y.",
+   "Unieś lekko ręce nad podłogę.",
+   "Opuść z kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie unoś się zbyt wysoko.",
+   "Nie unoś barków.",
+   "Nie wyginaj lędźwi.",
+   "Nie poruszaj się zbyt szybko."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj ręce na wysokości barków.",
+   "Rozluźnij szyję.",
+   "Poruszaj łopatkami delikatnie.",
+   "Unoś się tylko trochę."
+  ],
+  "desc": "Ćwiczenie na górę pleców: tylne części barków i kontrola łopatek.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Wyciągnij ręce na boki w kształt litery T.",
+   "Unieś lekko ręce.",
+   "Ściśnij łopatki.",
+   "Opuść powoli."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyrzucaj rąk w górę.",
+   "Nie unoś głowy.",
+   "Nie unoś barków.",
+   "Nie wymuszaj dużego zakresu ruchu."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Ściągaj łokcie w dół z kontrolą.",
+   "Delikatnie ściskaj łopatki.",
+   "Trzymaj szyję w linii z kręgosłupem.",
+   "Dbaj o komfort lędźwi."
+  ],
+  "desc": "Ćwiczenie na plecy naśladujące ruch ciągnięcia, bez sprzętu.",
+  "howTo": [
+   "Połóż się na brzuchu z rękami wyciągniętymi nad głową.",
+   "Unieś lekko klatkę piersiową.",
+   "Ściągaj łokcie w dół, do żeber.",
+   "Ściśnij łopatki.",
+   "Znów wyciągnij ręce do przodu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie szarp rękami.",
+   "Nie unoś się zbyt wysoko.",
+   "Nie odchylaj głowy do tyłu.",
+   "Nie unoś barków do uszu."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj szyję w linii z kręgosłupem.",
+   "Poruszaj się z kontrolą.",
+   "Dbaj o komfort lędźwi.",
+   "Oddychaj."
+  ],
+  "desc": "Ćwiczenie na plecy i koordynację w leżeniu na brzuchu.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Unieś lekko klatkę piersiową.",
+   "Poruszaj naprzemiennie przeciwną ręką i nogą jak w pływaniu.",
+   "Ruch ma być mały i równy."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie poruszaj się zbyt szybko.",
+   "Nie unoś się zbyt wysoko.",
+   "Nie odchylaj głowy do tyłu.",
+   "Nie wymuszaj ruchu w lędźwiach."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj klatkę piersiową otwartą.",
+   "Trzymaj biodra uniesione.",
+   "Utrzymuj stabilne barki.",
+   "Trzymaj szyję w linii z kręgosłupem."
+  ],
+  "desc": "Ćwiczenie tylnej taśmy: pośladki, tylne części ud, barki i plecy.",
+  "howTo": [
+   "Usiądź na podłodze z wyprostowanymi nogami.",
+   "Oprzyj dłonie za biodrami.",
+   "Dociskaj dłonie i pięty do podłogi.",
+   "Unieś biodra.",
+   "Utrzymaj ciało w jednej długiej linii."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj bioder.",
+   "Nie unoś barków.",
+   "Nie odchylaj głowy do tyłu.",
+   "Nie forsuj nadgarstków."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Unoś się tylko trochę.",
+   "Utrzymuj płynne pulsy.",
+   "Wydłużaj szyję.",
+   "Kontroluj lędźwie."
+  ],
+  "desc": "Ćwiczenie na prostowniki grzbietu i postawę, w małym zakresie.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Ułóż dłonie obok ciała lub lekko przy klatce.",
+   "Unieś lekko klatkę piersiową.",
+   "Rób małe, kontrolowane pulsy.",
+   "Trzymaj szyję w linii z kręgosłupem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pulsuj zbyt wysoko.",
+   "Nie bierz rozpędu.",
+   "Nie patrz przed siebie.",
+   "Nie wchodź w ostry ból w lędźwiach."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Unoś klatkę tylko odrobinę.",
+   "Ściągaj ramiona w W płynnie.",
+   "Ściągaj łopatki do tyłu i w dół.",
+   "Wydłużaj szyję."
+  ],
+  "desc": "Mocniejsze ćwiczenie na plecy: małe uniesienie jak w kobrze połączone z ruchem rąk w kształt W.",
+  "howTo": [
+   "Połóż się na brzuchu z rękami wyciągniętymi do przodu.",
+   "Unieś lekko klatkę piersiową.",
+   "Ściągnij łokcie w dół i do tyłu, w kształt litery W.",
+   "Ściśnij łopatki.",
+   "Znów wyciągnij ręce do przodu i opuść się z kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj nadmiernie lędźwi.",
+   "Nie ciągnij szyją.",
+   "Nie poruszaj się zbyt szybko.",
+   "Nie unoś barków."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Unoś się tylko trochę.",
+   "Niech szyja podąża za kręgosłupem.",
+   "Napnij pośladki.",
+   "Poruszaj się równo."
+  ],
+  "desc": "Ćwiczenie na plecy: naprzemienne unoszenie przeciwnej ręki i nogi, jak w pływaniu.",
+  "howTo": [
+   "Połóż się na brzuchu, ręce wyciągnięte nad głowę.",
+   "Unieś lekko klatkę piersiową i nogi.",
+   "Unieś jedną rękę i przeciwną nogę.",
+   "Opuść i zmień stronę, poruszając się naprzemiennie i płynnie."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj lędźwi na siłę.",
+   "Nie unoś głowy.",
+   "Nie poruszaj się szarpnięciami.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj ciało w jednej linii.",
+   "Trzymaj łokcie pod barkami.",
+   "Utrzymuj aktywny brzuch.",
+   "Oddychaj równo."
+  ],
+  "desc": "Ćwiczenie stabilizacji tułowia: brzuch, barki, pośladki i korpus.",
+  "howTo": [
+   "Ustaw łokcie pod barkami.",
+   "Cofnij stopy.",
+   "Utwórz prostą linię od barków do pięt.",
+   "Napnij brzuch i pośladki.",
+   "Utrzymaj pozycję."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by lędźwie opadły.",
+   "Nie unoś bioder zbyt wysoko.",
+   "Nie patrz przed siebie.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Napnij całe ciało.",
+   "Utrzymuj aktywne pośladki.",
+   "Utrzymuj mocny brzuch.",
+   "Oddychaj z kontrolą."
+  ],
+  "desc": "Krótka, intensywna deska z napięciem całego ciała.",
+  "howTo": [
+   "Przyjmij pozycję deski na przedramionach.",
+   "Mocno napnij brzuch.",
+   "Ściśnij pośladki.",
+   "Wyobraź sobie, że ciągniesz łokcie w stronę palców stóp.",
+   "Utrzymaj pozycję z maksymalną kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie trzymaj jej jak rozluźnionej deski.",
+   "Nie pozwól, by biodra opadły.",
+   "Nie wstrzymuj oddechu.",
+   "Nie próbuj trzymać zbyt długo."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj lędźwie blisko podłogi.",
+   "Kontroluj nogi.",
+   "Rozluźnij szyję.",
+   "Poruszaj się płynnie."
+  ],
+  "desc": "Ćwiczenie na dolne partie brzucha: kontrolowane krzyżowanie nóg.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Delikatnie dociśnij lędźwie do podłogi.",
+   "Unieś nogi.",
+   "Przekrzyżuj jedną nogę nad drugą.",
+   "Kontynuuj naprzemienne krzyżowanie."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj lędźwi.",
+   "Nie opuszczaj nóg zbyt nisko.",
+   "Nie podciągaj głowy do przodu.",
+   "Nie poruszaj się zbyt szybko."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj mały zakres ruchu.",
+   "Utrzymuj stabilne lędźwie.",
+   "Nie opuszczaj nóg zbyt nisko.",
+   "Oddychaj równo."
+  ],
+  "desc": "Ćwiczenie na dolne partie brzucha: krótkie, naprzemienne kopnięcia nogami.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Dociśnij lędźwie do podłogi.",
+   "Unieś nogi.",
+   "Poruszaj nogami w górę i w dół krótkimi, naprzemiennymi kopnięciami."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj lędźwi.",
+   "Nie rób dużych kopnięć.",
+   "Nie napinaj szyi.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Ruch zaczynaj od dolnej części brzucha.",
+   "Unoś miednicę z kontrolą.",
+   "Rozluźnij szyję.",
+   "Opuszczaj powoli."
+  ],
+  "desc": "Ćwiczenie na brzuch: kontrolowane unoszenie miednicy.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Zegnij kolana i unieś stopy.",
+   "Pracą brzucha lekko podwiń miednicę w górę.",
+   "Powoli opuść z powrotem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie machaj nogami.",
+   "Nie bierz rozpędu.",
+   "Nie ciągnij za szyję.",
+   "Nie opuszczaj bioder gwałtownie."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj lędźwie na podłodze.",
+   "Utrzymuj napięty brzuch.",
+   "Rozluźnij szyję.",
+   "Oddychaj."
+  ],
+  "desc": "Statyczne utrzymanie korpusu ze skróconą dźwignią, dla lepszej kontroli.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Dociśnij lędźwie do podłogi.",
+   "Unieś lekko barki.",
+   "Trzymaj kolana zgięte lub nogi wyżej uniesione.",
+   "Utrzymaj pozycję."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj lędźwi.",
+   "Nie opuszczaj nóg zbyt nisko.",
+   "Nie wysuwaj brody do przodu.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj łokieć pod barkiem.",
+   "Trzymaj biodra uniesione.",
+   "Wydłużaj ciało.",
+   "Trzymaj szyję w linii z kręgosłupem."
+  ],
+  "desc": "Ćwiczenie na boczne partie korpusu: mięśnie skośne oraz stabilność barku i bioder.",
+  "howTo": [
+   "Połóż się na boku.",
+   "Ustaw łokieć pod barkiem.",
+   "Unieś biodra.",
+   "Utrzymaj ciało w jednej prostej linii.",
+   "Utrzymaj pozycję."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj bioder.",
+   "Nie unoś barku.",
+   "Nie przechylaj klatki do przodu.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Ruch ma być mały i kontrolowany.",
+   "Trzymaj łokieć pod barkiem.",
+   "Poruszaj biodrami prosto w górę i w dół.",
+   "Utrzymuj napięty brzuch."
+  ],
+  "desc": "Mocniejszy wariant deski bocznej na mięśnie skośne i boczne partie bioder.",
+  "howTo": [
+   "Przyjmij pozycję deski bocznej.",
+   "Lekko opuść biodra.",
+   "Unieś biodra z powrotem.",
+   "Powtarzaj z kontrolą.",
+   "Zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opadaj zbyt nisko.",
+   "Nie skręcaj tułowia.",
+   "Nie zapadaj się w bark.",
+   "Nie poruszaj się zbyt szybko."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj biodra równo.",
+   "Utrzymuj napięty brzuch.",
+   "Utrzymuj stabilne barki.",
+   "Poruszaj się powoli."
+  ],
+  "desc": "Ćwiczenie na korpus i barki: dotykanie barku dłonią w pozycji deski.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Trzymaj biodra równo i stabilnie.",
+   "Dotknij jedną dłonią przeciwnego barku.",
+   "Wróć dłonią i dotknij drugą.",
+   "Utrzymuj ciało w bezruchu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie kołysz biodrami na boki.",
+   "Nie poruszaj się zbyt szybko.",
+   "Nie pozwól, by lędźwie opadły.",
+   "Nie skręcaj tułowia."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj stabilne biodra.",
+   "Utrzymuj aktywny brzuch.",
+   "Poruszaj się z kontrolą.",
+   "Trzymaj barki nad dłońmi lub łokciami."
+  ],
+  "desc": "Ćwiczenie na korpus i tricepsy: przejścia między deską na przedramionach a wysoką deską.",
+  "howTo": [
+   "Przyjmij pozycję deski na przedramionach.",
+   "Połóż jedną dłoń na podłodze i wyprostuj rękę.",
+   "Podnieś drugą dłoń i przejdź do wysokiej deski.",
+   "Opuść się z powrotem na przedramiona.",
+   "Zmieniaj rękę prowadzącą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie kołysz biodrami na boki.",
+   "Nie pozwól, by lędźwie opadły.",
+   "Nie poruszaj się zbyt szybko.",
+   "Nie pozwól, by barki się zapadły."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj stabilne lędźwie.",
+   "Poruszaj się powoli.",
+   "Dotykaj podłogi piętą delikatnie.",
+   "Utrzymuj stabilną miednicę."
+  ],
+  "desc": "Kontrolowane ćwiczenie na korpus, bezpieczniejsza alternatywa trudniejszych unoszeń nóg.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Unieś nogi w pozycji stołu.",
+   "Opuść jedną piętę w stronę podłogi.",
+   "Lekko dotknij i wróć.",
+   "Zmieniaj strony."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj nogi zbyt szybko.",
+   "Nie wyginaj lędźwi.",
+   "Nie ruszaj obiema nogami naraz.",
+   "Nie spiesz się z ruchem."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj lędźwie blisko podłogi.",
+   "Poruszaj się powoli.",
+   "Poruszaj przeciwną ręką i nogą razem.",
+   "Utrzymuj tułów w bezruchu."
+  ],
+  "desc": "Ćwiczenie kontroli korpusu: głębokie mięśnie brzucha i stabilność kręgosłupa.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Unieś ręce i nogi w pozycji stołu.",
+   "Wyciągnij przeciwną rękę i nogę.",
+   "Utrzymuj stabilne lędźwie.",
+   "Wróć i zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj lędźwi.",
+   "Nie poruszaj się zbyt szybko.",
+   "Nie opuszczaj nogi zbyt nisko.",
+   "Nie wypychaj żeber do przodu."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Skręcaj tułów.",
+   "Kontroluj lędźwie.",
+   "Rozluźnij szyję.",
+   "Poruszaj się płynnie."
+  ],
+  "desc": "Rotacyjne ćwiczenie na brzuch: mięśnie skośne i prosty brzucha.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Unieś kolana.",
+   "Połóż dłonie lekko przy głowie.",
+   "Skręć tułów i zbliż jeden łokieć do przeciwnego kolana.",
+   "Zmieniaj strony w kontrolowanym rytmie."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ciągnij za szyję.",
+   "Nie poruszaj samymi łokciami.",
+   "Nie spiesz się z powtórzeniami.",
+   "Nie wyginaj lędźwi."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Pozwól klatce piersiowej otworzyć się łagodnie.",
+   "Trzymaj barki rozluźnione.",
+   "Dbaj o komfort lędźwi.",
+   "Rozciągaj barki bez bólu."
+  ],
+  "desc": "Delikatne rozciąganie klatki piersiowej i przodu barków.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Otwórz ręce na boki.",
+   "Rozluźnij barki.",
+   "Pozwól klatce piersiowej delikatnie się otworzyć.",
+   "Oddychaj powoli."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wciskaj rąk na siłę w dół.",
+   "Nie wyginaj lędźwi.",
+   "Nie napinaj szyi.",
+   "Nie rozciągaj przez ból."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Rozciągaj lekko.",
+   "Pozwól kolanu pozostać lekko zgiętym.",
+   "Trzymaj lędźwie spokojnie.",
+   "Oddychaj powoli."
+  ],
+  "desc": "Delikatne rozciąganie tylnej części uda.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Unieś jedną nogę.",
+   "Chwyć za tył uda lub łydki.",
+   "Delikatnie przyciągaj nogę do siebie.",
+   "Zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ciągnij zbyt mocno.",
+   "Nie prostuj nogi na siłę.",
+   "Nie unoś bioder.",
+   "Nie wchodź w ostry ból za kolanem."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Poruszaj się powoli.",
+   "Trzymaj barki nisko.",
+   "Oddychaj swobodnie.",
+   "Utrzymuj komfortowe rozciągnięcie."
+  ],
+  "desc": "Delikatne rozciąganie skrętne kręgosłupa i tułowia.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Zegnij kolana.",
+   "Pozwól kolanom delikatnie opaść na jedną stronę.",
+   "Trzymaj barki na podłodze.",
+   "Wróć na środek i zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie dociskaj kolan do podłogi na siłę.",
+   "Nie skręcaj się szybko.",
+   "Nie unoś barku.",
+   "Nie rozciągaj przez ból."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Unoś się tylko lekko.",
+   "Trzymaj barki z dala od uszu.",
+   "Dbaj o komfort lędźwi.",
+   "Trzymaj szyję w linii z kręgosłupem."
+  ],
+  "desc": "Delikatne rozciąganie przodu ciała i łagodne wygięcie pleców.",
+  "howTo": [
+   "Połóż się na brzuchu.",
+   "Oprzyj przedramiona o podłogę.",
+   "Delikatnie unieś klatkę piersiową.",
+   "Trzymaj szyję wydłużoną.",
+   "Oddychaj powoli."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj nadmiernie lędźwi.",
+   "Nie odchylaj głowy do tyłu.",
+   "Nie unoś barków.",
+   "Nie forsuj pozycji."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Oddychaj spokojnie.",
+   "Trzymaj barki rozluźnione.",
+   "Rozluźnij twarz.",
+   "Pozwól ciału się uspokoić."
+  ],
+  "desc": "Spokojne ćwiczenie oddechowe na zakończenie treningu.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Rozluźnij barki i szczękę.",
+   "Połóż jedną dłoń na brzuchu, jeśli to wygodne.",
+   "Wdychaj delikatnie.",
+   "Wydychaj powoli."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie oddychaj zbyt mocno.",
+   "Nie wstrzymuj oddechu.",
+   "Nie napinaj szyi.",
+   "Nie wyginaj lędźwi."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Pozwól biodrom opaść w stronę pięt.",
+   "Delikatnie wydłużaj plecy.",
+   "Rozluźnij barki.",
+   "Oddychaj powoli."
+  ],
+  "desc": "Odprężające rozciąganie pleców, bioder i barków na wyciszenie.",
+  "howTo": [
+   "Uklęknij i usiądź biodrami na piętach.",
+   "Wyciągnij ręce do przodu po podłodze.",
+   "Opuść czoło na podłogę.",
+   "Oddychaj powoli i odpręż się."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wciskaj bioder na siłę.",
+   "Nie napinaj barków.",
+   "Nie wstrzymuj oddechu.",
+   "Nie przeciążaj kolan."
+  ]
+ },
+ "D01": {
+  "breathing": "Oddychaj równo; nie wstrzymuj oddechu.",
+  "correct": [
+   "Trzymaj łokieć przyklejony do boku.",
+   "Poruszaj się powoli, bez wymachu.",
+   "Trzymaj bark nisko, z dala od ucha.",
+   "Trzymaj nadgarstek prosto."
+  ],
+  "desc": "Powolne ćwiczenie stożka rotatorów, które stabilizuje bark przy serwisie i uderzeniach z głębi kortu. Jeden hantel 0,5 kg, jedna ręka naraz.",
+  "howTo": [
+   "Stań prosto z jednym hantlem 0,5 kg w dłoni.",
+   "Zegnij łokieć do 90° i przyciśnij go do boku.",
+   "Zacznij z przedramieniem skierowanym w poprzek brzucha.",
+   "Powoli obracaj przedramię na zewnątrz, od ciała.",
+   "Powoli wróć, potem zmień rękę."
+  ],
+  "safety": "Tylko 0,5 kg. Przerwij, jeśli bark zaczyna boleć. Nigdy nie biegaj ani nie skacz z hantlem.",
+  "voice": {
+   "finish": "Odłóż hantel.",
+   "last": "",
+   "mid": [
+    "Powoli obracaj przedramię na zewnątrz.",
+    "Łokieć zostaje na miejscu."
+   ],
+   "start": "Hantel pół kilo. Łokieć przy boku."
+  },
+  "wrong": [
+   "Nie pozwól, by łokieć uciekał do przodu lub na bok.",
+   "Nie szarp ciężarkiem.",
+   "Nie unoś barków.",
+   "Nie używaj cięższego hantla."
+  ]
+ },
+ "D02": {
+  "breathing": "Wydychaj powietrze, gdy ręce idą w górę.",
+  "correct": [
+   "Trzymaj plecy długie i płaskie.",
+   "Zatrzymaj się na wysokości barków.",
+   "Ściśnij łopatki.",
+   "Poruszaj obiema rękami razem."
+  ],
+  "desc": "Odwrotne rozpiętki w pochyleniu na tylne części barków i łopatki, czyli mięśnie postawy potrzebne tenisiście.",
+  "howTo": [
+   "Weź po hantlu 0,5 kg do każdej dłoni.",
+   "Pochyl tułów w biodrach, z prostymi plecami i miękkimi kolanami.",
+   "Pozwól rękom zwisać pod barkami.",
+   "Unieś ręce na boki do wysokości barków i ściśnij łopatki.",
+   "Powoli opuść."
+  ],
+  "safety": "Tylko 0,5 kg. Miękkie kolana. Nigdy nie skacz z hantlami.",
+  "voice": {
+   "finish": "Wyprostuj się i odłóż hantle.",
+   "last": "",
+   "mid": [
+    "Ręce na boki.",
+    "Ściśnij łopatki."
+   ],
+   "start": "Pochyl się, plecy proste, po pół kilo w każdej dłoni."
+  },
+  "wrong": [
+   "Nie zaokrąglaj pleców.",
+   "Nie wymachuj ciężarkami.",
+   "Nie unoś rąk powyżej barków.",
+   "Nie patrz w górę, wyginając kark."
+  ]
+ },
+ "D03": {
+  "breathing": "Wdech w dół, wydech w górę.",
+  "correct": [
+   "Trzymaj hantle przy klatce piersiowej.",
+   "Trzymaj pięty na podłodze.",
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj plecy długie."
+  ],
+  "desc": "Przysiad kielichowy: dwa hantle 0,5 kg trzymane przy klatce piersiowej, na nogi i stabilną postawę gotową do gry.",
+  "howTo": [
+   "Trzymaj oba hantle 0,5 kg razem przy klatce piersiowej.",
+   "Stań w rozkroku mniej więcej na szerokość barków.",
+   "Odsuń biodra do tyłu i zegnij kolana.",
+   "Trzymaj pięty na podłodze i klatkę piersiową wyprostowaną.",
+   "Wstań, nie pozwalając ciężarkom odpłynąć do przodu."
+  ],
+  "safety": "Nie skacz z hantlami. Jeśli kolano boli, przejdź na przysiad bez obciążenia.",
+  "voice": {
+   "finish": "Wyprostuj się.",
+   "last": "",
+   "mid": [
+    "Pięty w dół.",
+    "Kolana nad palcami stóp."
+   ],
+   "start": "Hantle przy klatce. Powolny przysiad."
+  },
+  "wrong": [
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie unoś pięt.",
+   "Nie pozwól, by hantle ciągnęły cię do przodu.",
+   "Nie podbijaj się z dołu."
+  ]
+ },
+ "D04": {
+  "breathing": "Oddychaj powoli. Nigdy nie wstrzymuj oddechu.",
+  "correct": [
+   "Trzymaj ręce przy uszach.",
+   "Trzymaj żebra nisko, bez wyginania pleców.",
+   "Trzymaj barki z dala od uszu.",
+   "Oddychaj."
+  ],
+  "desc": "Nieruchome utrzymanie hantli 0,5 kg nad głową, które trenuje stabilność barków potrzebną przy serwisie.",
+  "howTo": [
+   "Weź po hantlu 0,5 kg do każdej dłoni.",
+   "Wyprostuj obie ręce nad głową.",
+   "Zbliż bicepsy do uszu.",
+   "Trzymaj żebra nisko i napnij brzuch.",
+   "Utrzymaj pozycję i oddychaj do końca czasu, potem powoli opuść."
+  ],
+  "safety": "Tylko utrzymanie, bez wyciskań i wymachów. Jeśli bark drży lub boli, opuść hantle.",
+  "voice": {
+   "finish": "Opuść powoli.",
+   "last": "",
+   "mid": [
+    "Żebra w dół.",
+    "Oddychaj."
+   ],
+   "start": "Pół kilo nad głową. Ręce przy uszach."
+  },
+  "wrong": [
+   "Nie odchylaj się do tyłu.",
+   "Nie unoś barków.",
+   "Nie blokuj łokci na siłę.",
+   "Nie wyrzucaj ciężarków w górę szarpnięciem."
+  ]
+ },
+ "D05": {
+  "breathing": "Spokojne wdechy i wydechy, jeśli możesz, nosem.",
+  "correct": [
+   "Stój tak, jakby sznurek ciągnął czubek głowy w górę.",
+   "Trzymaj oba barki na jednym poziomie.",
+   "Trzymaj żebra spokojnie.",
+   "Trzymaj kolana miękkie, nie zablokowane."
+  ],
+  "desc": "Chwyt walizkowy: jeden hantel 0,5 kg w jednej dłoni. Chodzi o to, by stać prosto i się nie przechylać, czyli o siłę przeciw bocznemu zginaniu, potrzebną przy wypadzie do piłki.",
+  "howTo": [
+   "Weź jeden hantel 0,5 kg do jednej dłoni, ręka zwisa przy udzie.",
+   "Stań ze stopami pod biodrami.",
+   "Stój prosto: nie przechylaj się w stronę ciężarka ani od niego.",
+   "Utrzymaj pozycję i oddychaj.",
+   "Zmień rękę na drugą stronę."
+  ],
+  "safety": "Stój w miejscu. Nie chodź, nie biegaj ani nie skacz z hantlem.",
+  "voice": {
+   "finish": "Zmień rękę.",
+   "last": "",
+   "mid": [
+    "Nie przechylaj się.",
+    "Barki równo."
+   ],
+   "start": "Jeden hantel pół kilo w dłoni. Stój prosto."
+  },
+  "wrong": [
+   "Nie przechylaj się na bok.",
+   "Nie unoś barku ręki z ciężarkiem.",
+   "Nie chodź ani nie podskakuj.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Skacz nisko.",
+   "Ląduj miękko i cicho.",
+   "Trzymaj kolana lekko ugięte.",
+   "Stój prosto."
+  ],
+  "desc": "Lekka rozgrzewka kostek i łydek z małymi, szybkimi podskokami.",
+  "howTo": [
+   "Stań prosto, stopy mniej więcej na szerokość bioder.",
+   "Utrzymuj lekko ugięte kolana.",
+   "Rób małe, szybkie podskoki głównie z pracy stawów skokowych.",
+   "Lądując cicho, powtarzaj."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie skacz zbyt wysoko.",
+   "Nie ląduj głośno.",
+   "Nie blokuj kolan.",
+   "Nie pozwól, by kostki uciekały do środka lub na zewnątrz."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj tułów prosto.",
+   "Unoś kolana z kontrolą.",
+   "Stawiaj stopy miękko.",
+   "Oddychaj równo."
+  ],
+  "desc": "Rozgrzewka o niskim obciążeniu, zamiast wysokich kolan.",
+  "howTo": [
+   "Stań prosto.",
+   "Unieś jedno kolano mniej więcej na wysokość bioder.",
+   "Opuść je z kontrolą.",
+   "Zmień nogę i maszeruj dalej.",
+   "Poruszaj rękami naturalnie."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie odchylaj się do tyłu.",
+   "Nie wymachuj nogami bez kontroli.",
+   "Nie uderzaj stopami o podłogę.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Ląduj miękko.",
+   "Trzymaj kolana lekko ugięte.",
+   "Poruszaj rękami płynnie.",
+   "Oddychaj rytmicznie."
+  ],
+  "desc": "Całościowe ćwiczenie cardio, które podnosi tętno i rozgrzewa barki, biodra i nogi.",
+  "howTo": [
+   "Stań prosto, ręce przy bokach.",
+   "Wyskocz stopami na boki, unosząc ręce nad głowę.",
+   "Wskocz stopami z powrotem, opuszczając ręce.",
+   "Powtarzaj w równym rytmie."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ląduj twardo.",
+   "Nie blokuj kolan.",
+   "Nie unoś barków.",
+   "Nie przyspieszaj tak, by stracić kontrolę."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj mocną deskę.",
+   "Utrzymuj napięty brzuch.",
+   "Trzymaj barki nad dłońmi.",
+   "Poruszaj kolanami z kontrolą."
+  ],
+  "desc": "Dynamiczne ćwiczenie na korpus i kondycję w pozycji wysokiej deski.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Trzymaj dłonie pod barkami.",
+   "Podciągaj jedno kolano w stronę klatki piersiowej.",
+   "Zmieniaj nogi w rytmie.",
+   "Utrzymuj stabilne biodra."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie podrzucaj bioder wysoko.",
+   "Nie pozwól, by lędźwie opadły.",
+   "Nie rzucaj nogami na wszystkie strony.",
+   "Nie pozwól, by barki się zapadły."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Ląduj cicho.",
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj klatkę piersiową otwartą.",
+   "Kontroluj każdy skok."
+  ],
+  "desc": "Plyometryczne ćwiczenie nóg na moc, kondycję i koordynację.",
+  "howTo": [
+   "Stań w rozkroku na szerokość barków.",
+   "Opuść się kontrolowanym przysiadem.",
+   "Wyskocz w górę.",
+   "Ląduj miękko na lekko ugiętych kolanach.",
+   "Ustaw się na nowo przed kolejnym skokiem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ląduj twardo.",
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie skacz, zanim przysiad nie będzie stabilny.",
+   "Nie spiesz się bez ustawienia pozycji."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Ląduj cicho.",
+   "Trzymaj kolano nad palcami stóp.",
+   "Kontroluj tułów.",
+   "Poruszaj się płynnie z boku na bok."
+  ],
+  "desc": "Ćwiczenie skoków bocznych na nogi, biodra, równowagę i koordynację.",
+  "howTo": [
+   "Stań na jednej nodze.",
+   "Przeskocz bokiem na drugą nogę.",
+   "Ląduj miękko i ustabilizuj się.",
+   "Powtarzaj z boku na bok.",
+   "Pomagaj sobie rękami dla równowagi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by kolano zapadało się do środka przy lądowaniu.",
+   "Nie skacz za daleko zbyt szybko.",
+   "Nie wpadaj w lądowanie.",
+   "Nie skręcaj kolana przy zetknięciu z podłogą."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Unoś kolana w stronę wysokości bioder.",
+   "Ląduj lekko.",
+   "Utrzymuj aktywny korpus.",
+   "Trzymaj tułów wyprostowany."
+  ],
+  "desc": "Ćwiczenie cardio, które podnosi tętno i angażuje biodra, korpus i nogi.",
+  "howTo": [
+   "Stań prosto.",
+   "Biegnij w miejscu, wysoko unosząc kolana.",
+   "Poruszaj rękami naturalnie.",
+   "Utrzymuj szybki, ale kontrolowany rytm."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie odchylaj się do tyłu.",
+   "Nie ląduj ciężko.",
+   "Nie uderzaj stopami o podłogę.",
+   "Nie trać postawy, gdy tempo rośnie."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Stawiaj dłonie pod barkami.",
+   "Trzymaj mocną deskę.",
+   "Ląduj stopami miękko.",
+   "Kontroluj skok."
+  ],
+  "desc": "Całościowe ćwiczenie kondycyjne łączące przysiad, deskę i skok. W tym programie rób wersję bez pompki, chyba że pompka jest wyraźnie zalecona.",
+  "howTo": [
+   "Stań prosto.",
+   "Zrób przysiad i połóż dłonie na podłodze.",
+   "Wyskocz lub wykonaj krok stopami do tyłu do deski.",
+   "Wskocz lub wejdź stopami z powrotem do przodu.",
+   "Wstań i zakończ małym wyskokiem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by lędźwie opadły w desce.",
+   "Nie ląduj ciężko.",
+   "Nie spiesz się niedbałymi powtórzeniami.",
+   "Nie pozwól, by kolana zapadały się do środka przy skoku do przodu."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Ląduj miękko i z kontrolą.",
+   "Trzymaj przednie kolano nad palcami stóp.",
+   "Trzymaj tułów wyprostowany.",
+   "Utrzymuj bezpieczny zakres ruchu."
+  ],
+  "desc": "Zaawansowane plyometryczne ćwiczenie nóg na moc, kondycję i koordynację.",
+  "howTo": [
+   "Zacznij w pozycji wykroku.",
+   "Wyskocz w górę.",
+   "Zmień nogi w powietrzu.",
+   "Ląduj miękko w przeciwnym wykroku.",
+   "Odzyskaj równowagę przed kolejnym powtórzeniem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ląduj twardo.",
+   "Nie pozwól, by przednie kolano zapadało się do środka.",
+   "Nie schodź zbyt głęboko.",
+   "Nie poruszaj się szybciej, niż potrafisz kontrolować."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj pięty na podłodze.",
+   "Trzymaj plecy długie.",
+   "Dobierz komfortową głębokość."
+  ],
+  "desc": "Kontrolowane ćwiczenie nóg na uda, biodra i postawę.",
+  "howTo": [
+   "Stań w lekkim rozkroku, nieco szerzej niż biodra.",
+   "Odsuń biodra do tyłu.",
+   "Zegnij kolana do wygodnej, płytkiej głębokości.",
+   "Powoli wróć do stania."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie rób zbyt głębokiego przysiadu.",
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie unoś pięt.",
+   "Nie opadaj gwałtownie."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj stabilne zatrzymanie.",
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj klatkę piersiową otwartą.",
+   "Trzymaj pięty na podłodze."
+  ],
+  "desc": "Kontrolowany wariant przysiadu z krótkim zatrzymaniem w bezpiecznym zakresie.",
+  "howTo": [
+   "Stań stabilnie.",
+   "Opuść się do wygodnego, płytkiego przysiadu.",
+   "Zatrzymaj się na chwilę.",
+   "Z kontrolą wróć do stania."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie schodź zbyt głęboko.",
+   "Nie podbijaj się w dolnej pozycji.",
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj plecy proste.",
+   "Ruch zaczynaj od bioder.",
+   "Trzymaj kolana miękkie, nie mocno ugięte.",
+   "Niech szyja podąża za kręgosłupem."
+  ],
+  "desc": "Ćwiczenie ruchowe na biodra, tylne części ud i kontrolę lędźwi.",
+  "howTo": [
+   "Stań prosto, stopy na szerokość bioder.",
+   "Lekko zmiękcz kolana.",
+   "Odsuń biodra do tyłu.",
+   "Opuść tułów z prostymi plecami.",
+   "Wróć do stania, wypychając biodra do przodu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie zaokrąglaj pleców.",
+   "Nie zamieniaj tego w przysiad.",
+   "Nie schylaj się zbyt nisko.",
+   "Nie unoś głowy zbyt wysoko."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Unoś się pracą pośladka.",
+   "Trzymaj biodra równo.",
+   "Poruszaj się z kontrolą.",
+   "Trzymaj lędźwie w pozycji neutralnej."
+  ],
+  "desc": "Mocniejsze ćwiczenie na pośladki, wykonywane na jednej nodze.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Zegnij jedno kolano i zostaw stopę na podłodze.",
+   "Wyprostuj lub unieś drugą nogę.",
+   "Dociskaj pracującą piętę.",
+   "Unieś biodra i powoli opuść."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie skręcaj miednicy.",
+   "Nie odpychaj się palcami stóp.",
+   "Nie wyginaj lędźwi.",
+   "Nie opadaj zbyt szybko."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj biodra równo.",
+   "Utrzymuj aktywne pośladki.",
+   "Poruszaj się powoli.",
+   "Dbaj o komfort lędźwi."
+  ],
+  "desc": "Ćwiczenie na pośladki i stabilność miednicy.",
+  "howTo": [
+   "Przyjmij pozycję mostka biodrowego.",
+   "Trzymaj biodra uniesione.",
+   "Oderwij lekko jedną stopę od podłogi.",
+   "Postaw ją i zmień stronę.",
+   "Utrzymuj stabilną miednicę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by biodra opadły.",
+   "Nie kołysz się na boki.",
+   "Nie poruszaj się zbyt szybko.",
+   "Nie wyginaj lędźwi."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Dociskaj pięty.",
+   "Ściśnij pośladki na górze.",
+   "Trzymaj żebra nisko.",
+   "Pilnuj, by lędźwie nie wyginały się nadmiernie."
+  ],
+  "desc": "Ćwiczenie na pośladki, wzmacniające biodra i tylną taśmę.",
+  "howTo": [
+   "Połóż się na plecach.",
+   "Zegnij kolana i oprzyj stopy na podłodze.",
+   "Unieś biodra.",
+   "Zatrzymaj się na górze.",
+   "Powoli opuść."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wyginaj lędźwi na górze.",
+   "Nie unoś pięt.",
+   "Nie opuszczaj bioder zbyt szybko.",
+   "Nie ustawiaj stóp zbyt blisko."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Wyprostuj się.",
+   "Poruszaj się płynnie.",
+   "Utrzymuj kostki w jednej linii.",
+   "Opuszczaj z kontrolą."
+  ],
+  "desc": "Ćwiczenie na dolne partie nóg: łydki, kostki i kontrolę stóp.",
+  "howTo": [
+   "Stań prosto, stopy na szerokość bioder.",
+   "Wspiń się na palce.",
+   "Zatrzymaj się na chwilę u góry.",
+   "Powoli opuść pięty."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj pięt gwałtownie.",
+   "Nie przechylaj się do przodu.",
+   "Nie przechylaj kostek na zewnątrz.",
+   "Nie bierz rozpędu."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj biodra uniesione.",
+   "Poruszaj górną nogą powoli.",
+   "Utrzymuj stabilny tułów.",
+   "Utrzymuj mocny bark."
+  ],
+  "desc": "Ćwiczenie bocznej taśmy: boczne partie pośladków, mięśnie skośne i stabilność bioder.",
+  "howTo": [
+   "Przyjmij pozycję deski bocznej.",
+   "Trzymaj ciało w jednej prostej linii.",
+   "Unieś nieco górną nogę.",
+   "Opuść ją z kontrolą.",
+   "Powtarzaj i zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj bioder.",
+   "Nie wymachuj nogą.",
+   "Nie przetaczaj ciała do tyłu.",
+   "Nie zapadaj się w bark."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj pięty na podłodze.",
+   "Trzymaj plecy długie.",
+   "Kontroluj głębokość."
+  ],
+  "desc": "Podstawowy przysiad z masą własnego ciała na nogi, biodra i pośladki.",
+  "howTo": [
+   "Stań w rozkroku mniej więcej na szerokość barków.",
+   "Lekko odsuń biodra do tyłu.",
+   "Zegnij kolana i opuść się do przysiadu.",
+   "Trzymaj klatkę piersiową otwartą.",
+   "Wstań, dociskając całą stopę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie unoś pięt.",
+   "Nie zaokrąglaj pleców.",
+   "Nie opadaj zbyt szybko."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj przednie kolano nad palcami stóp.",
+   "Trzymaj tułów wyprostowany.",
+   "Cofaj nogę z kontrolą.",
+   "Trzymaj przednią piętę przy podłodze."
+  ],
+  "desc": "Ćwiczenie dolnych partii ciała na nogi, pośladki i równowagę.",
+  "howTo": [
+   "Stań prosto.",
+   "Cofnij jedną nogę.",
+   "Z kontrolą opuść się do wykroku.",
+   "Dociśnij przednią stopę, by wrócić do stania.",
+   "Zmień stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie pozwól, by przednie kolano zapadało się do środka.",
+   "Nie pochylaj się za bardzo do przodu.",
+   "Nie opadaj gwałtownie.",
+   "Nie odpychaj się zbyt mocno tylną nogą."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj wolne tempo.",
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj pięty na podłodze.",
+   "Trzymaj plecy w pozycji neutralnej."
+  ],
+  "desc": "Przysiad z masą własnego ciała, wykonywany powoli dla kontroli i siły nóg.",
+  "howTo": [
+   "Stań w rozkroku na szerokość barków.",
+   "Opuszczaj się przez około trzy sekundy.",
+   "Zatrzymaj się na chwilę na dole.",
+   "Wstań z kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opadaj szybko.",
+   "Nie podbijaj się z dołu.",
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj ciało w jednej linii.",
+   "Utrzymuj napięty brzuch.",
+   "Trzymaj łokcie pod kątem około 30–45 stopni.",
+   "Poruszaj się z kontrolą."
+  ],
+  "desc": "Podstawowe ćwiczenie górnej części ciała na klatkę piersiową, tricepsy, barki i korpus.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Ustaw dłonie pod barkami lub nieco szerzej.",
+   "Z kontrolą opuść ciało.",
+   "Wypchnij się w górę, utrzymując ciało prosto."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj bioder.",
+   "Nie unoś bioder zbyt wysoko.",
+   "Nie rozkładaj łokci prosto na boki.",
+   "Nie opadaj w dolną pozycję."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj łokcie blisko.",
+   "Trzymaj ciało prosto.",
+   "Trzymaj barki z dala od uszu.",
+   "Dbaj o komfort nadgarstków."
+  ],
+  "desc": "Wariant pompki z naciskiem na tricepsy.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Ustaw dłonie bliżej siebie niż w zwykłej pompce.",
+   "Trzymaj łokcie blisko ciała.",
+   "Opuszczaj się powoli i wypychaj w górę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie ustawiaj dłoni zbyt blisko siebie.",
+   "Nie rozkładaj łokci.",
+   "Nie pozwól, by lędźwie opadły.",
+   "Nie ćwicz przez ból nadgarstka lub łokcia."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Kontroluj zatrzymanie.",
+   "Utrzymuj napięty brzuch.",
+   "Utrzymuj aktywną klatkę piersiową.",
+   "Trzymaj ciało prosto."
+  ],
+  "desc": "Kontrolowana pompka z krótkim zatrzymaniem w dolnej pozycji.",
+  "howTo": [
+   "Przyjmij pozycję zwykłej pompki.",
+   "Opuszczaj się powoli.",
+   "Zatrzymaj się na sekundę blisko dołu.",
+   "Wypchnij się w górę, nie tracąc pozycji ciała."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie rozluźniaj się na dole.",
+   "Nie opuszczaj bioder.",
+   "Nie wstrzymuj oddechu.",
+   "Nie podbijaj się z dolnej pozycji."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj wolne, równe tempo.",
+   "Trzymaj ciało prosto.",
+   "Kontroluj łokcie.",
+   "Oddychaj równo."
+  ],
+  "desc": "Wolny wariant pompki, który zwiększa kontrolę i czas pod napięciem.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Opuszczaj się przez około trzy sekundy.",
+   "Zatrzymaj się na sekundę blisko dołu.",
+   "Wypychaj się w górę przez około trzy sekundy."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie spiesz się.",
+   "Nie zapadaj się na dole.",
+   "Nie pozwól, by biodra opadły.",
+   "Nie trać napięcia w korpusie."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj ciało równo ustawione.",
+   "Utrzymuj napięty brzuch.",
+   "Utrzymuj stabilne oba barki.",
+   "Poruszaj się z kontrolą."
+  ],
+  "desc": "Asymetryczny wariant pompki angażujący klatkę piersiową, barki i korpus.",
+  "howTo": [
+   "Przyjmij pozycję pompki.",
+   "Ustaw jedną dłoń nieco do przodu, a drugą nieco do tyłu.",
+   "Opuść się z kontrolą.",
+   "Wypchnij się w górę.",
+   "Przy kolejnej stronie zmień ustawienie dłoni."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie skręcaj tułowia.",
+   "Nie opuszczaj jednego barku.",
+   "Nie ustawiaj dłoni zbyt szeroko.",
+   "Nie wymuszaj zakresu, jeśli bark jest niewygodny."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj biodra wysoko.",
+   "Zginaj łokcie z kontrolą.",
+   "Utrzymuj stabilne barki.",
+   "Trzymaj szyję w linii z kręgosłupem."
+  ],
+  "desc": "Wariant pompki z naciskiem na barki.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Podejdź stopami nieco bliżej i unieś biodra.",
+   "Trzymaj głowę między rękami.",
+   "Opuszczaj głowę w stronę podłogi.",
+   "Wypchnij się z powrotem w górę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie przechodź w zwykłą pompkę.",
+   "Nie wysuwaj głowy zbyt daleko do przodu.",
+   "Nie rozkładaj łokci zbyt mocno.",
+   "Nie ćwicz przez ból barku."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Utrzymuj napięty brzuch.",
+   "Poruszaj łokciami płynnie.",
+   "Trzymaj barki nisko.",
+   "Dobierz komfortowy zakres ruchu."
+  ],
+  "desc": "Ćwiczenie na tricepsy i barki w podporze na przedramionach.",
+  "howTo": [
+   "Przyjmij podpór na przedramionach, ciało długie.",
+   "Trzymaj łokcie pod barkami lub nieco przed nimi.",
+   "Dociskaj dłonie i przedramiona.",
+   "Lekko wyprostuj łokcie.",
+   "Wróć z kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie prostuj łokci na siłę.",
+   "Nie opuszczaj bioder.",
+   "Nie unoś barków.",
+   "Nie ćwicz przez ból łokcia lub barku."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Rozluźnij szyję.",
+   "Poruszaj barkami płynnie.",
+   "Trzymaj ręce luźno.",
+   "Stój prosto."
+  ],
+  "desc": "Prosta rozgrzewka barków, przygotowująca szyję, barki i górę pleców.",
+  "howTo": [
+   "Stań prosto z rozluźnionymi rękami.",
+   "Zataczaj powolne kręgi barkami do tyłu.",
+   "Potem zataczaj powolne kręgi do przodu.",
+   "Poruszaj się płynnie i z kontrolą."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie unoś barków mocno.",
+   "Nie poruszaj się zbyt szybko.",
+   "Nie napinaj szyi.",
+   "Nie zaokrąglaj górnej części pleców."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj ręce blisko wysokości barków.",
+   "Rób małe kręgi.",
+   "Trzymaj barki nisko.",
+   "Rozluźnij szyję."
+  ],
+  "desc": "Rozgrzewka barków i górnej części pleców, aktywująca mięśnie naramienne i stabilizatory barku.",
+  "howTo": [
+   "Stań prosto i unieś ręce na wysokość barków.",
+   "Rób małe kręgi do przodu.",
+   "Potem małe kręgi do tyłu.",
+   "Utrzymuj ciasne, kontrolowane kręgi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie rób dużych, wymachowych ruchów.",
+   "Nie unoś barków do uszu.",
+   "Nie wyginaj lędźwi.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj stopy stabilnie.",
+   "Skręcaj się z tułowia.",
+   "Skręcaj płynnie.",
+   "Trzymaj kolana w bezruchu podczas skrętu."
+  ],
+  "desc": "Delikatne ćwiczenie rotacji tułowia i górnej części kręgosłupa.",
+  "howTo": [
+   "Stań w rozkroku na szerokość bioder.",
+   "Biodra trzymaj w większości skierowane do przodu.",
+   "Skręć górną część ciała w jedną stronę.",
+   "Wróć na środek i skręć w drugą stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie skręcaj kolan razem z ciałem.",
+   "Nie skręcaj się zbyt szybko.",
+   "Nie odchylaj się do tyłu.",
+   "Nie wymuszaj zakresu ruchu."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj plecy proste.",
+   "Ruch zaczynaj od bioder.",
+   "Trzymaj kolana miękkie, nie mocno ugięte.",
+   "Niech szyja podąża za kręgosłupem."
+  ],
+  "desc": "Ćwiczenie ruchowe na biodra, tylne części ud i kontrolę lędźwi.",
+  "howTo": [
+   "Stań prosto, stopy na szerokość bioder.",
+   "Lekko zmiękcz kolana.",
+   "Odsuń biodra do tyłu.",
+   "Opuść tułów z prostymi plecami.",
+   "Wróć do stania, wypychając biodra do przodu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie zaokrąglaj pleców.",
+   "Nie zamieniaj tego w przysiad.",
+   "Nie schylaj się zbyt nisko.",
+   "Nie unoś głowy zbyt wysoko."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj kolana nad palcami stóp.",
+   "Trzymaj pięty na podłodze.",
+   "Trzymaj plecy długie.",
+   "Utrzymuj umiarkowaną głębokość."
+  ],
+  "desc": "Kontrolowana rozgrzewka nóg w bezpiecznym, płytkim zakresie.",
+  "howTo": [
+   "Stań w lekkim rozkroku, nieco szerzej niż biodra.",
+   "Lekko odsuń biodra do tyłu.",
+   "Zegnij kolana tylko do wygodnej głębokości.",
+   "Powoli wróć do stania."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie rób zbyt głębokiego przysiadu.",
+   "Nie pozwól, by kolana zapadały się do środka.",
+   "Nie unoś pięt.",
+   "Nie opadaj zbyt szybko."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Trzymaj ciało w jednej linii.",
+   "Utrzymuj stabilne barki.",
+   "Utrzymuj aktywny korpus.",
+   "Poruszaj się płynnie."
+  ],
+  "desc": "Rozgrzewka barków, nadgarstków i korpusu.",
+  "howTo": [
+   "Przyjmij pozycję wysokiej deski.",
+   "Dłonie ustaw pod barkami.",
+   "Przesuń ciało lekko do przodu.",
+   "Przesuń z powrotem do pozycji wyjściowej.",
+   "Ruch ma być mały i kontrolowany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie opuszczaj bioder.",
+   "Nie wypychaj barków do uszu.",
+   "Nie przesuwaj się zbyt daleko do przodu.",
+   "Nie pozwól, by lędźwie opadły."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Oddychaj powoli i głęboko.",
+   "Rozluźniaj barki przy wydechu.",
+   "Trzymaj żebra nisko, nie wyginaj się nadmiernie.",
+   "Poruszaj się bez pośpiechu."
+  ],
+  "desc": "Spokojne ćwiczenie na otwarcie: głęboki oddech z łagodnym wyciągnięciem całego ciała, które wydłuża kręgosłup.",
+  "howTo": [
+   "Stań prosto, stopy na szerokość bioder.",
+   "Wdychając, wyciągnij obie ręce nad głowę.",
+   "Delikatnie wydłuż kręgosłup.",
+   "Wydychając, opuść ręce i rozluźnij barki."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wstrzymuj oddechu.",
+   "Nie wyginaj mocno lędźwi.",
+   "Nie unoś barków do uszu.",
+   "Nie spiesz się z wyciągnięciem."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Skręcaj się z tułowia.",
+   "Trzymaj biodra w większości zwrócone do przodu.",
+   "Trzymaj stopy mocno na podłodze.",
+   "Utrzymuj płynne, równe tempo."
+  ],
+  "desc": "Delikatne ćwiczenie rotacji, rozgrzewające kręgosłup i tułów.",
+  "howTo": [
+   "Stań w rozkroku na szerokość bioder.",
+   "Pozwól rękom swobodnie się kołysać.",
+   "Skręć górną część ciała w jedną stronę.",
+   "Płynnie przejdź na drugą stronę."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie skręcaj się mocno w kolanach.",
+   "Nie szarp rękami.",
+   "Nie skręcaj się zbyt szybko.",
+   "Nie wstrzymuj oddechu."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Pozwól rękom poruszać się swobodnie.",
+   "Trzymaj barki rozluźnione.",
+   "Pozwól klatce piersiowej delikatnie się otworzyć.",
+   "Stój prosto."
+  ],
+  "desc": "Dynamiczna rozgrzewka barków i klatki piersiowej, przygotowująca górę ciała do pompek i ćwiczeń z podskokami.",
+  "howTo": [
+   "Stań prosto, stopy na szerokość bioder.",
+   "Wymachuj w kontrolowany sposób rękami do przodu i do tyłu.",
+   "Pozwól klatce piersiowej naturalnie się otworzyć, gdy ręce idą do tyłu.",
+   "Poruszaj się płynnie i swobodnie."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nie wymachuj zbyt agresywnie.",
+   "Nie unoś barków do uszu.",
+   "Nie wyginaj lędźwi.",
+   "Nie pozwól, by ruch zamienił się w niekontrolowany rozpęd."
+  ]
+ }
+}

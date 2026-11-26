@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Udržujte stálý odpor.",
+   "Pohybujte se pomalu.",
+   "Držte loket blízko těla.",
+   "Držte rameno dole."
+  ],
+  "desc": "Cvik na bicepsy bez náčiní, kdy jedna ruka klade odpor druhé.",
+  "howTo": [
+   "Stůjte nebo seďte zpříma.",
+   "Ohněte jeden loket jako při bicepsovém zdvihu.",
+   "Druhou rukou tlačte shora na cvičící předloktí.",
+   "Pomalu zvedejte předloktí proti odporu.",
+   "Vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepohybujte se bez skutečného odporu.",
+   "Netrhejte pažemi.",
+   "Nezvedejte rameno.",
+   "Nezadržujte dech."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Udržujte stálý úhel v lokti.",
+   "Udržujte stálé napětí.",
+   "Uvolněte ramena.",
+   "Dýchejte dál."
+  ],
+  "desc": "Statické držení bicepsu s využitím vlastního odporu.",
+  "howTo": [
+   "Ohněte jeden loket asi do 90 stupňů.",
+   "Druhou rukou tlačte shora.",
+   "Cvičící paže klade odpor a nehýbe se.",
+   "Držte napětí.",
+   "Vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netlačte v krátkých trhavých pohybech.",
+   "Nekruťte trupem.",
+   "Nezvedejte rameno.",
+   "Nezadržujte dech."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Držte napětí pod kontrolou.",
+   "Držte ramena dole.",
+   "Držte zápěstí v pohodlné poloze.",
+   "Dýchejte klidně."
+  ],
+  "desc": "Izometrické cvičení paží a předloktí, kdy ruce tlačí proti sobě.",
+  "howTo": [
+   "Zahákněte o sebe prsty nebo ruce.",
+   "Držte lokty lehce pokrčené.",
+   "Tahejte ruce od sebe.",
+   "Držte stálé napětí.",
+   "Pomalu povolte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netahejte trhavě.",
+   "Nezvedejte ramena.",
+   "Nepřehýbejte zápěstí.",
+   "Nezadržujte dech."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Spouštějte pomalu.",
+   "Udržujte stálý odpor.",
+   "Držte loket blízko těla.",
+   "Uvolněte rameno."
+  ],
+  "desc": "Pomalé spouštění pro bicepsy s vlastním odporem.",
+  "howTo": [
+   "Začněte s jedním pokrčeným loktem.",
+   "Druhou rukou vytvářejte odpor.",
+   "Pomalu spouštějte cvičící předloktí.",
+   "Klaďte odpor po celou dobu spouštění.",
+   "Vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte paži rychle spadnout.",
+   "Necvičte bez odporu.",
+   "Nekruťte tělem.",
+   "Nezadržujte dech."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Zvedejte se jen málo.",
+   "Udržujte krk v prodloužení páteře.",
+   "Stahujte lopatky dozadu a dolů.",
+   "Lehce zapojte hýždě."
+  ],
+  "desc": "Cvik na záda zaměřený na držení těla: horní záda, lopatky a vzpřimovače páteře.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Položte paže podél těla.",
+   "Palce lehce otočte ven.",
+   "Mírně zvedněte hrudník.",
+   "Stáhněte lopatky dozadu a dolů.",
+   "Vydržte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nezvedejte se příliš vysoko.",
+   "Nezaklánějte hlavu.",
+   "Nepřehýbejte se příliš v bedrech.",
+   "Nezvedejte ramena."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Uvolněte krk.",
+   "Pohybujte lopatkami plynule.",
+   "Zdvih hrudníku nechte malý nebo žádný.",
+   "Pohybujte pažemi bez spěchu."
+  ],
+  "desc": "Cvik na horní záda a lopatky vleže na břiše.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Hlavu nechte čelem dolů.",
+   "Pohybujte pažemi v širokém oblouku z boků nad hlavu.",
+   "Vraťte se stejnou cestou.",
+   "Pohyb držte pod kontrolou."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nezvedejte hlavu.",
+   "Nepřehýbejte se příliš v bedrech.",
+   "Nehoďte pažemi.",
+   "Nezvedejte ramena."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Držte rozsah pohybu malý.",
+   "Nechte pracovat lopatky.",
+   "Udržujte krk v prodloužení páteře.",
+   "Držte ramena daleko od uší."
+  ],
+  "desc": "Cvik na horní záda, lopatky a zadní část ramen.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Pokrčte lokty do tvaru W.",
+   "Mírně zvedněte lokty a ruce.",
+   "Stáhněte k sobě lopatky.",
+   "Pomalu spusťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nezvedejte se příliš vysoko.",
+   "Netahejte hlavu nahoru.",
+   "Nepoužívejte setrvačnost.",
+   "Nepřehýbejte se příliš v bedrech."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Zvedejte paže jen trochu.",
+   "Udržujte krk v prodloužení páteře.",
+   "Držte ramena dole.",
+   "Pohybujte se pod kontrolou."
+  ],
+  "desc": "Cvik na lopatky pro dolní část trapézu a horní záda.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Natáhněte paže šikmo nad hlavu do tvaru Y.",
+   "Mírně zvedněte paže od podlahy.",
+   "Pomalu spusťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nezvedejte se příliš vysoko.",
+   "Nezvedejte ramena.",
+   "Neprohýbejte se v bedrech.",
+   "Nepohybujte se příliš rychle."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Držte paže v jedné linii s rameny.",
+   "Uvolněte krk.",
+   "Pohybujte lopatkami jemně.",
+   "Zdvih držte malý."
+  ],
+  "desc": "Cvik na horní záda pro zadní část ramen a kontrolu lopatek.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Natáhněte paže do stran do tvaru T.",
+   "Mírně zvedněte paže.",
+   "Stáhněte k sobě lopatky.",
+   "Pomalu spusťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nevyhazujte paže nahoru.",
+   "Nezvedejte hlavu.",
+   "Nezvedejte ramena.",
+   "Nenuťte se do velkého rozsahu pohybu."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Táhněte lokty dolů pod kontrolou.",
+   "Stahujte lopatky jemně k sobě.",
+   "Udržujte krk v prodloužení páteře.",
+   "Držte bedra v pohodlné poloze."
+  ],
+  "desc": "Cvik na záda, který napodobuje tažný pohyb bez náčiní.",
+  "howTo": [
+   "Lehněte si na břicho s pažemi nad hlavou.",
+   "Mírně zvedněte hrudník.",
+   "Táhněte lokty dolů k žebrům.",
+   "Stáhněte k sobě lopatky.",
+   "Znovu natáhněte paže dopředu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netrhejte pažemi.",
+   "Nezvedejte se příliš vysoko.",
+   "Nezaklánějte hlavu.",
+   "Nenechte ramena vyjet k uším."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Udržujte krk v prodloužení páteře.",
+   "Pohybujte se pod kontrolou.",
+   "Držte bedra v pohodlné poloze.",
+   "Dýchejte dál."
+  ],
+  "desc": "Cvik na záda a koordinaci vleže na břiše.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Mírně zvedněte hrudník.",
+   "Pohybujte protilehlou paží a nohou v řízeném plaveckém pohybu.",
+   "Pohyb držte malý a stálý."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepohybujte se příliš rychle.",
+   "Nezvedejte se příliš vysoko.",
+   "Nezaklánějte hlavu.",
+   "Nenuťte bedra."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Držte hrudník otevřený.",
+   "Držte boky nahoře.",
+   "Udržujte ramena stabilní.",
+   "Udržujte krk v prodloužení páteře."
+  ],
+  "desc": "Cvik na zadní řetězec: hýždě, zadní stehna, ramena a záda.",
+  "howTo": [
+   "Sedněte si na podlahu s nataženýma nohama.",
+   "Položte ruce za boky.",
+   "Zatlačte do rukou a pat.",
+   "Zvedněte boky.",
+   "Držte tělo v dlouhé linii."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepropadejte v bocích.",
+   "Nezvedejte ramena.",
+   "Nezaklánějte hlavu.",
+   "Nenuťte zápěstí."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Zdvih držte malý.",
+   "Pulzujte plynule.",
+   "Držte krk dlouhý.",
+   "Držte bedra pod kontrolou."
+  ],
+  "desc": "Cvik na záda s malým rozsahem pro vzpřimovače páteře a držení těla.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Položte ruce vedle těla nebo lehce poblíž hrudníku.",
+   "Mírně zvedněte hrudník.",
+   "Dělejte malé řízené pulzy.",
+   "Udržujte krk v prodloužení páteře."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepulzujte příliš vysoko.",
+   "Nepoužívejte setrvačnost.",
+   "Nedívejte se dopředu.",
+   "Netlačte do ostré bolesti v bedrech."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Zdvih hrudníku držte malý.",
+   "Tah do W provádějte plynule.",
+   "Stahujte lopatky dozadu a dolů.",
+   "Držte krk dlouhý."
+  ],
+  "desc": "Silnější cvik na záda, který spojuje malý zdvih jako u kobry s tahem paží do tvaru W.",
+  "howTo": [
+   "Lehněte si na břicho s pažemi vpředu.",
+   "Mírně zvedněte hrudník.",
+   "Stáhněte lokty dolů a dozadu do tvaru W.",
+   "Stáhněte k sobě lopatky.",
+   "Znovu natáhněte paže dopředu a pomalu spusťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepřehýbejte se příliš v bedrech.",
+   "Netahejte se za krk.",
+   "Nepohybujte se příliš rychle.",
+   "Nezvedejte ramena."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Zdvih držte malý.",
+   "Nechte krk pokračovat v linii páteře.",
+   "Držte hýždě zapojené.",
+   "Pohybujte se plynule."
+  ],
+  "desc": "Cvik na záda se střídavým zdvihem protilehlé paže a nohy jako při plavání.",
+  "howTo": [
+   "Lehněte si na břicho s pažemi nataženými nad hlavou.",
+   "Mírně zvedněte hrudník a nohy.",
+   "Zvedněte jednu paži a protilehlou nohu.",
+   "Spusťte a vyměňte strany, střídejte plynule."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepřetěžujte bedra.",
+   "Nezvedejte hlavu.",
+   "Nepohybujte se trhavě.",
+   "Nezadržujte dech."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Držte tělo v jedné linii.",
+   "Držte lokty pod rameny.",
+   "Udržujte střed těla zapojený.",
+   "Dýchejte stejnoměrně."
+  ],
+  "desc": "Cvik na stabilitu středu těla: břicho, ramena, hýždě a trup.",
+  "howTo": [
+   "Položte lokty pod ramena.",
+   "Došlápněte nohy dozadu.",
+   "Vytvořte přímku od ramen k patám.",
+   "Zpevněte břicho a hýždě.",
+   "Držte pozici."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte bedra propadnout.",
+   "Nezvedejte boky příliš vysoko.",
+   "Nedívejte se dopředu.",
+   "Nezadržujte dech."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Napněte celé tělo.",
+   "Držte hýždě zapojené.",
+   "Držte střed těla pevný.",
+   "Dýchejte pod kontrolou."
+  ],
+  "desc": "Krátký intenzivní plank zaměřený na napětí celého těla.",
+  "howTo": [
+   "Začněte v planku na předloktích.",
+   "Silně zpevněte břicho.",
+   "Stáhněte hýždě.",
+   "Představte si, že táhnete lokty směrem k špičkám.",
+   "Vydržte s maximální kontrolou."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedržte ho jako uvolněný plank.",
+   "Nenechte boky propadnout.",
+   "Nezadržujte dech.",
+   "Nesnažte se vydržet příliš dlouho."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Držte bedra blízko podlahy.",
+   "Držte nohy pod kontrolou.",
+   "Uvolněte krk.",
+   "Pohybujte se plynule."
+  ],
+  "desc": "Cvik na spodní část břicha s řízeným křížením nohou.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Jemně přitiskněte bedra k podlaze.",
+   "Zvedněte nohy.",
+   "Překřižte jednu nohu přes druhou.",
+   "Střídejte křížení dál."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neprohýbejte se v bedrech.",
+   "Nespouštějte nohy příliš nízko.",
+   "Netahejte hlavu dopředu.",
+   "Nepohybujte se příliš rychle."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Rozsah pohybu držte malý.",
+   "Udržujte bedra stabilní.",
+   "Nenechte nohy klesnout příliš nízko.",
+   "Dýchejte stejnoměrně."
+  ],
+  "desc": "Cvik na spodní část břicha s krátkými střídavými kopy nohou.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Přitiskněte bedra k podlaze.",
+   "Zvedněte nohy.",
+   "Pohybujte nohama nahoru a dolů v krátkých střídavých kopech."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neprohýbejte se v bedrech.",
+   "Nedělejte velké kopy.",
+   "Nenapínejte krk.",
+   "Nezadržujte dech."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Pracujte ze spodní části břicha.",
+   "Zvedejte pánev pod kontrolou.",
+   "Uvolněte krk.",
+   "Spouštějte pomalu."
+  ],
+  "desc": "Cvik na břicho zaměřený na řízené zvedání pánve.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Pokrčte kolena a zvedněte chodidla.",
+   "Pomocí břicha mírně zvedněte pánev nahoru.",
+   "Pomalu se vraťte dolů."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nehoďte nohama.",
+   "Nepoužívejte setrvačnost.",
+   "Netahejte se za krk.",
+   "Nenechte boky rychle spadnout."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Držte bedra na podlaze.",
+   "Držte břicho napnuté.",
+   "Uvolněte krk.",
+   "Dýchejte dál."
+  ],
+  "desc": "Statické držení středu těla s kratší pákou pro lepší kontrolu.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Přitiskněte bedra k podlaze.",
+   "Mírně zvedněte ramena.",
+   "Nechte kolena pokrčená nebo nohy zvednuté výš.",
+   "Držte pozici."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neprohýbejte se v bedrech.",
+   "Nespouštějte nohy příliš nízko.",
+   "Nevysouvejte bradu dopředu.",
+   "Nezadržujte dech."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Držte loket pod ramenem.",
+   "Držte boky nahoře.",
+   "Držte tělo dlouhé.",
+   "Udržujte krk v prodloužení páteře."
+  ],
+  "desc": "Boční cvik na střed těla pro šikmé svaly břicha a stabilitu ramene a boků.",
+  "howTo": [
+   "Lehněte si na bok.",
+   "Položte loket pod rameno.",
+   "Zvedněte boky.",
+   "Držte tělo v jedné rovné linii.",
+   "Držte pozici."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte boky propadnout.",
+   "Nezvedejte rameno.",
+   "Nenaklánějte hrudník dopředu.",
+   "Nezadržujte dech."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Pohyb držte malý a řízený.",
+   "Držte loket pod ramenem.",
+   "Pohybujte boky přímo nahoru a dolů.",
+   "Držte střed těla napnutý."
+  ],
+  "desc": "Silnější varianta bočního planku pro šikmé svaly břicha a boční stranu boků.",
+  "howTo": [
+   "Začněte v bočním planku.",
+   "Mírně spusťte boky.",
+   "Zvedněte boky zpět nahoru.",
+   "Opakujte pod kontrolou.",
+   "Vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nespouštějte se příliš nízko.",
+   "Nekruťte trupem.",
+   "Nepropadejte do ramene.",
+   "Nepohybujte se příliš rychle."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Držte boky rovně.",
+   "Držte střed těla napnutý.",
+   "Udržujte ramena stabilní.",
+   "Pohybujte se pomalu."
+  ],
+  "desc": "Cvik na střed těla a ramena: dotýkání ramen v poloze planku.",
+  "howTo": [
+   "Začněte ve vysokém planku.",
+   "Držte boky rovně a stabilně.",
+   "Dotkněte se jednou rukou protilehlého ramene.",
+   "Vraťte ji a dotkněte se druhou rukou.",
+   "Tělo držte v klidu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekývejte boky ze strany na stranu.",
+   "Nepohybujte se příliš rychle.",
+   "Nenechte bedra propadnout.",
+   "Nekruťte trupem."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Držte boky stabilní.",
+   "Držte střed těla zapojený.",
+   "Pohybujte se pod kontrolou.",
+   "Držte ramena nad rukama nebo lokty."
+  ],
+  "desc": "Cvik na střed těla a tricepsy s přechodem mezi plankem na předloktích a vysokým plankem.",
+  "howTo": [
+   "Začněte v planku na předloktích.",
+   "Položte jednu ruku na podlahu a vytlačte se nahoru.",
+   "Přidejte druhou ruku do vysokého planku.",
+   "Spusťte se zpět na předloktí.",
+   "Střídejte vedoucí paži."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekývejte boky ze strany na stranu.",
+   "Nenechte bedra propadnout.",
+   "Nepohybujte se příliš rychle.",
+   "Nenechte ramena zhroutit."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Udržujte bedra stabilní.",
+   "Pohybujte se pomalu.",
+   "Pátu pokládejte jemně.",
+   "Držte pánev v klidu."
+  ],
+  "desc": "Řízený cvik na střed těla a bezpečnější alternativa těžších cviků se zvedáním nohou.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Zvedněte nohy do polohy stolu.",
+   "Spusťte jednu patu k podlaze.",
+   "Lehce se dotkněte a vraťte se.",
+   "Střídejte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nespouštějte nohu příliš rychle.",
+   "Neprohýbejte se v bedrech.",
+   "Nepohybujte obě nohy najednou.",
+   "Nespěchejte s pohybem."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Držte bedra blízko podlahy.",
+   "Pohybujte se pomalu.",
+   "Pohybujte protilehlou paží a nohou společně.",
+   "Držte trup v klidu."
+  ],
+  "desc": "Cvik na kontrolu středu těla pro hluboké břišní svaly a stabilitu páteře.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Zvedněte paže i nohy do polohy stolu.",
+   "Natáhněte protilehlou paži a nohu.",
+   "Udržujte bedra stabilní.",
+   "Vraťte se a vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neprohýbejte se v bedrech.",
+   "Nepohybujte se příliš rychle.",
+   "Nespouštějte nohu příliš nízko.",
+   "Nenechte žebra vyčnívat."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Otáčejte se z trupu.",
+   "Držte bedra pod kontrolou.",
+   "Uvolněte krk.",
+   "Pohybujte se plynule."
+  ],
+  "desc": "Rotační cvik na břicho pro šikmé svaly a přední břišní svaly.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Přitáhněte kolena nahoru.",
+   "Položte ruce lehce u hlavy.",
+   "Otočte trup a přibližte jeden loket k protilehlému koleni.",
+   "Střídejte strany v řízeném rytmu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netahejte se za krk.",
+   "Nepohybujte jen lokty.",
+   "Nespěchejte s opakováními.",
+   "Nenechte bedra prohnout."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Nechte hrudník otevřít jemně.",
+   "Držte ramena uvolněná.",
+   "Držte bedra v pohodlné poloze.",
+   "Cvičte bez bolesti v ramenou."
+  ],
+  "desc": "Jemné protažení hrudníku a přední části ramen.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Roztáhněte paže do stran.",
+   "Uvolněte ramena.",
+   "Nechte hrudník jemně otevřít.",
+   "Dýchejte pomalu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netlačte paže silou dolů.",
+   "Neprohýbejte se v bedrech.",
+   "Nenapínejte krk.",
+   "Neprotahujte přes bolest."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Protažení držte mírné.",
+   "Nechte koleno lehce pokrčené.",
+   "Udržujte bedra v klidu.",
+   "Dýchejte pomalu."
+  ],
+  "desc": "Jemné protažení zadní části stehna.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Zvedněte jednu nohu.",
+   "Uchopte ji za stehnem nebo lýtkem.",
+   "Jemně přitahujte nohu k sobě.",
+   "Vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netahejte příliš silně.",
+   "Nenuťte nohu do narovnání.",
+   "Nezvedejte boky.",
+   "Netlačte do ostré bolesti za kolenem."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Pohybujte se pomalu.",
+   "Držte ramena dole.",
+   "Dýchejte uvolněně.",
+   "Protažení držte v pohodlné míře."
+  ],
+  "desc": "Jemné rotační protažení páteře a trupu.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Pokrčte kolena.",
+   "Nechte kolena jemně klesnout na jednu stranu.",
+   "Držte ramena na podlaze.",
+   "Vraťte se do středu a vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenuťte kolena k podlaze.",
+   "Nekruťte se rychle.",
+   "Nezvedejte rameno.",
+   "Neprotahujte přes bolest."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Zdvih držte mírný.",
+   "Držte ramena daleko od uší.",
+   "Držte bedra v pohodlné poloze.",
+   "Udržujte krk v prodloužení páteře."
+  ],
+  "desc": "Jemné protažení přední strany těla a mírný záklon.",
+  "howTo": [
+   "Lehněte si na břicho.",
+   "Položte předloktí na podlahu.",
+   "Jemně zvedněte hrudník.",
+   "Držte krk dlouhý.",
+   "Dýchejte pomalu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepřehýbejte se příliš v bedrech.",
+   "Nezaklánějte hlavu.",
+   "Nezvedejte ramena.",
+   "Nenuťte se do pozice."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Dýchejte klidně.",
+   "Držte ramena uvolněná.",
+   "Nechte obličej měkký.",
+   "Nechte tělo uklidnit."
+  ],
+  "desc": "Klidové dechové cvičení na závěr tréninku.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Uvolněte ramena a čelist.",
+   "Pokud je to příjemné, položte jednu ruku na břicho.",
+   "Jemně se nadechněte.",
+   "Pomalu vydechněte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedýchejte příliš usilovně.",
+   "Nezadržujte dech.",
+   "Nenapínejte krk.",
+   "Neprohýbejte se v bedrech."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Nechte boky usadit se k patám.",
+   "Jemně prodlužte záda.",
+   "Uvolněte ramena.",
+   "Dýchejte pomalu."
+  ],
+  "desc": "Uklidňující protažení zad, boků a ramen na zklidnění.",
+  "howTo": [
+   "Klekněte si a posaďte boky zpět k patám.",
+   "Natáhněte paže dopředu po podlaze.",
+   "Opřete čelo.",
+   "Dýchejte pomalu a uvolněte se."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Netlačte boky silou dolů.",
+   "Nenapínejte ramena.",
+   "Nezadržujte dech.",
+   "Nepřetěžujte kolena."
+  ]
+ },
+ "D01": {
+  "breathing": "Dýchejte rovnoměrně, nezadržujte dech.",
+  "correct": [
+   "Držte loket přilepený k boku.",
+   "Pohybujte se pomalu, bez švihu.",
+   "Držte rameno dole, daleko od ucha.",
+   "Držte zápěstí rovně."
+  ],
+  "desc": "Pomalé cvičení rotátorové manžety, které stabilizuje rameno pro podání a údery. Jedna činka 0,5 kg, vždy jedna paže.",
+  "howTo": [
+   "Stůjte zpříma s jednou činkou 0,5 kg v ruce.",
+   "Pokrčte loket do 90° a přitiskněte ho k boku.",
+   "Začněte s předloktím přes břicho.",
+   "Pomalu otáčejte předloktí ven, od těla.",
+   "Pomalu se vraťte, pak vyměňte paže."
+  ],
+  "safety": "Jen 0,5 kg. Přestaňte, pokud vás bolí rameno. S činkou nikdy neběhejte ani neskákejte.",
+  "voice": {
+   "finish": "Odložte činku.",
+   "last": "",
+   "mid": [
+    "Pomalu otáčejte předloktí ven.",
+    "Loket zůstává na místě."
+   ],
+   "start": "Půlkilová činka. Loket přilepený k boku."
+  },
+  "wrong": [
+   "Nenechte loket ujet dopředu ani do strany.",
+   "Netrhejte činkou.",
+   "Nezvedejte ramena.",
+   "Nepoužívejte těžší činku."
+  ]
+ },
+ "D02": {
+  "breathing": "Vydechněte při zvedání paží.",
+  "correct": [
+   "Držte záda dlouhá a rovná.",
+   "Zastavte ve výšce ramen.",
+   "Stahujte lopatky k sobě.",
+   "Pohybujte oběma pažemi společně."
+  ],
+  "desc": "Zapažování v předklonu pro zadní část ramen a lopatky, tedy svaly držení těla, které tenista potřebuje.",
+  "howTo": [
+   "Držte v každé ruce činku 0,5 kg.",
+   "Předkloňte se v bocích s rovnými zády a měkkými koleny.",
+   "Nechte paže viset pod rameny.",
+   "Zvedejte paže do stran až do výšky ramen a stáhněte k sobě lopatky.",
+   "Pomalu spusťte."
+  ],
+  "safety": "Jen 0,5 kg. Měkká kolena. S činkami nikdy neskákejte.",
+  "voice": {
+   "finish": "Vzpřimte se a odložte je.",
+   "last": "",
+   "mid": [
+    "Paže do stran.",
+    "Stáhněte lopatky k sobě."
+   ],
+   "start": "Předklon, záda rovná, v každé ruce půlkilo."
+  },
+  "wrong": [
+   "Nekulaťte záda.",
+   "Nehoďte činkami.",
+   "Nezvedejte paže nad ramena.",
+   "Nedívejte se nahoru a nezkracujte krk."
+  ]
+ },
+ "D03": {
+  "breathing": "Nádech dolů, výdech nahoru.",
+  "correct": [
+   "Držte činky u hrudníku.",
+   "Držte paty na podlaze.",
+   "Držte kolena nad špičkami.",
+   "Držte záda dlouhá."
+  ],
+  "desc": "Goblet dřep: obě činky 0,5 kg držené u hrudníku pro trénink nohou a stabilní držení těla připravené na raketu.",
+  "howTo": [
+   "Držte obě činky 0,5 kg spolu u hrudníku.",
+   "Stůjte s nohama asi na šířku ramen.",
+   "Posuňte boky dozadu a pokrčte kolena.",
+   "Držte paty na zemi a hrudník vzpřímený.",
+   "Vstaňte, aniž by vás činky táhly dopředu."
+  ],
+  "safety": "S činkami neskákejte. Pokud vás bolí koleno, přejděte na dřep bez zátěže.",
+  "voice": {
+   "finish": "Stůjte zpříma.",
+   "last": "",
+   "mid": [
+    "Paty dole.",
+    "Kolena nad špičkami."
+   ],
+   "start": "Činky u hrudníku. Pomalý dřep."
+  },
+  "wrong": [
+   "Nenechte kolena padat dovnitř.",
+   "Nezvedejte paty.",
+   "Nenechte se činkami stáhnout dopředu.",
+   "Neodrážejte se ze spodní polohy."
+  ]
+ },
+ "D04": {
+  "breathing": "Pomalé nádechy a výdechy. Nikdy nezadržujte dech.",
+  "correct": [
+   "Držte paže u uší.",
+   "Držte žebra dole, bez prohnutí zad.",
+   "Držte ramena daleko od uší.",
+   "Dýchejte dál."
+  ],
+  "desc": "Klidné držení nad hlavou s činkami 0,5 kg, které trénuje stabilitu ramen potřebnou při podání.",
+  "howTo": [
+   "Držte v každé ruce činku 0,5 kg.",
+   "Zvedněte obě paže rovně nad hlavu.",
+   "Přiblížte bicepsy k uším.",
+   "Držte žebra dole a břicho napnuté.",
+   "Vydržte v klidu a dýchejte do konce času, pak pomalu spusťte."
+  ],
+  "safety": "Jen držení, žádné tlaky ani švihy. Pokud se rameno třese nebo bolí, spusťte činky.",
+  "voice": {
+   "finish": "Pomalu spusťte.",
+   "last": "",
+   "mid": [
+    "Žebra dolů.",
+    "Dýchejte dál."
+   ],
+   "start": "Půlkilo nad hlavou. Paže u uší."
+  },
+  "wrong": [
+   "Nenaklánějte se dozadu.",
+   "Nezvedejte ramena.",
+   "Nezamykejte a nezatínejte lokty.",
+   "Netrhejte činkami nahoru."
+  ]
+ },
+ "D05": {
+  "breathing": "Klidně dýchejte nosem dovnitř i ven, pokud to jde.",
+  "correct": [
+   "Stůjte, jako by vás provázek táhl za temeno.",
+   "Držte obě ramena ve stejné výšce.",
+   "Udržujte žebra v klidu.",
+   "Držte kolena měkká, ne zamčená."
+  ],
+  "desc": "Držení jako s kufrem: jedna činka 0,5 kg v jedné ruce. Cílem je zůstat vzpřímený a nenaklonit se, tedy síla proti úklonu, kterou využijete při výpadu za míčem.",
+  "howTo": [
+   "Držte jednu činku 0,5 kg v jedné ruce, paže visí u stehna.",
+   "Stůjte s chodidly pod boky.",
+   "Zůstaňte vzpřímení: nenaklánějte se k závaží ani od něj.",
+   "Vydržte v klidu a dýchejte.",
+   "Vyměňte ruce pro druhou stranu."
+  ],
+  "safety": "Stůjte na místě. S činkou nechoďte, neběhejte ani neskákejte.",
+  "voice": {
+   "finish": "Vyměňte ruce.",
+   "last": "",
+   "mid": [
+    "Nenaklánějte se.",
+    "Ramena ve stejné výšce."
+   ],
+   "start": "Jedno půlkilo v jedné ruce. Stůjte zpříma."
+  },
+  "wrong": [
+   "Nenaklánějte se do strany.",
+   "Nezvedejte rameno zatížené paže.",
+   "Nechoďte ani nepodskakujte.",
+   "Nezadržujte dech."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Skákejte nízko.",
+   "Dopadejte měkce a tiše.",
+   "Držte kolena lehce pokrčená.",
+   "Stůjte zpříma."
+  ],
+  "desc": "Lehké zahřátí kotníků a lýtek malými rychlými skoky.",
+  "howTo": [
+   "Stůjte zpříma s chodidly asi na šířku boků.",
+   "Držte kolena lehce povolená.",
+   "Dělejte malé rychlé skoky hlavně z kotníků.",
+   "Dopadejte tiše a opakujte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neskákejte příliš vysoko.",
+   "Nedopadejte hlasitě.",
+   "Nezamykejte kolena.",
+   "Nenechte kotníky podklouzávat dovnitř ani ven."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Držte trup vzpřímený.",
+   "Zvedejte kolena pod kontrolou.",
+   "Došlapujte měkce.",
+   "Dýchejte stejnoměrně."
+  ],
+  "desc": "Zahřátí s malým nárazem jako alternativa vysokých kolen.",
+  "howTo": [
+   "Stůjte zpříma.",
+   "Zvedněte jedno koleno do výšky boků.",
+   "Spusťte ho pod kontrolou.",
+   "Vyměňte strany a pokračujte v pochodu.",
+   "Nechte paže pohybovat se přirozeně."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenaklánějte se dozadu.",
+   "Nemávejte nohama bez kontroly.",
+   "Netřískejte chodidly o zem.",
+   "Nezadržujte dech."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Dopadejte měkce.",
+   "Držte kolena lehce pokrčená.",
+   "Pohybujte pažemi plynule.",
+   "Dýchejte v rytmu."
+  ],
+  "desc": "Kardio cvik pro celé tělo, který zvyšuje tep a zahřívá ramena, boky a nohy.",
+  "howTo": [
+   "Stůjte zpříma s pažemi u těla.",
+   "Rozkročte nohy skokem a zvedněte paže nad hlavu.",
+   "Skokem nohy spojte a spusťte paže.",
+   "Opakujte stálým rytmem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedopadejte tvrdě.",
+   "Nezamykejte kolena.",
+   "Nezvedejte ramena.",
+   "Nepohybujte se tak rychle, že ztratíte kontrolu."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Držte pevný plank.",
+   "Držte střed těla napnutý.",
+   "Držte ramena nad rukama.",
+   "Pohybujte koleny pod kontrolou."
+  ],
+  "desc": "Dynamický cvik na střed těla a kondici z vysokého planku.",
+  "howTo": [
+   "Začněte ve vysokém planku.",
+   "Držte ruce pod rameny.",
+   "Přitáhněte jedno koleno k hrudníku.",
+   "Střídejte nohy v rytmu.",
+   "Držte boky stabilní."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte boky vyskakovat vysoko.",
+   "Nenechte bedra propadnout.",
+   "Nehýbejte nohama příliš divoce.",
+   "Nenechte ramena zhroutit."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Dopadejte tiše.",
+   "Držte kolena nad špičkami.",
+   "Držte hrudník otevřený.",
+   "Každý skok držte pod kontrolou."
+  ],
+  "desc": "Plyometrický cvik na nohy pro sílu, kondici a koordinaci.",
+  "howTo": [
+   "Začněte s nohama asi na šířku ramen.",
+   "Spusťte se do řízeného dřepu.",
+   "Vyskočte nahoru.",
+   "Dopadněte měkce s lehce pokrčenými koleny.",
+   "Před dalším skokem znovu zaujměte pozici."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedopadejte tvrdě.",
+   "Nenechte kolena padat dovnitř.",
+   "Neskákejte, dokud není dřep stabilní.",
+   "Nespěchejte bez zaujetí pozice."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Dopadejte tiše.",
+   "Držte koleno nad špičkou.",
+   "Držte trup pod kontrolou.",
+   "Pohybujte se plynule ze strany na stranu."
+  ],
+  "desc": "Boční skokový cvik pro nohy, boky, rovnováhu a koordinaci.",
+  "howTo": [
+   "Stůjte na jedné noze.",
+   "Odrazte se do strany na druhou nohu.",
+   "Dopadněte měkce a ustalte se.",
+   "Opakujte ze strany na stranu.",
+   "Pro rovnováhu používejte paže."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte koleno při dopadu padat dovnitř.",
+   "Neskákejte příliš daleko příliš brzy.",
+   "Nepropadejte do dopadu.",
+   "Nekruťte kolenem při dopadu."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Zvedejte kolena směrem k výšce boků.",
+   "Dopadejte lehce.",
+   "Držte střed těla zapojený.",
+   "Držte trup vzpřímený."
+  ],
+  "desc": "Kardio cvik, který zvyšuje tep a zapojuje boky, střed těla a nohy.",
+  "howTo": [
+   "Stůjte zpříma.",
+   "Běžte na místě s vysokým zvedáním kolen.",
+   "Pohybujte pažemi přirozeně.",
+   "Rytmus držte rychlý, ale pod kontrolou."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenaklánějte se dozadu.",
+   "Nedopadejte těžce.",
+   "Neplácejte chodidly o zem.",
+   "Neztrácejte držení těla, když se tempo zrychlí."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Pokládejte ruce pod ramena.",
+   "Držte pevný plank.",
+   "Došlapujte měkce.",
+   "Skok držte pod kontrolou."
+  ],
+  "desc": "Kondiční cvik pro celé tělo, který spojuje dřep, plank a skok. V tomto programu používejte verzi bez kliku, pokud není klik výslovně zadán.",
+  "howTo": [
+   "Stůjte zpříma.",
+   "Dřepněte a položte ruce na podlahu.",
+   "Skokem nebo krokem odsuňte nohy do planku.",
+   "Skokem nebo krokem přisuňte nohy dopředu.",
+   "Vstaňte a zakončete malým skokem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte bedra v planku propadnout.",
+   "Nedopadejte těžce.",
+   "Nespěchejte s nedbalými opakováními.",
+   "Nenechte kolena padat dovnitř při skoku dopředu."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Dopadejte měkce a pod kontrolou.",
+   "Držte přední koleno nad špičkou.",
+   "Držte trup vzpřímený.",
+   "Držte rozsah pohybu bezpečný."
+  ],
+  "desc": "Pokročilý plyometrický cvik na nohy pro sílu, kondici a koordinaci.",
+  "howTo": [
+   "Začněte v poloze výpadu.",
+   "Vyskočte nahoru.",
+   "Ve vzduchu vyměňte nohy.",
+   "Dopadněte měkce do opačného výpadu.",
+   "Před dalším opakováním znovu zajistěte rovnováhu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedopadejte tvrdě.",
+   "Nenechte přední koleno padat dovnitř.",
+   "Nesnižujte se příliš hluboko.",
+   "Nepohybujte se rychleji, než dokážete zvládnout."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Držte kolena nad špičkami.",
+   "Držte paty dole.",
+   "Držte záda dlouhá.",
+   "Hloubku držte pohodlnou."
+  ],
+  "desc": "Řízený cvik na nohy pro stehna, boky a držení těla.",
+  "howTo": [
+   "Stůjte s nohama o něco širší než boky.",
+   "Posuňte boky dozadu.",
+   "Pokrčte kolena do pohodlné mělké hloubky.",
+   "Pomalu vstaňte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedřepujte příliš hluboko.",
+   "Nenechte kolena padat dovnitř.",
+   "Nezvedejte paty.",
+   "Neklesejte rychle."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Výdrž držte stabilní.",
+   "Držte kolena nad špičkami.",
+   "Držte hrudník otevřený.",
+   "Držte paty na podlaze."
+  ],
+  "desc": "Řízená varianta dřepu s krátkým výdrží v bezpečném rozsahu.",
+  "howTo": [
+   "Stůjte stabilně.",
+   "Spusťte se do pohodlného mělkého dřepu.",
+   "Krátce vydržte.",
+   "Vstaňte pod kontrolou."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nechoďte příliš hluboko.",
+   "Nepodskakujte ve spodní poloze.",
+   "Nenechte kolena padat dovnitř.",
+   "Nezadržujte dech."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Držte záda rovná.",
+   "Pohybujte se z boků.",
+   "Držte kolena měkká, ne hluboce pokrčená.",
+   "Nechte krk pokračovat v linii páteře."
+  ],
+  "desc": "Pohybové cvičení pro boky, zadní stehna a kontrolu bedra.",
+  "howTo": [
+   "Stůjte zpříma s nohama na šířku boků.",
+   "Lehce povolte kolena.",
+   "Posuňte boky dozadu.",
+   "Skloňte trup s rovnými zády.",
+   "Vraťte se do stoje zatlačením boků dopředu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekulaťte záda.",
+   "Nepromeňte to v dřep.",
+   "Nesahejte příliš nízko.",
+   "Nezvedejte hlavu příliš vysoko."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Zvedejte se silou cvičící hýždě.",
+   "Držte boky v rovině.",
+   "Pohybujte se pod kontrolou.",
+   "Držte bedra v neutrální poloze."
+  ],
+  "desc": "Silnější cvik na hýždě s jednou nohou.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Pokrčte jedno koleno a nechte chodidlo na podlaze.",
+   "Natáhněte nebo zvedněte druhou nohu.",
+   "Zatlačte přes patu cvičící nohy.",
+   "Zvedněte boky a pomalu spusťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekruťte pánví.",
+   "Netlačte přes špičky.",
+   "Neprohýbejte se v bedrech.",
+   "Nespouštějte se příliš rychle."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Držte boky v rovině.",
+   "Držte hýždě zapojené.",
+   "Pohybujte se pomalu.",
+   "Držte bedra v pohodlné poloze."
+  ],
+  "desc": "Cvik na hýždě a stabilitu pánve.",
+  "howTo": [
+   "Začněte v poloze mostu.",
+   "Držte boky zvednuté.",
+   "Mírně zvedněte jedno chodidlo od podlahy.",
+   "Položte ho a vyměňte strany.",
+   "Držte pánev stabilní."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte boky klesnout.",
+   "Nekývejte se ze strany na stranu.",
+   "Nepohybujte se příliš rychle.",
+   "Neprohýbejte se v bedrech."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Tlačte do pat.",
+   "Nahoře stáhněte hýždě.",
+   "Držte žebra dole.",
+   "Nenechte se v bedrech příliš prohnout."
+  ],
+  "desc": "Cvik na hýždě, který posiluje boky a zadní řetězec.",
+  "howTo": [
+   "Lehněte si na záda.",
+   "Pokrčte kolena a položte chodidla na podlahu.",
+   "Zvedněte boky.",
+   "Nahoře vydržte.",
+   "Pomalu spusťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neprohýbejte se nahoře v bedrech.",
+   "Nezvedejte paty.",
+   "Nespouštějte boky příliš rychle.",
+   "Nestavte chodidla příliš blízko."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Vzpřimte se.",
+   "Pohybujte se plynule.",
+   "Držte kotníky v ose.",
+   "Spouštějte pod kontrolou."
+  ],
+  "desc": "Cvik na lýtka, kotníky a kontrolu chodidel.",
+  "howTo": [
+   "Stůjte zpříma s nohama na šířku boků.",
+   "Vyjděte na špičky.",
+   "Nahoře krátce vydržte.",
+   "Pomalu spusťte paty."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nespouštějte paty rychle.",
+   "Nenaklánějte se dopředu.",
+   "Nenechte kotníky padat ven.",
+   "Nepoužívejte setrvačnost."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Držte boky zvednuté.",
+   "Pohybujte horní nohou pomalu.",
+   "Držte trup stabilní.",
+   "Držte rameno pevné."
+  ],
+  "desc": "Cvik na boční řetězec pro boční hýždě, šikmé svaly břicha a stabilitu boků.",
+  "howTo": [
+   "Začněte v bočním planku.",
+   "Držte tělo v rovné linii.",
+   "Mírně zvedněte horní nohu.",
+   "Spusťte ji pod kontrolou.",
+   "Opakujte a vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte boky klesnout.",
+   "Nehoďte nohou.",
+   "Nenechte tělo přetočit dozadu.",
+   "Nepropadejte do ramene."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Držte kolena nad špičkami.",
+   "Držte paty na podlaze.",
+   "Držte záda dlouhá.",
+   "Hloubku držte pod kontrolou."
+  ],
+  "desc": "Základní dřep s vlastní vahou pro nohy, boky a hýždě.",
+  "howTo": [
+   "Stůjte s nohama asi na šířku ramen.",
+   "Mírně posuňte boky dozadu.",
+   "Pokrčte kolena a spusťte se do dřepu.",
+   "Držte hrudník otevřený.",
+   "Vstaňte přes celé chodidlo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte kolena padat dovnitř.",
+   "Nezvedejte paty.",
+   "Nekulaťte záda.",
+   "Neklesejte příliš rychle."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Držte přední koleno nad špičkou.",
+   "Držte trup vzpřímený.",
+   "Zakračujte pod kontrolou.",
+   "Držte přední patu na zemi."
+  ],
+  "desc": "Cvik na dolní část těla pro nohy, hýždě a rovnováhu.",
+  "howTo": [
+   "Stůjte zpříma.",
+   "Zakročte jednou nohou dozadu.",
+   "Pod kontrolou se spusťte do výpadu.",
+   "Odrazem přední nohy se vraťte do stoje.",
+   "Vyměňte strany."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte přední koleno padat dovnitř.",
+   "Nenaklánějte se příliš dopředu.",
+   "Neklesejte rychle.",
+   "Neodrážejte se příliš silně zadní nohou."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Držte pomalé tempo.",
+   "Držte kolena nad špičkami.",
+   "Držte paty na zemi.",
+   "Držte záda v neutrální poloze."
+  ],
+  "desc": "Vzduchový dřep prováděný pomalu pro rozvoj kontroly a síly nohou.",
+  "howTo": [
+   "Stůjte s nohama na šířku ramen.",
+   "Spouštějte se asi tři sekundy.",
+   "Dole krátce vydržte.",
+   "Vstaňte pod kontrolou."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neklesejte rychle.",
+   "Neodrážejte se ze spodní polohy.",
+   "Nenechte kolena padat dovnitř.",
+   "Nezadržujte dech."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Držte tělo v jedné linii.",
+   "Držte střed těla napnutý.",
+   "Držte lokty v úhlu asi 30 až 45 stupňů.",
+   "Pohybujte se pod kontrolou."
+  ],
+  "desc": "Základní cvik na horní část těla pro hrudník, tricepsy, ramena a střed těla.",
+  "howTo": [
+   "Začněte ve vysokém planku.",
+   "Položte ruce pod ramena nebo o něco šířeji.",
+   "Pod kontrolou spusťte tělo.",
+   "Vytlačte se zpět nahoru s rovným tělem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte boky propadnout.",
+   "Nezvedejte boky příliš vysoko.",
+   "Nerozevírejte lokty rovně do stran.",
+   "Nepropadejte do spodní polohy."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Držte lokty blízko.",
+   "Držte tělo rovně.",
+   "Držte ramena daleko od uší.",
+   "Držte zápěstí v pohodlné poloze."
+  ],
+  "desc": "Varianta kliku s větším zaměřením na tricepsy.",
+  "howTo": [
+   "Začněte ve vysokém planku.",
+   "Položte ruce blíž k sobě než při běžném kliku.",
+   "Držte lokty blízko těla.",
+   "Pomalu se spusťte a vytlačte zpět nahoru."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nestavte ruce příliš blízko.",
+   "Nerozevírejte lokty.",
+   "Nenechte bedra propadnout.",
+   "Netlačte přes bolest zápěstí nebo lokte."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Výdrž držte pod kontrolou.",
+   "Držte střed těla napnutý.",
+   "Držte hrudník aktivní.",
+   "Držte tělo rovně."
+  ],
+  "desc": "Řízený klik s krátkou výdrží ve spodní poloze.",
+  "howTo": [
+   "Začněte v poloze běžného kliku.",
+   "Pomalu se spusťte.",
+   "Poblíž spodní polohy vydržte jednu sekundu.",
+   "Vytlačte se zpět nahoru, aniž byste ztratili polohu těla."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neuvolňujte se dole.",
+   "Nenechte boky propadnout.",
+   "Nezadržujte dech.",
+   "Neodrážejte se ze spodní polohy."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Držte pomalé, rovnoměrné tempo.",
+   "Držte tělo rovně.",
+   "Držte lokty pod kontrolou.",
+   "Dýchejte stejnoměrně."
+  ],
+  "desc": "Pomalá varianta kliku, která zvyšuje kontrolu a dobu pod napětím.",
+  "howTo": [
+   "Začněte ve vysokém planku.",
+   "Spouštějte se asi tři sekundy.",
+   "Poblíž spodní polohy vydržte jednu sekundu.",
+   "Vytlačujte se nahoru asi tři sekundy."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nespěchejte s pohybem.",
+   "Nepropadejte dole.",
+   "Nenechte boky prověsit.",
+   "Neztrácejte napětí ve středu těla."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Držte tělo v ose.",
+   "Držte střed těla napnutý.",
+   "Udržujte obě ramena stabilní.",
+   "Pohybujte se pod kontrolou."
+  ],
+  "desc": "Asymetrická varianta kliku, která zatěžuje hrudník, ramena a střed těla.",
+  "howTo": [
+   "Začněte v poloze kliku.",
+   "Položte jednu ruku mírně dopředu a druhou mírně dozadu.",
+   "Pod kontrolou se spusťte.",
+   "Vytlačte se zpět nahoru.",
+   "Při další sérii vyměňte polohu rukou."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekruťte trupem.",
+   "Nenechte jedno rameno klesnout.",
+   "Nestavte ruce příliš široko.",
+   "Nenuťte rozsah, pokud je vám rameno nepříjemné."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Držte boky vysoko.",
+   "Pokrčujte lokty pod kontrolou.",
+   "Udržujte ramena stabilní.",
+   "Udržujte krk v prodloužení páteře."
+  ],
+  "desc": "Varianta kliku zaměřená na ramena.",
+  "howTo": [
+   "Začněte ve vysokém planku.",
+   "Přisuňte chodidla mírně blíž a zvedněte boky.",
+   "Držte hlavu mezi pažemi.",
+   "Spusťte hlavu směrem k podlaze.",
+   "Vytlačte se zpět nahoru."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nepropadejte do běžného kliku.",
+   "Nenechte hlavu vést příliš dopředu.",
+   "Nerozevírejte lokty příliš.",
+   "Netlačte přes bolest ramene."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Držte střed těla napnutý.",
+   "Pohybujte lokty plynule.",
+   "Držte ramena dole.",
+   "Rozsah pohybu držte pohodlný."
+  ],
+  "desc": "Cvik na tricepsy a ramena z opory na předloktích.",
+  "howTo": [
+   "Začněte na předloktích s dlouhým tělem.",
+   "Držte lokty pod rameny nebo mírně před nimi.",
+   "Zatlačte do rukou a předloktí.",
+   "Mírně natáhněte lokty.",
+   "Pod kontrolou se vraťte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenuťte lokty.",
+   "Nenechte boky propadnout.",
+   "Nezvedejte ramena.",
+   "Nepohybujte se přes bolest lokte nebo ramene."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Uvolněte krk.",
+   "Pohybujte rameny plynule.",
+   "Držte paže volné.",
+   "Vzpřimte se."
+  ],
+  "desc": "Jednoduché zahřátí ramen pro přípravu krku, ramen a horní části zad.",
+  "howTo": [
+   "Stůjte zpříma s uvolněnými pažemi.",
+   "Dělejte pomalé kruhy rameny dozadu.",
+   "Poté dělejte pomalé kruhy dopředu.",
+   "Pohyb držte plynulý a řízený."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nezvedejte ramena silně.",
+   "Nepohybujte se příliš rychle.",
+   "Nenapínejte krk.",
+   "Nekulaťte horní záda."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Držte paže ve výšce ramen.",
+   "Kruhy držte malé.",
+   "Držte ramena dole.",
+   "Uvolněte krk."
+  ],
+  "desc": "Zahřátí ramen a horní části zad, které aktivuje deltové svaly a stabilizátory ramen.",
+  "howTo": [
+   "Stůjte zpříma a zvedněte paže do výšky ramen.",
+   "Dělejte malé kruhy dopředu.",
+   "Poté dělejte malé kruhy dozadu.",
+   "Kruhy držte malé a řízené."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedělejte velké švihy.",
+   "Nezvedejte ramena k uším.",
+   "Neprohýbejte se v bedrech.",
+   "Nezadržujte dech."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Držte chodidla stabilní.",
+   "Otáčejte se z trupu.",
+   "Rotujte plynule.",
+   "Při otáčení držte kolena v klidu."
+  ],
+  "desc": "Jemné rotační cvičení pro trup a horní část páteře.",
+  "howTo": [
+   "Stůjte s nohama na šířku boků.",
+   "Držte boky většinou otočené dopředu.",
+   "Otočte horní část těla na jednu stranu.",
+   "Vraťte se do středu a otočte se na druhou stranu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Neotáčejte kolena s tělem.",
+   "Nerotujte příliš rychle.",
+   "Nenaklánějte se dozadu.",
+   "Nenuťte rozsah pohybu."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Držte záda rovná.",
+   "Pohybujte se z boků.",
+   "Držte kolena měkká, ne hluboce pokrčená.",
+   "Nechte krk pokračovat v linii páteře."
+  ],
+  "desc": "Pohybové cvičení pro boky, zadní stehna a kontrolu bedra.",
+  "howTo": [
+   "Stůjte zpříma s nohama na šířku boků.",
+   "Lehce povolte kolena.",
+   "Posuňte boky dozadu.",
+   "Skloňte trup s rovnými zády.",
+   "Vraťte se do stoje zatlačením boků dopředu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekulaťte záda.",
+   "Nepromeňte to v dřep.",
+   "Nesahejte příliš nízko.",
+   "Nezvedejte hlavu příliš vysoko."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Držte kolena nad špičkami.",
+   "Držte paty na podlaze.",
+   "Držte záda dlouhá.",
+   "Hloubku držte střední."
+  ],
+  "desc": "Řízené zahřátí nohou v bezpečném mělkém rozsahu.",
+  "howTo": [
+   "Stůjte s nohama o něco širší než boky.",
+   "Mírně posuňte boky dozadu.",
+   "Pokrčte kolena jen do pohodlné hloubky.",
+   "Pomalu se vraťte do stoje."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nedřepujte příliš hluboko.",
+   "Nenechte kolena padat dovnitř.",
+   "Nezvedejte paty.",
+   "Neklesejte příliš rychle."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Držte tělo v jedné linii.",
+   "Udržujte ramena stabilní.",
+   "Držte střed těla zapojený.",
+   "Pohybujte se plynule."
+  ],
+  "desc": "Zahřátí ramen, zápěstí a středu těla.",
+  "howTo": [
+   "Začněte v poloze vysokého planku.",
+   "Ruce jsou pod rameny.",
+   "Přesuňte tělo mírně dopředu.",
+   "Přesuňte se zpět do výchozí polohy.",
+   "Pohyb držte malý a řízený."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nenechte boky propadnout.",
+   "Netlačte ramena k uším.",
+   "Nepohybujte se příliš daleko dopředu.",
+   "Nenechte bedra prověsit."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Dýchejte pomalu a naplno.",
+   "Při výdechu uvolněte ramena.",
+   "Držte žebra dole, neprohýbejte se příliš.",
+   "Pohybujte se bez spěchu."
+  ],
+  "desc": "Klidné úvodní cvičení: hluboké dýchání s jemným protažením celého těla pro prodloužení páteře.",
+  "howTo": [
+   "Stůjte zpříma s nohama na šířku boků.",
+   "Nadechněte se a natáhněte obě paže nad hlavu.",
+   "Jemně prodlužte páteř.",
+   "Vydechněte a spusťte paže, nechte klesnout ramena."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nezadržujte dech.",
+   "Neprohýbejte se silně v bedrech.",
+   "Nezvedejte ramena k uším.",
+   "Nespěchejte s natažením."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Otáčejte se z trupu.",
+   "Držte boky většinou dopředu.",
+   "Držte chodidla na místě.",
+   "Držte plynulé, rovnoměrné tempo."
+  ],
+  "desc": "Jemné rotační cvičení pro zahřátí páteře a trupu.",
+  "howTo": [
+   "Stůjte s nohama na šířku boků.",
+   "Nechte paže volně kývat.",
+   "Otočte horní část těla na jednu stranu.",
+   "Plynule přejděte na druhou stranu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekruťte silou přes kolena.",
+   "Netrhejte pažemi.",
+   "Nerotujte příliš rychle.",
+   "Nezadržujte dech."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Nechte paže volně se pohybovat.",
+   "Držte ramena uvolněná.",
+   "Nechte hrudník jemně otevřít.",
+   "Vzpřimte se."
+  ],
+  "desc": "Dynamické zahřátí ramen a hrudníku pro přípravu horní části těla na kliky a skoky.",
+  "howTo": [
+   "Stůjte zpříma s nohama na šířku boků.",
+   "Kývejte pažemi dopředu a dozadu pod kontrolou.",
+   "Nechte hrudník přirozeně otevřít, když paže jdou dozadu.",
+   "Pohyb držte plynulý a uvolněný."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Nekývejte příliš prudce.",
+   "Nezvedejte ramena k uším.",
+   "Neprohýbejte se v bedrech.",
+   "Nenechte pohyb přejít v nekontrolovanou setrvačnost."
+  ]
+ }
+}

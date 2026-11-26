@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a resistência constante.",
+   "Mova-se devagar.",
+   "Mantenha o cotovelo perto do corpo.",
+   "Mantenha o ombro baixo."
+  ],
+  "desc": "Um exercício de bíceps sem equipamento, usando uma mão para fazer resistência à outra.",
+  "howTo": [
+   "Fique em pé ou sentado, com a postura alta.",
+   "Dobre um cotovelo como numa rosca.",
+   "Com a mão oposta, pressione o antebraço que trabalha para baixo.",
+   "Suba devagar, fazendo força contra a resistência.",
+   "Troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não se mova sem resistência de verdade.",
+   "Não dê trancos com o braço.",
+   "Não levante o ombro.",
+   "Não prenda a respiração."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o ângulo do cotovelo estável.",
+   "Mantenha a tensão constante.",
+   "Relaxe os ombros.",
+   "Continue respirando."
+  ],
+  "desc": "Uma sustentação estática de bíceps com autorresistência.",
+  "howTo": [
+   "Dobre um cotovelo a cerca de 90 graus.",
+   "Com a mão oposta, pressione para baixo.",
+   "O braço que trabalha resiste sem se mover.",
+   "Sustente a tensão.",
+   "Troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não pressione em trancos curtos.",
+   "Não gire o tronco.",
+   "Não levante o ombro.",
+   "Não prenda a respiração."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a tensão controlada.",
+   "Mantenha os ombros baixos.",
+   "Mantenha os punhos confortáveis.",
+   "Mantenha a respiração calma."
+  ],
+  "desc": "Um exercício isométrico para braços e antebraços, com as mãos puxando uma contra a outra.",
+  "howTo": [
+   "Entrelace os dedos ou as mãos.",
+   "Mantenha os cotovelos levemente dobrados.",
+   "Puxe as mãos para lados opostos.",
+   "Sustente uma tensão constante.",
+   "Relaxe devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não puxe com tranco.",
+   "Não encolha os ombros.",
+   "Não dobre demais os punhos.",
+   "Não prenda a respiração."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Desça devagar.",
+   "Mantenha a resistência constante.",
+   "Mantenha o cotovelo junto ao corpo.",
+   "Relaxe o ombro."
+  ],
+  "desc": "Um exercício lento de descida para o bíceps, com autorresistência.",
+  "howTo": [
+   "Comece com um cotovelo dobrado.",
+   "Com a mão oposta, crie resistência.",
+   "Desça o antebraço devagar.",
+   "Continue resistindo durante a descida.",
+   "Troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o braço cair rápido.",
+   "Não faça sem resistência.",
+   "Não gire o corpo.",
+   "Não prenda a respiração."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a elevação pequena.",
+   "Mantenha o pescoço neutro.",
+   "Leve as escápulas para trás e para baixo.",
+   "Contraia os glúteos de leve."
+  ],
+  "desc": "Um exercício para a postura, que trabalha a parte alta das costas, as escápulas e os extensores da coluna.",
+  "howTo": [
+   "Deite-se de bruços.",
+   "Coloque os braços ao longo do corpo.",
+   "Gire os polegares levemente para fora.",
+   "Levante um pouco o peito.",
+   "Leve as escápulas para trás e para baixo.",
+   "Sustente."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não levante demais.",
+   "Não jogue a cabeça para trás.",
+   "Não arqueie demais a lombar.",
+   "Não encolha os ombros."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Relaxe o pescoço.",
+   "Mova as escápulas com suavidade.",
+   "Mantenha a elevação do peito pequena ou neutra.",
+   "Mova os braços sem pressa."
+  ],
+  "desc": "Um exercício para a parte alta das costas e as escápulas, feito deitado de bruços.",
+  "howTo": [
+   "Deite-se de barriga para baixo.",
+   "Mantenha o rosto voltado para o chão.",
+   "Mova os braços num arco amplo, das laterais até acima da cabeça.",
+   "Volte pelo mesmo caminho.",
+   "Mantenha o movimento controlado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não levante a cabeça.",
+   "Não arqueie demais a lombar.",
+   "Não balance os braços.",
+   "Não encolha os ombros."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a amplitude de movimento pequena.",
+   "Deixe as escápulas fazerem o trabalho.",
+   "Mantenha o pescoço neutro.",
+   "Mantenha os ombros longe das orelhas."
+  ],
+  "desc": "Um exercício para a parte alta das costas, as escápulas e a parte de trás dos ombros.",
+  "howTo": [
+   "Deite-se de bruços.",
+   "Dobre os cotovelos formando um W.",
+   "Levante um pouco os cotovelos e as mãos.",
+   "Aperte as escápulas uma contra a outra.",
+   "Desça com controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não levante demais.",
+   "Não puxe a cabeça para cima.",
+   "Não use impulso.",
+   "Não arqueie demais a lombar."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Levante os braços só um pouco.",
+   "Mantenha o pescoço neutro.",
+   "Mantenha os ombros baixos.",
+   "Mova-se com controle."
+  ],
+  "desc": "Um exercício para as escápulas, com foco no trapézio inferior e na parte alta das costas.",
+  "howTo": [
+   "Deite-se de bruços.",
+   "Estenda os braços na diagonal, acima da cabeça, formando um Y.",
+   "Levante um pouco os braços do chão.",
+   "Desça com controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não levante demais.",
+   "Não encolha os ombros.",
+   "Não arqueie a lombar.",
+   "Não se mova rápido demais."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os braços alinhados com os ombros.",
+   "Relaxe o pescoço.",
+   "Mova as escápulas com suavidade.",
+   "Mantenha a elevação pequena."
+  ],
+  "desc": "Um exercício para a parte alta das costas, os ombros posteriores e o controle das escápulas.",
+  "howTo": [
+   "Deite-se de bruços.",
+   "Estenda os braços para os lados, formando um T.",
+   "Levante um pouco os braços.",
+   "Aperte as escápulas uma contra a outra.",
+   "Desça devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não jogue os braços para cima.",
+   "Não levante a cabeça.",
+   "Não encolha os ombros.",
+   "Não force uma amplitude grande."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Puxe os cotovelos para baixo com controle.",
+   "Aperte as escápulas com suavidade.",
+   "Mantenha o pescoço neutro.",
+   "Mantenha a lombar confortável."
+  ],
+  "desc": "Um exercício para as costas que imita o movimento de puxar, sem equipamento.",
+  "howTo": [
+   "Deite-se de bruços, com os braços acima da cabeça.",
+   "Levante um pouco o peito.",
+   "Puxe os cotovelos para baixo, em direção às costelas.",
+   "Aperte as escápulas uma contra a outra.",
+   "Estenda os braços para a frente de novo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não dê trancos com os braços.",
+   "Não levante demais.",
+   "Não jogue a cabeça para trás.",
+   "Não deixe os ombros subirem até as orelhas."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o pescoço neutro.",
+   "Mova-se com controle.",
+   "Mantenha a lombar confortável.",
+   "Continue respirando."
+  ],
+  "desc": "Um exercício de costas e coordenação, feito deitado de bruços.",
+  "howTo": [
+   "Deite-se de barriga para baixo.",
+   "Levante um pouco o peito.",
+   "Mova braço e perna opostos num padrão controlado de nado.",
+   "Mantenha o movimento pequeno e constante."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não se mova rápido demais.",
+   "Não levante demais.",
+   "Não jogue a cabeça para trás.",
+   "Não force a lombar."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o peito aberto.",
+   "Mantenha o quadril elevado.",
+   "Mantenha os ombros estáveis.",
+   "Mantenha o pescoço neutro."
+  ],
+  "desc": "Um exercício da cadeia posterior para glúteos, posteriores da coxa, ombros e costas.",
+  "howTo": [
+   "Sente-se no chão com as pernas estendidas.",
+   "Apoie as mãos atrás do quadril.",
+   "Empurre o chão com as mãos e os calcanhares.",
+   "Levante o quadril.",
+   "Mantenha o corpo numa linha longa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril cair.",
+   "Não encolha os ombros.",
+   "Não jogue a cabeça para trás.",
+   "Não force os punhos."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a elevação pequena.",
+   "Mantenha os pulsos suaves.",
+   "Mantenha o pescoço alongado.",
+   "Mantenha a lombar controlada."
+  ],
+  "desc": "Um exercício de costas com pequena amplitude, para os extensores da coluna e a postura.",
+  "howTo": [
+   "Deite-se de bruços.",
+   "Apoie as mãos ao lado do corpo ou de leve perto do peito.",
+   "Levante um pouco o peito.",
+   "Faça pequenos pulsos controlados.",
+   "Mantenha o pescoço neutro."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não pulse alto demais.",
+   "Não use impulso.",
+   "Não olhe para a frente.",
+   "Não force se sentir dor aguda na lombar."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a elevação do peito pequena.",
+   "Mantenha a puxada em W suave.",
+   "Leve as escápulas para trás e para baixo.",
+   "Mantenha o pescoço alongado."
+  ],
+  "desc": "Um exercício de costas mais forte, que combina uma pequena elevação de cobra com a puxada dos braços em W.",
+  "howTo": [
+   "Deite-se de bruços, com os braços estendidos à frente.",
+   "Levante um pouco o peito.",
+   "Puxe os cotovelos para baixo e para trás, formando um W.",
+   "Aperte as escápulas uma contra a outra.",
+   "Estenda os braços à frente de novo e desça com controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie demais a lombar.",
+   "Não puxe com o pescoço.",
+   "Não se mova rápido demais.",
+   "Não encolha os ombros."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a elevação pequena.",
+   "Deixe o pescoço acompanhar a coluna.",
+   "Mantenha os glúteos contraídos.",
+   "Mova-se com constância."
+  ],
+  "desc": "Um exercício de costas que levanta braço e perna opostos de forma alternada, num movimento parecido com o nado.",
+  "howTo": [
+   "Deite-se de bruços, com os braços estendidos acima da cabeça.",
+   "Levante um pouco o peito e as pernas.",
+   "Levante um braço e a perna oposta.",
+   "Desça e troque de lado, alternando com suavidade."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não force a lombar.",
+   "Não levante a cabeça.",
+   "Não se mova em trancos.",
+   "Não prenda a respiração."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o corpo numa só linha.",
+   "Mantenha os cotovelos sob os ombros.",
+   "Mantenha o core ativo.",
+   "Mantenha a respiração constante."
+  ],
+  "desc": "Um exercício de estabilidade do core para abdômen, ombros, glúteos e tronco.",
+  "howTo": [
+   "Apoie os cotovelos sob os ombros.",
+   "Leve os pés para trás.",
+   "Forme uma linha reta dos ombros aos calcanhares.",
+   "Contraia o abdômen e os glúteos.",
+   "Sustente a posição."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe a lombar cair.",
+   "Não levante demais o quadril.",
+   "Não olhe para a frente.",
+   "Não prenda a respiração."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Contraia o corpo todo.",
+   "Mantenha os glúteos ativos.",
+   "Mantenha o core firme.",
+   "Mantenha a respiração controlada."
+  ],
+  "desc": "Uma prancha curta e intensa, com foco na tensão do corpo todo.",
+  "howTo": [
+   "Comece numa prancha de antebraços.",
+   "Contraia o abdômen com força.",
+   "Aperte os glúteos.",
+   "Imagine puxar os cotovelos em direção aos pés.",
+   "Sustente com o máximo de controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não sustente como numa prancha relaxada.",
+   "Não deixe o quadril ceder.",
+   "Não prenda a respiração.",
+   "Não tente sustentar por tempo demais."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a lombar próxima ao chão.",
+   "Mantenha as pernas controladas.",
+   "Relaxe o pescoço.",
+   "Mova-se com suavidade."
+  ],
+  "desc": "Um exercício para o abdômen inferior, com movimentos controlados de cruzar as pernas.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Pressione a lombar suavemente contra o chão.",
+   "Levante as pernas.",
+   "Cruze uma perna sobre a outra.",
+   "Continue alternando o movimento de cruzar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie a lombar.",
+   "Não abaixe demais as pernas.",
+   "Não puxe a cabeça para a frente.",
+   "Não se mova rápido demais."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a amplitude de movimento pequena.",
+   "Mantenha a lombar estável.",
+   "Não deixe as pernas caírem demais.",
+   "Mantenha a respiração constante."
+  ],
+  "desc": "Um exercício para o abdômen inferior, com chutes curtos e alternados.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Pressione a lombar contra o chão.",
+   "Levante as pernas.",
+   "Mova as pernas para cima e para baixo, em chutes curtos e alternados."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie a lombar.",
+   "Não faça chutes grandes.",
+   "Não tensione o pescoço.",
+   "Não prenda a respiração."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Mova-se a partir do abdômen inferior.",
+   "Levante a pelve com controle.",
+   "Relaxe o pescoço.",
+   "Desça devagar."
+  ],
+  "desc": "Um exercício abdominal focado em elevar a pelve com controle.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Dobre os joelhos e levante os pés.",
+   "Use o abdômen para enrolar a pelve um pouco para cima.",
+   "Volte a descer devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não balance as pernas.",
+   "Não use impulso.",
+   "Não puxe o pescoço.",
+   "Não deixe o quadril cair rápido."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a lombar no chão.",
+   "Mantenha o abdômen contraído.",
+   "Relaxe o pescoço.",
+   "Continue respirando."
+  ],
+  "desc": "Uma sustentação estática do core com alavanca reduzida, para maior controle.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Pressione a lombar contra o chão.",
+   "Levante um pouco os ombros.",
+   "Mantenha os joelhos dobrados ou as pernas mais altas.",
+   "Sustente a posição."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie a lombar.",
+   "Não abaixe demais as pernas.",
+   "Não projete o queixo para a frente.",
+   "Não prenda a respiração."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o cotovelo sob o ombro.",
+   "Mantenha o quadril elevado.",
+   "Mantenha o corpo alongado.",
+   "Mantenha o pescoço neutro."
+  ],
+  "desc": "Um exercício lateral do core para os oblíquos e a estabilidade do ombro e do quadril.",
+  "howTo": [
+   "Deite-se de lado.",
+   "Apoie o cotovelo sob o ombro.",
+   "Levante o quadril.",
+   "Mantenha o corpo numa linha reta.",
+   "Sustente a posição."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril cair.",
+   "Não encolha o ombro.",
+   "Não gire o peito para a frente.",
+   "Não prenda a respiração."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o movimento pequeno e controlado.",
+   "Mantenha o cotovelo sob o ombro.",
+   "Mova o quadril em linha reta, para cima e para baixo.",
+   "Mantenha o core firme."
+  ],
+  "desc": "Uma variação mais forte da prancha lateral, para os oblíquos e o quadril lateral.",
+  "howTo": [
+   "Comece numa prancha lateral.",
+   "Abaixe um pouco o quadril.",
+   "Levante o quadril de novo.",
+   "Repita com controle.",
+   "Troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não desça demais.",
+   "Não gire o tronco.",
+   "Não desabe sobre o ombro.",
+   "Não se mova rápido demais."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o quadril nivelado.",
+   "Mantenha o core firme.",
+   "Mantenha os ombros estáveis.",
+   "Mova-se devagar."
+  ],
+  "desc": "Um exercício de core e ombros: tocar cada ombro enquanto sustenta a prancha.",
+  "howTo": [
+   "Comece numa prancha alta.",
+   "Mantenha o quadril nivelado e estável.",
+   "Toque uma mão no ombro oposto.",
+   "Volte a mão e toque com a outra.",
+   "Mantenha o corpo parado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não balance o quadril de um lado para o outro.",
+   "Não se mova rápido demais.",
+   "Não deixe a lombar cair.",
+   "Não gire o tronco."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o quadril estável.",
+   "Mantenha o core ativo.",
+   "Mova-se com controle.",
+   "Mantenha os ombros sobre as mãos ou os cotovelos."
+  ],
+  "desc": "Um exercício de core e tríceps, alternando entre a prancha de antebraços e a prancha alta.",
+  "howTo": [
+   "Comece numa prancha de antebraços.",
+   "Apoie uma mão no chão e empurre para cima.",
+   "Suba a outra mão até a prancha alta.",
+   "Volte a descer até os antebraços.",
+   "Alterne o braço que começa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não balance o quadril de um lado para o outro.",
+   "Não deixe a lombar cair.",
+   "Não se mova rápido demais.",
+   "Não deixe os ombros desabarem."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a lombar estável.",
+   "Mova-se devagar.",
+   "Apoie o calcanhar com suavidade.",
+   "Mantenha a pelve firme."
+  ],
+  "desc": "Um exercício de core controlado e uma alternativa mais segura aos movimentos de elevação de pernas mais difíceis.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Levante as pernas na posição de mesa.",
+   "Abaixe um calcanhar em direção ao chão.",
+   "Toque de leve e volte.",
+   "Alterne os lados."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe a perna cair rápido.",
+   "Não arqueie a lombar.",
+   "Não mova as duas pernas ao mesmo tempo.",
+   "Não apresse o movimento."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a lombar próxima ao chão.",
+   "Mova-se devagar.",
+   "Mova o braço e a perna opostos juntos.",
+   "Mantenha o tronco parado."
+  ],
+  "desc": "Um exercício de controle do core para o abdômen profundo e a estabilidade da coluna.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Levante braços e pernas na posição de mesa.",
+   "Estenda o braço e a perna opostos.",
+   "Mantenha a lombar estável.",
+   "Volte e troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie a lombar.",
+   "Não se mova rápido demais.",
+   "Não abaixe demais a perna.",
+   "Não deixe as costelas se abrirem."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Gire a partir do tronco.",
+   "Mantenha a lombar controlada.",
+   "Relaxe o pescoço.",
+   "Mova-se com suavidade."
+  ],
+  "desc": "Um exercício abdominal de rotação, para os oblíquos e o abdômen frontal.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Traga os joelhos para cima.",
+   "Apoie as mãos de leve perto da cabeça.",
+   "Gire o tronco e leve um cotovelo em direção ao joelho oposto.",
+   "Troque de lado num ritmo controlado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não puxe o pescoço.",
+   "Não mova só os cotovelos.",
+   "Não apresse as repetições.",
+   "Não deixe a lombar arquear."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Deixe o peito se abrir com suavidade.",
+   "Mantenha os ombros relaxados.",
+   "Mantenha a lombar confortável.",
+   "Mantenha os ombros sem dor."
+  ],
+  "desc": "Um alongamento suave para o peito e a parte da frente dos ombros.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Abra os braços para os lados.",
+   "Relaxe os ombros.",
+   "Deixe o peito se abrir suavemente.",
+   "Respire devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não force os braços para baixo.",
+   "Não arqueie a lombar.",
+   "Não tensione o pescoço.",
+   "Não alongue sentindo dor."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o alongamento leve.",
+   "Deixe o joelho levemente dobrado.",
+   "Mantenha a lombar tranquila.",
+   "Mantenha a respiração lenta."
+  ],
+  "desc": "Um alongamento suave para a parte de trás da coxa.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Levante uma perna.",
+   "Segure atrás da coxa ou da panturrilha.",
+   "Puxe a perna suavemente em sua direção.",
+   "Troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não puxe com força demais.",
+   "Não force a perna a ficar reta.",
+   "Não levante o quadril.",
+   "Não force se sentir dor aguda atrás do joelho."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Mova-se devagar.",
+   "Mantenha os ombros baixos.",
+   "Mantenha a respiração relaxada.",
+   "Mantenha o alongamento confortável."
+  ],
+  "desc": "Um alongamento suave de rotação para a coluna e o tronco.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Dobre os joelhos.",
+   "Deixe os joelhos caírem suavemente para um lado.",
+   "Mantenha os ombros no chão.",
+   "Volte ao centro e troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não force os joelhos até o chão.",
+   "Não gire rápido.",
+   "Não levante o ombro.",
+   "Não alongue sentindo dor."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a elevação leve.",
+   "Mantenha os ombros longe das orelhas.",
+   "Mantenha a lombar confortável.",
+   "Mantenha o pescoço neutro."
+  ],
+  "desc": "Um alongamento suave da parte da frente do corpo e uma leve extensão das costas.",
+  "howTo": [
+   "Deite-se de bruços.",
+   "Apoie os antebraços no chão.",
+   "Levante o peito com suavidade.",
+   "Mantenha o pescoço alongado.",
+   "Respire devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie demais a lombar.",
+   "Não jogue a cabeça para trás.",
+   "Não encolha os ombros.",
+   "Não force a posição."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a respiração calma.",
+   "Mantenha os ombros relaxados.",
+   "Mantenha o rosto suave.",
+   "Deixe o corpo se acomodar."
+  ],
+  "desc": "Um exercício calmo de respiração para encerrar a sessão.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Relaxe os ombros e a mandíbula.",
+   "Apoie uma mão na barriga, se for confortável.",
+   "Inspire com suavidade.",
+   "Expire devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não respire com força demais.",
+   "Não prenda a respiração.",
+   "Não tensione o pescoço.",
+   "Não arqueie a lombar."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Deixe o quadril se assentar em direção aos calcanhares.",
+   "Alongue as costas com suavidade.",
+   "Relaxe os ombros.",
+   "Mantenha a respiração lenta."
+  ],
+  "desc": "Um alongamento de descanso para as costas, o quadril e os ombros, para desacelerar.",
+  "howTo": [
+   "Ajoelhe-se e leve o quadril para trás, em direção aos calcanhares.",
+   "Estenda os braços à frente, no chão.",
+   "Deixe a testa descansar no chão.",
+   "Respire devagar e relaxe."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não force o quadril para baixo.",
+   "Não tensione os ombros.",
+   "Não prenda a respiração.",
+   "Não force os joelhos."
+  ]
+ },
+ "D01": {
+  "breathing": "Respire de forma regular; não prenda a respiração.",
+  "correct": [
+   "Mantenha o cotovelo colado na lateral do corpo.",
+   "Mova-se devagar, sem balançar.",
+   "Mantenha o ombro baixo, longe da orelha.",
+   "Mantenha o punho reto."
+  ],
+  "desc": "Um exercício lento para o manguito rotador, que estabiliza o ombro para saques e golpes de fundo. Um halter de 0,5 kg, um braço de cada vez.",
+  "howTo": [
+   "Fique em pé segurando um halter de 0,5 kg.",
+   "Dobre o cotovelo a 90° e encoste-o na lateral do corpo.",
+   "Comece com o antebraço cruzado sobre a barriga.",
+   "Gire o antebraço devagar para fora, afastando-o do corpo.",
+   "Volte devagar e depois troque de braço."
+  ],
+  "safety": "Somente 0,5 kg. Pare se o ombro doer. Nunca corra nem salte com o halter.",
+  "voice": {
+   "finish": "Largue o halter.",
+   "last": "",
+   "mid": [
+    "Gire o antebraço para fora devagar.",
+    "O cotovelo fica parado."
+   ],
+   "start": "Halter de meio quilo. Cotovelo colado ao corpo."
+  },
+  "wrong": [
+   "Não deixe o cotovelo se afastar para a frente ou para fora.",
+   "Não dê trancos com o peso.",
+   "Não encolha os ombros.",
+   "Não use um halter mais pesado."
+  ]
+ },
+ "D02": {
+  "breathing": "Expire enquanto os braços sobem.",
+  "correct": [
+   "Mantenha as costas longas e retas.",
+   "Pare na altura dos ombros.",
+   "Aperte as escápulas.",
+   "Mova os dois braços juntos."
+  ],
+  "desc": "Uma elevação posterior com o tronco inclinado, para a parte de trás dos ombros e as escápulas, os músculos da postura de que um tenista precisa.",
+  "howTo": [
+   "Segure um halter de 0,5 kg em cada mão.",
+   "Incline o tronco a partir do quadril, com as costas retas e os joelhos levemente flexionados.",
+   "Deixe os braços pendurados sob os ombros.",
+   "Levante os braços para os lados até a altura dos ombros e aperte as escápulas.",
+   "Desça devagar."
+  ],
+  "safety": "Somente 0,5 kg. Joelhos levemente flexionados. Nunca salte com os halteres.",
+  "voice": {
+   "finish": "Levante-se e largue os halteres.",
+   "last": "",
+   "mid": [
+    "Braços abertos para os lados.",
+    "Aperte as escápulas."
+   ],
+   "start": "Incline o tronco, costas retas, meio quilo em cada mão."
+  },
+  "wrong": [
+   "Não arredonde as costas.",
+   "Não balance os pesos.",
+   "Não levante acima dos ombros.",
+   "Não olhe para cima, forçando o pescoço."
+  ]
+ },
+ "D03": {
+  "breathing": "Inspire ao descer, expire ao subir.",
+  "correct": [
+   "Mantenha os halteres junto ao peito.",
+   "Mantenha os calcanhares no chão.",
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha as costas alongadas."
+  ],
+  "desc": "Um agachamento goblet: dois halteres de 0,5 kg junto ao peito, para trabalhar as pernas e uma postura estável, pronta para a raquete.",
+  "howTo": [
+   "Segure os dois halteres de 0,5 kg juntos, junto ao peito.",
+   "Fique com os pés mais ou menos na largura dos ombros.",
+   "Leve o quadril para trás e dobre os joelhos.",
+   "Mantenha os calcanhares no chão e o peito alto.",
+   "Levante-se sem deixar os pesos irem para a frente."
+  ],
+  "safety": "Não salte com os halteres. Se um joelho doer, passe para o agachamento sem peso.",
+  "voice": {
+   "finish": "Fique em pé, com a postura alta.",
+   "last": "",
+   "mid": [
+    "Calcanhares no chão.",
+    "Joelhos alinhados com os pés."
+   ],
+   "start": "Halteres junto ao peito. Agachamento lento."
+  },
+  "wrong": [
+   "Não deixe os joelhos caírem para dentro.",
+   "Não levante os calcanhares.",
+   "Não deixe os halteres puxarem você para a frente.",
+   "Não quique no fundo do movimento."
+  ]
+ },
+ "D04": {
+  "breathing": "Respire devagar. Nunca prenda a respiração.",
+  "correct": [
+   "Mantenha os braços junto às orelhas.",
+   "Mantenha as costelas para baixo, sem arquear as costas.",
+   "Mantenha os ombros longe das orelhas.",
+   "Continue respirando."
+  ],
+  "desc": "Uma sustentação parada com os halteres de 0,5 kg acima da cabeça, que trabalha a estabilidade do ombro usada no saque.",
+  "howTo": [
+   "Segure um halter de 0,5 kg em cada mão.",
+   "Estenda os dois braços retos acima da cabeça.",
+   "Aproxime os bíceps das orelhas.",
+   "Mantenha as costelas para baixo e a barriga firme.",
+   "Fique parado e respire até o tempo acabar; depois desça devagar."
+  ],
+  "safety": "Apenas sustente, sem empurrar nem balançar. Se o ombro tremer ou doer, abaixe os halteres.",
+  "voice": {
+   "finish": "Desça devagar.",
+   "last": "",
+   "mid": [
+    "Costelas para baixo.",
+    "Continue respirando."
+   ],
+   "start": "Meio quilo acima da cabeça. Braços junto às orelhas."
+  },
+  "wrong": [
+   "Não incline o corpo para trás.",
+   "Não encolha os ombros.",
+   "Não trave nem force os cotovelos.",
+   "Não empurre os pesos para cima com tranco."
+  ]
+ },
+ "D05": {
+  "breathing": "Respire com calma, inspirando e expirando pelo nariz, se puder.",
+  "correct": [
+   "Fique em pé como se um fio puxasse o topo da cabeça.",
+   "Mantenha os dois ombros nivelados.",
+   "Mantenha as costelas quietas.",
+   "Mantenha os joelhos macios, sem travar."
+  ],
+  "desc": "Uma sustentação de mala: um halter de 0,5 kg em uma mão. O objetivo é ficar alto e não inclinar, a mesma força contra a inclinação lateral usada ao se esticar para alcançar uma bola.",
+  "howTo": [
+   "Segure um halter de 0,5 kg em uma mão, com o braço pendurado junto à coxa.",
+   "Fique com os pés sob o quadril.",
+   "Mantenha a postura alta: não se incline para o lado do peso nem para o lado oposto.",
+   "Fique parado e respire.",
+   "Troque de mão para o outro lado."
+  ],
+  "safety": "Fique parado no lugar. Não ande, corra nem salte com o halter.",
+  "voice": {
+   "finish": "Troque de mão.",
+   "last": "",
+   "mid": [
+    "Não se incline.",
+    "Ombros nivelados."
+   ],
+   "start": "Meio quilo em uma mão. Postura alta."
+  },
+  "wrong": [
+   "Não se incline para o lado.",
+   "Não eleve o ombro do braço que segura o peso.",
+   "Não ande nem quique.",
+   "Não prenda a respiração."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os saltos baixos.",
+   "Aterrisse de forma suave e silenciosa.",
+   "Mantenha os joelhos levemente dobrados.",
+   "Mantenha a postura alta."
+  ],
+  "desc": "Um aquecimento leve para tornozelos e panturrilhas, com pequenos saltos rápidos.",
+  "howTo": [
+   "Fique em pé, com os pés mais ou menos na largura do quadril.",
+   "Mantenha os joelhos levemente flexionados.",
+   "Faça pequenos saltos rápidos, usando principalmente os tornozelos.",
+   "Aterrisse em silêncio e repita."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não salte alto demais.",
+   "Não aterrisse com barulho.",
+   "Não trave os joelhos.",
+   "Não deixe os tornozelos virarem para dentro nem para fora."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o tronco ereto.",
+   "Levante os joelhos com controle.",
+   "Apoie os pés com suavidade.",
+   "Mantenha a respiração constante."
+  ],
+  "desc": "Um aquecimento de baixo impacto, alternativa ao joelho alto.",
+  "howTo": [
+   "Fique em pé, com a postura alta.",
+   "Levante um joelho até a altura do quadril.",
+   "Abaixe-o com controle.",
+   "Troque de lado e continue marchando.",
+   "Mova os braços de forma natural."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não se incline para trás.",
+   "Não balance as pernas sem controle.",
+   "Não bata os pés no chão.",
+   "Não prenda a respiração."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Aterrisse com suavidade.",
+   "Mantenha os joelhos levemente dobrados.",
+   "Mova os braços com fluidez.",
+   "Mantenha a respiração ritmada."
+  ],
+  "desc": "Um exercício cardio de corpo inteiro, que acelera o coração e aquece ombros, quadril e pernas.",
+  "howTo": [
+   "Fique em pé, com os braços ao lado do corpo.",
+   "Salte abrindo os pés e levantando os braços acima da cabeça.",
+   "Salte fechando os pés e abaixando os braços.",
+   "Repita num ritmo constante."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não aterrisse com força.",
+   "Não trave os joelhos.",
+   "Não encolha os ombros.",
+   "Não se mova rápido demais, perdendo o controle."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Mantenha uma prancha firme.",
+   "Mantenha o core firme.",
+   "Mantenha os ombros sobre as mãos.",
+   "Mova os joelhos com controle."
+  ],
+  "desc": "Um exercício dinâmico de core e cardio, feito a partir da prancha alta.",
+  "howTo": [
+   "Comece numa prancha alta.",
+   "Mantenha as mãos sob os ombros.",
+   "Leve um joelho em direção ao peito.",
+   "Alterne as pernas num ritmo constante.",
+   "Mantenha o quadril estável."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril subir e descer.",
+   "Não deixe a lombar cair.",
+   "Não mova os pés de forma descontrolada.",
+   "Não deixe os ombros desabarem."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Aterrisse em silêncio.",
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha o peito aberto.",
+   "Mantenha cada salto controlado."
+  ],
+  "desc": "Um exercício pliométrico para as pernas, que trabalha potência, condicionamento e coordenação.",
+  "howTo": [
+   "Comece com os pés mais ou menos na largura dos ombros.",
+   "Desça num agachamento controlado.",
+   "Salte para cima.",
+   "Aterrisse com suavidade, com os joelhos levemente dobrados.",
+   "Reposicione-se antes do salto seguinte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não aterrisse com força.",
+   "Não deixe os joelhos caírem para dentro.",
+   "Não salte antes de o agachamento estar estável.",
+   "Não se apresse sem se reposicionar."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Aterrisse em silêncio.",
+   "Mantenha o joelho alinhado com o pé.",
+   "Mantenha o tronco controlado.",
+   "Mova-se com fluidez de um lado para o outro."
+  ],
+  "desc": "Um exercício de saltos laterais para pernas, quadril, equilíbrio e coordenação.",
+  "howTo": [
+   "Apoie-se em uma perna.",
+   "Salte para o lado, passando para a outra perna.",
+   "Aterrisse com suavidade e estabilize.",
+   "Repita de um lado para o outro.",
+   "Use os braços para se equilibrar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o joelho cair para dentro ao aterrissar.",
+   "Não salte longe demais cedo demais.",
+   "Não se jogue na aterrissagem.",
+   "Não torça o joelho ao tocar o chão."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Levante os joelhos até a altura do quadril.",
+   "Mantenha as aterrissagens leves.",
+   "Mantenha o core ativo.",
+   "Mantenha o tronco alto."
+  ],
+  "desc": "Um exercício cardio que acelera o coração e ativa o quadril, o core e as pernas.",
+  "howTo": [
+   "Fique em pé, com a postura alta.",
+   "Corra no lugar, levantando bem os joelhos.",
+   "Mova os braços de forma natural.",
+   "Mantenha o ritmo rápido, mas controlado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não se incline para trás.",
+   "Não aterrisse com peso.",
+   "Não bata os pés no chão.",
+   "Não perca a postura quando o ritmo aumentar."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Apoie as mãos sob os ombros.",
+   "Mantenha uma prancha firme.",
+   "Apoie os pés com suavidade.",
+   "Mantenha o salto controlado."
+  ],
+  "desc": "Um exercício de condicionamento de corpo inteiro que combina agachamento, prancha e salto. Neste programa, use a versão sem flexão, a menos que uma flexão seja indicada.",
+  "howTo": [
+   "Fique em pé, com a postura alta.",
+   "Agache e apoie as mãos no chão.",
+   "Salte ou dê um passo com os pés para trás, até a prancha.",
+   "Salte ou dê um passo com os pés para a frente.",
+   "Levante-se e termine com um pequeno salto."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe a lombar cair na prancha.",
+   "Não aterrisse com força.",
+   "Não se apresse em repetições desleixadas.",
+   "Não deixe os joelhos caírem para dentro ao saltar para a frente."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Aterrisse com suavidade e controle.",
+   "Mantenha o joelho da frente alinhado com o pé.",
+   "Mantenha o tronco ereto.",
+   "Mantenha a amplitude de movimento segura."
+  ],
+  "desc": "Um exercício pliométrico avançado para as pernas, que trabalha potência, condicionamento e coordenação.",
+  "howTo": [
+   "Comece na posição de afundo.",
+   "Salte para cima.",
+   "Troque as pernas no ar.",
+   "Aterrisse com suavidade no afundo oposto.",
+   "Recupere o equilíbrio antes da repetição seguinte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não aterrisse com força.",
+   "Não deixe o joelho da frente cair para dentro.",
+   "Não desça fundo demais.",
+   "Não se mova mais rápido do que consegue controlar."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha os calcanhares no chão.",
+   "Mantenha as costas alongadas.",
+   "Mantenha a profundidade confortável."
+  ],
+  "desc": "Um exercício controlado para as coxas, o quadril e a postura.",
+  "howTo": [
+   "Fique com os pés um pouco mais afastados que a largura do quadril.",
+   "Leve o quadril para trás.",
+   "Dobre os joelhos até uma profundidade rasa e confortável.",
+   "Levante-se devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não agache fundo demais.",
+   "Não deixe os joelhos caírem para dentro.",
+   "Não levante os calcanhares.",
+   "Não desça rápido."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a pausa estável.",
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha o peito aberto.",
+   "Mantenha os calcanhares no chão."
+  ],
+  "desc": "Uma variação controlada do agachamento, com uma breve pausa numa amplitude segura.",
+  "howTo": [
+   "Fique com os pés firmes.",
+   "Desça num agachamento raso e confortável.",
+   "Faça uma breve pausa.",
+   "Levante-se com controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não desça fundo demais.",
+   "Não quique na posição baixa.",
+   "Não deixe os joelhos caírem para dentro.",
+   "Não prenda a respiração."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Mantenha as costas retas.",
+   "Mova-se a partir do quadril.",
+   "Mantenha os joelhos soltos, sem dobrar muito.",
+   "Deixe o pescoço acompanhar a coluna."
+  ],
+  "desc": "Um exercício de movimento para o quadril, os posteriores da coxa e o controle da lombar.",
+  "howTo": [
+   "Fique em pé, com os pés na largura do quadril.",
+   "Flexione levemente os joelhos.",
+   "Leve o quadril para trás.",
+   "Incline o tronco para a frente com as costas retas.",
+   "Volte à posição em pé levando o quadril para a frente."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arredonde as costas.",
+   "Não transforme em agachamento.",
+   "Não desça demais.",
+   "Não levante demais a cabeça."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Levante usando o glúteo que trabalha.",
+   "Mantenha o quadril nivelado.",
+   "Mova-se com controle.",
+   "Mantenha a lombar neutra."
+  ],
+  "desc": "Um exercício mais forte para os glúteos, usando uma perna de cada vez.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Dobre um joelho e mantenha esse pé no chão.",
+   "Estenda ou levante a outra perna.",
+   "Empurre o chão com o calcanhar da perna que trabalha.",
+   "Levante o quadril e desça devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não gire a pelve.",
+   "Não empurre com os dedos dos pés.",
+   "Não arqueie a lombar.",
+   "Não desça rápido demais."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o quadril nivelado.",
+   "Mantenha os glúteos ativos.",
+   "Mova-se devagar.",
+   "Mantenha a lombar confortável."
+  ],
+  "desc": "Um exercício para os glúteos e a estabilidade da pelve.",
+  "howTo": [
+   "Comece na posição de ponte de glúteos.",
+   "Mantenha o quadril elevado.",
+   "Levante um pé um pouco do chão.",
+   "Apoie-o e troque de lado.",
+   "Mantenha a pelve estável."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril cair.",
+   "Não balance de um lado para o outro.",
+   "Não se mova rápido demais.",
+   "Não arqueie a lombar."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Empurre o chão com os calcanhares.",
+   "Aperte os glúteos no alto.",
+   "Mantenha as costelas para baixo.",
+   "Não deixe a lombar arquear demais."
+  ],
+  "desc": "Um exercício de glúteos que fortalece o quadril e a cadeia posterior.",
+  "howTo": [
+   "Deite-se de costas.",
+   "Dobre os joelhos e apoie os pés no chão.",
+   "Levante o quadril.",
+   "Faça uma pausa no alto.",
+   "Desça devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arqueie a lombar no alto.",
+   "Não levante os calcanhares.",
+   "Não deixe o quadril cair rápido demais.",
+   "Não apoie os pés perto demais."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Fique com a postura alta.",
+   "Mova-se com suavidade.",
+   "Mantenha os tornozelos alinhados.",
+   "Desça com controle."
+  ],
+  "desc": "Um exercício para a parte inferior da perna, que trabalha panturrilhas, tornozelos e controle dos pés.",
+  "howTo": [
+   "Fique em pé, com os pés na largura do quadril.",
+   "Suba na ponta dos pés.",
+   "Faça uma breve pausa no alto.",
+   "Abaixe os calcanhares devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe os calcanhares caírem rápido.",
+   "Não se incline para a frente.",
+   "Não gire os tornozelos para fora.",
+   "Não use impulso."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o quadril elevado.",
+   "Mova a perna de cima devagar.",
+   "Mantenha o tronco estável.",
+   "Mantenha o ombro firme."
+  ],
+  "desc": "Um exercício da cadeia lateral para os glúteos laterais, os oblíquos e a estabilidade do quadril.",
+  "howTo": [
+   "Comece numa prancha lateral.",
+   "Mantenha o corpo numa linha reta.",
+   "Levante um pouco a perna de cima.",
+   "Desça-a com controle.",
+   "Repita e troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril cair.",
+   "Não balance a perna.",
+   "Não gire o corpo para trás.",
+   "Não desabe sobre o ombro."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha os calcanhares no chão.",
+   "Mantenha as costas alongadas.",
+   "Mantenha a profundidade controlada."
+  ],
+  "desc": "Um agachamento básico com o peso do corpo, para pernas, quadril e glúteos.",
+  "howTo": [
+   "Fique com os pés mais ou menos na largura dos ombros.",
+   "Leve o quadril um pouco para trás.",
+   "Dobre os joelhos e desça num agachamento.",
+   "Mantenha o peito aberto.",
+   "Levante-se empurrando o chão com o pé inteiro."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe os joelhos caírem para dentro.",
+   "Não levante os calcanhares.",
+   "Não arredonde as costas.",
+   "Não desça rápido demais."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o joelho da frente alinhado com o pé.",
+   "Mantenha o tronco ereto.",
+   "Dê o passo para trás com controle.",
+   "Mantenha o calcanhar da frente apoiado."
+  ],
+  "desc": "Um exercício de membros inferiores para pernas, glúteos e equilíbrio.",
+  "howTo": [
+   "Fique em pé, com a postura alta.",
+   "Dê um passo para trás com uma perna.",
+   "Desça no afundo com controle.",
+   "Empurre o pé da frente para voltar à posição em pé.",
+   "Troque de lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o joelho da frente cair para dentro.",
+   "Não se incline demais para a frente.",
+   "Não desça rápido.",
+   "Não empurre a perna de trás com força demais."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o ritmo lento.",
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha os calcanhares no chão.",
+   "Mantenha as costas neutras."
+  ],
+  "desc": "Um agachamento livre feito devagar, para desenvolver controle e força nas pernas.",
+  "howTo": [
+   "Fique com os pés na largura dos ombros.",
+   "Desça ao longo de cerca de três segundos.",
+   "Faça uma breve pausa embaixo.",
+   "Levante-se com controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não desça rápido.",
+   "Não quique no fundo do movimento.",
+   "Não deixe os joelhos caírem para dentro.",
+   "Não prenda a respiração."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o corpo numa só linha.",
+   "Mantenha o core firme.",
+   "Mantenha os cotovelos a cerca de 30 a 45 graus.",
+   "Mova-se com controle."
+  ],
+  "desc": "Um exercício básico para a parte superior do corpo, que trabalha peito, tríceps, ombros e core.",
+  "howTo": [
+   "Comece numa prancha alta.",
+   "Apoie as mãos sob os ombros ou um pouco mais afastadas.",
+   "Desça o corpo com controle.",
+   "Empurre de volta para cima, mantendo o corpo reto."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril cair.",
+   "Não levante demais o quadril.",
+   "Não abra os cotovelos totalmente para os lados.",
+   "Não se jogue na posição baixa."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os cotovelos próximos.",
+   "Mantenha o corpo reto.",
+   "Mantenha os ombros longe das orelhas.",
+   "Mantenha os punhos confortáveis."
+  ],
+  "desc": "Uma variação da flexão com mais foco no tríceps.",
+  "howTo": [
+   "Comece numa prancha alta.",
+   "Posicione as mãos mais próximas do que numa flexão comum.",
+   "Mantenha os cotovelos perto do corpo.",
+   "Desça devagar e empurre de volta para cima."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não junte demais as mãos.",
+   "Não abra os cotovelos.",
+   "Não deixe a lombar cair.",
+   "Não force se sentir dor no punho ou no cotovelo."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Mantenha a pausa controlada.",
+   "Mantenha o core firme.",
+   "Mantenha o peito ativo.",
+   "Mantenha o corpo reto."
+  ],
+  "desc": "Uma flexão controlada, com uma breve pausa na posição baixa.",
+  "howTo": [
+   "Comece na posição de flexão comum.",
+   "Desça devagar.",
+   "Faça uma pausa de um segundo perto do fundo.",
+   "Empurre de volta para cima sem perder a posição do corpo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não relaxe embaixo.",
+   "Não deixe o quadril cair.",
+   "Não prenda a respiração.",
+   "Não quique na posição baixa."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Mantenha um ritmo lento e uniforme.",
+   "Mantenha o corpo reto.",
+   "Mantenha os cotovelos controlados.",
+   "Mantenha a respiração constante."
+  ],
+  "desc": "Uma variação lenta da flexão, que aumenta o controle e o tempo sob tensão.",
+  "howTo": [
+   "Comece numa prancha alta.",
+   "Desça ao longo de cerca de três segundos.",
+   "Faça uma pausa de um segundo perto do fundo.",
+   "Suba ao longo de cerca de três segundos."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não apresse o movimento.",
+   "Não desabe embaixo.",
+   "Não deixe o quadril ceder.",
+   "Não perca a tensão no core."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o corpo alinhado.",
+   "Mantenha o core firme.",
+   "Mantenha os dois ombros estáveis.",
+   "Mova-se com controle."
+  ],
+  "desc": "Uma variação assimétrica da flexão, que desafia o peito, os ombros e o core.",
+  "howTo": [
+   "Comece na posição de flexão.",
+   "Coloque uma mão um pouco à frente e a outra um pouco atrás.",
+   "Desça com controle.",
+   "Empurre de volta para cima.",
+   "Troque a posição das mãos na repetição seguinte."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não gire o tronco.",
+   "Não deixe um ombro cair.",
+   "Não afaste demais as mãos.",
+   "Não force a amplitude se o ombro estiver desconfortável."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o quadril alto.",
+   "Dobre os cotovelos com controle.",
+   "Mantenha os ombros estáveis.",
+   "Mantenha o pescoço neutro."
+  ],
+  "desc": "Uma variação da flexão com foco nos ombros.",
+  "howTo": [
+   "Comece numa prancha alta.",
+   "Aproxime um pouco os pés e levante o quadril.",
+   "Mantenha a cabeça entre os braços.",
+   "Abaixe a cabeça em direção ao chão.",
+   "Empurre de volta para cima."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não caia numa flexão comum.",
+   "Não deixe a cabeça ir muito para a frente.",
+   "Não abra demais os cotovelos.",
+   "Não force se sentir dor no ombro."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o core firme.",
+   "Mova os cotovelos com suavidade.",
+   "Mantenha os ombros baixos.",
+   "Mantenha a amplitude de movimento confortável."
+  ],
+  "desc": "Um exercício de tríceps e ombros, feito a partir do apoio nos antebraços.",
+  "howTo": [
+   "Comece apoiado nos antebraços, com o corpo alongado.",
+   "Mantenha os cotovelos sob os ombros ou um pouco à frente deles.",
+   "Empurre com as mãos e os antebraços.",
+   "Estenda levemente os cotovelos.",
+   "Volte com controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não force os cotovelos.",
+   "Não deixe o quadril cair.",
+   "Não encolha os ombros.",
+   "Não continue se sentir dor no cotovelo ou no ombro."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Relaxe o pescoço.",
+   "Mova os ombros com suavidade.",
+   "Mantenha os braços soltos.",
+   "Fique com a postura alta."
+  ],
+  "desc": "Um aquecimento simples de ombros, para preparar o pescoço, os ombros e a parte alta das costas.",
+  "howTo": [
+   "Fique em pé, com a postura alta e os braços relaxados.",
+   "Faça círculos lentos com os ombros para trás.",
+   "Depois faça círculos lentos para a frente.",
+   "Mantenha o movimento suave e controlado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não encolha os ombros com força.",
+   "Não se mova rápido demais.",
+   "Não tensione o pescoço.",
+   "Não arredonde a parte alta das costas."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os braços perto da altura dos ombros.",
+   "Mantenha os círculos pequenos.",
+   "Mantenha os ombros baixos.",
+   "Relaxe o pescoço."
+  ],
+  "desc": "Um aquecimento de ombros e parte alta das costas, que ativa os deltoides e os estabilizadores do ombro.",
+  "howTo": [
+   "Fique em pé e levante os braços até a altura dos ombros.",
+   "Faça pequenos círculos para a frente.",
+   "Depois faça pequenos círculos para trás.",
+   "Mantenha os círculos curtos e controlados."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não faça movimentos amplos e balançados.",
+   "Não levante os ombros até as orelhas.",
+   "Não arqueie a lombar.",
+   "Não prenda a respiração."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os pés estáveis.",
+   "Gire a partir do tronco.",
+   "Gire com suavidade.",
+   "Mantenha os joelhos parados ao girar."
+  ],
+  "desc": "Um exercício suave de rotação para o tronco e a parte alta da coluna.",
+  "howTo": [
+   "Fique com os pés na largura do quadril.",
+   "Mantenha o quadril voltado, na maior parte, para a frente.",
+   "Gire a parte superior do corpo para um lado.",
+   "Volte ao centro e gire para o outro lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não gire os joelhos junto com o corpo.",
+   "Não gire rápido demais.",
+   "Não se incline para trás.",
+   "Não force a amplitude de movimento."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Mantenha as costas retas.",
+   "Mova-se a partir do quadril.",
+   "Mantenha os joelhos soltos, sem dobrar muito.",
+   "Deixe o pescoço acompanhar a coluna."
+  ],
+  "desc": "Um exercício de movimento para o quadril, os posteriores da coxa e o controle da lombar.",
+  "howTo": [
+   "Fique em pé, com os pés na largura do quadril.",
+   "Flexione levemente os joelhos.",
+   "Leve o quadril para trás.",
+   "Incline o tronco para a frente com as costas retas.",
+   "Volte à posição em pé levando o quadril para a frente."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não arredonde as costas.",
+   "Não transforme em agachamento.",
+   "Não desça demais.",
+   "Não levante demais a cabeça."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Mantenha os joelhos alinhados com os pés.",
+   "Mantenha os calcanhares no chão.",
+   "Mantenha as costas alongadas.",
+   "Mantenha a profundidade moderada."
+  ],
+  "desc": "Um aquecimento controlado para as pernas, numa amplitude segura e rasa.",
+  "howTo": [
+   "Fique com os pés um pouco mais afastados que a largura do quadril.",
+   "Leve o quadril um pouco para trás.",
+   "Dobre os joelhos apenas até uma profundidade confortável.",
+   "Volte à posição em pé devagar."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não agache fundo demais.",
+   "Não deixe os joelhos caírem para dentro.",
+   "Não levante os calcanhares.",
+   "Não desça rápido demais."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Mantenha o corpo numa só linha.",
+   "Mantenha os ombros estáveis.",
+   "Mantenha o core ativo.",
+   "Mova-se com suavidade."
+  ],
+  "desc": "Um aquecimento para ombros, punhos e core.",
+  "howTo": [
+   "Comece na posição de prancha alta.",
+   "As mãos ficam sob os ombros.",
+   "Desloque o corpo um pouco para a frente.",
+   "Volte à posição inicial.",
+   "Mantenha o movimento pequeno e controlado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não deixe o quadril cair.",
+   "Não empurre os ombros até as orelhas.",
+   "Não vá longe demais para a frente.",
+   "Não deixe a lombar ceder."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Respire devagar e por completo.",
+   "Relaxe os ombros ao expirar.",
+   "Mantenha as costelas para baixo, sem arquear demais.",
+   "Mova-se sem pressa."
+  ],
+  "desc": "Um exercício de abertura calmo: respiração profunda com um alongamento suave de corpo inteiro, para alongar a coluna.",
+  "howTo": [
+   "Fique em pé, com os pés na largura do quadril.",
+   "Inspire e estenda os dois braços acima da cabeça.",
+   "Alongue a coluna com suavidade.",
+   "Expire e abaixe os braços, soltando os ombros."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não prenda a respiração.",
+   "Não arqueie a lombar com força.",
+   "Não encolha os ombros até as orelhas.",
+   "Não apresse o alongamento."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Gire a partir do tronco.",
+   "Mantenha o quadril, na maior parte, voltado para a frente.",
+   "Mantenha os pés firmes no chão.",
+   "Mantenha um ritmo suave e uniforme."
+  ],
+  "desc": "Um exercício suave de rotação para aquecer a coluna e o tronco.",
+  "howTo": [
+   "Fique com os pés na largura do quadril.",
+   "Deixe os braços balançarem soltos.",
+   "Gire a parte superior do corpo para um lado.",
+   "Passe com fluidez para o outro lado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não torça com força pelos joelhos.",
+   "Não dê puxões com os braços.",
+   "Não gire rápido demais.",
+   "Não prenda a respiração."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Deixe os braços se moverem livremente.",
+   "Mantenha os ombros relaxados.",
+   "Deixe o peito se abrir com suavidade.",
+   "Fique com a postura alta."
+  ],
+  "desc": "Um aquecimento dinâmico de ombros e peito, para preparar a parte superior do corpo para flexões e exercícios de salto.",
+  "howTo": [
+   "Fique em pé, com os pés na largura do quadril.",
+   "Balance os braços para a frente e para trás, de forma controlada.",
+   "Deixe o peito se abrir naturalmente quando os braços forem para trás.",
+   "Mantenha o movimento suave e relaxado."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Não balance com agressividade.",
+   "Não levante os ombros até as orelhas.",
+   "Não arqueie a lombar.",
+   "Não deixe o movimento virar um impulso descontrolado."
+  ]
+ }
+}

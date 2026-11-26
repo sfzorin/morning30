@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Jaga tahanan tetap stabil.",
+   "Bergeraklah perlahan.",
+   "Siku tetap dekat tubuh.",
+   "Bahu tetap turun."
+  ],
+  "desc": "Latihan bisep tanpa alat, satu tangan menahan tangan lainnya.",
+  "howTo": [
+   "Berdiri atau duduk tegak.",
+   "Tekuk satu siku seperti gerakan curl.",
+   "Tekan lengan bawah yang bekerja ke bawah dengan tangan sebaliknya.",
+   "Angkat perlahan ke atas melawan tahanan.",
+   "Ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan bergerak tanpa tahanan yang nyata.",
+   "Jangan menyentak lengan.",
+   "Jangan angkat bahu.",
+   "Jangan menahan napas."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Jaga sudut siku tetap stabil.",
+   "Jaga ketegangan tetap rata.",
+   "Rileksakan bahu.",
+   "Teruslah bernapas."
+  ],
+  "desc": "Tahanan statis untuk bisep dengan tahanan dari tangan sendiri.",
+  "howTo": [
+   "Tekuk satu siku sekitar 90 derajat.",
+   "Tekan ke bawah dengan tangan sebaliknya.",
+   "Lengan yang bekerja melawan tanpa bergerak.",
+   "Tahan ketegangannya.",
+   "Ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menekan dengan sentakan pendek.",
+   "Jangan memutar badan.",
+   "Jangan angkat bahu.",
+   "Jangan menahan napas."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Jaga ketegangan tetap terkendali.",
+   "Bahu tetap turun.",
+   "Jaga pergelangan tangan tetap nyaman.",
+   "Napas tetap tenang."
+  ],
+  "desc": "Latihan isometrik untuk lengan dan lengan bawah, kedua tangan saling melawan.",
+  "howTo": [
+   "Kaitkan jari atau kedua tangan.",
+   "Tekuk siku sedikit.",
+   "Tarik kedua tangan saling menjauh.",
+   "Tahan ketegangan yang stabil.",
+   "Lepaskan perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menarik dengan sentakan.",
+   "Jangan angkat bahu.",
+   "Jangan menekuk pergelangan tangan berlebihan.",
+   "Jangan menahan napas."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Turunkan perlahan.",
+   "Jaga tahanan tetap konstan.",
+   "Siku tetap dekat tubuh.",
+   "Rileksakan bahu."
+  ],
+  "desc": "Latihan bisep dengan penurunan lambat, memakai tahanan dari tangan sendiri.",
+  "howTo": [
+   "Mulai dengan satu siku tertekuk.",
+   "Buat tahanan dengan tangan sebaliknya.",
+   "Turunkan lengan bawah yang bekerja perlahan.",
+   "Tetap melawan saat menurunkan.",
+   "Ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan lengan jatuh cepat.",
+   "Jangan bergerak tanpa tahanan.",
+   "Jangan memutar badan.",
+   "Jangan menahan napas."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Angkat sedikit saja.",
+   "Leher tetap netral.",
+   "Tarik tulang belikat ke belakang dan ke bawah.",
+   "Kencangkan pantat dengan ringan."
+  ],
+  "desc": "Latihan punggung untuk postur: punggung atas, tulang belikat, dan otot penegak tulang belakang.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Letakkan lengan di sisi tubuh.",
+   "Putar ibu jari sedikit ke luar.",
+   "Angkat dada sedikit.",
+   "Tarik tulang belikat ke belakang dan ke bawah.",
+   "Tahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengangkat terlalu tinggi.",
+   "Jangan mendongakkan kepala ke belakang.",
+   "Jangan melengkungkan punggung bawah berlebihan.",
+   "Jangan angkat bahu."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Rileksakan leher.",
+   "Gerakkan tulang belikat dengan halus.",
+   "Angkat dada sedikit saja atau tetap netral.",
+   "Gerakkan lengan tanpa terburu-buru."
+  ],
+  "desc": "Latihan punggung atas dan tulang belikat dalam posisi telungkup.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Kepala menghadap ke bawah.",
+   "Gerakkan lengan membentuk busur lebar dari samping ke atas kepala.",
+   "Kembali lewat jalur yang sama.",
+   "Jaga gerakan tetap terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengangkat kepala.",
+   "Jangan melengkungkan punggung bawah terlalu banyak.",
+   "Jangan mengayunkan lengan.",
+   "Jangan angkat bahu."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Jaga rentang gerak tetap kecil.",
+   "Biarkan tulang belikat yang bekerja.",
+   "Leher tetap netral.",
+   "Jauhkan bahu dari telinga."
+  ],
+  "desc": "Latihan punggung atas untuk tulang belikat dan bahu belakang.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Tekuk siku membentuk huruf W.",
+   "Angkat siku dan tangan sedikit.",
+   "Jepit tulang belikat.",
+   "Turunkan dengan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengangkat terlalu tinggi.",
+   "Jangan menarik kepala ke atas.",
+   "Jangan memakai ayunan.",
+   "Jangan melengkungkan punggung bawah berlebihan."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Angkat lengan sedikit saja.",
+   "Leher tetap netral.",
+   "Bahu tetap turun.",
+   "Bergeraklah dengan terkendali."
+  ],
+  "desc": "Latihan tulang belikat untuk trapezius bawah dan punggung atas.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Rentangkan lengan menyilang ke atas kepala membentuk huruf Y.",
+   "Angkat lengan sedikit dari lantai.",
+   "Turunkan dengan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengangkat terlalu tinggi.",
+   "Jangan angkat bahu.",
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan bergerak terlalu cepat."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Jaga lengan sejajar dengan bahu.",
+   "Rileksakan leher.",
+   "Gerakkan tulang belikat dengan lembut.",
+   "Angkat sedikit saja."
+  ],
+  "desc": "Latihan punggung atas untuk bahu belakang dan kontrol tulang belikat.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Rentangkan lengan ke samping membentuk huruf T.",
+   "Angkat lengan sedikit.",
+   "Jepit tulang belikat.",
+   "Turunkan perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menghempaskan lengan ke atas.",
+   "Jangan mengangkat kepala.",
+   "Jangan angkat bahu.",
+   "Jangan memaksakan rentang gerak yang besar."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Tarik siku ke bawah dengan terkendali.",
+   "Jepit tulang belikat dengan lembut.",
+   "Leher tetap netral.",
+   "Jaga punggung bawah tetap nyaman."
+  ],
+  "desc": "Latihan punggung yang meniru gerakan menarik tanpa alat.",
+  "howTo": [
+   "Berbaring telungkup dengan lengan di atas kepala.",
+   "Angkat dada sedikit.",
+   "Tarik siku ke bawah menuju tulang rusuk.",
+   "Jepit tulang belikat.",
+   "Rentangkan lengan ke depan lagi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menyentak lengan.",
+   "Jangan mengangkat terlalu tinggi.",
+   "Jangan mendongakkan kepala ke belakang.",
+   "Jangan biarkan bahu naik ke telinga."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Leher tetap netral.",
+   "Bergeraklah dengan terkendali.",
+   "Jaga punggung bawah tetap nyaman.",
+   "Teruslah bernapas."
+  ],
+  "desc": "Latihan punggung dan koordinasi dalam posisi telungkup.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Angkat dada sedikit.",
+   "Gerakkan lengan dan kaki yang berlawanan seperti gerakan berenang yang terkendali.",
+   "Jaga gerakan tetap kecil dan stabil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan bergerak terlalu cepat.",
+   "Jangan mengangkat terlalu tinggi.",
+   "Jangan mendongakkan kepala ke belakang.",
+   "Jangan memaksa punggung bawah."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Dada tetap terbuka.",
+   "Pinggul tetap terangkat.",
+   "Jaga bahu tetap stabil.",
+   "Leher tetap netral."
+  ],
+  "desc": "Latihan rantai posterior untuk pantat, paha belakang, bahu, dan punggung.",
+  "howTo": [
+   "Duduk di lantai dengan kaki lurus.",
+   "Letakkan tangan di belakang pinggul.",
+   "Tekan lewat tangan dan tumit.",
+   "Angkat pinggul.",
+   "Tahan tubuh dalam satu garis panjang."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan pinggul.",
+   "Jangan angkat bahu.",
+   "Jangan mendongakkan kepala ke belakang.",
+   "Jangan memaksa pergelangan tangan."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Angkat sedikit saja.",
+   "Jaga denyutan tetap halus.",
+   "Leher tetap panjang.",
+   "Jaga punggung bawah tetap terkendali."
+  ],
+  "desc": "Latihan punggung dengan rentang kecil untuk otot penegak tulang belakang dan postur.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Letakkan tangan di samping tubuh atau ringan di dekat dada.",
+   "Angkat dada sedikit.",
+   "Lakukan denyutan kecil yang terkendali.",
+   "Leher tetap netral."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan berdenyut terlalu tinggi.",
+   "Jangan memakai ayunan.",
+   "Jangan menatap ke depan.",
+   "Jangan memaksa jika punggung bawah terasa nyeri tajam."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Angkat dada sedikit saja.",
+   "Jaga tarikan W tetap halus.",
+   "Tarik tulang belikat ke belakang dan ke bawah.",
+   "Leher tetap panjang."
+  ],
+  "desc": "Latihan punggung yang lebih kuat, menggabungkan angkatan cobra kecil dan tarikan lengan berbentuk W.",
+  "howTo": [
+   "Berbaring telungkup dengan lengan ke depan.",
+   "Angkat dada sedikit.",
+   "Tarik siku ke bawah dan ke belakang membentuk huruf W.",
+   "Jepit tulang belikat.",
+   "Rentangkan lengan ke depan lagi lalu turunkan dengan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah berlebihan.",
+   "Jangan menarik dengan leher.",
+   "Jangan bergerak terlalu cepat.",
+   "Jangan angkat bahu."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Angkat sedikit saja.",
+   "Biarkan leher mengikuti tulang belakang.",
+   "Kencangkan pantat.",
+   "Bergeraklah dengan stabil."
+  ],
+  "desc": "Latihan punggung dengan mengangkat lengan dan kaki yang berlawanan secara bergantian, seperti gerakan berenang.",
+  "howTo": [
+   "Berbaring telungkup dengan lengan menjulur di atas kepala.",
+   "Angkat dada dan kaki sedikit.",
+   "Angkat satu lengan dan kaki yang berlawanan.",
+   "Turunkan lalu ganti sisi, bergantian dengan halus."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memaksa punggung bawah melengkung.",
+   "Jangan mengangkat kepala.",
+   "Jangan bergerak dengan sentakan.",
+   "Jangan menahan napas."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Jaga tubuh dalam satu garis.",
+   "Siku tetap di bawah bahu.",
+   "Otot inti tetap aktif.",
+   "Napas tetap stabil."
+  ],
+  "desc": "Latihan stabilitas inti untuk perut, bahu, pantat, dan batang tubuh.",
+  "howTo": [
+   "Letakkan siku tepat di bawah bahu.",
+   "Langkahkan kaki ke belakang.",
+   "Buat garis lurus dari bahu sampai tumit.",
+   "Kencangkan perut dan pantat.",
+   "Tahan posisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan punggung bawah turun.",
+   "Jangan mengangkat pinggul terlalu tinggi.",
+   "Jangan menatap ke depan.",
+   "Jangan menahan napas."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Kencangkan seluruh tubuh.",
+   "Pantat tetap aktif.",
+   "Otot inti tetap kencang.",
+   "Jaga napas tetap terkendali."
+  ],
+  "desc": "Plank pendek yang intens dengan ketegangan seluruh tubuh.",
+  "howTo": [
+   "Mulai dalam plank siku.",
+   "Kencangkan perut sekuat mungkin.",
+   "Jepit pantat.",
+   "Bayangkan menarik siku ke arah jari kaki.",
+   "Tahan dengan kontrol penuh."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menahan seperti plank yang santai.",
+   "Jangan biarkan pinggul turun.",
+   "Jangan menahan napas.",
+   "Jangan mencoba menahan terlalu lama."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Jaga punggung bawah dekat lantai.",
+   "Kaki tetap terkendali.",
+   "Rileksakan leher.",
+   "Bergeraklah dengan halus."
+  ],
+  "desc": "Latihan perut bawah dengan gerakan silang kaki yang terkendali.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekan punggung bawah dengan lembut ke lantai.",
+   "Angkat kaki.",
+   "Silangkan satu kaki di atas kaki lainnya.",
+   "Lanjutkan gerakan silang secara bergantian."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan menurunkan kaki terlalu rendah.",
+   "Jangan menarik kepala ke depan.",
+   "Jangan bergerak terlalu cepat."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Jaga rentang gerak tetap kecil.",
+   "Jaga punggung bawah tetap stabil.",
+   "Jangan biarkan kaki turun terlalu rendah.",
+   "Napas tetap stabil."
+  ],
+  "desc": "Latihan perut bawah dengan tendangan kaki pendek bergantian.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekan punggung bawah ke lantai.",
+   "Angkat kaki.",
+   "Gerakkan kaki naik turun dengan tendangan pendek bergantian."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan menendang terlalu lebar.",
+   "Jangan menegangkan leher.",
+   "Jangan menahan napas."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Bergeraklah dari perut bawah.",
+   "Angkat panggul dengan terkendali.",
+   "Rileksakan leher.",
+   "Turunkan perlahan."
+  ],
+  "desc": "Latihan perut yang berfokus pada mengangkat panggul dengan kontrol.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekuk lutut dan angkat kaki.",
+   "Gunakan otot perut untuk menggulung panggul sedikit ke atas.",
+   "Turunkan kembali perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengayunkan kaki.",
+   "Jangan memakai ayunan.",
+   "Jangan menarik leher.",
+   "Jangan menjatuhkan pinggul dengan cepat."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Jaga punggung bawah tetap di lantai.",
+   "Perut tetap kencang.",
+   "Rileksakan leher.",
+   "Teruslah bernapas."
+  ],
+  "desc": "Tahanan statis untuk otot inti dengan tuas yang dipendekkan agar lebih terkendali.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekan punggung bawah ke lantai.",
+   "Angkat bahu sedikit.",
+   "Tekuk lutut atau angkat kaki lebih tinggi.",
+   "Tahan posisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan menurunkan kaki terlalu rendah.",
+   "Jangan menarik dagu ke depan.",
+   "Jangan menahan napas."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Siku tetap di bawah bahu.",
+   "Pinggul tetap terangkat.",
+   "Tubuh tetap memanjang.",
+   "Leher tetap netral."
+  ],
+  "desc": "Latihan inti samping untuk otot oblik serta stabilitas bahu dan pinggul.",
+  "howTo": [
+   "Berbaring miring.",
+   "Letakkan siku tepat di bawah bahu.",
+   "Angkat pinggul.",
+   "Jaga tubuh dalam satu garis lurus.",
+   "Tahan posisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan pinggul.",
+   "Jangan angkat bahu.",
+   "Jangan memutar dada ke depan.",
+   "Jangan menahan napas."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Jaga gerakan tetap kecil dan terkendali.",
+   "Siku tetap di bawah bahu.",
+   "Gerakkan pinggul lurus naik turun.",
+   "Otot inti tetap kencang."
+  ],
+  "desc": "Variasi plank samping yang lebih kuat untuk otot oblik dan pinggul samping.",
+  "howTo": [
+   "Mulai dalam plank samping.",
+   "Turunkan pinggul sedikit.",
+   "Angkat pinggul kembali ke atas.",
+   "Ulangi dengan terkendali.",
+   "Ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan turun terlalu rendah.",
+   "Jangan memutar badan.",
+   "Jangan ambruk ke arah bahu.",
+   "Jangan bergerak terlalu cepat."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Jaga pinggul tetap rata.",
+   "Otot inti tetap kencang.",
+   "Jaga bahu tetap stabil.",
+   "Bergeraklah perlahan."
+  ],
+  "desc": "Latihan inti dan bahu: menyentuh tiap bahu sambil menahan plank.",
+  "howTo": [
+   "Mulai dalam plank tinggi.",
+   "Jaga pinggul tetap rata dan stabil.",
+   "Sentuh bahu yang berlawanan dengan satu tangan.",
+   "Kembalikan tangan lalu sentuh dengan tangan lainnya.",
+   "Tubuh tetap diam."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menggoyangkan pinggul ke kanan dan kiri.",
+   "Jangan bergerak terlalu cepat.",
+   "Jangan biarkan punggung bawah turun.",
+   "Jangan memutar badan."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Jaga pinggul tetap stabil.",
+   "Otot inti tetap aktif.",
+   "Bergeraklah dengan terkendali.",
+   "Bahu tetap di atas tangan atau siku."
+  ],
+  "desc": "Latihan inti dan trisep yang berpindah antara plank siku dan plank tinggi.",
+  "howTo": [
+   "Mulai dalam plank siku.",
+   "Letakkan satu tangan di lantai dan dorong ke atas.",
+   "Naikkan tangan lainnya ke plank tinggi.",
+   "Turun kembali ke lengan bawah.",
+   "Ganti lengan yang memimpin secara bergantian."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menggoyangkan pinggul ke kanan dan kiri.",
+   "Jangan biarkan punggung bawah turun.",
+   "Jangan bergerak terlalu cepat.",
+   "Jangan biarkan bahu ambruk."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Jaga punggung bawah tetap stabil.",
+   "Bergeraklah perlahan.",
+   "Sentuhkan tumit ke lantai dengan lembut.",
+   "Panggul tetap stabil."
+  ],
+  "desc": "Latihan inti yang terkendali, alternatif lebih aman untuk gerakan angkat kaki yang lebih berat.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Angkat kaki ke posisi meja.",
+   "Turunkan satu tumit ke arah lantai.",
+   "Sentuh ringan lalu kembali.",
+   "Ganti sisi bergantian."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan kaki terlalu cepat.",
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan menggerakkan kedua kaki sekaligus.",
+   "Jangan terburu-buru."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Jaga punggung bawah dekat lantai.",
+   "Bergeraklah perlahan.",
+   "Gerakkan lengan dan kaki yang berlawanan bersamaan.",
+   "Batang tubuh tetap diam."
+  ],
+  "desc": "Latihan kontrol inti untuk perut dalam dan stabilitas tulang belakang.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Angkat lengan dan kaki ke posisi meja.",
+   "Luruskan lengan dan kaki yang berlawanan.",
+   "Jaga punggung bawah tetap stabil.",
+   "Kembali lalu ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan bergerak terlalu cepat.",
+   "Jangan menurunkan kaki terlalu rendah.",
+   "Jangan biarkan tulang rusuk mencuat."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Berputarlah dari batang tubuh.",
+   "Jaga punggung bawah tetap terkendali.",
+   "Rileksakan leher.",
+   "Bergeraklah dengan halus."
+  ],
+  "desc": "Latihan perut dengan rotasi untuk otot oblik dan perut depan.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Angkat lutut.",
+   "Letakkan tangan dengan ringan di dekat kepala.",
+   "Putar batang tubuh dan bawa satu siku ke lutut yang berlawanan.",
+   "Ganti sisi dengan ritme yang terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menarik leher.",
+   "Jangan hanya menggerakkan siku.",
+   "Jangan terburu-buru mengulang.",
+   "Jangan biarkan punggung bawah melengkung."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Biarkan dada terbuka dengan lembut.",
+   "Bahu tetap rileks.",
+   "Jaga punggung bawah tetap nyaman.",
+   "Jaga bahu bebas dari nyeri."
+  ],
+  "desc": "Peregangan lembut untuk dada dan bagian depan bahu.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Buka lengan ke samping.",
+   "Rileksakan bahu.",
+   "Biarkan dada terbuka dengan lembut.",
+   "Bernapaslah perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memaksa lengan ke bawah.",
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan menegangkan leher.",
+   "Jangan meregang sampai terasa nyeri."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Jaga peregangan tetap ringan.",
+   "Biarkan lutut tetap sedikit tertekuk.",
+   "Jaga punggung bawah tetap tenang.",
+   "Napas tetap pelan."
+  ],
+  "desc": "Peregangan lembut untuk bagian belakang paha.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Angkat satu kaki.",
+   "Pegang di belakang paha atau betis.",
+   "Tarik kaki perlahan ke arah tubuh.",
+   "Ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menarik terlalu keras.",
+   "Jangan memaksa kaki lurus.",
+   "Jangan mengangkat pinggul.",
+   "Jangan memaksa jika ada nyeri tajam di belakang lutut."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Bergeraklah perlahan.",
+   "Bahu tetap turun.",
+   "Napas tetap rileks.",
+   "Jaga peregangan tetap nyaman."
+  ],
+  "desc": "Peregangan rotasi lembut untuk tulang belakang dan batang tubuh.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekuk lutut.",
+   "Biarkan lutut bergerak perlahan ke satu sisi.",
+   "Jaga bahu tetap di lantai.",
+   "Kembali ke tengah lalu ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memaksa lutut sampai ke lantai.",
+   "Jangan memutar dengan cepat.",
+   "Jangan mengangkat bahu.",
+   "Jangan meregang sampai terasa nyeri."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Angkat dengan ringan saja.",
+   "Jauhkan bahu dari telinga.",
+   "Jaga punggung bawah tetap nyaman.",
+   "Leher tetap netral."
+  ],
+  "desc": "Peregangan lembut untuk bagian depan tubuh dan ekstensi punggung ringan.",
+  "howTo": [
+   "Berbaring telungkup.",
+   "Letakkan lengan bawah di lantai.",
+   "Angkat dada dengan lembut.",
+   "Leher tetap panjang.",
+   "Bernapaslah perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah berlebihan.",
+   "Jangan mendongakkan kepala ke belakang.",
+   "Jangan angkat bahu.",
+   "Jangan memaksakan posisi."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Jaga napas tetap tenang.",
+   "Bahu tetap rileks.",
+   "Wajah tetap lembut.",
+   "Biarkan tubuh menjadi tenang."
+  ],
+  "desc": "Latihan pernapasan yang tenang untuk menutup sesi.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Rileksakan bahu dan rahang.",
+   "Letakkan satu tangan di perut jika nyaman.",
+   "Tarik napas dengan lembut.",
+   "Embuskan napas perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan bernapas terlalu kuat.",
+   "Jangan menahan napas.",
+   "Jangan menegangkan leher.",
+   "Jangan melengkungkan punggung bawah."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Biarkan pinggul turun ke arah tumit.",
+   "Panjangkan punggung dengan lembut.",
+   "Rileksakan bahu.",
+   "Napas tetap pelan."
+  ],
+  "desc": "Peregangan santai untuk punggung, pinggul, dan bahu sebagai pendinginan.",
+  "howTo": [
+   "Berlutut dan dudukkan pinggul ke arah tumit.",
+   "Rentangkan lengan ke depan di lantai.",
+   "Biarkan dahi bersandar ke bawah.",
+   "Bernapaslah perlahan dan rileks."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memaksa pinggul turun.",
+   "Jangan menegangkan bahu.",
+   "Jangan menahan napas.",
+   "Jangan membebani lutut secara berlebihan."
+  ]
+ },
+ "D01": {
+  "breathing": "Bernapaslah dengan teratur; jangan menahan napas.",
+  "correct": [
+   "Siku tetap menempel di sisi tubuh.",
+   "Bergeraklah perlahan, tanpa ayunan.",
+   "Bahu tetap turun, jauh dari telinga.",
+   "Pergelangan tangan tetap lurus."
+  ],
+  "desc": "Latihan lambat untuk rotator cuff yang menstabilkan bahu saat servis dan pukulan groundstroke. Satu dumbel 0,5 kg, satu lengan bergantian.",
+  "howTo": [
+   "Berdiri tegak sambil memegang satu dumbel 0,5 kg.",
+   "Tekuk siku 90° dan rapatkan ke sisi tubuh.",
+   "Mulai dengan lengan bawah melintang di depan perut.",
+   "Putar lengan bawah perlahan ke luar, menjauhi tubuh.",
+   "Kembali perlahan, lalu ganti lengan."
+  ],
+  "safety": "Hanya 0,5 kg. Berhenti jika bahu terasa sakit. Jangan pernah berlari atau melompat sambil memegang dumbel.",
+  "voice": {
+   "finish": "Letakkan dumbelnya.",
+   "last": "",
+   "mid": [
+    "Putar lengan bawah ke luar perlahan.",
+    "Siku tetap di tempat."
+   ],
+   "start": "Dumbel setengah kilo. Siku menempel di sisi tubuh."
+  },
+  "wrong": [
+   "Jangan biarkan siku bergeser ke depan atau ke luar.",
+   "Jangan menyentak beban.",
+   "Jangan angkat bahu.",
+   "Jangan memakai dumbel yang lebih berat."
+  ]
+ },
+ "D02": {
+  "breathing": "Embuskan napas saat lengan naik.",
+  "correct": [
+   "Jaga punggung tetap panjang dan datar.",
+   "Berhenti setinggi bahu.",
+   "Jepit tulang belikat.",
+   "Gerakkan kedua lengan bersamaan."
+  ],
+  "desc": "Reverse fly membungkuk untuk bahu belakang dan tulang belikat, otot postur yang dibutuhkan pemain tenis.",
+  "howTo": [
+   "Pegang dumbel 0,5 kg di tiap tangan.",
+   "Condongkan badan dari pinggul dengan punggung lurus dan lutut sedikit tertekuk.",
+   "Biarkan lengan menggantung di bawah bahu.",
+   "Angkat lengan ke samping sampai setinggi bahu dan jepit tulang belikat.",
+   "Turunkan perlahan."
+  ],
+  "safety": "Hanya 0,5 kg. Lutut sedikit tertekuk. Jangan pernah melompat sambil memegang dumbel.",
+  "voice": {
+   "finish": "Berdiri dan letakkan dumbelnya.",
+   "last": "",
+   "mid": [
+    "Lengan ke samping.",
+    "Jepit tulang belikat."
+   ],
+   "start": "Condong dari pinggul, punggung lurus, setengah kilo di tiap tangan."
+  },
+  "wrong": [
+   "Jangan membungkukkan punggung.",
+   "Jangan mengayunkan beban.",
+   "Jangan mengangkat lebih tinggi dari bahu.",
+   "Jangan mendongak sampai leher tertekuk."
+  ]
+ },
+ "D03": {
+  "breathing": "Tarik napas saat turun, embuskan saat naik.",
+  "correct": [
+   "Dumbel tetap di dada.",
+   "Tumit tetap di lantai.",
+   "Lutut sejajar dengan jari kaki.",
+   "Punggung tetap panjang."
+  ],
+  "desc": "Goblet squat: kedua dumbel 0,5 kg dipegang di dada untuk melatih kaki dan postur stabil yang siap memegang raket.",
+  "howTo": [
+   "Pegang kedua dumbel 0,5 kg menyatu di dada.",
+   "Berdiri dengan kaki selebar bahu.",
+   "Dorong pinggul ke belakang dan tekuk lutut.",
+   "Jaga tumit tetap di lantai dan dada tegak.",
+   "Berdiri kembali tanpa membiarkan beban bergeser ke depan."
+  ],
+  "safety": "Jangan melompat sambil memegang dumbel. Jika lutut sakit, ganti dengan squat tanpa beban.",
+  "voice": {
+   "finish": "Berdiri tegak.",
+   "last": "",
+   "mid": [
+    "Tumit di lantai.",
+    "Lutut sejajar jari kaki."
+   ],
+   "start": "Dumbel di dada. Squat perlahan."
+  },
+  "wrong": [
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan mengangkat tumit.",
+   "Jangan biarkan dumbel menarik tubuh ke depan.",
+   "Jangan memantul dari posisi bawah."
+  ]
+ },
+ "D04": {
+  "breathing": "Napas pelan. Jangan pernah menahan napas.",
+  "correct": [
+   "Lengan tetap di dekat telinga.",
+   "Tulang rusuk tetap turun, punggung tidak melengkung.",
+   "Jauhkan bahu dari telinga.",
+   "Teruslah bernapas."
+  ],
+  "desc": "Tahanan di atas kepala yang diam dengan dumbel 0,5 kg untuk melatih stabilitas bahu yang dipakai saat servis.",
+  "howTo": [
+   "Pegang dumbel 0,5 kg di tiap tangan.",
+   "Luruskan kedua lengan ke atas kepala.",
+   "Dekatkan bisep ke telinga.",
+   "Jaga tulang rusuk turun dan perut kencang.",
+   "Tahan diam dan bernapaslah sampai waktu habis, lalu turunkan perlahan."
+  ],
+  "safety": "Hanya menahan, tanpa menekan atau mengayun. Jika bahu gemetar atau sakit, turunkan dumbelnya.",
+  "voice": {
+   "finish": "Turunkan perlahan.",
+   "last": "",
+   "mid": [
+    "Tulang rusuk turun.",
+    "Teruslah bernapas."
+   ],
+   "start": "Setengah kilo di atas kepala. Lengan dekat telinga."
+  },
+  "wrong": [
+   "Jangan bersandar ke belakang.",
+   "Jangan angkat bahu.",
+   "Jangan mengunci dan menekan siku secara berlebihan.",
+   "Jangan menyentak beban ke atas."
+  ]
+ },
+ "D05": {
+  "breathing": "Bernapas tenang, masuk dan keluar lewat hidung jika bisa.",
+  "correct": [
+   "Berdirilah seolah ada tali yang menarik ubun-ubun ke atas.",
+   "Jaga kedua bahu tetap sejajar.",
+   "Tulang rusuk tetap tenang.",
+   "Lutut sedikit tertekuk, tidak terkunci."
+  ],
+  "desc": "Suitcase hold: satu dumbel 0,5 kg di satu tangan. Tugasnya tetap tegak dan tidak miring, kekuatan anti-menekuk-samping yang sama saat meraih bola dengan lunge.",
+  "howTo": [
+   "Pegang satu dumbel 0,5 kg di satu tangan, lengan menggantung di dekat paha.",
+   "Berdiri dengan kaki di bawah pinggul.",
+   "Tetap tegak: jangan condong ke arah beban maupun menjauhinya.",
+   "Tahan diam dan bernapaslah.",
+   "Ganti tangan untuk sisi lainnya."
+  ],
+  "safety": "Berdiri di tempat. Jangan berjalan, berlari, atau melompat sambil memegang dumbel.",
+  "voice": {
+   "finish": "Ganti tangan.",
+   "last": "",
+   "mid": [
+    "Jangan condong.",
+    "Bahu sejajar."
+   ],
+   "start": "Satu dumbel setengah kilo di satu tangan. Berdiri tegak."
+  },
+  "wrong": [
+   "Jangan condong ke samping.",
+   "Jangan mengangkat bahu di sisi yang memegang beban.",
+   "Jangan berjalan atau memantul.",
+   "Jangan menahan napas."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Jaga lompatan tetap rendah.",
+   "Mendarat lembut dan pelan.",
+   "Lutut sedikit tertekuk.",
+   "Berdirilah tegak."
+  ],
+  "desc": "Pemanasan ringan untuk pergelangan kaki dan betis dengan lompatan kecil yang cepat.",
+  "howTo": [
+   "Berdiri tegak dengan kaki selebar pinggul.",
+   "Lutut sedikit tertekuk.",
+   "Lakukan lompatan kecil yang cepat, terutama dengan pergelangan kaki.",
+   "Mendarat pelan dan ulangi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melompat terlalu tinggi.",
+   "Jangan mendarat dengan keras.",
+   "Jangan mengunci lutut.",
+   "Jangan biarkan pergelangan kaki terpuntir ke dalam atau ke luar."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Badan tetap tegak.",
+   "Angkat lutut dengan terkendali.",
+   "Injakkan kaki dengan lembut.",
+   "Napas tetap stabil."
+  ],
+  "desc": "Alternatif pemanasan berdampak rendah pengganti high knees.",
+  "howTo": [
+   "Berdiri tegak.",
+   "Angkat satu lutut hingga setinggi pinggul.",
+   "Turunkan dengan terkendali.",
+   "Ganti sisi dan lanjutkan berbaris di tempat.",
+   "Ayunkan lengan secara alami."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan condong ke belakang.",
+   "Jangan mengayunkan kaki tanpa kendali.",
+   "Jangan membanting kaki ke lantai.",
+   "Jangan menahan napas."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Mendarat dengan lembut.",
+   "Lutut sedikit tertekuk.",
+   "Gerakkan lengan dengan halus.",
+   "Jaga napas tetap berirama."
+  ],
+  "desc": "Latihan kardio seluruh tubuh yang menaikkan detak jantung dan memanaskan bahu, pinggul, dan kaki.",
+  "howTo": [
+   "Berdiri tegak dengan lengan di sisi tubuh.",
+   "Lompatkan kaki ke luar sambil mengangkat lengan ke atas kepala.",
+   "Lompatkan kaki kembali ke dalam sambil menurunkan lengan.",
+   "Ulangi dengan ritme yang stabil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mendarat dengan keras.",
+   "Jangan mengunci lutut.",
+   "Jangan angkat bahu.",
+   "Jangan bergerak terlalu cepat sampai kehilangan kendali."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Tahan plank yang kuat.",
+   "Otot inti tetap kencang.",
+   "Bahu tetap di atas tangan.",
+   "Gerakkan lutut dengan terkendali."
+  ],
+  "desc": "Latihan inti dan kardio dinamis dari posisi plank tinggi.",
+  "howTo": [
+   "Mulai dalam plank tinggi.",
+   "Tangan tetap di bawah bahu.",
+   "Dorong satu lutut ke arah dada.",
+   "Ganti kaki dengan ritme teratur.",
+   "Jaga pinggul tetap stabil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan pinggul memantul tinggi.",
+   "Jangan biarkan punggung bawah turun.",
+   "Jangan menggerakkan kaki terlalu liar.",
+   "Jangan biarkan bahu ambruk."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Mendarat dengan pelan.",
+   "Lutut sejajar dengan jari kaki.",
+   "Dada tetap terbuka.",
+   "Jaga setiap lompatan tetap terkendali."
+  ],
+  "desc": "Latihan plyometrik untuk kaki guna melatih tenaga, kebugaran, dan koordinasi.",
+  "howTo": [
+   "Mulai dengan kaki selebar bahu.",
+   "Turun ke posisi squat yang terkendali.",
+   "Melompatlah ke atas.",
+   "Mendarat lembut dengan lutut sedikit tertekuk.",
+   "Atur ulang posisi sebelum lompatan berikutnya."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mendarat dengan keras.",
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan melompat sebelum squat stabil.",
+   "Jangan terburu-buru tanpa mengatur ulang posisi."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Mendarat dengan pelan.",
+   "Lutut sejajar dengan jari kaki.",
+   "Badan tetap terkendali.",
+   "Bergeraklah dengan halus dari sisi ke sisi."
+  ],
+  "desc": "Latihan lompat ke samping untuk kaki, pinggul, keseimbangan, dan koordinasi.",
+  "howTo": [
+   "Berdiri dengan satu kaki.",
+   "Lompat ke samping ke kaki lainnya.",
+   "Mendarat lembut dan stabilkan diri.",
+   "Ulangi dari sisi ke sisi.",
+   "Gunakan lengan untuk menjaga keseimbangan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan lutut tertekuk ke dalam saat mendarat.",
+   "Jangan melompat terlalu jauh terlalu cepat.",
+   "Jangan jatuh saat mendarat.",
+   "Jangan memuntir lutut saat menapak."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Angkat lutut hingga setinggi pinggul.",
+   "Mendarat dengan ringan.",
+   "Otot inti tetap aktif.",
+   "Badan tetap tegak."
+  ],
+  "desc": "Latihan kardio yang menaikkan detak jantung dan mengaktifkan pinggul, otot inti, dan kaki.",
+  "howTo": [
+   "Berdiri tegak.",
+   "Berlari di tempat sambil mengangkat lutut tinggi.",
+   "Ayunkan lengan secara alami.",
+   "Jaga ritme tetap cepat tetapi terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan condong ke belakang.",
+   "Jangan mendarat dengan berat.",
+   "Jangan biarkan kaki menampar lantai.",
+   "Jangan biarkan postur rusak saat tempo bertambah cepat."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Letakkan tangan tepat di bawah bahu.",
+   "Tahan plank yang kuat.",
+   "Mendarat dengan lembut.",
+   "Jaga lompatan tetap terkendali."
+  ],
+  "desc": "Latihan kebugaran seluruh tubuh yang menggabungkan squat, plank, dan lompatan. Dalam program ini, gunakan versi tanpa push-up kecuali push-up ditugaskan secara khusus.",
+  "howTo": [
+   "Berdiri tegak.",
+   "Squat ke bawah dan letakkan tangan di lantai.",
+   "Lompatkan atau langkahkan kaki ke belakang menjadi plank.",
+   "Lompatkan atau langkahkan kaki ke depan.",
+   "Berdiri dan akhiri dengan lompatan kecil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan punggung bawah turun saat plank.",
+   "Jangan mendarat dengan keras.",
+   "Jangan terburu-buru hingga gerakan berantakan.",
+   "Jangan biarkan lutut tertekuk ke dalam saat melompat ke depan."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Mendarat dengan lembut dan terkendali.",
+   "Lutut depan sejajar dengan jari kaki.",
+   "Badan tetap tegak.",
+   "Jaga rentang gerak tetap aman."
+  ],
+  "desc": "Latihan plyometrik tingkat lanjut untuk kaki guna melatih tenaga, kebugaran, dan koordinasi.",
+  "howTo": [
+   "Mulai dalam posisi lunge.",
+   "Melompatlah ke atas.",
+   "Tukar kaki di udara.",
+   "Mendarat lembut di lunge sebaliknya.",
+   "Atur ulang keseimbangan sebelum repetisi berikutnya."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mendarat dengan keras.",
+   "Jangan biarkan lutut depan tertekuk ke dalam.",
+   "Jangan turun terlalu dalam.",
+   "Jangan bergerak lebih cepat dari yang bisa dikendalikan."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Lutut sejajar dengan jari kaki.",
+   "Tumit tetap di lantai.",
+   "Punggung tetap panjang.",
+   "Jaga kedalaman tetap nyaman."
+  ],
+  "desc": "Latihan kaki yang terkendali untuk paha, pinggul, dan postur.",
+  "howTo": [
+   "Berdiri dengan kaki sedikit lebih lebar dari pinggul.",
+   "Dorong pinggul ke belakang.",
+   "Tekuk lutut sampai kedalaman dangkal yang nyaman.",
+   "Berdiri kembali perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan squat terlalu dalam.",
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan mengangkat tumit.",
+   "Jangan turun dengan cepat."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Jaga tahanan tetap stabil.",
+   "Lutut sejajar dengan jari kaki.",
+   "Dada tetap terbuka.",
+   "Tumit tetap di lantai."
+  ],
+  "desc": "Variasi squat terkendali dengan tahanan singkat dalam rentang yang aman.",
+  "howTo": [
+   "Berdiri dengan kaki stabil.",
+   "Turun ke squat dangkal yang nyaman.",
+   "Berhenti sejenak.",
+   "Berdiri kembali dengan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan turun terlalu dalam.",
+   "Jangan memantul di posisi bawah.",
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan menahan napas."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Punggung tetap lurus.",
+   "Bergeraklah dari pinggul.",
+   "Lutut lunak, tidak tertekuk dalam.",
+   "Biarkan leher mengikuti tulang belakang."
+  ],
+  "desc": "Latihan gerak untuk pinggul, paha belakang, dan kontrol punggung bawah.",
+  "howTo": [
+   "Berdiri tegak dengan kaki selebar pinggul.",
+   "Tekuk lutut sedikit.",
+   "Dorong pinggul ke belakang.",
+   "Turunkan badan dengan punggung lurus.",
+   "Kembali berdiri dengan mendorong pinggul ke depan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan membungkukkan punggung.",
+   "Jangan mengubahnya menjadi squat.",
+   "Jangan menjangkau terlalu rendah.",
+   "Jangan mendongak terlalu tinggi."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Angkat dengan pantat yang bekerja.",
+   "Jaga pinggul tetap rata.",
+   "Bergeraklah dengan terkendali.",
+   "Punggung bawah tetap netral."
+  ],
+  "desc": "Latihan pantat yang lebih kuat dengan satu kaki bergantian.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekuk satu lutut dan biarkan telapak kakinya di lantai.",
+   "Luruskan atau angkat kaki yang lain.",
+   "Dorong lewat tumit yang bekerja.",
+   "Angkat pinggul dan turunkan perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memutar panggul.",
+   "Jangan mendorong lewat jari kaki.",
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan turun terlalu cepat."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Jaga pinggul tetap rata.",
+   "Pantat tetap aktif.",
+   "Bergeraklah perlahan.",
+   "Jaga punggung bawah tetap nyaman."
+  ],
+  "desc": "Latihan pantat dan stabilitas panggul.",
+  "howTo": [
+   "Mulai dalam posisi glute bridge.",
+   "Jaga pinggul tetap terangkat.",
+   "Angkat satu kaki sedikit dari lantai.",
+   "Letakkan kembali dan ganti sisi.",
+   "Jaga panggul tetap stabil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan pinggul turun.",
+   "Jangan bergoyang ke kanan dan kiri.",
+   "Jangan bergerak terlalu cepat.",
+   "Jangan melengkungkan punggung bawah."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Dorong lewat tumit.",
+   "Jepit pantat di puncak gerakan.",
+   "Tulang rusuk tetap turun.",
+   "Jangan biarkan punggung bawah terlalu melengkung."
+  ],
+  "desc": "Latihan pantat yang menguatkan pinggul dan rantai posterior.",
+  "howTo": [
+   "Berbaring telentang.",
+   "Tekuk lutut dan letakkan telapak kaki di lantai.",
+   "Angkat pinggul.",
+   "Tahan sejenak di atas.",
+   "Turunkan perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan melengkungkan punggung bawah di puncak gerakan.",
+   "Jangan mengangkat tumit.",
+   "Jangan menjatuhkan pinggul terlalu cepat.",
+   "Jangan meletakkan kaki terlalu dekat."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Berdirilah tegak.",
+   "Bergeraklah dengan halus.",
+   "Jaga pergelangan kaki tetap lurus.",
+   "Turun dengan terkendali."
+  ],
+  "desc": "Latihan betis bagian bawah untuk betis, pergelangan kaki, dan kontrol kaki.",
+  "howTo": [
+   "Berdiri tegak dengan kaki selebar pinggul.",
+   "Naik ke ujung jari kaki.",
+   "Tahan sejenak di atas.",
+   "Turunkan tumit perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan tumit dengan cepat.",
+   "Jangan condong ke depan.",
+   "Jangan memiringkan pergelangan kaki ke luar.",
+   "Jangan memakai ayunan."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Pinggul tetap terangkat.",
+   "Gerakkan kaki atas perlahan.",
+   "Badan tetap stabil.",
+   "Jaga bahu tetap kuat."
+  ],
+  "desc": "Latihan rantai lateral untuk pantat samping, otot oblik, dan stabilitas pinggul.",
+  "howTo": [
+   "Mulai dalam plank samping.",
+   "Jaga tubuh dalam satu garis lurus.",
+   "Angkat kaki atas sedikit.",
+   "Turunkan dengan terkendali.",
+   "Ulangi lalu ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan pinggul.",
+   "Jangan mengayunkan kaki.",
+   "Jangan memutar tubuh ke belakang.",
+   "Jangan ambruk ke arah bahu."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Lutut sejajar dengan jari kaki.",
+   "Tumit tetap di lantai.",
+   "Punggung tetap panjang.",
+   "Jaga kedalaman tetap terkendali."
+  ],
+  "desc": "Squat berat badan dasar untuk kaki, pinggul, dan pantat.",
+  "howTo": [
+   "Berdiri dengan kaki selebar bahu.",
+   "Dorong pinggul sedikit ke belakang.",
+   "Tekuk lutut dan turun ke posisi squat.",
+   "Dada tetap terbuka.",
+   "Berdiri kembali dengan menekan seluruh telapak kaki."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan mengangkat tumit.",
+   "Jangan membungkukkan punggung.",
+   "Jangan turun terlalu cepat."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Lutut depan sejajar dengan jari kaki.",
+   "Badan tetap tegak.",
+   "Melangkah ke belakang dengan terkendali.",
+   "Tumit depan tetap menapak."
+  ],
+  "desc": "Latihan tubuh bagian bawah untuk kaki, pantat, dan keseimbangan.",
+  "howTo": [
+   "Berdiri tegak.",
+   "Langkahkan satu kaki ke belakang.",
+   "Turun ke posisi lunge dengan terkendali.",
+   "Dorong lewat kaki depan untuk kembali berdiri.",
+   "Ganti sisi."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan biarkan lutut depan tertekuk ke dalam.",
+   "Jangan condong terlalu jauh ke depan.",
+   "Jangan turun dengan cepat.",
+   "Jangan mendorong terlalu keras dari kaki belakang."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Jaga tempo tetap lambat.",
+   "Lutut sejajar dengan jari kaki.",
+   "Tumit tetap menapak.",
+   "Punggung tetap netral."
+  ],
+  "desc": "Air squat yang dilakukan perlahan untuk membangun kontrol dan kekuatan kaki.",
+  "howTo": [
+   "Berdiri dengan kaki selebar bahu.",
+   "Turun selama sekitar tiga detik.",
+   "Berhenti sejenak di bawah.",
+   "Berdiri dengan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan turun dengan cepat.",
+   "Jangan memantul dari posisi bawah.",
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan menahan napas."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Jaga tubuh dalam satu garis.",
+   "Otot inti tetap kencang.",
+   "Siku membentuk sudut sekitar 30 sampai 45 derajat.",
+   "Bergeraklah dengan terkendali."
+  ],
+  "desc": "Latihan tubuh bagian atas dasar untuk dada, trisep, bahu, dan otot inti.",
+  "howTo": [
+   "Mulai dalam plank tinggi.",
+   "Letakkan tangan di bawah bahu atau sedikit lebih lebar.",
+   "Turunkan tubuh dengan terkendali.",
+   "Dorong kembali ke atas sambil menjaga tubuh tetap lurus."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan pinggul.",
+   "Jangan mengangkat pinggul terlalu tinggi.",
+   "Jangan membuka siku lurus ke samping.",
+   "Jangan jatuh ke posisi bawah."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Siku tetap dekat.",
+   "Tubuh tetap lurus.",
+   "Jauhkan bahu dari telinga.",
+   "Jaga pergelangan tangan tetap nyaman."
+  ],
+  "desc": "Variasi push-up dengan fokus lebih besar pada trisep.",
+  "howTo": [
+   "Mulai dalam plank tinggi.",
+   "Letakkan tangan lebih dekat daripada push-up biasa.",
+   "Siku tetap dekat tubuh.",
+   "Turun perlahan lalu dorong kembali ke atas."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan meletakkan tangan terlalu dekat.",
+   "Jangan membuka siku.",
+   "Jangan biarkan punggung bawah turun.",
+   "Jangan memaksa saat pergelangan tangan atau siku nyeri."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Jaga jeda tetap terkendali.",
+   "Otot inti tetap kencang.",
+   "Dada tetap aktif.",
+   "Tubuh tetap lurus."
+  ],
+  "desc": "Push-up terkendali dengan jeda singkat di posisi bawah.",
+  "howTo": [
+   "Mulai dalam posisi push-up biasa.",
+   "Turun perlahan.",
+   "Berhenti satu detik di dekat posisi bawah.",
+   "Dorong kembali ke atas tanpa mengubah posisi tubuh."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan rileks di bawah.",
+   "Jangan menjatuhkan pinggul.",
+   "Jangan menahan napas.",
+   "Jangan memantul dari posisi bawah."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Jaga tempo tetap lambat dan merata.",
+   "Tubuh tetap lurus.",
+   "Jaga siku tetap terkendali.",
+   "Napas tetap stabil."
+  ],
+  "desc": "Variasi push-up lambat yang meningkatkan kontrol dan waktu di bawah ketegangan.",
+  "howTo": [
+   "Mulai dalam plank tinggi.",
+   "Turun selama sekitar tiga detik.",
+   "Berhenti satu detik di dekat posisi bawah.",
+   "Dorong ke atas selama sekitar tiga detik."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan terburu-buru.",
+   "Jangan ambruk di bawah.",
+   "Jangan biarkan pinggul melorot.",
+   "Jangan melepaskan ketegangan otot inti."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Jaga tubuh tetap menghadap lurus ke depan.",
+   "Otot inti tetap kencang.",
+   "Jaga kedua bahu tetap stabil.",
+   "Bergeraklah dengan terkendali."
+  ],
+  "desc": "Variasi push-up asimetris yang menantang dada, bahu, dan otot inti.",
+  "howTo": [
+   "Mulai dalam posisi push-up.",
+   "Letakkan satu tangan sedikit ke depan dan tangan lainnya sedikit ke belakang.",
+   "Turun dengan terkendali.",
+   "Dorong kembali ke atas.",
+   "Tukar posisi tangan pada sisi berikutnya."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memutar badan.",
+   "Jangan menjatuhkan salah satu bahu.",
+   "Jangan meletakkan tangan terlalu lebar.",
+   "Jangan memaksakan rentang gerak jika bahu terasa tidak nyaman."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Pinggul tetap tinggi.",
+   "Tekuk siku dengan terkendali.",
+   "Jaga bahu tetap stabil.",
+   "Leher tetap netral."
+  ],
+  "desc": "Variasi push-up yang berfokus pada bahu.",
+  "howTo": [
+   "Mulai dalam plank tinggi.",
+   "Langkahkan kaki sedikit lebih dekat dan angkat pinggul.",
+   "Kepala berada di antara kedua lengan.",
+   "Turunkan kepala ke arah lantai.",
+   "Dorong kembali ke atas."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan turun menjadi push-up biasa.",
+   "Jangan biarkan kepala memimpin terlalu jauh ke depan.",
+   "Jangan membuka siku terlalu lebar.",
+   "Jangan memaksa saat bahu terasa nyeri."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Otot inti tetap kencang.",
+   "Gerakkan siku dengan halus.",
+   "Bahu tetap turun.",
+   "Jaga rentang gerak tetap nyaman."
+  ],
+  "desc": "Latihan trisep dan bahu dari posisi bertumpu pada lengan bawah.",
+  "howTo": [
+   "Mulai bertumpu pada lengan bawah dengan tubuh memanjang.",
+   "Jaga siku di bawah atau sedikit di depan bahu.",
+   "Tekan lewat tangan dan lengan bawah.",
+   "Luruskan siku sedikit.",
+   "Kembali dengan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memaksa siku.",
+   "Jangan menjatuhkan pinggul.",
+   "Jangan angkat bahu.",
+   "Jangan bergerak saat siku atau bahu terasa nyeri."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Rileksakan leher.",
+   "Gerakkan bahu dengan halus.",
+   "Biarkan lengan tetap longgar.",
+   "Berdirilah tegak."
+  ],
+  "desc": "Pemanasan bahu sederhana untuk menyiapkan leher, bahu, dan punggung atas.",
+  "howTo": [
+   "Berdiri tegak dengan lengan rileks.",
+   "Putar bahu ke belakang secara perlahan.",
+   "Lalu putar bahu ke depan secara perlahan.",
+   "Jaga gerakan tetap halus dan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengangkat bahu dengan keras.",
+   "Jangan bergerak terlalu cepat.",
+   "Jangan menegangkan leher.",
+   "Jangan membungkukkan punggung atas."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Jaga lengan tetap setinggi bahu.",
+   "Jaga lingkaran tetap kecil.",
+   "Bahu tetap turun.",
+   "Rileksakan leher."
+  ],
+  "desc": "Pemanasan bahu dan punggung atas yang mengaktifkan otot deltoid dan penstabil bahu.",
+  "howTo": [
+   "Berdiri tegak dan angkat lengan setinggi bahu.",
+   "Buat lingkaran kecil ke depan.",
+   "Lalu buat lingkaran kecil ke belakang.",
+   "Jaga lingkaran tetap kecil dan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan membuat gerakan ayunan yang besar.",
+   "Jangan mengangkat bahu ke telinga.",
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan menahan napas."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Kaki tetap stabil.",
+   "Berputarlah dari batang tubuh.",
+   "Berputarlah dengan halus.",
+   "Lutut tetap diam saat berputar."
+  ],
+  "desc": "Latihan rotasi lembut untuk batang tubuh dan tulang belakang atas.",
+  "howTo": [
+   "Berdiri dengan kaki selebar pinggul.",
+   "Jaga pinggul tetap menghadap ke depan.",
+   "Putar badan bagian atas ke satu sisi.",
+   "Kembali ke tengah lalu putar ke sisi lain."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memutar lutut bersama badan.",
+   "Jangan berputar terlalu cepat.",
+   "Jangan condong ke belakang.",
+   "Jangan memaksakan rentang gerak."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Punggung tetap lurus.",
+   "Bergeraklah dari pinggul.",
+   "Lutut lunak, tidak tertekuk dalam.",
+   "Biarkan leher mengikuti tulang belakang."
+  ],
+  "desc": "Latihan gerak untuk pinggul, paha belakang, dan kontrol punggung bawah.",
+  "howTo": [
+   "Berdiri tegak dengan kaki selebar pinggul.",
+   "Tekuk lutut sedikit.",
+   "Dorong pinggul ke belakang.",
+   "Turunkan badan dengan punggung lurus.",
+   "Kembali berdiri dengan mendorong pinggul ke depan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan membungkukkan punggung.",
+   "Jangan mengubahnya menjadi squat.",
+   "Jangan menjangkau terlalu rendah.",
+   "Jangan mendongak terlalu tinggi."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Lutut sejajar dengan jari kaki.",
+   "Tumit tetap di lantai.",
+   "Punggung tetap panjang.",
+   "Jaga kedalaman tetap sedang."
+  ],
+  "desc": "Pemanasan kaki yang terkendali dengan rentang dangkal yang aman.",
+  "howTo": [
+   "Berdiri dengan kaki sedikit lebih lebar dari pinggul.",
+   "Dorong pinggul sedikit ke belakang.",
+   "Tekuk lutut hanya sampai kedalaman yang nyaman.",
+   "Kembali berdiri perlahan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan squat terlalu dalam.",
+   "Jangan biarkan lutut tertekuk ke dalam.",
+   "Jangan mengangkat tumit.",
+   "Jangan turun terlalu cepat."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Jaga tubuh dalam satu garis.",
+   "Jaga bahu tetap stabil.",
+   "Otot inti tetap aktif.",
+   "Bergeraklah dengan halus."
+  ],
+  "desc": "Pemanasan untuk bahu, pergelangan tangan, dan otot inti.",
+  "howTo": [
+   "Mulai dalam posisi plank tinggi.",
+   "Tangan berada di bawah bahu.",
+   "Geser tubuh sedikit ke depan.",
+   "Geser kembali ke posisi awal.",
+   "Jaga gerakan tetap kecil dan terkendali."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menjatuhkan pinggul.",
+   "Jangan mendorong bahu naik ke telinga.",
+   "Jangan bergeser terlalu jauh ke depan.",
+   "Jangan biarkan punggung bawah melorot."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Bernapaslah perlahan dan penuh.",
+   "Rileksakan bahu saat mengembuskan napas.",
+   "Tulang rusuk tetap turun, jangan melengkung berlebihan.",
+   "Bergeraklah tanpa terburu-buru."
+  ],
+  "desc": "Latihan pembuka yang tenang: napas dalam dengan rentangan seluruh tubuh yang lembut untuk memanjangkan tulang belakang.",
+  "howTo": [
+   "Berdiri tegak dengan kaki selebar pinggul.",
+   "Tarik napas dan rentangkan kedua lengan ke atas kepala.",
+   "Panjangkan tulang belakang dengan lembut.",
+   "Embuskan napas dan turunkan lengan sambil menurunkan bahu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan menahan napas.",
+   "Jangan melengkungkan punggung bawah dengan keras.",
+   "Jangan mengangkat bahu ke telinga.",
+   "Jangan terburu-buru merentangkan lengan."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Berputarlah dari batang tubuh.",
+   "Pinggul tetap menghadap ke depan.",
+   "Kaki tetap menapak.",
+   "Jaga tempo tetap halus dan merata."
+  ],
+  "desc": "Latihan rotasi lembut untuk memanaskan tulang belakang dan batang tubuh.",
+  "howTo": [
+   "Berdiri dengan kaki selebar pinggul.",
+   "Biarkan lengan mengayun longgar.",
+   "Putar badan bagian atas ke satu sisi.",
+   "Alirkan gerakan dengan halus ke sisi lain."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan memuntir keras lewat lutut.",
+   "Jangan menyentak lengan.",
+   "Jangan berputar terlalu cepat.",
+   "Jangan menahan napas."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Biarkan lengan bergerak bebas.",
+   "Bahu tetap rileks.",
+   "Biarkan dada terbuka dengan lembut.",
+   "Berdirilah tegak."
+  ],
+  "desc": "Pemanasan dinamis untuk bahu dan dada guna menyiapkan tubuh bagian atas untuk push-up dan latihan lompat.",
+  "howTo": [
+   "Berdiri tegak, kaki selebar pinggul.",
+   "Ayunkan lengan ke depan dan ke belakang dengan terkendali.",
+   "Biarkan dada terbuka secara alami saat lengan bergerak ke belakang.",
+   "Jaga gerakan tetap halus dan rileks."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Jangan mengayun terlalu agresif.",
+   "Jangan mengangkat bahu ke telinga.",
+   "Jangan melengkungkan punggung bawah.",
+   "Jangan biarkan gerakan berubah menjadi ayunan tak terkendali."
+  ]
+ }
+}

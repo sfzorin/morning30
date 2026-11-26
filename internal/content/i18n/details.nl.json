@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Houd de weerstand constant.",
+   "Beweeg langzaam.",
+   "Houd je elleboog dicht bij je lichaam.",
+   "Houd je schouder laag."
+  ],
+  "desc": "Een biceps-oefening zonder materiaal: de ene hand geeft weerstand aan de andere.",
+  "howTo": [
+   "Ga rechtop staan of zitten.",
+   "Buig één elleboog als bij een curl.",
+   "Duw met de andere hand omlaag op de onderarm die werkt.",
+   "Curl langzaam omhoog tegen de weerstand in.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Beweeg niet zonder echte weerstand.",
+   "Ruk niet met je arm.",
+   "Til je schouder niet op.",
+   "Houd je adem niet in."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Houd de hoek van je elleboog stabiel.",
+   "Houd de spanning constant.",
+   "Ontspan je schouders.",
+   "Blijf ademen."
+  ],
+  "desc": "Een statische biceps-houding met weerstand van je eigen hand.",
+  "howTo": [
+   "Buig één elleboog tot ongeveer 90 graden.",
+   "Duw met de andere hand omlaag.",
+   "De werkende arm houdt tegen zonder te bewegen.",
+   "Houd de spanning vast.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Duw niet met korte rukjes.",
+   "Draai je romp niet mee.",
+   "Til je schouder niet op.",
+   "Houd je adem niet in."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Houd de spanning beheerst.",
+   "Houd je schouders laag.",
+   "Houd je polsen ontspannen.",
+   "Adem rustig."
+  ],
+  "desc": "Een isometrische oefening voor armen en onderarmen, waarbij je handen tegen elkaar werken.",
+  "howTo": [
+   "Haak je vingers of handen in elkaar.",
+   "Houd je ellebogen licht gebogen.",
+   "Trek je handen van elkaar weg.",
+   "Houd de spanning constant.",
+   "Laat langzaam los."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Trek niet met een ruk.",
+   "Trek je schouders niet op.",
+   "Buig je polsen niet te ver door.",
+   "Houd je adem niet in."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Zak langzaam.",
+   "Houd de weerstand constant.",
+   "Houd je elleboog dicht bij je lichaam.",
+   "Ontspan je schouder."
+  ],
+  "desc": "Een langzame afremmende oefening voor de biceps met weerstand van je eigen hand.",
+  "howTo": [
+   "Begin met één elleboog gebogen.",
+   "Geef met de andere hand weerstand.",
+   "Laat de werkende onderarm langzaam zakken.",
+   "Blijf weerstand geven tijdens het zakken.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je arm niet snel vallen.",
+   "Werk niet zonder weerstand.",
+   "Draai je lichaam niet mee.",
+   "Houd je adem niet in."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Houd de beweging klein.",
+   "Houd je nek neutraal.",
+   "Trek je schouderbladen naar achteren en omlaag.",
+   "Span je bilspieren licht aan."
+  ],
+  "desc": "Een houdingsoefening voor de bovenrug, de schouderbladen en de rugstrekkers.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Leg je armen langs je lichaam.",
+   "Draai je duimen iets naar buiten.",
+   "Til je borst een klein stukje op.",
+   "Trek je schouderbladen naar achteren en omlaag.",
+   "Houd vast."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Kom niet te hoog omhoog.",
+   "Gooi je hoofd niet achterover.",
+   "Hol je onderrug niet te veel.",
+   "Trek je schouders niet op."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Ontspan je nek.",
+   "Beweeg je schouderbladen soepel.",
+   "Houd het optillen van je borst klein of neutraal.",
+   "Beweeg je armen zonder haast."
+  ],
+  "desc": "Een oefening voor de bovenrug en schouderbladen, uitgevoerd op je buik.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Houd je hoofd naar beneden gericht.",
+   "Beweeg je armen in een brede boog van opzij naar boven je hoofd.",
+   "Ga langs dezelfde weg terug.",
+   "Beweeg beheerst."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Til je hoofd niet op.",
+   "Hol je onderrug niet te veel.",
+   "Zwaai niet met je armen.",
+   "Trek je schouders niet op."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Houd de beweging klein.",
+   "Laat je schouderbladen het werk doen.",
+   "Houd je nek neutraal.",
+   "Houd je schouders ver van je oren."
+  ],
+  "desc": "Een bovenrugoefening voor de schouderbladen en de achterkant van de schouders.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Buig je ellebogen in een W-vorm.",
+   "Til je ellebogen en handen een klein stukje op.",
+   "Knijp je schouderbladen samen.",
+   "Zak beheerst terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Kom niet te hoog omhoog.",
+   "Trek je hoofd niet omhoog.",
+   "Gebruik geen zwaaibeweging.",
+   "Hol je onderrug niet te veel."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Til je armen maar een beetje op.",
+   "Houd je nek neutraal.",
+   "Houd je schouders laag.",
+   "Beweeg beheerst."
+  ],
+  "desc": "Een schouderbladoefening voor de onderste kapspieren en de bovenrug.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Strek je armen schuin boven je hoofd in een Y-vorm.",
+   "Til je armen een klein stukje van de vloer.",
+   "Zak beheerst terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Kom niet te hoog omhoog.",
+   "Trek je schouders niet op.",
+   "Hol je onderrug niet.",
+   "Beweeg niet te snel."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Houd je armen op schouderhoogte.",
+   "Ontspan je nek.",
+   "Beweeg je schouderbladen rustig.",
+   "Houd de beweging klein."
+  ],
+  "desc": "Een bovenrugoefening voor de achterkant van de schouders en de controle over je schouderbladen.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Strek je armen opzij in een T-vorm.",
+   "Til je armen een klein stukje op.",
+   "Knijp je schouderbladen samen.",
+   "Zak langzaam terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gooi je armen niet omhoog.",
+   "Til je hoofd niet op.",
+   "Trek je schouders niet op.",
+   "Forceer geen grote beweging."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Trek je ellebogen beheerst omlaag.",
+   "Knijp je schouderbladen zachtjes samen.",
+   "Houd je nek neutraal.",
+   "Houd je onderrug ontspannen."
+  ],
+  "desc": "Een rugoefening die een trekbeweging nabootst, zonder materiaal.",
+  "howTo": [
+   "Ga op je buik liggen met je armen boven je hoofd.",
+   "Til je borst een klein stukje op.",
+   "Trek je ellebogen omlaag naar je ribben.",
+   "Knijp je schouderbladen samen.",
+   "Strek je armen weer naar voren."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ruk niet met je armen.",
+   "Kom niet te hoog omhoog.",
+   "Gooi je hoofd niet achterover.",
+   "Laat je schouders niet naar je oren omhoogkomen."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Houd je nek neutraal.",
+   "Beweeg beheerst.",
+   "Houd je onderrug ontspannen.",
+   "Blijf ademen."
+  ],
+  "desc": "Een oefening voor rug en coördinatie, uitgevoerd op je buik.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Til je borst een klein stukje op.",
+   "Beweeg tegengestelde arm en been beheerst als bij het zwemmen.",
+   "Houd de beweging klein en regelmatig."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Beweeg niet te snel.",
+   "Kom niet te hoog omhoog.",
+   "Gooi je hoofd niet achterover.",
+   "Forceer je onderrug niet."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Houd je borst open.",
+   "Houd je heupen omhoog.",
+   "Houd je schouders stabiel.",
+   "Houd je nek neutraal."
+  ],
+  "desc": "Een oefening voor de achterste keten: bilspieren, hamstrings, schouders en rug.",
+  "howTo": [
+   "Ga op de vloer zitten met gestrekte benen.",
+   "Plaats je handen achter je heupen.",
+   "Duw door je handen en hielen.",
+   "Til je heupen op.",
+   "Houd je lichaam in één lange lijn."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet zakken.",
+   "Trek je schouders niet op.",
+   "Gooi je hoofd niet achterover.",
+   "Forceer je polsen niet."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Houd de beweging klein.",
+   "Pulseer soepel.",
+   "Houd je nek lang.",
+   "Houd je onderrug beheerst."
+  ],
+  "desc": "Een rugoefening met kleine bewegingen voor de rugstrekkers en je houding.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Leg je handen naast je lichaam of licht bij je borst.",
+   "Til je borst een klein stukje op.",
+   "Maak kleine, beheerste pulsjes.",
+   "Houd je nek neutraal."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pulseer niet te hoog.",
+   "Gebruik geen zwaaibeweging.",
+   "Kijk niet naar voren.",
+   "Duw niet door bij scherpe pijn in je onderrug."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Houd het optillen van je borst klein.",
+   "Trek in de W soepel.",
+   "Trek je schouderbladen naar achteren en omlaag.",
+   "Houd je nek lang."
+  ],
+  "desc": "Een zwaardere rugoefening: een kleine cobra-lift gecombineerd met een W-vormige armtrek.",
+  "howTo": [
+   "Ga op je buik liggen met je armen naar voren.",
+   "Til je borst een klein stukje op.",
+   "Trek je ellebogen omlaag en naar achteren in een W-vorm.",
+   "Knijp je schouderbladen samen.",
+   "Strek je armen weer naar voren en zak beheerst terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug niet te veel.",
+   "Trek niet met je nek.",
+   "Beweeg niet te snel.",
+   "Trek je schouders niet op."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Houd de beweging klein.",
+   "Laat je nek de lijn van je rug volgen.",
+   "Houd je bilspieren aangespannen.",
+   "Beweeg regelmatig."
+  ],
+  "desc": "Een rugoefening waarbij je afwisselend tegengestelde arm en been optilt, als bij het zwemmen.",
+  "howTo": [
+   "Ga op je buik liggen met je armen boven je hoofd.",
+   "Til je borst en benen een klein stukje op.",
+   "Til één arm en het tegenovergestelde been op.",
+   "Zak terug en wissel van kant, steeds soepel afwisselend."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Forceer je onderrug niet.",
+   "Til je hoofd niet op.",
+   "Beweeg niet met rukken.",
+   "Houd je adem niet in."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Houd je lichaam in één lijn.",
+   "Houd je ellebogen onder je schouders.",
+   "Houd je core actief.",
+   "Adem regelmatig."
+  ],
+  "desc": "Een stabiliteitsoefening voor buik, schouders, bilspieren en romp.",
+  "howTo": [
+   "Plaats je ellebogen onder je schouders.",
+   "Stap met je voeten naar achteren.",
+   "Maak een rechte lijn van je schouders tot je hielen.",
+   "Span je buik en bilspieren aan.",
+   "Houd de positie vast."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je onderrug niet zakken.",
+   "Steek je heupen niet te hoog omhoog.",
+   "Kijk niet naar voren.",
+   "Houd je adem niet in."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Span je hele lichaam aan.",
+   "Houd je bilspieren actief.",
+   "Houd je core strak.",
+   "Houd je ademhaling beheerst."
+  ],
+  "desc": "Een korte, intense plank met spanning in je hele lichaam.",
+  "howTo": [
+   "Begin in een onderarmplank.",
+   "Span je buik stevig aan.",
+   "Knijp je bilspieren samen.",
+   "Stel je voor dat je je ellebogen naar je tenen trekt.",
+   "Houd vast met maximale controle."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Houd hem niet vast als een ontspannen plank.",
+   "Laat je heupen niet doorzakken.",
+   "Houd je adem niet in.",
+   "Probeer hem niet te lang vast te houden."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Houd je onderrug dicht bij de vloer.",
+   "Houd je benen onder controle.",
+   "Ontspan je nek.",
+   "Beweeg soepel."
+  ],
+  "desc": "Een oefening voor de onderbuik met beheerste kruisbewegingen van de benen.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Druk je onderrug zachtjes naar de vloer.",
+   "Til je benen op.",
+   "Kruis het ene been over het andere.",
+   "Wissel de kruisbeweging steeds af."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug niet.",
+   "Zak niet te ver met je benen.",
+   "Trek je hoofd niet naar voren.",
+   "Beweeg niet te snel."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Houd de beweging klein.",
+   "Houd je onderrug stabiel.",
+   "Laat je benen niet te laag zakken.",
+   "Adem regelmatig."
+  ],
+  "desc": "Een oefening voor de onderbuik met korte, afwisselende beenschoppen.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Druk je onderrug naar de vloer.",
+   "Til je benen op.",
+   "Beweeg je benen met korte, afwisselende schoppen op en neer."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug niet.",
+   "Maak geen grote schoppen.",
+   "Span je nek niet aan.",
+   "Houd je adem niet in."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Beweeg vanuit je onderbuik.",
+   "Til je bekken beheerst op.",
+   "Ontspan je nek.",
+   "Zak langzaam."
+  ],
+  "desc": "Een buikoefening waarbij je je bekken beheerst optilt.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Buig je knieën en til je voeten op.",
+   "Rol je bekken met je buikspieren een klein stukje omhoog.",
+   "Zak langzaam terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zwaai niet met je benen.",
+   "Gebruik geen zwaaibeweging.",
+   "Trek niet aan je nek.",
+   "Laat je heupen niet snel vallen."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Houd je onderrug op de vloer.",
+   "Houd je buik strak.",
+   "Ontspan je nek.",
+   "Blijf ademen."
+  ],
+  "desc": "Een statische coreoefening met een kortere hefboom voor meer controle.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Druk je onderrug naar de vloer.",
+   "Til je schouders een klein stukje op.",
+   "Houd je knieën gebogen of je benen hoger.",
+   "Houd de positie vast."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug niet.",
+   "Zak niet te ver met je benen.",
+   "Steek je kin niet naar voren.",
+   "Houd je adem niet in."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Houd je elleboog onder je schouder.",
+   "Houd je heupen omhoog.",
+   "Houd je lichaam lang.",
+   "Houd je nek neutraal."
+  ],
+  "desc": "Een zijwaartse coreoefening voor de schuine buikspieren en de stabiliteit van schouder en heup.",
+  "howTo": [
+   "Ga op je zij liggen.",
+   "Plaats je elleboog onder je schouder.",
+   "Til je heupen op.",
+   "Houd je lichaam in één rechte lijn.",
+   "Houd de positie vast."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet zakken.",
+   "Trek je schouder niet op.",
+   "Rol je borst niet naar voren.",
+   "Houd je adem niet in."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Houd de beweging klein en beheerst.",
+   "Houd je elleboog onder je schouder.",
+   "Beweeg je heupen recht omhoog en omlaag.",
+   "Houd je core strak."
+  ],
+  "desc": "Een zwaardere variant van de zijplank voor de schuine buikspieren en de zijkant van de heup.",
+  "howTo": [
+   "Begin in een zijplank.",
+   "Laat je heupen een klein stukje zakken.",
+   "Til je heupen weer op.",
+   "Herhaal beheerst.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zak niet te ver door.",
+   "Draai je romp niet.",
+   "Zak niet weg in je schouder.",
+   "Beweeg niet te snel."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Houd je heupen waterpas.",
+   "Houd je core strak.",
+   "Houd je schouders stabiel.",
+   "Beweeg langzaam."
+  ],
+  "desc": "Een oefening voor core en schouders: in een plank tik je om de beurt je schouders aan.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Houd je heupen recht en stabiel.",
+   "Tik met één hand de tegenovergestelde schouder aan.",
+   "Zet de hand terug en tik met de andere hand.",
+   "Houd je lichaam stil."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Wieg niet met je heupen van links naar rechts.",
+   "Beweeg niet te snel.",
+   "Laat je onderrug niet zakken.",
+   "Draai je romp niet."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Houd je heupen stabiel.",
+   "Houd je core aangespannen.",
+   "Beweeg beheerst.",
+   "Houd je schouders boven je handen of ellebogen."
+  ],
+  "desc": "Een oefening voor core en triceps, waarbij je wisselt tussen een onderarmplank en een hoge plank.",
+  "howTo": [
+   "Begin in een onderarmplank.",
+   "Zet één hand op de vloer en duw jezelf omhoog.",
+   "Breng de andere hand omhoog naar een hoge plank.",
+   "Zak terug naar je onderarmen.",
+   "Wissel de arm waarmee je begint af."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Wieg niet met je heupen van links naar rechts.",
+   "Laat je onderrug niet zakken.",
+   "Beweeg niet te snel.",
+   "Laat je schouders niet inzakken."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Houd je onderrug stabiel.",
+   "Beweeg langzaam.",
+   "Zet je hiel zacht neer.",
+   "Houd je bekken stil."
+  ],
+  "desc": "Een beheerste coreoefening en een veiliger alternatief voor zwaardere beenheffingen.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Til je benen op in een tafelpositie.",
+   "Laat één hiel naar de vloer zakken.",
+   "Tik licht aan en kom terug.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je been niet te snel zakken.",
+   "Hol je onderrug niet.",
+   "Beweeg niet beide benen tegelijk.",
+   "Haast je niet."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Houd je onderrug dicht bij de vloer.",
+   "Beweeg langzaam.",
+   "Beweeg tegengestelde arm en been samen.",
+   "Houd je romp stil."
+  ],
+  "desc": "Een controle-oefening voor de diepe buikspieren en de stabiliteit van je rug.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Til je armen en benen op in een tafelpositie.",
+   "Strek de tegenovergestelde arm en het been.",
+   "Houd je onderrug stabiel.",
+   "Kom terug en wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug niet.",
+   "Beweeg niet te snel.",
+   "Laat je been niet te laag zakken.",
+   "Laat je ribben niet naar buiten komen."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Draai vanuit je romp.",
+   "Houd je onderrug beheerst.",
+   "Ontspan je nek.",
+   "Beweeg soepel."
+  ],
+  "desc": "Een draaiende buikoefening voor de schuine en de rechte buikspieren.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Haal je knieën omhoog.",
+   "Leg je handen licht bij je hoofd.",
+   "Draai je romp en breng één elleboog naar de tegenovergestelde knie.",
+   "Wissel van kant in een beheerst ritme."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Trek niet aan je nek.",
+   "Beweeg niet alleen je ellebogen.",
+   "Haast je niet met de herhalingen.",
+   "Hol je onderrug niet."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Laat je borst zacht openen.",
+   "Houd je schouders ontspannen.",
+   "Houd je onderrug ontspannen.",
+   "Houd je schouders pijnvrij."
+  ],
+  "desc": "Een zachte rek voor de borst en de voorkant van de schouders.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Open je armen naar de zijkanten.",
+   "Ontspan je schouders.",
+   "Laat je borst zachtjes openen.",
+   "Adem langzaam."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Duw je armen niet met kracht omlaag.",
+   "Hol je onderrug niet.",
+   "Span je nek niet aan.",
+   "Rek niet door pijn heen."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Houd de rek mild.",
+   "Laat je knie licht gebogen.",
+   "Houd je onderrug rustig.",
+   "Adem langzaam."
+  ],
+  "desc": "Een zachte rek voor de achterkant van het bovenbeen.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Til één been op.",
+   "Pak het vast achter je bovenbeen of kuit.",
+   "Trek het been zachtjes naar je toe.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Trek niet te hard.",
+   "Forceer je been niet recht.",
+   "Til je heupen niet op.",
+   "Duw niet door bij scherpe pijn achter je knie."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Beweeg langzaam.",
+   "Houd je schouders omlaag.",
+   "Adem ontspannen.",
+   "Houd de rek aangenaam."
+  ],
+  "desc": "Een zachte draairek voor je wervelkolom en romp.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Buig je knieën.",
+   "Laat je knieën rustig naar één kant zakken.",
+   "Houd je schouders op de vloer.",
+   "Kom terug naar het midden en wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Forceer je knieën niet naar de vloer.",
+   "Draai niet snel.",
+   "Til je schouder niet op.",
+   "Rek niet door pijn heen."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Houd het optillen mild.",
+   "Houd je schouders ver van je oren.",
+   "Houd je onderrug ontspannen.",
+   "Houd je nek neutraal."
+  ],
+  "desc": "Een zachte rek voor de voorkant van je lichaam en een lichte rugstrekking.",
+  "howTo": [
+   "Ga op je buik liggen.",
+   "Plaats je onderarmen op de vloer.",
+   "Til je borst zachtjes op.",
+   "Houd je nek lang.",
+   "Adem langzaam."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug niet te veel.",
+   "Gooi je hoofd niet achterover.",
+   "Trek je schouders niet op.",
+   "Forceer de positie niet."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Houd je ademhaling rustig.",
+   "Houd je schouders ontspannen.",
+   "Houd je gezicht zacht.",
+   "Laat je lichaam tot rust komen."
+  ],
+  "desc": "Een rustige ademhalingsoefening om de training mee af te sluiten.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Ontspan je schouders en kaken.",
+   "Leg één hand op je buik als dat prettig is.",
+   "Adem zachtjes in.",
+   "Adem langzaam uit."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Adem niet te krachtig.",
+   "Houd je adem niet in.",
+   "Span je nek niet aan.",
+   "Hol je onderrug niet."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Laat je heupen naar je hielen zakken.",
+   "Rek je rug zachtjes uit.",
+   "Ontspan je schouders.",
+   "Adem langzaam."
+  ],
+  "desc": "Een rustige rek voor rug, heupen en schouders om af te bouwen.",
+  "howTo": [
+   "Kniel en zak met je heupen naar achteren richting je hielen.",
+   "Strek je armen naar voren over de vloer.",
+   "Laat je voorhoofd rusten.",
+   "Adem langzaam en ontspan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Forceer je heupen niet omlaag.",
+   "Span je schouders niet aan.",
+   "Houd je adem niet in.",
+   "Belast je knieën niet te veel."
+  ]
+ },
+ "D01": {
+  "breathing": "Adem gelijkmatig door; houd je adem niet in.",
+  "correct": [
+   "Houd je elleboog tegen je zij geplakt.",
+   "Beweeg langzaam, zonder zwaaien.",
+   "Houd je schouder laag, weg van je oor.",
+   "Houd je pols recht."
+  ],
+  "desc": "Een langzame rotatormanchet-oefening die de schouder stabiel maakt voor opslagen en groundstrokes. Eén dumbbell van 0,5 kg, steeds één arm.",
+  "howTo": [
+   "Ga rechtop staan met één dumbbell van 0,5 kg in je hand.",
+   "Buig je elleboog tot 90° en houd hem tegen je zij.",
+   "Begin met je onderarm voor je buik.",
+   "Draai je onderarm langzaam naar buiten, weg van je lichaam.",
+   "Ga langzaam terug en wissel dan van arm."
+  ],
+  "safety": "Alleen 0,5 kg. Stop als je schouder pijn doet. Ren of spring nooit met de dumbbell.",
+  "voice": {
+   "finish": "Leg de dumbbell neer.",
+   "last": "",
+   "mid": [
+    "Draai je onderarm langzaam naar buiten.",
+    "Elleboog blijft staan."
+   ],
+   "start": "Dumbbell van een halve kilo. Elleboog tegen je zij."
+  },
+  "wrong": [
+   "Laat je elleboog niet naar voren of naar buiten wegzakken.",
+   "Ruk niet met het gewicht.",
+   "Trek je schouder niet op.",
+   "Gebruik geen zwaardere dumbbell."
+  ]
+ },
+ "D02": {
+  "breathing": "Adem uit terwijl je armen omhoog gaan.",
+  "correct": [
+   "Houd je rug lang en vlak.",
+   "Stop op schouderhoogte.",
+   "Knijp je schouderbladen samen.",
+   "Beweeg beide armen tegelijk."
+  ],
+  "desc": "Een voorovergebogen reverse fly voor de achterkant van de schouders en de schouderbladen, de houdingsspieren die een tennisser nodig heeft.",
+  "howTo": [
+   "Houd een dumbbell van 0,5 kg in elke hand.",
+   "Buig voorover vanuit je heupen met een rechte rug en zachte knieën.",
+   "Laat je armen onder je schouders hangen.",
+   "Til je armen zijwaarts tot schouderhoogte en knijp je schouderbladen samen.",
+   "Zak langzaam terug."
+  ],
+  "safety": "Alleen 0,5 kg. Zachte knieën. Spring nooit met de dumbbells.",
+  "voice": {
+   "finish": "Kom omhoog en leg ze neer.",
+   "last": "",
+   "mid": [
+    "Armen zijwaarts.",
+    "Knijp je schouderbladen samen."
+   ],
+   "start": "Buig voorover, rug recht, een halve kilo in elke hand."
+  },
+  "wrong": [
+   "Rond je rug niet.",
+   "Zwaai niet met de gewichten.",
+   "Til niet hoger dan je schouders.",
+   "Kijk niet omhoog en knijp je nek niet in."
+  ]
+ },
+ "D03": {
+  "breathing": "Adem in tijdens het zakken, adem uit tijdens het omhoog komen.",
+  "correct": [
+   "Houd de dumbbells tegen je borst.",
+   "Houd je hielen op de vloer.",
+   "Houd je knieën boven je tenen.",
+   "Houd je rug lang."
+  ],
+  "desc": "Een goblet squat: beide dumbbells van 0,5 kg tegen je borst, voor je benen en een stabiele houding.",
+  "howTo": [
+   "Houd beide dumbbells van 0,5 kg samen tegen je borst.",
+   "Sta met je voeten ongeveer op schouderbreedte.",
+   "Zak met je heupen naar achteren en buig je knieën.",
+   "Houd je hielen op de grond en je borst omhoog.",
+   "Kom omhoog zonder dat de gewichten naar voren zakken."
+  ],
+  "safety": "Spring niet met de dumbbells. Doet een knie pijn, doe dan een squat zonder gewicht.",
+  "voice": {
+   "finish": "Sta rechtop.",
+   "last": "",
+   "mid": [
+    "Hielen omlaag.",
+    "Knieën boven je tenen."
+   ],
+   "start": "Dumbbells tegen je borst. Langzame squat."
+  },
+  "wrong": [
+   "Laat je knieën niet naar binnen zakken.",
+   "Til je hielen niet op.",
+   "Laat de dumbbells je niet naar voren trekken.",
+   "Veer niet omhoog uit de onderste positie."
+  ]
+ },
+ "D04": {
+  "breathing": "Adem langzaam. Houd je adem nooit in.",
+  "correct": [
+   "Houd je armen bij je oren.",
+   "Houd je ribben omlaag, geen holle rug.",
+   "Houd je schouders ver van je oren.",
+   "Blijf ademen."
+  ],
+  "desc": "Een stille houding met 0,5 kg dumbbells boven je hoofd, voor de schouderstabiliteit die je bij het serveren nodig hebt.",
+  "howTo": [
+   "Houd een dumbbell van 0,5 kg in elke hand.",
+   "Strek beide armen recht boven je hoofd.",
+   "Breng je bovenarmen dicht bij je oren.",
+   "Houd je ribben omlaag en je buik strak.",
+   "Houd stil en blijf ademen tot de tijd om is, zak dan langzaam terug."
+  ],
+  "safety": "Alleen vasthouden, geen duwbewegingen of zwaaien. Trilt of doet je schouder pijn, laat dan de dumbbells zakken.",
+  "voice": {
+   "finish": "Laat langzaam zakken.",
+   "last": "",
+   "mid": [
+    "Ribben omlaag.",
+    "Blijf ademen."
+   ],
+   "start": "Een halve kilo boven je hoofd. Armen bij je oren."
+  },
+  "wrong": [
+   "Leun niet achterover.",
+   "Trek je schouders niet op.",
+   "Zet je ellebogen niet krampachtig op slot.",
+   "Ruk de gewichten niet omhoog."
+  ]
+ },
+ "D05": {
+  "breathing": "Adem rustig in en uit, door je neus als dat lukt.",
+  "correct": [
+   "Sta alsof een touwtje je kruin omhoog trekt.",
+   "Houd beide schouders gelijk.",
+   "Houd je ribben rustig.",
+   "Houd je knieën zacht, niet op slot."
+  ],
+  "desc": "Een suitcase hold: één dumbbell van 0,5 kg in één hand. Het gaat erom dat je rechtop blijft en niet wegkantelt, dezelfde kracht tegen zijwaarts buigen die je nodig hebt als je naar een bal duikt.",
+  "howTo": [
+   "Houd één dumbbell van 0,5 kg in één hand, arm langs je dij.",
+   "Sta met je voeten onder je heupen.",
+   "Blijf lang: leun niet naar het gewicht toe en ook niet ervan weg.",
+   "Houd stil en blijf ademen.",
+   "Wissel van hand voor de andere kant."
+  ],
+  "safety": "Blijf op één plek staan. Loop, ren of spring niet met de dumbbell.",
+  "voice": {
+   "finish": "Wissel van hand.",
+   "last": "",
+   "mid": [
+    "Niet leunen.",
+    "Schouders gelijk."
+   ],
+   "start": "Een halve kilo in één hand. Sta rechtop."
+  },
+  "wrong": [
+   "Leun niet opzij.",
+   "Trek de schouder van de arm met het gewicht niet omhoog.",
+   "Loop of veer niet.",
+   "Houd je adem niet in."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Spring laag.",
+   "Land zacht en stil.",
+   "Houd je knieën licht gebogen.",
+   "Sta lang."
+  ],
+  "desc": "Een lichte warming-up voor enkels en kuiten met kleine, snelle sprongetjes.",
+  "howTo": [
+   "Sta rechtop met je voeten ongeveer op heupbreedte.",
+   "Houd je knieën licht gebogen.",
+   "Maak kleine, snelle sprongetjes, vooral vanuit je enkels.",
+   "Land zacht en herhaal."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Spring niet te hoog.",
+   "Land niet luid.",
+   "Zet je knieën niet op slot.",
+   "Laat je enkels niet naar binnen of buiten rollen."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Houd je romp rechtop.",
+   "Til je knieën beheerst op.",
+   "Zet je voeten zacht neer.",
+   "Adem regelmatig."
+  ],
+  "desc": "Een warming-up met weinig impact, als alternatief voor high knees.",
+  "howTo": [
+   "Sta rechtop.",
+   "Til één knie tot heuphoogte.",
+   "Zet hem beheerst terug.",
+   "Wissel van been en blijf marcheren.",
+   "Laat je armen natuurlijk meebewegen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Leun niet achterover.",
+   "Zwaai niet ongecontroleerd met je benen.",
+   "Stamp niet met je voeten.",
+   "Houd je adem niet in."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Land zacht.",
+   "Houd je knieën licht gebogen.",
+   "Beweeg je armen soepel.",
+   "Adem ritmisch."
+  ],
+  "desc": "Een cardio-oefening voor je hele lichaam die je hartslag verhoogt en schouders, heupen en benen opwarmt.",
+  "howTo": [
+   "Sta rechtop met je armen langs je lichaam.",
+   "Spring met je voeten naar buiten en breng tegelijk je armen boven je hoofd.",
+   "Spring je voeten weer naar binnen en laat je armen zakken.",
+   "Herhaal in een regelmatig ritme."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Land niet hard.",
+   "Zet je knieën niet op slot.",
+   "Trek je schouders niet op.",
+   "Ga niet zo snel dat je de controle verliest."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Houd een stevige plank.",
+   "Houd je core strak.",
+   "Houd je schouders boven je handen.",
+   "Beweeg je knieën beheerst."
+  ],
+  "desc": "Een dynamische coreoefening en cardio vanuit een hoge plank.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Houd je handen onder je schouders.",
+   "Breng één knie naar je borst.",
+   "Wissel ritmisch van been.",
+   "Houd je heupen stabiel."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet hoog op en neer springen.",
+   "Laat je onderrug niet zakken.",
+   "Beweeg je voeten niet te wild.",
+   "Laat je schouders niet inzakken."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Land stil.",
+   "Houd je knieën boven je tenen.",
+   "Houd je borst open.",
+   "Houd elke sprong beheerst."
+  ],
+  "desc": "Een plyometrische beenoefening voor kracht, conditie en coördinatie.",
+  "howTo": [
+   "Begin met je voeten ongeveer op schouderbreedte.",
+   "Zak beheerst in een squat.",
+   "Spring omhoog.",
+   "Land zacht met licht gebogen knieën.",
+   "Neem weer je beginpositie aan vóór de volgende sprong."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Land niet hard.",
+   "Laat je knieën niet naar binnen zakken.",
+   "Spring niet voordat je squat stabiel is.",
+   "Haast je niet zonder je positie te herstellen."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Land stil.",
+   "Houd je knie boven je tenen.",
+   "Houd je romp beheerst.",
+   "Beweeg soepel van links naar rechts."
+  ],
+  "desc": "Een zijwaartse springoefening voor benen, heupen, balans en coördinatie.",
+  "howTo": [
+   "Sta op één been.",
+   "Hop zijwaarts naar het andere been.",
+   "Land zacht en kom tot stilstand.",
+   "Herhaal van links naar rechts.",
+   "Gebruik je armen voor de balans."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je knie bij de landing niet naar binnen zakken.",
+   "Spring niet te ver te snel.",
+   "Val niet in de landing.",
+   "Draai je knie niet bij het neerkomen."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Til je knieën naar heuphoogte.",
+   "Land licht.",
+   "Houd je core aangespannen.",
+   "Houd je romp rechtop."
+  ],
+  "desc": "Een cardio-oefening die je hartslag verhoogt en heupen, core en benen activeert.",
+  "howTo": [
+   "Sta rechtop.",
+   "Ren op de plaats en til je knieën hoog op.",
+   "Beweeg je armen natuurlijk mee.",
+   "Houd het ritme snel maar beheerst."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Leun niet achterover.",
+   "Land niet zwaar.",
+   "Laat je voeten niet op de vloer klappen.",
+   "Verlies je houding niet als het tempo omhoog gaat."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Zet je handen onder je schouders neer.",
+   "Houd een stevige plank.",
+   "Land zacht met je voeten.",
+   "Houd de sprong beheerst."
+  ],
+  "desc": "Een conditie-oefening voor je hele lichaam die een squat, plank en sprong combineert. In dit programma gebruik je de versie zonder push-up, tenzij er uitdrukkelijk een push-up is opgegeven.",
+  "howTo": [
+   "Sta rechtop.",
+   "Zak in een squat en zet je handen op de vloer.",
+   "Spring of stap met je voeten naar achteren in een plank.",
+   "Spring of stap met je voeten weer naar voren.",
+   "Kom omhoog en sluit af met een kleine sprong."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je onderrug in de plank niet zakken.",
+   "Land niet zwaar.",
+   "Haast je niet door slordige herhalingen.",
+   "Laat je knieën niet naar binnen zakken als je naar voren springt."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Land zacht en beheerst.",
+   "Houd je voorste knie boven je tenen.",
+   "Houd je romp rechtop.",
+   "Houd de beweging veilig."
+  ],
+  "desc": "Een geavanceerde plyometrische beenoefening voor kracht, conditie en coördinatie.",
+  "howTo": [
+   "Begin in een lungepositie.",
+   "Spring omhoog.",
+   "Wissel van been in de lucht.",
+   "Land zacht in de tegenovergestelde lunge.",
+   "Herstel je balans vóór de volgende herhaling."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Land niet hard.",
+   "Laat je voorste knie niet naar binnen zakken.",
+   "Zak niet te diep.",
+   "Ga niet sneller dan je kunt beheersen."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Houd je knieën boven je tenen.",
+   "Houd je hielen op de grond.",
+   "Houd je rug lang.",
+   "Houd de diepte prettig."
+  ],
+  "desc": "Een beheerste beenoefening voor bovenbenen, heupen en houding.",
+  "howTo": [
+   "Sta met je voeten iets breder dan heupbreedte.",
+   "Duw je heupen naar achteren.",
+   "Buig je knieën tot een prettige, ondiepe diepte.",
+   "Kom langzaam weer omhoog."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zak niet te diep.",
+   "Laat je knieën niet naar binnen zakken.",
+   "Til je hielen niet op.",
+   "Laat je niet snel zakken."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Houd de pauze stabiel.",
+   "Houd je knieën boven je tenen.",
+   "Houd je borst open.",
+   "Houd je hielen op de vloer."
+  ],
+  "desc": "Een beheerste squatvariant met een korte pauze binnen een veilig bereik.",
+  "howTo": [
+   "Sta stevig.",
+   "Zak in een prettige, ondiepe squat.",
+   "Pauzeer kort.",
+   "Kom beheerst weer omhoog."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ga niet te diep.",
+   "Veer niet in de onderste positie.",
+   "Laat je knieën niet naar binnen zakken.",
+   "Houd je adem niet in."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Houd je rug recht.",
+   "Beweeg vanuit je heupen.",
+   "Houd je knieën zacht, niet diep gebogen.",
+   "Laat je nek de lijn van je rug volgen."
+  ],
+  "desc": "Een bewegingsoefening voor heupen, hamstrings en controle over je onderrug.",
+  "howTo": [
+   "Sta rechtop met je voeten op heupbreedte.",
+   "Buig je knieën een beetje.",
+   "Duw je heupen naar achteren.",
+   "Zak met je romp naar voren met een rechte rug.",
+   "Kom omhoog door je heupen naar voren te duwen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rond je rug niet.",
+   "Maak er geen squat van.",
+   "Reik niet te laag.",
+   "Til je hoofd niet te hoog."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Til op met de bilspier van het werkende been.",
+   "Houd je heupen waterpas.",
+   "Beweeg beheerst.",
+   "Houd je onderrug neutraal."
+  ],
+  "desc": "Een zwaardere bilspieroefening met één been tegelijk.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Buig één knie en houd die voet op de vloer.",
+   "Strek het andere been of til het op.",
+   "Duw door de hiel van het werkende been.",
+   "Til je heupen op en zak langzaam terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Draai je bekken niet.",
+   "Duw niet door je tenen.",
+   "Hol je onderrug niet.",
+   "Zak niet te snel."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Houd je heupen waterpas.",
+   "Houd je bilspieren actief.",
+   "Beweeg langzaam.",
+   "Houd je onderrug ontspannen."
+  ],
+  "desc": "Een oefening voor de bilspieren en de stabiliteit van je bekken.",
+  "howTo": [
+   "Begin in de positie van een glute bridge.",
+   "Houd je heupen omhoog.",
+   "Til één voet een klein stukje van de vloer.",
+   "Zet hem neer en wissel van kant.",
+   "Houd je bekken stabiel."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet zakken.",
+   "Wieg niet van links naar rechts.",
+   "Beweeg niet te snel.",
+   "Hol je onderrug niet."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Duw door je hielen.",
+   "Knijp je bilspieren bovenaan samen.",
+   "Houd je ribben omlaag.",
+   "Laat je onderrug niet te veel hol worden."
+  ],
+  "desc": "Een bilspieroefening die heupen en achterste keten versterkt.",
+  "howTo": [
+   "Ga op je rug liggen.",
+   "Buig je knieën en zet je voeten op de vloer.",
+   "Til je heupen op.",
+   "Pauzeer bovenaan.",
+   "Zak langzaam terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hol je onderrug bovenaan niet.",
+   "Til je hielen niet op.",
+   "Laat je heupen niet te snel vallen.",
+   "Zet je voeten niet te dicht bij je billen."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Sta lang.",
+   "Beweeg soepel.",
+   "Houd je enkels in lijn.",
+   "Zak beheerst."
+  ],
+  "desc": "Een onderbeenoefening voor kuiten, enkels en voetcontrole.",
+  "howTo": [
+   "Sta rechtop met je voeten op heupbreedte.",
+   "Kom omhoog op de ballen van je voeten.",
+   "Pauzeer kort bovenaan.",
+   "Zak langzaam met je hielen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je hielen niet snel zakken.",
+   "Wieg niet naar voren.",
+   "Laat je enkels niet naar buiten rollen.",
+   "Gebruik geen zwaaibeweging."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Houd je heupen omhoog.",
+   "Beweeg je bovenste been langzaam.",
+   "Houd je romp stabiel.",
+   "Houd je schouder sterk."
+  ],
+  "desc": "Een oefening voor de zijketen: de zijkant van de bilspieren, de schuine buikspieren en heupstabiliteit.",
+  "howTo": [
+   "Begin in een zijplank.",
+   "Houd je lichaam in een rechte lijn.",
+   "Til je bovenste been een klein stukje op.",
+   "Zak beheerst terug.",
+   "Herhaal en wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet zakken.",
+   "Zwaai niet met je been.",
+   "Rol je lichaam niet naar achteren.",
+   "Zak niet weg in je schouder."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Houd je knieën boven je tenen.",
+   "Houd je hielen op de vloer.",
+   "Houd je rug lang.",
+   "Houd de diepte beheerst."
+  ],
+  "desc": "Een basale squat met je eigen lichaamsgewicht voor benen, heupen en bilspieren.",
+  "howTo": [
+   "Sta met je voeten ongeveer op schouderbreedte.",
+   "Duw je heupen een beetje naar achteren.",
+   "Buig je knieën en zak in een squat.",
+   "Houd je borst open.",
+   "Kom omhoog door je hele voet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je knieën niet naar binnen zakken.",
+   "Til je hielen niet op.",
+   "Rond je rug niet.",
+   "Zak niet te snel."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Houd je voorste knie boven je tenen.",
+   "Houd je romp rechtop.",
+   "Stap beheerst naar achteren.",
+   "Houd je voorste hiel op de grond."
+  ],
+  "desc": "Een onderlichaamsoefening voor benen, bilspieren en balans.",
+  "howTo": [
+   "Sta rechtop.",
+   "Stap met één been naar achteren.",
+   "Zak beheerst in een lunge.",
+   "Duw door je voorste voet om weer rechtop te komen.",
+   "Wissel van kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je voorste knie niet naar binnen zakken.",
+   "Leun niet te ver naar voren.",
+   "Zak niet snel.",
+   "Duw niet te hard af met je achterste been."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Houd het tempo langzaam.",
+   "Houd je knieën boven je tenen.",
+   "Houd je hielen op de grond.",
+   "Houd je rug neutraal."
+  ],
+  "desc": "Een langzaam uitgevoerde air squat voor controle en beenkracht.",
+  "howTo": [
+   "Sta met je voeten op schouderbreedte.",
+   "Zak in ongeveer drie seconden.",
+   "Pauzeer kort onderaan.",
+   "Kom beheerst omhoog."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zak niet snel naar beneden.",
+   "Veer niet omhoog uit de onderste positie.",
+   "Laat je knieën niet naar binnen zakken.",
+   "Houd je adem niet in."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Houd je lichaam in één lijn.",
+   "Houd je core strak.",
+   "Houd je ellebogen op ongeveer 30 tot 45 graden.",
+   "Beweeg beheerst."
+  ],
+  "desc": "Een basale bovenlichaamsoefening voor borst, triceps, schouders en core.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Zet je handen onder je schouders of iets breder.",
+   "Zak beheerst omlaag.",
+   "Duw jezelf weer omhoog met een recht lichaam."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet zakken.",
+   "Steek je heupen niet te hoog omhoog.",
+   "Zet je ellebogen niet recht naar buiten.",
+   "Val niet in de onderste positie."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Houd je ellebogen dichtbij.",
+   "Houd je lichaam recht.",
+   "Houd je schouders ver van je oren.",
+   "Houd je polsen ontspannen."
+  ],
+  "desc": "Een push-upvariant met meer nadruk op de triceps.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Zet je handen dichter bij elkaar dan bij een gewone push-up.",
+   "Houd je ellebogen dicht bij je lichaam.",
+   "Zak langzaam en duw jezelf weer omhoog."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zet je handen niet te dicht bij elkaar.",
+   "Zet je ellebogen niet naar buiten.",
+   "Laat je onderrug niet zakken.",
+   "Duw niet door bij pijn in je pols of elleboog."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Houd de pauze beheerst.",
+   "Houd je core strak.",
+   "Houd je borst actief.",
+   "Houd je lichaam recht."
+  ],
+  "desc": "Een beheerste push-up met een korte pauze onderaan.",
+  "howTo": [
+   "Begin in de positie van een gewone push-up.",
+   "Zak langzaam.",
+   "Pauzeer een seconde vlak boven de onderste positie.",
+   "Duw jezelf omhoog zonder je lichaamshouding te verliezen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ontspan niet onderaan.",
+   "Laat je heupen niet zakken.",
+   "Houd je adem niet in.",
+   "Veer niet omhoog uit de onderste positie."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Houd een langzaam, gelijkmatig tempo.",
+   "Houd je lichaam recht.",
+   "Houd je ellebogen onder controle.",
+   "Adem regelmatig."
+  ],
+  "desc": "Een langzame push-upvariant die de controle en de tijd onder spanning vergroot.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Zak in ongeveer drie seconden.",
+   "Pauzeer een seconde vlak boven de onderste positie.",
+   "Duw jezelf in ongeveer drie seconden omhoog."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Haast je niet.",
+   "Zak niet in elkaar onderaan.",
+   "Laat je heupen niet doorzakken.",
+   "Verlies de spanning in je core niet."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Houd je lichaam recht naar voren gericht.",
+   "Houd je core strak.",
+   "Houd beide schouders stabiel.",
+   "Beweeg beheerst."
+  ],
+  "desc": "Een asymmetrische push-upvariant die borst, schouders en core uitdaagt.",
+  "howTo": [
+   "Begin in een push-uppositie.",
+   "Zet de ene hand iets naar voren en de andere iets naar achteren.",
+   "Zak beheerst.",
+   "Duw jezelf weer omhoog.",
+   "Wissel bij de volgende keer de positie van je handen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Draai je romp niet.",
+   "Laat geen schouder zakken.",
+   "Zet je handen niet te wijd.",
+   "Forceer het bereik niet als je schouder ongemakkelijk voelt."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Houd je heupen hoog.",
+   "Buig je ellebogen beheerst.",
+   "Houd je schouders stabiel.",
+   "Houd je nek neutraal."
+  ],
+  "desc": "Een push-upvariant met de nadruk op de schouders.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Loop met je voeten iets dichterbij en til je heupen op.",
+   "Houd je hoofd tussen je armen.",
+   "Zak met je hoofd naar de vloer.",
+   "Duw jezelf weer omhoog."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ga niet over in een gewone push-up.",
+   "Laat je hoofd niet te ver naar voren gaan.",
+   "Zet je ellebogen niet te veel naar buiten.",
+   "Duw niet door bij pijn in je schouder."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Houd je core strak.",
+   "Beweeg je ellebogen soepel.",
+   "Houd je schouders laag.",
+   "Houd het bereik prettig."
+  ],
+  "desc": "Een oefening voor triceps en schouders vanuit steun op je onderarmen.",
+  "howTo": [
+   "Begin op je onderarmen met je lichaam lang uitgestrekt.",
+   "Houd je ellebogen onder of iets voor je schouders.",
+   "Duw door je handen en onderarmen.",
+   "Strek je ellebogen een beetje.",
+   "Ga beheerst terug."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Forceer je ellebogen niet.",
+   "Laat je heupen niet zakken.",
+   "Trek je schouders niet op.",
+   "Beweeg niet door pijn in je elleboog of schouder heen."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Ontspan je nek.",
+   "Beweeg je schouders soepel.",
+   "Houd je armen los.",
+   "Sta lang."
+  ],
+  "desc": "Een eenvoudige schouder-warming-up voor nek, schouders en bovenrug.",
+  "howTo": [
+   "Sta rechtop met ontspannen armen.",
+   "Maak langzame cirkels met je schouders naar achteren.",
+   "Maak daarna langzame cirkels naar voren.",
+   "Houd de beweging soepel en beheerst."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Trek je schouders niet hard op.",
+   "Beweeg niet te snel.",
+   "Span je nek niet aan.",
+   "Rond je bovenrug niet."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Houd je armen rond schouderhoogte.",
+   "Houd de cirkels klein.",
+   "Houd je schouders laag.",
+   "Ontspan je nek."
+  ],
+  "desc": "Een warming-up voor schouders en bovenrug die de deltaspieren en schouderstabilisatoren activeert.",
+  "howTo": [
+   "Sta rechtop en til je armen tot schouderhoogte.",
+   "Maak kleine cirkels naar voren.",
+   "Maak daarna kleine cirkels naar achteren.",
+   "Houd de cirkels klein en beheerst."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Maak geen grote zwaaibewegingen.",
+   "Trek je schouders niet naar je oren.",
+   "Hol je onderrug niet.",
+   "Houd je adem niet in."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Houd je voeten stabiel.",
+   "Draai vanuit je romp.",
+   "Draai soepel.",
+   "Houd je knieën stil als je draait."
+  ],
+  "desc": "Een zachte draai-oefening voor de romp en de bovenste wervelkolom.",
+  "howTo": [
+   "Sta met je voeten op heupbreedte.",
+   "Houd je heupen grotendeels naar voren gericht.",
+   "Draai je bovenlichaam naar één kant.",
+   "Kom terug naar het midden en draai naar de andere kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Draai je knieën niet mee met je lichaam.",
+   "Draai niet te snel.",
+   "Leun niet achterover.",
+   "Forceer het bereik niet."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Houd je rug recht.",
+   "Beweeg vanuit je heupen.",
+   "Houd je knieën zacht, niet diep gebogen.",
+   "Laat je nek de lijn van je rug volgen."
+  ],
+  "desc": "Een bewegingsoefening voor heupen, hamstrings en controle over je onderrug.",
+  "howTo": [
+   "Sta rechtop met je voeten op heupbreedte.",
+   "Buig je knieën een beetje.",
+   "Duw je heupen naar achteren.",
+   "Zak met je romp naar voren met een rechte rug.",
+   "Kom omhoog door je heupen naar voren te duwen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rond je rug niet.",
+   "Maak er geen squat van.",
+   "Reik niet te laag.",
+   "Til je hoofd niet te hoog."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Houd je knieën boven je tenen.",
+   "Houd je hielen op de vloer.",
+   "Houd je rug lang.",
+   "Houd de diepte gematigd."
+  ],
+  "desc": "Een beheerste warming-up voor de benen in een veilig, ondiep bereik.",
+  "howTo": [
+   "Sta met je voeten iets breder dan heupbreedte.",
+   "Duw je heupen een beetje naar achteren.",
+   "Buig je knieën alleen tot een prettige diepte.",
+   "Kom langzaam weer rechtop."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zak niet te diep.",
+   "Laat je knieën niet naar binnen zakken.",
+   "Til je hielen niet op.",
+   "Zak niet te snel."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Houd je lichaam in één lijn.",
+   "Houd je schouders stabiel.",
+   "Houd je core aangespannen.",
+   "Beweeg soepel."
+  ],
+  "desc": "Een warming-up voor schouders, polsen en core.",
+  "howTo": [
+   "Begin in een hoge plank.",
+   "Je handen staan onder je schouders.",
+   "Verplaats je lichaam een klein stukje naar voren.",
+   "Ga terug naar de beginpositie.",
+   "Houd de beweging klein en beheerst."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Laat je heupen niet zakken.",
+   "Duw je schouders niet naar je oren.",
+   "Ga niet te ver naar voren.",
+   "Laat je onderrug niet doorzakken."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Adem langzaam en diep.",
+   "Ontspan je schouders bij het uitademen.",
+   "Houd je ribben omlaag, hol je rug niet te veel.",
+   "Beweeg zonder haast."
+  ],
+  "desc": "Een rustige openingsoefening: diep ademhalen met een zachte strekbeweging van je hele lichaam om je rug te verlengen.",
+  "howTo": [
+   "Sta rechtop met je voeten op heupbreedte.",
+   "Adem in en strek beide armen boven je hoofd.",
+   "Rek je wervelkolom zachtjes uit.",
+   "Adem uit en laat je armen zakken, met ontspannen schouders."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Houd je adem niet in.",
+   "Hol je onderrug niet sterk.",
+   "Trek je schouders niet naar je oren.",
+   "Haast je niet met het reiken."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Draai vanuit je romp.",
+   "Houd je heupen grotendeels naar voren.",
+   "Houd je voeten op hun plek.",
+   "Houd een soepel, gelijkmatig tempo."
+  ],
+  "desc": "Een zachte draai-oefening om je wervelkolom en romp op te warmen.",
+  "howTo": [
+   "Sta met je voeten op heupbreedte.",
+   "Laat je armen losjes meezwaaien.",
+   "Draai je bovenlichaam naar één kant.",
+   "Ga vloeiend naar de andere kant."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Draai niet hard door je knieën.",
+   "Ruk niet aan je armen.",
+   "Draai niet te snel.",
+   "Houd je adem niet in."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Laat je armen vrij bewegen.",
+   "Houd je schouders ontspannen.",
+   "Laat je borst zachtjes openen.",
+   "Sta lang."
+  ],
+  "desc": "Een dynamische warming-up voor schouders en borst om je bovenlichaam voor te bereiden op push-ups en spronggerichte oefeningen.",
+  "howTo": [
+   "Sta rechtop met je voeten op heupbreedte.",
+   "Zwaai je armen beheerst naar voren en naar achteren.",
+   "Laat je borst vanzelf opengaan als je armen naar achteren gaan.",
+   "Houd de beweging soepel en ontspannen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Zwaai niet te wild.",
+   "Trek je schouders niet naar je oren.",
+   "Hol je onderrug niet.",
+   "Laat de beweging niet overgaan in ongecontroleerde zwaai."
+  ]
+ }
+}

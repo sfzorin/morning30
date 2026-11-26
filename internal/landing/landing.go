@@ -73,19 +73,18 @@ type card struct {
 }
 
 type dayRow struct {
-	N       int
-	Light   bool
-	Minutes int
-	Items   []string
+	Label, Minutes string // "Day 3", "≈ 14 min"
+	Light          bool
+	Items          []string
 }
 
 type page struct {
-	Lang, HTMLLang     string
+	Lang, HTMLLang, Dir string
 	Title, Desc        string
 	Canonical, Default string
 	Alternates         []link
 	Heading, Lead      string
-	Minutes            string
+	Minutes, Days30    string
 	Cards              []card
 	Days               []dayRow
 	IsCourse           bool
@@ -99,7 +98,7 @@ var uiKeys = []string{
 }
 
 func base(l i18n.Lang, path func(string) string) page {
-	p := page{Lang: string(l), HTMLLang: i18n.BCP47(l), T: map[string]string{}, IndexURL: IndexPath(string(l))}
+	p := page{Lang: string(l), HTMLLang: i18n.BCP47(l), Dir: i18n.Dir(l), T: map[string]string{}, IndexURL: IndexPath(string(l))}
 	for _, k := range uiKeys {
 		p.T[strings.ReplaceAll(k, ".", "_")] = i18n.T(l, k)
 	}
@@ -118,9 +117,11 @@ func minutes(sec int) int {
 	return 1
 }
 
-// span is the length of a session on day 1 and on the peak day, e.g. "12–18".
-func span(r content.Resolved) string {
-	return fmt.Sprintf("%d–%d", minutes(r.Workout(1, 0, pageRests).EstSec), minutes(r.Workout(content.TotalDays-1, 0, pageRests).EstSec))
+// span is the length of a session on day 1 and on the peak day, e.g.
+// "12–18 min a day".
+func span(l i18n.Lang, r content.Resolved) string {
+	first, peak := minutes(r.Workout(1, 0, pageRests).EstSec), minutes(r.Workout(content.TotalDays-1, 0, pageRests).EstSec)
+	return i18n.Tf(l, "fmt.min_range", first, peak) + " " + i18n.T(l, "landing.a_day")
 }
 
 func indexPage(l i18n.Lang) page {
@@ -132,7 +133,7 @@ func indexPage(l i18n.Lang) page {
 	for _, c := range content.Series30() {
 		p.Cards = append(p.Cards, card{
 			Title: c.TitleIn(string(l)), About: c.AboutIn(string(l)), URL: CoursePath(string(l), c),
-			Minutes: span(c.Resolve()),
+			Minutes: span(l, c.Resolve()),
 		})
 	}
 	return p
@@ -142,13 +143,15 @@ func coursePage(l i18n.Lang, c content.Course) page {
 	p := base(l, func(lang string) string { return CoursePath(lang, c) })
 	r := c.Resolve()
 	p.IsCourse = true
+	p.Days30 = i18n.Tf(l, "fmt.days", content.TotalDays)
 	p.Heading = c.TitleIn(string(l))
 	p.Title = p.Heading + " — " + i18n.T(l, "app.name")
 	p.Desc = c.AboutIn(string(l))
 	p.Lead = p.Desc
-	p.Minutes = span(r)
+	p.Minutes = span(l, r)
 	for _, d := range r.Days {
-		row := dayRow{N: d.Day, Light: content.IsRecoveryDay(d.Day), Minutes: minutes(r.Workout(d.Day, 0, pageRests).EstSec)}
+		row := dayRow{Label: i18n.Tf(l, "fmt.day", d.Day), Light: content.IsRecoveryDay(d.Day),
+			Minutes: "≈ " + i18n.Tf(l, "fmt.min", minutes(r.Workout(d.Day, 0, pageRests).EstSec))}
 		for _, it := range d.Items {
 			row.Items = append(row.Items, dose(l, it))
 		}
@@ -156,7 +159,7 @@ func coursePage(l i18n.Lang, c content.Course) page {
 	}
 	for _, o := range content.Series30() {
 		if o.Key != c.Key {
-			p.Cards = append(p.Cards, card{Title: o.TitleIn(string(l)), URL: CoursePath(string(l), o), Minutes: span(o.Resolve())})
+			p.Cards = append(p.Cards, card{Title: o.TitleIn(string(l)), URL: CoursePath(string(l), o), Minutes: span(l, o.Resolve())})
 		}
 	}
 	return p
@@ -174,7 +177,7 @@ func dose(l i18n.Lang, it content.RItem) string {
 	}
 	var s string
 	if it.Unit == content.Seconds {
-		s = fmt.Sprintf("%s · %d %s", name, it.Value, i18n.T(l, "workout.sec"))
+		s = name + " · " + i18n.Tf(l, "fmt.sec", it.Value)
 	} else {
 		s = fmt.Sprintf("%s × %d", name, it.Value)
 	}
@@ -197,7 +200,7 @@ func render(w http.ResponseWriter, p page) {
 }
 
 var tmpl = template.Must(template.New("page").Parse(`<!doctype html>
-<html lang="{{.HTMLLang}}">
+<html lang="{{.HTMLLang}}" dir="{{.Dir}}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -255,7 +258,7 @@ h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5p
 <h1>{{.Heading}}</h1>
 <p class="lead">{{.Lead}}</p>
 {{if .IsCourse}}
-<div class="facts"><span>30 × {{.T.home_day}}</span><span>{{.Minutes}} {{.T.home_min}} {{.T.landing_a_day}}</span></div>
+<div class="facts"><span>{{.Days30}}</span><span>{{.Minutes}}</span></div>
 <p class="muted">{{.T.landing_how}}</p>
 <a class="cta" href="/">{{.T.landing_start}}</a>
 <p class="muted">{{.T.landing_start_note}}</p>
@@ -263,20 +266,20 @@ h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5p
 <p class="muted">{{.T.landing_plan_note}}</p>
 <ol class="days">
 {{range .Days}}<li>
-<div class="head"><span class="n">{{$.T.home_day}} {{.N}}{{if .Light}} <span class="light">· {{$.T.landing_light}}</span>{{end}}</span><span class="min">≈ {{.Minutes}} {{$.T.home_min}}</span></div>
+<div class="head"><span class="n">{{.Label}}{{if .Light}} <span class="light">· {{$.T.landing_light}}</span>{{end}}</span><span class="min">{{.Minutes}}</span></div>
 <p class="items">{{range $i, $it := .Items}}{{if $i}}, {{end}}{{$it}}{{end}}</p>
 </li>
 {{end}}</ol>
 <a class="cta" href="/">{{.T.landing_start}}</a>
 <h2>{{.T.landing_all}}</h2>
 <div class="cards">
-{{range .Cards}}<a class="card" href="{{.URL}}"><b>{{.Title}}</b><small>{{.Minutes}} {{$.T.home_min}} {{$.T.landing_a_day}}</small></a>
+{{range .Cards}}<a class="card" href="{{.URL}}"><b>{{.Title}}</b><small>{{.Minutes}}</small></a>
 {{end}}<a class="card" href="{{.IndexURL}}"><b>{{.T.landing_all}} →</b></a>
 </div>
 {{else}}
 <p class="muted">{{.T.landing_how}}</p>
 <div class="cards">
-{{range .Cards}}<a class="card" href="{{.URL}}"><b>{{.Title}}</b><small>{{.Minutes}} {{$.T.home_min}} {{$.T.landing_a_day}}</small><p>{{.About}}</p></a>
+{{range .Cards}}<a class="card" href="{{.URL}}"><b>{{.Title}}</b><small>{{.Minutes}}</small><p>{{.About}}</p></a>
 {{end}}</div>
 <p><a class="cta" href="/">{{.T.landing_start}}</a></p>
 {{end}}

@@ -4,6 +4,7 @@ package pages
 
 import (
 	"morning30/internal/auth"
+	"morning30/internal/i18n"
 	"morning30/path"
 
 	"github.com/doors-dev/doors"
@@ -19,11 +20,17 @@ type Root struct {
 
 elem (r Root) Main() {
 	~(r.Auth.Bind(elem(s auth.Session) {
-		~(if !s.Authorized {
-			~(r.publicRoutes(s))
-		} else {
-			~(r.privateRoutes(s))
-		})
+		~{
+			l := i18n.Lang(s.Lang)
+		}
+		~// lang and dir follow the session, so Arabic and Hebrew lay out right to left.
+		<div class="app-lang" lang=(i18n.BCP47(l)) dir=(i18n.Dir(l))>
+			~(if !s.Authorized {
+				~(r.publicRoutes(s))
+			} else {
+				~(r.privateRoutes(s))
+			})
+		</div>
 	}))
 }
 

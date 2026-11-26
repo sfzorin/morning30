@@ -2,11 +2,13 @@ package content
 
 import (
 	"fmt"
+
+	"morning30/internal/langs"
 	"strings"
 	"testing"
 )
 
-var series30Langs = []string{"ru", "en", "tr", "de", "es", "fr", "it"}
+var series30Langs = langs.Codes()
 
 // The series must not leak into what accounts run today.
 func TestSeries30IsSeparateFromExistingPrograms(t *testing.T) {
@@ -46,7 +48,11 @@ func TestSeries30Titles(t *testing.T) {
 			}
 		}
 		for _, l := range series30Langs {
-			if len([]rune(c.About[l])) < 25 {
+			min := 25
+			if l == "ja" || l == "ko" || l == "zh" || l == "zh-hant" {
+				min = 10 // CJK says the same in far fewer characters
+			}
+			if len([]rune(c.About[l])) < min {
 				t.Errorf("%s: missing %s description", c.Key, l)
 			}
 		}

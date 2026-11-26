@@ -77,11 +77,11 @@ elem (h homePage) Main() {
 			})
 			~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang)) ~(icon("settings", false))</a>
 			~// The cycle number lives in the 30-day grid below.
-			<div class="day-num">~(i18n.T(l, "home.day"), " ", curDay)</div>
+			<div class="day-num">~(i18n.Tf(l, "fmt.day", curDay))</div>
 			<div class="day-meta">
 				<span>~(i18n.T(l, "home.rounds"), ": ", mainRounds)</span>
-				~>doors.ALink{Model: path.Path{Page: path.Today}} <a class="day-count">~(len(w.Items), " ", i18n.T(l, "home.exercises"))</a>
-				<span>~(i18n.T(l, "home.est"), " ", minutes(w.EstSec), " ", i18n.T(l, "home.min"))</span>
+				~>doors.ALink{Model: path.Path{Page: path.Today}} <a class="day-count">~(i18n.Tf(l, "fmt.exercises", len(w.Items)))</a>
+				<span>~(i18n.T(l, "home.est"), " ", i18n.Tf(l, "fmt.min", minutes(w.EstSec)))</span>
 				~(if lv := app.DB.GetLevel(h.sess.UserID); !w.FixedDifficulty && lv != 0 {
 					<span>~(i18n.T(l, "home.level"), " ", levelLabel(l, lv))</span>
 				})
@@ -97,7 +97,7 @@ elem (h homePage) Main() {
 		<section class="streak-row">
 			<span class="fire">🔥</span>
 			<span class="streak-n">~(streak)</span>
-			<span class="streak-label">~(i18n.T(l, "home.streak"), " · ", streak, " ", i18n.T(l, "home.days"))</span>
+			<span class="streak-label">~(i18n.T(l, "home.streak"), " · ", i18n.Tf(l, "fmt.days", streak))</span>
 		</section>
 
 		~// Date-based habit calendar (drives the streak).
@@ -107,7 +107,7 @@ elem (h homePage) Main() {
 
 		~// The looping 30-day program cycle (separate from the date calendar).
 		<section class="cycle">
-			<h3>~(i18n.T(l, "home.cycle"), " ", cycle)</h3>
+			<h3>~(i18n.Tf(l, "fmt.cycle", cycle))</h3>
 			~(if !w.FixedDifficulty {
 			<div class="diff">
 				<div class="diff-bar"></div>
@@ -154,7 +154,7 @@ elem (h homePage) programs(selected []app.SelectedView) {
 					}
 					~>doors.AClick{On: h.pickReady(key)} <button class=(courseClass(key == current)) type="button">
 						<span class="course-title">~(p.TitleIn(h.sess.Lang))</span>
-						<span class="course-meta">~(first, "–", peak, " ", i18n.T(l, "home.min"))</span>
+						<span class="course-meta">~(i18n.Tf(l, "fmt.min_range", first, peak))</span>
 					</button>
 				})
 			</div>
@@ -171,7 +171,7 @@ elem (h homePage) programs(selected []app.SelectedView) {
 				~(for _, p := range others {
 					~>doors.AClick{On: h.pickSelected(p.ID)} <button class="course-card" type="button">
 						<span class="course-title">~(p.Name)</span>
-						<span class="course-meta">~(i18n.T(l, "programs.day"), " ", p.Day)</span>
+						<span class="course-meta">~(i18n.Tf(l, "fmt.on_day", p.Day))</span>
 					</button>
 				})
 				~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="course-card add-card">

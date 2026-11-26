@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Tập bụng tại nhà không dụng cụ: lần lượt bụng dưới, cơ liên sườn và cả vùng core. Gập bụng, kéo kéo cắt, đạp xe và plank, tăng dần đều đặn.",
+  "title": "Cơ bụng trong 30 ngày"
+ },
+ "age50": {
+  "about": "Bài tập nhẹ nhàng cho sức mạnh chân và thăng bằng: đứng lên ngồi xuống, đứng một chân và đi nối gót chân với mũi chân.",
+  "title": "Tập luyện 50+"
+ },
+ "arms30": {
+  "about": "Tay và vai khỏe hơn mà không cần tạ: hít đất quỳ gối, nhún tay trên ghế, bài tập tự kháng lực và plank ngửa.",
+  "title": "Tay trong 30 ngày"
+ },
+ "backcare": {
+  "about": "Bài ổn định nhẹ nhàng: McGill curl-up, bird dog, plank nghiêng, không nhảy, không cúi gập mạnh. Đây không phải là điều trị: hãy hỏi ý kiến bác sĩ và dừng lại nếu cơn đau lan xuống chân hoặc xuất hiện tê.",
+  "title": "Chăm sóc lưng khi thoát vị đĩa đệm"
+ },
+ "bedtime": {
+  "about": "Tập khi nằm, chậm rãi, hơi thở êm.",
+  "title": "Giãn cơ trước khi ngủ"
+ },
+ "climbing": {
+  "about": "Lực nắm, xương bả vai và treo người trên xà, core khỏe và nhóm cơ đối kháng của ngón tay. Cần có xà đơn.",
+  "title": "Cho người leo núi"
+ },
+ "cycling": {
+  "about": "Mông, đầu gối và lưng dưới, sau đó mở rộng ngực và hông sau khi ngồi yên xe.",
+  "title": "Cho người đạp xe"
+ },
+ "demo": {
+  "about": "Bài tập ngắn cho toàn thân, không nhảy: khởi đầu ngày nhẹ nhàng và tăng dần đều đặn.",
+  "title": "Tập sáng"
+ },
+ "feet": {
+  "about": "Vòm chân, ngón chân và cổ chân: bài short foot, co khăn bằng ngón chân, đi bằng mũi chân và gót chân. Hỗ trợ khi bị bàn chân bẹt nhưng không thay thế bác sĩ.",
+  "title": "Bàn chân khỏe"
+ },
+ "football": {
+  "about": "Gân kheo, đùi trong, cổ chân và thăng bằng: bài tập giúp phòng ngừa chấn thương.",
+  "title": "Cho cầu thủ bóng đá"
+ },
+ "frontsplit30": {
+  "about": "Lunge và bài giãn cơ gập hông và gân kheo, có tay chống đỡ.",
+  "title": "Xoạc dọc trong 30 ngày"
+ },
+ "golf": {
+  "about": "Xoay thân, hông linh hoạt, vai và thăng bằng một chân. Nhịp độ êm, phù hợp cả sau tuổi 50.",
+  "title": "Cho người chơi golf"
+ },
+ "hiking": {
+  "about": "Chân khỏe khi leo dốc, đầu gối vững khi xuống dốc, cổ chân chắc và lưng sẵn sàng mang ba lô.",
+  "title": "Đi bộ đường dài và trekking"
+ },
+ "hips30": {
+  "about": "Tư thế con bướm, chim bồ câu và squat sâu để hông thoải mái hơn.",
+  "title": "Linh hoạt khớp hông trong 30 ngày"
+ },
+ "hockey": {
+  "about": "Tư thế thấp, nhảy trượt băng, thăng bằng và xoay thân.",
+  "title": "Khúc côn cầu và trượt băng"
+ },
+ "jumpsports": {
+  "about": "Bật nhảy, tiếp đất mềm và cổ chân khỏe.",
+  "title": "Bóng rổ và bóng chuyền"
+ },
+ "kids30": {
+  "about": "Cho trẻ 7–12 tuổi: sức mạnh và sự linh hoạt theo nhịp vui nhộn.",
+  "title": "Tập luyện cho trẻ em"
+ },
+ "kidsagility": {
+  "about": "Cho trẻ em: nhảy, thăng bằng và phản xạ nhanh.",
+  "title": "Nhanh nhẹn và phối hợp"
+ },
+ "kidsball": {
+  "about": "Bật nhảy tiếp đất mềm, bước chân nhanh, phản xạ và tay khỏe.",
+  "title": "Bóng rổ và bóng chuyền cho trẻ em"
+ },
+ "kidsdance": {
+  "about": "Bước chân và vỗ tay theo nhịp, nhảy lướt, plié và thăng bằng.",
+  "title": "Nhảy múa và nhịp điệu cho trẻ em"
+ },
+ "kidsfeet": {
+  "about": "Bài tập bàn chân vui nhộn: đi bằng mũi chân, gót chân và mép ngoài bàn chân, co khăn, con sâu bò. Không thay thế bác sĩ.",
+  "title": "Bài tập bàn chân bẹt cho trẻ em"
+ },
+ "kidsfootball": {
+  "about": "Chân, phối hợp và thăng bằng một chân cho cầu thủ nhí.",
+  "title": "Bóng đá cho trẻ em"
+ },
+ "kidsgym": {
+  "about": "Con thuyền, con én, ngồi co gối và plié: dẻo dai, thăng bằng và core khỏe.",
+  "title": "Thể dục dụng cụ cho trẻ em"
+ },
+ "kidshockey": {
+  "about": "Tư thế trượt băng, nhảy ngang, bước nhanh và thăng bằng.",
+  "title": "Khúc côn cầu và trượt băng nghệ thuật cho trẻ em"
+ },
+ "kidskarate": {
+  "about": "Tư thế đứng, đấm và đá vào không khí, vung chân và thăng bằng.",
+  "title": "Karate và taekwondo cho trẻ em"
+ },
+ "kidsposture": {
+  "about": "Lưng và vai sau nhiều giờ ngồi ở bàn học.",
+  "title": "Tư thế cho học sinh"
+ },
+ "kidsswim": {
+  "about": "Tư thế thuôn dài, đạp chân chân vịt, con thuyền và động tác tay bơi trên cạn cho bé bơi.",
+  "title": "Bơi lội cho trẻ em"
+ },
+ "kidstennis": {
+  "about": "Di chuyển chân, xoay thân và vai khỏe cho tay vợt nhí.",
+  "title": "Tennis cho trẻ em"
+ },
+ "kidswrestling": {
+  "about": "Co người, lăn an toàn, bò kiểu gấu và đi kiểu cua. Chỉ lăn trên thảm hoặc thảm mềm.",
+  "title": "Đấu vật và judo cho trẻ em"
+ },
+ "legs30": {
+  "about": "Squat, cầu mông và lunge không dụng cụ. Squat tăng từ 10 lên 24 lần mỗi hiệp; các bài nhảy xuất hiện từ ngày 12.",
+  "title": "Chân và mông trong 30 ngày"
+ },
+ "martial": {
+  "about": "Đấm gió, đá, sức mạnh core và linh hoạt khớp hông.",
+  "title": "Cho võ thuật"
+ },
+ "morningstretch": {
+  "about": "Giãn cơ nhẹ nhàng ngay sau khi thức dậy, không gắng sức.",
+  "title": "Giãn cơ buổi sáng"
+ },
+ "office30": {
+  "about": "Bài tập ngắn sau nhiều giờ ngồi máy tính: cổ, vai, lưng trên và tư thế.",
+  "title": "Cổ và lưng cho dân văn phòng"
+ },
+ "plank30": {
+  "about": "Plank mỗi ngày, từ 20 giây lên 70 giây mỗi hiệp. Plank thẳng, nghiêng, chuyển động và ngửa luân phiên, kèm bài cho lưng để giữ cân bằng.",
+  "title": "Plank trong 30 ngày"
+ },
+ "posture30": {
+  "about": "Tăng cường lưng để có tư thế tốt hơn: xương bả vai, cơ duỗi lưng và toàn bộ mặt sau cơ thể. Không nhảy, không dụng cụ, tập hết trên thảm.",
+  "title": "Tư thế đẹp hơn trong 30 ngày"
+ },
+ "pullups30": {
+  "about": "Từ treo người trên xà đến những cái kéo xà đầu tiên: kéo bả vai, hạ chậm và kéo bàn. Bạn cần có xà đơn.",
+  "title": "Kéo xà trong 30 ngày"
+ },
+ "pushups30": {
+  "about": "Từ 4 đến 15 cái hít đất mỗi hiệp. Các biến thể khó hơn như tay hẹp, chậm, giữ lần lượt được thêm vào, và bài cho lưng cân bằng với các bài đẩy.",
+  "title": "Hít đất trong 30 ngày"
+ },
+ "racket": {
+  "about": "Bước tách, lunge, bước ngang nhanh và vai khỏe.",
+  "title": "Padel, cầu lông, bóng bàn"
+ },
+ "rowing": {
+  "about": "Lưng và xương bả vai, core xoay khỏe và lực đẩy từ hông.",
+  "title": "Chèo thuyền, kayak, SUP"
+ },
+ "runners": {
+  "about": "Mông, bắp chân và thăng bằng: sức mạnh bảo vệ đầu gối và cổ chân khi chạy.",
+  "title": "Cho người chạy bộ"
+ },
+ "scoliosis": {
+  "about": "Tập đều hai bên: cơ lưng, core, xương bả vai và hơi thở. Không thay thế điều trị hay chương trình riêng của chuyên gia.",
+  "title": "Đối xứng lưng khi cong vẹo cột sống"
+ },
+ "sidesplit30": {
+  "about": "Tư thế chân rộng và bài giãn đùi trong, từng bước một.",
+  "title": "Xoạc ngang trong 30 ngày"
+ },
+ "ski": {
+  "about": "Chuẩn bị cho mùa tuyết: sức bền chân, thăng bằng và đầu gối khỏe.",
+  "title": "Trượt tuyết và snowboard"
+ },
+ "slim30": {
+  "about": "Các vòng cardio và bài sức mạnh toàn thân để đốt nhiều năng lượng hơn. Khóa này có các bài nhảy; squat nhảy và burpee chỉ xuất hiện ở nửa sau.",
+  "title": "Giảm cân trong 30 ngày"
+ },
+ "stretch30": {
+  "about": "Toàn thân: chân, lưng và vai. Độ dẻo dai tăng dần từng ngày.",
+  "title": "Giãn cơ trong 30 ngày"
+ },
+ "swim": {
+  "about": "Tập trên cạn: xương bả vai và vai, tư thế thuôn dài, core khỏe và cổ chân linh hoạt.",
+  "title": "Cho người bơi lội"
+ },
+ "taichi30": {
+  "about": "Các động tác thái cực quyền chậm giúp thăng bằng và bình tĩnh: những thế quen thuộc mỗi ngày và chuỗi động tác mới dần xuất hiện.",
+  "title": "Thái cực quyền trong 30 ngày"
+ },
+ "tennis": {
+  "about": "Di chuyển ngang, core và vai để chơi tự tin.",
+  "title": "Cho người chơi tennis"
+ },
+ "toetouch30": {
+  "about": "Động tác cúi gập người về phía trước: mặt sau của chân và lưng dưới.",
+  "title": "Chạm ngón chân trong 30 ngày"
+ },
+ "wrestling": {
+  "about": "Bước lao vào, sprawl, cổ khỏe mà không cần cầu đầu, và sức bền core.",
+  "title": "Đấu vật và judo"
+ }
+}

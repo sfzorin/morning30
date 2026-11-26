@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Giữ lực cản đều.",
+   "Di chuyển chậm.",
+   "Giữ khuỷu tay sát thân.",
+   "Hạ vai xuống."
+  ],
+  "desc": "Bài tập tay trước không cần dụng cụ, dùng một tay làm lực cản cho tay kia.",
+  "howTo": [
+   "Đứng hoặc ngồi thẳng lưng.",
+   "Gập một khuỷu tay như khi cuốn tạ.",
+   "Dùng tay còn lại ấn xuống cẳng tay đang tập.",
+   "Cuốn tay lên từ từ, chống lại lực cản.",
+   "Đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng tập khi không có lực cản thật sự.",
+   "Đừng giật tay.",
+   "Đừng nhún vai.",
+   "Đừng nín thở."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Giữ góc khuỷu tay ổn định.",
+   "Giữ lực căng đều.",
+   "Thả lỏng vai.",
+   "Tiếp tục thở."
+  ],
+  "desc": "Bài giữ tĩnh cho cơ tay trước, dùng lực cản từ chính tay bạn.",
+  "howTo": [
+   "Gập một khuỷu tay khoảng 90 độ.",
+   "Dùng tay còn lại ấn xuống.",
+   "Tay đang tập chống lại mà không di chuyển.",
+   "Giữ lực căng.",
+   "Đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ấn thành từng cú giật ngắn.",
+   "Đừng xoay thân người.",
+   "Đừng nhún vai.",
+   "Đừng nín thở."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Giữ lực căng có kiểm soát.",
+   "Hạ vai xuống.",
+   "Giữ cổ tay thoải mái.",
+   "Thở nhịp nhàng, bình tĩnh."
+  ],
+  "desc": "Bài tập đẳng trường cho cánh tay và cẳng tay, hai tay đối kháng nhau.",
+  "howTo": [
+   "Móc các ngón tay hoặc hai bàn tay vào nhau.",
+   "Giữ khuỷu tay hơi gập.",
+   "Kéo hai tay ra xa nhau.",
+   "Giữ lực căng đều.",
+   "Thả lỏng từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng giật mạnh khi kéo.",
+   "Đừng nhún vai.",
+   "Đừng gập cổ tay quá mức.",
+   "Đừng nín thở."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Hạ xuống chậm.",
+   "Giữ lực cản không đổi.",
+   "Giữ khuỷu tay sát thân.",
+   "Thả lỏng vai."
+  ],
+  "desc": "Bài hạ tay chậm cho cơ tay trước, dùng lực cản từ chính tay bạn.",
+  "howTo": [
+   "Bắt đầu với một khuỷu tay gập.",
+   "Dùng tay còn lại tạo lực cản.",
+   "Hạ cẳng tay đang tập xuống từ từ.",
+   "Tiếp tục chống lại lực cản trong lúc hạ.",
+   "Đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để tay rơi nhanh xuống.",
+   "Đừng tập mà không có lực cản.",
+   "Đừng xoay người.",
+   "Đừng nín thở."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Chỉ nâng lên một chút.",
+   "Giữ cổ ở tư thế trung lập.",
+   "Kéo xương bả vai về sau và xuống dưới.",
+   "Siết nhẹ cơ mông."
+  ],
+  "desc": "Bài tập lưng chú trọng tư thế, cho lưng trên, xương bả vai và các cơ duỗi cột sống.",
+  "howTo": [
+   "Nằm sấp.",
+   "Đặt hai tay dọc theo thân.",
+   "Xoay hai ngón cái hơi hướng ra ngoài.",
+   "Nâng ngực lên một chút.",
+   "Kéo xương bả vai về sau và xuống dưới.",
+   "Giữ nguyên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nâng quá cao.",
+   "Đừng ngửa đầu ra sau.",
+   "Đừng ưỡn thắt lưng quá mức.",
+   "Đừng nhún vai."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Thả lỏng cổ.",
+   "Di chuyển xương bả vai nhẹ nhàng.",
+   "Chỉ nâng ngực lên ít hoặc giữ nguyên.",
+   "Đưa tay không vội vàng."
+  ],
+  "desc": "Bài tập lưng trên và xương bả vai, thực hiện khi nằm sấp.",
+  "howTo": [
+   "Nằm sấp.",
+   "Để đầu hướng xuống.",
+   "Di chuyển hai tay theo vòng cung rộng từ hai bên lên phía trên đầu.",
+   "Đưa tay về theo đúng đường cũ.",
+   "Giữ chuyển động có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ngẩng đầu.",
+   "Đừng ưỡn thắt lưng quá nhiều.",
+   "Đừng vung tay.",
+   "Đừng nhún vai."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Giữ biên độ chuyển động nhỏ.",
+   "Để xương bả vai làm việc.",
+   "Giữ cổ ở tư thế trung lập.",
+   "Giữ vai tránh xa tai."
+  ],
+  "desc": "Bài tập lưng trên cho xương bả vai và vai sau.",
+  "howTo": [
+   "Nằm sấp.",
+   "Gập khuỷu tay thành hình chữ W.",
+   "Nâng khuỷu tay và bàn tay lên một chút.",
+   "Siết hai xương bả vai lại.",
+   "Hạ xuống có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nâng quá cao.",
+   "Đừng ngẩng đầu lên.",
+   "Đừng dùng đà.",
+   "Đừng ưỡn thắt lưng quá mức."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Chỉ nâng tay lên một chút.",
+   "Giữ cổ ở tư thế trung lập.",
+   "Hạ vai xuống.",
+   "Di chuyển có kiểm soát."
+  ],
+  "desc": "Bài tập xương bả vai cho cơ thang dưới và lưng trên.",
+  "howTo": [
+   "Nằm sấp.",
+   "Đưa hai tay chéo lên phía trên đầu thành hình chữ Y.",
+   "Nâng hai tay lên khỏi sàn một chút.",
+   "Hạ xuống có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nâng quá cao.",
+   "Đừng nhún vai.",
+   "Đừng ưỡn thắt lưng.",
+   "Đừng di chuyển quá nhanh."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Giữ hai tay thẳng hàng với vai.",
+   "Thả lỏng cổ.",
+   "Di chuyển xương bả vai nhẹ nhàng.",
+   "Chỉ nâng lên một chút."
+  ],
+  "desc": "Bài tập lưng trên cho vai sau và khả năng kiểm soát xương bả vai.",
+  "howTo": [
+   "Nằm sấp.",
+   "Dang hai tay sang hai bên thành hình chữ T.",
+   "Nâng hai tay lên một chút.",
+   "Siết hai xương bả vai lại.",
+   "Hạ xuống từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hất mạnh tay lên.",
+   "Đừng ngẩng đầu.",
+   "Đừng nhún vai.",
+   "Đừng cố tạo biên độ lớn."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Kéo khuỷu tay xuống có kiểm soát.",
+   "Siết nhẹ xương bả vai.",
+   "Giữ cổ ở tư thế trung lập.",
+   "Giữ thắt lưng thoải mái."
+  ],
+  "desc": "Bài tập lưng mô phỏng động tác kéo mà không cần dụng cụ.",
+  "howTo": [
+   "Nằm sấp, hai tay duỗi qua đầu.",
+   "Nâng ngực lên một chút.",
+   "Kéo khuỷu tay xuống về phía xương sườn.",
+   "Siết hai xương bả vai lại.",
+   "Đưa hai tay về phía trước trở lại."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng giật tay.",
+   "Đừng nâng quá cao.",
+   "Đừng ngửa đầu ra sau.",
+   "Đừng để vai co lên sát tai."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Giữ cổ ở tư thế trung lập.",
+   "Di chuyển có kiểm soát.",
+   "Giữ thắt lưng thoải mái.",
+   "Tiếp tục thở."
+  ],
+  "desc": "Bài tập lưng và phối hợp vận động, thực hiện khi nằm sấp.",
+  "howTo": [
+   "Nằm sấp.",
+   "Nâng ngực lên một chút.",
+   "Di chuyển tay và chân đối bên theo kiểu bơi có kiểm soát.",
+   "Giữ chuyển động nhỏ và đều."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng di chuyển quá nhanh.",
+   "Đừng nâng quá cao.",
+   "Đừng ngửa đầu ra sau.",
+   "Đừng gắng sức bằng thắt lưng."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Mở rộng ngực.",
+   "Giữ hông nâng cao.",
+   "Giữ vai ổn định.",
+   "Giữ cổ ở tư thế trung lập."
+  ],
+  "desc": "Bài tập chuỗi cơ sau cho mông, đùi sau, vai và lưng.",
+  "howTo": [
+   "Ngồi trên sàn, hai chân duỗi thẳng.",
+   "Đặt hai tay phía sau hông.",
+   "Đẩy xuống bằng hai tay và hai gót chân.",
+   "Nâng hông lên.",
+   "Giữ cơ thể thành một đường thẳng dài."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ hông xuống.",
+   "Đừng nhún vai.",
+   "Đừng ngửa đầu ra sau.",
+   "Đừng ép cổ tay."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Chỉ nâng lên một chút.",
+   "Giữ các nhịp nảy mượt mà.",
+   "Giữ cổ dài.",
+   "Giữ thắt lưng có kiểm soát."
+  ],
+  "desc": "Bài tập lưng biên độ nhỏ cho các cơ duỗi cột sống và tư thế.",
+  "howTo": [
+   "Nằm sấp.",
+   "Đặt hai tay cạnh thân hoặc nhẹ nhàng gần ngực.",
+   "Nâng ngực lên một chút.",
+   "Thực hiện những nhịp nảy nhỏ có kiểm soát.",
+   "Giữ cổ ở tư thế trung lập."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nảy quá cao.",
+   "Đừng dùng đà.",
+   "Đừng nhìn thẳng về phía trước.",
+   "Đừng ép khi thắt lưng đau nhói."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Chỉ nâng ngực lên một chút.",
+   "Kéo chữ W thật mượt.",
+   "Kéo xương bả vai về sau và xuống dưới.",
+   "Giữ cổ dài."
+  ],
+  "desc": "Bài tập lưng mạnh hơn, kết hợp nâng ngực nhỏ kiểu rắn hổ mang với kéo tay hình chữ W.",
+  "howTo": [
+   "Nằm sấp, hai tay duỗi về phía trước.",
+   "Nâng ngực lên một chút.",
+   "Kéo khuỷu tay xuống và ra sau thành hình chữ W.",
+   "Siết hai xương bả vai lại.",
+   "Duỗi tay về phía trước trở lại và hạ xuống có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng quá mức.",
+   "Đừng kéo bằng cổ.",
+   "Đừng di chuyển quá nhanh.",
+   "Đừng nhún vai."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Chỉ nâng lên một chút.",
+   "Để cổ thẳng theo cột sống.",
+   "Giữ cơ mông siết nhẹ.",
+   "Di chuyển đều đặn."
+  ],
+  "desc": "Bài tập lưng nâng tay và chân đối bên luân phiên, giống động tác bơi.",
+  "howTo": [
+   "Nằm sấp, hai tay duỗi qua đầu.",
+   "Nâng ngực và hai chân lên một chút.",
+   "Nâng một tay cùng chân đối bên.",
+   "Hạ xuống và đổi bên, luân phiên nhịp nhàng."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ép thắt lưng quá mức.",
+   "Đừng ngẩng đầu.",
+   "Đừng di chuyển giật cục.",
+   "Đừng nín thở."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Giữ cơ thể thành một đường thẳng.",
+   "Giữ khuỷu tay ngay dưới vai.",
+   "Giữ cơ trung tâm luôn siết.",
+   "Thở đều."
+  ],
+  "desc": "Bài tập ổn định thân cho cơ bụng, vai, mông và thân mình.",
+  "howTo": [
+   "Đặt khuỷu tay ngay dưới vai.",
+   "Bước hai chân ra sau.",
+   "Tạo thành một đường thẳng từ vai đến gót chân.",
+   "Siết cơ bụng và cơ mông.",
+   "Giữ nguyên tư thế."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để thắt lưng võng xuống.",
+   "Đừng nâng hông quá cao.",
+   "Đừng nhìn thẳng về phía trước.",
+   "Đừng nín thở."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Căng toàn thân.",
+   "Giữ cơ mông siết chặt.",
+   "Giữ cơ trung tâm chắc.",
+   "Kiểm soát nhịp thở."
+  ],
+  "desc": "Bài plank ngắn, cường độ cao, tập trung vào việc căng toàn thân.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank trên khuỷu tay.",
+   "Siết mạnh cơ bụng.",
+   "Siết cơ mông.",
+   "Tưởng tượng kéo khuỷu tay về phía các ngón chân.",
+   "Giữ với mức kiểm soát tối đa."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng giữ như plank thư giãn.",
+   "Đừng để hông võng xuống.",
+   "Đừng nín thở.",
+   "Đừng cố giữ quá lâu."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Giữ thắt lưng sát sàn.",
+   "Giữ hai chân có kiểm soát.",
+   "Thả lỏng cổ.",
+   "Di chuyển mượt mà."
+  ],
+  "desc": "Bài tập bụng dưới với động tác bắt chéo chân có kiểm soát.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Ép nhẹ thắt lưng xuống sàn.",
+   "Nâng hai chân lên.",
+   "Bắt chéo chân này qua chân kia.",
+   "Tiếp tục luân phiên động tác bắt chéo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng.",
+   "Đừng hạ chân xuống quá thấp.",
+   "Đừng kéo đầu về phía trước.",
+   "Đừng di chuyển quá nhanh."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Giữ biên độ chuyển động nhỏ.",
+   "Giữ thắt lưng ổn định.",
+   "Đừng để chân hạ xuống quá thấp.",
+   "Thở đều."
+  ],
+  "desc": "Bài tập bụng dưới với những cú đá chân ngắn luân phiên.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Ép thắt lưng xuống sàn.",
+   "Nâng hai chân lên.",
+   "Đưa hai chân lên xuống bằng những cú đá ngắn luân phiên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng.",
+   "Đừng đá biên độ lớn.",
+   "Đừng gồng cổ.",
+   "Đừng nín thở."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Vận động từ cơ bụng dưới.",
+   "Nâng xương chậu có kiểm soát.",
+   "Thả lỏng cổ.",
+   "Hạ xuống chậm."
+  ],
+  "desc": "Bài tập bụng tập trung vào việc nâng xương chậu có kiểm soát.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Gập đầu gối và nhấc hai bàn chân lên.",
+   "Dùng cơ bụng cuộn xương chậu lên một chút.",
+   "Hạ xuống từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng vung chân.",
+   "Đừng dùng đà.",
+   "Đừng kéo cổ.",
+   "Đừng thả hông xuống nhanh."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Giữ thắt lưng sát sàn.",
+   "Siết chặt cơ bụng.",
+   "Thả lỏng cổ.",
+   "Tiếp tục thở."
+  ],
+  "desc": "Bài giữ tĩnh cho cơ trung tâm với cánh tay đòn ngắn hơn để kiểm soát tốt hơn.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Ép thắt lưng xuống sàn.",
+   "Nâng vai lên một chút.",
+   "Giữ đầu gối gập hoặc nâng chân cao hơn.",
+   "Giữ nguyên tư thế."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng.",
+   "Đừng hạ chân xuống quá thấp.",
+   "Đừng đưa cằm về phía trước.",
+   "Đừng nín thở."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Giữ khuỷu tay ngay dưới vai.",
+   "Giữ hông nâng cao.",
+   "Giữ cơ thể dài ra.",
+   "Giữ cổ ở tư thế trung lập."
+  ],
+  "desc": "Bài tập cơ trung tâm bên hông cho cơ liên sườn, vai và độ ổn định của hông.",
+  "howTo": [
+   "Nằm nghiêng một bên.",
+   "Đặt khuỷu tay ngay dưới vai.",
+   "Nâng hông lên.",
+   "Giữ cơ thể thành một đường thẳng.",
+   "Giữ nguyên tư thế."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ hông xuống.",
+   "Đừng nhún vai.",
+   "Đừng cuộn ngực về phía trước.",
+   "Đừng nín thở."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Giữ chuyển động nhỏ và có kiểm soát.",
+   "Giữ khuỷu tay ngay dưới vai.",
+   "Đưa hông lên xuống theo đường thẳng.",
+   "Siết chặt cơ trung tâm."
+  ],
+  "desc": "Biến thể plank nghiêng mạnh hơn cho cơ liên sườn và hông bên.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank nghiêng.",
+   "Hạ hông xuống một chút.",
+   "Nâng hông lên lại.",
+   "Lặp lại có kiểm soát.",
+   "Đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ quá thấp.",
+   "Đừng xoay thân người.",
+   "Đừng dồn sức xuống vai.",
+   "Đừng di chuyển quá nhanh."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Giữ hông ngang.",
+   "Siết chặt cơ trung tâm.",
+   "Giữ vai ổn định.",
+   "Di chuyển chậm."
+  ],
+  "desc": "Bài tập cơ trung tâm và vai: chạm từng vai khi giữ tư thế plank.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Giữ hông ngang và ổn định.",
+   "Chạm một tay lên vai đối bên.",
+   "Đưa tay về rồi chạm bằng tay còn lại.",
+   "Giữ cơ thể không lắc."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng lắc hông sang hai bên.",
+   "Đừng di chuyển quá nhanh.",
+   "Đừng để thắt lưng võng xuống.",
+   "Đừng xoay thân người."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Giữ hông ổn định.",
+   "Giữ cơ trung tâm siết.",
+   "Di chuyển có kiểm soát.",
+   "Giữ vai ngay trên bàn tay hoặc khuỷu tay."
+  ],
+  "desc": "Bài tập cơ trung tâm và cơ tay sau, chuyển giữa plank khuỷu tay và plank cao.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank trên khuỷu tay.",
+   "Đặt một bàn tay xuống sàn và chống người lên.",
+   "Đưa bàn tay kia lên vào tư thế plank cao.",
+   "Hạ xuống lại về khuỷu tay.",
+   "Luân phiên tay dẫn đầu."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng lắc hông sang hai bên.",
+   "Đừng để thắt lưng võng xuống.",
+   "Đừng di chuyển quá nhanh.",
+   "Đừng để vai sụp xuống."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Giữ thắt lưng ổn định.",
+   "Di chuyển chậm.",
+   "Chạm gót xuống nhẹ nhàng.",
+   "Giữ xương chậu vững."
+  ],
+  "desc": "Bài tập cơ trung tâm có kiểm soát, một lựa chọn an toàn hơn cho các động tác nâng chân khó hơn.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Nâng hai chân lên tư thế bàn (đầu gối gập 90 độ).",
+   "Hạ một gót chân xuống gần sàn.",
+   "Chạm nhẹ rồi đưa về.",
+   "Đổi bên luân phiên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ chân xuống quá nhanh.",
+   "Đừng ưỡn thắt lưng.",
+   "Đừng di chuyển cả hai chân cùng lúc.",
+   "Đừng vội vàng."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Giữ thắt lưng sát sàn.",
+   "Di chuyển chậm.",
+   "Di chuyển tay và chân đối bên cùng lúc.",
+   "Giữ thân người đứng yên."
+  ],
+  "desc": "Bài kiểm soát cơ trung tâm cho cơ bụng sâu và độ vững của cột sống.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Nâng tay và chân lên tư thế bàn.",
+   "Duỗi tay và chân đối bên.",
+   "Giữ thắt lưng ổn định.",
+   "Đưa về và đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng.",
+   "Đừng di chuyển quá nhanh.",
+   "Đừng hạ chân xuống quá thấp.",
+   "Đừng để xương sườn bung ra."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Xoay từ thân người.",
+   "Giữ thắt lưng có kiểm soát.",
+   "Thả lỏng cổ.",
+   "Di chuyển mượt mà."
+  ],
+  "desc": "Bài tập bụng xoay người cho cơ liên sườn và cơ bụng trước.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Co đầu gối lên.",
+   "Đặt nhẹ hai tay gần đầu.",
+   "Xoay thân người và đưa một khuỷu tay về phía đầu gối đối bên.",
+   "Đổi bên theo nhịp có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng kéo cổ.",
+   "Đừng chỉ di chuyển mỗi khuỷu tay.",
+   "Đừng làm vội các lần lặp.",
+   "Đừng để thắt lưng ưỡn lên."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Để ngực mở ra mềm mại.",
+   "Giữ vai thả lỏng.",
+   "Giữ thắt lưng thoải mái.",
+   "Giữ vai không đau."
+  ],
+  "desc": "Bài giãn cơ nhẹ nhàng cho ngực và phần trước vai.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Dang hai tay sang hai bên.",
+   "Thả lỏng vai.",
+   "Để ngực mở ra nhẹ nhàng.",
+   "Thở chậm."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ép tay xuống.",
+   "Đừng ưỡn thắt lưng.",
+   "Đừng gồng cổ.",
+   "Đừng giãn khi đang đau."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Giữ mức giãn nhẹ.",
+   "Để đầu gối hơi gập.",
+   "Giữ thắt lưng thả lỏng.",
+   "Thở chậm."
+  ],
+  "desc": "Bài giãn cơ nhẹ nhàng cho mặt sau đùi.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Nâng một chân lên.",
+   "Giữ phía sau đùi hoặc bắp chân.",
+   "Kéo chân nhẹ nhàng về phía bạn.",
+   "Đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng kéo quá mạnh.",
+   "Đừng ép chân phải duỗi thẳng.",
+   "Đừng nhấc hông lên.",
+   "Đừng cố khi đau nhói phía sau đầu gối."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Di chuyển chậm.",
+   "Hạ vai xuống.",
+   "Giữ nhịp thở thư giãn.",
+   "Giữ mức giãn thoải mái."
+  ],
+  "desc": "Bài giãn cơ xoay nhẹ nhàng cho cột sống và thân mình.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Gập hai đầu gối.",
+   "Để hai đầu gối nhẹ nhàng đổ sang một bên.",
+   "Giữ vai sát sàn.",
+   "Đưa về giữa rồi đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ép đầu gối chạm sàn.",
+   "Đừng xoay người nhanh.",
+   "Đừng nhấc vai lên.",
+   "Đừng giãn khi đang đau."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Chỉ nâng lên nhẹ.",
+   "Giữ vai tránh xa tai.",
+   "Giữ thắt lưng thoải mái.",
+   "Giữ cổ ở tư thế trung lập."
+  ],
+  "desc": "Bài giãn cơ nhẹ nhàng cho mặt trước cơ thể và ưỡn lưng nhẹ.",
+  "howTo": [
+   "Nằm sấp.",
+   "Đặt hai cẳng tay trên sàn.",
+   "Nâng ngực lên nhẹ nhàng.",
+   "Giữ cổ dài.",
+   "Thở chậm."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng quá mức.",
+   "Đừng ngửa đầu ra sau.",
+   "Đừng nhún vai.",
+   "Đừng ép tư thế."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Giữ nhịp thở bình tĩnh.",
+   "Giữ vai thả lỏng.",
+   "Giữ khuôn mặt mềm mại.",
+   "Để cơ thể lắng xuống."
+  ],
+  "desc": "Bài thở êm dịu để kết thúc buổi tập.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Thả lỏng vai và hàm.",
+   "Đặt một tay lên bụng nếu thấy thoải mái.",
+   "Hít vào nhẹ nhàng.",
+   "Thở ra chậm."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng thở quá mạnh.",
+   "Đừng nín thở.",
+   "Đừng gồng cổ.",
+   "Đừng ưỡn thắt lưng."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Để hông lắng xuống về phía gót chân.",
+   "Kéo dài lưng nhẹ nhàng.",
+   "Thả lỏng vai.",
+   "Giữ nhịp thở chậm."
+  ],
+  "desc": "Bài giãn cơ thư thái cho lưng, hông và vai để thả lỏng cuối buổi.",
+  "howTo": [
+   "Quỳ xuống và đưa hông ngồi về phía gót chân.",
+   "Duỗi hai tay về phía trước trên sàn.",
+   "Để trán nghỉ xuống sàn.",
+   "Thở chậm và thư giãn."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ép hông xuống.",
+   "Đừng gồng vai.",
+   "Đừng nín thở.",
+   "Đừng làm căng đầu gối."
+  ]
+ },
+ "D01": {
+  "breathing": "Thở đều, đừng nín thở.",
+  "correct": [
+   "Giữ khuỷu tay dính sát sườn.",
+   "Di chuyển chậm, không vung.",
+   "Hạ vai xuống, tránh xa tai.",
+   "Giữ cổ tay thẳng."
+  ],
+  "desc": "Bài tập chậm cho chóp xoay vai, giúp vai vững khi giao bóng và đánh bóng. Một quả tạ 0,5 kg, từng tay một.",
+  "howTo": [
+   "Đứng thẳng, cầm một quả tạ 0,5 kg.",
+   "Gập khuỷu tay 90° và ép sát vào sườn.",
+   "Bắt đầu với cẳng tay đặt ngang bụng.",
+   "Xoay cẳng tay từ từ ra ngoài, rời xa thân người.",
+   "Đưa về từ từ rồi đổi tay."
+  ],
+  "safety": "Chỉ dùng tạ 0,5 kg. Dừng lại nếu vai đau. Không chạy hay nhảy khi cầm tạ.",
+  "voice": {
+   "finish": "Đặt tạ xuống.",
+   "last": "",
+   "mid": [
+    "Xoay cẳng tay ra ngoài thật chậm.",
+    "Khuỷu tay giữ yên."
+   ],
+   "start": "Tạ nửa ký. Khuỷu tay dính sát sườn."
+  },
+  "wrong": [
+   "Đừng để khuỷu tay trôi ra trước hoặc ra ngoài.",
+   "Đừng giật tạ.",
+   "Đừng nhún vai.",
+   "Đừng dùng tạ nặng hơn."
+  ]
+ },
+ "D02": {
+  "breathing": "Thở ra khi nâng tay lên.",
+  "correct": [
+   "Giữ lưng dài và phẳng.",
+   "Dừng ở ngang vai.",
+   "Siết hai xương bả vai lại.",
+   "Di chuyển hai tay cùng lúc."
+  ],
+  "desc": "Động tác dang tay khi cúi người cho vai sau và xương bả vai, nhóm cơ tư thế mà người chơi tennis cần.",
+  "howTo": [
+   "Cầm một quả tạ 0,5 kg ở mỗi tay.",
+   "Gập người từ hông, lưng thẳng, đầu gối hơi mềm.",
+   "Để hai tay buông thõng dưới vai.",
+   "Nâng hai tay sang hai bên đến ngang vai và siết xương bả vai lại.",
+   "Hạ xuống từ từ."
+  ],
+  "safety": "Chỉ dùng tạ 0,5 kg. Đầu gối hơi mềm. Không nhảy khi cầm tạ.",
+  "voice": {
+   "finish": "Đứng thẳng lên và đặt tạ xuống.",
+   "last": "",
+   "mid": [
+    "Dang tay sang hai bên.",
+    "Siết hai xương bả vai."
+   ],
+   "start": "Gập người từ hông, lưng thẳng, mỗi tay nửa ký."
+  },
+  "wrong": [
+   "Đừng cong lưng.",
+   "Đừng vung tạ.",
+   "Đừng nâng cao hơn vai.",
+   "Đừng ngẩng đầu làm cổ bị gập."
+  ]
+ },
+ "D03": {
+  "breathing": "Hít vào khi xuống, thở ra khi lên.",
+  "correct": [
+   "Giữ tạ ở ngang ngực.",
+   "Giữ gót chân chạm sàn.",
+   "Giữ đầu gối thẳng hướng với mũi chân.",
+   "Giữ lưng dài."
+  ],
+  "desc": "Squat kiểu goblet: giữ hai quả tạ 0,5 kg trước ngực để tập chân và tư thế vững vàng, sẵn sàng cầm vợt.",
+  "howTo": [
+   "Cầm hai quả tạ 0,5 kg cùng nhau trước ngực.",
+   "Đứng hai chân rộng bằng vai.",
+   "Đẩy hông ra sau và gập đầu gối.",
+   "Giữ gót chân chạm sàn và ngực thẳng.",
+   "Đứng lên mà không để tạ bị kéo về phía trước."
+  ],
+  "safety": "Không nhảy khi cầm tạ. Nếu đầu gối đau, hãy chuyển sang squat không tạ.",
+  "voice": {
+   "finish": "Đứng thẳng.",
+   "last": "",
+   "mid": [
+    "Gót chân chạm sàn.",
+    "Đầu gối thẳng hướng mũi chân."
+   ],
+   "start": "Tạ ở ngang ngực. Squat chậm."
+  },
+  "wrong": [
+   "Đừng để đầu gối chụm vào trong.",
+   "Đừng nhấc gót chân.",
+   "Đừng để tạ kéo bạn đổ về phía trước.",
+   "Đừng nảy người lên từ vị trí thấp nhất."
+  ]
+ },
+ "D04": {
+  "breathing": "Thở chậm. Đừng bao giờ nín thở.",
+  "correct": [
+   "Giữ hai tay sát tai.",
+   "Hạ xương sườn xuống, không ưỡn lưng.",
+   "Giữ vai tránh xa tai.",
+   "Tiếp tục thở."
+  ],
+  "desc": "Bài giữ tạ 0,5 kg trên đầu, đứng yên, giúp luyện độ vững của vai dùng khi giao bóng.",
+  "howTo": [
+   "Cầm một quả tạ 0,5 kg ở mỗi tay.",
+   "Đẩy hai tay thẳng lên trên đầu.",
+   "Đưa hai bắp tay sát tai.",
+   "Hạ xương sườn xuống và siết bụng.",
+   "Giữ yên và thở cho đến hết thời gian, rồi hạ xuống từ từ."
+  ],
+  "safety": "Chỉ giữ, không đẩy hay vung tạ. Nếu vai run hoặc đau, hãy hạ tạ xuống.",
+  "voice": {
+   "finish": "Hạ xuống từ từ.",
+   "last": "",
+   "mid": [
+    "Hạ xương sườn xuống.",
+    "Tiếp tục thở."
+   ],
+   "start": "Nửa ký trên đầu. Hai tay sát tai."
+  },
+  "wrong": [
+   "Đừng ngả người ra sau.",
+   "Đừng nhún vai.",
+   "Đừng khóa cứng và nghiến khuỷu tay.",
+   "Đừng giật tạ lên."
+  ]
+ },
+ "D05": {
+  "breathing": "Hít vào và thở ra bình tĩnh bằng mũi nếu có thể.",
+  "correct": [
+   "Đứng như có sợi dây kéo đỉnh đầu lên.",
+   "Giữ hai vai ngang nhau.",
+   "Giữ xương sườn yên.",
+   "Giữ đầu gối mềm, không khóa cứng."
+  ],
+  "desc": "Bài xách vali: một quả tạ 0,5 kg ở một tay. Mục tiêu là đứng thẳng và không bị nghiêng, đây là sức mạnh chống nghiêng người dùng khi lao ra đỡ bóng.",
+  "howTo": [
+   "Cầm một quả tạ 0,5 kg ở một tay, tay buông xuôi cạnh đùi.",
+   "Đứng hai chân dưới hông.",
+   "Giữ người thẳng: đừng nghiêng về phía tạ hay ngược lại.",
+   "Giữ yên và thở.",
+   "Đổi tay để tập bên còn lại."
+  ],
+  "safety": "Đứng yên tại chỗ. Không đi, chạy hay nhảy khi cầm tạ.",
+  "voice": {
+   "finish": "Đổi tay.",
+   "last": "",
+   "mid": [
+    "Đừng nghiêng người.",
+    "Hai vai ngang nhau."
+   ],
+   "start": "Nửa ký ở một tay. Đứng thẳng."
+  },
+  "wrong": [
+   "Đừng nghiêng người sang một bên.",
+   "Đừng nhấc vai bên cầm tạ lên.",
+   "Đừng đi lại hay nảy người.",
+   "Đừng nín thở."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Nhảy thấp thôi.",
+   "Tiếp đất mềm và êm.",
+   "Giữ đầu gối hơi gập.",
+   "Đứng thẳng người."
+  ],
+  "desc": "Bài khởi động nhẹ cho cổ chân và bắp chân bằng những cú nhảy nhỏ, nhanh.",
+  "howTo": [
+   "Đứng thẳng, hai chân rộng bằng hông.",
+   "Giữ đầu gối hơi mềm.",
+   "Thực hiện những cú nhảy nhỏ, nhanh, chủ yếu bằng cổ chân.",
+   "Tiếp đất nhẹ nhàng và lặp lại."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nhảy quá cao.",
+   "Đừng tiếp đất ầm ầm.",
+   "Đừng khóa đầu gối.",
+   "Đừng để cổ chân lật vào trong hay ra ngoài."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Giữ thân người thẳng đứng.",
+   "Nâng đầu gối có kiểm soát.",
+   "Đặt chân xuống nhẹ nhàng.",
+   "Thở đều."
+  ],
+  "desc": "Bài khởi động nhẹ nhàng thay cho động tác nâng cao gối.",
+  "howTo": [
+   "Đứng thẳng.",
+   "Nâng một đầu gối lên đến ngang hông.",
+   "Hạ xuống có kiểm soát.",
+   "Đổi chân và tiếp tục bước tại chỗ.",
+   "Đánh tay tự nhiên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ngả người ra sau.",
+   "Đừng vung chân thiếu kiểm soát.",
+   "Đừng giậm chân mạnh xuống.",
+   "Đừng nín thở."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Tiếp đất nhẹ nhàng.",
+   "Giữ đầu gối hơi gập.",
+   "Di chuyển hai tay mượt mà.",
+   "Giữ nhịp thở đều."
+  ],
+  "desc": "Bài cardio toàn thân giúp tăng nhịp tim và khởi động vai, hông và chân.",
+  "howTo": [
+   "Đứng thẳng, hai tay buông dọc thân.",
+   "Nhảy hai chân dang ra đồng thời đưa hai tay lên trên đầu.",
+   "Nhảy hai chân khép lại đồng thời hạ hai tay xuống.",
+   "Lặp lại với nhịp đều."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng tiếp đất mạnh.",
+   "Đừng khóa đầu gối.",
+   "Đừng nhún vai.",
+   "Đừng nhảy quá nhanh đến mức mất kiểm soát."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Giữ plank chắc chắn.",
+   "Siết chặt cơ trung tâm.",
+   "Giữ vai ngay trên bàn tay.",
+   "Di chuyển đầu gối có kiểm soát."
+  ],
+  "desc": "Bài tập cơ trung tâm và cardio năng động, thực hiện từ tư thế plank cao.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Giữ hai tay ngay dưới vai.",
+   "Đưa một đầu gối về phía ngực.",
+   "Đổi chân nhịp nhàng.",
+   "Giữ hông ổn định."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để hông nảy lên cao.",
+   "Đừng để thắt lưng võng xuống.",
+   "Đừng đưa chân quá loạn.",
+   "Đừng để vai sụp xuống."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Tiếp đất êm.",
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Mở rộng ngực.",
+   "Kiểm soát từng cú nhảy."
+  ],
+  "desc": "Bài tập chân plyometric giúp tăng sức bật, thể lực và khả năng phối hợp.",
+  "howTo": [
+   "Bắt đầu với hai chân rộng bằng vai.",
+   "Hạ xuống tư thế squat có kiểm soát.",
+   "Bật nhảy lên.",
+   "Tiếp đất nhẹ nhàng, đầu gối hơi gập.",
+   "Ổn định lại tư thế trước cú nhảy tiếp theo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng tiếp đất mạnh.",
+   "Đừng để đầu gối chụm vào trong.",
+   "Đừng nhảy khi squat chưa vững.",
+   "Đừng vội mà không ổn định lại."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Tiếp đất êm.",
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Giữ thân người có kiểm soát.",
+   "Di chuyển mượt mà từ bên này sang bên kia."
+  ],
+  "desc": "Bài nhảy ngang cho chân, hông, thăng bằng và khả năng phối hợp.",
+  "howTo": [
+   "Đứng trên một chân.",
+   "Nhảy ngang sang chân kia.",
+   "Tiếp đất nhẹ nhàng và giữ vững.",
+   "Lặp lại từ bên này sang bên kia.",
+   "Dùng hai tay để giữ thăng bằng."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để đầu gối chụm vào trong khi tiếp đất.",
+   "Đừng nhảy quá xa quá sớm.",
+   "Đừng đổ người xuống khi tiếp đất.",
+   "Đừng xoay đầu gối khi chạm đất."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Nâng đầu gối lên đến ngang hông.",
+   "Tiếp đất nhẹ.",
+   "Giữ cơ trung tâm siết.",
+   "Giữ thân người thẳng."
+  ],
+  "desc": "Bài cardio giúp tăng nhịp tim và kích hoạt hông, cơ trung tâm và chân.",
+  "howTo": [
+   "Đứng thẳng.",
+   "Chạy tại chỗ và nâng cao đầu gối.",
+   "Đánh tay tự nhiên.",
+   "Giữ nhịp nhanh nhưng có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ngả người ra sau.",
+   "Đừng tiếp đất nặng nề.",
+   "Đừng để chân đập mạnh xuống sàn.",
+   "Đừng để mất tư thế khi tăng tốc."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Đặt hai tay ngay dưới vai.",
+   "Giữ plank chắc chắn.",
+   "Tiếp đất nhẹ nhàng bằng hai chân.",
+   "Kiểm soát cú nhảy."
+  ],
+  "desc": "Bài tập thể lực toàn thân kết hợp squat, plank và nhảy. Trong chương trình này, hãy dùng phiên bản không chống đẩy, trừ khi có chỉ định chống đẩy cụ thể.",
+  "howTo": [
+   "Đứng thẳng.",
+   "Ngồi xổm xuống và đặt hai tay lên sàn.",
+   "Nhảy hoặc bước hai chân ra sau vào tư thế plank.",
+   "Nhảy hoặc bước hai chân về phía trước.",
+   "Đứng lên và kết thúc bằng một cú nhảy nhỏ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để thắt lưng võng xuống khi plank.",
+   "Đừng tiếp đất mạnh.",
+   "Đừng làm vội những lần lặp cẩu thả.",
+   "Đừng để đầu gối chụm vào trong khi nhảy lên phía trước."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Tiếp đất êm và có kiểm soát.",
+   "Giữ đầu gối trước thẳng hướng mũi chân.",
+   "Giữ thân người thẳng đứng.",
+   "Giữ biên độ chuyển động an toàn."
+  ],
+  "desc": "Bài tập chân plyometric nâng cao giúp tăng sức bật, thể lực và khả năng phối hợp.",
+  "howTo": [
+   "Bắt đầu ở tư thế chùng chân.",
+   "Bật nhảy lên.",
+   "Đổi chân trên không.",
+   "Tiếp đất nhẹ nhàng ở tư thế chùng chân đối bên.",
+   "Lấy lại thăng bằng trước lần lặp tiếp theo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng tiếp đất mạnh.",
+   "Đừng để đầu gối trước đổ vào trong.",
+   "Đừng hạ xuống quá sâu.",
+   "Đừng di chuyển nhanh hơn mức bạn kiểm soát được."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Giữ gót chân chạm sàn.",
+   "Giữ lưng dài.",
+   "Giữ độ sâu thoải mái."
+  ],
+  "desc": "Bài tập chân có kiểm soát cho đùi, hông và tư thế.",
+  "howTo": [
+   "Đứng hai chân rộng hơn hông một chút.",
+   "Đẩy hông ra sau.",
+   "Gập đầu gối đến độ sâu nông vừa thoải mái.",
+   "Đứng lên từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng squat quá sâu.",
+   "Đừng để đầu gối chụm vào trong.",
+   "Đừng nhấc gót chân.",
+   "Đừng thả người xuống nhanh."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Giữ nhịp dừng thật vững.",
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Mở rộng ngực.",
+   "Giữ gót chân chạm sàn."
+  ],
+  "desc": "Biến thể squat có kiểm soát với một nhịp giữ ngắn trong biên độ an toàn.",
+  "howTo": [
+   "Đứng vững hai chân.",
+   "Hạ xuống squat nông thoải mái.",
+   "Dừng lại một chút.",
+   "Đứng lên có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng xuống quá sâu.",
+   "Đừng nảy người ở vị trí thấp nhất.",
+   "Đừng để đầu gối chụm vào.",
+   "Đừng nín thở."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Giữ lưng thẳng.",
+   "Vận động từ hông.",
+   "Giữ đầu gối mềm, không gập sâu.",
+   "Để cổ thẳng theo cột sống."
+  ],
+  "desc": "Bài tập chuyển động cho hông, cơ đùi sau và khả năng kiểm soát thắt lưng.",
+  "howTo": [
+   "Đứng thẳng, hai chân rộng bằng hông.",
+   "Giữ đầu gối hơi mềm.",
+   "Đẩy hông ra sau.",
+   "Hạ thân người xuống với lưng thẳng.",
+   "Trở về tư thế đứng bằng cách đẩy hông ra trước."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng cong lưng.",
+   "Đừng biến nó thành squat.",
+   "Đừng cúi quá thấp.",
+   "Đừng ngẩng đầu quá cao."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Nâng bằng cơ mông bên đang tập.",
+   "Giữ hông ngang.",
+   "Di chuyển có kiểm soát.",
+   "Giữ thắt lưng ở tư thế trung lập."
+  ],
+  "desc": "Bài tập mông mạnh hơn, mỗi lần dùng một chân.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Gập một đầu gối và giữ bàn chân đó trên sàn.",
+   "Duỗi hoặc nâng chân còn lại.",
+   "Đẩy qua gót chân đang tập.",
+   "Nâng hông lên và hạ xuống từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng xoay xương chậu.",
+   "Đừng đẩy bằng mũi chân.",
+   "Đừng ưỡn thắt lưng.",
+   "Đừng hạ xuống quá nhanh."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Giữ hông ngang.",
+   "Giữ cơ mông luôn hoạt động.",
+   "Di chuyển chậm.",
+   "Giữ thắt lưng thoải mái."
+  ],
+  "desc": "Bài tập cơ mông và độ vững của xương chậu.",
+  "howTo": [
+   "Bắt đầu ở tư thế cầu mông.",
+   "Giữ hông nâng cao.",
+   "Nhấc một bàn chân lên khỏi sàn một chút.",
+   "Đặt xuống và đổi bên.",
+   "Giữ xương chậu ổn định."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để hông tụt xuống.",
+   "Đừng lắc sang hai bên.",
+   "Đừng di chuyển quá nhanh.",
+   "Đừng ưỡn thắt lưng."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Đẩy qua gót chân.",
+   "Siết cơ mông ở trên cùng.",
+   "Hạ xương sườn xuống.",
+   "Đừng để thắt lưng ưỡn quá mức."
+  ],
+  "desc": "Bài tập mông giúp tăng sức mạnh cho hông và chuỗi cơ sau.",
+  "howTo": [
+   "Nằm ngửa.",
+   "Gập đầu gối và đặt bàn chân trên sàn.",
+   "Nâng hông lên.",
+   "Dừng lại ở trên cùng.",
+   "Hạ xuống từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ưỡn thắt lưng ở trên cùng.",
+   "Đừng nhấc gót chân.",
+   "Đừng thả hông xuống quá nhanh.",
+   "Đừng đặt bàn chân quá gần."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Đứng thẳng người.",
+   "Di chuyển mượt mà.",
+   "Giữ cổ chân thẳng hàng.",
+   "Hạ xuống có kiểm soát."
+  ],
+  "desc": "Bài tập cẳng chân cho bắp chân, cổ chân và khả năng kiểm soát bàn chân.",
+  "howTo": [
+   "Đứng thẳng, hai chân rộng bằng hông.",
+   "Kiễng lên trên các đầu bàn chân.",
+   "Dừng lại một chút ở trên cùng.",
+   "Hạ gót chân xuống từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng thả gót chân xuống nhanh.",
+   "Đừng chúi người về phía trước.",
+   "Đừng để cổ chân lật ra ngoài.",
+   "Đừng dùng đà."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Giữ hông nâng cao.",
+   "Di chuyển chân trên chậm rãi.",
+   "Giữ thân người ổn định.",
+   "Giữ vai chắc chắn."
+  ],
+  "desc": "Bài tập chuỗi cơ bên cho mông bên, cơ liên sườn và độ vững của hông.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank nghiêng.",
+   "Giữ cơ thể thành một đường thẳng.",
+   "Nâng chân trên lên một chút.",
+   "Hạ xuống có kiểm soát.",
+   "Lặp lại rồi đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ hông xuống.",
+   "Đừng vung chân.",
+   "Đừng lật người ra sau.",
+   "Đừng dồn sức xuống vai."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Giữ gót chân chạm sàn.",
+   "Giữ lưng dài.",
+   "Kiểm soát độ sâu."
+  ],
+  "desc": "Bài squat cơ bản bằng trọng lượng cơ thể cho chân, hông và mông.",
+  "howTo": [
+   "Đứng hai chân rộng bằng vai.",
+   "Đẩy hông ra sau một chút.",
+   "Gập đầu gối và hạ xuống tư thế squat.",
+   "Mở rộng ngực.",
+   "Đứng lên bằng cả bàn chân."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để đầu gối chụm vào trong.",
+   "Đừng nhấc gót chân.",
+   "Đừng cong lưng.",
+   "Đừng thả người xuống quá nhanh."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Giữ đầu gối trước thẳng hướng mũi chân.",
+   "Giữ thân người thẳng đứng.",
+   "Bước ra sau có kiểm soát.",
+   "Giữ gót chân trước chạm sàn."
+  ],
+  "desc": "Bài tập thân dưới cho chân, mông và thăng bằng.",
+  "howTo": [
+   "Đứng thẳng.",
+   "Bước một chân ra sau.",
+   "Hạ xuống tư thế chùng chân có kiểm soát.",
+   "Đẩy qua bàn chân trước để đứng lên.",
+   "Đổi bên."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để đầu gối trước đổ vào trong.",
+   "Đừng chúi người quá nhiều về phía trước.",
+   "Đừng thả người xuống nhanh.",
+   "Đừng đẩy bằng chân sau quá mạnh."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Giữ nhịp chậm.",
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Giữ gót chân chạm sàn.",
+   "Giữ lưng ở tư thế trung lập."
+  ],
+  "desc": "Bài squat không tạ thực hiện chậm để rèn khả năng kiểm soát và sức mạnh chân.",
+  "howTo": [
+   "Đứng hai chân rộng bằng vai.",
+   "Hạ xuống trong khoảng ba giây.",
+   "Dừng lại một chút ở dưới cùng.",
+   "Đứng lên có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ xuống nhanh.",
+   "Đừng nảy người từ vị trí thấp nhất.",
+   "Đừng để đầu gối chụm vào.",
+   "Đừng nín thở."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Giữ cơ thể thành một đường thẳng.",
+   "Siết chặt cơ trung tâm.",
+   "Giữ khuỷu tay ở góc khoảng 30 đến 45 độ.",
+   "Di chuyển có kiểm soát."
+  ],
+  "desc": "Bài tập thân trên cơ bản cho ngực, cơ tay sau, vai và cơ trung tâm.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Đặt hai tay dưới vai hoặc rộng hơn một chút.",
+   "Hạ thân người xuống có kiểm soát.",
+   "Đẩy lên trở lại trong khi giữ cơ thể thẳng."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để hông võng xuống.",
+   "Đừng nâng hông quá cao.",
+   "Đừng để khuỷu tay bung thẳng ra hai bên.",
+   "Đừng đổ người xuống ở vị trí thấp nhất."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Giữ khuỷu tay sát thân.",
+   "Giữ cơ thể thẳng.",
+   "Giữ vai tránh xa tai.",
+   "Giữ cổ tay thoải mái."
+  ],
+  "desc": "Biến thể chống đẩy tập trung nhiều hơn vào cơ tay sau.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Đặt hai tay gần nhau hơn so với chống đẩy thông thường.",
+   "Giữ khuỷu tay sát thân.",
+   "Hạ xuống chậm và đẩy lên trở lại."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng đặt hai tay quá gần nhau.",
+   "Đừng để khuỷu tay bung ra.",
+   "Đừng để thắt lưng võng xuống.",
+   "Đừng cố khi cổ tay hoặc khuỷu tay đau."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Giữ nhịp dừng có kiểm soát.",
+   "Siết chặt cơ trung tâm.",
+   "Giữ ngực luôn hoạt động.",
+   "Giữ cơ thể thẳng."
+  ],
+  "desc": "Bài chống đẩy có kiểm soát với một nhịp dừng ngắn ở vị trí thấp nhất.",
+  "howTo": [
+   "Bắt đầu ở tư thế chống đẩy thông thường.",
+   "Hạ xuống chậm.",
+   "Dừng một giây ở gần vị trí thấp nhất.",
+   "Đẩy lên trở lại mà không làm mất tư thế cơ thể."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng thả lỏng ở vị trí thấp nhất.",
+   "Đừng để hông võng xuống.",
+   "Đừng nín thở.",
+   "Đừng nảy người từ vị trí thấp nhất."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Giữ nhịp chậm và đều.",
+   "Giữ cơ thể thẳng.",
+   "Kiểm soát khuỷu tay.",
+   "Thở đều."
+  ],
+  "desc": "Biến thể chống đẩy chậm giúp tăng khả năng kiểm soát và thời gian cơ chịu lực.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Hạ xuống trong khoảng ba giây.",
+   "Dừng một giây ở gần vị trí thấp nhất.",
+   "Đẩy lên trong khoảng ba giây."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng làm vội.",
+   "Đừng đổ sập người ở vị trí thấp nhất.",
+   "Đừng để hông võng xuống.",
+   "Đừng thả lỏng cơ trung tâm."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Giữ thân người ngay ngắn.",
+   "Siết chặt cơ trung tâm.",
+   "Giữ cả hai vai ổn định.",
+   "Di chuyển có kiểm soát."
+  ],
+  "desc": "Biến thể chống đẩy không đối xứng, thử thách ngực, vai và cơ trung tâm.",
+  "howTo": [
+   "Bắt đầu ở tư thế chống đẩy.",
+   "Đặt một tay hơi lên trước và tay kia hơi lùi về sau.",
+   "Hạ xuống có kiểm soát.",
+   "Đẩy lên trở lại.",
+   "Đổi vị trí tay ở lần tiếp theo."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng xoay thân người.",
+   "Đừng để một bên vai tụt xuống.",
+   "Đừng đặt hai tay quá rộng.",
+   "Đừng ép biên độ nếu vai thấy khó chịu."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Giữ hông cao.",
+   "Gập khuỷu tay có kiểm soát.",
+   "Giữ vai ổn định.",
+   "Giữ cổ ở tư thế trung lập."
+  ],
+  "desc": "Biến thể chống đẩy tập trung vào vai.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Bước hai chân lại gần hơn một chút và nâng hông lên.",
+   "Giữ đầu nằm giữa hai tay.",
+   "Hạ đầu xuống phía sàn.",
+   "Đẩy lên trở lại."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng hạ xuống thành chống đẩy thông thường.",
+   "Đừng để đầu dẫn quá xa về phía trước.",
+   "Đừng để khuỷu tay bung ra quá nhiều.",
+   "Đừng cố khi vai đau."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Siết chặt cơ trung tâm.",
+   "Di chuyển khuỷu tay mượt mà.",
+   "Hạ vai xuống.",
+   "Giữ biên độ chuyển động thoải mái."
+  ],
+  "desc": "Bài tập cơ tay sau và vai, thực hiện từ tư thế chống bằng cẳng tay.",
+  "howTo": [
+   "Bắt đầu trên hai cẳng tay, cơ thể kéo dài.",
+   "Giữ khuỷu tay ngay dưới vai hoặc hơi lệch về phía trước.",
+   "Đẩy qua hai bàn tay và cẳng tay.",
+   "Duỗi nhẹ khuỷu tay.",
+   "Trở về có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng ép khuỷu tay.",
+   "Đừng để hông võng xuống.",
+   "Đừng nhún vai.",
+   "Đừng tiếp tục khi khuỷu tay hoặc vai đau."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Thả lỏng cổ.",
+   "Di chuyển vai mượt mà.",
+   "Giữ hai tay thả lỏng.",
+   "Đứng thẳng người."
+  ],
+  "desc": "Bài khởi động vai đơn giản để chuẩn bị cho cổ, vai và lưng trên.",
+  "howTo": [
+   "Đứng thẳng, hai tay thả lỏng.",
+   "Xoay vai thành những vòng tròn chậm về phía sau.",
+   "Sau đó xoay những vòng tròn chậm về phía trước.",
+   "Giữ chuyển động mượt và có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nhún vai mạnh.",
+   "Đừng di chuyển quá nhanh.",
+   "Đừng gồng cổ.",
+   "Đừng cong lưng trên."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Giữ hai tay ở gần ngang vai.",
+   "Giữ các vòng tròn nhỏ.",
+   "Hạ vai xuống.",
+   "Thả lỏng cổ."
+  ],
+  "desc": "Bài khởi động vai và lưng trên, kích hoạt cơ delta và các cơ ổn định vai.",
+  "howTo": [
+   "Đứng thẳng và nâng hai tay ngang vai.",
+   "Xoay những vòng tròn nhỏ về phía trước.",
+   "Sau đó xoay những vòng tròn nhỏ về phía sau.",
+   "Giữ các vòng tròn nhỏ gọn và có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng vung tay biên độ lớn.",
+   "Đừng nâng vai lên sát tai.",
+   "Đừng ưỡn thắt lưng.",
+   "Đừng nín thở."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Giữ hai chân vững.",
+   "Xoay từ thân người.",
+   "Xoay mượt mà.",
+   "Giữ đầu gối đứng yên khi xoay."
+  ],
+  "desc": "Bài xoay nhẹ nhàng cho thân mình và phần trên cột sống.",
+  "howTo": [
+   "Đứng hai chân rộng bằng hông.",
+   "Giữ hông chủ yếu hướng về phía trước.",
+   "Xoay thân trên sang một bên.",
+   "Trở về giữa rồi xoay sang bên kia."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng xoay đầu gối theo người.",
+   "Đừng xoay quá nhanh.",
+   "Đừng ngả người ra sau.",
+   "Đừng ép biên độ chuyển động."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Giữ lưng thẳng.",
+   "Vận động từ hông.",
+   "Giữ đầu gối mềm, không gập sâu.",
+   "Để cổ thẳng theo cột sống."
+  ],
+  "desc": "Bài tập chuyển động cho hông, cơ đùi sau và khả năng kiểm soát thắt lưng.",
+  "howTo": [
+   "Đứng thẳng, hai chân rộng bằng hông.",
+   "Giữ đầu gối hơi mềm.",
+   "Đẩy hông ra sau.",
+   "Hạ thân người xuống với lưng thẳng.",
+   "Trở về tư thế đứng bằng cách đẩy hông ra trước."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng cong lưng.",
+   "Đừng biến nó thành squat.",
+   "Đừng cúi quá thấp.",
+   "Đừng ngẩng đầu quá cao."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Giữ đầu gối thẳng hướng mũi chân.",
+   "Giữ gót chân chạm sàn.",
+   "Giữ lưng dài.",
+   "Giữ độ sâu vừa phải."
+  ],
+  "desc": "Bài khởi động chân có kiểm soát trong biên độ nông, an toàn.",
+  "howTo": [
+   "Đứng hai chân rộng hơn hông một chút.",
+   "Đẩy hông hơi ra sau.",
+   "Chỉ gập đầu gối đến độ sâu thoải mái.",
+   "Đứng lên từ từ."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng squat quá sâu.",
+   "Đừng để đầu gối chụm vào trong.",
+   "Đừng nhấc gót chân.",
+   "Đừng thả người xuống quá nhanh."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Giữ cơ thể thành một đường thẳng.",
+   "Giữ vai ổn định.",
+   "Giữ cơ trung tâm luôn siết.",
+   "Di chuyển mượt mà."
+  ],
+  "desc": "Bài khởi động cho vai, cổ tay và cơ trung tâm.",
+  "howTo": [
+   "Bắt đầu ở tư thế plank cao.",
+   "Hai tay đặt dưới vai.",
+   "Dịch cơ thể về phía trước một chút.",
+   "Dịch lại về vị trí ban đầu.",
+   "Giữ chuyển động nhỏ và có kiểm soát."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng để hông võng xuống.",
+   "Đừng đẩy vai lên sát tai.",
+   "Đừng dịch quá xa về phía trước.",
+   "Đừng để thắt lưng võng xuống."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Thở chậm và đầy đặn.",
+   "Thả lỏng vai khi thở ra.",
+   "Hạ xương sườn xuống, đừng ưỡn quá mức.",
+   "Di chuyển không vội vàng."
+  ],
+  "desc": "Bài mở đầu êm dịu: hít thở sâu kết hợp duỗi nhẹ toàn thân để kéo dài cột sống.",
+  "howTo": [
+   "Đứng thẳng, hai chân rộng bằng hông.",
+   "Hít vào và đưa hai tay lên trên đầu.",
+   "Kéo dài cột sống nhẹ nhàng.",
+   "Thở ra và hạ hai tay xuống, thả lỏng vai."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng nín thở.",
+   "Đừng ưỡn mạnh thắt lưng.",
+   "Đừng nhún vai lên sát tai.",
+   "Đừng vội vàng khi vươn tay."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Xoay từ thân người.",
+   "Giữ hông chủ yếu hướng về phía trước.",
+   "Giữ hai chân vững trên sàn.",
+   "Giữ nhịp đều và mượt."
+  ],
+  "desc": "Bài xoay nhẹ nhàng để khởi động cột sống và thân mình.",
+  "howTo": [
+   "Đứng hai chân rộng bằng hông.",
+   "Để hai tay đung đưa thoải mái.",
+   "Xoay thân trên sang một bên.",
+   "Chuyển mượt mà sang bên kia."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng xoay mạnh qua đầu gối.",
+   "Đừng giật tay.",
+   "Đừng xoay quá nhanh.",
+   "Đừng nín thở."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Để hai tay di chuyển tự do.",
+   "Giữ vai thả lỏng.",
+   "Để ngực mở ra nhẹ nhàng.",
+   "Đứng thẳng người."
+  ],
+  "desc": "Bài khởi động vai và ngực năng động để chuẩn bị thân trên cho chống đẩy và các bài nhảy.",
+  "howTo": [
+   "Đứng thẳng, hai chân rộng bằng hông.",
+   "Vung hai tay ra trước và ra sau một cách có kiểm soát.",
+   "Để ngực mở ra tự nhiên khi tay đưa ra sau.",
+   "Giữ chuyển động mượt và thả lỏng."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Đừng vung tay quá mạnh.",
+   "Đừng nâng vai lên sát tai.",
+   "Đừng ưỡn thắt lưng.",
+   "Đừng để chuyển động biến thành đà không kiểm soát."
+  ]
+ }
+}

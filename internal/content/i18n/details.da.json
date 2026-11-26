@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Hold modstanden jævn.",
+   "Bevæg dig langsomt.",
+   "Hold albuen tæt på kroppen.",
+   "Hold skulderen nede."
+  ],
+  "desc": "En biceps-øvelse uden udstyr, hvor den ene hånd yder modstand mod den anden.",
+  "howTo": [
+   "Stå eller sid rank.",
+   "Bøj den ene albue som i et curl.",
+   "Tryk med den modsatte hånd ned på underarmen, der arbejder.",
+   "Curl langsomt opad mod modstanden.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Bevæg dig ikke uden rigtig modstand.",
+   "Ryk ikke i armen.",
+   "Løft ikke skulderen.",
+   "Hold ikke vejret."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Hold albuevinklen stabil.",
+   "Hold spændingen jævn.",
+   "Slap af i skuldrene.",
+   "Bliv ved med at trække vejret."
+  ],
+  "desc": "Et statisk biceps-hold med selvmodstand.",
+  "howTo": [
+   "Bøj den ene albue til cirka 90 grader.",
+   "Tryk med den modsatte hånd nedad.",
+   "Den arbejdende arm yder modstand uden at bevæge sig.",
+   "Hold spændingen.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tryk ikke i korte ryk.",
+   "Drej ikke overkroppen.",
+   "Løft ikke skulderen.",
+   "Hold ikke vejret."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Hold spændingen kontrolleret.",
+   "Hold skuldrene nede.",
+   "Hold håndleddene behagelige.",
+   "Træk vejret roligt."
+  ],
+  "desc": "En isometrisk øvelse for arme og underarme, hvor hænderne trækker mod hinanden.",
+  "howTo": [
+   "Hægt fingrene eller hænderne ind i hinanden.",
+   "Hold albuerne let bøjede.",
+   "Træk hænderne væk fra hinanden.",
+   "Hold en jævn spænding.",
+   "Slip langsomt op."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Træk ikke med et ryk.",
+   "Træk ikke skuldrene op.",
+   "Bøj ikke håndleddene for meget.",
+   "Hold ikke vejret."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Sænk langsomt.",
+   "Hold modstanden konstant.",
+   "Hold albuen tæt på kroppen.",
+   "Slap af i skulderen."
+  ],
+  "desc": "En langsom sænkning for biceps med selvmodstand.",
+  "howTo": [
+   "Start med den ene albue bøjet.",
+   "Skab modstand med den modsatte hånd.",
+   "Sænk langsomt den arbejdende underarm.",
+   "Bliv ved med at yde modstand under sænkningen.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke armen falde hurtigt.",
+   "Arbejd ikke uden modstand.",
+   "Drej ikke kroppen.",
+   "Hold ikke vejret."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Hold løftet lille.",
+   "Hold nakken neutral.",
+   "Træk skulderbladene bagud og nedad.",
+   "Spænd let i balderne."
+  ],
+  "desc": "En holdningsøvelse for den øvre ryg, skulderbladene og rygstrækkerne.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Placer armene langs kroppen.",
+   "Drej tommelfingrene lidt udad.",
+   "Løft brystet en smule.",
+   "Træk skulderbladene bagud og nedad.",
+   "Hold stillingen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Løft ikke for højt.",
+   "Kast ikke hovedet bagud.",
+   "Svaj ikke for meget i lænden.",
+   "Træk ikke skuldrene op."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Slap af i nakken.",
+   "Bevæg skulderbladene jævnt.",
+   "Hold brystløftet lille eller neutralt.",
+   "Bevæg armene uden hast."
+  ],
+  "desc": "En øvelse for den øvre ryg og skulderbladene, udført liggende på maven.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Hold hovedet vendt nedad.",
+   "Før armene i en stor bue fra siden til over hovedet.",
+   "Før dem tilbage ad samme vej.",
+   "Hold bevægelsen kontrolleret."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Løft ikke hovedet.",
+   "Svaj ikke for meget i lænden.",
+   "Sving ikke med armene.",
+   "Træk ikke skuldrene op."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "Hold bevægelsen lille.",
+   "Lad skulderbladene gøre arbejdet.",
+   "Hold nakken neutral.",
+   "Hold skuldrene væk fra ørerne."
+  ],
+  "desc": "En øvelse for den øvre ryg, skulderbladene og de bageste skuldre.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Bøj albuerne i en W-form.",
+   "Løft albuer og hænder en smule.",
+   "Pres skulderbladene sammen.",
+   "Sænk med kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Løft ikke for højt.",
+   "Træk ikke hovedet op.",
+   "Brug ikke sving.",
+   "Svaj ikke for meget i lænden."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Løft kun armene lidt.",
+   "Hold nakken neutral.",
+   "Hold skuldrene nede.",
+   "Bevæg dig med kontrol."
+  ],
+  "desc": "En øvelse for skulderbladene, den nedre trapezmuskel og den øvre ryg.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Stræk armene diagonalt over hovedet i en Y-form.",
+   "Løft armene en smule fra gulvet.",
+   "Sænk med kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Løft ikke for højt.",
+   "Træk ikke skuldrene op.",
+   "Svaj ikke i lænden.",
+   "Bevæg dig ikke for hurtigt."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Hold armene på linje med skuldrene.",
+   "Slap af i nakken.",
+   "Bevæg skulderbladene blidt.",
+   "Hold løftet lille."
+  ],
+  "desc": "En øvelse for den øvre ryg, de bageste skuldre og kontrol over skulderbladene.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Stræk armene ud til siden i en T-form.",
+   "Løft armene en smule.",
+   "Pres skulderbladene sammen.",
+   "Sænk langsomt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Kast ikke armene opad.",
+   "Løft ikke hovedet.",
+   "Træk ikke skuldrene op.",
+   "Tving ikke bevægelsen for stor."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Træk albuerne ned med kontrol.",
+   "Pres skulderbladene sammen med let hånd.",
+   "Hold nakken neutral.",
+   "Hold lænden behagelig."
+  ],
+  "desc": "En rygøvelse, der efterligner en trækbevægelse uden udstyr.",
+  "howTo": [
+   "Læg dig på maven med armene over hovedet.",
+   "Løft brystet en smule.",
+   "Træk albuerne ned mod ribbenene.",
+   "Pres skulderbladene sammen.",
+   "Stræk armene frem igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ryk ikke i armene.",
+   "Løft ikke for højt.",
+   "Kast ikke hovedet bagud.",
+   "Lad ikke skuldrene stige op mod ørerne."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Hold nakken neutral.",
+   "Bevæg dig med kontrol.",
+   "Hold lænden behagelig.",
+   "Bliv ved med at trække vejret."
+  ],
+  "desc": "En øvelse for ryg og koordination, udført liggende på maven.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Løft brystet en smule.",
+   "Bevæg modsat arm og ben i et kontrolleret svømmemønster.",
+   "Hold bevægelsen lille og jævn."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Bevæg dig ikke for hurtigt.",
+   "Løft ikke for højt.",
+   "Kast ikke hovedet bagud.",
+   "Tving ikke lænden."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Hold brystet åbent.",
+   "Hold hofterne løftet.",
+   "Hold skuldrene stabile.",
+   "Hold nakken neutral."
+  ],
+  "desc": "En øvelse for den bagerste muskelkæde: baller, baglår, skuldre og ryg.",
+  "howTo": [
+   "Sæt dig på gulvet med strakte ben.",
+   "Placer hænderne bag hofterne.",
+   "Pres gennem hænder og hæle.",
+   "Løft hofterne.",
+   "Hold kroppen i en lang linje."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne falde.",
+   "Træk ikke skuldrene op.",
+   "Kast ikke hovedet bagud.",
+   "Tving ikke håndleddene."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Hold løftet lille.",
+   "Hold pulseringerne jævne.",
+   "Hold nakken lang.",
+   "Hold lænden kontrolleret."
+  ],
+  "desc": "En øvelse med lille bevægelsesudslag for rygstrækkerne og holdningen.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Placer hænderne ved siden af kroppen eller let nær brystet.",
+   "Løft brystet en smule.",
+   "Lav små, kontrollerede pulseringer.",
+   "Hold nakken neutral."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pulsér ikke for højt.",
+   "Brug ikke sving.",
+   "Se ikke frem.",
+   "Pres ikke ind i skarp smerte i lænden."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Hold brystløftet lille.",
+   "Hold W-trækket jævnt.",
+   "Træk skulderbladene bagud og nedad.",
+   "Hold nakken lang."
+  ],
+  "desc": "En kraftigere rygøvelse, der kombinerer et lille cobra-løft med et W-træk med armene.",
+  "howTo": [
+   "Læg dig på maven med armene fremad.",
+   "Løft brystet en smule.",
+   "Træk albuerne ned og bagud i en W-form.",
+   "Pres skulderbladene sammen.",
+   "Stræk frem igen og sænk med kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke for meget i lænden.",
+   "Træk ikke med nakken.",
+   "Bevæg dig ikke for hurtigt.",
+   "Træk ikke skuldrene op."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Hold løftet lille.",
+   "Lad nakken følge rygsøjlen.",
+   "Spænd i balderne.",
+   "Bevæg dig jævnt."
+  ],
+  "desc": "En rygøvelse, hvor modsat arm og ben løftes skiftevis i en bevægelse som svømning.",
+  "howTo": [
+   "Læg dig på maven med armene strakt over hovedet.",
+   "Løft bryst og ben en smule.",
+   "Løft den ene arm og det modsatte ben.",
+   "Sænk og skift side, og veksl jævnt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pres ikke lænden bagud.",
+   "Løft ikke hovedet.",
+   "Bevæg dig ikke i ryk.",
+   "Hold ikke vejret."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Hold kroppen i én linje.",
+   "Hold albuerne under skuldrene.",
+   "Hold core aktiv.",
+   "Hold vejrtrækningen jævn."
+  ],
+  "desc": "En stabilitetsøvelse for core, med mavemuskler, skuldre, baller og krop.",
+  "howTo": [
+   "Placer albuerne under skuldrene.",
+   "Træd fødderne bagud.",
+   "Lav en lige linje fra skuldre til hæle.",
+   "Spænd mave og baller.",
+   "Hold stillingen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke lænden falde.",
+   "Løft ikke hofterne for højt.",
+   "Se ikke frem.",
+   "Hold ikke vejret."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Spænd hele kroppen.",
+   "Hold balderne aktive.",
+   "Hold core stramt.",
+   "Hold vejrtrækningen kontrolleret."
+  ],
+  "desc": "En kort, intens planke med fuld kropsspænding.",
+  "howTo": [
+   "Start i en planke på underarmene.",
+   "Spænd kraftigt i maven.",
+   "Pres balderne sammen.",
+   "Forestil dig, at du trækker albuerne mod tæerne.",
+   "Hold med maksimal kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hold den ikke som en afslappet planke.",
+   "Lad ikke hofterne hænge.",
+   "Hold ikke vejret.",
+   "Prøv ikke at holde for længe."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Hold lænden tæt på gulvet.",
+   "Hold benene kontrollerede.",
+   "Slap af i nakken.",
+   "Bevæg dig jævnt."
+  ],
+  "desc": "En øvelse for den nedre mave med kontrollerede krydsbevægelser af benene.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Pres lænden blidt mod gulvet.",
+   "Løft benene.",
+   "Kryds det ene ben over det andet.",
+   "Fortsæt med at skifte i krydsbevægelsen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke i lænden.",
+   "Sænk ikke benene for meget.",
+   "Træk ikke hovedet frem.",
+   "Bevæg dig ikke for hurtigt."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Hold bevægelsen lille.",
+   "Hold lænden stabil.",
+   "Lad ikke benene falde for lavt.",
+   "Hold vejrtrækningen jævn."
+  ],
+  "desc": "En øvelse for den nedre mave med korte, skiftende benspark.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Pres lænden mod gulvet.",
+   "Løft benene.",
+   "Bevæg benene op og ned i korte, skiftende spark."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke i lænden.",
+   "Lav ikke store spark.",
+   "Spænd ikke i nakken.",
+   "Hold ikke vejret."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Bevæg dig fra den nedre mave.",
+   "Løft bækkenet med kontrol.",
+   "Slap af i nakken.",
+   "Sænk langsomt."
+  ],
+  "desc": "En mave-øvelse med fokus på at løfte bækkenet med kontrol.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Bøj knæene og løft fødderne.",
+   "Brug mavemusklerne til at rulle bækkenet lidt opad.",
+   "Sænk langsomt tilbage."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sving ikke med benene.",
+   "Brug ikke sving.",
+   "Træk ikke i nakken.",
+   "Lad ikke hofterne falde hurtigt."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Hold lænden mod gulvet.",
+   "Hold maven stram.",
+   "Slap af i nakken.",
+   "Bliv ved med at trække vejret."
+  ],
+  "desc": "Et statisk core-hold med en kortere løftearm for bedre kontrol.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Pres lænden mod gulvet.",
+   "Løft skuldrene en smule.",
+   "Hold knæene bøjede eller benene løftet højere.",
+   "Hold stillingen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke i lænden.",
+   "Sænk ikke benene for meget.",
+   "Træk ikke hagen frem.",
+   "Hold ikke vejret."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Hold albuen under skulderen.",
+   "Hold hofterne løftet.",
+   "Hold kroppen lang.",
+   "Hold nakken neutral."
+  ],
+  "desc": "En sidelæns core-øvelse for de skrå mavemuskler samt stabilitet i skulder og hofte.",
+  "howTo": [
+   "Læg dig på siden.",
+   "Placer albuen under skulderen.",
+   "Løft hofterne.",
+   "Hold kroppen i én lige linje.",
+   "Hold stillingen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne falde.",
+   "Træk ikke skulderen op.",
+   "Rul ikke brystet fremad.",
+   "Hold ikke vejret."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Hold bevægelsen lille og kontrolleret.",
+   "Hold albuen under skulderen.",
+   "Bevæg hofterne lige op og ned.",
+   "Hold core stramt."
+  ],
+  "desc": "En sværere variant af sideplanken for de skrå mavemuskler og hoftens yderside.",
+  "howTo": [
+   "Start i en sideplanke.",
+   "Sænk hofterne lidt.",
+   "Løft hofterne op igen.",
+   "Gentag med kontrol.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sænk ikke for langt.",
+   "Drej ikke overkroppen.",
+   "Kollaps ikke ind i skulderen.",
+   "Bevæg dig ikke for hurtigt."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Hold hofterne lige.",
+   "Hold core stramt.",
+   "Hold skuldrene stabile.",
+   "Bevæg dig langsomt."
+  ],
+  "desc": "En øvelse for core og skuldre: tryk på hver skulder, mens du holder en planke.",
+  "howTo": [
+   "Start i en høj planke.",
+   "Hold hofterne lige og stabile.",
+   "Rør den ene hånd ved den modsatte skulder.",
+   "Før den tilbage og rør med den anden hånd.",
+   "Hold kroppen i ro."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vug ikke med hofterne fra side til side.",
+   "Bevæg dig ikke for hurtigt.",
+   "Lad ikke lænden falde.",
+   "Drej ikke overkroppen."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Hold hofterne stabile.",
+   "Hold core aktivt.",
+   "Bevæg dig med kontrol.",
+   "Hold skuldrene over hænderne eller albuerne."
+  ],
+  "desc": "En øvelse for core og triceps, hvor du skifter mellem planke på underarmene og høj planke.",
+  "howTo": [
+   "Start i en planke på underarmene.",
+   "Sæt den ene hånd i gulvet og pres op.",
+   "Før den anden hånd op i en høj planke.",
+   "Sænk tilbage til underarmene.",
+   "Skift den arm, der leder."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vug ikke med hofterne fra side til side.",
+   "Lad ikke lænden falde.",
+   "Bevæg dig ikke for hurtigt.",
+   "Lad ikke skuldrene kollapse."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Hold lænden stabil.",
+   "Bevæg dig langsomt.",
+   "Sæt hælen blødt i gulvet.",
+   "Hold bækkenet i ro."
+  ],
+  "desc": "En kontrolleret core-øvelse og et skånsommere alternativ til sværere benløft.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Løft benene i bordposition.",
+   "Sænk den ene hæl mod gulvet.",
+   "Tryk let og før den tilbage.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Slip ikke benet ned for hurtigt.",
+   "Svaj ikke i lænden.",
+   "Bevæg ikke begge ben på én gang.",
+   "Skynd dig ikke."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Hold lænden tæt på gulvet.",
+   "Bevæg dig langsomt.",
+   "Bevæg modsat arm og ben sammen.",
+   "Hold overkroppen i ro."
+  ],
+  "desc": "En øvelse for core-kontrol, de dybe mavemuskler og rygsøjlens stabilitet.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Løft arme og ben i bordposition.",
+   "Stræk modsat arm og ben ud.",
+   "Hold lænden stabil.",
+   "Før tilbage og skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke i lænden.",
+   "Bevæg dig ikke for hurtigt.",
+   "Sænk ikke benet for lavt.",
+   "Lad ikke ribbenene springe ud."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "Drej fra overkroppen.",
+   "Hold lænden kontrolleret.",
+   "Slap af i nakken.",
+   "Bevæg dig jævnt."
+  ],
+  "desc": "En roterende mave-øvelse for de skrå mavemuskler og den forreste mave.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Træk knæene op.",
+   "Placer hænderne let ved hovedet.",
+   "Drej overkroppen og før den ene albue mod det modsatte knæ.",
+   "Skift side i en kontrolleret rytme."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Træk ikke i nakken.",
+   "Bevæg ikke kun albuerne.",
+   "Skynd dig ikke gennem gentagelserne.",
+   "Lad ikke lænden svaje."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Lad brystet åbne sig blødt.",
+   "Hold skuldrene afslappede.",
+   "Hold lænden behagelig.",
+   "Hold skuldrene smertefri."
+  ],
+  "desc": "En blid udstrækning af brystet og skuldrenes forside.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Åbn armene ud til siderne.",
+   "Slap af i skuldrene.",
+   "Lad brystet åbne sig blidt.",
+   "Træk vejret langsomt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pres ikke armene ned.",
+   "Svaj ikke i lænden.",
+   "Spænd ikke i nakken.",
+   "Stræk aldrig gennem smerte."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Hold udstrækningen mild.",
+   "Lad knæet være let bøjet.",
+   "Hold lænden rolig.",
+   "Hold vejrtrækningen langsom."
+  ],
+  "desc": "En blid udstrækning af lårets bagside.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Løft det ene ben.",
+   "Hold bag låret eller læggen.",
+   "Træk benet blidt mod dig.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Træk ikke for hårdt.",
+   "Pres ikke benet helt lige.",
+   "Løft ikke hofterne.",
+   "Pres ikke ind i skarp smerte bag knæet."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Bevæg dig langsomt.",
+   "Hold skuldrene nede.",
+   "Hold vejrtrækningen afslappet.",
+   "Hold udstrækningen behagelig."
+  ],
+  "desc": "En blid rotationsudstrækning for rygsøjlen og overkroppen.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Bøj knæene.",
+   "Lad knæene blidt falde til den ene side.",
+   "Hold skuldrene mod gulvet.",
+   "Kom tilbage til midten og skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pres ikke knæene ned mod gulvet.",
+   "Drej ikke hurtigt.",
+   "Løft ikke skulderen.",
+   "Stræk aldrig gennem smerte."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Hold løftet mildt.",
+   "Hold skuldrene væk fra ørerne.",
+   "Hold lænden behagelig.",
+   "Hold nakken neutral."
+  ],
+  "desc": "En blid udstrækning af kroppens forside og en mild rygbøjning bagud.",
+  "howTo": [
+   "Læg dig på maven.",
+   "Placer underarmene på gulvet.",
+   "Løft brystet blidt.",
+   "Hold nakken lang.",
+   "Træk vejret langsomt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke for meget i lænden.",
+   "Kast ikke hovedet bagud.",
+   "Træk ikke skuldrene op.",
+   "Tving ikke stillingen."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Hold vejrtrækningen rolig.",
+   "Hold skuldrene afslappede.",
+   "Hold ansigtet blødt.",
+   "Lad kroppen falde til ro."
+  ],
+  "desc": "En rolig vejrtrækningsøvelse til at afslutte træningen.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Slap af i skuldre og kæbe.",
+   "Læg en hånd på maven, hvis det er behageligt.",
+   "Træk vejret blidt ind.",
+   "Pust langsomt ud."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Træk ikke vejret for kraftigt.",
+   "Hold ikke vejret.",
+   "Spænd ikke i nakken.",
+   "Svaj ikke i lænden."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Lad hofterne synke mod hælene.",
+   "Forlæng ryggen blidt.",
+   "Slap af i skuldrene.",
+   "Hold vejrtrækningen langsom."
+  ],
+  "desc": "En afslappende udstrækning af ryg, hofter og skuldre til at falde til ro.",
+  "howTo": [
+   "Knæl og sæt hofterne tilbage mod hælene.",
+   "Stræk armene frem på gulvet.",
+   "Lad panden hvile ned.",
+   "Træk vejret langsomt og slap af."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Pres ikke hofterne ned.",
+   "Spænd ikke i skuldrene.",
+   "Hold ikke vejret.",
+   "Belast ikke knæene for meget."
+  ]
+ },
+ "D01": {
+  "breathing": "Træk vejret jævnt, og hold ikke vejret.",
+  "correct": [
+   "Hold albuen limet til siden.",
+   "Bevæg dig langsomt uden sving.",
+   "Hold skulderen nede, væk fra øret.",
+   "Hold håndleddet lige."
+  ],
+  "desc": "En langsom øvelse for rotatorkuflen, der gør skulderen stabil til serv og grundslag. Ét 0,5 kg håndvægt, én arm ad gangen.",
+  "howTo": [
+   "Stå rank med én 0,5 kg håndvægt.",
+   "Bøj albuen til 90° og hold den ind til siden.",
+   "Start med underarmen på tværs af maven.",
+   "Drej langsomt underarmen udad, væk fra kroppen.",
+   "Før den langsomt tilbage, og skift så arm."
+  ],
+  "safety": "Kun 0,5 kg. Stop, hvis skulderen gør ondt. Løb eller hop aldrig med håndvægten.",
+  "voice": {
+   "finish": "Læg håndvægten fra dig.",
+   "last": "",
+   "mid": [
+    "Drej underarmen langsomt ud.",
+    "Albuen bliver, hvor den er."
+   ],
+   "start": "Et halvt kilo. Albuen limet til siden."
+  },
+  "wrong": [
+   "Lad ikke albuen glide frem eller ud.",
+   "Ryk ikke i vægten.",
+   "Træk ikke skuldrene op.",
+   "Brug ikke en tungere håndvægt."
+  ]
+ },
+ "D02": {
+  "breathing": "Pust ud, mens armene løftes.",
+  "correct": [
+   "Hold ryggen lang og flad.",
+   "Stop i skulderhøjde.",
+   "Pres skulderbladene sammen.",
+   "Bevæg begge arme sammen."
+  ],
+  "desc": "En foroverbøjet omvendt flyes for de bageste skuldre og skulderbladene, de holdningsmuskler en tennisspiller har brug for.",
+  "howTo": [
+   "Hold en 0,5 kg håndvægt i hver hånd.",
+   "Hæld i hofterne med lige ryg og bløde knæ.",
+   "Lad armene hænge ned under skuldrene.",
+   "Løft armene ud til siderne op til skulderhøjde, og pres skulderbladene sammen.",
+   "Sænk langsomt."
+  ],
+  "safety": "Kun 0,5 kg. Bløde knæ. Hop aldrig med håndvægtene.",
+  "voice": {
+   "finish": "Rejs dig op og læg dem fra dig.",
+   "last": "",
+   "mid": [
+    "Arme ud til siderne.",
+    "Pres skulderbladene sammen."
+   ],
+   "start": "Hæld i hofterne, ret ryg, et halvt kilo i hver hånd."
+  },
+  "wrong": [
+   "Rund ikke ryggen.",
+   "Sving ikke med vægtene.",
+   "Løft ikke højere end skuldrene.",
+   "Se ikke op, så nakken knækker."
+  ]
+ },
+ "D03": {
+  "breathing": "Træk vejret ind på vej ned, pust ud på vej op.",
+  "correct": [
+   "Hold håndvægtene ved brystet.",
+   "Hold hælene i gulvet.",
+   "Hold knæene over tæerne.",
+   "Hold ryggen lang."
+  ],
+  "desc": "En goblet squat: to 0,5 kg håndvægte holdt ved brystet for at træne benene og en stabil, ketsjerklar holdning.",
+  "howTo": [
+   "Hold begge 0,5 kg håndvægte sammen ved brystet.",
+   "Stå med fødderne omtrent i skulderbredde.",
+   "Sæt hofterne tilbage og bøj knæene.",
+   "Hold hælene nede og brystet højt.",
+   "Rejs dig uden at lade vægtene trække fremad."
+  ],
+  "safety": "Hop ikke med håndvægtene. Hvis et knæ gør ondt, så skift til en squat uden vægte.",
+  "voice": {
+   "finish": "Stå rank.",
+   "last": "",
+   "mid": [
+    "Hælene nede.",
+    "Knæene over tæerne."
+   ],
+   "start": "Håndvægte ved brystet. Langsom squat."
+  },
+  "wrong": [
+   "Lad ikke knæene falde indad.",
+   "Løft ikke hælene.",
+   "Lad ikke håndvægtene trække dig fremad.",
+   "Hop ikke op fra bunden."
+  ]
+ },
+ "D04": {
+  "breathing": "Langsomme vejrtrækninger. Hold aldrig vejret.",
+  "correct": [
+   "Hold armene ved ørerne.",
+   "Hold ribbenene nede, ingen svajryg.",
+   "Hold skuldrene væk fra ørerne.",
+   "Bliv ved med at trække vejret."
+  ],
+  "desc": "Et roligt hold over hovedet med 0,5 kg håndvægte, der træner den skulderstabilitet, man bruger til serv.",
+  "howTo": [
+   "Hold en 0,5 kg håndvægt i hver hånd.",
+   "Pres begge arme lige op over hovedet.",
+   "Før overarmene tæt på ørerne.",
+   "Hold ribbenene nede og maven stram.",
+   "Hold stille og træk vejret, til tiden er gået, og sænk så langsomt."
+  ],
+  "safety": "Kun hold, ingen pres eller sving. Hvis skulderen ryster eller gør ondt, så sænk håndvægtene.",
+  "voice": {
+   "finish": "Sænk langsomt.",
+   "last": "",
+   "mid": [
+    "Ribbenene nede.",
+    "Bliv ved med at trække vejret."
+   ],
+   "start": "Et halvt kilo over hovedet. Arme ved ørerne."
+  },
+  "wrong": [
+   "Læn dig ikke bagud.",
+   "Træk ikke skuldrene op.",
+   "Lås ikke albuerne og pres dem ikke.",
+   "Ryk ikke vægtene op."
+  ]
+ },
+ "D05": {
+  "breathing": "Rolige vejrtrækninger ind og ud gennem næsen, hvis du kan.",
+  "correct": [
+   "Stå, som om en snor trak dig op i issen.",
+   "Hold begge skuldre i samme højde.",
+   "Hold ribbenene rolige.",
+   "Hold knæene bløde, ikke låste."
+  ],
+  "desc": "Et kuffert-hold: én 0,5 kg håndvægt i den ene hånd. Opgaven er at stå rank og ikke vippe, den samme styrke mod sidebøjning, som bruges, når man strækker sig efter en bold.",
+  "howTo": [
+   "Hold én 0,5 kg håndvægt i den ene hånd, med armen hængende ved låret.",
+   "Stå med fødderne under hofterne.",
+   "Stå rank: læn dig hverken mod vægten eller væk fra den.",
+   "Hold stille og træk vejret.",
+   "Skift hånd til den anden side."
+  ],
+  "safety": "Stå på stedet. Gå, løb eller hop ikke med håndvægten.",
+  "voice": {
+   "finish": "Skift hånd.",
+   "last": "",
+   "mid": [
+    "Læn dig ikke.",
+    "Skuldrene i samme højde."
+   ],
+   "start": "Et halvt kilo i den ene hånd. Stå rank."
+  },
+  "wrong": [
+   "Læn dig ikke til siden.",
+   "Træk ikke skulderen op på den side, hvor du holder vægten.",
+   "Gå ikke og vip ikke.",
+   "Hold ikke vejret."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Hold hoppene lave.",
+   "Land blødt og stille.",
+   "Hold knæene let bøjede.",
+   "Stå rank."
+  ],
+  "desc": "En let opvarmning af ankler og lægge med små, hurtige hop.",
+  "howTo": [
+   "Stå rank med fødderne omtrent i hoftebredde.",
+   "Hold knæene let bløde.",
+   "Lav små, hurtige hop mest fra anklerne.",
+   "Land stille og gentag."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hop ikke for højt.",
+   "Land ikke højlydt.",
+   "Lås ikke knæene.",
+   "Lad ikke anklerne rulle ind eller ud."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Hold overkroppen oprejst.",
+   "Løft knæene med kontrol.",
+   "Sæt fødderne blødt.",
+   "Hold vejrtrækningen jævn."
+  ],
+  "desc": "Et skånsomt opvarmningsalternativ til højt knæløft.",
+  "howTo": [
+   "Stå rank.",
+   "Løft det ene knæ mod hofthøjde.",
+   "Sænk det med kontrol.",
+   "Skift side og fortsæt med at marchere.",
+   "Lad armene bevæge sig naturligt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Læn dig ikke bagud.",
+   "Sving ikke med benene uden kontrol.",
+   "Dunk ikke fødderne i gulvet.",
+   "Hold ikke vejret."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Land blødt.",
+   "Hold knæene let bøjede.",
+   "Bevæg armene jævnt.",
+   "Hold vejrtrækningen rytmisk."
+  ],
+  "desc": "En helkropsøvelse til konditionen, der hæver pulsen og varmer skuldre, hofter og ben op.",
+  "howTo": [
+   "Stå rank med armene ned langs siden.",
+   "Hop fødderne ud, mens armene løftes over hovedet.",
+   "Hop fødderne ind, mens armene sænkes.",
+   "Gentag i en jævn rytme."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Land ikke hårdt.",
+   "Lås ikke knæene.",
+   "Træk ikke skuldrene op.",
+   "Bevæg dig ikke så hurtigt, at du mister kontrollen."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Hold en stærk planke.",
+   "Hold core stramt.",
+   "Hold skuldrene over hænderne.",
+   "Før knæene med kontrol."
+  ],
+  "desc": "En dynamisk øvelse for core og kondition, udført fra en høj planke.",
+  "howTo": [
+   "Start i en høj planke.",
+   "Hold hænderne under skuldrene.",
+   "Før det ene knæ mod brystet.",
+   "Skift ben i rytme.",
+   "Hold hofterne stabile."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne hoppe højt.",
+   "Lad ikke lænden falde.",
+   "Bevæg ikke fødderne for vildt.",
+   "Lad ikke skuldrene kollapse."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Land stille.",
+   "Hold knæene over tæerne.",
+   "Hold brystet åbent.",
+   "Hold hvert hop kontrolleret."
+  ],
+  "desc": "En plyometrisk benøvelse for kraft, kondition og koordination.",
+  "howTo": [
+   "Start med fødderne omtrent i skulderbredde.",
+   "Sænk dig i en kontrolleret squat.",
+   "Hop opad.",
+   "Land blødt med let bøjede knæ.",
+   "Find din stilling igen før næste hop."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Land ikke hårdt.",
+   "Lad ikke knæene falde indad.",
+   "Hop ikke, før squatten er stabil.",
+   "Skynd dig ikke uden at finde stillingen igen."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Land stille.",
+   "Hold knæet over tæerne.",
+   "Hold overkroppen kontrolleret.",
+   "Bevæg dig jævnt fra side til side."
+  ],
+  "desc": "En sidelæns hoppeøvelse for ben, hofter, balance og koordination.",
+  "howTo": [
+   "Stå på ét ben.",
+   "Hop sidelæns over på det andet ben.",
+   "Land blødt og find balancen.",
+   "Gentag fra side til side.",
+   "Brug armene til balance."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke knæet falde indad, når du lander.",
+   "Hop ikke for langt for tidligt.",
+   "Fald ikke ind i landingen.",
+   "Vrid ikke knæet, når foden rammer gulvet."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Løft knæene mod hofthøjde.",
+   "Hold landingerne lette.",
+   "Hold core aktivt.",
+   "Hold overkroppen rank."
+  ],
+  "desc": "En konditionsøvelse, der hæver pulsen og aktiverer hofter, core og ben.",
+  "howTo": [
+   "Stå rank.",
+   "Løb på stedet og løft knæene højt.",
+   "Bevæg armene naturligt.",
+   "Hold rytmen hurtig, men kontrolleret."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Læn dig ikke bagud.",
+   "Land ikke tungt.",
+   "Lad ikke fødderne klaske i gulvet.",
+   "Mist ikke holdningen, når tempoet stiger."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "Sæt hænderne under skuldrene.",
+   "Hold en stærk planke.",
+   "Land blødt på fødderne.",
+   "Hold hoppet kontrolleret."
+  ],
+  "desc": "En helkropsøvelse, der kombinerer squat, planke og hop. I dette program bruges versionen uden armbøjning, medmindre en armbøjning er angivet specifikt.",
+  "howTo": [
+   "Stå rank.",
+   "Gå ned i en squat og sæt hænderne i gulvet.",
+   "Hop eller træd fødderne tilbage i en planke.",
+   "Hop eller træd fødderne frem.",
+   "Rejs dig og afslut med et lille hop."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke lænden falde i planken.",
+   "Land ikke tungt.",
+   "Skynd dig ikke gennem sjuskede gentagelser.",
+   "Lad ikke knæene falde indad, når du hopper frem."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Land blødt og kontrolleret.",
+   "Hold det forreste knæ over tæerne.",
+   "Hold overkroppen oprejst.",
+   "Hold bevægelsen i et sikkert udslag."
+  ],
+  "desc": "En avanceret plyometrisk benøvelse for kraft, kondition og koordination.",
+  "howTo": [
+   "Start i en udfaldsstilling.",
+   "Hop opad.",
+   "Skift ben i luften.",
+   "Land blødt i det modsatte udfald.",
+   "Find balancen igen før næste gentagelse."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Land ikke hårdt.",
+   "Lad ikke det forreste knæ falde indad.",
+   "Gå ikke for dybt ned.",
+   "Bevæg dig ikke hurtigere, end du kan kontrollere."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Hold knæene over tæerne.",
+   "Hold hælene nede.",
+   "Hold ryggen lang.",
+   "Hold dybden behagelig."
+  ],
+  "desc": "En kontrolleret benøvelse for lår, hofter og holdning.",
+  "howTo": [
+   "Stå med fødderne lidt bredere end hoftebredde.",
+   "Skub hofterne tilbage.",
+   "Bøj knæene til en behagelig, ikke for dyb stilling.",
+   "Rejs dig langsomt op igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå ikke for dybt ned.",
+   "Lad ikke knæene falde indad.",
+   "Løft ikke hælene.",
+   "Slip dig ikke hurtigt ned."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Hold pausen stabil.",
+   "Hold knæene over tæerne.",
+   "Hold brystet åbent.",
+   "Hold hælene i gulvet."
+  ],
+  "desc": "En kontrolleret squat-variant med et kort hold i et sikkert område.",
+  "howTo": [
+   "Stå med fødderne stabilt.",
+   "Gå ned i en behagelig, ikke for dyb squat.",
+   "Hold en kort pause.",
+   "Rejs dig op igen med kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå ikke for dybt ned.",
+   "Hop ikke op fra bunden.",
+   "Lad ikke knæene falde ind.",
+   "Hold ikke vejret."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Hold ryggen lige.",
+   "Bevæg dig fra hofterne.",
+   "Hold knæene bløde, ikke dybt bøjede.",
+   "Lad nakken følge rygsøjlen."
+  ],
+  "desc": "En bevægelsesøvelse for hofter, baglår og kontrol over lænden.",
+  "howTo": [
+   "Stå rank med fødderne i hoftebredde.",
+   "Gør knæene let bløde.",
+   "Skub hofterne tilbage.",
+   "Sænk overkroppen med lige ryg.",
+   "Kom op at stå ved at drive hofterne frem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rund ikke ryggen.",
+   "Lav den ikke om til en squat.",
+   "Rækk ikke for langt ned.",
+   "Løft ikke hovedet for højt."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "Løft med den arbejdende balle.",
+   "Hold hofterne lige.",
+   "Bevæg dig med kontrol.",
+   "Hold lænden neutral."
+  ],
+  "desc": "En kraftigere ballemuskel-øvelse på ét ben ad gangen.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Bøj det ene knæ og hold den fod i gulvet.",
+   "Stræk eller løft det andet ben.",
+   "Pres gennem den arbejdende hæl.",
+   "Løft hofterne og sænk langsomt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Drej ikke bækkenet.",
+   "Pres ikke gennem tæerne.",
+   "Svaj ikke i lænden.",
+   "Slip dig ikke for hurtigt ned."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Hold hofterne lige.",
+   "Hold balderne aktive.",
+   "Bevæg dig langsomt.",
+   "Hold lænden behagelig."
+  ],
+  "desc": "En øvelse for balderne og bækkenets stabilitet.",
+  "howTo": [
+   "Start i en bro-stilling for balderne.",
+   "Hold hofterne løftet.",
+   "Løft den ene fod lidt fra gulvet.",
+   "Sæt den ned og skift side.",
+   "Hold bækkenet stabilt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne falde.",
+   "Vug ikke fra side til side.",
+   "Bevæg dig ikke for hurtigt.",
+   "Svaj ikke i lænden."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Pres gennem hælene.",
+   "Pres balderne sammen foroven.",
+   "Hold ribbenene nede.",
+   "Lad ikke lænden svaje for meget."
+  ],
+  "desc": "En ballemuskel-øvelse, der styrker hofter og den bagerste muskelkæde.",
+  "howTo": [
+   "Læg dig på ryggen.",
+   "Bøj knæene og sæt fødderne i gulvet.",
+   "Løft hofterne.",
+   "Hold en pause foroven.",
+   "Sænk langsomt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Svaj ikke i lænden foroven.",
+   "Løft ikke hælene.",
+   "Slip ikke hofterne for hurtigt ned.",
+   "Sæt ikke fødderne for tæt på."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Stå rank.",
+   "Bevæg dig jævnt.",
+   "Hold anklerne på linje.",
+   "Sænk med kontrol."
+  ],
+  "desc": "En øvelse for underbenet: lægge, ankler og fodkontrol.",
+  "howTo": [
+   "Stå rank med fødderne i hoftebredde.",
+   "Rejs dig op på tæerne.",
+   "Hold en kort pause foroven.",
+   "Sænk hælene langsomt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Slip ikke hælene hurtigt ned.",
+   "Vip ikke fremad.",
+   "Rul ikke anklerne udad.",
+   "Brug ikke sving."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Hold hofterne løftet.",
+   "Bevæg det øverste ben langsomt.",
+   "Hold overkroppen stabil.",
+   "Hold skulderen stærk."
+  ],
+  "desc": "En øvelse for kroppens sidekæde: ydre balder, skrå mavemuskler og hoftestabilitet.",
+  "howTo": [
+   "Start i en sideplanke.",
+   "Hold kroppen i en lige linje.",
+   "Løft det øverste ben lidt.",
+   "Sænk det med kontrol.",
+   "Gentag og skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne falde.",
+   "Sving ikke med benet.",
+   "Rul ikke kroppen bagud.",
+   "Kollaps ikke ind i skulderen."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Hold knæene over tæerne.",
+   "Hold hælene i gulvet.",
+   "Hold ryggen lang.",
+   "Hold dybden kontrolleret."
+  ],
+  "desc": "En grundlæggende squat med kropsvægt for ben, hofter og baller.",
+  "howTo": [
+   "Stå med fødderne omtrent i skulderbredde.",
+   "Skub hofterne lidt tilbage.",
+   "Bøj knæene og gå ned i en squat.",
+   "Hold brystet åbent.",
+   "Rejs dig op gennem hele foden."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke knæene falde indad.",
+   "Løft ikke hælene.",
+   "Rund ikke ryggen.",
+   "Slip dig ikke for hurtigt ned."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Hold det forreste knæ over tæerne.",
+   "Hold overkroppen oprejst.",
+   "Træd tilbage med kontrol.",
+   "Hold den forreste hæl i gulvet."
+  ],
+  "desc": "En underkropsøvelse for ben, baller og balance.",
+  "howTo": [
+   "Stå rank.",
+   "Tag et skridt tilbage med det ene ben.",
+   "Gå ned i et udfald med kontrol.",
+   "Pres gennem den forreste fod for at komme op at stå.",
+   "Skift side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke det forreste knæ falde indad.",
+   "Læn dig ikke for langt frem.",
+   "Slip dig ikke hurtigt ned.",
+   "Skub ikke for hårdt fra med det bageste ben."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Hold tempoet langsomt.",
+   "Hold knæene over tæerne.",
+   "Hold hælene i gulvet.",
+   "Hold ryggen neutral."
+  ],
+  "desc": "En squat uden vægt, udført langsomt for at opbygge kontrol og benstyrke.",
+  "howTo": [
+   "Stå med fødderne i skulderbredde.",
+   "Gå ned over cirka tre sekunder.",
+   "Hold en kort pause i bunden.",
+   "Rejs dig op med kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Slip dig ikke hurtigt ned.",
+   "Hop ikke op fra bunden.",
+   "Lad ikke knæene falde ind.",
+   "Hold ikke vejret."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Hold kroppen i én linje.",
+   "Hold core stramt.",
+   "Hold albuerne i cirka 30 til 45 graders vinkel.",
+   "Bevæg dig med kontrol."
+  ],
+  "desc": "En grundlæggende overkropsøvelse for bryst, triceps, skuldre og core.",
+  "howTo": [
+   "Start i en høj planke.",
+   "Placer hænderne under skuldrene eller lidt bredere.",
+   "Sænk kroppen med kontrol.",
+   "Pres op igen, mens kroppen holdes lige."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne falde.",
+   "Løft ikke hofterne for højt.",
+   "Spred ikke albuerne ligeud til siden.",
+   "Fald ikke ned i bunden."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Hold albuerne tæt på.",
+   "Hold kroppen lige.",
+   "Hold skuldrene væk fra ørerne.",
+   "Hold håndleddene behagelige."
+  ],
+  "desc": "En armbøjnings-variant med mere fokus på triceps.",
+  "howTo": [
+   "Start i en høj planke.",
+   "Placer hænderne tættere end i en almindelig armbøjning.",
+   "Hold albuerne tæt på kroppen.",
+   "Sænk langsomt og pres op igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Placer ikke hænderne for tæt.",
+   "Spred ikke albuerne.",
+   "Lad ikke lænden falde.",
+   "Pres ikke gennem smerte i håndled eller albue."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Hold pausen kontrolleret.",
+   "Hold core stramt.",
+   "Hold brystet aktivt.",
+   "Hold kroppen lige."
+  ],
+  "desc": "En kontrolleret armbøjning med en kort pause i bunden.",
+  "howTo": [
+   "Start i en almindelig armbøjningsstilling.",
+   "Sænk langsomt.",
+   "Hold en pause på et sekund nær bunden.",
+   "Pres op igen uden at miste kropsstillingen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Slap ikke af i bunden.",
+   "Lad ikke hofterne falde.",
+   "Hold ikke vejret.",
+   "Hop ikke op fra bunden."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Hold et langsomt, jævnt tempo.",
+   "Hold kroppen lige.",
+   "Hold albuerne kontrollerede.",
+   "Hold vejrtrækningen jævn."
+  ],
+  "desc": "En langsom armbøjnings-variant, der øger kontrollen og tiden under belastning.",
+  "howTo": [
+   "Start i en høj planke.",
+   "Sænk dig over cirka tre sekunder.",
+   "Hold en pause på et sekund nær bunden.",
+   "Pres op over cirka tre sekunder."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Skynd dig ikke.",
+   "Kollaps ikke i bunden.",
+   "Lad ikke hofterne hænge.",
+   "Mist ikke spændingen i core."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Hold kroppen vendt lige frem.",
+   "Hold core stramt.",
+   "Hold begge skuldre stabile.",
+   "Bevæg dig med kontrol."
+  ],
+  "desc": "En asymmetrisk armbøjnings-variant, der udfordrer bryst, skuldre og core.",
+  "howTo": [
+   "Start i en armbøjningsstilling.",
+   "Placer den ene hånd lidt længere frem og den anden lidt længere tilbage.",
+   "Sænk med kontrol.",
+   "Pres op igen.",
+   "Skift håndstilling på næste side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Drej ikke overkroppen.",
+   "Lad ikke den ene skulder falde.",
+   "Placer ikke hænderne for bredt.",
+   "Tving ikke bevægelsen, hvis skulderen føles ubehagelig."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Hold hofterne højt.",
+   "Bøj albuerne med kontrol.",
+   "Hold skuldrene stabile.",
+   "Hold nakken neutral."
+  ],
+  "desc": "En armbøjnings-variant med fokus på skuldrene.",
+  "howTo": [
+   "Start i en høj planke.",
+   "Gå fødderne lidt tættere på og løft hofterne.",
+   "Hold hovedet mellem armene.",
+   "Sænk hovedet mod gulvet.",
+   "Pres op igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Fald ikke ned i en almindelig armbøjning.",
+   "Lad ikke hovedet føre for langt frem.",
+   "Spred ikke albuerne for meget.",
+   "Pres ikke gennem smerte i skulderen."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Hold core stramt.",
+   "Bevæg albuerne jævnt.",
+   "Hold skuldrene nede.",
+   "Hold bevægelsen behagelig."
+  ],
+  "desc": "En øvelse for triceps og skuldre, udført fra en støtte på underarmene.",
+  "howTo": [
+   "Start på underarmene med kroppen lang.",
+   "Hold albuerne under eller lidt foran skuldrene.",
+   "Pres gennem hænder og underarme.",
+   "Stræk albuerne lidt.",
+   "Før tilbage med kontrol."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Tving ikke albuerne.",
+   "Lad ikke hofterne falde.",
+   "Træk ikke skuldrene op.",
+   "Bevæg dig ikke gennem smerte i albue eller skulder."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Slap af i nakken.",
+   "Bevæg skuldrene jævnt.",
+   "Hold armene løse.",
+   "Stå rank."
+  ],
+  "desc": "En enkel skulderopvarmning, der forbereder nakke, skuldre og øvre ryg.",
+  "howTo": [
+   "Stå rank med afslappede arme.",
+   "Lav langsomme cirkler med skuldrene bagud.",
+   "Lav derefter langsomme cirkler fremad.",
+   "Hold bevægelsen jævn og kontrolleret."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Træk ikke skuldrene hårdt op.",
+   "Bevæg dig ikke for hurtigt.",
+   "Spænd ikke i nakken.",
+   "Rund ikke den øvre ryg."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Hold armene nær skulderhøjde.",
+   "Hold cirklerne små.",
+   "Hold skuldrene nede.",
+   "Slap af i nakken."
+  ],
+  "desc": "En opvarmning af skuldre og øvre ryg, der aktiverer deltamusklerne og skulderstabilisatorerne.",
+  "howTo": [
+   "Stå rank og løft armene til skulderhøjde.",
+   "Lav små cirkler fremad.",
+   "Lav derefter små cirkler bagud.",
+   "Hold cirklerne små og kontrollerede."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lav ikke store svingende bevægelser.",
+   "Løft ikke skuldrene op til ørerne.",
+   "Svaj ikke i lænden.",
+   "Hold ikke vejret."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Hold fødderne stabile.",
+   "Drej fra overkroppen.",
+   "Drej jævnt.",
+   "Hold knæene i ro, når du drejer."
+  ],
+  "desc": "En blid rotationsøvelse for overkroppen og den øvre rygsøjle.",
+  "howTo": [
+   "Stå med fødderne i hoftebredde.",
+   "Hold hofterne for det meste vendt fremad.",
+   "Drej overkroppen til den ene side.",
+   "Kom tilbage til midten og drej til den anden side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Drej ikke knæene med kroppen.",
+   "Drej ikke for hurtigt.",
+   "Læn dig ikke bagud.",
+   "Tving ikke bevægelsen."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Hold ryggen lige.",
+   "Bevæg dig fra hofterne.",
+   "Hold knæene bløde, ikke dybt bøjede.",
+   "Lad nakken følge rygsøjlen."
+  ],
+  "desc": "En bevægelsesøvelse for hofter, baglår og kontrol over lænden.",
+  "howTo": [
+   "Stå rank med fødderne i hoftebredde.",
+   "Gør knæene let bløde.",
+   "Skub hofterne tilbage.",
+   "Sænk overkroppen med lige ryg.",
+   "Kom op at stå ved at drive hofterne frem."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Rund ikke ryggen.",
+   "Lav den ikke om til en squat.",
+   "Rækk ikke for langt ned.",
+   "Løft ikke hovedet for højt."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Hold knæene over tæerne.",
+   "Hold hælene i gulvet.",
+   "Hold ryggen lang.",
+   "Hold dybden moderat."
+  ],
+  "desc": "En kontrolleret benopvarmning i et sikkert, lavt område.",
+  "howTo": [
+   "Stå med fødderne lidt bredere end hoftebredde.",
+   "Skub hofterne lidt tilbage.",
+   "Bøj kun knæene til en behagelig dybde.",
+   "Rejs dig langsomt op igen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Gå ikke for dybt ned.",
+   "Lad ikke knæene falde indad.",
+   "Løft ikke hælene.",
+   "Slip dig ikke for hurtigt ned."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Hold kroppen i én linje.",
+   "Hold skuldrene stabile.",
+   "Hold core aktivt.",
+   "Bevæg dig jævnt."
+  ],
+  "desc": "En opvarmning af skuldre, håndled og core.",
+  "howTo": [
+   "Start i en høj plankestilling.",
+   "Hænderne er under skuldrene.",
+   "Før kroppen lidt fremad.",
+   "Før den tilbage til startpositionen.",
+   "Hold bevægelsen lille og kontrolleret."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Lad ikke hofterne falde.",
+   "Pres ikke skuldrene op mod ørerne.",
+   "Før dig ikke for langt frem.",
+   "Lad ikke lænden hænge."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Træk vejret langsomt og fuldt.",
+   "Slap af i skuldrene, når du puster ud.",
+   "Hold ribbenene nede, svaj ikke for meget.",
+   "Bevæg dig uden hast."
+  ],
+  "desc": "En rolig åbningsøvelse: dyb vejrtrækning med et blidt stræk af hele kroppen for at forlænge rygsøjlen.",
+  "howTo": [
+   "Stå rank med fødderne i hoftebredde.",
+   "Træk vejret ind og stræk begge arme over hovedet.",
+   "Forlæng rygsøjlen blidt.",
+   "Pust ud og sænk armene, mens skuldrene falder ned."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Hold ikke vejret.",
+   "Svaj ikke hårdt i lænden.",
+   "Træk ikke skuldrene op til ørerne.",
+   "Skynd dig ikke med strækket."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "Drej fra overkroppen.",
+   "Hold hofterne for det meste fremad.",
+   "Hold fødderne plantet.",
+   "Hold et jævnt, roligt tempo."
+  ],
+  "desc": "En blid rotationsøvelse, der varmer rygsøjlen og overkroppen op.",
+  "howTo": [
+   "Stå med fødderne i hoftebredde.",
+   "Lad armene svinge løst.",
+   "Drej overkroppen til den ene side.",
+   "Glid jævnt over til den anden side."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Vrid ikke hårdt gennem knæene.",
+   "Ryk ikke i armene.",
+   "Drej ikke for hurtigt.",
+   "Hold ikke vejret."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Lad armene bevæge sig frit.",
+   "Hold skuldrene afslappede.",
+   "Lad brystet åbne sig blidt.",
+   "Stå rank."
+  ],
+  "desc": "En dynamisk opvarmning af skuldre og bryst, der forbereder overkroppen til armbøjninger og hoppeøvelser.",
+  "howTo": [
+   "Stå rank med fødderne i hoftebredde.",
+   "Sving armene frem og tilbage på en kontrolleret måde.",
+   "Lad brystet åbne sig naturligt, når armene går bagud.",
+   "Hold bevægelsen jævn og afslappet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Sving ikke for voldsomt.",
+   "Løft ikke skuldrene op til ørerne.",
+   "Svaj ikke i lænden.",
+   "Lad ikke bevægelsen blive til ukontrolleret sving."
+  ]
+ }
+}

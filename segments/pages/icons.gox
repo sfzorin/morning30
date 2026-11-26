@@ -9,9 +9,9 @@ import (
 // every phone. filled paints the shape (used for a selected star).
 elem icon(name string, filled bool) {
 	~{
-		class := "ic"
+		class := "ic ic-" + name // the name lets right-to-left layouts mirror arrows
 		if filled {
-			class = "ic fill"
+			class += " fill"
 		}
 	}
 	<svg class=(class) viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">

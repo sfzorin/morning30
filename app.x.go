@@ -92,7 +92,7 @@ func (a App) Main() gox.Elem {
 //line app.gox:35
 					__e = __c.Set("name", "description"); if __e != nil { return }
 //line app.gox:35
-					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat. Daily progression, streaks, male/female figures, and 7 languages. Open-source PWA."); if __e != nil { return }
+					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat. Daily progression, streaks, male/female figures, and 28 languages. Open-source PWA."); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("meta"); if __e != nil { return }
@@ -148,7 +148,7 @@ func (a App) Main() gox.Elem {
 //line app.gox:42
 					__e = __c.Set("property", "og:description"); if __e != nil { return }
 //line app.gox:42
-					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat. Daily progression, streaks, and 7 languages."); if __e != nil { return }
+					__e = __c.Set("content", "A free, voice-guided 30-day morning workout you can do anywhere with just a mat. Daily progression, streaks, and 28 languages."); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("meta"); if __e != nil { return }
@@ -262,7 +262,7 @@ func (a App) Main() gox.Elem {
 //line app.gox:57
 					__e = __c.Set("type", "application/ld+json"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Raw("{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"morning30.com\",\"url\":\"https://morning30.com/\",\"applicationCategory\":\"HealthApplication\",\"operatingSystem\":\"Web\",\"browserRequirements\":\"Requires JavaScript\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"A free, voice-guided 30-day morning workout you can do anywhere with just a mat.\",\"inLanguage\":[\"en\",\"ru\",\"tr\",\"de\",\"es\",\"fr\",\"it\"]}"); if __e != nil { return }
+					__e = __c.Raw("{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"morning30.com\",\"url\":\"https://morning30.com/\",\"applicationCategory\":\"HealthApplication\",\"operatingSystem\":\"Web\",\"browserRequirements\":\"Requires JavaScript\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"A free, voice-guided 30-day morning workout you can do anywhere with just a mat.\",\"inLanguage\":[\"en\",\"ru\",\"tr\",\"de\",\"es\",\"fr\",\"it\",\"pt\",\"pl\",\"nl\",\"sv\",\"da\",\"nb\",\"fi\",\"cs\",\"ro\",\"hu\",\"el\",\"ja\",\"ko\",\"zh-Hans\",\"zh-Hant\",\"id\",\"vi\",\"th\",\"ar\",\"he\",\"fa\"]}"); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}

@@ -7,6 +7,7 @@ package pages
 
 import (
 	"morning30/internal/auth"
+	"morning30/internal/i18n"
 	"morning30/path"
 
 	"github.com/doors-dev/doors"
@@ -20,51 +21,65 @@ type Root struct {
 	Auth doors.Source[auth.Session]
 }
 
-//line router.gox:20
+//line router.gox:21
 func (r Root) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line router.gox:21
+//line router.gox:22
 		__e = __c.Any(r.Auth.Bind(func(s auth.Session) gox.Elem {
 		return gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
-//line router.gox:22
-			if !s.Authorized {
-//line router.gox:23
-				__e = __c.Any(r.publicRoutes(s)); if __e != nil { return }
-			} else  {
-//line router.gox:25
-				__e = __c.Any(r.privateRoutes(s)); if __e != nil { return }
-			}
-		return })
+//line router.gox:24
+			l := i18n.Lang(s.Lang)
+
+			__e = __c.Init("div"); if __e != nil { return }
+			{
 //line router.gox:27
+				__e = __c.Set("class", "app-lang"); if __e != nil { return }
+//line router.gox:27
+				__e = __c.Set("lang", i18n.BCP47(l)); if __e != nil { return }
+//line router.gox:27
+				__e = __c.Set("dir", i18n.Dir(l)); if __e != nil { return }
+				__e = __c.Submit(); if __e != nil { return }
+//line router.gox:28
+				if !s.Authorized {
+//line router.gox:29
+					__e = __c.Any(r.publicRoutes(s)); if __e != nil { return }
+				} else  {
+//line router.gox:31
+					__e = __c.Any(r.privateRoutes(s)); if __e != nil { return }
+				}
+			}
+			__e = __c.Close(); if __e != nil { return }
+		return })
+//line router.gox:34
 	})); if __e != nil { return }
 	return })
-//line router.gox:28
+//line router.gox:35
 }
 
 // publicRoutes: login (default) and register.
-//line router.gox:31
+//line router.gox:38
 func (r Root) publicRoutes(s auth.Session) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line router.gox:32
+//line router.gox:39
 		__e = __c.Any(r.Path.Route(
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Register }).
 			Comp(authPage{sess: s, auth: r.Auth, path: r.Path, register: true}),
 		doors.RouteDefaultComp[path.Path](authPage{sess: s, auth: r.Auth, path: r.Path, register: false}),
 	)); if __e != nil { return }
 	return })
-//line router.gox:37
+//line router.gox:44
 }
 
 // privateRoutes: settings, the workout player (/day/:n), and home (default).
 // Guests can also reach the auth pages to upgrade to a real account.
-//line router.gox:41
+//line router.gox:48
 func (r Root) privateRoutes(s auth.Session) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line router.gox:42
+//line router.gox:49
 		__e = __c.Any(r.Path.Route(
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Register }).
 			Comp(authPage{sess: s, auth: r.Auth, path: r.Path, register: true}),
@@ -96,5 +111,5 @@ func (r Root) privateRoutes(s auth.Session) gox.Elem {
 		doors.RouteDefaultComp[path.Path](homePage{sess: s, auth: r.Auth, path: r.Path}),
 	)); if __e != nil { return }
 	return })
-//line router.gox:72
+//line router.gox:79
 }

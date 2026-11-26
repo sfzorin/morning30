@@ -1,0 +1,202 @@
+{
+ "abs30": {
+  "about": "Vatsalihakset kotona ilman välineitä: alavatsa, vinot vatsalihakset ja koko keskivartalo vuorotellen. Vatsarutistuksia, saksia, pyöräilyä ja lankkuja tasaisesti kasvavalla kuormalla.",
+  "title": "Vatsalihakset 30 päivässä"
+ },
+ "age50": {
+  "about": "Rauhallinen ohjelma jalkavoimaan ja tasapainoon: tuolilta nousuja, yhden jalan seisontaa ja kantapäästä varpaaseen -kävelyä.",
+  "title": "Treeni 50+"
+ },
+ "arms30": {
+  "about": "Vahvemmat kädet ja hartiat ilman painoja: polvipunnerruksia, tuolilla dippejä, itsevastusliikkeitä ja käänteisiä lankkuja.",
+  "title": "Käsivarret 30 päivässä"
+ },
+ "backcare": {
+  "about": "Lempeää tukilihasten harjoittelua: McGill-vatsarutistukset, nelinkontin vastakkaiset ojennukset, sivulankut, ei hyppyjä eikä jyrkkiä taivutuksia. Ei ole hoitoa: kysy neuvoa lääkäriltä ja lopeta, jos kipu säteilee jalkaan tai ilmenee tunnottomuutta.",
+  "title": "Selkähuolto välilevyn pullistumiin"
+ },
+ "bedtime": {
+  "about": "Makuulla, hitaasti ja rauhallisella hengityksellä.",
+  "title": "Iltavenyttely"
+ },
+ "climbing": {
+  "about": "Ote, lapaluut ja riippuminen tangossa, vahva keskivartalo ja sormien vastalihakset. Tarvitset leuanvetotangon.",
+  "title": "Kiipeilijöille"
+ },
+ "cycling": {
+  "about": "Pakarat, polvet ja alaselkä, sitten rinnan ja lonkkien avaus satulan jälkeen.",
+  "title": "Pyöräilijöille"
+ },
+ "demo": {
+  "about": "Lyhyt koko kehon ohjelma ilman hyppyjä: lempeä päivän aloitus ja tasaisesti kasvava kuormitus.",
+  "title": "Aamujumppa"
+ },
+ "feet": {
+  "about": "Jalkaholvi, varpaat ja nilkat: lyhyt jalka, pyyheryppyjä, varvas- ja kantapäkävelyä. Auttaa lättäjalkaisuuteen, mutta ei korvaa lääkäriä.",
+  "title": "Terveet jalat"
+ },
+ "football": {
+  "about": "Reiden takaosa, sisäreidet, nilkat ja tasapaino: harjoittelua, joka auttaa ehkäisemään vammoja.",
+  "title": "Jalkapalloilijoille"
+ },
+ "frontsplit30": {
+  "about": "Askelkyykkyjä ja venytyksiä lonkankoukistajille ja reiden takaosalle käsituella.",
+  "title": "Etuspagaatti 30 päivässä"
+ },
+ "golf": {
+  "about": "Vartalon kierto, liikkuvat lonkat, hartiat ja yhden jalan tasapaino. Rauhallinen tahti, sopii myös yli 50-vuotiaille.",
+  "title": "Golfaajille"
+ },
+ "hiking": {
+  "about": "Jalat ylämäkiin, polvet alamäkiin, vahvat nilkat ja selkä valmiina reppua varten.",
+  "title": "Vaellus ja retkeily"
+ },
+ "hips30": {
+  "about": "Perhonen, kyyhky ja syvä kyykky vapaammille lonkille.",
+  "title": "Lonkkien liikkuvuus 30 päivässä"
+ },
+ "hockey": {
+  "about": "Matala asento, luistelijan hypyt, tasapaino ja vartalon kierto.",
+  "title": "Jääkiekko ja luistelu"
+ },
+ "jumpsports": {
+  "about": "Hyppyjä, pehmeitä alastuloja ja vahvat nilkat.",
+  "title": "Koripallo ja lentopallo"
+ },
+ "kids30": {
+  "about": "7–12-vuotiaille: voimaa ja liikkuvuutta leikkisässä tahdissa.",
+  "title": "Lasten treeni"
+ },
+ "kidsagility": {
+  "about": "Lapsille: hyppyjä, tasapainoa ja nopeita reaktioita.",
+  "title": "Ketteryys ja koordinaatio"
+ },
+ "kidsball": {
+  "about": "Hyppyjä pehmeillä alastuloilla, nopeat jalat, reaktiot ja vahvat kädet.",
+  "title": "Koripallo ja lentopallo lapsille"
+ },
+ "kidsdance": {
+  "about": "Askelia ja taputuksia tahdissa, loikkia, pliee-liikkeitä ja tasapainoa.",
+  "title": "Tanssi ja rytmi lapsille"
+ },
+ "kidsfeet": {
+  "about": "Leikkisiä jalkaharjoituksia: kävelyä varpailla, kantapäillä ja jalan ulkoreunoilla, pyyheryppyjä, toukka. Ei korvaa lääkäriä.",
+  "title": "Lättäjalkaharjoitukset lapsille"
+ },
+ "kidsfootball": {
+  "about": "Jalat, koordinaatio ja yhden jalan tasapaino nuorille jalkapalloilijoille.",
+  "title": "Jalkapallo lapsille"
+ },
+ "kidsgym": {
+  "about": "Veneet, pääskynen, kippiistunnat ja pliee-liikkeet: notkeutta, tasapainoa ja vahva keskivartalo.",
+  "title": "Telinevoimistelu lapsille"
+ },
+ "kidshockey": {
+  "about": "Luistelijan asento, sivuhypyt, nopeat askeleet ja tasapaino.",
+  "title": "Jääkiekko ja taitoluistelu lapsille"
+ },
+ "kidskarate": {
+  "about": "Asennot, lyönnit ja potkut ilmaan, jalkaheilautukset ja tasapaino.",
+  "title": "Karate ja taekwondo lapsille"
+ },
+ "kidsposture": {
+  "about": "Selkä ja hartiat pitkien koulupäivien jälkeen.",
+  "title": "Ryhti koululaisille"
+ },
+ "kidsswim": {
+  "about": "Virtaviiva, räpylälyönnit, veneet ja käsivedot kuivalla maalla nuorille uimareille.",
+  "title": "Uinti lapsille"
+ },
+ "kidstennis": {
+  "about": "Jalkatyö, vartalon käännöt ja vahvat hartiat nuorille tennispelaajille.",
+  "title": "Tennis lapsille"
+ },
+ "kidswrestling": {
+  "about": "Kippiasennot, turvalliset rullaukset, karhukävely ja rapukävely. Rullaukset vain matolla tai pehmeällä matolla.",
+  "title": "Paini ja judo lapsille"
+ },
+ "legs30": {
+  "about": "Kyykkyjä, lantionnostoja ja askelkyykkyjä ilman välineitä. Kyykyt kasvavat 10:stä 24:ään sarjassa; hyppyliikkeet tulevat mukaan päivästä 12.",
+  "title": "Jalat ja pakarat 30 päivässä"
+ },
+ "martial": {
+  "about": "Varjonyrkkeily, potkut, keskivartalon voima ja lonkkien liikkuvuus.",
+  "title": "Kamppailulajeille"
+ },
+ "morningstretch": {
+  "about": "Lempeää venyttelyä heti herättyä, ilman rasitusta.",
+  "title": "Aamuvenyttely"
+ },
+ "office30": {
+  "about": "Lyhyt ohjelma tietokoneen ääressä istumisen jälkeen: niska, hartiat, yläselkä ja ryhti.",
+  "title": "Niska ja selkä toimistotyöläisille"
+ },
+ "plank30": {
+  "about": "Lankku joka päivä, 20 sekunnista 70 sekuntiin per sarja. Etu-, sivu-, liikkuva ja käänteinen lankku vuorottelevat, ja selkäliikkeet pitävät tasapainon.",
+  "title": "Lankku 30 päivässä"
+ },
+ "posture30": {
+  "about": "Selän vahvistusta ryhdin parantamiseksi: lapaluut, selän ojentajat ja koko kehon takaosa. Ei hyppyjä eikä välineitä, kaikki matolla.",
+  "title": "Parempi ryhti 30 päivässä"
+ },
+ "pullups30": {
+  "about": "Tangossa roikkumisesta ensimmäisiin leuanvetoihin: lapavedot, laskuvaiheet ja pöytärudut. Tarvitset leuanvetotangon.",
+  "title": "Leuanvedot 30 päivässä"
+ },
+ "pushups30": {
+  "about": "4:stä 15 punnerrukseen sarjassa. Vaikeammat muunnelmat — kapea, hidas, tauotettu — tulevat mukaan yksi kerrallaan, ja selkäliikkeet tasapainottavat työntöjä.",
+  "title": "Punnerrukset 30 päivässä"
+ },
+ "racket": {
+  "about": "Hyppyalkuaskel, askelkyykyt, nopeat sivuaskeleet ja vahva olkapää.",
+  "title": "Padel, sulkapallo, pöytätennis"
+ },
+ "rowing": {
+  "about": "Selkä ja lapaluut, vahva kiertyvä keskivartalo ja lonkkavoima.",
+  "title": "Soutu, kajakki, SUP"
+ },
+ "runners": {
+  "about": "Pakarat, pohkeet ja tasapaino: voimaa, joka suojaa polvia ja nilkkoja lenkeillä.",
+  "title": "Juoksijoille"
+ },
+ "scoliosis": {
+  "about": "Tasaista työtä molemmille puolille: selkälihakset, keskivartalo, lapaluut ja hengitys. Ei korvaa hoitoa eikä asiantuntijan yksilöllistä ohjelmaa.",
+  "title": "Selän symmetria skolioosissa"
+ },
+ "sidesplit30": {
+  "about": "Leveät asennot ja sisäreisien venytykset askel askeleelta.",
+  "title": "Sivuspagaatti 30 päivässä"
+ },
+ "ski": {
+  "about": "Valmistaudu kauteen: jalkojen kestävyys, tasapaino ja vahvat polvet.",
+  "title": "Hiihto ja lumilautailu"
+ },
+ "slim30": {
+  "about": "Kestävyyspiirejä ja koko kehon voimaharjoittelua energiankulutuksen lisäämiseksi. Kurssilla on hyppyjä; kyykkyhypyt ja burpeet tulevat mukaan vasta jälkimmäisellä puoliskolla.",
+  "title": "Laihdu 30 päivässä"
+ },
+ "stretch30": {
+  "about": "Koko kehosi: jalat, selkä ja hartiat. Notkeus kasvaa päivä päivältä.",
+  "title": "Venyttely 30 päivässä"
+ },
+ "swim": {
+  "about": "Kuivaharjoittelu: lapaluut ja hartiat, virtaviiva, vahva keskivartalo ja liikkuvat nilkat.",
+  "title": "Uimareille"
+ },
+ "taichi30": {
+  "about": "Hitaita tai chi -liikkeitä tasapainoon ja rauhaan: tuttuja muotoja joka päivä ja uusia sarjoja matkan varrella.",
+  "title": "Tai chi 30 päivässä"
+ },
+ "tennis": {
+  "about": "Sivuttaisjalkatyö, keskivartalo ja hartiat varmaan pelaamiseen.",
+  "title": "Tennispelaajille"
+ },
+ "toetouch30": {
+  "about": "Eteentaivutus: jalkojen takaosat ja alaselkä.",
+  "title": "Varpaisiin ylettyminen 30 päivässä"
+ },
+ "wrestling": {
+  "about": "Hyökkäysaskeleet, sprawlit, vahva niska ilman päällä siltaamista ja keskivartalon kestävyys.",
+  "title": "Paini ja judo"
+ }
+}

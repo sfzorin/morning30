@@ -144,7 +144,7 @@ elem (s settingsPage) Main() {
 					<div class="srow col">
 						<div class="row-between">
 							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
-							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(i18n.Tf(l, "fmt.sec", v)) }))</output>
 						</div>
 						<input type="range" min="0" max=(content.RestMax) step="5" value=(restW) aria-label=(i18n.T(l, "settings.rest_warmup"))
 							(doors.AChange{On: s.saveRest("warmup", restWVal, saveStatus)})>
@@ -152,7 +152,7 @@ elem (s settingsPage) Main() {
 					<div class="srow col">
 						<div class="row-between">
 							<span>~(i18n.T(l, "settings.rest_main"))</span>
-							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(i18n.Tf(l, "fmt.sec", v)) }))</output>
 						</div>
 						<input type="range" min=(content.MainRestMin) max=(content.RestMax) step="5" value=(restM) aria-label=(i18n.T(l, "settings.rest_main"))
 							(doors.AChange{On: s.saveRest("main", restMVal, saveStatus)})>
@@ -160,7 +160,7 @@ elem (s settingsPage) Main() {
 					<div class="srow col">
 						<div class="row-between">
 							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
-							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(i18n.Tf(l, "fmt.sec", v)) }))</output>
 						</div>
 						<input type="range" min="0" max=(content.RestMax) step="5" value=(restC) aria-label=(i18n.T(l, "settings.rest_cooldown"))
 							(doors.AChange{On: s.saveRest("cooldown", restCVal, saveStatus)})>
@@ -241,7 +241,7 @@ elem (s settingsPage) Main() {
 							<span>~(i18n.T(l, "settings.warmup_rounds"))</span>
 							<span>~(content.WarmupRounds)</span>
 						</div>
-						<div class="cyc-head">~(if warmTarget == "day-warmup" { ~(i18n.T(l, "workout.warmup"), " · ", i18n.T(l, "home.day"), " ", st.Day) } else { ~(i18n.T(l, "settings.warmup_series")) })</div>
+						<div class="cyc-head">~(if warmTarget == "day-warmup" { ~(i18n.T(l, "workout.warmup"), " · ", i18n.Tf(l, "fmt.day", st.Day)) } else { ~(i18n.T(l, "settings.warmup_series")) })</div>
 						~(s.editList(editSrc, cat, entries, l, p.WarmupFor(idx), warmTarget, st.Open))
 
 						~(if len(p.Days) > 0 {
@@ -250,11 +250,11 @@ elem (s settingsPage) Main() {
 								<span>~(i18n.T(l, "settings.main_rounds"))</span>
 								<span>~(content.MainRounds)</span>
 							</div>
-							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.T(l, "home.day"), " ", st.Day, " · ", len(rd.Items), " ", i18n.T(l, "home.exercises"))</div>
+							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tf(l, "fmt.exercises", len(rd.Items)))</div>
 							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
 						})
 
-						<div class="cyc-head">~(if coolTarget == "day-cooldown" { ~(i18n.T(l, "workout.cooldown"), " · ", i18n.T(l, "home.day"), " ", st.Day) } else { ~(i18n.T(l, "settings.cooldown_series")) })</div>
+						<div class="cyc-head">~(if coolTarget == "day-cooldown" { ~(i18n.T(l, "workout.cooldown"), " · ", i18n.Tf(l, "fmt.day", st.Day)) } else { ~(i18n.T(l, "settings.cooldown_series")) })</div>
 						~(s.editList(editSrc, cat, entries, l, p.CooldownFor(idx), coolTarget, st.Open))
 					}))
 

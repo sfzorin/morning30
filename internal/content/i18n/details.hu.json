@@ -1,0 +1,2244 @@
+{
+ "A01": {
+  "breathing": "",
+  "correct": [
+   "Tartsd egyenletesen az ellenállást.",
+   "Mozogj lassan.",
+   "Tartsd a könyöködet a testedhez közel.",
+   "Tartsd lent a vállad."
+  ],
+  "desc": "Eszköz nélküli bicepszgyakorlat: az egyik kéz ellenállást fejt ki a másikkal szemben.",
+  "howTo": [
+   "Állj vagy ülj egyenesen.",
+   "Hajlítsd be az egyik könyöködet, mint egy bicepszhajlításnál.",
+   "A másik kezeddel nyomd lefelé a dolgozó alkarodat.",
+   "Lassan hajlítsd felfelé az ellenállás ellenében.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne mozogj valódi ellenállás nélkül.",
+   "Ne rángasd a karodat.",
+   "Ne húzd fel a vállad.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "A02": {
+  "breathing": "",
+  "correct": [
+   "Tartsd állandóan a könyökszöget.",
+   "Tartsd egyenletesen a feszülést.",
+   "Lazítsd el a válladat.",
+   "Lélegezz tovább."
+  ],
+  "desc": "Statikus bicepsztartás önellenállással.",
+  "howTo": [
+   "Hajlítsd be az egyik könyöködet kb. 90 fokban.",
+   "A másik kezeddel nyomj lefelé.",
+   "A dolgozó kar ellenáll, de nem mozdul.",
+   "Tartsd a feszülést.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne nyomj rövid, rángatózó mozdulatokkal.",
+   "Ne csavard el a törzsedet.",
+   "Ne húzd fel a vállad.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "A03": {
+  "breathing": "",
+  "correct": [
+   "Tartsd kontrollált feszülésben.",
+   "Tartsd lent a válladat.",
+   "Tartsd kényelmesen a csuklódat.",
+   "Lélegezz nyugodtan."
+  ],
+  "desc": "Izometrikus kar- és alkargyakorlat: a két kéz egymásnak feszül.",
+  "howTo": [
+   "Kapcsold össze az ujjaidat vagy a kezeidet.",
+   "Tartsd a könyöködet kissé hajlítva.",
+   "Húzd szét a két kezet egymástól.",
+   "Tartsd egyenletes feszülésben.",
+   "Lassan engedd el."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne rántsd a kezeidet.",
+   "Ne húzd fel a válladat.",
+   "Ne hajlítsd túl a csuklódat.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "A04": {
+  "breathing": "",
+  "correct": [
+   "Lassan engedd le.",
+   "Tartsd állandóan az ellenállást.",
+   "Tartsd a könyöködet a testedhez közel.",
+   "Lazítsd el a válladat."
+  ],
+  "desc": "Lassú leengedéses bicepszgyakorlat önellenállással.",
+  "howTo": [
+   "Kezdd az egyik könyököd behajlítva.",
+   "A másik kezeddel fejts ki ellenállást.",
+   "Lassan engedd le a dolgozó alkarodat.",
+   "Az egész leengedés alatt tartsd az ellenállást.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd gyorsan leesni a karodat.",
+   "Ne végezd ellenállás nélkül.",
+   "Ne csavard a testedet.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "B01": {
+  "breathing": "",
+  "correct": [
+   "Csak kicsit emelkedj.",
+   "Tartsd semlegesen a nyakadat.",
+   "Húzd hátra és lefelé a lapockáidat.",
+   "Enyhén feszítsd meg a farizmaidat."
+  ],
+  "desc": "Tartásjavító hátgyakorlat a felső hátnak, a lapockáknak és a gerincfeszítőknek.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Tedd a karodat a tested mellé.",
+   "Fordítsd a hüvelykujjaidat kissé kifelé.",
+   "Emeld meg kicsit a mellkasodat.",
+   "Húzd hátra és lefelé a lapockáidat.",
+   "Tartsd meg."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne emelkedj túl magasra.",
+   "Ne hajtsd hátra a fejedet.",
+   "Ne homorítsd túl az ágyékodat.",
+   "Ne húzd fel a válladat."
+  ]
+ },
+ "B02": {
+  "breathing": "",
+  "correct": [
+   "Lazítsd el a nyakadat.",
+   "Simán mozgasd a lapockáidat.",
+   "A mellkasemelés legyen kicsi vagy semleges.",
+   "Sietség nélkül mozgasd a karodat."
+  ],
+  "desc": "Hason fekve végzett felsőhát- és lapockagyakorlat.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Tartsd a fejedet lefelé fordítva.",
+   "Mozgasd a karodat nagy ívben oldalról a fej fölé.",
+   "Ugyanazon az úton térj vissza.",
+   "Tartsd kontrollált a mozgást."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne emeld fel a fejedet.",
+   "Ne homorítsd túl az ágyékodat.",
+   "Ne lendítsd a karodat.",
+   "Ne húzd fel a válladat."
+  ]
+ },
+ "B03": {
+  "breathing": "",
+  "correct": [
+   "A mozgástartomány legyen kicsi.",
+   "A lapockáid végezzék a munkát.",
+   "Tartsd semlegesen a nyakadat.",
+   "Tartsd távol a válladat a füledtől."
+  ],
+  "desc": "Felsőhát-gyakorlat a lapockáknak és a hátsó vállaknak.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Hajlítsd W alakba a könyöködet.",
+   "Emeld meg kicsit a könyöködet és a kezedet.",
+   "Szorítsd össze a lapockáidat.",
+   "Kontrolláltan engedd vissza."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne emelkedj túl magasra.",
+   "Ne húzd fel a fejedet.",
+   "Ne használj lendületet.",
+   "Ne homorítsd túl az ágyékodat."
+  ]
+ },
+ "B04": {
+  "breathing": "",
+  "correct": [
+   "Csak kicsit emeld a karodat.",
+   "Tartsd semlegesen a nyakadat.",
+   "Tartsd lent a válladat.",
+   "Kontrolláltan mozogj."
+  ],
+  "desc": "Lapockagyakorlat az alsó trapézizomnak és a felső hátnak.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Nyújtsd a karodat átlósan a fej fölé, Y alakban.",
+   "Emeld el kissé a karodat a padlótól.",
+   "Kontrolláltan engedd vissza."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne emelkedj túl magasra.",
+   "Ne húzd fel a válladat.",
+   "Ne homorítsd az ágyékodat.",
+   "Ne mozogj túl gyorsan."
+  ]
+ },
+ "B05": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a karodat a válladdal egy vonalban.",
+   "Lazítsd el a nyakadat.",
+   "Finoman mozgasd a lapockáidat.",
+   "Csak kicsit emelj."
+  ],
+  "desc": "Felsőhát-gyakorlat a hátsó vállaknak és a lapockakontrollnak.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Nyújtsd ki oldalra a karodat, T alakban.",
+   "Emeld meg kicsit a karodat.",
+   "Szorítsd össze a lapockáidat.",
+   "Lassan engedd vissza."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne dobd fel a karodat.",
+   "Ne emeld fel a fejedet.",
+   "Ne húzd fel a válladat.",
+   "Ne erőltess nagy mozgástartományt."
+  ]
+ },
+ "B06": {
+  "breathing": "",
+  "correct": [
+   "Kontrolláltan húzd lefelé a könyöködet.",
+   "Finoman szorítsd össze a lapockáidat.",
+   "Tartsd semlegesen a nyakadat.",
+   "Tartsd kényelmesen az ágyékodat."
+  ],
+  "desc": "Hátgyakorlat, amely eszköz nélkül utánozza a húzómozdulatot.",
+  "howTo": [
+   "Feküdj hasra, a karod a fej fölött.",
+   "Emeld meg kicsit a mellkasodat.",
+   "Húzd a könyöködet lefelé a bordáid felé.",
+   "Szorítsd össze a lapockáidat.",
+   "Nyújtsd újra előre a karodat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne rángasd a karodat.",
+   "Ne emelkedj túl magasra.",
+   "Ne hajtsd hátra a fejedet.",
+   "Ne hagyd, hogy a válladat a füledig húzd."
+  ]
+ },
+ "B07": {
+  "breathing": "",
+  "correct": [
+   "Tartsd semlegesen a nyakadat.",
+   "Kontrolláltan mozogj.",
+   "Tartsd kényelmesen az ágyékodat.",
+   "Lélegezz tovább."
+  ],
+  "desc": "Hason fekve végzett hát- és koordinációs gyakorlat.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Emeld meg kicsit a mellkasodat.",
+   "Mozgasd az ellentétes kart és lábat kontrollált úszómozdulatban.",
+   "Tartsd kicsi és egyenletes a mozgást."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne mozogj túl gyorsan.",
+   "Ne emelkedj túl magasra.",
+   "Ne hajtsd hátra a fejedet.",
+   "Ne erőltesd az ágyékodat."
+  ]
+ },
+ "B08": {
+  "breathing": "",
+  "correct": [
+   "Tartsd nyitva a mellkasodat.",
+   "Tartsd magasan a csípődet.",
+   "Tartsd stabilan a válladat.",
+   "Tartsd semlegesen a nyakadat."
+  ],
+  "desc": "Hátsó lánc gyakorlat a farizmoknak, a combhajlítóknak, a vállaknak és a hátnak.",
+  "howTo": [
+   "Ülj le a földre kinyújtott lábbal.",
+   "Tedd a kezedet a csípőd mögé.",
+   "Told a kezedbe és a sarkadba.",
+   "Emeld fel a csípődet.",
+   "Tartsd a testedet egy hosszú vonalban."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd le a csípődet.",
+   "Ne húzd fel a válladat.",
+   "Ne hajtsd hátra a fejedet.",
+   "Ne erőltesd a csuklódat."
+  ]
+ },
+ "B09": {
+  "breathing": "",
+  "correct": [
+   "Csak kicsit emelkedj.",
+   "A lüktetés legyen sima.",
+   "Tartsd hosszan a nyakadat.",
+   "Tartsd kontroll alatt az ágyékodat."
+  ],
+  "desc": "Kis mozgástartományú hátgyakorlat a gerincfeszítőknek és a tartásnak.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Tedd a kezedet a tested mellé vagy könnyedén a mellkasod közelébe.",
+   "Emeld meg kicsit a mellkasodat.",
+   "Végezz kicsi, kontrollált lüktetéseket.",
+   "Tartsd semlegesen a nyakadat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne lüktess túl magasra.",
+   "Ne használj lendületet.",
+   "Ne nézz előre.",
+   "Ne told bele magad éles ágyéki fájdalomba."
+  ]
+ },
+ "B10": {
+  "breathing": "",
+  "correct": [
+   "Tartsd kicsi a mellkasemelést.",
+   "A W-húzás legyen sima.",
+   "Húzd hátra és lefelé a lapockáidat.",
+   "Tartsd hosszan a nyakadat."
+  ],
+  "desc": "Erősebb hátgyakorlat: kis kobraemelés és W alakú karhúzás kombinációja.",
+  "howTo": [
+   "Feküdj hasra, a karod előre.",
+   "Emeld meg kicsit a mellkasodat.",
+   "Húzd lefelé és hátra a könyöködet W alakba.",
+   "Szorítsd össze a lapockáidat.",
+   "Nyújtsd újra előre, és kontrolláltan engedd vissza magad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd túl az ágyékodat.",
+   "Ne a nyakaddal húzz.",
+   "Ne mozogj túl gyorsan.",
+   "Ne húzd fel a válladat."
+  ]
+ },
+ "B11": {
+  "breathing": "",
+  "correct": [
+   "Csak kicsit emelj.",
+   "A nyakad kövesse a gerincedet.",
+   "Tartsd feszesen a farizmaidat.",
+   "Egyenletesen mozogj."
+  ],
+  "desc": "Hátgyakorlat: az ellentétes kar és láb váltakozó, úszásszerű emelése.",
+  "howTo": [
+   "Feküdj hasra, a karod a fej fölé nyújtva.",
+   "Emeld meg kicsit a mellkasodat és a lábadat.",
+   "Emeld fel az egyik karodat és az ellentétes lábadat.",
+   "Engedd le, és váltsd az oldalt, simán váltogatva."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne feszítsd hátra erővel az ágyékodat.",
+   "Ne emeld fel a fejedet.",
+   "Ne mozogj rángatózva.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "C01": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a testedet egy vonalban.",
+   "Tartsd a könyöködet a válladad alatt.",
+   "Tartsd aktívan a törzsedet.",
+   "Lélegezz egyenletesen."
+  ],
+  "desc": "Törzsstabilitási gyakorlat a hasizmoknak, a vállaknak, a farizmoknak és a törzsnek.",
+  "howTo": [
+   "Tedd a könyöködet a válladad alá.",
+   "Lépj hátra a lábaddal.",
+   "Alakíts ki egyenes vonalat a válltól a sarokig.",
+   "Feszítsd meg a hasizmaidat és a farizmaidat.",
+   "Tartsd meg a pózt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd lesüllyedni az ágyékodat.",
+   "Ne told túl magasra a csípődet.",
+   "Ne nézz előre.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "C02": {
+  "breathing": "",
+  "correct": [
+   "Feszítsd meg az egész testedet.",
+   "Tartsd aktívan a farizmaidat.",
+   "Tartsd feszesen a törzsedet.",
+   "Lélegezz kontrolláltan."
+  ],
+  "desc": "Rövid, intenzív plank az egész test megfeszítésével.",
+  "howTo": [
+   "Kezdd alkartámaszban.",
+   "Erősen feszítsd meg a hasizmaidat.",
+   "Szorítsd össze a farizmaidat.",
+   "Képzeld el, hogy a könyöködet a lábujjaid felé húzod.",
+   "Tartsd meg maximális kontrollal."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne tartsd úgy, mint egy laza plankot.",
+   "Ne engedd leereszkedni a csípődet.",
+   "Ne tartsd vissza a lélegzeted.",
+   "Ne próbáld túl sokáig tartani."
+  ]
+ },
+ "C03": {
+  "breathing": "",
+  "correct": [
+   "Tartsd az ágyékodat közel a padlóhoz.",
+   "Kontrolláld a lábadat.",
+   "Lazítsd el a nyakadat.",
+   "Simán mozogj."
+  ],
+  "desc": "Alsó hasi gyakorlat a lábak kontrollált keresztezésével.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Finoman nyomd az ágyékodat a padló felé.",
+   "Emeld fel a lábadat.",
+   "Keresztezd az egyik lábat a másik fölött.",
+   "Folytasd a keresztezést váltakozva."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd az ágyékodat.",
+   "Ne engedd túl alacsonyra a lábadat.",
+   "Ne húzd előre a fejedet.",
+   "Ne mozogj túl gyorsan."
+  ]
+ },
+ "C04": {
+  "breathing": "",
+  "correct": [
+   "Tartsd kicsi a mozgástartományt.",
+   "Tartsd stabilan az ágyékodat.",
+   "Ne engedd túl alacsonyra a lábadat.",
+   "Lélegezz egyenletesen."
+  ],
+  "desc": "Alsó hasi gyakorlat rövid, váltakozó lábrúgásokkal.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Nyomd az ágyékodat a padló felé.",
+   "Emeld fel a lábadat.",
+   "Mozgasd a lábadat fel-le rövid, váltakozó rúgásokkal."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd az ágyékodat.",
+   "Ne rúgj nagyokat.",
+   "Ne feszítsd meg a nyakadat.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "C05": {
+  "breathing": "",
+  "correct": [
+   "Az alsó hasadból mozogj.",
+   "Kontrolláltan emeld a medencédet.",
+   "Lazítsd el a nyakadat.",
+   "Lassan engedd le."
+  ],
+  "desc": "Hasizom-gyakorlat a medence kontrollált felemelésére.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Hajlítsd be a térdedet, és emeld fel a lábfejedet.",
+   "A hasizmaiddal görbítsd kicsit felfelé a medencédet.",
+   "Lassan engedd vissza."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne lendítsd a lábadat.",
+   "Ne használj lendületet.",
+   "Ne húzd a nyakadat.",
+   "Ne ejtsd le gyorsan a csípődet."
+  ]
+ },
+ "C06": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a padlón az ágyékodat.",
+   "Tartsd feszesen a hasizmaidat.",
+   "Lazítsd el a nyakadat.",
+   "Lélegezz tovább."
+  ],
+  "desc": "Statikus törzstartás rövidített emelőkarral a jobb kontrollért.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Nyomd az ágyékodat a padló felé.",
+   "Emeld meg kicsit a válladat.",
+   "Tartsd behajlítva a térdedet, vagy emeld magasabbra a lábadat.",
+   "Tartsd meg a pózt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd az ágyékodat.",
+   "Ne engedd túl alacsonyra a lábadat.",
+   "Ne told előre az állad.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "C07": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a könyöködet a válladad alatt.",
+   "Tartsd magasan a csípődet.",
+   "Tartsd hosszan a testedet.",
+   "Tartsd semlegesen a nyakadat."
+  ],
+  "desc": "Oldalsó törzsgyakorlat a ferde hasizmoknak, a vállnak és a csípőstabilitásnak.",
+  "howTo": [
+   "Feküdj az oldaladra.",
+   "Tedd a könyöködet a válladad alá.",
+   "Emeld fel a csípődet.",
+   "Tartsd a testedet egy egyenes vonalban.",
+   "Tartsd meg a pózt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd le a csípődet.",
+   "Ne húzd fel a válladat.",
+   "Ne fordítsd előre a mellkasodat.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "C08": {
+  "breathing": "",
+  "correct": [
+   "Tartsd kicsi és kontrollált a mozgást.",
+   "Tartsd a könyöködet a válladad alatt.",
+   "A csípődet egyenesen fel-le mozgasd.",
+   "Tartsd feszesen a törzsedet."
+  ],
+  "desc": "Erősebb oldalsó plank változat a ferde hasizmoknak és az oldalsó csípőnek.",
+  "howTo": [
+   "Kezdj oldalsó plankban.",
+   "Engedd le kissé a csípődet.",
+   "Emeld vissza a csípődet.",
+   "Ismételd kontrolláltan.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd le túl mélyre.",
+   "Ne csavard a törzsedet.",
+   "Ne roskadj a válladba.",
+   "Ne mozogj túl gyorsan."
+  ]
+ },
+ "C09": {
+  "breathing": "",
+  "correct": [
+   "Tartsd egy szinten a csípődet.",
+   "Tartsd feszesen a törzsedet.",
+   "Tartsd stabilan a válladat.",
+   "Lassan mozogj."
+  ],
+  "desc": "Törzs- és vállgyakorlat: plank tartás közben megérinted a vállaidat.",
+  "howTo": [
+   "Kezdd magas plankban.",
+   "Tartsd egy szinten és stabilan a csípődet.",
+   "Érintsd az egyik kezeddel az ellenkező vállad.",
+   "Tedd vissza, és érintsd meg a másik kezeddel.",
+   "Tartsd mozdulatlanul a testedet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne ringasd oldalra a csípődet.",
+   "Ne mozogj túl gyorsan.",
+   "Ne engedd lesüllyedni az ágyékodat.",
+   "Ne csavard a törzsedet."
+  ]
+ },
+ "C10": {
+  "breathing": "",
+  "correct": [
+   "Tartsd stabilan a csípődet.",
+   "Tartsd aktívan a törzsedet.",
+   "Kontrolláltan mozogj.",
+   "Tartsd a válladat a kezed vagy a könyököd felett."
+  ],
+  "desc": "Törzs- és tricepszgyakorlat: váltás alkartámasz és magas plank között.",
+  "howTo": [
+   "Kezdd alkartámaszban.",
+   "Tedd az egyik kezedet a padlóra, és told fel magad.",
+   "Told fel a másik kezedet is magas plankba.",
+   "Térj vissza az alkarodra.",
+   "Váltogasd a vezető kezet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne ringasd oldalra a csípődet.",
+   "Ne engedd lesüllyedni az ágyékodat.",
+   "Ne mozogj túl gyorsan.",
+   "Ne engedd összeroskadni a válladat."
+  ]
+ },
+ "C11": {
+  "breathing": "",
+  "correct": [
+   "Tartsd stabilan az ágyékodat.",
+   "Lassan mozogj.",
+   "Puhán tedd le a sarkadat.",
+   "Tartsd nyugodtan a medencédet."
+  ],
+  "desc": "Kontrollált törzsgyakorlat, biztonságosabb alternatíva a nehezebb lábemelős mozdulatokhoz.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Emeld a lábadat asztalpozícióba.",
+   "Engedd az egyik sarkadat a padló felé.",
+   "Finoman érintsd meg, és térj vissza.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne ejtsd le gyorsan a lábadat.",
+   "Ne homorítsd az ágyékodat.",
+   "Ne mozgasd egyszerre mindkét lábadat.",
+   "Ne siesd el a mozdulatot."
+  ]
+ },
+ "C12": {
+  "breathing": "",
+  "correct": [
+   "Tartsd az ágyékodat közel a padlóhoz.",
+   "Lassan mozogj.",
+   "Az ellentétes karodat és lábadat együtt mozgasd.",
+   "Tartsd mozdulatlanul a törzsedet."
+  ],
+  "desc": "Törzskontroll-gyakorlat a mély hasizmoknak és a gerincstabilitásnak.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Emeld asztalpozícióba a karodat és a lábadat.",
+   "Nyújtsd ki az ellentétes kart és lábat.",
+   "Tartsd stabilan az ágyékodat.",
+   "Térj vissza, és váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd az ágyékodat.",
+   "Ne mozogj túl gyorsan.",
+   "Ne engedd túl alacsonyra a lábadat.",
+   "Ne engedd kinyílni a bordáidat."
+  ]
+ },
+ "C13": {
+  "breathing": "",
+  "correct": [
+   "A törzsedből forogj.",
+   "Tartsd kontroll alatt az ágyékodat.",
+   "Lazítsd el a nyakadat.",
+   "Simán mozogj."
+  ],
+  "desc": "Forgató hasizom-gyakorlat a ferde és az egyenes hasizmoknak.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Húzd fel a térdedet.",
+   "Tedd a kezedet könnyedén a fejed mellé.",
+   "Forgasd el a törzsedet, és vidd az egyik könyöködet az ellenkező térded felé.",
+   "Kontrollált ritmusban váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne húzd a nyakadat.",
+   "Ne csak a könyöködet mozgasd.",
+   "Ne siesd el az ismétléseket.",
+   "Ne engedd homorodni az ágyékodat."
+  ]
+ },
+ "CD01": {
+  "breathing": "",
+  "correct": [
+   "Hagyd, hogy a mellkasod puhán megnyíljon.",
+   "Tartsd lazán a válladat.",
+   "Tartsd kényelmesen az ágyékodat.",
+   "A válladnak ne legyen fájdalmas."
+  ],
+  "desc": "Gyengéd nyújtás a mellkasnak és a vállak elülső részének.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Nyisd ki oldalra a karodat.",
+   "Lazítsd el a válladat.",
+   "Hagyd, hogy a mellkasod finoman megnyíljon.",
+   "Lélegezz lassan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne erőltesd lefelé a karodat.",
+   "Ne homorítsd az ágyékodat.",
+   "Ne feszítsd meg a nyakadat.",
+   "Ne nyújts fájdalom ellenére."
+  ]
+ },
+ "CD02": {
+  "breathing": "",
+  "correct": [
+   "Enyhe legyen a nyújtás.",
+   "A térded maradjon kissé hajlítva.",
+   "Tartsd nyugodtan az ágyékodat.",
+   "Lassan lélegezz."
+  ],
+  "desc": "Gyengéd nyújtás a comb hátsó részének.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Emeld fel az egyik lábadat.",
+   "Fogd meg a combod vagy a vádlid mögött.",
+   "Finoman húzd magad felé a lábadat.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne húzd túl erősen.",
+   "Ne erőltesd egyenesre a lábadat.",
+   "Ne emeld fel a csípődet.",
+   "Ne told bele magad éles fájdalomba a térded mögött."
+  ]
+ },
+ "CD03": {
+  "breathing": "",
+  "correct": [
+   "Lassan mozogj.",
+   "Tartsd lent a válladat.",
+   "Lélegezz lazán.",
+   "Maradjon kényelmes a nyújtás."
+  ],
+  "desc": "Gyengéd forgató nyújtás a gerincnek és a törzsnek.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Hajlítsd be a térdedet.",
+   "Engedd a térdedet finoman az egyik oldalra.",
+   "Tartsd a válladat a padlón.",
+   "Térj vissza középre, és váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne erőltesd a térdedet a padlóig.",
+   "Ne csavarodj gyorsan.",
+   "Ne emeld fel a válladat.",
+   "Ne nyújts fájdalom ellenére."
+  ]
+ },
+ "CD04": {
+  "breathing": "",
+  "correct": [
+   "Csak enyhén emelkedj.",
+   "Tartsd távol a válladat a füledtől.",
+   "Tartsd kényelmesen az ágyékodat.",
+   "Tartsd semlegesen a nyakadat."
+  ],
+  "desc": "Gyengéd nyújtás a test elülső oldalának és enyhe hátfeszítés.",
+  "howTo": [
+   "Feküdj hasra.",
+   "Tedd az alkarodat a padlóra.",
+   "Finoman emeld meg a mellkasodat.",
+   "Tartsd hosszan a nyakadat.",
+   "Lélegezz lassan."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd túl az ágyékodat.",
+   "Ne hajtsd hátra a fejedet.",
+   "Ne húzd fel a válladat.",
+   "Ne erőltesd a pózt."
+  ]
+ },
+ "CD05": {
+  "breathing": "",
+  "correct": [
+   "Tartsd nyugodt a légzésed.",
+   "Tartsd lazán a válladat.",
+   "Tartsd lágyan az arcodat.",
+   "Hagyd, hogy a tested megnyugodjon."
+  ],
+  "desc": "Nyugodt légzőgyakorlat az edzés lezárására.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Lazítsd el a válladat és az állkapcsodat.",
+   "Ha kényelmes, tedd az egyik kezedet a hasadra.",
+   "Lélegezz be finoman.",
+   "Lassan fújd ki."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne lélegezz túl erőltetetten.",
+   "Ne tartsd vissza a lélegzeted.",
+   "Ne feszítsd meg a nyakadat.",
+   "Ne homorítsd az ágyékodat."
+  ]
+ },
+ "CD07": {
+  "breathing": "",
+  "correct": [
+   "Hagyd a csípődet a sarkad felé süllyedni.",
+   "Finoman nyújtsd meg a hátadat.",
+   "Lazítsd el a válladat.",
+   "Lassan lélegezz."
+  ],
+  "desc": "Pihentető nyújtás a hátnak, a csípőnek és a válloknak a lecsendesedéshez.",
+  "howTo": [
+   "Térdelj le, és ülj vissza a csípőddel a sarkad felé.",
+   "Nyújtsd előre a karodat a padlón.",
+   "Hagyd a homlokodat leereszkedni.",
+   "Lélegezz lassan, és lazíts."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne erőltesd lefelé a csípődet.",
+   "Ne feszítsd meg a válladat.",
+   "Ne tartsd vissza a lélegzeted.",
+   "Ne terheld túl a térdedet."
+  ]
+ },
+ "D01": {
+  "breathing": "Egyenletesen lélegezz, ne tartsd vissza a lélegzeted.",
+  "correct": [
+   "Tartsd az oldaladhoz tapadva a könyöködet.",
+   "Lassan mozogj, lendület nélkül.",
+   "Tartsd lent a válladat, távol a füledtől.",
+   "Tartsd egyenesen a csuklódat."
+  ],
+  "desc": "Lassú rotátorköpeny-gyakorlat, amely stabilizálja a vállat adogatáshoz és ütésekhez. Egy 0,5 kg-os súlyzó, egyszerre egy kézzel.",
+  "howTo": [
+   "Állj egyenesen, egy 0,5 kg-os súlyzót tartva.",
+   "Hajlítsd be a könyöködet 90°-ban, és szorítsd az oldaladhoz.",
+   "Kezdd úgy, hogy az alkarod a hasad előtt van.",
+   "Lassan forgasd az alkarodat kifelé, a testedtől távolodva.",
+   "Lassan térj vissza, aztán váltsd a kezet."
+  ],
+  "safety": "Csak 0,5 kg-os súllyal. Állj le, ha fáj a válladad. Soha ne fuss és ne ugorj a súlyzóval.",
+  "voice": {
+   "finish": "Tedd le a súlyzót.",
+   "last": "",
+   "mid": [
+    "Lassan forgasd ki az alkarodat.",
+    "A könyököd marad a helyén."
+   ],
+   "start": "Fél kilós súlyzó. A könyököd az oldaladon."
+  },
+  "wrong": [
+   "Ne engedd, hogy a könyököd előre vagy kifelé csússzon.",
+   "Ne rángasd a súlyt.",
+   "Ne húzd fel a válladat.",
+   "Ne használj nehezebb súlyzót."
+  ]
+ },
+ "D02": {
+  "breathing": "Kifúváskor emeld a karodat.",
+  "correct": [
+   "Tartsd hosszan és laposan a hátadat.",
+   "Vállmagasságban állj meg.",
+   "Szorítsd össze a lapockáidat.",
+   "Mindkét karodat együtt mozgasd."
+  ],
+  "desc": "Előrehajolt fordított szárnyalás a hátsó vállaknak és a lapockáknak: azokat a tartóizmokat edzi, amelyekre egy teniszezőnek szüksége van.",
+  "howTo": [
+   "Fogj egy-egy 0,5 kg-os súlyzót mindkét kezedbe.",
+   "Hajolj előre a csípődből, egyenes háttal és puha térddel.",
+   "Hagyd lelógni a karodat a válladad alatt.",
+   "Emeld oldalra a karodat vállmagasságig, és szorítsd össze a lapockáidat.",
+   "Lassan engedd vissza."
+  ],
+  "safety": "Csak 0,5 kg-os súllyal. Puha térddel. Soha ne ugorj a súlyzókkal.",
+  "voice": {
+   "finish": "Állj fel, és tedd le őket.",
+   "last": "",
+   "mid": [
+    "Karok oldalra.",
+    "Szorítsd össze a lapockáidat."
+   ],
+   "start": "Hajolj előre, egyenes háttal, fél kiló mindkét kezedben."
+  },
+  "wrong": [
+   "Ne görbítsd a hátadat.",
+   "Ne lendítsd a súlyokat.",
+   "Ne emeld a vállad fölé.",
+   "Ne nézz fel, és ne nyomd össze a nyakadat."
+  ]
+ },
+ "D03": {
+  "breathing": "Lefelé belégzés, felfelé kilégzés.",
+  "correct": [
+   "Tartsd a súlyzókat a mellkasodnál.",
+   "Tartsd a padlón a sarkadat.",
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd hosszan a hátadat."
+  ],
+  "desc": "Goblet guggolás: mindkét 0,5 kg-os súlyzó a mellkas előtt, a lábnak és a stabil, ütésre kész tartásnak.",
+  "howTo": [
+   "Tartsd együtt a két 0,5 kg-os súlyzót a mellkasodnál.",
+   "Állj vállszélességű terpeszben.",
+   "Told hátra a csípődet, és hajlítsd be a térdedet.",
+   "Tartsd lent a sarkadat, és magasan a mellkasodat.",
+   "Állj fel úgy, hogy a súlyok ne húzzanak előre."
+  ],
+  "safety": "Ne ugorj a súlyzókkal. Ha fáj a térded, válts testsúlyos guggolásra.",
+  "voice": {
+   "finish": "Állj fel egyenesen.",
+   "last": "",
+   "mid": [
+    "Sarok lent.",
+    "Térd a lábujjak felett."
+   ],
+   "start": "Súlyzók a mellkasnál. Lassú guggolás."
+  },
+  "wrong": [
+   "Ne engedd befelé esni a térdedet.",
+   "Ne emeld fel a sarkadat.",
+   "Ne hagyd, hogy a súlyzók előre húzzanak.",
+   "Ne pattanj fel az alsó helyzetből."
+  ]
+ },
+ "D04": {
+  "breathing": "Lassan lélegezz. Soha ne tartsd vissza a lélegzeted.",
+  "correct": [
+   "Tartsd a karodat a füled mellett.",
+   "Tartsd lent a bordáidat, ne homoríts.",
+   "Tartsd távol a válladat a füledtől.",
+   "Lélegezz tovább."
+  ],
+  "desc": "Mozdulatlan fej fölötti tartás 0,5 kg-os súlyzókkal, amely az adogatáshoz szükséges vállstabilitást edzi.",
+  "howTo": [
+   "Fogj egy-egy 0,5 kg-os súlyzót mindkét kezedbe.",
+   "Nyomd egyenesen a fejed fölé a karodat.",
+   "Vidd a bicepszedet közel a füledhez.",
+   "Tartsd lent a bordáidat, és feszesen a hasadat.",
+   "Tartsd mozdulatlanul, és lélegezz, amíg le nem jár az idő, aztán lassan engedd le."
+  ],
+  "safety": "Csak tartás, nyomás és lendítés nélkül. Ha remeg vagy fáj a válladad, engedd le a súlyzókat.",
+  "voice": {
+   "finish": "Lassan engedd le.",
+   "last": "",
+   "mid": [
+    "Bordák lent.",
+    "Lélegezz tovább."
+   ],
+   "start": "Fél kiló a fej fölött. Kar a füled mellett."
+  },
+  "wrong": [
+   "Ne dőlj hátra.",
+   "Ne húzd fel a válladat.",
+   "Ne feszítsd ki és csikorgasd a könyöködet.",
+   "Ne rántsd fel a súlyokat."
+  ]
+ },
+ "D05": {
+  "breathing": "Nyugodt be- és kilégzés, ha tudod, orron át.",
+  "correct": [
+   "Állj úgy, mintha egy zsinór húzná fel a fejed búbját.",
+   "Tartsd egy szinten a vállaidat.",
+   "Tartsd nyugodtan a bordáidat.",
+   "Tartsd puhán a térdedet, ne feszítsd be."
+  ],
+  "desc": "Bőröndtartás: egy 0,5 kg-os súlyzó az egyik kezedben. A feladat, hogy egyenesen állj, és ne dőlj meg: ugyanaz az oldalhajlítás elleni erő, amelyre labda utáni kilépésnél van szükség.",
+  "howTo": [
+   "Fogj egy 0,5 kg-os súlyzót az egyik kezedbe, a karod a combod mellett lóg.",
+   "Állj úgy, hogy a lábad a csípőd alatt van.",
+   "Maradj egyenes: ne dőlj a súly felé, se tőle el.",
+   "Tartsd mozdulatlanul, és lélegezz.",
+   "A másik oldalhoz váltsd a kezet."
+  ],
+  "safety": "Állj egy helyben. Ne sétálj, ne fuss és ne ugorj a súlyzóval.",
+  "voice": {
+   "finish": "Válts kezet.",
+   "last": "",
+   "mid": [
+    "Ne dőlj meg.",
+    "Vállak egy szinten."
+   ],
+   "start": "Egy fél kiló az egyik kezedben. Állj egyenesen."
+  },
+  "wrong": [
+   "Ne dőlj oldalra.",
+   "Ne húzd fel a súlyt tartó kar vállát.",
+   "Ne sétálj, és ne pattogj.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "J01": {
+  "breathing": "",
+  "correct": [
+   "Tartsd alacsonyan az ugrásokat.",
+   "Puhán és halkan érkezz.",
+   "Tartsd kissé hajlítva a térdedet.",
+   "Állj egyenesen."
+  ],
+  "desc": "Könnyű boka- és vádliátmozgatás kicsi, gyors ugrásokkal.",
+  "howTo": [
+   "Állj egyenesen, a lábad csípőszélességben.",
+   "Tartsd a térdedet kissé puhán.",
+   "Ugorj kicsiket, gyorsan, főleg a bokádból.",
+   "Landolj halkan, és ismételd."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne ugorj túl magasra.",
+   "Ne érkezz hangosan.",
+   "Ne feszítsd be a térdedet.",
+   "Ne engedd, hogy a bokád befelé vagy kifelé billenjen."
+  ]
+ },
+ "J02": {
+  "breathing": "",
+  "correct": [
+   "Tartsd függőlegesen a törzsedet.",
+   "Kontrolláltan emeld a térdedet.",
+   "Puhán tedd le a lábadat.",
+   "Lélegezz egyenletesen."
+  ],
+  "desc": "Kíméletes bemelegítés a magas térdemelés alternatívájaként.",
+  "howTo": [
+   "Állj egyenesen.",
+   "Emeld az egyik térdedet csípőmagasságig.",
+   "Kontrolláltan engedd vissza.",
+   "Váltsd a lábat, és menetelj tovább.",
+   "A karod mozogjon természetesen."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne dőlj hátra.",
+   "Ne lendítsd kontroll nélkül a lábadat.",
+   "Ne csapd le a lábadat.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "J03": {
+  "breathing": "",
+  "correct": [
+   "Puhán érkezz.",
+   "Tartsd kissé hajlítva a térdedet.",
+   "Simán mozgasd a karodat.",
+   "Ritmusosan lélegezz."
+  ],
+  "desc": "Egésztest kardiógyakorlat, amely emeli a pulzust, és bemelegíti a vállat, a csípőt és a lábat.",
+  "howTo": [
+   "Állj egyenesen, a karod a tested mellett.",
+   "Ugorj terpeszbe, közben emeld a karodat a fejed fölé.",
+   "Ugorj vissza összezárt lábbal, közben engedd le a karodat.",
+   "Ismételd egyenletes ritmusban."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne érkezz keményen.",
+   "Ne feszítsd be a térdedet.",
+   "Ne húzd fel a válladat.",
+   "Ne mozogj olyan gyorsan, hogy elveszítsd az uralmat."
+  ]
+ },
+ "J04": {
+  "breathing": "",
+  "correct": [
+   "Tarts erős plankot.",
+   "Tartsd feszesen a törzsedet.",
+   "Tartsd a válladat a kezed felett.",
+   "Kontrolláltan mozgasd a térdedet."
+  ],
+  "desc": "Dinamikus törzs- és kardiógyakorlat magas plankból.",
+  "howTo": [
+   "Kezdd magas plankban.",
+   "Tartsd a kezedet a válladad alatt.",
+   "Húzd az egyik térdedet a mellkasod felé.",
+   "Ritmusosan váltogasd a lábadat.",
+   "Tartsd stabilan a csípődet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne hagyd, hogy a csípőd magasra pattogjon.",
+   "Ne engedd lesüllyedni az ágyékodat.",
+   "Ne kapkodd vadul a lábadat.",
+   "Ne engedd összeroskadni a válladat."
+  ]
+ },
+ "J05": {
+  "breathing": "",
+  "correct": [
+   "Halkan érkezz.",
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd nyitva a mellkasodat.",
+   "Minden ugrás legyen kontrollált."
+  ],
+  "desc": "Plyometrikus lábgyakorlat erőhöz, kondícióhoz és koordinációhoz.",
+  "howTo": [
+   "Kezdd vállszélességű terpeszben.",
+   "Süllyedj kontrolláltan guggolásba.",
+   "Ugorj felfelé.",
+   "Puhán érkezz, kissé hajlított térddel.",
+   "A következő ugrás előtt állj vissza a kiinduló helyzetbe."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne érkezz keményen.",
+   "Ne engedd befelé roskadni a térdedet.",
+   "Ne ugorj, mielőtt a guggolás stabil.",
+   "Ne siess a kiinduló helyzet nélkül."
+  ]
+ },
+ "J06": {
+  "breathing": "",
+  "correct": [
+   "Halkan érkezz.",
+   "Tartsd a térdedet a lábujjad felett.",
+   "Tartsd kontroll alatt a törzsedet.",
+   "Simán mozogj oldalról oldalra."
+  ],
+  "desc": "Oldalirányú ugrógyakorlat a lábnak, a csípőnek, az egyensúlynak és a koordinációnak.",
+  "howTo": [
+   "Állj az egyik lábadra.",
+   "Ugorj oldalra a másik lábadra.",
+   "Puhán érkezz, és stabilizálj.",
+   "Ismételd oldalról oldalra.",
+   "A karodat használd az egyensúlyhoz."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd, hogy a térded befelé roskadjon érkezéskor.",
+   "Ne ugorj túl messzire túl hamar.",
+   "Ne zuhanj bele az érkezésbe.",
+   "Ne csavard ki a térdedet földet éréskor."
+  ]
+ },
+ "J07": {
+  "breathing": "",
+  "correct": [
+   "Emeld a térdedet csípőmagasságig.",
+   "Könnyedén érkezz.",
+   "Tartsd aktívan a törzsedet.",
+   "Tartsd egyenesen a törzsedet."
+  ],
+  "desc": "Kardiógyakorlat, amely emeli a pulzust, és aktiválja a csípőt, a törzset és a lábat.",
+  "howTo": [
+   "Állj egyenesen.",
+   "Fuss egy helyben, magasra emelve a térdedet.",
+   "A karod mozogjon természetesen.",
+   "A ritmus legyen gyors, de kontrollált."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne dőlj hátra.",
+   "Ne érkezz nehézkesen.",
+   "Ne csapkodd a padlót a lábaddal.",
+   "Ne veszítsd el a tartásodat, ahogy gyorsul a tempó."
+  ]
+ },
+ "J08": {
+  "breathing": "",
+  "correct": [
+   "A kezedre a válladad alatt érkezz.",
+   "Tarts erős plankot.",
+   "Puhán érkezz a lábadra.",
+   "Kontrollált legyen az ugrás."
+  ],
+  "desc": "Egésztest kondicionáló gyakorlat guggolás, plank és ugrás kombinációjával. Ebben a programban a fekvőtámasz nélküli változatot használd, hacsak kifejezetten fekvőtámaszt nem írnak elő.",
+  "howTo": [
+   "Állj egyenesen.",
+   "Guggolj le, és tedd a kezedet a padlóra.",
+   "Ugorj vagy lépj hátra a lábaddal plankba.",
+   "Ugorj vagy lépj előre a lábaddal.",
+   "Állj fel, és zárd egy kis ugrással."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd lesüllyedni az ágyékodat a plankban.",
+   "Ne érkezz nehézkesen.",
+   "Ne siess hanyag ismétlésekkel.",
+   "Ne engedd befelé roskadni a térdedet, amikor előre ugrasz."
+  ]
+ },
+ "J09": {
+  "breathing": "",
+  "correct": [
+   "Puhán és kontrolláltan érkezz.",
+   "Tartsd az elülső térdedet a lábujjaid felett.",
+   "Tartsd egyenesen a törzsedet.",
+   "Maradj biztonságos mozgástartományban."
+  ],
+  "desc": "Haladó plyometrikus lábgyakorlat erőhöz, kondícióhoz és koordinációhoz.",
+  "howTo": [
+   "Kezdd kitörés helyzetben.",
+   "Ugorj felfelé.",
+   "Cseréld meg a lábadat a levegőben.",
+   "Puhán érkezz az ellenkező kitörésbe.",
+   "A következő ismétlés előtt állítsd helyre az egyensúlyodat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne érkezz keményen.",
+   "Ne engedd befelé roskadni az elülső térdedet.",
+   "Ne süllyedj túl mélyre.",
+   "Ne mozogj gyorsabban, mint amit kontrollálni tudsz."
+  ]
+ },
+ "L01": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd a padlón a sarkadat.",
+   "Tartsd hosszan a hátadat.",
+   "Maradjon kényelmes a mélység."
+  ],
+  "desc": "Kontrollált lábgyakorlat a combnak, a csípőnek és a tartásnak.",
+  "howTo": [
+   "Állj a csípőszélességnél kissé szélesebb terpeszben.",
+   "Told hátra a csípődet.",
+   "Hajlítsd be a térdedet kényelmes, sekély mélységig.",
+   "Lassan állj fel."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne guggolj túl mélyre.",
+   "Ne engedd befelé roskadni a térdedet.",
+   "Ne emeld fel a sarkadat.",
+   "Ne zuhanj le gyorsan."
+  ]
+ },
+ "L02": {
+  "breathing": "",
+  "correct": [
+   "Tartsd stabilan a megállást.",
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd nyitva a mellkasodat.",
+   "Tartsd a padlón a sarkadat."
+  ],
+  "desc": "Kontrollált guggolásváltozat rövid megállással biztonságos tartományban.",
+  "howTo": [
+   "Állj stabilan.",
+   "Süllyedj kényelmes, sekély guggolásba.",
+   "Állj meg röviden.",
+   "Kontrolláltan állj fel."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne menj túl mélyre.",
+   "Ne pattogj az alsó helyzetben.",
+   "Ne engedd befelé esni a térdedet.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "L03": {
+  "breathing": "",
+  "correct": [
+   "Tartsd egyenesen a hátadat.",
+   "A csípődből mozogj.",
+   "Tartsd puhán a térdedet, ne hajlítsd mélyen.",
+   "A nyakad kövesse a gerincedet."
+  ],
+  "desc": "Mozgásgyakorlat a csípő, a combhajlítók és az ágyéki kontroll számára.",
+  "howTo": [
+   "Állj egyenesen, a lábad csípőszélességben.",
+   "Lazítsd meg kissé a térdedet.",
+   "Told hátra a csípődet.",
+   "Engedd le a törzsedet egyenes háttal.",
+   "Told előre a csípődet, és térj vissza állásba."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne görbítsd a hátadat.",
+   "Ne csinálj belőle guggolást.",
+   "Ne nyúlj túl mélyre.",
+   "Ne emeld fel túl magasra a fejedet."
+  ]
+ },
+ "L04": {
+  "breathing": "",
+  "correct": [
+   "A dolgozó farizmoddal emelj.",
+   "Tartsd egy szinten a csípődet.",
+   "Kontrolláltan mozogj.",
+   "Tartsd semlegesen az ágyékodat."
+  ],
+  "desc": "Erősebb farizomgyakorlat egyszerre egy lábbal.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Hajlítsd be az egyik térdedet, és tartsd a lábfejedet a padlón.",
+   "Nyújtsd ki vagy emeld fel a másik lábadat.",
+   "Told a dolgozó sarkadba.",
+   "Emeld fel a csípődet, és lassan engedd le."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne csavard el a medencédet.",
+   "Ne told a lábujjaidba.",
+   "Ne homorítsd az ágyékodat.",
+   "Ne ereszkedj túl gyorsan."
+  ]
+ },
+ "L05": {
+  "breathing": "",
+  "correct": [
+   "Tartsd egy szinten a csípődet.",
+   "Tartsd aktívan a farizmaidat.",
+   "Lassan mozogj.",
+   "Tartsd kényelmesen az ágyékodat."
+  ],
+  "desc": "Farizom- és medencestabilitási gyakorlat.",
+  "howTo": [
+   "Kezdd farizomhíd helyzetben.",
+   "Tartsd magasan a csípődet.",
+   "Emeld el kissé az egyik lábfejedet a padlótól.",
+   "Tedd le, és váltsd az oldalt.",
+   "Tartsd stabilan a medencédet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd leesni a csípődet.",
+   "Ne ringatózz oldalra.",
+   "Ne mozogj túl gyorsan.",
+   "Ne homorítsd az ágyékodat."
+  ]
+ },
+ "L06": {
+  "breathing": "",
+  "correct": [
+   "Told a sarkadba.",
+   "A csúcsponton szorítsd össze a farizmaidat.",
+   "Tartsd lent a bordáidat.",
+   "Ne engedd túlhomorodni az ágyékodat."
+  ],
+  "desc": "Farizomgyakorlat, amely erősíti a csípőt és a hátsó láncot.",
+  "howTo": [
+   "Feküdj hanyatt.",
+   "Hajlítsd be a térdedet, és tedd a lábfejedet a padlóra.",
+   "Emeld fel a csípődet.",
+   "Állj meg a csúcsponton.",
+   "Lassan engedd le."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne homorítsd az ágyékodat a csúcsponton.",
+   "Ne emeld fel a sarkadat.",
+   "Ne ejtsd le gyorsan a csípődet.",
+   "Ne tedd a lábfejedet túl közel."
+  ]
+ },
+ "L07": {
+  "breathing": "",
+  "correct": [
+   "Állj fel magasra.",
+   "Simán mozogj.",
+   "Tartsd egy vonalban a bokádat.",
+   "Kontrolláltan engedd le."
+  ],
+  "desc": "Lábszárgyakorlat a vádlinak, a bokának és a lábfej kontrolljának.",
+  "howTo": [
+   "Állj egyenesen, a lábad csípőszélességben.",
+   "Emelkedj fel a lábujjaid elejére.",
+   "Állj meg röviden a csúcsponton.",
+   "Lassan engedd le a sarkadat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne ejtsd le gyorsan a sarkadat.",
+   "Ne dőlj előre.",
+   "Ne fordítsd kifelé a bokádat.",
+   "Ne használj lendületet."
+  ]
+ },
+ "L09": {
+  "breathing": "",
+  "correct": [
+   "Tartsd magasan a csípődet.",
+   "Lassan mozgasd a felső lábadat.",
+   "Tartsd stabilan a törzsedet.",
+   "Tartsd erősen a válladat."
+  ],
+  "desc": "Oldalsó láncot dolgoztató gyakorlat az oldalsó farizmoknak, a ferde hasizmoknak és a csípőstabilitásnak.",
+  "howTo": [
+   "Kezdj oldalsó plankban.",
+   "Tartsd egy egyenes vonalban a testedet.",
+   "Emeld meg kissé a felső lábadat.",
+   "Kontrolláltan engedd le.",
+   "Ismételd, aztán váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd le a csípődet.",
+   "Ne lendítsd a lábadat.",
+   "Ne fordulj hátra a testeddel.",
+   "Ne roskadj a válladba."
+  ]
+ },
+ "L10": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd a padlón a sarkadat.",
+   "Tartsd hosszan a hátadat.",
+   "Kontrollált legyen a mélység."
+  ],
+  "desc": "Alap testsúlyos guggolás a lábnak, a csípőnek és a farizmoknak.",
+  "howTo": [
+   "Állj kb. vállszélességű terpeszben.",
+   "Told kissé hátra a csípődet.",
+   "Hajlítsd be a térdedet, és süllyedj guggolásba.",
+   "Tartsd nyitva a mellkasodat.",
+   "Állj fel az egész talpadra támaszkodva."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd befelé roskadni a térdedet.",
+   "Ne emeld fel a sarkadat.",
+   "Ne görbítsd a hátadat.",
+   "Ne zuhanj le gyorsan."
+  ]
+ },
+ "L11": {
+  "breathing": "",
+  "correct": [
+   "Tartsd az elülső térdedet a lábujjaid felett.",
+   "Tartsd egyenesen a törzsedet.",
+   "Kontrolláltan lépj hátra.",
+   "Tartsd a földön az elülső sarkadat."
+  ],
+  "desc": "Alsótestgyakorlat a lábnak, a farizmoknak és az egyensúlynak.",
+  "howTo": [
+   "Állj egyenesen.",
+   "Lépj hátra az egyik lábaddal.",
+   "Kontrolláltan süllyedj kitörésbe.",
+   "Az elöl lévő lábfejedre támaszkodva told vissza magad állásba.",
+   "Váltsd az oldalt."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd befelé roskadni az elülső térdedet.",
+   "Ne dőlj túl előre.",
+   "Ne zuhanj le gyorsan.",
+   "Ne told el magad túl erősen a hátsó lábaddal."
+  ]
+ },
+ "L12": {
+  "breathing": "",
+  "correct": [
+   "Tartsd lassan a tempót.",
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd a földön a sarkadat.",
+   "Tartsd semlegesen a hátadat."
+  ],
+  "desc": "Lassan végzett testsúlyos guggolás a kontroll és a lábak erejének fejlesztésére.",
+  "howTo": [
+   "Állj vállszélességű terpeszben.",
+   "Kb. három másodperc alatt süllyedj le.",
+   "Állj meg röviden alul.",
+   "Kontrolláltan állj fel."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne zuhanj le gyorsan.",
+   "Ne pattanj fel az alsó helyzetből.",
+   "Ne engedd befelé esni a térdedet.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "P01": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a testedet egy vonalban.",
+   "Tartsd feszesen a törzsedet.",
+   "Tartsd a könyöködet kb. 30-45 fokban.",
+   "Kontrolláltan mozogj."
+  ],
+  "desc": "Alap felsőtest-gyakorlat a mellkasnak, a tricepsznek, a vállnak és a törzsnek.",
+  "howTo": [
+   "Kezdd magas plankban.",
+   "Tedd a kezedet a válladad alá vagy kicsit szélesebben.",
+   "Kontrolláltan engedd le a testedet.",
+   "Told vissza magad, közben tartsd egyenesen a testedet."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd le a csípődet.",
+   "Ne told túl magasra a csípődet.",
+   "Ne tárd egyenesen oldalra a könyöködet.",
+   "Ne zuhanj bele az alsó helyzetbe."
+  ]
+ },
+ "P02": {
+  "breathing": "",
+  "correct": [
+   "Tartsd közel a könyöködet.",
+   "Tartsd egyenesen a testedet.",
+   "Tartsd távol a válladat a füledtől.",
+   "Tartsd kényelmesen a csuklódat."
+  ],
+  "desc": "Fekvőtámasz-változat, amely jobban megdolgoztatja a tricepszet.",
+  "howTo": [
+   "Kezdd magas plankban.",
+   "Tedd a kezedet közelebb, mint a hagyományos fekvőtámasznál.",
+   "Tartsd a könyöködet a testedhez közel.",
+   "Lassan süllyedj le, és told vissza magad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne tedd a kezedet túl közel.",
+   "Ne tárd ki a könyöködet.",
+   "Ne engedd lesüllyedni az ágyékodat.",
+   "Ne told át magad a csukló- vagy könyökfájdalmon."
+  ]
+ },
+ "P03": {
+  "breathing": "",
+  "correct": [
+   "Tartsd kontrolláltan a megállást.",
+   "Tartsd feszesen a törzsedet.",
+   "Tartsd aktívan a mellkasodat.",
+   "Tartsd egyenesen a testedet."
+  ],
+  "desc": "Kontrollált fekvőtámasz rövid megállással az alsó helyzetben.",
+  "howTo": [
+   "Kezdd hagyományos fekvőtámasz helyzetben.",
+   "Lassan süllyedj le.",
+   "Állj meg egy másodpercre az alsó helyzet közelében.",
+   "Told vissza magad úgy, hogy közben nem veszíted el a testtartásodat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne lazíts el alul.",
+   "Ne engedd le a csípődet.",
+   "Ne tartsd vissza a lélegzeted.",
+   "Ne pattanj fel az alsó helyzetből."
+  ]
+ },
+ "P04": {
+  "breathing": "",
+  "correct": [
+   "Tartsd lassú, egyenletes tempót.",
+   "Tartsd egyenesen a testedet.",
+   "Kontrolláld a könyöködet.",
+   "Lélegezz egyenletesen."
+  ],
+  "desc": "Lassú fekvőtámasz-változat, amely növeli a kontrollt és a feszülés alatt töltött időt.",
+  "howTo": [
+   "Kezdd magas plankban.",
+   "Kb. három másodperc alatt süllyedj le.",
+   "Állj meg egy másodpercre az alsó helyzet közelében.",
+   "Kb. három másodperc alatt told fel magad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne siesd el a mozdulatot.",
+   "Ne roskadj össze alul.",
+   "Ne engedd lelógni a csípődet.",
+   "Ne veszítsd el a törzsed feszességét."
+  ]
+ },
+ "P05": {
+  "breathing": "",
+  "correct": [
+   "Tartsd egyenesen a testedet.",
+   "Tartsd feszesen a törzsedet.",
+   "Tartsd stabilan mindkét válladat.",
+   "Kontrolláltan mozogj."
+  ],
+  "desc": "Aszimmetrikus fekvőtámasz-változat, amely megdolgoztatja a mellkast, a vállat és a törzset.",
+  "howTo": [
+   "Kezdj fekvőtámasz helyzetben.",
+   "Tedd az egyik kezedet kicsit előrébb, a másikat kicsit hátrébb.",
+   "Kontrolláltan süllyedj le.",
+   "Told vissza magad.",
+   "A következő oldalon cseréld meg a kezed helyzetét."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne csavard a törzsedet.",
+   "Ne engedd le az egyik válladat.",
+   "Ne tedd túl szélesre a kezedet.",
+   "Ne erőltesd a mozgástartományt, ha kényelmetlen a válladnak."
+  ]
+ },
+ "P06": {
+  "breathing": "",
+  "correct": [
+   "Tartsd magasan a csípődet.",
+   "Kontrolláltan hajlítsd a könyöködet.",
+   "Tartsd stabilan a válladat.",
+   "Tartsd semlegesen a nyakadat."
+  ],
+  "desc": "Vállra fókuszáló fekvőtámasz-változat.",
+  "howTo": [
+   "Kezdd magas plankban.",
+   "Lépj kicsit közelebb a lábaddal, és emeld fel a csípődet.",
+   "Tartsd a fejedet a karod között.",
+   "Engedd a fejedet a padló felé.",
+   "Told vissza magad."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne süllyedj át hagyományos fekvőtámaszba.",
+   "Ne engedd, hogy a fejed túl messze előre vezessen.",
+   "Ne tárd ki túlságosan a könyöködet.",
+   "Ne told át magad a vállfájdalmon."
+  ]
+ },
+ "P08": {
+  "breathing": "",
+  "correct": [
+   "Tartsd feszesen a törzsedet.",
+   "Simán mozgasd a könyöködet.",
+   "Tartsd lent a válladat.",
+   "Maradjon kényelmes a mozgástartomány."
+  ],
+  "desc": "Tricepsz- és vállgyakorlat alkartámasz helyzetből.",
+  "howTo": [
+   "Kezdd alkartámaszban, hosszan kinyújtott testtel.",
+   "Tartsd a könyöködet a válladad alatt vagy kicsit előtte.",
+   "Told a kezedbe és az alkarodba.",
+   "Kicsit nyújtsd ki a könyöködet.",
+   "Kontrolláltan térj vissza."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne erőltesd a könyöködet.",
+   "Ne engedd le a csípődet.",
+   "Ne húzd fel a válladat.",
+   "Ne mozogj könyök- vagy vállfájdalom mellett."
+  ]
+ },
+ "W01": {
+  "breathing": "",
+  "correct": [
+   "Lazítsd el a nyakadat.",
+   "Simán mozgasd a válladat.",
+   "Tartsd lazán a karodat.",
+   "Állj egyenesen."
+  ],
+  "desc": "Egyszerű vállbemelegítés a nyak, a váll és a felső hát előkészítésére.",
+  "howTo": [
+   "Állj egyenesen, a karod laza.",
+   "Lassan köröztesd hátrafelé a válladat.",
+   "Aztán lassan köröztesd előre.",
+   "Tartsd simán és kontrolláltan a mozgást."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne húzd fel erősen a válladat.",
+   "Ne mozogj túl gyorsan.",
+   "Ne feszítsd meg a nyakadat.",
+   "Ne görbítsd a felső hátadat."
+  ]
+ },
+ "W02": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a karodat vállmagasságban.",
+   "Kicsik legyenek a körök.",
+   "Tartsd lent a válladat.",
+   "Lazítsd el a nyakadat."
+  ],
+  "desc": "Váll- és felsőhát-bemelegítés, amely aktiválja a deltaizmokat és a vállstabilizálókat.",
+  "howTo": [
+   "Állj egyenesen, és emeld vállmagasságba a karodat.",
+   "Végezz kis köröket előre.",
+   "Aztán végezz kis köröket hátra.",
+   "Tartsd szűkön és kontrolláltan a köröket."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne csinálj nagy lendítő mozdulatokat.",
+   "Ne húzd fel a válladat a füledig.",
+   "Ne homorítsd az ágyékodat.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "W03": {
+  "breathing": "",
+  "correct": [
+   "Tartsd stabilan a lábadat.",
+   "A törzsedből fordulj.",
+   "Simán forogj.",
+   "A térded maradjon mozdulatlan, amikor fordulsz."
+  ],
+  "desc": "Gyengéd forgatógyakorlat a törzsnek és a felső gerincnek.",
+  "howTo": [
+   "Állj csípőszélességű terpeszben.",
+   "Tartsd a csípődet többnyire előre fordítva.",
+   "Forgasd el a felsőtestedet az egyik oldalra.",
+   "Térj vissza középre, és forgasd a másik oldalra."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne fordítsd a térdedet a testeddel együtt.",
+   "Ne forogj túl gyorsan.",
+   "Ne dőlj hátra.",
+   "Ne erőltesd a mozgástartományt."
+  ]
+ },
+ "W04": {
+  "breathing": "",
+  "correct": [
+   "Tartsd egyenesen a hátadat.",
+   "A csípődből mozogj.",
+   "Tartsd puhán a térdedet, ne hajlítsd mélyen.",
+   "A nyakad kövesse a gerincedet."
+  ],
+  "desc": "Mozgásgyakorlat a csípő, a combhajlítók és az ágyéki kontroll számára.",
+  "howTo": [
+   "Állj egyenesen, a lábad csípőszélességben.",
+   "Lazítsd meg kissé a térdedet.",
+   "Told hátra a csípődet.",
+   "Engedd le a törzsedet egyenes háttal.",
+   "Told előre a csípődet, és térj vissza állásba."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne görbítsd a hátadat.",
+   "Ne csinálj belőle guggolást.",
+   "Ne nyúlj túl mélyre.",
+   "Ne emeld fel túl magasra a fejedet."
+  ]
+ },
+ "W05": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a térdedet a lábujjaid felett.",
+   "Tartsd a padlón a sarkadat.",
+   "Tartsd hosszan a hátadat.",
+   "Maradjon mérsékelt a mélység."
+  ],
+  "desc": "Kontrollált lábbemelegítés biztonságos, sekély tartományban.",
+  "howTo": [
+   "Állj a csípőszélességnél kissé szélesebb terpeszben.",
+   "Told kissé hátra a csípődet.",
+   "Csak kényelmes mélységig hajlítsd be a térdedet.",
+   "Lassan térj vissza állásba."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne guggolj túl mélyre.",
+   "Ne engedd befelé roskadni a térdedet.",
+   "Ne emeld fel a sarkadat.",
+   "Ne zuhanj le túl gyorsan."
+  ]
+ },
+ "W06": {
+  "breathing": "",
+  "correct": [
+   "Tartsd a testedet egy vonalban.",
+   "Tartsd stabilan a válladat.",
+   "Tartsd aktívan a törzsedet.",
+   "Simán mozogj."
+  ],
+  "desc": "Bemelegítés a vállnak, a csuklónak és a törzsnek.",
+  "howTo": [
+   "Kezdd magas plank helyzetben.",
+   "A kezed a válladad alatt van.",
+   "Told kicsit előre a testedet.",
+   "Told vissza a kiindulóhelyzetbe.",
+   "Tartsd kicsi és kontrollált a mozgást."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne engedd le a csípődet.",
+   "Ne told fel a válladat a füledig.",
+   "Ne told túl messze előre.",
+   "Ne engedd lesüllyedni az ágyékodat."
+  ]
+ },
+ "W07": {
+  "breathing": "",
+  "correct": [
+   "Lassan és teljesen lélegezz.",
+   "Kilégzéskor lazítsd el a válladat.",
+   "Tartsd lent a bordáidat, ne homorítsd túl.",
+   "Sietség nélkül mozogj."
+  ],
+  "desc": "Nyugodt nyitógyakorlat: mély légzés és finom, egésztestes nyújtózkodás a gerinc megnyújtására.",
+  "howTo": [
+   "Állj egyenesen, a lábad csípőszélességben.",
+   "Szívj be, és nyújtsd mindkét karodat a fejed fölé.",
+   "Finoman nyújtsd meg a gerincedet.",
+   "Fújd ki, és engedd le a karodat, miközben leejted a válladat."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne tartsd vissza a lélegzeted.",
+   "Ne homorítsd erősen az ágyékodat.",
+   "Ne húzd fel a válladat a füledig.",
+   "Ne siesd el a nyújtózkodást."
+  ]
+ },
+ "W08": {
+  "breathing": "",
+  "correct": [
+   "A törzsedből fordulj.",
+   "Tartsd többnyire előre a csípődet.",
+   "Tartsd a földön a lábadat.",
+   "Tarts sima, egyenletes tempót."
+  ],
+  "desc": "Gyengéd forgatógyakorlat a gerinc és a törzs bemelegítésére.",
+  "howTo": [
+   "Állj csípőszélességű terpeszben.",
+   "Hagyd lazán lendülni a karodat.",
+   "Forgasd el a felsőtestedet az egyik oldalra.",
+   "Simán fordulj át a másik oldalra."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne csavard erősen a térdedből.",
+   "Ne rángasd a karodat.",
+   "Ne forogj túl gyorsan.",
+   "Ne tartsd vissza a lélegzeted."
+  ]
+ },
+ "W09": {
+  "breathing": "",
+  "correct": [
+   "Hagyd szabadon mozogni a karodat.",
+   "Tartsd lazán a válladat.",
+   "Hagyd, hogy a mellkasod finoman megnyíljon.",
+   "Állj egyenesen."
+  ],
+  "desc": "Dinamikus váll- és mellkasbemelegítés, amely előkészíti a felsőtestet a fekvőtámaszokra és ugrógyakorlatokra.",
+  "howTo": [
+   "Állj egyenesen, a lábad csípőszélességben.",
+   "Lendítsd kontrolláltan előre és hátra a karodat.",
+   "Hagyd, hogy a mellkasod természetesen megnyíljon, amikor a karod hátra megy.",
+   "Tartsd simán és lazán a mozgást."
+  ],
+  "safety": "",
+  "voice": {
+   "finish": "",
+   "last": "",
+   "mid": null,
+   "start": ""
+  },
+  "wrong": [
+   "Ne lendíts túl erősen.",
+   "Ne húzd fel a válladat a füledig.",
+   "Ne homorítsd az ágyékodat.",
+   "Ne engedd, hogy a mozgás kontrollálatlan lendületté váljon."
+  ]
+ }
+}

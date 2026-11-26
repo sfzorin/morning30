@@ -1,12 +1,18 @@
-// Package i18n holds UI strings and exercise names for the 7 supported languages.
+// Package i18n holds UI strings, exercise names and calendar words for every
+// supported language. Each language lives in its own file, locales/<code>.json;
+// anything a language lacks falls back to English.
 package i18n
 
 import (
+	"embed"
+	"encoding/json"
 	"fmt"
 	"strings"
+
+	"morning30/internal/langs"
 )
 
-// Lang is a BCP-47-ish language code we support.
+// Lang is one of our language codes (see package langs).
 type Lang string
 
 const (
@@ -22,26 +28,50 @@ const (
 // Default language when nothing else is known.
 const Default = EN
 
-// Order is the canonical column order used by the translation tables.
-var Order = []Lang{RU, EN, TR, DE, ES, FR, IT}
-
 // Meta describes a language for the picker.
 type Meta struct {
 	Code Lang
 	Name string // endonym
 	// BCP47 is the tag passed to the browser SpeechSynthesis / lang attribute.
 	BCP47 string
+	RTL   bool
 }
 
-// Languages is the ordered list shown in the UI.
-var Languages = []Meta{
-	{RU, "Русский", "ru-RU"},
-	{EN, "English", "en-US"},
-	{TR, "Türkçe", "tr-TR"},
-	{DE, "Deutsch", "de-DE"},
-	{ES, "Español", "es-ES"},
-	{FR, "Français", "fr-FR"},
-	{IT, "Italiano", "it-IT"},
+// Languages is the ordered list shown in the UI; Order is the same as codes.
+var (
+	Languages []Meta
+	Order     []Lang
+)
+
+// locale is the content of one locales/<code>.json file.
+type locale struct {
+	UI        map[string]string `json:"ui"`
+	Exercises map[string]string `json:"exercises"`
+	Months    []string          `json:"months"`
+	Weekdays  []string          `json:"weekdays"`
+}
+
+//go:embed locales/*.json
+var localeFS embed.FS
+
+var locales = map[Lang]*locale{}
+
+func init() {
+	for _, m := range langs.All {
+		l := Lang(m.Code)
+		Languages = append(Languages, Meta{Code: l, Name: m.Name, BCP47: m.BCP47, RTL: m.RTL})
+		Order = append(Order, l)
+		loc := &locale{}
+		if raw, err := localeFS.ReadFile("locales/" + m.Code + ".json"); err == nil {
+			if err := json.Unmarshal(raw, loc); err != nil {
+				panic(fmt.Sprintf("i18n: locales/%s.json: %v", m.Code, err))
+			}
+		}
+		locales[l] = loc
+	}
+	if en := locales[EN]; len(en.UI) == 0 || len(en.Months) != 12 || len(en.Weekdays) != 7 {
+		panic("i18n: the English locale is incomplete")
+	}
 }
 
 func index(l Lang) int {
@@ -58,14 +88,51 @@ func Valid(code string) bool {
 	return index(Lang(code)) >= 0
 }
 
+// aliases maps browser and legacy tags to our codes.
+var aliases = map[string]Lang{
+	"no": "nb", "nn": "nb", "iw": "he", "in": "id", "pt-br": "pt", "pt-pt": "pt",
+	"zh-hant": "zh-hant", "zh-tw": "zh-hant", "zh-hk": "zh-hant", "zh-mo": "zh-hant",
+	"zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "zh-my": "zh",
+}
+
+// match maps one language tag (e.g. "zh-Hant-TW", "pt_BR", "fr") to a
+// supported language.
+func match(tag string) (Lang, bool) {
+	tag = strings.ReplaceAll(strings.ToLower(strings.TrimSpace(tag)), "_", "-")
+	if tag == "" {
+		return "", false
+	}
+	if index(Lang(tag)) >= 0 {
+		return Lang(tag), true
+	}
+	if strings.HasPrefix(tag, "zh-") {
+		for _, part := range strings.Split(tag, "-")[1:] {
+			if l, ok := aliases["zh-"+part]; ok {
+				return l, true
+			}
+		}
+		return "zh", true
+	}
+	if l, ok := aliases[tag]; ok {
+		return l, true
+	}
+	base := tag
+	if i := strings.Index(base, "-"); i >= 0 {
+		base = base[:i]
+	}
+	if l, ok := aliases[base]; ok {
+		return l, true
+	}
+	if index(Lang(base)) >= 0 {
+		return Lang(base), true
+	}
+	return "", false
+}
+
 // Parse normalizes a code to a supported Lang, falling back to Default.
 func Parse(code string) Lang {
-	code = strings.ToLower(strings.TrimSpace(code))
-	if i := strings.IndexAny(code, "-_"); i >= 0 {
-		code = code[:i]
-	}
-	if index(Lang(code)) >= 0 {
-		return Lang(code)
+	if l, ok := match(code); ok {
+		return l
 	}
 	return Default
 }
@@ -77,12 +144,8 @@ func FromAcceptLanguage(header string) Lang {
 		if i := strings.Index(tag, ";"); i >= 0 {
 			tag = tag[:i]
 		}
-		tag = strings.ToLower(strings.TrimSpace(tag))
-		if i := strings.IndexAny(tag, "-_"); i >= 0 {
-			tag = tag[:i]
-		}
-		if index(Lang(tag)) >= 0 {
-			return Lang(tag)
+		if l, ok := match(tag); ok {
+			return l
 		}
 	}
 	return Default
@@ -98,17 +161,40 @@ func BCP47(l Lang) string {
 	return "en-US"
 }
 
+// RTL reports whether a language is written right to left.
+func RTL(l Lang) bool {
+	for _, m := range Languages {
+		if m.Code == l {
+			return m.RTL
+		}
+	}
+	return false
+}
+
+// Dir returns the HTML dir attribute value for a language.
+func Dir(l Lang) string {
+	if RTL(l) {
+		return "rtl"
+	}
+	return "ltr"
+}
+
+func lookup(m func(*locale) map[string]string, l Lang, key string) (string, bool) {
+	if loc := locales[l]; loc != nil {
+		if s := m(loc)[key]; s != "" {
+			return s, true
+		}
+	}
+	if s := m(locales[EN])[key]; s != "" {
+		return s, true
+	}
+	return "", false
+}
+
 // T looks up a UI string by key, falling back to English then the key itself.
 func T(l Lang, key string) string {
-	row, ok := ui[key]
-	if !ok {
-		return key
-	}
-	if i := index(l); i >= 0 && row[i] != "" {
-		return row[i]
-	}
-	if row[1] != "" { // English column
-		return row[1]
+	if s, ok := lookup(func(x *locale) map[string]string { return x.UI }, l, key); ok {
+		return s
 	}
 	return key
 }
@@ -120,14 +206,10 @@ func Tf(l Lang, key string, args ...any) string {
 
 // Exercise returns the localized name for an exercise ID.
 func Exercise(l Lang, id string) string {
-	row, ok := exerciseNames[id]
-	if !ok {
-		return id
+	if s, ok := lookup(func(x *locale) map[string]string { return x.Exercises }, l, id); ok {
+		return s
 	}
-	if i := index(l); i >= 0 && row[i] != "" {
-		return row[i]
-	}
-	return row[1]
+	return id
 }
 
 // Cue returns the localized spoken cue text for a key (used by the voice engine).
