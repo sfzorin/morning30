@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -68,14 +69,20 @@ func TestEditorCannotDeleteTheLastExerciseOfAnyPhase(t *testing.T) {
 	}
 }
 
-// The settings handler uses only Data; the embedded request keeps the fixture
-// focused on the actual submitted form and its persisted/reactive result.
-type settingsRequest struct {
-	doors.RequestForm[settingsForm]
-	form settingsForm
+// changeRequest is a minimal change event from one settings control.
+type changeRequest struct {
+	doors.RequestEvent[doors.ChangeEvent]
+	ev doors.ChangeEvent
 }
 
-func (r settingsRequest) Data() settingsForm { return r.form }
+func (r changeRequest) Event() doors.ChangeEvent { return r.ev }
+
+func number(v int) changeRequest {
+	f := float64(v)
+	return changeRequest{ev: doors.ChangeEvent{Value: strconv.Itoa(v), Number: &f}}
+}
+
+func text(v string) changeRequest { return changeRequest{ev: doors.ChangeEvent{Value: v}} }
 
 func settingsTestPage(t *testing.T) (*db.DB, settingsPage, doors.Source[auth.Session]) {
 	t.Helper()
@@ -95,20 +102,23 @@ func settingsTestPage(t *testing.T) (*db.DB, settingsPage, doors.Source[auth.Ses
 	return database, settingsPage{sess: sess, auth: source}, source
 }
 
-func TestSettingsSavePersistsAllThreeRestsAndWorkoutUsesThem(t *testing.T) {
+// Every setting is stored as soon as its control changes; the rests drive
+// the workout's pauses and the visible session follows.
+func TestSettingsAutosaveEachControl(t *testing.T) {
 	database, page, session := settingsTestPage(t)
 	status := doors.NewSource("")
+	ctx := context.Background()
 	for _, rests := range []content.Rests{{Warmup: 0, Main: 5, Cooldown: 10}, {Warmup: 30, Main: 35, Cooldown: 0}, {Warmup: -5, Main: 95, Cooldown: 80}} {
-		page.save(status)(context.Background(), settingsRequest{form: settingsForm{
-			Name: "Updated", RestWarmup: rests.Warmup, Rest: rests.Main, RestCooldown: rests.Cooldown, VoiceMode: "min", Sex: "f",
-		}})
+		page.saveRest("warmup", doors.NewSource(0), status)(ctx, number(rests.Warmup))
+		page.saveRest("main", doors.NewSource(0), status)(ctx, number(rests.Main))
+		page.saveRest("cooldown", doors.NewSource(0), status)(ctx, number(rests.Cooldown))
 		want := rests.Normalize()
 		warmup, main, cooldown := database.Rests(page.sess.UserID)
 		if (content.Rests{Warmup: warmup, Main: main, Cooldown: cooldown}) != want {
 			t.Fatalf("saved rests = %d/%d/%d, want %+v", warmup, main, cooldown, want)
 		}
-		if status.Get() != "settings.saved" || session.Get().Rest != want.Main || session.Get().Name != "Updated" || session.Get().VoiceMode != "min" {
-			t.Fatalf("successful save did not update the visible session: status %q session %+v", status.Get(), session.Get())
+		if status.Get() != "" || session.Get().Rest != want.Main {
+			t.Fatalf("status %q session %+v", status.Get(), session.Get())
 		}
 		workout := app.UserWorkout(page.sess.UserID, 1)
 		for i, item := range workout.Items {
@@ -128,16 +138,27 @@ func TestSettingsSavePersistsAllThreeRestsAndWorkoutUsesThem(t *testing.T) {
 			}
 		}
 	}
+	page.saveSetting("voice", status)(ctx, text("min"))
+	page.saveSetting("name", status)(ctx, text("  Updated  "))
+	page.saveSetting("figure", status)(ctx, text("g"))
+	if s := session.Get(); s.Name != "Updated" || s.VoiceMode != "min" || !s.Voice || database.GetSex(page.sess.UserID) != "g" || status.Get() != "" {
+		t.Fatalf("session %+v figure %q status %q", s, database.GetSex(page.sess.UserID), status.Get())
+	}
+	page.saveSetting("figure", status)(ctx, text("x"))
+	if status.Get() != "settings.save_failed" || database.GetSex(page.sess.UserID) != "g" {
+		t.Fatal("an unknown figure was accepted")
+	}
 }
 
-func TestSettingsSaveFailureDoesNotClaimSuccessOrChangeSession(t *testing.T) {
+func TestSettingsSaveFailureDoesNotChangeSession(t *testing.T) {
 	database, page, session := settingsTestPage(t)
 	before := session.Get()
 	if err := database.Close(); err != nil {
 		t.Fatal(err)
 	}
-	status := doors.NewSource("settings.saved")
-	page.save(status)(context.Background(), settingsRequest{form: settingsForm{Name: "Changed", Rest: 35, VoiceMode: "off"}})
+	status := doors.NewSource("")
+	page.saveSetting("name", status)(context.Background(), text("Changed"))
+	page.saveRest("main", doors.NewSource(0), status)(context.Background(), number(35))
 	if status.Get() != "settings.save_failed" {
 		t.Fatalf("failed save showed %q", status.Get())
 	}

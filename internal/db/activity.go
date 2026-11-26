@@ -131,6 +131,9 @@ func (d *DB) ResetProgress(userID int64) error {
 	if _, err := d.sql.Exec(`DELETE FROM activity WHERE user_id = ?`, userID); err != nil {
 		return err
 	}
+	if _, err := d.sql.Exec(`UPDATE selected_programs SET position = 0 WHERE user_id = ?`, userID); err != nil {
+		return err
+	}
 	_, err := d.sql.Exec(`UPDATE users SET position = 0 WHERE id = ?`, userID)
 	return err
 }

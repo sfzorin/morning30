@@ -154,6 +154,18 @@ CREATE TABLE IF NOT EXISTS saved_programs (
 );
 CREATE INDEX IF NOT EXISTS idx_saved_programs_user ON saved_programs(user_id);
 
+-- A user's selected programs: each keeps its own copy and its own cycle day.
+CREATE TABLE IF NOT EXISTS selected_programs (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id      INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    source       TEXT NOT NULL DEFAULT '',  -- catalog key it came from, '' for the user's own
+    name         TEXT NOT NULL,
+    program_json TEXT NOT NULL,
+    position     INTEGER NOT NULL DEFAULT 0,
+    added_at     TEXT NOT NULL               -- UTC, RFC 3339
+);
+CREATE INDEX IF NOT EXISTS idx_selected_programs_user ON selected_programs(user_id);
+
 DROP TABLE IF EXISTS progress;
 `
 	if _, err := d.sql.Exec(schema); err != nil {
@@ -182,6 +194,7 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN rest_cooldown INTEGER NOT NULL DEFAULT 10`,
 		`ALTER TABLE users ADD COLUMN jokes INTEGER NOT NULL DEFAULT 0`,
 		`ALTER TABLE users ADD COLUMN mcp_token_hash TEXT NOT NULL DEFAULT ''`,
+		`ALTER TABLE users ADD COLUMN current_selected INTEGER NOT NULL DEFAULT 0`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

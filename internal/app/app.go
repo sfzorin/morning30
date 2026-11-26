@@ -11,16 +11,11 @@ import (
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/db"
-	"morning30/internal/i18n"
 )
 
 var (
 	// ErrInvalidProgram is returned when uploaded program JSON is not a usable cycle.
 	ErrInvalidProgram = errors.New("invalid program")
-	// ErrUnknownCourse is returned when a "… in 30 days" course key matches nothing.
-	ErrUnknownCourse = errors.New("unknown course")
-	// ErrEmptyProgramName is returned when a program is renamed to nothing.
-	ErrEmptyProgramName = errors.New("program name is empty")
 	// ErrInvalidExercise is returned when a custom exercise document is unusable.
 	ErrInvalidExercise = errors.New("invalid exercise")
 )
@@ -139,9 +134,7 @@ func SetLibraryPoses(exerciseID string, poses []string) error {
 // ExerciseFrames returns 1 or 2 image URLs for the player. Pose catalog stills
 // win when present; otherwise the legacy built-in PNG.
 func ExerciseFrames(cat catalog.Catalog, id, sex string) []string {
-	if sex != "f" {
-		sex = "m"
-	}
+	sex = db.NormalizeSex(sex)
 	var out []string
 	for _, pid := range cat.PoseIDs(id) {
 		if DB != nil && DB.HasPose(pid) {
@@ -169,9 +162,7 @@ func ExerciseAnimation(cat catalog.Catalog, id, sex string) *ExerciseDemo {
 	if !ok || d.Animation == nil || !catalog.ValidAnimation(d.Animation) || DB == nil || !DB.HasPose(d.Animation.Pose) {
 		return nil
 	}
-	if sex != "f" {
-		sex = "m"
-	}
+	sex = db.NormalizeSex(sex)
 	otherSrc := ""
 	if d.Animation.OtherPose != "" {
 		if !DB.HasPose(d.Animation.OtherPose) {
@@ -238,147 +229,6 @@ func SnapshotLegacy(userID int64) {
 	}
 	_ = DB.SetProgramJSON(userID, r.Marshal())
 	_ = DB.SetActiveProgram(userID, "custom")
-}
-
-// SetUserProgram stores a personal cycle from JSON and makes it active.
-// It does not reset cycle position, streaks, or activity.
-func SetUserProgram(userID int64, raw string) error {
-	r, err := content.ParseResolved(strings.TrimSpace(raw))
-	if err != nil || len(r.Days) == 0 {
-		return ErrInvalidProgram
-	}
-	if strings.TrimSpace(r.Name) == "" {
-		r.Name = "My program"
-	}
-	if err := DB.SetProgramJSON(userID, r.Marshal()); err != nil {
-		return err
-	}
-	return DB.SetActiveProgram(userID, "custom")
-}
-
-// ReplaceUserProgram swaps in a different personal cycle from JSON (a course,
-// an imported file, an agent upload). Unlike SetUserProgram, which saves edits
-// to the same program, it first keeps the program being replaced whenever that
-// program is the user's own work, so it can be brought back.
-// It does not reset cycle position, streaks, or activity.
-func ReplaceUserProgram(userID int64, raw string) error {
-	r, err := content.ParseResolved(strings.TrimSpace(raw))
-	if err != nil || len(r.Days) == 0 {
-		return ErrInvalidProgram
-	}
-	if strings.TrimSpace(r.Name) == "" {
-		r.Name = "My program"
-	}
-	return DB.ReplaceProgram(userID, r.Marshal(), "custom", ownProgramName(userID))
-}
-
-// ownProgramName returns the name of the account's personal program when it is
-// worth keeping: the user (or an agent) made or edited it. It is "" when there
-// is no personal program or it is an untouched copy of the demo or of a course,
-// which can always be started again.
-func ownProgramName(userID int64) string {
-	raw, err := DB.GetProgramJSON(userID)
-	if err != nil || raw == "" {
-		return ""
-	}
-	r, err := content.ParseResolved(raw)
-	if err != nil {
-		return "My program" // unreadable here, but still the user's data
-	}
-	name := CleanProgramName(r.Name)
-	if name == "" {
-		name = "My program"
-	}
-	r.Name = ""
-	body := r.Marshal()
-	readyMade := []content.Resolved{content.ResolveDemo()}
-	for _, c := range content.Series30() {
-		readyMade = append(readyMade, c.Resolve())
-	}
-	for _, ready := range readyMade {
-		ready.Name = ""
-		if ready.Marshal() == body {
-			return ""
-		}
-	}
-	return name
-}
-
-// KeepsCurrentProgram reports whether replacing the account's program now
-// would put the current one into the saved list.
-func KeepsCurrentProgram(userID int64) bool { return ownProgramName(userID) != "" }
-
-// SavedPrograms lists programs this account replaced and can bring back.
-func SavedPrograms(userID int64) []db.SavedProgram {
-	list, err := DB.SavedPrograms(userID)
-	if err != nil {
-		return nil
-	}
-	return list
-}
-
-// RestoreSavedProgram brings a saved program back as the account's program.
-// The program it replaces is kept in turn when it is the user's own work.
-func RestoreSavedProgram(userID, savedID int64) error {
-	return DB.RestoreSavedProgram(userID, savedID, ownProgramName(userID))
-}
-
-// ProgramNameMax is the longest program name, in characters.
-const ProgramNameMax = 40
-
-// CleanProgramName trims a user-typed program name and clips it on whole
-// characters. An empty result means "no name given".
-func CleanProgramName(name string) string {
-	name = strings.Join(strings.Fields(name), " ")
-	if runes := []rune(name); len(runes) > ProgramNameMax {
-		name = strings.TrimSpace(string(runes[:ProgramNameMax]))
-	}
-	return name
-}
-
-// ProgramTitle is the name shown for the account's active program: the
-// personal file's own name, or the localized demo label.
-func ProgramTitle(userID int64, lang string) string {
-	if HasCustomProgram(userID) {
-		if name := strings.TrimSpace(UserProgram(userID).Name); name != "" {
-			return name
-		}
-	}
-	return i18n.T(i18n.Lang(lang), "program.demo")
-}
-
-// RenameProgram gives the account's program a name of the user's choosing.
-// Exercises, doses, cycle position and streak are untouched. An account still
-// on the demo gets its own copy of the demo under that name.
-func RenameProgram(userID int64, name string) error {
-	name = CleanProgramName(name)
-	if name == "" {
-		return ErrEmptyProgramName
-	}
-	r := UserProgram(userID)
-	r.Name = name
-	return SetUserProgram(userID, r.Marshal())
-}
-
-// UseCourse makes a "… in 30 days" course this account's personal program,
-// titled in the user's language. From then on it is an ordinary personal file
-// the user may edit. Like any program change, it keeps the cycle position,
-// streak and activity calendar. The program it replaces is kept in the saved
-// list when it is the user's own work.
-func UseCourse(userID int64, key, lang string) error {
-	c, ok := content.CourseByKey(key)
-	if !ok {
-		return ErrUnknownCourse
-	}
-	r := c.Resolve()
-	r.Name = c.TitleIn(lang)
-	return ReplaceUserProgram(userID, r.Marshal())
-}
-
-// RestoreDemo clears the personal file so the user runs the public demo.
-// Progress is left as-is, and the user's own program is kept in the saved list.
-func RestoreDemo(userID int64) error {
-	return DB.ReplaceProgram(userID, "", content.DefaultStandardKey(), ownProgramName(userID))
 }
 
 // ActiveProgramKey returns the user's selected program key: "custom" when a saved

@@ -1,7 +1,10 @@
 // Package i18n holds UI strings and exercise names for the 7 supported languages.
 package i18n
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 // Lang is a BCP-47-ish language code we support.
 type Lang string
@@ -108,6 +111,11 @@ func T(l Lang, key string) string {
 		return row[1]
 	}
 	return key
+}
+
+// Tf looks up a UI string with %s placeholders and fills them in.
+func Tf(l Lang, key string, args ...any) string {
+	return fmt.Sprintf(T(l, key), args...)
 }
 
 // Exercise returns the localized name for an exercise ID.

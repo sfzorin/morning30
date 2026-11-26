@@ -24,6 +24,8 @@ type Pose struct {
 	Label string `json:"label,omitempty"`
 	HasM  bool   `json:"hasM"`
 	HasF  bool   `json:"hasF"`
+	HasB  bool   `json:"hasB"` // boy
+	HasG  bool   `json:"hasG"` // girl
 }
 
 // NormalizePoseID lowercases and trims a catalog slug. Empty if illegal.
@@ -35,12 +37,24 @@ func NormalizePoseID(id string) string {
 	return s
 }
 
-// NormalizeSex maps anything but "f" to "m".
+// Figures: m (man), f (woman), b (boy), g (girl).
+
+// NormalizeSex maps a figure code to m, f, b or g; anything else is "m".
 func NormalizeSex(sex string) string {
-	if strings.EqualFold(strings.TrimSpace(sex), "f") {
-		return "f"
+	switch s := strings.ToLower(strings.TrimSpace(sex)); s {
+	case "f", "b", "g":
+		return s
 	}
 	return "m"
+}
+
+// figureFallback is the order in which stills are tried for a figure: a child
+// without its own still is shown as the adult of the same sex.
+var figureFallback = map[string][]string{
+	"m": {"m", "f"},
+	"f": {"f", "m"},
+	"b": {"b", "m", "g", "f"},
+	"g": {"g", "f", "b", "m"},
 }
 
 // SniffImageMIME returns image/png, image/jpeg, image/webp, or "".
@@ -74,7 +88,7 @@ func clipKind(s string) string {
 	return s
 }
 
-// PutPose upserts catalog metadata and stores one still for sex m|f.
+// PutPose upserts catalog metadata and stores one still for figure m|f|b|g.
 func (d *DB) PutPose(id, kind, label, sex string, data []byte) error {
 	id = NormalizePoseID(id)
 	if id == "" {
@@ -121,7 +135,9 @@ func (d *DB) ListPoses() ([]Pose, error) {
 	rows, err := d.sql.Query(`
 		SELECT p.id, p.kind, p.label,
 		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'm'),
-		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'f')
+		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'f'),
+		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'b'),
+		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'g')
 		FROM poses p
 		ORDER BY p.kind, p.id`)
 	if err != nil {
@@ -131,12 +147,11 @@ func (d *DB) ListPoses() ([]Pose, error) {
 	out := make([]Pose, 0)
 	for rows.Next() {
 		var p Pose
-		var hasM, hasF int
-		if err := rows.Scan(&p.ID, &p.Kind, &p.Label, &hasM, &hasF); err != nil {
+		var hasM, hasF, hasB, hasG int
+		if err := rows.Scan(&p.ID, &p.Kind, &p.Label, &hasM, &hasF, &hasB, &hasG); err != nil {
 			return nil, err
 		}
-		p.HasM = hasM != 0
-		p.HasF = hasF != 0
+		p.HasM, p.HasF, p.HasB, p.HasG = hasM != 0, hasF != 0, hasB != 0, hasG != 0
 		out = append(out, p)
 	}
 	return out, rows.Err()
@@ -159,24 +174,18 @@ func (d *DB) PoseImage(id, sex string) (mime string, data []byte, err error) {
 	if id == "" {
 		return "", nil, sql.ErrNoRows
 	}
-	sex = NormalizeSex(sex)
-	other := "f"
-	if sex == "f" {
-		other = "m"
+	for _, s := range figureFallback[NormalizeSex(sex)] {
+		err = d.sql.QueryRow(
+			`SELECT mime, data FROM pose_images WHERE pose_id = ? AND sex = ?`,
+			id, s).Scan(&mime, &data)
+		if err == nil {
+			return mime, data, nil
+		}
+		if !errors.Is(err, sql.ErrNoRows) {
+			return "", nil, err
+		}
 	}
-	err = d.sql.QueryRow(
-		`SELECT mime, data FROM pose_images WHERE pose_id = ? AND sex = ?`,
-		id, sex).Scan(&mime, &data)
-	if err == nil {
-		return mime, data, nil
-	}
-	if !errors.Is(err, sql.ErrNoRows) {
-		return "", nil, err
-	}
-	err = d.sql.QueryRow(
-		`SELECT mime, data FROM pose_images WHERE pose_id = ? AND sex = ?`,
-		id, other).Scan(&mime, &data)
-	return mime, data, err
+	return "", nil, sql.ErrNoRows
 }
 
 // GetPose returns catalog metadata for one id.
@@ -186,16 +195,17 @@ func (d *DB) GetPose(id string) (Pose, error) {
 		return Pose{}, sql.ErrNoRows
 	}
 	var p Pose
-	var hasM, hasF int
+	var hasM, hasF, hasB, hasG int
 	err := d.sql.QueryRow(`
 		SELECT p.id, p.kind, p.label,
 		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'm'),
-		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'f')
-		FROM poses p WHERE p.id = ?`, id).Scan(&p.ID, &p.Kind, &p.Label, &hasM, &hasF)
+		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'f'),
+		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'b'),
+		       EXISTS(SELECT 1 FROM pose_images i WHERE i.pose_id = p.id AND i.sex = 'g')
+		FROM poses p WHERE p.id = ?`, id).Scan(&p.ID, &p.Kind, &p.Label, &hasM, &hasF, &hasB, &hasG)
 	if err != nil {
 		return Pose{}, err
 	}
-	p.HasM = hasM != 0
-	p.HasF = hasF != 0
+	p.HasM, p.HasF, p.HasB, p.HasG = hasM != 0, hasF != 0, hasB != 0, hasG != 0
 	return p, nil
 }

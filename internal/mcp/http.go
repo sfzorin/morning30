@@ -55,122 +55,6 @@ func Handler(adminToken string) http.Handler {
 			Program:  app.UserProgram(acc.ID),
 		})
 	})
-	mux.HandleFunc("PUT /api/accounts/{who}/program", func(w http.ResponseWriter, r *http.Request) {
-		acc, ok := lookupAccount(w, r)
-		if !ok {
-			return
-		}
-		body, err := io.ReadAll(io.LimitReader(r.Body, 1<<20))
-		if err != nil {
-			writeErr(w, http.StatusBadRequest, err)
-			return
-		}
-		if err := app.ReplaceUserProgram(acc.ID, string(body)); err != nil {
-			writeErr(w, http.StatusBadRequest, err)
-			return
-		}
-		acc, _ = app.DB.AccountByID(acc.ID)
-		writeJSON(w, programView{Account: acc, Personal: true, Program: app.UserProgram(acc.ID)})
-	})
-	mux.HandleFunc("PUT /api/accounts/{who}/program/name", func(w http.ResponseWriter, r *http.Request) {
-		acc, ok := lookupAccount(w, r)
-		if !ok {
-			return
-		}
-		body, err := io.ReadAll(io.LimitReader(r.Body, 1<<12))
-		if err != nil {
-			writeErr(w, http.StatusBadRequest, err)
-			return
-		}
-		// The name may be sent as plain text or as {"name": "..."}.
-		name := string(body)
-		if trimmed := strings.TrimSpace(name); strings.HasPrefix(trimmed, "{") {
-			var a renameArgs
-			if err := json.Unmarshal([]byte(trimmed), &a); err != nil {
-				writeErr(w, http.StatusBadRequest, err)
-				return
-			}
-			name = a.Name
-		}
-		view, err := renameProgram(acc, name)
-		if err != nil {
-			writeErr(w, http.StatusBadRequest, err)
-			return
-		}
-		writeJSON(w, view)
-	})
-	mux.HandleFunc("POST /api/accounts/{who}/course/{key}", func(w http.ResponseWriter, r *http.Request) {
-		acc, ok := lookupAccount(w, r)
-		if !ok {
-			return
-		}
-		view, err := useCourse(acc, r.PathValue("key"), r.URL.Query().Get("lang"))
-		if errors.Is(err, app.ErrUnknownCourse) {
-			writeErr(w, http.StatusNotFound, err)
-			return
-		}
-		if err != nil {
-			writeErr(w, http.StatusBadRequest, err)
-			return
-		}
-		writeJSON(w, view)
-	})
-	mux.HandleFunc("GET /api/courses", func(w http.ResponseWriter, _ *http.Request) {
-		writeJSON(w, courseList())
-	})
-	mux.HandleFunc("GET /api/courses/{key}", func(w http.ResponseWriter, r *http.Request) {
-		view, err := courseDetail(r.PathValue("key"))
-		if err != nil {
-			writeErr(w, http.StatusNotFound, err)
-			return
-		}
-		writeJSON(w, view)
-	})
-	mux.HandleFunc("GET /api/accounts/{who}/saved-programs", func(w http.ResponseWriter, r *http.Request) {
-		acc, ok := lookupAccount(w, r)
-		if !ok {
-			return
-		}
-		list, err := app.DB.SavedPrograms(acc.ID)
-		if err != nil {
-			writeErr(w, http.StatusInternalServerError, err)
-			return
-		}
-		writeJSON(w, list)
-	})
-	mux.HandleFunc("POST /api/accounts/{who}/saved-programs/{id}/restore", func(w http.ResponseWriter, r *http.Request) {
-		acc, ok := lookupAccount(w, r)
-		if !ok {
-			return
-		}
-		id, err := strconv.ParseInt(r.PathValue("id"), 10, 64)
-		if err != nil {
-			writeErr(w, http.StatusBadRequest, err)
-			return
-		}
-		view, err := restoreSaved(acc, id)
-		if errors.Is(err, db.ErrSavedProgramNotFound) {
-			writeErr(w, http.StatusNotFound, err)
-			return
-		}
-		if err != nil {
-			writeErr(w, http.StatusInternalServerError, err)
-			return
-		}
-		writeJSON(w, view)
-	})
-	mux.HandleFunc("POST /api/accounts/{who}/restore-demo", func(w http.ResponseWriter, r *http.Request) {
-		acc, ok := lookupAccount(w, r)
-		if !ok {
-			return
-		}
-		if err := app.RestoreDemo(acc.ID); err != nil {
-			writeErr(w, http.StatusInternalServerError, err)
-			return
-		}
-		acc, _ = app.DB.AccountByID(acc.ID)
-		writeJSON(w, programView{Account: acc, Personal: false, Program: app.UserProgram(acc.ID)})
-	})
 	mux.HandleFunc("GET /api/accounts/{who}/exercises", func(w http.ResponseWriter, r *http.Request) {
 		acc, ok := lookupAccount(w, r)
 		if !ok {
@@ -317,6 +201,7 @@ func Handler(adminToken string) http.Handler {
 		}
 		writeJSON(w, d)
 	})
+	registerOps(mux)
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		got := strings.TrimSpace(strings.TrimPrefix(r.Header.Get("Authorization"), "Bearer "))
 		if adminToken != "" && got == adminToken {

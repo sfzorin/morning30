@@ -1,0 +1,217 @@
+package pages
+
+import (
+	"context"
+	"errors"
+	"strconv"
+
+	"morning30/internal/app"
+	"morning30/internal/auth"
+	"morning30/internal/content"
+	"morning30/internal/i18n"
+	"morning30/path"
+
+	"github.com/doors-dev/doors"
+	"github.com/doors-dev/gox"
+)
+
+// todayPage lists the exercises of the user's next day. Each exercise opens a
+// menu: its card, replace it with a similar one, or remove it.
+type todayPage struct {
+	sess auth.Session
+	path doors.Source[path.Path]
+}
+
+// todayState is the whole screen state in one comparable value.
+type todayState struct {
+	Open    string     // "part:index" of the item whose menu is open
+	Card    string     // exercise id whose card is shown
+	Replace string     // exercise id being replaced
+	Remove  string     // "part:id" being removed (asks where)
+	Where   whereState // days the replace/remove applies to
+	Err     string     // i18n key of the last error
+}
+
+elem (t todayPage) Main() {
+	~{
+		l := i18n.Lang(t.sess.Lang)
+		st := doors.NewSource(todayState{Where: whereState{Mode: "all"}})
+		figure := doors.NewSource(app.DB.GetSex(t.sess.UserID))
+	}
+	<title>~(i18n.T(l, "home.day"))</title>
+	<main class="screen">
+		<section class="library today">
+			~(st.Bind(elem(s todayState) {
+				~(if s.Card != "" {
+					~(exerciseCard{userID: t.sess.UserID, lang: t.sess.Lang, id: s.Card, figure: figure,
+						onBack: func(ctx context.Context) { st.Update(ctx, todayState{Where: s.Where}) }})
+				} else if s.Replace != "" {
+					~(t.replace(l, st, s))
+				} else {
+					~(t.list(l, st, s))
+				})
+			}))
+		</section>
+	</main>
+}
+
+// list is the day's plan by part.
+elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) {
+	~{
+		plan := app.Day(t.sess.UserID, t.sess.Lang, 0)
+		parts := []struct{ Slot, Key string }{
+			{"warmup", "workout.warmup"}, {"main", "workout.main"}, {"cooldown", "workout.cooldown"},
+		}
+		fig := app.DB.GetSex(t.sess.UserID)
+	}
+	<div class="lib-head">
+		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-back" aria-label=(i18n.T(l, "nav.home"))>←</a>
+		<h1>~(i18n.T(l, "home.day"), " ", plan.Day, " · ", plan.Program)</h1>
+	</div>
+	<p class="lib-intro">~(plan.Exercises, " ", i18n.T(l, "home.exercises"), " · ≈ ", plan.EstMinutes, " ", i18n.T(l, "home.min"))</p>
+	~(if s.Err != "" {
+		<p class="err" role="alert">~(i18n.T(l, s.Err))</p>
+	})
+	~(for _, part := range parts {
+		<h2 class="lib-grp">
+			~(i18n.T(l, part.Key))
+			~(if part.Slot == "main" { ~(" · ", plan.MainRounds, " ", i18n.T(l, "today.rounds")) })
+		</h2>
+		<div class="lib-list">
+			~(for i, it := range plan.Items {
+				~(if it.Part == part.Slot {
+					~{
+						key := part.Slot + ":" + strconv.Itoa(i)
+						open := s.Open == key
+					}
+					~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+						next := todayState{Where: s.Where}
+						if !open {
+							next.Open = key
+						}
+						st.Update(ctx, next)
+						return false
+					}} <button class=(itemClass(open)) type="button">
+						~(if src := firstFrameOf(t.sess.UserID, it.ID, fig); src != "" {
+							<img class="lib-thumb" loading="lazy" src=(src) alt="">
+						} else {
+							<span class="lib-thumb"></span>
+						})
+						<span class="lib-item-name">~(it.Name)</span>
+						<span class="lib-item-dose">~(doseLabel(l, it.Unit, it.Value, it.PerSide))</span>
+					</button>
+					~(if open {
+						<div class="item-menu">
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								st.Update(ctx, todayState{Card: it.ID, Where: s.Where})
+								toTop(r)
+								return false
+							}} <button type="button">ⓘ ~(i18n.T(l, "today.card"))</button>
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								st.Update(ctx, todayState{Replace: it.ID, Where: whereState{Mode: "all"}})
+								toTop(r)
+								return false
+							}} <button type="button">⇄ ~(i18n.T(l, "today.replace"))</button>
+							~(if s.Remove == part.Slot+":"+it.ID {
+								<div class="remove-ask">
+									<span>~(i18n.T(l, "today.remove_where"))</span>
+									~>doors.AClick{On: t.remove(st, s, it.ID, part.Slot, content.OneDay(plan.Day))} <button class="danger" type="button">~(i18n.T(l, "days.today"))</button>
+									~>doors.AClick{On: t.remove(st, s, it.ID, part.Slot, content.AllDays())} <button class="danger" type="button">~(i18n.T(l, "days.all"))</button>
+								</div>
+							} else {
+								~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+									st.Update(ctx, todayState{Open: key, Remove: part.Slot + ":" + it.ID, Where: s.Where})
+									return false
+								}} <button class="danger" type="button">✕ ~(i18n.T(l, "today.remove"))</button>
+							})
+						</div>
+					})
+				})
+			})
+		</div>
+		~(if part.Slot == "main" {
+			~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="add-link">+ ~(i18n.T(l, "today.add"))</a>
+		})
+	})
+	~>doors.ALink{Model: path.Path{Page: path.Start}} <a class="btn primary big">~(i18n.T(l, "home.start"))</a>
+}
+
+func itemClass(open bool) string {
+	if open {
+		return "lib-item open"
+	}
+	return "lib-item"
+}
+
+// remove takes an exercise out of today or of every day.
+func (t todayPage) remove(st doors.Source[todayState], s todayState, id, part string, days content.Days) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		_, err := app.RemoveFromCurrent(t.sess.UserID, id, content.Slot(part), days)
+		if err != nil {
+			key := "today.edit_failed"
+			if errors.Is(err, content.ErrEmptyPhase) {
+				key = "today.part_empty"
+			}
+			st.Update(ctx, todayState{Err: key, Where: s.Where})
+			return false
+		}
+		_ = r.After(doors.ActionLocationReload{})
+		return false
+	}
+}
+
+// replace offers easier, similar and harder exercises for one exercise.
+elem (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayState) {
+	~{
+		cat := app.UserCatalog(t.sess.UserID)
+		sim, _ := app.SimilarExercises(t.sess.UserID, t.sess.Lang, s.Replace)
+		fig := app.DB.GetSex(t.sess.UserID)
+		groups := []struct {
+			Key  string
+			List []app.ExerciseInfo
+		}{{"replace.easier", sim.Easier}, {"replace.same", sim.Same}, {"replace.harder", sim.Harder}}
+		today := app.CurrentDay(t.sess.UserID)
+	}
+	<div class="lib-head">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, todayState{Where: s.Where})
+			return false
+		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "nav.close"))>←</button>
+		<h1>~(i18n.T(l, "today.replace"), ": ", cat.Name(l, s.Replace))</h1>
+	</div>
+	<h2 class="lib-grp">~(i18n.T(l, "replace.where"))</h2>
+	~(wherePicker(l, s.Where, func(ctx context.Context, w whereState) {
+		st.Update(ctx, todayState{Replace: s.Replace, Where: w})
+	}))
+	~(if s.Err != "" {
+		<p class="err" role="alert">~(i18n.T(l, s.Err))</p>
+	})
+	~(for _, g := range groups {
+		~(if len(g.List) > 0 {
+			<h2 class="lib-grp">~(i18n.T(l, g.Key))</h2>
+			<div class="lib-list">
+				~(for _, e := range g.List {
+					<div class="lib-item">
+						~(if src := firstFrameOf(t.sess.UserID, e.ID, fig); src != "" {
+							<img class="lib-thumb" loading="lazy" src=(src) alt="">
+						} else {
+							<span class="lib-thumb"></span>
+						})
+						<span class="lib-item-name">~(e.Name)</span>
+						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+							days := s.Where.days(today)
+							if _, err := app.ReplaceInCurrent(t.sess.UserID, s.Replace, e.ID, days); err != nil {
+								st.Update(ctx, todayState{Replace: s.Replace, Where: s.Where, Err: "today.edit_failed"})
+								return false
+							}
+							_ = r.After(doors.ActionLocationReload{})
+							return false
+						}} <button class="btn small" type="button">~(i18n.T(l, "replace.pick"))</button>
+					</div>
+				})
+			</div>
+		})
+	})
+}
+
+var _ = gox.Elem(nil)

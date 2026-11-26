@@ -19,16 +19,6 @@ import (
 	"github.com/doors-dev/gox"
 )
 
-// settingsForm is the decoded settings submission.
-type settingsForm struct {
-	Name         string `form:"name"`
-	Rest         int    `form:"rest"`          // main set
-	RestWarmup   int    `form:"rest_warmup"`
-	RestCooldown int    `form:"rest_cooldown"`
-	VoiceMode    string `form:"voice_mode"`
-	Sex          string `form:"sex"`
-}
-
 type newExForm struct {
 	ID      string `form:"ex_id"`
 	Name    string `form:"ex_name"`
@@ -51,9 +41,10 @@ type editState struct {
 
 // settingsPage lets the user change rest time, language, voice and reset progress.
 type settingsPage struct {
-	sess auth.Session
-	auth doors.Source[auth.Session]
-	path doors.Source[path.Path]
+	sess   auth.Session
+	auth   doors.Source[auth.Session]
+	path   doors.Source[path.Path]
+	editor bool // the "program and exercise editor" page instead of settings
 }
 
 type posePickForm struct {
@@ -78,7 +69,6 @@ elem (s settingsPage) Main() {
 		restWVal := doors.NewSource(restW)
 		restMVal := doors.NewSource(restM)
 		restCVal := doors.NewSource(restC)
-		hasCustom := app.HasCustomProgram(s.sess.UserID)
 		cat := app.UserCatalog(s.sess.UserID)
 		entries := cat.List(l)
 		prog := app.UserProgram(s.sess.UserID) // the active program (built-in or custom)
@@ -92,167 +82,23 @@ elem (s settingsPage) Main() {
 		levelSrc := doors.NewSource(s.sess.Level)
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirmReset := doors.NewSource(false)
-		courseSrc := doors.NewSource("") // key of the 30-day course being considered
-		keepsCurrent := app.KeepsCurrentProgram(s.sess.UserID)
-		savedPrograms := app.SavedPrograms(s.sess.UserID)
 		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
 		poseList, _ := app.DB.ListPoses()
 		if poseList == nil {
 			poseList = []db.Pose{}
 		}
 	}
-	<title>~(i18n.T(l, "settings.title"))</title>
+	<title>~(if s.editor { ~(i18n.T(l, "settings.editor")) } else { ~(i18n.T(l, "settings.title")) })</title>
 	<main class="screen">
 		<section class="settings">
-			<div class="settings-head">
-				<h1>~(i18n.T(l, "settings.title"))</h1>
-				~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "nav.close"))>✕</a>
-			</div>
-			~{
-				vm := s.sess.VoiceMode
-				if vm == "" {
-					vm = "normal"
-				}
-			}
-			<div class="settings-card">
-				~// Language (applies immediately)
-				<div class="srow">
-					<span>~(i18n.T(l, "settings.language"))</span>
-					~(langSwitch{sess: s.sess, auth: s.auth, persist: true})
+			~(if s.editor {
+				<div class="settings-head">
+					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.settings"))>←</a>
+					<h1>~(i18n.T(l, "settings.editor"))</h1>
 				</div>
-
-				~>doors.ASubmit[settingsForm]{On: s.save(saveStatus)} <form class="settings-form">
-					<div class="srow">
-						<span>~(i18n.T(l, "auth.name"))</span>
-						<input class="text-input compact" name="name" type="text" maxlength="40" value=(s.sess.Name)>
-					</div>
-					~// Three rest durations: warm-up, main set, cool-down.
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
-							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
-						</div>
-						<input type="range" name="rest_warmup" min="0" max=(content.RestMax) step="5" value=(restW)
-							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-								if n := r.Event().Number; n != nil { restWVal.Update(ctx, int(*n)) }
-								return false
-							}})>
-					</div>
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest_main"))</span>
-							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
-						</div>
-						<input type="range" name="rest" min=(content.MainRestMin) max=(content.RestMax) step="5" value=(restM)
-							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-								if n := r.Event().Number; n != nil { restMVal.Update(ctx, int(*n)) }
-								return false
-							}})>
-					</div>
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
-							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
-						</div>
-						<input type="range" name="rest_cooldown" min="0" max=(content.RestMax) step="5" value=(restC)
-							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-								if n := r.Event().Number; n != nil { restCVal.Update(ctx, int(*n)) }
-								return false
-							}})>
-					</div>
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.voice"))</span>
-						<select class="lang-select compact" name="voice_mode">
-							<option value="off" selected=func { return vm == "off" }>~(i18n.T(l, "voice.off"))</option>
-							<option value="min" selected=func { return vm == "min" }>~(i18n.T(l, "voice.min"))</option>
-							<option value="normal" selected=func { return vm == "normal" }>~(i18n.T(l, "voice.normal"))</option>
-							<option value="detailed" selected=func { return vm == "detailed" }>~(i18n.T(l, "voice.detailed"))</option>
-						</select>
-					</div>
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.sex"))</span>
-						<select class="lang-select compact" name="sex">
-							<option value="m" selected=func { return curSex != "f" }>~(i18n.T(l, "sex.male"))</option>
-							<option value="f" selected=func { return curSex == "f" }>~(i18n.T(l, "sex.female"))</option>
-						</select>
-					</div>
-					<div class="srow save-row">
-						<button class="btn primary" type="submit">~(i18n.T(l, "settings.save"))</button>
-						~(saveStatus.Bind(elem(key string) {
-							~(if key != "" {
-								<span class=func { if key == "settings.save_failed" { return "err" }; return "saved-msg" } role="status">~(i18n.T(l, key))</span>
-							})
-						}))
-					</div>
-				</form>
-
-				~// Programs with prescribed dosing opt out of universal scaling.
-				~(if !prog.FixedDifficulty {
-				<div class="srow col">
-					<div class="row-between">
-						<span>~(i18n.T(l, "settings.difficulty"))</span>
-						<output class="rest-out">
-							~(levelSrc.Bind(elem(v int) {
-								~(levelLabel(l, v))
-							}))
-						</output>
-					</div>
-					<input type="range" min="-3" max="3" step="1" value=(s.sess.Level) (doors.AChange{On: s.setLevel(levelSrc)})>
-				</div>
-
-				})
-
-				~// "… in 30 days" courses: picking one copies it into this account's
-				~// personal plan. Cycle position and streak are untouched.
-				<div class="srow">
-					<span>~(i18n.T(l, "settings.program"))</span>
-					<input class="text-input compact" type="text" maxlength=(app.ProgramNameMax) value=(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) aria-label=(i18n.T(l, "settings.program"))
-						(doors.AChange{On: s.renameProgram})>
-				</div>
-				~(courseSrc.Bind(elem(picked string) {
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.course"))</span>
-						<select class="lang-select" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-							courseSrc.Update(ctx, r.Event().Value)
-							return false
-						}})>
-							<option value="" selected=func { return picked == "" }>~(i18n.T(l, "settings.course_pick"))</option>
-							~(for _, c := range content.Series30() {
-								<option value=(c.Key) selected=func { return c.Key == picked }>~(c.TitleIn(string(l)))</option>
-							})
-						</select>
-					</div>
-					~(if picked != "" {
-						<div class="srow">
-							<div class="confirm-reset">
-								<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))~(if keepsCurrent { ~(" ", i18n.T(l, "settings.course_keep")) })</span>
-								<div class="confirm-actions">
-									~>doors.AClick{On: s.useCourse(picked)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.course_use"))</button>
-									~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-										courseSrc.Update(ctx, "")
-										return false
-									}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
-								</div>
-							</div>
-						</div>
-					})
-				}))
-
-				~// Programs this account replaced (by a course, an import, the demo
-				~// or an agent). Bringing one back keeps the current one in turn.
-				~(if len(savedPrograms) > 0 {
-					<div class="srow col">
-						<span>~(i18n.T(l, "settings.saved_programs"))</span>
-						~(for _, sp := range savedPrograms {
-							<div class="row-between saved-row">
-								<span class="saved-name">~(sp.Name)<small>~(savedDate(sp.SavedAt))</small></span>
-								~>doors.AClick{On: s.restoreSaved(sp.ID)} <button class="btn small" type="button">~(i18n.T(l, "settings.saved_restore"))</button>
-							</div>
-						})
-					</div>
-				})
-
-				~// Personal 30-day cycle: edit this account's plan only.
+				<p class="editing">~(i18n.T(l, "settings.editing"), " ")<b>~(app.ProgramTitle(s.sess.UserID, s.sess.Lang))</b></p>
+				<div class="settings-card">
+				~// The current program's 30-day cycle, day by day.
 				<details class="cycle-details">
 					<summary>~(i18n.T(l, "settings.cycle"))</summary>
 
@@ -316,17 +162,8 @@ elem (s settingsPage) Main() {
 					}))
 
 					<div class="srow cyc-save">
-						<input class="text-input compact" type="text" maxlength="40" value=(prog.Name) placeholder=(i18n.T(l, "settings.version_name"))
-							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-								nameSrc.Update(ctx, r.Event().Value)
-								return false
-							}})>
 						~>doors.AClick{On: s.saveEditor(editSrc, nameSrc)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.save_version"))</button>
 					</div>
-
-					~(if hasCustom {
-						~>doors.AClick{On: s.deleteProgram} <button class="btn danger small" type="button">~(i18n.T(l, "settings.restore_demo"))</button>
-					})
 				</details>
 
 				~// Browse exercise content (description + all tips), download any
@@ -442,15 +279,9 @@ elem (s settingsPage) Main() {
 					<script src=(assets.ExUpload) inline></script>
 				</details>
 
-				<div class="srow">
-					<span>~(i18n.T(l, "settings.account"))</span>
-					~(if s.sess.IsGuest {
-						~>doors.ALink{Model: path.Path{Page: path.Register}} <a class="btn primary small">~(i18n.T(l, "auth.register"))</a>
-					} else {
-						<span class="email">~(s.sess.Email)</span>
-					})
-				</div>
-
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="row-link">~(i18n.T(l, "library.title")) <span aria-hidden="true">›</span></a>
+					</div>
 				~(mcpSrc.Bind(elem(st mcpTokState) {
 					~{
 						mcpBtn := i18n.T(l, "settings.mcp_create")
@@ -471,6 +302,108 @@ elem (s settingsPage) Main() {
 						~>doors.AClick{On: s.issueMCP(mcpSrc)} <button class="btn small" type="button">~(mcpBtn)</button>
 					</div>
 				}))
+
+				</div>
+			} else {
+				<div class="settings-head">
+					<h1>~(i18n.T(l, "settings.title"))</h1>
+					~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "nav.close"))>✕</a>
+				</div>
+				~{
+					vm := s.sess.VoiceMode
+					if vm == "" {
+						vm = "normal"
+					}
+				}
+				~// Every setting is stored as soon as it changes.
+				<h2 class="sgroup">~(i18n.T(l, "settings.group_training"))</h2>
+				<div class="settings-card">
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
+							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" min="0" max=(content.RestMax) step="5" value=(restW) aria-label=(i18n.T(l, "settings.rest_warmup"))
+							(doors.AChange{On: s.saveRest("warmup", restWVal, saveStatus)})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_main"))</span>
+							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" min=(content.MainRestMin) max=(content.RestMax) step="5" value=(restM) aria-label=(i18n.T(l, "settings.rest_main"))
+							(doors.AChange{On: s.saveRest("main", restMVal, saveStatus)})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
+							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" min="0" max=(content.RestMax) step="5" value=(restC) aria-label=(i18n.T(l, "settings.rest_cooldown"))
+							(doors.AChange{On: s.saveRest("cooldown", restCVal, saveStatus)})>
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.voice"))</span>
+						<select class="lang-select compact" aria-label=(i18n.T(l, "settings.voice")) (doors.AChange{On: s.saveSetting("voice", saveStatus)})>
+							<option value="off" selected=func { return vm == "off" }>~(i18n.T(l, "voice.off"))</option>
+							<option value="min" selected=func { return vm == "min" }>~(i18n.T(l, "voice.min"))</option>
+							<option value="normal" selected=func { return vm == "normal" }>~(i18n.T(l, "voice.normal"))</option>
+							<option value="detailed" selected=func { return vm == "detailed" }>~(i18n.T(l, "voice.detailed"))</option>
+						</select>
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.sex"))</span>
+						<select class="lang-select compact" aria-label=(i18n.T(l, "settings.sex")) (doors.AChange{On: s.saveSetting("figure", saveStatus)})>
+							<option value="m" selected=func { return curSex == "m" }>~(i18n.T(l, "sex.male"))</option>
+							<option value="f" selected=func { return curSex == "f" }>~(i18n.T(l, "sex.female"))</option>
+							<option value="b" selected=func { return curSex == "b" }>~(i18n.T(l, "sex.boy"))</option>
+							<option value="g" selected=func { return curSex == "g" }>~(i18n.T(l, "sex.girl"))</option>
+						</select>
+					</div>
+					~// Programs with prescribed dosing opt out of universal scaling.
+					~(if !prog.FixedDifficulty {
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.difficulty"))</span>
+							<output class="rest-out">
+								~(levelSrc.Bind(elem(v int) {
+									~(levelLabel(l, v))
+								}))
+							</output>
+						</div>
+						<input type="range" min="-3" max="3" step="1" value=(s.sess.Level) aria-label=(i18n.T(l, "settings.difficulty")) (doors.AChange{On: s.setLevel(levelSrc)})>
+					</div>
+					})
+				</div>
+
+				<h2 class="sgroup">~(i18n.T(l, "settings.group_program"))</h2>
+				<div class="settings-card">
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="row-link"><span>~(i18n.T(l, "programs.title"))</span><span class="row-value">~(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) ›</span></a>
+					</div>
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="row-link"><span>~(i18n.T(l, "settings.editor"))</span><span class="row-value">›</span></a>
+					</div>
+				</div>
+
+				<h2 class="sgroup">~(i18n.T(l, "settings.group_profile"))</h2>
+				<div class="settings-card">
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.language"))</span>
+						~(langSwitch{sess: s.sess, auth: s.auth, persist: true})
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "auth.name"))</span>
+						<input class="text-input compact" type="text" maxlength="40" value=(s.sess.Name) aria-label=(i18n.T(l, "auth.name")) (doors.AChange{On: s.saveSetting("name", saveStatus)})>
+					</div>
+				<div class="srow">
+					<span>~(i18n.T(l, "settings.account"))</span>
+					~(if s.sess.IsGuest {
+						~>doors.ALink{Model: path.Path{Page: path.Register}} <a class="btn primary small">~(i18n.T(l, "auth.register"))</a>
+					} else {
+						<span class="email">~(s.sess.Email)</span>
+					})
+				</div>
 
 				<div class="srow save-row">
 					~(confirmReset.Bind(elem(c bool) {
@@ -493,7 +426,13 @@ elem (s settingsPage) Main() {
 						})
 					}))
 				</div>
-			</div>
+				</div>
+				~(saveStatus.Bind(elem(key string) {
+					~(if key != "" {
+						<p class="err" role="alert">~(i18n.T(l, key))</p>
+					})
+				}))
+			})
 		</section>
 	</main>
 }
@@ -573,41 +512,6 @@ elem (s settingsPage) exGroup(entries []catalog.Entry, l i18n.Lang, cur, slot, l
 	</optgroup>
 }
 
-// save persists rest + voice and updates the reactive session.
-func (s settingsPage) save(status doors.Source[string]) func(context.Context, doors.RequestForm[settingsForm]) bool {
-	return func(ctx context.Context, r doors.RequestForm[settingsForm]) bool {
-		f := r.Data()
-		status.Update(ctx, "")
-		rests := (content.Rests{Warmup: f.RestWarmup, Main: f.Rest, Cooldown: f.RestCooldown}).Normalize()
-		name := strings.TrimSpace(f.Name)
-		if len(name) > 40 {
-			name = name[:40]
-		}
-		mode := f.VoiceMode
-		switch mode {
-		case "off", "min", "normal", "detailed":
-		default:
-			mode = "normal"
-		}
-		if err := app.DB.UpdateSettings(s.sess.UserID, name, s.sess.Lang, rests.Warmup, rests.Main, rests.Cooldown, mode); err != nil {
-			status.Update(ctx, "settings.save_failed")
-			return false
-		}
-		if err := app.DB.SetSex(s.sess.UserID, f.Sex); err != nil {
-			status.Update(ctx, "settings.save_failed")
-			return false
-		}
-		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
-			cur.Name = name
-			cur.Rest = rests.Main
-			cur.VoiceMode = mode
-			cur.Voice = mode != "off"
-			return cur
-		})
-		status.Update(ctx, "settings.saved")
-		return false
-	}
-}
 
 // unitWord is the unit label shown next to an editable value.
 func unitWord(l i18n.Lang, u content.Unit, perSide bool) string {
@@ -922,7 +826,7 @@ func (s settingsPage) importProgram(status doors.Source[string]) func(context.Co
 			return false
 		}
 		raw := strings.TrimSpace(pf.FormValue("progjson"))
-		if raw == "" || app.ReplaceUserProgram(s.sess.UserID, raw) != nil {
+		if raw == "" || app.ImportProgram(s.sess.UserID, raw) != nil {
 			status.Update(ctx, "settings.import_failed")
 			return false
 		}
@@ -1006,50 +910,10 @@ func (s settingsPage) importExercise(ctx context.Context, r doors.RequestRawForm
 	return false
 }
 
-// renameProgram stores a new name for this account's program. An empty name
-// is ignored; the reload brings back the saved one.
-func (s settingsPage) renameProgram(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-	_ = app.RenameProgram(s.sess.UserID, r.Event().Value)
-	_ = r.After(doors.ActionLocationReload{})
-	return false
-}
 
-// restoreSaved brings a saved program back as this account's program.
-func (s settingsPage) restoreSaved(id int64) func(context.Context, doors.RequestPointer) bool {
-	return func(ctx context.Context, r doors.RequestPointer) bool {
-		if app.RestoreSavedProgram(s.sess.UserID, id) != nil {
-			return false
-		}
-		_ = r.After(doors.ActionLocationReload{})
-		return false
-	}
-}
 
-// savedDate shows the day a program was put aside (stored as UTC RFC 3339).
-func savedDate(at string) string {
-	if len(at) >= 10 {
-		return at[:10]
-	}
-	return at
-}
 
-// useCourse installs a 30-day course as this account's personal program.
-func (s settingsPage) useCourse(key string) func(context.Context, doors.RequestPointer) bool {
-	return func(ctx context.Context, r doors.RequestPointer) bool {
-		if app.UseCourse(s.sess.UserID, key, s.sess.Lang) != nil {
-			return false
-		}
-		_ = r.After(doors.ActionLocationReload{})
-		return false
-	}
-}
 
-// deleteProgram clears the personal file and returns this account to the demo.
-func (s settingsPage) deleteProgram(ctx context.Context, r doors.RequestPointer) bool {
-	_ = app.RestoreDemo(s.sess.UserID)
-	_ = r.After(doors.ActionLocationReload{})
-	return false
-}
 
 // issueMCP creates or replaces this account's MCP bearer token and shows it once.
 func (s settingsPage) issueMCP(src doors.Source[mcpTokState]) func(context.Context, doors.RequestPointer) bool {
@@ -1068,4 +932,65 @@ func (s settingsPage) reset(ctx context.Context, r doors.RequestPointer) bool {
 	_ = app.DB.ResetProgress(s.sess.UserID)
 	s.path.Update(ctx, path.Path{Page: path.Home})
 	return false
+}
+
+// saveRest stores one of the three rests as soon as its slider is released.
+func (s settingsPage) saveRest(which string, val doors.Source[int], status doors.Source[string]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		n := r.Event().Number
+		if n == nil {
+			return false
+		}
+		v := int(*n)
+		var p app.SettingsPatch
+		switch which {
+		case "warmup":
+			p.RestWarmup = &v
+		case "main":
+			p.RestMain = &v
+		default:
+			p.RestCooldown = &v
+		}
+		st, err := app.UpdateSettings(s.sess.UserID, p)
+		if err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
+		status.Update(ctx, "")
+		val.Update(ctx, v)
+		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
+			cur.Rest = st.RestMain
+			return cur
+		})
+		return false
+	}
+}
+
+// saveSetting stores the voice mode, the figure or the name as soon as it changes.
+func (s settingsPage) saveSetting(which string, status doors.Source[string]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		v := r.Event().Value
+		var p app.SettingsPatch
+		switch which {
+		case "voice":
+			p.VoiceMode = &v
+		case "figure":
+			p.Figure = &v
+		default:
+			p.Name = &v
+		}
+		st, err := app.UpdateSettings(s.sess.UserID, p)
+		if err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
+		status.Update(ctx, "")
+		s.auth.Mutate(ctx, func(cur auth.Session) auth.Session {
+			cur.Name = st.Name
+			cur.VoiceMode = st.VoiceMode
+			cur.Voice = st.VoiceMode != "off"
+			return cur
+		})
+		return false
+	}
 }

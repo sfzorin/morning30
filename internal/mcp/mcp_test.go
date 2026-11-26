@@ -168,209 +168,214 @@ func jsonRaw(v any) json.RawMessage {
 	return b
 }
 
-// A token issued in settings drives the whole course flow for its own account:
-// list courses, start one, read it back, rename it, edit it, switch to another.
-// Cycle position and other accounts are never touched.
-func TestUserTokenRunsCourseFlowOverHTTP(t *testing.T) {
-	d := setupMCP(t)
-	a, _ := d.CreateUser("a@b.com", "h", "ru", "Ann")
-	b, _ := d.CreateUser("b@b.com", "h", "en", "Bob")
-	for i := 0; i < 3; i++ {
-		_ = d.AdvancePosition(a.ID)
-	}
-	tok, err := d.IssueMCPToken(a.ID)
-	if err != nil {
-		t.Fatal(err)
-	}
+// tokenClient calls the HTTP API with a per-account token.
+func tokenClient(t *testing.T, token string) func(method, url, body string) (int, string) {
 	h := Handler("")
-	call := func(method, url, body string) (int, string) {
-		req := httptest.NewRequest(method, url, strings.NewReader(body))
-		req.Header.Set("Authorization", "Bearer "+tok)
-		rr := httptest.NewRecorder()
-		h.ServeHTTP(rr, req)
-		return rr.Code, rr.Body.String()
-	}
-	view := func(body string) programView {
-		var v programView
-		if err := json.Unmarshal([]byte(body), &v); err != nil {
-			t.Fatalf("bad program view: %v in %s", err, body)
-		}
-		return v
-	}
-
-	code, body := call("GET", "/api/courses", "")
-	var courses []courseView
-	if code != http.StatusOK || json.Unmarshal([]byte(body), &courses) != nil || len(courses) != len(content.Series30()) {
-		t.Fatalf("courses: %d %s", code, body)
-	}
-	if courses[0].Key != "plank30" || courses[0].Titles["ru"] != "Планка за 30 дней" || courses[0].Program != nil {
-		t.Fatalf("course list entry: %+v", courses[0])
-	}
-	code, body = call("GET", "/api/courses/plank30", "")
-	var one courseView
-	if code != http.StatusOK || json.Unmarshal([]byte(body), &one) != nil || one.Program == nil || len(one.Program.Days) != content.TotalDays {
-		t.Fatalf("course detail: %d %s", code, body)
-	}
-	if code, _ = call("GET", "/api/courses/nope30", ""); code != http.StatusNotFound {
-		t.Fatalf("unknown course detail: %d", code)
-	}
-
-	// Start a course: titled in the account's language, position kept.
-	code, body = call("POST", "/api/accounts/me/course/plank30", "")
-	v := view(body)
-	if code != http.StatusOK || !v.Personal || v.Program.Name != "Планка за 30 дней" || !v.Account.HasProgram {
-		t.Fatalf("use course: %d %s", code, body)
-	}
-	if code, _ = call("POST", "/api/accounts/me/course/nope30", ""); code != http.StatusNotFound {
-		t.Fatalf("unknown course: %d", code)
-	}
-	if code, _ = call("POST", "/api/accounts/"+strconv.FormatInt(b.ID, 10)+"/course/abs30", ""); code != http.StatusForbidden {
-		t.Fatalf("cross-account course: %d", code)
-	}
-
-	// Rename it, as plain text and as JSON.
-	code, body = call("PUT", "/api/accounts/me/program/name", "Моя планка")
-	if code != http.StatusOK || view(body).Program.Name != "Моя планка" {
-		t.Fatalf("rename text: %d %s", code, body)
-	}
-	code, body = call("PUT", "/api/accounts/me/program/name", `{"name": "Планка по утрам"}`)
-	if code != http.StatusOK || view(body).Program.Name != "Планка по утрам" {
-		t.Fatalf("rename json: %d %s", code, body)
-	}
-	if code, _ = call("PUT", "/api/accounts/me/program/name", "   "); code != http.StatusBadRequest {
-		t.Fatalf("empty rename: %d", code)
-	}
-
-	// The renamed course reads back as an ordinary program and can be edited
-	// and uploaded again through the existing endpoint.
-	code, body = call("GET", "/api/accounts/me/program", "")
-	v = view(body)
-	if code != http.StatusOK || v.Program.Name != "Планка по утрам" || len(v.Program.Days) != content.TotalDays {
-		t.Fatalf("get program: %d %s", code, body)
-	}
-	v.Program.Days[0].Items[0].Value = 45
-	code, body = call("PUT", "/api/accounts/me/program", v.Program.Marshal())
-	v = view(body)
-	if code != http.StatusOK || v.Program.Days[0].Items[0].Value != 45 || v.Program.Name != "Планка по утрам" {
-		t.Fatalf("put edited course: %d %s", code, body)
-	}
-
-	// Switch to another course with an explicit title language.
-	code, body = call("POST", "/api/accounts/me/course/abs30?lang=en", "")
-	if code != http.StatusOK || view(body).Program.Name != "Abs in 30 Days" {
-		t.Fatalf("switch course: %d %s", code, body)
-	}
-
-	if p, _ := d.Position(a.ID); p != 3 {
-		t.Fatalf("position moved to %d", p)
-	}
-	if app.HasCustomProgram(b.ID) {
-		t.Fatal("another account was changed")
-	}
-}
-
-// The same course flow through the stdio tools.
-func TestCourseToolsOverRPC(t *testing.T) {
-	d := setupMCP(t)
-	u, _ := d.CreateUser("c@b.com", "h", "de", "Cara")
-	_ = d.AdvancePosition(u.ID)
-
-	raw := handleRPC([]byte(`{"jsonrpc":"2.0","id":1,"method":"tools/list"}`))
-	for _, name := range []string{"list_courses", "get_course", "use_course", "rename_program"} {
-		if !bytes.Contains(raw, []byte(`"`+name+`"`)) {
-			t.Fatalf("tools/list lacks %s", name)
-		}
-	}
-	res := callTool("list_courses", jsonRaw(map[string]any{}))
-	if res.IsError || !strings.Contains(res.Content[0].Text, "slim30") {
-		t.Fatalf("list_courses: %s", res.Content[0].Text)
-	}
-	res = callTool("get_course", jsonRaw(map[string]any{"course": "slim30"}))
-	if res.IsError || !strings.Contains(res.Content[0].Text, `"totalDays": 30`) {
-		t.Fatalf("get_course: %s", res.Content[0].Text)
-	}
-	res = callTool("use_course", jsonRaw(map[string]any{"account": "c@b.com", "course": "pushups30"}))
-	if res.IsError || app.UserProgram(u.ID).Name != "Liegestütze in 30 Tagen" {
-		t.Fatalf("use_course: %s", res.Content[0].Text)
-	}
-	res = callTool("rename_program", jsonRaw(map[string]any{"account": "c@b.com", "name": "Mein Plan"}))
-	if res.IsError || app.UserProgram(u.ID).Name != "Mein Plan" {
-		t.Fatalf("rename_program: %s", res.Content[0].Text)
-	}
-	if res = callTool("use_course", jsonRaw(map[string]any{"account": "c@b.com", "course": "nope30"})); !res.IsError {
-		t.Fatal("unknown course accepted")
-	}
-	if res = callTool("rename_program", jsonRaw(map[string]any{"account": "c@b.com", "name": ""})); !res.IsError {
-		t.Fatal("empty name accepted")
-	}
-	if app.UserProgram(u.ID).Name != "Mein Plan" {
-		t.Fatal("failed calls changed the program")
-	}
-	if p, _ := d.Position(u.ID); p != 1 {
-		t.Fatalf("position moved to %d", p)
-	}
-}
-
-// An agent upload cannot wipe a user's own program either: it lands in the
-// saved list, which the same token can read and restore from.
-func TestAgentUploadKeepsOwnProgramAndCanRestoreIt(t *testing.T) {
-	d := setupMCP(t)
-	a, _ := d.CreateUser("a@b.com", "h", "en", "Ann")
-	b, _ := d.CreateUser("b@b.com", "h", "en", "Bob")
-	mine := content.ResolveDemo()
-	mine.Name = "Ann's plan"
-	mine.Days[0].Items[0].Value = 17
-	if err := app.SetUserProgram(a.ID, mine.Marshal()); err != nil {
-		t.Fatal(err)
-	}
-	want := app.UserProgram(a.ID).Marshal()
-	tok, _ := d.IssueMCPToken(a.ID)
-	tokB, _ := d.IssueMCPToken(b.ID)
-	h := Handler("")
-	call := func(token, method, url, body string) (int, string) {
+	return func(method, url, body string) (int, string) {
 		req := httptest.NewRequest(method, url, strings.NewReader(body))
 		req.Header.Set("Authorization", "Bearer "+token)
 		rr := httptest.NewRecorder()
 		h.ServeHTTP(rr, req)
 		return rr.Code, rr.Body.String()
 	}
+}
 
-	upload := content.ResolveDemo()
-	upload.Name = "Agent plan"
-	upload.Days[1].Items[0].Value = 31
-	if code, body := call(tok, "PUT", "/api/accounts/me/program", upload.Marshal()); code != http.StatusOK {
-		t.Fatalf("upload: %d %s", code, body)
+func decode[T any](t *testing.T, body string) T {
+	t.Helper()
+	var v T
+	if err := json.Unmarshal([]byte(body), &v); err != nil {
+		t.Fatalf("decode %T: %v in %s", v, err, body)
 	}
-	code, body := call(tok, "GET", "/api/accounts/me/saved-programs", "")
-	var saved []db.SavedProgram
-	if code != http.StatusOK || json.Unmarshal([]byte(body), &saved) != nil || len(saved) != 1 || saved[0].Name != "Ann's plan" {
-		t.Fatalf("saved list: %d %s", code, body)
-	}
-	id := strconv.FormatInt(saved[0].ID, 10)
-	if code, _ = call(tokB, "POST", "/api/accounts/me/saved-programs/"+id+"/restore", ""); code != http.StatusNotFound {
-		t.Fatalf("another account restored it: %d", code)
-	}
-	if code, body = call(tok, "POST", "/api/accounts/me/saved-programs/"+id+"/restore", ""); code != http.StatusOK {
-		t.Fatalf("restore: %d %s", code, body)
-	}
-	if app.UserProgram(a.ID).Marshal() != want {
-		t.Fatal("restored program differs from the original")
+	return v
+}
+
+// Every new feature of the app is reachable with the token from settings:
+// catalog, selected programs, switching with per-program days, renaming,
+// the day plan, library, similar exercises, add/replace/remove, settings
+// with four figures. The token never reaches another account.
+func TestTokenCoversEveryProgramFeature(t *testing.T) {
+	d := setupMCP(t)
+	a, _ := d.CreateUser("a@b.com", "h", "ru", "Ann")
+	b, _ := d.CreateUser("b@b.com", "h", "en", "Bob")
+	tok, _ := d.IssueMCPToken(a.ID)
+	call := tokenClient(t, tok)
+	must := func(method, url, body string) string {
+		t.Helper()
+		code, out := call(method, url, body)
+		if code != http.StatusOK {
+			t.Fatalf("%s %s: %d %s", method, url, code, out)
+		}
+		return out
 	}
 
-	// The same through the stdio tools: the agent's plan is now the saved one.
-	res := callTool("list_saved_programs", jsonRaw(map[string]any{"account": "a@b.com"}))
-	if res.IsError || !strings.Contains(res.Content[0].Text, "Agent plan") {
-		t.Fatalf("list_saved_programs: %s", res.Content[0].Text)
+	catalog := decode[[]readyView](t, must("GET", "/api/programs", ""))
+	if len(catalog) != len(content.Catalog()) || catalog[0].Key != content.DemoKey || catalog[0].Category != content.CatStart {
+		t.Fatalf("catalog: %+v", catalog[:1])
 	}
-	rows, _ := d.SavedPrograms(a.ID)
-	res = callTool("restore_saved_program", jsonRaw(map[string]any{"account": "a@b.com", "id": rows[0].ID}))
-	if res.IsError || app.UserProgram(a.ID).Name != "Agent plan" {
-		t.Fatalf("restore_saved_program: %s", res.Content[0].Text)
+	one := decode[readyView](t, must("GET", "/api/programs/slim30", ""))
+	if one.Program == nil || !one.Tags.Jumps || one.Minutes[0] == 0 {
+		t.Fatalf("program detail: %+v", one)
 	}
-	if rows, _ = d.SavedPrograms(a.ID); len(rows) != 1 || rows[0].Name != "Ann's plan" {
-		t.Fatalf("after swap: %+v", rows)
+	if code, _ := call("GET", "/api/programs/nope", ""); code != http.StatusNotFound {
+		t.Fatalf("unknown program: %d", code)
+	}
+
+	// Twelve days on the morning workout, then plank: plank starts at day 1.
+	for i := 0; i < 12; i++ {
+		_ = d.AdvancePosition(a.ID)
+	}
+	v := decode[programView](t, must("POST", "/api/accounts/me/select", `{"key":"plank30"}`))
+	if v.Day != 1 || v.Program.Name != "Планка за 30 дней" || len(v.Selected) != 2 {
+		t.Fatalf("select plank: day %d name %q selected %d", v.Day, v.Program.Name, len(v.Selected))
+	}
+	must("POST", "/api/accounts/me/selected", `{"key":"abs30"}`)
+	sel := decode[[]app.SelectedView](t, must("GET", "/api/accounts/me/selected", ""))
+	if len(sel) != 3 {
+		t.Fatalf("selected: %+v", sel)
+	}
+
+	// Edit plank: add, replace, remove — on specific days and every day.
+	must("POST", "/api/accounts/me/program/exercises", `{"exercise":"B01","part":"main","days":"today","value":25}`)
+	day := decode[app.DayPlan](t, must("GET", "/api/accounts/me/day", ""))
+	found := false
+	for _, it := range day.Items {
+		found = found || (it.ID == "B01" && it.Part == "main")
+	}
+	if !found || day.Day != 1 {
+		t.Fatalf("added exercise missing from today: %+v", day)
+	}
+	sim := decode[app.Similar](t, must("GET", "/api/accounts/me/exercises/P01/similar", ""))
+	if len(sim.Easier) == 0 || len(sim.Harder) == 0 {
+		t.Fatalf("similar: %+v", sim)
+	}
+	must("POST", "/api/accounts/me/program/replace", `{"from":"C01","to":"C02","days":[1,2,3]}`)
+	must("POST", "/api/accounts/me/program/remove", `{"exercise":"C09","part":"main","days":"all"}`)
+	if code, out := call("POST", "/api/accounts/me/program/remove", `{"exercise":"ZZZ"}`); code != http.StatusNotFound {
+		t.Fatalf("remove missing: %d %s", code, out)
+	}
+	must("PUT", "/api/accounts/me/program/name", "Моя планка")
+
+	// The edited plank needs consent before removal.
+	sel = decode[[]app.SelectedView](t, must("GET", "/api/accounts/me/selected", ""))
+	var plankID int64
+	for _, s := range sel {
+		if s.Source == "plank30" {
+			plankID = s.ID
+			if !s.Edited || s.Name != "Моя планка" || !s.Current {
+				t.Fatalf("edited plank view: %+v", s)
+			}
+		}
+	}
+	if code, _ := call("DELETE", "/api/accounts/me/selected/"+strconv.FormatInt(plankID, 10), ""); code != http.StatusConflict {
+		t.Fatalf("edited program removed without consent: %d", code)
+	}
+
+	// Back to the morning workout: its day 13 is still there.
+	v = decode[programView](t, must("POST", "/api/accounts/me/restore-demo", ""))
+	if v.Day != 13 {
+		t.Fatalf("morning workout day %d, want 13", v.Day)
+	}
+	// Library with filters; settings with a child figure.
+	lib := decode[[]app.ExerciseInfo](t, must("GET", "/api/accounts/me/library?group=cardio&noJumps=1", ""))
+	for _, e := range lib {
+		if e.Group != "cardio" || e.Jumps {
+			t.Fatalf("library filter leaked %+v", e)
+		}
+	}
+	st := decode[app.Settings](t, must("PATCH", "/api/accounts/me/settings", `{"figure":"g","restMain":25,"level":2}`))
+	if st.Figure != "g" || st.RestMain != 25 || st.Level != 2 || st.Lang != "ru" {
+		t.Fatalf("settings: %+v", st)
+	}
+	if code, _ := call("PATCH", "/api/accounts/me/settings", `{"figure":"x"}`); code != http.StatusBadRequest {
+		t.Fatalf("bad figure accepted: %d", code)
+	}
+
+	// Import adds a new program; the token cannot touch Bob.
+	imp := content.ResolveDemo()
+	imp.Name = "Агент"
+	imp.Days[0].Items[0].Value = 21
+	v = decode[programView](t, must("POST", "/api/accounts/me/programs/import", imp.Marshal()))
+	if v.Program.Name != "Агент" || v.Day != 1 {
+		t.Fatalf("import: %q day %d", v.Program.Name, v.Day)
+	}
+	bob := "/api/accounts/" + strconv.FormatInt(b.ID, 10)
+	for _, url := range []string{bob + "/select", bob + "/selected", bob + "/program/exercises"} {
+		if code, _ := call("POST", url, `{"key":"abs30","exercise":"C01","part":"main"}`); code != http.StatusForbidden {
+			t.Fatalf("%s reached another account: %d", url, code)
+		}
 	}
 	if app.HasCustomProgram(b.ID) {
 		t.Fatal("another account was changed")
+	}
+}
+
+// The same operations through the stdio tools, including the older names.
+func TestProgramToolsOverRPC(t *testing.T) {
+	d := setupMCP(t)
+	u, _ := d.CreateUser("c@b.com", "h", "de", "Cara")
+	_ = d.AdvancePosition(u.ID)
+
+	raw := handleRPC([]byte(`{"jsonrpc":"2.0","id":1,"method":"tools/list"}`))
+	for _, name := range []string{"list_programs", "get_ready_program", "list_selected", "select_program", "star_program",
+		"unselect_program", "rename_program", "set_program", "import_program", "get_day", "add_exercise",
+		"replace_exercise", "remove_exercise", "list_exercises", "similar_exercises", "get_settings", "set_settings",
+		"use_course", "list_courses", "get_course", "list_saved_programs", "restore_saved_program", "put_pose"} {
+		if !bytes.Contains(raw, []byte(`"`+name+`"`)) {
+			t.Fatalf("tools/list lacks %s", name)
+		}
+	}
+	res := callTool("use_course", jsonRaw(map[string]any{"account": "c@b.com", "course": "pushups30"}))
+	if res.IsError || app.UserProgram(u.ID).Name != "Liegestütze in 30 Tagen" {
+		t.Fatalf("use_course: %s", res.Content[0].Text)
+	}
+	res = callTool("add_exercise", jsonRaw(map[string]any{"account": "c@b.com", "exercise": "A01", "part": "main", "days": 3, "value": 8}))
+	if res.IsError {
+		t.Fatalf("add_exercise: %s", res.Content[0].Text)
+	}
+	res = callTool("get_day", jsonRaw(map[string]any{"account": "c@b.com", "day": 3}))
+	if res.IsError || !strings.Contains(res.Content[0].Text, `"A01"`) {
+		t.Fatalf("get_day: %s", res.Content[0].Text)
+	}
+	res = callTool("select_program", jsonRaw(map[string]any{"account": "c@b.com", "key": "demo"}))
+	if res.IsError || app.CurrentDay(u.ID) != 2 {
+		t.Fatalf("back to the morning workout on day %d: %s", app.CurrentDay(u.ID), res.Content[0].Text)
+	}
+	res = callTool("list_saved_programs", jsonRaw(map[string]any{"account": "c@b.com"}))
+	if res.IsError || !strings.Contains(res.Content[0].Text, "Liegestütze") {
+		t.Fatalf("list_saved_programs: %s", res.Content[0].Text)
+	}
+	res = callTool("unselect_program", jsonRaw(map[string]any{"account": "c@b.com", "key": "pushups30"}))
+	if !res.IsError {
+		t.Fatal("edited program removed without consent")
+	}
+	res = callTool("unselect_program", jsonRaw(map[string]any{"account": "c@b.com", "key": "pushups30", "discardEdits": true}))
+	if res.IsError {
+		t.Fatalf("unselect: %s", res.Content[0].Text)
+	}
+	res = callTool("set_settings", jsonRaw(map[string]any{"account": "c@b.com", "voiceMode": "min"}))
+	if res.IsError || !strings.Contains(res.Content[0].Text, `"voiceMode": "min"`) {
+		t.Fatalf("set_settings: %s", res.Content[0].Text)
+	}
+}
+
+func TestPosesForFourFigures(t *testing.T) {
+	d := setupMCP(t)
+	png := []byte("\x89PNG\r\n\x1a\n0000")
+	if err := d.PutPose("squat", "squat", "Squat", "m", png); err != nil {
+		t.Fatal(err)
+	}
+	girl := append([]byte(nil), png...)
+	girl = append(girl, 'g')
+	if err := d.PutPose("squat", "squat", "Squat", "g", girl); err != nil {
+		t.Fatal(err)
+	}
+	p, _ := d.GetPose("squat")
+	if !p.HasM || p.HasF || p.HasB || !p.HasG {
+		t.Fatalf("figures: %+v", p)
+	}
+	for sex, want := range map[string][]byte{"g": girl, "b": png, "f": png, "m": png} {
+		if _, got, err := d.PoseImage("squat", sex); err != nil || !bytes.Equal(got, want) {
+			t.Fatalf("figure %s: %v", sex, err)
+		}
 	}
 }

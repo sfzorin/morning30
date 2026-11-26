@@ -20,7 +20,6 @@ import (
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/db"
-	"morning30/internal/i18n"
 )
 
 const protocolVersion = "2024-11-05"
@@ -77,89 +76,12 @@ type setPosesArgs struct {
 	Poses []string `json:"poses"`
 }
 
-type courseArgs struct {
-	Account string `json:"account"`
-	Course  string `json:"course"`
-	Lang    string `json:"lang"`
-}
-
-type savedArgs struct {
-	Account string `json:"account"`
-	ID      int64  `json:"id"`
-}
-
-type renameArgs struct {
-	Account string `json:"account"`
-	Name    string `json:"name"`
-}
-
-// courseView describes one built-in "… in 30 days" course. Program is filled
-// only when a single course is requested.
-type courseView struct {
-	Key     string            `json:"key"`
-	Titles  map[string]string `json:"titles"`
-	Days    int               `json:"days"`
-	Program *content.Resolved `json:"program,omitempty"`
-}
-
-func courseList() []courseView {
-	out := []courseView{}
-	for _, c := range content.Series30() {
-		out = append(out, courseView{Key: c.Key, Titles: c.Title, Days: content.TotalDays})
-	}
-	return out
-}
-
-func courseDetail(key string) (courseView, error) {
-	c, ok := content.CourseByKey(strings.TrimSpace(key))
-	if !ok {
-		return courseView{}, app.ErrUnknownCourse
-	}
-	r := c.Resolve()
-	return courseView{Key: c.Key, Titles: c.Title, Days: content.TotalDays, Program: &r}, nil
-}
-
-// useCourse copies a course into the account's personal program. The title
-// is in lang, or in the account's own language when lang is empty.
-func useCourse(acc db.Account, key, lang string) (programView, error) {
-	lang = strings.TrimSpace(lang)
-	if lang == "" {
-		if u, err := app.DB.UserByID(acc.ID); err == nil {
-			lang = u.Lang
-		}
-	}
-	if err := app.UseCourse(acc.ID, strings.TrimSpace(key), lang); err != nil {
-		return programView{}, err
-	}
-	return currentProgram(acc.ID)
-}
-
-func renameProgram(acc db.Account, name string) (programView, error) {
-	if err := app.RenameProgram(acc.ID, name); err != nil {
-		return programView{}, err
-	}
-	return currentProgram(acc.ID)
-}
-
-func restoreSaved(acc db.Account, id int64) (programView, error) {
-	if err := app.RestoreSavedProgram(acc.ID, id); err != nil {
-		return programView{}, err
-	}
-	return currentProgram(acc.ID)
-}
-
-func currentProgram(userID int64) (programView, error) {
-	acc, err := app.DB.AccountByID(userID)
-	if err != nil {
-		return programView{}, err
-	}
-	return programView{Account: acc, Personal: app.ActiveProgramKey(userID) == "custom", Program: app.UserProgram(userID)}, nil
-}
-
 type programView struct {
-	Account  db.Account       `json:"account"`
-	Personal bool             `json:"personal"`
-	Program  content.Resolved `json:"program"`
+	Account  db.Account         `json:"account"`
+	Personal bool               `json:"personal"`
+	Program  content.Resolved   `json:"program"`
+	Day      int                `json:"day,omitempty"`      // next day of the current program
+	Selected []app.SelectedView `json:"selected,omitempty"` // the account's selected programs
 }
 
 type toolResult struct {
@@ -181,8 +103,8 @@ func textResult(v any, err error) toolResult {
 }
 
 func tools() []map[string]any {
-	account := map[string]any{"type": "string", "description": "User id, email, or unique display name"}
-	return []map[string]any{
+	account := accountSchema
+	return append(opTools(), []map[string]any{
 		{
 			"name":        "list_accounts",
 			"description": "List morning30 accounts (id, email, name, whether they have a personal 30-day plan).",
@@ -194,57 +116,8 @@ func tools() []map[string]any {
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
 		},
 		{
-			"name":        "set_program",
-			"description": "Upload a 30-day cycle JSON into the account's personal file. Does not reset day position or streaks. The program it replaces is kept in the account's saved list when it is the user's own work (see list_saved_programs).",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "program": map[string]any{"description": "Resolved program object or JSON string"}}, "required": []string{"account", "program"}},
-		},
-		{
-			"name":        "list_courses",
-			"description": "List the built-in \"… in 30 days\" courses (key and titles per language). Any of them can become an account's program with use_course.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
-		},
-		{
-			"name":        "get_course",
-			"description": "Get one built-in course with its full 30-day program JSON, e.g. to adapt it and upload the result with set_program.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"course": map[string]any{"type": "string", "description": "Course key from list_courses"}}, "required": []string{"course"}},
-		},
-		{
-			"name":        "use_course",
-			"description": "Copy a built-in course into the account's personal program. It is then an ordinary editable program. Does not reset day position or streaks. The program it replaces is kept in the account's saved list when it is the user's own work.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
-				"account": account,
-				"course":  map[string]any{"type": "string", "description": "Course key from list_courses"},
-				"lang":    map[string]any{"type": "string", "description": "Language of the program name (ru, en, tr, de, es, fr, it). Defaults to the account's language."},
-			}, "required": []string{"account", "course"}},
-		},
-		{
-			"name":        "rename_program",
-			"description": "Give the account's program a new name (up to 40 characters). Exercises, day position and streaks are unchanged. An account on the demo gets its own copy of the demo under that name.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "name": map[string]any{"type": "string"}}, "required": []string{"account", "name"}},
-		},
-		{
-			"name":        "list_saved_programs",
-			"description": "List programs this account replaced and can bring back (id, name, when it was put aside). Up to 10 are kept.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
-		},
-		{
-			"name":        "restore_saved_program",
-			"description": "Bring a saved program back as the account's program. The program it replaces is kept in the saved list in turn when it is the user's own work. Does not reset day position or streaks.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account, "id": map[string]any{"type": "integer", "description": "Saved program id from list_saved_programs"}}, "required": []string{"account", "id"}},
-		},
-		{
-			"name":        "restore_demo",
-			"description": "Clear the personal file so the account runs the public demo. Progress is kept, and the user's own program goes to the saved list.",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
-		},
-		{
 			"name":        "list_custom_exercises",
 			"description": "List this account's custom exercises (overlay on the built-in library).",
-			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
-		},
-		{
-			"name":        "list_exercises",
-			"description": "List every exercise this account can use (built-in plus custom overlay).",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{"account": account}, "required": []string{"account"}},
 		},
 		{
@@ -264,17 +137,17 @@ func tools() []map[string]any {
 		},
 		{
 			"name":        "list_poses",
-			"description": "Shared pose catalog (id, kind, label, which sexes have an image). Pick 1–2 ids per exercise.",
+			"description": "Shared pose catalog (id, kind, label, which figures have an image: hasM, hasF, hasB, hasG). Pick 1–2 ids per exercise.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
 		},
 		{
 			"name":        "put_pose",
-			"description": "Upload one still into the shared pose catalog. image is raw base64 (png/jpeg/webp). sex is m or f. kind is the taxonomy group (optional until the table exists).",
+			"description": "Upload one still into the shared pose catalog. image is raw base64 (png/jpeg/webp). sex is the figure: m (man), f (woman), b (boy) or g (girl); a child without its own still is shown as the adult of the same sex. kind is the taxonomy group (optional until the table exists).",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
 				"id":    map[string]any{"type": "string"},
 				"kind":  map[string]any{"type": "string"},
 				"label": map[string]any{"type": "string"},
-				"sex":   map[string]any{"type": "string", "description": "m or f"},
+				"sex":   map[string]any{"type": "string", "description": "m, f, b or g"},
 				"image": map[string]any{"type": "string", "description": "base64 still"},
 			}, "required": []string{"id", "image"}},
 		},
@@ -286,11 +159,14 @@ func tools() []map[string]any {
 				"poses": map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
 			}, "required": []string{"id", "poses"}},
 		},
-	}
+	}...)
 }
 
 func callTool(name string, args json.RawMessage) toolResult {
 	app.SnapshotAll()
+	if o, ok := opByName(name); ok {
+		return textResult(o.callStdio(args))
+	}
 	switch name {
 	case "list_accounts":
 		accs, err := app.DB.ListAccounts()
@@ -312,86 +188,6 @@ func callTool(name string, args json.RawMessage) toolResult {
 			Personal: app.ActiveProgramKey(acc.ID) == "custom",
 			Program:  app.UserProgram(acc.ID),
 		}, nil)
-	case "set_program":
-		var a programArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		raw, err := programJSON(a.Program)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		if err := app.ReplaceUserProgram(acc.ID, raw); err != nil {
-			return textResult(nil, err)
-		}
-		acc, _ = app.DB.AccountByID(acc.ID)
-		return textResult(programView{Account: acc, Personal: true, Program: app.UserProgram(acc.ID)}, nil)
-	case "restore_demo":
-		var a accountArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		if err := app.RestoreDemo(acc.ID); err != nil {
-			return textResult(nil, err)
-		}
-		acc, _ = app.DB.AccountByID(acc.ID)
-		return textResult(programView{Account: acc, Personal: false, Program: app.UserProgram(acc.ID)}, nil)
-	case "list_courses":
-		return textResult(courseList(), nil)
-	case "get_course":
-		var a courseArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		return textResult(courseDetail(a.Course))
-	case "use_course":
-		var a courseArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		return textResult(useCourse(acc, a.Course, a.Lang))
-	case "rename_program":
-		var a renameArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		return textResult(renameProgram(acc, a.Name))
-	case "list_saved_programs":
-		var a accountArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		return textResult(app.DB.SavedPrograms(acc.ID))
-	case "restore_saved_program":
-		var a savedArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		return textResult(restoreSaved(acc, a.ID))
 	case "list_custom_exercises":
 		var a accountArgs
 		if err := json.Unmarshal(args, &a); err != nil {
@@ -407,16 +203,6 @@ func callTool(name string, args json.RawMessage) toolResult {
 		}
 		c := catalog.New(j)
 		return textResult(c.Custom(), nil)
-	case "list_exercises":
-		var a accountArgs
-		if err := json.Unmarshal(args, &a); err != nil {
-			return textResult(nil, err)
-		}
-		acc, err := app.DB.FindAccount(a.Account)
-		if err != nil {
-			return textResult(nil, err)
-		}
-		return textResult(app.UserCatalog(acc.ID).List(i18n.EN), nil)
 	case "get_exercise":
 		var a exerciseArgs
 		if err := json.Unmarshal(args, &a); err != nil {

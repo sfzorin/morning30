@@ -1,0 +1,355 @@
+package pages
+
+import (
+	"context"
+	"strconv"
+	"strings"
+
+	"morning30/internal/app"
+	"morning30/internal/auth"
+	"morning30/internal/content"
+	"morning30/internal/i18n"
+	"morning30/path"
+
+	"github.com/doors-dev/doors"
+	"github.com/doors-dev/gox"
+)
+
+// programsPage is the program catalog with the user's selected programs on
+// top. One tap on a program switches to it; the star adds or removes it from
+// the selected ones; the arrow opens a preview with the 30-day plan.
+type programsPage struct {
+	sess auth.Session
+	auth doors.Source[auth.Session]
+	path doors.Source[path.Path]
+}
+
+type progState struct {
+	Cat        string // category filter ("" = all)
+	NoJumps    bool
+	NoEquip    bool
+	Preview    string // catalog key shown in preview
+	Rename     bool   // renaming the current program
+	ConfirmID  int64  // selected program waiting for "discard edits"
+	ConfirmKey string // catalog program waiting for "discard edits"
+	Tick       int    // bumped to redraw after a change made in place
+}
+
+elem (p programsPage) Main() {
+	~{
+		l := i18n.Lang(p.sess.Lang)
+		cat := content.CatStart
+		if src, ok := content.ReadyByKey(app.CurrentSource(p.sess.UserID)); ok {
+			cat = src.Category
+		}
+		st := doors.NewSource(progState{Cat: cat})
+	}
+	<title>~(i18n.T(l, "programs.title"))</title>
+	<main class="screen">
+		<section class="library programs">
+			~(st.Bind(elem(s progState) {
+				~(if s.Preview != "" {
+					~(p.preview(l, st, s))
+				} else {
+					~(p.catalog(l, st, s))
+				})
+			}))
+		</section>
+	</main>
+}
+
+elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progState) {
+	~{
+		selected := app.SelectedPrograms(p.sess.UserID)
+		starred := map[string]app.SelectedView{}
+		for _, sp := range selected {
+			if sp.Source != "" {
+				starred[sp.Source] = sp
+			}
+		}
+		used := map[string]bool{}
+		for _, rp := range content.Catalog() {
+			used[rp.Category] = true
+		}
+	}
+	<div class="lib-head">
+		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-back" aria-label=(i18n.T(l, "nav.home"))>←</a>
+		<h1>~(i18n.T(l, "programs.title"))</h1>
+	</div>
+
+	~(if len(selected) > 0 {
+		<h2 class="lib-grp">~(i18n.T(l, "programs.selected"))</h2>
+		<div class="sel-list">
+			~(for _, sp := range selected {
+				~(if s.ConfirmID == sp.ID {
+					<div class="sel-row confirm">
+						<span>~(i18n.Tf(l, "programs.remove_confirm", sp.Name))</span>
+						<div class="confirm-actions">
+							~>doors.AClick{On: p.unselect(sp.ID, true)} <button class="btn danger small" type="button">~(i18n.T(l, "programs.remove"))</button>
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip})
+								return false
+							}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
+						</div>
+					</div>
+				} else if sp.Current && s.Rename {
+					<div class="sel-row on">
+						<input class="text-input" type="text" maxlength=(app.ProgramNameMax) value=(sp.Name) aria-label=(i18n.T(l, "programs.rename")) autofocus
+							(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+								if app.RenameProgram(p.sess.UserID, r.Event().Value) == nil {
+									_ = r.After(doors.ActionLocationReload{})
+								}
+								return false
+							}})>
+					</div>
+				} else {
+					<div class=(selRowClass(sp.Current))>
+						~>doors.AClick{On: p.pickSelected(sp.ID)} <button class="sel-main" type="button">
+							<span class="sel-name">~(sp.Name)</span>
+						</button>
+						~(if sp.Current {
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Rename: true})
+								return false
+							}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.rename"))>✎</button>
+						})
+						<span class="sel-day">~(i18n.T(l, "programs.day"), " ", sp.Day)</span>
+						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+							if sp.Edited {
+								st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, ConfirmID: sp.ID})
+								return false
+							}
+							if app.Unselect(p.sess.UserID, sp.ID, false) == nil {
+								_ = r.After(doors.ActionLocationReload{})
+							}
+							return false
+						}} <button class="star on" type="button" aria-label=(i18n.T(l, "programs.unstar"))>★</button>
+					</div>
+				})
+			})
+		</div>
+	})
+
+	<div class="chips">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, progState{NoJumps: s.NoJumps, NoEquip: s.NoEquip})
+			return false
+		}} <button type="button" class=(chipClass(s.Cat == ""))>~(i18n.T(l, "programs.all"))</button>
+		~(for _, c := range content.Categories() {
+			~(if used[c] {
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					st.Update(ctx, progState{Cat: c, NoJumps: s.NoJumps, NoEquip: s.NoEquip})
+					return false
+				}} <button type="button" class=(chipClass(s.Cat == c))>~(i18n.T(l, "cat."+c))</button>
+			})
+		})
+	</div>
+	<div class="toggles">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, progState{Cat: s.Cat, NoJumps: !s.NoJumps, NoEquip: s.NoEquip})
+			return false
+		}} <button type="button" class=(toggleClass(s.NoJumps)) aria-pressed=(strconv.FormatBool(s.NoJumps))><span class="sw"></span>~(i18n.T(l, "filter.nojumps"))</button>
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: !s.NoEquip})
+			return false
+		}} <button type="button" class=(toggleClass(s.NoEquip)) aria-pressed=(strconv.FormatBool(s.NoEquip))><span class="sw"></span>~(i18n.T(l, "filter.noequipment"))</button>
+	</div>
+
+	<div class="prog-list">
+		~(for _, rp := range content.Catalog() {
+			~{
+				r := rp.Build()
+				tags := content.ProgramTags(r)
+				first, peak := content.MinutesSpan(r)
+				show := (s.Cat == "" || rp.Category == s.Cat) && !(s.NoJumps && tags.Jumps) && !(s.NoEquip && tags.Equipment)
+				mine, isStarred := starred[rp.Key]
+			}
+			~(if show {
+				~(if s.ConfirmKey == rp.Key {
+					<div class="sel-row confirm">
+						<span>~(i18n.Tf(l, "programs.remove_confirm", mine.Name))</span>
+						<div class="confirm-actions">
+							~>doors.AClick{On: p.unselect(mine.ID, true)} <button class="btn danger small" type="button">~(i18n.T(l, "programs.remove"))</button>
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip})
+								return false
+							}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
+						</div>
+					</div>
+				} else {
+					<div class="prog-row">
+						~>doors.AClick{On: p.pickReady(rp.Key)} <button class="prog-main" type="button">
+							<span class="prog-top"><b>~(rp.TitleIn(p.sess.Lang))</b><span class="m">~(first, "–", peak, " ", i18n.T(l, "home.min"))</span></span>
+							<span class="prog-about">~(rp.AboutIn(p.sess.Lang))</span>
+							~(if tags.Jumps || tags.Equipment {
+								<span class="prog-tags">
+									~(if tags.Jumps { <span class="tag">~(i18n.T(l, "tag.jumps"))</span> })
+									~(if tags.Equipment { <span class="tag">~(i18n.T(l, "tag.equipment"))</span> })
+								</span>
+							})
+						</button>
+						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+							if isStarred {
+								if mine.Edited {
+									st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, ConfirmKey: rp.Key})
+									return false
+								}
+								if app.Unselect(p.sess.UserID, mine.ID, false) == nil {
+									_ = r.After(doors.ActionLocationReload{})
+								}
+								return false
+							}
+							if _, err := app.StarReady(p.sess.UserID, rp.Key, p.sess.Lang); err == nil {
+								_ = r.After(doors.ActionLocationReload{})
+							}
+							return false
+						}} <button class=(starClass(isStarred)) type="button" aria-label=(starLabel(l, isStarred))>~(starGlyph(isStarred))</button>
+						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+							st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key})
+							toTop(r)
+							return false
+						}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.more"))>›</button>
+					</div>
+				})
+			})
+		})
+	</div>
+}
+
+// preview shows one ready program before choosing it.
+elem (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progState) {
+	~{
+		rp, _ := content.ReadyByKey(s.Preview)
+		r := rp.Build()
+		tags := content.ProgramTags(r)
+		first, peak := content.MinutesSpan(r)
+		cat := app.UserCatalog(p.sess.UserID)
+		w, m, c := app.DB.Rests(p.sess.UserID)
+		rests := content.Rests{Warmup: w, Main: m, Cooldown: c}
+		isStarred := false
+		for _, sp := range app.SelectedPrograms(p.sess.UserID) {
+			isStarred = isStarred || sp.Source == rp.Key
+		}
+	}
+	<div class="lib-head">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip})
+			return false
+		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "programs.title"))>←</button>
+		<h1>~(rp.TitleIn(p.sess.Lang))</h1>
+	</div>
+	<p class="lib-desc">~(rp.AboutIn(p.sess.Lang))</p>
+	<div class="pills">
+		<span class="pill">~(first, "–", peak, " ", i18n.T(l, "home.min"), " ", i18n.T(l, "landing.a_day"))</span>
+		<span class="pill">~(if tags.Jumps { ~(i18n.T(l, "tag.jumps")) } else { ~(i18n.T(l, "tag.nojumps")) })</span>
+		<span class="pill">~(if tags.Equipment { ~(i18n.T(l, "tag.equipment")) } else { ~(i18n.T(l, "tag.noequipment")) })</span>
+	</div>
+	<div class="preview-actions">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			if app.SelectReady(p.sess.UserID, rp.Key, p.sess.Lang) == nil {
+				p.path.Update(ctx, path.Path{Page: path.Home})
+			}
+			return false
+		}} <button class="btn primary" type="button">~(i18n.T(l, "programs.start"))</button>
+		~(if !isStarred {
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				if _, err := app.StarReady(p.sess.UserID, rp.Key, p.sess.Lang); err == nil {
+					st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key, Tick: s.Tick + 1})
+				}
+				return false
+			}} <button class="btn" type="button">☆ ~(i18n.T(l, "programs.star"))</button>
+		} else {
+			<span class="pill on">★ ~(i18n.T(l, "programs.in_selected"))</span>
+		})
+	</div>
+	<h2 class="lib-grp">~(i18n.T(l, "landing.plan"))</h2>
+	<ol class="plan-days">
+		~(for i, d := range r.Days {
+			~{
+				var items []string
+				for _, it := range d.Items {
+					items = append(items, cat.Name(l, it.ID)+" "+doseLabel(l, string(it.Unit), it.Value, false))
+				}
+				est := r.Workout(i+1, 0, rests).EstSec
+			}
+			<li>
+				<div class="plan-head">
+					<b>~(i18n.T(l, "home.day"), " ", d.Day)~(if content.IsRecoveryDay(d.Day) { <span class="light"> · ~(i18n.T(l, "landing.light"))</span> })</b>
+					<span class="m">~("≈ ", (est+59)/60, " ", i18n.T(l, "home.min"))</span>
+				</div>
+				<p class="m">~(strings.Join(items, ", "))</p>
+			</li>
+		})
+	</ol>
+}
+
+func selRowClass(current bool) string {
+	if current {
+		return "sel-row on"
+	}
+	return "sel-row"
+}
+
+func chipClass(on bool) string {
+	if on {
+		return "chip on"
+	}
+	return "chip"
+}
+
+func toggleClass(on bool) string {
+	if on {
+		return "toggle on"
+	}
+	return "toggle"
+}
+
+func starClass(on bool) string {
+	if on {
+		return "star on"
+	}
+	return "star"
+}
+
+func starGlyph(on bool) string {
+	if on {
+		return "★"
+	}
+	return "☆"
+}
+
+func starLabel(l i18n.Lang, on bool) string {
+	if on {
+		return i18n.T(l, "programs.unstar")
+	}
+	return i18n.T(l, "programs.star")
+}
+
+func (p programsPage) pickReady(key string) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if app.SelectReady(p.sess.UserID, key, p.sess.Lang) == nil {
+			_ = r.After(doors.ActionLocationReload{})
+		}
+		return false
+	}
+}
+
+func (p programsPage) pickSelected(id int64) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if app.SelectByID(p.sess.UserID, id) == nil {
+			_ = r.After(doors.ActionLocationReload{})
+		}
+		return false
+	}
+}
+
+func (p programsPage) unselect(id int64, discard bool) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if app.Unselect(p.sess.UserID, id, discard) == nil {
+			_ = r.After(doors.ActionLocationReload{})
+		}
+		return false
+	}
+}
+
+var _ = gox.Elem(nil)

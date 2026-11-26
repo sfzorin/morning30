@@ -57,7 +57,7 @@ elem (h homePage) Main() {
 		greeting += "!"
 
 		monthOffset := doors.NewSource(0)
-		hasCustom := app.HasCustomProgram(h.sess.UserID)
+		selected := app.SelectedPrograms(h.sess.UserID)
 		resumeData := map[string]any{"userId": h.sess.UserID, "position": pos, "programKey": app.WorkoutProgramKey(h.sess.UserID), "streak": streak, "restartAt": app.CycleRestartAt(h.sess.UserID)}
 	}
 	<title>~(i18n.T(l, "app.name"))</title>
@@ -75,9 +75,9 @@ elem (h homePage) Main() {
 			~(if doneToday {
 				<p class="done-banner">~(i18n.T(l, "home.done_today"))</p>
 			})
-			~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang))</a>
-			<div class="hero-cycle">~(i18n.T(l, "home.cycle"), " ", cycle)~(if !w.FixedDifficulty { ~("  ·  " + levelLabel(l, h.sess.Level)) })</div>
-			<div class="day-num">~(i18n.T(l, "home.day"), " ", curDay)</div>
+			~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang))</a>
+			<div class="hero-cycle">~(i18n.T(l, "home.cycle"), " ", cycle)~(if !w.FixedDifficulty && h.sess.Level != 0 { ~("  ·  ", i18n.T(l, "home.level"), " ", levelLabel(l, h.sess.Level)) })</div>
+			~>doors.ALink{Model: path.Path{Page: path.Today}} <a class="day-num day-link">~(i18n.T(l, "home.day"), " ", curDay) <span class="chev" aria-hidden="true">›</span></a>
 			<div class="day-meta">
 				<span>~(i18n.T(l, "home.rounds"), ": ", mainRounds)</span>
 				<span>~(len(w.Items), " ", i18n.T(l, "home.exercises"))</span>
@@ -88,11 +88,7 @@ elem (h homePage) Main() {
 			<p class="home-save-status hidden" role="status" data-pending=(i18n.T(l, "done.save_pending")) data-saved=(i18n.T(l, "done.saved"))></p>
 		</section>
 
-		~// Courses are offered here only until the account has a program of its
-		~// own; after that they are started from settings, never by a stray tap.
-		~(if !hasCustom {
-			~(h.courses())
-		})
+		~(h.programs(selected))
 
 		<section class="streak-row">
 			<span class="fire">🔥</span>
@@ -124,62 +120,74 @@ elem (h homePage) Main() {
 	</main>
 }
 
-// courses lists the "… in 30 days" series for an account still on the demo.
-// Tapping a course asks first; only "Start course" copies it into this
-// account's program (position and streak stay).
-elem (h homePage) courses() {
+// programs offers quick switching: popular ready programs until the user has
+// another selected program, then their other selected programs. One tap switches.
+elem (h homePage) programs(selected []app.SelectedView) {
 	~{
 		l := i18n.Lang(h.sess.Lang)
-		restW, restM, restC := app.DB.Rests(h.sess.UserID)
-		rests := content.Rests{Warmup: restW, Main: restM, Cooldown: restC}
-		picked := doors.NewSource("")
+		var others []app.SelectedView
+		for _, p := range selected {
+			if !p.Current {
+				others = append(others, p)
+			}
+		}
+		// Until there is another selected program to switch to, offer the
+		// popular ready programs (the current one highlighted).
+		newcomer := len(others) == 0
+		current := app.CurrentSource(h.sess.UserID)
 	}
 	<section class="courses">
-		<h3>~(i18n.T(l, "home.courses"))</h3>
-		~(picked.Bind(elem(key string) {
-			<div class="course-list">
-				~(for _, c := range content.Series30() {
+		<div class="courses-head">
+			<h3>~(if newcomer { ~(i18n.T(l, "home.programs_ready")) } else { ~(i18n.T(l, "home.switch")) })</h3>
+			~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="all-link">~(i18n.T(l, "home.all_programs")) ›</a>
+		</div>
+		<div class="course-list">
+			~(if newcomer {
+				~(for _, key := range content.PopularKeys() {
 					~{
-						r := c.Resolve()
-						first := minutes(r.Workout(1, h.sess.Level, rests).EstSec)
-						peak := minutes(r.Workout(content.TotalDays-1, h.sess.Level, rests).EstSec)
-						cls := "course-card"
-						if c.Key == key {
-							cls += " on"
-						}
+						p, _ := content.ReadyByKey(key)
+						first, peak := content.MinutesSpan(p.Build())
 					}
-					~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-						picked.Update(ctx, c.Key)
-						return false
-					}} <button class=(cls) type="button">
-						<span class="course-title">~(c.TitleIn(h.sess.Lang))</span>
+					~>doors.AClick{On: h.pickReady(key)} <button class=(courseClass(key == current)) type="button">
+						<span class="course-title">~(p.TitleIn(h.sess.Lang))</span>
 						<span class="course-meta">~(first, "–", peak, " ", i18n.T(l, "home.min"))</span>
 					</button>
 				})
-			</div>
-			~(if key != "" {
-				<div class="confirm-reset course-confirm">
-					<span class="confirm-q calm">~(i18n.T(l, "settings.course_note"))</span>
-					<div class="confirm-actions">
-						~>doors.AClick{On: h.useCourse(key)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.course_use"))</button>
-						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-							picked.Update(ctx, "")
-							return false
-						}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
-					</div>
-				</div>
+			} else {
+				~(for _, p := range others {
+					~>doors.AClick{On: h.pickSelected(p.ID)} <button class="course-card" type="button">
+						<span class="course-title">~(p.Name)</span>
+						<span class="course-meta">~(i18n.T(l, "programs.day"), " ", p.Day)</span>
+					</button>
+				})
 			})
-		}))
+		</div>
 	</section>
 }
 
-// useCourse installs a 30-day course as this account's program and reloads.
-func (h homePage) useCourse(key string) func(context.Context, doors.RequestPointer) bool {
+func courseClass(on bool) string {
+	if on {
+		return "course-card on"
+	}
+	return "course-card"
+}
+
+// pickReady switches to a ready program and reloads the home screen.
+func (h homePage) pickReady(key string) func(context.Context, doors.RequestPointer) bool {
 	return func(ctx context.Context, r doors.RequestPointer) bool {
-		if app.UseCourse(h.sess.UserID, key, h.sess.Lang) != nil {
-			return false
+		if app.SelectReady(h.sess.UserID, key, h.sess.Lang) == nil {
+			_ = r.After(doors.ActionLocationReload{})
 		}
-		_ = r.After(doors.ActionLocationReload{})
+		return false
+	}
+}
+
+// pickSelected switches to one of the user's selected programs.
+func (h homePage) pickSelected(id int64) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if app.SelectByID(h.sess.UserID, id) == nil {
+			_ = r.After(doors.ActionLocationReload{})
+		}
 		return false
 	}
 }

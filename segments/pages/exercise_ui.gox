@@ -1,0 +1,176 @@
+package pages
+
+import (
+	"context"
+	"strconv"
+
+	"morning30/internal/app"
+	"morning30/internal/content"
+	"morning30/internal/i18n"
+
+	"github.com/doors-dev/doors"
+	"github.com/doors-dev/gox"
+)
+
+// Shared pieces of the day screen and the library: an exercise card with the
+// four figures, a day selection and dose labels.
+
+// figureKeys pairs the four figures with their label keys.
+var figureKeys = []struct{ Code, Key string }{
+	{"m", "sex.male"}, {"f", "sex.female"}, {"b", "sex.boy"}, {"g", "sex.girl"},
+}
+
+// doseLabel formats a dose: "× 12", "45 сек", "5 дыханий", plus per side.
+func doseLabel(l i18n.Lang, unit string, value int, perSide bool) string {
+	var s string
+	switch content.Unit(unit) {
+	case content.Seconds:
+		s = strconv.Itoa(value) + " " + i18n.T(l, "workout.sec")
+	case content.Breaths:
+		s = strconv.Itoa(value) + " " + i18n.T(l, "workout.breaths")
+	default:
+		s = "× " + strconv.Itoa(value)
+	}
+	if perSide {
+		s += " " + i18n.T(l, "today.per_side")
+	}
+	return s
+}
+
+// firstFrameOf returns the first picture of an exercise for a figure.
+func firstFrameOf(userID int64, id, figure string) string {
+	frames := app.ExerciseFrames(app.UserCatalog(userID), id, figure)
+	if len(frames) == 0 {
+		return ""
+	}
+	return frames[0]
+}
+
+// whereState is a day selection: "today", "all", or "pick" with a day mask.
+type whereState struct {
+	Mode string // today | all | pick
+	Mask uint32 // bit d-1 set = day d, for "pick"
+}
+
+// days turns a selection into the days an edit touches.
+func (w whereState) days(today int) content.Days {
+	switch w.Mode {
+	case "today":
+		return content.OneDay(today)
+	case "pick":
+		var list []int
+		for d := 1; d <= content.TotalDays; d++ {
+			if w.Mask&(1<<uint(d-1)) != 0 {
+				list = append(list, d)
+			}
+		}
+		return content.Days{List: list}
+	}
+	return content.AllDays()
+}
+
+// wherePicker renders "Today / All days / Choose" and, when choosing, a grid
+// of the 30 days. update stores a new selection.
+elem wherePicker(l i18n.Lang, w whereState, update func(context.Context, whereState)) {
+	<div class="seg3">
+		~(for _, opt := range []struct{ Mode, Key string }{{"today", "days.today"}, {"all", "days.all"}, {"pick", "days.pick"}} {
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				update(ctx, whereState{Mode: opt.Mode, Mask: w.Mask})
+				return false
+			}} <button type="button" class=(segClass(w.Mode == opt.Mode))>~(i18n.T(l, opt.Key))</button>
+		})
+	</div>
+	~(if w.Mode == "pick" {
+		<div class="day-pick">
+			~(for d := 1; d <= content.TotalDays; d++ {
+				~{
+					bit := uint32(1) << uint(d-1)
+				}
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					update(ctx, whereState{Mode: "pick", Mask: w.Mask ^ bit})
+					return false
+				}} <button type="button" class=(segClass(w.Mask&bit != 0))>~(d)</button>
+			})
+		</div>
+	})
+}
+
+// toTop shows a newly opened view from its start.
+func toTop(r doors.RequestPointer) {
+	_ = r.After(doors.ActionScroll{Selector: "main", Options: map[string]any{"block": "start"}})
+}
+
+func segClass(on bool) string {
+	if on {
+		return "seg on"
+	}
+	return "seg"
+}
+
+// exerciseCard shows an exercise: picture with a figure switcher, technique,
+// what is correct and the common mistakes. onAdd (optional) adds it to the program.
+type exerciseCard struct {
+	userID int64
+	lang   string
+	id     string
+	figure doors.Source[string]
+	onBack func(context.Context)
+	onAdd  func(context.Context)
+}
+
+elem (c exerciseCard) Main() {
+	~{
+		l := i18n.Lang(c.lang)
+		cat := app.UserCatalog(c.userID)
+		d, _ := cat.Detail(l, c.id)
+	}
+	<div class="lib-head">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			c.onBack(ctx)
+			return false
+		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "nav.close"))>←</button>
+		<h1>~(cat.Name(l, c.id))</h1>
+	</div>
+	~(c.figure.Bind(elem(fig string) {
+		~(if src := firstFrameOf(c.userID, c.id, fig); src != "" {
+			<img class="card-img" src=(src) alt=(cat.Name(l, c.id))>
+		})
+		<div class="seg2">
+			~(for _, f := range figureKeys {
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					c.figure.Update(ctx, f.Code)
+					return false
+				}} <button type="button" class=(segClass(fig == f.Code))>~(i18n.T(l, f.Key))</button>
+			})
+		</div>
+	}))
+	~(if d.Desc != "" {
+		<p class="lib-desc">~(d.Desc)</p>
+	})
+	~(if len(d.HowTo) > 0 {
+		<div class="lib-sec">
+			<h2>~(i18n.T(l, "library.howto"))</h2>
+			<ol>~(for _, line := range d.HowTo { <li>~(line)</li> })</ol>
+		</div>
+	})
+	~(if len(d.Correct) > 0 {
+		<div class="lib-sec lib-correct">
+			<h2>~(i18n.T(l, "library.correct"))</h2>
+			<ul>~(for _, line := range d.Correct { <li>~(line)</li> })</ul>
+		</div>
+	})
+	~(if len(d.Wrong) > 0 {
+		<div class="lib-sec lib-mistakes">
+			<h2>~(i18n.T(l, "library.mistakes"))</h2>
+			<ul>~(for _, line := range d.Wrong { <li>~(line)</li> })</ul>
+		</div>
+	})
+	~(if c.onAdd != nil {
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			c.onAdd(ctx)
+			return false
+		}} <button class="btn primary wide" type="button">+ ~(i18n.T(l, "library.add_to_program"))</button>
+	})
+}
+
+var _ = gox.Elem(nil)

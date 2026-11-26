@@ -2,153 +2,236 @@ package pages
 
 import (
 	"context"
-	"strings"
+	"errors"
 
+	"morning30/internal/app"
 	"morning30/internal/auth"
+	"morning30/internal/content"
 	"morning30/internal/i18n"
-	"morning30/internal/library"
 	"morning30/path"
 
 	"github.com/doors-dev/doors"
 	"github.com/doors-dev/gox"
 )
 
-// libState is the library browser's position: a group key, then an exercise id.
-// "" group = the group list; group set, id "" = that group's exercises; id set =
-// the exercise detail (card). One Source drives all three levels.
-type libState struct {
-	Group string
-	ID    string
-}
-
-// libraryPage is the browse-only exercise library imported from Leap Fitness:
-// grouped lists down to a localized card.
+// libraryPage is the exercise library: find an exercise, look at its card,
+// and add it to the current program ("+": part, days and amount).
 type libraryPage struct {
 	sess auth.Session
 	auth doors.Source[auth.Session]
 	path doors.Source[path.Path]
 }
 
+// libState is the whole library screen in one comparable value.
+type libState struct {
+	Query   string
+	Group   string
+	NoJumps bool
+	Card    string // exercise whose card is open
+	Add     string // exercise being added
+	Part    string
+	Where   whereState
+	Value   int
+	Err     string // i18n key of the last error
+	Done    string // name of the exercise just added
+}
+
+// list returns to the list, keeping the search and filters.
+func (s libState) list() libState {
+	return libState{Query: s.Query, Group: s.Group, NoJumps: s.NoJumps}
+}
+
 elem (p libraryPage) Main() {
 	~{
 		l := i18n.Lang(p.sess.Lang)
-		lang := string(l)
 		st := doors.NewSource(libState{})
+		figure := doors.NewSource(app.DB.GetSex(p.sess.UserID))
 	}
 	<title>~(i18n.T(l, "library.title"))</title>
 	<main class="screen">
 		<section class="library">
 			~(st.Bind(elem(s libState) {
-				~(if s.ID != "" {
-					~(p.detail(l, lang, st, s))
+				~(if s.Add != "" {
+					~(p.addSheet(l, st, s))
+				} else if s.Card != "" {
+					~(exerciseCard{userID: p.sess.UserID, lang: p.sess.Lang, id: s.Card, figure: figure,
+						onBack: func(ctx context.Context) { st.Update(ctx, s.list()) },
+						onAdd:  func(ctx context.Context) { st.Update(ctx, p.startAdd(s, s.Card)) }})
 				} else {
-					~(if s.Group != "" {
-						~(p.groupView(l, lang, st, s.Group))
-					} else {
-						~(p.groupList(l, st))
-					})
+					~(p.list(l, st, s))
 				})
 			}))
 		</section>
 	</main>
 }
 
-// groupList is level 1: every browse category with its exercise count.
-elem (p libraryPage) groupList(l i18n.Lang, st doors.Source[libState]) {
+// startAdd opens the add sheet with the exercise's own part and a default amount.
+func (p libraryPage) startAdd(s libState, id string) libState {
+	next := s.list()
+	next.Add = id
+	next.Part = string(content.Main)
+	next.Where = whereState{Mode: "all"}
+	next.Value = 10
+	if def, ok := app.UserCatalog(p.sess.UserID).Def(id); ok {
+		if def.Slot != "" {
+			next.Part = string(def.Slot)
+		}
+		next.Value = content.DefaultValue(def.Unit)
+	}
+	return next
+}
+
+elem (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) {
+	~{
+		items := app.Library(p.sess.UserID, p.sess.Lang, s.Group, s.Query, s.NoJumps)
+		all := app.Library(p.sess.UserID, p.sess.Lang, "", "", false)
+		used := map[string]bool{}
+		for _, e := range all {
+			used[e.Group] = true
+		}
+		fig := app.DB.GetSex(p.sess.UserID)
+		group := ""
+	}
 	<div class="lib-head">
+		~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="lib-back" aria-label=(i18n.T(l, "settings.editor"))>←</a>
 		<h1>~(i18n.T(l, "library.title"))</h1>
-		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-x" aria-label=(i18n.T(l, "workout.quit"))>✕</a>
 	</div>
-	<p class="lib-intro">~(i18n.T(l, "library.intro"))</p>
-	<div class="lib-groups">
-		~(for _, g := range library.Groups() {
-			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-				st.Update(ctx, libState{Group: g.Key})
-				return false
-			}}
-			<button class="lib-grow" type="button">
-				<span class="lib-grow-name">~(g.Label)</span>
-				<span class="lib-grow-count">~(len(g.Cards))</span>
-			</button>
-		})
-	</div>
-}
-
-// groupView is level 2: the exercises in one group.
-elem (p libraryPage) groupView(l i18n.Lang, lang string, st doors.Source[libState], group string) {
-	~{
-		var cards []*library.Card
-		label := group
-		for _, g := range library.Groups() {
-			if g.Key == group {
-				cards = g.Cards
-				label = g.Label
-				break
-			}
-		}
-	}
-	<div class="lib-head">
-		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-			st.Update(ctx, libState{})
-			return false
-		}} <button class="lib-back" type="button" aria-label="←">←</button>
-		<h1>~(label)</h1>
-	</div>
-	<div class="lib-list">
-		~(for _, c := range cards {
-			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-				st.Update(ctx, libState{Group: group, ID: c.ID})
-				return false
-			}}
-			<button class="lib-item" type="button">
-				~(if thumb := localThumb(c.Source.Thumbnail); thumb != "" {
-					<img class="lib-thumb" loading="lazy" src=(thumb) alt="">
-				})
-				<span class="lib-item-name">~(c.Name(lang))</span>
-			</button>
-		})
-	</div>
-}
-
-// detail is level 3: the localized card.
-elem (p libraryPage) detail(l i18n.Lang, lang string, st doors.Source[libState], s libState) {
-	~{
-		c, ok := library.ByID(s.ID)
-	}
-	~(if !ok {
-		<p>~(i18n.T(l, "library.title"))</p>
-	} else {
-		~{
-			t := c.Text(lang)
-		}
-		<div class="lib-head">
-			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-				st.Update(ctx, libState{Group: s.Group})
-				return false
-			}} <button class="lib-back" type="button" aria-label="←">←</button>
-			<h1>~(c.Name(lang))</h1>
-		</div>
-		<p class="lib-desc">~(t.ShortDescription)</p>
-
-		<div class="lib-sec">
-			<h2>~(i18n.T(l, "library.howto"))</h2>
-			<ul>~(for _, line := range t.HowTo { <li>~(line)</li> })</ul>
-		</div>
-		<div class="lib-sec lib-correct">
-			<h2>~(i18n.T(l, "library.correct"))</h2>
-			<ul>~(for _, line := range t.Correct { <li>~(line)</li> })</ul>
-		</div>
-		<div class="lib-sec lib-mistakes">
-			<h2>~(i18n.T(l, "library.mistakes"))</h2>
-			<ul>~(for _, line := range t.Mistakes { <li>~(line)</li> })</ul>
-		</div>
+	~(if s.Done != "" {
+		<p class="ok-msg" role="status">~(i18n.Tf(l, "library.added", s.Done, app.ProgramTitle(p.sess.UserID, p.sess.Lang)))</p>
 	})
+	<input class="text-input search" type="search" value=(s.Query) placeholder=(i18n.T(l, "library.search")) aria-label=(i18n.T(l, "library.search"))
+		(doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+			st.Update(ctx, libState{Query: r.Event().Value, Group: s.Group, NoJumps: s.NoJumps})
+			return false
+		}})>
+	<div class="chips">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, libState{Query: s.Query, NoJumps: s.NoJumps})
+			return false
+		}} <button type="button" class=(chipClass(s.Group == ""))>~(i18n.T(l, "programs.all"))</button>
+		~(for _, g := range app.LibraryGroups() {
+			~(if used[g] {
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					st.Update(ctx, libState{Query: s.Query, Group: g, NoJumps: s.NoJumps})
+					return false
+				}} <button type="button" class=(chipClass(s.Group == g))>~(i18n.T(l, "grp."+g))</button>
+			})
+		})
+	</div>
+	<div class="toggles">
+		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+			st.Update(ctx, libState{Query: s.Query, Group: s.Group, NoJumps: !s.NoJumps})
+			return false
+		}} <button type="button" class=(toggleClass(s.NoJumps))><span class="sw"></span>~(i18n.T(l, "filter.nojumps"))</button>
+	</div>
+	~(if len(items) == 0 {
+		<p class="lib-intro">~(i18n.T(l, "library.nothing"))</p>
+	})
+	<div class="lib-list">
+		~(for _, e := range items {
+			~(if s.Group == "" && e.Group != group {
+				~{ group = e.Group }
+				<h2 class="lib-grp">~(i18n.T(l, "grp."+e.Group))</h2>
+			})
+			<div class="lib-item">
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					next := s.list()
+					next.Card = e.ID
+					st.Update(ctx, next)
+					toTop(r)
+					return false
+				}} <button class="lib-open" type="button">
+					~(if src := firstFrameOf(p.sess.UserID, e.ID, fig); src != "" {
+						<img class="lib-thumb" loading="lazy" src=(src) alt="">
+					} else {
+						<span class="lib-thumb"></span>
+					})
+					<span class="lib-item-name">~(e.Name)</span>
+				</button>
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					st.Update(ctx, p.startAdd(s, e.ID))
+					toTop(r)
+					return false
+				}} <button class="add-btn" type="button" aria-label=(i18n.T(l, "library.add_to_program"))>+</button>
+			</div>
+		})
+	</div>
 }
 
-func localThumb(url string) string {
-	u := strings.ToLower(url)
-	if u == "" || strings.Contains(u, "youtu") || strings.Contains(u, "ytimg") {
-		return ""
+// addSheet asks where, on which days and how much, then adds the exercise.
+elem (p libraryPage) addSheet(l i18n.Lang, st doors.Source[libState], s libState) {
+	~{
+		cat := app.UserCatalog(p.sess.UserID)
+		def, _ := cat.Def(s.Add)
+		step := 1
+		if def.Unit == content.Seconds {
+			step = 5
+		}
+		with := func(change func(*libState)) libState {
+			next := s
+			next.Err = ""
+			change(&next)
+			return next
+		}
+		today := app.CurrentDay(p.sess.UserID)
 	}
-	return url
+	<div class="sheet">
+		<h1>~(cat.Name(l, s.Add))</h1>
+		<p class="lib-intro">~(i18n.Tf(l, "library.into", app.ProgramTitle(p.sess.UserID, p.sess.Lang)))</p>
+		<h2 class="lib-grp">~(i18n.T(l, "library.part"))</h2>
+		<div class="seg3">
+			~(for _, part := range []struct{ Slot, Key string }{{"warmup", "workout.warmup"}, {"main", "workout.main"}, {"cooldown", "workout.cooldown"}} {
+				~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+					st.Update(ctx, with(func(n *libState) { n.Part = part.Slot }))
+					return false
+				}} <button type="button" class=(segClass(s.Part == part.Slot))>~(i18n.T(l, part.Key))</button>
+			})
+		</div>
+		<h2 class="lib-grp">~(i18n.T(l, "library.days"))</h2>
+		~(wherePicker(l, s.Where, func(ctx context.Context, w whereState) {
+			st.Update(ctx, with(func(n *libState) { n.Where = w }))
+		}))
+		<h2 class="lib-grp">~(i18n.T(l, "library.amount"))</h2>
+		<div class="stepper">
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				st.Update(ctx, with(func(n *libState) {
+					if n.Value-step >= 1 {
+						n.Value -= step
+					}
+				}))
+				return false
+			}} <button type="button" aria-label="−">−</button>
+			<b>~(doseLabel(l, string(def.Unit), s.Value, def.PerSide))</b>
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				st.Update(ctx, with(func(n *libState) { n.Value += step }))
+				return false
+			}} <button type="button" aria-label="+">+</button>
+		</div>
+		~(if s.Err != "" {
+			<p class="err" role="alert">~(i18n.T(l, s.Err))</p>
+		})
+		<div class="preview-actions">
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				err := app.AddToCurrent(p.sess.UserID, s.Add, content.Slot(s.Part), s.Where.days(today), s.Value)
+				if err != nil {
+					key := "today.edit_failed"
+					if errors.Is(err, content.ErrNoDays) {
+						key = "library.no_days"
+					}
+					st.Update(ctx, with(func(n *libState) { n.Err = key }))
+					return false
+				}
+				done := s.list()
+				done.Done = cat.Name(l, s.Add)
+				st.Update(ctx, done)
+				return false
+			}} <button class="btn primary" type="button">~(i18n.T(l, "library.add"))</button>
+			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				st.Update(ctx, s.list())
+				return false
+			}} <button class="btn" type="button">~(i18n.T(l, "settings.cancel"))</button>
+		</div>
+	</div>
 }
+
+var _ = gox.Elem(nil)

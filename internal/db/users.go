@@ -182,22 +182,16 @@ func clampLevel(l int) int {
 	return l
 }
 
-// GetSex returns the user's figure preference ("m" or "f"; defaults to "m").
+// GetSex returns the user's figure: m (man, default), f (woman), b (boy) or g (girl).
 func (d *DB) GetSex(userID int64) string {
 	var s string
 	_ = d.sql.QueryRow(`SELECT sex FROM users WHERE id = ?`, userID).Scan(&s)
-	if s != "f" {
-		return "m"
-	}
-	return "f"
+	return NormalizeSex(s)
 }
 
-// SetSex stores the user's figure preference (anything but "f" is stored as "m").
+// SetSex stores the user's figure (unknown values are stored as "m").
 func (d *DB) SetSex(userID int64, sex string) error {
-	if sex != "f" {
-		sex = "m"
-	}
-	_, err := d.sql.Exec(`UPDATE users SET sex = ? WHERE id = ?`, sex, userID)
+	_, err := d.sql.Exec(`UPDATE users SET sex = ? WHERE id = ?`, NormalizeSex(sex), userID)
 	return err
 }
 

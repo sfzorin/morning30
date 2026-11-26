@@ -25,21 +25,30 @@ small client-side workout engine.
   into that account's personal JSON on first load; cycle position and streaks
   stay put. Settings edit *this* account only — there is no Sergey/Vlad/Ilya
   picker.
-- **"… in 30 days" courses.** Six goal-named courses (plank, abs, lose weight,
-  push-ups, posture, legs & glutes) are offered on the home screen and in
-  settings. Picking one copies it into the account's personal plan under the
-  course's name; from then on it is edited and renamed like any other plan.
-  Switching courses keeps the cycle day and streak. Once an account has its
-  own plan the courses are offered in settings only. Each course also has a
-  public page per language (`/{lang}/courses/...`, listed in the sitemap).
-- **Saved programs.** Starting a course, importing a file, returning to the
-  demo or an agent upload never destroys a plan the user made or edited: it is
-  put aside in a per-account list (newest ten) and can be restored in settings.
-  Restoring swaps, so the plan it replaces is kept in turn. Untouched copies of
-  the demo or of a course are not kept; they can always be started again.
-- **In-app editor.** Reorder, add, remove and retime exercises; all three phases
-  remain nonempty, with exactly two main rounds. Save as this account's version,
-  or restore the demo.
+- **Ready programs.** A catalog of ready 30-day programs (the morning workout
+  plus goal-named "… in 30 days" courses) in sections — first steps, strength,
+  weight loss, posture — with one-line descriptions, a preview of the 30-day
+  plan, and "no jumps" / "no equipment" filters read from the programs
+  themselves. Each course also has a public page per language
+  (`/{lang}/courses/...`, listed in the sitemap).
+- **Selected programs.** The user's own shortlist. One tap on a program
+  switches to it; the star adds or removes it without switching. Every
+  selected program keeps its own copy (with the user's edits) and its own
+  cycle day, so switching never loses anything; the streak and calendar are
+  common. Removing a program that holds the user's edits asks first. The home
+  screen offers quick switching between them (popular ready programs until
+  there is a second one).
+- **Day screen and practical library.** Tapping the day on the home screen
+  lists its exercises; each one opens its card, a replacement picker (easier,
+  similar, harder exercises of the same group, for today, every day or chosen
+  days) or removal. The library has search, groups and a "no jumps" filter;
+  "+" adds an exercise to a part of the current program on chosen days with a
+  chosen amount. Edits always go to the user's version of the program.
+- **Program and exercise editor.** A separate page (Settings → editor) for the
+  full day-by-day cycle editor, exercise content and JSON, the library and the
+  agent token. Reorder, add, remove and retime exercises; all three phases
+  remain nonempty, with exactly two main rounds. Settings themselves keep only
+  the workout, program and profile choices, each saved as soon as it changes.
 - **Exercise JSON.** Download any exercise as a file, paste or upload one back.
   Custom exercises overlay the built-in library. Each exercise can use one
   catalog still (static) or two (they swap once a second). Legacy built-in
@@ -85,8 +94,11 @@ small client-side workout engine.
   announcement of the next exercise with its count, a 3-2-1 lead-in, a half-time
   marker on timed sets, and running technique narration (how to do it / common
   mistakes). Four levels in settings: off · minimal · normal · detailed.
-- **Male / female figures.** A settings toggle picks the variant. Moving
-  exercises show two catalog stills that alternate every second; holds use one.
+- **Four figures.** Man, woman, boy or girl, chosen in settings and in each
+  exercise card. A child figure without its own picture is shown as the adult
+  of the same sex. Picking a children's ready program switches to the child
+  figure (and back for an adult program). Moving exercises show two catalog
+  stills that alternate every second; holds use one.
 - **Accounts.** Email + password (bcrypt). A **guest mode** lets people start
   immediately; signing up later upgrades the guest in place, keeping all progress.
 - **Streaks & calendar.** Consecutive-day streaks and a monthly activity calendar.
@@ -222,21 +234,41 @@ stdio (local Cursor / Claude against the same DB file):
 MORNING_DB=morning.db go run ./cmd/morning-mcp
 ```
 
-Tools: `list_accounts`, `get_program`, `set_program`, `rename_program`,
-`list_courses`, `get_course`, `use_course`, `list_saved_programs`,
-`restore_saved_program`, `restore_demo`, `list_exercises`, `list_custom_exercises`, `get_exercise`, `put_exercise`,
-`list_figures`, `list_poses`, `put_pose`, `set_exercise_poses`.
-`account` is a user id, email, or unique display name.
-`use_course` copies a built-in "… in 30 days" course into the account's
-personal program (titled in the account's language unless `lang` is given);
-from then on it is an ordinary program for `get_program` / `set_program`.
-`rename_program` changes only the name. Neither moves the cycle day or streak.
-`set_program`, `use_course` and `restore_demo` put the user's own previous
-plan into the saved list; `list_saved_programs` / `restore_saved_program`
-(HTTP: `GET /api/accounts/me/saved-programs`,
-`POST /api/accounts/me/saved-programs/{id}/restore`) bring one back.
+Every feature of the app is available to agents. Each operation exists both as
+a stdio tool and as an HTTP endpoint with the account's token (`me` = the
+token's account):
+
+| Tool | HTTP | What it does |
+|---|---|---|
+| `list_programs` | `GET /api/programs` | catalog: key, category, titles and descriptions in 7 languages, tags (jumps, equipment), minutes |
+| `get_ready_program` | `GET /api/programs/{key}` | one ready program with its 30-day plan |
+| `list_selected` | `GET /api/accounts/me/selected` | selected programs: id, name, source key, own day, current, edited |
+| `select_program` | `POST /api/accounts/me/select` | switch by catalog `key` or selected `id`; nothing is lost |
+| `star_program` | `POST /api/accounts/me/selected` | add a catalog program without switching |
+| `unselect_program` | `DELETE /api/accounts/me/selected/{id}` | remove; edited programs need `discardEdits=true` (409 otherwise) |
+| `rename_program` | `PUT /api/accounts/me/program/name` | rename the current program (plain text or `{"name"}`) |
+| `set_program` | `PUT /api/accounts/me/program` | save a new version of the current program (day stays) |
+| `import_program` | `POST /api/accounts/me/programs/import` | add a program as a new selected one, at day 1 |
+| `restore_demo` | `POST /api/accounts/me/restore-demo` | switch to the morning workout |
+| `get_day` | `GET /api/accounts/me/day[/{n}]` | a day's exercises with the doses the user will do |
+| `add_exercise` | `POST /api/accounts/me/program/exercises` | `exercise`, `part`, `days`, `value` |
+| `replace_exercise` | `POST /api/accounts/me/program/replace` | `from`, `to`, `days`; the dose carries over |
+| `remove_exercise` | `POST /api/accounts/me/program/remove` | `exercise`, optional `part`, `days` |
+| `list_exercises` | `GET /api/accounts/me/library` | library with `group`, `query`, `noJumps` filters |
+| `similar_exercises` | `GET /api/accounts/me/exercises/{id}/similar` | easier, similar and harder replacements |
+| `get_settings` / `set_settings` | `GET` / `PATCH /api/accounts/me/settings` | name, lang, rests, voiceMode, figure (`m f b g`), level |
+
+`days` is `"today"`, `"all"` (default), a day number or a list of day numbers.
+Also: `list_accounts`, `get_program` (`GET /api/accounts/me/program`),
+`list_custom_exercises`, `get_exercise`, `put_exercise`, `list_figures`,
+`list_poses`, `put_pose`, `set_exercise_poses`. `account` is a user id, email,
+or unique display name. Earlier names keep working: `list_courses`,
+`get_course`, `use_course`, `list_saved_programs`, `restore_saved_program`
+(and `/api/courses`). Nothing an agent does resets the streak; a program's day
+changes only when switching to a program with its own day.
 `put_exercise` may set `poses` to 1–2 ids from `list_poses` (`svg` stays the
-legacy figure fallback). `put_pose` uploads a still (base64 png/jpeg/webp).
+legacy figure fallback). `put_pose` uploads a still (base64 png/jpeg/webp) for a figure `sex`: m, f, b
+or g.
 `set_exercise_poses` assigns those stills on a global library exercise.
 
 HTTP is always on `/api/*`. Issue a token in **Settings → MCP token** (shown once;
@@ -247,9 +279,12 @@ curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/accounts
 curl -H "Authorization: Bearer m30_…" \
   -X PUT --data-binary @P08.json \
   http://localhost:8080/api/accounts/me/exercises/P08
-curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/courses
+curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/programs
 curl -H "Authorization: Bearer m30_…" \
-  -X POST http://localhost:8080/api/accounts/me/course/plank30
+  -X POST --data '{"key":"plank30"}' http://localhost:8080/api/accounts/me/select
+curl -H "Authorization: Bearer m30_…" \
+  -X POST --data '{"exercise":"C07","part":"main","days":"today","value":25}' \
+  http://localhost:8080/api/accounts/me/program/exercises
 curl -H "Authorization: Bearer m30_…" \
   -X PUT --data 'My morning plank' \
   http://localhost:8080/api/accounts/me/program/name
