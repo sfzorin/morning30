@@ -1,0 +1,402 @@
+{
+ "swim": {
+  "title": {
+   "ru": "Для пловцов",
+   "en": "For Swimmers",
+   "tr": "Yüzücüler İçin",
+   "de": "Für Schwimmer",
+   "es": "Para nadadores",
+   "fr": "Pour les nageurs",
+   "it": "Per i nuotatori"
+  },
+  "about": {
+   "ru": "Сухая тренировка на суше: лопатки и плечи, «стрелка», сильный корпус и подвижные голеностопы.",
+   "en": "Dryland training: shoulder blades and shoulders, the streamline, a strong core and mobile ankles.",
+   "tr": "Karada yüzme antrenmanı: kürek kemikleri ve omuzlar, süzülme (streamline) duruşu, güçlü bir gövde ve esnek bilekler.",
+   "de": "Trockentraining an Land: Schulterblätter und Schultern, Streamline-Haltung, starker Rumpf und bewegliche Sprunggelenke.",
+   "es": "Entrenamiento en seco: omóplatos y hombros, posición hidrodinámica (streamline), core fuerte y tobillos móviles.",
+   "fr": "Entraînement à sec : omoplates et épaules, position hydrodynamique (streamline), gainage solide et chevilles souples.",
+   "it": "Allenamento a secco: scapole e spalle, posizione idrodinamica (streamline), core forte e caviglie mobili."
+  }
+ },
+ "wrestling": {
+  "title": {
+   "ru": "Борьба и дзюдо",
+   "en": "Wrestling and Judo",
+   "tr": "Güreş ve Judo",
+   "de": "Ringen und Judo",
+   "es": "Lucha y judo",
+   "fr": "Lutte et judo",
+   "it": "Lotta e judo"
+  },
+  "about": {
+   "ru": "Проходы в ноги, спрол, крепкая шея без моста на голове и выносливость корпуса.",
+   "en": "Shot steps, sprawls, a strong neck without head bridges, and core endurance.",
+   "tr": "Bacak kapma (shot) adımları, sprawl, baş köprüsü yapmadan güçlü boyun ve gövde dayanıklılığı.",
+   "de": "Beinangriffe (Shots), Sprawls, ein kräftiger Nacken ohne Kopfbrücken und Rumpfausdauer.",
+   "es": "Entradas a las piernas (shots), sprawls, un cuello fuerte sin puentes sobre la cabeza y resistencia del core.",
+   "fr": "Attaques aux jambes (shots), sprawls, une nuque solide sans pont sur la tête et endurance du tronc.",
+   "it": "Attacchi alle gambe (shot), sprawl, un collo forte senza ponti sulla testa e resistenza del core."
+  }
+ },
+ "cycling": {
+  "title": {
+   "ru": "Для велосипедистов",
+   "en": "For Cyclists",
+   "tr": "Bisikletçiler İçin",
+   "de": "Für Radfahrer",
+   "es": "Para ciclistas",
+   "fr": "Pour les cyclistes",
+   "it": "Per i ciclisti"
+  },
+  "about": {
+   "ru": "Ягодицы, колени и поясница, а после седла — раскрытие груди и бёдер.",
+   "en": "Glutes, knees and lower back, then opening the chest and hips after the saddle.",
+   "tr": "Kalça, diz ve bel; sele sonrasında ise göğsü ve kalçaları açma.",
+   "de": "Gesäß, Knie und unterer Rücken, danach Brust und Hüften nach dem Sattel öffnen.",
+   "es": "Glúteos, rodillas y zona lumbar; y, tras la bici, apertura de pecho y caderas.",
+   "fr": "Fessiers, genoux et bas du dos, puis ouverture de la poitrine et des hanches après la selle.",
+   "it": "Glutei, ginocchia e zona lombare, poi apertura di petto e anche dopo la sella."
+  }
+ },
+ "hockey": {
+  "title": {
+   "ru": "Хоккей и коньки",
+   "en": "Hockey and Skating",
+   "tr": "Hokey ve Buz Pateni",
+   "de": "Hockey und Eislaufen",
+   "es": "Hockey y patinaje",
+   "fr": "Hockey et patinage",
+   "it": "Hockey e pattinaggio"
+  },
+  "about": {
+   "ru": "Низкая стойка, прыжки конькобежца, равновесие и повороты корпуса.",
+   "en": "A low stance, skater jumps, balance and torso rotation.",
+   "tr": "Alçak duruş, patenci sıçramaları, denge ve gövde rotasyonu.",
+   "de": "Tiefe Position, Schlittschuhsprünge, Gleichgewicht und Rumpfrotation.",
+   "es": "Postura baja, saltos de patinador, equilibrio y rotación del torso.",
+   "fr": "Position basse, sauts de patineur, équilibre et rotations du buste.",
+   "it": "Posizione bassa, salti del pattinatore, equilibrio e rotazioni del busto."
+  }
+ },
+ "climbing": {
+  "title": {
+   "ru": "Для скалолазов",
+   "en": "For Climbers",
+   "tr": "Tırmanıcılar İçin",
+   "de": "Für Kletterer",
+   "es": "Para escaladores",
+   "fr": "Pour les grimpeurs",
+   "it": "Per gli scalatori"
+  },
+  "about": {
+   "ru": "Хват, лопатки и вис на турнике, сильный корпус и мышцы-антагонисты пальцев. Нужен турник.",
+   "en": "Grip, shoulder blades and hanging on a bar, a strong core and finger antagonists. Needs a pull-up bar.",
+   "tr": "Kavrama, kürek kemikleri ve barfikste asılma, güçlü gövde ve parmakların antagonist kasları. Barfiks demiri gerekir.",
+   "de": "Griffkraft, Schulterblätter und Hängen an der Klimmzugstange, starker Rumpf und die Antagonisten der Finger. Eine Klimmzugstange ist nötig.",
+   "es": "Agarre, omóplatos y colgarse de la barra, core fuerte y músculos antagonistas de los dedos. Necesitas una barra de dominadas.",
+   "fr": "Prise, omoplates et suspension à la barre de traction, gainage solide et muscles antagonistes des doigts. Une barre de traction est nécessaire.",
+   "it": "Presa, scapole e sospensione alla sbarra, core forte e muscoli antagonisti delle dita. Serve una sbarra per trazioni."
+  }
+ },
+ "golf": {
+  "title": {
+   "ru": "Для гольфистов",
+   "en": "For Golfers",
+   "tr": "Golfçüler İçin",
+   "de": "Für Golfer",
+   "es": "Para golfistas",
+   "fr": "Pour les golfeurs",
+   "it": "Per i golfisti"
+  },
+  "about": {
+   "ru": "Повороты корпуса, подвижные бёдра, плечи и равновесие на одной ноге. Спокойный темп, подходит и после 50.",
+   "en": "Torso rotation, mobile hips, shoulders and single-leg balance. A calm pace, suitable after 50 too.",
+   "tr": "Gövde rotasyonu, esnek kalçalar, omuzlar ve tek ayak üzerinde denge. Sakin tempo, 50 yaş üstü için de uygundur.",
+   "de": "Rumpfrotation, bewegliche Hüften, Schultern und Gleichgewicht auf einem Bein. Ruhiges Tempo, auch ab 50 geeignet.",
+   "es": "Rotación del torso, caderas móviles, hombros y equilibrio sobre una pierna. Ritmo tranquilo, apto también a partir de los 50.",
+   "fr": "Rotation du buste, hanches souples, épaules et équilibre sur une jambe. Rythme tranquille, convient aussi après 50 ans.",
+   "it": "Rotazione del busto, anche mobili, spalle ed equilibrio su una gamba. Ritmo tranquillo, adatto anche dopo i 50 anni."
+  }
+ },
+ "racket": {
+  "title": {
+   "ru": "Падел, бадминтон, настольный теннис",
+   "en": "Padel, Badminton, Table Tennis",
+   "tr": "Padel, Badminton, Masa Tenisi",
+   "de": "Padel, Badminton, Tischtennis",
+   "es": "Pádel, bádminton, tenis de mesa",
+   "fr": "Padel, badminton, tennis de table",
+   "it": "Padel, badminton, tennis tavolo"
+  },
+  "about": {
+   "ru": "Сплит-степ, выпады, быстрые шаги в стороны и крепкое плечо.",
+   "en": "Split steps, lunges, quick side steps and a strong shoulder.",
+   "tr": "Split step, hamleler, hızlı yan adımlar ve güçlü omuz.",
+   "de": "Split-Steps, Ausfallschritte, schnelle Seitschritte und eine kräftige Schulter.",
+   "es": "Split step, zancadas, pasos laterales rápidos y un hombro fuerte.",
+   "fr": "Split step, fentes, pas chassés rapides et épaule solide.",
+   "it": "Split step, affondi, passi laterali rapidi e una spalla forte."
+  }
+ },
+ "hiking": {
+  "title": {
+   "ru": "Походы и трекинг",
+   "en": "Hiking and Trekking",
+   "tr": "Yürüyüş ve Trekking",
+   "de": "Wandern und Trekking",
+   "es": "Senderismo y trekking",
+   "fr": "Randonnée et trek",
+   "it": "Escursionismo e trekking"
+  },
+  "about": {
+   "ru": "Ноги для подъёмов, колени для спусков, крепкие голеностопы и спина под рюкзак.",
+   "en": "Legs for climbs, knees for descents, strong ankles and a back ready for a backpack.",
+   "tr": "Yokuş çıkmak için bacaklar, inişler için dizler, güçlü bilekler ve sırt çantasına hazır bir sırt.",
+   "de": "Beine für den Aufstieg, Knie für den Abstieg, kräftige Sprunggelenke und ein Rücken, der für den Rucksack gewappnet ist.",
+   "es": "Piernas para las subidas, rodillas para las bajadas, tobillos fuertes y una espalda lista para la mochila.",
+   "fr": "Des jambes pour les montées, des genoux pour les descentes, des chevilles solides et un dos prêt pour le sac à dos.",
+   "it": "Gambe per le salite, ginocchia per le discese, caviglie forti e una schiena pronta per lo zaino."
+  }
+ },
+ "rowing": {
+  "title": {
+   "ru": "Гребля, байдарка, SUP",
+   "en": "Rowing, Kayak, SUP",
+   "tr": "Kürek, Kano, SUP",
+   "de": "Rudern, Kajak, SUP",
+   "es": "Remo, kayak, SUP",
+   "fr": "Aviron, kayak, SUP",
+   "it": "Canottaggio, kayak, SUP"
+  },
+  "about": {
+   "ru": "Спина и лопатки, сильный корпус с поворотами и работа бёдрами.",
+   "en": "Back and shoulder blades, a strong rotating core and hip drive.",
+   "tr": "Sırt ve kürek kemikleri, dönüşlü güçlü gövde ve kalçadan güç aktarımı.",
+   "de": "Rücken und Schulterblätter, ein starker Rumpf mit Rotation und Hüfteinsatz.",
+   "es": "Espalda y omóplatos, un core fuerte con rotación y trabajo de cadera.",
+   "fr": "Dos et omoplates, un tronc solide en rotation et poussée des hanches.",
+   "it": "Schiena e scapole, un core forte con rotazioni e spinta delle anche."
+  }
+ },
+ "backcare": {
+  "title": {
+   "ru": "Спина при протрузиях",
+   "en": "Back Care for Disc Protrusions",
+   "tr": "Fıtıkta Sırt Bakımı",
+   "de": "Rücken bei Bandscheibenvorwölbung",
+   "es": "Espalda con protrusiones discales",
+   "fr": "Dos et protrusions discales",
+   "it": "Schiena con protrusioni discali"
+  },
+  "about": {
+   "ru": "Бережная стабилизация: скручивание Макгилла, птица-собака, боковая планка, без прыжков и резких наклонов. Не заменяет лечение: согласуйте с врачом, при боли, отдающей в ногу, или онемении остановитесь.",
+   "en": "Gentle stabilisation: McGill curl-ups, bird dogs, side planks, no jumps or sharp bends. Not a treatment: check with your doctor, and stop if pain spreads into the leg or numbness appears.",
+   "tr": "Nazik stabilizasyon: McGill curl-up, kuş-köpek, yan plank; sıçrama ve ani öne eğilme yok. Tedavinin yerini tutmaz: doktorunuza danışın, ağrı bacağa yayılırsa veya uyuşma olursa durun.",
+   "de": "Sanfte Stabilisation: McGill-Curl-ups, Vierfüßlerstand mit Arm- und Beinheben (Bird Dog), seitlicher Unterarmstütz, keine Sprünge oder ruckartigen Vorbeugen. Kein Ersatz für eine Behandlung: Sprich vorher mit deinem Arzt und hör auf, wenn der Schmerz ins Bein ausstrahlt oder Taubheit auftritt.",
+   "es": "Estabilización suave: McGill curl-up, bird dog, plancha lateral, sin saltos ni flexiones bruscas. No es un tratamiento: consúltalo con tu médico y para si el dolor se irradia a la pierna o aparece entumecimiento.",
+   "fr": "Stabilisation douce : McGill curl-up, bird dog, planche latérale, sans sauts ni flexions brusques. Ne remplace pas un traitement : demandez l'avis de votre médecin et arrêtez si la douleur descend dans la jambe ou si un engourdissement apparaît.",
+   "it": "Stabilizzazione delicata: McGill curl-up, bird dog, plank laterale, senza salti né flessioni brusche. Non sostituisce una terapia: confrontati con il medico e fermati se il dolore si irradia alla gamba o compare formicolio o intorpidimento."
+  }
+ },
+ "scoliosis": {
+  "title": {
+   "ru": "Симметрия спины при сколиозе",
+   "en": "Back Symmetry for Scoliosis",
+   "tr": "Skolyozda Sırt Simetrisi",
+   "de": "Rückensymmetrie bei Skoliose",
+   "es": "Simetría de espalda en escoliosis",
+   "fr": "Symétrie du dos en cas de scoliose",
+   "it": "Simmetria della schiena nella scoliosi"
+  },
+  "about": {
+   "ru": "Равная работа обеих сторон: мышцы спины, корпус, лопатки и дыхание. Не заменяет лечение и индивидуальную программу специалиста.",
+   "en": "Even work on both sides: back muscles, core, shoulder blades and breathing. Not a substitute for treatment or a specialist's individual program.",
+   "tr": "Her iki tarafın eşit çalışması: sırt kasları, gövde, kürek kemikleri ve nefes. Tedavinin ve uzmanın kişiye özel programının yerini tutmaz.",
+   "de": "Gleichmäßige Arbeit beider Seiten: Rückenmuskeln, Rumpf, Schulterblätter und Atmung. Kein Ersatz für eine Behandlung oder das individuelle Programm eines Spezialisten.",
+   "es": "Trabajo equilibrado de ambos lados: músculos de la espalda, core, omóplatos y respiración. No sustituye al tratamiento ni al programa individual de un especialista.",
+   "fr": "Un travail égal des deux côtés : muscles du dos, tronc, omoplates et respiration. Ne remplace ni un traitement ni le programme individuel d'un spécialiste.",
+   "it": "Lavoro uniforme su entrambi i lati: muscoli della schiena, core, scapole e respirazione. Non sostituisce la terapia né il programma individuale di uno specialista."
+  }
+ },
+ "feet": {
+  "title": {
+   "ru": "Здоровые стопы",
+   "en": "Healthy Feet",
+   "tr": "Sağlıklı Ayaklar",
+   "de": "Gesunde Füße",
+   "es": "Pies sanos",
+   "fr": "Pieds en bonne santé",
+   "it": "Piedi sani"
+  },
+  "about": {
+   "ru": "Свод стопы, пальцы и голеностоп: «короткая стопа», полотенце, ходьба на носках и пятках. Помогает при плоскостопии, но не заменяет врача.",
+   "en": "Arch, toes and ankles: the short foot, towel scrunches, walking on toes and heels. Helps with flat feet but does not replace a doctor.",
+   "tr": "Ayak kemeri, parmaklar ve bilek: \"kısa ayak\", havlu toplama, parmak ucu ve topuk üzerinde yürüme. Düztabana yardımcı olur ama doktorun yerini tutmaz.",
+   "de": "Fußgewölbe, Zehen und Sprunggelenk: der „Short Foot\", Handtuch-Raffen, Gehen auf Zehen und Fersen. Hilft bei Plattfüßen, ersetzt aber keinen Arzt.",
+   "es": "Arco del pie, dedos y tobillo: el «pie corto» (short foot), arrugar la toalla, caminar de puntillas y de talones. Ayuda con los pies planos, pero no sustituye al médico.",
+   "fr": "Voûte plantaire, orteils et cheville : le « short foot », la serviette à froisser avec les orteils, la marche sur la pointe et sur les talons. Aide en cas de pieds plats, mais ne remplace pas un médecin.",
+   "it": "Arco plantare, dita e caviglia: il «short foot», raccogliere l'asciugamano con le dita, camminare sulle punte e sui talloni. Aiuta in caso di piedi piatti, ma non sostituisce il medico."
+  }
+ },
+ "kidsswim": {
+  "title": {
+   "ru": "Плавание для детей",
+   "en": "Swimming for Kids",
+   "tr": "Çocuklar İçin Yüzme",
+   "de": "Schwimmen für Kinder",
+   "es": "Natación para niños",
+   "fr": "Natation pour enfants",
+   "it": "Nuoto per bambini"
+  },
+  "about": {
+   "ru": "«Стрелка», ножки-ласты, лодочки и гребки руками на суше для юных пловцов.",
+   "en": "Streamline, flipper kicks, boats and arm strokes on dry land for young swimmers.",
+   "tr": "Genç yüzücüler için karada süzülme duruşu, palet gibi bacak vuruşları, kayık pozu ve kol çekişleri.",
+   "de": "Streamline, Flossenbeine, Boote und Armzüge an Land für junge Schwimmer.",
+   "es": "Posición de flecha (streamline), patadas de aleta, barquitos y brazadas en tierra firme para jóvenes nadadores.",
+   "fr": "Position en flèche (streamline), battements de palmes, bateaux et mouvements de bras à sec pour les jeunes nageurs.",
+   "it": "Posizione a freccia (streamline), battute da pinna, barchette e bracciate a secco per giovani nuotatori."
+  }
+ },
+ "kidswrestling": {
+  "title": {
+   "ru": "Борьба и дзюдо для детей",
+   "en": "Wrestling and Judo for Kids",
+   "tr": "Çocuklar İçin Güreş ve Judo",
+   "de": "Ringen und Judo für Kinder",
+   "es": "Lucha y judo para niños",
+   "fr": "Lutte et judo pour enfants",
+   "it": "Lotta e judo per bambini"
+  },
+  "about": {
+   "ru": "Группировка, безопасные перекаты, медвежья ходьба и крабик. Перекаты — только на мате или мягком ковре.",
+   "en": "Tucks, safe rolls, bear crawls and crab walks. Rolls only on a mat or soft carpet.",
+   "tr": "Kıvrılma, güvenli yuvarlanmalar, ayı yürüyüşü ve yengeç yürüyüşü. Yuvarlanmalar yalnızca mat veya yumuşak halı üzerinde yapılır.",
+   "de": "Zusammenrollen, sichere Rollen, Bärengang und Krabbengang. Rollen nur auf einer Matte oder einem weichen Teppich.",
+   "es": "Agrupación, volteretas seguras, caminata del oso y del cangrejo. Las volteretas solo sobre un tapete o una alfombra blanda.",
+   "fr": "Position groupée, roulades sécurisées, marche de l'ours et du crabe. Roulades uniquement sur un tapis ou une moquette douce.",
+   "it": "Raggomitolamento, rotolamenti sicuri, camminata dell'orso e del granchio. I rotolamenti solo su un tappetino o un tappeto morbido."
+  }
+ },
+ "kidskarate": {
+  "title": {
+   "ru": "Карате и тхэквондо для детей",
+   "en": "Karate and Taekwondo for Kids",
+   "tr": "Çocuklar İçin Karate ve Taekwondo",
+   "de": "Karate und Taekwondo für Kinder",
+   "es": "Kárate y taekwondo para niños",
+   "fr": "Karaté et taekwondo pour enfants",
+   "it": "Karate e taekwondo per bambini"
+  },
+  "about": {
+   "ru": "Стойки, удары руками и ногами по воздуху, махи и равновесие.",
+   "en": "Stances, punches and kicks in the air, leg swings and balance.",
+   "tr": "Duruşlar, havaya yumruk ve tekmeler, bacak salınımları ve denge.",
+   "de": "Stände, Schläge und Tritte in die Luft, Beinschwünge und Gleichgewicht.",
+   "es": "Posturas, puñetazos y patadas al aire, balanceos de piernas y equilibrio.",
+   "fr": "Positions, coups de poing et de pied dans le vide, balancements de jambes et équilibre.",
+   "it": "Posizioni, pugni e calci nell'aria, oscillazioni delle gambe ed equilibrio."
+  }
+ },
+ "kidsgym": {
+  "title": {
+   "ru": "Гимнастика для детей",
+   "en": "Gymnastics for Kids",
+   "tr": "Çocuklar İçin Jimnastik",
+   "de": "Gymnastik für Kinder",
+   "es": "Gimnasia para niños",
+   "fr": "Gymnastique pour enfants",
+   "it": "Ginnastica per bambini"
+  },
+  "about": {
+   "ru": "Лодочки, ласточка, уголок и плие: гибкость, равновесие и сильный корпус.",
+   "en": "Boats, the swallow, tuck sits and pliés: flexibility, balance and a strong core.",
+   "tr": "Kayık, kırlangıç, kıvrık oturuş ve plié: esneklik, denge ve güçlü gövde.",
+   "de": "Boote, Schwalbe, Winkelsitz und Pliés: Beweglichkeit, Gleichgewicht und ein starker Rumpf.",
+   "es": "Barquitos, la golondrina, sentadillas en escuadra y pliés: flexibilidad, equilibrio y core fuerte.",
+   "fr": "Bateaux, hirondelle, équerre et pliés : souplesse, équilibre et gainage solide.",
+   "it": "Barchette, la rondine, la squadretta e i plié: flessibilità, equilibrio e core forte."
+  }
+ },
+ "kidsdance": {
+  "title": {
+   "ru": "Танцы и ритмика для детей",
+   "en": "Dance and Rhythm for Kids",
+   "tr": "Çocuklar İçin Dans ve Ritim",
+   "de": "Tanz und Rhythmik für Kinder",
+   "es": "Baile y ritmo para niños",
+   "fr": "Danse et rythmique pour enfants",
+   "it": "Danza e ritmica per bambini"
+  },
+  "about": {
+   "ru": "Шаги и хлопки в ритм, подскоки, плие и равновесие.",
+   "en": "Steps and claps to the beat, skips, pliés and balance.",
+   "tr": "Ritme uygun adımlar ve alkışlar, sekmeler, plié ve denge.",
+   "de": "Schritte und Klatschen im Takt, Hüpfer, Pliés und Gleichgewicht.",
+   "es": "Pasos y palmadas al ritmo, saltitos, pliés y equilibrio.",
+   "fr": "Pas et claquements de mains en rythme, petits sauts, pliés et équilibre.",
+   "it": "Passi e battiti di mani a ritmo, saltelli, plié ed equilibrio."
+  }
+ },
+ "kidshockey": {
+  "title": {
+   "ru": "Хоккей и фигурное катание для детей",
+   "en": "Hockey and Figure Skating for Kids",
+   "tr": "Çocuklar İçin Hokey ve Artistik Patinaj",
+   "de": "Hockey und Eiskunstlauf für Kinder",
+   "es": "Hockey y patinaje artístico para niños",
+   "fr": "Hockey et patinage artistique pour enfants",
+   "it": "Hockey e pattinaggio artistico per bambini"
+  },
+  "about": {
+   "ru": "Посадка конькобежца, прыжки в стороны, быстрые шаги и равновесие.",
+   "en": "Skater's stance, side jumps, quick steps and balance.",
+   "tr": "Patenci duruşu, yana sıçramalar, hızlı adımlar ve denge.",
+   "de": "Schlittschuhläufer-Haltung, Seitsprünge, schnelle Schritte und Gleichgewicht.",
+   "es": "Postura de patinador, saltos laterales, pasos rápidos y equilibrio.",
+   "fr": "Position du patineur, sauts latéraux, pas rapides et équilibre.",
+   "it": "Posizione del pattinatore, salti laterali, passi veloci ed equilibrio."
+  }
+ },
+ "kidsball": {
+  "title": {
+   "ru": "Баскетбол и волейбол для детей",
+   "en": "Basketball and Volleyball for Kids",
+   "tr": "Çocuklar İçin Basketbol ve Voleybol",
+   "de": "Basketball und Volleyball für Kinder",
+   "es": "Baloncesto y voleibol para niños",
+   "fr": "Basket-ball et volley-ball pour enfants",
+   "it": "Basket e pallavolo per bambini"
+  },
+  "about": {
+   "ru": "Прыжки с мягким приземлением, быстрые ноги, реакция и сильные руки.",
+   "en": "Jumps with soft landings, quick feet, reactions and strong arms.",
+   "tr": "Yumuşak inişli sıçramalar, hızlı ayaklar, refleks ve güçlü kollar.",
+   "de": "Sprünge mit weicher Landung, schnelle Füße, Reaktionsvermögen und starke Arme.",
+   "es": "Saltos con aterrizaje suave, pies rápidos, reflejos y brazos fuertes.",
+   "fr": "Sauts avec réception amortie, pieds rapides, réactivité et bras solides.",
+   "it": "Salti con atterraggio morbido, piedi rapidi, riflessi e braccia forti."
+  }
+ },
+ "kidsfeet": {
+  "title": {
+   "ru": "Против плоскостопия для детей",
+   "en": "Flat Feet Exercises for Kids",
+   "tr": "Çocuklar İçin Düztaban Egzersizleri",
+   "de": "Gegen Plattfüße für Kinder",
+   "es": "Contra los pies planos para niños",
+   "fr": "Contre les pieds plats pour enfants",
+   "it": "Contro i piedi piatti per bambini"
+  },
+  "about": {
+   "ru": "Игровые упражнения для стоп: ходьба на носочках, пяточках и «медвежонком», платок пальцами, гусеница. Не заменяет врача.",
+   "en": "Playful foot exercises: walking on tiptoes, heels and outer edges, towel scrunches, the caterpillar. Does not replace a doctor.",
+   "tr": "Ayaklar için oyunlu egzersizler: parmak ucunda, topuklarda ve ayak dış kenarında yürüme, parmaklarla havlu toplama, tırtıl. Doktorun yerini tutmaz.",
+   "de": "Spielerische Fußübungen: Gehen auf Zehenspitzen, Fersen und Fußaußenkanten, Tuch mit den Zehen greifen, die Raupe. Ersetzt keinen Arzt.",
+   "es": "Ejercicios divertidos para los pies: caminar de puntillas, de talones y con el borde externo, arrugar el pañuelo con los dedos, la oruga. No sustituye al médico.",
+   "fr": "Exercices ludiques pour les pieds : marche sur la pointe, sur les talons et sur le bord externe, foulard attrapé avec les orteils, la chenille. Ne remplace pas un médecin.",
+   "it": "Esercizi giocosi per i piedi: camminare sulle punte, sui talloni e sul bordo esterno, afferrare il fazzoletto con le dita, il bruco. Non sostituisce il medico."
+  }
+ }
+}

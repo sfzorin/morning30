@@ -180,12 +180,13 @@ func TestCatalogTagsAndMatching(t *testing.T) {
 	jumps := map[string]bool{}
 	for _, p := range Catalog() {
 		jumps[p.Key] = p.Tags().Jumps
-		if p.Tags().Equipment != (p.Key == "pullups30") {
+		if want := p.Key == "pullups30" || p.Key == "climbing"; p.Tags().Equipment != want {
 			t.Errorf("%s equipment = %v", p.Key, p.Tags().Equipment)
 		}
 	}
 	for key, want := range map[string]bool{"demo": false, "plank30": false, "abs30": false, "posture30": false, "slim30": true, "legs30": true,
-		"stretch30": false, "taichi30": false, "kidsagility": true, "jumpsports": true, "age50": false} {
+		"stretch30": false, "taichi30": false, "kidsagility": true, "jumpsports": true, "age50": false,
+		"backcare": false, "scoliosis": false, "feet": false, "kidsfeet": false, "golf": false, "kidsball": true, "kidshockey": true} {
 		if jumps[key] != want {
 			t.Errorf("%s jumps = %v, want %v", key, jumps[key], want)
 		}

@@ -236,4 +236,5 @@ func init() {
 		c.Title, c.About = t.Title, t.About
 		series30 = append(series30, c)
 	}
+	addExtraCourses()
 }

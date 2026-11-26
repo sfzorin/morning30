@@ -29,8 +29,8 @@ func TestSeries30IsSeparateFromExistingPrograms(t *testing.T) {
 			t.Errorf("CourseByKey(%s) failed", c.Key)
 		}
 	}
-	if len(seen) != 29 {
-		t.Errorf("want 29 courses, got %d", len(seen))
+	if len(seen) != 49 {
+		t.Errorf("want 49 courses, got %d", len(seen))
 	}
 	if _, ok := CourseByKey("demo"); ok {
 		t.Error("demo must not be a series course")

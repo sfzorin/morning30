@@ -25,12 +25,16 @@ small client-side workout engine.
   into that account's personal JSON on first load; cycle position and streaks
   stay put. Settings edit *this* account only — there is no Sergey/Vlad/Ilya
   picker.
-- **Ready programs.** A catalog of 30 ready 30-day programs in seven sections —
+- **Ready programs.** A catalog of 50 ready 30-day programs in seven sections —
   first steps (morning workout, 50+), strength (plank, abs, push-ups, arms,
   pull-ups, legs), weight loss, stretching (seven programs, from splits to a
-  bedtime stretch), back and balance (posture, desk workers, tai chi), kids
-  (five programs on the kids' exercises with their own drawings) and sports
-  (runners, football, tennis, skiing, martial arts, basketball and volleyball) —
+  bedtime stretch), back and balance (posture, desk workers, tai chi, back care
+  for disc protrusions, back symmetry for scoliosis, healthy feet), kids
+  (thirteen programs: general, agility, posture, tennis, football, swimming,
+  wrestling and judo, karate, gymnastics, dance, hockey and skating,
+  basketball and volleyball, flat feet) and sports (runners, football, tennis,
+  skiing, martial arts, basketball and volleyball, swimming, wrestling and
+  judo, cycling, hockey, climbing, golf, padel and badminton, hiking, rowing) —
   with one-line descriptions, a preview of the 30-day plan, and "no jumps" /
   "no equipment" filters read from the programs themselves. Picking a kids'
   program switches the figure to a child. Each course also has a public page per language
