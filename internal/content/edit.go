@@ -295,3 +295,28 @@ func SetDose(r Resolved, id string, days Days, value, percent int) (Resolved, in
 	}
 	return out, n, nil
 }
+
+// SetPart replaces a part of the selected days with the given exercises
+// (each with its dose), so a whole program can be written in a few calls.
+func SetPart(r Resolved, part Slot, days Days, items []RItem) (Resolved, error) {
+	if !validPart(part) {
+		return r, ErrBadPart
+	}
+	if len(items) == 0 {
+		return r, ErrEmptyPhase
+	}
+	out := clone(r)
+	lists, err := out.lists(part, days)
+	if err != nil {
+		return r, err
+	}
+	for _, l := range lists {
+		list := make([]RItem, len(items))
+		for i, it := range items {
+			it.Slot, it.Round = part, 1
+			list[i] = it
+		}
+		*l = list
+	}
+	return out, nil
+}

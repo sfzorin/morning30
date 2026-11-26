@@ -128,6 +128,7 @@
   "coach.limit": "Bugünlük bu kadar: koç günde en fazla %d mesaj kabul eder.",
   "coach.new": "Yeni egzersiz: %s",
   "coach.off": "YZ koç henüz kullanılamıyor.",
+  "coach.only": "Yalnızca programınızı değiştiririm. Programda neyi değiştireceğimi yazın.",
   "coach.placeholder": "Ne değişsin?",
   "coach.removed": "“%s” çıkarıldı",
   "coach.renamed": "Yeni ad: %s",

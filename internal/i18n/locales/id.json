@@ -128,6 +128,7 @@
   "coach.limit": "Cukup untuk hari ini: pelatih menerima hingga %d pesan per hari.",
   "coach.new": "Latihan baru: %s",
   "coach.off": "Pelatih AI belum tersedia.",
+  "coach.only": "Aku hanya mengubah programmu. Tulis apa yang ingin diubah.",
   "coach.placeholder": "Apa yang perlu diubah?",
   "coach.removed": "“%s” dihapus",
   "coach.renamed": "Nama baru: %s",

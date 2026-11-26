@@ -128,6 +128,7 @@
   "coach.limit": "Det var alt for i dag: coachen modtager op til %d beskeder om dagen.",
   "coach.new": "Ny øvelse: %s",
   "coach.off": "AI-coachen er ikke tilgængelig endnu.",
+  "coach.only": "Jeg ændrer kun dit program. Skriv, hvad der skal ændres.",
   "coach.placeholder": "Hvad skal ændres?",
   "coach.removed": "»%s« fjernet",
   "coach.renamed": "Nyt navn: %s",

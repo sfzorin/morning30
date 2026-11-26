@@ -128,6 +128,7 @@
   "coach.limit": "Atât pe azi: antrenorul primește până la %d mesaje pe zi.",
   "coach.new": "Exercițiu nou: %s",
   "coach.off": "Antrenorul AI nu este încă disponibil.",
+  "coach.only": "Modific doar programul tău. Spune-mi ce să schimb în el.",
   "coach.placeholder": "Ce să se schimbe?",
   "coach.removed": "eliminat „%s”",
   "coach.renamed": "Nume nou: %s",

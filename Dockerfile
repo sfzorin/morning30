@@ -15,6 +15,8 @@ WORKDIR /app
 RUN useradd --system --create-home --home-dir /app --shell /usr/sbin/nologin app
 
 COPY --from=build /out/morning /app/morning
+# Root certificates for outgoing HTTPS (the AI coach calls the model API).
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 ENV MORNING_DB=/data/morning.db
 

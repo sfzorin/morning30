@@ -128,6 +128,7 @@
   "coach.limit": "That's all for today: the coach takes up to %d messages a day.",
   "coach.new": "New exercise: %s",
   "coach.off": "The AI coach isn't available yet.",
+  "coach.only": "I only change your program. Tell me what to change in it.",
   "coach.placeholder": "What should change?",
   "coach.removed": "removed %s",
   "coach.renamed": "New name: %s",

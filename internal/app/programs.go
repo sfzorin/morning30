@@ -2,6 +2,7 @@ package app
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 
 	"morning30/internal/content"
@@ -437,4 +438,29 @@ func SetDoseInCurrent(userID int64, id string, days content.Days, value, percent
 		return out, err
 	})
 	return n, err
+}
+
+// PartItem is one exercise with its dose for SetPartInCurrent.
+type PartItem struct {
+	ID    string
+	Value int // reps, seconds or breaths; <= 0 uses the default
+}
+
+// SetPartInCurrent replaces a part of the chosen days of the current program.
+func SetPartInCurrent(userID int64, part content.Slot, days content.Days, list []PartItem) error {
+	items := make([]content.RItem, 0, len(list))
+	for _, p := range list {
+		def, err := exerciseDef(userID, p.ID)
+		if err != nil {
+			return fmt.Errorf("%w: %s", err, p.ID)
+		}
+		v := p.Value
+		if v <= 0 {
+			v = content.DefaultValue(def.Unit)
+		}
+		items = append(items, content.RItem{ID: def.ID, Unit: def.Unit, Value: min(v, 600), PerSide: def.PerSide})
+	}
+	return EditCurrent(userID, func(r content.Resolved) (content.Resolved, error) {
+		return content.SetPart(r, part, days, items)
+	})
 }

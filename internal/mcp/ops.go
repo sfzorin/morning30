@@ -221,7 +221,7 @@ var ops = []op{
 		Run:  func(db.Account, args) (any, error) { return catalogList(), nil },
 	},
 	{
-		Name: "get_ready_program",
+		Name:  "get_ready_program",
 		Desc:  "Get one ready program with its full 30-day plan (what the program preview shows).",
 		Props: map[string]any{"key": map[string]any{"type": "string", "description": "Key from list_programs"}}, Require: []string{"key"},
 		Run: func(_ db.Account, a args) (any, error) {

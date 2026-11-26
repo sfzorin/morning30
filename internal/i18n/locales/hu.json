@@ -128,6 +128,7 @@
   "coach.limit": "Mára ennyi: az edző naponta legfeljebb %d üzenetet fogad.",
   "coach.new": "Új gyakorlat: %s",
   "coach.off": "Az MI-edző még nem érhető el.",
+  "coach.only": "Csak a programodat módosítom. Írd meg, mit változtassak rajta.",
   "coach.placeholder": "Mit változtassak?",
   "coach.removed": "eltávolítva: „%s”",
   "coach.renamed": "Új név: %s",

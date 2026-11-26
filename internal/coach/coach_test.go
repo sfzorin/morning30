@@ -196,3 +196,19 @@ func TestCleanReply(t *testing.T) {
 		t.Fatalf("cleanReply = %q", got)
 	}
 }
+
+// An off-topic answer becomes the fixed sentence in the person's language.
+func TestOffTopicMarker(t *testing.T) {
+	uid := setup(t)
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_, _ = w.Write([]byte(`{"choices":[{"message":{"role":"assistant","content":"[OFF_TOPIC]"}}]}`))
+	}))
+	defer srv.Close()
+	res, _, err := Ask(context.Background(), Config{BaseURL: srv.URL, Key: "k", Model: "m"}, uid, "ru", nil, "Кто ты?")
+	if err != nil || !res.OffTopic || !strings.HasPrefix(res.Reply, "Я только меняю") || len(res.Changes) != 0 {
+		t.Fatalf("res = %+v, %v", res, err)
+	}
+	if p := SystemPrompt(uid, "ru"); !strings.Contains(p, OffTopic) || !strings.Contains(p, "name: Аня") {
+		t.Fatal("prompt lacks the off-topic rule or the name")
+	}
+}

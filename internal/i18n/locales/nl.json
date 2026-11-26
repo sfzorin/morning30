@@ -128,6 +128,7 @@
   "coach.limit": "Dat was het voor vandaag: de coach neemt maximaal %d berichten per dag aan.",
   "coach.new": "Nieuwe oefening: %s",
   "coach.off": "De AI-coach is nog niet beschikbaar.",
+  "coach.only": "Ik pas alleen je programma aan. Vertel wat ik moet veranderen.",
   "coach.placeholder": "Wat moet er veranderen?",
   "coach.removed": "“%s” verwijderd",
   "coach.renamed": "Nieuwe naam: %s",

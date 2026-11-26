@@ -128,6 +128,7 @@
   "coach.limit": "今天就到這裡：教練每天最多接收 %d 則訊息。",
   "coach.new": "新動作：%s",
   "coach.off": "AI 教練暫時無法使用。",
+  "coach.only": "我只負責修改你的訓練計畫。請告訴我要改什麼。",
   "coach.placeholder": "想改什麼？",
   "coach.removed": "已移除「%s」",
   "coach.renamed": "新名稱：%s",

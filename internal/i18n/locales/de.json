@@ -128,6 +128,7 @@
   "coach.limit": "Das war's für heute: Der Coach nimmt bis zu %d Nachrichten pro Tag an.",
   "coach.new": "Neue Übung: %s",
   "coach.off": "Der KI-Coach ist noch nicht verfügbar.",
+  "coach.only": "Ich ändere nur dein Programm. Schreib mir, was ich daran ändern soll.",
   "coach.placeholder": "Was soll sich ändern?",
   "coach.removed": "„%s“ entfernt",
   "coach.renamed": "Neuer Name: %s",

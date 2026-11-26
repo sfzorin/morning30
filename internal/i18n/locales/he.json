@@ -128,6 +128,7 @@
   "coach.limit": "זה הכול להיום: המאמן מקבל עד %d הודעות ביום.",
   "coach.new": "תרגיל חדש: %s",
   "coach.off": "מאמן ה-AI עדיין לא זמין.",
+  "coach.only": "אני רק משנה את התוכנית שלך. כתוב מה לשנות בה.",
   "coach.placeholder": "מה לשנות?",
   "coach.removed": "הוסר „%s”",
   "coach.renamed": "שם חדש: %s",

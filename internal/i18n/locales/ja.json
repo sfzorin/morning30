@@ -128,6 +128,7 @@
   "coach.limit": "今日はここまでです。コーチが受け付けるのは1日%d件までです。",
   "coach.new": "新しい種目：%s",
   "coach.off": "AIコーチはまだご利用いただけません。",
+  "coach.only": "このアプリではプログラムの変更だけを行います。変更したい内容を書いてください。",
   "coach.placeholder": "何を変えますか？",
   "coach.removed": "「%s」を削除",
   "coach.renamed": "新しい名前：%s",

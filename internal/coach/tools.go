@@ -58,6 +58,11 @@ func toolDefs() []map[string]any {
 		fn("remove_exercise", "Remove an exercise from the chosen days (a part of a day is never left empty).", map[string]any{
 			"exercise": str("Exercise id"), "part": partProp, "days": daysProp,
 		}, "exercise"),
+		fn("set_part", "Write a whole part (warm-up, main or cool-down) of the chosen days at once: the list replaces what is there, in this order. Use it to write a new program or rework many days: e.g. days 1-10, 11-20 and 21-30 with growing doses.", map[string]any{
+			"part": partProp, "days": daysProp,
+			"exercises": map[string]any{"type": "array", "description": "In order; value = reps, seconds or breaths by the exercise's unit",
+				"items": map[string]any{"type": "object", "properties": map[string]any{"id": str("Exercise id"), "value": num("Dose")}, "required": []string{"id", "value"}}},
+		}, "part", "exercises"),
 		fn("set_dose", "Change how many reps / seconds / breaths an exercise has on the chosen days: value sets it, percent scales the current dose (80 = 20% less, 120 = 20% more).", map[string]any{
 			"exercise": str("Exercise id"), "days": daysProp, "value": num("New dose"), "percent": num("Scale, 10–300"),
 		}, "exercise"),
@@ -260,6 +265,27 @@ func (s *session) call(name string, a args) (string, error) {
 		}
 		s.edited = true
 		return fmt.Sprintf("done: %d removed", n), nil
+	case "set_part":
+		days, err := a.days(uid)
+		if err != nil {
+			return "", err
+		}
+		raw, _ := a["exercises"].([]any)
+		var list []app.PartItem
+		for _, x := range raw {
+			m, _ := x.(map[string]any)
+			id, _ := m["id"].(string)
+			v, _ := args(m).num("value")
+			list = append(list, app.PartItem{ID: strings.TrimSpace(id), Value: v})
+		}
+		if len(list) == 0 {
+			return "", errors.New("exercises must list at least one exercise")
+		}
+		if err := app.SetPartInCurrent(uid, content.Slot(a.str("part")), days, list); err != nil {
+			return "", err
+		}
+		s.edited = true
+		return fmt.Sprintf("done: %d exercises set", len(list)), nil
 	case "set_dose":
 		days, err := a.days(uid)
 		if err != nil {
