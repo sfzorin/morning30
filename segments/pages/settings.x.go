@@ -983,7 +983,7 @@ func (s settingsPage) Main() gox.Elem {
 									__e = __c.Set("class", "cyc-head"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 //line settings.gox:253
-									__e = __c.Many(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tf(l, "fmt.exercises", len(rd.Items))); if __e != nil { return }
+									__e = __c.Many(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tn(l, "fmt.exercises", len(rd.Items))); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 //line settings.gox:254

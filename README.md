@@ -336,7 +336,8 @@ The list of languages lives in `internal/langs` (code, name, speech tag,
 right-to-left). Each language has:
 
 - `internal/i18n/locales/<lang>.json` — UI strings (with `%d` templates such as
-  `fmt.day` so every language puts numbers where it needs them), exercise names,
+  `fmt.day` so every language puts numbers where it needs them, and plural
+  variants such as `fmt.exercises|few` picked by CLDR rules), exercise names,
   month and weekday names;
 - `internal/content/i18n/{courses,details,exercises}.<lang>.json` — program
   titles and descriptions, the cards of the original exercises, and the cards

@@ -172,7 +172,7 @@ func (h homePage) Main() gox.Elem {
 							__e = __c.Set("class", "day-count"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 //line home.gox:83
-							__e = __c.Any(i18n.Tf(l, "fmt.exercises", len(w.Items))); if __e != nil { return }
+							__e = __c.Any(i18n.Tn(l, "fmt.exercises", len(w.Items))); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
@@ -264,7 +264,7 @@ func (h homePage) Main() gox.Elem {
 					__e = __c.Set("class", "streak-label"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:100
-					__e = __c.Many(i18n.T(l, "home.streak"), " · ", i18n.Tf(l, "fmt.days", streak)); if __e != nil { return }
+					__e = __c.Many(i18n.T(l, "home.streak"), " · ", i18n.Tn(l, "fmt.days", streak)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}

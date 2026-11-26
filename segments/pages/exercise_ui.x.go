@@ -30,7 +30,7 @@ func doseLabel(l i18n.Lang, unit string, value int, perSide bool) string {
 	case content.Seconds:
 		s = i18n.Tf(l, "fmt.sec", value)
 	case content.Breaths:
-		s = i18n.Tf(l, "fmt.breaths", value)
+		s = i18n.Tn(l, "fmt.breaths", value)
 	default:
 		s = "× " + strconv.Itoa(value)
 	}

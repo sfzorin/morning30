@@ -250,7 +250,7 @@ elem (s settingsPage) Main() {
 								<span>~(i18n.T(l, "settings.main_rounds"))</span>
 								<span>~(content.MainRounds)</span>
 							</div>
-							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tf(l, "fmt.exercises", len(rd.Items)))</div>
+							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tn(l, "fmt.exercises", len(rd.Items)))</div>
 							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
 						})
 

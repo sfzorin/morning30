@@ -136,7 +136,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 			__e = __c.Set("class", "lib-intro"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 //line today.gox:71
-			__e = __c.Many(i18n.Tf(l, "fmt.exercises", plan.Exercises), " · ≈ ", i18n.Tf(l, "fmt.min", plan.EstMinutes)); if __e != nil { return }
+			__e = __c.Many(i18n.Tn(l, "fmt.exercises", plan.Exercises), " · ≈ ", i18n.Tf(l, "fmt.min", plan.EstMinutes)); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 //line today.gox:72
@@ -165,7 +165,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:78
 				if part.Slot == "main" {
 //line today.gox:78
-					__e = __c.Many(" · ", i18n.Tf(l, "fmt.rounds", plan.MainRounds)); if __e != nil { return }
+					__e = __c.Many(" · ", i18n.Tn(l, "fmt.rounds", plan.MainRounds)); if __e != nil { return }
 				}
 			}
 			__e = __c.Close(); if __e != nil { return }

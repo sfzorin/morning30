@@ -143,7 +143,7 @@ func coursePage(l i18n.Lang, c content.Course) page {
 	p := base(l, func(lang string) string { return CoursePath(lang, c) })
 	r := c.Resolve()
 	p.IsCourse = true
-	p.Days30 = i18n.Tf(l, "fmt.days", content.TotalDays)
+	p.Days30 = i18n.Tn(l, "fmt.days", content.TotalDays)
 	p.Heading = c.TitleIn(string(l))
 	p.Title = p.Heading + " — " + i18n.T(l, "app.name")
 	p.Desc = c.AboutIn(string(l))

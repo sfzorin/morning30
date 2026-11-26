@@ -42,9 +42,18 @@ func TestEveryLanguageIsComplete(t *testing.T) {
 				t.Errorf("%s: ui %q placeholders %q, English has %q", l, key, placeholders(got), placeholders(want))
 			}
 		}
-		for key := range loc.UI {
-			if _, ok := en.UI[key]; !ok {
+		for key, got := range loc.UI {
+			if _, ok := en.UI[key]; ok {
+				continue
+			}
+			base, ok := pluralVariant(key)
+			if _, known := en.UI[base]; !ok || !known {
 				t.Errorf("%s: ui %q is not in English", l, key)
+				continue
+			}
+			// A plural form keeps the number or, like Arabic "two", spells it out.
+			if p := placeholders(got); p != "" && p != placeholders(en.UI[base]) {
+				t.Errorf("%s: plural %q has placeholders %q", l, key, p)
 			}
 		}
 		if len(loc.Months) != 12 || len(loc.Weekdays) != 7 {
@@ -94,5 +103,31 @@ func TestParseAndFallback(t *testing.T) {
 	}
 	if len(Languages) != len(langs.All) || len(Order) != len(langs.All) {
 		t.Errorf("language lists differ")
+	}
+}
+
+func TestPluralForms(t *testing.T) {
+	for _, c := range []struct {
+		lang Lang
+		key  string
+		n    int
+		want string
+	}{
+		{"ru", "fmt.exercises", 1, "1 упражнение"}, {"ru", "fmt.exercises", 3, "3 упражнения"},
+		{"ru", "fmt.exercises", 12, "12 упражнений"}, {"ru", "fmt.exercises", 21, "21 упражнение"},
+		{"ru", "fmt.rounds", 5, "5 кругов"}, {"ru", "fmt.rounds", 2, "2 круга"},
+		{"pl", "fmt.exercises", 1, "1 ćwiczenie"}, {"pl", "fmt.exercises", 22, "22 ćwiczenia"},
+		{"pl", "fmt.exercises", 25, "25 ćwiczeń"}, {"pl", "fmt.exercises", 13, "13 ćwiczeń"},
+		{"pl", "fmt.days", 1, "1 dzień"}, {"pl", "fmt.rounds", 3, "3 rundy"},
+		{"cs", "fmt.exercises", 1, "1 cvik"}, {"cs", "fmt.exercises", 4, "4 cviky"},
+		{"cs", "fmt.exercises", 25, "25 cviků"}, {"cs", "fmt.days", 30, "30 dní"},
+		{"ar", "fmt.exercises", 1, "تمرين واحد"}, {"ar", "fmt.exercises", 2, "تمرينان"},
+		{"ar", "fmt.exercises", 5, "5 تمارين"}, {"ar", "fmt.exercises", 25, "25 تمرينًا"},
+		{"ar", "fmt.days", 30, "30 يومًا"}, {"ar", "fmt.rounds", 10, "10 جولات"},
+		{"en", "fmt.exercises", 25, "25 exercises"},
+	} {
+		if got := Tn(c.lang, c.key, c.n); got != c.want {
+			t.Errorf("Tn(%s, %s, %d) = %q, want %q", c.lang, c.key, c.n, got, c.want)
+		}
 	}
 }
