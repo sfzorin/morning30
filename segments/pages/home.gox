@@ -108,17 +108,23 @@ elem (h homePage) Main() {
 		~// The looping 30-day program cycle (separate from the date calendar).
 		<section class="cycle">
 			<h3>~(i18n.Tf(l, "fmt.cycle", cycle))</h3>
-			~(if !w.FixedDifficulty {
-			<div class="diff">
-				<div class="diff-bar"></div>
-				<span class="diff-label">~(i18n.T(l, "home.diff"))</span>
-			</div>
-			})
+			~{
+				// Compare what the grid shows: days with the same minutes look the same.
+				load := app.CycleLoad(h.sess.UserID)
+				shown := make([]int, len(load))
+				for i, sec := range load {
+					shown[i] = minutes(sec)
+				}
+				light := content.LightDays(shown)
+			}
 			<div class="cyc-grid">
 				~(for d := 1; d <= content.TotalDays; d++ {
-					~(h.cycleCell(d, curDay))
+					~(h.cycleCell(l, d, curDay, load[d-1], light[d]))
 				})
 			</div>
+			~(if len(light) > 0 {
+				<p class="cyc-legend"><i></i>~(i18n.T(l, "landing.light"))</p>
+			})
 		</section>
 		<script src=(assets.WorkoutHome()) inline data:resume=(resumeData)></script>
 	</main>
@@ -276,7 +282,9 @@ elem (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr st
 }
 
 // cycleCell renders one of the 30 program days; sequential, looping each cycle.
-elem (h homePage) cycleCell(d, current int) {
+// Days ahead show how long they take, so the build-up and the lighter days
+// (green, found from the actual load) are visible right in the grid.
+elem (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) {
 	~{
 		done := d < current
 		isCurrent := d == current
@@ -298,6 +306,14 @@ elem (h homePage) cycleCell(d, current int) {
 			✓
 		} else {
 			~(d)
+			<small class=(lightClass(light))>~(i18n.Tf(l, "fmt.min", minutes(sec)))</small>
 		})
 	</a>
+}
+
+func lightClass(light bool) string {
+	if light {
+		return "light"
+	}
+	return ""
 }
