@@ -180,7 +180,7 @@ elem (s settingsPage) Main() {
 					</div>
 					<div class="srow">
 						~{ b := []byte(prog.Marshal()) }
-						<a class="row-link" (doors.ResourceBytes(b)) name="workout.json"><span>~(i18n.T(l, "program.download"))</span><span class="row-value">workout.json</span></a>
+						<a class="row-link" (doors.ResourceBytes(b)) name="workout.json"><span>~(i18n.T(l, "program.download"))</span></a>
 					</div>
 				</div>
 				~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="btn change-program">~(i18n.T(l, "program.change"))</a>
@@ -197,72 +197,68 @@ elem (s settingsPage) Main() {
 				<p class="editing">~(i18n.T(l, "settings.editing"), " ")<b>~(app.ProgramTitle(s.sess.UserID, s.sess.Lang))</b></p>
 				<div class="settings-card">
 				~// The current program's 30-day cycle, day by day.
-				<details class="cycle-details" open>
-					<summary>~(i18n.T(l, "settings.cycle"))</summary>
-
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.download"))</span>
-						~{ b := []byte(prog.Marshal()) }
-						<a class="btn small" (doors.ResourceBytes(b)) name="workout.json">workout.json</a>
+				<div class="srow">
+					<span>~(i18n.T(l, "settings.download"))</span>
+					~{ b := []byte(prog.Marshal()) }
+					<a class="btn small" (doors.ResourceBytes(b)) name="workout.json">workout.json</a>
+				</div>
+				~>doors.ARawSubmit{On: s.importProgram(importStatus)} <form class="ex-import-form">
+					<textarea class="ex-import" name="progjson" rows="3" placeholder=(i18n.T(l, "settings.paste_program"))></textarea>
+					<div class="srow ex-import-row">
+						<input class="ex-file" type="file" accept=".json,application/json">
+						<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
 					</div>
-					~>doors.ARawSubmit{On: s.importProgram(importStatus)} <form class="ex-import-form">
-						<textarea class="ex-import" name="progjson" rows="3" placeholder=(i18n.T(l, "settings.paste_program"))></textarea>
-						<div class="srow ex-import-row">
-							<input class="ex-file" type="file" accept=".json,application/json">
-							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
-						</div>
-						~(importStatus.Bind(elem(key string) {
-							~(if key != "" { <p class="err" role="alert">~(i18n.T(l, key))</p> })
-						}))
-					</form>
-
-					<div class="srow">
-						<span>~(i18n.T(l, "home.day"))</span>
-						<select class="lang-select compact" (doors.AChange{On: s.setDay(editSrc)})>
-							~(for d := 1; d <= len(prog.Days); d++ {
-								<option value=(d) selected=func { return d == 1 }>~(d)</option>
-							})
-						</select>
-					</div>
-
-					~(editSrc.Bind(elem(st editState) {
-						~{
-							p, _ := content.ParseResolved(st.JSON)
-							idx := clampDay(st.Day, len(p.Days)) - 1
-							if idx < 0 {
-								idx = 0
-							}
-							warmTarget, coolTarget := "warmup", "cooldown"
-							if len(p.Days) > 0 {
-								if p.Days[idx].Warmup != nil { warmTarget = "day-warmup" }
-								if p.Days[idx].Cooldown != nil { coolTarget = "day-cooldown" }
-							}
-						}
-						<div class="srow">
-							<span>~(i18n.T(l, "settings.warmup_rounds"))</span>
-							<span>~(content.WarmupRounds)</span>
-						</div>
-						<div class="cyc-head">~(if warmTarget == "day-warmup" { ~(i18n.T(l, "workout.warmup"), " · ", i18n.Tf(l, "fmt.day", st.Day)) } else { ~(i18n.T(l, "settings.warmup_series")) })</div>
-						~(s.editList(editSrc, cat, entries, l, p.WarmupFor(idx), warmTarget, st.Open))
-
-						~(if len(p.Days) > 0 {
-							~{ rd := p.Days[idx] }
-							<div class="srow">
-								<span>~(i18n.T(l, "settings.main_rounds"))</span>
-								<span>~(content.MainRounds)</span>
-							</div>
-							<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day), " · ", i18n.Tn(l, "fmt.exercises", len(rd.Items)))</div>
-							~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
-						})
-
-						<div class="cyc-head">~(if coolTarget == "day-cooldown" { ~(i18n.T(l, "workout.cooldown"), " · ", i18n.Tf(l, "fmt.day", st.Day)) } else { ~(i18n.T(l, "settings.cooldown_series")) })</div>
-						~(s.editList(editSrc, cat, entries, l, p.CooldownFor(idx), coolTarget, st.Open))
+					~(importStatus.Bind(elem(key string) {
+						~(if key != "" { <p class="err" role="alert">~(i18n.T(l, key))</p> })
 					}))
+				</form>
 
-					<div class="srow cyc-save">
-						~>doors.AClick{On: s.saveEditor(editSrc, nameSrc)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.save_version"))</button>
+				<div class="srow">
+					<span>~(i18n.T(l, "home.day"))</span>
+					<select class="lang-select compact" (doors.AChange{On: s.setDay(editSrc)})>
+						~(for d := 1; d <= len(prog.Days); d++ {
+							<option value=(d) selected=func { return d == 1 }>~(d)</option>
+						})
+					</select>
+				</div>
+
+				~(editSrc.Bind(elem(st editState) {
+					~{
+						p, _ := content.ParseResolved(st.JSON)
+						idx := clampDay(st.Day, len(p.Days)) - 1
+						if idx < 0 {
+							idx = 0
+						}
+						warmTarget, coolTarget := "warmup", "cooldown"
+						if len(p.Days) > 0 {
+							if p.Days[idx].Warmup != nil { warmTarget = "day-warmup" }
+							if p.Days[idx].Cooldown != nil { coolTarget = "day-cooldown" }
+						}
+					}
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.warmup_rounds"))</span>
+						<span>~(content.WarmupRounds)</span>
 					</div>
-				</details>
+					<div class="cyc-head">~(if warmTarget == "day-warmup" { ~(i18n.T(l, "workout.warmup"), " · ", i18n.Tf(l, "fmt.day", st.Day)) } else { ~(i18n.T(l, "settings.warmup_series")) })</div>
+					~(s.editList(editSrc, cat, entries, l, p.WarmupFor(idx), warmTarget, st.Open))
+
+					~(if len(p.Days) > 0 {
+						~{ rd := p.Days[idx] }
+						<div class="srow">
+							<span>~(i18n.T(l, "settings.main_rounds"))</span>
+							<span>~(content.MainRounds)</span>
+						</div>
+						<div class="cyc-head">~(i18n.T(l, "settings.main_block"), " · ", i18n.Tf(l, "fmt.day", st.Day))</div>
+						~(s.editList(editSrc, cat, entries, l, rd.Items, "day", st.Open))
+					})
+
+					<div class="cyc-head">~(if coolTarget == "day-cooldown" { ~(i18n.T(l, "workout.cooldown"), " · ", i18n.Tf(l, "fmt.day", st.Day)) } else { ~(i18n.T(l, "settings.cooldown_series")) })</div>
+					~(s.editList(editSrc, cat, entries, l, p.CooldownFor(idx), coolTarget, st.Open))
+				}))
+
+				<div class="srow cyc-save">
+					~>doors.AClick{On: s.saveEditor(editSrc, nameSrc)} <button class="btn primary small" type="button">~(i18n.T(l, "settings.save_version"))</button>
+				</div>
 
 				</div>
 			} else if s.mode == "exercises" {
@@ -273,116 +269,113 @@ elem (s settingsPage) Main() {
 				<div class="settings-card">
 				~// Browse exercise content (description + all tips), download any
 				~// exercise as JSON, or import one (paste / file).
-				<details class="cycle-details" open>
-					<summary>~(i18n.T(l, "settings.exercise_content"))</summary>
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.exercise"))</span>
-						<select class="lang-select compact" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
-							selSrc.Update(ctx, r.Event().Value)
-							return false
-						}})>
-							~(s.exOptions(entries, l, firstID))
-						</select>
-					</div>
-					~// Read-only content of the selected exercise.
-					~(selSrc.Bind(elem(id string) {
-						~(s.exDetail(l, cat, id))
-					}))
-					~(selSrc.Bind(elem(id string) {
-						~{
-							cur := cat.PoseIDs(id)
-							poseA, poseB := "", ""
-							if len(cur) > 0 {
-								poseA = cur[0]
-							}
-							if len(cur) > 1 {
-								poseB = cur[1]
-							}
-							sex := app.DB.GetSex(s.sess.UserID)
-							thumbs := app.ExerciseFrames(cat, id, sex)
+				<div class="srow">
+					<span>~(i18n.T(l, "settings.exercise"))</span>
+					<select class="lang-select compact" (doors.AChange{On: func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+						selSrc.Update(ctx, r.Event().Value)
+						return false
+					}})>
+						~(s.exOptions(entries, l, firstID))
+					</select>
+				</div>
+				~// Read-only content of the selected exercise.
+				~(selSrc.Bind(elem(id string) {
+					~(s.exDetail(l, cat, id))
+				}))
+				~(selSrc.Bind(elem(id string) {
+					~{
+						cur := cat.PoseIDs(id)
+						poseA, poseB := "", ""
+						if len(cur) > 0 {
+							poseA = cur[0]
 						}
-						~>doors.ASubmit[posePickForm]{On: s.assignPoses} <form class="ex-import-form">
-							<input type="hidden" name="pose_ex" value=(id)>
-							<div class="pose-preview">
-								~(for _, u := range thumbs {
-									<img class="pose-thumb" src=(u) alt="">
-								})
-							</div>
-							<div class="srow col">
-								<span>~(i18n.T(l, "settings.pose_a"))</span>
-								<select class="lang-select compact" name="pose_a">
-									~(s.poseOptions(poseList, poseA, i18n.T(l, "settings.pose_none")))
-								</select>
-							</div>
-							<div class="srow col">
-								<span>~(i18n.T(l, "settings.pose_b"))</span>
-								<select class="lang-select compact" name="pose_b">
-									~(s.poseOptions(poseList, poseB, i18n.T(l, "settings.pose_none")))
-								</select>
-							</div>
-							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.pose_save"))</button>
-						</form>
-					}))
-					~>doors.ASubmit[newExForm]{On: s.createExercise} <form class="ex-import-form">
-						<div class="srow col">
-							<span>~(i18n.T(l, "settings.new_exercise"))</span>
-							<input class="text-input compact" name="ex_id" type="text" maxlength="12" placeholder="X01">
-							<input class="text-input compact" name="ex_name" type="text" maxlength="60" placeholder=(i18n.T(l, "settings.exercise"))>
+						if len(cur) > 1 {
+							poseB = cur[1]
+						}
+						sex := app.DB.GetSex(s.sess.UserID)
+						thumbs := app.ExerciseFrames(cat, id, sex)
+					}
+					~>doors.ASubmit[posePickForm]{On: s.assignPoses} <form class="ex-import-form">
+						<input type="hidden" name="pose_ex" value=(id)>
+						<div class="pose-preview">
+							~(for _, u := range thumbs {
+								<img class="pose-thumb" src=(u) alt="">
+							})
 						</div>
 						<div class="srow col">
 							<span>~(i18n.T(l, "settings.pose_a"))</span>
-							<select class="lang-select compact" name="ex_pose_a">
-								~(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none")))
+							<select class="lang-select compact" name="pose_a">
+								~(s.poseOptions(poseList, poseA, i18n.T(l, "settings.pose_none")))
 							</select>
 						</div>
 						<div class="srow col">
 							<span>~(i18n.T(l, "settings.pose_b"))</span>
-							<select class="lang-select compact" name="ex_pose_b">
-								~(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none")))
+							<select class="lang-select compact" name="pose_b">
+								~(s.poseOptions(poseList, poseB, i18n.T(l, "settings.pose_none")))
 							</select>
 						</div>
-						<div class="srow">
-							<span>~(i18n.T(l, "settings.figure"))</span>
-							<select class="lang-select compact" name="ex_figure">
-								~(for _, e := range entries {
-									<option value=(e.ID)>~(e.Name)</option>
-								})
-							</select>
-						</div>
-						<div class="srow">
-							<select class="lang-select compact" name="ex_slot">
-								<option value="warmup">~(i18n.T(l, "workout.warmup"))</option>
-								<option value="main" selected=func { return true }>~(i18n.T(l, "workout.main"))</option>
-								<option value="cooldown">~(i18n.T(l, "workout.cooldown"))</option>
-							</select>
-							<select class="lang-select compact" name="ex_unit">
-								<option value="reps">~(i18n.T(l, "workout.x_reps"))</option>
-								<option value="seconds">~(i18n.T(l, "workout.sec"))</option>
-								<option value="breaths">~(i18n.T(l, "workout.breaths"))</option>
-							</select>
-							<label><input type="checkbox" name="ex_perside" value="1"> ~(i18n.T(l, "workout.side"))</label>
-							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.add_exercise"))</button>
-						</div>
+						<button class="btn primary small" type="submit">~(i18n.T(l, "settings.pose_save"))</button>
 					</form>
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.download"))</span>
-						~(selSrc.Bind(elem(id string) {
-							~{
-								doc, _ := cat.Doc(id)
-								b := doc.Marshal()
-							}
-							<a class="btn small" (doors.ResourceBytes(b)) name=(id + ".json")>~(id, ".json")</a>
-						}))
+				}))
+				~>doors.ASubmit[newExForm]{On: s.createExercise} <form class="ex-import-form">
+					<div class="srow col">
+						<span>~(i18n.T(l, "settings.new_exercise"))</span>
+						<input class="text-input compact" name="ex_id" type="text" maxlength="12" placeholder="X01">
+						<input class="text-input compact" name="ex_name" type="text" maxlength="60" placeholder=(i18n.T(l, "settings.exercise"))>
 					</div>
-					~>doors.ARawSubmit{On: s.importExercise} <form class="ex-import-form">
-						<textarea class="ex-import" name="exjson" rows="3" placeholder=(i18n.T(l, "settings.paste_json"))></textarea>
-						<div class="srow ex-import-row">
-							<input class="ex-file" type="file" accept=".json,application/json">
-							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
-						</div>
-					</form>
-					<script src=(assets.ExUpload) inline></script>
-				</details>
+					<div class="srow col">
+						<span>~(i18n.T(l, "settings.pose_a"))</span>
+						<select class="lang-select compact" name="ex_pose_a">
+							~(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none")))
+						</select>
+					</div>
+					<div class="srow col">
+						<span>~(i18n.T(l, "settings.pose_b"))</span>
+						<select class="lang-select compact" name="ex_pose_b">
+							~(s.poseOptions(poseList, "", i18n.T(l, "settings.pose_none")))
+						</select>
+					</div>
+					<div class="srow">
+						<span>~(i18n.T(l, "settings.figure"))</span>
+						<select class="lang-select compact" name="ex_figure">
+							~(for _, e := range entries {
+								<option value=(e.ID)>~(e.Name)</option>
+							})
+						</select>
+					</div>
+					<div class="srow">
+						<select class="lang-select compact" name="ex_slot">
+							<option value="warmup">~(i18n.T(l, "workout.warmup"))</option>
+							<option value="main" selected=func { return true }>~(i18n.T(l, "workout.main"))</option>
+							<option value="cooldown">~(i18n.T(l, "workout.cooldown"))</option>
+						</select>
+						<select class="lang-select compact" name="ex_unit">
+							<option value="reps">~(i18n.T(l, "workout.x_reps"))</option>
+							<option value="seconds">~(i18n.T(l, "workout.sec"))</option>
+							<option value="breaths">~(i18n.T(l, "workout.breaths"))</option>
+						</select>
+						<label><input type="checkbox" name="ex_perside" value="1"> ~(i18n.T(l, "workout.side"))</label>
+						<button class="btn primary small" type="submit">~(i18n.T(l, "settings.add_exercise"))</button>
+					</div>
+				</form>
+				<div class="srow">
+					<span>~(i18n.T(l, "settings.download"))</span>
+					~(selSrc.Bind(elem(id string) {
+						~{
+							doc, _ := cat.Doc(id)
+							b := doc.Marshal()
+						}
+						<a class="btn small" (doors.ResourceBytes(b)) name=(id + ".json")>~(id, ".json")</a>
+					}))
+				</div>
+				~>doors.ARawSubmit{On: s.importExercise} <form class="ex-import-form">
+					<textarea class="ex-import" name="exjson" rows="3" placeholder=(i18n.T(l, "settings.paste_json"))></textarea>
+					<div class="srow ex-import-row">
+						<input class="ex-file" type="file" accept=".json,application/json">
+						<button class="btn primary small" type="submit">~(i18n.T(l, "settings.import"))</button>
+					</div>
+				</form>
+				<script src=(assets.ExUpload) inline></script>
 
 				</div>
 			} else if s.mode == "agent" {
@@ -476,15 +469,6 @@ elem (s settingsPage) Main() {
 					})
 				</div>
 
-				</div>
-				<h2 class="sgroup">~(i18n.T(l, "settings.group_more"))</h2>
-				<div class="settings-card">
-					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.SettingsExercises}} <a class="row-link"><span>~(i18n.T(l, "settings.custom_exercises"))</span><span class="row-value">~(icon("next", false))</span></a>
-					</div>
-					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.SettingsAgent}} <a class="row-link"><span>~(i18n.T(l, "settings.agent_token"))</span><span class="row-value">~(icon("next", false))</span></a>
-					</div>
 				</div>
 				<div class="settings-card reset-card">
 				<div class="srow save-row">
@@ -710,10 +694,10 @@ elem (s settingsPage) editList(editSrc doors.Source[editState], cat catalog.Cata
 				</select>
 				<input class="cyc-val" type="number" inputmode="numeric" min="1" max="600" value=(it.Value) (doors.AChange{On: s.editSetValue(editSrc, target, ii)})>
 				<span class="cyc-unit">~(unitWord(l, it.Unit, it.PerSide))</span>
-				~>doors.AClick{On: s.editPeek(editSrc, target, ii)} <button class="cyc-op cyc-info" type="button" aria-label=(i18n.T(l, "settings.view"))>ⓘ</button>
-				~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>↑</button>
-				~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>↓</button>
-				~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" disabled=(len(items) <= 1) aria-label=(i18n.T(l, "settings.remove"))>✕</button>
+				~>doors.AClick{On: s.editPeek(editSrc, target, ii)} <button class="cyc-op cyc-info" type="button" aria-label=(i18n.T(l, "settings.view"))>~(icon("info", false))</button>
+				~>doors.AClick{On: s.editMove(editSrc, target, ii, -1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_up"))>~(icon("up", false))</button>
+				~>doors.AClick{On: s.editMove(editSrc, target, ii, 1)} <button class="cyc-op" type="button" aria-label=(i18n.T(l, "settings.move_down"))>~(icon("down", false))</button>
+				~>doors.AClick{On: s.editDelete(editSrc, target, ii)} <button class="cyc-op danger" type="button" disabled=(len(items) <= 1) aria-label=(i18n.T(l, "settings.remove"))>~(icon("close", false))</button>
 			</li>
 			~(if open == key {
 				<li class="cyc-peek">

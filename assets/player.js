@@ -84,11 +84,6 @@
     infoOverlay: $(".info-overlay"),
     infoMedia: $(".info-media"),
     infoVisual: $(".info-visual"),
-    demoControls: $(".demo-controls"),
-    demoToggle: $(".demo-toggle"),
-    demoPrev: $(".demo-prev"),
-    demoNext: $(".demo-next"),
-    demoFrame: $(".demo-frame"),
     infoName: $(".info-name"),
     infoDesc: $(".info-desc"),
     infoHow: $(".info-how"),
@@ -236,7 +231,6 @@
   }
   function stopFrames() {
     if (frameTimer) { clearInterval(frameTimer); frameTimer = null; }
-    if (el.demoToggle) el.demoToggle.textContent = t("demo_play");
   }
   function animationOf(it) {
     var a = it && it.animation;
@@ -265,7 +259,6 @@
       if (el.svg) el.svg.src = src;
       if (el.infoMedia) el.infoMedia.src = src;
     }
-    if (el.demoFrame) el.demoFrame.textContent = t("demo_frame") + " " + (frameIdx + 1) + "/" + count;
   }
   function playFrames(it, inInfo) {
     stopFrames();
@@ -286,7 +279,6 @@
       }
     }
     frameStep = Math.max(0, order.indexOf(frameIdx));
-    if (el.demoToggle) el.demoToggle.textContent = t("demo_pause");
     frameTimer = setInterval(function () {
       if (disposed || document.visibilityState !== "visible" || (inInfo ? !vis(el.infoOverlay) : !running())) { stopFrames(); return; }
       frameStep = (frameStep + 1) % order.length;
@@ -309,7 +301,6 @@
       if (a || !frames.length) img.removeAttribute("src");
       img.alt = it.name || "";
     });
-    [el.demoControls, el.demoFrame].forEach(function (node) { if (node) node.classList.toggle("hidden", count < 2); });
     paintFrame(it, 0);
     if (a) {
       // Load only this exercise. A missing strip must retain the original still.
@@ -319,7 +310,7 @@
           failedAnimations[src] = true;
           if (!disposed && items[i] === it) {
             showFrames(it);
-            if (vis(el.infoOverlay) && !reducedMotion) playFrames(it, true);
+            if (vis(el.infoOverlay)) playFrames(it, true);
           }
         };
         preload.src = src;
@@ -613,7 +604,8 @@
   // setPhaseLabel writes the phase + round into the top label, slot-coloured.
   function setPhaseLabel(it) {
     var totalRounds = slotRounds[it.slot] || 1;
-    el.phase.textContent = slotLabel(it.slot) + " · " + t("round") + " " + it.round + (totalRounds > 1 ? "/" + totalRounds : "");
+    // "Round 1" of a single round says nothing; show the round only when there are several.
+    el.phase.textContent = slotLabel(it.slot) + (totalRounds > 1 ? " · " + t("round") + " " + it.round + "/" + totalRounds : "");
     el.phase.classList.remove("slot-warmup", "slot-main", "slot-cooldown");
     el.phase.classList.add("slot-" + it.slot);
     setSlotTheme(it.slot);
@@ -1112,7 +1104,8 @@
       else el.infoReplace.classList.add("hidden");
     }
     el.infoOverlay.classList.remove("hidden");
-    if (!reducedMotion) playFrames(it, true);
+    // Opening the card asks to see the movement, so it plays even with reduced motion.
+    playFrames(it, true);
   }
   function closeInfo() {
     stopFrames();
@@ -1154,17 +1147,6 @@
   if (el.name) el.name.addEventListener("click", openInfo);
   if (el.infoClose) el.infoClose.addEventListener("click", closeInfo);
   if (el.infoReplace) el.infoReplace.addEventListener("click", doReplace);
-  if (el.demoToggle) el.demoToggle.addEventListener("click", function () {
-    if (!vis(el.infoOverlay)) return;
-    if (frameTimer) stopFrames(); else playFrames(items[i], true);
-  });
-  function stepFrame(delta) {
-    if (!vis(el.infoOverlay)) return;
-    stopFrames();
-    paintFrame(items[i], frameIdx + delta);
-  }
-  if (el.demoPrev) el.demoPrev.addEventListener("click", function () { stepFrame(-1); });
-  if (el.demoNext) el.demoNext.addEventListener("click", function () { stepFrame(1); });
 
   // Static control labels
   if (el.prev) el.prev.textContent = t("prev");

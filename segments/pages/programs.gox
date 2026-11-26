@@ -178,7 +178,11 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 					</div>
 				} else {
 					<div class="prog-row">
-						~>doors.AClick{On: p.pickReady(rp.Key)} <button class="prog-main" type="button">
+						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+							st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key})
+							toTop(r)
+							return false
+						}} <button class="prog-main" type="button">
 							<span class="prog-top"><b>~(rp.TitleIn(p.sess.Lang))</b><span class="m">~(i18n.Tf(l, "fmt.min_range", first, peak))</span></span>
 							<span class="prog-about">~(rp.AboutIn(p.sess.Lang))</span>
 							~(if tags.Jumps || tags.Equipment {
@@ -204,11 +208,6 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 							}
 							return false
 						}} <button class=(starClass(isStarred)) type="button" aria-label=(starLabel(l, isStarred))>~(icon("star", isStarred))</button>
-						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-							st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key})
-							toTop(r)
-							return false
-						}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.more"))>~(icon("next", false))</button>
 					</div>
 				})
 			})
@@ -316,15 +315,6 @@ func starLabel(l i18n.Lang, on bool) string {
 		return i18n.T(l, "programs.unstar")
 	}
 	return i18n.T(l, "programs.star")
-}
-
-func (p programsPage) pickReady(key string) func(context.Context, doors.RequestPointer) bool {
-	return func(ctx context.Context, r doors.RequestPointer) bool {
-		if app.SelectReady(p.sess.UserID, key, p.sess.Lang) == nil {
-			_ = r.After(doors.ActionLocationReload{})
-		}
-		return false
-	}
 }
 
 func (p programsPage) pickSelected(id int64) func(context.Context, doors.RequestPointer) bool {

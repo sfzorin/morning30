@@ -137,8 +137,6 @@ func (h homePage) Main() gox.Elem {
 						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:78
 						__e = __c.Any(app.ProgramTitle(h.sess.UserID, h.sess.Lang)); if __e != nil { return }
-//line home.gox:78
-						__e = __c.Any(icon("settings", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
@@ -180,7 +178,7 @@ func (h homePage) Main() gox.Elem {
 					{
 						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:84
-						__e = __c.Many(i18n.T(l, "home.est"), " ", i18n.Tf(l, "fmt.min", minutes(w.EstSec))); if __e != nil { return }
+						__e = __c.Many("≈ ", i18n.Tf(l, "fmt.min", minutes(w.EstSec))); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 //line home.gox:85
@@ -264,7 +262,7 @@ func (h homePage) Main() gox.Elem {
 					__e = __c.Set("class", "streak-label"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:100
-					__e = __c.Many(i18n.T(l, "home.streak"), " · ", i18n.Tn(l, "fmt.days", streak)); if __e != nil { return }
+					__e = __c.Any(i18n.T(l, "home.streak")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}

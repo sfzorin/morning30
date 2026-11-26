@@ -686,7 +686,7 @@ test('side-change details, Skip and Back preserve the exercise and intended side
   assert.equal(p.get('.ex-name').textContent, 'Next');
 });
 
-test('phase shows current and total main rounds while single-round warmup and cooldown stay compact', () => {
+test('phase shows current and total main rounds; a single round shows no round at all', () => {
   const p = player([
     item({ id: 'warm', slot: 'warmup' }),
     item({ id: 'a', round: 1 }), item({ id: 'b', round: 1 }),
@@ -694,10 +694,12 @@ test('phase shows current and total main rounds while single-round warmup and co
     item({ id: 'cool', slot: 'cooldown' }),
   ], { labels: { round: 'Круг' } });
   p.advance(3);
-  assert.match(p.get('.phase').textContent, /Круг 1$/);
-  for (const expected of ['1/2', '1/2', '2/2', '2/2', '1']) {
+  assert.doesNotMatch(p.get('.phase').textContent, /Круг/);
+  for (const expected of ['Круг 1/2', 'Круг 1/2', 'Круг 2/2', 'Круг 2/2', null]) {
     p.get('.ctl-done').click();
-    assert.ok(p.get('.phase').textContent.endsWith('Круг ' + expected));
+    const text = p.get('.phase').textContent;
+    if (expected) assert.ok(text.endsWith(expected), text);
+    else assert.doesNotMatch(text, /Круг/);
   }
 });
 
@@ -1232,21 +1234,15 @@ test('a forward/back step sequence plays all phases in order instead of reversin
   ]);
 });
 
-test('detail demonstration can be paused and stepped without consuming exercise time', () => {
+test('detail demonstration plays by itself without consuming exercise time', () => {
   const p = player([item({ unit: 'seconds', value: 20, animation: demo() })]);
   p.advance(5);
   p.get('.ex-visual').click();
   const remaining = p.persistence.data.checkpoint.state.remainingMs;
   assert.ok(!hidden(p.get('.info-overlay')));
-  p.advance(3);
-  p.get('.demo-toggle').click();
-  const position = demoPosition(p);
-  p.advance(10);
-  assert.equal(demoPosition(p), position);
-  p.get('.demo-next').click();
-  assert.notEqual(demoPosition(p), position);
-  p.get('.demo-prev').click();
-  assert.equal(demoPosition(p), position);
+  const seen = new Set();
+  for (let n = 0; n < 4; n++) { p.advance(1); seen.add(demoPosition(p)); }
+  assert.ok(seen.size > 1, 'the card keeps animating');
   assert.equal(p.persistence.data.checkpoint.state.remainingMs, remaining);
   p.get('.info-close').click();
   p.advance(1);
@@ -1285,14 +1281,11 @@ test('missing animation falls back to the still and only current exercise strips
   assert.equal(p.images.length, 1);
 });
 
-test('reduced motion keeps a still frame but allows intentional playback in details', () => {
+test('reduced motion keeps the workout still; opening the card shows the movement', () => {
   const p = player([item({ animation: demo() })], {}, { reducedMotion: true });
   p.advance(10);
   assert.equal(demoPosition(p), '0% 50%');
   p.get('.ex-visual').click();
-  p.advance(2);
-  assert.equal(demoPosition(p), '0% 50%');
-  p.get('.demo-toggle').click();
   p.advance(1);
   assert.equal(demoPosition(p), '50% 50%');
 });

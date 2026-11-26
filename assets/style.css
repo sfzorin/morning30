@@ -284,19 +284,6 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .saved-name small { display: block; color: var(--muted); font-size: 12px; }
 .confirm-actions { display: flex; gap: 10px; }
 
-/* Collapsible cycle viewer/editor */
-.cycle-details { border-bottom: 1px solid var(--line); }
-.cycle-details > summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 13px 0;
-  color: var(--fg);
-  font-size: 15px;
-  font-weight: 600;
-}
-.cycle-details > summary::-webkit-details-marker { display: none; }
-.cycle-details > summary::after { content: "▾"; float: inline-end; color: var(--muted); }
-.cycle-details[open] > summary::after { content: "▴"; }
 .cyc-head { color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; padding: 6px 0; }
 .cyc-list { list-style: none; margin: 0; padding: 0; }
 .cyc-list li {
@@ -363,6 +350,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
   cursor: pointer;
 }
 .cyc-op.cyc-info { color: var(--accent); }
+.cyc-op .ic { width: 16px; height: 16px; }
 .cyc-op.danger { color: var(--danger, #e5484d); }
 .cyc-peek {
   padding: 8px 10px; margin: 2px 0 6px; border: 1px solid var(--line);
@@ -563,10 +551,6 @@ body:has(.player) {
 .reaction-arrow { font: 900 clamp(70px, 18vw, 112px)/1 system-ui, sans-serif; }
 .reaction-word { font: 800 clamp(20px, 5vw, 28px)/1.2 system-ui, sans-serif; }
 .ex-svg, .info-media { display: block; width: 100%; height: 100%; object-fit: contain; }
-.demo-frame { color: var(--muted); font-size: 12px; text-align: center; }
-.demo-controls { display: flex; gap: 8px; justify-content: center; }
-.demo-controls .btn { padding: 8px 12px; min-height: 44px; }
-.demo-toggle { flex: 1; }
 .pose-preview { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .pose-thumb {
   width: 72px; height: 72px; object-fit: contain; border-radius: 12px;
@@ -860,7 +844,6 @@ body:has(.player) {
 .add-card .course-title { color: var(--accent); }
 
 /* ---- Program page ---- */
-.hero-program .ic { width: 16px; height: 16px; color: var(--muted); vertical-align: -2px; margin-inline-start: 6px; }
 .settings-head .prog-name-input { flex: 1; margin: 0 0 0 4px; }
 .settings-head h1 { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .change-program { display: block; text-align: center; margin-top: 14px; background: var(--card2); color: var(--fg); text-decoration: none; }

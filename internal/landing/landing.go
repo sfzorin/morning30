@@ -14,6 +14,7 @@ import (
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/i18n"
+	"morning30/internal/langs"
 )
 
 // Origin is the canonical public address used in links for crawlers.
@@ -107,9 +108,17 @@ func base(l i18n.Lang, path func(string) string) page {
 	p.Canonical = Origin + path(string(l))
 	p.Default = Origin + path(string(i18n.EN))
 	for _, o := range i18n.Order {
-		p.Alternates = append(p.Alternates, link{Lang: i18n.BCP47(o), Label: strings.ToUpper(string(o)), URL: path(string(o)), Current: o == l})
+		p.Alternates = append(p.Alternates, link{Lang: i18n.BCP47(o), Label: langName(o), URL: path(string(o)), Current: o == l})
 	}
 	return p
+}
+
+// langName is the language's own name for the picker ("Deutsch", "日本語").
+func langName(l i18n.Lang) string {
+	if m, ok := langs.Get(string(l)); ok {
+		return m.Name
+	}
+	return strings.ToUpper(string(l))
 }
 
 func minutes(sec int) int {
@@ -226,9 +235,8 @@ a{color:inherit}
 .wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
 .brand{font-weight:800;text-decoration:none}
-.langs{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px}
-.langs a{color:var(--muted);text-decoration:none}
-.langs a.on{color:var(--accent);font-weight:700}
+.lang{appearance:none;-webkit-appearance:none;background:var(--card) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%2394a3b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M1 1.5 6 6.5 11 1.5'/></svg>") no-repeat right 12px center;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:8px 32px 8px 12px;font:inherit;font-size:14px;max-width:50%}
+[dir=rtl] .lang{background-position:left 12px center;padding:8px 12px 8px 32px}
 h1{font-size:30px;line-height:1.15;letter-spacing:-.5px;margin:0 0 12px;text-wrap:balance}
 h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:32px 0 10px}
 .lead{font-size:17px;margin:0 0 12px}
@@ -254,7 +262,7 @@ h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5p
 <div class="wrap">
 <div class="top">
 <a class="brand" href="/">🌅 {{.T.app_name}}</a>
-<nav class="langs">{{range .Alternates}}<a href="{{.URL}}" hreflang="{{.Lang}}"{{if .Current}} class="on"{{end}}>{{.Label}}</a>{{end}}</nav>
+<select class="lang" aria-label="Language" onchange="location.href=this.value">{{range .Alternates}}<option value="{{.URL}}" lang="{{.Lang}}"{{if .Current}} selected{{end}}>{{.Label}}</option>{{end}}</select>
 </div>
 <main>
 <h1>{{.Heading}}</h1>

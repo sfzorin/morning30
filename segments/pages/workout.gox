@@ -241,9 +241,6 @@ func (w workoutPage) playerData() playerPayload {
 		"save_retry": i18n.T(l, "done.save_retry"),
 		"save_unavailable": i18n.T(l, "done.save_unavailable"),
 		"saved": i18n.T(l, "done.saved"),
-		"demo_play": i18n.T(l, "demo.play"),
-		"demo_pause": i18n.T(l, "demo.pause"),
-		"demo_frame": i18n.T(l, "demo.frame"),
 	}
 	cues := map[string]string{
 		"ready":       i18n.Cue(l, "ready"),
@@ -347,12 +344,6 @@ elem (w workoutPage) Main() {
 		<div class="info-overlay hidden">
 			<div class="info-card">
 				<div class="info-visual"><img class="info-media" alt=""></div>
-				<div class="demo-controls hidden">
-					<button class="demo-prev btn" type="button" aria-label=(i18n.T(l, "demo.prev"))>←</button>
-					<button class="demo-toggle btn" type="button"></button>
-					<button class="demo-next btn" type="button" aria-label=(i18n.T(l, "demo.next"))>→</button>
-				</div>
-				<div class="demo-frame hidden"></div>
 				<h2 class="info-name"></h2>
 				<p class="info-desc"></p>
 				<div class="info-sec info-how-sec">
@@ -372,7 +363,7 @@ elem (w workoutPage) Main() {
 					<p class="info-breathing"></p>
 				</div>
 				<div class="info-sec info-warn-sec">
-					<h3>⚠️ ~(i18n.T(l, "info.warning"))</h3>
+					<h3>~(i18n.T(l, "info.warning"))</h3>
 					<p class="info-warn"></p>
 				</div>
 				<button class="info-replace btn" type="button">~(i18n.T(l, "info.replace"))</button>

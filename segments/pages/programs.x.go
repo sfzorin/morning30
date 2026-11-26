@@ -523,33 +523,37 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 							__e = __c.Set("class", "prog-row"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:181
-							__e = (doors.AClick{On: p.pickReady(rp.Key)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+							__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+							st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key})
+							toTop(r)
+							return false
+						}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line programs.gox:181
+//line programs.gox:185
 									__e = __c.Set("class", "prog-main"); if __e != nil { return }
-//line programs.gox:181
+//line programs.gox:185
 									__e = __c.Set("type", "button"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
-//line programs.gox:182
+//line programs.gox:186
 										__e = __c.Set("class", "prog-top"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.Init("b"); if __e != nil { return }
 										{
 											__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:182
+//line programs.gox:186
 											__e = __c.Any(rp.TitleIn(p.sess.Lang)); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 										__e = __c.Init("span"); if __e != nil { return }
 										{
-//line programs.gox:182
+//line programs.gox:186
 											__e = __c.Set("class", "m"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:182
+//line programs.gox:186
 											__e = __c.Any(i18n.Tf(l, "fmt.min_range", first, peak)); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -557,40 +561,40 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 									__e = __c.Close(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
-//line programs.gox:183
+//line programs.gox:187
 										__e = __c.Set("class", "prog-about"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:183
+//line programs.gox:187
 										__e = __c.Any(rp.AboutIn(p.sess.Lang)); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
-//line programs.gox:184
+//line programs.gox:188
 									if tags.Jumps || tags.Equipment {
 										__e = __c.Init("span"); if __e != nil { return }
 										{
-//line programs.gox:185
+//line programs.gox:189
 											__e = __c.Set("class", "prog-tags"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:186
+//line programs.gox:190
 											if tags.Jumps {
 												__e = __c.Init("span"); if __e != nil { return }
 												{
-//line programs.gox:186
+//line programs.gox:190
 													__e = __c.Set("class", "tag"); if __e != nil { return }
 													__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:186
+//line programs.gox:190
 													__e = __c.Any(i18n.T(l, "tag.jumps")); if __e != nil { return }
 												}
 												__e = __c.Close(); if __e != nil { return }
 											}
-//line programs.gox:187
+//line programs.gox:191
 											if tags.Equipment {
 												__e = __c.Init("span"); if __e != nil { return }
 												{
-//line programs.gox:187
+//line programs.gox:191
 													__e = __c.Set("class", "tag"); if __e != nil { return }
 													__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:187
+//line programs.gox:191
 													__e = __c.Any(i18n.T(l, "tag.equipment")); if __e != nil { return }
 												}
 												__e = __c.Close(); if __e != nil { return }
@@ -601,7 +605,7 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
-//line programs.gox:191
+//line programs.gox:195
 							__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 							if isStarred {
 								if mine.Edited {
@@ -621,36 +625,15 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line programs.gox:206
+//line programs.gox:210
 									__e = __c.Set("class", starClass(isStarred)); if __e != nil { return }
-//line programs.gox:206
+//line programs.gox:210
 									__e = __c.Set("type", "button"); if __e != nil { return }
-//line programs.gox:206
+//line programs.gox:210
 									__e = __c.Set("aria-label", starLabel(l, isStarred)); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:206
+//line programs.gox:210
 									__e = __c.Any(icon("star", isStarred)); if __e != nil { return }
-								}
-								__e = __c.Close(); if __e != nil { return }
-							return })); if __e != nil { return }
-//line programs.gox:207
-							__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-							st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key})
-							toTop(r)
-							return false
-						}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
-								ctx := __c.Context(); _ = ctx
-								__e = __c.Init("button"); if __e != nil { return }
-								{
-//line programs.gox:211
-									__e = __c.Set("class", "icon-mini"); if __e != nil { return }
-//line programs.gox:211
-									__e = __c.Set("type", "button"); if __e != nil { return }
-//line programs.gox:211
-									__e = __c.Set("aria-label", i18n.T(l, "programs.more")); if __e != nil { return }
-									__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:211
-									__e = __c.Any(icon("next", false)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
@@ -662,15 +645,15 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line programs.gox:217
+//line programs.gox:216
 }
 
 // preview shows one ready program before choosing it.
-//line programs.gox:220
+//line programs.gox:219
 func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progState) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line programs.gox:222
+//line programs.gox:221
 		rp, _ := content.ReadyByKey(s.Preview)
 		r := rp.Build()
 		tags := content.ProgramTags(r)
@@ -685,10 +668,10 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line programs.gox:234
+//line programs.gox:233
 			__e = __c.Set("class", "lib-head"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:235
+//line programs.gox:234
 			__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip})
 			return false
@@ -696,14 +679,14 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line programs.gox:238
+//line programs.gox:237
 					__e = __c.Set("class", "lib-back"); if __e != nil { return }
-//line programs.gox:238
+//line programs.gox:237
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line programs.gox:238
+//line programs.gox:237
 					__e = __c.Set("aria-label", i18n.T(l, "programs.title")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:238
+//line programs.gox:237
 					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -711,7 +694,7 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 			__e = __c.Init("h1"); if __e != nil { return }
 			{
 				__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:239
+//line programs.gox:238
 				__e = __c.Any(rp.TitleIn(p.sess.Lang)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
@@ -719,53 +702,53 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("p"); if __e != nil { return }
 		{
-//line programs.gox:241
+//line programs.gox:240
 			__e = __c.Set("class", "lib-desc"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:241
+//line programs.gox:240
 			__e = __c.Any(rp.AboutIn(p.sess.Lang)); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line programs.gox:242
+//line programs.gox:241
 			__e = __c.Set("class", "pills"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line programs.gox:243
+//line programs.gox:242
 				__e = __c.Set("class", "pill"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:243
+//line programs.gox:242
 				__e = __c.Many(i18n.Tf(l, "fmt.min_range", first, peak), " ", i18n.T(l, "landing.a_day")); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line programs.gox:244
+//line programs.gox:243
 				__e = __c.Set("class", "pill"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:244
+//line programs.gox:243
 				if tags.Jumps {
-//line programs.gox:244
+//line programs.gox:243
 					__e = __c.Any(i18n.T(l, "tag.jumps")); if __e != nil { return }
 				} else  {
-//line programs.gox:244
+//line programs.gox:243
 					__e = __c.Any(i18n.T(l, "tag.nojumps")); if __e != nil { return }
 				}
 			}
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line programs.gox:245
+//line programs.gox:244
 				__e = __c.Set("class", "pill"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:245
+//line programs.gox:244
 				if tags.Equipment {
-//line programs.gox:245
+//line programs.gox:244
 					__e = __c.Any(i18n.T(l, "tag.equipment")); if __e != nil { return }
 				} else  {
-//line programs.gox:245
+//line programs.gox:244
 					__e = __c.Any(i18n.T(l, "tag.noequipment")); if __e != nil { return }
 				}
 			}
@@ -774,10 +757,10 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line programs.gox:247
+//line programs.gox:246
 			__e = __c.Set("class", "preview-actions"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:248
+//line programs.gox:247
 			__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			if app.SelectReady(p.sess.UserID, rp.Key, p.sess.Lang) == nil {
 				p.path.Update(ctx, path.Path{Page: path.Home})
@@ -787,19 +770,19 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line programs.gox:253
+//line programs.gox:252
 					__e = __c.Set("class", "btn primary"); if __e != nil { return }
-//line programs.gox:253
+//line programs.gox:252
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:253
+//line programs.gox:252
 					__e = __c.Any(i18n.T(l, "programs.start")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
-//line programs.gox:254
+//line programs.gox:253
 			if !isStarred {
-//line programs.gox:255
+//line programs.gox:254
 				__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				if _, err := app.StarReady(p.sess.UserID, rp.Key, p.sess.Lang); err == nil {
 					st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key, Tick: s.Tick + 1})
@@ -809,14 +792,14 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line programs.gox:260
+//line programs.gox:259
 						__e = __c.Set("class", "btn"); if __e != nil { return }
-//line programs.gox:260
+//line programs.gox:259
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:260
+//line programs.gox:259
 						__e = __c.Any(icon("star", false)); if __e != nil { return }
-//line programs.gox:260
+//line programs.gox:259
 						__e = __c.Any(i18n.T(l, "programs.star")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -824,12 +807,12 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 			} else  {
 				__e = __c.Init("span"); if __e != nil { return }
 				{
-//line programs.gox:262
+//line programs.gox:261
 					__e = __c.Set("class", "pill on"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:262
+//line programs.gox:261
 					__e = __c.Any(icon("star", true)); if __e != nil { return }
-//line programs.gox:262
+//line programs.gox:261
 					__e = __c.Any(i18n.T(l, "programs.in_selected")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -838,21 +821,21 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("h2"); if __e != nil { return }
 		{
-//line programs.gox:265
+//line programs.gox:264
 			__e = __c.Set("class", "lib-grp"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:265
+//line programs.gox:264
 			__e = __c.Any(i18n.T(l, "landing.plan")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("ol"); if __e != nil { return }
 		{
-//line programs.gox:266
+//line programs.gox:265
 			__e = __c.Set("class", "plan-days"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:267
+//line programs.gox:266
 			for i, d := range r.Days {
-//line programs.gox:269
+//line programs.gox:268
 				var items []string
 				for _, it := range d.Items {
 					items = append(items, cat.Name(l, it.ID)+" "+doseLabel(l, string(it.Unit), it.Value, false))
@@ -864,23 +847,23 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line programs.gox:276
+//line programs.gox:275
 						__e = __c.Set("class", "plan-head"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("b"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:277
+//line programs.gox:276
 							__e = __c.Any(i18n.Tf(l, "fmt.day", d.Day)); if __e != nil { return }
-//line programs.gox:277
+//line programs.gox:276
 							if content.IsRecoveryDay(d.Day) {
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line programs.gox:277
+//line programs.gox:276
 									__e = __c.Set("class", "light"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Text(" · "); if __e != nil { return }
-//line programs.gox:277
+//line programs.gox:276
 									__e = __c.Any(i18n.T(l, "landing.light")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -889,10 +872,10 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("span"); if __e != nil { return }
 						{
-//line programs.gox:278
+//line programs.gox:277
 							__e = __c.Set("class", "m"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:278
+//line programs.gox:277
 							__e = __c.Many("≈ ", i18n.Tf(l, "fmt.min", (est+59)/60)); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -900,10 +883,10 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
-//line programs.gox:280
+//line programs.gox:279
 						__e = __c.Set("class", "m"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line programs.gox:280
+//line programs.gox:279
 						__e = __c.Any(strings.Join(items, ", ")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -913,7 +896,7 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line programs.gox:284
+//line programs.gox:283
 }
 
 func selRowClass(current bool) string {
@@ -949,15 +932,6 @@ func starLabel(l i18n.Lang, on bool) string {
 		return i18n.T(l, "programs.unstar")
 	}
 	return i18n.T(l, "programs.star")
-}
-
-func (p programsPage) pickReady(key string) func(context.Context, doors.RequestPointer) bool {
-	return func(ctx context.Context, r doors.RequestPointer) bool {
-		if app.SelectReady(p.sess.UserID, key, p.sess.Lang) == nil {
-			_ = r.After(doors.ActionLocationReload{})
-		}
-		return false
-	}
 }
 
 func (p programsPage) pickSelected(id int64) func(context.Context, doors.RequestPointer) bool {
