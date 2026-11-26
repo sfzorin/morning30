@@ -292,7 +292,7 @@ func (a authPage) guest(ctx context.Context, r doors.RequestPointer) bool {
 		Authorized: true, UserID: gu.ID, Email: gu.Email, Name: gu.Name,
 		Lang: gu.Lang, Rest: gu.Rest, Voice: gu.Voice, VoiceMode: gu.VoiceMode, IsGuest: true,
 	})
-	a.path.Update(ctx, path.Path{Page: path.Home})
+	a.path.Update(ctx, path.Path{Page: path.About})
 	return false
 }
 
@@ -379,7 +379,11 @@ func (a authPage) submit(msg doors.Source[string]) func(context.Context, doors.R
 			Voice:      u.Voice,
 			VoiceMode:  u.VoiceMode,
 		})
-		a.path.Update(ctx, path.Path{Page: path.Home})
+		next := path.Path{Page: path.Home}
+		if app.NeedsFitnessProfile(u.ID) {
+			next = path.Path{Page: path.About} // a newcomer first tells about themselves
+		}
+		a.path.Update(ctx, next)
 		return false
 	}
 }

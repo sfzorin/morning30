@@ -166,6 +166,30 @@ CREATE TABLE IF NOT EXISTS selected_programs (
 );
 CREATE INDEX IF NOT EXISTS idx_selected_programs_user ON selected_programs(user_id);
 
+-- What the person told about themselves on the "About you" screen.
+CREATE TABLE IF NOT EXISTS fitness_profiles (
+    user_id    INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+    child      INTEGER NOT NULL DEFAULT 0,
+    age        INTEGER NOT NULL DEFAULT 0,
+    height_cm  INTEGER NOT NULL DEFAULT 0,
+    weight_kg  INTEGER NOT NULL DEFAULT 0,
+    concerns   TEXT NOT NULL DEFAULT '',     -- comma-separated: back,knees,pressure,feet
+    updated_at TEXT NOT NULL
+);
+
+-- One row per fitness self-test; -1 = that test was skipped.
+CREATE TABLE IF NOT EXISTS fitness_tests (
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id   INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    push_ups  INTEGER NOT NULL,
+    squats    INTEGER NOT NULL,
+    plank_sec INTEGER NOT NULL,
+    pull_ups  INTEGER NOT NULL,
+    score     INTEGER NOT NULL,             -- fitness index 0..100
+    taken_at  TEXT NOT NULL                 -- UTC, RFC 3339
+);
+CREATE INDEX IF NOT EXISTS idx_fitness_tests_user ON fitness_tests(user_id);
+
 DROP TABLE IF EXISTS progress;
 `
 	if _, err := d.sql.Exec(schema); err != nil {

@@ -1,0 +1,2 @@
+"NSHealthUpdateUsageDescription" = "morning30 saves each finished workout to Apple Health.";
+"NSHealthShareUsageDescription" = "morning30 only saves workouts to Apple Health and does not read your health data.";

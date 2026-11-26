@@ -39,6 +39,20 @@ small client-side workout engine.
   "no equipment" filters read from the programs themselves. Picking a kids'
   program switches the figure to a child. Each course also has a public page per language
   (`/{lang}/courses/...`, listed in the sitemap).
+- **About you and the fitness index.** A newcomer (guest or new account)
+  first sees "About you": for me or for a child, figure, age, height, weight
+  and what bothers them (back, knees, blood pressure, feet). A voice-guided
+  self-test follows — push-ups, squats in one minute, a plank hold and
+  pull-ups (each can be skipped). `internal/fitness` compares each result with
+  a typical one for the age and sex (typical = 50 points, twice that = 100,
+  children have their own norms), averages them into an index 0–100 with a
+  level (getting started, fair, good, excellent) and recommends a program,
+  its difficulty and rounds: back → back care (posture for children), feet →
+  healthy feet, blood pressure or 50+ → workout 50+, otherwise the morning
+  workout; knees, a high BMI, blood pressure and age 60+ make it gentler. The
+  result screen shows the index (and the previous one after a retest) and
+  starts the program. Settings → Profile → Fitness reopens it; the answers and
+  tests are deleted with the account.
 - **Selected programs.** The user's own shortlist. One tap on a program
   switches to it; the star adds or removes it without switching. Every
   selected program keeps its own copy (with the user's edits) and its own

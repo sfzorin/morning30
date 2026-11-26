@@ -155,11 +155,15 @@ func main() {
 
 	mux.Handle("GET /poses/{id}", http.HandlerFunc(app.ServePose))
 	mux.HandleFunc("/api/workouts/complete", app.CompleteWorkoutHTTP)
+	mux.HandleFunc("/api/fitness/test", app.FitnessTestHTTP)
 	mux.Handle("/api/", mcp.Handler(strings.TrimSpace(os.Getenv("MORNING_MCP_TOKEN"))))
 
 	mux.Handle("/", a)
 
 	addr := ":8080"
+	if port := strings.TrimSpace(os.Getenv("PORT")); port != "" {
+		addr = ":" + port
+	}
 	log.Printf("morning30 listening on %s", addr)
 	if err := http.ListenAndServe(addr, mux); err != nil {
 		log.Fatal(err)

@@ -11,6 +11,10 @@ Shared with the site:
 - Settings → Delete account — required by both stores; works everywhere.
 - `/privacy` — the privacy policy for the store listings.
 - `/.well-known/assetlinks.json` — set `ANDROID_CERT_SHA256` on the server.
+- Finished workouts: `assets/player.js` fires `m30:workout` (start, end, program
+  title, kind strength/stretch); `app-bridge.js` hands it to the phone once
+  (workouts shorter than a minute are skipped), which writes it to Apple Health
+  or Health Connect. The apps only write workouts and never read health data.
 
 ## Android (`apps/android`)
 
@@ -20,7 +24,19 @@ A Trusted Web Activity (Chrome full screen) plus a small native part:
 - `ReminderActivity` receives the time from the site
   (`intent://reminder?…#Intent;scheme=morning30;…`), asks for notification
   permission and schedules the reminder;
-- `ReminderReceiver` shows the notification and restores it after a reboot.
+- `ReminderReceiver` shows the notification and restores it after a reboot;
+- `HealthActivity` receives a finished workout
+  (`intent://health?start=…&end=…&kind=…&title=…`) and writes an
+  `ExerciseSessionRecord` (calisthenics or stretching) to Health Connect,
+  asking for the write-exercise permission the first time. Chrome opens
+  `intent://` links only right after a tap, so a workout that ends on a timer
+  is sent on the next tap (the done screen's button);
+- `PrivacyActivity` is what Health Connect opens from "privacy policy"
+  (shows https://morning30.com/privacy).
+
+Health Connect needs `minSdk 26`, `compileSdk 36` and Android Gradle plugin
+8.10+. In Play Console fill in the Health Connect declaration: the app writes
+Exercise only, for workout history in the user's health app.
 
 Build (JDK 17, Android SDK):
 
@@ -59,7 +75,17 @@ A UIKit app around a WKWebView (`WebViewController`):
 - schedules a daily local notification (`Reminders`);
 - keeps the screen on during a workout (`/day/N`, `/start`);
 - shows a "No internet connection" screen with a retry button;
-- opens links to other sites in Safari; plays voice cues with the silent switch on.
+- opens links to other sites in Safari; plays voice cues with the silent switch on;
+- writes each finished workout to Apple Health (`Health.swift`, HealthKit
+  entitlement in `project.yml`, usage texts in `Info.plist` and
+  `*.lproj/InfoPlist.strings`); the permission sheet asks only to write
+  Workouts. In App Store Connect add the HealthKit capability to the App ID
+  and answer the privacy questions: Health & Fitness data, used for app
+  functionality, written to Apple Health only.
+
+Debug builds take `MORNING30_URL` (another dev server) and
+`MORNING30_TEST_WORKOUT=1` (save a 15-minute test workout at launch), e.g.
+`SIMCTL_CHILD_MORNING30_URL=http://localhost:8081/ xcrun simctl launch booted com.morning30.app`.
 
 The Xcode project is generated from `project.yml`:
 
@@ -74,6 +100,9 @@ Capabilities, Product → Archive, then Distribute App → App Store Connect.
 ## Store listings
 
 - Privacy policy URL: https://morning30.com/privacy
-- Data collection: email and name (account), workout history and settings
-  (app functionality); not linked to tracking; no third-party sharing.
+- Data collection: email and name (account), workout history and settings,
+  and if the person fills them in: age, height, weight, concerns and fitness
+  test results (app functionality); not linked to tracking; no third-party
+  sharing. Workouts are written to Apple Health / Health Connect with
+  permission; nothing is read from them.
 - Account deletion: Settings → Delete account (in the app and on the site).

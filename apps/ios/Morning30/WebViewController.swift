@@ -6,7 +6,8 @@ import WebKit
 /// clear "no internet" screen.
 final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     #if DEBUG
-    static let startURL = URL(string: "http://localhost:8080/")!
+    // MORNING30_URL points a debug build at another dev server (simctl: SIMCTL_CHILD_MORNING30_URL).
+    static let startURL = URL(string: ProcessInfo.processInfo.environment["MORNING30_URL"] ?? "http://localhost:8080/")!
     #else
     static let startURL = URL(string: "https://morning30.com/")!
     #endif
@@ -52,12 +53,19 @@ final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
             offline.topAnchor.constraint(equalTo: view.topAnchor),
             offline.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        // Keep the screen on while a workout plays (/day/N and /start).
+        // Keep the screen on while a workout plays (/day/N, /start) and during
+        // the fitness self-test (/test).
         urlObservation = webView.observe(\.url, options: [.new]) { webView, _ in
             let path = webView.url?.path ?? ""
-            UIApplication.shared.isIdleTimerDisabled = path.hasPrefix("/day/") || path == "/start"
+            UIApplication.shared.isIdleTimerDisabled = path.hasPrefix("/day/") || path == "/start" || path == "/test"
         }
         webView.load(URLRequest(url: Self.startURL))
+        #if DEBUG
+        // MORNING30_TEST_WORKOUT=1 saves a 15-minute test workout to Apple Health.
+        if ProcessInfo.processInfo.environment["MORNING30_TEST_WORKOUT"] == "1" {
+            Health.saveWorkout(start: Date().addingTimeInterval(-900), end: Date(), title: "morning30 test", kind: "strength")
+        }
+        #endif
     }
 
     private func reload() {
@@ -72,8 +80,18 @@ final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
     // MARK: Messages from the site
 
     func userContentController(_ controller: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let body = message.body as? [String: Any], body["type"] as? String == "reminder" else { return }
-        Reminders.set(time: body["time"] as? String ?? "", title: body["title"] as? String ?? "", body: body["body"] as? String ?? "")
+        guard let body = message.body as? [String: Any] else { return }
+        switch body["type"] as? String {
+        case "reminder":
+            Reminders.set(time: body["time"] as? String ?? "", title: body["title"] as? String ?? "", body: body["body"] as? String ?? "")
+        case "workout":
+            // A finished workout from assets/app-bridge.js: times are Unix milliseconds.
+            guard let start = body["start"] as? Double, let end = body["end"] as? Double else { return }
+            Health.saveWorkout(start: Date(timeIntervalSince1970: start / 1000), end: Date(timeIntervalSince1970: end / 1000),
+                               title: body["title"] as? String ?? "", kind: body["kind"] as? String ?? "strength")
+        default:
+            break
+        }
     }
 
     // MARK: Navigation

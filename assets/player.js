@@ -139,7 +139,7 @@
     index: 0, side: 1, phase: "ready", remainingMs: 3000, sideDurationMs: null,
     nextIndex: 0, nextSide: 1, level: level, swaps: {},
     eventId: store ? store.newEventId() : String(Date.now()) + Math.random().toString(16).slice(2).repeat(3),
-    completion: null
+    completion: null, startedAt: Date.now()
   };
   function checkpoint() {
     state.index = i;
@@ -890,6 +890,11 @@
     if (el.applause) el.applause.classList.add("hidden");
     el.doneStreak.classList.add("hidden");
     sendCompletion();
+    // The phone apps write the workout to Apple Health / Health Connect (app-bridge.js).
+    try {
+      document.dispatchEvent(new CustomEvent("m30:workout", { detail: { eventId: state.eventId, start: state.startedAt,
+        end: Date.parse(state.completion.completedAt), title: payload.programTitle || "", kind: payload.programKind || "strength", estSec: payload.estSec || 0 } }));
+    } catch (_) {}
   }
 
   // ---- celebration: confetti + a roaring crowd (applause, cheers, whistles) ----
@@ -1265,7 +1270,7 @@
     i = 0; curSide = 1;
     level = fixedDifficulty ? 0 : (payload.level || 0);
     state = { index: 0, side: 1, phase: "ready", remainingMs: 3000, sideDurationMs: null, nextIndex: 0, nextSide: 1,
-      level: level, swaps: {}, eventId: store ? store.newEventId() : state.eventId, completion: null };
+      level: level, swaps: {}, eventId: store ? store.newEventId() : state.eventId, completion: null, startedAt: Date.now() };
     paused = false; resumeNeeded = false;
     updateDiff();
     el.resumeOverlay.classList.add("hidden");

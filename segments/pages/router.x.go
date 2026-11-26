@@ -111,6 +111,12 @@ func (r Root) privateRoutes(s auth.Session) gox.Elem {
 			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, mode: "exercises"}),
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.SettingsAgent }).
 			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, mode: "agent"}),
+		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.About }).
+			Comp(aboutPage{sess: s, path: r.Path}),
+		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Test }).
+			Comp(testPage{sess: s, path: r.Path}),
+		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Fitness }).
+			Comp(fitnessPage{sess: s, path: r.Path}),
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Start }).
 			Comp(workoutPage{sess: s, day: 0, path: r.Path}),
 		doors.RouteDerive(func(p path.Path) (int, bool) {
@@ -121,5 +127,5 @@ func (r Root) privateRoutes(s auth.Session) gox.Elem {
 		doors.RouteDefaultComp[path.Path](homePage{sess: s, auth: r.Auth, path: r.Path}),
 	)); if __e != nil { return }
 	return })
-//line router.gox:82
+//line router.gox:88
 }

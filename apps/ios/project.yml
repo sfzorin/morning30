@@ -13,6 +13,11 @@ targets:
     type: application
     platform: iOS
     sources: [Morning30]
+    entitlements:
+      path: Morning30/Morning30.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.morning30.app

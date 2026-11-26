@@ -1,0 +1,288 @@
+package pages
+
+import (
+	"context"
+	"log"
+	"fmt"
+	"strconv"
+	"strings"
+
+	"morning30/assets"
+	"morning30/internal/app"
+	"morning30/internal/auth"
+	"morning30/internal/content"
+	"morning30/internal/fitness"
+	"morning30/internal/i18n"
+	"morning30/path"
+
+	"github.com/doors-dev/doors"
+	"github.com/doors-dev/gox"
+)
+
+// The fitness profile: "About you", the voice-guided self-test and its result
+// with the recommended program. A newcomer lands here right after signing up
+// or choosing to continue without an account; later it opens from Settings.
+
+// fitnessSummary is the value of the Settings row: "57 · Good", or nothing.
+func fitnessSummary(l i18n.Lang, userID int64) string {
+	latest, _, ok, _ := app.LatestFitness(userID)
+	if !ok {
+		return ""
+	}
+	return strconv.Itoa(latest.Index) + " · " + i18n.T(l, "fitness.level_"+latest.Level)
+}
+
+// aboutForm is the decoded "About you" form.
+type aboutForm struct {
+	Who      string `form:"who"`
+	Sex      string `form:"sex"`
+	Age      string `form:"age"`
+	Height   string `form:"height"`
+	Weight   string `form:"weight"`
+	Back     string `form:"c_back"`
+	Knees    string `form:"c_knees"`
+	Pressure string `form:"c_pressure"`
+	Feet     string `form:"c_feet"`
+}
+
+type aboutPage struct {
+	sess auth.Session
+	path doors.Source[path.Path]
+}
+
+func numberValue(v int) string {
+	if v <= 0 {
+		return ""
+	}
+	return strconv.Itoa(v)
+}
+
+elem (a aboutPage) Main() {
+	~{
+		l := i18n.Lang(a.sess.Lang)
+		p, _ := app.FitnessProfile(a.sess.UserID)
+		female := p.Female()
+		concerns := []struct{ Key, Label string }{
+			{fitness.Back, "fitness.c_back"}, {fitness.Knees, "fitness.c_knees"},
+			{fitness.Pressure, "fitness.c_pressure"}, {fitness.Feet, "fitness.c_feet"},
+		}
+	}
+	<title>~(i18n.T(l, "fitness.about"))</title>
+	<main class="screen">
+		<section class="fit about">
+			<h1>~(i18n.T(l, "fitness.about"))</h1>
+			<p class="fit-lead">~(i18n.T(l, "fitness.lead"))</p>
+			~>doors.ASubmit[aboutForm]{On: a.submit} <form class="fit-form" novalidate>
+				<p class="fit-label">~(i18n.T(l, "fitness.who"))</p>
+				<div class="seg">
+					<label><input type="radio" name="who" value="self" checked=(!p.Child)><span>~(i18n.T(l, "fitness.self"))</span></label>
+					<label><input type="radio" name="who" value="child" checked=(p.Child)><span>~(i18n.T(l, "fitness.child"))</span></label>
+				</div>
+				<p class="fit-label">~(i18n.T(l, "settings.sex"))</p>
+				<div class="seg">
+					<label><input type="radio" name="sex" value="1" checked=(!female)><span class="adult">~(i18n.T(l, "sex.male"))</span><span class="kid">~(i18n.T(l, "sex.boy"))</span></label>
+					<label><input type="radio" name="sex" value="2" checked=(female)><span class="adult">~(i18n.T(l, "sex.female"))</span><span class="kid">~(i18n.T(l, "sex.girl"))</span></label>
+				</div>
+				<div class="fit-nums">
+					<label><span class="fit-label">~(i18n.T(l, "fitness.age"))</span><input class="text-input" name="age" type="number" inputmode="numeric" min="3" max="110" value=(numberValue(p.Age))></label>
+					<label><span class="fit-label">~(i18n.T(l, "fitness.height"))</span><input class="text-input" name="height" type="number" inputmode="numeric" min="80" max="250" value=(numberValue(p.Height))></label>
+					<label><span class="fit-label">~(i18n.T(l, "fitness.weight"))</span><input class="text-input" name="weight" type="number" inputmode="numeric" min="15" max="300" value=(numberValue(p.Weight))></label>
+				</div>
+				<p class="fit-label">~(i18n.T(l, "fitness.concerns"))</p>
+				<div class="chips">
+					~(for _, c := range concerns {
+						<label class="fit-chip"><input type="checkbox" name=("c_" + c.Key) value="1" checked=(p.Has(c.Key))><span>~(i18n.T(l, c.Label))</span></label>
+					})
+				</div>
+				<button class="btn primary fit-go" type="submit">~(i18n.T(l, "fitness.next"))</button>
+			</form>
+			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="fit-skip">~(i18n.T(l, "workout.skip"))</a>
+		</section>
+	</main>
+}
+
+func atoi(s string) int {
+	n, _ := strconv.Atoi(strings.TrimSpace(s))
+	return n
+}
+
+// submit saves the answers and opens the test.
+func (a aboutPage) submit(ctx context.Context, r doors.RequestForm[aboutForm]) bool {
+	f := r.Data()
+	p := fitness.Profile{Child: f.Who == "child", Sex: "m", Age: atoi(f.Age), Height: atoi(f.Height), Weight: atoi(f.Weight)}
+	if f.Sex == "2" {
+		p.Sex = "f"
+	}
+	for key, on := range map[string]string{fitness.Back: f.Back, fitness.Knees: f.Knees, fitness.Pressure: f.Pressure, fitness.Feet: f.Feet} {
+		if on != "" {
+			p.Concerns = append(p.Concerns, key)
+		}
+	}
+	if err := app.SaveFitnessProfile(a.sess.UserID, p); err != nil {
+		log.Printf("about save: %v", err)
+		return false
+	}
+	a.path.Update(ctx, path.Path{Page: path.Test})
+	return false
+}
+
+// testStep is one exercise of the self-test as the page script sees it.
+type testStep struct {
+	ID     string   `json:"id"`   // push | squat | plank | pull
+	Kind   string   `json:"kind"` // count | minute | hold
+	Name   string   `json:"name"`
+	Hint   string   `json:"hint"`
+	Frames []string `json:"frames"`
+}
+
+type testPayload struct {
+	BCP47  string            `json:"bcp47"`
+	Voice  bool              `json:"voice"`
+	Steps  []testStep        `json:"steps"`
+	Labels map[string]string `json:"labels"`
+}
+
+type testPage struct {
+	sess auth.Session
+	path doors.Source[path.Path]
+}
+
+func (t testPage) payload() testPayload {
+	l := i18n.Lang(t.sess.Lang)
+	cat := app.UserCatalog(t.sess.UserID)
+	sex := app.DB.GetSex(t.sess.UserID)
+	step := func(id, kind, exercise, hint string) testStep {
+		return testStep{ID: id, Kind: kind, Name: cat.Name(l, exercise), Hint: i18n.T(l, hint), Frames: app.ExerciseFrames(cat, exercise, sex)}
+	}
+	return testPayload{
+		BCP47: i18n.BCP47(l),
+		Voice: t.sess.VoiceMode != "off",
+		Steps: []testStep{
+			step("push", "count", "P01", "fitness.push_hint"),
+			step("squat", "minute", "L10", "fitness.squat_hint"),
+			step("plank", "hold", "C01", "fitness.plank_hint"),
+			step("pull", "count", "PU06", "fitness.pull_hint"),
+		},
+		Labels: map[string]string{
+			"test":  i18n.T(l, "fitness.test"),
+			"done":  i18n.T(l, "workout.done"),
+			"start": i18n.T(l, "fitness.start"),
+			"stop":  i18n.T(l, "fitness.stop"),
+			"back":  i18n.T(l, "workout.prev"),
+			"skip":  i18n.T(l, "workout.skip"),
+			"go":    i18n.Cue(l, "go"),
+			"error": i18n.T(l, "fitness.save_failed"),
+		},
+	}
+}
+
+elem (t testPage) Main() {
+	~{
+		l := i18n.Lang(t.sess.Lang)
+	}
+	<title>~(i18n.T(l, "fitness.test"))</title>
+	<div class="player fit-test">
+		<div class="player-top">
+			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "nav.close"))>~(icon("close", false))</a>
+			<div class="pbar fit-bar"></div>
+			<div class="phase">~(i18n.T(l, "fitness.test"))</div>
+		</div>
+		<div class="stage">
+			<div class="ex-visual"><img class="ex-svg" alt=""></div>
+			<div class="ex-name"></div>
+			<p class="fit-hint"></p>
+			<div class="fit-count">
+				<button class="lvl-btn fit-minus" type="button" aria-label="−">~(icon("minus", false))</button>
+				<output class="fit-value">0</output>
+				<button class="lvl-btn fit-plus" type="button" aria-label="+">~(icon("plus", false))</button>
+			</div>
+			<div class="fit-clock hidden"></div>
+			<p class="err fit-err hidden" role="alert"></p>
+		</div>
+		<div class="done-row">
+			<button class="btn primary fit-main" type="button"></button>
+		</div>
+		<div class="controls">
+			<button class="btn fit-back" type="button"></button>
+			<button class="btn fit-skip-step" type="button"></button>
+		</div>
+		<script src=(assets.FitnessTest) inline data:payload=(t.payload())></script>
+	</div>
+}
+
+type fitnessPage struct {
+	sess auth.Session
+	path doors.Source[path.Path]
+}
+
+// clock writes seconds as m:ss.
+func clock(sec int) string {
+	return fmt.Sprintf("%d:%02d", sec/60, sec%60)
+}
+
+func resultValue(v int, seconds bool) string {
+	if v < 0 {
+		return "—"
+	}
+	if seconds {
+		return clock(v)
+	}
+	return strconv.Itoa(v)
+}
+
+elem (f fitnessPage) Main() {
+	~{
+		l := i18n.Lang(f.sess.Lang)
+		latest, previous, has, hasPrev := app.LatestFitness(f.sess.UserID)
+		plan := app.FitnessPlan(f.sess.UserID)
+		prog, _ := content.ReadyByKey(plan.Program)
+		built := prog.Build()
+		first, peak := content.MinutesSpan(built)
+		rows := []struct {
+			Key     string
+			Value   int
+			Seconds bool
+		}{
+			{"fitness.r_push", latest.Results.PushUps, false}, {"fitness.r_squat", latest.Results.Squats, false},
+			{"fitness.r_plank", latest.Results.PlankSec, true}, {"fitness.r_pull", latest.Results.PullUps, false},
+		}
+	}
+	<title>~(i18n.T(l, "fitness.title"))</title>
+	<main class="screen">
+		<section class="fit result">
+			<h1>~(i18n.T(l, "fitness.title"))</h1>
+			~(if has {
+				<div class="fit-score">
+					<span class="fit-index">~(latest.Index)</span>
+					<span class="fit-of">~(i18n.T(l, "fitness.of100"))</span>
+					~(if hasPrev {
+						<span class="fit-of">~(i18n.Tf(l, "fitness.was", previous.Index))</span>
+					})
+				</div>
+				<p class="fit-level">~(i18n.T(l, "fitness.level_"+latest.Level))</p>
+				<div class="settings-card">
+					~(for _, r := range rows {
+						<div class="srow"><span>~(i18n.T(l, r.Key))</span><span class="fit-res">~(resultValue(r.Value, r.Seconds))</span></div>
+					})
+				</div>
+			})
+			<div class="settings-card fit-plan">
+				<p class="fit-plan-name">~(prog.TitleIn(f.sess.Lang))</p>
+				<p class="fit-plan-meta">
+					~(if !built.FixedDifficulty { ~(i18n.T(l, "settings.difficulty"), " ", levelLabel(l, plan.Level), " · ") })
+					~(i18n.Tn(l, "fmt.rounds", plan.Rounds), " · ", i18n.Tf(l, "fmt.min_range", first, peak))
+				</p>
+			</div>
+			~>doors.AClick{On: f.start} <button class="btn primary fit-go" type="button">~(i18n.T(l, "home.start"))</button>
+		</section>
+	</main>
+}
+
+// start switches to the recommended program and begins its next day.
+func (f fitnessPage) start(ctx context.Context, r doors.RequestPointer) bool {
+	if err := app.ApplyFitnessPlan(f.sess.UserID, f.sess.Lang); err != nil {
+		return false
+	}
+	f.path.Update(ctx, path.Path{Page: path.Start})
+	return false
+}

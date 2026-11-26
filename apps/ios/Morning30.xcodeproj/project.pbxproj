@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1921262A7B94EDC024F42839 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A699C2C6ED56F326D2585C3 /* WebViewController.swift */; };
+		222A6BA7F8C6070FD94879AC /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C81065E4E291EE3687FCC5 /* Health.swift */; };
 		6CFF5FF96FA1DB5BD4D7FBA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A424E472333379F70EC784F5 /* SceneDelegate.swift */; };
 		7EC308280EF07F6141E07F78 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF9084F3131846D4989C93 /* Reminders.swift */; };
 		8F5D99AF93A4F668489B5506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FC760E18C733D2E995BEA8 /* Assets.xcassets */; };
 		B431FC07C5D5CDCA60E7F6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D549FEA565EBBD5686C603FB /* AppDelegate.swift */; };
+		C1078804B3FA5285C521841E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C1550531DBE1FF399BD0C12 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +21,13 @@
 		296FEFA974CE53431DBE7BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A699C2C6ED56F326D2585C3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		71DF9084F3131846D4989C93 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
+		76C81065E4E291EE3687FCC5 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		888BC4372C00F8E154DF1687 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A424E472333379F70EC784F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B0DE5A075A7518BB9D5EB39B /* Morning30.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Morning30.entitlements; sourceTree = "<group>"; };
 		CFF780D05095B49B371B17B9 /* Morning30.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Morning30.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D549FEA565EBBD5686C603FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EED4929F1384102F84AFDB69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -46,10 +52,13 @@
 			children = (
 				D549FEA565EBBD5686C603FB /* AppDelegate.swift */,
 				08FC760E18C733D2E995BEA8 /* Assets.xcassets */,
+				76C81065E4E291EE3687FCC5 /* Health.swift */,
 				296FEFA974CE53431DBE7BAA /* Info.plist */,
+				B0DE5A075A7518BB9D5EB39B /* Morning30.entitlements */,
 				71DF9084F3131846D4989C93 /* Reminders.swift */,
 				A424E472333379F70EC784F5 /* SceneDelegate.swift */,
 				2A699C2C6ED56F326D2585C3 /* WebViewController.swift */,
+				1C1550531DBE1FF399BD0C12 /* InfoPlist.strings */,
 			);
 			path = Morning30;
 			sourceTree = "<group>";
@@ -95,6 +104,7 @@
 			knownRegions = (
 				Base,
 				en,
+				ru,
 			);
 			mainGroup = A4BEDB7FA47537971D3B5653;
 			minimizedProjectReferenceProxies = 1;
@@ -114,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5D99AF93A4F668489B5506 /* Assets.xcassets in Resources */,
+				C1078804B3FA5285C521841E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B431FC07C5D5CDCA60E7F6FC /* AppDelegate.swift in Sources */,
+				222A6BA7F8C6070FD94879AC /* Health.swift in Sources */,
 				7EC308280EF07F6141E07F78 /* Reminders.swift in Sources */,
 				6CFF5FF96FA1DB5BD4D7FBA8 /* SceneDelegate.swift in Sources */,
 				1921262A7B94EDC024F42839 /* WebViewController.swift in Sources */,
@@ -133,11 +145,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		1C1550531DBE1FF399BD0C12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EED4929F1384102F84AFDB69 /* en */,
+				888BC4372C00F8E154DF1687 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4030B2D3FC9949385B8B9C57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Morning30/Morning30.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Morning30/Info.plist;
@@ -221,6 +246,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Morning30/Morning30.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Morning30/Info.plist;

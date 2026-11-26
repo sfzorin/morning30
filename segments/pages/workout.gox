@@ -68,6 +68,9 @@ type playerPayload struct {
 	UserID    int64             `json:"userId"`
 	Position  int               `json:"position"`
 	ProgramKey string           `json:"programKey"`
+	ProgramTitle string         `json:"programTitle"` // for Apple Health / Health Connect
+	ProgramKind  string         `json:"programKind"`  // strength | stretch
+	EstSec       int            `json:"estSec"`
 	ResumeKey string            `json:"resumeKey"`
 	RestartAt string            `json:"restartAt,omitempty"`
 	Day       int               `json:"day"`
@@ -274,6 +277,9 @@ func (w workoutPage) playerData() playerPayload {
 		UserID: w.sess.UserID,
 		Position: position,
 		ProgramKey: programKey,
+		ProgramTitle: app.ProgramTitle(w.sess.UserID, w.sess.Lang),
+		ProgramKind:  app.WorkoutKind(w.sess.UserID),
+		EstSec:       wk.EstSec,
 		ResumeKey: fmt.Sprintf("%s:%d:%d", programKey, position, day),
 		RestartAt: app.CycleRestartAt(w.sess.UserID),
 		Day:       day,

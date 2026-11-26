@@ -33,6 +33,11 @@ func PersistentPlayer() []byte {
 //go:embed app-bridge.js
 var AppBridge []byte
 
+// FitnessTest runs the voice-guided fitness self-test.
+//
+//go:embed fitness-test.js
+var FitnessTest []byte
+
 //go:embed workout-home.js
 var workoutHome []byte
 

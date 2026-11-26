@@ -50,6 +50,10 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>morning30 saves each finished workout to Apple Health.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>morning30 only saves workouts to Apple Health and does not read your health data.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<!-- Debug builds talk to the dev server on this Mac (http://localhost:8080). -->

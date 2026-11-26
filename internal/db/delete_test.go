@@ -24,6 +24,12 @@ func TestDeleteUserRemovesAllData(t *testing.T) {
 		if _, err := d.AddSelected(id, "plank30", "Plank", `{"days":[]}`, 3); err != nil {
 			t.Fatal(err)
 		}
+		if err := d.SaveFitnessProfile(id, FitnessProfile{Age: 40, Height: 180, Weight: 80, Concerns: "back"}); err != nil {
+			t.Fatal(err)
+		}
+		if _, err := d.AddFitnessTest(id, FitnessTest{PushUps: 10, Squats: 30, PlankSec: 60, PullUps: -1, Score: 45}); err != nil {
+			t.Fatal(err)
+		}
 	}
 	if err := d.CreateSession("tok-gone", u.ID, time.Hour); err != nil {
 		t.Fatal(err)
@@ -34,7 +40,7 @@ func TestDeleteUserRemovesAllData(t *testing.T) {
 	if _, err := d.UserByID(u.ID); err == nil {
 		t.Fatal("user still exists")
 	}
-	for table, want := range map[string]int{"activity": 1, "selected_programs": 1, "sessions": 0} {
+	for table, want := range map[string]int{"activity": 1, "selected_programs": 1, "sessions": 0, "fitness_profiles": 1, "fitness_tests": 1} {
 		var n int
 		if err := d.sql.QueryRow(`SELECT COUNT(*) FROM ` + table).Scan(&n); err != nil {
 			t.Fatal(err)
