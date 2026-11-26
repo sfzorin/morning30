@@ -246,6 +246,8 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .cell.done { background: linear-gradient(135deg, var(--ok), #10b981); color: #052e1a; }
 .cell.current { outline: 2px solid var(--accent); }
 .cell.locked { color: var(--muted); opacity: .45; }
+.hero-program .ic { width: 16px; height: 16px; color: var(--muted); vertical-align: -2px; margin-inline-start: 6px; }
+.cal-nav .ic, .quit .ic, .lvl-btn .ic { width: 20px; height: 20px; }
 .cell small { max-width: 100%; font-size: 11px; font-weight: 500; color: var(--muted); line-height: 1.1; text-align: center; }
 .cell small.light, .cyc-legend { color: var(--ok); }
 .cyc-legend { display: flex; align-items: center; gap: 6px; margin: 10px 0 0; font-size: 12px; }

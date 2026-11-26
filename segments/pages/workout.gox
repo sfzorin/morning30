@@ -315,16 +315,16 @@ elem (w workoutPage) Main() {
 	<title>~(i18n.T(l, "app.name"))</title>
 	<div class="player">
 		<div class="player-top">
-			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "workout.quit"))>✕</a>
+			~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "workout.quit"))>~(icon("close", false))</a>
 			<div class="pbar"></div>
 			<div class="phase"></div>
 		</div>
 
 		~// In-workout difficulty nudge (applies to all remaining sets this session).
 		<div class="lvl-row">
-			<button class="lvl-btn lvl-down" type="button" aria-label=(i18n.T(l, "workout.easier"))>−</button>
+			<button class="lvl-btn lvl-down" type="button" aria-label=(i18n.T(l, "workout.easier"))>~(icon("minus", false))</button>
 			<span class="lvl-label"></span>
-			<button class="lvl-btn lvl-up" type="button" aria-label=(i18n.T(l, "workout.harder"))>+</button>
+			<button class="lvl-btn lvl-up" type="button" aria-label=(i18n.T(l, "workout.harder"))>~(icon("plus", false))</button>
 		</div>
 
 		<div class="stage">

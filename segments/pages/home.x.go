@@ -137,6 +137,8 @@ func (h homePage) Main() gox.Elem {
 						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:78
 						__e = __c.Any(app.ProgramTitle(h.sess.UserID, h.sess.Lang)); if __e != nil { return }
+//line home.gox:78
+						__e = __c.Any(icon("settings", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
@@ -605,7 +607,8 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 //line home.gox:240
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("‹"); if __e != nil { return }
+//line home.gox:240
+						__e = __c.Any(icon("back", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
@@ -631,7 +634,8 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 //line home.gox:245
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("›"); if __e != nil { return }
+//line home.gox:245
+						__e = __c.Any(icon("next", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }

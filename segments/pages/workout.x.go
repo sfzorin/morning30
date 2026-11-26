@@ -345,7 +345,8 @@ func (w workoutPage) Main() gox.Elem {
 //line workout.gox:318
 						__e = __c.Set("aria-label", i18n.T(l, "workout.quit")); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("✕"); if __e != nil { return }
+//line workout.gox:318
+						__e = __c.Any(icon("close", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
@@ -379,7 +380,8 @@ func (w workoutPage) Main() gox.Elem {
 //line workout.gox:325
 					__e = __c.Set("aria-label", i18n.T(l, "workout.easier")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("−"); if __e != nil { return }
+//line workout.gox:325
+					__e = __c.Any(icon("minus", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("span"); if __e != nil { return }
@@ -398,7 +400,8 @@ func (w workoutPage) Main() gox.Elem {
 //line workout.gox:327
 					__e = __c.Set("aria-label", i18n.T(l, "workout.harder")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("+"); if __e != nil { return }
+//line workout.gox:327
+					__e = __c.Any(icon("plus", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}

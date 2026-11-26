@@ -75,7 +75,7 @@ elem (h homePage) Main() {
 			~(if doneToday {
 				<p class="done-banner">~(i18n.T(l, "home.done_today"))</p>
 			})
-			~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang))</a>
+			~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang)) ~(icon("settings", false))</a>
 			~// The cycle number lives in the 30-day grid below.
 			<div class="day-num">~(i18n.Tf(l, "fmt.day", curDay))</div>
 			<div class="day-meta">
@@ -237,12 +237,12 @@ elem (h homePage) month(monthOffset doors.Source[int]) {
 			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				monthOffset.Mutate(ctx, func(o int) int { return o - 1 })
 				return false
-			}} <button class="cal-nav" type="button">‹</button>
+			}} <button class="cal-nav" type="button">~(icon("back", false))</button>
 			<span class="cal-title">~(i18n.Month(l, month), " ", year)</span>
 			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				monthOffset.Mutate(ctx, func(o int) int { return o + 1 })
 				return false
-			}} <button class="cal-nav" type="button">›</button>
+			}} <button class="cal-nav" type="button">~(icon("next", false))</button>
 		</div>
 		<div class="cal-week">
 			~(for wd := 0; wd < 7; wd++ {
