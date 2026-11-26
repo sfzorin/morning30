@@ -1,0 +1,462 @@
+{
+ "arms30": {
+  "title": {
+   "ru": "Руки за 30 дней",
+   "en": "Arms in 30 Days",
+   "tr": "30 Günde Kollar",
+   "de": "Arme in 30 Tagen",
+   "es": "Brazos en 30 días",
+   "fr": "Bras en 30 jours",
+   "it": "Braccia in 30 giorni"
+  },
+  "about": {
+   "ru": "Сильные руки и плечи без гантелей: отжимания с колен и от стула, упражнения с сопротивлением и обратная планка.",
+   "en": "Stronger arms and shoulders without weights: knee push-ups, chair dips, self-resistance work and reverse planks.",
+   "tr": "Ağırlık kullanmadan güçlü kollar ve omuzlar: dizde şınav, sandalyede dips, kendi direncinle çalışma ve ters plank.",
+   "de": "Stärkere Arme und Schultern ohne Gewichte: Knie-Liegestütze, Dips am Stuhl, Übungen mit Eigenwiderstand und umgekehrter Unterarmstütz.",
+   "es": "Brazos y hombros más fuertes sin pesas: flexiones de rodillas, fondos en silla, ejercicios de autorresistencia y plancha inversa.",
+   "fr": "Des bras et des épaules plus forts sans haltères : pompes sur les genoux, dips sur chaise, exercices en auto-résistance et planche inversée.",
+   "it": "Braccia e spalle più forti senza pesi: flessioni sulle ginocchia, dip su sedia, esercizi di auto-resistenza e plank inverso."
+  }
+ },
+ "pullups30": {
+  "title": {
+   "ru": "Подтягивания за 30 дней",
+   "en": "Pull-Ups in 30 Days",
+   "tr": "30 Günde Barfiks",
+   "de": "Klimmzüge in 30 Tagen",
+   "es": "Dominadas en 30 días",
+   "fr": "Tractions en 30 jours",
+   "it": "Trazioni in 30 giorni"
+  },
+  "about": {
+   "ru": "От виса на турнике к первым подтягиваниям: подтягивания лопатками, негативы и тяга под столом. Нужен турник.",
+   "en": "From hanging on the bar to your first pull-ups: scapular pulls, negatives and table rows. You need a pull-up bar.",
+   "tr": "Barda asılı kalmaktan ilk barfiklere: skapular çekişler, negatifler ve masa altı kürek çekişi. Barfiks barı gerekir.",
+   "de": "Vom Hängen an der Stange zu den ersten Klimmzügen: Scapular Pulls, Negativ-Klimmzüge und Rudern unter dem Tisch. Du brauchst eine Klimmzugstange.",
+   "es": "De colgarte de la barra a tus primeras dominadas: dominadas escapulares, negativas y remo bajo la mesa. Necesitas una barra de dominadas.",
+   "fr": "De la suspension à la barre à tes premières tractions : tractions scapulaires, négatives et rowing sous la table. Il te faut une barre de traction.",
+   "it": "Dal semplice appeso alla sbarra alle tue prime trazioni: trazioni scapolari, negative e rematore sotto il tavolo. Serve una sbarra per trazioni."
+  }
+ },
+ "age50": {
+  "title": {
+   "ru": "Зарядка 50+",
+   "en": "Workout 50+",
+   "tr": "Egzersiz 50+",
+   "de": "Fitness 50+",
+   "es": "Ejercicio 50+",
+   "fr": "Gym 50+",
+   "it": "Allenamento 50+"
+  },
+  "about": {
+   "ru": "Спокойная зарядка для силы ног и равновесия: вставания со стула, стойки на одной ноге и ходьба пятка к носку.",
+   "en": "A calm routine for leg strength and balance: sit-to-stands, single-leg stands and heel-to-toe walking.",
+   "tr": "Bacak gücü ve denge için sakin bir rutin: sandalyeden kalkma, tek ayak üzerinde durma ve topuk-parmak yürüyüşü.",
+   "de": "Eine ruhige Routine für Beinkraft und Gleichgewicht: Aufstehen vom Stuhl, Einbeinstand und Fersen-Zehen-Gang.",
+   "es": "Una rutina tranquila para la fuerza de piernas y el equilibrio: levantarse de la silla, equilibrio a una pierna y caminar talón con punta.",
+   "fr": "Une routine tranquille pour la force des jambes et l'équilibre : se lever d'une chaise, appui sur une jambe et marche talon-pointe.",
+   "it": "Una routine tranquilla per la forza delle gambe e l'equilibrio: alzarsi dalla sedia, equilibrio su una gamba e camminata tallone-punta."
+  }
+ },
+ "office30": {
+  "title": {
+   "ru": "Шея и спина для офиса",
+   "en": "Neck and Back for Desk Workers",
+   "tr": "Ofis Çalışanları İçin Boyun ve Sırt",
+   "de": "Nacken und Rücken fürs Büro",
+   "es": "Cuello y espalda para la oficina",
+   "fr": "Nuque et dos pour le bureau",
+   "it": "Collo e schiena per l'ufficio"
+  },
+  "about": {
+   "ru": "Короткая зарядка после сидения за компьютером: шея, плечи, грудной отдел и осанка.",
+   "en": "A short routine after hours at the computer: neck, shoulders, upper back and posture.",
+   "tr": "Saatlerce bilgisayar başında oturduktan sonra kısa bir rutin: boyun, omuzlar, üst sırt ve duruş.",
+   "de": "Eine kurze Routine nach Stunden am Computer: Nacken, Schultern, oberer Rücken und Haltung.",
+   "es": "Una rutina corta después de horas frente al ordenador: cuello, hombros, espalda alta y postura.",
+   "fr": "Une courte routine après des heures devant l'ordinateur : nuque, épaules, haut du dos et posture.",
+   "it": "Una breve routine dopo ore al computer: collo, spalle, parte alta della schiena e postura."
+  }
+ },
+ "taichi30": {
+  "title": {
+   "ru": "Тай-чи за 30 дней",
+   "en": "Tai Chi in 30 Days",
+   "tr": "30 Günde Tai Chi",
+   "de": "Tai-Chi in 30 Tagen",
+   "es": "Tai chi en 30 días",
+   "fr": "Tai-chi en 30 jours",
+   "it": "Tai chi in 30 giorni"
+  },
+  "about": {
+   "ru": "Медленные движения тай-чи для равновесия и спокойствия: каждый день знакомые формы и новые связки.",
+   "en": "Slow tai chi movements for balance and calm: familiar forms every day and new sequences as you go.",
+   "tr": "Denge ve sakinlik için yavaş tai chi hareketleri: her gün tanıdık formlar ve yeni diziler.",
+   "de": "Langsame Tai-Chi-Bewegungen für Gleichgewicht und Ruhe: jeden Tag bekannte Formen und neue Abfolgen.",
+   "es": "Movimientos lentos de tai chi para el equilibrio y la calma: formas conocidas cada día y secuencias nuevas sobre la marcha.",
+   "fr": "Des mouvements lents de tai-chi pour l'équilibre et le calme : chaque jour des formes familières et de nouveaux enchaînements.",
+   "it": "Movimenti lenti di tai chi per equilibrio e calma: ogni giorno forme già note e nuove sequenze."
+  }
+ },
+ "stretch30": {
+  "title": {
+   "ru": "Растяжка за 30 дней",
+   "en": "Stretching in 30 Days",
+   "tr": "30 Günde Esneme",
+   "de": "Dehnen in 30 Tagen",
+   "es": "Estiramientos en 30 días",
+   "fr": "Étirements en 30 jours",
+   "it": "Stretching in 30 giorni"
+  },
+  "about": {
+   "ru": "Всё тело: ноги, спина, плечи. Гибкость растёт день за днём.",
+   "en": "Your whole body: legs, back and shoulders. Flexibility grows day by day.",
+   "tr": "Tüm vücut: bacaklar, sırt ve omuzlar. Esneklik her gün biraz daha artar.",
+   "de": "Der ganze Körper: Beine, Rücken und Schultern. Die Beweglichkeit wächst Tag für Tag.",
+   "es": "Todo el cuerpo: piernas, espalda y hombros. La flexibilidad crece día a día.",
+   "fr": "Tout le corps : jambes, dos et épaules. La souplesse progresse jour après jour.",
+   "it": "Tutto il corpo: gambe, schiena e spalle. La flessibilità cresce giorno dopo giorno."
+  }
+ },
+ "sidesplit30": {
+  "title": {
+   "ru": "Поперечный шпагат за 30 дней",
+   "en": "Side Splits in 30 Days",
+   "tr": "30 Günde Yan Spagat",
+   "de": "Seitspagat in 30 Tagen",
+   "es": "Split lateral en 30 días",
+   "fr": "Grand écart facial en 30 jours",
+   "it": "Spaccata laterale in 30 giorni"
+  },
+  "about": {
+   "ru": "Широкие стойки и растяжка внутренней поверхности бёдер шаг за шагом.",
+   "en": "Wide stances and inner-thigh stretches, step by step.",
+   "tr": "Geniş duruşlar ve iç bacak esnetmeleri, adım adım.",
+   "de": "Weite Stände und Dehnung der Oberschenkelinnenseiten, Schritt für Schritt.",
+   "es": "Posturas amplias y estiramientos de la cara interna del muslo, paso a paso.",
+   "fr": "Positions écartées et étirements de l'intérieur des cuisses, pas à pas.",
+   "it": "Posizioni ampie e stretching dell'interno coscia, passo dopo passo."
+  }
+ },
+ "frontsplit30": {
+  "title": {
+   "ru": "Продольный шпагат за 30 дней",
+   "en": "Front Splits in 30 Days",
+   "tr": "30 Günde Ön Spagat",
+   "de": "Frontspagat in 30 Tagen",
+   "es": "Split frontal en 30 días",
+   "fr": "Grand écart antéropostérieur en 30 jours",
+   "it": "Spaccata frontale in 30 giorni"
+  },
+  "about": {
+   "ru": "Выпады и растяжка сгибателей и задней поверхности бедра с опорой на руки.",
+   "en": "Lunges and stretches for the hip flexors and hamstrings, with hand support.",
+   "tr": "Kalça fleksörleri ve arka bacak için hamleler ve esnetmeler, ellerle destek alarak.",
+   "de": "Ausfallschritte und Dehnungen für Hüftbeuger und Oberschenkelrückseite, mit Handstütze.",
+   "es": "Zancadas y estiramientos de los flexores de la cadera y los isquiotibiales, con apoyo de las manos.",
+   "fr": "Fentes et étirements des fléchisseurs de la hanche et des ischio-jambiers, avec appui des mains.",
+   "it": "Affondi e stretching dei flessori dell'anca e dei femorali, con appoggio delle mani."
+  }
+ },
+ "toetouch30": {
+  "title": {
+   "ru": "Достать до пола за 30 дней",
+   "en": "Touch Your Toes in 30 Days",
+   "tr": "30 Günde Parmak Uçlarına Dokun",
+   "de": "Zehen berühren in 30 Tagen",
+   "es": "Tocar la punta de los pies en 30 días",
+   "fr": "Toucher ses orteils en 30 jours",
+   "it": "Toccare la punta dei piedi in 30 giorni"
+  },
+  "about": {
+   "ru": "Наклон вперёд: задняя поверхность ног и поясница.",
+   "en": "The forward bend: the backs of the legs and the lower back.",
+   "tr": "Öne eğilme: bacakların arkası ve bel.",
+   "de": "Die Vorbeuge: Beinrückseiten und unterer Rücken.",
+   "es": "La flexión hacia delante: la parte posterior de las piernas y la zona lumbar.",
+   "fr": "La flexion avant : l'arrière des jambes et le bas du dos.",
+   "it": "La flessione in avanti: la parte posteriore delle gambe e la zona lombare."
+  }
+ },
+ "hips30": {
+  "title": {
+   "ru": "Раскрытие бёдер за 30 дней",
+   "en": "Hip Mobility in 30 Days",
+   "tr": "30 Günde Kalça Mobilitesi",
+   "de": "Hüftmobilität in 30 Tagen",
+   "es": "Movilidad de cadera en 30 días",
+   "fr": "Mobilité des hanches en 30 jours",
+   "it": "Mobilità dell'anca in 30 giorni"
+  },
+  "about": {
+   "ru": "Бабочка, голубь, глубокий присед — свободнее тазобедренные суставы.",
+   "en": "Butterfly, pigeon and deep squat for freer hips.",
+   "tr": "Kelebek, güvercin ve derin squat ile daha özgür kalçalar.",
+   "de": "Schmetterling, Taube und tiefe Hocke für freiere Hüften.",
+   "es": "Mariposa, paloma y sentadilla profunda para unas caderas más libres.",
+   "fr": "Papillon, pigeon et squat profond pour des hanches plus libres.",
+   "it": "Farfalla, piccione e squat profondo per anche più libere."
+  }
+ },
+ "morningstretch": {
+  "title": {
+   "ru": "Утренняя растяжка",
+   "en": "Morning Stretch",
+   "tr": "Sabah Esnemesi",
+   "de": "Morgendliches Dehnen",
+   "es": "Estiramiento matutino",
+   "fr": "Étirements du matin",
+   "it": "Stretching mattutino"
+  },
+  "about": {
+   "ru": "Мягко сразу после сна, без нагрузки.",
+   "en": "Gentle stretching right after waking up, no strain.",
+   "tr": "Uyanır uyanmaz nazik bir esneme, zorlanmadan.",
+   "de": "Sanftes Dehnen direkt nach dem Aufwachen, ohne Belastung.",
+   "es": "Estiramientos suaves nada más despertar, sin esfuerzo.",
+   "fr": "Des étirements doux dès le réveil, sans effort.",
+   "it": "Stretching delicato appena svegli, senza sforzo."
+  }
+ },
+ "bedtime": {
+  "title": {
+   "ru": "Растяжка перед сном",
+   "en": "Bedtime Stretch",
+   "tr": "Uyku Öncesi Esneme",
+   "de": "Dehnen vor dem Schlafen",
+   "es": "Estiramiento antes de dormir",
+   "fr": "Étirements du soir",
+   "it": "Stretching prima di dormire"
+  },
+  "about": {
+   "ru": "Лёжа, медленно, со спокойным дыханием.",
+   "en": "Lying down, slowly, with calm breathing.",
+   "tr": "Uzanarak, yavaşça ve sakin nefesle.",
+   "de": "Im Liegen, langsam und mit ruhiger Atmung.",
+   "es": "Boca arriba, despacio y con una respiración tranquila.",
+   "fr": "Sur le dos, lentement, avec une respiration calme.",
+   "it": "Da sdraiati, lentamente, con un respiro calmo."
+  }
+ },
+ "kids30": {
+  "title": {
+   "ru": "Зарядка для детей",
+   "en": "Kids' Workout",
+   "tr": "Çocuklar İçin Egzersiz",
+   "de": "Fitness für Kinder",
+   "es": "Ejercicio para niños",
+   "fr": "Gym pour enfants",
+   "it": "Allenamento per bambini"
+  },
+  "about": {
+   "ru": "Для 7–12 лет: сила и подвижность в игровом темпе.",
+   "en": "For ages 7–12: strength and mobility at a playful pace.",
+   "tr": "7-12 yaş için: eğlenceli bir tempoda güç ve hareketlilik.",
+   "de": "Für 7- bis 12-Jährige: Kraft und Beweglichkeit in spielerischem Tempo.",
+   "es": "Para edades de 7 a 12 años: fuerza y movilidad a un ritmo divertido.",
+   "fr": "Pour les 7 à 12 ans : force et mobilité sur un rythme ludique.",
+   "it": "Per bambini da 7 a 12 anni: forza e mobilità con un ritmo giocoso."
+  }
+ },
+ "kidsagility": {
+  "title": {
+   "ru": "Ловкость и координация",
+   "en": "Agility and Coordination",
+   "tr": "Çeviklik ve Koordinasyon",
+   "de": "Gewandtheit und Koordination",
+   "es": "Agilidad y coordinación",
+   "fr": "Agilité et coordination",
+   "it": "Agilità e coordinazione"
+  },
+  "about": {
+   "ru": "Для детей: прыжки, равновесие и быстрая реакция.",
+   "en": "For kids: hops, balance and quick reactions.",
+   "tr": "Çocuklar için: sıçramalar, denge ve hızlı refleksler.",
+   "de": "Für Kinder: Hüpfen, Gleichgewicht und schnelle Reaktionen.",
+   "es": "Para niños: saltitos, equilibrio y reacciones rápidas.",
+   "fr": "Pour les enfants : sauts, équilibre et réactions rapides.",
+   "it": "Per bambini: saltelli, equilibrio e reazioni rapide."
+  }
+ },
+ "kidsposture": {
+  "title": {
+   "ru": "Осанка для школьников",
+   "en": "Posture for Schoolchildren",
+   "tr": "Okul Çocukları İçin Duruş",
+   "de": "Haltung für Schulkinder",
+   "es": "Postura para escolares",
+   "fr": "Posture pour les écoliers",
+   "it": "Postura per gli scolari"
+  },
+  "about": {
+   "ru": "Спина и плечи после долгого сидения за партой.",
+   "en": "Back and shoulders after long hours at a school desk.",
+   "tr": "Okul sırasında uzun süre oturduktan sonra sırt ve omuzlar için.",
+   "de": "Rücken und Schultern nach langem Sitzen an der Schulbank.",
+   "es": "Espalda y hombros después de muchas horas en el pupitre.",
+   "fr": "Dos et épaules après de longues heures assis au pupitre.",
+   "it": "Schiena e spalle dopo lunghe ore seduti al banco di scuola."
+  }
+ },
+ "kidstennis": {
+  "title": {
+   "ru": "Теннис для детей",
+   "en": "Tennis for Kids",
+   "tr": "Çocuklar İçin Tenis",
+   "de": "Tennis für Kinder",
+   "es": "Tenis para niños",
+   "fr": "Tennis pour enfants",
+   "it": "Tennis per bambini"
+  },
+  "about": {
+   "ru": "Работа ног, повороты корпуса и сильные плечи для юных теннисистов.",
+   "en": "Footwork, trunk turns and strong shoulders for young tennis players.",
+   "tr": "Genç tenisçiler için ayak çalışması, gövde dönüşleri ve güçlü omuzlar.",
+   "de": "Beinarbeit, Rumpfdrehungen und starke Schultern für junge Tennisspieler.",
+   "es": "Juego de piernas, giros de tronco y hombros fuertes para jóvenes tenistas.",
+   "fr": "Jeu de jambes, rotations du buste et épaules solides pour les jeunes joueurs de tennis.",
+   "it": "Lavoro di gambe, rotazioni del busto e spalle forti per i giovani tennisti."
+  }
+ },
+ "kidsfootball": {
+  "title": {
+   "ru": "Футбол для детей",
+   "en": "Football for Kids",
+   "tr": "Çocuklar İçin Futbol",
+   "de": "Fußball für Kinder",
+   "es": "Fútbol para niños",
+   "fr": "Football pour enfants",
+   "it": "Calcio per bambini"
+  },
+  "about": {
+   "ru": "Ноги, координация и равновесие на одной ноге для юных футболистов.",
+   "en": "Legs, coordination and single-leg balance for young footballers.",
+   "tr": "Genç futbolcular için bacaklar, koordinasyon ve tek ayak üzerinde denge.",
+   "de": "Beine, Koordination und Einbeingleichgewicht für junge Fußballer.",
+   "es": "Piernas, coordinación y equilibrio a una pierna para jóvenes futbolistas.",
+   "fr": "Jambes, coordination et équilibre sur une jambe pour les jeunes footballeurs.",
+   "it": "Gambe, coordinazione ed equilibrio su una gamba per i giovani calciatori."
+  }
+ },
+ "runners": {
+  "title": {
+   "ru": "Для бегунов",
+   "en": "For Runners",
+   "tr": "Koşucular İçin",
+   "de": "Für Läufer",
+   "es": "Para corredores",
+   "fr": "Pour les coureurs",
+   "it": "Per i runner"
+  },
+  "about": {
+   "ru": "Ягодицы, икры и равновесие: сила, которая бережёт колени и голеностоп на пробежках.",
+   "en": "Glutes, calves and balance: strength that protects knees and ankles on your runs.",
+   "tr": "Kalça, baldır ve denge: koşularda dizleri ve ayak bileklerini koruyan güç.",
+   "de": "Gesäß, Waden und Gleichgewicht: Kraft, die Knie und Sprunggelenke beim Laufen schützt.",
+   "es": "Glúteos, gemelos y equilibrio: fuerza que protege rodillas y tobillos al correr.",
+   "fr": "Fessiers, mollets et équilibre : une force qui protège les genoux et les chevilles pendant la course.",
+   "it": "Glutei, polpacci ed equilibrio: una forza che protegge ginocchia e caviglie quando corri."
+  }
+ },
+ "football": {
+  "title": {
+   "ru": "Для футболистов",
+   "en": "For Football Players",
+   "tr": "Futbolcular İçin",
+   "de": "Für Fußballspieler",
+   "es": "Para futbolistas",
+   "fr": "Pour les joueurs de football",
+   "it": "Per i calciatori"
+  },
+  "about": {
+   "ru": "Задняя и внутренняя поверхность бедра, голеностоп и равновесие — разминка для профилактики травм.",
+   "en": "Hamstrings, inner thighs, ankles and balance: training that helps prevent injuries.",
+   "tr": "Arka bacak, iç bacak, ayak bileği ve denge: sakatlıkları önlemeye yardımcı olan antrenman.",
+   "de": "Oberschenkelrückseite, Adduktoren, Sprunggelenke und Gleichgewicht: Training zur Verletzungsvorbeugung.",
+   "es": "Isquiotibiales, aductores, tobillos y equilibrio: entrenamiento que ayuda a prevenir lesiones.",
+   "fr": "Ischio-jambiers, adducteurs, chevilles et équilibre : un entraînement qui aide à prévenir les blessures.",
+   "it": "Femorali, adduttori, caviglie ed equilibrio: allenamento che aiuta a prevenire gli infortuni."
+  }
+ },
+ "tennis": {
+  "title": {
+   "ru": "Для теннисистов",
+   "en": "For Tennis Players",
+   "tr": "Tenisçiler İçin",
+   "de": "Für Tennisspieler",
+   "es": "Para tenistas",
+   "fr": "Pour les joueurs de tennis",
+   "it": "Per i tennisti"
+  },
+  "about": {
+   "ru": "Работа ног в стороны, корпус и плечи для уверенной игры.",
+   "en": "Side-to-side footwork, core and shoulders for confident play.",
+   "tr": "Güvenli bir oyun için yanlara ayak çalışması, gövde ve omuzlar.",
+   "de": "Seitliche Beinarbeit, Rumpf und Schultern für ein sicheres Spiel.",
+   "es": "Desplazamientos laterales, core y hombros para jugar con seguridad.",
+   "fr": "Déplacements latéraux, gainage et épaules pour jouer avec assurance.",
+   "it": "Spostamenti laterali, core e spalle per giocare con sicurezza."
+  }
+ },
+ "ski": {
+  "title": {
+   "ru": "Горные лыжи и сноуборд",
+   "en": "Ski and Snowboard",
+   "tr": "Kayak ve Snowboard",
+   "de": "Ski und Snowboard",
+   "es": "Esquí y snowboard",
+   "fr": "Ski et snowboard",
+   "it": "Sci e snowboard"
+  },
+  "about": {
+   "ru": "Подготовка к сезону: выносливость ног, равновесие и колени.",
+   "en": "Get ready for the season: leg endurance, balance and strong knees.",
+   "tr": "Sezona hazırlık: bacak dayanıklılığı, denge ve güçlü dizler.",
+   "de": "Vorbereitung auf die Saison: Beinausdauer, Gleichgewicht und stabile Knie.",
+   "es": "Preparación para la temporada: resistencia de piernas, equilibrio y rodillas fuertes.",
+   "fr": "Préparation à la saison : endurance des jambes, équilibre et genoux solides.",
+   "it": "Preparazione alla stagione: resistenza delle gambe, equilibrio e ginocchia forti."
+  }
+ },
+ "martial": {
+  "title": {
+   "ru": "Для единоборств",
+   "en": "For Martial Arts",
+   "tr": "Dövüş Sanatları İçin",
+   "de": "Für Kampfsport",
+   "es": "Para artes marciales",
+   "fr": "Pour les arts martiaux",
+   "it": "Per le arti marziali"
+  },
+  "about": {
+   "ru": "Бой с тенью, удары ногами, сила корпуса и подвижность бёдер.",
+   "en": "Shadow boxing, kicks, core strength and hip mobility.",
+   "tr": "Gölge boks, tekmeler, gövde gücü ve kalça mobilitesi.",
+   "de": "Schattenboxen, Tritte, Rumpfkraft und Hüftmobilität.",
+   "es": "Boxeo de sombra, patadas, fuerza del core y movilidad de cadera.",
+   "fr": "Boxe dans le vide, coups de pied, gainage et mobilité des hanches.",
+   "it": "Shadow boxing, calci, forza del core e mobilità dell'anca."
+  }
+ },
+ "jumpsports": {
+  "title": {
+   "ru": "Баскетбол и волейбол",
+   "en": "Basketball and Volleyball",
+   "tr": "Basketbol ve Voleybol",
+   "de": "Basketball und Volleyball",
+   "es": "Baloncesto y voleibol",
+   "fr": "Basket-ball et volley-ball",
+   "it": "Basket e pallavolo"
+  },
+  "about": {
+   "ru": "Прыжки, мягкое приземление и сильный голеностоп.",
+   "en": "Jumps, soft landings and strong ankles.",
+   "tr": "Sıçramalar, yumuşak inişler ve güçlü ayak bilekleri.",
+   "de": "Sprünge, weiche Landungen und starke Sprunggelenke.",
+   "es": "Saltos, aterrizajes suaves y tobillos fuertes.",
+   "fr": "Sauts, réceptions amorties et chevilles solides.",
+   "it": "Salti, atterraggi morbidi e caviglie forti."
+  }
+ }
+}

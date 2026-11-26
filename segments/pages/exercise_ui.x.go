@@ -196,7 +196,8 @@ func (c exerciseCard) Main() gox.Elem {
 //line exercise_ui.gox:131
 					__e = __c.Set("aria-label", i18n.T(l, "nav.close")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("←"); if __e != nil { return }
+//line exercise_ui.gox:131
+					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
@@ -380,7 +381,8 @@ func (c exerciseCard) Main() gox.Elem {
 //line exercise_ui.gox:172
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("+ "); if __e != nil { return }
+//line exercise_ui.gox:172
+					__e = __c.Any(icon("plus", false)); if __e != nil { return }
 //line exercise_ui.gox:172
 					__e = __c.Any(i18n.T(l, "library.add_to_program")); if __e != nil { return }
 				}

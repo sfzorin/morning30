@@ -116,7 +116,8 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:68
 					__e = __c.Set("aria-label", i18n.T(l, "nav.home")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("←"); if __e != nil { return }
+//line today.gox:68
+					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
@@ -261,7 +262,8 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:109
 										__e = __c.Set("type", "button"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-										__e = __c.Text("ⓘ "); if __e != nil { return }
+//line today.gox:109
+										__e = __c.Any(icon("info", false)); if __e != nil { return }
 //line today.gox:109
 										__e = __c.Any(i18n.T(l, "today.card")); if __e != nil { return }
 									}
@@ -279,7 +281,8 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:114
 										__e = __c.Set("type", "button"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-										__e = __c.Text("⇄ "); if __e != nil { return }
+//line today.gox:114
+										__e = __c.Any(icon("replace", false)); if __e != nil { return }
 //line today.gox:114
 										__e = __c.Any(i18n.T(l, "today.replace")); if __e != nil { return }
 									}
@@ -345,7 +348,8 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:125
 											__e = __c.Set("type", "button"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-											__e = __c.Text("✕ "); if __e != nil { return }
+//line today.gox:125
+											__e = __c.Any(icon("close", false)); if __e != nil { return }
 //line today.gox:125
 											__e = __c.Any(i18n.T(l, "today.remove")); if __e != nil { return }
 										}
@@ -369,7 +373,8 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 //line today.gox:133
 						__e = __c.Set("class", "add-link"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("+ "); if __e != nil { return }
+//line today.gox:133
+						__e = __c.Any(icon("plus", false)); if __e != nil { return }
 //line today.gox:133
 						__e = __c.Any(i18n.T(l, "today.add")); if __e != nil { return }
 					}
@@ -453,7 +458,8 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 //line today.gox:179
 					__e = __c.Set("aria-label", i18n.T(l, "nav.close")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("←"); if __e != nil { return }
+//line today.gox:179
+					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }

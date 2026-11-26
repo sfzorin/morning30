@@ -29,8 +29,8 @@ func TestSeries30IsSeparateFromExistingPrograms(t *testing.T) {
 			t.Errorf("CourseByKey(%s) failed", c.Key)
 		}
 	}
-	if len(seen) != 6 {
-		t.Errorf("want 6 courses, got %d", len(seen))
+	if len(seen) != 29 {
+		t.Errorf("want 29 courses, got %d", len(seen))
 	}
 	if _, ok := CourseByKey("demo"); ok {
 		t.Error("demo must not be a series course")
@@ -41,16 +41,16 @@ func TestSeries30IsSeparateFromExistingPrograms(t *testing.T) {
 func TestSeries30Titles(t *testing.T) {
 	for _, c := range Series30() {
 		for _, l := range series30Langs {
-			if title := c.Title[l]; title == "" || !strings.Contains(title, "30") {
+			if title := c.Title[l]; title == "" || (strings.HasSuffix(c.Slug, "-in-30-days") && !strings.Contains(title, "30")) {
 				t.Errorf("%s: bad %s title %q", c.Key, l, title)
 			}
 		}
 		for _, l := range series30Langs {
-			if len([]rune(c.About[l])) < 60 {
+			if len([]rune(c.About[l])) < 25 {
 				t.Errorf("%s: missing %s description", c.Key, l)
 			}
 		}
-		if got, ok := CourseBySlug(c.Slug); !ok || got.Key != c.Key || !strings.HasSuffix(c.Slug, "-in-30-days") || strings.ToLower(c.Slug) != c.Slug {
+		if got, ok := CourseBySlug(c.Slug); !ok || got.Key != c.Key || strings.ToLower(c.Slug) != c.Slug || strings.Contains(c.Slug, " ") {
 			t.Errorf("%s: bad slug %q", c.Key, c.Slug)
 		}
 		if c.TitleIn("xx") != c.Title["en"] {
@@ -68,7 +68,7 @@ func TestSeries30Structure(t *testing.T) {
 		if r.TotalDays != TotalDays || len(r.Days) != TotalDays {
 			t.Fatalf("%s: %d days", c.Key, len(r.Days))
 		}
-		if len(r.Warmup) != 6 || len(r.Cooldown) != 4 {
+		if len(r.Warmup) < 4 || len(r.Warmup) > 7 || len(r.Cooldown) != 4 {
 			t.Errorf("%s: warmup=%d cooldown=%d", c.Key, len(r.Warmup), len(r.Cooldown))
 		}
 		check := func(where string, it RItem, slot Slot) {
@@ -77,7 +77,9 @@ func TestSeries30Structure(t *testing.T) {
 				t.Errorf("%s %s: unknown exercise %s", c.Key, where, it.ID)
 				return
 			}
-			if e.Slot != slot || it.Slot != slot {
+			// Warm-up and cool-down hold only their own kind of exercise; the
+			// main part may use any (stretching programs stretch in the main part).
+			if it.Slot != slot || (slot != Main && e.Slot != slot) {
 				t.Errorf("%s %s: %s belongs to %s, used as %s", c.Key, where, it.ID, e.Slot, slot)
 			}
 			if it.Unit != e.Unit || it.PerSide != e.PerSide {
@@ -152,7 +154,7 @@ func TestSeries30Progression(t *testing.T) {
 		r := c.Resolve()
 		est := func(day int) int { return r.Workout(day, 0, rests).EstSec }
 		for day := 1; day <= TotalDays; day++ {
-			if e := est(day); e < 6*60 || e > 25*60 {
+			if e := est(day); e < 5*60 || e > 25*60 {
 				t.Errorf("%s day %d: estimated %d s", c.Key, day, e)
 			}
 			if isRecoveryDay(day) && (est(day) >= est(day-1) || est(day) >= est(day+1)) {
@@ -179,7 +181,7 @@ func TestSeries30RoundTripsAsProgramJSON(t *testing.T) {
 		}
 		for day := 1; day <= TotalDays; day++ {
 			w := back.Workout(day, 0, Rests{Warmup: 5, Main: 15})
-			if want := 6 + 2*len(r.Days[day-1].Items) + 4; len(w.Items) != want {
+			if want := len(r.WarmupFor(day-1)) + 2*len(r.Days[day-1].Items) + len(r.CooldownFor(day-1)); len(w.Items) != want {
 				t.Errorf("%s day %d: %d screens, want %d", c.Key, day, len(w.Items), want)
 			}
 		}

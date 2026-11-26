@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"strings"
 
+	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/i18n"
 )
@@ -163,7 +164,14 @@ func coursePage(l i18n.Lang, c content.Course) page {
 
 // dose formats one station, e.g. "Forearm plank · 20 sec" or "Push-ups × 6".
 func dose(l i18n.Lang, it content.RItem) string {
-	name := i18n.Exercise(l, it.ID)
+	name := it.ID
+	if doc, ok := catalog.Builtin(it.ID); ok {
+		if loc, ok := doc.Content[string(l)]; ok && loc.Name != "" {
+			name = loc.Name
+		} else if loc, ok := doc.Content["en"]; ok && loc.Name != "" {
+			name = loc.Name
+		}
+	}
 	var s string
 	if it.Unit == content.Seconds {
 		s = fmt.Sprintf("%s · %d %s", name, it.Value, i18n.T(l, "workout.sec"))

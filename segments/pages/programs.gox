@@ -73,7 +73,7 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 		}
 	}
 	<div class="lib-head">
-		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-back" aria-label=(i18n.T(l, "nav.home"))>←</a>
+		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-back" aria-label=(i18n.T(l, "nav.home"))>~(icon("back", false))</a>
 		<h1>~(i18n.T(l, "programs.title"))</h1>
 	</div>
 
@@ -111,7 +111,7 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 								st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Rename: true})
 								return false
-							}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.rename"))>✎</button>
+							}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.rename"))>~(icon("edit", false))</button>
 						})
 						<span class="sel-day">~(i18n.T(l, "programs.day"), " ", sp.Day)</span>
 						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
@@ -123,7 +123,7 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 								_ = r.After(doors.ActionLocationReload{})
 							}
 							return false
-						}} <button class="star on" type="button" aria-label=(i18n.T(l, "programs.unstar"))>★</button>
+						}} <button class="star on" type="button" aria-label=(i18n.T(l, "programs.unstar"))>~(icon("star", true))</button>
 					</div>
 				})
 			})
@@ -203,12 +203,12 @@ elem (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 								_ = r.After(doors.ActionLocationReload{})
 							}
 							return false
-						}} <button class=(starClass(isStarred)) type="button" aria-label=(starLabel(l, isStarred))>~(starGlyph(isStarred))</button>
+						}} <button class=(starClass(isStarred)) type="button" aria-label=(starLabel(l, isStarred))>~(icon("star", isStarred))</button>
 						~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 							st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key})
 							toTop(r)
 							return false
-						}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.more"))>›</button>
+						}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.more"))>~(icon("next", false))</button>
 					</div>
 				})
 			})
@@ -235,7 +235,7 @@ elem (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip})
 			return false
-		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "programs.title"))>←</button>
+		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "programs.title"))>~(icon("back", false))</button>
 		<h1>~(rp.TitleIn(p.sess.Lang))</h1>
 	</div>
 	<p class="lib-desc">~(rp.AboutIn(p.sess.Lang))</p>
@@ -257,9 +257,9 @@ elem (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 					st.Update(ctx, progState{Cat: s.Cat, NoJumps: s.NoJumps, NoEquip: s.NoEquip, Preview: rp.Key, Tick: s.Tick + 1})
 				}
 				return false
-			}} <button class="btn" type="button">☆ ~(i18n.T(l, "programs.star"))</button>
+			}} <button class="btn" type="button">~(icon("star", false)) ~(i18n.T(l, "programs.star"))</button>
 		} else {
-			<span class="pill on">★ ~(i18n.T(l, "programs.in_selected"))</span>
+			<span class="pill on">~(icon("star", true)) ~(i18n.T(l, "programs.in_selected"))</span>
 		})
 	</div>
 	<h2 class="lib-grp">~(i18n.T(l, "landing.plan"))</h2>
@@ -309,13 +309,6 @@ func starClass(on bool) string {
 		return "star on"
 	}
 	return "star"
-}
-
-func starGlyph(on bool) string {
-	if on {
-		return "★"
-	}
-	return "☆"
 }
 
 func starLabel(l i18n.Lang, on bool) string {

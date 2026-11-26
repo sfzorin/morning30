@@ -93,7 +93,7 @@ elem (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) {
 		group := ""
 	}
 	<div class="lib-head">
-		~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="lib-back" aria-label=(i18n.T(l, "settings.editor"))>←</a>
+		~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="lib-back" aria-label=(i18n.T(l, "settings.editor"))>~(icon("back", false))</a>
 		<h1>~(i18n.T(l, "library.title"))</h1>
 	</div>
 	~(if s.Done != "" {
@@ -152,7 +152,7 @@ elem (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) {
 					st.Update(ctx, p.startAdd(s, e.ID))
 					toTop(r)
 					return false
-				}} <button class="add-btn" type="button" aria-label=(i18n.T(l, "library.add_to_program"))>+</button>
+				}} <button class="add-btn" type="button" aria-label=(i18n.T(l, "library.add_to_program"))>~(icon("plus", false))</button>
 			</div>
 		})
 	</div>
@@ -200,12 +200,12 @@ elem (p libraryPage) addSheet(l i18n.Lang, st doors.Source[libState], s libState
 					}
 				}))
 				return false
-			}} <button type="button" aria-label="−">−</button>
+			}} <button type="button" aria-label="−">~(icon("minus", false))</button>
 			<b>~(doseLabel(l, string(def.Unit), s.Value, def.PerSide))</b>
 			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				st.Update(ctx, with(func(n *libState) { n.Value += step }))
 				return false
-			}} <button type="button" aria-label="+">+</button>
+			}} <button type="button" aria-label="+">~(icon("plus", false))</button>
 		</div>
 		~(if s.Err != "" {
 			<p class="err" role="alert">~(i18n.T(l, s.Err))</p>

@@ -21,12 +21,18 @@ const (
 	GroupCardio   = "cardio"
 	GroupStretch  = "stretch"
 	GroupDumbbell = "dumbbell"
+	GroupPullup   = "pullup"
+	GroupBalance  = "balance"
+	GroupTaiChi   = "taichi"
+	GroupNeck     = "neck"
+	GroupKids     = "kids"
 	GroupCustom   = "custom"
 )
 
 // LibraryGroups lists the library groups in display order.
 func LibraryGroups() []string {
-	return []string{GroupWarmup, GroupCore, GroupPush, GroupBack, GroupArms, GroupLegs, GroupCardio, GroupStretch, GroupDumbbell, GroupCustom}
+	return []string{GroupWarmup, GroupCore, GroupPush, GroupPullup, GroupBack, GroupArms, GroupLegs, GroupCardio,
+		GroupStretch, GroupNeck, GroupBalance, GroupTaiChi, GroupDumbbell, GroupKids, GroupCustom}
 }
 
 // ExerciseInfo is one library exercise as screens and agents see it.
@@ -49,8 +55,18 @@ func ExerciseGroup(cat catalog.Catalog, id string) string {
 		return GroupCustom
 	}
 	switch {
-	case strings.HasPrefix(id, "CD"):
+	case strings.HasPrefix(id, "CD"), strings.HasPrefix(id, "ST"):
 		return GroupStretch
+	case strings.HasPrefix(id, "PU"):
+		return GroupPullup
+	case strings.HasPrefix(id, "BL"):
+		return GroupBalance
+	case strings.HasPrefix(id, "TC"):
+		return GroupTaiChi
+	case strings.HasPrefix(id, "NK"):
+		return GroupNeck
+	case strings.HasPrefix(id, "IT"):
+		return GroupKids
 	case strings.HasPrefix(id, "W"):
 		return GroupWarmup
 	case strings.HasPrefix(id, "C"):

@@ -122,7 +122,8 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:76
 					__e = __c.Set("aria-label", i18n.T(l, "nav.home")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("←"); if __e != nil { return }
+//line programs.gox:76
+					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
@@ -285,7 +286,8 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:114
 										__e = __c.Set("aria-label", i18n.T(l, "programs.rename")); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-										__e = __c.Text("✎"); if __e != nil { return }
+//line programs.gox:114
+										__e = __c.Any(icon("edit", false)); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 								return })); if __e != nil { return }
@@ -320,7 +322,8 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:126
 									__e = __c.Set("aria-label", i18n.T(l, "programs.unstar")); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-									__e = __c.Text("★"); if __e != nil { return }
+//line programs.gox:126
+									__e = __c.Any(icon("star", true)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
@@ -626,7 +629,7 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 									__e = __c.Set("aria-label", starLabel(l, isStarred)); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 //line programs.gox:206
-									__e = __c.Any(starGlyph(isStarred)); if __e != nil { return }
+									__e = __c.Any(icon("star", isStarred)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
@@ -646,7 +649,8 @@ func (p programsPage) catalog(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:211
 									__e = __c.Set("aria-label", i18n.T(l, "programs.more")); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-									__e = __c.Text("›"); if __e != nil { return }
+//line programs.gox:211
+									__e = __c.Any(icon("next", false)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							return })); if __e != nil { return }
@@ -699,7 +703,8 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:238
 					__e = __c.Set("aria-label", i18n.T(l, "programs.title")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("←"); if __e != nil { return }
+//line programs.gox:238
+					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
@@ -809,7 +814,8 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:260
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("☆ "); if __e != nil { return }
+//line programs.gox:260
+						__e = __c.Any(icon("star", false)); if __e != nil { return }
 //line programs.gox:260
 						__e = __c.Any(i18n.T(l, "programs.star")); if __e != nil { return }
 					}
@@ -821,7 +827,8 @@ func (p programsPage) preview(l i18n.Lang, st doors.Source[progState], s progSta
 //line programs.gox:262
 					__e = __c.Set("class", "pill on"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("★ "); if __e != nil { return }
+//line programs.gox:262
+					__e = __c.Any(icon("star", true)); if __e != nil { return }
 //line programs.gox:262
 					__e = __c.Any(i18n.T(l, "programs.in_selected")); if __e != nil { return }
 				}
@@ -935,13 +942,6 @@ func starClass(on bool) string {
 		return "star on"
 	}
 	return "star"
-}
-
-func starGlyph(on bool) string {
-	if on {
-		return "★"
-	}
-	return "☆"
 }
 
 func starLabel(l i18n.Lang, on bool) string {

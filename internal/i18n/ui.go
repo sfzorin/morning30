@@ -43,6 +43,7 @@ var ui = map[string][7]string{
 
 	// Programs, day screen, library, settings groups
 	"home.level":              {"сложность", "difficulty", "zorluk", "Schwierigkeit", "dificultad", "difficulté", "difficoltà"},
+	"home.day_list":           {"Упражнения дня", "Today's exercises", "Günün egzersizleri", "Übungen des Tages", "Ejercicios del día", "Exercices du jour", "Esercizi del giorno"},
 	"home.programs_ready":     {"Готовые программы", "Ready programs", "Hazır programlar", "Fertige Programme", "Programas listos", "Programmes prêts", "Programmi pronti"},
 	"home.switch":             {"Переключиться", "Switch to", "Geçiş yap", "Wechseln zu", "Cambiar a", "Passer à", "Passa a"},
 	"home.all_programs":       {"Все программы", "All programs", "Tüm programlar", "Alle Programme", "Todos los programas", "Tous les programmes", "Tutti i programmi"},
@@ -107,6 +108,11 @@ var ui = map[string][7]string{
 	"grp.cardio":              {"Кардио", "Cardio", "Kardiyo", "Cardio", "Cardio", "Cardio", "Cardio"},
 	"grp.stretch":             {"Растяжка", "Stretching", "Esneme", "Dehnen", "Estiramiento", "Étirements", "Stretching"},
 	"grp.dumbbell":            {"С гантелями", "With dumbbells", "Dambılla", "Mit Hanteln", "Con mancuernas", "Avec haltères", "Con manubri"},
+	"grp.pullup":              {"Турник", "Pull-up bar", "Barfiks", "Klimmzugstange", "Barra", "Barre de traction", "Sbarra"},
+	"grp.balance":             {"Равновесие", "Balance", "Denge", "Gleichgewicht", "Equilibrio", "Équilibre", "Equilibrio"},
+	"grp.taichi":              {"Тай-чи", "Tai chi", "Tai chi", "Tai-Chi", "Taichí", "Tai-chi", "Tai chi"},
+	"grp.neck":                {"Шея и плечи", "Neck and shoulders", "Boyun ve omuzlar", "Nacken und Schultern", "Cuello y hombros", "Cou et épaules", "Collo e spalle"},
+	"grp.kids":                {"Детские", "For kids", "Çocuklar için", "Für Kinder", "Para niños", "Pour enfants", "Per bambini"},
 	"grp.custom":              {"Свои", "Your own", "Kendi egzersizleriniz", "Eigene", "Propios", "Les vôtres", "Personali"},
 	"settings.editor":         {"Редактор программ и упражнений", "Program and exercise editor", "Program ve egzersiz düzenleyici", "Programm- und Übungseditor", "Editor de programas y ejercicios", "Éditeur de programmes et d'exercices", "Editor di programmi ed esercizi"},
 	"settings.editing":        {"Правите:", "Editing:", "Düzenleniyor:", "Du bearbeitest:", "Editando:", "Vous modifiez :", "Stai modificando:"},

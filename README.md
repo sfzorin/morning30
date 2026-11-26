@@ -25,11 +25,15 @@ small client-side workout engine.
   into that account's personal JSON on first load; cycle position and streaks
   stay put. Settings edit *this* account only — there is no Sergey/Vlad/Ilya
   picker.
-- **Ready programs.** A catalog of ready 30-day programs (the morning workout
-  plus goal-named "… in 30 days" courses) in sections — first steps, strength,
-  weight loss, posture — with one-line descriptions, a preview of the 30-day
-  plan, and "no jumps" / "no equipment" filters read from the programs
-  themselves. Each course also has a public page per language
+- **Ready programs.** A catalog of 30 ready 30-day programs in seven sections —
+  first steps (morning workout, 50+), strength (plank, abs, push-ups, arms,
+  pull-ups, legs), weight loss, stretching (seven programs, from splits to a
+  bedtime stretch), back and balance (posture, desk workers, tai chi), kids
+  (five programs on the kids' exercises with their own drawings) and sports
+  (runners, football, tennis, skiing, martial arts, basketball and volleyball) —
+  with one-line descriptions, a preview of the 30-day plan, and "no jumps" /
+  "no equipment" filters read from the programs themselves. Picking a kids'
+  program switches the figure to a child. Each course also has a public page per language
   (`/{lang}/courses/...`, listed in the sitemap).
 - **Selected programs.** The user's own shortlist. One tap on a program
   switches to it; the star adds or removes it without switching. Every
@@ -49,6 +53,11 @@ small client-side workout engine.
   agent token. Reorder, add, remove and retime exercises; all three phases
   remain nonempty, with exactly two main rounds. Settings themselves keep only
   the workout, program and profile choices, each saved as soon as it changes.
+- **Exercise documents.** Besides the original built-ins, exercises can be
+  complete JSON documents (definition plus name, technique, mistakes,
+  breathing, safety and voice cues in all seven languages) in
+  `internal/content/exercises/*.json`; they join the built-in library at
+  start-up. A test checks every document in every language.
 - **Exercise JSON.** Download any exercise as a file, paste or upload one back.
   Custom exercises overlay the built-in library. Each exercise can use one
   catalog still (static) or two (they swap once a second). Legacy built-in

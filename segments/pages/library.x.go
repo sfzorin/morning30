@@ -144,7 +144,8 @@ func (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) go
 //line library.gox:96
 					__e = __c.Set("aria-label", i18n.T(l, "settings.editor")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("←"); if __e != nil { return }
+//line library.gox:96
+					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
@@ -376,7 +377,8 @@ func (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) go
 //line library.gox:155
 							__e = __c.Set("aria-label", i18n.T(l, "library.add_to_program")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-							__e = __c.Text("+"); if __e != nil { return }
+//line library.gox:155
+							__e = __c.Any(icon("plus", false)); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					return })); if __e != nil { return }
@@ -511,7 +513,8 @@ func (p libraryPage) addSheet(l i18n.Lang, st doors.Source[libState], s libState
 //line library.gox:203
 						__e = __c.Set("aria-label", "−"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("−"); if __e != nil { return }
+//line library.gox:203
+						__e = __c.Any(icon("minus", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
@@ -535,7 +538,8 @@ func (p libraryPage) addSheet(l i18n.Lang, st doors.Source[libState], s libState
 //line library.gox:208
 						__e = __c.Set("aria-label", "+"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("+"); if __e != nil { return }
+//line library.gox:208
+						__e = __c.Any(icon("plus", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }

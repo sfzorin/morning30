@@ -175,6 +175,14 @@ func (d Doc) Compact() string {
 // Builtin assembles the canonical Doc for a built-in exercise: its definition
 // plus name/hint/warning/technique/voice in all 7 languages.
 func Builtin(id string) (Doc, bool) {
+	if raw, ok := content.BundledDoc(id); ok {
+		var d Doc
+		if err := json.Unmarshal(raw, &d); err != nil {
+			return Doc{}, false
+		}
+		d.ID = id
+		return d, true
+	}
 	ex, ok := content.Get(id)
 	if !ok {
 		return Doc{}, false
@@ -379,8 +387,8 @@ func (c Catalog) Figure(id, sex string) string {
 	if d, ok := c.resolve(id); ok {
 		key = content.FigureKey(d.SVG, id)
 	}
-	if _, ok := content.Get(key); !ok {
-		return "" // A custom exercise may be published before its pictures.
+	if ex, ok := content.Get(key); !ok || ex.Bundled {
+		return "" // Custom and bundled exercises have no legacy drawing.
 	}
 	return "/static/ex/" + sex + "/" + key + ".png"
 }

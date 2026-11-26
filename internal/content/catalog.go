@@ -88,11 +88,13 @@ func ProgramTags(r Resolved) Tags {
 var jumpIDs = map[string]bool{"J01": true, "J03": true, "J05": true, "J06": true, "J07": true, "J08": true, "J09": true}
 
 // IsJump reports whether a built-in exercise involves jumping.
-func IsJump(id string) bool { return jumpIDs[id] }
+func IsJump(id string) bool { return jumpIDs[id] || bundledDefs[id].Jumps }
 
-// NeedsEquipment reports whether a built-in exercise needs equipment (the
-// light dumbbells of the D group).
-func NeedsEquipment(id string) bool { return len(id) == 3 && id[0] == 'D' }
+// NeedsEquipment reports whether a built-in exercise needs equipment: the
+// light dumbbells of the D group, or a bundled exercise that says so.
+func NeedsEquipment(id string) bool {
+	return (len(id) == 3 && id[0] == 'D') || bundledDefs[id].Equipment
+}
 
 // MinutesSpan is a program's session length on day 1 and on the peak day 29,
 // with the rest settings of a new account.
@@ -138,12 +140,15 @@ func Catalog() []ReadyProgram {
 	out := []ReadyProgram{demoProgram}
 	for _, c := range series30 {
 		c := c
-		cat := courseCategory[c.Key]
+		cat := c.Category
+		if cat == "" {
+			cat = courseCategory[c.Key]
+		}
 		if cat == "" {
 			cat = CatStrength
 		}
 		out = append(out, ReadyProgram{
-			Key: c.Key, Slug: c.Slug, Category: cat, Title: c.Title, About: c.About,
+			Key: c.Key, Slug: c.Slug, Category: cat, Kids: c.Kids, Title: c.Title, About: c.About,
 			Build: c.Resolve,
 		})
 	}

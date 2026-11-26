@@ -7,6 +7,7 @@ import (
 	"strings"
 	"testing"
 
+	"morning30/internal/catalog"
 	"morning30/internal/content"
 	"morning30/internal/i18n"
 )
@@ -69,7 +70,8 @@ func TestEveryCoursePageInEveryLanguage(t *testing.T) {
 			// Every exercise is named in words, never by its internal id.
 			for _, d := range c.Resolve().Days {
 				for _, it := range d.Items {
-					if name := i18n.Exercise(l, it.ID); name == it.ID || !strings.Contains(page, escaped(name)) {
+					doc, _ := catalog.Builtin(it.ID)
+					if name := doc.Content[lang].Name; name == "" || !strings.Contains(page, escaped(name)) {
 						t.Errorf("%s %s: exercise %s is not named", lang, c.Key, it.ID)
 					}
 				}

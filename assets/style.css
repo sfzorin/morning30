@@ -763,8 +763,6 @@ body:has(.player) {
 .courses-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
 .courses-head h3 { margin: 0; }
 .all-link { color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
-.day-link { display: block; color: var(--fg); text-decoration: none; }
-.day-link .chev { color: var(--muted); font-size: 22px; font-weight: 600; }
 
 /* ---- Lists, chips, toggles ---- */
 .lib-grp { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; margin: 16px 2px 6px; }
@@ -839,3 +837,18 @@ body:has(.player) {
 .plan-days .light { color: var(--ok); font-size: 12px; font-weight: 600; }
 .lib-item > .btn.small { margin-left: auto; align-self: center; background: var(--bg); flex: none; }
 .lib-item > .lib-item-name { flex: 1; }
+
+/* ---- Icons ---- */
+.ic { width: 20px; height: 20px; flex: none; vertical-align: -4px; }
+.ic.fill { fill: currentColor; }
+.icon-btn .ic { width: 22px; height: 22px; }
+.lib-back .ic, .settings-head .back .ic, .quit .ic { width: 20px; height: 20px; }
+.row-value .ic { width: 16px; height: 16px; vertical-align: -3px; color: var(--muted); }
+.item-menu > button { display: flex; align-items: center; gap: 10px; }
+.add-link { display: inline-flex; align-items: center; gap: 6px; }
+.add-link .ic, .btn .ic { width: 18px; height: 18px; vertical-align: -3px; }
+.star .ic, .icon-mini .ic { width: 20px; height: 20px; }
+.pill .ic { width: 14px; height: 14px; vertical-align: -2px; }
+.day-list-link { display: inline-block; color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; margin: 6px 0 2px; }
+/* The whole settings row is the link, not just its text. */
+.row-link { padding: 14px 0; margin: -14px 0; min-height: 44px; }

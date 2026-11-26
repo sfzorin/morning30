@@ -1,0 +1,42 @@
+package pages
+
+import (
+	"github.com/doors-dev/gox"
+)
+
+// icon draws a small outline icon (24×24 grid, current text colour) so
+// buttons never rely on text symbols or emoji that render differently on
+// every phone. filled paints the shape (used for a selected star).
+elem icon(name string, filled bool) {
+	~{
+		class := "ic"
+		if filled {
+			class = "ic fill"
+		}
+	}
+	<svg class=(class) viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+		~(if name == "back" {
+			<path d="M5 12h14"></path><path d="M5 12l6 6"></path><path d="M5 12l6-6"></path>
+		} else if name == "next" {
+			<path d="M9 6l6 6-6 6"></path>
+		} else if name == "close" {
+			<path d="M18 6L6 18"></path><path d="M6 6l12 12"></path>
+		} else if name == "plus" {
+			<path d="M12 5v14"></path><path d="M5 12h14"></path>
+		} else if name == "minus" {
+			<path d="M5 12h14"></path>
+		} else if name == "edit" {
+			<path d="M4 20h4L18.5 9.5a2.83 2.83 0 0 0-4-4L4 16v4"></path><path d="M13.5 6.5l4 4"></path>
+		} else if name == "star" {
+			<path d="M12 17.75l-6.17 3.25 1.18-6.88-5-4.87 6.9-1L12 2l3.09 6.25 6.9 1-5 4.87 1.18 6.88z"></path>
+		} else if name == "info" {
+			<circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path>
+		} else if name == "replace" {
+			<path d="M7 10h14l-4-4"></path><path d="M17 14H3l4 4"></path>
+		} else if name == "settings" {
+			<path d="M10.33 4.32c.43-1.76 2.92-1.76 3.35 0a1.72 1.72 0 0 0 2.57 1.07c1.54-.94 3.31.83 2.37 2.37a1.72 1.72 0 0 0 1.07 2.57c1.76.43 1.76 2.92 0 3.35a1.72 1.72 0 0 0-1.07 2.57c.94 1.54-.83 3.31-2.37 2.37a1.72 1.72 0 0 0-2.57 1.07c-.43 1.76-2.92 1.76-3.35 0a1.72 1.72 0 0 0-2.57-1.07c-1.54.94-3.31-.83-2.37-2.37a1.72 1.72 0 0 0-1.07-2.57c-1.76-.43-1.76-2.92 0-3.35a1.72 1.72 0 0 0 1.07-2.57c-.94-1.54.83-3.31 2.37-2.37 1 .61 2.3.07 2.57-1.07z"></path><circle cx="12" cy="12" r="3"></circle>
+		})
+	</svg>
+}
+
+var _ = gox.Elem(nil)

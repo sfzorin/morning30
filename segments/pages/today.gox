@@ -65,7 +65,7 @@ elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 		fig := app.DB.GetSex(t.sess.UserID)
 	}
 	<div class="lib-head">
-		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-back" aria-label=(i18n.T(l, "nav.home"))>←</a>
+		~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="lib-back" aria-label=(i18n.T(l, "nav.home"))>~(icon("back", false))</a>
 		<h1>~(i18n.T(l, "home.day"), " ", plan.Day, " · ", plan.Program)</h1>
 	</div>
 	<p class="lib-intro">~(plan.Exercises, " ", i18n.T(l, "home.exercises"), " · ≈ ", plan.EstMinutes, " ", i18n.T(l, "home.min"))</p>
@@ -106,12 +106,12 @@ elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 								st.Update(ctx, todayState{Card: it.ID, Where: s.Where})
 								toTop(r)
 								return false
-							}} <button type="button">ⓘ ~(i18n.T(l, "today.card"))</button>
+							}} <button type="button">~(icon("info", false)) ~(i18n.T(l, "today.card"))</button>
 							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 								st.Update(ctx, todayState{Replace: it.ID, Where: whereState{Mode: "all"}})
 								toTop(r)
 								return false
-							}} <button type="button">⇄ ~(i18n.T(l, "today.replace"))</button>
+							}} <button type="button">~(icon("replace", false)) ~(i18n.T(l, "today.replace"))</button>
 							~(if s.Remove == part.Slot+":"+it.ID {
 								<div class="remove-ask">
 									<span>~(i18n.T(l, "today.remove_where"))</span>
@@ -122,7 +122,7 @@ elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 								~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 									st.Update(ctx, todayState{Open: key, Remove: part.Slot + ":" + it.ID, Where: s.Where})
 									return false
-								}} <button class="danger" type="button">✕ ~(i18n.T(l, "today.remove"))</button>
+								}} <button class="danger" type="button">~(icon("close", false)) ~(i18n.T(l, "today.remove"))</button>
 							})
 						</div>
 					})
@@ -130,7 +130,7 @@ elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 			})
 		</div>
 		~(if part.Slot == "main" {
-			~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="add-link">+ ~(i18n.T(l, "today.add"))</a>
+			~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="add-link">~(icon("plus", false)) ~(i18n.T(l, "today.add"))</a>
 		})
 	})
 	~>doors.ALink{Model: path.Path{Page: path.Start}} <a class="btn primary big">~(i18n.T(l, "home.start"))</a>
@@ -176,7 +176,7 @@ elem (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			st.Update(ctx, todayState{Where: s.Where})
 			return false
-		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "nav.close"))>←</button>
+		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "nav.close"))>~(icon("back", false))</button>
 		<h1>~(i18n.T(l, "today.replace"), ": ", cat.Name(l, s.Replace))</h1>
 	</div>
 	<h2 class="lib-grp">~(i18n.T(l, "replace.where"))</h2>

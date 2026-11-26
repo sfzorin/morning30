@@ -127,68 +127,41 @@ func (h header) Main() gox.Elem {
 //line common.gox:73
 				__e = __c.Set("class", "top-right"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-				__e = __c.Init("span"); if __e != nil { return }
-				{
 //line common.gox:74
-					__e = __c.Set("class", "streak-badge"); if __e != nil { return }
-//line common.gox:74
-					__e = __c.Set("title", i18n.T(l, "home.streak")); if __e != nil { return }
-					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("🔥 "); if __e != nil { return }
-//line common.gox:74
-					__e = __c.Any(h.streak); if __e != nil { return }
-				}
-				__e = __c.Close(); if __e != nil { return }
-//line common.gox:75
 				__e = (doors.ALink{Model: path.Path{Page: path.Settings}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line common.gox:75
+//line common.gox:74
 						__e = __c.Set("class", "icon-btn"); if __e != nil { return }
-//line common.gox:75
+//line common.gox:74
 						__e = __c.Set("aria-label", i18n.T(l, "nav.settings")); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("⚙️"); if __e != nil { return }
+//line common.gox:74
+						__e = __c.Any(icon("settings", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
-//line common.gox:76
-				if !h.sess.IsGuest {
-//line common.gox:77
-					__e = (doors.AClick{On: h.logout}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
-						ctx := __c.Context(); _ = ctx
-						__e = __c.Init("button"); if __e != nil { return }
-						{
-//line common.gox:77
-							__e = __c.Set("class", "icon-btn"); if __e != nil { return }
-//line common.gox:77
-							__e = __c.Set("type", "button"); if __e != nil { return }
-//line common.gox:77
-							__e = __c.Set("aria-label", i18n.T(l, "nav.logout")); if __e != nil { return }
-							__e = __c.Submit(); if __e != nil { return }
-							__e = __c.Text("⎋"); if __e != nil { return }
-						}
-						__e = __c.Close(); if __e != nil { return }
-					return })); if __e != nil { return }
-				}
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line common.gox:81
+//line common.gox:77
 }
 
-func (h header) logout(ctx context.Context, r doors.RequestPointer) bool {
-	if c, err := r.GetCookie("session"); err == nil {
-		_ = app.DB.DeleteSession(c.Value)
+// logout ends the session and returns to the sign-in page.
+func logout(sess auth.Session, src doors.Source[auth.Session], p doors.Source[path.Path]) func(context.Context, doors.RequestPointer) bool {
+	return func(ctx context.Context, r doors.RequestPointer) bool {
+		if c, err := r.GetCookie("session"); err == nil {
+			_ = app.DB.DeleteSession(c.Value)
+		}
+		r.SetCookie(&http.Cookie{Name: "session", Path: "/", MaxAge: -1, HttpOnly: true})
+		doors.SessionExpire(ctx, 0)
+		src.Update(ctx, auth.Session{Lang: sess.Lang, Rest: 20})
+		p.Update(ctx, path.Path{Page: path.Login})
+		return false
 	}
-	r.SetCookie(&http.Cookie{Name: "session", Path: "/", MaxAge: -1, HttpOnly: true})
-	doors.SessionExpire(ctx, 0)
-	h.auth.Update(ctx, auth.Session{Lang: h.sess.Lang, Rest: 20})
-	h.path.Update(ctx, path.Path{Page: path.Login})
-	return false
 }
 
 // minutes renders a seconds count as a rounded minute number (min 1).

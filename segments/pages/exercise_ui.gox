@@ -128,7 +128,7 @@ elem (c exerciseCard) Main() {
 		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			c.onBack(ctx)
 			return false
-		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "nav.close"))>←</button>
+		}} <button class="lib-back" type="button" aria-label=(i18n.T(l, "nav.close"))>~(icon("back", false))</button>
 		<h1>~(cat.Name(l, c.id))</h1>
 	</div>
 	~(c.figure.Bind(elem(fig string) {
@@ -169,7 +169,7 @@ elem (c exerciseCard) Main() {
 		~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			c.onAdd(ctx)
 			return false
-		}} <button class="btn primary wide" type="button">+ ~(i18n.T(l, "library.add_to_program"))</button>
+		}} <button class="btn primary wide" type="button">~(icon("plus", false)) ~(i18n.T(l, "library.add_to_program"))</button>
 	})
 }
 

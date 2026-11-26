@@ -45,6 +45,7 @@ type Exercise struct {
 	Replacement string // substitute ID used by the adaptation engine
 	Video       string // optional video/GIF URL (reserved; falls back to the SVG)
 	Thumb       string // optional thumbnail URL (reserved)
+	Bundled     bool   // defined by a bundled JSON document (no legacy drawing)
 }
 
 // Pool is the library keyed by ID.

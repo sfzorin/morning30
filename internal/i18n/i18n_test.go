@@ -18,6 +18,9 @@ func TestUIStringsHaveEnglish(t *testing.T) {
 // Every exercise in the pool must have a localized name in all 7 languages.
 func TestExerciseNamesCoverPool(t *testing.T) {
 	for id := range content.Pool {
+		if content.IsBundled(id) {
+			continue // bundled documents carry their own names
+		}
 		row, ok := exerciseNames[id]
 		if !ok {
 			t.Errorf("exercise %q has no translations", id)

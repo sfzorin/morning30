@@ -93,7 +93,7 @@ elem (s settingsPage) Main() {
 		<section class="settings">
 			~(if s.editor {
 				<div class="settings-head">
-					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.settings"))>←</a>
+					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.settings"))>~(icon("back", false))</a>
 					<h1>~(i18n.T(l, "settings.editor"))</h1>
 				</div>
 				<p class="editing">~(i18n.T(l, "settings.editing"), " ")<b>~(app.ProgramTitle(s.sess.UserID, s.sess.Lang))</b></p>
@@ -280,7 +280,7 @@ elem (s settingsPage) Main() {
 				</details>
 
 					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="row-link">~(i18n.T(l, "library.title")) <span aria-hidden="true">›</span></a>
+						~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="row-link"><span>~(i18n.T(l, "library.title"))</span><span class="row-value">~(icon("next", false))</span></a>
 					</div>
 				~(mcpSrc.Bind(elem(st mcpTokState) {
 					~{
@@ -307,7 +307,7 @@ elem (s settingsPage) Main() {
 			} else {
 				<div class="settings-head">
 					<h1>~(i18n.T(l, "settings.title"))</h1>
-					~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "nav.close"))>✕</a>
+					~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="quit" aria-label=(i18n.T(l, "nav.close"))>~(icon("close", false))</a>
 				</div>
 				~{
 					vm := s.sess.VoiceMode
@@ -379,10 +379,10 @@ elem (s settingsPage) Main() {
 				<h2 class="sgroup">~(i18n.T(l, "settings.group_program"))</h2>
 				<div class="settings-card">
 					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="row-link"><span>~(i18n.T(l, "programs.title"))</span><span class="row-value">~(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) ›</span></a>
+						~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="row-link"><span>~(i18n.T(l, "programs.title"))</span><span class="row-value">~(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) ~(icon("next", false))</span></a>
 					</div>
 					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="row-link"><span>~(i18n.T(l, "settings.editor"))</span><span class="row-value">›</span></a>
+						~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="row-link"><span>~(i18n.T(l, "settings.editor"))</span><span class="row-value">~(icon("next", false))</span></a>
 					</div>
 				</div>
 
@@ -402,6 +402,7 @@ elem (s settingsPage) Main() {
 						~>doors.ALink{Model: path.Path{Page: path.Register}} <a class="btn primary small">~(i18n.T(l, "auth.register"))</a>
 					} else {
 						<span class="email">~(s.sess.Email)</span>
+						~>doors.AClick{On: logout(s.sess, s.auth, s.path)} <button class="btn small" type="button">~(i18n.T(l, "nav.logout"))</button>
 					})
 				</div>
 

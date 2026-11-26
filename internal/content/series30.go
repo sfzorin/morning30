@@ -8,11 +8,13 @@ package content
 
 // Course is one goal-named 30-day program of the series.
 type Course struct {
-	Key   string            // stable id, e.g. "plank30"
-	Slug  string            // public URL name, e.g. "plank-in-30-days"
-	Title map[string]string // language code → display title
-	About map[string]string // language code → one-paragraph description
-	plan  coursePlan
+	Key      string            // stable id, e.g. "plank30"
+	Slug     string            // public URL name, e.g. "plank-in-30-days"
+	Category string            // catalog section ("" = from courseCategory)
+	Kids     bool              // a children's program
+	Title    map[string]string // language code → display title
+	About    map[string]string // language code → one-paragraph description
+	plan     coursePlan
 }
 
 // TitleIn returns the title in language l, falling back to English.
