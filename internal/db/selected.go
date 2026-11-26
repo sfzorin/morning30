@@ -25,6 +25,15 @@ type SelectedProgram struct {
 	AddedAt  string `json:"addedAt"`
 }
 
+// ProgramEpoch counts program switches. It is part of the key that resumes an
+// interrupted workout, so switching away makes that workout stale for good,
+// even after switching back.
+func (d *DB) ProgramEpoch(userID int64) int {
+	var n int
+	_ = d.sql.QueryRow(`SELECT program_epoch FROM users WHERE id = ?`, userID).Scan(&n)
+	return n
+}
+
 // CurrentSelected returns the id of the selected program in the active slot
 // (0 when the user runs the plain morning workout without a row).
 func (d *DB) CurrentSelected(userID int64) int64 {
@@ -143,7 +152,9 @@ func (d *DB) SwitchSelected(userID, targetID int64) error {
 			return err
 		}
 	}
-	if _, err := tx.Exec(`UPDATE users SET program_json = ?, active_program = 'custom', position = ?, current_selected = ? WHERE id = ?`,
+	// A new epoch makes any interrupted workout of the previous program stale.
+	if _, err := tx.Exec(`UPDATE users SET program_json = ?, active_program = 'custom', position = ?, current_selected = ?,
+		program_epoch = program_epoch + 1 WHERE id = ?`,
 		program, targetPos, targetID, userID); err != nil {
 		return err
 	}
@@ -171,7 +182,8 @@ func (d *DB) ClearActive(userID int64, demoKey string) error {
 			return err
 		}
 	}
-	if _, err := tx.Exec(`UPDATE users SET program_json = '', active_program = ?, position = 0, current_selected = 0 WHERE id = ?`,
+	if _, err := tx.Exec(`UPDATE users SET program_json = '', active_program = ?, position = 0, current_selected = 0,
+		program_epoch = program_epoch + 1 WHERE id = ?`,
 		demoKey, userID); err != nil {
 		return err
 	}

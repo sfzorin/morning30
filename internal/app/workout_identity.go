@@ -43,5 +43,10 @@ func WorkoutProgramKey(userID int64) string {
 	// is unchanged. A combined timer saved before side-change preparation
 	// cannot safely be interpreted as one segment of the new timed exercise.
 	data := fmt.Sprintf("%s\n%d,%d,%d\nside-change:%d", UserProgram(userID).Marshal(), warmup, main, cooldown, content.SideChangeSeconds)
+	// After a program switch an interrupted workout is never offered again.
+	// Accounts that never switched keep their existing key.
+	if epoch := DB.ProgramEpoch(userID); epoch > 0 {
+		data += fmt.Sprintf("\nprogram-epoch:%d", epoch)
+	}
 	return fmt.Sprintf("%x", sha256.Sum256([]byte(data)))
 }

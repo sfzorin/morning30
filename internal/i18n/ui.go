@@ -43,7 +43,6 @@ var ui = map[string][7]string{
 
 	// Programs, day screen, library, settings groups
 	"home.level":              {"сложность", "difficulty", "zorluk", "Schwierigkeit", "dificultad", "difficulté", "difficoltà"},
-	"home.day_list":           {"Упражнения дня", "Today's exercises", "Günün egzersizleri", "Übungen des Tages", "Ejercicios del día", "Exercices du jour", "Esercizi del giorno"},
 	"home.programs_ready":     {"Готовые программы", "Ready programs", "Hazır programlar", "Fertige Programme", "Programas listos", "Programmes prêts", "Programmi pronti"},
 	"home.switch":             {"Переключиться", "Switch to", "Geçiş yap", "Wechseln zu", "Cambiar a", "Passer à", "Passa a"},
 	"home.all_programs":       {"Все программы", "All programs", "Tüm programlar", "Alle Programme", "Todos los programas", "Tous les programmes", "Tutti i programmi"},

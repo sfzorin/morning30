@@ -10,6 +10,7 @@
   var state = window.MorningWorkoutState;
   if (!state || !config) return;
   var link = document.querySelector(".resume-workout");
+  var start = document.querySelector(".start-workout");
   var status = document.querySelector(".home-save-status");
   var disposed = false;
   var reloading = false;
@@ -34,6 +35,8 @@
       link.classList.toggle("hidden", !resume);
       if (resume) link.href = resume.url;
     }
+    // One button only: "Continue" the interrupted workout instead of starting.
+    if (start) start.classList.toggle("hidden", !!resume);
     if (status) {
       var pending = state.pending(config.userId).length > 0;
       status.classList.toggle("hidden", !pending && !hasSaved);

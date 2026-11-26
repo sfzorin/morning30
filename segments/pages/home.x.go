@@ -175,13 +175,19 @@ func (h homePage) Main() gox.Elem {
 						__e = __c.Many(i18n.T(l, "home.rounds"), ": ", mainRounds); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
-					__e = __c.Init("span"); if __e != nil { return }
-					{
-						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:83
-						__e = __c.Many(len(w.Items), " ", i18n.T(l, "home.exercises")); if __e != nil { return }
-					}
-					__e = __c.Close(); if __e != nil { return }
+					__e = (doors.ALink{Model: path.Path{Page: path.Today}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+						ctx := __c.Context(); _ = ctx
+						__e = __c.Init("a"); if __e != nil { return }
+						{
+//line home.gox:83
+							__e = __c.Set("class", "day-count"); if __e != nil { return }
+							__e = __c.Submit(); if __e != nil { return }
+//line home.gox:83
+							__e = __c.Many(len(w.Items), " ", i18n.T(l, "home.exercises")); if __e != nil { return }
+						}
+						__e = __c.Close(); if __e != nil { return }
+					return })); if __e != nil { return }
 					__e = __c.Init("span"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
@@ -191,26 +197,13 @@ func (h homePage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line home.gox:86
-				__e = (doors.ALink{Model: path.Path{Page: path.Today}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
-					ctx := __c.Context(); _ = ctx
-					__e = __c.Init("a"); if __e != nil { return }
-					{
-//line home.gox:86
-						__e = __c.Set("class", "day-list-link"); if __e != nil { return }
-						__e = __c.Submit(); if __e != nil { return }
-//line home.gox:86
-						__e = __c.Any(i18n.T(l, "home.day_list")); if __e != nil { return }
-					}
-					__e = __c.Close(); if __e != nil { return }
-				return })); if __e != nil { return }
 //line home.gox:87
 				__e = (doors.ALink{Model: path.Path{Page: path.Start}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
 //line home.gox:87
-						__e = __c.Set("class", "btn primary big"); if __e != nil { return }
+						__e = __c.Set("class", "btn primary big start-workout"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:87
 						__e = __c.Any(startLabel); if __e != nil { return }
@@ -220,12 +213,12 @@ func (h homePage) Main() gox.Elem {
 				__e = __c.Init("a"); if __e != nil { return }
 				{
 //line home.gox:88
-					__e = __c.Set("class", "btn resume-workout hidden"); if __e != nil { return }
+					__e = __c.Set("class", "btn primary big resume-workout hidden"); if __e != nil { return }
 //line home.gox:88
 					__e = __c.Set("href", "/"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:88
-					__e = __c.Any(i18n.T(l, "home.resume_workout")); if __e != nil { return }
+					__e = __c.Any(i18n.T(l, "home.continue")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("p"); if __e != nil { return }

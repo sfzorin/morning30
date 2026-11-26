@@ -295,3 +295,24 @@ func TestFigures(t *testing.T) {
 		}
 	}
 }
+
+// Switching programs makes an interrupted workout stale, even after coming
+// back to the same program; without a switch it can still be resumed.
+func TestSwitchMakesInterruptedWorkoutStale(t *testing.T) {
+	d := openAppDB(t)
+	u, _ := d.CreateUser("resume@example.com", "h", "en", "R")
+	_ = SelectReady(u.ID, "plank30", "en")
+	paused := WorkoutProgramKey(u.ID)
+	if WorkoutProgramKey(u.ID) != paused {
+		t.Fatal("the key must be stable without a switch")
+	}
+	_ = SelectReady(u.ID, "abs30", "en")
+	_ = SelectReady(u.ID, "plank30", "en")
+	if WorkoutProgramKey(u.ID) == paused {
+		t.Fatal("an interrupted workout survived a program switch")
+	}
+	fresh, _ := d.CreateUser("never@example.com", "h", "en", "N")
+	if d.ProgramEpoch(fresh.ID) != 0 {
+		t.Fatal("a new account starts at epoch 0")
+	}
+}

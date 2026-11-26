@@ -168,7 +168,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .day-num { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
 .day-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
 .cycle-done { color: var(--ok); font-size: 14px; margin-top: 12px; }
-.resume-workout { width: 100%; margin-top: 12px; }
+.resume-workout { width: 100%; }
 .home-save-status { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
 
 .streak-row {
@@ -849,6 +849,6 @@ body:has(.player) {
 .add-link .ic, .btn .ic { width: 18px; height: 18px; vertical-align: -3px; }
 .star .ic, .icon-mini .ic { width: 20px; height: 20px; }
 .pill .ic { width: 14px; height: 14px; vertical-align: -2px; }
-.day-list-link { display: inline-block; color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; margin: 6px 0 2px; }
+.day-count { color: var(--accent); font-weight: 600; text-decoration: none; padding: 6px 2px; margin: -6px -2px; }
 /* The whole settings row is the link, not just its text. */
 .row-link { padding: 14px 0; margin: -14px 0; min-height: 44px; }
