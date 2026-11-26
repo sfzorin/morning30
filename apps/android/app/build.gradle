@@ -1,0 +1,61 @@
+plugins {
+    id "com.android.application"
+}
+
+// Release signing comes from keystore.properties (never committed):
+//   storeFile=/path/to/upload.jks
+//   storePassword=...
+//   keyAlias=upload
+//   keyPassword=...
+def keystoreProps = new Properties()
+def keystoreFile = rootProject.file("keystore.properties")
+if (keystoreFile.exists()) {
+    keystoreFile.withInputStream { keystoreProps.load(it) }
+}
+
+android {
+    namespace "com.morning30.app"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.morning30.app"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            if (keystoreFile.exists()) {
+                storeFile file(keystoreProps["storeFile"])
+                storePassword keystoreProps["storePassword"]
+                keyAlias keystoreProps["keyAlias"]
+                keyPassword keystoreProps["keyPassword"]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            // The emulator reaches the local dev server on the host at 10.0.2.2.
+            resValue "string", "launch_url", "http://10.0.2.2:8080/"
+        }
+        release {
+            resValue "string", "launch_url", "https://morning30.com/"
+            minifyEnabled false
+            if (keystoreFile.exists()) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation "com.google.androidbrowserhelper:androidbrowserhelper:2.5.0"
+}

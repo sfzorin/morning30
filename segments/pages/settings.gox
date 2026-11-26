@@ -1,6 +1,7 @@
 package pages
 
 import (
+	"fmt"
 	"context"
 	"encoding/json"
 	"strconv"
@@ -88,7 +89,7 @@ elem (s settingsPage) Main() {
 		cycleNo := app.CurrentPosition(s.sess.UserID)/content.TotalDays + 1
 		dayCount := len(app.UserWorkout(s.sess.UserID, curDay).Items)
 		curSex := app.DB.GetSex(s.sess.UserID)
-		confirmReset := doors.NewSource(false)
+		confirm := doors.NewSource("")
 		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
 		poseList, _ := app.DB.ListPoses()
 		if poseList == nil {
@@ -443,7 +444,18 @@ elem (s settingsPage) Main() {
 							<option value="g" selected=func { return curSex == "g" }>~(i18n.T(l, "sex.girl"))</option>
 						</select>
 					</div>
+					~// Shown only inside the iPhone and Android apps (assets/app-bridge.js).
+					<div class="srow hidden" data-app-reminder>
+						<span>~(i18n.T(l, "settings.reminder"))</span>
+						<select class="lang-select compact" aria-label=(i18n.T(l, "settings.reminder"))>
+							<option value="">~(i18n.T(l, "settings.reminder_off"))</option>
+							~(for _, t := range reminderTimes() {
+								<option value=(t)>~(t)</option>
+							})
+						</select>
+					</div>
 				</div>
+				<script src=(assets.AppBridge) inline data:reminder=(reminderTexts(l))></script>
 				<h2 class="sgroup">~(i18n.T(l, "settings.group_profile"))</h2>
 				<div class="settings-card">
 					<div class="srow">
@@ -476,19 +488,25 @@ elem (s settingsPage) Main() {
 				</div>
 				<div class="settings-card reset-card">
 				<div class="srow save-row">
-					~(confirmReset.Bind(elem(c bool) {
-						~(if !c {
-							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-								confirmReset.Update(ctx, true)
-								return false
-							}} <button class="btn danger small" type="button">~(i18n.T(l, "settings.reset"))</button>
+					~(confirm.Bind(elem(c string) {
+						~(if c == "" {
+							<div class="danger-actions">
+								~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+									confirm.Update(ctx, "reset")
+									return false
+								}} <button class="btn danger small" type="button">~(i18n.T(l, "settings.reset"))</button>
+								~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+									confirm.Update(ctx, "delete")
+									return false
+								}} <button class="btn danger small" type="button">~(i18n.T(l, "settings.delete_account"))</button>
+							</div>
 						} else {
 							<div class="confirm-reset">
-								<span class="confirm-q">~(i18n.T(l, "settings.reset_confirm"))</span>
+								<span class="confirm-q">~(i18n.T(l, "settings."+c+"_confirm"))</span>
 								<div class="confirm-actions">
-									~>doors.AClick{On: s.reset} <button class="btn danger small" type="button">~(i18n.T(l, "settings.reset_yes"))</button>
+									~>doors.AClick{On: s.confirmed(c)} <button class="btn danger small" type="button">~(i18n.T(l, "settings."+c+"_yes"))</button>
 									~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-										confirmReset.Update(ctx, false)
+										confirm.Update(ctx, "")
 										return false
 									}} <button class="btn small" type="button">~(i18n.T(l, "settings.cancel"))</button>
 								</div>
@@ -998,6 +1016,36 @@ func (s settingsPage) issueMCP(src doors.Source[mcpTokState]) func(context.Conte
 }
 
 // reset clears all progress and returns to the home screen.
+// reminderTimes are the morning reminder choices: 05:00 to 11:00, every 15 minutes.
+func reminderTimes() []string {
+	var out []string
+	for m := 5 * 60; m <= 11*60; m += 15 {
+		out = append(out, fmt.Sprintf("%02d:%02d", m/60, m%60))
+	}
+	return out
+}
+
+// reminderTexts is what the phone shows in the reminder notification.
+func reminderTexts(l i18n.Lang) map[string]string {
+	return map[string]string{"title": i18n.T(l, "reminder.title"), "body": i18n.T(l, "reminder.body")}
+}
+
+// confirmed is the action behind the "yes" of a confirmation.
+func (s settingsPage) confirmed(what string) func(context.Context, doors.RequestPointer) bool {
+	if what == "delete" {
+		return s.deleteAccount
+	}
+	return s.reset
+}
+
+// deleteAccount removes the account with all its data and signs out.
+func (s settingsPage) deleteAccount(ctx context.Context, r doors.RequestPointer) bool {
+	if err := app.DB.DeleteUser(s.sess.UserID); err != nil {
+		return false
+	}
+	return logout(s.sess, s.auth, s.path)(ctx, r)
+}
+
 func (s settingsPage) reset(ctx context.Context, r doors.RequestPointer) bool {
 	_ = app.DB.ResetProgress(s.sess.UserID)
 	s.path.Update(ctx, path.Path{Page: path.Home})

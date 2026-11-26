@@ -26,6 +26,8 @@ var pageRests = content.Rests{Warmup: 10, Main: 20, Cooldown: 10}
 // Register adds the public course routes. Paths are listed per language so
 // they never overlap the app's own routes.
 func Register(mux *http.ServeMux) {
+	mux.HandleFunc("GET /privacy", servePrivacy)
+	mux.HandleFunc("GET /.well-known/assetlinks.json", serveAssetLinks)
 	mux.HandleFunc("GET /courses", func(w http.ResponseWriter, r *http.Request) {
 		l := i18n.FromAcceptLanguage(r.Header.Get("Accept-Language"))
 		http.Redirect(w, r, IndexPath(string(l)), http.StatusFound)

@@ -67,6 +67,15 @@ func (d *DB) ConvertGuest(userID int64, email, passHash, name string) error {
 }
 
 // UserByID loads a user by primary key.
+// DeleteUser removes an account and, through ON DELETE CASCADE, everything
+// that belongs to it: sessions, activity, completions, feedback, selected and
+// saved programs. Custom exercises, settings and the agent token live on the
+// user row itself.
+func (d *DB) DeleteUser(id int64) error {
+	_, err := d.sql.Exec(`DELETE FROM users WHERE id = ?`, id)
+	return err
+}
+
 func (d *DB) UserByID(id int64) (User, error) {
 	row := d.sql.QueryRow(`SELECT `+userCols+` FROM users WHERE id = ?`, id)
 	return scanUser(row)

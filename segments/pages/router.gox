@@ -3,6 +3,7 @@
 package pages
 
 import (
+	"morning30/assets"
 	"morning30/internal/auth"
 	"morning30/internal/i18n"
 	"morning30/path"
@@ -25,6 +26,8 @@ elem (r Root) Main() {
 		}
 		~// lang and dir follow the session, so Arabic and Hebrew lay out right to left.
 		<div class="app-lang" lang=(i18n.BCP47(l)) dir=(i18n.Dir(l))>
+			~// Remembers that the page runs inside the Android or iPhone app, whatever page opens first.
+			<script src=(assets.AppBridge) inline></script>
 			~(if !s.Authorized {
 				~(r.publicRoutes(s))
 			} else {

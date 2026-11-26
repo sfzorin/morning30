@@ -125,3 +125,23 @@ func TestSitemapURLs(t *testing.T) {
 		}
 	}
 }
+
+func TestPrivacyAndAssetLinks(t *testing.T) {
+	mux := http.NewServeMux()
+	Register(mux)
+	for lang, want := range map[string]string{"ru": "Удалить аккаунт", "en": "Delete account", "ja": "Delete account"} {
+		rec := httptest.NewRecorder()
+		req := httptest.NewRequest("GET", "/privacy", nil)
+		req.Header.Set("Accept-Language", lang)
+		mux.ServeHTTP(rec, req)
+		if rec.Code != 200 || !strings.Contains(rec.Body.String(), want) {
+			t.Errorf("privacy %s: %d, missing %q", lang, rec.Code, want)
+		}
+	}
+	t.Setenv("ANDROID_CERT_SHA256", "AA:BB")
+	rec := httptest.NewRecorder()
+	mux.ServeHTTP(rec, httptest.NewRequest("GET", "/.well-known/assetlinks.json", nil))
+	if !strings.Contains(rec.Body.String(), `"package_name":"com.morning30.app"`) || !strings.Contains(rec.Body.String(), "AA:BB") {
+		t.Errorf("assetlinks: %s", rec.Body.String())
+	}
+}

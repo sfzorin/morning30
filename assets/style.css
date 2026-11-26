@@ -862,6 +862,7 @@ body:has(.player) {
 .settings-head h1 { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .change-program { display: block; text-align: center; margin-top: 14px; background: var(--card2); color: var(--fg); text-decoration: none; }
 .reset-card { margin-top: 14px; }
+.danger-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 /* ---- Right-to-left languages (Arabic, Hebrew) ---- */
 [dir="rtl"] .lang-select { background-position: left 13px center; }

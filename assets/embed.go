@@ -28,6 +28,11 @@ func PersistentPlayer() []byte {
 	return append(append([]byte{}, WorkoutState...), Player...)
 }
 
+// AppBridge connects the site to the iPhone and Android apps (reminder).
+//
+//go:embed app-bridge.js
+var AppBridge []byte
+
 //go:embed workout-home.js
 var workoutHome []byte
 
