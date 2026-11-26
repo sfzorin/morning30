@@ -261,6 +261,11 @@ Dockerfile           multi-stage container build
 | `AI_MODEL`          | `~deepseek/deepseek-flash-latest@deepseek` | `model@provider`. `~…-latest` follows the maker's newest model of that family by itself; `@provider` pins requests to the maker's own servers (no resellers). |
 | `AI_FALLBACK`       | `qwen/qwen3.8-flash@alibaba` | Used when the main model fails; `none` turns it off |
 
+On morning30.com these come from the deploy workflow: `AI_API_KEY` is a
+GitHub Actions **secret**, `AI_MODEL`, `AI_FALLBACK` and `ANDROID_CERT_SHA256`
+are repository **variables** (Settings → Secrets and variables → Actions);
+the next deploy picks them up.
+
 `go run ./cmd/coachbench model@provider …` runs real program edits against
 models and prints which passed, the cost per message and the time — use it
 before changing `AI_MODEL`.

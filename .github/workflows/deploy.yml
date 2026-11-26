@@ -38,6 +38,11 @@ jobs:
       - name: Build, restart, and verify
         env:
           COMMIT_SHA: ${{ github.sha }}
+          # The AI coach key lives only in GitHub secrets; the rest are plain variables.
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          AI_FALLBACK: ${{ vars.AI_FALLBACK }}
+          ANDROID_CERT_SHA256: ${{ vars.ANDROID_CERT_SHA256 }}
         run: |
           set -euo pipefail
           cd "$DEPLOY_PATH"

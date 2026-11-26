@@ -10,7 +10,7 @@ Shared with the site:
   app-only "Reminder" row in Settings and hands the chosen time to the phone.
 - Settings → Delete account — required by both stores; works everywhere.
 - `/privacy` — the privacy policy for the store listings.
-- `/.well-known/assetlinks.json` — set `ANDROID_CERT_SHA256` on the server.
+- `/.well-known/assetlinks.json` — set `ANDROID_CERT_SHA256` as a GitHub Actions variable (see the main README).
 - Finished workouts: `assets/player.js` fires `m30:workout` (start, end, program
   title, kind strength/stretch); `app-bridge.js` hands it to the phone once
   (workouts shorter than a minute are skipped), which writes it to Apple Health

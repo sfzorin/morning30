@@ -8,6 +8,11 @@ services:
     restart: unless-stopped
     environment:
       MORNING_DB: /data/morning.db
+      # From the deploy workflow (GitHub secrets / variables); empty = defaults.
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: ${AI_MODEL:-}
+      AI_FALLBACK: ${AI_FALLBACK:-}
+      ANDROID_CERT_SHA256: ${ANDROID_CERT_SHA256:-}
     expose:
       - "8080"
     volumes:
