@@ -255,3 +255,43 @@ func (r Resolved) contains(part Slot, days Days, id string) bool {
 	}
 	return false
 }
+
+// SetDose changes the dose of an exercise on the selected days, in every part
+// that holds it. value > 0 sets it; otherwise percent (e.g. 120 = +20 %)
+// scales the current dose. It returns how many occurrences changed.
+func SetDose(r Resolved, id string, days Days, value, percent int) (Resolved, int, error) {
+	if value <= 0 && percent <= 0 {
+		return r, 0, errors.New("give value or percent")
+	}
+	out := clone(r)
+	n := 0
+	for _, part := range []Slot{Warmup, Main, Cooldown} {
+		if !out.contains(part, days, id) {
+			continue
+		}
+		lists, err := out.lists(part, days)
+		if err != nil {
+			return r, 0, err
+		}
+		for _, l := range lists {
+			for i, it := range *l {
+				if it.ID != id {
+					continue
+				}
+				v := value
+				if v <= 0 {
+					v = (it.Value*percent + 50) / 100
+				}
+				(*l)[i].Value = max(1, min(v, 600))
+				n++
+			}
+		}
+	}
+	if n == 0 {
+		if _, err := days.indexes(len(r.Days)); err != nil {
+			return r, 0, err
+		}
+		return r, 0, ErrNotInProgram
+	}
+	return out, n, nil
+}

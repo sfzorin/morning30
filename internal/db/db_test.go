@@ -2,7 +2,6 @@ package db
 
 import (
 	"path/filepath"
-	"strings"
 	"testing"
 	"time"
 )
@@ -220,36 +219,6 @@ func TestListAndFindAccount(t *testing.T) {
 	}
 	if _, err := d.FindAccount("nobody"); err != ErrAccountNotFound {
 		t.Fatalf("missing: %v", err)
-	}
-}
-
-func TestMCPTokenIssueAndReissue(t *testing.T) {
-	d := openTest(t)
-	u, _ := d.CreateUser("tok@b.com", "h", "en", "Tok")
-	if d.HasMCPToken(u.ID) {
-		t.Fatal("new user already has a token")
-	}
-	a, err := d.IssueMCPToken(u.ID)
-	if err != nil || !strings.HasPrefix(a, "m30_") {
-		t.Fatalf("issue: %q %v", a, err)
-	}
-	if !d.HasMCPToken(u.ID) {
-		t.Fatal("hash not stored")
-	}
-	got, err := d.AccountByMCPToken(a)
-	if err != nil || got.ID != u.ID {
-		t.Fatalf("lookup: %+v %v", got, err)
-	}
-	b, err := d.IssueMCPToken(u.ID)
-	if err != nil || b == a {
-		t.Fatalf("reissue: %v same=%v", err, b == a)
-	}
-	if _, err := d.AccountByMCPToken(a); err != ErrAccountNotFound {
-		t.Fatal("old token still valid")
-	}
-	got, err = d.AccountByMCPToken(b)
-	if err != nil || got.ID != u.ID {
-		t.Fatalf("new token: %+v %v", got, err)
 	}
 }
 

@@ -17,14 +17,14 @@ const (
 	Editor
 	Program
 	SettingsExercises
-	SettingsAgent
 	About
 	Test
 	Fitness
+	Coach
 )
 
 // Path is the single path model. The Day field is populated for /day/:Day.
 type Path struct {
-	Page Page `path:"/ | /login | /register | /day/:Day | /settings | /library | /start | /today | /programs | /editor | /program | /settings/exercises | /settings/agent | /about | /test | /fitness"`
+	Page Page `path:"/ | /login | /register | /day/:Day | /settings | /library | /start | /today | /programs | /editor | /program | /settings/exercises | /about | /test | /fitness | /coach"`
 	Day  int
 }

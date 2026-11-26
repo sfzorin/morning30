@@ -426,3 +426,15 @@ func LangOf(userID int64) string {
 	}
 	return string(i18n.EN)
 }
+
+// SetDoseInCurrent changes an exercise's dose on the chosen days of the
+// current program: value sets it, percent scales it.
+func SetDoseInCurrent(userID int64, id string, days content.Days, value, percent int) (int, error) {
+	n := 0
+	err := EditCurrent(userID, func(r content.Resolved) (content.Resolved, error) {
+		out, changed, err := content.SetDose(r, strings.TrimSpace(id), days, value, percent)
+		n = changed
+		return out, err
+	})
+	return n, err
+}

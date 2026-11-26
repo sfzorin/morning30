@@ -72,8 +72,15 @@ small client-side workout engine.
   From there: today's exercises, the day-by-day editor (reorder, add, remove and
   retime exercises; all three phases stay nonempty), the library and the JSON
   download. General settings keep only what belongs to the person — voice,
-  figure, language, name, account — plus "More": your own exercises and JSON,
-  and the agent token. Every setting is saved as soon as it changes.
+  figure, language, name, account. Every setting is saved as soon as it changes.
+- **AI coach.** On the program page, "AI coach" opens a chat that edits the
+  current program — and only it: add, replace and remove exercises on chosen
+  days, change doses, rounds, difficulty and rests, rename the program, and
+  create new exercises in the person's library. Each request carries the
+  program day by day, the program rules and the "About you" answers, so nobody
+  has to explain where they are. The list of changes under a reply is computed
+  by the server from the program before and after, and **Undo** brings the
+  program back. Up to 40 messages per account per day.
 - **Exercise documents.** Besides the original built-ins, exercises can be
   complete JSON documents (definition plus name, technique, mistakes,
   breathing, safety and voice cues in every language) in
@@ -83,10 +90,9 @@ small client-side workout engine.
   Custom exercises overlay the built-in library. Each exercise can use one
   catalog still (static) or two (they swap once a second). Legacy built-in
   PNGs remain the fallback until photos are assigned.
-- **MCP.** Agents write exercises and the 30-day cycle straight into the user's
-  SQLite row (`custom_exercises` / `program_json`). Same data the editor and
-  file import use. Progress is never reset. They also upload stills into the
-  shared pose catalog and pick 1–2 photos per exercise.
+- **Local MCP for the operator.** `cmd/morning-mcp` (stdio, on the machine with
+  the database file) edits any account's exercises and program and uploads pose
+  stills. There is no network API and no per-user tokens.
 - **Universal difficulty.** A per-user level from **−3 to +3** scales every
   program by ±10% per step (reps and seconds only; breaths and warm-up/cool-down
   stay fixed). Prescribed programs can lock their doses with `fixedDifficulty`.
@@ -197,7 +203,8 @@ internal/
   db/                SQLite: users, sessions, activity, exercise library, pose stills
   auth/              bcrypt, session tokens, the shared Session value
   app/               process-wide deps (DB) + per-user program/workout resolution
-  mcp/               stdio JSON-RPC + optional Bearer HTTP /api
+  mcp/               stdio JSON-RPC tools for cmd/morning-mcp
+  coach/             the AI coach: model client, scoped tools, context, change list
 cmd/morning-mcp      stdio MCP server (same SQLite file as the app)
 segments/pages/      router, auth, home, workout, settings, shared header
 components/           shared UI (e.g. 404)
@@ -249,88 +256,39 @@ Dockerfile           multi-stage container build
 | Env                 | Default      | Description |
 |---------------------|--------------|-------------|
 | `MORNING_DB`        | `morning.db` | SQLite database file path (the container points this at the persistent `/data` volume) |
-| `MORNING_MCP_TOKEN` | *(unset)*    | Optional **admin** Bearer token: list/edit any account. Per-user tokens from Settings work without this. |
+| `AI_API_KEY`        | *(unset)*    | Key of an OpenAI-compatible chat API (OpenRouter). Without it the AI coach says it is unavailable. Keep it in the server's environment or a local `.env` (git-ignored), never in the repository. |
+| `AI_BASE_URL`       | `https://openrouter.ai/api/v1` | The chat API |
+| `AI_MODEL`          | `~deepseek/deepseek-flash-latest@deepseek` | `model@provider`. `~…-latest` follows the maker's newest model of that family by itself; `@provider` pins requests to the maker's own servers (no resellers). |
+| `AI_FALLBACK`       | `qwen/qwen3.8-flash@alibaba` | Used when the main model fails; `none` turns it off |
+
+`go run ./cmd/coachbench model@provider …` runs real program edits against
+models and prints which passed, the cost per message and the time — use it
+before changing `AI_MODEL`.
 
 The server listens on `:8080`.
 
 ---
 
-## MCP (agents)
+## MCP (operator, local only)
 
-Agents edit **this user's** overlay for exercises and the 30-day cycle, plus a
-**shared pose catalog** (stills in SQLite that every account can pick from):
-
-- `custom_exercises` — per-exercise JSON (same document the settings download/upload uses)
-- `program_json` — the 30-day cycle (same shape the in-app editor saves)
-
-stdio (local Cursor / Claude against the same DB file):
+`cmd/morning-mcp` is a stdio MCP server for the operator's own tools (Cursor,
+Claude Code) on the machine that holds the database file. It is not reachable
+over the network; inside the app, people edit programs with the AI coach.
 
 ```bash
 MORNING_DB=morning.db go run ./cmd/morning-mcp
 ```
 
-Every feature of the app is available to agents. Each operation exists both as
-a stdio tool and as an HTTP endpoint with the account's token (`me` = the
-token's account):
-
-| Tool | HTTP | What it does |
-|---|---|---|
-| `list_programs` | `GET /api/programs` | catalog: key, category, titles and descriptions in 7 languages, tags (jumps, equipment), minutes |
-| `get_ready_program` | `GET /api/programs/{key}` | one ready program with its 30-day plan |
-| `list_selected` | `GET /api/accounts/me/selected` | selected programs: id, name, source key, own day, current, edited |
-| `select_program` | `POST /api/accounts/me/select` | switch by catalog `key` or selected `id`; nothing is lost |
-| `star_program` | `POST /api/accounts/me/selected` | add a catalog program without switching |
-| `unselect_program` | `DELETE /api/accounts/me/selected/{id}` | remove; edited programs need `discardEdits=true` (409 otherwise) |
-| `rename_program` | `PUT /api/accounts/me/program/name` | rename the current program (plain text or `{"name"}`) |
-| `set_program` | `PUT /api/accounts/me/program` | save a new version of the current program (day stays) |
-| `import_program` | `POST /api/accounts/me/programs/import` | add a program as a new selected one, at day 1 |
-| `restore_demo` | `POST /api/accounts/me/restore-demo` | switch to the morning workout |
-| `get_day` | `GET /api/accounts/me/day[/{n}]` | a day's exercises with the doses the user will do |
-| `add_exercise` | `POST /api/accounts/me/program/exercises` | `exercise`, `part`, `days`, `value` |
-| `replace_exercise` | `POST /api/accounts/me/program/replace` | `from`, `to`, `days`; the dose carries over |
-| `remove_exercise` | `POST /api/accounts/me/program/remove` | `exercise`, optional `part`, `days` |
-| `list_exercises` | `GET /api/accounts/me/library` | library with `group`, `query`, `noJumps` filters |
-| `similar_exercises` | `GET /api/accounts/me/exercises/{id}/similar` | easier, similar and harder replacements |
-| `get_settings` / `set_settings` | `GET` / `PATCH /api/accounts/me/settings` | name, lang, rests, voiceMode, figure (`m f b g`), level |
-
-`days` is `"today"`, `"all"` (default), a day number or a list of day numbers.
-Also: `list_accounts`, `get_program` (`GET /api/accounts/me/program`),
-`list_custom_exercises`, `get_exercise`, `put_exercise`, `list_figures`,
-`list_poses`, `put_pose`, `set_exercise_poses`. `account` is a user id, email,
-or unique display name. Earlier names keep working: `list_courses`,
-`get_course`, `use_course`, `list_saved_programs`, `restore_saved_program`
-(and `/api/courses`). Nothing an agent does resets the streak; a program's day
-changes only when switching to a program with its own day.
-`put_exercise` may set `poses` to 1–2 ids from `list_poses` (`svg` stays the
-legacy figure fallback). `put_pose` uploads a still (base64 png/jpeg/webp) for a figure `sex`: m, f, b
-or g.
-`set_exercise_poses` assigns those stills on a global library exercise.
-
-HTTP is always on `/api/*`. Issue a token in **Settings → MCP token** (shown once;
-**Reissue** invalidates the old one). That Bearer is scoped to the account:
-
-```bash
-curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/accounts
-curl -H "Authorization: Bearer m30_…" \
-  -X PUT --data-binary @P08.json \
-  http://localhost:8080/api/accounts/me/exercises/P08
-curl -H "Authorization: Bearer m30_…" http://localhost:8080/api/programs
-curl -H "Authorization: Bearer m30_…" \
-  -X POST --data '{"key":"plank30"}' http://localhost:8080/api/accounts/me/select
-curl -H "Authorization: Bearer m30_…" \
-  -X POST --data '{"exercise":"C07","part":"main","days":"today","value":25}' \
-  http://localhost:8080/api/accounts/me/program/exercises
-curl -H "Authorization: Bearer m30_…" \
-  -X PUT --data 'My morning plank' \
-  http://localhost:8080/api/accounts/me/program/name
-curl -H "Authorization: Bearer m30_…" \
-  -H "Content-Type: image/png" \
-  --data-binary @plank-high.png \
-  "http://localhost:8080/api/poses/plank-high?sex=m&kind=plank&label=High%20plank"
-```
-
-`MORNING_MCP_TOKEN` is an optional operator override that can still address any
-account by id/email/name.
+Tools: `list_accounts`, `list_programs`, `get_ready_program`, `list_selected`,
+`select_program`, `star_program`, `unselect_program`, `rename_program`,
+`get_program`, `set_program`, `import_program`, `restore_demo`, `get_day`,
+`add_exercise`, `replace_exercise`, `remove_exercise`, `list_exercises`,
+`similar_exercises`, `get_settings`, `set_settings`, `list_custom_exercises`,
+`get_exercise`, `put_exercise`, `list_figures`, `list_poses`, `put_pose`,
+`set_exercise_poses`. `account` is a user id, email or unique display name;
+`days` is `"today"`, `"all"` (default), a day number or a list. Nothing changes
+the streak; `put_pose` uploads a still (base64 png/jpeg/webp) for a figure
+`m`, `f`, `b` or `g`.
 
 ---
 

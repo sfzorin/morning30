@@ -16,7 +16,6 @@ import (
 	"morning30/internal/db"
 	"morning30/internal/i18n"
 	"morning30/internal/landing"
-	"morning30/internal/mcp"
 
 	"github.com/doors-dev/doors"
 	"github.com/doors-dev/gox"
@@ -156,7 +155,6 @@ func main() {
 	mux.Handle("GET /poses/{id}", http.HandlerFunc(app.ServePose))
 	mux.HandleFunc("/api/workouts/complete", app.CompleteWorkoutHTTP)
 	mux.HandleFunc("/api/fitness/test", app.FitnessTestHTTP)
-	mux.Handle("/api/", mcp.Handler(strings.TrimSpace(os.Getenv("MORNING_MCP_TOKEN"))))
 
 	mux.Handle("/", a)
 

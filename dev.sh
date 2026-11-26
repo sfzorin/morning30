@@ -7,6 +7,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export PATH="$ROOT/.tooling/bin:/opt/homebrew/bin:$PATH"
 export GOFLAGS=-mod=mod
 cd "$ROOT"
+# Local secrets (AI_API_KEY …) live in .env, which git ignores.
+if [ -f .env ]; then set -a; . ./.env; set +a; fi
 
 gen() {
   # Regenerate all .x.go from .gox (gox gen recurses from the given dir).

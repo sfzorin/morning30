@@ -65,3 +65,8 @@ func Static() fs.FS {
 	}
 	return sub
 }
+
+// CoachScroll keeps the AI coach conversation scrolled to its newest message.
+//
+//go:embed coach.js
+var CoachScroll []byte

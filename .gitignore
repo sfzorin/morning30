@@ -28,3 +28,8 @@ body/web/models/*.fbx
 
 # Python tooling venv for scripts/
 .venv/
+
+# Local secrets (API keys for the AI coach etc.) — never commit
+.env
+.env.*
+.codex-ssh

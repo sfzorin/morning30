@@ -45,18 +45,13 @@ type settingsPage struct {
 	sess auth.Session
 	auth doors.Source[auth.Session]
 	path doors.Source[path.Path]
-	mode string // "" settings, "program" the program page, "editor", "exercises", "agent"
+	mode string // "" settings, "program" the program page, "editor", "exercises"
 }
 
 type posePickForm struct {
 	ID    string `form:"pose_ex"`
 	PoseA string `form:"pose_a"`
 	PoseB string `form:"pose_b"`
-}
-
-type mcpTokState struct {
-	Has   bool
-	Fresh string // plaintext, only right after issue/reissue
 }
 
 elem (s settingsPage) Main() {
@@ -90,7 +85,6 @@ elem (s settingsPage) Main() {
 		dayCount := len(app.UserWorkout(s.sess.UserID, curDay).Items)
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirm := doors.NewSource("")
-		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
 		poseList, _ := app.DB.ListPoses()
 		if poseList == nil {
 			poseList = []db.Pose{}
@@ -169,6 +163,9 @@ elem (s settingsPage) Main() {
 				</div>
 				<h2 class="sgroup">~(i18n.T(l, "program.exercises"))</h2>
 				<div class="settings-card">
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Coach}} <a class="row-link"><span>~(i18n.T(l, "coach.title"))</span><span class="row-value">~(icon("next", false))</span></a>
+					</div>
 					<div class="srow">
 						~>doors.ALink{Model: path.Path{Page: path.Today}} <a class="row-link"><span>~(i18n.T(l, "program.day_list"))</span><span class="row-value">~(dayCount) ~(icon("next", false))</span></a>
 					</div>
@@ -377,33 +374,6 @@ elem (s settingsPage) Main() {
 				</form>
 				<script src=(assets.ExUpload) inline></script>
 
-				</div>
-			} else if s.mode == "agent" {
-				<div class="settings-head">
-					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.close"))>~(icon("back", false))</a>
-					<h1>~(i18n.T(l, "settings.agent_token"))</h1>
-				</div>
-				<div class="settings-card">
-				~(mcpSrc.Bind(elem(st mcpTokState) {
-					~{
-						mcpBtn := i18n.T(l, "settings.mcp_create")
-						if st.Has {
-							mcpBtn = i18n.T(l, "settings.mcp_reissue")
-						}
-					}
-					<div class="srow col">
-						<span>~(i18n.T(l, "settings.mcp"))</span>
-						~(if st.Fresh != "" {
-							<input class="text-input compact mcp-token" type="text" readonly value=(st.Fresh)>
-							<p class="mcp-hint">~(i18n.T(l, "settings.mcp_copy"))</p>
-						} else if st.Has {
-							<span>~(i18n.T(l, "settings.mcp_active"))</span>
-						} else {
-							<span>~(i18n.T(l, "settings.mcp_none"))</span>
-						})
-						~>doors.AClick{On: s.issueMCP(mcpSrc)} <button class="btn small" type="button">~(mcpBtn)</button>
-					</div>
-				}))
 				</div>
 			} else {
 				<div class="settings-head">
@@ -990,18 +960,6 @@ func (s settingsPage) importExercise(ctx context.Context, r doors.RequestRawForm
 
 
 
-// issueMCP creates or replaces this account's MCP bearer token and shows it once.
-func (s settingsPage) issueMCP(src doors.Source[mcpTokState]) func(context.Context, doors.RequestPointer) bool {
-	return func(ctx context.Context, r doors.RequestPointer) bool {
-		tok, err := app.DB.IssueMCPToken(s.sess.UserID)
-		if err != nil || tok == "" {
-			return false
-		}
-		src.Update(ctx, mcpTokState{Has: true, Fresh: tok})
-		return false
-	}
-}
-
 // reset clears all progress and returns to the home screen.
 // reminderTimes are the morning reminder choices: 05:00 to 11:00, every 15 minutes.
 func reminderTimes() []string {
@@ -1110,8 +1068,6 @@ func pageTitle(mode string) string {
 		return "program.editor"
 	case "exercises":
 		return "settings.custom_exercises"
-	case "agent":
-		return "settings.agent_token"
 	}
 	return "settings.title"
 }

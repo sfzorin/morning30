@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
-	"net/http"
 	"strconv"
 	"strings"
 
@@ -14,8 +12,8 @@ import (
 	"morning30/internal/db"
 )
 
-// Operations shared by the stdio MCP server and the Bearer HTTP API: each one
-// is described once, so a tool and its endpoint can never drift apart.
+// Operations of the local stdio MCP server (cmd/morning-mcp). There is no
+// network API: inside the app, programs are edited by the built-in AI coach.
 
 var accountSchema = map[string]any{"type": "string", "description": "User id, email, or unique display name"}
 
@@ -31,8 +29,6 @@ type op struct {
 	Props   map[string]any // input properties besides "account"
 	Require []string       // required inputs besides "account"
 	Account bool           // works on one account
-	Method  string         // HTTP method ("" = stdio only)
-	Paths   []string       // HTTP paths
 	Run     func(acc db.Account, a args) (any, error)
 }
 
@@ -220,12 +216,12 @@ func programRaw(a args) (string, error) {
 
 var ops = []op{
 	{
-		Name: "list_programs", Method: "GET", Paths: []string{"/api/programs", "/api/courses"},
+		Name: "list_programs",
 		Desc: "List every ready program of the catalog: key, category (start, strength, weightloss, stretch, backbalance, kids, sport), titles and one-line descriptions in every supported language, tags (jumps, equipment) and minutes per session on day 1 and on the peak day.",
 		Run:  func(db.Account, args) (any, error) { return catalogList(), nil },
 	},
 	{
-		Name: "get_ready_program", Method: "GET", Paths: []string{"/api/programs/{key}", "/api/courses/{key}"},
+		Name: "get_ready_program",
 		Desc:  "Get one ready program with its full 30-day plan (what the program preview shows).",
 		Props: map[string]any{"key": map[string]any{"type": "string", "description": "Key from list_programs"}}, Require: []string{"key"},
 		Run: func(_ db.Account, a args) (any, error) {
@@ -237,12 +233,12 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "list_selected", Account: true, Method: "GET", Paths: []string{"/api/accounts/{who}/selected"},
+		Name: "list_selected", Account: true,
 		Desc: "List the account's selected programs: id, name, source catalog key (empty for the user's own), its own next day, whether it is current, and whether it holds the user's edits.",
 		Run:  func(acc db.Account, _ args) (any, error) { return app.SelectedPrograms(acc.ID), nil },
 	},
 	{
-		Name: "select_program", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/select"},
+		Name: "select_program", Account: true,
 		Desc: "Switch the account to a program: a catalog key (it is added to the selected programs; if the user already has it, their own version and day come back) or the id of a selected program. Each program keeps its own day; the streak is common. Nothing is lost.",
 		Props: map[string]any{
 			"key":  map[string]any{"type": "string", "description": "Catalog key from list_programs"},
@@ -252,7 +248,7 @@ var ops = []op{
 		Run: selectProgram,
 	},
 	{
-		Name: "star_program", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/selected"},
+		Name: "star_program", Account: true,
 		Desc:  "Add a catalog program to the selected programs without switching to it (the star in the catalog).",
 		Props: map[string]any{"key": map[string]any{"type": "string"}, "lang": map[string]any{"type": "string"}}, Require: []string{"key"},
 		Run: func(acc db.Account, a args) (any, error) {
@@ -263,7 +259,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "unselect_program", Account: true, Method: "DELETE", Paths: []string{"/api/accounts/{who}/selected/{id}"},
+		Name: "unselect_program", Account: true,
 		Desc: "Remove a program from the selected programs, by id or catalog key. A program holding the user's edits needs discardEdits=true, because the edits cannot be brought back. Removing the current program switches to another selected one, or to the morning workout.",
 		Props: map[string]any{
 			"id":           map[string]any{"type": "integer"},
@@ -281,7 +277,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "rename_program", Account: true, Method: "PUT", Paths: []string{"/api/accounts/{who}/program/name"},
+		Name: "rename_program", Account: true,
 		Desc:  "Rename the current program (up to 40 characters). Exercises, day and streak are unchanged.",
 		Props: map[string]any{"name": map[string]any{"type": "string"}}, Require: []string{"name"},
 		Run: func(acc db.Account, a args) (any, error) {
@@ -289,7 +285,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "set_program", Account: true, Method: "PUT", Paths: []string{"/api/accounts/{who}/program"},
+		Name: "set_program", Account: true,
 		Desc:  "Save a new version of the CURRENT program from a full 30-day program JSON (get_program, change, set_program). The day and streak stay. To add a different program instead, use import_program.",
 		Props: map[string]any{"program": map[string]any{"description": "Resolved program object or JSON string"}}, Require: []string{"program"},
 		Run: func(acc db.Account, a args) (any, error) {
@@ -301,7 +297,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "import_program", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/programs/import"},
+		Name: "import_program", Account: true,
 		Desc:  "Add a program from JSON as a new selected program and switch to it at day 1. Every program the user had stays selected.",
 		Props: map[string]any{"program": map[string]any{"description": "Resolved program object or JSON string"}}, Require: []string{"program"},
 		Run: func(acc db.Account, a args) (any, error) {
@@ -313,12 +309,12 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "restore_demo", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/restore-demo"},
+		Name: "restore_demo", Account: true,
 		Desc: "Switch to the morning workout. Every selected program, with its edits and day, stays.",
 		Run:  func(acc db.Account, _ args) (any, error) { return then(acc.ID, app.RestoreDemo(acc.ID)) },
 	},
 	{
-		Name: "get_day", Account: true, Method: "GET", Paths: []string{"/api/accounts/{who}/day", "/api/accounts/{who}/day/{day}"},
+		Name: "get_day", Account: true,
 		Desc:  "The exercises of a day of the current program with the doses the user will do (warm-up, the main part listed once, cool-down). Without day: the user's next day.",
 		Props: map[string]any{"day": map[string]any{"type": "integer", "description": "1–30"}, "lang": map[string]any{"type": "string"}},
 		Run: func(acc db.Account, a args) (any, error) {
@@ -326,7 +322,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "add_exercise", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/program/exercises"},
+		Name: "add_exercise", Account: true,
 		Desc: "Add an exercise to a part of the current program on the chosen days (the library's \"+\"). value is reps, seconds or breaths for the exercise's unit; omitted uses a sensible default.",
 		Props: map[string]any{
 			"exercise": map[string]any{"type": "string", "description": "Exercise id from list_exercises"},
@@ -346,7 +342,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "replace_exercise", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/program/replace"},
+		Name: "replace_exercise", Account: true,
 		Desc: "Replace an exercise with another on the chosen days of the current program; the dose carries over (converted if the unit differs). See similar_exercises for easier, similar and harder options.",
 		Props: map[string]any{
 			"from": map[string]any{"type": "string"}, "to": map[string]any{"type": "string"}, "days": daysSchema,
@@ -362,7 +358,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "remove_exercise", Account: true, Method: "POST", Paths: []string{"/api/accounts/{who}/program/remove"},
+		Name: "remove_exercise", Account: true,
 		Desc: "Remove an exercise from the chosen days of the current program (part optional: every part). A part of a day is never left empty.",
 		Props: map[string]any{
 			"exercise": map[string]any{"type": "string"}, "part": partSchema, "days": daysSchema,
@@ -386,7 +382,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "list_exercises", Account: true, Method: "GET", Paths: []string{"/api/accounts/{who}/library"},
+		Name: "list_exercises", Account: true,
 		Desc: "The exercise library this account can use (built-in plus custom): id, name, group (warmup, core, push, back, arms, legs, cardio, stretch, dumbbell, custom), part of the day, unit, per side, difficulty 1–5, jumps, equipment.",
 		Props: map[string]any{
 			"group": map[string]any{"type": "string"}, "query": map[string]any{"type": "string", "description": "Part of a name or id"},
@@ -401,7 +397,7 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "similar_exercises", Account: true, Method: "GET", Paths: []string{"/api/accounts/{who}/exercises/{id}/similar"},
+		Name: "similar_exercises", Account: true,
 		Desc:  "Exercises that can replace one: same group and part of the day, split into easier, same and harder.",
 		Props: map[string]any{"id": map[string]any{"type": "string"}, "lang": map[string]any{"type": "string"}}, Require: []string{"id"},
 		Run: func(acc db.Account, a args) (any, error) {
@@ -409,12 +405,12 @@ var ops = []op{
 		},
 	},
 	{
-		Name: "get_settings", Account: true, Method: "GET", Paths: []string{"/api/accounts/{who}/settings"},
+		Name: "get_settings", Account: true,
 		Desc: "The account's settings: name, lang, the three rests in seconds, voiceMode, figure (m man, f woman, b boy, g girl), difficulty level −3..+3 and main rounds 1..10.",
 		Run:  func(acc db.Account, _ args) (any, error) { return app.GetSettings(acc.ID) },
 	},
 	{
-		Name: "set_settings", Account: true, Method: "PATCH", Paths: []string{"/api/accounts/{who}/settings"},
+		Name: "set_settings", Account: true,
 		Desc: "Change only the given settings. Rests: warm-up and cool-down 0–40 s, main 5–40 s. voiceMode off|min|normal|detailed. figure m|f|b|g. level −3..+3. rounds 1..10 (how many times the main part repeats, for every program).",
 		Props: map[string]any{
 			"name": map[string]any{"type": "string"}, "lang": map[string]any{"type": "string"},
@@ -513,96 +509,4 @@ func (o op) callStdio(raw json.RawMessage) (any, error) {
 		}
 	}
 	return o.Run(acc, a)
-}
-
-// registerOps adds every operation's HTTP routes to the API mux.
-func registerOps(mux *http.ServeMux) {
-	for _, o := range ops {
-		if o.Method == "" {
-			continue
-		}
-		o := o
-		for _, path := range o.Paths {
-			path := path
-			mux.HandleFunc(o.Method+" "+path, func(w http.ResponseWriter, r *http.Request) {
-				var acc db.Account
-				if o.Account {
-					var ok bool
-					if acc, ok = lookupAccount(w, r); !ok {
-						return
-					}
-				}
-				a, err := httpArgs(r, path)
-				if err != nil {
-					writeErr(w, http.StatusBadRequest, err)
-					return
-				}
-				v, err := o.Run(acc, a)
-				if err != nil {
-					writeErr(w, statusFor(err), err)
-					return
-				}
-				writeJSON(w, v)
-			})
-		}
-	}
-}
-
-// httpArgs merges a JSON body, path values and query parameters. A body that
-// is not a JSON object is the program (set/import) or the name (rename).
-func httpArgs(r *http.Request, path string) (args, error) {
-	body, err := io.ReadAll(io.LimitReader(r.Body, 1<<20))
-	if err != nil {
-		return nil, err
-	}
-	a := args{}
-	trimmed := strings.TrimSpace(string(body))
-	switch {
-	case strings.HasPrefix(trimmed, "{") && isOpBody(trimmed):
-		if a, err = parseArgs(body); err != nil {
-			return nil, err
-		}
-	case strings.HasPrefix(trimmed, "{"):
-		a["program"] = trimmed // a bare program document
-	case trimmed != "":
-		a["name"] = trimmed // a plain-text name
-	}
-	for _, seg := range strings.Split(path, "/") {
-		if strings.HasPrefix(seg, "{") && seg != "{who}" {
-			k := strings.Trim(seg, "{}")
-			a[k] = r.PathValue(k)
-		}
-	}
-	for k, v := range r.URL.Query() {
-		if len(v) > 0 {
-			a[k] = v[0]
-		}
-	}
-	if _, ok := a["_self"]; !ok {
-		self, _ := json.Marshal(a)
-		a["_self"] = json.RawMessage(self)
-	}
-	return a, nil
-}
-
-// isOpBody tells an operation's own JSON body ({"name": …}, {"exercise": …})
-// from a bare program document, whose "days" is a list of day objects.
-func isOpBody(s string) bool {
-	var probe map[string]json.RawMessage
-	if json.Unmarshal([]byte(s), &probe) != nil {
-		return false
-	}
-	days := strings.TrimSpace(string(probe["days"]))
-	return !(strings.HasPrefix(days, "[") && strings.HasPrefix(strings.TrimSpace(strings.TrimPrefix(days, "[")), "{"))
-}
-
-func statusFor(err error) int {
-	switch {
-	case errors.Is(err, app.ErrUnknownCourse), errors.Is(err, app.ErrUnknownExercise),
-		errors.Is(err, db.ErrSelectedNotFound), errors.Is(err, content.ErrNotInProgram):
-		return http.StatusNotFound
-	case errors.Is(err, app.ErrHasEdits):
-		return http.StatusConflict
-	}
-	return http.StatusBadRequest
 }

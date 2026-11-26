@@ -895,6 +895,37 @@ body:has(.player) {
 .fit-plan-meta { color: var(--muted); font-size: 14px; margin-top: 4px !important; }
 .fit-row > span:first-child { color: var(--muted); font-size: 14px; }
 .fit-row .row-value { display: inline-flex; align-items: center; gap: 6px; color: var(--fg); }
+
+/* ---- AI coach ---- */
+.coach { display: flex; flex-direction: column; min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom)); padding-bottom: 0; }
+.coach .lib-head h1 { margin: 0; }
+.coach-sub { color: var(--muted); font-size: 14px; margin: 2px 0 0; }
+.coach-thread { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; padding: 16px 0; }
+.coach-lead { color: var(--muted); margin: 0; }
+.coach-examples { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-btn { border: 1px solid var(--line); background: none; color: var(--fg); border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 14px; cursor: pointer; }
+.bubble { max-width: 86%; padding: 10px 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.bubble p { margin: 0; }
+.bubble.me { align-self: flex-end; background: var(--accent); color: #1f1300; border-radius: 16px 16px 4px 16px; }
+.bubble.ai { align-self: flex-start; background: var(--card); border-radius: 16px 16px 16px 4px; }
+[dir="rtl"] .bubble.me { border-radius: 16px 16px 16px 4px; }
+[dir="rtl"] .bubble.ai { border-radius: 16px 16px 4px 16px; }
+.coach-changes { list-style: none; margin: 8px 0 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); font-size: 14px; display: grid; gap: 4px; }
+.coach-changes.undone { opacity: .5; text-decoration: line-through; }
+.coach-changes .muted { color: var(--muted); }
+.coach-changes .ic { width: 14px; height: 14px; vertical-align: -2px; color: var(--muted); margin: 0 4px; }
+[dir="rtl"] .ic-to { transform: scaleX(-1); }
+.coach-undo { background: none; border: 0; padding: 6px 0 0; color: var(--muted); text-decoration: underline; font: inherit; font-size: 14px; cursor: pointer; }
+.coach-undone { color: var(--muted); font-size: 14px; margin-top: 6px !important; }
+.bubble.typing { display: inline-flex; gap: 4px; padding: 14px; }
+.bubble.typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: coach-dot 1s infinite ease-in-out; }
+.bubble.typing span:nth-child(2) { animation-delay: .15s; }
+.bubble.typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes coach-dot { 0%, 80%, 100% { opacity: .3; } 40% { opacity: 1; } }
+.coach-input { position: sticky; bottom: 0; display: flex; gap: 8px; align-items: center; padding: 10px 0; background: var(--bg); }
+.coach-input .text-input { flex: 1; border-radius: 999px; padding: 12px 16px; margin: 0; }
+.coach-send { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%; border: 0; background: var(--accent); color: #1f1300; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.coach-send .ic { width: 20px; height: 20px; }
 /* Day 30: the fitness test again (workout.gox done screen). */
 .done-start { color: var(--muted); font-size: 15px; margin-top: 6px; }
 .retest { margin-top: 12px; min-width: 60%; position: relative; z-index: 2; }

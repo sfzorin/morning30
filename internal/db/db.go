@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS users (
     custom_exercises TEXT NOT NULL DEFAULT '',   -- per-user custom exercise library (map id -> Doc JSON)
     level          INTEGER NOT NULL DEFAULT 0,   -- universal difficulty level (−3..+3)
     jokes        INTEGER NOT NULL DEFAULT 0,   -- silly rest-pause jokes
-    mcp_token_hash TEXT NOT NULL DEFAULT '', -- sha256 of the per-user MCP bearer token
+    mcp_token_hash TEXT NOT NULL DEFAULT '', -- unused: per-user API tokens were removed
     created_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -190,6 +190,20 @@ CREATE TABLE IF NOT EXISTS fitness_tests (
 );
 CREATE INDEX IF NOT EXISTS idx_fitness_tests_user ON fitness_tests(user_id);
 
+-- The AI coach conversation, one thread per selected program.
+CREATE TABLE IF NOT EXISTS coach_messages (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    program_id INTEGER NOT NULL DEFAULT 0,   -- selected_programs.id the thread belongs to
+    role       TEXT NOT NULL,                -- user | coach
+    text       TEXT NOT NULL,
+    changes    TEXT NOT NULL DEFAULT '',     -- JSON list of change lines shown under a reply
+    undo       TEXT NOT NULL DEFAULT '',     -- JSON snapshot taken before the reply's edits
+    undone     INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL                 -- UTC, RFC 3339
+);
+CREATE INDEX IF NOT EXISTS idx_coach_messages_user ON coach_messages(user_id, program_id);
+
 DROP TABLE IF EXISTS progress;
 `
 	if _, err := d.sql.Exec(schema); err != nil {
@@ -233,6 +247,8 @@ DROP TABLE IF EXISTS progress;
 			}
 		}
 	}
-	_, _ = d.sql.Exec(`CREATE UNIQUE INDEX IF NOT EXISTS idx_users_mcp_token ON users(mcp_token_hash) WHERE mcp_token_hash != ''`)
+	// Per-user API tokens were removed: forget any issued ones.
+	_, _ = d.sql.Exec(`DROP INDEX IF EXISTS idx_users_mcp_token`)
+	_, _ = d.sql.Exec(`UPDATE users SET mcp_token_hash = '' WHERE mcp_token_hash != ''`)
 	return nil
 }

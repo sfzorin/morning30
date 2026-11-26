@@ -19,6 +19,8 @@ elem icon(name string, filled bool) {
 			<path d="M5 12h14"></path><path d="M5 12l6 6"></path><path d="M5 12l6-6"></path>
 		} else if name == "next" {
 			<path d="M9 6l6 6-6 6"></path>
+		} else if name == "to" {
+			<path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path>
 		} else if name == "up" {
 			<path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path>
 		} else if name == "down" {
