@@ -304,6 +304,13 @@ elem (w workoutPage) Main() {
 	~{
 		l := i18n.Lang(w.sess.Lang)
 		payload := w.playerData()
+		// The last day of the 30-day course offers the fitness test again.
+		courseEnd := w.clampDay() == content.TotalDays
+		startFitness, _, hadTest, _ := app.LatestFitness(w.sess.UserID)
+		homeClass := "btn primary back-home"
+		if courseEnd {
+			homeClass = "btn back-home"
+		}
 	}
 	<title>~(i18n.T(l, "app.name"))</title>
 	<div class="player">
@@ -382,7 +389,13 @@ elem (w workoutPage) Main() {
 			<div class="done-title"></div>
 			<div class="done-enc"></div>
 			<div class="done-streak"></div>
-			<a class="btn primary back-home" href="/">~(i18n.T(l, "done.back_home"))</a>
+			~(if courseEnd && hadTest {
+				<div class="done-start">~(i18n.Tf(l, "fitness.start_index", startFitness.Index))</div>
+			})
+			~(if courseEnd {
+				<a class="btn primary retest" href="/test">~(i18n.T(l, "fitness.retest"))</a>
+			})
+			<a class=(homeClass) href="/">~(i18n.T(l, "done.back_home"))</a>
 		</div>
 
 		<script

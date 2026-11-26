@@ -895,3 +895,7 @@ body:has(.player) {
 .fit-plan-meta { color: var(--muted); font-size: 14px; margin-top: 4px !important; }
 .fit-row > span:first-child { color: var(--muted); font-size: 14px; }
 .fit-row .row-value { display: inline-flex; align-items: center; gap: 6px; color: var(--fg); }
+/* Day 30: the fitness test again (workout.gox done screen). */
+.done-start { color: var(--muted); font-size: 15px; margin-top: 6px; }
+.retest { margin-top: 12px; min-width: 60%; position: relative; z-index: 2; }
+.retest + .back-home { margin-top: 0; }
