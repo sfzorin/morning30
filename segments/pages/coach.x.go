@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"sync/atomic"
 	"time"
 
 	"morning30/assets"
@@ -28,6 +29,7 @@ import (
 type coachPage struct {
 	sess auth.Session
 	path doors.Source[path.Path]
+	busy *atomic.Bool // a reply is in progress on this page
 }
 
 type coachForm struct {
@@ -85,11 +87,12 @@ func loadCoach(userID int64) coachView {
 	return v
 }
 
-//line coach.gox:85
+//line coach.gox:87
 func (c coachPage) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line coach.gox:87
+//line coach.gox:89
+		c.busy = new(atomic.Bool)
 		l := i18n.Lang(c.sess.Lang)
 		view := doors.NewSourceEqual(loadCoach(c.sess.UserID), func(coachView, coachView) bool { return false })
 		enabled := coach.FromEnv().Enabled()
@@ -98,31 +101,31 @@ func (c coachPage) Main() gox.Elem {
 		__e = __c.Init("title"); if __e != nil { return }
 		{
 			__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:92
+//line coach.gox:95
 			__e = __c.Any(i18n.T(l, "coach.title")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("main"); if __e != nil { return }
 		{
-//line coach.gox:93
+//line coach.gox:96
 			__e = __c.Set("class", "screen coach"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line coach.gox:94
+//line coach.gox:97
 				__e = __c.Set("class", "lib-head"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:95
+//line coach.gox:98
 				__e = (doors.ALink{Model: path.Path{Page: path.Program}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line coach.gox:95
+//line coach.gox:98
 						__e = __c.Set("class", "lib-back"); if __e != nil { return }
-//line coach.gox:95
+//line coach.gox:98
 						__e = __c.Set("aria-label", i18n.T(l, "coach.back")); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:95
+//line coach.gox:98
 						__e = __c.Any(icon("back", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -133,16 +136,16 @@ func (c coachPage) Main() gox.Elem {
 					__e = __c.Init("h1"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:97
+//line coach.gox:100
 						__e = __c.Any(i18n.T(l, "coach.title")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
-//line coach.gox:98
+//line coach.gox:101
 						__e = __c.Set("class", "coach-sub"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:98
+//line coach.gox:101
 						__e = __c.Any(app.ProgramTitle(c.sess.UserID, c.sess.Lang)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -150,46 +153,46 @@ func (c coachPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:101
+//line coach.gox:104
 			__e = __c.Any(view.Bind(func(v coachView) gox.Elem {
 			return gox.Elem(func(__c gox.Cursor) (__e error) {
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line coach.gox:102
+//line coach.gox:105
 					__e = __c.Set("class", "coach-thread"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:103
+//line coach.gox:106
 					if len(v.Lines) == 0 && v.Pending == "" {
 						__e = __c.Init("p"); if __e != nil { return }
 						{
-//line coach.gox:104
+//line coach.gox:107
 							__e = __c.Set("class", "coach-lead"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:104
+//line coach.gox:107
 							__e = __c.Any(i18n.T(l, "coach.lead")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line coach.gox:105
+//line coach.gox:108
 						if enabled {
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line coach.gox:106
+//line coach.gox:109
 								__e = __c.Set("class", "coach-examples"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:107
+//line coach.gox:110
 								for _, ex := range examples {
-//line coach.gox:108
+//line coach.gox:111
 									__e = (doors.AClick{On: c.sendText(view, ex)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 										ctx := __c.Context(); _ = ctx
 										__e = __c.Init("button"); if __e != nil { return }
 										{
-//line coach.gox:108
+//line coach.gox:111
 											__e = __c.Set("class", "chip-btn"); if __e != nil { return }
-//line coach.gox:108
+//line coach.gox:111
 											__e = __c.Set("type", "button"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:108
+//line coach.gox:111
 											__e = __c.Any(ex); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -199,45 +202,45 @@ func (c coachPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 						}
 					}
-//line coach.gox:113
+//line coach.gox:116
 					for _, line := range v.Lines {
-//line coach.gox:114
+//line coach.gox:117
 						if line.Mine {
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line coach.gox:115
+//line coach.gox:118
 								__e = __c.Set("class", "bubble me"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:115
+//line coach.gox:118
 								__e = __c.Any(line.Text); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						} else  {
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line coach.gox:117
+//line coach.gox:120
 								__e = __c.Set("class", "bubble ai"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("p"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:118
+//line coach.gox:121
 									__e = __c.Any(line.Text); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
-//line coach.gox:119
+//line coach.gox:122
 								if len(line.Changes) > 0 {
 									__e = __c.Init("ul"); if __e != nil { return }
 									{
-//line coach.gox:120
+//line coach.gox:123
 										__e = __c.Set("class", coachChangesClass(line.Undone)); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:121
+//line coach.gox:124
 										for _, ch := range line.Changes {
 											__e = __c.Init("li"); if __e != nil { return }
 											{
 												__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:122
+//line coach.gox:125
 												__e = __c.Any(coachChange(l, ch)); if __e != nil { return }
 											}
 											__e = __c.Close(); if __e != nil { return }
@@ -245,31 +248,31 @@ func (c coachPage) Main() gox.Elem {
 									}
 									__e = __c.Close(); if __e != nil { return }
 								}
-//line coach.gox:126
+//line coach.gox:129
 								if line.CanUndo {
-//line coach.gox:127
+//line coach.gox:130
 									__e = (doors.AClick{On: c.undo(view, line.ID)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 										ctx := __c.Context(); _ = ctx
 										__e = __c.Init("button"); if __e != nil { return }
 										{
-//line coach.gox:127
+//line coach.gox:130
 											__e = __c.Set("class", "coach-undo"); if __e != nil { return }
-//line coach.gox:127
+//line coach.gox:130
 											__e = __c.Set("type", "button"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:127
+//line coach.gox:130
 											__e = __c.Any(i18n.T(l, "coach.undo")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
 									return })); if __e != nil { return }
-//line coach.gox:128
+//line coach.gox:131
 								} else if line.Undone {
 									__e = __c.Init("p"); if __e != nil { return }
 									{
-//line coach.gox:129
+//line coach.gox:132
 										__e = __c.Set("class", "coach-undone"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:129
+//line coach.gox:132
 										__e = __c.Any(i18n.T(l, "coach.undone")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -278,24 +281,24 @@ func (c coachPage) Main() gox.Elem {
 							__e = __c.Close(); if __e != nil { return }
 						}
 					}
-//line coach.gox:134
+//line coach.gox:137
 					if v.Pending != "" {
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line coach.gox:135
+//line coach.gox:138
 							__e = __c.Set("class", "bubble me"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:135
+//line coach.gox:138
 							__e = __c.Any(v.Pending); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line coach.gox:136
+//line coach.gox:139
 							__e = __c.Set("class", "bubble ai typing"); if __e != nil { return }
-//line coach.gox:136
+//line coach.gox:139
 							__e = __c.Set("role", "status"); if __e != nil { return }
-//line coach.gox:136
+//line coach.gox:139
 							__e = __c.Set("aria-label", i18n.T(l, "coach.thinking")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("span"); if __e != nil { return }
@@ -316,23 +319,23 @@ func (c coachPage) Main() gox.Elem {
 						}
 						__e = __c.Close(); if __e != nil { return }
 					}
-//line coach.gox:138
+//line coach.gox:141
 					if v.Err != "" {
 						__e = __c.Init("p"); if __e != nil { return }
 						{
-//line coach.gox:139
+//line coach.gox:142
 							__e = __c.Set("class", "err"); if __e != nil { return }
-//line coach.gox:139
+//line coach.gox:142
 							__e = __c.Set("role", "alert"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:139
+//line coach.gox:142
 							__e = __c.Any(coachErr(l, v.Err)); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					}
 					__e = __c.Init("script"); if __e != nil { return }
 					{
-//line coach.gox:141
+//line coach.gox:144
 						__e = __c.Set("src", assets.CoachScroll); if __e != nil { return }
 						__e = __c.Set("inline", true); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
@@ -342,46 +345,46 @@ func (c coachPage) Main() gox.Elem {
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })
-//line coach.gox:143
+//line coach.gox:146
 		})); if __e != nil { return }
-//line coach.gox:144
+//line coach.gox:147
 			if enabled {
-//line coach.gox:145
+//line coach.gox:148
 				__e = (doors.ASubmit[coachForm]{On: c.submit(view)}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("form"); if __e != nil { return }
 					{
-//line coach.gox:145
+//line coach.gox:148
 						__e = __c.Set("class", "coach-input"); if __e != nil { return }
-//line coach.gox:145
+//line coach.gox:148
 						__e = __c.Set("autocomplete", "off"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.InitVoid("input"); if __e != nil { return }
 						{
-//line coach.gox:146
+//line coach.gox:149
 							__e = __c.Set("class", "text-input"); if __e != nil { return }
-//line coach.gox:146
+//line coach.gox:149
 							__e = __c.Set("name", "text"); if __e != nil { return }
-//line coach.gox:146
+//line coach.gox:149
 							__e = __c.Set("type", "text"); if __e != nil { return }
-//line coach.gox:146
+//line coach.gox:149
 							__e = __c.Set("maxlength", coachMaxText); if __e != nil { return }
-//line coach.gox:146
+//line coach.gox:149
 							__e = __c.Set("placeholder", i18n.T(l, "coach.placeholder")); if __e != nil { return }
-//line coach.gox:146
+//line coach.gox:149
 							__e = __c.Set("aria-label", i18n.T(l, "coach.placeholder")); if __e != nil { return }
 						}
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line coach.gox:147
+//line coach.gox:150
 							__e = __c.Set("class", "coach-send"); if __e != nil { return }
-//line coach.gox:147
+//line coach.gox:150
 							__e = __c.Set("type", "submit"); if __e != nil { return }
-//line coach.gox:147
+//line coach.gox:150
 							__e = __c.Set("aria-label", i18n.T(l, "coach.send")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:147
+//line coach.gox:150
 							__e = __c.Any(icon("up", false)); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -391,10 +394,10 @@ func (c coachPage) Main() gox.Elem {
 			} else  {
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line coach.gox:150
+//line coach.gox:153
 					__e = __c.Set("class", "coach-lead"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:150
+//line coach.gox:153
 					__e = __c.Any(i18n.T(l, "coach.off")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -402,7 +405,7 @@ func (c coachPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line coach.gox:153
+//line coach.gox:156
 }
 
 func coachChangesClass(undone bool) string {
@@ -444,146 +447,146 @@ func coachPart(l i18n.Lang, part string) string {
 	return ""
 }
 
-//line coach.gox:194
+//line coach.gox:197
 func coachChange(l i18n.Lang, ch coach.Change) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line coach.gox:196
+//line coach.gox:199
 		days := coachDays(l, ch.Days)
 		prefix := days
 		if part := coachPart(l, ch.Part); part != "" {
 			prefix = days + ", " + strings.ToLower(part)
 		}
 
-//line coach.gox:202
+//line coach.gox:205
 		if ch.Kind == "replace" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:203
+//line coach.gox:206
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:203
+//line coach.gox:206
 				__e = __c.Any(prefix + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:203
+//line coach.gox:206
 			__e = __c.Any(ch.From); if __e != nil { return }
-//line coach.gox:203
+//line coach.gox:206
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:203
+//line coach.gox:206
 			__e = __c.Any(ch.To); if __e != nil { return }
-//line coach.gox:204
+//line coach.gox:207
 		} else if ch.Kind == "add" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:205
+//line coach.gox:208
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:205
+//line coach.gox:208
 				__e = __c.Any(prefix + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:205
+//line coach.gox:208
 			__e = __c.Any(i18n.Tf(l, "coach.added", ch.To)); if __e != nil { return }
-//line coach.gox:206
+//line coach.gox:209
 		} else if ch.Kind == "remove" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:207
+//line coach.gox:210
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:207
+//line coach.gox:210
 				__e = __c.Any(prefix + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:207
+//line coach.gox:210
 			__e = __c.Any(i18n.Tf(l, "coach.removed", ch.To)); if __e != nil { return }
-//line coach.gox:208
+//line coach.gox:211
 		} else if ch.Kind == "dose" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:209
+//line coach.gox:212
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:209
+//line coach.gox:212
 				__e = __c.Any(days + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:209
+//line coach.gox:212
 			__e = __c.Any(ch.To); if __e != nil { return }
-//line coach.gox:210
+//line coach.gox:213
 			if ch.Pct != 0 {
-//line coach.gox:211
+//line coach.gox:214
 				__e = __c.Many(" ", fmt.Sprintf("%+d%%", ch.Pct)); if __e != nil { return }
 			} else  {
-//line coach.gox:213
+//line coach.gox:216
 				__e = __c.Many(" ", ch.Old); if __e != nil { return }
-//line coach.gox:213
+//line coach.gox:216
 				__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:213
+//line coach.gox:216
 				__e = __c.Any(ch.New); if __e != nil { return }
 			}
-//line coach.gox:215
-		} else if ch.Kind == "new" {
-//line coach.gox:216
-			__e = __c.Any(i18n.Tf(l, "coach.new", ch.To)); if __e != nil { return }
-//line coach.gox:217
-		} else if ch.Kind == "rename" {
 //line coach.gox:218
-			__e = __c.Any(i18n.Tf(l, "coach.renamed", ch.To)); if __e != nil { return }
+		} else if ch.Kind == "new" {
 //line coach.gox:219
+			__e = __c.Any(i18n.Tf(l, "coach.new", ch.To)); if __e != nil { return }
+//line coach.gox:220
+		} else if ch.Kind == "rename" {
+//line coach.gox:221
+			__e = __c.Any(i18n.Tf(l, "coach.renamed", ch.To)); if __e != nil { return }
+//line coach.gox:222
 		} else if ch.Kind == "rounds" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:220
+//line coach.gox:223
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:220
+//line coach.gox:223
 				__e = __c.Any(i18n.T(l, "settings.rounds") + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:220
+//line coach.gox:223
 			__e = __c.Any(ch.Old); if __e != nil { return }
-//line coach.gox:220
+//line coach.gox:223
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:220
+//line coach.gox:223
 			__e = __c.Any(ch.New); if __e != nil { return }
-//line coach.gox:221
+//line coach.gox:224
 		} else if ch.Kind == "level" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:222
+//line coach.gox:225
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:222
+//line coach.gox:225
 				__e = __c.Any(i18n.T(l, "settings.difficulty") + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:222
+//line coach.gox:225
 			__e = __c.Any(levelLabel(l, ch.Old)); if __e != nil { return }
-//line coach.gox:222
+//line coach.gox:225
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:222
+//line coach.gox:225
 			__e = __c.Any(levelLabel(l, ch.New)); if __e != nil { return }
 		} else  {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:224
+//line coach.gox:227
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:224
+//line coach.gox:227
 				__e = __c.Any(i18n.T(l, "settings."+ch.Kind) + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:224
+//line coach.gox:227
 			__e = __c.Any(i18n.Tf(l, "fmt.sec", ch.Old)); if __e != nil { return }
-//line coach.gox:224
+//line coach.gox:227
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:224
+//line coach.gox:227
 			__e = __c.Any(i18n.Tf(l, "fmt.sec", ch.New)); if __e != nil { return }
 		}
 	return })
-//line coach.gox:226
+//line coach.gox:229
 }
 
 func (c coachPage) submit(view doors.Source[coachView]) func(context.Context, doors.RequestForm[coachForm]) bool {
@@ -610,10 +613,11 @@ func (c coachPage) send(ctx context.Context, view doors.Source[coachView], text 
 	if text == "" {
 		return
 	}
-	if cur, ok := view.Effect(ctx); ok && cur.Pending != "" {
+	if !c.busy.CompareAndSwap(false, true) {
 		return // one message at a time
 	}
 	if coach.LimitReached(c.sess.UserID) {
+		c.busy.Store(false)
 		v.Err = "coach.limit"
 		view.Update(ctx, v)
 		return
@@ -623,6 +627,7 @@ func (c coachPage) send(ctx context.Context, view doors.Source[coachView], text 
 	uid, lang := c.sess.UserID, c.sess.Lang
 	bg := doors.InstanceContext(ctx)
 	go func() {
+		defer c.busy.Store(false)
 		before := coachProgramID(uid)
 		history, _ := app.DB.CoachMessages(uid, before, 12)
 		askCtx, cancel := context.WithTimeout(bg, 2*time.Minute)

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"sync/atomic"
 	"time"
 
 	"morning30/assets"
@@ -25,6 +26,7 @@ import (
 type coachPage struct {
 	sess auth.Session
 	path doors.Source[path.Path]
+	busy *atomic.Bool // a reply is in progress on this page
 }
 
 type coachForm struct {
@@ -84,6 +86,7 @@ func loadCoach(userID int64) coachView {
 
 elem (c coachPage) Main() {
 	~{
+		c.busy = new(atomic.Bool)
 		l := i18n.Lang(c.sess.Lang)
 		view := doors.NewSourceEqual(loadCoach(c.sess.UserID), func(coachView, coachView) bool { return false })
 		enabled := coach.FromEnv().Enabled()
@@ -249,10 +252,11 @@ func (c coachPage) send(ctx context.Context, view doors.Source[coachView], text 
 	if text == "" {
 		return
 	}
-	if cur, ok := view.Effect(ctx); ok && cur.Pending != "" {
+	if !c.busy.CompareAndSwap(false, true) {
 		return // one message at a time
 	}
 	if coach.LimitReached(c.sess.UserID) {
+		c.busy.Store(false)
 		v.Err = "coach.limit"
 		view.Update(ctx, v)
 		return
@@ -262,6 +266,7 @@ func (c coachPage) send(ctx context.Context, view doors.Source[coachView], text 
 	uid, lang := c.sess.UserID, c.sess.Lang
 	bg := doors.InstanceContext(ctx)
 	go func() {
+		defer c.busy.Store(false)
 		before := coachProgramID(uid)
 		history, _ := app.DB.CoachMessages(uid, before, 12)
 		askCtx, cancel := context.WithTimeout(bg, 2*time.Minute)
