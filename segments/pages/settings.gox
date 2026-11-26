@@ -41,10 +41,10 @@ type editState struct {
 
 // settingsPage lets the user change rest time, language, voice and reset progress.
 type settingsPage struct {
-	sess   auth.Session
-	auth   doors.Source[auth.Session]
-	path   doors.Source[path.Path]
-	editor bool // the "program and exercise editor" page instead of settings
+	sess auth.Session
+	auth doors.Source[auth.Session]
+	path doors.Source[path.Path]
+	mode string // "" settings, "program" the program page, "editor", "exercises", "agent"
 }
 
 type posePickForm struct {
@@ -79,7 +79,14 @@ elem (s settingsPage) Main() {
 			firstID = entries[0].ID
 		}
 		selSrc := doors.NewSource(firstID)
-		levelSrc := doors.NewSource(s.sess.Level)
+		level := app.DB.GetLevel(s.sess.UserID)
+		levelSrc := doors.NewSource(level)
+		rounds := app.DB.GetRounds(s.sess.UserID)
+		roundsVal := doors.NewSource(rounds)
+		renaming := doors.NewSource(false)
+		curDay := app.CurrentDay(s.sess.UserID)
+		cycleNo := app.CurrentPosition(s.sess.UserID)/content.TotalDays + 1
+		dayCount := len(app.UserWorkout(s.sess.UserID, curDay).Items)
 		curSex := app.DB.GetSex(s.sess.UserID)
 		confirmReset := doors.NewSource(false)
 		mcpSrc := doors.NewSource(mcpTokState{Has: app.DB.HasMCPToken(s.sess.UserID)})
@@ -88,18 +95,108 @@ elem (s settingsPage) Main() {
 			poseList = []db.Pose{}
 		}
 	}
-	<title>~(if s.editor { ~(i18n.T(l, "settings.editor")) } else { ~(i18n.T(l, "settings.title")) })</title>
+	<title>~(if s.mode == "program" { ~(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) } else { ~(i18n.T(l, pageTitle(s.mode))) })</title>
 	<main class="screen">
 		<section class="settings">
-			~(if s.editor {
+			~(if s.mode == "program" {
+				~// Everything that belongs to the current program: its name,
+				~// difficulty, rounds and pauses, and its exercises.
 				<div class="settings-head">
-					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.settings"))>~(icon("back", false))</a>
-					<h1>~(i18n.T(l, "settings.editor"))</h1>
+					~>doors.ALink{Model: path.Path{Page: path.Home}} <a class="back" aria-label=(i18n.T(l, "nav.home"))>~(icon("back", false))</a>
+					~(renaming.Bind(elem(on bool) {
+						~(if on {
+							<input class="text-input prog-name-input" type="text" maxlength=(app.ProgramNameMax) value=(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) aria-label=(i18n.T(l, "programs.rename")) autofocus
+								(doors.AChange{On: s.renameProgram})>
+						} else {
+							<h1>~(app.ProgramTitle(s.sess.UserID, s.sess.Lang))</h1>
+							~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+								renaming.Update(ctx, true)
+								return false
+							}} <button class="icon-mini" type="button" aria-label=(i18n.T(l, "programs.rename"))>~(icon("edit", false))</button>
+						})
+					}))
+				</div>
+				<p class="editing">~(i18n.Tf(l, "program.day_of", curDay, content.TotalDays, cycleNo))</p>
+				<h2 class="sgroup">~(i18n.T(l, "settings.group_training"))</h2>
+				<div class="settings-card">
+					~// Programs with prescribed dosing opt out of universal scaling.
+					~(if !prog.FixedDifficulty {
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.difficulty"))</span>
+							<output class="rest-out">
+								~(levelSrc.Bind(elem(v int) {
+									~(levelLabel(l, v))
+								}))
+							</output>
+						</div>
+						<input type="range" min="-3" max="3" step="1" value=(level) aria-label=(i18n.T(l, "settings.difficulty")) (doors.AChange{On: s.setLevel(levelSrc)})>
+					</div>
+					})
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rounds"))</span>
+							<output class="rest-out">~(roundsVal.Bind(elem(v int) { ~(v) }))</output>
+						</div>
+						<input type="range" min=(content.RoundsMin) max=(content.RoundsMax) step="1" value=(rounds) aria-label=(i18n.T(l, "settings.rounds"))
+							(doors.AChange{On: s.saveRounds(roundsVal, saveStatus)})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
+							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" min="0" max=(content.RestMax) step="5" value=(restW) aria-label=(i18n.T(l, "settings.rest_warmup"))
+							(doors.AChange{On: s.saveRest("warmup", restWVal, saveStatus)})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_main"))</span>
+							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" min=(content.MainRestMin) max=(content.RestMax) step="5" value=(restM) aria-label=(i18n.T(l, "settings.rest_main"))
+							(doors.AChange{On: s.saveRest("main", restMVal, saveStatus)})>
+					</div>
+					<div class="srow col">
+						<div class="row-between">
+							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
+							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
+						</div>
+						<input type="range" min="0" max=(content.RestMax) step="5" value=(restC) aria-label=(i18n.T(l, "settings.rest_cooldown"))
+							(doors.AChange{On: s.saveRest("cooldown", restCVal, saveStatus)})>
+					</div>
+				</div>
+				<h2 class="sgroup">~(i18n.T(l, "program.exercises"))</h2>
+				<div class="settings-card">
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Today}} <a class="row-link"><span>~(i18n.T(l, "program.day_list"))</span><span class="row-value">~(dayCount) ~(icon("next", false))</span></a>
+					</div>
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="row-link"><span>~(i18n.T(l, "program.editor"))</span><span class="row-value">~(icon("next", false))</span></a>
+					</div>
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="row-link"><span>~(i18n.T(l, "library.title"))</span><span class="row-value">~(icon("next", false))</span></a>
+					</div>
+					<div class="srow">
+						~{ b := []byte(prog.Marshal()) }
+						<a class="row-link" (doors.ResourceBytes(b)) name="workout.json"><span>~(i18n.T(l, "program.download"))</span><span class="row-value">workout.json</span></a>
+					</div>
+				</div>
+				~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="btn change-program">~(i18n.T(l, "program.change"))</a>
+				~(saveStatus.Bind(elem(key string) {
+					~(if key != "" {
+						<p class="err" role="alert">~(i18n.T(l, key))</p>
+					})
+				}))
+			} else if s.mode == "editor" {
+				<div class="settings-head">
+					~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="back" aria-label=(i18n.T(l, "nav.close"))>~(icon("back", false))</a>
+					<h1>~(i18n.T(l, "program.editor"))</h1>
 				</div>
 				<p class="editing">~(i18n.T(l, "settings.editing"), " ")<b>~(app.ProgramTitle(s.sess.UserID, s.sess.Lang))</b></p>
 				<div class="settings-card">
 				~// The current program's 30-day cycle, day by day.
-				<details class="cycle-details">
+				<details class="cycle-details" open>
 					<summary>~(i18n.T(l, "settings.cycle"))</summary>
 
 					<div class="srow">
@@ -166,9 +263,16 @@ elem (s settingsPage) Main() {
 					</div>
 				</details>
 
+				</div>
+			} else if s.mode == "exercises" {
+				<div class="settings-head">
+					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.close"))>~(icon("back", false))</a>
+					<h1>~(i18n.T(l, "settings.custom_exercises"))</h1>
+				</div>
+				<div class="settings-card">
 				~// Browse exercise content (description + all tips), download any
 				~// exercise as JSON, or import one (paste / file).
-				<details class="cycle-details">
+				<details class="cycle-details" open>
 					<summary>~(i18n.T(l, "settings.exercise_content"))</summary>
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.exercise"))</span>
@@ -279,9 +383,13 @@ elem (s settingsPage) Main() {
 					<script src=(assets.ExUpload) inline></script>
 				</details>
 
-					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.Library}} <a class="row-link"><span>~(i18n.T(l, "library.title"))</span><span class="row-value">~(icon("next", false))</span></a>
-					</div>
+				</div>
+			} else if s.mode == "agent" {
+				<div class="settings-head">
+					~>doors.ALink{Model: path.Path{Page: path.Settings}} <a class="back" aria-label=(i18n.T(l, "nav.close"))>~(icon("back", false))</a>
+					<h1>~(i18n.T(l, "settings.agent_token"))</h1>
+				</div>
+				<div class="settings-card">
 				~(mcpSrc.Bind(elem(st mcpTokState) {
 					~{
 						mcpBtn := i18n.T(l, "settings.mcp_create")
@@ -302,7 +410,6 @@ elem (s settingsPage) Main() {
 						~>doors.AClick{On: s.issueMCP(mcpSrc)} <button class="btn small" type="button">~(mcpBtn)</button>
 					</div>
 				}))
-
 				</div>
 			} else {
 				<div class="settings-head">
@@ -315,33 +422,9 @@ elem (s settingsPage) Main() {
 						vm = "normal"
 					}
 				}
-				~// Every setting is stored as soon as it changes.
-				<h2 class="sgroup">~(i18n.T(l, "settings.group_training"))</h2>
+				~// Only what belongs to the person; workout settings live with each program.
+				<h2 class="sgroup">~(i18n.T(l, "settings.group_voice"))</h2>
 				<div class="settings-card">
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest_warmup"))</span>
-							<output class="rest-out">~(restWVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
-						</div>
-						<input type="range" min="0" max=(content.RestMax) step="5" value=(restW) aria-label=(i18n.T(l, "settings.rest_warmup"))
-							(doors.AChange{On: s.saveRest("warmup", restWVal, saveStatus)})>
-					</div>
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest_main"))</span>
-							<output class="rest-out">~(restMVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
-						</div>
-						<input type="range" min=(content.MainRestMin) max=(content.RestMax) step="5" value=(restM) aria-label=(i18n.T(l, "settings.rest_main"))
-							(doors.AChange{On: s.saveRest("main", restMVal, saveStatus)})>
-					</div>
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.rest_cooldown"))</span>
-							<output class="rest-out">~(restCVal.Bind(elem(v int) { ~(v, " ", i18n.T(l, "workout.sec")) }))</output>
-						</div>
-						<input type="range" min="0" max=(content.RestMax) step="5" value=(restC) aria-label=(i18n.T(l, "settings.rest_cooldown"))
-							(doors.AChange{On: s.saveRest("cooldown", restCVal, saveStatus)})>
-					</div>
 					<div class="srow">
 						<span>~(i18n.T(l, "settings.voice"))</span>
 						<select class="lang-select compact" aria-label=(i18n.T(l, "settings.voice")) (doors.AChange{On: s.saveSetting("voice", saveStatus)})>
@@ -360,32 +443,7 @@ elem (s settingsPage) Main() {
 							<option value="g" selected=func { return curSex == "g" }>~(i18n.T(l, "sex.girl"))</option>
 						</select>
 					</div>
-					~// Programs with prescribed dosing opt out of universal scaling.
-					~(if !prog.FixedDifficulty {
-					<div class="srow col">
-						<div class="row-between">
-							<span>~(i18n.T(l, "settings.difficulty"))</span>
-							<output class="rest-out">
-								~(levelSrc.Bind(elem(v int) {
-									~(levelLabel(l, v))
-								}))
-							</output>
-						</div>
-						<input type="range" min="-3" max="3" step="1" value=(s.sess.Level) aria-label=(i18n.T(l, "settings.difficulty")) (doors.AChange{On: s.setLevel(levelSrc)})>
-					</div>
-					})
 				</div>
-
-				<h2 class="sgroup">~(i18n.T(l, "settings.group_program"))</h2>
-				<div class="settings-card">
-					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="row-link"><span>~(i18n.T(l, "programs.title"))</span><span class="row-value">~(app.ProgramTitle(s.sess.UserID, s.sess.Lang)) ~(icon("next", false))</span></a>
-					</div>
-					<div class="srow">
-						~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="row-link"><span>~(i18n.T(l, "settings.editor"))</span><span class="row-value">~(icon("next", false))</span></a>
-					</div>
-				</div>
-
 				<h2 class="sgroup">~(i18n.T(l, "settings.group_profile"))</h2>
 				<div class="settings-card">
 					<div class="srow">
@@ -406,6 +464,17 @@ elem (s settingsPage) Main() {
 					})
 				</div>
 
+				</div>
+				<h2 class="sgroup">~(i18n.T(l, "settings.group_more"))</h2>
+				<div class="settings-card">
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.SettingsExercises}} <a class="row-link"><span>~(i18n.T(l, "settings.custom_exercises"))</span><span class="row-value">~(icon("next", false))</span></a>
+					</div>
+					<div class="srow">
+						~>doors.ALink{Model: path.Path{Page: path.SettingsAgent}} <a class="row-link"><span>~(i18n.T(l, "settings.agent_token"))</span><span class="row-value">~(icon("next", false))</span></a>
+					</div>
+				</div>
+				<div class="settings-card reset-card">
 				<div class="srow save-row">
 					~(confirmReset.Bind(elem(c bool) {
 						~(if !c {
@@ -994,4 +1063,47 @@ func (s settingsPage) saveSetting(which string, status doors.Source[string]) fun
 		})
 		return false
 	}
+}
+
+
+// pageTitle is the document title of each settings mode.
+func pageTitle(mode string) string {
+	switch mode {
+	case "program":
+		return "programs.title"
+	case "editor":
+		return "program.editor"
+	case "exercises":
+		return "settings.custom_exercises"
+	case "agent":
+		return "settings.agent_token"
+	}
+	return "settings.title"
+}
+
+// saveRounds stores how many times the current program's main part repeats.
+func (s settingsPage) saveRounds(val doors.Source[int], status doors.Source[string]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
+	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+		n := r.Event().Number
+		if n == nil {
+			return false
+		}
+		v := int(*n)
+		st, err := app.UpdateSettings(s.sess.UserID, app.SettingsPatch{Rounds: &v})
+		if err != nil {
+			status.Update(ctx, "settings.save_failed")
+			return false
+		}
+		status.Update(ctx, "")
+		val.Update(ctx, st.Rounds)
+		return false
+	}
+}
+
+// renameProgram stores a new name for the current program and reloads.
+func (s settingsPage) renameProgram(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
+	if app.RenameProgram(s.sess.UserID, r.Event().Value) == nil {
+		_ = r.After(doors.ActionLocationReload{})
+	}
+	return false
 }

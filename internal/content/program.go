@@ -138,7 +138,9 @@ func isRecoveryDay(day int) bool { return recoveryDays[clampDay(day)] }
 // Every workout has one warm-up, two complete main rounds and one cool-down.
 const (
 	WarmupRounds = 1
-	MainRounds   = 2
+	MainRounds   = 2 // default number of main rounds
+	RoundsMin    = 1
+	RoundsMax    = 10
 	RestMax      = 40
 	MainRestMin  = 5
 )

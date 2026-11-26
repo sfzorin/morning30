@@ -48,11 +48,14 @@ small client-side workout engine.
   days) or removal. The library has search, groups and a "no jumps" filter;
   "+" adds an exercise to a part of the current program on chosen days with a
   chosen amount. Edits always go to the user's version of the program.
-- **Program and exercise editor.** A separate page (Settings → editor) for the
-  full day-by-day cycle editor, exercise content and JSON, the library and the
-  agent token. Reorder, add, remove and retime exercises; all three phases
-  remain nonempty, with exactly two main rounds. Settings themselves keep only
-  the workout, program and profile choices, each saved as soon as it changes.
+- **Program page.** Tapping the program name on the home screen opens its
+  page: rename it, and set its difficulty, number of main rounds (1–10) and the
+  three pauses. These belong to each program and travel with it when switching.
+  From there: today's exercises, the day-by-day editor (reorder, add, remove and
+  retime exercises; all three phases stay nonempty), the library and the JSON
+  download. General settings keep only what belongs to the person — voice,
+  figure, language, name, account — plus "More": your own exercises and JSON,
+  and the agent token. Every setting is saved as soon as it changes.
 - **Exercise documents.** Besides the original built-ins, exercises can be
   complete JSON documents (definition plus name, technique, mistakes,
   breathing, safety and voice cues in all seven languages) in
@@ -74,7 +77,7 @@ small client-side workout engine.
   exercise's phase; the final exercise has no following pause. The same resolved
   values drive estimates and player timers. Program JSON cannot prescribe pauses;
   old `rest`/`sideRest` fields are ignored on import and omitted on export.
-- **Daily phases.** Every program includes a warm-up, two main rounds and a
+- **Daily phases.** Every program includes a warm-up, its main rounds (two by default) and a
   cool-down. Empty day phases inherit the shared phase; missing shared phases
   and empty main sequences use demo defaults. Legacy identical expanded rounds
   collapse to one sequence; asymmetric old rounds are rejected visibly on import.

@@ -182,6 +182,29 @@ func clampLevel(l int) int {
 	return l
 }
 
+// GetRounds returns how many times the main part repeats (1..10, default 2).
+func (d *DB) GetRounds(userID int64) int {
+	n := 2
+	_ = d.sql.QueryRow(`SELECT main_rounds FROM users WHERE id = ?`, userID).Scan(&n)
+	return clampRounds(n)
+}
+
+// SetRounds stores the number of main rounds, clamped to 1..10.
+func (d *DB) SetRounds(userID int64, n int) error {
+	_, err := d.sql.Exec(`UPDATE users SET main_rounds = ? WHERE id = ?`, clampRounds(n), userID)
+	return err
+}
+
+func clampRounds(n int) int {
+	if n < 1 {
+		return 1
+	}
+	if n > 10 {
+		return 10
+	}
+	return n
+}
+
 // GetSex returns the user's figure: m (man, default), f (woman), b (boy) or g (girl).
 func (d *DB) GetSex(userID int64) string {
 	var s string

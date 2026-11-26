@@ -410,16 +410,17 @@ var ops = []op{
 	},
 	{
 		Name: "get_settings", Account: true, Method: "GET", Paths: []string{"/api/accounts/{who}/settings"},
-		Desc: "The account's settings: name, lang, the three rests in seconds, voiceMode, figure (m man, f woman, b boy, g girl) and difficulty level −3..+3.",
+		Desc: "The account's settings: name, lang, the three rests in seconds, voiceMode, figure (m man, f woman, b boy, g girl), difficulty level −3..+3 and main rounds 1..10.",
 		Run:  func(acc db.Account, _ args) (any, error) { return app.GetSettings(acc.ID) },
 	},
 	{
 		Name: "set_settings", Account: true, Method: "PATCH", Paths: []string{"/api/accounts/{who}/settings"},
-		Desc: "Change only the given settings. Rests: warm-up and cool-down 0–40 s, main 5–40 s. voiceMode off|min|normal|detailed. figure m|f|b|g. level −3..+3.",
+		Desc: "Change only the given settings. Rests: warm-up and cool-down 0–40 s, main 5–40 s. voiceMode off|min|normal|detailed. figure m|f|b|g. level −3..+3. rounds 1..10 (how many times the main part repeats, for every program).",
 		Props: map[string]any{
 			"name": map[string]any{"type": "string"}, "lang": map[string]any{"type": "string"},
 			"restWarmup": map[string]any{"type": "integer"}, "restMain": map[string]any{"type": "integer"}, "restCooldown": map[string]any{"type": "integer"},
 			"voiceMode": map[string]any{"type": "string"}, "figure": map[string]any{"type": "string"}, "level": map[string]any{"type": "integer"},
+			"rounds": map[string]any{"type": "integer"},
 		},
 		Run: func(acc db.Account, a args) (any, error) {
 			var p app.SettingsPatch

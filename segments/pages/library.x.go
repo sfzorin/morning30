@@ -135,14 +135,14 @@ func (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) go
 			__e = __c.Set("class", "lib-head"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 //line library.gox:96
-			__e = (doors.ALink{Model: path.Path{Page: path.Editor}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+			__e = (doors.ALink{Model: path.Path{Page: path.Program}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("a"); if __e != nil { return }
 				{
 //line library.gox:96
 					__e = __c.Set("class", "lib-back"); if __e != nil { return }
 //line library.gox:96
-					__e = __c.Set("aria-label", i18n.T(l, "settings.editor")); if __e != nil { return }
+					__e = __c.Set("aria-label", i18n.T(l, "programs.title")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line library.gox:96
 					__e = __c.Any(icon("back", false)); if __e != nil { return }

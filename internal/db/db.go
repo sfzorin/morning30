@@ -196,6 +196,12 @@ DROP TABLE IF EXISTS progress;
 		`ALTER TABLE users ADD COLUMN mcp_token_hash TEXT NOT NULL DEFAULT ''`,
 		`ALTER TABLE users ADD COLUMN current_selected INTEGER NOT NULL DEFAULT 0`,
 		`ALTER TABLE users ADD COLUMN program_epoch INTEGER NOT NULL DEFAULT 0`,
+		`ALTER TABLE users ADD COLUMN main_rounds INTEGER NOT NULL DEFAULT 2`,
+		`ALTER TABLE selected_programs ADD COLUMN level INTEGER NOT NULL DEFAULT 0`,
+		`ALTER TABLE selected_programs ADD COLUMN rounds INTEGER NOT NULL DEFAULT 2`,
+		`ALTER TABLE selected_programs ADD COLUMN rest_warmup INTEGER`,
+		`ALTER TABLE selected_programs ADD COLUMN rest_main INTEGER`,
+		`ALTER TABLE selected_programs ADD COLUMN rest_cooldown INTEGER`,
 	} {
 		if _, err := d.sql.Exec(alter); err != nil {
 			if !strings.Contains(err.Error(), "duplicate column") {

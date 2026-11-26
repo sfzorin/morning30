@@ -7,10 +7,12 @@ import (
 )
 
 // Selected programs: a user's own shortlist. Each row keeps its own copy of a
-// program (with the user's edits) and its own cycle day. The program the user
+// program (with the user's edits), its own cycle day and its own workout
+// settings: difficulty, number of main rounds and the three rests. The program the user
 // is running right now also lives in users.program_json / users.position, the
-// "active slot" that the player, completions and cycle restarts already use;
-// switching programs saves the slot into its row and loads the next row into it.
+// "active slot" that the player, completions and cycle restarts already use —
+// as do users.level, users.main_rounds and the users.rest_* columns. Switching
+// programs saves the slot into its row and loads the next row into it.
 
 // ErrSelectedNotFound is returned when a selected program id is not the user's.
 var ErrSelectedNotFound = errors.New("selected program not found")
@@ -102,8 +104,13 @@ func (d *DB) AdoptActive(userID int64, source, name, program string) (int64, err
 	if current != 0 {
 		return current, tx.Commit()
 	}
-	res, err := tx.Exec(`INSERT INTO selected_programs (user_id, source, name, program_json, position, added_at)
-		VALUES (?, ?, ?, ?, ?, ?)`, userID, source, name, program, position, time.Now().UTC().Format(time.RFC3339))
+	st, err := readSlot(tx, userID)
+	if err != nil {
+		return 0, err
+	}
+	res, err := tx.Exec(`INSERT INTO selected_programs (user_id, source, name, program_json, position, added_at,
+		level, rounds, rest_warmup, rest_main, rest_cooldown) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		userID, source, name, program, position, time.Now().UTC().Format(time.RFC3339), st.level, st.rounds, st.warm, st.main, st.cool)
 	if err != nil {
 		return 0, err
 	}
@@ -116,6 +123,28 @@ func (d *DB) AdoptActive(userID int64, source, name, program string) (int64, err
 		return 0, err
 	}
 	return id, tx.Commit()
+}
+
+// slotSettings are the per-program workout settings held in the active slot.
+type slotSettings struct{ level, rounds, warm, main, cool int }
+
+func readSlot(tx *sql.Tx, userID int64) (slotSettings, error) {
+	var st slotSettings
+	err := tx.QueryRow(`SELECT level, main_rounds, rest_warmup, rest_seconds, rest_cooldown FROM users WHERE id = ?`, userID).
+		Scan(&st.level, &st.rounds, &st.warm, &st.main, &st.cool)
+	return st, err
+}
+
+// saveSlot stores the active slot's program, day and settings into its row.
+func saveSlot(tx *sql.Tx, userID, rowID int64, program string, position int) error {
+	st, err := readSlot(tx, userID)
+	if err != nil {
+		return err
+	}
+	_, err = tx.Exec(`UPDATE selected_programs SET program_json = ?, position = ?, level = ?, rounds = ?,
+		rest_warmup = ?, rest_main = ?, rest_cooldown = ? WHERE id = ? AND user_id = ?`,
+		program, position, st.level, st.rounds, st.warm, st.main, st.cool, rowID, userID)
+	return err
 }
 
 // SwitchSelected saves the active slot into its row and loads another selected
@@ -147,15 +176,23 @@ func (d *DB) SwitchSelected(userID, targetID int64) error {
 		return tx.Commit()
 	}
 	if current != 0 {
-		if _, err := tx.Exec(`UPDATE selected_programs SET program_json = ?, position = ? WHERE id = ? AND user_id = ?`,
-			live, position, current, userID); err != nil {
+		if err := saveSlot(tx, userID, current, live, position); err != nil {
 			return err
 		}
 	}
+	// The target's own settings; rests it never stored keep the current ones.
+	var level, rounds int
+	var warm, main, cool sql.NullInt64
+	if err := tx.QueryRow(`SELECT level, rounds, rest_warmup, rest_main, rest_cooldown FROM selected_programs WHERE id = ? AND user_id = ?`,
+		targetID, userID).Scan(&level, &rounds, &warm, &main, &cool); err != nil {
+		return err
+	}
 	// A new epoch makes any interrupted workout of the previous program stale.
 	if _, err := tx.Exec(`UPDATE users SET program_json = ?, active_program = 'custom', position = ?, current_selected = ?,
-		program_epoch = program_epoch + 1 WHERE id = ?`,
-		program, targetPos, targetID, userID); err != nil {
+		program_epoch = program_epoch + 1, level = ?, main_rounds = ?,
+		rest_warmup = COALESCE(?, rest_warmup), rest_seconds = COALESCE(?, rest_seconds), rest_cooldown = COALESCE(?, rest_cooldown)
+		WHERE id = ?`,
+		program, targetPos, targetID, level, rounds, warm, main, cool, userID); err != nil {
 		return err
 	}
 	return tx.Commit()
@@ -177,13 +214,12 @@ func (d *DB) ClearActive(userID int64, demoKey string) error {
 		return err
 	}
 	if current != 0 {
-		if _, err := tx.Exec(`UPDATE selected_programs SET program_json = ?, position = ? WHERE id = ? AND user_id = ?`,
-			live, position, current, userID); err != nil {
+		if err := saveSlot(tx, userID, current, live, position); err != nil {
 			return err
 		}
 	}
 	if _, err := tx.Exec(`UPDATE users SET program_json = '', active_program = ?, position = 0, current_selected = 0,
-		program_epoch = program_epoch + 1 WHERE id = ?`,
+		program_epoch = program_epoch + 1, level = 0, main_rounds = 2 WHERE id = ?`,
 		demoKey, userID); err != nil {
 		return err
 	}

@@ -48,5 +48,8 @@ func WorkoutProgramKey(userID int64) string {
 	if epoch := DB.ProgramEpoch(userID); epoch > 0 {
 		data += fmt.Sprintf("\nprogram-epoch:%d", epoch)
 	}
+	if rounds := DB.GetRounds(userID); rounds != content.MainRounds {
+		data += fmt.Sprintf("\nrounds:%d", rounds)
+	}
 	return fmt.Sprintf("%x", sha256.Sum256([]byte(data)))
 }

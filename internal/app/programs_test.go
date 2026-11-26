@@ -316,3 +316,46 @@ func TestSwitchMakesInterruptedWorkoutStale(t *testing.T) {
 		t.Fatal("a new account starts at epoch 0")
 	}
 }
+
+// Difficulty, rounds and pauses belong to each program and survive switching
+// back and forth; a newly added program starts at normal difficulty and two
+// rounds with the pauses of the program it was picked from.
+func TestEachProgramKeepsItsOwnSettings(t *testing.T) {
+	d := openAppDB(t)
+	u, _ := d.CreateUser("settings@example.com", "h", "en", "S")
+	set := func(level, rounds, main int) {
+		t.Helper()
+		if _, err := UpdateSettings(u.ID, SettingsPatch{Level: &level, Rounds: &rounds, RestMain: &main}); err != nil {
+			t.Fatal(err)
+		}
+	}
+	expect := func(what string, level, rounds, main int) {
+		t.Helper()
+		st, _ := GetSettings(u.ID)
+		if st.Level != level || st.Rounds != rounds || st.RestMain != main {
+			t.Fatalf("%s: level %d rounds %d main rest %d, want %d %d %d", what, st.Level, st.Rounds, st.RestMain, level, rounds, main)
+		}
+	}
+	_ = SelectReady(u.ID, "plank30", "en")
+	set(2, 3, 30)
+	if w := UserWorkout(u.ID, 1); countMain(w) != 3*len(UserProgram(u.ID).Days[0].Items) {
+		t.Fatal("rounds setting not applied to the workout")
+	}
+	_ = SelectReady(u.ID, "abs30", "en")
+	expect("new abs", 0, 2, 30)
+	set(-1, 1, 15)
+	_ = SelectReady(u.ID, "plank30", "en")
+	expect("plank again", 2, 3, 30)
+	_ = SelectReady(u.ID, "abs30", "en")
+	expect("abs again", -1, 1, 15)
+}
+
+func countMain(w content.Workout) int {
+	n := 0
+	for _, it := range w.Items {
+		if it.Slot == content.Main {
+			n++
+		}
+	}
+	return n
+}

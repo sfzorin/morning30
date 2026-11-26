@@ -239,6 +239,24 @@ func (r Resolved) Marshal() string {
 // Direct structs and imported programs obey the same contract. Dose scaling
 // affects the main phase only; user rest preferences affect every transition.
 func (r Resolved) Workout(day, level int, rests Rests) Workout {
+	return r.WorkoutRounds(day, level, MainRounds, rests)
+}
+
+// ClampRounds keeps a number of main rounds within 1..10.
+func ClampRounds(n int) int {
+	if n < RoundsMin {
+		return RoundsMin
+	}
+	if n > RoundsMax {
+		return RoundsMax
+	}
+	return n
+}
+
+// WorkoutRounds builds a day's session with the main part repeated rounds
+// times (the user's setting, 1..10).
+func (r Resolved) WorkoutRounds(day, level, rounds int, rests Rests) Workout {
+	rounds = ClampRounds(rounds)
 	r.normalize()
 	day = clampDay(day)
 	var items []Item
@@ -259,7 +277,7 @@ func (r Resolved) Workout(day, level int, rests Rests) Workout {
 	for _, ri := range r.WarmupFor(day - 1) {
 		emit(ri, Warmup, 1)
 	}
-	for round := 1; round <= MainRounds; round++ {
+	for round := 1; round <= rounds; round++ {
 		for _, ri := range r.Days[day-1].Items {
 			emit(ri, Main, round)
 		}

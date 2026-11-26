@@ -79,7 +79,13 @@ func (r Root) privateRoutes(s auth.Session) gox.Elem {
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Programs }).
 			Comp(programsPage{sess: s, auth: r.Auth, path: r.Path}),
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Editor }).
-			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, editor: true}),
+			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, mode: "editor"}),
+		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Program }).
+			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, mode: "program"}),
+		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.SettingsExercises }).
+			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, mode: "exercises"}),
+		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.SettingsAgent }).
+			Comp(settingsPage{sess: s, auth: r.Auth, path: r.Path, mode: "agent"}),
 		doors.RouteMatch(func(p path.Path) bool { return p.Page == path.Start }).
 			Comp(workoutPage{sess: s, day: 0, path: r.Path}),
 		doors.RouteDerive(func(p path.Path) (int, bool) {
@@ -90,5 +96,5 @@ func (r Root) privateRoutes(s auth.Session) gox.Elem {
 		doors.RouteDefaultComp[path.Path](homePage{sess: s, auth: r.Auth, path: r.Path}),
 	)); if __e != nil { return }
 	return })
-//line router.gox:66
+//line router.gox:72
 }

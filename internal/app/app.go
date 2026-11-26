@@ -256,7 +256,7 @@ func UserProgram(userID int64) content.Resolved {
 func UserWorkout(userID int64, day int) content.Workout {
 	w, m, c := DB.Rests(userID)
 	rests := content.Rests{Warmup: w, Main: m, Cooldown: c}
-	return UserProgram(userID).Workout(day, DB.GetLevel(userID), rests)
+	return UserProgram(userID).WorkoutRounds(day, DB.GetLevel(userID), DB.GetRounds(userID), rests)
 }
 
 // UserWorkoutBase builds the day's workout at level 0 (base, unscaled values) and
@@ -265,5 +265,5 @@ func UserWorkout(userID int64, day int) content.Workout {
 func UserWorkoutBase(userID int64, day int) (content.Workout, int) {
 	w, m, c := DB.Rests(userID)
 	rests := content.Rests{Warmup: w, Main: m, Cooldown: c}
-	return UserProgram(userID).Workout(day, 0, rests), DB.GetLevel(userID)
+	return UserProgram(userID).WorkoutRounds(day, 0, DB.GetRounds(userID), rests), DB.GetLevel(userID)
 }

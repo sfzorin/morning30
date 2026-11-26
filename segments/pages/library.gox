@@ -93,7 +93,7 @@ elem (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) {
 		group := ""
 	}
 	<div class="lib-head">
-		~>doors.ALink{Model: path.Path{Page: path.Editor}} <a class="lib-back" aria-label=(i18n.T(l, "settings.editor"))>~(icon("back", false))</a>
+		~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="lib-back" aria-label=(i18n.T(l, "programs.title"))>~(icon("back", false))</a>
 		<h1>~(i18n.T(l, "library.title"))</h1>
 	</div>
 	~(if s.Done != "" {

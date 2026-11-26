@@ -75,13 +75,16 @@ elem (h homePage) Main() {
 			~(if doneToday {
 				<p class="done-banner">~(i18n.T(l, "home.done_today"))</p>
 			})
-			~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang))</a>
-			<div class="hero-cycle">~(i18n.T(l, "home.cycle"), " ", cycle)~(if !w.FixedDifficulty && h.sess.Level != 0 { ~("  ·  ", i18n.T(l, "home.level"), " ", levelLabel(l, h.sess.Level)) })</div>
+			~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="hero-program">~(app.ProgramTitle(h.sess.UserID, h.sess.Lang)) ~(icon("settings", false))</a>
+			~// The cycle number lives in the 30-day grid below.
 			<div class="day-num">~(i18n.T(l, "home.day"), " ", curDay)</div>
 			<div class="day-meta">
 				<span>~(i18n.T(l, "home.rounds"), ": ", mainRounds)</span>
 				~>doors.ALink{Model: path.Path{Page: path.Today}} <a class="day-count">~(len(w.Items), " ", i18n.T(l, "home.exercises"))</a>
 				<span>~(i18n.T(l, "home.est"), " ", minutes(w.EstSec), " ", i18n.T(l, "home.min"))</span>
+				~(if lv := app.DB.GetLevel(h.sess.UserID); !w.FixedDifficulty && lv != 0 {
+					<span>~(i18n.T(l, "home.level"), " ", levelLabel(l, lv))</span>
+				})
 			</div>
 			~// An interrupted workout replaces the start button with one "Continue".
 			~>doors.ALink{Model: path.Path{Page: path.Start}} <a class="btn primary big start-workout">~(startLabel)</a>
@@ -156,11 +159,14 @@ elem (h homePage) programs(selected []app.SelectedView) {
 				})
 			</div>
 		</section>
-	} else if len(others) > 0 {
+	} else {
+		~// The other selected programs, plus a way to add one right here.
 		<section class="courses">
-			<div class="courses-head">
-				<h3>~(i18n.T(l, "home.switch"))</h3>
-			</div>
+			~(if len(others) > 0 {
+				<div class="courses-head">
+					<h3>~(i18n.T(l, "home.switch"))</h3>
+				</div>
+			})
 			<div class="course-list">
 				~(for _, p := range others {
 					~>doors.AClick{On: h.pickSelected(p.ID)} <button class="course-card" type="button">
@@ -168,6 +174,10 @@ elem (h homePage) programs(selected []app.SelectedView) {
 						<span class="course-meta">~(i18n.T(l, "programs.day"), " ", p.Day)</span>
 					</button>
 				})
+				~>doors.ALink{Model: path.Path{Page: path.Programs}} <a class="course-card add-card">
+					~(icon("plus", false))
+					<span class="course-title">~(i18n.T(l, "home.add_program"))</span>
+				</a>
 			</div>
 		</section>
 	})

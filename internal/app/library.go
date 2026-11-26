@@ -194,7 +194,7 @@ func Day(userID int64, lang string, day int) DayPlan {
 	w := UserWorkout(userID, day)
 	cat := UserCatalog(userID)
 	l := i18n.Lang(lang)
-	plan := DayPlan{Program: ProgramTitle(userID, lang), Day: day, Exercises: len(w.Items), MainRounds: content.MainRounds, EstMinutes: (w.EstSec + 59) / 60}
+	plan := DayPlan{Program: ProgramTitle(userID, lang), Day: day, Exercises: len(w.Items), MainRounds: DB.GetRounds(userID), EstMinutes: (w.EstSec + 59) / 60}
 	for _, it := range w.Items {
 		if it.Slot == content.Main && it.Round > 1 {
 			continue
@@ -217,6 +217,7 @@ type Settings struct {
 	VoiceMode    string `json:"voiceMode"` // off, min, normal or detailed
 	Figure       string `json:"figure"`    // m, f, b or g
 	Level        int    `json:"level"`     // difficulty −3..+3
+	Rounds       int    `json:"rounds"`    // main rounds 1..10
 }
 
 // SettingsPatch changes only the fields that are set.
@@ -229,6 +230,7 @@ type SettingsPatch struct {
 	VoiceMode    *string `json:"voiceMode,omitempty"`
 	Figure       *string `json:"figure,omitempty"`
 	Level        *int    `json:"level,omitempty"`
+	Rounds       *int    `json:"rounds,omitempty"`
 }
 
 // GetSettings reads the account preferences.
@@ -243,7 +245,7 @@ func GetSettings(userID int64) (Settings, error) {
 		vm = "normal"
 	}
 	return Settings{Name: u.Name, Lang: u.Lang, RestWarmup: w, RestMain: m, RestCooldown: c,
-		VoiceMode: vm, Figure: DB.GetSex(userID), Level: DB.GetLevel(userID)}, nil
+		VoiceMode: vm, Figure: DB.GetSex(userID), Level: DB.GetLevel(userID), Rounds: DB.GetRounds(userID)}, nil
 }
 
 // ErrInvalidSettings is returned for an unsupported language, voice mode or figure.
@@ -305,6 +307,11 @@ func UpdateSettings(userID int64, p SettingsPatch) (Settings, error) {
 	}
 	if p.Level != nil {
 		if err := DB.SetLevel(userID, *p.Level); err != nil {
+			return s, err
+		}
+	}
+	if p.Rounds != nil {
+		if err := DB.SetRounds(userID, *p.Rounds); err != nil {
 			return s, err
 		}
 	}
