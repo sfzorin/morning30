@@ -6,14 +6,15 @@ package landing
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"net/http"
 	"strings"
 
+	"morning30/internal/brand"
 	"morning30/internal/catalog"
 	"morning30/internal/content"
-	"morning30/internal/brand"
 	"morning30/internal/i18n"
 	"morning30/internal/langs"
 )
@@ -84,17 +85,18 @@ type dayRow struct {
 
 type page struct {
 	Lang, HTMLLang, Dir string
-	Title, Desc        string
-	Canonical, Default string
-	Alternates         []link
-	Heading, Lead      string
-	Minutes, Days30    string
-	Cards              []card
-	Days               []dayRow
-	IsCourse           bool
-	T                  map[string]string
-	IndexURL           string
-	Logo               template.HTML // the sun mark before the name
+	Title, Desc         string
+	Canonical, Default  string
+	Alternates          []link
+	Heading, Lead       string
+	Minutes, Days30     string
+	Cards               []card
+	Days                []dayRow
+	IsCourse            bool
+	T                   map[string]string
+	IndexURL            string
+	Logo                template.HTML // the sun mark before the name
+	JSONLD              template.JS   // schema.org data for search engines
 }
 
 var uiKeys = []string{
@@ -149,6 +151,14 @@ func indexPage(l i18n.Lang) page {
 			Minutes: span(l, c.Resolve()),
 		})
 	}
+	items := make([]any, 0, len(p.Cards))
+	for i, c := range p.Cards {
+		items = append(items, map[string]any{"@type": "ListItem", "position": i + 1, "name": c.Title, "url": Origin + c.URL})
+	}
+	p.JSONLD = jsonLD(map[string]any{
+		"@context": "https://schema.org", "@type": "ItemList", "name": p.Heading, "inLanguage": p.HTMLLang,
+		"itemListElement": items,
+	})
 	return p
 }
 
@@ -175,7 +185,33 @@ func coursePage(l i18n.Lang, c content.Course) page {
 			p.Cards = append(p.Cards, card{Title: o.TitleIn(string(l)), URL: CoursePath(string(l), o), Minutes: span(l, o.Resolve())})
 		}
 	}
+	org := map[string]any{"@type": "Organization", "name": "morning30.com", "url": Origin + "/"}
+	p.JSONLD = jsonLD([]any{
+		map[string]any{
+			"@context": "https://schema.org", "@type": "Course", "name": p.Heading, "description": p.Desc,
+			"url": p.Canonical, "inLanguage": p.HTMLLang, "provider": org, "isAccessibleForFree": true,
+			"offers": map[string]any{"@type": "Offer", "price": "0", "priceCurrency": "USD", "category": "Free"},
+			"hasCourseInstance": map[string]any{"@type": "CourseInstance", "courseMode": "Online",
+				"courseWorkload": "P30D", "courseSchedule": map[string]any{"@type": "Schedule", "repeatFrequency": "Daily", "repeatCount": content.TotalDays}},
+		},
+		map[string]any{
+			"@context": "https://schema.org", "@type": "BreadcrumbList",
+			"itemListElement": []any{
+				map[string]any{"@type": "ListItem", "position": 1, "name": i18n.T(l, "home.courses"), "item": Origin + IndexPath(string(l))},
+				map[string]any{"@type": "ListItem", "position": 2, "name": p.Heading, "item": p.Canonical},
+			},
+		},
+	})
 	return p
+}
+
+// jsonLD encodes schema.org data for a <script type="application/ld+json">.
+func jsonLD(v any) template.JS {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return ""
+	}
+	return template.JS(b)
 }
 
 // dose formats one station, e.g. "Forearm plank · 20 sec" or "Push-ups × 6".
@@ -228,7 +264,8 @@ var tmpl = template.Must(template.New("page").Parse(`<!doctype html>
 <meta property="og:url" content="{{.Canonical}}">
 <meta property="og:image" content="` + Origin + `/static/icon-512.png">
 <meta name="theme-color" content="#0f172a">
-<link rel="icon" type="image/svg+xml" href="/static/icon.svg">
+{{if .JSONLD}}<script type="application/ld+json">{{.JSONLD}}</script>
+{{end}}<link rel="icon" type="image/svg+xml" href="/static/icon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/static/icon-192.png">
 <link rel="apple-touch-icon" href="/static/icon-180.png">
 <style>

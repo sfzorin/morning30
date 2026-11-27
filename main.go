@@ -143,7 +143,13 @@ func main() {
 	// SEO: robots + sitemap (the landing page plus the public course pages).
 	mux.HandleFunc("/robots.txt", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-		w.Write([]byte("User-agent: *\nAllow: /\nSitemap: https://morning30.com/sitemap.xml\n"))
+		// The public pages are the home page, the course catalog and the
+		// privacy policy; the app's own screens are personal and stay out.
+		w.Write([]byte("User-agent: *\nAllow: /\n" +
+			"Disallow: /login\nDisallow: /register\nDisallow: /settings\nDisallow: /program\nDisallow: /programs\n" +
+			"Disallow: /today\nDisallow: /library\nDisallow: /editor\nDisallow: /day/\nDisallow: /start\n" +
+			"Disallow: /coach\nDisallow: /about\nDisallow: /test\nDisallow: /fitness\nDisallow: /api/\n" +
+			"Sitemap: https://morning30.com/sitemap.xml\n"))
 	})
 	mux.HandleFunc("/sitemap.xml", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "application/xml; charset=utf-8")

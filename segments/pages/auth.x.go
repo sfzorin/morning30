@@ -59,7 +59,7 @@ func (a authPage) Main() gox.Elem {
 		{
 			__e = __c.Submit(); if __e != nil { return }
 //line auth.gox:52
-			__e = __c.Any(i18n.T(l, "app.name")); if __e != nil { return }
+			__e = __c.Any(i18n.T(l, "app.name") + " — " + i18n.T(l, "app.tagline")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("main"); if __e != nil { return }
