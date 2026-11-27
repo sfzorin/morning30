@@ -248,7 +248,7 @@ func (h homePage) Main() gox.Elem {
 					__e = __c.Set("class", "fire"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 //line home.gox:99
-					__e = __c.Any(icon("flame", true)); if __e != nil { return }
+					__e = __c.Any(flameMark(30)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("span"); if __e != nil { return }
@@ -730,7 +730,7 @@ func (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr st
 //line home.gox:280
 			if acts[ds] {
 //line home.gox:281
-				__e = __c.Any(icon("flame", true)); if __e != nil { return }
+				__e = __c.Any(flameMark(18)); if __e != nil { return }
 			} else  {
 //line home.gox:283
 				__e = __c.Any(dd); if __e != nil { return }

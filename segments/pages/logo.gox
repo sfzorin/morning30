@@ -19,6 +19,15 @@ elem logoMark(size int) {
 	</svg>
 }
 
+// flameMark is the streak flame: three layers of fire (red, orange, yellow).
+elem flameMark(size int) {
+	<svg class="flame" width=(size) height=(size) viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+		<path d="M12 1C14.5 5.5 20 8.5 20 15A8 8 0 0 1 4 15C4 11.5 5.8 9.4 7.4 7.8C7.6 10 8.6 11.4 9.8 12C9.4 8.4 10.2 4.2 12 1Z" fill="#ef4444"></path>
+		<path d="M12.4 7.5C14.2 10.3 17 12.2 17 16A5 5 0 0 1 7 16C7 14 8 12.6 9.2 11.6C9.5 13 10.2 13.8 11 14.2C10.9 12 11.3 9.6 12.4 7.5Z" fill="#fb923c"></path>
+		<path d="M12 13C13.4 14.4 14.4 15.6 14.4 17.2A2.4 2.4 0 0 1 9.6 17.2C9.6 15.8 10.6 14.5 12 13Z" fill="#fde047"></path>
+	</svg>
+}
+
 func f2(v float64) string { return fmt.Sprintf("%.2f", v) }
 
 var _ = gox.Elem(nil)

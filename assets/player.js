@@ -900,90 +900,112 @@
   // ---- celebration: confetti + a roaring crowd (applause, cheers, whistles) ----
   function celebrate() {
     confetti();
+    fireworks();
+    applause();
+  }
+
+  // applause plays a real recording of a cheering, clapping crowd
+  // (static/sounds/cheer.mp3: BigSoundBank #237, CC0). Phones only play sound
+  // that follows a tap, so the first tap in the workout opens the audio and
+  // loads the recording; the finish then plays it through Web Audio (a plain
+  // fetch, which also works when the service worker serves it from cache).
+  var cheerCtx = null, cheerBuf = null;
+  function primeCheer() {
+    if (cheerCtx) return;
+    var Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx || !window.fetch) return;
     try {
-      var Ctx = window.AudioContext || window.webkitAudioContext;
-      if (!Ctx) return;
-      var ac = new Ctx();
-      var t0 = ac.currentTime;
-      var master = ac.createGain();
-      master.gain.value = 0.9;
-      master.connect(ac.destination);
+      cheerCtx = new Ctx();
+      if (cheerCtx.resume) cheerCtx.resume();
+      window.fetch("/static/sounds/cheer.mp3").then(function (r) { return r.arrayBuffer(); }).then(function (data) {
+        return new Promise(function (ok, fail) { cheerCtx.decodeAudioData(data, ok, fail); });
+      }).then(function (buf) { cheerBuf = buf; }).catch(function () {});
+    } catch (e) { cheerCtx = null; }
+  }
+  function onFirstTap() {
+    document.removeEventListener("pointerdown", onFirstTap, true);
+    document.removeEventListener("keydown", onFirstTap, true);
+    primeCheer();
+  }
+  document.addEventListener("pointerdown", onFirstTap, true);
+  document.addEventListener("keydown", onFirstTap, true);
 
-      // Applause bed: a crowd of ~900 random claps over ~3 s, with a swell.
-      var dur = 3.0;
-      var buffer = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
-      var d = buffer.getChannelData(0), i, k;
-      for (i = 0; i < 900; i++) {
-        var at = Math.floor(Math.random() * d.length);
-        var len = 40 + Math.floor(Math.random() * 80);
-        var amp = 0.5 + Math.random() * 0.5;
-        for (k = 0; k < len && at + k < d.length; k++) {
-          var e = 1 - k / len;
-          d[at + k] += (Math.random() * 2 - 1) * e * e * amp;
-        }
+  function applause() {
+    primeCheer();
+    if (!cheerCtx) return;
+    var tries = 0;
+    (function play() {
+      if (disposed) return;
+      if (!cheerBuf) { if (++tries < 20) setTimeout(play, 150); return; }
+      try {
+        if (cheerCtx.resume) cheerCtx.resume();
+        var src = cheerCtx.createBufferSource(), gain = cheerCtx.createGain();
+        src.buffer = cheerBuf;
+        gain.gain.value = 0.9;
+        src.connect(gain); gain.connect(cheerCtx.destination);
+        src.start();
+      } catch (e) {}
+    })();
+  }
+
+  // fireworks draws ~4 s of rockets bursting over the done screen (silently;
+  // the sound is the applause). Skipped with reduced motion or without a canvas.
+  function fireworks() {
+    if (reducedMotion || !el.doneOverlay) return;
+    var canvas = document.createElement("canvas");
+    var cx = canvas.getContext && canvas.getContext("2d");
+    if (!cx) return;
+    canvas.className = "fireworks";
+    el.doneOverlay.appendChild(canvas);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = canvas.width = Math.round((el.doneOverlay.clientWidth || window.innerWidth) * dpr);
+    var H = canvas.height = Math.round((el.doneOverlay.clientHeight || window.innerHeight) * dpr);
+    var colors = ["#fbbf24", "#f472b6", "#34d399", "#60a5fa", "#f87171", "#a78bfa", "#fde047"];
+    var rockets = [], sparks = [], start = 0, fired = 0;
+    function launch() {
+      rockets.push({ x: W * (0.15 + Math.random() * 0.7), y: H, vx: (Math.random() - 0.5) * 2 * dpr,
+        vy: -(14 + Math.random() * 5) * dpr, top: H * (0.12 + Math.random() * 0.3),
+        c: colors[Math.floor(Math.random() * colors.length)] });
+    }
+    function burst(r) {
+      for (var n = 0; n < 80; n++) {
+        var a = n / 80 * Math.PI * 2, sp = (3.5 + Math.random() * 5.5) * dpr;
+        sparks.push({ x: r.x, y: r.y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 1, c: Math.random() < 0.75 ? r.c : "#ffffff" });
       }
-      var bed = ac.createBufferSource(); bed.buffer = buffer;
-      var bp = ac.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 1900; bp.Q.value = 0.7;
-      var bedG = ac.createGain();
-      bedG.gain.setValueAtTime(0.0001, t0);
-      bedG.gain.exponentialRampToValueAtTime(0.6, t0 + 0.25);
-      bedG.gain.setValueAtTime(0.6, t0 + 1.7);
-      bedG.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-      bed.connect(bp); bp.connect(bedG); bedG.connect(master);
-      bed.start(t0);
-
-      // Crowd roar: a throaty "ahhh" — brown-ish noise shaped by two vowel
-      // formants, with a big swell and a slow undulation, like an approving
-      // crowd. (Pitched oscillators sound fake; a real roar is filtered noise.)
-      var roarBuf = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
-      var rd = roarBuf.getChannelData(0), lastp = 0;
-      for (k = 0; k < rd.length; k++) {
-        var wn = Math.random() * 2 - 1;
-        lastp = (lastp + 0.02 * wn) / 1.02; // leaky integrator → brown-ish noise
-        rd[k] = lastp * 3.0 + wn * 0.3;
+    }
+    function frame(ts) {
+      if (disposed) { canvas.remove(); return; }
+      if (!start) start = ts;
+      var t = ts - start;
+      // Fade the previous frame so sparks leave short trails.
+      cx.globalCompositeOperation = "destination-out";
+      cx.fillStyle = "rgba(0,0,0,0.28)";
+      cx.fillRect(0, 0, W, H);
+      cx.globalCompositeOperation = "source-over";
+      if (t < 4200 && fired < Math.floor(t / 420) + 1) {
+        launch(); fired++;
+        if (Math.random() < 0.4) launch();
       }
-      var roar = ac.createBufferSource(); roar.buffer = roarBuf;
-      var f1 = ac.createBiquadFilter(); f1.type = "bandpass"; f1.frequency.value = 620; f1.Q.value = 2.2;
-      var f2 = ac.createBiquadFilter(); f2.type = "bandpass"; f2.frequency.value = 1300; f2.Q.value = 2.2;
-      var roarG = ac.createGain();
-      roarG.gain.setValueAtTime(0.0001, t0);
-      roarG.gain.exponentialRampToValueAtTime(0.55, t0 + 0.4); // crowd swells up
-      roarG.gain.setValueAtTime(0.55, t0 + 1.9);
-      roarG.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-      var trem = ac.createOscillator(); trem.type = "sine"; trem.frequency.value = 4;
-      var tremG = ac.createGain(); tremG.gain.value = 0.16; // undulation
-      trem.connect(tremG); tremG.connect(roarG.gain);
-      roar.connect(f1); roar.connect(f2);
-      f1.connect(roarG); f2.connect(roarG); roarG.connect(master);
-      roar.start(t0); roar.stop(t0 + dur); trem.start(t0); trem.stop(t0 + dur);
-
-      // A couple of celebratory whistles.
-      for (i = 0; i < 2; i++) {
-        var ws = t0 + 0.3 + Math.random() * 1.2;
-        var wo = ac.createOscillator(); wo.type = "sine";
-        var wf = 2200 + Math.random() * 600;
-        wo.frequency.setValueAtTime(wf, ws);
-        wo.frequency.linearRampToValueAtTime(wf + 300, ws + 0.3);
-        var wg = ac.createGain();
-        wg.gain.setValueAtTime(0.0001, ws);
-        wg.gain.exponentialRampToValueAtTime(0.06, ws + 0.05);
-        wg.gain.exponentialRampToValueAtTime(0.0001, ws + 0.5);
-        wo.connect(wg); wg.connect(master);
-        wo.start(ws); wo.stop(ws + 0.55);
-      }
-
-      // Bright chime arpeggio (the firework "salute").
-      [523, 659, 784, 1046].forEach(function (f, n) {
-        var o = ac.createOscillator(), g = ac.createGain();
-        o.type = "triangle"; o.frequency.value = f;
-        o.connect(g); g.connect(master);
-        var s = t0 + n * 0.12;
-        g.gain.setValueAtTime(0.0001, s);
-        g.gain.exponentialRampToValueAtTime(0.22, s + 0.03);
-        g.gain.exponentialRampToValueAtTime(0.0001, s + 0.5);
-        o.start(s); o.stop(s + 0.52);
+      rockets = rockets.filter(function (r) {
+        r.x += r.vx; r.y += r.vy; r.vy += 0.17 * dpr;
+        cx.fillStyle = r.c;
+        cx.fillRect(r.x - 1.5 * dpr, r.y - 5 * dpr, 3 * dpr, 10 * dpr);
+        if (r.y <= r.top || r.vy >= 0) { burst(r); return false; }
+        return true;
       });
-    } catch (e) {}
+      sparks = sparks.filter(function (p) {
+        p.x += p.vx; p.y += p.vy; p.vx *= 0.985; p.vy = p.vy * 0.985 + 0.085 * dpr; p.life -= 0.011;
+        if (p.life <= 0) return false;
+        cx.globalAlpha = p.life;
+        cx.fillStyle = p.c;
+        cx.beginPath(); cx.arc(p.x, p.y, 2.6 * dpr, 0, Math.PI * 2); cx.fill();
+        cx.globalAlpha = 1;
+        return true;
+      });
+      if (t < 8000 || rockets.length || sparks.length) requestAnimationFrame(frame);
+      else canvas.remove();
+    }
+    requestAnimationFrame(frame);
   }
 
   function confetti() {
@@ -1293,6 +1315,9 @@
     window.removeEventListener("pageshow", onPageShow);
     window.removeEventListener("focus", onPageShow);
     if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged === loadVoices) window.speechSynthesis.onvoiceschanged = null;
+    document.removeEventListener("pointerdown", onFirstTap, true);
+    document.removeEventListener("keydown", onFirstTap, true);
+    if (cheerCtx && cheerCtx.close) { try { cheerCtx.close(); } catch (e) {} }
   });
 
   if (redirectAfterRestart()) return;
