@@ -1,0 +1,24 @@
+package pages
+
+import (
+	"fmt"
+
+	"github.com/doors-dev/gox"
+
+	"morning30/internal/brand"
+)
+
+// logoMark draws the morning30 sun with its 30 rays (internal/brand), the
+// same mark as the app icon, for the login card.
+elem logoMark(size int) {
+	<svg class="logo-mark" width=(size) height=(size) viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+		~(for _, r := range brand.RayList() {
+			<line x1=(f2(r.X1)) y1=(f2(r.Y1)) x2=(f2(r.X2)) y2=(f2(r.Y2)) stroke=(r.Color) stroke-width=(f2(brand.RayWidth)) stroke-linecap="round"></line>
+		})
+		<circle cx="50" cy="50" r=(f2(brand.SunR)) fill=(brand.Sun)></circle>
+	</svg>
+}
+
+func f2(v float64) string { return fmt.Sprintf("%.2f", v) }
+
+var _ = gox.Elem(nil)

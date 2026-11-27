@@ -1,7 +1,12 @@
-// Command genicons writes PNG app icons (192, 512, 180) to assets/static/.
-// A simple "sunrise" mark: orange sun over a dark background.
+// Command genicons draws the morning30 icon (internal/brand) for the site,
+// the iPhone app and the Android app:
 //
-// Run: go run ./cmd/genicons
+//	assets/static/icon.svg, icon-180.png, icon-192.png, icon-512.png
+//	apps/ios/…/AppIcon.appiconset/icon-1024.png
+//	apps/android/…/mipmap-*/ic_launcher.png
+//
+// PNGs are full-bleed squares; the phones round the corners themselves.
+// Run from the repository root: go run ./cmd/genicons
 package main
 
 import (
@@ -11,54 +16,64 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"strconv"
+
+	"morning30/internal/brand"
 )
 
-var (
-	bg   = color.RGBA{0x0f, 0x17, 0x2a, 0xff}
-	sun1 = color.RGBA{0xfb, 0x92, 0x3c, 0xff}
-	sun2 = color.RGBA{0xf9, 0x73, 0x16, 0xff}
-)
-
-func lerp(a, b color.RGBA, t float64) color.RGBA {
-	return color.RGBA{
-		uint8(float64(a.R) + (float64(b.R)-float64(a.R))*t),
-		uint8(float64(a.G) + (float64(b.G)-float64(a.G))*t),
-		uint8(float64(a.B) + (float64(b.B)-float64(a.B))*t),
-		0xff,
-	}
+func hex(s string) color.RGBA {
+	v, _ := strconv.ParseUint(s[1:], 16, 32)
+	return color.RGBA{uint8(v >> 16), uint8(v >> 8), uint8(v), 0xff}
 }
 
+// segDist is the distance from p to the segment a–b.
+func segDist(px, py, ax, ay, bx, by float64) float64 {
+	dx, dy := bx-ax, by-ay
+	t := ((px-ax)*dx + (py-ay)*dy) / (dx*dx + dy*dy)
+	t = math.Max(0, math.Min(1, t))
+	return math.Hypot(px-(ax+t*dx), py-(ay+t*dy))
+}
+
+// colorAt samples the mark at a point of the 100×100 canvas.
+func colorAt(x, y float64, rays []brand.Ray, bg, sun color.RGBA) color.RGBA {
+	if math.Hypot(x-brand.CenterXY, y-brand.CenterXY) <= brand.SunR {
+		return sun
+	}
+	for _, r := range rays {
+		if segDist(x, y, r.X1, r.Y1, r.X2, r.Y2) <= brand.RayWidth/2 {
+			return hex(r.Color)
+		}
+	}
+	return bg
+}
+
+// draw renders the icon with 4×4 supersampling for smooth edges.
 func draw(size int) *image.RGBA {
+	const ss = 4
+	bg, sun, rays := hex(brand.Background), hex(brand.Sun), brand.RayList()
 	img := image.NewRGBA(image.Rect(0, 0, size, size))
-	cx := float64(size) / 2
-	cy := float64(size) * 0.62
-	r := float64(size) * 0.26
-	horizon := float64(size) * 0.62
-	for y := 0; y < size; y++ {
-		for x := 0; x < size; x++ {
-			fx, fy := float64(x), float64(y)
-			c := bg
-			d := math.Hypot(fx-cx, fy-cy)
-			if d <= r {
-				c = lerp(sun1, sun2, d/r) // sun disc with vertical-ish shade
-			} else {
-				// faint rays above horizon
-				if fy < horizon {
-					ang := math.Atan2(horizon-fy, fx-cx)
-					ray := math.Abs(math.Sin(ang * 6))
-					if ray > 0.86 && d < r*2.1 {
-						c = lerp(bg, sun1, (ray-0.86)/0.14*0.5)
-					}
+	scale := 100 / float64(size)
+	for py := 0; py < size; py++ {
+		for px := 0; px < size; px++ {
+			var r, g, b int
+			for sy := 0; sy < ss; sy++ {
+				for sx := 0; sx < ss; sx++ {
+					c := colorAt((float64(px)+(float64(sx)+.5)/ss)*scale, (float64(py)+(float64(sy)+.5)/ss)*scale, rays, bg, sun)
+					r, g, b = r+int(c.R), g+int(c.G), b+int(c.B)
 				}
 			}
-			img.Set(x, y, c)
+			n := ss * ss
+			img.Set(px, py, color.RGBA{uint8(r / n), uint8(g / n), uint8(b / n), 0xff})
 		}
 	}
 	return img
 }
 
-func write(size int, name string) {
-	f, err := os.Create(filepath.Join("assets", "static", name))
+func write(size int, path string) {
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		panic(err)
+	}
+	f, err := os.Create(path)
 	if err != nil {
 		panic(err)
 	}
@@ -69,8 +84,15 @@ func write(size int, name string) {
 }
 
 func main() {
-	write(192, "icon-192.png")
-	write(512, "icon-512.png")
-	write(180, "icon-180.png")
+	if err := os.WriteFile(filepath.Join("assets", "static", "icon.svg"), []byte(brand.IconSVG()), 0o644); err != nil {
+		panic(err)
+	}
+	for _, s := range []int{180, 192, 512} {
+		write(s, filepath.Join("assets", "static", "icon-"+strconv.Itoa(s)+".png"))
+	}
+	write(1024, filepath.Join("apps", "ios", "Morning30", "Assets.xcassets", "AppIcon.appiconset", "icon-1024.png"))
+	for dir, s := range map[string]int{"mdpi": 48, "hdpi": 72, "xhdpi": 96, "xxhdpi": 144, "xxxhdpi": 192} {
+		write(s, filepath.Join("apps", "android", "app", "src", "main", "res", "mipmap-"+dir, "ic_launcher.png"))
+	}
 	println("wrote icons")
 }

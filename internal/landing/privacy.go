@@ -79,6 +79,8 @@ var privacyTmpl = template.Must(template.New("privacy").Parse(`<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{.Text.Title}} — morning30.com</title>
 <link rel="canonical" href="` + Origin + `/privacy">
+<link rel="icon" type="image/svg+xml" href="/static/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icon-192.png">
 <style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6;margin:0;padding:24px 16px}
 main{max-width:680px;margin:0 auto}h1{font-size:26px}h2{font-size:18px;margin-top:28px}a{color:#fb923c}.muted{color:#94a3b8}</style>
 </head><body><main>

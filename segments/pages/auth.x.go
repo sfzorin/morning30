@@ -77,7 +77,8 @@ func (a authPage) Main() gox.Elem {
 //line auth.gox:55
 					__e = __c.Set("class", "logo"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("🌅"); if __e != nil { return }
+//line auth.gox:55
+					__e = __c.Any(logoMark(64)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("h1"); if __e != nil { return }

@@ -96,7 +96,7 @@ elem (h homePage) Main() {
 		~(h.programs(selected))
 
 		<section class="streak-row">
-			<span class="fire">🔥</span>
+			<span class="fire">~(icon("flame", true))</span>
 			<span class="streak-n">~(streak)</span>
 			<span class="streak-label">~(i18n.T(l, "home.streak"))</span>
 		</section>
@@ -278,7 +278,7 @@ elem (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr st
 	}
 	<div class=(cls)>
 		~(if acts[ds] {
-			🔥
+			~(icon("flame", true))
 		} else {
 			~(dd)
 		})

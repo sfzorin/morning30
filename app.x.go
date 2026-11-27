@@ -236,18 +236,30 @@ func (a App) Main() gox.Elem {
 				__e = __c.InitVoid("link"); if __e != nil { return }
 				{
 //line app.gox:54
-					__e = __c.Set("rel", "apple-touch-icon"); if __e != nil { return }
+					__e = __c.Set("rel", "icon"); if __e != nil { return }
 //line app.gox:54
-					__e = __c.Set("href", "/static/icon-180.png"); if __e != nil { return }
+					__e = __c.Set("type", "image/png"); if __e != nil { return }
+//line app.gox:54
+					__e = __c.Set("sizes", "192x192"); if __e != nil { return }
+//line app.gox:54
+					__e = __c.Set("href", "/static/icon-192.png"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.InitVoid("link"); if __e != nil { return }
 				{
 //line app.gox:55
+					__e = __c.Set("rel", "apple-touch-icon"); if __e != nil { return }
+//line app.gox:55
+					__e = __c.Set("href", "/static/icon-180.png"); if __e != nil { return }
+				}
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.InitVoid("link"); if __e != nil { return }
+				{
+//line app.gox:56
 					__e = __c.Set("rel", "stylesheet"); if __e != nil { return }
-//line app.gox:55
+//line app.gox:56
 					__e = __c.Set("href", assets.Style); if __e != nil { return }
-//line app.gox:55
+//line app.gox:56
 					__e = __c.Set("name", "main.css"); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
@@ -259,7 +271,7 @@ func (a App) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("script"); if __e != nil { return }
 				{
-//line app.gox:57
+//line app.gox:58
 					__e = __c.Set("type", "application/ld+json"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Raw("{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"morning30.com\",\"url\":\"https://morning30.com/\",\"applicationCategory\":\"HealthApplication\",\"operatingSystem\":\"Web\",\"browserRequirements\":\"Requires JavaScript\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"description\":\"A free, voice-guided 30-day morning workout you can do anywhere with just a mat.\",\"inLanguage\":[\"en\",\"ru\",\"tr\",\"de\",\"es\",\"fr\",\"it\",\"pt\",\"pl\",\"nl\",\"sv\",\"da\",\"nb\",\"fi\",\"cs\",\"ro\",\"hu\",\"el\",\"ja\",\"ko\",\"zh-Hans\",\"zh-Hant\",\"id\",\"vi\",\"th\",\"ar\",\"he\",\"fa\"]}"); if __e != nil { return }
@@ -270,7 +282,7 @@ func (a App) Main() gox.Elem {
 			__e = __c.Init("body"); if __e != nil { return }
 			{
 				__e = __c.Submit(); if __e != nil { return }
-//line app.gox:62
+//line app.gox:63
 				__e = __c.Any(doors.Route(
 				doors.RouteModel(func(p doors.Source[path.Path]) gox.Comp {
 					return pages.Root{Path: p, Auth: a.auth}
@@ -280,7 +292,7 @@ func (a App) Main() gox.Elem {
 				__e = __c.Init("script"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Raw("if (\"serviceWorker\" in navigator) {\n\t\t\t\t\tnavigator.serviceWorker.register(\"/static/sw.js\").catch(function () {})\n\t\t\t\t}"); if __e != nil { return }
+					__e = __c.Raw("if (\"serviceWorker\" in navigator) {\n\t\t\t\t\tnavigator.serviceWorker.register(\"/static/sw.js\").catch(function () {})\n\t\t\t\t}\n\t\t\t\t// A page left in the background for long has been forgotten by the\n\t\t\t\t// server (doors drops idle pages after ~40 min, and deploys restart it);\n\t\t\t\t// its first tap would only reload it. Reload as soon as it is back.\n\t\t\t\t(function () {\n\t\t\t\t\tvar hiddenAt = document.hidden ? Date.now() : 0\n\t\t\t\t\tvar stale = 15 * 60 * 1000\n\t\t\t\t\tdocument.addEventListener(\"visibilitychange\", function () {\n\t\t\t\t\t\tif (document.hidden) { hiddenAt = Date.now(); return }\n\t\t\t\t\t\tif (hiddenAt && Date.now() - hiddenAt > stale) location.reload()\n\t\t\t\t\t\thiddenAt = 0\n\t\t\t\t\t})\n\t\t\t\t\twindow.addEventListener(\"pageshow\", function (e) {\n\t\t\t\t\t\tif (e.persisted) location.reload()\n\t\t\t\t\t})\n\t\t\t\t})()"); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
@@ -288,5 +300,5 @@ func (a App) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line app.gox:76
+//line app.gox:92
 }

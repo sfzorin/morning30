@@ -78,7 +78,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
   text-align: center;
   box-shadow: 0 20px 50px rgba(0,0,0,.4);
 }
-.auth-card .logo { font-size: 56px; line-height: 1; }
+.auth-card .logo { display: flex; justify-content: center; }
 .brand { font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
 .tagline { color: var(--muted); margin-top: -.2em; font-size: 14px; }
 .auth-card h2 { margin-top: 18px; font-size: 20px; }
@@ -183,7 +183,9 @@ h1, h2, h3 { margin: 0 0 .4em; }
   padding: 16px 20px;
   margin-bottom: 18px;
 }
-.streak-row .fire { font-size: 30px; }
+.streak-row .fire { display: flex; color: var(--accent); }
+.streak-row .fire .ic { width: 30px; height: 30px; stroke-width: 1.6; }
+.cal-day .ic { width: 18px; height: 18px; color: var(--accent); stroke-width: 1.6; }
 .streak-row .streak-n { font-size: 30px; font-weight: 800; }
 .streak-row .streak-label { color: var(--muted); font-size: 14px; }
 
@@ -687,7 +689,9 @@ body:has(.player) {
   padding: 24px;
   overflow: hidden;
 }
-.applause { font-size: 72px; animation: pop .6s ease both; }
+.applause { display: flex; color: var(--accent); animation: pop .6s ease both; }
+.applause .ic { width: 76px; height: 76px; stroke-width: 1.5; }
+.done-streak::before { content: ""; display: inline-block; width: 1.1em; height: 1.1em; margin-inline-end: .3em; vertical-align: -.2em; background: #fb923c; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 10.94c2.33-3.31.17-7.82-1-8.94 0 3.4-2.24 5.3-3.67 6.71C5.9 10.11 5 12.32 5 14.29 5 18 8.13 21 12 21s7-3 7-6.71c0-1.71-1.23-4.4-2.33-5.59-2.09 3.35-3.26 3.35-4.67 2.24'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 10.94c2.33-3.31.17-7.82-1-8.94 0 3.4-2.24 5.3-3.67 6.71C5.9 10.11 5 12.32 5 14.29 5 18 8.13 21 12 21s7-3 7-6.71c0-1.71-1.23-4.4-2.33-5.59-2.09 3.35-3.26 3.35-4.67 2.24'/%3E%3C/svg%3E") center / contain no-repeat; }
 .done-title { font-size: 30px; font-weight: 800; }
 .done-enc { font-size: 18px; color: var(--accent); font-weight: 600; max-width: 18em; }
 .done-streak { font-size: 20px; font-weight: 700; background: var(--card2); padding: 8px 18px; border-radius: 999px; }

@@ -134,6 +134,12 @@ func main() {
 	// Public "… in 30 days" course pages (plain HTML, no session).
 	landing.Register(mux)
 
+	// Browsers and crawlers ask for /favicon.ico on their own: answer with the sun.
+	mux.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "public, max-age=86400")
+		http.ServeFileFS(w, r, assets.Static(), "icon-192.png")
+	})
+
 	// SEO: robots + sitemap (the landing page plus the public course pages).
 	mux.HandleFunc("/robots.txt", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")

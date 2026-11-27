@@ -736,7 +736,8 @@ func (w workoutPage) Main() gox.Elem {
 //line workout.gox:388
 					__e = __c.Set("class", "applause"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Text("👏"); if __e != nil { return }
+//line workout.gox:388
+					__e = __c.Any(icon("trophy", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }

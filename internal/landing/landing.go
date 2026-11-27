@@ -13,6 +13,7 @@ import (
 
 	"morning30/internal/catalog"
 	"morning30/internal/content"
+	"morning30/internal/brand"
 	"morning30/internal/i18n"
 	"morning30/internal/langs"
 )
@@ -93,6 +94,7 @@ type page struct {
 	IsCourse           bool
 	T                  map[string]string
 	IndexURL           string
+	Logo               template.HTML // the sun mark before the name
 }
 
 var uiKeys = []string{
@@ -101,7 +103,7 @@ var uiKeys = []string{
 }
 
 func base(l i18n.Lang, path func(string) string) page {
-	p := page{Lang: string(l), HTMLLang: i18n.BCP47(l), Dir: i18n.Dir(l), T: map[string]string{}, IndexURL: IndexPath(string(l))}
+	p := page{Lang: string(l), HTMLLang: i18n.BCP47(l), Dir: i18n.Dir(l), T: map[string]string{}, IndexURL: IndexPath(string(l)), Logo: template.HTML(brand.Mark("mark", 28))}
 	for _, k := range uiKeys {
 		p.T[strings.ReplaceAll(k, ".", "_")] = i18n.T(l, k)
 	}
@@ -226,7 +228,9 @@ var tmpl = template.Must(template.New("page").Parse(`<!doctype html>
 <meta property="og:url" content="{{.Canonical}}">
 <meta property="og:image" content="` + Origin + `/static/icon-512.png">
 <meta name="theme-color" content="#0f172a">
-<link rel="icon" href="/static/icon.svg">
+<link rel="icon" type="image/svg+xml" href="/static/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" href="/static/icon-180.png">
 <style>
 :root{--bg:#0f172a;--card:#1e293b;--card2:#273449;--fg:#f1f5f9;--muted:#94a3b8;--accent:#fb923c;--accent2:#f97316;--ok:#34d399;--line:#334155}
 *{box-sizing:border-box}
@@ -234,7 +238,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,B
 a{color:inherit}
 .wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
-.brand{font-weight:800;text-decoration:none}
+.brand{display:inline-flex;align-items:center;gap:8px;font-weight:800;text-decoration:none}
 .lang{appearance:none;-webkit-appearance:none;background:var(--card) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%2394a3b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M1 1.5 6 6.5 11 1.5'/></svg>") no-repeat right 12px center;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:8px 32px 8px 12px;font:inherit;font-size:14px;max-width:50%}
 [dir=rtl] .lang{background-position:left 12px center;padding:8px 12px 8px 32px}
 h1{font-size:30px;line-height:1.15;letter-spacing:-.5px;margin:0 0 12px;text-wrap:balance}
@@ -261,7 +265,7 @@ h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5p
 <body>
 <div class="wrap">
 <div class="top">
-<a class="brand" href="/">🌅 {{.T.app_name}}</a>
+<a class="brand" href="/">{{.Logo}}{{.T.app_name}}</a>
 <select class="lang" aria-label="Language" onchange="location.href=this.value">{{range .Alternates}}<option value="{{.URL}}" lang="{{.Lang}}"{{if .Current}} selected{{end}}>{{.Label}}</option>{{end}}</select>
 </div>
 <main>

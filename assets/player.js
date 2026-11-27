@@ -837,7 +837,7 @@
     el.doneStreak.classList.remove("hidden");
     var name = (payload.name || "").trim();
     el.doneTitle.textContent = name ? name + ", " + t("bravo") : t("done_title");
-    if (receipt && typeof receipt.streak === "number") el.doneStreak.textContent = "🔥 " + receipt.streak + " · " + t("streak");
+    if (receipt && typeof receipt.streak === "number") el.doneStreak.textContent = receipt.streak + " · " + t("streak"); // the flame is drawn in CSS
     if (!celebrated) {
       celebrated = true;
       var message = enc.length ? enc[Math.floor(Math.random() * enc.length)] : "";

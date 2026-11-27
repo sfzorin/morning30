@@ -52,7 +52,7 @@ elem (a authPage) Main() {
 	<title>~(i18n.T(l, "app.name"))</title>
 	<main class="auth">
 		<div class="auth-card">
-			<div class="logo">🌅</div>
+			<div class="logo">~(logoMark(64))</div>
 			<h1 class="brand">~(i18n.T(l, "app.name"))</h1>
 			<p class="tagline">~(i18n.T(l, "app.tagline"))</p>
 			<h2>~(title)</h2>
