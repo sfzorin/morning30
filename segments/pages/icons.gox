@@ -23,8 +23,6 @@ elem icon(name string, filled bool) {
 			<path d="M9 6l6 6-6 6"></path>
 		} else if name == "to" {
 			<path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path>
-		} else if name == "trophy" {
-			<path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10"></path><path d="M17 4v8a5 5 0 0 1-10 0V4"></path><circle cx="5" cy="9" r="2"></circle><circle cx="19" cy="9" r="2"></circle>
 		} else if name == "check" {
 			<path d="M5 12l5 5L20 7"></path>
 		} else if name == "up" {

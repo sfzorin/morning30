@@ -385,7 +385,7 @@ elem (w workoutPage) Main() {
 		</div>
 
 		<div class="done-overlay hidden">
-			<div class="applause">~(icon("trophy", false))</div>
+			<div class="applause">~(trophyMark())</div>
 			<div class="done-title"></div>
 			<div class="done-enc"></div>
 			<div class="done-streak"></div>

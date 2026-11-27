@@ -948,8 +948,11 @@
     })();
   }
 
-  // fireworks draws ~4 s of rockets bursting over the done screen (silently;
-  // the sound is the applause). Skipped with reduced motion or without a canvas.
+  // fireworks fires about four seconds of rockets over the done screen and a
+  // finale of five at once (silently; the sound is the applause). Bursts come
+  // in three kinds: a coloured peony, a ring and a slow golden willow; some
+  // sparks glitter. Glowing trails use additive blending. Skipped with reduced
+  // motion or without a canvas.
   function fireworks() {
     if (reducedMotion || !el.doneOverlay) return;
     var canvas = document.createElement("canvas");
@@ -960,49 +963,71 @@
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var W = canvas.width = Math.round((el.doneOverlay.clientWidth || window.innerWidth) * dpr);
     var H = canvas.height = Math.round((el.doneOverlay.clientHeight || window.innerHeight) * dpr);
-    var colors = ["#fbbf24", "#f472b6", "#34d399", "#60a5fa", "#f87171", "#a78bfa", "#fde047"];
-    var rockets = [], sparks = [], start = 0, fired = 0;
-    function launch() {
-      rockets.push({ x: W * (0.15 + Math.random() * 0.7), y: H, vx: (Math.random() - 0.5) * 2 * dpr,
-        vy: -(14 + Math.random() * 5) * dpr, top: H * (0.12 + Math.random() * 0.3),
-        c: colors[Math.floor(Math.random() * colors.length)] });
+    var palette = [["#ff4d6d", "#ffd6e0"], ["#4dabf7", "#d0ebff"], ["#69db7c", "#d3f9d8"],
+      ["#ffd43b", "#fff3bf"], ["#b197fc", "#e5dbff"], ["#ff922b", "#ffe8cc"]];
+    var kinds = ["peony", "ring", "willow", "peony", "glitter"];
+    var plan = [], rockets = [], sparks = [], start = 0, t;
+    for (t = 150; t < 3300; t += 380 + Math.random() * 220) plan.push({ at: t, kind: kinds[Math.floor(Math.random() * kinds.length)] });
+    for (var f = 0; f < 5; f++) plan.push({ at: 3500 + f * 90, kind: f % 2 ? "willow" : "peony" });
+
+    function launch(kind) {
+      var x = W * (0.15 + Math.random() * 0.7);
+      rockets.push({ x: x, y: H, vx: (Math.random() - 0.5) * 1.6 * dpr, vy: -(13.5 + Math.random() * 4) * dpr,
+        top: H * (0.1 + Math.random() * 0.28), kind: kind, c: palette[Math.floor(Math.random() * palette.length)] });
+    }
+    function spark(x, y, vx, vy, life, decay, g, c, w, glitter) {
+      sparks.push({ x: x, y: y, px: x, py: y, vx: vx, vy: vy, life: life, decay: decay, g: g, c: c, w: w, glitter: glitter });
     }
     function burst(r) {
-      for (var n = 0; n < 80; n++) {
-        var a = n / 80 * Math.PI * 2, sp = (3.5 + Math.random() * 5.5) * dpr;
-        sparks.push({ x: r.x, y: r.y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 1, c: Math.random() < 0.75 ? r.c : "#ffffff" });
+      var willow = r.kind === "willow", ring = r.kind === "ring";
+      var n = willow ? 90 : ring ? 70 : 120;
+      for (var k = 0; k < n; k++) {
+        var a = k / n * Math.PI * 2 + Math.random() * 0.05;
+        var sp = (ring ? 6.2 : willow ? 1.5 + Math.random() * 4 : 2 + Math.random() * 6) * dpr;
+        var c = willow ? (Math.random() < 0.5 ? "#ffd43b" : "#ffa94d") : (Math.random() < 0.8 ? r.c[0] : r.c[1]);
+        spark(r.x, r.y, Math.cos(a) * sp, Math.sin(a) * sp, 1, willow ? 0.006 : 0.012 + Math.random() * 0.006,
+          (willow ? 0.05 : 0.075) * dpr, c, willow ? 2.2 : 2.8, r.kind === "glitter" || Math.random() < 0.15);
+      }
+      for (k = 0; k < 14; k++) { // the white flash at the centre
+        var b = Math.random() * Math.PI * 2, s = Math.random() * 1.5 * dpr;
+        spark(r.x, r.y, Math.cos(b) * s, Math.sin(b) * s, 0.7, 0.03, 0, "#ffffff", 5, false);
       }
     }
     function frame(ts) {
       if (disposed) { canvas.remove(); return; }
       if (!start) start = ts;
-      var t = ts - start;
-      // Fade the previous frame so sparks leave short trails.
-      cx.globalCompositeOperation = "destination-out";
-      cx.fillStyle = "rgba(0,0,0,0.28)";
+      var now = ts - start;
+      cx.globalCompositeOperation = "destination-out"; // fade into trails
+      cx.fillStyle = "rgba(0,0,0,0.2)";
       cx.fillRect(0, 0, W, H);
-      cx.globalCompositeOperation = "source-over";
-      if (t < 4200 && fired < Math.floor(t / 420) + 1) {
-        launch(); fired++;
-        if (Math.random() < 0.4) launch();
-      }
+      cx.globalCompositeOperation = "lighter"; // overlapping sparks glow
+      while (plan.length && plan[0].at <= now) launch(plan.shift().kind);
+      cx.lineCap = "round";
       rockets = rockets.filter(function (r) {
-        r.x += r.vx; r.y += r.vy; r.vy += 0.17 * dpr;
-        cx.fillStyle = r.c;
-        cx.fillRect(r.x - 1.5 * dpr, r.y - 5 * dpr, 3 * dpr, 10 * dpr);
+        var px = r.x, py = r.y;
+        r.x += r.vx; r.y += r.vy; r.vy += 0.16 * dpr;
+        cx.strokeStyle = "rgba(255,236,200,0.9)";
+        cx.lineWidth = 1.5 * dpr;
+        cx.beginPath(); cx.moveTo(px, py + 5 * dpr); cx.lineTo(r.x, r.y); cx.stroke();
+        if (Math.random() < 0.6) spark(r.x, r.y + 3 * dpr, (Math.random() - 0.5) * dpr, Math.random() * dpr, 0.5, 0.05, 0.05 * dpr, "#ffd8a8", 2, false);
         if (r.y <= r.top || r.vy >= 0) { burst(r); return false; }
         return true;
       });
       sparks = sparks.filter(function (p) {
-        p.x += p.vx; p.y += p.vy; p.vx *= 0.985; p.vy = p.vy * 0.985 + 0.085 * dpr; p.life -= 0.011;
+        p.px = p.x; p.py = p.y;
+        p.x += p.vx; p.y += p.vy; p.vx *= 0.982; p.vy = p.vy * 0.982 + p.g;
+        p.life -= p.decay;
         if (p.life <= 0) return false;
-        cx.globalAlpha = p.life;
-        cx.fillStyle = p.c;
-        cx.beginPath(); cx.arc(p.x, p.y, 2.6 * dpr, 0, Math.PI * 2); cx.fill();
+        var alpha = p.life;
+        if (p.glitter && Math.random() < 0.5) alpha *= 0.15;
+        cx.globalAlpha = Math.min(1, alpha);
+        cx.strokeStyle = p.c;
+        cx.lineWidth = p.w * Math.max(0.4, p.life) * dpr / 2;
+        cx.beginPath(); cx.moveTo(p.px, p.py); cx.lineTo(p.x, p.y); cx.stroke();
         cx.globalAlpha = 1;
         return true;
       });
-      if (t < 8000 || rockets.length || sparks.length) requestAnimationFrame(frame);
+      if (now < 9000 && (plan.length || rockets.length || sparks.length)) requestAnimationFrame(frame);
       else canvas.remove();
     }
     requestAnimationFrame(frame);

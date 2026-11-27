@@ -2,6 +2,7 @@ package pages
 
 import (
 	"fmt"
+	"math"
 
 	"github.com/doors-dev/gox"
 
@@ -26,6 +27,50 @@ elem flameMark(size int) {
 		<path d="M12.4 7.5C14.2 10.3 17 12.2 17 16A5 5 0 0 1 7 16C7 14 8 12.6 9.2 11.6C9.5 13 10.2 13.8 11 14.2C10.9 12 11.3 9.6 12.4 7.5Z" fill="#fb923c"></path>
 		<path d="M12 13C13.4 14.4 14.4 15.6 14.4 17.2A2.4 2.4 0 0 1 9.6 17.2C9.6 15.8 10.6 14.5 12 13Z" fill="#fde047"></path>
 	</svg>
+}
+
+// trophyMark is the finished-workout trophy: a gold cup with a star, 30
+// slowly turning rays behind it (as in the logo) and a few twinkles.
+elem trophyMark() {
+	<div class="trophy">
+		<svg class="trophy-rays" viewBox="0 0 170 170" aria-hidden="true" focusable="false">
+			~(for i := 0; i < 30; i++ {
+				~{ x1, y1, x2, y2, op, w := trophyRay(i) }
+				<line x1=(x1) y1=(y1) x2=(x2) y2=(y2) stroke="#fbbf24" stroke-opacity=(op) stroke-width=(w) stroke-linecap="round"></line>
+			})
+		</svg>
+		<svg class="trophy-cup" viewBox="0 0 170 170" aria-hidden="true" focusable="false">
+			<g transform="translate(85 88)">
+				<path d="M-44 -46 C-66 -46 -70 -16 -42 -4" fill="none" stroke="#d97706" stroke-width="9" stroke-linecap="round"></path>
+				<path d="M44 -46 C66 -46 70 -16 42 -4" fill="none" stroke="#b45309" stroke-width="9" stroke-linecap="round"></path>
+				<path d="M-44 -50 H44 C44 -12 30 10 0 14 C-30 10 -44 -12 -44 -50Z" fill="#fbbf24"></path>
+				<path d="M0 -50 H44 C44 -12 30 10 0 14Z" fill="#f59e0b"></path>
+				<path d="M-34 -44 C-34 -24 -28 -10 -16 0" fill="none" stroke="#fef3c7" stroke-width="5" stroke-linecap="round" opacity=".9"></path>
+				<rect x="-48" y="-56" width="96" height="10" rx="5" fill="#fcd34d"></rect>
+				<rect x="0" y="-56" width="48" height="10" rx="5" fill="#fbbf24"></rect>
+				<path d="M0 -38 L5 -27 L17 -26 L8 -18 L11 -6 L0 -12 L-11 -6 L-8 -18 L-17 -26 L-5 -27Z" fill="#fff7d6"></path>
+				<path d="M-7 14 H7 L10 32 H-10Z" fill="#d97706"></path>
+				<path d="M0 14 H7 L10 32 H0Z" fill="#b45309"></path>
+				<rect x="-26" y="32" width="52" height="11" rx="3" fill="#f59e0b"></rect>
+				<rect x="0" y="32" width="26" height="11" rx="3" fill="#d97706"></rect>
+				<rect x="-34" y="43" width="68" height="14" rx="4" fill="#92400e"></rect>
+				<rect x="-20" y="47" width="40" height="5" rx="2" fill="#fbbf24" opacity=".85"></rect>
+			</g>
+			<path class="twinkle t1" d="M34 36 L36.5 43.5 L44 46 L36.5 48.5 L34 56 L31.5 48.5 L24 46 L31.5 43.5Z" fill="#ffffff"></path>
+			<path class="twinkle t2" d="M138 56 L140 62 L146 64 L140 66 L138 72 L136 66 L130 64 L136 62Z" fill="#fde68a"></path>
+			<path class="twinkle t3" d="M128 20 L129.5 24.5 L134 26 L129.5 27.5 L128 32 L126.5 27.5 L122 26 L126.5 24.5Z" fill="#ffffff"></path>
+		</svg>
+	</div>
+}
+
+// trophyRay places ray i of 30 around the cup; every other ray is fainter.
+func trophyRay(i int) (x1, y1, x2, y2, opacity, width string) {
+	a := float64(i) * 12 * math.Pi / 180
+	op, w := "0.22", "7"
+	if i%2 == 1 {
+		op, w = "0.10", "4"
+	}
+	return f2(85 + 50*math.Cos(a)), f2(88 + 50*math.Sin(a)), f2(85 + 82*math.Cos(a)), f2(88 + 82*math.Sin(a)), op, w
 }
 
 func f2(v float64) string { return fmt.Sprintf("%.2f", v) }
