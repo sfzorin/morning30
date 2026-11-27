@@ -946,6 +946,17 @@ body:has(.player) {
 .add-card { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; text-decoration: none; border: 1.5px dashed var(--line); background: transparent; color: var(--accent); }
 .add-card .ic { width: 22px; height: 22px; }
 .add-card .course-title { color: var(--accent); }
+.course-list > .add-card:only-child {
+  grid-column: 1 / -1;
+  justify-self: start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+}
+.course-list > .add-card:only-child .ic { flex: none; }
 
 /* ---- Program page ---- */
 .settings-head .prog-name-input { flex: 1; margin: 0 0 0 4px; }
