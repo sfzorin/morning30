@@ -149,6 +149,12 @@ elem (c coachPage) Main() {
 				<input class="text-input" name="text" type="text" maxlength=(coachMaxText) placeholder=(i18n.T(l, "coach.placeholder")) aria-label=(i18n.T(l, "coach.placeholder"))>
 				<button class="coach-send" type="submit" aria-label=(i18n.T(l, "coach.send"))>~(icon("up", false))</button>
 			</form>
+			<script>
+				$on("coach-sent", () => {
+					const field = document.querySelector(".coach-input input[name=text]")
+					if (field) field.value = ""
+				})
+			</script>
 		} else {
 			<p class="coach-lead">~(i18n.T(l, "coach.off"))</p>
 		})
@@ -231,6 +237,7 @@ elem coachChange(l i18n.Lang, ch coach.Change) {
 func (c coachPage) submit(view doors.Source[coachView]) func(context.Context, doors.RequestForm[coachForm]) bool {
 	return func(ctx context.Context, r doors.RequestForm[coachForm]) bool {
 		c.send(ctx, view, r.Data().Text)
+		r.After(doors.ActionEmit{Name: "coach-sent"}) // empties the field (see the script by the form)
 		return false
 	}
 }

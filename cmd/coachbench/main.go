@@ -127,7 +127,7 @@ func load(uid int64, day int) int {
 func shape(uid int64) string {
 	r := app.UserProgram(uid)
 	for i := range r.Days {
-		if n := len(r.Days[i].Items); n < 3 || n > 8 {
+		if n := len(r.Days[i].Items); n < 3 || n > 14 {
 			return fmt.Sprintf("day %d has %d main exercises", i+1, n)
 		}
 		if len(r.WarmupFor(i)) == 0 || len(r.CooldownFor(i)) == 0 {
@@ -261,6 +261,12 @@ var scenarios = []scenario{
 			}
 		}
 		return "no custom exercise in the program"
+	}},
+	{"", "one hour", "demo", "Хочу заниматься по часу в день, сделай программу на 60 минут.", func(uid int64, b state, _ coach.Result) string {
+		if a := read(uid); a.avgMin < 45 {
+			return fmt.Sprintf("average day %d min (was %d)", a.avgMin, b.avgMin)
+		}
+		return ""
 	}},
 	{"", "rename", "demo", "Переименуй программу в «Утро с Сергеем»", func(uid int64, b state, _ coach.Result) string {
 		if a := read(uid); a.name != "Утро с Сергеем" {

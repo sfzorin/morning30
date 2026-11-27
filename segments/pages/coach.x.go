@@ -391,13 +391,19 @@ func (c coachPage) Main() gox.Elem {
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
+				__e = __c.Init("script"); if __e != nil { return }
+				{
+					__e = __c.Submit(); if __e != nil { return }
+					__e = __c.Raw("$on(\"coach-sent\", () => {\n\t\t\t\t\tconst field = document.querySelector(\".coach-input input[name=text]\")\n\t\t\t\t\tif (field) field.value = \"\"\n\t\t\t\t})"); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
 			} else  {
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line coach.gox:153
+//line coach.gox:159
 					__e = __c.Set("class", "coach-lead"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:153
+//line coach.gox:159
 					__e = __c.Any(i18n.T(l, "coach.off")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -405,7 +411,7 @@ func (c coachPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line coach.gox:156
+//line coach.gox:162
 }
 
 func coachChangesClass(undone bool) string {
@@ -447,151 +453,152 @@ func coachPart(l i18n.Lang, part string) string {
 	return ""
 }
 
-//line coach.gox:197
+//line coach.gox:203
 func coachChange(l i18n.Lang, ch coach.Change) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line coach.gox:199
+//line coach.gox:205
 		days := coachDays(l, ch.Days)
 		prefix := days
 		if part := coachPart(l, ch.Part); part != "" {
 			prefix = days + ", " + strings.ToLower(part)
 		}
 
-//line coach.gox:205
+//line coach.gox:211
 		if ch.Kind == "replace" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:206
+//line coach.gox:212
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:206
+//line coach.gox:212
 				__e = __c.Any(prefix + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:206
+//line coach.gox:212
 			__e = __c.Any(ch.From); if __e != nil { return }
-//line coach.gox:206
+//line coach.gox:212
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:206
-			__e = __c.Any(ch.To); if __e != nil { return }
-//line coach.gox:207
-		} else if ch.Kind == "add" {
-			__e = __c.Init("span"); if __e != nil { return }
-			{
-//line coach.gox:208
-				__e = __c.Set("class", "muted"); if __e != nil { return }
-				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:208
-				__e = __c.Any(prefix + ": "); if __e != nil { return }
-			}
-			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:208
-			__e = __c.Any(i18n.Tf(l, "coach.added", ch.To)); if __e != nil { return }
-//line coach.gox:209
-		} else if ch.Kind == "remove" {
-			__e = __c.Init("span"); if __e != nil { return }
-			{
-//line coach.gox:210
-				__e = __c.Set("class", "muted"); if __e != nil { return }
-				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:210
-				__e = __c.Any(prefix + ": "); if __e != nil { return }
-			}
-			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:210
-			__e = __c.Any(i18n.Tf(l, "coach.removed", ch.To)); if __e != nil { return }
-//line coach.gox:211
-		} else if ch.Kind == "dose" {
-			__e = __c.Init("span"); if __e != nil { return }
-			{
-//line coach.gox:212
-				__e = __c.Set("class", "muted"); if __e != nil { return }
-				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:212
-				__e = __c.Any(days + ": "); if __e != nil { return }
-			}
-			__e = __c.Close(); if __e != nil { return }
 //line coach.gox:212
 			__e = __c.Any(ch.To); if __e != nil { return }
 //line coach.gox:213
-			if ch.Pct != 0 {
+		} else if ch.Kind == "add" {
+			__e = __c.Init("span"); if __e != nil { return }
+			{
 //line coach.gox:214
+				__e = __c.Set("class", "muted"); if __e != nil { return }
+				__e = __c.Submit(); if __e != nil { return }
+//line coach.gox:214
+				__e = __c.Any(prefix + ": "); if __e != nil { return }
+			}
+			__e = __c.Close(); if __e != nil { return }
+//line coach.gox:214
+			__e = __c.Any(i18n.Tf(l, "coach.added", ch.To)); if __e != nil { return }
+//line coach.gox:215
+		} else if ch.Kind == "remove" {
+			__e = __c.Init("span"); if __e != nil { return }
+			{
+//line coach.gox:216
+				__e = __c.Set("class", "muted"); if __e != nil { return }
+				__e = __c.Submit(); if __e != nil { return }
+//line coach.gox:216
+				__e = __c.Any(prefix + ": "); if __e != nil { return }
+			}
+			__e = __c.Close(); if __e != nil { return }
+//line coach.gox:216
+			__e = __c.Any(i18n.Tf(l, "coach.removed", ch.To)); if __e != nil { return }
+//line coach.gox:217
+		} else if ch.Kind == "dose" {
+			__e = __c.Init("span"); if __e != nil { return }
+			{
+//line coach.gox:218
+				__e = __c.Set("class", "muted"); if __e != nil { return }
+				__e = __c.Submit(); if __e != nil { return }
+//line coach.gox:218
+				__e = __c.Any(days + ": "); if __e != nil { return }
+			}
+			__e = __c.Close(); if __e != nil { return }
+//line coach.gox:218
+			__e = __c.Any(ch.To); if __e != nil { return }
+//line coach.gox:219
+			if ch.Pct != 0 {
+//line coach.gox:220
 				__e = __c.Many(" ", fmt.Sprintf("%+d%%", ch.Pct)); if __e != nil { return }
 			} else  {
-//line coach.gox:216
+//line coach.gox:222
 				__e = __c.Many(" ", ch.Old); if __e != nil { return }
-//line coach.gox:216
+//line coach.gox:222
 				__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:216
+//line coach.gox:222
 				__e = __c.Any(ch.New); if __e != nil { return }
 			}
-//line coach.gox:218
+//line coach.gox:224
 		} else if ch.Kind == "new" {
-//line coach.gox:219
+//line coach.gox:225
 			__e = __c.Any(i18n.Tf(l, "coach.new", ch.To)); if __e != nil { return }
-//line coach.gox:220
+//line coach.gox:226
 		} else if ch.Kind == "rename" {
-//line coach.gox:221
+//line coach.gox:227
 			__e = __c.Any(i18n.Tf(l, "coach.renamed", ch.To)); if __e != nil { return }
-//line coach.gox:222
+//line coach.gox:228
 		} else if ch.Kind == "rounds" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:223
+//line coach.gox:229
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:223
+//line coach.gox:229
 				__e = __c.Any(i18n.T(l, "settings.rounds") + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:223
+//line coach.gox:229
 			__e = __c.Any(ch.Old); if __e != nil { return }
-//line coach.gox:223
+//line coach.gox:229
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:223
+//line coach.gox:229
 			__e = __c.Any(ch.New); if __e != nil { return }
-//line coach.gox:224
+//line coach.gox:230
 		} else if ch.Kind == "level" {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:225
+//line coach.gox:231
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:225
+//line coach.gox:231
 				__e = __c.Any(i18n.T(l, "settings.difficulty") + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:225
+//line coach.gox:231
 			__e = __c.Any(levelLabel(l, ch.Old)); if __e != nil { return }
-//line coach.gox:225
+//line coach.gox:231
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:225
+//line coach.gox:231
 			__e = __c.Any(levelLabel(l, ch.New)); if __e != nil { return }
 		} else  {
 			__e = __c.Init("span"); if __e != nil { return }
 			{
-//line coach.gox:227
+//line coach.gox:233
 				__e = __c.Set("class", "muted"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line coach.gox:227
+//line coach.gox:233
 				__e = __c.Any(i18n.T(l, "settings."+ch.Kind) + ": "); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line coach.gox:227
+//line coach.gox:233
 			__e = __c.Any(i18n.Tf(l, "fmt.sec", ch.Old)); if __e != nil { return }
-//line coach.gox:227
+//line coach.gox:233
 			__e = __c.Any(icon("to", false)); if __e != nil { return }
-//line coach.gox:227
+//line coach.gox:233
 			__e = __c.Any(i18n.Tf(l, "fmt.sec", ch.New)); if __e != nil { return }
 		}
 	return })
-//line coach.gox:229
+//line coach.gox:235
 }
 
 func (c coachPage) submit(view doors.Source[coachView]) func(context.Context, doors.RequestForm[coachForm]) bool {
 	return func(ctx context.Context, r doors.RequestForm[coachForm]) bool {
 		c.send(ctx, view, r.Data().Text)
+		r.After(doors.ActionEmit{Name: "coach-sent"}) // empties the field (see the script by the form)
 		return false
 	}
 }

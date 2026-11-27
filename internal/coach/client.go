@@ -94,6 +94,10 @@ type Message struct {
 	Content    string     `json:"content"`
 	ToolCalls  []ToolCall `json:"tool_calls,omitempty"`
 	ToolCallID string     `json:"tool_call_id,omitempty"`
+	// The model's reasoning, never shown; passed back as received.
+	Reasoning        string          `json:"reasoning,omitempty"`
+	ReasoningContent string          `json:"reasoning_content,omitempty"`
+	ReasoningDetails json.RawMessage `json:"reasoning_details,omitempty"`
 }
 
 // ToolCall is a function call requested by the model.
@@ -129,7 +133,9 @@ func (c Config) chat(ctx context.Context, msgs []Message, tools []map[string]any
 	}
 	if strings.Contains(c.BaseURL, "openrouter.ai") {
 		body["usage"] = map[string]any{"include": true}
-		body["reasoning"] = map[string]any{"effort": "low", "exclude": true}
+		// Reasoning comes back with the answer and is sent back with the
+		// conversation: thinking models require it between tool calls.
+		body["reasoning"] = map[string]any{"effort": "low"}
 		if len(c.Providers) > 0 {
 			body["provider"] = map[string]any{"only": c.Providers, "allow_fallbacks": false}
 		}
