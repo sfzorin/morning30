@@ -762,42 +762,30 @@ func (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) gox.El
 		if locked {
 			cls += " locked"
 		}
+		if light && !done {
+			cls += " light"
+		}
 
-//line home.gox:308
+//line home.gox:311
 		__e = (doors.ALink{Model: path.Path{Page: path.Day, Day: d}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
 			__e = __c.Init("a"); if __e != nil { return }
 			{
-//line home.gox:308
+//line home.gox:311
 				__e = __c.Set("class", cls); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line home.gox:309
-				if done {
-//line home.gox:310
-					__e = __c.Any(icon("check", false)); if __e != nil { return }
-				} else  {
-//line home.gox:312
-					__e = __c.Any(d); if __e != nil { return }
-					__e = __c.Init("small"); if __e != nil { return }
-					{
-//line home.gox:313
-						__e = __c.Set("class", lightClass(light)); if __e != nil { return }
-						__e = __c.Submit(); if __e != nil { return }
-//line home.gox:313
-						__e = __c.Any(i18n.Tf(l, "fmt.min", minutes(sec))); if __e != nil { return }
-					}
-					__e = __c.Close(); if __e != nil { return }
+//line home.gox:314
+				__e = __c.Any(d); if __e != nil { return }
+				__e = __c.Init("small"); if __e != nil { return }
+				{
+					__e = __c.Submit(); if __e != nil { return }
+//line home.gox:315
+					__e = __c.Any(i18n.Tf(l, "fmt.min", minutes(sec))); if __e != nil { return }
 				}
+				__e = __c.Close(); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		return })); if __e != nil { return }
 	return })
-//line home.gox:316
-}
-
-func lightClass(light bool) string {
-	if light {
-		return "light"
-	}
-	return ""
+//line home.gox:317
 }

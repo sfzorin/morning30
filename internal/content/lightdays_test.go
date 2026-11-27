@@ -15,12 +15,12 @@ func lightList(m map[int]bool) []int {
 	return out
 }
 
-// Morning Workout's minutes: the shortest day of each week is marked; day 4
-// (one minute shorter) and day 21 (day 18 is lighter that week) are not.
+// Morning Workout's minutes: each day shorter than the two days either side
+// is marked, which matches the plan's eight lighter days.
 func TestLightDaysFollowLoad(t *testing.T) {
 	min := []int{14, 15, 14, 13, 15, 17, 13, 16, 17, 18, 14, 18, 17, 14, 17, 17, 20, 13, 20, 19, 14, 21, 16, 20, 14, 21, 19, 14, 22, 19}
 	est := append([]int(nil), min...)
-	if got, want := lightList(LightDays(est)), []int{7, 11, 14, 18, 25, 28}; !reflect.DeepEqual(got, want) {
+	if got, want := lightList(LightDays(est)), []int{4, 7, 11, 14, 18, 21, 25, 28}; !reflect.DeepEqual(got, want) {
 		t.Fatalf("light days %v, want %v", got, want)
 	}
 	flat := make([]int, 30)
