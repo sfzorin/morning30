@@ -34,13 +34,13 @@ func figureTile(l i18n.Lang, figure string) gox.Elem {
 			__e = __c.InitVoid("img"); if __e != nil { return }
 			{
 //line exercise_ui.gox:24
-				__e = __c.Set("src", "/static/characters/" + figure + ".webp"); if __e != nil { return }
+				__e = __c.Set("src", "/static/characters/" + figure + "-front.webp"); if __e != nil { return }
 //line exercise_ui.gox:24
 				__e = __c.Set("alt", ""); if __e != nil { return }
 //line exercise_ui.gox:24
-				__e = __c.Set("width", "288"); if __e != nil { return }
+				__e = __c.Set("width", "120"); if __e != nil { return }
 //line exercise_ui.gox:24
-				__e = __c.Set("height", "288"); if __e != nil { return }
+				__e = __c.Set("height", "320"); if __e != nil { return }
 			}
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("span"); if __e != nil { return }

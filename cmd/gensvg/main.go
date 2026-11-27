@@ -1,5 +1,5 @@
 // Command gensvg generates schematic, animated exercise SVGs into
-// assets/static/ex/<id>.svg, one per exercise in the content pool.
+// body/out/schematic/<id>.svg, one draft per exercise in the content pool.
 //
 // Figures are simple stick figures animated with SMIL (limbs rotate around
 // their joints). Colors are themed by slot (warmup / main / cooldown).
@@ -236,7 +236,7 @@ func indexOf(s, sub string) int {
 }
 
 func main() {
-	dir := filepath.Join("assets", "static", "ex")
+	dir := filepath.Join("body", "out", "schematic")
 	if err := os.MkdirAll(dir, 0o755); err != nil {
 		panic(err)
 	}

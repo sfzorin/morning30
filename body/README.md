@@ -1,6 +1,8 @@
 # body — exercise figure generator
 
-Standalone workspace for the morning app's exercise illustrations.
+Standalone workspace for experimenting with exercise poses. Generated drafts go
+into the ignored `out/` folder. The app's exercise illustrations are stored in
+[`assets/static/exercise-art/v1/`](../assets/static/exercise-art/v1/).
 Figures are **generated** from a logical 3D skeleton, not hand-drawn, and exported as
 flat schematic **SVG** (light fill + thin dark contour, themeable, crisp at any size).
 

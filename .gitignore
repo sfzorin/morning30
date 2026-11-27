@@ -24,6 +24,8 @@ node_modules/
 
 # 3D mannequin source meshes (large Mixamo FBX/GLB drop-ins; served from disk, not embedded)
 body/web/models/*.fbx
+# Local pose exports from the Blender and schematic figure tools.
+/body/out/
 # (glb committed; only fbx ignored)
 
 # Python tooling venv for scripts/

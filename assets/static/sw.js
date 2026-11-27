@@ -4,6 +4,11 @@
 
 const CACHE = "morning-v1";
 
+function retiredArtwork(request) {
+  const path = new URL(request.url).pathname;
+  return path.startsWith("/static/ex/") || /^\/static\/characters\/[mfbg]\.webp$/.test(path);
+}
+
 self.addEventListener("install", () => self.skipWaiting());
 
 self.addEventListener("activate", (e) => {
@@ -12,8 +17,7 @@ self.addEventListener("activate", (e) => {
     await Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)));
     const cache = await caches.open(CACHE);
     const requests = await cache.keys();
-    await Promise.all(requests.filter((r) => new URL(r.url).pathname.startsWith("/static/ex/"))
-      .map((r) => cache.delete(r)));
+    await Promise.all(requests.filter(retiredArtwork).map((r) => cache.delete(r)));
     await self.clients.claim();
   })());
 });

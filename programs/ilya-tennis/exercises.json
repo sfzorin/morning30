@@ -210,14 +210,6 @@
           "finish": "Fatto. Fermati dolcemente."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it01-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it01-demo-v1"
     }
   },
   {
@@ -431,14 +423,6 @@
           "finish": "Fatto. Avvicina i piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it02-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it02-demo-v1"
     }
   },
   {
@@ -659,14 +643,6 @@
           "finish": "Serie finita. Raddrizzati con calma."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it02-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it02-demo-v1"
     }
   },
   {
@@ -880,14 +856,6 @@
           "finish": "Fatto. Abbassa le braccia."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it04-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it04-demo-v1"
     }
   },
   {
@@ -1101,14 +1069,6 @@
           "finish": "Fatto. Raddrizzati dolcemente."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it05-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it05-demo-v1"
     }
   },
   {
@@ -1322,14 +1282,6 @@
           "finish": "Fatto. Raddrizzati e rilassa le gambe."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it06-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it06-demo-v1"
     }
   },
   {
@@ -1543,14 +1495,6 @@
           "finish": "Fatto. Fermati comodamente al centro."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it07-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it07-demo-v1"
     }
   },
   {
@@ -1771,14 +1715,6 @@
           "finish": "Serie finita. Avvicina i piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it08-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it08-demo-v1"
     }
   },
   {
@@ -1992,14 +1928,6 @@
           "finish": "Serie finita. Appoggia le ginocchia e riposa."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it09-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it09-demo-v1"
     }
   },
   {
@@ -2213,14 +2141,6 @@
           "finish": "Fatto. Appoggia le braccia a terra e rilassati."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it10-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it10-demo-v1"
     }
   },
   {
@@ -2441,14 +2361,6 @@
           "finish": "Serie finita. Appoggia entrambi i piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it11-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it11-demo-v1"
     }
   },
   {
@@ -2669,14 +2581,6 @@
           "finish": "Serie finita. Appoggia i piedi a terra."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it12-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it12-demo-v1"
     }
   },
   {
@@ -2890,14 +2794,6 @@
           "finish": "Fatto. Esci dolcemente dall’allungamento."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it13-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it13-demo-v1"
     }
   },
   {
@@ -3111,14 +3007,6 @@
           "finish": "Fatto. Girati su un fianco e alzati piano."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it14-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it14-demo-v1"
     }
   },
   {
@@ -3332,14 +3220,6 @@
           "finish": "Fatto. Torna al centro."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it15-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it15-demo-v1"
     }
   },
   {
@@ -3553,15 +3433,6 @@
           "finish": "Fatto. Resta al centro."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it16-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it16-demo-v1",
-      "otherPose": "ilya-boy-it16-demo-other-v1"
     }
   },
   {
@@ -3775,14 +3646,6 @@
           "finish": "Fatto. Appoggia entrambi i piedi a terra."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it17-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it17-demo-v1"
     }
   },
   {
@@ -3996,14 +3859,6 @@
           "finish": "Fatto. Fermati dolcemente."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it18-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it18-demo-v1"
     }
   },
   {
@@ -4224,14 +4079,6 @@
           "finish": "Serie finita. Torna nella posizione di attesa."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it19-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it19-demo-v1"
     }
   },
   {
@@ -4445,14 +4292,6 @@
           "finish": "Fatto. Riposa comodamente a quattro appoggi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it20-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it20-demo-v1"
     }
   },
   {
@@ -4673,15 +4512,6 @@
           "finish": "Serie finita. Riunisci i palmi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it21-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it21-demo-v1",
-      "otherPose": "ilya-boy-it21-demo-other-v1"
     }
   },
   {
@@ -4895,14 +4725,6 @@
           "finish": "Fatto. Torna a quattro appoggi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it22-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it22-demo-v1"
     }
   },
   {
@@ -5116,14 +4938,6 @@
           "finish": "Fatto. Piega la gamba e abbassala dolcemente."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it23-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it23-demo-v1"
     }
   },
   {
@@ -5337,14 +5151,6 @@
           "finish": "Serie finita. Stai in piedi comodamente."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it24-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it24-demo-v1"
     }
   },
   {
@@ -5558,14 +5364,6 @@
           "finish": "Serie finita. Appoggia i pesi con attenzione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it25-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it25-demo-v1"
     }
   },
   {
@@ -5779,14 +5577,6 @@
           "finish": "Serie finita. Raddrizzati e appoggia i pesi con attenzione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it26-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it26-demo-v1"
     }
   },
   {
@@ -6007,14 +5797,6 @@
           "finish": "Serie finita. Appoggia entrambi i piedi e rilassati."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it27-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it27-demo-v1"
     }
   },
   {
@@ -6228,14 +6010,6 @@
           "finish": "Fatto. Abbassa dolcemente il bacino."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it28-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it28-demo-v1"
     }
   },
   {
@@ -6449,15 +6223,6 @@
           "finish": "Fatto. Cambia il piede che parte nella prossima serie."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it29-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "sequence",
-      "pose": "ilya-boy-it29-demo-v1",
-      "otherPose": "ilya-boy-it29-demo-other-v1"
     }
   },
   {
@@ -6671,14 +6436,6 @@
           "finish": "Fatto. Resta al centro."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it30-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it30-demo-v1"
     }
   },
   {
@@ -6892,14 +6649,6 @@
           "finish": "Fatto. Fermati comodamente in piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it01-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it01-demo-v1"
     }
   },
   {
@@ -7120,15 +6869,6 @@
           "finish": "Serie finita. Appoggia entrambi i piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it32-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "sequence",
-      "pose": "ilya-boy-it32-demo-v1",
-      "otherPose": "ilya-boy-it32-demo-other-v1"
     }
   },
   {
@@ -7349,14 +7089,6 @@
           "finish": "Serie finita. Torna in una posizione di attesa rilassata."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it33-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it33-demo-v1"
     }
   },
   {
@@ -7584,14 +7316,6 @@
           "finish": "Fatto. Fermati comodamente in piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it34-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it34-demo-v1"
     }
   },
   {
@@ -7819,14 +7543,6 @@
           "finish": "Fatto. Fermati comodamente in piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it35-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it35-demo-v1"
     }
   },
   {
@@ -8064,14 +7780,6 @@
         "startSeconds": 3,
         "endSeconds": 1
       }
-    },
-    "poses": [
-      "ilya-boy-it36-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it36-demo-v1"
     }
   },
   {
@@ -8299,14 +8007,6 @@
           "finish": "Finito. Rimani in piedi tranquillo."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it37-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it37-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -8534,14 +8234,6 @@
           "finish": "Finito. Resta dritto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it06-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "movement",
-      "pose": "ilya-boy-it06-demo-v1"
     }
   },
   {
@@ -8769,14 +8461,6 @@
           "finish": "Finito. Appoggia dolcemente le ginocchia."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it39-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it39-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -9004,14 +8688,6 @@
           "finish": "Finito. Appoggia dolcemente le ginocchia."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it40-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it40-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -9239,15 +8915,6 @@
           "finish": "Finito. Abbassa dolcemente il bacino."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it41-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it41-demo-v1",
-      "frames": 3,
-      "kind": "movement",
-      "otherPose": "ilya-boy-it41-other-demo-v1"
     }
   },
   {
@@ -9475,14 +9142,6 @@
           "finish": "Fatto. Stai in piedi."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it42-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it42-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -9703,15 +9362,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it43-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it43-demo-v1",
-      "frames": 3,
-      "kind": "movement",
-      "otherPose": "ilya-boy-it43-other-demo-v1"
     }
   },
   {
@@ -9932,14 +9582,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it44-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it44-demo-v1",
-      "frames": 3,
-      "kind": "sequence"
     }
   },
   {
@@ -10167,15 +9809,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it45-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it45-demo-v1",
-      "frames": 3,
-      "kind": "movement",
-      "otherPose": "ilya-boy-it45-other-demo-v1"
     }
   },
   {
@@ -10396,15 +10029,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it46-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it46-demo-v1",
-      "frames": 3,
-      "kind": "sequence",
-      "otherPose": "ilya-boy-it46-other-demo-v1"
     }
   },
   {
@@ -10632,15 +10256,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it47-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it47-demo-v1",
-      "frames": 3,
-      "kind": "movement",
-      "otherPose": "ilya-boy-it47-other-demo-v1"
     }
   },
   {
@@ -10861,14 +10476,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it48-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it48-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -11089,14 +10696,6 @@
           "finish": "Fatto."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it30-v1"
-    ],
-    "animation": {
-      "frames": 3,
-      "kind": "alternating",
-      "pose": "ilya-boy-it30-demo-v1"
     }
   },
   {
@@ -11324,14 +10923,6 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it50-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it50-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -11559,14 +11150,6 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it51-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it51-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -11794,14 +11377,6 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it52-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it52-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   },
   {
@@ -12029,14 +11604,6 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it53-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it53-demo-v1",
-      "frames": 3,
-      "kind": "movement"
     }
   },
   {
@@ -12264,14 +11831,6 @@
           "finish": "Fatto. Esci lentamente dalla posizione."
         }
       }
-    },
-    "poses": [
-      "ilya-boy-it54-v1"
-    ],
-    "animation": {
-      "pose": "ilya-boy-it54-demo-v1",
-      "frames": 3,
-      "kind": "alternating"
     }
   }
 ]

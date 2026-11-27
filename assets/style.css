@@ -850,15 +850,17 @@ body:has(.player) {
   place-items: center;
   position: relative;
   width: 100%;
+  aspect-ratio: 1;
   overflow: hidden;
   border-radius: 8px;
   background: #fff;
 }
 .figure-art img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  max-width: 124px;
+  height: 100%;
+  object-fit: contain;
 }
 .figure-name {
   padding: 6px 1px 4px;
@@ -889,6 +891,7 @@ body:has(.player) {
 .figure-radio:focus-visible ~ .figure-choice { outline: 2px solid var(--fg); outline-offset: 2px; }
 .figure-settings .figure-grid { margin: 0; }
 .figure-profile { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.figure-profile .figure-art { aspect-ratio: 3 / 2; }
 .figure-option { position: relative; }
 .figure-radio { position: absolute; opacity: 0; }
 .figure-profile .figure-child,

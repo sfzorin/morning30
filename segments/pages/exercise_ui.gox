@@ -21,7 +21,7 @@ var figureLabels = map[string]string{
 
 elem figureTile(l i18n.Lang, figure string) {
 	<span class="figure-art">
-		<img src=("/static/characters/" + figure + ".webp") alt="" width="288" height="288">
+		<img src=("/static/characters/" + figure + "-front.webp") alt="" width="120" height="320">
 		<span class="figure-check" aria-hidden="true">✓</span>
 	</span>
 	<span class="figure-name">~(i18n.T(l, figureLabels[figure]))</span>

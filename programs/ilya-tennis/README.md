@@ -190,90 +190,17 @@ account's program/library/active-program fields in one transaction. Position,
 activity, preferences, credentials and other accounts are preserved. It does not
 run global seeding or legacy account migration.
 
-Pictures are published separately after the program. `images.json`, when present,
-lists bundle-local PNG files and immutable pose IDs; existing different images
-cause the transaction to fail. Exercises without pictures display text and voice
-until their pose references are installed. Keep account backups outside Git.
-
-For the second publication, add `--images-only` to the install command. This
-requires the exercises to exist and only changes their `poses` and supplied
-`animation` fields, preserving the live program, exercise text and progress.
+Keep account backups outside Git.
 
 ## Character and illustrations
 
-The existing 36 illustrated exercises use the same fictional eight-year-old boy from
-`references/boy-turnaround.png` and `references/boy-ready.png`. The 34 selected
-PNG illustrations live in `images/`; IT02/IT03 share the ankle-rock pose and
-IT01/IT31 share the walking pose. These stills remain library thumbnails and
-fallbacks if a demonstration cannot load. Existing illustrations and aligned
-demonstrations are retained unchanged.
+The app resolves illustrations for this program by exercise ID from the shared
+library. Each exercise has a man, woman, boy and girl. Set the figure in the
+account settings. The [boy's character sheet](../character-references/turnarounds/boy.png)
+shows the approved front, back and three-quarter views.
 
-IT37–IT54 were published first as complete text and voice in all seven languages,
-then received a separate illustration release. All 54 definitions now require
-valid aligned demonstrations. Sixteen new exercises have their own stills and
-21 generated three-frame strips. IT38 reuses IT06's squat and IT49 reuses IT30's
-diagonal step: the movements match, while their prescribed timing differs.
-IT41, IT43, IT45 and IT47 include a second strip for the other side or leading leg;
-IT46 uses six sequential Y/T/W lowering-and-lifting frames. Every other new
-exercise has three frames, with both sides shown where applicable.
-
-The built-in ImageGen tool produced the new originals. Exact prompts, selected
-outputs and corrections are recorded in
-[strength A](prompts-daily-strength-a.json),
-[strength B](prompts-daily-strength-b.json) and
-[stretching](prompts-daily-stretches.json).
-Published media live in `images/` and `animations/aligned/`; the bundle contains
-109 immutable pose assets. Frame registration is performed offline with uniform
-scale and translation. Wall-supported stretches use the fixed wall and mat edge
-as their reference, so switching the supporting foot does not shift the scene.
-The previous 36 exercises' published assets remain byte-for-byte unchanged.
-
-IT34–IT36 were published first with complete text and voice in all seven
-languages, followed by a separate illustration release. Each new drill has three
-aligned frames showing neutral position and work with both legs. The exact
-ImageGen prompts and the opposite-leg correction are in
-`prompts-dynamic-footwork.json`.
-
-`animations/*.png` preserves the original generated strips; `animations/aligned/`
-contains the published strips of three equal 640×640 square frames. The
-player shows one frame at a time, with a one-second interval. A `movement` strip
-plays start–middle–end–middle; an `alternating` strip plays neutral–one side–neutral–
-other side. Complex exercises can use `otherPose` for a second three-frame strip:
-`movement` finishes and returns on each side; `sequence` walks through all six
-frames in order; `alternating` returns to neutral between all four directions
-of the compass exercise. This is a technique demonstration, not a rep counter or a pace
-to match. The prescribed dose and self-managed sides remain unchanged.
-
-Tapping the figure or exercise name opens the technique card and pauses the workout clock. The
-demonstration can be paused, played or inspected frame by frame. Leaving the app
-stops playback; the workout still requires Continue on return. During active
-reaction work the figure stays neutral so the demonstration cannot contradict
-the random signal; its animation remains available in the technique card. Reduced-motion
-preferences disable autoplay, with manual playback available in the card.
-
-Only the current exercise's strips are loaded. Animation URLs are immutable pose
-IDs; missing images fall back to the original still. The bundle installer validates
-frame count, references and square-cell dimensions before changing the account.
-
-The final frames are cropped and registered algorithmically, without redrawing:
-
-```sh
-python3 scripts/align_exercise_frames.py programs/ilya-tennis/animations \
-  programs/ilya-tennis/animations/aligned
-python3 -m unittest discover -s scripts -p 'test_*.py'
-```
-
-This offline authoring tool requires Pillow and numpy. It detects actual gaps
-between the source figures (which may not be equal thirds), aligns camera scale
-and anchors, then applies a shared crop to every pose of an exercise. It preserves
-posture changes instead of enlarging a lower pose to fill its frame. Hinges use
-planted feet; jumps retain the landing floor; line steps use the blue line;
-stationary-head drills keep the head fixed; floor exercises use the whole visible
-mat, including disconnected regions. `aligned/alignment.json` records every
-source rectangle, anchor and uniform affine transform. The original images stay
-unchanged and allow the process to be rerun exactly.
-
-Images were generated with the built-in ImageGen tool using both character
-references. Exact prompts and any corrections are saved in `prompts-*.json`;
-reference prompts are in `references/prompts.json`. Only inspected child images
-are published. Adult drafts and rejected variants are excluded.
+The player shows one frame for holds and uses two or three phases for movement.
+The technique card pauses the workout clock and lets the user play or step
+through the phases. During active reaction work, the figure stays neutral while
+the signal changes. The [exercise artwork guide](../library-illustrations/README.md)
+describes where the images and phase definitions are stored.

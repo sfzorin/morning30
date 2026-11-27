@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"image/png"
 	"os"
 	"reflect"
 	"regexp"
 	"strings"
 	"testing"
 
+	"morning30/internal/app"
 	"morning30/internal/catalog"
 	"morning30/internal/content"
 )
@@ -162,7 +162,7 @@ func TestThirtyDayProgressionUsesStandardWorkoutRules(t *testing.T) {
 	}
 }
 
-func TestPublishedDemonstrationsAreAligned(t *testing.T) {
+func TestProgramUsesLibraryArtwork(t *testing.T) {
 	raw, err := os.ReadFile("exercises.json")
 	if err != nil {
 		t.Fatal(err)
@@ -171,48 +171,16 @@ func TestPublishedDemonstrationsAreAligned(t *testing.T) {
 	if err := json.Unmarshal(raw, &docs); err != nil {
 		t.Fatal(err)
 	}
-	raw, err = os.ReadFile("images.json")
-	if err != nil {
-		t.Fatal(err)
-	}
-	var manifest []struct {
-		ID   string `json:"id"`
-		File string `json:"file"`
-	}
-	if err := json.Unmarshal(raw, &manifest); err != nil {
-		t.Fatal(err)
-	}
-	images := map[string]string{}
-	for _, entry := range manifest {
-		images[entry.ID] = entry.File
-	}
+	cat := catalog.New("")
 	for _, doc := range docs {
-		a := doc.Animation
-		if a == nil || !catalog.ValidAnimation(a) {
-			t.Fatalf("missing/invalid demonstration: %s", doc.ID)
+		if len(doc.Poses) != 0 || doc.Animation != nil {
+			t.Fatalf("%s has its own obsolete illustration assignments", doc.ID)
 		}
-		if doc.PerSide && a.Kind != "alternating" && a.OtherPose == "" {
-			t.Errorf("%s must demonstrate both sides", doc.ID)
-		}
-		for _, pose := range []string{a.Pose, a.OtherPose} {
-			if pose == "" {
-				continue
-			}
-			path := images[pose]
-			if !strings.HasPrefix(path, "animations/aligned/") {
-				t.Fatalf("%s uses an unaligned/missing strip: %s", doc.ID, path)
-			}
-			file, err := os.Open(path)
-			if err != nil {
-				t.Fatal(err)
-			}
-			cfg, err := png.DecodeConfig(file)
-			file.Close()
-			if err != nil {
-				t.Fatal(err)
-			}
-			if cfg.Height != 640 || cfg.Width != a.Frames*cfg.Height {
-				t.Fatalf("%s has unequal frames", doc.ID)
+		cat.Put(doc)
+		for _, figure := range app.Figures {
+			stills := app.ExerciseFrames(cat, doc.ID, figure)
+			if len(stills) != 1 || !strings.HasPrefix(stills[0], "/static/exercise-art/v1/") {
+				t.Errorf("%s/%s uses %v, want new library artwork", doc.ID, figure, stills)
 			}
 		}
 	}
