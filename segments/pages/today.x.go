@@ -96,6 +96,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 		ctx := __c.Context(); _ = ctx
 //line today.gox:61
 		plan := app.Day(t.sess.UserID, t.sess.Lang, 0)
+		cat := app.UserCatalog(t.sess.UserID)
 		parts := []struct{ Slot, Key string }{
 			{"warmup", "workout.warmup"}, {"main", "workout.main"}, {"cooldown", "workout.cooldown"},
 		}
@@ -103,20 +104,20 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line today.gox:67
+//line today.gox:68
 			__e = __c.Set("class", "lib-head"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line today.gox:68
+//line today.gox:69
 			__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("a"); if __e != nil { return }
 				{
-//line today.gox:68
+//line today.gox:69
 					__e = __c.Set("class", "lib-back"); if __e != nil { return }
-//line today.gox:68
+//line today.gox:69
 					__e = __c.Set("aria-label", i18n.T(l, "nav.home")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line today.gox:68
+//line today.gox:69
 					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -124,7 +125,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 			__e = __c.Init("h1"); if __e != nil { return }
 			{
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:69
+//line today.gox:70
 				__e = __c.Many(i18n.Tf(l, "fmt.day", plan.Day), " · ", plan.Program); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
@@ -132,57 +133,57 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("p"); if __e != nil { return }
 		{
-//line today.gox:71
+//line today.gox:72
 			__e = __c.Set("class", "lib-intro"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line today.gox:71
+//line today.gox:72
 			__e = __c.Many(i18n.Tn(l, "fmt.exercises", plan.Exercises), " · ≈ ", i18n.Tf(l, "fmt.min", plan.EstMinutes)); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
-//line today.gox:72
+//line today.gox:73
 		if s.Err != "" {
 			__e = __c.Init("p"); if __e != nil { return }
 			{
-//line today.gox:73
+//line today.gox:74
 				__e = __c.Set("class", "err"); if __e != nil { return }
-//line today.gox:73
+//line today.gox:74
 				__e = __c.Set("role", "alert"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:73
+//line today.gox:74
 				__e = __c.Any(i18n.T(l, s.Err)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
-//line today.gox:75
+//line today.gox:76
 		for _, part := range parts {
 			__e = __c.Init("h2"); if __e != nil { return }
 			{
-//line today.gox:76
+//line today.gox:77
 				__e = __c.Set("class", "lib-grp"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:77
+//line today.gox:78
 				__e = __c.Any(i18n.T(l, part.Key)); if __e != nil { return }
-//line today.gox:78
+//line today.gox:79
 				if part.Slot == "main" {
-//line today.gox:78
+//line today.gox:79
 					__e = __c.Many(" · ", i18n.Tn(l, "fmt.rounds", plan.MainRounds)); if __e != nil { return }
 				}
 			}
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line today.gox:80
+//line today.gox:81
 				__e = __c.Set("class", "lib-list"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:81
-				for i, it := range plan.Items {
 //line today.gox:82
+				for i, it := range plan.Items {
+//line today.gox:83
 					if it.Part == part.Slot {
-//line today.gox:84
+//line today.gox:85
 						key := part.Slot + ":" + strconv.Itoa(i)
 						open := s.Open == key
 
-//line today.gox:87
+//line today.gox:88
 						__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 						next := todayState{Where: s.Where}
 						if !open {
@@ -194,29 +195,29 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 							ctx := __c.Context(); _ = ctx
 							__e = __c.Init("button"); if __e != nil { return }
 							{
-//line today.gox:94
+//line today.gox:95
 								__e = __c.Set("class", itemClass(open)); if __e != nil { return }
-//line today.gox:94
+//line today.gox:95
 								__e = __c.Set("type", "button"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line today.gox:95
-								if src := firstFrameOf(t.sess.UserID, it.ID, fig); src != "" {
+//line today.gox:96
+								if src := firstFrame(app.ExerciseFrames(cat, it.ID, fig)); src != "" {
 									__e = __c.InitVoid("img"); if __e != nil { return }
 									{
-//line today.gox:96
+//line today.gox:97
 										__e = __c.Set("class", "lib-thumb"); if __e != nil { return }
-//line today.gox:96
+//line today.gox:97
 										__e = __c.Set("loading", "lazy"); if __e != nil { return }
-//line today.gox:96
+//line today.gox:97
 										__e = __c.Set("src", src); if __e != nil { return }
-//line today.gox:96
+//line today.gox:97
 										__e = __c.Set("alt", ""); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
 								} else  {
 									__e = __c.Init("span"); if __e != nil { return }
 									{
-//line today.gox:98
+//line today.gox:99
 										__e = __c.Set("class", "lib-thumb"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 									}
@@ -224,33 +225,33 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 								}
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line today.gox:100
+//line today.gox:101
 									__e = __c.Set("class", "lib-item-name"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line today.gox:100
+//line today.gox:101
 									__e = __c.Any(it.Name); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line today.gox:101
+//line today.gox:102
 									__e = __c.Set("class", "lib-item-dose"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line today.gox:101
+//line today.gox:102
 									__e = __c.Any(doseLabel(l, it.Unit, it.Value, it.PerSide)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
 						return })); if __e != nil { return }
-//line today.gox:103
+//line today.gox:104
 						if open {
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line today.gox:104
+//line today.gox:105
 								__e = __c.Set("class", "item-menu"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line today.gox:105
+//line today.gox:106
 								__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 								st.Update(ctx, todayState{Card: it.ID, Where: s.Where})
 								toTop(r)
@@ -259,17 +260,17 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 									ctx := __c.Context(); _ = ctx
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line today.gox:109
+//line today.gox:110
 										__e = __c.Set("type", "button"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line today.gox:109
+//line today.gox:110
 										__e = __c.Any(icon("info", false)); if __e != nil { return }
-//line today.gox:109
+//line today.gox:110
 										__e = __c.Any(i18n.T(l, "today.card")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 								return })); if __e != nil { return }
-//line today.gox:110
+//line today.gox:111
 								__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 								st.Update(ctx, todayState{Replace: it.ID, Where: whereState{Mode: "all"}})
 								toTop(r)
@@ -278,56 +279,56 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 									ctx := __c.Context(); _ = ctx
 									__e = __c.Init("button"); if __e != nil { return }
 									{
-//line today.gox:114
+//line today.gox:115
 										__e = __c.Set("type", "button"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
-//line today.gox:114
+//line today.gox:115
 										__e = __c.Any(icon("replace", false)); if __e != nil { return }
-//line today.gox:114
+//line today.gox:115
 										__e = __c.Any(i18n.T(l, "today.replace")); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
 								return })); if __e != nil { return }
-//line today.gox:115
+//line today.gox:116
 								if s.Remove == part.Slot+":"+it.ID {
 									__e = __c.Init("div"); if __e != nil { return }
 									{
-//line today.gox:116
+//line today.gox:117
 										__e = __c.Set("class", "remove-ask"); if __e != nil { return }
 										__e = __c.Submit(); if __e != nil { return }
 										__e = __c.Init("span"); if __e != nil { return }
 										{
 											__e = __c.Submit(); if __e != nil { return }
-//line today.gox:117
+//line today.gox:118
 											__e = __c.Any(i18n.T(l, "today.remove_where")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
-//line today.gox:118
+//line today.gox:119
 										__e = (doors.AClick{On: t.remove(st, s, it.ID, part.Slot, content.OneDay(plan.Day))}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 											ctx := __c.Context(); _ = ctx
 											__e = __c.Init("button"); if __e != nil { return }
 											{
-//line today.gox:118
+//line today.gox:119
 												__e = __c.Set("class", "danger"); if __e != nil { return }
-//line today.gox:118
+//line today.gox:119
 												__e = __c.Set("type", "button"); if __e != nil { return }
 												__e = __c.Submit(); if __e != nil { return }
-//line today.gox:118
+//line today.gox:119
 												__e = __c.Any(i18n.T(l, "days.today")); if __e != nil { return }
 											}
 											__e = __c.Close(); if __e != nil { return }
 										return })); if __e != nil { return }
-//line today.gox:119
+//line today.gox:120
 										__e = (doors.AClick{On: t.remove(st, s, it.ID, part.Slot, content.AllDays())}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 											ctx := __c.Context(); _ = ctx
 											__e = __c.Init("button"); if __e != nil { return }
 											{
-//line today.gox:119
+//line today.gox:120
 												__e = __c.Set("class", "danger"); if __e != nil { return }
-//line today.gox:119
+//line today.gox:120
 												__e = __c.Set("type", "button"); if __e != nil { return }
 												__e = __c.Submit(); if __e != nil { return }
-//line today.gox:119
+//line today.gox:120
 												__e = __c.Any(i18n.T(l, "days.all")); if __e != nil { return }
 											}
 											__e = __c.Close(); if __e != nil { return }
@@ -335,7 +336,7 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 									}
 									__e = __c.Close(); if __e != nil { return }
 								} else  {
-//line today.gox:122
+//line today.gox:123
 									__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 									st.Update(ctx, todayState{Open: key, Remove: part.Slot + ":" + it.ID, Where: s.Where})
 									return false
@@ -343,14 +344,14 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 										ctx := __c.Context(); _ = ctx
 										__e = __c.Init("button"); if __e != nil { return }
 										{
-//line today.gox:125
+//line today.gox:126
 											__e = __c.Set("class", "danger"); if __e != nil { return }
-//line today.gox:125
+//line today.gox:126
 											__e = __c.Set("type", "button"); if __e != nil { return }
 											__e = __c.Submit(); if __e != nil { return }
-//line today.gox:125
+//line today.gox:126
 											__e = __c.Any(icon("close", false)); if __e != nil { return }
-//line today.gox:125
+//line today.gox:126
 											__e = __c.Any(i18n.T(l, "today.remove")); if __e != nil { return }
 										}
 										__e = __c.Close(); if __e != nil { return }
@@ -363,40 +364,40 @@ func (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 				}
 			}
 			__e = __c.Close(); if __e != nil { return }
-//line today.gox:132
-			if part.Slot == "main" {
 //line today.gox:133
+			if part.Slot == "main" {
+//line today.gox:134
 				__e = (doors.ALink{Model: path.Path{Page: path.Library}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line today.gox:133
+//line today.gox:134
 						__e = __c.Set("class", "add-link"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line today.gox:133
+//line today.gox:134
 						__e = __c.Any(icon("plus", false)); if __e != nil { return }
-//line today.gox:133
+//line today.gox:134
 						__e = __c.Any(i18n.T(l, "today.add")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
 			}
 		}
-//line today.gox:136
+//line today.gox:137
 		__e = (doors.ALink{Model: path.Path{Page: path.Start}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
 			__e = __c.Init("a"); if __e != nil { return }
 			{
-//line today.gox:136
+//line today.gox:137
 				__e = __c.Set("class", "btn primary big"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:136
+//line today.gox:137
 				__e = __c.Any(i18n.T(l, "home.start")); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		return })); if __e != nil { return }
 	return })
-//line today.gox:137
+//line today.gox:138
 }
 
 func itemClass(open bool) string {
@@ -424,11 +425,11 @@ func (t todayPage) remove(st doors.Source[todayState], s todayState, id, part st
 }
 
 // replace offers easier, similar and harder exercises for one exercise.
-//line today.gox:164
+//line today.gox:165
 func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayState) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line today.gox:166
+//line today.gox:167
 		cat := app.UserCatalog(t.sess.UserID)
 		sim, _ := app.SimilarExercises(t.sess.UserID, t.sess.Lang, s.Replace)
 		fig := app.DB.GetSex(t.sess.UserID)
@@ -440,10 +441,10 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line today.gox:175
+//line today.gox:176
 			__e = __c.Set("class", "lib-head"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line today.gox:176
+//line today.gox:177
 			__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			st.Update(ctx, todayState{Where: s.Where})
 			return false
@@ -451,14 +452,14 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line today.gox:179
+//line today.gox:180
 					__e = __c.Set("class", "lib-back"); if __e != nil { return }
-//line today.gox:179
+//line today.gox:180
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line today.gox:179
+//line today.gox:180
 					__e = __c.Set("aria-label", i18n.T(l, "nav.close")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line today.gox:179
+//line today.gox:180
 					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -466,7 +467,7 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 			__e = __c.Init("h1"); if __e != nil { return }
 			{
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:180
+//line today.gox:181
 				__e = __c.Many(i18n.T(l, "today.replace"), ": ", cat.Name(l, s.Replace)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
@@ -474,74 +475,74 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("h2"); if __e != nil { return }
 		{
-//line today.gox:182
+//line today.gox:183
 			__e = __c.Set("class", "lib-grp"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line today.gox:182
+//line today.gox:183
 			__e = __c.Any(i18n.T(l, "replace.where")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
-//line today.gox:183
+//line today.gox:184
 		__e = __c.Any(wherePicker(l, s.Where, func(ctx context.Context, w whereState) {
 		st.Update(ctx, todayState{Replace: s.Replace, Where: w})
 	})); if __e != nil { return }
-//line today.gox:186
+//line today.gox:187
 		if s.Err != "" {
 			__e = __c.Init("p"); if __e != nil { return }
 			{
-//line today.gox:187
+//line today.gox:188
 				__e = __c.Set("class", "err"); if __e != nil { return }
-//line today.gox:187
+//line today.gox:188
 				__e = __c.Set("role", "alert"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line today.gox:187
+//line today.gox:188
 				__e = __c.Any(i18n.T(l, s.Err)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
-//line today.gox:189
-		for _, g := range groups {
 //line today.gox:190
+		for _, g := range groups {
+//line today.gox:191
 			if len(g.List) > 0 {
 				__e = __c.Init("h2"); if __e != nil { return }
 				{
-//line today.gox:191
+//line today.gox:192
 					__e = __c.Set("class", "lib-grp"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line today.gox:191
+//line today.gox:192
 					__e = __c.Any(i18n.T(l, g.Key)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line today.gox:192
+//line today.gox:193
 					__e = __c.Set("class", "lib-list"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line today.gox:193
+//line today.gox:194
 					for _, e := range g.List {
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line today.gox:194
+//line today.gox:195
 							__e = __c.Set("class", "lib-item"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line today.gox:195
-							if src := firstFrameOf(t.sess.UserID, e.ID, fig); src != "" {
+//line today.gox:196
+							if src := firstFrame(app.ExerciseFrames(cat, e.ID, fig)); src != "" {
 								__e = __c.InitVoid("img"); if __e != nil { return }
 								{
-//line today.gox:196
+//line today.gox:197
 									__e = __c.Set("class", "lib-thumb"); if __e != nil { return }
-//line today.gox:196
+//line today.gox:197
 									__e = __c.Set("loading", "lazy"); if __e != nil { return }
-//line today.gox:196
+//line today.gox:197
 									__e = __c.Set("src", src); if __e != nil { return }
-//line today.gox:196
+//line today.gox:197
 									__e = __c.Set("alt", ""); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
 							} else  {
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line today.gox:198
+//line today.gox:199
 									__e = __c.Set("class", "lib-thumb"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 								}
@@ -549,14 +550,14 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 							}
 							__e = __c.Init("span"); if __e != nil { return }
 							{
-//line today.gox:200
+//line today.gox:201
 								__e = __c.Set("class", "lib-item-name"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line today.gox:200
+//line today.gox:201
 								__e = __c.Any(e.Name); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
-//line today.gox:201
+//line today.gox:202
 							__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 							days := s.Where.days(today)
 							if _, err := app.ReplaceInCurrent(t.sess.UserID, s.Replace, e.ID, days); err != nil {
@@ -569,12 +570,12 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 								ctx := __c.Context(); _ = ctx
 								__e = __c.Init("button"); if __e != nil { return }
 								{
-//line today.gox:209
+//line today.gox:210
 									__e = __c.Set("class", "btn small"); if __e != nil { return }
-//line today.gox:209
+//line today.gox:210
 									__e = __c.Set("type", "button"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line today.gox:209
+//line today.gox:210
 									__e = __c.Any(i18n.T(l, "replace.pick")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -587,7 +588,7 @@ func (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 			}
 		}
 	return })
-//line today.gox:215
+//line today.gox:216
 }
 
 var _ = gox.Elem(nil)

@@ -90,6 +90,7 @@ elem (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) {
 			used[e.Group] = true
 		}
 		fig := app.DB.GetSex(p.sess.UserID)
+		cat := app.UserCatalog(p.sess.UserID)
 		group := ""
 	}
 	<div class="lib-head">
@@ -141,7 +142,7 @@ elem (p libraryPage) list(l i18n.Lang, st doors.Source[libState], s libState) {
 					toTop(r)
 					return false
 				}} <button class="lib-open" type="button">
-					~(if src := firstFrameOf(p.sess.UserID, e.ID, fig); src != "" {
+					~(if src := firstFrame(app.ExerciseFrames(cat, e.ID, fig)); src != "" {
 						<img class="lib-thumb" loading="lazy" src=(src) alt="">
 					} else {
 						<span class="lib-thumb"></span>

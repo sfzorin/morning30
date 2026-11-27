@@ -234,7 +234,7 @@
   }
   function animationOf(it) {
     var a = it && it.animation;
-    var poseURL = /^\/poses\/[a-z0-9_-]+(?:\?sex=[mf])?$/;
+    var poseURL = /^(?:\/poses\/[a-z0-9_-]+(?:\?sex=[mfbg])?|\/static\/exercise-art\/v1\/[A-Z]+[0-9]+\/[mfbg]\/(?:movement|sequence|alternating)\.webp(?:\?v=[a-f0-9]{16})?)$/;
     return a && el.visual && el.infoVisual && typeof a.src === "string" &&
       poseURL.test(a.src) && !failedAnimations[a.src] &&
       (!a.otherSrc || (typeof a.otherSrc === "string" && poseURL.test(a.otherSrc) && !failedAnimations[a.otherSrc])) &&

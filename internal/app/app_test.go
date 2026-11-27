@@ -126,6 +126,7 @@ var tinyPNG = []byte{
 }
 
 func TestSeedBuiltinsKeepsPoseAssignment(t *testing.T) {
+	useArtFiles(t, nil)
 	d := openAppDB(t)
 	SeedBuiltins()
 	if err := d.PutPose("plank-high", "plank", "High", "m", tinyPNG); err != nil {
@@ -150,6 +151,7 @@ func TestSeedBuiltinsKeepsPoseAssignment(t *testing.T) {
 }
 
 func TestExerciseAnimationSurvivesSeedingAndRequiresBothStrips(t *testing.T) {
+	useArtFiles(t, nil)
 	d := openAppDB(t)
 	SeedBuiltins()
 	doc, _ := UserCatalog(0).Doc("P08")
@@ -182,6 +184,7 @@ func TestExerciseAnimationSurvivesSeedingAndRequiresBothStrips(t *testing.T) {
 }
 
 func TestExerciseFramesFallsBackToFigure(t *testing.T) {
+	useArtFiles(t, nil)
 	d := openAppDB(t)
 	SeedBuiltins()
 	_ = d
@@ -192,6 +195,7 @@ func TestExerciseFramesFallsBackToFigure(t *testing.T) {
 }
 
 func TestExerciseFramesCanAwaitCustomIllustrations(t *testing.T) {
+	useArtFiles(t, nil)
 	openAppDB(t)
 	cat := catalog.New(`{"IT01":{"id":"IT01","slot":"main","unit":"seconds","content":{"en":{"name":"Walking"}}}}`)
 	if frames := ExerciseFrames(cat, "IT01", "m"); len(frames) != 0 {
@@ -200,6 +204,7 @@ func TestExerciseFramesCanAwaitCustomIllustrations(t *testing.T) {
 }
 
 func TestSeedPoseStillsKeepsProgressAndManualPoses(t *testing.T) {
+	useArtFiles(t, nil)
 	d := openAppDB(t)
 	SeedBuiltins()
 	u, _ := d.CreateUser("seed@b.com", "h", "en", "Seed")

@@ -1192,6 +1192,18 @@ test('invalid restart deadlines are ignored and a finished pending event is pres
 const demo = (kind = 'alternating', fields = {}) => ({ src: '/poses/demo', frames: 3, kind, ...fields });
 const demoPosition = p => p.get('.ex-visual').style.backgroundPosition;
 
+test('plays published strips for all four figures and saved child demonstrations', () => {
+  for (const figure of ['m', 'f', 'b', 'g']) {
+    for (const src of [`/static/exercise-art/v1/IT45/${figure}/alternating.webp?v=0123456789abcdef`, `/poses/demo?sex=${figure}`]) {
+      const p = player([item({ animation: demo('alternating', { src }) })]);
+      p.advance(4);
+      assert.equal(p.get('.ex-visual').style.backgroundImage, `url("${src}")`);
+      assert.equal(demoPosition(p), '50% 50%');
+      p.cleanup();
+    }
+  }
+});
+
 test('alternating demonstration shows both legs through neutral without adding workout steps', () => {
   const p = player([item({ perSide: true, animation: demo() }), item({ id: 'next' })], { selfManagedSides: true });
   p.advance(3);

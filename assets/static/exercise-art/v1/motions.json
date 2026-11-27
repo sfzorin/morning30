@@ -1,0 +1,947 @@
+{
+  "A01": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "A04": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 1
+  },
+  "A05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "A06": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B02": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B04": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B06": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B07": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "B09": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B10": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B11": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "B12": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "B14": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "B15": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "BL02": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "BL03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "BL04": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "BL05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "BL06": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  },
+  "C03": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "C04": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "C05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "C08": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "C09": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "C10": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "C11": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "C12": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "C13": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "C15": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "C16": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "C19": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "D01": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "D02": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "D03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT01": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT02": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT04": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT06": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT07": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT08": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT09": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT10": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT11": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT12": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT15": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT16": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT18": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT19": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT20": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT21": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT22": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT24": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT25": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT26": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT27": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT29": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT30": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT31": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT32": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT33": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT34": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT35": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT36": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 1
+  },
+  "IT37": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT38": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT39": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT40": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT42": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT43": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT44": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT45": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT46": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 3
+  },
+  "IT47": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT48": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT49": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "IT56": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT57": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT60": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT63": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT64": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT65": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT66": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT67": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT68": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  },
+  "IT69": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT71": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 3
+  },
+  "IT72": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT73": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT74": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT76": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT77": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "IT78": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT79": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT80": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT81": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT82": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT83": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT84": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT85": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "IT86": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J01": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J02": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J04": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J05": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J06": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J07": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J08": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J09": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J10": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J11": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J12": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "J13": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  },
+  "J14": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J15": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "J16": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  },
+  "J17": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "J18": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "J19": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "L01": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L02": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L04": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L05": {
+    "frames": 3,
+    "kind": "alternating",
+    "cover": 2
+  },
+  "L07": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L09": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L10": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L11": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L12": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L13": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L15": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L16": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L17": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L18": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L19": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L20": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L21": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "L24": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "L25": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "L26": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "NK02": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "NK03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "NK04": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "NK07": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "NK08": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "P01": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P02": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P03": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P04": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P06": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P08": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "P09": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "PU02": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "PU03": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "PU05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "PU06": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "PU07": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "PU08": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "ST15": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "TC01": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC02": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 2
+  },
+  "TC03": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC04": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC05": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 3
+  },
+  "TC06": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC07": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC08": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC09": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 3
+  },
+  "TC10": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "TC11": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W01": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W02": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W03": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  },
+  "W04": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "W05": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "W06": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "W07": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "W08": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  },
+  "W09": {
+    "frames": 2,
+    "kind": "movement",
+    "cover": 2
+  },
+  "W10": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W11": {
+    "frames": 3,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W12": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W13": {
+    "frames": 2,
+    "kind": "sequence",
+    "cover": 2
+  },
+  "W14": {
+    "frames": 3,
+    "kind": "movement",
+    "cover": 3
+  }
+}

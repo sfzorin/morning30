@@ -37,15 +37,6 @@ func doseLabel(l i18n.Lang, unit string, value int, perSide bool) string {
 	return s
 }
 
-// firstFrameOf returns the first picture of an exercise for a figure.
-func firstFrameOf(userID int64, id, figure string) string {
-	frames := app.ExerciseFrames(app.UserCatalog(userID), id, figure)
-	if len(frames) == 0 {
-		return ""
-	}
-	return frames[0]
-}
-
 // whereState is a day selection: "today", "all", or "pick" with a day mask.
 type whereState struct {
 	Mode string // today | all | pick
@@ -132,7 +123,7 @@ elem (c exerciseCard) Main() {
 		<h1>~(cat.Name(l, c.id))</h1>
 	</div>
 	~(c.figure.Bind(elem(fig string) {
-		~(if src := firstFrameOf(c.userID, c.id, fig); src != "" {
+		~(if src := firstFrame(app.ExerciseFrames(cat, c.id, fig)); src != "" {
 			<img class="card-img" src=(src) alt=(cat.Name(l, c.id))>
 		})
 		<div class="seg2">

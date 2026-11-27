@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "references": {
+    "f": "../character-references/turnarounds/woman.png",
+    "m": "../character-references/turnarounds/man.png",
+    "g": "../character-references/turnarounds/girl.png",
+    "b": "../character-references/turnarounds/boy.png"
+  },
+  "base_prompt": "For the Morning30 illustrated exercise library, use the supplied three-view sheet STRICTLY as the visual identity reference for ONE exercise demonstrator (same face, age, physical proportions, hair, barefoot and exact sports outfit). Draw a new biomechanically accurate exercise demonstration. The reference sheet's neutral standing pose and its camera angles are not poses for this exercise. Choose the instructional camera angle that most clearly exposes the required joint angles, open space between limbs and points of contact. The person looks naturally in the direction of the movement, neck in line with spine. Use the same softly realistic, carefully lit 3D illustration as the reference; white studio floor with a soft contact shadow; show a stable wall, chair, towel, step or other material only when actually required by the exercise. No captions, borders, arrows, ghost limbs, duplicate body parts, stray equipment or watermarks. Entire body, including fingertips and feet, always visible with margin around every phase.",
+  "static": "One complete held position in a single square image.",
+  "dynamic": "Two or three phases arranged left to right in equal square columns. One complete figure per column at the same scale and camera angle.",
+  "exercise_overrides": {
+    "ST07": {
+      "figures": ["b", "g"],
+      "direction": "Show the seated stretch from above and behind on a blue mat. Both feet are visible at the ends of the V and both palms rest on the mat between the legs. Keep the approved sports shirt and use matching navy track pants and light trainers."
+    },
+    "IT70": {
+      "figures": ["g"],
+      "direction": "For the girl's horse stance, keep her teal training shirt, hair and facial identity. Show the whole stance from the front in navy track pants and grey trainers."
+    }
+  },
+  "exercises": "exercises.json"
+}

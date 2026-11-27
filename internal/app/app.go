@@ -131,22 +131,53 @@ func SetLibraryPoses(exerciseID string, poses []string) error {
 	return DB.SetExercise(exerciseID, d.Compact())
 }
 
-// ExerciseFrames returns 1 or 2 image URLs for the player. Pose catalog stills
-// win when present; otherwise the legacy built-in PNG.
+// ExerciseFrames returns the stills used by exercise cards and the player.
 func ExerciseFrames(cat catalog.Catalog, id, sex string) []string {
 	sex = db.NormalizeSex(sex)
-	var out []string
-	for _, pid := range cat.PoseIDs(id) {
-		if DB != nil && DB.HasPose(pid) {
-			out = append(out, "/poses/"+url.PathEscape(pid)+"?sex="+url.QueryEscape(sex))
+	doc, ok := cat.Doc(id)
+	if !ok {
+		return nil
+	}
+	poses := catalog.ClipPoses(doc.Poses)
+	if art, figure, ok := artForExercise(cat, doc, sex); ok {
+		if art.hasAssignedStills(id, poses) {
+			if assigned := availablePoseFrames(poses, sex, true); len(assigned) > 0 {
+				return assigned
+			}
+		}
+		return []string{figure.still}
+	}
+	if frames := availablePoseFrames(poses, sex, false); len(frames) > 0 {
+		return frames
+	}
+	if figure := cat.Figure(id, sex); figure != "" {
+		return []string{figure}
+	}
+	return nil
+}
+
+func availablePoseFrames(poses []string, sex string, exact bool) []string {
+	var frames []string
+	for _, pid := range poses {
+		if hasPose(pid, sex, exact) {
+			frames = append(frames, poseURL(pid, sex))
 		}
 	}
-	if len(out) == 0 {
-		if figure := cat.Figure(id, sex); figure != "" {
-			return []string{figure}
-		}
+	return frames
+}
+
+func hasPose(id, sex string, exact bool) bool {
+	if DB == nil {
+		return false
 	}
-	return out
+	if exact {
+		return DB.HasPoseFigure(id, sex)
+	}
+	return DB.HasPose(id)
+}
+
+func poseURL(id, sex string) string {
+	return "/poses/" + url.PathEscape(id) + "?sex=" + url.QueryEscape(sex)
 }
 
 // ExerciseDemo resolves optional animation metadata, retaining stills as fallback.
@@ -158,22 +189,41 @@ type ExerciseDemo struct {
 }
 
 func ExerciseAnimation(cat catalog.Catalog, id, sex string) *ExerciseDemo {
-	d, ok := cat.Doc(id)
-	if !ok || d.Animation == nil || !catalog.ValidAnimation(d.Animation) || DB == nil || !DB.HasPose(d.Animation.Pose) {
+	doc, ok := cat.Doc(id)
+	if !ok {
 		return nil
 	}
 	sex = db.NormalizeSex(sex)
+	if art, figure, ok := artForExercise(cat, doc, sex); ok {
+		if art.hasAssignedAnimation(doc.Animation) {
+			if demo := availablePoseAnimation(doc.Animation, sex, true); demo != nil {
+				return demo
+			}
+		}
+		poses := catalog.ClipPoses(doc.Poses)
+		if art.hasAssignedStills(id, poses) && len(availablePoseFrames(poses, sex, true)) > 0 {
+			return nil // Keep the explicitly selected stills visible in the player.
+		}
+		return figure.demo
+	}
+	return availablePoseAnimation(doc.Animation, sex, false)
+}
+
+func availablePoseAnimation(a *catalog.Animation, sex string, exact bool) *ExerciseDemo {
+	if a == nil || !catalog.ValidAnimation(a) || !hasPose(a.Pose, sex, exact) {
+		return nil
+	}
 	otherSrc := ""
-	if d.Animation.OtherPose != "" {
-		if !DB.HasPose(d.Animation.OtherPose) {
+	if a.OtherPose != "" {
+		if !hasPose(a.OtherPose, sex, exact) {
 			return nil
 		}
-		otherSrc = "/poses/" + url.PathEscape(d.Animation.OtherPose) + "?sex=" + url.QueryEscape(sex)
+		otherSrc = poseURL(a.OtherPose, sex)
 	}
 	return &ExerciseDemo{
-		Src:      "/poses/" + url.PathEscape(d.Animation.Pose) + "?sex=" + url.QueryEscape(sex),
+		Src:      poseURL(a.Pose, sex),
 		OtherSrc: otherSrc,
-		Frames:   d.Animation.Frames, Kind: d.Animation.Kind,
+		Frames:   a.Frames, Kind: a.Kind,
 	}
 }
 

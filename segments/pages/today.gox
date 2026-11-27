@@ -59,6 +59,7 @@ elem (t todayPage) Main() {
 elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) {
 	~{
 		plan := app.Day(t.sess.UserID, t.sess.Lang, 0)
+		cat := app.UserCatalog(t.sess.UserID)
 		parts := []struct{ Slot, Key string }{
 			{"warmup", "workout.warmup"}, {"main", "workout.main"}, {"cooldown", "workout.cooldown"},
 		}
@@ -92,7 +93,7 @@ elem (t todayPage) list(l i18n.Lang, st doors.Source[todayState], s todayState) 
 						st.Update(ctx, next)
 						return false
 					}} <button class=(itemClass(open)) type="button">
-						~(if src := firstFrameOf(t.sess.UserID, it.ID, fig); src != "" {
+						~(if src := firstFrame(app.ExerciseFrames(cat, it.ID, fig)); src != "" {
 							<img class="lib-thumb" loading="lazy" src=(src) alt="">
 						} else {
 							<span class="lib-thumb"></span>
@@ -192,7 +193,7 @@ elem (t todayPage) replace(l i18n.Lang, st doors.Source[todayState], s todayStat
 			<div class="lib-list">
 				~(for _, e := range g.List {
 					<div class="lib-item">
-						~(if src := firstFrameOf(t.sess.UserID, e.ID, fig); src != "" {
+						~(if src := firstFrame(app.ExerciseFrames(cat, e.ID, fig)); src != "" {
 							<img class="lib-thumb" loading="lazy" src=(src) alt="">
 						} else {
 							<span class="lib-thumb"></span>

@@ -1,0 +1,2657 @@
+[
+  {
+    "id": "W01",
+    "name": "Shoulder circles",
+    "instruction": "Stand tall with the arms relaxed. Make slow circles with the shoulders backward. Then make slow circles forward. Keep the movement smooth and controlled.",
+    "frames": 3,
+    "phases": [
+      "Front three-quarter view. Stand tall with the shoulders low and the arms hanging loosely.",
+      "Both shoulders roll slightly forward and rise toward the ears; elbows remain heavy.",
+      "Both shoulders draw back and start to descend, opening the chest slightly. Keep the head and feet in place."
+    ]
+  },
+  {
+    "id": "W02",
+    "name": "Small arm circles",
+    "instruction": "Stand tall and raise the arms to shoulder height. Make small circles forward. Then make small circles backward. Keep the circles tight and controlled.",
+    "frames": 3,
+    "phases": [
+      "Oblique view. Extend both arms sideways at shoulder height with the fingertips just forward of the shoulder line.",
+      "Trace the upper part of the small circle with both hands slightly above shoulder level. Keep elbows long.",
+      "Hands pass just behind the shoulder line and lower slightly on the rear of the same small circle. The arms stay outstretched throughout."
+    ]
+  },
+  {
+    "id": "W03",
+    "name": "Standing twists",
+    "instruction": "Stand with feet hip-width apart. Keep the hips mostly facing forward. Rotate the upper body to one side. Return to center and rotate to the other side.",
+    "frames": 3,
+    "phases": [
+      "Feet hip-width, pelvis facing ahead, upper torso turned gently to the left.",
+      "Stand centered with sternum and pelvis facing ahead.",
+      "Rotate the chest gently to the right over the same planted feet."
+    ]
+  },
+  {
+    "id": "W04",
+    "name": "Hip hinge",
+    "instruction": "Stand tall with feet hip-width apart. Soften the knees slightly. Push the hips back. Lower the torso with a straight back. Return to standing by driving the hips forward.",
+    "frames": 2,
+    "phases": [
+      "Stand upright with hip-width feet flat, knees slightly soft and arms relaxed.",
+      "Hips move backward, torso tips forward as one long line and arms hang freely below shoulders. Keep shins nearly upright."
+    ]
+  },
+  {
+    "id": "W05",
+    "name": "Shallow squat",
+    "instruction": "Stand with feet slightly wider than hip-width. Push the hips slightly back. Bend the knees only to a comfortable depth. Return to standing slowly.",
+    "frames": 2,
+    "phases": [
+      "Stand upright, whole feet planted slightly wider than the hips, hands comfortably in front.",
+      "Sit the hips back into a shallow squat, knees tracking the toes and heels planted. Keep the torso long."
+    ]
+  },
+  {
+    "id": "W06",
+    "name": "High plank weight shift",
+    "instruction": "Start in a high plank position. Hands are under the shoulders. Shift the body slightly forward. Shift back to the starting position. Keep the movement small and controlled.",
+    "frames": 2,
+    "phases": [
+      "High plank, palms below shoulders, elbows extended and body straight from head to heels.",
+      "Keeping hands planted and body rigid, shift forward slightly on the toes so shoulders just pass wrists."
+    ]
+  },
+  {
+    "id": "W07",
+    "name": "Standing breathing + reach",
+    "instruction": "Stand tall with feet hip-width apart. Inhale and reach both arms overhead. Lengthen gently through the spine. Exhale and lower the arms, dropping the shoulders.",
+    "frames": 2,
+    "phases": [
+      "Stand over hip-width feet, arms down, shoulders relaxed.",
+      "Reach both arms overhead on the inhale, ribs stacked over pelvis, heels down."
+    ]
+  },
+  {
+    "id": "W08",
+    "name": "Standing torso rotations",
+    "instruction": "Stand with feet hip-width apart. Let the arms swing loosely. Rotate the upper body to one side. Flow smoothly to the other side.",
+    "frames": 3,
+    "phases": [
+      "Stand facing forward from the hips, with shoulders turned left and relaxed arms following.",
+      "Pass through the middle facing forward, arms hanging loosely.",
+      "Rotate the shoulders right with the arms following the trunk, keeping both feet planted."
+    ]
+  },
+  {
+    "id": "W09",
+    "name": "Arm swings",
+    "instruction": "Stand tall, feet hip-width apart. Swing the arms forward and backward in a controlled way. Let the chest open naturally as the arms move back. Keep the movement smooth and relaxed.",
+    "frames": 2,
+    "phases": [
+      "Stand tall with arms swinging forward together, elbows soft, feet planted.",
+      "Same stance, arms swept a little behind the body, chest open, controlled range."
+    ]
+  },
+  {
+    "id": "C01",
+    "name": "Forearm plank",
+    "instruction": "Place the elbows under the shoulders. Step the feet back. Make a straight line from shoulders to heels. Tighten the abs and glutes. Hold the position.",
+    "frames": 1,
+    "phases": [
+      "Show the held forearm plank from the side: elbows under shoulders, forearms flat, toes planted, straight shoulder–hip–heel line, gaze toward the floor."
+    ]
+  },
+  {
+    "id": "C02",
+    "name": "RKC plank",
+    "instruction": "Start in a forearm plank. Tighten the abs strongly. Squeeze the glutes. Imagine pulling the elbows toward the toes. Hold with maximum control.",
+    "frames": 1,
+    "phases": [
+      "Hold a forearm plank, elbows directly beneath shoulders, toes tucked, fists lightly closed, glutes and abdomen braced; head, hips and heels aligned."
+    ]
+  },
+  {
+    "id": "C03",
+    "name": "Scissors",
+    "instruction": "Lie on the back. Press the lower back gently toward the floor. Lift the legs. Cross one leg over the other. Continue alternating the crossing motion.",
+    "frames": 2,
+    "phases": [
+      "Supine, lower back in contact with mat. Both long legs hover, with left ankle crossing above right in the horizontal scissor.",
+      "Right ankle now crosses above left as the legs slide past each other sideways. Keep the legs hovering."
+    ]
+  },
+  {
+    "id": "C04",
+    "name": "Flutter kicks",
+    "instruction": "Lie on the back. Press the lower back toward the floor. Lift the legs. Move the legs up and down in short alternating kicks.",
+    "frames": 2,
+    "phases": [
+      "Side-oblique view, supine, lower back supported. Right straight leg a little higher than left, both hovering.",
+      "Left leg a little higher and right lower: a small up-and-down flutter from the hips."
+    ]
+  },
+  {
+    "id": "C05",
+    "name": "Reverse crunch",
+    "instruction": "Lie on the back. Bend the knees and lift the feet. Use the abs to curl the pelvis slightly upward. Lower back down slowly.",
+    "frames": 2,
+    "phases": [
+      "Supine with hips on mat, knees bent over hips, shins roughly parallel to floor and arms alongside.",
+      "Knees move toward chest as pelvis rolls a short distance off mat; upper back remains in contact."
+    ]
+  },
+  {
+    "id": "C06",
+    "name": "Hollow hold (easy)",
+    "instruction": "Lie on the back. Press the lower back toward the floor. Lift the shoulders slightly. Keep the knees bent or legs raised higher. Hold the position.",
+    "frames": 1,
+    "phases": [
+      "Supine hollow hold with bent knees drawn up, shoulder blades just off the floor, arms reaching toward thighs, lower back pressed to mat."
+    ]
+  },
+  {
+    "id": "C07",
+    "name": "Side plank",
+    "instruction": "Lie on one side. Place the elbow under the shoulder. Lift the hips. Keep the body in one straight line. Hold the position.",
+    "frames": 1,
+    "phases": [
+      "Hold a side forearm plank with elbow beneath shoulder, legs long, hips lifted in line with the ankles and shoulders."
+    ]
+  },
+  {
+    "id": "C08",
+    "name": "Side plank hip lift",
+    "instruction": "Start in a side plank. Lower the hips slightly. Lift the hips back up. Repeat with control. Switch sides.",
+    "frames": 2,
+    "phases": [
+      "Side forearm support with legs extended, upper hand on hip; allow the hips to dip slightly toward the mat.",
+      "Lift hips back to a straight shoulder-to-ankle line, same supporting elbow and feet."
+    ]
+  },
+  {
+    "id": "C09",
+    "name": "Plank shoulder taps",
+    "instruction": "Start in a high plank. Keep the hips level and stable. Tap one hand to the opposite shoulder. Return it and tap with the other hand. Keep the body still.",
+    "frames": 3,
+    "phases": [
+      "High plank, both hands under shoulders, feet slightly wide, hips level.",
+      "Right hand rests briefly on left shoulder, supported by left palm and both feet.",
+      "Left hand rests on right shoulder, supported by right palm and both feet. Body stays square."
+    ]
+  },
+  {
+    "id": "C10",
+    "name": "Up-down plank",
+    "instruction": "Start in a forearm plank. Place one hand on the floor and press up. Bring the other hand up into a high plank. Lower back down to the forearms. Alternate the leading arm.",
+    "frames": 3,
+    "phases": [
+      "Start in a low plank with both forearms supporting, elbows below shoulders, feet planted.",
+      "One palm replaces its elbow beneath the shoulder while the other forearm stays on the mat.",
+      "Press up into a high plank on both palms, arms extended and hips level."
+    ]
+  },
+  {
+    "id": "C11",
+    "name": "Heel taps",
+    "instruction": "Lie on the back. Lift the legs into a tabletop position. Lower one heel toward the floor. Tap lightly and return. Alternate sides.",
+    "frames": 3,
+    "phases": [
+      "Supine with hips and knees at right angles, both shins level and arms resting on floor.",
+      "Lower one bent leg until its heel just touches the floor; the opposite leg remains in tabletop.",
+      "Show the other heel touching, opposite leg back in tabletop and lower back supported."
+    ]
+  },
+  {
+    "id": "C12",
+    "name": "Dead bug (advanced)",
+    "instruction": "Lie on the back. Lift the arms and legs into tabletop position. Extend the opposite arm and leg. Keep the lower back stable. Return and switch sides.",
+    "frames": 3,
+    "phases": [
+      "Supine, arms pointing up, both knees bent over hips, shins level.",
+      "Reach right arm overhead while left leg extends low off the mat; left arm stays up and right knee bent.",
+      "Extend left arm and right leg instead; keep the inactive arm upright and the inactive knee bent."
+    ]
+  },
+  {
+    "id": "C13",
+    "name": "Bicycle crunches",
+    "instruction": "Lie on the back. Bring the knees up. Place the hands lightly near the head. Rotate the torso and bring one elbow toward the opposite knee. Switch sides in a controlled rhythm.",
+    "frames": 2,
+    "phases": [
+      "Supine, hands lightly by temples, shoulders lifted. Rotate right elbow toward left bent knee as right leg extends.",
+      "Rotate left elbow toward right bent knee as left leg extends, pelvis steady."
+    ]
+  },
+  {
+    "id": "P01",
+    "name": "Push-ups",
+    "instruction": "Start in a high plank. Place the hands under the shoulders or slightly wider. Lower the body with control. Push back up while keeping the body straight.",
+    "frames": 2,
+    "phases": [
+      "High plank, hands slightly wider than shoulders, arms straight, toes supporting.",
+      "Lower the whole body until chest nears the mat, elbows angling back and head-to-heel line intact."
+    ]
+  },
+  {
+    "id": "P02",
+    "name": "Narrow push-ups",
+    "instruction": "Start in a high plank. Place the hands closer than in a regular push-up. Keep the elbows near the body. Lower slowly and press back up.",
+    "frames": 2,
+    "phases": [
+      "High plank with hands narrower than shoulder width and elbows extended.",
+      "Chest lowered between hands, elbows held close to sides, hips aligned with body."
+    ]
+  },
+  {
+    "id": "P03",
+    "name": "Paused push-ups",
+    "instruction": "Start in a regular push-up position. Lower slowly. Pause for one second near the bottom. Push back up without losing body position.",
+    "frames": 2,
+    "phases": [
+      "High plank, hands slightly wider than shoulders, arms straight, toes supporting.",
+      "Lower the whole body until chest nears the mat, elbows angling back and head-to-heel line intact."
+    ]
+  },
+  {
+    "id": "P04",
+    "name": "Slow push-ups 3-1-3",
+    "instruction": "Start in a high plank. Lower for about three seconds. Pause for one second near the bottom. Push up for about three seconds.",
+    "frames": 2,
+    "phases": [
+      "High plank, hands slightly wider than shoulders, arms straight, toes supporting.",
+      "Lower the whole body until chest nears the mat, elbows angling back and head-to-heel line intact."
+    ]
+  },
+  {
+    "id": "P05",
+    "name": "Staggered push-ups",
+    "instruction": "Start in a push-up position. Place one hand slightly forward and the other slightly back. Lower with control. Push back up. Switch hand position on the next side.",
+    "frames": 2,
+    "phases": [
+      "High plank, one hand a little forward of its shoulder and the other a little behind, both feet anchored.",
+      "Bend both elbows, lowering the straight body while preserving the staggered hand placement."
+    ]
+  },
+  {
+    "id": "P06",
+    "name": "Pike push-ups",
+    "instruction": "Start in a high plank. Walk the feet slightly closer and lift the hips. Keep the head between the arms. Lower the head toward the floor. Press back up.",
+    "frames": 2,
+    "phases": [
+      "Hands and feet on the floor, hips high in an inverted V, arms straight and head between upper arms.",
+      "Bend elbows and lower the head toward a point just ahead of the hands, keeping the hips high and feet planted."
+    ]
+  },
+  {
+    "id": "P08",
+    "name": "Sphinx push-ups",
+    "instruction": "Start on the forearms with the body long. Keep the elbows under or slightly ahead of the shoulders. Press through the hands and forearms. Extend the elbows slightly. Return with control.",
+    "frames": 2,
+    "phases": [
+      "Long forearm plank, both palms flat, elbows under or just ahead of shoulders.",
+      "Press through the unmoved palms and raise both elbows a little clear of the floor, keeping the trunk long."
+    ]
+  },
+  {
+    "id": "B01",
+    "name": "Cobra hold",
+    "instruction": "Lie face down. Place the arms along the body. Turn the thumbs slightly outward. Lift the chest slightly. Pull the shoulder blades back and down. Hold.",
+    "frames": 1,
+    "phases": [
+      "Lie face down, arms alongside torso, thumbs facing out. Hold chest a little clear of mat, shoulder blades drawn back and down, neck long."
+    ]
+  },
+  {
+    "id": "B02",
+    "name": "Reverse snow angels",
+    "instruction": "Lie on the stomach. Keep the head facing down. Move the arms in a wide arc from the sides toward overhead. Return along the same path. Keep the movement controlled.",
+    "frames": 3,
+    "phases": [
+      "Prone, head facing mat, long arms close to outer thighs.",
+      "Sweep both long arms out to the sides at shoulder height.",
+      "Reach both arms diagonally overhead in the same plane, without lifting the chin."
+    ]
+  },
+  {
+    "id": "B03",
+    "name": "Prone W-raise",
+    "instruction": "Lie face down. Bend the elbows into a W shape. Lift the elbows and hands slightly. Squeeze the shoulder blades. Lower with control.",
+    "frames": 2,
+    "phases": [
+      "Face down, gaze toward mat, elbows bent in a W with hands and elbows resting.",
+      "Lift elbows and hands together a few centimetres, keeping the W and the neck long."
+    ]
+  },
+  {
+    "id": "B04",
+    "name": "Prone Y-raise",
+    "instruction": "Lie face down. Reach the arms diagonally overhead into a Y shape. Lift the arms slightly from the floor. Lower with control.",
+    "frames": 2,
+    "phases": [
+      "Prone, arms diagonally overhead in a Y, thumbs facing up and head low.",
+      "Raise both arms slightly above the mat without lifting the chin; retain the Y shape."
+    ]
+  },
+  {
+    "id": "B05",
+    "name": "Prone T-raise",
+    "instruction": "Lie face down. Extend the arms out to the sides in a T shape. Lift the arms slightly. Squeeze the shoulder blades. Lower slowly.",
+    "frames": 2,
+    "phases": [
+      "Lie face down with both straight arms resting out to the sides in a T.",
+      "Maintain the T, squeezing shoulder blades and lifting both arms slightly."
+    ]
+  },
+  {
+    "id": "B06",
+    "name": "Superman pull-down",
+    "instruction": "Lie on the stomach with arms overhead. Lift the chest slightly. Pull the elbows down toward the ribs. Squeeze the shoulder blades. Reach the arms forward again.",
+    "frames": 2,
+    "phases": [
+      "Lie prone, chest slightly lifted, gaze toward mat, both arms reaching overhead.",
+      "Draw elbows toward ribs with forearms forward and shoulder blades together, keeping torso low."
+    ]
+  },
+  {
+    "id": "B07",
+    "name": "Swimmers",
+    "instruction": "Lie on the stomach. Lift the chest slightly. Move opposite arm and leg in a controlled swimming pattern. Keep the movement small and steady.",
+    "frames": 2,
+    "phases": [
+      "Prone, face down, right arm and left leg hovering above the other pair.",
+      "Swap to left arm and right leg lifted, keeping the other pair low and neck long."
+    ]
+  },
+  {
+    "id": "B08",
+    "name": "Reverse plank",
+    "instruction": "Sit on the floor with legs extended. Place the hands behind the hips. Press through the hands and heels. Lift the hips. Hold the body in a long line.",
+    "frames": 1,
+    "phases": [
+      "Hold a reverse plank, palms planted behind shoulders, arms straight, heels on floor, hips lifted into a long line with shoulders and ankles."
+    ]
+  },
+  {
+    "id": "B09",
+    "name": "Back extension pulses",
+    "instruction": "Lie face down. Place the hands beside the body or lightly near the chest. Lift the chest slightly. Make small controlled pulses. Keep the neck neutral.",
+    "frames": 2,
+    "phases": [
+      "Prone, arms alongside body, head and upper chest just clear of mat.",
+      "Lift the chest a few centimetres higher in a small pulse without tipping the head back."
+    ]
+  },
+  {
+    "id": "B10",
+    "name": "Cobra to W-pull",
+    "instruction": "Lie face down with arms forward. Lift the chest slightly. Pull the elbows down and back into a W shape. Squeeze the shoulder blades. Reach forward again and lower with control.",
+    "frames": 2,
+    "phases": [
+      "Prone with both arms reached forward and chest close to mat.",
+      "Chest slightly elevated, elbows bent and drawn back into a W, forearms off mat, gaze down."
+    ]
+  },
+  {
+    "id": "B11",
+    "name": "Swimmers",
+    "instruction": "Lie face down, arms reaching overhead. Lift the chest and legs slightly. Raise one arm and the opposite leg. Lower and switch sides, alternating smoothly.",
+    "frames": 2,
+    "phases": [
+      "Prone, face down, right arm and left leg hovering above the other pair.",
+      "Swap to left arm and right leg lifted, keeping the other pair low and neck long."
+    ]
+  },
+  {
+    "id": "A01",
+    "name": "Self-resist curl",
+    "instruction": "Stand or sit tall. Bend one elbow like a curl. Use the opposite hand to press down on the working forearm. Curl upward slowly against resistance. Switch sides.",
+    "frames": 2,
+    "phases": [
+      "Upright with working elbow at side, forearm low and palm facing up; opposite palm contacts the working forearm.",
+      "Curl the working forearm upward against the other hand, elbow anchored and shoulders level."
+    ]
+  },
+  {
+    "id": "A02",
+    "name": "Biceps isometric 90°",
+    "instruction": "Bend one elbow to about 90 degrees. Use the opposite hand to press down. The working arm resists without moving. Hold the tension. Switch sides.",
+    "frames": 1,
+    "phases": [
+      "Upright with one elbow at the side bent 90 degrees, palm up. Press opposite palm downward on working forearm while the working arm holds still."
+    ]
+  },
+  {
+    "id": "A03",
+    "name": "Palm-hook pull",
+    "instruction": "Hook the fingers or hands together. Keep the elbows slightly bent. Pull the hands away from each other. Hold steady tension. Relax slowly.",
+    "frames": 1,
+    "phases": [
+      "Stand with hands hooked together in front of the chest, bent elbows out to the sides; maintain the outward pull without separating the hands."
+    ]
+  },
+  {
+    "id": "A04",
+    "name": "Slow negative curl",
+    "instruction": "Start with one elbow bent. Use the opposite hand to create resistance. Slowly lower the working forearm. Keep resisting during the lowering phase. Switch sides.",
+    "frames": 2,
+    "phases": [
+      "Working elbow fixed to the side and bent, forearm raised, opposite palm pressing on the working forearm.",
+      "Lower the working forearm to a more open elbow angle against the same contact, wrist straight."
+    ]
+  },
+  {
+    "id": "L01",
+    "name": "Shallow squat",
+    "instruction": "Stand with feet slightly wider than hip-width. Push the hips back. Bend the knees to a comfortable shallow depth. Stand back up slowly.",
+    "frames": 2,
+    "phases": [
+      "Stand upright, whole feet planted slightly wider than the hips, hands comfortably in front.",
+      "Sit the hips back into a shallow squat, knees tracking the toes and heels planted. Keep the torso long."
+    ]
+  },
+  {
+    "id": "L02",
+    "name": "Paused squat",
+    "instruction": "Stand with feet stable. Lower into a comfortable shallow squat. Pause briefly. Stand back up with control.",
+    "frames": 2,
+    "phases": [
+      "Stand upright, whole feet planted slightly wider than the hips, hands comfortably in front.",
+      "Sit the hips back into a shallow squat, knees tracking the toes and heels planted. Keep the torso long."
+    ]
+  },
+  {
+    "id": "L03",
+    "name": "Hip hinge",
+    "instruction": "Stand tall with feet hip-width apart. Soften the knees slightly. Push the hips back. Lower the torso with a straight back. Return to standing by driving the hips forward.",
+    "frames": 2,
+    "phases": [
+      "Stand upright with hip-width feet flat, knees slightly soft and arms relaxed.",
+      "Hips move backward, torso tips forward as one long line and arms hang freely below shoulders. Keep shins nearly upright."
+    ]
+  },
+  {
+    "id": "L04",
+    "name": "Single-leg glute bridge",
+    "instruction": "Lie on the back. Bend one knee and keep that foot on the floor. Extend or lift the other leg. Push through the working heel. Lift the hips and lower slowly.",
+    "frames": 2,
+    "phases": [
+      "Lie supine, one foot planted under a bent knee and other leg extended clear of floor, hips resting.",
+      "Keep the same foot planted and raise hips into alignment with shoulders and supporting knee; free leg stays extended."
+    ]
+  },
+  {
+    "id": "L05",
+    "name": "Glute bridge march",
+    "instruction": "Start in a glute bridge position. Keep the hips lifted. Lift one foot slightly from the floor. Put it down and switch sides. Keep the pelvis stable.",
+    "frames": 3,
+    "phases": [
+      "Hold a bridge with hips level, knees bent and both feet flat.",
+      "Lift right foot a little, supporting the bridge with the left foot.",
+      "Lift left foot a little, supporting the bridge with the right foot."
+    ]
+  },
+  {
+    "id": "L06",
+    "name": "Glute bridge hold",
+    "instruction": "Lie on the back. Bend the knees and place the feet on the floor. Lift the hips. Pause at the top. Lower slowly.",
+    "frames": 1,
+    "phases": [
+      "Hold the top of a two-foot glute bridge, shoulders and feet on mat, knees bent, hips in line with shoulders and knees."
+    ]
+  },
+  {
+    "id": "L07",
+    "name": "Calf raises",
+    "instruction": "Stand tall with feet hip-width apart. Rise onto the balls of the feet. Pause briefly at the top. Lower the heels slowly.",
+    "frames": 2,
+    "phases": [
+      "Stand upright with both heels on the floor, toes forward and knees soft.",
+      "Rise onto balls of both feet, heels lifted together, ankles upright and posture tall."
+    ]
+  },
+  {
+    "id": "L09",
+    "name": "Side plank leg lift",
+    "instruction": "Start in a side plank. Keep the body in a straight line. Lift the top leg slightly. Lower it with control. Repeat and switch sides.",
+    "frames": 2,
+    "phases": [
+      "Hold a side forearm plank, straight legs stacked, hips lifted.",
+      "Lift the top leg a short distance directly sideways, maintaining the trunk line and lower foot support."
+    ]
+  },
+  {
+    "id": "L10",
+    "name": "Air squats",
+    "instruction": "Stand with feet about shoulder-width apart. Push the hips back slightly. Bend the knees and lower into a squat. Keep the chest open. Stand back up through the whole foot.",
+    "frames": 2,
+    "phases": [
+      "Stand tall over shoulder-width feet, toes slightly turned out and heels planted.",
+      "Sit back and bend knees into a comfortable squat, knees tracking toes, chest open and heels down."
+    ]
+  },
+  {
+    "id": "L11",
+    "name": "Reverse lunges",
+    "instruction": "Stand tall. Step one leg back. Lower into a lunge with control. Push through the front foot to return to standing. Switch sides.",
+    "frames": 2,
+    "phases": [
+      "Stand tall with feet hip-width, knees soft and hands comfortably in front.",
+      "Step one foot back and lower into a lunge, front heel planted and back knee hovering beneath the hip."
+    ]
+  },
+  {
+    "id": "L12",
+    "name": "Slow air squats",
+    "instruction": "Stand with feet shoulder-width apart. Lower over about three seconds. Pause briefly at the bottom. Stand up with control.",
+    "frames": 2,
+    "phases": [
+      "Stand tall over shoulder-width feet, toes slightly turned out and heels planted.",
+      "Sit back and bend knees into a comfortable squat, knees tracking toes, chest open and heels down."
+    ]
+  },
+  {
+    "id": "J01",
+    "name": "Low pogo jumps",
+    "instruction": "Stand tall with feet about hip-width apart. Keep the knees slightly soft. Make small quick jumps using mostly the ankles. Land quietly and repeat.",
+    "frames": 2,
+    "phases": [
+      "Stand on both feet, knees softly bent and ankles ready to spring.",
+      "Both feet clear the ground by a small distance in a low, ankle-driven hop with body upright."
+    ]
+  },
+  {
+    "id": "J02",
+    "name": "Marching high knees",
+    "instruction": "Stand tall. Lift one knee toward hip height. Lower it with control. Switch sides and continue marching. Keep the arms moving naturally.",
+    "frames": 2,
+    "phases": [
+      "March tall, left knee rising toward hip height as right arm comes forward; right foot planted.",
+      "Right knee rises and left arm comes forward; left foot planted and supporting."
+    ]
+  },
+  {
+    "id": "J03",
+    "name": "Jumping jacks",
+    "instruction": "Stand tall with arms by the sides. Jump the feet out while raising the arms overhead. Jump the feet back in while lowering the arms. Repeat with a steady rhythm.",
+    "frames": 2,
+    "phases": [
+      "Stand with feet together and arms alongside the body.",
+      "Feet land apart as arms rise overhead, knees softly bent and torso upright."
+    ]
+  },
+  {
+    "id": "J04",
+    "name": "Mountain climbers",
+    "instruction": "Start in a high plank. Keep the hands under the shoulders. Drive one knee toward the chest. Switch legs rhythmically. Keep the hips stable.",
+    "frames": 2,
+    "phases": [
+      "High plank, right knee drawn forward beneath torso, left leg extended behind.",
+      "Switch: left knee comes forward and right leg extends, hands anchored below shoulders."
+    ]
+  },
+  {
+    "id": "J05",
+    "name": "Squat jumps",
+    "instruction": "Start with feet about shoulder-width apart. Lower into a controlled squat. Jump upward. Land softly with knees slightly bent. Reset your position before the next jump.",
+    "frames": 3,
+    "phases": [
+      "Prepare with feet shoulder-width, knees bent and hips back, arms down.",
+      "Jump straight up, feet clearly off the floor and arms reaching upward.",
+      "Land on both feet, knees flexed in line with toes and hips back to absorb impact."
+    ]
+  },
+  {
+    "id": "J06",
+    "name": "Skater hops",
+    "instruction": "Stand on one leg. Hop sideways to the other leg. Land softly and stabilize. Repeat side to side. Use the arms for balance.",
+    "frames": 3,
+    "phases": [
+      "Balance on the right foot, right knee softly bent, free leg trailing behind, arms balancing.",
+      "Bound sideways with both feet just off floor, arms counterbalancing.",
+      "Land and stabilize on the bent left leg, right leg trailing behind."
+    ]
+  },
+  {
+    "id": "J07",
+    "name": "High knees",
+    "instruction": "Stand tall. Run in place while lifting the knees high. Move the arms naturally. Keep the rhythm quick but controlled.",
+    "frames": 2,
+    "phases": [
+      "Running in place, left knee high, right arm forward and right foot returning toward floor.",
+      "Running in place, right knee high, left arm forward and left foot returning toward floor."
+    ]
+  },
+  {
+    "id": "J08",
+    "name": "Burpees",
+    "instruction": "Stand tall. Squat down and place the hands on the floor. Jump or step the feet back into a plank. Jump or step the feet forward. Stand up and finish with a small jump.",
+    "frames": 3,
+    "phases": [
+      "Crouch from standing and plant both palms on the floor between the feet.",
+      "Extend both legs back to a straight high plank on hands and toes.",
+      "After bringing feet under hips, finish in a small upright jump with both feet off the floor."
+    ]
+  },
+  {
+    "id": "J09",
+    "name": "Jump lunges",
+    "instruction": "Start in a lunge position. Jump upward. Switch legs in the air. Land softly in the opposite lunge. Reset your balance before the next rep.",
+    "frames": 3,
+    "phases": [
+      "Low lunge, left foot forward and right knee hovering.",
+      "Small vertical jump, legs switching beneath upright body.",
+      "Soft opposite lunge landing, right foot forward, left knee hovering."
+    ]
+  },
+  {
+    "id": "CD01",
+    "name": "Chest stretch",
+    "instruction": "Lie on the back. Open the arms out to the sides. Relax the shoulders. Let the chest open gently. Breathe slowly.",
+    "frames": 1,
+    "phases": [
+      "Lie on the back, arms open wide on the floor, palms up and shoulders relaxed, chest facing the ceiling."
+    ]
+  },
+  {
+    "id": "CD02",
+    "name": "Hamstring stretch",
+    "instruction": "Lie on the back. Lift one leg. Hold behind the thigh or calf. Pull the leg gently toward you. Switch sides.",
+    "frames": 1,
+    "phases": [
+      "Lie supine, one foot planted and the other leg raised. Both hands support the back of its thigh as the knee gently straightens, shoulders resting."
+    ]
+  },
+  {
+    "id": "CD03",
+    "name": "Supine twist",
+    "instruction": "Lie on the back. Bend the knees. Let the knees move gently to one side. Keep the shoulders on the floor. Return to center and switch sides.",
+    "frames": 1,
+    "phases": [
+      "Supine with both bent knees resting together to one side, shoulder blades on the floor, arms spread comfortably."
+    ]
+  },
+  {
+    "id": "CD04",
+    "name": "Sphinx pose",
+    "instruction": "Lie on the stomach. Place the forearms on the floor. Lift the chest gently. Keep the neck long. Breathe slowly.",
+    "frames": 1,
+    "phases": [
+      "Prone with elbows beneath shoulders and forearms flat, chest gently lifted, pelvis and legs resting, gaze slightly ahead on floor."
+    ]
+  },
+  {
+    "id": "CD05",
+    "name": "Lying breathing",
+    "instruction": "Lie on the back. Relax the shoulders and jaw. Place one hand on the belly if comfortable. Inhale gently. Exhale slowly.",
+    "frames": 1,
+    "phases": [
+      "Lie on the back, knees comfortably bent, feet on floor and hands resting on belly, shoulders and head relaxed."
+    ]
+  },
+  {
+    "id": "CD07",
+    "name": "Child's pose",
+    "instruction": "Kneel and sit the hips back toward the heels. Reach the arms forward on the floor. Let the forehead rest down. Breathe slowly and relax.",
+    "frames": 1,
+    "phases": [
+      "Kneel with hips toward heels and arms reaching forward on the mat, forehead comfortably down, shoulders relaxed."
+    ]
+  },
+  {
+    "id": "D01",
+    "name": "External shoulder rotation",
+    "instruction": "Stand tall holding one 0.5 kg dumbbell. Bend the elbow to 90° and pin it to your side. Start with the forearm across your belly. Slowly rotate the forearm outward, away from the body. Return slowly, then switch arms.",
+    "frames": 2,
+    "phases": [
+      "Stand with a single small dumbbell in one hand, elbow bent 90 degrees and pinned to side, forearm across belly.",
+      "Rotate the forearm outward while keeping the upper arm at the ribs, wrist level and torso facing forward."
+    ]
+  },
+  {
+    "id": "D02",
+    "name": "Bent-over reverse fly",
+    "instruction": "Hold a 0.5 kg dumbbell in each hand. Hinge at the hips with a straight back and soft knees. Let the arms hang under the shoulders. Raise the arms out to the sides up to shoulder height and squeeze the shoulder blades. Lower slowly.",
+    "frames": 2,
+    "phases": [
+      "Hip hinge with back long, knees soft, and one small dumbbell hanging below each shoulder.",
+      "Raise both arms out to the sides near shoulder height, elbows soft, torso staying hinged."
+    ]
+  },
+  {
+    "id": "D03",
+    "name": "Goblet squat",
+    "instruction": "Hold both 0.5 kg dumbbells together at the chest. Stand with feet about shoulder-width apart. Sit the hips back and bend the knees. Keep the heels down and the chest tall. Stand up without letting the weights drift forward.",
+    "frames": 2,
+    "phases": [
+      "Stand with feet slightly wider than hips, holding two small dumbbells close together at chest height.",
+      "Maintain the same grip at the chest and squat to a comfortable depth with heels down and knees over toes."
+    ]
+  },
+  {
+    "id": "D04",
+    "name": "Overhead dumbbell hold",
+    "instruction": "Hold a 0.5 kg dumbbell in each hand. Press both arms straight overhead. Bring the biceps close to the ears. Keep the ribs down and the belly tight. Hold still and breathe until the time ends, then lower slowly.",
+    "frames": 1,
+    "phases": [
+      "Stand with one small dumbbell in each hand, both arms extended overhead, biceps near ears, ribs down and feet planted."
+    ]
+  },
+  {
+    "id": "D05",
+    "name": "Suitcase hold",
+    "instruction": "Hold one 0.5 kg dumbbell in one hand, arm hanging by the thigh. Stand with feet under the hips. Stay tall: don't lean toward the weight or away from it. Hold still and breathe. Switch hands for the other side.",
+    "frames": 1,
+    "phases": [
+      "Stand upright, feet under hips, one small dumbbell hanging from a straight arm beside thigh; shoulders and pelvis level."
+    ]
+  },
+  {
+    "id": "IT01",
+    "name": "Easy walking",
+    "instruction": "Stand comfortably with clear space around you. Walk in place, lifting your feet only a little. Let your arms move naturally with your steps. Keep an easy pace until the signal.",
+    "frames": 2,
+    "phases": [
+      "Easy walk in place: left foot just lifted while right foot supports, right arm forward and shoulders loose.",
+      "Right foot just lifted and left foot supports, left arm forward. Take equally small steps."
+    ]
+  },
+  {
+    "id": "IT02",
+    "name": "Alternating ankle rocks",
+    "instruction": "Place one foot slightly in front of the other. Gently move the front knee forward in the direction of your toes. Move the knee back, keeping the heel on the floor. One forward-and-back rock is one repetition; switch legs each time and count the total.",
+    "frames": 2,
+    "phases": [
+      "Stand in a short staggered stance with the front sole fully planted and knee over ankle.",
+      "Move the front knee forward in line with the toes, keeping the whole front heel down and both feet in place."
+    ]
+  },
+  {
+    "id": "IT03",
+    "name": "Knee-over-toe ankle rock",
+    "instruction": "Place the working foot slightly forward; touch a wall for balance if needed. Slowly move its knee forward in the direction of the toes. Move back to the start; that is one repetition. Complete the assigned repetitions on one leg, then switch yourself and repeat the same number. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 2,
+    "phases": [
+      "Stand in a short staggered stance with the front sole fully planted and knee over ankle.",
+      "Move the front knee forward in line with the toes, keeping the whole front heel down and both feet in place."
+    ]
+  },
+  {
+    "id": "IT04",
+    "name": "Shoulder circles and arm swings",
+    "instruction": "Stand comfortably and let your arms hang. Make 4 slow shoulder circles backward, then 4 forward. Make 4 small forward-and-back arm swings; a full out-and-back swing counts as one. Count 12 movements in total. Keep your neck relaxed.",
+    "frames": 3,
+    "phases": [
+      "Stand relaxed, arms hanging loose and shoulders slightly elevated during the circular roll.",
+      "Both arms swing gently forward with shoulders relaxed.",
+      "Both arms swing a little behind the torso; keep feet and chest facing ahead."
+    ]
+  },
+  {
+    "id": "IT05",
+    "name": "Hip hinges",
+    "instruction": "Stand with feet hip-width apart and knees slightly bent. Send your hips backward as if closing a drawer behind you. Tip your body a little forward while keeping your back straight. Stand up smoothly to finish one repetition. Count each bend without rushing.",
+    "frames": 2,
+    "phases": [
+      "Stand upright with hip-width feet flat, knees slightly soft and arms relaxed.",
+      "Hips move backward, torso tips forward as one long line and arms hang freely below shoulders. Keep shins nearly upright."
+    ]
+  },
+  {
+    "id": "IT06",
+    "name": "Slow shallow squats",
+    "instruction": "Stand with feet slightly wider than your hips and hands comfortably in front. Move your hips back a little and softly bend your knees. Lower only a short way, keeping heels on the floor. Stand smoothly to finish one repetition. Count the squats at an easy pace.",
+    "frames": 2,
+    "phases": [
+      "Stand upright, whole feet planted slightly wider than the hips, hands comfortably in front.",
+      "Sit the hips back into a shallow squat, knees tracking the toes and heels planted. Keep the torso long."
+    ]
+  },
+  {
+    "id": "IT07",
+    "name": "Split step, side step and hold",
+    "instruction": "Stand in the centre with feet slightly wider than hips, soft knees and hands in front. Make a tiny two-foot hop and land softly. Step right and hold a balanced stance for 2 seconds. Return to the centre for one repetition; go left on the next.",
+    "frames": 3,
+    "phases": [
+      "Facing ahead in a ready stance, make a tiny split-step hop; both feet just off floor.",
+      "Land softly on both feet, a little wider than hips, knees flexed and hands in front.",
+      "Take a short side step to the right and settle into the balanced ready stance."
+    ]
+  },
+  {
+    "id": "IT08",
+    "name": "Reverse lunge with a pause",
+    "instruction": "Stand tall with feet hip-width apart; the working leg stays in front. Step the other foot back and lower for 2 seconds, bending both knees. Pause for 1 second at a comfortable depth. Push through the front foot and bring the back foot in for one repetition. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 2,
+    "phases": [
+      "Stand tall with feet hip-width, knees soft and hands comfortably in front.",
+      "Step one foot back and lower into a lunge, front heel planted and back knee hovering beneath the hip."
+    ]
+  },
+  {
+    "id": "IT09",
+    "name": "Slow-lowering push-ups",
+    "instruction": "Place hands slightly wider than shoulders and step feet back; rest on your knees for the easier version. Make a straight line from head to heels, or from head to knees. Bend elbows slightly backward and lower your chest for 2 seconds to a comfortable depth. Press smoothly through your palms to return for one repetition.",
+    "frames": 2,
+    "phases": [
+      "High plank, hands slightly wider than shoulders, arms straight, toes supporting.",
+      "Lower the whole body until chest nears the mat, elbows angling back and head-to-heel line intact."
+    ]
+  },
+  {
+    "id": "IT10",
+    "name": "Prone W raises",
+    "instruction": "Lie on your stomach facing down; bend your elbows so your arms form a W. Keep your chest low and gently draw your shoulder blades together. Lift hands and elbows just off the floor and hold for 1 second. Lower smoothly for one repetition.",
+    "frames": 2,
+    "phases": [
+      "Face down, gaze toward mat, elbows bent in a W with hands and elbows resting.",
+      "Lift elbows and hands together a few centimetres, keeping the W and the neck long."
+    ]
+  },
+  {
+    "id": "IT11",
+    "name": "Single-leg calf raise",
+    "instruction": "Stand beside a wall and touch it with your fingertips. Put your weight on the working leg and lift the other foot slightly. Rise onto the ball of the working foot and hold for 1 second. Lower the heel smoothly for one repetition; switch legs after the set. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 2,
+    "phases": [
+      "Stand beside a wall, fingertips lightly touching it, one foot off floor and supporting heel down.",
+      "Rise onto the ball of the supporting foot without leaning sideways; free foot stays lifted and fingertips stay on wall."
+    ]
+  },
+  {
+    "id": "IT12",
+    "name": "Dead bug",
+    "instruction": "Lie on your back with arms up and bent knees over your hips. Slowly reach your right arm overhead and straighten your left leg without touching the floor. Return them for one repetition; move only while your lower back stays still. Complete the assigned repetitions with this pair, then switch pairs yourself and do the same number. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 3,
+    "phases": [
+      "Supine, arms pointing up, both knees bent over hips, shins level.",
+      "Reach right arm overhead while left leg extends low off the mat; left arm stays up and right knee bent.",
+      "Extend left arm and right leg instead; keep the inactive arm upright and the inactive knee bent."
+    ]
+  },
+  {
+    "id": "IT13",
+    "name": "Wall calf stretch",
+    "instruction": "Place your palms on a wall and step one foot back. Bend the front knee slightly and keep the back leg almost straight. Keep the back heel down and gently lean toward the wall. Switch sides at the cue. After the 3, 2, 1 countdown, continue stretching the other calf.",
+    "frames": 1,
+    "phases": [
+      "Face wall with palms planted, one leg backward and straight, rear heel on floor. Front knee bends and torso leans gently toward wall."
+    ]
+  },
+  {
+    "id": "IT14",
+    "name": "Quiet breathing on your back",
+    "instruction": "Lie on your back with knees comfortably bent and feet on the floor. Rest your hands beside you or on your belly. Relax your face and shoulders, breathing at your usual pace. After the signal, roll onto your side and get up slowly.",
+    "frames": 1,
+    "phases": [
+      "Lie on the back, knees comfortably bent, feet on floor and hands resting on belly, shoulders and head relaxed."
+    ]
+  },
+  {
+    "id": "IT15",
+    "name": "Side steps",
+    "instruction": "Stand in the centre with feet slightly wider than hips and soft knees. Take one or two short side steps to the right. Return to the centre, then take the same steps left. Alternate until the signal, leaving space between your feet.",
+    "frames": 3,
+    "phases": [
+      "Face ahead with soft knees, feet hip-width and hands in front at the centre.",
+      "Right foot steps sideways right; trailing foot follows without crossing.",
+      "Show a short side step to the left, facing forward and maintaining a gap between feet."
+    ]
+  },
+  {
+    "id": "IT16",
+    "name": "Compass steps",
+    "instruction": "Choose a centre point and stand steadily. Step forward and return to the centre. Step right and return, then back and return. Step left and return. All four directions with returns make one repetition.",
+    "frames": 3,
+    "phases": [
+      "From the centre, step one foot forward, leaving the other foot near centre.",
+      "After returning, show a step to the side, torso facing forward.",
+      "After returning, show a step backward with the other foot near centre. Rear foot and its floor contact visible."
+    ]
+  },
+  {
+    "id": "IT17",
+    "name": "Single-leg balance",
+    "instruction": "Stand near a wall in case you need support. Shift weight to one leg and lift the other foot a little. Look at a fixed point ahead and place your arms comfortably. Switch sides yourself halfway through the total time; one timer covers both sides.",
+    "frames": 1,
+    "phases": [
+      "Stand upright beside a wall on one softly bent leg. The other foot is slightly lifted, gaze forward, arms comfortable, pelvis level."
+    ]
+  },
+  {
+    "id": "IT18",
+    "name": "Cross-body march",
+    "instruction": "Stand tall with hands loose in front. Raise your left knee and touch it with your right palm. Put it down, then touch your right knee with your left palm. One knee touch followed by putting the foot down is one repetition; alternate and count the total.",
+    "frames": 2,
+    "phases": [
+      "March with left knee lifted and right palm touching it across body; right foot planted.",
+      "March with right knee lifted and left palm touching it across body; left foot planted."
+    ]
+  },
+  {
+    "id": "IT19",
+    "name": "Tennis preparation turn",
+    "instruction": "Stand with feet slightly wider than hips, soft knees and hands in front. Slowly turn shoulders and hips toward the working side. Allow your feet to pivot a little with your body. Return to face forward for one repetition; switch sides after the set. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 2,
+    "phases": [
+      "Stand facing forward with feet slightly wide, knees soft and empty hands in front.",
+      "Turn hips and shoulders together toward one side, allowing feet to pivot lightly, hands following trunk."
+    ]
+  },
+  {
+    "id": "IT20",
+    "name": "Gentle cat stretch",
+    "instruction": "Start on hands and knees with hands under shoulders and knees under hips. Breathe out and gently round your back, looking toward the mat. Breathe in and return to a straight back without a deep arch. One rounding and return counts as one repetition.",
+    "frames": 2,
+    "phases": [
+      "On all fours, hands beneath shoulders and knees under hips, back level.",
+      "Exhale and gently round the spine upward, gaze down toward mat, arms staying straight."
+    ]
+  },
+  {
+    "id": "IT21",
+    "name": "Side-lying open book",
+    "instruction": "Lie on your side with bent knees together and arms straight in front, palms together. Slowly open the top arm sideways and slightly behind you, following it with your eyes. Keep knees together and move only as far as comfortable. Bring the palms together for one repetition; change sides after the set. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 2,
+    "phases": [
+      "Side-lying with knees bent and stacked, both arms straight forward and palms touching.",
+      "Open top arm backward and turn chest and eyes toward that hand, keeping bent knees stacked."
+    ]
+  },
+  {
+    "id": "IT22",
+    "name": "Hands-and-knees rock back",
+    "instruction": "Start on hands and knees with hands under shoulders and knees comfortably under hips. Keep hands in place and slowly move hips toward your heels. Stop before any discomfort in your knees or back. Rock forward to the start for one repetition.",
+    "frames": 2,
+    "phases": [
+      "Start on all fours with back long and hips over knees.",
+      "Keeping both palms planted, rock hips backward toward heels, arms reaching long and spine relaxed."
+    ]
+  },
+  {
+    "id": "IT23",
+    "name": "Lying hamstring stretch",
+    "instruction": "Lie on your back with one foot on the floor and lift the other leg bent. Hold the back of the raised thigh, not the knee. Gently straighten that leg until you feel a light stretch behind the thigh. Halfway through the total time, bend and lower the leg, then switch yourself; one timer covers both sides.",
+    "frames": 1,
+    "phases": [
+      "Lie supine, one foot planted and the other leg raised. Both hands support the back of its thigh as the knee gently straightens, shoulders resting."
+    ]
+  },
+  {
+    "id": "IT24",
+    "name": "Lateral hop and hold",
+    "instruction": "Stand in the centre with feet hip-width apart and soft knees. Bend a little and make a small two-foot hop to the right. Land softly on both feet, bend your knees and hold for 2 seconds. That is one repetition; hop back left on the next.",
+    "frames": 3,
+    "phases": [
+      "Face ahead with both feet hip-width and knees soft at centre.",
+      "Both feet lift a little in a small sideways hop.",
+      "Land slightly to the right on both feet and hold with knees bent, chest upright."
+    ]
+  },
+  {
+    "id": "IT25",
+    "name": "Squat with light dumbbells",
+    "instruction": "Hold one 0.5 kg dumbbell in each hand, close together in front of your chest and clear of your chin. With feet slightly wider than hips, move hips back a little and lower for 3 seconds. Pause for 1 second at a comfortable depth with heels down. Stand smoothly for one repetition.",
+    "frames": 2,
+    "phases": [
+      "Stand with feet slightly wider than hips, holding two small dumbbells close together at chest height.",
+      "Maintain the same grip at the chest and squat to a comfortable depth with heels down and knees over toes."
+    ]
+  },
+  {
+    "id": "IT26",
+    "name": "Bent-over dumbbell row",
+    "instruction": "Hold a 0.5 kg dumbbell in each hand and stand with feet hip-width apart. Soften your knees, send hips back and lean forward with a straight back and hanging arms. Pull elbows backward toward your hips and hold the weights beside you for 1 second. Lower your arms smoothly for one repetition.",
+    "frames": 2,
+    "phases": [
+      "In a hip hinge with back long, hold one small 0.5 kg dumbbell in each hand, arms hanging down.",
+      "Draw elbows back toward hips, bringing dumbbells beside torso without straightening the body."
+    ]
+  },
+  {
+    "id": "IT27",
+    "name": "Single-leg glute bridge",
+    "instruction": "Lie on your back with knees bent and arms on the floor. Keep the working foot down and lift the other leg with its knee bent. Press through the working foot and lift hips into a shoulder–hip–knee line; hold for 1 second. Lower smoothly for one repetition; switch the supporting leg after the set. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 2,
+    "phases": [
+      "Supine, arms at sides, working foot planted and other knee bent with that foot raised; hips on mat.",
+      "Lift hips into a line from shoulders through hips to supporting knee, free knee still bent."
+    ]
+  },
+  {
+    "id": "IT28",
+    "name": "Side plank from bent knees",
+    "instruction": "Lie on your side, bend your knees and place the lower elbow beneath your shoulder. Press through your forearm and lower knee to lift your hips. Keep a straight shoulder–hip–knee line and breathe calmly. Halfway through the total time, lower your hips and switch sides yourself; one timer covers both sides.",
+    "frames": 1,
+    "phases": [
+      "Hold side plank on a forearm and lower knee. Both knees bent, hips elevated into a straight shoulder–hip–knee line, upper hand on hip."
+    ]
+  },
+  {
+    "id": "IT29",
+    "name": "Step over a line and back",
+    "instruction": "Imagine a line on the floor in front of your feet. Step the right foot across, then bring the left across, leaving space between them. Step the right foot back behind the line, then the left. Both feet across and back make one repetition; lead with the left foot in the next round.",
+    "frames": 3,
+    "phases": [
+      "Face forward just behind a flat line with both feet hip-width.",
+      "Step one foot across the line, leaving the trailing foot planted behind.",
+      "Bring the trailing foot over, both feet beyond the line and still hip-width."
+    ]
+  },
+  {
+    "id": "IT30",
+    "name": "V-shaped diagonal steps",
+    "instruction": "Stand in the centre with slightly bent knees. Step your right foot diagonally forward-right, then bring it back to centre. Step your left foot forward-left and bring it back. One diagonal step and return make one repetition; alternate sides and count the total.",
+    "frames": 3,
+    "phases": [
+      "Face forward at centre, knees soft, hands in front.",
+      "Right foot steps diagonally forward-right while left foot stays anchored.",
+      "After returning to centre, left foot steps diagonally forward-left while right foot stays anchored."
+    ]
+  },
+  {
+    "id": "IT31",
+    "name": "Foot rhythm: two slow, four quick",
+    "instruction": "Stand comfortably with soft knees. Take two slow steps in place, right then left. Take four short, quick steps, alternating feet. Repeat the two-slow, four-quick pattern until the signal.",
+    "frames": 3,
+    "phases": [
+      "Stand tall stepping in place, right foot a little higher for a slow step and left foot planted.",
+      "Switch to a slow left step with right foot planted.",
+      "Show a short quick step with the lifted foot low and the standing knee soft, arms counterbalancing."
+    ]
+  },
+  {
+    "id": "IT32",
+    "name": "Single-leg three-way toe taps",
+    "instruction": "Stand on the working support leg with a soft knee; stay near a wall if needed. Lightly tap the free toes in front, then bring them back beside the standing foot. Tap to the side and then behind, returning between taps. The full three-tap sequence is one repetition; switch the standing leg after the set. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 3,
+    "phases": [
+      "Balance on one softly bent leg and tap free toes lightly ahead of supporting foot.",
+      "Same supporting foot stays planted while free toes tap the floor out to the side.",
+      "Same supporting foot stays planted while the free toes tap behind."
+    ]
+  },
+  {
+    "id": "IT33",
+    "name": "Side step, preparation turn and return",
+    "instruction": "Start at the centre in a ready stance with feet slightly wider than hips and soft knees. Take a short step toward the working side and plant the foot steadily. Gently turn shoulders and hips that way, allowing your feet to pivot a little. Face forward and step back to centre for one repetition; switch sides after the set. The shown count is for each side. Count yourself and tap Done only after both sides.",
+    "frames": 3,
+    "phases": [
+      "Start in a ready stance facing forward, feet slightly wider than hips.",
+      "Take a short side step to the right and plant the right foot, still facing forward.",
+      "Pivot feet slightly and turn hips and chest toward the stepped side, hands following the trunk."
+    ]
+  },
+  {
+    "id": "IT34",
+    "name": "Quick lateral shuffles",
+    "instruction": "Place two flat marks 60–80 cm apart with clear space around them. Stand between them facing forward with slightly bent knees. Use short, quick shuffle steps towards the right mark. Keep space between your feet. Brake softly, then move straight back towards the left mark. Keep changing direction until the timer ends. Use the fastest pace that keeps your steps short and accurate.",
+    "frames": 3,
+    "phases": [
+      "Face ahead between two flat marks, feet apart, knees slightly bent.",
+      "Shuffle right with leading foot near right mark and trailing foot following without crossing.",
+      "Brake and shuffle left toward left mark, feet still uncrossed, hips low."
+    ]
+  },
+  {
+    "id": "IT35",
+    "name": "Quick steps over a line",
+    "instruction": "Mark a short, flat line on the floor. Stand behind it with feet hip-width apart and soft knees. Quickly step your right foot over the line and bring it back beside your left foot. Then step your left foot over the line and bring it back. Keep alternating feet until the timer ends. Take frequent low steps close to the line. Keep your body steady and look slightly ahead.",
+    "frames": 3,
+    "phases": [
+      "Stand facing forward just behind the flat line, both feet hip-width.",
+      "Step right foot just over the line, left foot stays behind.",
+      "Right foot returns behind the line and left foot steps just over it."
+    ]
+  },
+  {
+    "id": "IT36",
+    "name": "Quick feet and direction reaction",
+    "instruction": "Stand in the centre of your clear space facing the screen. Feet slightly wider than hips, knees soft and hands in front. Take frequent small steps in place. The first random left or right cue comes after 3 seconds of movement; the gaps then gradually shorten from 3 seconds to 1 second. On the cue, take one short step in that direction, brake softly and return straight to the centre. Resume quick feet in place when you return. During the final 3 seconds, keep stepping in place to the countdown without new direction cues. Left and right mean your own left and right.",
+    "frames": 3,
+    "phases": [
+      "Face forward at centre, feet close to the floor in a small quick step, hands in front.",
+      "Take a short step to the right and absorb the weight on the bent right knee.",
+      "After returning to centre take a short step to the left, facing ahead and braking softly."
+    ]
+  },
+  {
+    "id": "IT37",
+    "name": "Short-step jogging in place",
+    "instruction": "Stand in the middle of a nonslip mat with your elbows slightly bent. Jog in place, lifting your feet a little one at a time and landing softly. Let your arms help the movement; keep your body upright and look ahead. Keep the assigned pace until the timer ends; your knees only need to rise a little.",
+    "frames": 2,
+    "phases": [
+      "Jog in place with left foot just off floor, right arm forward and torso upright.",
+      "Jog in place with right foot just off floor, left arm forward; low knees and relaxed shoulders."
+    ]
+  },
+  {
+    "id": "IT38",
+    "name": "Squat with a bottom pause",
+    "instruction": "Stand with feet slightly wider than your hips, toes a little outward and hands in front. Take one second to move your hips back and bend your knees to a comfortable depth. Pause for one second with your whole foot planted and knees pointing with your toes. Stand up smoothly in one second for one repetition. Count your repetitions and press Done after the set.",
+    "frames": 2,
+    "phases": [
+      "Stand upright, whole feet planted slightly wider than the hips, hands comfortably in front.",
+      "Sit the hips back into a shallow squat, knees tracking the toes and heels planted. Keep the torso long."
+    ]
+  },
+  {
+    "id": "IT39",
+    "name": "Plank with shoulder taps",
+    "instruction": "Place your hands under your shoulders, straighten your legs and set your feet wider than your hips. Keep a line from head to heels and shift a little weight onto one hand. Tap the opposite shoulder with the other hand, then return it calmly to the floor. Change hands. One tap and return is one repetition, taking about 2 seconds. Count both hands together and press Done after all repetitions.",
+    "frames": 3,
+    "phases": [
+      "High plank, both hands under shoulders, feet slightly wide, hips level.",
+      "Right hand rests briefly on left shoulder, supported by left palm and both feet.",
+      "Left hand rests on right shoulder, supported by right palm and both feet. Body stays square."
+    ]
+  },
+  {
+    "id": "IT40",
+    "name": "Forearm plank with small foot lifts",
+    "instruction": "Put your elbows under your shoulders, support yourself on forearms and toes, and line up your body. Keep your hips level and lift one foot just 2–3 cm. Hold it briefly, lower it smoothly and then lift the other foot. One lift and return is one repetition, taking about 3 seconds. Count both legs together and press Done after all repetitions.",
+    "frames": 3,
+    "phases": [
+      "Straight forearm plank, both toes on floor, elbows beneath shoulders, pelvis level.",
+      "Lift one foot just 2–3 cm, leg long and pelvis unchanged.",
+      "Opposite foot hovers 2–3 cm as the first returns to the mat."
+    ]
+  },
+  {
+    "id": "IT41",
+    "name": "Side plank with staggered feet",
+    "instruction": "Lie on your side, put the lower elbow under your shoulder and straighten your legs. Place the upper foot slightly in front of the lower foot so both touch the floor. Press through your forearm and feet, lifting your hips into line with shoulders and legs. Put the upper hand on your hip. Hold and breathe. Lower your hips and change sides on the cue; the combined timer covers both sides.",
+    "frames": 1,
+    "phases": [
+      "Hold a side forearm plank with elbow under shoulder, upper foot slightly in front of lower and both touching floor, upper hand resting on hip."
+    ]
+  },
+  {
+    "id": "IT42",
+    "name": "Lateral lunge",
+    "instruction": "Stand tall with feet hip-width apart and hands in front. Make room for a step to the side. Step sideways, push your hips back and bend the leg you stepped with. Point that knee in the same direction as your toes. Keep your other leg straight without a strong stretch. Keep both feet on the floor. Push through the bent leg to return to standing. One step out and return is one rep, taking about three seconds. Complete the shown number on each leg, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand hip-width, hands comfortably in front and toes forward.",
+      "Step sideways, shift hips back, bend the stepping knee over toes, keep the other leg straight and both feet planted."
+    ]
+  },
+  {
+    "id": "IT43",
+    "name": "Two steps forward and back",
+    "instruction": "Stand in the middle of a clear space, feet hip-width apart, knees soft and hands in front. Take two short steps forward, then two short steps back to your starting place. Keep your body facing forward. Repeat starting with the other foot. Continue until the timer ends, leaving clear space in front and behind.",
+    "frames": 3,
+    "phases": [
+      "Stand at centre facing forward with knees soft.",
+      "Take a small forward step, other foot trailing; body still facing forward.",
+      "From the forward position take a small backward step toward centre, same body orientation throughout."
+    ]
+  },
+  {
+    "id": "IT44",
+    "name": "Squat and calf raise",
+    "instruction": "Stand with feet about shoulder-width apart, hands in front and heels on the floor. Move your hips slightly back and squat to a comfortable depth, keeping knees aligned with toes. Stand up, then rise smoothly onto your toes and lower your heels. The whole sequence is one repetition; take about three seconds.",
+    "frames": 3,
+    "phases": [
+      "Stand with both feet flat, about shoulder-width, hands in front.",
+      "Sit back into a comfortable squat with heels down and knees tracking toes.",
+      "Stand tall and finish rising onto both forefeet with both heels lifted."
+    ]
+  },
+  {
+    "id": "IT45",
+    "name": "Single-leg hip hinge",
+    "instruction": "Stand on one leg with a soft supporting knee. Keep the free leg close and use your arms for balance if needed. Slowly move your hips back and tip your torso forward as the free leg reaches back. Keep your back long and hips facing the floor. Stop at a small comfortable depth and return to standing. One hinge and return is one repetition, taking about three seconds. The count is for each leg. Complete both sides before pressing Done.",
+    "frames": 2,
+    "phases": [
+      "Balance upright on one softly bent leg, free foot a little above floor, arms out comfortably.",
+      "Hinge the torso forward as the free leg reaches back, hips square and back long, support foot planted."
+    ]
+  },
+  {
+    "id": "IT46",
+    "name": "Prone Y–T–W arm lifts",
+    "instruction": "Lie on your front, look down at the mat and keep your neck long. Rest your legs and keep your chest low. Reach your arms diagonally forward into a Y, lift them slightly and lower. Move them out to a T and repeat; then bend your elbows into a W and repeat. One lift, brief hold and lower is one repetition, taking about three seconds. Keep cycling Y, T, W to the displayed total: 12 repetitions give four of each shape.",
+    "frames": 3,
+    "phases": [
+      "Prone with neck long, chest low and both arms lifted slightly on diagonals overhead: Y.",
+      "Keep chest low and lift the straight arms outward at shoulder height: T.",
+      "Bend elbows and lift the hands and elbows slightly into a W shape beside the upper back."
+    ]
+  },
+  {
+    "id": "IT47",
+    "name": "Stationary split squat",
+    "instruction": "Place one foot forward and the other back, keeping hip-width space between them as if on two rails. The rear heel is raised. Bend both knees and lower to a comfortable depth. Keep the front heel down and the front knee pointing with the toes. Press the front foot into the floor and rise, leaving both feet in place. Lowering and rising is one repetition, taking about three seconds. The count is for each leg. Complete both sides before pressing Done.",
+    "frames": 2,
+    "phases": [
+      "Stand in a fixed split stance with a hip-width gap side-to-side, back heel raised and front foot flat.",
+      "Lower straight down by bending both knees; same foot placement, front knee tracks toes, back knee hovers."
+    ]
+  },
+  {
+    "id": "IT48",
+    "name": "Forearm plank with alternating side steps",
+    "instruction": "Set up a forearm plank with elbows below shoulders, body in a straight line and feet slightly wider than hips. Step one foot a small distance sideways and return it. Keep your shoulders and hips steady. Repeat with the other leg. One foot out and back is one repetition; alternate legs and count the total. Take about three seconds for each repetition.",
+    "frames": 3,
+    "phases": [
+      "Hold forearm plank with feet slightly wider than hips, elbows under shoulders.",
+      "Step right toes a little farther sideways, hips square, left foot stationary.",
+      "Return right foot and show left toes stepped out to the left, shoulders and hips level."
+    ]
+  },
+  {
+    "id": "IT49",
+    "name": "Continuous diagonal steps and return",
+    "instruction": "Stand in the centre, feet hip-width apart, knees slightly bent and hands in front. Step your right foot a little forward-right and return it to the centre. Then step the left foot forward-left and return. Keep alternating until the timer ends. Take short, low steps and keep your body facing forward.",
+    "frames": 3,
+    "phases": [
+      "Face forward at centre, knees soft, hands in front.",
+      "Right foot steps diagonally forward-right while left foot stays anchored.",
+      "After returning to centre, left foot steps diagonally forward-left while right foot stays anchored."
+    ]
+  },
+  {
+    "id": "IT50",
+    "name": "Half-kneeling hip flexor stretch",
+    "instruction": "Kneel on one knee on a padded mat. Place your other foot in front, roughly below that knee, with your legs hip-width apart. Keep your torso upright and place your hands on your hips. Gently tuck your pelvis: tip an imaginary belt buckle slightly upward. Move your hips a little forward until you feel a mild stretch at the front of the back hip. Keep your lower back in its natural position. When the app says “Change sides”, gently change legs. After “three, two, one”, hold the other side.",
+    "frames": 1,
+    "phases": [
+      "Half-kneeling, front foot below front knee, back knee padded. Hold torso upright with hands at hips, pelvis slightly tucked and hips shifted gently forward."
+    ]
+  },
+  {
+    "id": "IT51",
+    "name": "Standing quad stretch by a wall",
+    "instruction": "Stand sideways to a wall and support yourself with the nearer palm. Keep your standing knee slightly soft. Bend the leg farther from the wall behind you. With your free hand, hold the ankle on the same side; keep your knees close together. Bring your heel gently toward your bottom until you feel a mild stretch at the front of the thigh. The bent knee points down and your hips and torso stay upright. When the app says “Change sides”, gently release your leg and turn your other side toward the wall. Change your supporting hand and leg; after “three, two, one”, hold the other side.",
+    "frames": 1,
+    "phases": [
+      "Stand sideways to a wall with nearer hand on it. Bend outside knee, same-side hand holding ankle behind, knees close, bent knee pointing down, torso tall."
+    ]
+  },
+  {
+    "id": "IT52",
+    "name": "Lying figure-four glute stretch",
+    "instruction": "Lie on your back with your knees bent and feet on the mat. Rest one ankle on the opposite thigh, just above the knee. Reach one hand between your legs and the other around the outside. Hold the back of the thigh that supports the ankle. Gently draw that thigh a little toward you until you feel a mild stretch in the crossed leg’s buttock. Keep your head and shoulders on the mat; let the crossed knee point comfortably outward. When the app says “Change sides”, gently change legs. After “three, two, one”, hold the other side.",
+    "frames": 1,
+    "phases": [
+      "Lie supine, one ankle crossed above opposite knee. Hold behind the supporting thigh with both hands and draw it closer, crossed knee opening out, head down."
+    ]
+  },
+  {
+    "id": "IT53",
+    "name": "Child’s pose: gentle back stretch",
+    "instruction": "Start on hands and knees on a padded mat. Place your knees comfortably apart and keep your feet close together. Slowly move your hips back toward your heels only as far as feels comfortable. Keep your palms forward, shoulder-width apart, and gently reach through your arms. Lower your chest toward the mat without forcing. If comfortable, rest your forehead on the mat or a folded towel and relax your neck. Hold calmly until the end signal. Then ease back onto hands and knees.",
+    "frames": 1,
+    "phases": [
+      "Kneel with hips toward heels and arms reaching forward on the mat, forehead comfortably down, shoulders relaxed."
+    ]
+  },
+  {
+    "id": "IT54",
+    "name": "Chest stretch with forearm on wall",
+    "instruction": "Stand sideways beside a wall. Place the nearer foot a little ahead of the other in a comfortable stance. Rest the nearer forearm and palm on the wall with your fingers pointing up. Keep your elbow slightly below your shoulder and your shoulder relaxed and down. Slowly turn your chest and hips a little away from the wall until you feel a mild chest stretch. Use a small movement, keeping your arm on the wall without taking it far behind you. When the app says “Change sides”, gently release your arm and turn your other side toward the wall. Place your other forearm; after “three, two, one”, hold the other side.",
+    "frames": 1,
+    "phases": [
+      "Stand sideways to wall with nearer forearm and palm resting on it, fingers up, elbow just below shoulder. Turn body slightly away, keeping near shoulder relaxed."
+    ]
+  },
+  {
+    "id": "PU01",
+    "name": "Dead hang",
+    "instruction": "Stand on a chair under the bar and grip it overhand, shoulder-width or slightly wider. Hang with straight arms. At first, your toes may touch the chair. Gently engage your shoulders: draw them down, not up to your ears. Relax your legs and keep your body still. At the end, step onto the chair before you let go.",
+    "frames": 1,
+    "phases": [
+      "Hang still from secure overhead bar with hands overhand just beyond shoulder-width, arms long, shoulders engaged, stable chair beneath for access."
+    ]
+  },
+  {
+    "id": "PU02",
+    "name": "Scapular pull-ups",
+    "instruction": "Hang from the bar on straight arms, overhand grip, slightly wider than your shoulders. Without bending your elbows, pull your shoulder blades down and slightly back. Your body rises a few centimetres. Pause for a second. Slowly lower back to a full hang. Repeat for the reps, then step onto the chair and let go.",
+    "frames": 2,
+    "phases": [
+      "Hang from a secure bar with an overhand grip, arms straight and shoulders in a natural high position.",
+      "Without bending elbows, draw shoulder blades down and slightly back, raising body just a few centimetres."
+    ]
+  },
+  {
+    "id": "PU03",
+    "name": "Negative pull-ups",
+    "instruction": "Step onto a stable chair so your chin is above the bar, arms bent, overhand grip. Take your feet off the chair and hang. Lower yourself slowly over 3–5 seconds until your arms are straight. Step back onto the chair for the next rep. After the last rep, stand on the chair and let go.",
+    "frames": 3,
+    "phases": [
+      "Hold the top position at a secure bar with overhand grip, chin above bar, elbows bent, feet just clear of a stable chair.",
+      "Lower through a midrange position with elbows partly open, body quiet and feet free.",
+      "Finish hanging with arms long, feet beside stable chair ready to step back onto it."
+    ]
+  },
+  {
+    "id": "PU04",
+    "name": "Flexed-arm hang",
+    "instruction": "Step onto a stable chair and grip the bar overhand. Bring your chin above the bar with elbows bent and chest close to the bar. Lift your feet off the chair and hold the position. Keep your shoulders down and your body still. At the end, step back onto the chair and let go.",
+    "frames": 1,
+    "phases": [
+      "Hold chin above a secure horizontal bar in an overhand grip, elbows bent, shoulders down and feet lifted clear of stable access chair."
+    ]
+  },
+  {
+    "id": "PU05",
+    "name": "Assisted pull-ups with feet on a chair",
+    "instruction": "Place a sturdy chair under or in front of the bar and put your feet on it. Grip the bar overhand, slightly wider than your shoulders. Pull your chest toward the bar with your arms, using your legs only as much as needed. Lower slowly until your arms are straight. Repeat for the reps, then let go and stand on the chair.",
+    "frames": 2,
+    "phases": [
+      "Grip secure overhead bar with straight arms, feet supported on a sturdy chair, knees bent.",
+      "Pull chest up toward bar, elbows drawing down, feet remaining supported on same chair for assistance."
+    ]
+  },
+  {
+    "id": "PU06",
+    "name": "Pull-ups",
+    "instruction": "Grip the bar overhand, slightly wider than your shoulders. Hang with straight arms and keep your shoulders away from your ears. Pull up, driving your elbows down, until your chin is above the bar. Lower with control until your arms are fully straight. Repeat, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Hang on a secure horizontal bar, overhand grip a little wider than shoulders, arms long.",
+      "Pull up with elbows down until chin clears bar, body controlled and feet off the floor."
+    ]
+  },
+  {
+    "id": "PU07",
+    "name": "Inverted row under a table",
+    "instruction": "Check that the table is sturdy and stable, then lie under it. Grip the table edge shoulder-width apart. Plant your heels on the floor and keep your body straight from head to heels. Pull your chest to the table edge, squeezing your shoulder blades. Lower slowly, repeat, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Lie under a sturdy table, both hands gripping its edge, arms long, heels planted, head-to-heels line straight.",
+      "Pull chest toward table edge with elbows bending, heels staying planted and hips aligned."
+    ]
+  },
+  {
+    "id": "A05",
+    "name": "Chair dips",
+    "instruction": "Place a stable chair against a wall and sit on its edge. Put your hands next to your hips with fingers pointing forward. Slide your hips off the seat, knees bent and feet on the floor. Bend your elbows to about 90° and keep your back close to the chair. Press up to straight arms, repeat, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Plant a stable chair against wall. Grip front edge beside hips, fingers forward, hips just off seat, knees bent and elbows straight.",
+      "With feet planted and back close to chair, bend elbows backward to a comfortable angle and lower hips."
+    ]
+  },
+  {
+    "id": "P09",
+    "name": "Knee push-ups",
+    "instruction": "Kneel on a mat with your hands slightly wider than your shoulders. Make a straight line from your head to your knees. Bend your elbows and lower your chest toward the floor. Press back up to straight arms. Repeat, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Kneel with palms slightly wider than shoulders and arms straight, knees on mat, head-to-knee line straight.",
+      "Bend elbows back and lower chest toward mat, rotating through knees while hips stay aligned."
+    ]
+  },
+  {
+    "id": "C14",
+    "name": "Short side plank with knee on a chair",
+    "instruction": "Lie on your side next to a chair, forearm under your shoulder. Rest your top knee on the chair seat. Lift your hips so your body is straight from shoulder to knee. Let the bottom leg hang or lift it slightly. Hold the position and breathe steadily. When the app says “Change sides”, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Side-on beside a stable chair, top knee supported by seat and lower forearm on floor under shoulder. Hips lifted to a shoulder–hip–top-knee line, lower leg clear."
+    ]
+  },
+  {
+    "id": "L14",
+    "name": "Wall sit",
+    "instruction": "Stand with your back against a wall, feet hip-width apart and slightly forward. Slide down until your knees are bent to about 90°. Keep your knees over your ankles and your back flat on the wall. Hold the position and breathe steadily. Then slide up slowly and stand.",
+    "frames": 1,
+    "phases": [
+      "Hold a wall sit, back against wall, feet hip-width and flat with ankles beneath knees, hips and knees bent near right angles."
+    ]
+  },
+  {
+    "id": "ST01",
+    "name": "Standing forward fold",
+    "instruction": "Stand with your feet hip-width apart. Soften your knees and hinge forward at the hips. Let your torso, head and arms hang toward your legs. Hold a mild stretch along the back of your legs. To come out, slowly roll up one vertebra at a time.",
+    "frames": 1,
+    "phases": [
+      "Stand feet hip-width, knees soft. Fold forward from hips with torso draped over thighs, head and arms hanging comfortably."
+    ]
+  },
+  {
+    "id": "ST02",
+    "name": "Seated forward fold",
+    "instruction": "Sit on the floor with your legs straight and together. Bend your knees slightly if you need to. Lengthen your back and hinge forward from the hips. Reach toward your shins or feet as far as is comfortable. Hold a mild stretch and breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "Sit with both legs straight together, knees soft, torso folded gently forward from hips with long back, hands resting near shins."
+    ]
+  },
+  {
+    "id": "ST03",
+    "name": "Butterfly stretch",
+    "instruction": "Sit tall and bring the soles of your feet together. Let your knees fall out to the sides and hold your ankles. Lengthen your spine upward. Gently lean forward from the hips until you feel a mild stretch in your inner thighs. Hold the position and breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "Sit with soles together, knees open outward, hands around ankles and chest long, inclining a little forward from hips."
+    ]
+  },
+  {
+    "id": "ST04",
+    "name": "Kneeling hip flexor stretch",
+    "instruction": "Kneel on one knee on a padded mat with the other foot in front. Tuck your pelvis slightly and draw your belly in. Gently shift your hips forward until you feel a stretch at the front of the back hip. Keep your torso upright with your hands on the front thigh or your waist. Breathe calmly and hold the position. When the app says “Change sides”, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Half-kneeling, front foot below front knee, back knee padded. Hold torso upright with hands at hips, pelvis slightly tucked and hips shifted gently forward."
+    ]
+  },
+  {
+    "id": "ST05",
+    "name": "Pigeon stretch",
+    "instruction": "Start on hands and knees and bring one knee forward behind the same wrist. Angle the shin across the mat and extend the back leg behind you. Square your hips so they face forward. Stay upright on your hands or lower onto your forearms. Breathe calmly and hold a mild stretch in the glute. When the app says “Change sides”, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "In pigeon stretch, front knee bent with shin angled across mat, back leg extended behind. Hips face forward, hands resting on floor, chest long."
+    ]
+  },
+  {
+    "id": "ST06",
+    "name": "Frog stretch",
+    "instruction": "Start on hands and knees on a soft mat. Widen your knees to the sides to a comfortable distance. Place your ankles in line with your knees, feet turned outward. Lower onto your forearms. Gently shift your hips back until you feel a mild stretch in your inner thighs. Hold the position and breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "On a padded mat, knees comfortably wide apart, ankles in line with knees, feet turned outward, weight on forearms and hips eased slightly back."
+    ]
+  },
+  {
+    "id": "ST07",
+    "name": "Seated straddle fold",
+    "instruction": "Sit on the floor with your legs wide apart, toes pointing up. Lengthen your back and place your palms on the floor in front of you. Walk your hands forward from your hips, folding with a long back. Stop at a mild stretch in the inner and back thighs. Hold the position and breathe evenly.",
+    "frames": 1,
+    "phases": [
+      "Sit on floor with legs open in a comfortable straddle and toes up, back long, torso gently hinged forward, hands on floor in front."
+    ]
+  },
+  {
+    "id": "ST08",
+    "name": "Side lunge stretch",
+    "instruction": "Stand with your feet wide, toes forward or turned slightly out. Bend one knee and shift your hips toward it, keeping the other leg straight. Place your hands on the bent thigh or the floor and keep your back straight. Feel a mild stretch in the inner thigh of the straight leg. When the app says “Change sides”, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Stand wide; hold hips shifted to one side over a bent knee, opposite leg straight, both soles grounded, hands on bent thigh and back long."
+    ]
+  },
+  {
+    "id": "ST09",
+    "name": "Half split",
+    "instruction": "Start in a lunge with the back knee on the floor. Shift your hips back over the back knee and straighten the front leg, toes up. Place your hands on the floor or on blocks beside your leg. Hinge forward from the hips with a long back until you feel a mild stretch. When the app says “Change sides”, switch to the other leg.",
+    "frames": 1,
+    "phases": [
+      "Half split with back knee grounded beneath hips, front leg long, heel planted and toes raised, hands beside front leg and back long in a gentle hinge."
+    ]
+  },
+  {
+    "id": "ST10",
+    "name": "Supported front split prep",
+    "instruction": "Start in a lunge and place your hands on the floor or on a stack of books beside the front leg. Slide the front heel forward and the back knee backward. Keep your weight on your hands and lower only to a mild stretch. Keep your hips square, facing forward. When the app says “Change sides”, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Hold a supported partial front split with hands resting on stable blocks beside front leg, front heel forward and back knee behind, pelvis square and high enough for a mild stretch."
+    ]
+  },
+  {
+    "id": "ST11",
+    "name": "Wide-stance forward fold",
+    "instruction": "Stand with your feet wide, toes slightly in, knees soft. Fold forward from the hips with a long back. Lower your hands to the floor, your shins or blocks. Feel a mild stretch in the inner and back thighs and hold. Come up slowly with a flat back.",
+    "frames": 1,
+    "phases": [
+      "Wide-legged standing forward fold, toes slightly in, knees soft, torso hinged from hips and hands resting on shins or floor."
+    ]
+  },
+  {
+    "id": "ST12",
+    "name": "Standing quad stretch",
+    "instruction": "Stand next to a wall and rest one hand on it for balance. Bend one knee and hold your ankle behind you. Bring your knees together and tuck your pelvis slightly. Feel a mild stretch at the front of the thigh and hold. When the app says “Change sides”, switch to the other leg.",
+    "frames": 1,
+    "phases": [
+      "Stand sideways to a wall with nearer hand on it. Bend outside knee, same-side hand holding ankle behind, knees close, bent knee pointing down, torso tall."
+    ]
+  },
+  {
+    "id": "ST13",
+    "name": "Lying figure-four stretch",
+    "instruction": "Lie on your back with knees bent and feet flat. Cross one ankle over the opposite knee. Hold behind the thigh of the bottom leg. Gently draw it toward your chest and hold. When the app tells you to change sides, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Lie supine, one ankle crossed above opposite knee. Hold behind the supporting thigh with both hands and draw it closer, crossed knee opening out, head down."
+    ]
+  },
+  {
+    "id": "ST14",
+    "name": "Deep squat hold",
+    "instruction": "Set your feet slightly wider than your hips, toes turned out a little. Slowly sink into a deep squat as far as is comfortable. Keep your heels down; a folded towel under them is fine. Place your elbows inside your knees and lift your chest. Hold the position and breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "Hold a comfortable deep squat with whole feet planted slightly wider than hips, elbows inside knees, palms together and chest lifted."
+    ]
+  },
+  {
+    "id": "ST15",
+    "name": "Cat-cow",
+    "instruction": "Get on hands and knees: hands under shoulders, knees under hips. Exhale and round your back like a cat, lowering your head. Inhale and gently arch your back, looking forward. Move slowly, one section of the spine at a time. Keep a smooth rhythm for all the reps, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "On hands and knees, round spine upward in cat, head lowered and pelvis tucked.",
+      "With hands and knees unmoved, gently arch spine into cow, tilting pelvis and lifting gaze slightly forward."
+    ]
+  },
+  {
+    "id": "ST16",
+    "name": "Calf stretch at a wall",
+    "instruction": "Place your hands on a wall and step one foot back. Bend the front knee and keep the back leg straight. Press the back heel into the floor. Lean forward until you feel a stretch in the back calf. When the app tells you to change sides, switch to the other leg.",
+    "frames": 1,
+    "phases": [
+      "Face wall with palms planted, one leg backward and straight, rear heel on floor. Front knee bends and torso leans gently toward wall."
+    ]
+  },
+  {
+    "id": "ST17",
+    "name": "Cross-body shoulder stretch",
+    "instruction": "Stand tall and drop your shoulders. Straighten one arm and bring it across your chest. Hold it above the elbow with your other hand. Gently draw the arm toward your chest and hold. When the app tells you to change sides, switch to the other arm.",
+    "frames": 1,
+    "phases": [
+      "Stand tall, one straight arm across chest, other hand gently holding upper arm above elbow, shoulders relaxed."
+    ]
+  },
+  {
+    "id": "ST18",
+    "name": "Overhead triceps stretch",
+    "instruction": "Raise one arm overhead. Bend the elbow so your hand reaches between your shoulder blades. Gently hold the elbow with your other hand. Keep your head upright and hold the stretch. When the app tells you to change sides, switch to the other arm.",
+    "frames": 1,
+    "phases": [
+      "Stand tall with one arm overhead, elbow bent and hand down between shoulder blades. Other hand lightly supports raised elbow."
+    ]
+  },
+  {
+    "id": "ST19",
+    "name": "Thread the needle",
+    "instruction": "Start on hands and knees, hands under shoulders and knees under hips. Slide one arm under your body along the floor, palm up. Lower that shoulder and the side of your head to the mat, and let the other hand support you. Keep the hips level over the knees and breathe calmly. When the app tells you to change sides, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "From kneeling, thread one arm under torso, palm up, shoulder and side of head resting on mat, other hand supporting and hips over knees."
+    ]
+  },
+  {
+    "id": "ST20",
+    "name": "Standing side bend",
+    "instruction": "Stand tall with your feet hip-width apart and knees soft. Reach one arm overhead and let the other hang relaxed. Lean gently to the opposite side, lengthening along your side. Keep the hips level and still, and breathe calmly. When the app tells you to change sides, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Stand with feet hip-width and knees soft. Reach one arm overhead while bending gently toward the opposite side, other arm resting, hips level."
+    ]
+  },
+  {
+    "id": "ST21",
+    "name": "Legs up the wall",
+    "instruction": "Sit sideways right next to a wall and lie back. Swing your legs up the wall and keep your hips close to it. Keep the knees soft and your arms relaxed by your sides. Relax your neck and shoulders and breathe slowly. To come out, bend your knees and roll gently onto your side.",
+    "frames": 1,
+    "phases": [
+      "Lie on back near a wall with both legs extending up wall, knees softly bent and arms resting on floor beside body."
+    ]
+  },
+  {
+    "id": "ST22",
+    "name": "Knees to chest",
+    "instruction": "Lie on your back with your knees bent. Bring both knees toward your chest. Hold behind your thighs or on your shins. Let your lower back relax into the floor, with your head resting down. If you like, rock gently from side to side.",
+    "frames": 1,
+    "phases": [
+      "Lie supine with head resting and both knees drawn toward chest, hands holding shins or behind thighs, lower back relaxed."
+    ]
+  },
+  {
+    "id": "NK01",
+    "name": "Neck side stretch",
+    "instruction": "Sit or stand tall with your shoulders low and relaxed. Slowly tilt your head so the ear moves toward the shoulder. If you like, rest a hand on your head without pulling. Breathe calmly and hold a mild stretch along the neck. When the app tells you to change sides, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Sit tall with shoulders relaxed. Hold head gently tilted sideways with ear moving toward shoulder, eyes forward and no lifting of the shoulder."
+    ]
+  },
+  {
+    "id": "NK02",
+    "name": "Chin tucks",
+    "instruction": "Sit or stand tall and look straight ahead. Keep your shoulders low and relaxed. Glide your head straight back, as if making a double chin. Don't tilt your head up or down. Hold for a second, release smoothly and repeat.",
+    "frames": 2,
+    "phases": [
+      "Side view seated upright, gaze level and neck neutral.",
+      "Glide the head straight backward, making a small chin tuck without angling the chin upward or downward."
+    ]
+  },
+  {
+    "id": "NK03",
+    "name": "Slow neck turns",
+    "instruction": "Sit or stand tall with relaxed shoulders. Slowly turn your head to look over one shoulder. Return to the centre and do all the reps to this side. Then repeat the same way to the other side. When both sides are done, tap Done.",
+    "frames": 2,
+    "phases": [
+      "Sit upright, chin level, shoulders low and gaze forward.",
+      "Rotate the head comfortably to one side to look over that shoulder, leaving torso facing forward."
+    ]
+  },
+  {
+    "id": "NK04",
+    "name": "Shoulder rolls",
+    "instruction": "Stand or sit tall with your arms relaxed at your sides. Lift your shoulders toward your ears. Roll them smoothly backward. Lower them down to complete the circle. Repeat without rushing, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Stand or sit tall with arms hanging and shoulders down.",
+      "Roll both shoulders up toward ears, head steady.",
+      "Draw shoulders back and down to complete roll, arms loose."
+    ]
+  },
+  {
+    "id": "NK05",
+    "name": "Seated chair twist",
+    "instruction": "Sit near the front of a stable chair with your feet flat on the floor. Turn your chest to one side, holding the backrest or your thigh. Grow tall on the inhale and twist a little more on the exhale. Keep your knees pointing forward. When the app tells you to change sides, switch to the other side.",
+    "frames": 1,
+    "phases": [
+      "Sit forward on a stable chair with feet flat, knees facing ahead. Hold a gentle torso turn with hands on thigh and backrest, neck long."
+    ]
+  },
+  {
+    "id": "NK06",
+    "name": "Chest opener with hands behind the back",
+    "instruction": "Stand tall and clasp your hands behind your back, or hold a towel. Draw your shoulder blades together. Gently lift your hands away from your back as your chest opens. Keep your chin level and look straight ahead. Hold the position and breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "Stand upright, chin level, hands clasped behind pelvis and lifted slightly away from back, shoulder blades gently drawn together."
+    ]
+  },
+  {
+    "id": "NK07",
+    "name": "Wrist and forearm stretch",
+    "instruction": "Extend one arm forward with the palm up. With the other hand, gently draw the fingers back toward you. Turn the palm down and draw the back of the hand toward you. Keep the elbow straight but not locked. Then stretch the other arm the same way.",
+    "frames": 2,
+    "phases": [
+      "Hold one arm forward, elbow long and palm up. Gently draw the fingers down and back with the other hand, stretching the palm side of the forearm. Shoulders stay low.",
+      "Keep the same arm forward and turn the palm down. Flex the wrist so the fingers point toward the floor and use the other hand to draw the back of the hand gently toward the body."
+    ]
+  },
+  {
+    "id": "BL01",
+    "name": "Single-leg stand",
+    "instruction": "Stand tall next to a wall or a stable chair. Lift one foot slightly off the floor. Look at a fixed point ahead and hold your balance. Touch the support only if you need it. When the app tells you to change sides, switch to the other leg.",
+    "frames": 1,
+    "phases": [
+      "Stand upright beside a wall on one softly bent leg. The other foot is slightly lifted, gaze forward, arms comfortable, pelvis level."
+    ]
+  },
+  {
+    "id": "BL02",
+    "name": "Heel-to-toe walk",
+    "instruction": "Stand tall next to a wall. Place the heel of one foot right in front of the toes of the other. Keep your arms relaxed or slightly out to the sides. Look ahead and walk slowly, heel to toe. At the end of the line, turn carefully and walk back.",
+    "frames": 2,
+    "phases": [
+      "Walk heel to toe near a wall, left heel placed in line just in front of right toes, gaze forward.",
+      "Place right heel directly ahead of left toes on same line, arms slightly out for balance."
+    ]
+  },
+  {
+    "id": "BL03",
+    "name": "Single-leg hip hinge",
+    "instruction": "Stand next to a wall and touch it for support if needed. Shift your weight onto one leg and soften the knee. Hinge forward from the hip as the other leg extends back, keeping your back long. Return upright with control. Do all reps on one side, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Balance upright on one softly bent leg, free foot a little above floor, arms out comfortably.",
+      "Hinge the torso forward as the free leg reaches back, hips square and back long, support foot planted."
+    ]
+  },
+  {
+    "id": "BL04",
+    "name": "Sit-to-stand from a chair",
+    "instruction": "Check that the chair is stable and will not slide; put it against a wall if you can. Sit on the front half of the chair with your feet hip-width apart. Lean slightly forward and stand up, without using your hands if possible. Stand fully upright for a second. Sit back down slowly and with control.",
+    "frames": 3,
+    "phases": [
+      "Sit on front half of stable chair, feet hip-width and planted, hands free.",
+      "Lean the torso a little forward as hips lift clear of seat and body weight shifts onto feet.",
+      "Stand upright in front of the same chair, hips and knees extended, feet unchanged."
+    ]
+  },
+  {
+    "id": "BL05",
+    "name": "Standing side leg raise",
+    "instruction": "Stand tall, holding a stable chair or a wall. Point your toes forward and keep your torso upright. Slowly lift one straight leg out to the side a short way. Lower the leg with control. Do all reps on one side, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand beside stable chair with one hand resting on back, feet close and toes forward.",
+      "Lift the outside straight leg laterally a short distance, hips level and torso upright."
+    ]
+  },
+  {
+    "id": "L15",
+    "name": "Single-leg calf raise with support",
+    "instruction": "Stand by a wall and hold it with one hand. Shift your weight onto one foot and lift the other slightly. Rise high onto the ball of the standing foot and pause for a second. Lower slowly until the whole foot is on the floor. Do all reps on one side, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand beside a wall, fingertips lightly touching it, one foot off floor and supporting heel down.",
+      "Rise onto the ball of the supporting foot without leaning sideways; free foot stays lifted and fingertips stay on wall."
+    ]
+  },
+  {
+    "id": "W10",
+    "name": "Ankle circles",
+    "instruction": "Stand holding a support, or sit on a stable chair. Lift one foot slightly off the floor. Slowly draw circles with your toes in one direction. Then draw circles in the other direction. Do all reps on one side, then the other, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Seated on a stable chair, working foot clear of floor, shin still, toes tracing the top of a small circle.",
+      "Same leg and camera, toes point outward near side of circle.",
+      "Same leg, toes point down on lower arc of circle; keep lower leg steady."
+    ]
+  },
+  {
+    "id": "TC01",
+    "name": "Tai chi opening",
+    "instruction": "Stand with feet shoulder-width apart, knees soft, arms relaxed. As you inhale, float your arms forward and up to shoulder height. As you exhale, sink slightly and lower your palms to your hips. Keep repeating this cycle slowly and continuously for the whole time.",
+    "frames": 3,
+    "phases": [
+      "Stand shoulder-width, knees soft and arms resting in front of hips.",
+      "Both arms float forward to shoulder height with soft elbows and wrists.",
+      "Sink gently through knees, bringing both palms down near hips."
+    ]
+  },
+  {
+    "id": "TC02",
+    "name": "Cloud hands",
+    "instruction": "Stand with feet wider than your hips, knees soft, one hand at face height and the other at waist height. Shift your weight to one leg and turn the waist smoothly, letting the arms follow. Your hands circle in front of the body and swap heights; your eyes follow the upper hand. Shift your weight the other way, then keep repeating slowly and continuously for the whole time.",
+    "frames": 3,
+    "phases": [
+      "Wide soft stance, weight left, torso turned left, left hand near face and right hand near waist.",
+      "Shift through centre as hands trace crossing circular paths in front of body.",
+      "Shift weight right, torso turned right, right hand high and left low, gaze following upper hand."
+    ]
+  },
+  {
+    "id": "TC03",
+    "name": "Parting the wild horse's mane",
+    "instruction": "Sink slightly with your hands in front of you as if holding a ball. Slowly step forward diagonally into a bow stance and part your hands: the front hand rises to eye level, the back hand presses down by the hip. Shift your weight back smoothly, gather the hands again and repeat, breathing evenly. Keep repeating slowly and continuously. When the app tells you to change sides, switch to the other side.",
+    "frames": 3,
+    "phases": [
+      "Soft-kneed stance, arms gathered in front as though cradling a ball.",
+      "Step diagonally into a bow stance, separating arms, front hand near eye level and rear hand low by hip.",
+      "Shift weight back and gather the hands again over the rear leg."
+    ]
+  },
+  {
+    "id": "TC04",
+    "name": "Brush knee and push",
+    "instruction": "Stand with soft knees, one hand by your ear and the other in front of your chest. Slowly step forward into a bow stance: one hand sweeps down past the front knee while the other pushes forward from the ear at chest height. Turn the waist with the hands, then shift your weight back smoothly and repeat. Keep repeating slowly and continuously. When the app tells you to change sides, switch to the other side.",
+    "frames": 3,
+    "phases": [
+      "Stand with knees soft, one hand near its ear and opposite forearm in front of chest.",
+      "Step forward into bow stance, one hand sweeping down past front knee, other palm extending ahead at chest height.",
+      "Ease weight onto back leg and gather hands, maintaining the same forward-facing orientation."
+    ]
+  },
+  {
+    "id": "TC05",
+    "name": "Repulse the monkey",
+    "instruction": "Stand with feet hip-width apart, knees soft, one hand forward and the other by your waist. Slowly step backward, landing on the toes first and then lowering the heel. As you step, one hand pushes forward while the other draws back by the waist, palms turning smoothly. Alternate legs and hands in a smooth flow, repeating continuously for the whole time.",
+    "frames": 3,
+    "phases": [
+      "Stand with feet hip-width and slightly staggered, one palm forward and other by waist.",
+      "Step back onto rear toes, both hands passing through middle at different heights.",
+      "Set rear heel down and transfer weight, now other palm forward and first hand by waist."
+    ]
+  },
+  {
+    "id": "TC06",
+    "name": "White crane spreads its wings",
+    "instruction": "Stand with your weight on the back leg and the front toes lightly touching the floor. As you inhale, raise one hand above your forehead, palm outward. As you exhale, press the other hand down softly beside your hip and hold the pose calmly. Move smoothly to the other side and keep repeating slowly and continuously. When the app tells you to change sides, switch to the other side.",
+    "frames": 3,
+    "phases": [
+      "Set weight over back leg with front toes touching lightly, arms relaxed in front.",
+      "Raise one hand above forehead, palm outward, opposite palm pressing down beside hip, back leg bearing weight.",
+      "Shift smoothly into the mirrored crane position, the other hand high and weight over the other leg."
+    ]
+  },
+  {
+    "id": "TC07",
+    "name": "Golden rooster stands on one leg",
+    "instruction": "Stand tall with feet hip-width apart and knees soft. Slowly lift one knee to hip height or lower, raising the same-side hand so the elbow sits above the knee. Press the other palm gently down beside your hip and find your balance. Lower the leg and hands slowly, then keep repeating this smooth cycle for the whole time. When the app tells you to change sides, switch to the other side.",
+    "frames": 3,
+    "phases": [
+      "Stand upright on both feet, knees soft and hands low.",
+      "Balance with one knee lifted comfortably, matching elbow above that knee and opposite palm beside hip.",
+      "Return both feet and hands gently down, shoulders relaxed."
+    ]
+  },
+  {
+    "id": "TC08",
+    "name": "Grasp the bird's tail",
+    "instruction": "Take a bow stance with one foot forward, weight on it and knees soft. Raise the front forearm in front of you. Shift your weight back and softly draw the hands toward you. Bring the palms together, shift forward, then push the palms smoothly ahead. Keep repeating this whole cycle smoothly for the whole time. When the app tells you to change sides, switch to the other side.",
+    "frames": 3,
+    "phases": [
+      "Bow stance with weight forward and lead forearm rounded in front of chest.",
+      "Shift weight back and draw hands inward, keeping elbows soft.",
+      "Shift forward again and extend palms ahead in a controlled push, heels grounded."
+    ]
+  },
+  {
+    "id": "TC09",
+    "name": "Single whip",
+    "instruction": "Take a wide stance with soft knees and your weight centered. Shift your weight and turn; extend one arm to the side and bring the fingertips together into a hook. Circle the other hand past your face. Shift the weight the opposite way and push that palm out softly, settling the hips. Return smoothly and keep repeating the movement for the whole time.",
+    "frames": 3,
+    "phases": [
+      "Wide stance, knees soft, turn to one side with that arm extended and fingertips joined in a loose hook.",
+      "Keep hook arm extended, circle the other open palm across front of face as weight passes centre.",
+      "Settle onto the opposite leg with the open palm extended sideways and hook hand remaining out."
+    ]
+  },
+  {
+    "id": "TC10",
+    "name": "Tai chi closing",
+    "instruction": "Stand with feet shoulder-width apart and knees soft. Cross your hands in front of your chest. Slowly open the arms out to the sides. Lower the palms smoothly to the hips while softly straightening the knees. Keep repeating this slow movement for the whole time, then breathe calmly.",
+    "frames": 3,
+    "phases": [
+      "Stand shoulder-width with soft knees and hands crossed in front of chest.",
+      "Open both arms gently out to sides, elbows relaxed.",
+      "Lower palms beside hips while knees straighten softly."
+    ]
+  },
+  {
+    "id": "TC11",
+    "name": "Tai chi weight-shift walk",
+    "instruction": "Stand tall with soft knees and your hands resting on your hips. Place the heel softly in front of you. Roll the foot down and shift your weight fully onto it. Only then lift the back foot and take the next step. Keep walking very slowly for the whole time, looking ahead.",
+    "frames": 3,
+    "phases": [
+      "Stand tall with hands at hips; place one heel lightly ahead, toes lifted, weight still behind.",
+      "Roll the front foot flat and shift weight over it, rear heel releasing.",
+      "Lift the rear foot and swing it forward for the next controlled heel placement."
+    ]
+  },
+  {
+    "id": "J12",
+    "name": "Shadow boxing",
+    "instruction": "Take a fighting stance with soft knees and fists by your face. Stay on the balls of your feet and move lightly. Throw light straight punches, alternating right and left. Add hooks, turning the torso with each one. Return the hands to the guard after every punch and keep going for the whole time.",
+    "frames": 3,
+    "phases": [
+      "Stand alone in an open exercise space, feet staggered, knees soft and hands raised comfortably.",
+      "Extend one arm into the empty space, torso turning a little, other hand held up.",
+      "Show the opposite arm reaching across a curved path in the air, with feet grounded and no contact or target."
+    ]
+  },
+  {
+    "id": "J10",
+    "name": "Lateral bounds",
+    "instruction": "Stand on one leg with the other foot slightly off the floor. Push off and bound sideways onto the other foot. Land softly on the ball of the foot with the knee bent and over the toes. Hold the landing for a second, then bound back. Swing your arms for balance. Count both directions together, then finish the set in the app.",
+    "frames": 3,
+    "phases": [
+      "Balance on the right foot, right knee softly bent, free leg trailing behind, arms balancing.",
+      "Bound sideways with both feet just off floor, arms counterbalancing.",
+      "Land and stabilize on the bent left leg, right leg trailing behind."
+    ]
+  },
+  {
+    "id": "J11",
+    "name": "Tuck jumps",
+    "instruction": "Stand tall with feet shoulder-width apart and arms in front. Dip slightly and jump straight up. Pull your knees toward your chest in the air. Land softly on the balls of the feet with bent knees. Reset briefly and repeat. When you are done, finish the set in the app.",
+    "frames": 3,
+    "phases": [
+      "Feet shoulder-width with knees bent in a little preparatory dip, arms in front.",
+      "Jump vertically and draw knees upward in the air, leaving clear space below feet.",
+      "Land softly on both feet with hips and knees flexed, body balanced."
+    ]
+  },
+  {
+    "id": "J13",
+    "name": "Front kicks",
+    "instruction": "Stand in a fighting stance with your hands up by your face. Lift one knee forward. Extend the lower leg and kick forward with the ball of the foot. Pull the leg back and put it down under control. Do all reps on one side, then the other, then finish the set in the app.",
+    "frames": 3,
+    "phases": [
+      "Stand balanced in a staggered stance facing clear, empty floor, hands up.",
+      "Lift one bent knee in front, keeping the standing knee soft and torso tall.",
+      "Gently extend the lifted lower leg forward at low height into clear space, supporting foot planted."
+    ]
+  },
+  {
+    "id": "J14",
+    "name": "Single-leg hops",
+    "instruction": "Stand on one leg with the knee slightly bent. Hop forward a small distance. Land softly on the same leg with the knee bent and over the toes. Stabilise, then hop again. Do all hops on one leg, then the other, then finish the set in the app.",
+    "frames": 3,
+    "phases": [
+      "Balance on one foot with supporting knee softly flexed and other foot lifted.",
+      "Hop forward a short distance on the same side, both feet briefly airborne.",
+      "Land on the same foot, knee bent and aligned over toes, free leg hovering."
+    ]
+  },
+  {
+    "id": "L13",
+    "name": "Side lunge",
+    "instruction": "Stand tall with your feet together and chest up. Take a wide step to the side. Bend that knee and sit your hips back while the other leg stays straight. Keep both feet pointing forward and the heel of the bent leg down. Push back to the start. Do all reps on one side, then the other, then finish the set in the app.",
+    "frames": 2,
+    "phases": [
+      "Stand hip-width, hands comfortably in front and toes forward.",
+      "Step sideways, shift hips back, bend the stepping knee over toes, keep the other leg straight and both feet planted."
+    ]
+  },
+  {
+    "id": "J15",
+    "name": "Skipping without a rope",
+    "instruction": "Stand tall with your elbows close and hands at hip height. Hop lightly on the balls of your feet. Circle your wrists as if turning a rope. Keep your knees soft and land quietly. Keep the rhythm until the app tells you to stop.",
+    "frames": 2,
+    "phases": [
+      "Stand tall with hands relaxed at hip height as though holding an imaginary rope, knees soft.",
+      "Hop a small distance off floor with both feet, wrists slightly rotated, elbows close and shoulders low."
+    ]
+  },
+  {
+    "id": "C15",
+    "name": "McGill curl-up",
+    "instruction": "Lie on your back with one knee bent, foot flat, and the other leg straight. Slide both hands, palms down, under your lower back to keep its natural curve. Lift your head and shoulders a few centimetres as one block, neck neutral. Hold for 2 to 3 seconds, then lower slowly. Halfway through the set, swap which knee is bent.",
+    "frames": 2,
+    "phases": [
+      "Supine with one leg straight, other knee bent and foot flat, both hands under lumbar curve and head resting.",
+      "Raise head and shoulders together a few centimetres, neck neutral, hand and leg position unchanged."
+    ]
+  },
+  {
+    "id": "C16",
+    "name": "Bird dog",
+    "instruction": "Start on all fours, hands under shoulders, knees under hips, back neutral. Slowly reach one arm forward and the opposite leg back until both are level with your body. Hold for 2 seconds without dropping or twisting the pelvis. Return to the start and repeat. Do all reps on one side, then switch to the other pair. When both sides are done, tap Done.",
+    "frames": 2,
+    "phases": [
+      "On hands and knees with hands beneath shoulders, knees beneath hips and back neutral.",
+      "Reach one arm straight forward and opposite leg straight back to trunk height, pelvis level and spine long."
+    ]
+  },
+  {
+    "id": "C17",
+    "name": "Side plank on knees",
+    "instruction": "Lie on your side, forearm under the shoulder, knees bent with feet behind you. Lift your hips until your body is straight from head to knees. Put your free hand on your hip and hold. Breathe calmly and keep your shoulder away from your ear. When the app says “Change sides”, turn over to the other side.",
+    "frames": 1,
+    "phases": [
+      "Hold side plank on a forearm and lower knee. Both knees bent, hips elevated into a straight shoulder–hip–knee line, upper hand on hip."
+    ]
+  },
+  {
+    "id": "B12",
+    "name": "Wall angels",
+    "instruction": "Stand with your head, upper back and pelvis against a wall, feet a step forward. Draw your ribs down. Bend your arms into a W, elbows and backs of the hands toward the wall. Slowly slide your arms up toward a Y. Slide back down to the W just as slowly. Keep contact with the wall only as far as is comfortable.",
+    "frames": 2,
+    "phases": [
+      "Stand against a wall with head, upper back and pelvis supported; elbows bent in W and ribs down.",
+      "Slide arms up toward a Y with backs of hands near wall, keeping ribcage quiet."
+    ]
+  },
+  {
+    "id": "ST23",
+    "name": "Open book on your side",
+    "instruction": "Lie on your side, hips and knees bent 90°, a cushion under your head. Stretch both arms straight forward, palms together. Keep your knees together and slowly open the top arm in an arc to the other side, following your hand with your eyes. Rest the arm where it is comfortable and breathe calmly. When the app says “Change sides”, turn over to the other side.",
+    "frames": 1,
+    "phases": [
+      "Side-lying open book in its held open position: bent knees stacked together, cushion under head, top arm extended behind as chest and gaze turn toward it."
+    ]
+  },
+  {
+    "id": "ST24",
+    "name": "Sphinx",
+    "instruction": "Lie on your stomach, elbows under your shoulders, forearms on the floor. Let your chest rise gently while your pelvis and legs stay relaxed on the floor. Move your shoulders away from your ears and keep your neck long. Breathe calmly and hold the position.",
+    "frames": 1,
+    "phases": [
+      "Prone with elbows beneath shoulders and forearms flat, chest gently lifted, pelvis and legs resting, gaze slightly ahead on floor."
+    ]
+  },
+  {
+    "id": "CD08",
+    "name": "Belly breathing lying down",
+    "instruction": "Lie on your back with knees bent and feet flat. Put one hand on your chest and one on your belly. Breathe in slowly through your nose so your belly rises under your hand and your chest stays quiet. Breathe out longer through your mouth as your belly lowers. Repeat at your own calm pace.",
+    "frames": 1,
+    "phases": [
+      "Lie on back with bent knees and feet flat, one hand on chest and the other on belly, head supported and shoulders relaxed."
+    ]
+  },
+  {
+    "id": "ST25",
+    "name": "Back and lat stretch at a chair",
+    "instruction": "Kneel facing a stable chair or sofa. Place your forearms or hands on the seat. Move your hips back toward your heels and let your chest sink between your arms, back long. Feel the stretch along the sides of your back and armpits. Breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "Kneel facing a stable chair, forearms supported on seat, hips back toward heels and chest gently lowered between extended arms."
+    ]
+  },
+  {
+    "id": "L23",
+    "name": "Short foot",
+    "instruction": "Sit or stand with bare feet flat on the floor. Without curling the toes, draw the ball of the foot toward the heel. The arch lifts and the foot gets slightly shorter. Keep the toes long and relaxed on the floor. Hold the position, then release.",
+    "frames": 1,
+    "phases": [
+      "Sit upright, bare heel and ball of foot firmly grounded. Hold the gently shortened foot with arch domed, toes long on the floor, ankle aligned. Frame low enough to show the arch."
+    ]
+  },
+  {
+    "id": "L24",
+    "name": "Towel scrunches",
+    "instruction": "Sit on a chair with a small towel flat on the floor under one bare foot. Keep the heel down and grab the towel with the toes. Pull the towel toward you bit by bit. Spread the toes and grab again. When the app says “Change sides”, switch to the other foot.",
+    "frames": 2,
+    "phases": [
+      "Sit on stable chair, heel planted and toes spread over a small flat towel.",
+      "With heel still planted, toes grip the cloth, bunching the towel toward the foot."
+    ]
+  },
+  {
+    "id": "L25",
+    "name": "Toe lifts and spreads",
+    "instruction": "Sit with bare feet flat on the floor. Lift only the big toes while the other toes stay down, then lower them. Lift the four small toes while the big toes stay down, then lower them. Spread all toes wide. That is one rep. Move slowly, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Sit with feet bare and heels down. Lift only the big toes, other toes resting.",
+      "Lower big toes and lift the four smaller toes on each foot, heels unchanged.",
+      "Spread all toes wide on the floor without curling them."
+    ]
+  },
+  {
+    "id": "L19",
+    "name": "Tibialis raises at a wall",
+    "instruction": "Lean your back against a wall with heels about a foot length in front of it. Keep the legs straight but the knees not locked. Lift the toes and the front of the feet as high as you can. Pause for a second at the top. Lower the feet slowly to the floor.",
+    "frames": 2,
+    "phases": [
+      "Lean upright against wall, feet a little forward, heels and forefeet grounded.",
+      "Lift both forefeet and toes off floor while both heels and back stay in place."
+    ]
+  },
+  {
+    "id": "W12",
+    "name": "Walking on toes",
+    "instruction": "Stand tall and rise high onto the balls of your feet. Walk on the spot or around the room with small steps. Keep the heels up and the body tall. Let your arms hang relaxed. Stay up on your toes until the exercise ends.",
+    "frames": 2,
+    "phases": [
+      "Walk upright on both forefeet with heels raised, one foot taking a small step ahead.",
+      "Advance the other foot on its forefoot, heels still lifted, torso tall."
+    ]
+  },
+  {
+    "id": "W13",
+    "name": "Walking on heels",
+    "instruction": "Stand tall and shift your weight onto your heels. Lift the toes and the front of the feet. Walk on the spot or around the room with small steps. Keep the knees soft and the body upright. Let your arms hang relaxed.",
+    "frames": 2,
+    "phases": [
+      "Walk upright on heels, forefeet lifted, left foot a short step ahead.",
+      "Right foot steps ahead on its heel with both sets of toes lifted, knees soft."
+    ]
+  },
+  {
+    "id": "ST26",
+    "name": "Sole stretch",
+    "instruction": "Sit and cross one ankle over the other knee. Hold the toes of that foot with your hand. Gently pull the toes back toward the shin until you feel a stretch under the arch. The other hand can lightly rub the sole. When the app says “Change sides”, switch feet.",
+    "frames": 1,
+    "phases": [
+      "Sit with ankle crossed over opposite knee; hand gently draws toes back toward shin while other hand steadies foot, arch visible."
+    ]
+  },
+  {
+    "id": "L26",
+    "name": "Heel-to-toe rocks",
+    "instruction": "Stand tall near a wall, feet hip-width apart. Slowly roll forward and rise onto the balls of your feet. Then roll back onto your heels, lifting the toes. One forward and back is one rep. Move smoothly, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand tall near a wall, both heels lifted together, weight on forefeet.",
+      "Rock back onto both heels, forefeet and toes raised, knees soft."
+    ]
+  },
+  {
+    "id": "B13",
+    "name": "Prone streamline hold",
+    "instruction": "Lie on your stomach with arms overhead, one hand on top of the other. Keep your upper arms by your ears and your legs long and together. Lift your arms, head and chest slightly off the floor. Look down and reach long through your fingers and toes. Hold until the app signals the end.",
+    "frames": 1,
+    "phases": [
+      "Lie prone, long legs together and toes reaching back. Reach arms overhead, hands overlapped, head and arms just clear of floor, neck long, gaze down."
+    ]
+  },
+  {
+    "id": "B14",
+    "name": "Prone breaststroke arms",
+    "instruction": "Lie on your stomach, arms forward, chest slightly lifted. Look down and keep your neck long. Sweep your arms out and back toward your hips, squeezing the shoulder blades. Bring your hands under your chest and stretch them forward again. Repeat slowly and smoothly.",
+    "frames": 3,
+    "phases": [
+      "Lie prone, chest slightly raised, neck long and arms extended forward.",
+      "Sweep both arms outward and back toward hips, chest remaining low.",
+      "Recover the hands beneath chest with elbows bending before reaching forward again."
+    ]
+  },
+  {
+    "id": "W11",
+    "name": "Standing front crawl arms",
+    "instruction": "Stand tall with your knees soft. Make big alternating arm circles forward, like front crawl. Let each hand pass close to your ear as your torso turns slightly with each stroke. Breathe steadily and keep an easy pace. Continue until the app signals the end.",
+    "frames": 3,
+    "phases": [
+      "Stand with soft knees, right arm reaching overhead near the ear, left arm beside hip, torso slightly turned.",
+      "Arms pass in opposite parts of a front-crawl circle, one reaching forward and the other recovering backward.",
+      "Left arm now reaches overhead by ear and right hand passes the hip, torso turning gently the other way."
+    ]
+  },
+  {
+    "id": "ST27",
+    "name": "Kneeling ankle stretch",
+    "instruction": "Kneel on a soft surface with the tops of your feet flat on the floor. Place your hands on the floor beside your knees. Slowly sit back toward your heels until you feel a stretch along the front of your ankles. Take weight off with your hands, or put a cushion between heels and buttocks, if needed. Hold until the app signals the end.",
+    "frames": 1,
+    "phases": [
+      "Kneel on padded mat with tops of feet down and hands on floor beside knees; hips lowered gently toward heels, weight partly supported on hands."
+    ]
+  },
+  {
+    "id": "PU08",
+    "name": "Hanging knee raises",
+    "instruction": "Check that the bar is secure, then hang from it with an overhand grip. Engage your shoulders slightly instead of hanging loosely. Bring your knees up toward your chest without swinging. Pause for a moment at the top. Lower your legs slowly and repeat.",
+    "frames": 2,
+    "phases": [
+      "Hang still from secure overhead bar, hands overhand, shoulders engaged and legs down.",
+      "Raise both bent knees toward chest without swinging, shoulders still engaged."
+    ]
+  },
+  {
+    "id": "A06",
+    "name": "Resisted finger extensions",
+    "instruction": "Hold one hand in front of you with the fingers slightly curled. Cup the other hand's fingers over the fingernails. Slowly open the fingers against the light resistance. Close them again just as slowly. Do all reps on one hand, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Hold one hand in front with fingers curled slightly and fingertips of the other hand cupped lightly over nails.",
+      "Open the working fingers against that contact, opposite hand providing light resistance."
+    ]
+  },
+  {
+    "id": "A07",
+    "name": "Towel squeeze",
+    "instruction": "Roll a towel up tightly. Hold it in both hands in front of your body, elbows bent. Squeeze and twist hard, as if wringing out water. Let your forearms do the work and keep your shoulders relaxed. Keep going until the app signals the end, and keep breathing.",
+    "frames": 1,
+    "phases": [
+      "Stand with elbows bent beside the body, shoulders relaxed. Hold a rolled towel horizontally under visible wringing tension between the two hands, wrists comfortably aligned."
+    ]
+  },
+  {
+    "id": "C18",
+    "name": "Bear plank hold",
+    "instruction": "Get on all fours with hands under shoulders, knees under hips and toes tucked. Brace your stomach. Lift your knees a few centimetres off the floor. Keep your back flat and your hips level with your back. Hold until the app signals the end.",
+    "frames": 1,
+    "phases": [
+      "On hands and toes with knees bent under hips and hovering just above floor, arms vertical below shoulders, back flat and hips level."
+    ]
+  },
+  {
+    "id": "J16",
+    "name": "Sprawl",
+    "instruction": "Stand in an athletic stance: feet wider than shoulders, knees bent. Place your hands on the floor in front of you. Send both legs back and lower the hips toward the floor, legs wide, chest up. Bring the feet back under you and stand into the stance. Do all reps, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Low athletic stance, feet wider than shoulders, hips back and hands in front.",
+      "Crouch and plant both palms on floor in front of feet.",
+      "Legs extended wide behind, hips low, chest lifted on hands, neck long."
+    ]
+  },
+  {
+    "id": "J17",
+    "name": "Shot step",
+    "instruction": "Get into a wrestling stance, knees bent, hands forward. Lower the hips by bending the knees, not the back. Take a long step with the lead leg and bring the back knee close to the floor. Keep the chest up and hands forward; then step back to the stance. Do all reps leading with one leg, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand alone with feet staggered, knees soft and hands in front.",
+      "Lower hips and step forward with one foot; back knee hovers just above floor, chest lifted, no contact with another person."
+    ]
+  },
+  {
+    "id": "NK08",
+    "name": "Neck isometrics: front and back",
+    "instruction": "Sit or stand tall with the neck neutral. Put a palm on your forehead and press your head gently into it at half effort; the head does not move. Halfway through, move your hands to the back of your head. Press your head gently back into your hands without moving it. Breathe steadily until the end.",
+    "frames": 2,
+    "phases": [
+      "Sit tall with neck neutral and shoulders low. Hold one palm on the forehead and gently press the head forward into the stationary hand; the head stays level and still.",
+      "Maintain the same upright posture. Rest both hands on the back of the head with elbows comfortably apart, pressing the head backward into the hands without moving the neck."
+    ]
+  },
+  {
+    "id": "NK09",
+    "name": "Neck isometrics: sideways",
+    "instruction": "Sit or stand tall with your shoulders down. Place a palm on the side of your head, above the ear. Press your head gently into the hand at half effort without tilting it. Breathe steadily and keep your shoulders down. When the app says “Change sides”, switch to the other hand and side.",
+    "frames": 1,
+    "phases": [
+      "Seated tall, palm against side of head above ear. Head remains centred, gently pressing into hand while both shoulders stay level."
+    ]
+  },
+  {
+    "id": "L17",
+    "name": "Cossack squat",
+    "instruction": "Stand with your feet wide and toes slightly out. Shift your weight to one side and sit down into that knee, keeping the heel of the bent leg down. Keep the other leg straight with the toes up and the chest up. Push back up to the middle. Do all reps to one side, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand with feet wide, toes slightly outward, trunk upright.",
+      "Sit the hips toward one heel, bending that knee; other leg stays straight with toes lifted, bent-side heel grounded."
+    ]
+  },
+  {
+    "id": "L16",
+    "name": "Curtsy lunge",
+    "instruction": "Stand tall with the feet hip-width apart. Step one leg back and diagonally behind the other. Bend both knees into a lunge, front knee over the toes, hips square. Push back up to standing. Do all reps on one side, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand tall, feet hip-width and hips facing forward.",
+      "Cross one foot diagonally behind the other, lower into a small curtsy lunge, front heel grounded and front knee tracking toes."
+    ]
+  },
+  {
+    "id": "J18",
+    "name": "Low-stance shuffles",
+    "instruction": "Get into a low athletic stance: knees bent, chest up, weight on the balls of your feet. Shuffle a few quick steps sideways in one direction. Shuffle back the other way. Don't cross your feet and keep your hips low. Keep shuffling until the time is up.",
+    "frames": 3,
+    "phases": [
+      "Stay low, facing ahead with knees bent, slightly wider than hip-width and weight toward forefeet.",
+      "Shuffle right with the right foot leading, no crossing, hips at the same height.",
+      "Shuffle left with left foot leading, no crossing, facing ahead."
+    ]
+  },
+  {
+    "id": "C19",
+    "name": "Russian twists",
+    "instruction": "Sit with your knees bent and heels on the floor. Lean back slightly with a long, straight back. Hold your hands together in front of your chest. Turn your shoulders to one side, then to the other; each side counts as one rep. Do all reps, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Sit with knees bent, heels planted, torso leaning slightly back and hands together in front; turn shoulders gently left.",
+      "Turn shoulders and joined hands to the right, preserving the same pelvis and foot position."
+    ]
+  },
+  {
+    "id": "J19",
+    "name": "Split step",
+    "instruction": "Stand in a ready stance with your knees slightly bent. Make a small hop on the spot. Land softly on the balls of both feet, slightly wider than the hips, knees bent. Right away, take one quick step out to the side or forward and come back. Alternate directions and repeat.",
+    "frames": 3,
+    "phases": [
+      "Start in a ready stance, knees soft, then rise just clear of floor in a small hop.",
+      "Land on both forefeet in a slightly wide stance, knees bent and hands ready.",
+      "Take one short step sideways from that landing, maintaining balance."
+    ]
+  },
+  {
+    "id": "L20",
+    "name": "Forward lunge with push back",
+    "instruction": "Stand tall. Take a long step forward into a lunge, front knee over the toes. Reach the same-side hand forward as if to a ball. Push off the front foot and return to standing. Do all reps on one leg, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand tall with both feet under hips and hands comfortably at sides.",
+      "Step one foot far forward, lower into a lunge and reach the same-side hand forward, front knee over toes."
+    ]
+  },
+  {
+    "id": "L18",
+    "name": "Step-ups",
+    "instruction": "Stand in front of a stable step 20–30 cm high. Put the whole foot of one leg on it. Push through that heel and step up until you stand tall. Step down slowly. Do all reps on one leg, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Face a stable low step with one whole foot on its top, the other foot on floor.",
+      "Press through the top foot and stand tall on the step, bringing the trailing foot up."
+    ]
+  },
+  {
+    "id": "L21",
+    "name": "Lateral step-downs",
+    "instruction": "Stand side-on on a low stable step on one leg, the other foot hanging off the side. Slowly bend the standing knee, hips back. Lightly touch the floor with the free heel. Straighten the standing leg and rise back up. Do all reps on one leg, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand sideways on low stable step on one leg, other foot hanging just off side, pelvis level.",
+      "Bend supporting knee, move hips back and touch free heel lightly to floor beside step."
+    ]
+  },
+  {
+    "id": "W14",
+    "name": "Golf-stance torso turns",
+    "instruction": "Stand with feet hip-width apart and knees soft. Hinge slightly forward from the hips with a long back, arms crossed over your chest. Turn your shoulders one way as in a backswing, then the other way. Keep your hips fairly quiet. Do all the turns to one side, then the other, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Soft-kneed stance, slight hip hinge, back long and arms crossed over chest, shoulders turned gently to one side.",
+      "Pass through centre without straightening hips or moving feet.",
+      "Rotate shoulders to the other side with hips relatively quiet and feet planted."
+    ]
+  },
+  {
+    "id": "BL06",
+    "name": "Single-leg stand with torso turns",
+    "instruction": "Stand on one leg with a soft knee, the other foot slightly lifted. Bring your hands together in front of your chest. Keeping your balance, slowly turn your shoulders to one side and back. Then turn to the other side. Hold a wall if needed. When the app says “Change sides”, switch to the other leg.",
+    "frames": 3,
+    "phases": [
+      "Balance on one softly bent leg, hands together in front of chest, shoulders turned a little left.",
+      "Hold the same balance as shoulders pass through centre.",
+      "Turn shoulders right with hands following while pelvis stays facing forward."
+    ]
+  },
+  {
+    "id": "ST28",
+    "name": "Seated glute stretch on a chair",
+    "instruction": "Sit tall near the front of a stable chair. Place one ankle on the opposite knee. Keeping your back long, hinge forward from the hips. Stop when you feel a stretch in the buttock and hold. When the app says “Change sides”, switch legs.",
+    "frames": 1,
+    "phases": [
+      "Sit near front of stable chair with one ankle crossed over opposite knee, spine long and torso gently hinged forward at hips."
+    ]
+  },
+  {
+    "id": "B15",
+    "name": "Bent-over reverse fly, no weights",
+    "instruction": "Hinge forward from the hips with soft knees and a long flat back, arms hanging down, thumbs pointing out. Raise your arms out to the sides to shoulder height. Squeeze your shoulder blades together at the top. Lower your arms slowly. Repeat at a steady pace.",
+    "frames": 2,
+    "phases": [
+      "Hinge at hips, knees soft, back flat, empty hands hanging beneath shoulders with thumbs turned out.",
+      "Lift the arms sideways near shoulder height, shoulder blades drawing together, body still hinged."
+    ]
+  },
+  {
+    "id": "IT55",
+    "name": "Streamline on your tummy",
+    "instruction": "Lie on your tummy on a mat, legs long and together. Stretch your arms up beside your ears, one hand on top of the other. Reach your fingers forward and your toes back, like an arrow. Lift your arms and head just a little, eyes looking down. Hold and keep breathing calmly.",
+    "frames": 1,
+    "phases": [
+      "Lie prone, long legs together and toes reaching back. Reach arms overhead, hands overlapped, head and arms just clear of floor, neck long, gaze down."
+    ]
+  },
+  {
+    "id": "IT56",
+    "name": "Front crawl arms",
+    "instruction": "Stand tall with your feet shoulder-width apart and your tummy gently in. Swing one arm forward and up in a big circle, like front crawl. Let the hand pass by your ear and come down. Now do the same with the other arm, one after the other. Move smoothly and breathe calmly.",
+    "frames": 3,
+    "phases": [
+      "Stand with soft knees, right arm reaching overhead near the ear, left arm beside hip, torso slightly turned.",
+      "Arms pass in opposite parts of a front-crawl circle, one reaching forward and the other recovering backward.",
+      "Left arm now reaches overhead by ear and right hand passes the hip, torso turning gently the other way."
+    ]
+  },
+  {
+    "id": "IT57",
+    "name": "Flipper kicks on your tummy",
+    "instruction": "Lie on your tummy with your forehead on your hands and legs long. Point your toes like flippers. Make small quick kicks up and down with straight legs. Keep your knees almost straight and your hips on the floor. Kick steadily and breathe calmly.",
+    "frames": 2,
+    "phases": [
+      "Lie prone, forehead on stacked hands, hips on mat and legs long. Right foot slightly above left.",
+      "Lift left foot slightly as right lowers, knees near straight and hips resting."
+    ]
+  },
+  {
+    "id": "IT58",
+    "name": "Boat on your tummy",
+    "instruction": "Lie on your tummy with your arms stretched forward and legs long. Lift your arms, chest and legs a little off the floor. Look down and keep your neck long. Keep your legs straight like the bottom of a boat. Hold your boat and breathe calmly.",
+    "frames": 1,
+    "phases": [
+      "Lie prone, arms stretched forward, chest and long legs hovering a small distance off mat, neck long and eyes down."
+    ]
+  },
+  {
+    "id": "IT59",
+    "name": "Boat on your back",
+    "instruction": "Lie on your back, bend your knees toward your chest and reach your arms forward. Press your lower back into the floor. Lift your head and shoulders just a little. Hold your small boat. Stronger kids can straighten the legs a bit. Breathe calmly and hold.",
+    "frames": 1,
+    "phases": [
+      "Supine tuck hold, knees drawn up and bent, lower back against mat, shoulders and head slightly lifted, arms reaching forward."
+    ]
+  },
+  {
+    "id": "IT60",
+    "name": "Frog arms on your tummy",
+    "instruction": "Lie on your tummy with your arms stretched forward and your chest lifted a little. Sweep your arms out to the sides, like a frog swimming. Bring your hands under your chest. Stretch your arms forward again. Move smoothly, do all the reps in a row, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Prone with chest slightly lifted and neck long, both arms reaching forward.",
+      "Sweep arms out to sides as elbows soften.",
+      "Bring hands beneath chest ready to reach forward, keeping shoulders away from ears."
+    ]
+  },
+  {
+    "id": "IT61",
+    "name": "Swallow balance",
+    "instruction": "Stand near a wall on one leg with your arms out like wings. Tip your body forward and lift your other leg behind you. Make your body and the raised leg one long line. Hold your swallow. If you wobble, touch the wall with a hand. When the app says “Change sides”, switch to the other leg.",
+    "frames": 1,
+    "phases": [
+      "Balance on one foot, arms stretched sideways, torso tipped forward and free leg extended backward as one long line, gaze slightly ahead on floor."
+    ]
+  },
+  {
+    "id": "IT62",
+    "name": "Tuck sit hold",
+    "instruction": "Sit on the floor with your knees bent and your hands on the floor beside your hips. Lean back a little with a straight back. Lift your feet off the floor, knees still bent. Hold the tuck and look forward. Breathe calmly and don't rock.",
+    "frames": 1,
+    "phases": [
+      "Sit with palms planted beside hips, torso leaning slightly back with a straight spine, knees bent and both feet held off the floor."
+    ]
+  },
+  {
+    "id": "IT63",
+    "name": "Rocking in a tuck",
+    "instruction": "Sit on a mat and pull your knees to your chest. Hold your shins with your hands and tuck your chin. Rock back on your round back to your shoulder blades. Roll forward and sit up again without letting go of your knees. Keep rocking smoothly, like a ball.",
+    "frames": 2,
+    "phases": [
+      "Sit on mat in a tight tuck, hands holding shins, chin tucked.",
+      "Rock backward on the rounded back to shoulder blades, keeping knees tucked, head and neck clear of loading."
+    ]
+  },
+  {
+    "id": "IT64",
+    "name": "Side roll from sitting",
+    "instruction": "Sit on a mat with legs forward and chin tucked. Bring one arm across your chest. Roll gently onto that side and slap the mat with your arm. Come back to sitting. Do all rolls to one side, then the other side, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Sit on mat with legs in front, chin tucked and one arm across the chest.",
+      "Gently roll onto that side and extend the arm along the mat, head clear of the floor, torso resting on the side."
+    ]
+  },
+  {
+    "id": "IT65",
+    "name": "Bear crawl",
+    "instruction": "Get on your hands and feet, knees bent and just above the floor. Keep your back flat like a table. Step forward with your right hand and left foot. Now step with your left hand and right foot. Crawl a few steps forward and back.",
+    "frames": 2,
+    "phases": [
+      "Bear-crawl position, knees bent hovering, right hand and left foot moving forward together.",
+      "Shift to left hand and right foot advancing, back level and knees just off the mat."
+    ]
+  },
+  {
+    "id": "IT66",
+    "name": "Crab walk",
+    "instruction": "Sit on the floor and put your palms behind your hips, fingers pointing forward. Bend your knees and put your feet flat. Lift your hips so your body is like a table. Walk on your hands and feet forward, then back, like a crab. Step slowly and keep your hips high.",
+    "frames": 2,
+    "phases": [
+      "Face-up crab position with hips raised, palms on floor behind hips and knees bent. Advance right hand and left foot.",
+      "Maintain elevated hips and advance left hand and right foot."
+    ]
+  },
+  {
+    "id": "IT67",
+    "name": "Straight punch from stance",
+    "instruction": "Stand in a stance with one foot forward, knees soft, fists by your chin. Punch one arm straight forward at the air, palm down. Bring the fist back to your chin quickly. Keep the other hand by your face the whole time. Do all punches with one arm, then the other, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand alone with staggered feet, soft knees and hands up, facing empty space.",
+      "One arm extended forward into empty air for the solo exercise; other hand stays near the chest, feet grounded."
+    ]
+  },
+  {
+    "id": "IT68",
+    "name": "Front kick",
+    "instruction": "Stand in a stance with your hands up by your face. Lift your knee. Push your foot forward at the air, low, with the ball of the foot. Pull the leg back and put the foot down softly. Do all kicks with one leg, then the other, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Stand balanced in a staggered stance facing clear, empty floor, hands up.",
+      "Lift one bent knee in front, keeping the standing knee soft and torso tall.",
+      "Gently extend the lifted lower leg forward at low height into clear space, supporting foot planted."
+    ]
+  },
+  {
+    "id": "IT69",
+    "name": "Side leg swing with support",
+    "instruction": "Stand side-on to a wall and rest one hand on it. Keep your body upright and your toes pointing forward. Swing the outside leg smoothly out to the side. Lower it back down just as smoothly. Do all swings with one leg, then turn around, do the other leg, then tap Done.",
+    "frames": 2,
+    "phases": [
+      "Stand sideways to the wall with one hand on it and outside leg near the supporting leg.",
+      "Move outside leg sideways a short distance, toes forward, standing knee soft and torso upright."
+    ]
+  },
+  {
+    "id": "IT70",
+    "name": "Horse stance",
+    "instruction": "Stand with your feet wide, toes forward or slightly out. Bend your knees as if sitting on a horse. Keep your back straight and your fists at your belt. Point your knees the same way as your toes. Hold the stance until the cue.",
+    "frames": 1,
+    "phases": [
+      "Hold a wide stance, knees bent in the direction of toes, back upright, hands close to waist."
+    ]
+  },
+  {
+    "id": "IT71",
+    "name": "Clap and step to the beat",
+    "instruction": "Stand tall with your feet together. Step to the side and bring your feet together. Then step the other way. Clap your hands on every second step. Then change the pattern: clap twice, step-together. Keep the rhythm even, like music.",
+    "frames": 3,
+    "phases": [
+      "Stand tall with feet together and hands apart at chest height.",
+      "Step one foot sideways, arms relaxed apart.",
+      "Bring feet together and clap hands lightly at chest height."
+    ]
+  },
+  {
+    "id": "IT72",
+    "name": "Skips on the spot",
+    "instruction": "Stand tall and bend your elbows. Hop on one foot and lift the other knee up. Switch feet right away, like skipping. Swing your arms in time with your legs. Land softly on the balls of your feet.",
+    "frames": 2,
+    "phases": [
+      "Skip on right foot as left knee lifts and right arm swings forward.",
+      "Switch to left-foot support, right knee lifted and left arm forward."
+    ]
+  },
+  {
+    "id": "IT73",
+    "name": "Plié",
+    "instruction": "Stand tall with your heels close and toes turned out comfortably. Round your arms in front, as if hugging a big ball. Bend your knees out over your toes, keeping your back straight. Straighten up and stand tall. Repeat calmly, with no rush.",
+    "frames": 2,
+    "phases": [
+      "Stand tall, heels near each other, toes turned out comfortably, arms curved in front.",
+      "Bend knees outward above toes into a gentle plié, heels grounded, torso vertical and arms curved."
+    ]
+  },
+  {
+    "id": "IT74",
+    "name": "Skater jumps",
+    "instruction": "Stand on one foot with the knee slightly bent. Jump sideways to the other foot, like a speed skater. Land softly on a bent knee and freeze for one second. Swing the free leg behind you and use your arms for balance. Count each landing.",
+    "frames": 3,
+    "phases": [
+      "Balance on the right foot, right knee softly bent, free leg trailing behind, arms balancing.",
+      "Bound sideways with both feet just off floor, arms counterbalancing.",
+      "Land and stabilize on the bent left leg, right leg trailing behind."
+    ]
+  },
+  {
+    "id": "IT75",
+    "name": "Skater's stance hold",
+    "instruction": "Stand with your feet hip-width apart. Bend your knees, as if sitting on an invisible chair. Lean your chest forward with a flat back, like a board. Put your hands behind your back, like a skater gliding. Hold the pose until the signal.",
+    "frames": 1,
+    "phases": [
+      "Hold skater stance with feet hip-width, knees bent, hips back, trunk leaning forward with a long back and hands behind hips."
+    ]
+  },
+  {
+    "id": "IT76",
+    "name": "Jump up, land softly",
+    "instruction": "Stand shoulder-width apart and bend your knees a little. Swing your arms up and jump straight up. Land quietly on the balls of your feet with bent knees pointing over your toes. Freeze for one second, like a cat. Straighten up and repeat.",
+    "frames": 3,
+    "phases": [
+      "Prepare with feet shoulder-width, knees bent and hips back, arms down.",
+      "Jump straight up, feet clearly off the floor and arms reaching upward.",
+      "Land on both feet, knees flexed in line with toes and hips back to absorb impact."
+    ]
+  },
+  {
+    "id": "IT77",
+    "name": "Wall push-ups",
+    "instruction": "Stand an arm’s length from a wall. Put your hands on the wall at chest height. Bend your elbows and bring your chest toward the wall with a straight body. Push away and straighten your arms. Repeat calmly, with no rush.",
+    "frames": 2,
+    "phases": [
+      "Stand at arm's length from wall, hands planted at chest height, elbows straight, feet steady.",
+      "Bend elbows and bring chest toward wall, body straight from head through heels."
+    ]
+  },
+  {
+    "id": "IT78",
+    "name": "Windmill arms",
+    "instruction": "Stand tall with your feet shoulder-width apart. Lift your straight arms out to the sides. Make big circles forward with both arms, like windmill blades. After a few circles, change direction: circle backward. Move calmly and smoothly.",
+    "frames": 3,
+    "phases": [
+      "Stand erect, both straight arms forward at shoulder height as they circle, feet shoulder-width.",
+      "Both arms sweep upward overhead in the same large circle, hands relaxed.",
+      "Arms sweep down past the sides to continue the circle, feet and trunk steady."
+    ]
+  },
+  {
+    "id": "IT79",
+    "name": "Tiptoe walk",
+    "instruction": "Stand tall with your feet together. Rise high on your tiptoes, like a giraffe. Take small, calm steps. Keep your heels high the whole time.",
+    "frames": 2,
+    "phases": [
+      "Walk upright on both forefeet with heels raised, one foot taking a small step ahead.",
+      "Advance the other foot on its forefoot, heels still lifted, torso tall."
+    ]
+  },
+  {
+    "id": "IT80",
+    "name": "Heel walk",
+    "instruction": "Stand tall with your arms by your sides. Lift your toes up off the floor. Walk on your heels, like a penguin. Keep your back straight and your steps small.",
+    "frames": 2,
+    "phases": [
+      "Walk upright on heels, forefeet lifted, left foot a short step ahead.",
+      "Right foot steps ahead on its heel with both sets of toes lifted, knees soft."
+    ]
+  },
+  {
+    "id": "IT81",
+    "name": "Teddy bear walk on outer edges",
+    "instruction": "Stand tall with your feet hip-width apart. Roll your feet onto their outer edges and curl your toes a little. Walk slowly, like a little bear. Keep your knees soft and your steps small.",
+    "frames": 2,
+    "phases": [
+      "Walk with knees soft and feet tipped mildly toward their outer edges, one foot just ahead.",
+      "Switch the leading foot in another short, controlled step on the outer edges."
+    ]
+  },
+  {
+    "id": "IT82",
+    "name": "Scrunch a towel with your toes",
+    "instruction": "Sit on a chair with one bare foot on the floor. Put a small towel or cloth under that foot. Grab the towel with your toes and pull it in bit by bit. Keep your heel down and your leg still. When the app says “Change sides”, switch feet.",
+    "frames": 2,
+    "phases": [
+      "Sit on stable chair, heel planted and toes spread over a small flat towel.",
+      "With heel still planted, toes grip the cloth, bunching the towel toward the foot."
+    ]
+  },
+  {
+    "id": "IT83",
+    "name": "Foot caterpillar",
+    "instruction": "Sit on a chair with your bare feet flat on the floor. Curl the toes of one foot and pull the heel toward them. Stretch the toes forward, so the foot crawls like a caterpillar. Crawl forward, then crawl back the same way. Do all reps with one foot, then the other, then tap Done.",
+    "frames": 3,
+    "phases": [
+      "Sit on chair with one bare foot flat and toes lengthened forward.",
+      "Curl the toes against the floor, drawing the heel a little forward toward them.",
+      "Extend toes forward again from the new heel position, heel staying grounded."
+    ]
+  },
+  {
+    "id": "IT84",
+    "name": "Draw with your toes",
+    "instruction": "Sit on a chair and lift one foot a little. Draw big circles in the air with your big toe. Then draw letters, moving only your ankle. Keep your knee and shoulders calm. When the app says “Change sides”, switch feet.",
+    "frames": 3,
+    "phases": [
+      "Sit with one foot slightly lifted and knee still. Viewed obliquely, the toes trace the upper part of a circle.",
+      "From the same seat and camera, toes point out toward the side of the circle as the ankle turns.",
+      "Toes pass through the lower part of the circle, knee held still; use the same ankle articulation to trace letters."
+    ]
+  },
+  {
+    "id": "IT85",
+    "name": "Toe piano",
+    "instruction": "Sit on a chair with your bare feet flat on the floor. Lift only your big toes, then put them down. Press your big toes down and lift the other toes. Switch back and forth, like playing the piano. Move slowly and evenly.",
+    "frames": 2,
+    "phases": [
+      "Seated, bare feet planted. Raise just the big toes; four smaller toes on each foot remain down.",
+      "Keep the big toes down while lifting the four smaller toes; both heels remain grounded."
+    ]
+  },
+  {
+    "id": "IT86",
+    "name": "Up on toes, roll to heels",
+    "instruction": "Stand tall next to a wall with your feet together. Rise high up on your tiptoes. Slowly roll back onto your heels and lift your toes. Rock like a rocking chair, smoothly and without rushing. Touch the wall with your hand if you need support.",
+    "frames": 2,
+    "phases": [
+      "Stand tall near a wall, both heels lifted together, weight on forefeet.",
+      "Rock back onto both heels, forefeet and toes raised, knees soft."
+    ]
+  }
+]

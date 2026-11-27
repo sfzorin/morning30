@@ -168,6 +168,14 @@ func (d *DB) HasPose(id string) bool {
 	return n > 0
 }
 
+// HasPoseFigure checks only the requested variant, without reading the image blob.
+func (d *DB) HasPoseFigure(id, sex string) bool {
+	var exists bool
+	err := d.sql.QueryRow(`SELECT EXISTS(SELECT 1 FROM pose_images WHERE pose_id = ? AND sex = ?)`,
+		NormalizePoseID(id), NormalizeSex(sex)).Scan(&exists)
+	return err == nil && exists
+}
+
 // PoseImage returns bytes for sex, falling back to the other sex.
 func (d *DB) PoseImage(id, sex string) (mime string, data []byte, err error) {
 	id = NormalizePoseID(id)

@@ -1,0 +1,11 @@
+{
+  "exercise": "L01",
+  "anchor": "Planted foreground foot, measured against the first frame",
+  "units": "Pixels on the 512 × 512 frame; positive x points right and positive y points down",
+  "offsets": {
+    "m": [[0, 0], [24, 0]],
+    "f": [[0, 0], [20, 3]],
+    "b": [[0, 0], [24, 0]],
+    "g": [[0, 0], [20, 2]]
+  }
+}

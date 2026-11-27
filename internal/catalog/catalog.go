@@ -118,8 +118,13 @@ func ValidReaction(r *Reaction) bool {
 func ValidAnimation(a *Animation) bool {
 	return a == nil || (a.Pose != "" && clipPoseID(a.Pose) == a.Pose &&
 		(a.OtherPose == "" || clipPoseID(a.OtherPose) == a.OtherPose) &&
-		a.Frames >= 2 && a.Frames <= 3 &&
-		(a.Kind == "movement" || a.Kind == "sequence" || (a.Kind == "alternating" && a.Frames == 3)))
+		ValidFrameSequence(a.Frames, a.Kind))
+}
+
+// ValidFrameSequence reports whether a strip can be played with this frame order.
+func ValidFrameSequence(frames int, kind string) bool {
+	return frames >= 2 && frames <= 3 &&
+		(kind == "movement" || kind == "sequence" || (kind == "alternating" && frames == 3))
 }
 
 // Doc is a self-contained exercise: definition + localized content for every
