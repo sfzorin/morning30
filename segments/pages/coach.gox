@@ -50,13 +50,16 @@ type coachView struct {
 	Err     string // i18n key or ready text of the last problem
 }
 
-// coachMaxText is the longest message the coach accepts, in characters.
-const coachMaxText = 600
+const (
+	coachMaxText = 600            // the longest message the coach accepts, in characters
+	coachKeep    = 50             // messages kept per program's conversation
+	coachMemory  = 24 * time.Hour // how far back the model sees the conversation
+)
 
 func coachProgramID(userID int64) int64 { return app.DB.CurrentSelected(userID) }
 
 func loadCoach(userID int64) coachView {
-	rows, err := app.DB.CoachMessages(userID, coachProgramID(userID), 60)
+	rows, err := app.DB.CoachMessages(userID, coachProgramID(userID), coachKeep)
 	if err != nil {
 		log.Printf("coach history %d: %v", userID, err)
 	}
@@ -95,7 +98,7 @@ elem (c coachPage) Main() {
 	<title>~(i18n.T(l, "coach.title"))</title>
 	<main class="screen coach">
 		<div class="lib-head">
-			~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="lib-back" aria-label=(i18n.T(l, "coach.back"))>~(icon("back", false))</a>
+			~>doors.ALink{Model: path.Path{Page: path.Program}} <a class="lib-back" aria-label=(i18n.T(l, "workout.prev"))>~(icon("back", false))</a>
 			<div>
 				<h1>~(i18n.T(l, "coach.title"))</h1>
 				<p class="coach-sub">~(app.ProgramTitle(c.sess.UserID, c.sess.Lang))</p>
@@ -150,6 +153,18 @@ elem (c coachPage) Main() {
 				<button class="coach-send" type="submit" aria-label=(i18n.T(l, "coach.send"))>~(icon("up", false))</button>
 			</form>
 			<script>
+				// The back arrow returns to where the coach was opened from (home or
+				// the program page); opened directly, it goes to the program page.
+				if (!window.__coachBack) {
+					window.__coachBack = true
+					window.addEventListener("click", (e) => {
+						if (e.target.closest && e.target.closest(".coach .lib-back") && history.length > 1) {
+							e.preventDefault()
+							e.stopImmediatePropagation()
+							history.back()
+						}
+					}, true)
+				}
 				$on("coach-sent", () => {
 					const field = document.querySelector(".coach-input input[name=text]")
 					if (field) field.value = ""
@@ -275,7 +290,9 @@ func (c coachPage) send(ctx context.Context, view doors.Source[coachView], text 
 	go func() {
 		defer c.busy.Store(false)
 		before := coachProgramID(uid)
-		history, _ := app.DB.CoachMessages(uid, before, 12)
+		// Only today's conversation goes to the model; the program itself is
+		// always sent in full.
+		history, _ := app.DB.CoachRecent(uid, before, time.Now().Add(-coachMemory), 10)
 		askCtx, cancel := context.WithTimeout(bg, 2*time.Minute)
 		res, snap, err := coach.Ask(askCtx, coach.FromEnv(), uid, lang, history, text)
 		cancel()
@@ -304,6 +321,9 @@ func (c coachPage) send(ctx context.Context, view doors.Source[coachView], text 
 		}
 		if _, err := app.DB.AddCoachMessage(uid, db.CoachMessage{ProgramID: program, Role: "coach", Text: reply, Changes: changes, Undo: undo}); err != nil {
 			log.Printf("coach save %d: %v", uid, err)
+		}
+		if err := app.DB.PruneCoach(uid, program, coachKeep); err != nil {
+			log.Printf("coach prune %d: %v", uid, err)
 		}
 		<-view.XUpdate(bg, loadCoach(uid))
 	}()

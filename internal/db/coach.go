@@ -76,3 +76,34 @@ func (d *DB) CoachRequestsSince(userID int64, t time.Time) int {
 		userID, t.UTC().Format(time.RFC3339)).Scan(&n)
 	return n
 }
+
+// CoachRecent returns up to limit messages of a thread written since t,
+// oldest first: the conversation the model still needs to see.
+func (d *DB) CoachRecent(userID, programID int64, since time.Time, limit int) ([]CoachMessage, error) {
+	all, err := d.CoachMessages(userID, programID, limit)
+	if err != nil {
+		return nil, err
+	}
+	out := all[:0]
+	for _, m := range all {
+		if !m.Created.Before(since) {
+			out = append(out, m)
+		}
+	}
+	return out, nil
+}
+
+// PruneCoach keeps the newest keep messages of a thread and only the newest
+// undo copy: an older edit can no longer be undone, so its copy of the
+// program is dropped.
+func (d *DB) PruneCoach(userID, programID int64, keep int) error {
+	if _, err := d.sql.Exec(`DELETE FROM coach_messages WHERE user_id = ? AND program_id = ? AND id NOT IN (
+		SELECT id FROM coach_messages WHERE user_id = ? AND program_id = ? ORDER BY id DESC LIMIT ?)`,
+		userID, programID, userID, programID, keep); err != nil {
+		return err
+	}
+	_, err := d.sql.Exec(`UPDATE coach_messages SET undo = '' WHERE user_id = ? AND program_id = ? AND undo != '' AND id < (
+		SELECT MAX(id) FROM coach_messages WHERE user_id = ? AND program_id = ? AND undo != '')`,
+		userID, programID, userID, programID)
+	return err
+}

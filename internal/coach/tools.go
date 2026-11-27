@@ -48,6 +48,7 @@ func toolDefs() []map[string]any {
 			}),
 		fn("similar_exercises", "Exercises that can replace one: easier, similar and harder.", map[string]any{"id": str("Exercise id")}, "id"),
 		fn("show_program", "Show the current program again, day by day (after edits).", nil),
+		fn("exercise_details", "The app's description of an exercise: what it is, technique steps, what to watch for, common mistakes, breathing, safety. Use it to answer questions about how to do an exercise.", map[string]any{"id": str("Exercise id")}, "id"),
 		fn("add_exercise", "Add an exercise to a part of the chosen days.", map[string]any{
 			"exercise": str("Exercise id"), "part": partProp, "days": daysProp,
 			"value": num("Reps, seconds or breaths (by the exercise's unit). Omit for a sensible default."),
@@ -232,6 +233,8 @@ func (s *session) call(name string, a args) (string, error) {
 		return b.String(), nil
 	case "show_program":
 		return Overview(uid, lang), nil
+	case "exercise_details":
+		return exerciseDetails(uid, lang, a.str("id"))
 	case "add_exercise":
 		days, err := a.days(uid)
 		if err != nil {
@@ -389,4 +392,28 @@ func createExercise(userID int64, lang string, a args) (string, error) {
 		return "", err
 	}
 	return id, nil
+}
+
+// exerciseDetails writes the app's own description of an exercise.
+func exerciseDetails(userID int64, lang, id string) (string, error) {
+	l := i18n.Parse(lang)
+	cat := app.UserCatalog(userID)
+	d, ok := cat.Detail(l, id)
+	if !ok {
+		return "", fmt.Errorf("exercise %q not found", id)
+	}
+	var b strings.Builder
+	fmt.Fprintf(&b, "%s %s\n", id, cat.Name(l, id))
+	line := func(title, text string) {
+		if strings.TrimSpace(text) != "" {
+			fmt.Fprintf(&b, "%s: %s\n", title, text)
+		}
+	}
+	line("About", d.Desc)
+	line("Steps", strings.Join(d.HowTo, " / "))
+	line("Watch for", strings.Join(d.Correct, " / "))
+	line("Mistakes", strings.Join(d.Wrong, " / "))
+	line("Breathing", d.Breathing)
+	line("Safety", d.Safety)
+	return b.String(), nil
 }

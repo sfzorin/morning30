@@ -127,7 +127,7 @@ func TestToolsChangesAndUndo(t *testing.T) {
 func TestSystemPromptHasContext(t *testing.T) {
 	uid := setup(t)
 	p := SystemPrompt(uid, "ru")
-	for _, want := range []string{"morning30.com", "CURRENT program", "Русский", "Day 1", "warm-up:"} {
+	for _, want := range []string{"morning30.com", "CURRENT program", "Русский", "Exercises (id: name, unit, difficulty 1–5):", "Warm-up, days"} {
 		if !strings.Contains(p, want) {
 			t.Errorf("prompt has no %q", want)
 		}
@@ -210,5 +210,17 @@ func TestOffTopicMarker(t *testing.T) {
 	}
 	if p := SystemPrompt(uid, "ru"); !strings.Contains(p, OffTopic) || !strings.Contains(p, "name: Аня") {
 		t.Fatal("prompt lacks the off-topic rule or the name")
+	}
+}
+
+func TestExerciseDetailsTool(t *testing.T) {
+	uid := setup(t)
+	s := &session{userID: uid, lang: "ru"}
+	out := s.run("exercise_details", `{"id":"C01"}`)
+	if strings.HasPrefix(out, "error") || !strings.Contains(out, "C01") || !strings.Contains(out, "Steps:") {
+		t.Fatalf("details = %q", out)
+	}
+	if out := s.run("exercise_details", `{"id":"NOPE"}`); !strings.HasPrefix(out, "error") {
+		t.Fatal("unknown id must fail")
 	}
 }
