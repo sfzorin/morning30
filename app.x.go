@@ -292,7 +292,7 @@ func (a App) Main() gox.Elem {
 				__e = __c.Init("script"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-					__e = __c.Raw("if (\"serviceWorker\" in navigator) {\n\t\t\t\t\tnavigator.serviceWorker.register(\"/static/sw.js\").catch(function () {})\n\t\t\t\t}\n\t\t\t\t// A page left in the background for long has been forgotten by the\n\t\t\t\t// server (doors drops idle pages after ~40 min, and deploys restart it);\n\t\t\t\t// its first tap would only reload it. Reload as soon as it is back.\n\t\t\t\t(function () {\n\t\t\t\t\tvar hiddenAt = document.hidden ? Date.now() : 0\n\t\t\t\t\tvar stale = 15 * 60 * 1000\n\t\t\t\t\tdocument.addEventListener(\"visibilitychange\", function () {\n\t\t\t\t\t\tif (document.hidden) { hiddenAt = Date.now(); return }\n\t\t\t\t\t\tif (hiddenAt && Date.now() - hiddenAt > stale) location.reload()\n\t\t\t\t\t\thiddenAt = 0\n\t\t\t\t\t})\n\t\t\t\t\twindow.addEventListener(\"pageshow\", function (e) {\n\t\t\t\t\t\tif (e.persisted) location.reload()\n\t\t\t\t\t})\n\t\t\t\t})()"); if __e != nil { return }
+					__e = __c.Raw("if (\"serviceWorker\" in navigator) {\n\t\t\t\t\tnavigator.serviceWorker.register(\"/static/sw.js\").catch(function () {})\n\t\t\t\t}\n\t\t\t\t// A page left in the background for long has been forgotten by the\n\t\t\t\t// server (doors drops idle pages after ~40 min, and deploys restart it);\n\t\t\t\t// its first tap would only reload it. Reload as soon as it is back.\n\t\t\t\t(function () {\n\t\t\t\t\tvar hiddenAt = document.hidden ? Date.now() : 0\n\t\t\t\t\tvar stale = 15 * 60 * 1000\n\t\t\t\t\t// Never during a workout or the fitness test: those keep their own\n\t\t\t\t\t// state, and a reload there would interrupt.\n\t\t\t\t\tfunction busy() { return /^\\/(day\\/|start$|test$)/.test(location.pathname) }\n\t\t\t\t\tdocument.addEventListener(\"visibilitychange\", function () {\n\t\t\t\t\t\tif (document.hidden) { hiddenAt = Date.now(); return }\n\t\t\t\t\t\tif (hiddenAt && Date.now() - hiddenAt > stale && !busy()) location.reload()\n\t\t\t\t\t\thiddenAt = 0\n\t\t\t\t\t})\n\t\t\t\t\twindow.addEventListener(\"pageshow\", function (e) {\n\t\t\t\t\t\tif (e.persisted && !busy()) location.reload()\n\t\t\t\t\t})\n\t\t\t\t})()"); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			}
@@ -300,5 +300,5 @@ func (a App) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line app.gox:92
+//line app.gox:95
 }

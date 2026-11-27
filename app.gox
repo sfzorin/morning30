@@ -77,13 +77,16 @@ elem (a App) Main() {
 				(function () {
 					var hiddenAt = document.hidden ? Date.now() : 0
 					var stale = 15 * 60 * 1000
+					// Never during a workout or the fitness test: those keep their own
+					// state, and a reload there would interrupt.
+					function busy() { return /^\/(day\/|start$|test$)/.test(location.pathname) }
 					document.addEventListener("visibilitychange", function () {
 						if (document.hidden) { hiddenAt = Date.now(); return }
-						if (hiddenAt && Date.now() - hiddenAt > stale) location.reload()
+						if (hiddenAt && Date.now() - hiddenAt > stale && !busy()) location.reload()
 						hiddenAt = 0
 					})
 					window.addEventListener("pageshow", function (e) {
-						if (e.persisted) location.reload()
+						if (e.persisted && !busy()) location.reload()
 					})
 				})()
 			</script>
