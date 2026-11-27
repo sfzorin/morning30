@@ -275,13 +275,17 @@ elem (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr st
 		if ds == todayStr {
 			cls += " today"
 		}
+		if ds > todayStr {
+			cls += " future"
+		}
 	}
+	~// A plain month, unlike the cycle's tiles: the number with a small flame
+	~// under it on workout days; today has an orange ring around both.
 	<div class=(cls)>
-		~(if acts[ds] {
-			~(flameMark(18))
-		} else {
-			~(dd)
-		})
+		<div class="cal-in">
+			<span>~(dd)</span>
+			<i>~(if acts[ds] { ~(flameMark(12)) })</i>
+		</div>
 	</div>
 }
 

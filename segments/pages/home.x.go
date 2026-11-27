@@ -721,34 +721,53 @@ func (h homePage) dayCell(year, month, dd int, acts map[string]bool, todayStr st
 		if ds == todayStr {
 			cls += " today"
 		}
+		if ds > todayStr {
+			cls += " future"
+		}
 
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line home.gox:279
+//line home.gox:284
 			__e = __c.Set("class", cls); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line home.gox:280
-			if acts[ds] {
-//line home.gox:281
-				__e = __c.Any(flameMark(18)); if __e != nil { return }
-			} else  {
-//line home.gox:283
-				__e = __c.Any(dd); if __e != nil { return }
+			__e = __c.Init("div"); if __e != nil { return }
+			{
+//line home.gox:285
+				__e = __c.Set("class", "cal-in"); if __e != nil { return }
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.Init("span"); if __e != nil { return }
+				{
+					__e = __c.Submit(); if __e != nil { return }
+//line home.gox:286
+					__e = __c.Any(dd); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
+				__e = __c.Init("i"); if __e != nil { return }
+				{
+					__e = __c.Submit(); if __e != nil { return }
+//line home.gox:287
+					if acts[ds] {
+//line home.gox:287
+						__e = __c.Any(flameMark(12)); if __e != nil { return }
+					}
+				}
+				__e = __c.Close(); if __e != nil { return }
 			}
+			__e = __c.Close(); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line home.gox:286
+//line home.gox:290
 }
 
 // cycleCell renders one of the 30 program days; sequential, looping each cycle.
 // Days ahead show how long they take, so the build-up and the lighter days
 // (green, found from the actual load) are visible right in the grid.
-//line home.gox:291
+//line home.gox:295
 func (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line home.gox:293
+//line home.gox:297
 		done := d < current
 		isCurrent := d == current
 		locked := d > current
@@ -766,20 +785,20 @@ func (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) gox.El
 			cls += " light"
 		}
 
-//line home.gox:311
+//line home.gox:315
 		__e = (doors.ALink{Model: path.Path{Page: path.Day, Day: d}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
 			__e = __c.Init("a"); if __e != nil { return }
 			{
-//line home.gox:311
+//line home.gox:315
 				__e = __c.Set("class", cls); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line home.gox:314
+//line home.gox:318
 				__e = __c.Any(d); if __e != nil { return }
 				__e = __c.Init("small"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line home.gox:315
+//line home.gox:319
 					__e = __c.Any(i18n.Tf(l, "fmt.min", minutes(sec))); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -787,5 +806,5 @@ func (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) gox.El
 			__e = __c.Close(); if __e != nil { return }
 		return })); if __e != nil { return }
 	return })
-//line home.gox:317
+//line home.gox:321
 }
