@@ -128,7 +128,7 @@
   "coach.limit": "Det var allt för idag: coachen tar emot upp till %d meddelanden per dag.",
   "coach.new": "Ny övning: %s",
   "coach.off": "AI-coachen är inte tillgänglig än.",
-  "coach.only": "Jag ändrar bara ditt program. Skriv vad du vill ändra.",
+  "coach.only": "Jag hjälper bara till med din träning. Fråga om ditt program eller hur träningen går.",
   "coach.placeholder": "Vad ska ändras?",
   "coach.removed": "”%s” borttagen",
   "coach.renamed": "Nytt namn: %s",

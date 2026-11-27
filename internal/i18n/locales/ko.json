@@ -128,7 +128,7 @@
   "coach.limit": "오늘은 여기까지예요. 코치는 하루 최대 %d개의 메시지를 받아요.",
   "coach.new": "새 운동: %s",
   "coach.off": "AI 코치는 아직 사용할 수 없어요.",
-  "coach.only": "저는 프로그램 수정만 합니다. 무엇을 바꿀지 알려 주세요.",
+  "coach.only": "운동에 관한 것만 도와드려요. 프로그램이나 운동이 어떻게 되고 있는지 물어보세요.",
   "coach.placeholder": "무엇을 바꿀까요?",
   "coach.removed": "“%s” 제거됨",
   "coach.renamed": "새 이름: %s",

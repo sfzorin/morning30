@@ -128,7 +128,7 @@
   "coach.limit": "Eso es todo por hoy: el entrenador admite hasta %d mensajes al día.",
   "coach.new": "Ejercicio nuevo: %s",
   "coach.off": "El entrenador IA aún no está disponible.",
-  "coach.only": "Solo cambio tu programa. Dime qué quieres cambiar en él.",
+  "coach.only": "Solo te ayudo con tus entrenamientos. Pregúntame por tu programa o por cómo te va.",
   "coach.placeholder": "¿Qué quieres cambiar?",
   "coach.removed": "quitado «%s»",
   "coach.renamed": "Nuevo nombre: %s",

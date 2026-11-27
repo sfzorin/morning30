@@ -205,7 +205,7 @@ func TestOffTopicMarker(t *testing.T) {
 	}))
 	defer srv.Close()
 	res, _, err := Ask(context.Background(), Config{BaseURL: srv.URL, Key: "k", Model: "m"}, uid, "ru", nil, "Кто ты?")
-	if err != nil || !res.OffTopic || !strings.HasPrefix(res.Reply, "Я только меняю") || len(res.Changes) != 0 {
+	if err != nil || !res.OffTopic || !strings.HasPrefix(res.Reply, "Я помогаю только") || len(res.Changes) != 0 {
 		t.Fatalf("res = %+v, %v", res, err)
 	}
 	if p := SystemPrompt(uid, "ru"); !strings.Contains(p, OffTopic) || !strings.Contains(p, "name: Аня") {

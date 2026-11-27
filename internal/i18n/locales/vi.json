@@ -128,7 +128,7 @@
   "coach.limit": "Hôm nay đến đây thôi: huấn luyện viên nhận tối đa %d tin nhắn mỗi ngày.",
   "coach.new": "Bài tập mới: %s",
   "coach.off": "Huấn luyện viên AI chưa khả dụng.",
-  "coach.only": "Mình chỉ chỉnh sửa chương trình của bạn. Hãy cho biết bạn muốn thay đổi gì.",
+  "coach.only": "Mình chỉ hỗ trợ về việc tập luyện của bạn. Hãy hỏi về chương trình hoặc buổi tập của bạn.",
   "coach.placeholder": "Cần thay đổi gì?",
   "coach.removed": "đã bỏ “%s”",
   "coach.renamed": "Tên mới: %s",

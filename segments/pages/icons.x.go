@@ -249,78 +249,101 @@ func icon(name string, filled bool) gox.Elem {
 				}
 				__e = __c.Close(); if __e != nil { return }
 //line icons.gox:46
-			} else if name == "settings" {
+			} else if name == "sparkles" {
 				__e = __c.Init("path"); if __e != nil { return }
 				{
 //line icons.gox:47
+					__e = __c.Set("d", "M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2-2a2 2 0 0 1-2-2a2 2 0 0 1-2 2"); if __e != nil { return }
+					__e = __c.Submit(); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
+				__e = __c.Init("path"); if __e != nil { return }
+				{
+//line icons.gox:47
+					__e = __c.Set("d", "M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2-2a2 2 0 0 1-2-2a2 2 0 0 1-2 2"); if __e != nil { return }
+					__e = __c.Submit(); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
+				__e = __c.Init("path"); if __e != nil { return }
+				{
+//line icons.gox:47
+					__e = __c.Set("d", "M9 18a6 6 0 0 1 6-6a6 6 0 0 1-6-6a6 6 0 0 1-6 6a6 6 0 0 1 6 6"); if __e != nil { return }
+					__e = __c.Submit(); if __e != nil { return }
+				}
+				__e = __c.Close(); if __e != nil { return }
+//line icons.gox:48
+			} else if name == "settings" {
+				__e = __c.Init("path"); if __e != nil { return }
+				{
+//line icons.gox:49
 					__e = __c.Set("d", "M4 6h8"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("path"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("d", "M16 6h4"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("circle"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("cx", "14"); if __e != nil { return }
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("cy", "6"); if __e != nil { return }
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("r", "2"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("path"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("d", "M4 12h2"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("path"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("d", "M10 12h10"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("circle"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("cx", "8"); if __e != nil { return }
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("cy", "12"); if __e != nil { return }
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("r", "2"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("path"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("d", "M4 18h11"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("path"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("d", "M19 18h1"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("circle"); if __e != nil { return }
 				{
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("cx", "17"); if __e != nil { return }
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("cy", "18"); if __e != nil { return }
-//line icons.gox:47
+//line icons.gox:49
 					__e = __c.Set("r", "2"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
@@ -329,7 +352,7 @@ func icon(name string, filled bool) gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line icons.gox:50
+//line icons.gox:52
 }
 
 var _ = gox.Elem(nil)

@@ -934,3 +934,9 @@ body:has(.player) {
 .done-start { color: var(--muted); font-size: 15px; margin-top: 6px; }
 .retest { margin-top: 12px; min-width: 60%; position: relative; z-index: 2; }
 .retest + .back-home { margin-top: 0; }
+
+/* ---- AI coach button on home ---- */
+.coach-fab { position: fixed; z-index: 30; inset-inline-end: max(16px, calc((100vw - 480px) / 2 + 16px)); bottom: calc(16px + env(safe-area-inset-bottom)); width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #1f1300; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0, 0, 0, .45); }
+.coach-fab .ic { width: 26px; height: 26px; }
+.coach-fab:active { transform: scale(.95); }
+main:has(> .coach-fab) { padding-bottom: 96px; }
