@@ -608,7 +608,7 @@ func (h homePage) month(monthOffset doors.Source[int]) gox.Elem {
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 //line home.gox:240
-						__e = __c.Any(icon("back", false)); if __e != nil { return }
+						__e = __c.Any(icon("prev", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
@@ -752,7 +752,8 @@ func (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) gox.El
 				__e = __c.Submit(); if __e != nil { return }
 //line home.gox:305
 				if done {
-					__e = __c.Text("✓"); if __e != nil { return }
+//line home.gox:306
+					__e = __c.Any(icon("check", false)); if __e != nil { return }
 				} else  {
 //line home.gox:308
 					__e = __c.Any(d); if __e != nil { return }

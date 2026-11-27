@@ -110,7 +110,7 @@ function player(items, extra = {}, options = {}) {
       speak(utterance) {
         utterances.push(utterance); spoken.push(utterance.text);
         speechEvents.push({ at: now, text: utterance.text, pendingBefore: speechPending++,
-          arrow: get('.reaction-arrow').textContent, visible: !get('.reaction-cue').classList.contains('hidden') });
+          arrow: get('.reaction-arrow')['data-dir'], visible: !get('.reaction-cue').classList.contains('hidden') });
       } },
   });
   if (options.noSpeech) delete window.speechSynthesis;
@@ -199,7 +199,7 @@ test('reaction cadence accelerates within active work and reaches one second bef
   assert.ok(gaps.every((gap, index) => gap >= 1000 && (!index || gap <= gaps[index - 1])));
   assert.deepEqual(gaps.slice(-2), [1000, 1000], 'fastest cadence is used before countdown');
   assert.ok(events.every(event => event.at < 30000 && event.visible &&
-    event.arrow === (event.text === 'Left' ? '←' : '→') && event.pendingBefore === 0));
+    event.arrow === (event.text === 'Left' ? 'left' : 'right') && event.pendingBefore === 0));
   assert.ok(hidden(p.get('.reaction-cue')));
   assert.equal(p.get('.ex-value').textContent, '3″');
   p.advance(3);
@@ -295,7 +295,7 @@ test('reaction cues share continuous work time and balance randomized directions
   assert.equal(directionsSaid(p).length, 0);
   p.advance(1);
   assert.equal(p.get('.reaction-word').textContent, 'Left');
-  assert.equal(p.get('.reaction-arrow').textContent, '←');
+  assert.equal(p.get('.reaction-arrow')['data-dir'], 'left');
   assert.ok(!hidden(p.get('.reaction-cue')));
   assert.equal(p.get('.ex-value').textContent, '27″');
   p.advance(9);
@@ -432,7 +432,7 @@ test('accelerating reaction remains visible with voice off and yields completely
   const muted = player([acceleratingReaction()], { voiceMode: 'off', cues: reactionCues }, { random: () => 0 });
   muted.advance(6);
   assert.ok(!hidden(muted.get('.reaction-cue')));
-  assert.equal(muted.get('.reaction-arrow').textContent, '←');
+  assert.equal(muted.get('.reaction-arrow')['data-dir'], 'left');
   muted.advance(2);
   assert.ok(hidden(muted.get('.reaction-cue')));
   muted.advance(.75);

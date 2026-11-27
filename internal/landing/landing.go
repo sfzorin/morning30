@@ -284,7 +284,7 @@ h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5p
 <h2>{{.T.landing_all}}</h2>
 <div class="cards">
 {{range .Cards}}<a class="card" href="{{.URL}}"><b>{{.Title}}</b><small>{{.Minutes}}</small></a>
-{{end}}<a class="card" href="{{.IndexURL}}"><b>{{.T.landing_all}} →</b></a>
+{{end}}<a class="card" href="{{.IndexURL}}"><b>{{.T.landing_all}}</b></a>
 </div>
 {{else}}
 <p class="muted">{{.T.landing_how}}</p>

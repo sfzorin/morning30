@@ -237,7 +237,7 @@ elem (h homePage) month(monthOffset doors.Source[int]) {
 			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				monthOffset.Mutate(ctx, func(o int) int { return o - 1 })
 				return false
-			}} <button class="cal-nav" type="button">~(icon("back", false))</button>
+			}} <button class="cal-nav" type="button">~(icon("prev", false))</button>
 			<span class="cal-title">~(i18n.Month(l, month), " ", year)</span>
 			~>doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				monthOffset.Mutate(ctx, func(o int) int { return o + 1 })
@@ -303,7 +303,7 @@ elem (h homePage) cycleCell(l i18n.Lang, d, current, sec int, light bool) {
 	~// Every day is tappable — jump straight into that day's program.
 	~>doors.ALink{Model: path.Path{Page: path.Day, Day: d}} <a class=(cls)>
 		~(if done {
-			✓
+			~(icon("check", false))
 		} else {
 			~(d)
 			<small class=(lightClass(light))>~(i18n.Tf(l, "fmt.min", minutes(sec)))</small>

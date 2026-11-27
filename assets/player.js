@@ -210,7 +210,7 @@
     if (reactionHideTimer != null) clearTimeout(reactionHideTimer);
     var direction = drawReactionDirection(it);
     var word = cues["reaction_" + direction] || direction;
-    el.reactionArrow.textContent = direction === "left" ? "←" : "→";
+    el.reactionArrow.setAttribute("data-dir", direction); // drawn as an icon in CSS
     el.reactionWord.textContent = word;
     el.reaction.classList.remove("hidden");
     sayNow(word);

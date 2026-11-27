@@ -248,6 +248,7 @@ h1, h2, h3 { margin: 0 0 .4em; }
 .cell.locked { color: var(--muted); opacity: .45; }
 .hero-program .ic { width: 16px; height: 16px; color: var(--muted); vertical-align: -2px; margin-inline-start: 6px; }
 .cal-nav .ic, .quit .ic, .lvl-btn .ic { width: 20px; height: 20px; }
+.cell .ic { width: 20px; height: 20px; stroke-width: 2.6; }
 .cell small { max-width: 100%; font-size: 11px; font-weight: 500; color: var(--muted); line-height: 1.1; text-align: center; }
 .cell small.light, .cyc-legend { color: var(--ok); }
 .cyc-legend { display: flex; align-items: center; gap: 6px; margin: 10px 0 0; font-size: 12px; }
@@ -511,15 +512,15 @@ body:has(.player) {
 .player.frozen .stage > * { filter: grayscale(.9) brightness(.5); opacity: .8; transition: filter .2s ease, opacity .2s ease; }
 .player.frozen .player-top { opacity: .4; transition: opacity .2s ease; }
 .player.frozen .stage::after {
-  content: "⏸";
+  content: "";
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 84px;
-  color: rgba(186, 230, 253, .92);
-  text-shadow: 0 2px 16px rgba(0, 0, 0, .5);
+  margin: auto;
+  width: 96px;
+  height: 96px;
+  background: rgba(186, 230, 253, .92);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Crect x='6' y='5' width='4' height='14' rx='1.2'/%3E%3Crect x='14' y='5' width='4' height='14' rx='1.2'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Crect x='6' y='5' width='4' height='14' rx='1.2'/%3E%3Crect x='14' y='5' width='4' height='14' rx='1.2'/%3E%3C/svg%3E") center / contain no-repeat;
   pointer-events: none;
 }
 .ex-index { color: var(--muted); font-size: 14px; font-weight: 600; }
@@ -552,7 +553,8 @@ body:has(.player) {
   color: #172033;
   pointer-events: none;
 }
-.reaction-arrow { font: 900 clamp(70px, 18vw, 112px)/1 system-ui, sans-serif; }
+.reaction-arrow { width: clamp(70px, 18vw, 112px); aspect-ratio: 1; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5'/%3E%3Cpath d='M11 18l-6-6 6-6'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5'/%3E%3Cpath d='M11 18l-6-6 6-6'/%3E%3C/svg%3E") center / contain no-repeat; }
+.reaction-arrow[data-dir="right"] { transform: scaleX(-1); }
 .reaction-word { font: 800 clamp(20px, 5vw, 28px)/1.2 system-ui, sans-serif; }
 .ex-svg, .info-media { display: block; width: 100%; height: 100%; object-fit: contain; }
 .pose-preview { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
@@ -857,7 +859,7 @@ body:has(.player) {
 /* ---- Right-to-left languages (Arabic, Hebrew) ---- */
 [dir="rtl"] .lang-select { background-position: left 13px center; }
 [dir="rtl"] .cyc-list.edit .cyc-row .cyc-select { background-position: left 9px center; padding: 7px 9px 7px 26px; }
-[dir="rtl"] .ic-back, [dir="rtl"] .ic-next, [dir="rtl"] .ic-replace { transform: scaleX(-1); }
+[dir="rtl"] .ic-back, [dir="rtl"] .ic-prev, [dir="rtl"] .ic-next, [dir="rtl"] .ic-replace { transform: scaleX(-1); }
 
 /* ---- Fitness profile: About you, the self-test and its result ---- */
 .fit h1 { margin-bottom: 4px; }

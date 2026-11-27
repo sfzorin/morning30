@@ -517,7 +517,7 @@ elem (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) {
 		})
 		~(if d.Safety != "" {
 			<div class="ex-detail-sec">
-				<h4>⚠️ ~(i18n.T(l, "info.warning"))</h4>
+				<h4>~(i18n.T(l, "info.warning"))</h4>
 				<p>~(d.Safety)</p>
 			</div>
 		})

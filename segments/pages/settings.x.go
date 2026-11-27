@@ -2300,7 +2300,6 @@ func (s settingsPage) exDetail(l i18n.Lang, cat catalog.Catalog, id string) gox.
 					__e = __c.Init("h4"); if __e != nil { return }
 					{
 						__e = __c.Submit(); if __e != nil { return }
-						__e = __c.Text("⚠️ "); if __e != nil { return }
 //line settings.gox:520
 						__e = __c.Any(i18n.T(l, "info.warning")); if __e != nil { return }
 					}
