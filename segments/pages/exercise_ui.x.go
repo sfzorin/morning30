@@ -18,9 +18,96 @@ import (
 // Shared pieces of the day screen and the library: an exercise card with the
 // four figures, a day selection and dose labels.
 
-// figureKeys pairs the four figures with their label keys.
-var figureKeys = []struct{ Code, Key string }{
-	{"m", "sex.male"}, {"f", "sex.female"}, {"b", "sex.boy"}, {"g", "sex.girl"},
+var figureLabels = map[string]string{
+	"m": "sex.male", "f": "sex.female", "b": "sex.boy", "g": "sex.girl",
+}
+
+//line exercise_ui.gox:22
+func figureTile(l i18n.Lang, figure string) gox.Elem {
+	return gox.Elem(func(__c gox.Cursor) (__e error) {
+		ctx := __c.Context(); _ = ctx
+		__e = __c.Init("span"); if __e != nil { return }
+		{
+//line exercise_ui.gox:23
+			__e = __c.Set("class", "figure-art"); if __e != nil { return }
+			__e = __c.Submit(); if __e != nil { return }
+			__e = __c.InitVoid("img"); if __e != nil { return }
+			{
+//line exercise_ui.gox:24
+				__e = __c.Set("src", "/static/characters/" + figure + ".webp"); if __e != nil { return }
+//line exercise_ui.gox:24
+				__e = __c.Set("alt", ""); if __e != nil { return }
+//line exercise_ui.gox:24
+				__e = __c.Set("width", "288"); if __e != nil { return }
+//line exercise_ui.gox:24
+				__e = __c.Set("height", "288"); if __e != nil { return }
+			}
+			__e = __c.Submit(); if __e != nil { return }
+			__e = __c.Init("span"); if __e != nil { return }
+			{
+//line exercise_ui.gox:25
+				__e = __c.Set("class", "figure-check"); if __e != nil { return }
+//line exercise_ui.gox:25
+				__e = __c.Set("aria-hidden", "true"); if __e != nil { return }
+				__e = __c.Submit(); if __e != nil { return }
+				__e = __c.Text("✓"); if __e != nil { return }
+			}
+			__e = __c.Close(); if __e != nil { return }
+		}
+		__e = __c.Close(); if __e != nil { return }
+		__e = __c.Init("span"); if __e != nil { return }
+		{
+//line exercise_ui.gox:27
+			__e = __c.Set("class", "figure-name"); if __e != nil { return }
+			__e = __c.Submit(); if __e != nil { return }
+//line exercise_ui.gox:27
+			__e = __c.Any(i18n.T(l, figureLabels[figure])); if __e != nil { return }
+		}
+		__e = __c.Close(); if __e != nil { return }
+	return })
+//line exercise_ui.gox:28
+}
+
+//line exercise_ui.gox:30
+func figureCards(l i18n.Lang, selected string, choose func(context.Context, string)) gox.Elem {
+	return gox.Elem(func(__c gox.Cursor) (__e error) {
+		ctx := __c.Context(); _ = ctx
+		__e = __c.Init("div"); if __e != nil { return }
+		{
+//line exercise_ui.gox:31
+			__e = __c.Set("class", "figure-grid"); if __e != nil { return }
+//line exercise_ui.gox:31
+			__e = __c.Set("role", "group"); if __e != nil { return }
+//line exercise_ui.gox:31
+			__e = __c.Set("aria-label", i18n.T(l, "settings.sex")); if __e != nil { return }
+			__e = __c.Submit(); if __e != nil { return }
+//line exercise_ui.gox:32
+			for _, figure := range app.Figures {
+//line exercise_ui.gox:33
+				__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
+				choose(ctx, figure)
+				return false
+			}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
+					ctx := __c.Context(); _ = ctx
+					__e = __c.Init("button"); if __e != nil { return }
+					{
+//line exercise_ui.gox:36
+						__e = __c.Set("class", "figure-choice"); if __e != nil { return }
+//line exercise_ui.gox:36
+						__e = __c.Set("type", "button"); if __e != nil { return }
+//line exercise_ui.gox:36
+						__e = __c.Set("aria-pressed", strconv.FormatBool(selected == figure)); if __e != nil { return }
+						__e = __c.Submit(); if __e != nil { return }
+//line exercise_ui.gox:37
+						__e = __c.Any(figureTile(l, figure)); if __e != nil { return }
+					}
+					__e = __c.Close(); if __e != nil { return }
+				return })); if __e != nil { return }
+			}
+		}
+		__e = __c.Close(); if __e != nil { return }
+	return })
+//line exercise_ui.gox:41
 }
 
 // doseLabel formats a dose: "× 12", "45 сек", "5 дыханий", plus per side.
@@ -65,18 +152,18 @@ func (w whereState) days(today int) content.Days {
 
 // wherePicker renders "Today / All days / Choose" and, when choosing, a grid
 // of the 30 days. update stores a new selection.
-//line exercise_ui.gox:65
+//line exercise_ui.gox:85
 func wherePicker(l i18n.Lang, w whereState, update func(context.Context, whereState)) gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line exercise_ui.gox:66
+//line exercise_ui.gox:86
 			__e = __c.Set("class", "seg3"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:67
+//line exercise_ui.gox:87
 			for _, opt := range []struct{ Mode, Key string }{{"today", "days.today"}, {"all", "days.all"}, {"pick", "days.pick"}} {
-//line exercise_ui.gox:68
+//line exercise_ui.gox:88
 				__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 				update(ctx, whereState{Mode: opt.Mode, Mask: w.Mask})
 				return false
@@ -84,12 +171,12 @@ func wherePicker(l i18n.Lang, w whereState, update func(context.Context, whereSt
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line exercise_ui.gox:71
+//line exercise_ui.gox:91
 						__e = __c.Set("type", "button"); if __e != nil { return }
-//line exercise_ui.gox:71
+//line exercise_ui.gox:91
 						__e = __c.Set("class", segClass(w.Mode == opt.Mode)); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:71
+//line exercise_ui.gox:91
 						__e = __c.Any(i18n.T(l, opt.Key)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -97,19 +184,19 @@ func wherePicker(l i18n.Lang, w whereState, update func(context.Context, whereSt
 			}
 		}
 		__e = __c.Close(); if __e != nil { return }
-//line exercise_ui.gox:74
+//line exercise_ui.gox:94
 		if w.Mode == "pick" {
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line exercise_ui.gox:75
+//line exercise_ui.gox:95
 				__e = __c.Set("class", "day-pick"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:76
+//line exercise_ui.gox:96
 				for d := 1; d <= content.TotalDays; d++ {
-//line exercise_ui.gox:78
+//line exercise_ui.gox:98
 					bit := uint32(1) << uint(d-1)
 
-//line exercise_ui.gox:80
+//line exercise_ui.gox:100
 					__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 					update(ctx, whereState{Mode: "pick", Mask: w.Mask ^ bit})
 					return false
@@ -117,12 +204,12 @@ func wherePicker(l i18n.Lang, w whereState, update func(context.Context, whereSt
 						ctx := __c.Context(); _ = ctx
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line exercise_ui.gox:83
+//line exercise_ui.gox:103
 							__e = __c.Set("type", "button"); if __e != nil { return }
-//line exercise_ui.gox:83
+//line exercise_ui.gox:103
 							__e = __c.Set("class", segClass(w.Mask&bit != 0)); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:83
+//line exercise_ui.gox:103
 							__e = __c.Any(d); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -132,7 +219,7 @@ func wherePicker(l i18n.Lang, w whereState, update func(context.Context, whereSt
 			__e = __c.Close(); if __e != nil { return }
 		}
 	return })
-//line exercise_ui.gox:87
+//line exercise_ui.gox:107
 }
 
 // toTop shows a newly opened view from its start.
@@ -158,21 +245,21 @@ type exerciseCard struct {
 	onAdd  func(context.Context)
 }
 
-//line exercise_ui.gox:112
+//line exercise_ui.gox:132
 func (c exerciseCard) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line exercise_ui.gox:114
+//line exercise_ui.gox:134
 		l := i18n.Lang(c.lang)
 		cat := app.UserCatalog(c.userID)
 		d, _ := cat.Detail(l, c.id)
 
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line exercise_ui.gox:118
+//line exercise_ui.gox:138
 			__e = __c.Set("class", "lib-head"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:119
+//line exercise_ui.gox:139
 			__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			c.onBack(ctx)
 			return false
@@ -180,14 +267,14 @@ func (c exerciseCard) Main() gox.Elem {
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line exercise_ui.gox:122
+//line exercise_ui.gox:142
 					__e = __c.Set("class", "lib-back"); if __e != nil { return }
-//line exercise_ui.gox:122
+//line exercise_ui.gox:142
 					__e = __c.Set("type", "button"); if __e != nil { return }
-//line exercise_ui.gox:122
+//line exercise_ui.gox:142
 					__e = __c.Set("aria-label", i18n.T(l, "nav.close")); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:122
+//line exercise_ui.gox:142
 					__e = __c.Any(icon("back", false)); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -195,95 +282,69 @@ func (c exerciseCard) Main() gox.Elem {
 			__e = __c.Init("h1"); if __e != nil { return }
 			{
 				__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:123
+//line exercise_ui.gox:143
 				__e = __c.Any(cat.Name(l, c.id)); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
-//line exercise_ui.gox:125
+//line exercise_ui.gox:145
 		__e = __c.Any(c.figure.Bind(func(fig string) gox.Elem {
 		return gox.Elem(func(__c gox.Cursor) (__e error) {
 			ctx := __c.Context(); _ = ctx
-//line exercise_ui.gox:126
+//line exercise_ui.gox:146
 			if src := firstFrame(app.ExerciseFrames(cat, c.id, fig)); src != "" {
 				__e = __c.InitVoid("img"); if __e != nil { return }
 				{
-//line exercise_ui.gox:127
+//line exercise_ui.gox:147
 					__e = __c.Set("class", "card-img"); if __e != nil { return }
-//line exercise_ui.gox:127
+//line exercise_ui.gox:147
 					__e = __c.Set("src", src); if __e != nil { return }
-//line exercise_ui.gox:127
+//line exercise_ui.gox:147
 					__e = __c.Set("alt", cat.Name(l, c.id)); if __e != nil { return }
 				}
 				__e = __c.Submit(); if __e != nil { return }
 			}
-			__e = __c.Init("div"); if __e != nil { return }
-			{
-//line exercise_ui.gox:129
-				__e = __c.Set("class", "seg2"); if __e != nil { return }
-				__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:130
-				for _, f := range figureKeys {
-//line exercise_ui.gox:131
-					__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
-					c.figure.Update(ctx, f.Code)
-					return false
-				}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
-						ctx := __c.Context(); _ = ctx
-						__e = __c.Init("button"); if __e != nil { return }
-						{
-//line exercise_ui.gox:134
-							__e = __c.Set("type", "button"); if __e != nil { return }
-//line exercise_ui.gox:134
-							__e = __c.Set("class", segClass(fig == f.Code)); if __e != nil { return }
-							__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:134
-							__e = __c.Any(i18n.T(l, f.Key)); if __e != nil { return }
-						}
-						__e = __c.Close(); if __e != nil { return }
-					return })); if __e != nil { return }
-				}
-			}
-			__e = __c.Close(); if __e != nil { return }
+//line exercise_ui.gox:149
+			__e = __c.Any(figureCards(l, fig, func(ctx context.Context, figure string) { c.figure.Update(ctx, figure) })); if __e != nil { return }
 		return })
-//line exercise_ui.gox:137
+//line exercise_ui.gox:150
 	})); if __e != nil { return }
-//line exercise_ui.gox:138
+//line exercise_ui.gox:151
 		if d.Desc != "" {
 			__e = __c.Init("p"); if __e != nil { return }
 			{
-//line exercise_ui.gox:139
+//line exercise_ui.gox:152
 				__e = __c.Set("class", "lib-desc"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:139
+//line exercise_ui.gox:152
 				__e = __c.Any(d.Desc); if __e != nil { return }
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
-//line exercise_ui.gox:141
+//line exercise_ui.gox:154
 		if len(d.HowTo) > 0 {
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line exercise_ui.gox:142
+//line exercise_ui.gox:155
 				__e = __c.Set("class", "lib-sec"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("h2"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:143
+//line exercise_ui.gox:156
 					__e = __c.Any(i18n.T(l, "library.howto")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("ol"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:144
+//line exercise_ui.gox:157
 					for _, line := range d.HowTo {
 						__e = __c.Init("li"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:144
+//line exercise_ui.gox:157
 							__e = __c.Any(line); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -293,29 +354,29 @@ func (c exerciseCard) Main() gox.Elem {
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
-//line exercise_ui.gox:147
+//line exercise_ui.gox:160
 		if len(d.Correct) > 0 {
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line exercise_ui.gox:148
+//line exercise_ui.gox:161
 				__e = __c.Set("class", "lib-sec lib-correct"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("h2"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:149
+//line exercise_ui.gox:162
 					__e = __c.Any(i18n.T(l, "library.correct")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("ul"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:150
+//line exercise_ui.gox:163
 					for _, line := range d.Correct {
 						__e = __c.Init("li"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:150
+//line exercise_ui.gox:163
 							__e = __c.Any(line); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -325,29 +386,29 @@ func (c exerciseCard) Main() gox.Elem {
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
-//line exercise_ui.gox:153
+//line exercise_ui.gox:166
 		if len(d.Wrong) > 0 {
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line exercise_ui.gox:154
+//line exercise_ui.gox:167
 				__e = __c.Set("class", "lib-sec lib-mistakes"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("h2"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:155
+//line exercise_ui.gox:168
 					__e = __c.Any(i18n.T(l, "library.mistakes")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("ul"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:156
+//line exercise_ui.gox:169
 					for _, line := range d.Wrong {
 						__e = __c.Init("li"); if __e != nil { return }
 						{
 							__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:156
+//line exercise_ui.gox:169
 							__e = __c.Any(line); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
@@ -357,9 +418,9 @@ func (c exerciseCard) Main() gox.Elem {
 			}
 			__e = __c.Close(); if __e != nil { return }
 		}
-//line exercise_ui.gox:159
+//line exercise_ui.gox:172
 		if c.onAdd != nil {
-//line exercise_ui.gox:160
+//line exercise_ui.gox:173
 			__e = (doors.AClick{On: func(ctx context.Context, r doors.RequestPointer) bool {
 			c.onAdd(ctx)
 			return false
@@ -367,21 +428,21 @@ func (c exerciseCard) Main() gox.Elem {
 				ctx := __c.Context(); _ = ctx
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line exercise_ui.gox:163
+//line exercise_ui.gox:176
 					__e = __c.Set("class", "btn primary wide"); if __e != nil { return }
-//line exercise_ui.gox:163
+//line exercise_ui.gox:176
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line exercise_ui.gox:163
+//line exercise_ui.gox:176
 					__e = __c.Any(icon("plus", false)); if __e != nil { return }
-//line exercise_ui.gox:163
+//line exercise_ui.gox:176
 					__e = __c.Any(i18n.T(l, "library.add_to_program")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 			return })); if __e != nil { return }
 		}
 	return })
-//line exercise_ui.gox:165
+//line exercise_ui.gox:178
 }
 
 var _ = gox.Elem(nil)

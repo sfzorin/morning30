@@ -220,9 +220,9 @@ deploy/              production docker-compose
 Dockerfile           multi-stage container build
 ```
 
-> **Note:** leftover built-in figures live under `assets/static/ex/<m|f>/<id>.png`.
-> New stills go into the SQLite pose catalog (`poses` / `pose_images`) and are
-> served at `/poses/{id}?sex=m|f`.
+> Built-in exercises use the four published figures under `assets/static/exercise-art/v1/`,
+> including in saved programs. Custom exercise uploads use the SQLite pose catalog
+> and are served at `/poses/{id}?sex=m|f|b|g`.
 
 ---
 

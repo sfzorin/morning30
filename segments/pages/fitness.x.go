@@ -191,83 +191,59 @@ func (a aboutPage) Main() gox.Elem {
 						__e = __c.Init("div"); if __e != nil { return }
 						{
 //line fitness.gox:82
-							__e = __c.Set("class", "seg"); if __e != nil { return }
+							__e = __c.Set("class", "figure-grid figure-profile"); if __e != nil { return }
+//line fitness.gox:82
+							__e = __c.Set("role", "group"); if __e != nil { return }
+//line fitness.gox:82
+							__e = __c.Set("aria-label", i18n.T(l, "settings.sex")); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-							__e = __c.Init("label"); if __e != nil { return }
-							{
-								__e = __c.Submit(); if __e != nil { return }
-								__e = __c.InitVoid("input"); if __e != nil { return }
+//line fitness.gox:83
+							for i, adult := range []string{"m", "f"} {
+								__e = __c.Init("label"); if __e != nil { return }
 								{
-//line fitness.gox:83
-									__e = __c.Set("type", "radio"); if __e != nil { return }
-//line fitness.gox:83
-									__e = __c.Set("name", "sex"); if __e != nil { return }
-//line fitness.gox:83
-									__e = __c.Set("value", "1"); if __e != nil { return }
-//line fitness.gox:83
-									__e = __c.Set("checked", !female); if __e != nil { return }
-								}
-								__e = __c.Submit(); if __e != nil { return }
-								__e = __c.Init("span"); if __e != nil { return }
-								{
-//line fitness.gox:83
-									__e = __c.Set("class", "adult"); if __e != nil { return }
+//line fitness.gox:84
+									__e = __c.Set("class", "figure-option"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:83
-									__e = __c.Any(i18n.T(l, "sex.male")); if __e != nil { return }
-								}
-								__e = __c.Close(); if __e != nil { return }
-								__e = __c.Init("span"); if __e != nil { return }
-								{
-//line fitness.gox:83
-									__e = __c.Set("class", "kid"); if __e != nil { return }
+									__e = __c.InitVoid("input"); if __e != nil { return }
+									{
+//line fitness.gox:85
+										__e = __c.Set("class", "figure-radio"); if __e != nil { return }
+//line fitness.gox:85
+										__e = __c.Set("type", "radio"); if __e != nil { return }
+//line fitness.gox:85
+										__e = __c.Set("name", "sex"); if __e != nil { return }
+//line fitness.gox:85
+										__e = __c.Set("value", strconv.Itoa(i+1)); if __e != nil { return }
+//line fitness.gox:85
+										__e = __c.Set("checked", (i == 1) == female); if __e != nil { return }
+									}
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:83
-									__e = __c.Any(i18n.T(l, "sex.boy")); if __e != nil { return }
-								}
-								__e = __c.Close(); if __e != nil { return }
-							}
-							__e = __c.Close(); if __e != nil { return }
-							__e = __c.Init("label"); if __e != nil { return }
-							{
-								__e = __c.Submit(); if __e != nil { return }
-								__e = __c.InitVoid("input"); if __e != nil { return }
-								{
-//line fitness.gox:84
-									__e = __c.Set("type", "radio"); if __e != nil { return }
-//line fitness.gox:84
-									__e = __c.Set("name", "sex"); if __e != nil { return }
-//line fitness.gox:84
-									__e = __c.Set("value", "2"); if __e != nil { return }
-//line fitness.gox:84
-									__e = __c.Set("checked", female); if __e != nil { return }
-								}
-								__e = __c.Submit(); if __e != nil { return }
-								__e = __c.Init("span"); if __e != nil { return }
-								{
-//line fitness.gox:84
-									__e = __c.Set("class", "adult"); if __e != nil { return }
-									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:84
-									__e = __c.Any(i18n.T(l, "sex.female")); if __e != nil { return }
-								}
-								__e = __c.Close(); if __e != nil { return }
-								__e = __c.Init("span"); if __e != nil { return }
-								{
-//line fitness.gox:84
-									__e = __c.Set("class", "kid"); if __e != nil { return }
-									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:84
-									__e = __c.Any(i18n.T(l, "sex.girl")); if __e != nil { return }
+									__e = __c.Init("span"); if __e != nil { return }
+									{
+//line fitness.gox:86
+										__e = __c.Set("class", "figure-choice figure-adult"); if __e != nil { return }
+										__e = __c.Submit(); if __e != nil { return }
+//line fitness.gox:86
+										__e = __c.Any(figureTile(l, adult)); if __e != nil { return }
+									}
+									__e = __c.Close(); if __e != nil { return }
+									__e = __c.Init("span"); if __e != nil { return }
+									{
+//line fitness.gox:87
+										__e = __c.Set("class", "figure-choice figure-child"); if __e != nil { return }
+										__e = __c.Submit(); if __e != nil { return }
+//line fitness.gox:87
+										__e = __c.Any(figureTile(l, app.FigureFor(adult, true))); if __e != nil { return }
+									}
+									__e = __c.Close(); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 							}
-							__e = __c.Close(); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line fitness.gox:86
+//line fitness.gox:91
 							__e = __c.Set("class", "fit-nums"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
 							__e = __c.Init("label"); if __e != nil { return }
@@ -275,28 +251,28 @@ func (a aboutPage) Main() gox.Elem {
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("class", "fit-label"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Any(i18n.T(l, "fitness.age")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("class", "text-input"); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("name", "age"); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("type", "number"); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("inputmode", "numeric"); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("min", "3"); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("max", "110"); if __e != nil { return }
-//line fitness.gox:87
+//line fitness.gox:92
 									__e = __c.Set("value", numberValue(p.Age)); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
@@ -307,28 +283,28 @@ func (a aboutPage) Main() gox.Elem {
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("class", "fit-label"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Any(i18n.T(l, "fitness.height")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("class", "text-input"); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("name", "height"); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("type", "number"); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("inputmode", "numeric"); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("min", "80"); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("max", "250"); if __e != nil { return }
-//line fitness.gox:88
+//line fitness.gox:93
 									__e = __c.Set("value", numberValue(p.Height)); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
@@ -339,28 +315,28 @@ func (a aboutPage) Main() gox.Elem {
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("class", "fit-label"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Any(i18n.T(l, "fitness.weight")); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.InitVoid("input"); if __e != nil { return }
 								{
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("class", "text-input"); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("name", "weight"); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("type", "number"); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("inputmode", "numeric"); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("min", "15"); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("max", "300"); if __e != nil { return }
-//line fitness.gox:89
+//line fitness.gox:94
 									__e = __c.Set("value", numberValue(p.Weight)); if __e != nil { return }
 								}
 								__e = __c.Submit(); if __e != nil { return }
@@ -370,41 +346,41 @@ func (a aboutPage) Main() gox.Elem {
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("p"); if __e != nil { return }
 						{
-//line fitness.gox:91
+//line fitness.gox:96
 							__e = __c.Set("class", "fit-label"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:91
+//line fitness.gox:96
 							__e = __c.Any(i18n.T(l, "fitness.concerns")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("div"); if __e != nil { return }
 						{
-//line fitness.gox:92
+//line fitness.gox:97
 							__e = __c.Set("class", "chips"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:93
+//line fitness.gox:98
 							for _, c := range concerns {
 								__e = __c.Init("label"); if __e != nil { return }
 								{
-//line fitness.gox:94
+//line fitness.gox:99
 									__e = __c.Set("class", "fit-chip"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.InitVoid("input"); if __e != nil { return }
 									{
-//line fitness.gox:94
+//line fitness.gox:99
 										__e = __c.Set("type", "checkbox"); if __e != nil { return }
-//line fitness.gox:94
+//line fitness.gox:99
 										__e = __c.Set("name", "c_" + c.Key); if __e != nil { return }
-//line fitness.gox:94
+//line fitness.gox:99
 										__e = __c.Set("value", "1"); if __e != nil { return }
-//line fitness.gox:94
+//line fitness.gox:99
 										__e = __c.Set("checked", p.Has(c.Key)); if __e != nil { return }
 									}
 									__e = __c.Submit(); if __e != nil { return }
 									__e = __c.Init("span"); if __e != nil { return }
 									{
 										__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:94
+//line fitness.gox:99
 										__e = __c.Any(i18n.T(l, c.Label)); if __e != nil { return }
 									}
 									__e = __c.Close(); if __e != nil { return }
@@ -415,27 +391,27 @@ func (a aboutPage) Main() gox.Elem {
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("button"); if __e != nil { return }
 						{
-//line fitness.gox:97
+//line fitness.gox:102
 							__e = __c.Set("class", "btn primary fit-go"); if __e != nil { return }
-//line fitness.gox:97
+//line fitness.gox:102
 							__e = __c.Set("type", "submit"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:97
+//line fitness.gox:102
 							__e = __c.Any(i18n.T(l, "fitness.next")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
-//line fitness.gox:99
+//line fitness.gox:104
 				__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line fitness.gox:99
+//line fitness.gox:104
 						__e = __c.Set("class", "fit-skip"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:99
+//line fitness.gox:104
 						__e = __c.Any(i18n.T(l, "workout.skip")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -445,7 +421,7 @@ func (a aboutPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line fitness.gox:102
+//line fitness.gox:107
 }
 
 func atoi(s string) int {
@@ -523,58 +499,58 @@ func (t testPage) payload() testPayload {
 	}
 }
 
-//line fitness.gox:179
+//line fitness.gox:184
 func (t testPage) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line fitness.gox:181
+//line fitness.gox:186
 		l := i18n.Lang(t.sess.Lang)
 
 		__e = __c.Init("title"); if __e != nil { return }
 		{
 			__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:183
+//line fitness.gox:188
 			__e = __c.Any(i18n.T(l, "fitness.test")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("div"); if __e != nil { return }
 		{
-//line fitness.gox:184
+//line fitness.gox:189
 			__e = __c.Set("class", "player fit-test"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line fitness.gox:185
+//line fitness.gox:190
 				__e = __c.Set("class", "player-top"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:186
+//line fitness.gox:191
 				__e = (doors.ALink{Model: path.Path{Page: path.Home}}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("a"); if __e != nil { return }
 					{
-//line fitness.gox:186
+//line fitness.gox:191
 						__e = __c.Set("class", "quit"); if __e != nil { return }
-//line fitness.gox:186
+//line fitness.gox:191
 						__e = __c.Set("aria-label", i18n.T(l, "nav.close")); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:186
+//line fitness.gox:191
 						__e = __c.Any(icon("close", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				return })); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:187
+//line fitness.gox:192
 					__e = __c.Set("class", "pbar fit-bar"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:188
+//line fitness.gox:193
 					__e = __c.Set("class", "phase"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:188
+//line fitness.gox:193
 					__e = __c.Any(i18n.T(l, "fitness.test")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
@@ -582,19 +558,19 @@ func (t testPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line fitness.gox:190
+//line fitness.gox:195
 				__e = __c.Set("class", "stage"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:191
+//line fitness.gox:196
 					__e = __c.Set("class", "ex-visual"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.InitVoid("img"); if __e != nil { return }
 					{
-//line fitness.gox:191
+//line fitness.gox:196
 						__e = __c.Set("class", "ex-svg"); if __e != nil { return }
-//line fitness.gox:191
+//line fitness.gox:196
 						__e = __c.Set("alt", ""); if __e != nil { return }
 					}
 					__e = __c.Submit(); if __e != nil { return }
@@ -602,39 +578,39 @@ func (t testPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:192
+//line fitness.gox:197
 					__e = __c.Set("class", "ex-name"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line fitness.gox:193
+//line fitness.gox:198
 					__e = __c.Set("class", "fit-hint"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:194
+//line fitness.gox:199
 					__e = __c.Set("class", "fit-count"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line fitness.gox:195
+//line fitness.gox:200
 						__e = __c.Set("class", "lvl-btn fit-minus"); if __e != nil { return }
-//line fitness.gox:195
+//line fitness.gox:200
 						__e = __c.Set("type", "button"); if __e != nil { return }
-//line fitness.gox:195
+//line fitness.gox:200
 						__e = __c.Set("aria-label", "−"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:195
+//line fitness.gox:200
 						__e = __c.Any(icon("minus", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("output"); if __e != nil { return }
 					{
-//line fitness.gox:196
+//line fitness.gox:201
 						__e = __c.Set("class", "fit-value"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Text("0"); if __e != nil { return }
@@ -642,14 +618,14 @@ func (t testPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line fitness.gox:197
+//line fitness.gox:202
 						__e = __c.Set("class", "lvl-btn fit-plus"); if __e != nil { return }
-//line fitness.gox:197
+//line fitness.gox:202
 						__e = __c.Set("type", "button"); if __e != nil { return }
-//line fitness.gox:197
+//line fitness.gox:202
 						__e = __c.Set("aria-label", "+"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:197
+//line fitness.gox:202
 						__e = __c.Any(icon("plus", false)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -657,16 +633,16 @@ func (t testPage) Main() gox.Elem {
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:199
+//line fitness.gox:204
 					__e = __c.Set("class", "fit-clock hidden"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("p"); if __e != nil { return }
 				{
-//line fitness.gox:200
+//line fitness.gox:205
 					__e = __c.Set("class", "err fit-err hidden"); if __e != nil { return }
-//line fitness.gox:200
+//line fitness.gox:205
 					__e = __c.Set("role", "alert"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
@@ -675,14 +651,14 @@ func (t testPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line fitness.gox:202
+//line fitness.gox:207
 				__e = __c.Set("class", "done-row"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line fitness.gox:203
+//line fitness.gox:208
 					__e = __c.Set("class", "btn primary fit-main"); if __e != nil { return }
-//line fitness.gox:203
+//line fitness.gox:208
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
@@ -691,23 +667,23 @@ func (t testPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("div"); if __e != nil { return }
 			{
-//line fitness.gox:205
+//line fitness.gox:210
 				__e = __c.Set("class", "controls"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line fitness.gox:206
+//line fitness.gox:211
 					__e = __c.Set("class", "btn fit-back"); if __e != nil { return }
-//line fitness.gox:206
+//line fitness.gox:211
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
 				__e = __c.Init("button"); if __e != nil { return }
 				{
-//line fitness.gox:207
+//line fitness.gox:212
 					__e = __c.Set("class", "btn fit-skip-step"); if __e != nil { return }
-//line fitness.gox:207
+//line fitness.gox:212
 					__e = __c.Set("type", "button"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 				}
@@ -716,10 +692,10 @@ func (t testPage) Main() gox.Elem {
 			__e = __c.Close(); if __e != nil { return }
 			__e = __c.Init("script"); if __e != nil { return }
 			{
-//line fitness.gox:209
+//line fitness.gox:214
 				__e = __c.Set("src", assets.FitnessTest); if __e != nil { return }
 				__e = __c.Set("inline", true); if __e != nil { return }
-//line fitness.gox:209
+//line fitness.gox:214
 				__e = __c.Set("data:payload", t.payload()); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Raw(""); if __e != nil { return }
@@ -728,7 +704,7 @@ func (t testPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line fitness.gox:211
+//line fitness.gox:216
 }
 
 type fitnessPage struct {
@@ -751,11 +727,11 @@ func resultValue(v int, seconds bool) string {
 	return strconv.Itoa(v)
 }
 
-//line fitness.gox:233
+//line fitness.gox:238
 func (f fitnessPage) Main() gox.Elem {
 	return gox.Elem(func(__c gox.Cursor) (__e error) {
 		ctx := __c.Context(); _ = ctx
-//line fitness.gox:235
+//line fitness.gox:240
 		l := i18n.Lang(f.sess.Lang)
 		latest, previous, has, hasPrev := app.LatestFitness(f.sess.UserID)
 		plan := app.FitnessPlan(f.sess.UserID)
@@ -774,60 +750,60 @@ func (f fitnessPage) Main() gox.Elem {
 		__e = __c.Init("title"); if __e != nil { return }
 		{
 			__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:250
+//line fitness.gox:255
 			__e = __c.Any(i18n.T(l, "fitness.title")); if __e != nil { return }
 		}
 		__e = __c.Close(); if __e != nil { return }
 		__e = __c.Init("main"); if __e != nil { return }
 		{
-//line fitness.gox:251
+//line fitness.gox:256
 			__e = __c.Set("class", "screen"); if __e != nil { return }
 			__e = __c.Submit(); if __e != nil { return }
 			__e = __c.Init("section"); if __e != nil { return }
 			{
-//line fitness.gox:252
+//line fitness.gox:257
 				__e = __c.Set("class", "fit result"); if __e != nil { return }
 				__e = __c.Submit(); if __e != nil { return }
 				__e = __c.Init("h1"); if __e != nil { return }
 				{
 					__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:253
+//line fitness.gox:258
 					__e = __c.Any(i18n.T(l, "fitness.title")); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line fitness.gox:254
+//line fitness.gox:259
 				if has {
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line fitness.gox:255
+//line fitness.gox:260
 						__e = __c.Set("class", "fit-score"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
 						__e = __c.Init("span"); if __e != nil { return }
 						{
-//line fitness.gox:256
+//line fitness.gox:261
 							__e = __c.Set("class", "fit-index"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:256
+//line fitness.gox:261
 							__e = __c.Any(latest.Index); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
 						__e = __c.Init("span"); if __e != nil { return }
 						{
-//line fitness.gox:257
+//line fitness.gox:262
 							__e = __c.Set("class", "fit-of"); if __e != nil { return }
 							__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:257
+//line fitness.gox:262
 							__e = __c.Any(i18n.T(l, "fitness.of100")); if __e != nil { return }
 						}
 						__e = __c.Close(); if __e != nil { return }
-//line fitness.gox:258
+//line fitness.gox:263
 						if hasPrev {
 							__e = __c.Init("span"); if __e != nil { return }
 							{
-//line fitness.gox:259
+//line fitness.gox:264
 								__e = __c.Set("class", "fit-of"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:259
+//line fitness.gox:264
 								__e = __c.Any(i18n.Tf(l, "fitness.was", previous.Index)); if __e != nil { return }
 							}
 							__e = __c.Close(); if __e != nil { return }
@@ -836,38 +812,38 @@ func (f fitnessPage) Main() gox.Elem {
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
-//line fitness.gox:262
+//line fitness.gox:267
 						__e = __c.Set("class", "fit-level"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:262
+//line fitness.gox:267
 						__e = __c.Any(i18n.T(l, "fitness.level_"+latest.Level)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("div"); if __e != nil { return }
 					{
-//line fitness.gox:263
+//line fitness.gox:268
 						__e = __c.Set("class", "settings-card"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:264
+//line fitness.gox:269
 						for _, r := range rows {
 							__e = __c.Init("div"); if __e != nil { return }
 							{
-//line fitness.gox:265
+//line fitness.gox:270
 								__e = __c.Set("class", "srow"); if __e != nil { return }
 								__e = __c.Submit(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:265
+//line fitness.gox:270
 									__e = __c.Any(i18n.T(l, r.Key)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
 								__e = __c.Init("span"); if __e != nil { return }
 								{
-//line fitness.gox:265
+//line fitness.gox:270
 									__e = __c.Set("class", "fit-res"); if __e != nil { return }
 									__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:265
+//line fitness.gox:270
 									__e = __c.Any(resultValue(r.Value, r.Seconds)); if __e != nil { return }
 								}
 								__e = __c.Close(); if __e != nil { return }
@@ -879,45 +855,45 @@ func (f fitnessPage) Main() gox.Elem {
 				}
 				__e = __c.Init("div"); if __e != nil { return }
 				{
-//line fitness.gox:269
+//line fitness.gox:274
 					__e = __c.Set("class", "settings-card fit-plan"); if __e != nil { return }
 					__e = __c.Submit(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
-//line fitness.gox:270
+//line fitness.gox:275
 						__e = __c.Set("class", "fit-plan-name"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:270
+//line fitness.gox:275
 						__e = __c.Any(prog.TitleIn(f.sess.Lang)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 					__e = __c.Init("p"); if __e != nil { return }
 					{
-//line fitness.gox:271
+//line fitness.gox:276
 						__e = __c.Set("class", "fit-plan-meta"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:272
+//line fitness.gox:277
 						if !built.FixedDifficulty {
-//line fitness.gox:272
+//line fitness.gox:277
 							__e = __c.Many(i18n.T(l, "settings.difficulty"), " ", levelLabel(l, plan.Level), " · "); if __e != nil { return }
 						}
-//line fitness.gox:273
+//line fitness.gox:278
 						__e = __c.Many(i18n.Tn(l, "fmt.rounds", plan.Rounds), " · ", i18n.Tf(l, "fmt.min_range", first, peak)); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
 				}
 				__e = __c.Close(); if __e != nil { return }
-//line fitness.gox:276
+//line fitness.gox:281
 				__e = (doors.AClick{On: f.start}).Proxy(__c, gox.Elem(func(__c gox.Cursor) (__e error) {
 					ctx := __c.Context(); _ = ctx
 					__e = __c.Init("button"); if __e != nil { return }
 					{
-//line fitness.gox:276
+//line fitness.gox:281
 						__e = __c.Set("class", "btn primary fit-go"); if __e != nil { return }
-//line fitness.gox:276
+//line fitness.gox:281
 						__e = __c.Set("type", "button"); if __e != nil { return }
 						__e = __c.Submit(); if __e != nil { return }
-//line fitness.gox:276
+//line fitness.gox:281
 						__e = __c.Any(i18n.T(l, "home.start")); if __e != nil { return }
 					}
 					__e = __c.Close(); if __e != nil { return }
@@ -927,7 +903,7 @@ func (f fitnessPage) Main() gox.Elem {
 		}
 		__e = __c.Close(); if __e != nil { return }
 	return })
-//line fitness.gox:279
+//line fitness.gox:284
 }
 
 // start switches to the recommended program and begins its next day.

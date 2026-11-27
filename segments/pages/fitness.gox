@@ -79,9 +79,14 @@ elem (a aboutPage) Main() {
 					<label><input type="radio" name="who" value="child" checked=(p.Child)><span>~(i18n.T(l, "fitness.child"))</span></label>
 				</div>
 				<p class="fit-label">~(i18n.T(l, "settings.sex"))</p>
-				<div class="seg">
-					<label><input type="radio" name="sex" value="1" checked=(!female)><span class="adult">~(i18n.T(l, "sex.male"))</span><span class="kid">~(i18n.T(l, "sex.boy"))</span></label>
-					<label><input type="radio" name="sex" value="2" checked=(female)><span class="adult">~(i18n.T(l, "sex.female"))</span><span class="kid">~(i18n.T(l, "sex.girl"))</span></label>
+				<div class="figure-grid figure-profile" role="group" aria-label=(i18n.T(l, "settings.sex"))>
+					~(for i, adult := range []string{"m", "f"} {
+						<label class="figure-option">
+							<input class="figure-radio" type="radio" name="sex" value=(strconv.Itoa(i+1)) checked=((i == 1) == female)>
+							<span class="figure-choice figure-adult">~(figureTile(l, adult))</span>
+							<span class="figure-choice figure-child">~(figureTile(l, app.FigureFor(adult, true)))</span>
+						</label>
+					})
 				</div>
 				<div class="fit-nums">
 					<label><span class="fit-label">~(i18n.T(l, "fitness.age"))</span><input class="text-input" name="age" type="number" inputmode="numeric" min="3" max="110" value=(numberValue(p.Age))></label>

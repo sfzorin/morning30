@@ -4,7 +4,7 @@ package main
 
 import (
 	"context"
-	"embed"
+	_ "embed"
 	"log"
 	"net/http"
 	"os"
@@ -47,11 +47,6 @@ var bodyPoses []byte
 //go:embed body/web/shotgrid.html
 var bodyShotGrid []byte
 
-// poseStillFS is the rendered exercise stills ({ID}-1.png, {ID}-2.png).
-//
-//go:embed body/out/*.png
-var poseStillFS embed.FS
-
 func main() {
 	// MORNING_DB is what the container (Dockerfile / docker-compose) sets to the
 	// persistent /data volume; DANI_DB is kept as a legacy fallback.
@@ -69,10 +64,7 @@ func main() {
 	defer database.Close()
 	app.DB = database
 	app.SeedBuiltins() // populate the global exercise library (idempotent)
-	if err := app.SeedPoseStills(poseStillFS); err != nil {
-		log.Printf("seed poses: %v", err)
-	}
-	app.SnapshotAll() // copy leftover named plans into personal files
+	app.SnapshotAll()  // copy leftover named plans into personal files
 
 	a := doors.NewApp(func(ctx context.Context, r doors.Request) gox.Comp {
 		// Bootstrap the shared reactive session once per browser session.
@@ -97,7 +89,7 @@ func main() {
 		doors.WithConf(doors.Conf{ServerSessionCookieNoSecure: true}),
 	)
 
-	// Serve embedded static files (icons, manifest, service worker, exercise SVGs).
+	// Serve embedded static files (icons, manifest, service worker, illustrations).
 	a.Use(doors.UseFS("/static", assets.Static(), doors.CacheControlStatic))
 
 	// /body — standalone interactive 3D mannequin editor (separate from the workout app).

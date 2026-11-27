@@ -140,12 +140,13 @@ func TestSettingsAutosaveEachControl(t *testing.T) {
 	}
 	page.saveSetting("voice", status)(ctx, text("min"))
 	page.saveSetting("name", status)(ctx, text("  Updated  "))
-	page.saveSetting("figure", status)(ctx, text("g"))
-	if s := session.Get(); s.Name != "Updated" || s.VoiceMode != "min" || !s.Voice || database.GetSex(page.sess.UserID) != "g" || status.Get() != "" {
+	selected := doors.NewSource(database.GetSex(page.sess.UserID))
+	page.saveFigure(ctx, selected, status, "g")
+	if s := session.Get(); s.Name != "Updated" || s.VoiceMode != "min" || !s.Voice || database.GetSex(page.sess.UserID) != "g" || selected.Get() != "g" || status.Get() != "" {
 		t.Fatalf("session %+v figure %q status %q", s, database.GetSex(page.sess.UserID), status.Get())
 	}
-	page.saveSetting("figure", status)(ctx, text("x"))
-	if status.Get() != "settings.save_failed" || database.GetSex(page.sess.UserID) != "g" {
+	page.saveFigure(ctx, selected, status, "x")
+	if status.Get() != "settings.save_failed" || database.GetSex(page.sess.UserID) != "g" || selected.Get() != "g" {
 		t.Fatal("an unknown figure was accepted")
 	}
 }

@@ -8,8 +8,6 @@ import (
 	"io"
 	"io/fs"
 	"log"
-	"slices"
-	"strings"
 
 	"morning30/assets"
 	"morning30/internal/catalog"
@@ -24,18 +22,12 @@ type figureArt struct {
 	demo  *ExerciseDemo
 }
 
-type exerciseArt struct {
-	figures   map[string]figureArt
-	poses     []string
-	animation *catalog.Animation
-	name      string
-	howTo     []string
-}
-
 var exerciseArtwork = readExerciseArtwork(assets.Static())
 
-func readExerciseArtwork(files fs.FS) map[string]exerciseArt {
-	index := make(map[string]exerciseArt)
+type exerciseArtIndex map[string]map[string]figureArt
+
+func readExerciseArtwork(files fs.FS) exerciseArtIndex {
+	index := make(exerciseArtIndex)
 	dirs, err := fs.ReadDir(files, exerciseArtDir)
 	if errors.Is(err, fs.ErrNotExist) {
 		return index
@@ -50,11 +42,10 @@ func readExerciseArtwork(files fs.FS) map[string]exerciseArt {
 			continue
 		}
 		id := dir.Name()
-		doc, ok := catalog.Builtin(id)
-		if !ok {
+		if _, ok := content.Get(id); !ok {
 			continue
 		}
-		art := artForBuiltin(doc)
+		figures := make(map[string]figureArt)
 		motion := motions[id]
 		// The manifest only describes the order and number of square frames.
 		hasMotion := catalog.ValidFrameSequence(motion.Frames, motion.Kind)
@@ -70,9 +61,9 @@ func readExerciseArtwork(files fs.FS) map[string]exerciseArt {
 					figure.demo = &ExerciseDemo{Src: strip, Frames: motion.Frames, Kind: motion.Kind}
 				}
 			}
-			art.figures[sex] = figure
+			figures[sex] = figure
 		}
-		index[id] = art
+		index[id] = figures
 	}
 	addSharedArt(index, motions, readArtMap[string](files, "shared-movements.json"))
 	return index
@@ -94,14 +85,9 @@ func readArtMap[T any](files fs.FS, name string) map[string]T {
 	return entries
 }
 
-func artForBuiltin(doc catalog.Doc) exerciseArt {
-	en := doc.Content["en"]
-	return exerciseArt{figures: map[string]figureArt{}, poses: doc.Poses, animation: doc.Animation, name: en.Name, howTo: en.HowTo}
-}
-
-// Share complete figure variants, keeping the target's pose assignments and technique.
+// Share complete figure variants between equivalent built-in exercises.
 // The table names direct sources only, so its map iteration order is immaterial.
-func addSharedArt(index map[string]exerciseArt, motions map[string]catalog.Animation, aliases map[string]string) {
+func addSharedArt(index exerciseArtIndex, motions map[string]catalog.Animation, aliases map[string]string) {
 	if motions == nil {
 		return // Without the manifest we cannot tell whether a missing strip is intentional.
 	}
@@ -117,15 +103,14 @@ func addSharedArt(index map[string]exerciseArt, motions map[string]catalog.Anima
 		}
 		targetArt, ok := index[target]
 		if !ok {
-			doc, ok := catalog.Builtin(target)
-			if !ok {
+			if _, ok := content.Get(target); !ok {
 				continue
 			}
-			targetArt = artForBuiltin(doc)
+			targetArt = make(map[string]figureArt)
 		}
-		for sex, figure := range sourceArt.figures {
-			if _, own := targetArt.figures[sex]; !own && (!dynamic || figure.demo != nil) {
-				targetArt.figures[sex] = figure
+		for sex, figure := range sourceArt {
+			if _, own := targetArt[sex]; !own && (!dynamic || figure.demo != nil) {
+				targetArt[sex] = figure
 			}
 		}
 		index[target] = targetArt
@@ -146,31 +131,4 @@ func artFileURL(files fs.FS, name string) string {
 		return ""
 	}
 	return "/static/" + name + "?v=" + hex.EncodeToString(hash.Sum(nil)[:8])
-}
-
-// A personal exercise can reuse a built-in ID for a different movement.
-func artForExercise(cat catalog.Catalog, doc catalog.Doc, sex string) (exerciseArt, figureArt, bool) {
-	art := exerciseArtwork[doc.ID]
-	figure, ok := art.figures[sex]
-	if content.FigureKey(doc.SVG, doc.ID) != doc.ID {
-		return art, figure, false
-	}
-	if ok && cat.IsCustom(doc.ID) {
-		en := doc.Content["en"]
-		ok = en.Name == art.name && slices.Equal(en.HowTo, art.howTo)
-	}
-	return art, figure, ok
-}
-
-func (art exerciseArt) hasAssignedStills(id string, poses []string) bool {
-	if len(poses) == 0 || slices.Equal(poses, art.poses) {
-		return false
-	}
-	// SeedPoseStills assigns this exact pair to the original built-ins.
-	key := strings.ToLower(id)
-	return len(poses) != 2 || poses[0] != key+"-1" || poses[1] != key+"-2"
-}
-
-func (art exerciseArt) hasAssignedAnimation(a *catalog.Animation) bool {
-	return a != nil && (art.animation == nil || *a != *art.animation)
 }

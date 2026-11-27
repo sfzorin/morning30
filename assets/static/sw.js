@@ -1,5 +1,5 @@
 // Minimal service worker: enables installability and caches static assets
-// (exercise SVGs, icons) for fast repeat loads and offline viewing.
+// (exercise illustrations, icons) for fast repeat loads and offline viewing.
 // Dynamic doors pages always go to the network.
 
 const CACHE = "morning-v1";
@@ -7,11 +7,15 @@ const CACHE = "morning-v1";
 self.addEventListener("install", () => self.skipWaiting());
 
 self.addEventListener("activate", (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
+  e.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)));
+    const cache = await caches.open(CACHE);
+    const requests = await cache.keys();
+    await Promise.all(requests.filter((r) => new URL(r.url).pathname.startsWith("/static/ex/"))
+      .map((r) => cache.delete(r)));
+    await self.clients.claim();
+  })());
 });
 
 self.addEventListener("fetch", (e) => {

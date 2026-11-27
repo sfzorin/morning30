@@ -377,27 +377,6 @@ func (c Catalog) SVG(id string) string {
 	return "/static/ex/" + id + ".png"
 }
 
-// Figure returns the figure URL for an exercise, choosing the male/female
-// variant by sex ("m"/"f"). Used when the pose catalog has no stills yet.
-func (c Catalog) Figure(id, sex string) string {
-	// The legacy built-in drawings exist for adults only: a child figure
-	// uses the adult of the same sex.
-	switch sex {
-	case "f", "g":
-		sex = "f"
-	default:
-		sex = "m"
-	}
-	key := id
-	if d, ok := c.resolve(id); ok {
-		key = content.FigureKey(d.SVG, id)
-	}
-	if ex, ok := content.Get(key); !ok || ex.Bundled {
-		return "" // Custom and bundled exercises have no legacy drawing.
-	}
-	return "/static/ex/" + sex + "/" + key + ".png"
-}
-
 // ValidDoc sanity-checks an imported or MCP-written exercise document.
 func ValidDoc(d Doc) bool {
 	if strings.TrimSpace(d.ID) == "" || !ValidAnimation(d.Animation) || !ValidReaction(d.Reaction) {

@@ -138,42 +138,29 @@ func ExerciseFrames(cat catalog.Catalog, id, sex string) []string {
 	if !ok {
 		return nil
 	}
-	poses := catalog.ClipPoses(doc.Poses)
-	if art, figure, ok := artForExercise(cat, doc, sex); ok {
-		if art.hasAssignedStills(id, poses) {
-			if assigned := availablePoseFrames(poses, sex, true); len(assigned) > 0 {
-				return assigned
-			}
+	// Personal program copies can carry old pose assignments on built-in IDs.
+	if _, builtin := content.Get(id); builtin {
+		if still := exerciseArtwork[id][sex].still; still != "" {
+			return []string{still}
 		}
-		return []string{figure.still}
+		return nil
 	}
-	if frames := availablePoseFrames(poses, sex, false); len(frames) > 0 {
-		return frames
-	}
-	if figure := cat.Figure(id, sex); figure != "" {
-		return []string{figure}
-	}
-	return nil
-}
-
-func availablePoseFrames(poses []string, sex string, exact bool) []string {
 	var frames []string
-	for _, pid := range poses {
-		if hasPose(pid, sex, exact) {
+	for _, pid := range catalog.ClipPoses(doc.Poses) {
+		if hasActivePose(pid) {
 			frames = append(frames, poseURL(pid, sex))
+		}
+	}
+	if len(frames) == 0 {
+		if still := exerciseArtwork[content.FigureKey(doc.SVG, id)][sex].still; still != "" {
+			return []string{still}
 		}
 	}
 	return frames
 }
 
-func hasPose(id, sex string, exact bool) bool {
-	if DB == nil {
-		return false
-	}
-	if exact {
-		return DB.HasPoseFigure(id, sex)
-	}
-	return DB.HasPose(id)
+func hasActivePose(id string) bool {
+	return DB != nil && !retiredPose(id) && DB.HasPose(id)
 }
 
 func poseURL(id, sex string) string {
@@ -194,28 +181,19 @@ func ExerciseAnimation(cat catalog.Catalog, id, sex string) *ExerciseDemo {
 		return nil
 	}
 	sex = db.NormalizeSex(sex)
-	if art, figure, ok := artForExercise(cat, doc, sex); ok {
-		if art.hasAssignedAnimation(doc.Animation) {
-			if demo := availablePoseAnimation(doc.Animation, sex, true); demo != nil {
-				return demo
-			}
-		}
-		poses := catalog.ClipPoses(doc.Poses)
-		if art.hasAssignedStills(id, poses) && len(availablePoseFrames(poses, sex, true)) > 0 {
-			return nil // Keep the explicitly selected stills visible in the player.
-		}
-		return figure.demo
+	if _, builtin := content.Get(id); builtin {
+		return exerciseArtwork[id][sex].demo
 	}
-	return availablePoseAnimation(doc.Animation, sex, false)
+	return availablePoseAnimation(doc.Animation, sex)
 }
 
-func availablePoseAnimation(a *catalog.Animation, sex string, exact bool) *ExerciseDemo {
-	if a == nil || !catalog.ValidAnimation(a) || !hasPose(a.Pose, sex, exact) {
+func availablePoseAnimation(a *catalog.Animation, sex string) *ExerciseDemo {
+	if a == nil || !catalog.ValidAnimation(a) || !hasActivePose(a.Pose) {
 		return nil
 	}
 	otherSrc := ""
 	if a.OtherPose != "" {
-		if !hasPose(a.OtherPose, sex, exact) {
+		if !hasActivePose(a.OtherPose) {
 			return nil
 		}
 		otherSrc = poseURL(a.OtherPose, sex)

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"context"
 	"encoding/json"
+	"slices"
 	"strconv"
 	"strings"
 
@@ -83,9 +84,9 @@ elem (s settingsPage) Main() {
 		curDay := app.CurrentDay(s.sess.UserID)
 		cycleNo := app.CurrentPosition(s.sess.UserID)/content.TotalDays + 1
 		dayCount := len(app.UserWorkout(s.sess.UserID, curDay).Items)
-		curSex := app.DB.GetSex(s.sess.UserID)
+		figureSrc := doors.NewSource(app.DB.GetSex(s.sess.UserID))
 		confirm := doors.NewSource("")
-		poseList, _ := app.DB.ListPoses()
+		poseList, _ := app.ActiveExercisePoses()
 		if poseList == nil {
 			poseList = []db.Pose{}
 		}
@@ -281,6 +282,7 @@ elem (s settingsPage) Main() {
 				}))
 				~(selSrc.Bind(elem(id string) {
 					~{
+						_, builtin := content.Get(id)
 						cur := cat.PoseIDs(id)
 						poseA, poseB := "", ""
 						if len(cur) > 0 {
@@ -292,27 +294,29 @@ elem (s settingsPage) Main() {
 						sex := app.DB.GetSex(s.sess.UserID)
 						thumbs := app.ExerciseFrames(cat, id, sex)
 					}
-					~>doors.ASubmit[posePickForm]{On: s.assignPoses} <form class="ex-import-form">
-						<input type="hidden" name="pose_ex" value=(id)>
-						<div class="pose-preview">
-							~(for _, u := range thumbs {
-								<img class="pose-thumb" src=(u) alt="">
-							})
-						</div>
-						<div class="srow col">
-							<span>~(i18n.T(l, "settings.pose_a"))</span>
-							<select class="lang-select compact" name="pose_a">
-								~(s.poseOptions(poseList, poseA, i18n.T(l, "settings.pose_none")))
-							</select>
-						</div>
-						<div class="srow col">
-							<span>~(i18n.T(l, "settings.pose_b"))</span>
-							<select class="lang-select compact" name="pose_b">
-								~(s.poseOptions(poseList, poseB, i18n.T(l, "settings.pose_none")))
-							</select>
-						</div>
-						<button class="btn primary small" type="submit">~(i18n.T(l, "settings.pose_save"))</button>
-					</form>
+					<div class="pose-preview">
+						~(for _, u := range thumbs {
+							<img class="pose-thumb" src=(u) alt="">
+						})
+					</div>
+					~(if !builtin {
+						~>doors.ASubmit[posePickForm]{On: s.assignPoses} <form class="ex-import-form">
+							<input type="hidden" name="pose_ex" value=(id)>
+							<div class="srow col">
+								<span>~(i18n.T(l, "settings.pose_a"))</span>
+								<select class="lang-select compact" name="pose_a">
+									~(s.poseOptions(poseList, poseA, i18n.T(l, "settings.pose_none")))
+								</select>
+							</div>
+							<div class="srow col">
+								<span>~(i18n.T(l, "settings.pose_b"))</span>
+								<select class="lang-select compact" name="pose_b">
+									~(s.poseOptions(poseList, poseB, i18n.T(l, "settings.pose_none")))
+								</select>
+							</div>
+							<button class="btn primary small" type="submit">~(i18n.T(l, "settings.pose_save"))</button>
+						</form>
+					})
 				}))
 				~>doors.ASubmit[newExForm]{On: s.createExercise} <form class="ex-import-form">
 					<div class="srow col">
@@ -398,15 +402,6 @@ elem (s settingsPage) Main() {
 							<option value="detailed" selected=func { return vm == "detailed" }>~(i18n.T(l, "voice.detailed"))</option>
 						</select>
 					</div>
-					<div class="srow">
-						<span>~(i18n.T(l, "settings.sex"))</span>
-						<select class="lang-select compact" aria-label=(i18n.T(l, "settings.sex")) (doors.AChange{On: s.saveSetting("figure", saveStatus)})>
-							<option value="m" selected=func { return curSex == "m" }>~(i18n.T(l, "sex.male"))</option>
-							<option value="f" selected=func { return curSex == "f" }>~(i18n.T(l, "sex.female"))</option>
-							<option value="b" selected=func { return curSex == "b" }>~(i18n.T(l, "sex.boy"))</option>
-							<option value="g" selected=func { return curSex == "g" }>~(i18n.T(l, "sex.girl"))</option>
-						</select>
-					</div>
 					~// Shown only inside the iPhone and Android apps (assets/app-bridge.js).
 					<div class="srow hidden" data-app-reminder>
 						<span>~(i18n.T(l, "settings.reminder"))</span>
@@ -419,6 +414,14 @@ elem (s settingsPage) Main() {
 					</div>
 				</div>
 				<script src=(assets.AppBridge) inline data:reminder=(reminderTexts(l))></script>
+				<h2 class="sgroup">~(i18n.T(l, "settings.sex"))</h2>
+				<div class="settings-card figure-settings">
+					~(figureSrc.Bind(elem(selected string) {
+						~(figureCards(l, selected, func(ctx context.Context, figure string) {
+							s.saveFigure(ctx, figureSrc, saveStatus, figure)
+						}))
+					}))
+				</div>
 				<h2 class="sgroup">~(i18n.T(l, "settings.group_profile"))</h2>
 				<div class="settings-card">
 					<div class="srow">
@@ -1029,7 +1032,16 @@ func (s settingsPage) saveRest(which string, val doors.Source[int], status doors
 	}
 }
 
-// saveSetting stores the voice mode, the figure or the name as soon as it changes.
+func (s settingsPage) saveFigure(ctx context.Context, selected, status doors.Source[string], figure string) {
+	if !slices.Contains(app.Figures, figure) || app.DB.SetSex(s.sess.UserID, figure) != nil {
+		status.Update(ctx, "settings.save_failed")
+		return
+	}
+	selected.Update(ctx, figure)
+	status.Update(ctx, "")
+}
+
+// saveSetting stores the voice mode or the name as soon as it changes.
 func (s settingsPage) saveSetting(which string, status doors.Source[string]) func(context.Context, doors.RequestEvent[doors.ChangeEvent]) bool {
 	return func(ctx context.Context, r doors.RequestEvent[doors.ChangeEvent]) bool {
 		v := r.Event().Value
@@ -1037,8 +1049,6 @@ func (s settingsPage) saveSetting(which string, status doors.Source[string]) fun
 		switch which {
 		case "voice":
 			p.VoiceMode = &v
-		case "figure":
-			p.Figure = &v
 		default:
 			p.Name = &v
 		}

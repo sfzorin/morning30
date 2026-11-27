@@ -2,9 +2,7 @@ package app
 
 import (
 	"path/filepath"
-	"strings"
 	"testing"
-	"testing/fstest"
 
 	"morning30/internal/catalog"
 	"morning30/internal/content"
@@ -144,10 +142,7 @@ func TestSeedBuiltinsKeepsPoseAssignment(t *testing.T) {
 	if len(ids) != 2 || ids[0] != "plank-high" || ids[1] != "plank-low" {
 		t.Fatalf("poses after seed: %#v", ids)
 	}
-	frames := ExerciseFrames(cat, "P08", "m")
-	if len(frames) != 2 || !strings.Contains(frames[0], "/poses/plank-high") {
-		t.Fatalf("frames: %#v", frames)
-	}
+
 }
 
 func TestExerciseAnimationSurvivesSeedingAndRequiresBothStrips(t *testing.T) {
@@ -165,82 +160,32 @@ func TestExerciseAnimationSurvivesSeedingAndRequiresBothStrips(t *testing.T) {
 	if saved.Animation == nil || *saved.Animation != *doc.Animation {
 		t.Fatal("seeding discarded the animation")
 	}
+	custom := catalog.Doc{ID: "X01", Animation: saved.Animation, Poses: []string{"motion"}}
+	cat.Put(custom)
 	if err := d.PutPose("motion", "demo", "Movement", "m", tinyPNG); err != nil {
 		t.Fatal(err)
 	}
-	if ExerciseAnimation(cat, "P08", "m") != nil {
+	if ExerciseAnimation(cat, "X01", "m") != nil {
 		t.Fatal("published an incomplete demonstration")
 	}
 	if err := d.PutPose("other", "demo", "Other side", "m", tinyPNG); err != nil {
 		t.Fatal(err)
 	}
-	a := ExerciseAnimation(cat, "P08", "m")
+	a := ExerciseAnimation(cat, "X01", "m")
 	if a == nil || a.Src != "/poses/motion?sex=m" || a.OtherSrc != "/poses/other?sex=m" || a.Frames != 3 {
 		t.Fatalf("animation: %#v", a)
 	}
-	if len(ExerciseFrames(cat, "P08", "m")) == 0 {
+	if len(ExerciseFrames(cat, "X01", "m")) == 0 {
 		t.Fatal("animation removed still fallback")
-	}
-}
-
-func TestExerciseFramesFallsBackToFigure(t *testing.T) {
-	useArtFiles(t, nil)
-	d := openAppDB(t)
-	SeedBuiltins()
-	_ = d
-	frames := ExerciseFrames(UserCatalog(0), "P08", "f")
-	if len(frames) != 1 || !strings.Contains(frames[0], "/static/ex/f/P08.png") {
-		t.Fatalf("fallback: %#v", frames)
 	}
 }
 
 func TestExerciseFramesCanAwaitCustomIllustrations(t *testing.T) {
 	useArtFiles(t, nil)
 	openAppDB(t)
-	cat := catalog.New(`{"IT01":{"id":"IT01","slot":"main","unit":"seconds","content":{"en":{"name":"Walking"}}}}`)
-	if frames := ExerciseFrames(cat, "IT01", "m"); len(frames) != 0 {
+	cat := catalog.New(`{"X01":{"id":"X01","slot":"main","unit":"seconds","content":{"en":{"name":"Walking"}}}}`)
+	if frames := ExerciseFrames(cat, "X01", "m"); len(frames) != 0 {
 		t.Fatalf("unillustrated exercise must not show a broken or unrelated picture: %#v", frames)
-	}
-}
-
-func TestSeedPoseStillsKeepsProgressAndManualPoses(t *testing.T) {
-	useArtFiles(t, nil)
-	d := openAppDB(t)
-	SeedBuiltins()
-	u, _ := d.CreateUser("seed@b.com", "h", "en", "Seed")
-	if err := d.RecordActivity(u.ID, "2026-09-01"); err != nil {
-		t.Fatal(err)
-	}
-	fsys := fstest.MapFS{
-		"body/out/P08-1.png": {Data: tinyPNG},
-		"body/out/P08-2.png": {Data: append([]byte{}, tinyPNG...)},
-	}
-	if err := SeedPoseStills(fsys); err != nil {
-		t.Fatal(err)
-	}
-	ids := UserCatalog(0).PoseIDs("P08")
-	if len(ids) != 2 || ids[0] != "p08-1" || ids[1] != "p08-2" {
-		t.Fatalf("assigned %#v", ids)
-	}
-	frames := ExerciseFrames(UserCatalog(0), "P08", "f")
-	if len(frames) != 2 || !strings.Contains(frames[0], "/poses/p08-1") {
-		t.Fatalf("frames %#v", frames)
-	}
-	if ok, err := d.HasActivity(u.ID, "2026-09-01"); err != nil || !ok {
-		t.Fatalf("activity after seed: %v %v", ok, err)
-	}
-	if err := SetLibraryPoses("P08", []string{"p08-1"}); err != nil {
-		t.Fatal(err)
-	}
-	if err := SeedPoseStills(fsys); err != nil {
-		t.Fatal(err)
-	}
-	ids = UserCatalog(0).PoseIDs("P08")
-	if len(ids) != 1 || ids[0] != "p08-1" {
-		t.Fatalf("manual poses overwritten: %#v", ids)
-	}
-	if frames := ExerciseFrames(UserCatalog(0), "W01", "m"); len(frames) != 1 || !strings.Contains(frames[0], "/static/ex/") {
-		t.Fatalf("unseeded figure: %#v", frames)
 	}
 }
 

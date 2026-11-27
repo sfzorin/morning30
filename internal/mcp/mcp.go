@@ -132,12 +132,12 @@ func tools() []map[string]any {
 		},
 		{
 			"name":        "list_figures",
-			"description": "Built-in illustration ids a custom exercise may reuse as svg (legacy fallback).",
+			"description": "Published illustration ids a custom exercise may reuse as svg.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
 		},
 		{
 			"name":        "list_poses",
-			"description": "Shared pose catalog (id, kind, label, which figures have an image: hasM, hasF, hasB, hasG). Pick 1–2 ids per exercise.",
+			"description": "Uploaded poses available for custom exercises (id, kind, label and figure variants).",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{}},
 		},
 		{
@@ -153,7 +153,7 @@ func tools() []map[string]any {
 		},
 		{
 			"name":        "set_exercise_poses",
-			"description": "Assign 1–2 pose catalog ids to a global library exercise. Two stills alternate every second; one is static. Does not reset progress.",
+			"description": "Store pose assignments in a global library exercise's metadata. Built-in exercise cards and workouts display its published illustrations.",
 			"inputSchema": map[string]any{"type": "object", "properties": map[string]any{
 				"id":    map[string]any{"type": "string", "description": "Exercise id"},
 				"poses": map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
@@ -241,7 +241,7 @@ func callTool(name string, args json.RawMessage) toolResult {
 	case "list_figures":
 		return textResult(content.FigureIDs(), nil)
 	case "list_poses":
-		poses, err := app.DB.ListPoses()
+		poses, err := app.ActiveExercisePoses()
 		if poses == nil {
 			poses = []db.Pose{}
 		}
